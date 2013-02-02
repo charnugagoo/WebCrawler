@@ -1,7 +1,13 @@
-import sys, urllib2, urllib, json
+import sys, urllib2, urllib, json, collections
 
 argv = sys.argv
 if len(argv) < 2:
     sys.exit("Please give a query (a set of keywords) and a number n!")
-print json.load(urllib2.urlopen(
-    "https://ajax.googleapis.com/ajax/services/search/web?v=1.0&rsz=8&" + urllib.urlencode({"q": sys.argv[1]})))
+queue = collections.deque([])
+url = "https://ajax.googleapis.com/ajax/services/search/web?v=1.0&" + urllib.urlencode({"q": argv[1]})
+for result in json.load(urllib2.urlopen(url + "&rsz=8"))["responseData"]["results"]:
+    queue.append(result["url"])
+for result in json.load(urllib2.urlopen(url + "&rsz=2&start=8"))["responseData"]["results"]:
+    queue.append(result["url"])
+while len(queue) > 0:
+    currentURL = queue.popleft()

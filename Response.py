@@ -56,3 +56,10 @@ Response = {u'responseData': {
          u'unescapedUrl': u'http://money.cnn.com/2012/11/20/news/economy/top-1-percent/index.html',
          u'content': u'Nov 20, 2012 <b>...</b> You needed an adjusted gross income of $370000 to get into the top <b>1</b>% in 2010,   up from $352000 a year earlier.'}]},
             u'responseDetails': None, u'responseStatus': 200}
+queue = ([u'http://www.google.com/%2B1/button/', u'https://developers.google.com/%2B/plugins/%2B1button/',
+          u'http://en.wikipedia.org/wiki/1_(number)', u'https://twitter.com/1',
+          u'http://googleblog.blogspot.com/2011/03/1s-right-recommendations-right-when-you.html',
+          u'http://www.onepercentfortheplanet.org/en/',
+          u'http://www.youtube.com/playlist%3Flist%3DPL967AEA43B29EB01A',
+          u'http://www.washingtonpost.com/blogs/ezra-klein/post/who-are-the-1-percenters/2011/10/06/gIQAn4JDQL_blog.html',
+          u'http://money.cnn.com/2012/11/20/news/economy/top-1-percent/index.html', u'http://plusonemusic.net/'])
