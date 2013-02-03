@@ -10,4 +10,5 @@ for result in json.load(urllib2.urlopen(url + "&rsz=8"))["responseData"]["result
 for result in json.load(urllib2.urlopen(url + "&rsz=2&start=8"))["responseData"]["results"]:
     queue.append(result["url"])
 while len(queue) > 0:
-    currentURL = queue.popleft()
+    link = queue.popleft()
+    urllib.urlretrieve(link, link)
