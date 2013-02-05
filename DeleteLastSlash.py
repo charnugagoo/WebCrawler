@@ -4,4 +4,4 @@ def DeleteLastSlash (href):
     else:
         return href
 
-print DeleteLastSlash("www.baidu.com/")
+#print DeleteLastSlash("www.baidu.com/")

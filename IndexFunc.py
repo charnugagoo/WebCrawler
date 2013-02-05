@@ -38,12 +38,12 @@ def deleteIndexFile (href):
         return href[0:href.rfind("default")]
     else:
         return href
-
-print isIndexPage ("baidu.com/index.html")
-print isIndexPage ("baidu.com/inde.html")
-print isIndexPage ("baidu.com/main")
-print isIndexPage ("baidu.com/index")
-print isIndexPage ("baidu.com/default.html")
-print isIndexPage ("baidu.com/main")
-print deleteIndexFile("baidu.com/main")
-print deleteIndexFile("baidu.com/index.html")
+#
+#print isIndexPage ("baidu.com/index.html")
+#print isIndexPage ("baidu.com/inde.html")
+#print isIndexPage ("baidu.com/main")
+#print isIndexPage ("baidu.com/index")
+#print isIndexPage ("baidu.com/default.html")
+#print isIndexPage ("baidu.com/main")
+#print deleteIndexFile("baidu.com/main")
+#print deleteIndexFile("baidu.com/index.html")
