@@ -1,14 +1,35 @@
-import sys, urllib2, urllib, json, collections
+import sys, urllib2, urllib, json, collections, htmllib, formatter
 
-argv = sys.argv
-if len(argv) < 2:
+class Parser(htmllib.HTMLParser):
+    def __init__(self):
+        htmllib.HTMLParser.__init__(self, formatter.NullFormatter())
+
+    def anchor_bgn(self, href, name, type):
+        if href.startswith("http://"):
+            queue.append(href)
+
+#argv = sys.argv
+argv = [1, 1, 11]
+if len(argv) < 3:
     sys.exit("Please give a query (a set of keywords) and a number n!")
 queue = collections.deque([])
 url = "https://ajax.googleapis.com/ajax/services/search/web?v=1.0&" + urllib.urlencode({"q": argv[1]})
-for result in json.load(urllib2.urlopen(url + "&rsz=8"))["responseData"]["results"]:
-    queue.append(result["url"])
-for result in json.load(urllib2.urlopen(url + "&rsz=2&start=8"))["responseData"]["results"]:
-    queue.append(result["url"])
-while len(queue) > 0:
+urlKey = "unescapedUrl"
+results0_7 = urllib2.urlopen(url + "&rsz=8")
+for result in json.load(results0_7)["responseData"]["results"]:
+    queue.append(result[urlKey])
+results0_7.close()
+results8_9 = urllib2.urlopen(url + "&rsz=2&start=8")
+for result in json.load(results8_9)["responseData"]["results"]:
+    queue.append(result[urlKey])
+results8_9.close()
+pagesNumber = int(argv[2])
+pagesCollected = 0
+while len(queue) > 0 and pagesCollected < pagesNumber:
     link = queue.popleft()
-    urllib.urlretrieve(link, link)
+    linkFileName = link.replace("/", ":")
+    urllib.urlretrieve(link, linkFileName)
+    parser = Parser()
+    parser.feed(open(linkFileName).read())
+    parser.close()
+    pagesCollected += 1
