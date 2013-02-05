@@ -1,4 +1,4 @@
-import sys, urllib2, urllib, json, collections, htmllib, formatter
+import sys, urllib2, urllib, json, collections, htmllib, formatter, DeleteLastSlash
 
 class Parser(htmllib.HTMLParser):
     def __init__(self):
@@ -15,6 +15,7 @@ class Parser(htmllib.HTMLParser):
                 number_visited_url += 1 #zhuoran
 #                print href
             else:
+                pass
 #                print "visited: ", href
             #zhuoran
 
