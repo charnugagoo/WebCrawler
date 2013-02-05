@@ -15,9 +15,11 @@ def isSupportType (href):
         strlist = str.split('.')
         if len(strlist) >= 2 :
             str = strlist[len(strlist)-1]
-            if not support_list.get(str) :
+            if support_list.get(str) == None:
                 return -1
     return href
 
 #print isSupportType("http://www.baidu.com/wowo.wowo.avi")
 #print isSupportType("http://www.baidu.com")
+#print isSupportType("http://www.google.com/+1/button")
+#isSupportType("http://googleblog.blogspot.com/2011/03/1s-right-recommendations-right-when-you.html")

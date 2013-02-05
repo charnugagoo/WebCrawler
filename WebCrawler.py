@@ -1,5 +1,17 @@
 # coding=utf-8
-import sys, urllib2, urllib, json, collections, htmllib, formatter, DeleteLastSlash, urlparse, os
+import sys, urllib2, urllib, json, collections, htmllib, formatter, urlparse, os, CheckUrl
+
+def Queue_Push_Front (href) :
+    global hash_table
+    global number_visited_url
+    print href
+    href = CheckUrl.checkUrl(href)
+    print href
+    if href != -1:
+        if hash_table.has_key(href) == None:
+            queue.append(href)
+            hash_table[href] = number_visited_url #zhuoran
+            number_visited_url += 1 #zhuoran
 
 class Parser(htmllib.HTMLParser):
     def __init__(self):
@@ -7,18 +19,11 @@ class Parser(htmllib.HTMLParser):
 
     def anchor_bgn(self, href, name, type):
         href = urlparse.urljoin(link, href)
-        global hash_table
-        global number_visited_url
         #zhuoran
-        if not hash_table.has_key(href):
-            queue.append(href)
-            hash_table[href] = number_visited_url #zhuoran
-            number_visited_url += 1 #zhuoran
-        else:
-            pass
+        Queue_Push_Front (href)
 
 #argv = sys.argv
-argv = [1, 1, 11]
+argv = [1, 1, 10]
 if len(argv) < 3:
     sys.exit("Please give a query (a set of keywords) and a number n!")
 #initial
@@ -33,15 +38,11 @@ url = "https://ajax.googleapis.com/ajax/services/search/web?v=1.0&" + urllib.url
 urlKey = "unescapedUrl"
 results0_7 = urllib2.urlopen(url + "&rsz=8")
 for result in json.load(results0_7)["responseData"]["results"]:
-    queue.append(result[urlKey])
-    hash_table[result[urlKey]] = number_visited_url #zhuoran
-    number_visited_url += 1 #zhuoran
+    Queue_Push_Front(result[urlKey])
 results0_7.close()
 results8_9 = urllib2.urlopen(url + "&rsz=2&start=8")
 for result in json.load(results8_9)["responseData"]["results"]:
-    queue.append(result[urlKey])
-    hash_table[result[urlKey]] = number_visited_url #zhuoran
-    number_visited_url += 1 #zhuoran
+    Queue_Push_Front(result[urlKey])
 results8_9.close()
 pagesNumber = int(argv[2])
 number_visited_url = 0  #zhuoran
@@ -50,12 +51,12 @@ number_visited_url = 0  #zhuoran
 visited = open("visited.txt", "a")
 # Each page should be visited only once and stored in a file in directory.
 pagesDirectory = "pages"
-os.mkdir(pagesDirectory)
+if not os.path.exists(pagesDirectory):
+    os.mkdir(pagesDirectory)
 
 while len(queue) > 0 and number_collected_url < pagesNumber:
     number_collected_url += 1
     link = queue.popleft()
-
     # output a list of all visited URLs, in the order they are visited, into a le.
     visited.write(link + "\n")
     # flush() does not necessarily write the file’s data to disk. Use flush() followed by os.fsync() to ensure this behavior.
@@ -67,7 +68,6 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
     parser = Parser()
     parser.feed(open(linkFileName).read())
     parser.close()
-
 visited.close()
 
 

@@ -1,0 +1,1859 @@
+
+<!DOCTYPE html>
+<html lang="en" class="devsite">
+
+  
+
+  <head>
+    <meta charset="utf-8" />
+    <script src="/_static/js/script_head.js"></script>
+    <link rel="stylesheet" type="text/css" href="/_static/css/screen.css" />
+    <link rel="shortcut icon" href="/_static/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/_static/images/apple-touch-icon.png">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script id="jqueryui" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"></script>
+    <script src="//www.google.com/jsapi?key=AIzaSyCZfHRnq7tigC-COeQRmoa9Cxr0vbrK6xw"></script>
+
+    <script type="text/javascript" src="//www.gstatic.com/feedback/api.js"></script>
+    <script type="text/javascript" src="/jsi18n/"></script>
+    <!--[if lt IE 9]>
+    <script src="/_static/js/html5shim/html5.js"></script>
+    <![endif]-->
+
+    
+  <script type="text/javascript">
+    var contentTimer = new window.jstiming.Timer();
+
+    var ___gcfg = ___gcfg || {};
+    ___gcfg.lang = 'en';
+  </script>
+  
+  <title>+1 Button - Google+ Platform &mdash; Google Developers</title>
+  
+  
+  
+    
+    
+    
+    
+    <link rel="stylesheet" href="/+/css/plus.css" />
+  
+
+
+    
+    
+
+  </head>
+  <body class="two-column docs">
+    
+    <div id="sandbar">
+      
+      <a href="/sandbar?q=&page_url=/%2B/plugins/%2B1button/"></a>
+      <div id="gc-googlebar"></div>
+      <img src="/_static/images/google-logo.png" style="display:none;"/>
+      
+    </div>
+    
+
+    
+    
+
+    <div id="gc-wrapper" itemscope itemtype="http://schema.org/Article">
+      
+      <input id="gc-analytics" type="hidden" value="UA-24532603-1" />
+      
+
+      
+
+      <div id="gc-topnav">
+        <div>
+
+          
+          
+
+          <ul>
+
+            
+            
+
+            
+            
+            
+            
+            <li class=""><a href="/">Home</a></li>
+            
+            <li class="active"><a href="/products/">Products</a></li>
+            
+            <li class=""><a href="/events/">Conferences</a></li>
+            
+            <li class=""><a href="/showcase/">Showcase</a></li>
+            
+            <li class=""><a href="/live/">Live</a></li>
+            
+            <li class=""><a href="/groups/">Groups</a></li>
+            
+
+            
+            
+            
+          </ul>
+        </div>
+      </div>
+      
+      
+
+      
+      
+      
+        <div id="gc-appbar">
+          
+          
+<h1>
+
+  <a href="/+">Google+ Platform</a>
+  <div class="plusone-container">
+    <div class="g-plusone"
+      data-href="https://developers.google.com/+"
+      data-size="medium"
+      data-source="google:developers"></div>
+  </div>
+
+
+<div style="float:right;">
+  
+  <a href="" class="google-feedback" data-p="74502" data-b="" data-context="">Feedback on this document</a>
+</div>
+
+
+
+
+
+</h1>
+
+
+          
+        </div>
+      
+      
+
+      
+        
+      <div id="gc-main">
+        
+        
+  
+  
+      
+      
+      <div id="gc-sidebar">
+        
+
+  
+
+
+
+  <nav class="gc-toc"><ul><li class=""><a href="/+/" data-title="Google+ platform"><span>Google+ platform</span></a></li><li class=""><a href="/+/mobile/android/" data-title="Android"><span>Android</span></a><ul><li class=""><a href="/+/mobile/android/getting-started" data-title="Getting started"><span>Getting started</span></a></li><li class=""><a href="/+/mobile/android/sign-in" data-title="Sign in"><span>Sign in</span></a></li><li class=""><a href="/+/mobile/android/share" data-title="Share"><span>Share</span></a></li><li class=""><a href="/+/mobile/android/write-moments" data-title="Write moments"><span>Write moments</span></a></li><li class=""><a href="/+/mobile/android/recommend" data-title="+1 button"><span>+1 button</span></a></li><li class=""><span class="tlw-title" data-title="Google Play services">Google Play services</span><ul><li class=""><a href="/android/google-play-services/" data-title="Overview"><span>Overview</span></a></li><li class=""><a href="/android/google-play-services/reference/" data-title="API Reference"><span>API Reference</span></a></li></ul></li></ul></li><li class=""><a href="/+/mobile/ios/" data-title="iOS"><span>iOS</span></a><ul><li class=""><a href="/+/mobile/ios/getting-started" data-title="Getting started"><span>Getting started</span></a></li><li class=""><a href="/+/mobile/ios/sign-in" data-title="Sign in"><span>Sign in</span></a></li><li class=""><a href="/+/mobile/ios/share" data-title="Share"><span>Share</span></a></li><li class=""><a href="/+/mobile/ios/write-moments" data-title="Write moments"><span>Write moments</span></a></li><li class=""><a href="/+/mobile/ios/api/" data-title="API Reference"><span>API Reference</span></a><ul><li class=""><a href="/+/mobile/ios/api/interface_g_p_p_sign_in" data-title="GPPSignIn"><span>GPPSignIn</span></a></li><li class=""><a href="/+/mobile/ios/api/interface_g_p_p_sign_in_button" data-title="GPPSignInButton"><span>GPPSignInButton</span></a></li><li class=""><a href="/+/mobile/ios/api/protocol_g_p_p_sign_in_delegate-p" data-title="GPPSignInDelegate"><span>GPPSignInDelegate</span></a></li><li class=""><a href="/+/mobile/ios/api/interface_g_p_p_share" data-title="GPPShare"><span>GPPShare</span></a></li><li class=""><a href="/+/mobile/ios/api/protocol_g_p_p_share_builder-p" data-title="GPPShareBuilder"><span>GPPShareBuilder</span></a></li><li class=""><a href="/+/mobile/ios/api/protocol_g_p_p_share_delegate-p" data-title="GPPShareDelegate"><span>GPPShareDelegate</span></a></li><li class=""><a href="/+/mobile/ios/api/interface_g_p_p_deep_link" data-title="GPPDeepLink"><span>GPPDeepLink</span></a><ul><li class=""><a href="/+/mobile/ios/source-values" data-title="Source Values"><span>Source Values</span></a></li></ul></li></ul></li></ul></li><li class=""><a href="/+/plugins/" data-title="Websites"><span>Websites</span></a><ul><li class=""><a href="/+/plugins/+1button/" data-title="+1 Button"><span>+1 Button</span></a></li><li class=""><a href="/+/plugins/badge/" data-title="Badge"><span>Badge</span></a><ul><li class=""><a href="/+/plugins/badge/branding-guidelines" data-title="Branding Guidelines"><span>Branding Guidelines</span></a></li></ul></li><li class=""><a href="/+/plugins/share/" data-title="Share"><span>Share</span></a></li><li class=""><a href="/+/plugins/snippet/" data-title="Snippet"><span>Snippet</span></a></li><li class=""><a href="/+/plugins/buttons-policy" data-title="Buttons Policy"><span>Buttons Policy</span></a></li></ul></li></ul><hr/><ul><li class=""><a href="/+/hangouts" data-title="Hangouts API"><span>Hangouts API</span></a><ul><li class=""><a href="/+/hangouts/getting-started" data-title="Getting Started"><span>Getting Started</span></a></li><li class=""><a href="/+/hangouts/sample-apps" data-title="Sample Apps"><span>Sample Apps</span></a></li><li class=""><a href="/+/hangouts/writing" data-title="Writing Apps"><span>Writing Apps</span></a><ul><li class=""><a href="/+/hangouts/shared-state" data-title="Shared state"><span>Shared state</span></a></li><li class=""><a href="/+/hangouts/resource-management" data-title="Manage resources"><span>Manage resources</span></a></li></ul></li><li class=""><a href="/+/hangouts/running" data-title="Running Apps"><span>Running Apps</span></a></li><li class=""><a href="/+/hangouts/publishing" data-title="Publishing Apps"><span>Publishing Apps</span></a></li><li class=""><a href="/+/hangouts/button" data-title="Hangout Button"><span>Hangout Button</span></a></li><li class=""><a href="/+/hangouts/api/" data-title="API"><span>API</span></a><ul><li class=""><a href="/+/hangouts/api/gapi.hangout" data-title="gapi.hangout"><span>gapi.hangout</span></a></li><li class=""><a href="/+/hangouts/api/gapi.hangout.av" data-title="gapi.hangout.av"><span>gapi.hangout.av</span></a></li><li class=""><a href="/+/hangouts/api/gapi.hangout.av.effects" data-title="gapi.hangout.av.effects"><span>gapi.hangout.av.effects</span></a></li><li class=""><a href="/+/hangouts/api/gapi.hangout.data" data-title="gapi.hangout.data"><span>gapi.hangout.data</span></a></li><li class=""><a href="/+/hangouts/api/gapi.hangout.layout" data-title="gapi.hangout.layout"><span>gapi.hangout.layout</span></a></li><li class=""><a href="/+/hangouts/api/gapi.hangout.onair" data-title="gapi.hangout.onair"><span>gapi.hangout.onair</span></a></li><li class=""><a href="/+/hangouts/api/index-all" data-title="Index"><span>Index</span></a></li></ul></li><li class=""><a href="/+/hangouts/faq" data-title="FAQ"><span>FAQ</span></a></li><li class=""><a href="/+/release-notes/hangouts" data-title="Release Notes"><span>Release Notes</span></a></li></ul></li><li class=""><span class="tlw-title" data-title="REST API">REST API</span><ul><li class=""><a href="/+/api" data-title="Public data API"><span>Public data API</span></a><ul><li class=""><a href="/+/api/latest/" data-title="Overview"><span>Overview</span></a></li><li class=""><a href="/+/api/latest/people" data-title="People"><span>People</span></a><ul><li class=""><a href="/+/api/latest/people/get" data-title="get"><span>get</span></a></li><li class=""><a href="/+/api/latest/people/search" data-title="search"><span>search</span></a></li><li class=""><a href="/+/api/latest/people/listByActivity" data-title="listByActivity"><span>listByActivity</span></a></li></ul></li><li class=""><a href="/+/api/latest/activities" data-title="Activities"><span>Activities</span></a><ul><li class=""><a href="/+/api/latest/activities/list" data-title="list"><span>list</span></a></li><li class=""><a href="/+/api/latest/activities/get" data-title="get"><span>get</span></a></li><li class=""><a href="/+/api/latest/activities/search" data-title="search"><span>search</span></a></li></ul></li><li class=""><a href="/+/api/latest/comments" data-title="Comments"><span>Comments</span></a><ul><li class=""><a href="/+/api/latest/comments/list" data-title="list"><span>list</span></a></li><li class=""><a href="/+/api/latest/comments/get" data-title="get"><span>get</span></a></li></ul></li></ul></li><li class=""><a href="/+/history/" data-title="History API"><span>History API</span></a><ul><li class=""><a href="/+/history/preview" data-title="Preview Sign-up"><span>Preview Sign-up</span></a><ul><li class=""><a href="/+/history/preview/opt-out" data-title="Opt-out"><span>Opt-out</span></a></li><li class=""><a href="/+/history/learn-more" data-title="Learn More"><span>Learn More</span></a></li></ul></li><li class=""><a href="/+/history/client-side-flow" data-title="Client Side Flow Example"><span>Client Side Flow Example</span></a></li><li class=""><a href="/+/history/server-side-flow" data-title="Server Side Flow Example"><span>Server Side Flow Example</span></a></li><li class=""><a href="/+/history/api/moments" data-title="API Reference"><span>API Reference</span></a><ul><li class=""><a href="/+/history/api/moments/insert" data-title="Insert"><span>Insert</span></a></li></ul></li></ul></li><li class=""><a href="/+/api/oauth" data-title="OAuth"><span>OAuth</span></a></li><li class=""><a href="/+/api/pages-signup" data-title="Pages API"><span>Pages API</span></a></li></ul></li></ul><hr/><ul><li class=""><a href="/+/downloads/" data-title="Downloads"><span>Downloads</span></a></li><li class=""><a href="/+/release-notes/" data-title="Release Notes"><span>Release Notes</span></a></li><li class=""><a href="/+/best-practices" data-title="Best Practices"><span>Best Practices</span></a></li></ul><hr/><ul><li class=""><span class="tlw-title" data-title="Community &amp; Support">Community &amp; Support</span><ul><li class=""><a href="/+/support" data-title="Get support"><span>Get support</span></a></li><li class=""><a href="/+/discussions" data-title="Discussions"><span>Discussions</span></a></li><li class=""><a href="/+/office-hours" data-title="Office Hours"><span>Office Hours</span></a></li><li class=""><a href="http://googleplusplatform.blogspot.com/" data-title="Blog"><span>Blog</span></a></li><li class=""><a href="/showcase/#tags=google+plus" data-title="Showcase"><span>Showcase</span></a></li></ul></li><li class=""><a href="https://code.google.com/apis/console" data-title="APIs Console"><span>APIs Console</span></a></li></ul><hr/><ul><li class=""><a href="/+/policies" data-title="Developer Policies"><span>Developer Policies</span></a></li><li class=""><a href="/+/terms" data-title="Terms of Service"><span>Terms of Service</span></a></li></ul></nav>
+
+
+
+      </div>
+      
+
+      <div id="gc-content"
+           
+           
+           >
+        
+        <div>
+  
+          
+  
+  <h1 itemprop="name" class="page-title" >+1 Button</h1>
+  
+  <div itemprop="articleBody">
+  
+
+<g:configurator class="plus-configurator" cfg="+1button" height="353"></g:configurator>
+<h2>Documentation</h2>
+<nav class="inline-toc">
+  <ol class="toc">
+    <li><a href="#getting-started">Getting Started</a>
+      <ol class="toc">
+        <li><a href="#quick-look">A Simple Button</a></li>
+        <li><a href="#plusonetag">+1 Tag</a></li>
+        <li><a href="#async-load">Asynchronous Loading</a></li>
+      </ol>
+    </li>
+    <li><a href="#configuration">Configuration</a>
+      <ol class="toc">
+        <li><a href="#target-url">Setting the +1 Target URL</a></li>
+        <li><a href="#script-parameters">Script Tag Parameters</a></li>
+        <li><a href="#plusonetag-parameters">+1 Tag Attributes</a></li>
+        <li><a href="#button-sizes">Button Sizes</a></li>
+        <li><a href="#inline-annotation">Inline Annotation Widths</a></li>
+        <li><a href="#plus-snippet">Populating the +Snippet</a></li>
+      </ol>
+    </li>
+    <li><a href="#jsapi">JavaScript API</a></li>
+    <li>
+      <a href="#examples">Examples</a>
+      <ol class="toc">
+        <li><a href="#example-basic">Basic Page</a></li>
+        <li><a href="#example-explicit-load">Explicit Load</a></li>
+        <li><a href="#example-explicit-render">Explicit Render</a></li>
+        <li><a href="#example-async-load">Asynchronous Load</a></li>
+      </ol>
+    </li>
+    <li><a href="#faqs">FAQs</a></li>
+    <li><a href="#available-languages">Language Codes</a></li>
+  </ol>
+</nav>
+
+<section itemscope itemtype="http://schema.org/Article">
+  <p itemprop="description">
+    You can add and customize the +1 button to meet the needs of your website, such as modifying the
+    button size and load technique. By adding the +1 button to your website, you allow your users
+    to recommend your content to their circles and drive traffic to your site. The +1 button can also
+    improve the time spent on your site by providing recommendations for further reading.
+  </p>
+  <p>Use of the +1 button is subject to the
+    <a href="/+/plugins/buttons-policy">Google +1 Button policy</a>.
+  </p>
+</section>
+
+<section id="getting-started">
+  <h2>Getting Started</h2>
+
+  <h3 id="quick-look">A Simple Button</h3>
+
+  <p>
+    The easiest method for including a +1 button on your page is to include the necessary
+    JavaScript resource and to add a +1 button tag:
+  </p>
+
+
+
+  <pre class="prettyprint">
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://apis.google.com/js/plusone.js&quot;&gt;&lt;/script&gt;
+&lt;g:plusone&gt;&lt;/g:plusone&gt;
+</pre>
+
+  <p>
+    The script must be loaded from the HTTPS protocol and can be included from any point on
+    the page without restriction. For more information, see the <a href="#faqs">FAQ</a>.
+    You can also load the script <a href="#async-load">asynchronously</a> for improved
+    performance.
+  </p>
+
+
+  <h3 id="plusonetag">+1 tag</h3>
+
+  <p>
+    To render a simple +1 tag:
+  </p>
+
+  <pre class="prettyprint">&lt;g:plusone size="tall">&lt;/g:plusone></pre>
+
+  <p>
+    You can also use a HTML5-valid +1 tag by setting the class attribute to
+    <code>g-plusone</code>, and prefixing any button attributes with <code>data-</code>.
+  </p>
+
+  <pre class="prettyprint">&lt;div class="g-plusone" data-size="tall" ... >&lt;/div>
+  </pre>
+
+  <p>
+    By default, the included script will traverse the DOM and render +1 tags as buttons. You can improve
+    rendering time on large pages by using the <a href="#jsapi">JavaScript API</a> to traverse only a
+    single element within the page, or to render a specific element as a +1 button.
+  </p>
+
+
+  <h3 id="async-load">Asynchronous JavaScript loading</h3>
+
+  <p>
+    Asynchronous inclusion allows your web page to continue loading while your browser fetches the +1
+    JavaScript file. By loading these elements in parallel, you ensure that loading +1
+    button JavaScript file does not increase your page load time.
+  </p>
+
+  <p>
+    To include the +1 button JavaScript asynchronously, use the following code:
+  </p>
+
+
+  <pre class="prettyprint">
+&lt;script type=&quot;text/javascript&quot;&gt;
+  (function() {
+    var po = document.createElement(&#39;script&#39;); po.type = &#39;text/javascript&#39;; po.async = true;
+    po.src = &#39;https://apis.google.com/js/plusone.js&#39;;
+    var s = document.getElementsByTagName(&#39;script&#39;)[0]; s.parentNode.insertBefore(po, s);
+  })();
+&lt;/script&gt;
+</pre>
+
+  <aside class="note">
+    <strong>Tip:</strong> For the best performance, place this code immediately after the last +1 tag.
+  </aside>
+
+  <p>
+    If you would like to set <a href="#script-parameters">script tag parameters</a>, use the following syntax:
+  </p>
+
+
+
+  <pre class="prettyprint">
+  window.___gcfg = {
+    lang: &#39;zh-CN&#39;,
+    parsetags: &#39;onload&#39;
+  };
+</pre>
+
+  <p>
+    A full example is included in the <a href="#example-async-load">examples</a>.
+  </p>
+
+</section>
+
+<section id="configuration">
+  <h2>Configuration</h2>
+
+  <h3 id="target-url">Setting the +1 target URL</h3>
+
+  <p>
+    The URL that is +1'd is determined in the following order:
+  </p>
+  <dl>
+    <dt>
+      1. The button's href attribute
+    </dt>
+    <dd>
+      This attribute explicitly defines the +1 target URL.
+    </dd>
+
+    <dt>
+      2. The page's <code>&lt;link rel="canonical" ... /&gt;</code> tag
+    </dt>
+    <dd>
+      If the +1 button's href attribute is not provided, Google uses the page's canonical URL.
+      For more information on defining the canonical URL for a page,
+      see <a href="http://www.google.com/support/webmasters/bin/answer.py?answer=139066">this
+      help article</a>.</dd>
+
+    <dt>
+      3. The URL provided by <code>document.location.href</code> , which is not recommended.
+    </dt>
+    <dd>
+      If none of these items are present, Google uses the URL of the page as found in
+      the DOM. Because this URL might contain session IDs, anchors, or other parameters that are not
+      actually part of the canonical URL, we highly recommend either setting the <code>href</code>
+      attribute for the +1 button or adding a <code>&lt;link rel="canonical" ...&gt;</code> tag to
+      your page.
+    </dd>
+
+  </dl>
+
+  <aside class="note">
+    <strong>Note:</strong> The +1 is a public action and must be performed on a public URL. If you
+    attempt to +1 a URL that is not public, an error occurs.
+  </aside>
+
+
+  <h3 id="script-parameters">Script tag parameters</h3>
+
+  <p>
+    These parameters are defined within the <code>&lt;script /&gt;</code> element. The parameters control
+    the language and button loading mechanism that are used across the entire web page.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Key</th>
+        <th>Value</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>lang</code></td>
+        <td><var>language code</var></td>
+        <td><code>en-US</code></td>
+        <td>Sets the language to use for the +1 buttons on the page. For available
+            <var>language code</var> values, see the
+            <a href="#available-languages">list of supported language codes</a>
+            and a <a href="#example-async-load"><code>lang</code> example</a>.
+      </tr>
+      <tr>
+        <td><code>parsetags</code></td>
+        <td><code>explicit, onload</code></td>
+        <td><code>onload</code></td>
+        <td>
+          Sets the loading mechanism to use.
+          <hr/>
+          <dl>
+            <dt>onload</dt>
+            <dd>All +1 buttons on the page are automatically rendered after the page loads.
+                See the <a href="#async-load">asynchronous load example</a>.
+</dd>
+
+            <dt>explicit</dt>
+            <dd>
+              +1 buttons are rendered only with explicit calls
+              to <code><a href="#jsapi">gapi.plusone.go</a></code>
+              or <code><a href="#jsapi">gapi.plusone.render</a></code>.
+              <p>
+                When you use the <code>explicit</code> load in conjunction with <code>go</code>
+                and <code>render</code> calls that point to specific containers in your page, you prevent
+                the script from traversing the entire DOM, which can improve button rendering time.
+                See the <a href="#example-explicit-load">gapi.plusone.go</a> and
+                <a href="#example-explicit-render">gapi.plusone.render</a> examples.
+              </p>
+            </dd>
+          </dl>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 id="plusonetag-parameters">+1 tag attributes</h3>
+
+  <p>
+    These parameters control settings for each button. You can set these parameters as attribute=value
+    pairs on <a href="#plusonetag">+1 button tags</a>, or as JavaScript <code>key:value</code> pairs in a call
+    to <code><a href="#jsapi">gapi.plusone.render</a></code>.
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Value</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="attr-href"><code>href</code></td>
+        <td><var>URL to +1</var></td>
+        <td><var>current page URL</var></td>
+        <td>
+          Sets the URL to +1. Set this attribute when you have a +1 button next
+          to an item description for another page and want the button to +1 the
+          referenced page and not the current page. If you set this attribute by
+          using <code><a href="#jsapi">gapi.plus.render</a></code>, you should
+          should not escape the URL.
+        </td>
+      </tr>
+
+      <tr>
+        <td id="attr-size"><code>size</code></td>
+        <td>
+          <ul class="nolist noindent">
+            <li><code>small</code></li>
+            <li><code>medium</code></li>
+            <li><code>standard</code></li>
+            <li><code>tall</code></li>
+          </ul>
+        </td>
+        <td><code>standard</code></td>
+        <td>
+          Sets the +1 button size to render. See <a href="#button-sizes">button sizes</a>
+          for more information.
+        </td>
+      </tr>
+
+      <tr>
+        <td id="attr-annotation"><code>annotation</code></td>
+        <td>
+          <ul class="nolist noindent">
+            <li><code>none</code></li>
+            <li><code>bubble</code></li>
+            <li><code>inline</code></li>
+          </ul>
+        </td>
+        <td><code>bubble</code></td>
+        <td>
+          Sets the annotation to display next to the button.
+          <hr/>
+          <dl>
+            <dt>none</dt>
+            <dd>
+              Do not render additional annotations.
+            </dd>
+            <dt>bubble</dt>
+            <dd>
+              Display the number of users who have +1'd the page in a graphic
+              next to the button.
+            </dd>
+            <dt>inline</dt>
+            <dd>
+              <p>
+                Display profile pictures of connected users who have +1'd the page and
+                a count of users who have +1'd the page.
+              </p>
+            </dd>
+          </dl>
+        </td>
+      </tr>
+
+      <tr>
+        <td id="attr-width"><code>width</code></td>
+        <td><var>int</var></td>
+        <td class="empty-cell">&mdash;</td>
+        <td>
+          If <code>annotation</code> is set to "<code>inline</code>", this parameter sets the width in pixels to use for
+          the button and its inline annotation. If the width is omitted, a button and its inline annotation use
+          450px.
+          <p>
+            See <a href="#inline-annotation">Inline annotation widths</a> for examples of how the annotation
+            is displayed for various width settings.
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td id="attr-align"><code>align</code></td>
+        <td>
+          <ul class="nolist noindent">
+            <li><code>left</code></li>
+            <li><code>right</code></li>
+          </ul>
+        </td>
+        <td><code>left</code></td>
+        <td>
+          Sets the horizontal alignment of the button assets within its frame.
+        </td>
+      </tr>
+      <tr>
+        <td id="attr-expandTo"><code>expandTo</code></td>
+        <td>
+          <var style="white-space: nowrap">comma-separated list of</var>
+          <ul class="nolist noindent">
+            <li><code>top</code></li>
+            <li><code>right</code></li>
+            <li><code>bottom</code></li>
+            <li><code>left</code></li>
+          </ul>
+        </td>
+        <td><var>empty list</var></td>
+        <td>
+          <p>
+            Sets the preferred positions to display hover and confirmation bubbles, which are relative
+            to the button. Set this parameter when your page contains certain elements, such as Flash
+            objects, that might interfere with rendering the bubbles.
+          </p>
+          <p>
+            For example, <code>top</code> will display the hover and confirmation bubbles above the
+            button.
+          <p>
+            If omitted, the rendering logic will guess the best position, usually defaulting to below
+            the button by using the <code>bottom</code> value.
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td id="attr-callback"><code>callback</code></td>
+        <td><var>function(jsonParam)</var></td>
+        <td class="empty-cell">&mdash;</td>
+        <td>
+          If specified, this function is called after the user clicks the +1 button.
+          The callback function must be in the global namespace and accept a
+          single parameter, which is a JSON object with the following structure:
+
+          <pre>{
+  "href": <var>target URL</var>,
+  "state": "on"|"off"
+}</pre>
+          <p>
+            The <code>state</code> property is set to "<code>on</code>" for a +1, and
+            "<code>off</code>" for the removal of a +1.
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td id="attr-onstartinteraction">
+          <code>onstartinteraction</code>
+        </td>
+        <td><var>function(jsonParam)</var></td>
+        <td class="empty-cell">&mdash;</td>
+        <td>
+          <p>
+            If specified, this function is called either when a hover bubble displays, which is caused by the
+            user hovering the mouse over the +1 button, or when a confirmation bubble displays, which is caused
+            by the user +1'ing the page. You can use this callback function to modify your page, such
+            as pausing a video when the bubble appears.
+          </p>
+          <p>
+            This function must be in the global namespace and accept a single parameter, which
+            is a JSON object with the following structure:
+          </p>
+          <pre>{
+  "id": <var>target URL</var>,
+  "type": hover|confirm
+}</pre>
+        </td>
+      </tr>
+      <tr>
+        <td id="attr-onendinteraction"><code>onendinteraction</code></td>
+        <td><var>function(jsonParam)</var></td>
+        <td class="empty-cell">&mdash;</td>
+        <td>
+          <p>
+            If specified, this function is called when either a hover or confirmation bubble
+            disappears. You can use this callback function to modify your page, such as resuming
+            a video when the bubble closes.
+          </p>
+          <p>
+            This function accepts a single parameter, which is identical in structure to the
+            parameter passed to <code>onstartinteraction</code>.
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td id="attr-recommendations"><code>recommendations</code></td>
+        <td><code>true, false</code></td>
+        <td><code>true</code></td>
+        <td>To disable showing recommendations within the +1 hover bubble, set <code>recommendations</code>
+            to <code>false</code>.</td> This feature is currently in
+            <a href="http://www.google.com/+/learnmore/platform-preview/">platform preview</a>.
+      </tr>
+      <tr class="deprecated">
+        <td id="attr-count"><code>count</code></td>
+        <td><code>true, false</code></td>
+        <td><code>true</code></td>
+        <td>
+          <b>Deprecated:</b> To disable the count display, use <code>annotation="none"</code>.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 id="button-sizes">Button sizes</h3>
+
+  <p>
+    Specifying a height that is smaller than the smallest supported height render as the smallest supported height.
+    Other heights render the largest button that will fit and vertically center that icon in
+    the requested space. If enough space is available horizontally, the small and standard buttons render
+    the total number of +1's for that page.
+  </p>
+
+  <div id="buttonSizeExamples">
+  <table>
+    <thead>
+      <tr>
+        <th>Button type (annotation)</th>
+        <th>Example</th>
+        <th>Width (px)</th>
+        <th>Max width (px)</th>
+        <th>Height (px)</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td><b>Small</b> (none)</td>
+        <td><g:plusone size="small" annotation="none"></g:plusone></td>
+        <td>24</td>
+        <td class="empty-cell">&mdash;</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td><b>Small</b> (bubble)</td>
+        <td><g:plusone size="small"></g:plusone></td>
+        <td class="empty-cell">&mdash;</td>
+        <td>70</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td><b>Medium</b> (none)</td>
+        <td><g:plusone size="medium" annotation="none"></g:plusone></td>
+        <td>32</td>
+        <td class="empty-cell">&mdash;</td>
+        <td>20</td>
+      </tr>
+      <tr>
+        <td><b>Medium</b> (bubble)</td>
+        <td><g:plusone size="medium"></g:plusone></td>
+        <td class="empty-cell">&mdash;</td>
+        <td>90</td>
+        <td>20</td>
+      </tr>
+      <tr>
+        <td><b>Standard</b> (none)</td>
+        <td><g:plusone annotation="none"></g:plusone></td>
+        <td>38</td>
+        <td class="empty-cell">&mdash;</td>
+        <td>24</td>
+      </tr>
+      <tr>
+        <td><b>Standard</b> (bubble)</td>
+        <td><g:plusone></g:plusone></td>
+        <td class="empty-cell">&mdash;</td>
+        <td>106</td>
+        <td>24</td>
+      </tr>
+      <tr>
+        <td><b>Tall</b> (none)</td>
+        <td><g:plusone size="tall" annotation="none"></g:plusone></td>
+        <td>50</td>
+        <td class="empty-cell">&mdash;</td>
+        <td>20</td>
+      </tr>
+      <tr>
+        <td><b>Tall</b> (bubble)</td>
+        <td><g:plusone size="tall"></g:plusone></td>
+        <td>50</td>
+        <td class="empty-cell">&mdash;</td>
+        <td>60</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3 id="inline-annotation">Inline annotation widths</h3>
+
+  <p>
+    The display of inline annotations varies based on the value of the <code>width</code> parameter.
+  </p>
+  <ul>
+    <li>If the width parameter is unspecified, a +1 button and its inline annotation use a width of 450px.</li>
+    <li>The inline annotation requires a minimum of 120px to display. Lower values are automatically resized. The recommended minimum width is 250px.</li>
+    <li>For other widths, the display of inline profile pictures and text will vary based on the defined width, as shown in the examples below.</li>
+  </ul>
+  <div id="inlineExamples">
+    <table>
+      <thead>
+        <th>Width</th>
+        <th>+1 Button (www.google.com)</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>250px</td>
+          <td><g:plusone href="http://www.google.com/" annotation="inline" width="250"></g:plusone></td>
+        </tr>
+        <tr>
+          <td>300px</td>
+          <td><g:plusone href="http://www.google.com/" annotation="inline" width="300"></g:plusone></td>
+        </tr>
+        <tr>
+          <td>350px</td>
+          <td><g:plusone href="http://www.google.com/" annotation="inline" width="350"></g:plusone></td>
+        </tr>
+        <tr>
+          <td>unspecified (450px)</td>
+          <td><g:plusone href="http://www.google.com/" annotation="inline"></g:plusone></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <h3 id="plus-snippet">Populating the +Snippet</h3>
+
+  <p>
+    After clicking the +1 button, the user is given the option to share the page to Google+ via a
+    displayed <b>share bubble</b>. This share bubble with the resulting Google+ activity post
+    includes a preview, or <dfn><strong>+Snippet</strong></dfn>, that contains the page title, a brief
+    description of the page, and a thumbnail image. These pieces of data are extracted from
+    content found at the <a href="#target-url">target URL</a> and can be easily
+    specified by the content publisher.
+  </p>
+  <p>
+    For detailed information and to customize your own snippet, see the <a
+    href="/+/plugins/snippet">snippet documentation</a>.
+  </p>
+</section>
+
+<section id="jsapi">
+  <h2>JavaScript API</h2>
+
+  <p>
+    The +1 button JavaScript defines two button-rendering functions under the
+    <code>gapi.plusone</code> namespace. You must call one of these functions
+    if you disable automatic rendering by setting
+    <code><a href="#script-parameters">parsetags</a></code> to "<code>explicit</code>".
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Method</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code class="prettyprint-javascript">gapi.plusone.<strong>render</strong>(<br/>
+ <var>container</var>,<br/> <var>parameters</var><br/>)</code></td>
+        <td>
+          Renders the specified container as a +1 button widget.
+          <hr/>
+          <dl>
+            <dt>container</dt>
+            <dd>
+              The container to render as the +1 button. Specify either the ID of the container
+              (string) or the DOM element itself.
+            </dd>
+            <dt>parameters</dt>
+            <dd>
+              An object containing <a href="#plusonetag-parameters">+1 tag attributes</a> as
+              key=value pairs, for example, <code>{"size": "tall", "callback": myCallbackFunction}</code>.
+            </dd>
+          </dl>
+        </td>
+      </tr>
+      <tr>
+        <td><code class="prettyprint">gapi.plusone.<strong>go</strong>(<br/> <var>opt_container</var><br/>)</code></td>
+        <td>
+          Renders all +1 tags and classes in the specified container. This function
+          should be used only if <code>parsetags</code> is set to <code>explicit</code>,
+          which you might do for performance reasons.
+          <hr/>
+          <dl>
+            <dt>opt_container</dt>
+            <dd>
+              The container containing the +1 button tags to render. Specify either the
+              ID of the container (string) or the DOM element itself. If the <code>opt_container</code>
+              parameter is omitted, all +1 tags on the page are rendered.
+            </dd>
+          </dl>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  </section>
+
+  <section id="examples">
+  <h2>Examples</h2>
+
+  <h3 id="example-basic">Basic page</h3>
+
+
+  <pre class="prettyprint">
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;+1 demo: Basic page&lt;/title&gt;
+    &lt;link rel=&quot;canonical&quot; href=&quot;http://www.example.com&quot; /&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;https://apis.google.com/js/plusone.js&quot;&gt;
+    &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;g:plusone&gt;&lt;/g:plusone&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+  <h3 id="example-explicit-load">Explicit load</h3>
+
+
+  <pre class="prettyprint">
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;+1 demo: Explicit load&lt;/title&gt;
+    &lt;link rel=&quot;canonical&quot; href=&quot;http://www.example.com&quot; /&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;https://apis.google.com/js/plusone.js&quot;&gt;
+      {&quot;parsetags&quot;: &quot;explicit&quot;}
+    &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;content&quot;&gt;
+      &lt;g:plusone&gt;&lt;/g:plusone&gt;
+    &lt;/div&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+      gapi.plusone.go(&quot;content&quot;);
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+  <h3 id="example-explicit-render">Explicit render</h3>
+
+
+  <pre class="prettyprint">
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;+1 Demo: Explicit render&lt;/title&gt;
+    &lt;link rel=&quot;canonical&quot; href=&quot;http://www.example.com&quot; /&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;https://apis.google.com/js/plusone.js&quot;&gt;
+      {&quot;parsetags&quot;: &quot;explicit&quot;}
+    &lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+      function renderPlusone() {
+        gapi.plusone.render(&quot;plusone-div&quot;);
+      }
+    &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;a href=&quot;#&quot; onClick=&quot;renderPlusone();&quot;&gt;Render the +1 button&lt;/a&gt;
+    &lt;div id=&quot;plusone-div&quot;&gt;&lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h3 id="example-async-load">Asynchronous load</h3>
+
+
+  <pre class="prettyprint">
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;+1 Demo: Async load&lt;/title&gt;
+    &lt;link rel=&quot;canonical&quot; href=&quot;http://www.example.com&quot; /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;g:plusone&gt;&lt;/g:plusone&gt;
+
+    &lt;script type=&quot;text/javascript&quot;&gt;
+      window.___gcfg = {
+        lang: &#39;en-US&#39;
+      };
+
+      (function() {
+        var po = document.createElement(&#39;script&#39;); po.type = &#39;text/javascript&#39;; po.async = true;
+        po.src = &#39;https://apis.google.com/js/plusone.js&#39;;
+        var s = document.getElementsByTagName(&#39;script&#39;)[0]; s.parentNode.insertBefore(po, s);
+      })();
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+</section>
+
+<section id="faqs">
+  <h2>Frequently asked questions</h2>
+
+  <p>
+    The following FAQs deal with technical considerations and
+    implementation details. For additional resources, see the <a
+    href="http://www.google.com/support/webmasters/bin/answer.py?answer=1140194"
+    target="_blank">general
+    FAQs</a> and the <a href="/+/discussions" target="_blank">platform discussion
+    forum</a>.
+  </p>
+  <dl>
+    <dt id="faq-multiple-buttons">
+      Can I place multiple buttons on a single page that all +1 different URLs?
+    </dt>
+    <dd>
+      Yes.  Use the <code>href</code> attribute as specified in
+      <a href="#plusonetag-parameters">+1 tag parameters</a> to indicate the URL to be
+      +1&apos;d.
+    </dd>
+
+    <dt id="faq-button-location">
+      Where should I put the +1 button on my pages?
+    </dt>
+    <dd>
+      You know your page and your users best, so we recommend putting the button
+      wherever you think it will be the most effective.  Above the fold, near the
+      title of the page, and close to sharing links is often a good location.  It
+      can also be effective to place the +1 button at the end of an article or story
+      as well as the beginning.
+    </dd>
+
+    <dt id="faq-script-tag-latency">
+      Is there any latency impact from the position of the
+      <code>&lt;script&gt;</code> tag in the page?
+    </dt>
+    <dd>
+      No, there is no significant latency impact from the placement of the
+      <code>&lt;script&gt;</code> tag.  However, by placing the tag at the bottom of
+      the document, just before the body close tag, you might improve the loading
+      speed of the page.
+    </dd>
+
+    <dt id="faq-script-tag-position">
+      Does the <code>&lt;script&gt;</code> tag need to be included
+      before the +1 tag?
+    </dt>
+    <dd>
+      No, the <code>&lt;script&gt;</code> tag can be included anywhere in the
+      page.
+    </dd>
+
+    <dt id="faq-script-tag-position-explicit-render">
+      Does the <code>&lt;script&gt;</code> tag need to be included
+      before another <code>&lt;script&gt;</code> tag calls one of the methods in
+      the <a href="#jsapi">JavaScript API</a> section?
+    </dt>
+    <dd>
+      Yes, if you use any of the <a href="#jsapi">JavaScript API</a> methods,
+      they need to be placed in the page after the <code>&lt;script&gt;</code>
+      inclusion.
+    </dd>
+
+    <dt id="faq-private-url">
+      What happens if I +1 a private URL?
+    </dt>
+    <dd>
+      The button won't work. +1's only work for public URLs.
+    </dd>
+
+    <dt id="faq-href-attribute">
+      Do I need to use the <code>href</code> attribute?
+    </dt>
+    <dd>
+      The <code>href</code> attribute is not required.  See <a
+      href="#target-url">+1 target URL</a> for more information
+    </dd>
+
+    <dt id="faq-rel-canonical-required">
+      Do all my pages need to have a <code>rel="canonical"</code> tag?
+    </dt>
+    <dd>
+      No, though we recommend it.  If the <code>href</code> attribute isn't set, Google will
+      next look for the <code>rel="canonical"</code> tag on the page.  If that isn't found,
+      Google will use the <code>document.location.href</code>.  This final value can
+      sometimes be misleading because of state variables often kept in the URL.  So,
+      using a <code>rel="canonical"</code> tag can help you specify the exact URL
+      you want +1'd.
+    </dd>
+
+    <dt id="faq-security-warning">
+      Some of my users get a security warning when they view pages with the +1
+      button. How do I get rid of this?
+    </dt>
+    <dd>
+      The +1 button code requires a script from Google's servers.  You might get
+      this error by including the script via <code>http://</code> on a page that's
+      loaded via <code>https://</code>.  We recommend using <code>https://</code> to
+      include the script:
+
+
+
+      <pre class="prettyprint">
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://apis.google.com/js/plusone.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+      If your web page uses <code>https://</code>, some browsers and verification
+      tools will show an error when any assets on the page are called via
+      <code>http://</code>. If your site serves pages via <code>https://</code>,
+      make sure that the +1 button code on those pages also uses
+      <code>https://</code>. (In fact, it's fine to use <code>https://</code> in the
+      button code for all pages, even if they are only served via
+      <code>http://</code>.)
+    </dd>
+
+    <dt id="faq-analytics-tracking">
+      Can I track +1 button interactions with Google Analytics?
+    </dt>
+    <dd>
+      Yes, the latest version of Google Analytics automatically tracks all +1 button interactions
+      without any modifications to your existing tracking code. You can view social-related metrics
+      with reports under <b>Visitors > Social</b>. Read more on the <a target="_blank"
+      href="http://www.google.com/support/analyticshelp/bin/answer.py?answer=1316556&amp;topic=1316551">About
+      Social Plug-in Analytics</a> Help Center page.
+    </dd>
+
+    <dt id="faq-flash-content-interference">
+      Why is the hover bubble cut off by Adobe Flash content?
+    </dt>
+    <dd>
+      <p>
+        By default Flash content renders above all other HTML content. This includes hover
+        bubbles and other content rendered by the +1 button. This might result in some
+        +1 button content appearing to be cut off by Adobe Flash elements in your page.
+      </p>
+      <p>
+        The solution depends on your situation. If you can edit the HTML source code for
+        the Flash object on your page, you can simply add a property to the object element.
+        However, if the Flash element is being added to your page by a script (as is the
+        typical case for ads), you will need a more sophisticated solution.
+      </p>
+      <p>
+        First, if you have access to the HTML source code for the Flash object on your
+        page, you must set the <code>wmode</code> parameter to
+        &apos;<code>transparent</code>&apos;. You can do this by adding a parameter to
+        the Flash object element:
+      </p>
+
+
+
+      <pre class="prettyprint">
+&lt;object ... &gt;
+&lt;param name=&quot;wmode&quot; value=&quot;transparent&quot;&gt;
+... &lt;/object&gt;
+</pre>
+
+      <p>
+        For other cases, where the Flash element is added by a script, you might
+        still be able to resolve this issue. You can programmatically add the
+        above described parameter using JavaScript.
+        <a target="_blank" href="https://github.com/scribd/flash_heed">FlashHeed</a>
+        is an example of this technique. This will work as long as the Flash
+        is not embedded inside an iframe. If the Flash element is inside an iframe,
+        you must reposition either the Flash content or the +1 button to prevent
+        an overlap.
+      </p>
+    </dd>
+    <dt id="faq-iframe-clipping">
+      I put my +1 button code inside an iframe. Why is the share dialog being cut
+      off in some web browsers?
+    </dt>
+    <dd>
+      <p>
+        When you click on the +1 button we display a share dialog. This dialog is
+        much larger than the +1 button itself. For this reason, if you put +1
+        button code inside an iframe that is smaller than the share dialog, parts
+        of the share dialog can be cut off and become inaccessible to your users.
+      </p>
+      <p>
+        To work around this it's best to directly include the +1 button source
+        code into your pages. If you must use an iframe to wrap the +1 button,
+        make sure that there is plenty of space for the share dialog.
+      </p>
+    </dd>
+    <dt id="faq-right-align">
+      I've set the the alignment of my button to <code>right</code>, but the
+      button isn't right-aligned on the page.
+    </dt>
+    <dd>
+      If <code>align="right"</code> is set, Google will right-align the button
+      assets within its frame. However, for the button to be right-aligned on
+      your page, you must set the alignment of the button container.  For
+      example:
+
+      <pre class="prettyprint">
+&lt;div style=&quot;float: right&quot;&gt;
+  &lt;g:plusone align=&quot;right&quot;&gt;&lt;/g:plusone&gt;
+&lt;/div&gt;
+</pre>
+    </dd>
+    <dt id="faq-recommendations-off">
+      The recommendations in the +1 hover are not appropriate for my website, how do I remove them?
+    </dt>
+    <dd>
+      <a href="/+/discussions">Please let us know</a> why the recommendations do not
+      work on your website so that we can improve the product and improve the
+      experience for your website. If you need to disable the recommendations, 
+      you can set the <a href="#attr-recommendations">recommendations attribute</a>
+      to false on the +1 tag.
+    </dd>
+    <dt id="faq-browsers">What web browsers are supported?</dt>
+    <dd>
+    
+
+All Google+ plugins support the same web browsers as the Google+ web
+interface:
+<ul>
+  <li>Windows: Chrome, Firefox 3.6 and up, Internet Explorer 8 and up</li>
+  <li>Linux : Chrome, Firefox 3.6 and up</li>
+  <li>Mac: Chrome, Firefox 3.6 and up, Safari 4 and up</li>
+</ul>
+
+    </dd>
+  </dl>
+  </section>
+
+  <section id="available-languages">
+    <h2>Language Codes</h2>
+    <table style="border: none;">
+  <tr>
+    <td style="border: none;">
+      <table>
+        <thead>
+          <tr>
+            <th>Language</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Afrikaans</td>
+            <td>af</td>
+          </tr>
+          <tr>
+            <td>Amharic</td>
+            <td>am</td>
+          </tr>
+          <tr>
+            <td>Arabic</td>
+            <td>ar</td>
+          </tr>
+          <tr>
+            <td>Basque</td>
+            <td>eu</td>
+          </tr>
+          <tr>
+            <td>Bengali</td>
+            <td>bn</td>
+          </tr>
+          <tr>
+            <td>Bulgarian</td>
+            <td>bg</td>
+          </tr>
+          <tr>
+            <td>Catalan</td>
+            <td>ca</td>
+          </tr>
+          <tr>
+            <td>Chinese (Hong Kong)</td>
+            <td>zh-HK</td>
+          </tr>
+          <tr>
+            <td>Chinese (Simplified)</td>
+            <td>zh-CN</td>
+          </tr>
+          <tr>
+            <td>Chinese (Traditional)</td>
+            <td>zh-TW</td>
+          </tr>
+          <tr>
+            <td>Croatian</td>
+            <td>hr</td>
+          </tr>
+          <tr>
+            <td>Czech</td>
+            <td>cs</td>
+          </tr>
+          <tr>
+            <td>Danish</td>
+            <td>da</td>
+          </tr>
+          <tr>
+            <td>Dutch</td>
+            <td>nl</td>
+          </tr>
+          <tr>
+            <td>English (UK)</td>
+            <td>en-GB</td>
+          </tr>
+          <tr>
+            <td>English (US)</td>
+            <td>en-US</td>
+          </tr>
+          <tr>
+            <td>Estonian</td>
+            <td>et</td>
+          </tr>
+          <tr>
+            <td>Filipino</td>
+            <td>fil</td>
+          </tr>
+          <tr>
+            <td>Finnish</td>
+            <td>fi</td>
+          </tr>
+          <tr>
+            <td>French</td>
+            <td>fr</td>
+          </tr>
+          <tr>
+            <td>French (Canadian)</td>
+            <td>fr-CA</td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+    <td style="border: none;">
+      <table>
+        <thead>
+          <tr>
+            <th>Language</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Galician</td>
+            <td>gl</td>
+          </tr>
+          <tr>
+            <td>German</td>
+            <td>de</td>
+          </tr>
+          <tr>
+            <td>Greek</td>
+            <td>el</td>
+          </tr>
+          <tr>
+            <td>Gujarati</td>
+            <td>gu</td>
+          </tr>
+          <tr>
+            <td>Hebrew</td>
+            <td>iw</td>
+          </tr>
+          <tr>
+            <td>Hindi</td>
+            <td>hi</td>
+          </tr>
+          <tr>
+            <td>Hungarian</td>
+            <td>hu</td>
+          </tr>
+          <tr>
+            <td>Icelandic</td>
+            <td>is</td>
+          </tr>
+          <tr>
+            <td>Indonesian</td>
+            <td>id</td>
+          </tr>
+          <tr>
+            <td>Italian</td>
+            <td>it</td>
+          </tr>
+          <tr>
+            <td>Japanese</td>
+            <td>ja</td>
+          </tr>
+          <tr>
+            <td>Kannada</td>
+            <td>kn</td>
+          </tr>
+          <tr>
+            <td>Korean</td>
+            <td>ko</td>
+          </tr>
+          <tr>
+            <td>Latvian</td>
+            <td>lv</td>
+          </tr>
+          <tr>
+            <td>Lithuanian</td>
+            <td>lt</td>
+          </tr>
+          <tr>
+            <td>Malay</td>
+            <td>ms</td>
+          </tr>
+          <tr>
+            <td>Malayalam</td>
+            <td>ml</td>
+          </tr>
+          <tr>
+            <td>Marathi</td>
+            <td>mr</td>
+          </tr>
+          <tr>
+            <td>Norwegian</td>
+            <td>no</td>
+          </tr>
+          <tr>
+            <td>Persian</td>
+            <td>fa</td>
+          </tr>
+          <tr>
+            <td>Polish</td>
+            <td>pl</td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+    <td style="border: none;">
+      <table>
+        <thead>
+          <tr>
+            <th>Language</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Portuguese (Brazil)</td>
+            <td>pt-BR</td>
+          </tr>
+          <tr>
+            <td>Portuguese (Portugal)</td>
+            <td>pt-PT</td>
+          </tr>
+          <tr>
+            <td>Romanian</td>
+            <td>ro</td>
+          </tr>
+          <tr>
+            <td>Russian</td>
+            <td>ru</td>
+          </tr>
+          <tr>
+            <td>Serbian</td>
+            <td>sr</td>
+          </tr>
+          <tr>
+            <td>Slovak</td>
+            <td>sk</td>
+          </tr>
+          <tr>
+            <td>Slovenian</td>
+            <td>sl</td>
+          </tr>
+          <tr>
+            <td>Spanish</td>
+            <td>es</td>
+          </tr>
+          <tr>
+            <td>Spanish (Latin America)</td>
+            <td>es-419</td>
+          </tr>
+          <tr>
+            <td>Swahili</td>
+            <td>sw</td>
+          </tr>
+          <tr>
+            <td>Swedish</td>
+            <td>sv</td>
+          </tr>
+          <tr>
+            <td>Tamil</td>
+            <td>ta</td>
+          </tr>
+          <tr>
+            <td>Telugu</td>
+            <td>te</td>
+          </tr>
+          <tr>
+            <td>Thai</td>
+            <td>th</td>
+          </tr>
+          <tr>
+            <td>Turkish</td>
+            <td>tr</td>
+          </tr>
+          <tr>
+            <td>Ukrainian</td>
+            <td>uk</td>
+          </tr>
+          <tr>
+            <td>Urdu</td>
+            <td>ur</td>
+          </tr>
+          <tr>
+            <td>Vietnamese</td>
+            <td>vi</td>
+          </tr>
+          <tr>
+            <td>Zulu</td>
+            <td>zu</td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+</table>
+
+  </section>
+  
+  </div>
+
+  
+        </div>
+        
+<div id="gc-content-footer">
+
+
+
+<div itemprop="datePublished" content="2012-11-29T19:24:38.201230" id="gc-content-last-updated">Last updated November 29, 2012.</div>
+
+</div>
+
+
+
+
+      </div>
+  
+
+        
+      </div>
+        
+      
+
+      
+      
+      <footer id="gc-footer">
+        <div id="gc-copyright">
+          <a href="/">
+            <img id="developers-logo-footer" src="/_static/images/developers-logo-footer.png" alt="Google Developers logo" style="vertical-align: center; float: left"/>
+          </a>
+          <ul>
+            <li><a href="http://www.google.com/">Google</a></li>
+            <li><a href="/readme/terms">Terms of Service</a></li>
+            <li><a href="http://www.google.com/intl/en/privacy/">Privacy Policy</a></li>
+            <li><a href="/jobs">Jobs</a></li>
+            <li><a class="google-feedback" data-p="81425" data-b="Documentation"  data-v="devsite-20130205-rc00.365096875493190496" href="">Report a bug</a></li>
+          </ul>
+        </div>
+        
+        <div id="gc-language">
+          <ul>
+            <li>
+              <form id="setlang" action="/i18n/setlang/" method="post">
+                <div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='36db3da06e7aa7833e47839d4913a437' /></div>
+                <select id="footer_language" name="language">
+                  
+                  
+                  <option
+                     value="ar"
+                     >
+                    العربيّة
+                  </option>
+                  
+                  <option
+                     value="bg"
+                     >
+                    български
+                  </option>
+                  
+                  <option
+                     value="ca"
+                     >
+                    català
+                  </option>
+                  
+                  <option
+                     value="zh-cn"
+                     >
+                    简体中文
+                  </option>
+                  
+                  <option
+                     value="zh-tw"
+                     >
+                    繁體中文
+                  </option>
+                  
+                  <option
+                     value="hr"
+                     >
+                    Hrvatski
+                  </option>
+                  
+                  <option
+                     value="cs"
+                     >
+                    česky
+                  </option>
+                  
+                  <option
+                     value="da"
+                     >
+                    Dansk
+                  </option>
+                  
+                  <option
+                     value="nl"
+                     >
+                    Nederlands
+                  </option>
+                  
+                  <option
+                     value="en"
+                      selected="selected" >
+                    English
+                  </option>
+                  
+                  <option
+                     value="fa"
+                     >
+                    فارسی
+                  </option>
+                  
+                  <option
+                     value="fi"
+                     >
+                    suomi
+                  </option>
+                  
+                  <option
+                     value="fr"
+                     >
+                    Français
+                  </option>
+                  
+                  <option
+                     value="de"
+                     >
+                    Deutsch
+                  </option>
+                  
+                  <option
+                     value="el"
+                     >
+                    Ελληνικά
+                  </option>
+                  
+                  <option
+                     value="he"
+                     >
+                    עברית
+                  </option>
+                  
+                  <option
+                     value="hi"
+                     >
+                    Hindi
+                  </option>
+                  
+                  <option
+                     value="hu"
+                     >
+                    Magyar
+                  </option>
+                  
+                  <option
+                     value="id"
+                     >
+                    Bahasa Indonesia
+                  </option>
+                  
+                  <option
+                     value="it"
+                     >
+                    italiano
+                  </option>
+                  
+                  <option
+                     value="ja"
+                     >
+                    日本語
+                  </option>
+                  
+                  <option
+                     value="ko"
+                     >
+                    한국어
+                  </option>
+                  
+                  <option
+                     value="lv"
+                     >
+                    latviešu
+                  </option>
+                  
+                  <option
+                     value="lt"
+                     >
+                    Lithuanian
+                  </option>
+                  
+                  <option
+                     value="nb"
+                     >
+                    Norsk (bokmål)
+                  </option>
+                  
+                  <option
+                     value="nn"
+                     >
+                    Norsk (nynorsk)
+                  </option>
+                  
+                  <option
+                     value="pl"
+                     >
+                    polski
+                  </option>
+                  
+                  <option
+                     value="pt-br"
+                     >
+                    Português Brasileiro
+                  </option>
+                  
+                  <option
+                     value="pt"
+                     >
+                    Português
+                  </option>
+                  
+                  <option
+                     value="ro"
+                     >
+                    Română
+                  </option>
+                  
+                  <option
+                     value="ru"
+                     >
+                    Русский
+                  </option>
+                  
+                  <option
+                     value="sr"
+                     >
+                    српски
+                  </option>
+                  
+                  <option
+                     value="sk"
+                     >
+                    slovenský
+                  </option>
+                  
+                  <option
+                     value="sl"
+                     >
+                    Slovenščina
+                  </option>
+                  
+                  <option
+                     value="es"
+                     >
+                    español
+                  </option>
+                  
+                  <option
+                     value="sv"
+                     >
+                    Svenska
+                  </option>
+                  
+                  <option
+                     value="th"
+                     >
+                    Thai
+                  </option>
+                  
+                  <option
+                     value="tr"
+                     >
+                    Türkçe
+                  </option>
+                  
+                  <option
+                     value="uk"
+                     >
+                    Українська
+                  </option>
+                  
+                  <option
+                     value="vi"
+                     >
+                    Vietnamese
+                  </option>
+                  
+                </select>
+              </form>
+            </li>
+          </ul>
+        </div>
+        
+      </footer>
+      
+      
+    </div>
+    <div id="needAuth" class="msgDialogContent">
+      
+      <h1>Authentication required</h1>
+      
+      <div>
+        You need to be signed in with <a href='http://www.google.com/+'>Google+</a> to do that.
+      </div>
+      <button>Sign in</button>
+      <button>Cancel</button>
+    </div>
+    <div id="signingIn" class="msgDialogContent">
+      
+      <h1>Signing you in...</h1>
+      <div>
+        
+        Google Developers needs your permission to do that.
+      </div>
+      
+      <button>Try again</button>
+      
+      <button>Cancel</button>
+    </div>
+    <script src="/_static/js/script_foot.js"></script>
+    <script>
+      (function($) {
+        devsite.devsite.Init($, null, '');
+      })(jQuery);
+
+      
+      devsite.localInit = function() {
+        
+      };
+      
+    </script>
+    <!-- Google Code for PXL - Developers - Codesite - HP - 90d Remarketing List -->
+    <script type="text/javascript">
+    $('#setlang select').each(function() {
+      if ($.browser.msie) {
+        $(this).change(function() {
+          $('#setlang').submit();
+        });
+      } else {
+        $(this).kdSelect({'change': function() {
+          $('#setlang').submit();
+        }});
+      }
+    });
+    </script>
+    <script type="text/javascript">
+      /* <![CDATA[ */
+      var google_conversion_id = 992540712;
+      var google_conversion_language = "en";
+      var google_conversion_format = "3";
+      var google_conversion_color = "ffffff";
+      var google_conversion_label = "qio2CKCPwQMQqPCj2QM";
+      var google_conversion_value = 0;
+      /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+
+    
+
+    <script>
+      
+      google.load('visualization', '1', {packages: ['table']});
+    </script>
+
+    <noscript>
+      <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/992540712/?label=qio2CKCPwQMQqPCj2QM&amp;guid=ON&amp;script=0"/>
+      </div>
+    </noscript>
+    
+
+
+
+
+
+<script type="text/javascript">
+$(document).ready(function(e) {
+    // Render any carousels on the page
+    $('.carousel').carousel();
+    // Render any feed widgets on the page
+    
+    $('.feed').rss();
+    $('.feed-plain').rss();
+    // Render any OSS widgets on the page.
+    $('.oss').oss();
+    });
+</script>
+
+<script type="text/javascript" defer>
+
+// Trigger the plusoneLoaded handler once plusone.js has loaded.
+function devsite_plusoneLoaded() {
+  jQuery(window).trigger('plusoneLoaded');
+}
+
+
+$(document).ready(function() {
+    contentTimer.name = 'content';
+    contentTimer.tick('ol');
+    window.jstiming.report(contentTimer);
+
+    // Boilerplate javascript to enable the plusone button
+    var po = document.createElement('script'); po.type = 'text/javascript';
+    po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js?onload=devsite_plusoneLoaded';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(po, s);
+});
+</script>
+
+
+
+
+  </body>
+
+  
+</html>
