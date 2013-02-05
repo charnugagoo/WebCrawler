@@ -1,22 +1,23 @@
-import sys, urllib2, urllib, json, collections, htmllib, formatter, DeleteLastSlash
+# coding=utf-8
+import sys, urllib2, urllib, json, collections, htmllib, formatter, DeleteLastSlash, urlparse, os
 
 class Parser(htmllib.HTMLParser):
     def __init__(self):
         htmllib.HTMLParser.__init__(self, formatter.NullFormatter())
-    
+
     def anchor_bgn(self, href, name, type):
-        if href.startswith("http://"):
-            global hash_table
-            global number_visited_url
-            #zhuoran
-            if not hash_table.has_key(href):
-                queue.append(href)
-                hash_table[href] = number_visited_url #zhuoran
-                number_visited_url += 1 #zhuoran
-#                print href
-            else:
-                pass
-#                print "visited: ", href
+        href = urlparse.urljoin(link, href)
+        global hash_table
+        global number_visited_url
+        #zhuoran
+        if not hash_table.has_key(href):
+            queue.append(href)
+            hash_table[href] = number_visited_url #zhuoran
+            number_visited_url += 1 #zhuoran
+        #                print href
+        else:
+            pass
+            #                print "visited: ", href
             #zhuoran
 
 #argv = sys.argv
@@ -47,14 +48,29 @@ for result in json.load(results8_9)["responseData"]["results"]:
 results8_9.close()
 pagesNumber = int(argv[2])
 number_visited_url = 0  #zhuoran
+
+# a list of all visited URLs
+visited = open("visited.txt", "a")
+# Each page should be visited only once and stored in a file in directory.
+pagesDirectory = "pages"
+os.mkdir(pagesDirectory)
+
 while len(queue) > 0 and number_collected_url < pagesNumber:
     number_collected_url += 1
     link = queue.popleft()
-    linkFileName = link.replace("/", ":")
+
+    # output a list of all visited URLs, in the order they are visited, into a le.
+    visited.write(link + "\n")
+    # flush() does not necessarily write the file’s data to disk. Use flush() followed by os.fsync() to ensure this behavior.
+    visited.flush()
+    os.fsync(visited.fileno())
+
+    linkFileName = pagesDirectory + "/" + link.replace("/", ":")
     urllib.urlretrieve(link, linkFileName)
     parser = Parser()
     parser.feed(open(linkFileName).read())
     parser.close()
-    
+
+visited.close()
 
 
