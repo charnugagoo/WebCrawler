@@ -6,7 +6,6 @@ class Parser(htmllib.HTMLParser):
         htmllib.HTMLParser.__init__(self, formatter.NullFormatter())
 
     def anchor_bgn(self, href, name, type):
-<<<<<<< HEAD
         href = urlparse.urljoin(link, href)
         global hash_table
         global number_visited_url
@@ -15,23 +14,8 @@ class Parser(htmllib.HTMLParser):
             queue.append(href)
             hash_table[href] = number_visited_url #zhuoran
             number_visited_url += 1 #zhuoran
-        #                print href
         else:
             pass
-            #                print "visited: ", href
-=======
-        if href.startswith("http://"):
-            global hash_table
-            global number_visited_url
-            #zhuoran
-            if not hash_table.has_key(href):
-                queue.append(href)
-                hash_table[href] = number_visited_url #zhuoran
-                number_visited_url += 1 #zhuoran
-            else:
-                pass
->>>>>>> ChekUrlFunction
-            #zhuoran
 
 #argv = sys.argv
 argv = [1, 1, 11]
