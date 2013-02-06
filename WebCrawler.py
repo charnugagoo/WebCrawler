@@ -1,9 +1,9 @@
 # coding=utf-8
-import sys, urllib2, urllib, json, collections, htmllib, formatter, urlparse, os, CheckUrl, CheckSite
+import sys, urllib2, urllib, json, collections, htmllib, formatter, urlparse, os, CheckUrl, CheckSite, datetime
 
 #check the url and push into queue
 #if check is not needed, push into queue directly
-def Queue_Check_Push_Front (href) :
+def Queue_Check_Push_Front(href):
     global hash_table
     global number_visited_url
     href = CheckUrl.checkUrl(href)
@@ -18,13 +18,14 @@ def Queue_Check_Push_Front (href) :
         else:
             pass
 
+
 class Parser(htmllib.HTMLParser):
     def __init__(self):
         htmllib.HTMLParser.__init__(self, formatter.NullFormatter())
 
     def anchor_bgn(self, href, name, type):
         href = urlparse.urljoin(link, href)
-        Queue_Check_Push_Front (href)
+        Queue_Check_Push_Front(href)
 
 #argv = sys.argv
 argv = [1, 1, 10]
@@ -66,6 +67,11 @@ pagesDirectory = "pages"
 if not os.path.exists(pagesDirectory):
     os.mkdir(pagesDirectory)
 
+totalSize = 0
+beginTime = datetime.datetime.now()
+# number of 404 errors
+numberOf404 = 0
+
 while len(queue) > 0 and number_collected_url < pagesNumber:
     number_collected_url += 1
     link = queue.popleft()
@@ -73,19 +79,46 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
     if  flag == -1:
         continue
     elif flag == -2:
-        queue.append(href)
-    #else do next
-    # output a list of all visited URLs, in the order they are visited, into a le.
-    visited.write(link + "\n")
-    # flush() does not necessarily write the file’s data to disk. Use flush() followed by os.fsync() to ensure this behavior.
-    visited.flush()
-    os.fsync(visited.fileno())
+        queue.append(link)
+    else:
+        try:
+            # Open the URL
+            pageToVisit = urllib2.urlopen(urllib2.Request(link, headers={
+                # change user agent
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17"
+            }))
+        except urllib2.HTTPError as e:
+            if e.code == 404:
+                # number of 404 errors
+                numberOf404 += 1
+            continue
 
-    linkFileName = pagesDirectory + "/" + link.replace("/", ":")
-    urllib.urlretrieve(link, linkFileName)
-    parser = Parser()
-    parser.feed(open(linkFileName).read())
-    parser.close()
+        linkFileName = pagesDirectory + "/" + link.replace("/", ":")
+        urllib.urlretrieve(link, linkFileName)
+
+        # page size
+        size = os.stat(linkFileName).st_size
+        totalSize += size
+
+        # output a list of all visited URLs, in the order they are visited, into a file.
+        # In each line, in addition to the URL of the crawled page, you should also print the time when it was crawled, its size, and the return code (e.g., 200, 404).
+        visited.write(", ".join(["URL: " + link, "time: " + datetime.datetime.now().isoformat(),
+                                 "size: " + str(size) + " bytes",
+                                 "return code: " + str(pageToVisit.code)]) + "\n")
+        # flush() does not necessarily write the file’s data to disk. Use flush() followed by os.fsync() to ensure this behavior.
+        visited.flush()
+        os.fsync(visited.fileno())
+
+        pageToVisit.close()
+
+        parser = Parser()
+        parser.feed(open(linkFileName).read())
+        parser.close()
+
+# It would also be good to have some statistics at the end of the file, like number of files, total size, total time, number of 404 errors etc.
+visited.write(", ".join(
+    ["number of files: " + str(number_collected_url),
+     "total size: " + str(totalSize) + " bytes",
+     "total time: " + str((datetime.datetime.now() - beginTime).total_seconds()) + " seconds",
+     "number of 404 errors: " + str(numberOf404)]) + "\n")
 visited.close()
-
-
