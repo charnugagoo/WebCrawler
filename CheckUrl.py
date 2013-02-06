@@ -7,7 +7,7 @@ import isSupportType
 def checkUrl (href):
     href = DeleteLastSlash.DeleteLastSlash (href)
     href = IndexFunc.deleteIndexFile (href)
+    href = DeleteLastSlash.DeleteLastSlash (href)
     href = isSupportType.isSupportType (href)
+    href = DeleteLastSlash.DeleteLastSlash (href)
     return href
-
-#print checkUrl("http://googleblog.blogspot.com/2011/03/1s-right-recommendations-right-when-you.html")

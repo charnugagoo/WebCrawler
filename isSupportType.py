@@ -15,7 +15,7 @@ def isSupportType (href):
         strlist = str.split('.')
         if len(strlist) >= 2 :
             str = strlist[len(strlist)-1]
-            if support_list.get(str) == None:
+            if not support_list.has_key(str):
                 return -1
     return href
 
