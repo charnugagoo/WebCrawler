@@ -43,13 +43,6 @@ hash_table = {} #hash table url:hash_number
 url = "https://ajax.googleapis.com/ajax/services/search/web?v=1.0&" + urllib.urlencode({"q": argv[1]})
 urlKey = "unescapedUrl"
 results0_7 = urllib2.urlopen(url + "&rsz=8")
-
-# I have a bug here
-#Traceback (most recent call last):
-#    File "WebCrawler.py", line 45, in <module>
-#        for result in json.load(results0_7)["responseData"]["results"]:
-#TypeError: 'NoneType' object is not subscriptable
-#the line after this line
 for result in json.load(results0_7)["responseData"]["results"]:
     Queue_Check_Push_Front(result[urlKey])
 results0_7.close()
