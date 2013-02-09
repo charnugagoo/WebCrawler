@@ -1,16 +1,38 @@
 # coding=utf-8
-import sys, urllib2, urllib, json, collections, htmllib, formatter, urlparse, os, CheckUrl, CheckSite, datetime
+import sys
+import urllib2
+import urllib
+import json
+import collections
+import htmllib
+import formatter
+import urlparse
+import os
+import datetime
 
-#check the url and push into queue
-#if check is not needed, push into queue directly
-def Queue_Check_Push_Front(href):
+import CheckSite
+
+
+def Queue_Check_Push_Front(page):
+    """
+    Check the url and push into queue.
+
+    If check is not needed, push into queue directly.
+
+    :param page: {
+        url: the url of each page,
+        depth: the depth of each page, i.e., its minimum distance from one of the 10 start pages
+    }
+    """
+    href = page["url"]
+
     global hash_table
     global number_visited_url
-    href = CheckUrl.checkUrl(href)
+    # href = CheckUrl.checkUrl(href)
     if href != -1:
         if CheckSite.checkSite_Visitable(href) == 1:
             if not hash_table.has_key(href):
-                queue.append(href)
+                queue.append(page)
                 hash_table[href] = number_visited_url #zhuoran
                 number_visited_url += 1 #zhuoran
             else:
@@ -22,13 +44,18 @@ def Queue_Check_Push_Front(href):
 class Parser(htmllib.HTMLParser):
     def __init__(self):
         htmllib.HTMLParser.__init__(self, formatter.NullFormatter())
+        # the depth of each page, i.e., its minimum distance from one of the 10 start pages.
+        self.depth = 0
 
     def anchor_bgn(self, href, name, type):
         href = urlparse.urljoin(link, href)
-        Queue_Check_Push_Front(href)
+        Queue_Check_Push_Front({
+            "url": href,
+            "depth": self.depth
+        })
 
 #argv = sys.argv
-argv = [1, 1, 10]
+argv = [1, 1, 11]
 if len(argv) < 3:
     sys.exit("Please give a query (a set of keywords) and a number n!")
 #initial
@@ -44,11 +71,19 @@ url = "https://ajax.googleapis.com/ajax/services/search/web?v=1.0&" + urllib.url
 urlKey = "unescapedUrl"
 results0_7 = urllib2.urlopen(url + "&rsz=8")
 for result in json.load(results0_7)["responseData"]["results"]:
-    Queue_Check_Push_Front(result[urlKey])
+    Queue_Check_Push_Front({
+        "url": result[urlKey],
+        # the depth of each page
+        "depth": 0
+    })
 results0_7.close()
 results8_9 = urllib2.urlopen(url + "&rsz=2&start=8")
 for result in json.load(results8_9)["responseData"]["results"]:
-    Queue_Check_Push_Front(result[urlKey])
+    Queue_Check_Push_Front({
+        "url": result[urlKey],
+        # the depth of each page
+        "depth": 0
+    })
 results8_9.close()
 pagesNumber = int(argv[2])
 number_visited_url = 0  #zhuoran
@@ -64,12 +99,17 @@ totalSize = 0
 beginTime = datetime.datetime.now()
 # number of 404 errors
 numberOf404 = 0
+parser = Parser()
 
 while len(queue) > 0 and number_collected_url < pagesNumber:
     number_collected_url += 1
-    link = queue.popleft()
+
+    page = queue.popleft()
+    link = page["url"]
+    depth = page["depth"]
+
     flag = CheckSite.checkSite_Processible(link)
-    if  flag == -1:
+    if flag == -1:
         continue
     elif flag == -2:
         queue.append(link)
@@ -95,16 +135,20 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
 
         # output a list of all visited URLs, in the order they are visited, into a file.
         # In each line, in addition to the URL of the crawled page, you should also print the time when it was crawled, its size, and the return code (e.g., 200, 404).
-        visited.write(", ".join(["URL: " + link, "time: " + datetime.datetime.now().isoformat(),
-                                 "size: " + str(size) + " bytes",
-                                 "return code: " + str(pageToVisit.code)]) + "\n")
+        visited.write(", ".join([
+            "URL: " + link, "time: " + datetime.datetime.now().isoformat(),
+            "size: " + str(size) + " bytes",
+            "return code: " + str(pageToVisit.code),
+            "depth: " + str(depth)
+        ]) + "\n")
         # flush() does not necessarily write the file’s data to disk. Use flush() followed by os.fsync() to ensure this behavior.
         visited.flush()
         os.fsync(visited.fileno())
 
         pageToVisit.close()
 
-        parser = Parser()
+        # the depth of each page
+        parser.depth = depth + 1
         parser.feed(open(linkFileName).read())
         parser.close()
 
