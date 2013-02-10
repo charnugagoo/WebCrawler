@@ -54,6 +54,18 @@ class Parser(htmllib.HTMLParser):
             "depth": self.depth
         })
 
+    # Override handler of <frame ...>...</frame> tags
+    def start_frame(self, attrs):
+        # process the attributes
+        for attr in attrs:
+            # ignore all non src attributes
+            if attr[0] == "src":
+                href = urlparse.urljoin(link, attr[1])
+                Queue_Check_Push_Front({
+                    "url": href,
+                    "depth": self.depth
+                })
+
 #argv = sys.argv
 argv = [1, 1, 11]
 if len(argv) < 3:
@@ -126,8 +138,12 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
                 numberOf404 += 1
             continue
 
+        # Each page should be stored in a file in your directory.
         linkFileName = pagesDirectory + "/" + link.replace("/", ":")
-        urllib.urlretrieve(link, linkFileName)
+        pageVisited = open(linkFileName, "w")
+        pageContent = pageToVisit.read()
+        pageVisited.write(pageContent)
+        pageVisited.close()
 
         # page size
         size = os.stat(linkFileName).st_size
@@ -138,7 +154,7 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
         visited.write(", ".join([
             "URL: " + link, "time: " + datetime.datetime.now().isoformat(),
             "size: " + str(size) + " bytes",
-            "return code: " + str(pageToVisit.code),
+            "return code: " + str(pageToVisit.getcode()),
             "depth: " + str(depth)
         ]) + "\n")
         # flush() does not necessarily write the file’s data to disk. Use flush() followed by os.fsync() to ensure this behavior.
@@ -149,7 +165,7 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
 
         # the depth of each page
         parser.depth = depth + 1
-        parser.feed(open(linkFileName).read())
+        parser.feed(pageContent)
         parser.close()
 
 # It would also be good to have some statistics at the end of the file, like number of files, total size, total time, number of 404 errors etc.
