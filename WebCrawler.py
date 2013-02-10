@@ -163,14 +163,24 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
         try:
             # Open the URL
             pageToVisit = urllib2.urlopen(urllib2.Request(link, headers={
-                # change user agent
+                # Change user agent.
                 "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.17 (KHTML, like Gecko) "
-                              "Chrome/24.0.1312.57 Safari/537.17"
+                              "Chrome/24.0.1312.57 Safari/537.17",
+                # Only html and xhtml are acceptable for the response.
+                # If the server cannot send a response which is acceptable according to the combined Accept field value,
+                # then the server SHOULD send a 406 (not acceptable) response.
+                "Accept": "text/html,application/xhtml+xml"
             }))
         except urllib2.HTTPError as e:
             if e.code == 404:
                 # number of 404 errors
                 numberOf404 += 1
+            continue
+
+        # Ask for the MIME type of afile.
+        mime = pageToVisit.info().gettype()
+        # Only html and xhtml are acceptable for the response.
+        if mime != "text/html" and mime != "application/xhtml+xml":
             continue
 
         # Each page should be stored in a file in your directory.
