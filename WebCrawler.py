@@ -1,14 +1,14 @@
 # coding=utf-8
+import formatter
+import htmllib
 import sys
 import urllib2
 import urllib
 import json
 import collections
-import htmllib
-import formatter
-import urlparse
 import os
 import datetime
+import urlparse
 
 import CheckSite
 
@@ -42,29 +42,51 @@ def Queue_Check_Push_Front(page):
 
 
 class Parser(htmllib.HTMLParser):
-    def __init__(self):
+    def __init__(self, depth, base_url):
         htmllib.HTMLParser.__init__(self, formatter.NullFormatter())
         # the depth of each page, i.e., its minimum distance from one of the 10 start pages.
-        self.depth = 0
+        self.depth = depth
+        # The base URL to use for all relative URLs contained within a document.
+        self.base_url = base_url
+        # Usage Note: If multiple <base> elements are specified, only the first href and first target value are used; all others are ignored.
+        self.base_element_number = 0
 
     def anchor_bgn(self, href, name, type):
-        href = urlparse.urljoin(link, href)
-        Queue_Check_Push_Front({
-            "url": href,
-            "depth": self.depth
-        })
+        self.process_url(href)
 
-    # Override handler of <frame ...>...</frame> tags
+    # Override handler of <frame ...>...</frame> tags.
     def start_frame(self, attrs):
         # process the attributes
         for attr in attrs:
             # ignore all non src attributes
             if attr[0] == "src":
-                href = urlparse.urljoin(link, attr[1])
-                Queue_Check_Push_Front({
-                    "url": href,
-                    "depth": self.depth
-                })
+                self.process_url(attr[1])
+
+    # Ambiguity of URLs.
+    def process_url(self, href):
+        href = urlparse.urljoin(self.base_url, href)
+        Queue_Check_Push_Front({
+            "url": href,
+            "depth": self.depth
+        })
+
+    # Override handler of <base ...>...</base> tags.
+    def start_base(self, attrs):
+        # Usage Note: If multiple <base> elements are specified, only the first href and first target value are used; all others are ignored.
+        if self.base_element_number > 0:
+            return
+        self.base_element_number += 1
+        # process the attributes
+        for attr in attrs:
+            # ignore all non href attributes
+            if attr[0] == "href":
+                href = attr[1]
+                if "://" in href:
+                    # Absolute URIs.
+                    self.base_url = href
+                else:
+                    # Relative URIs.
+                    self.base_url = urlparse.urljoin(self.base_url, href)
 
 #argv = sys.argv
 argv = [1, 1, 11]
@@ -111,7 +133,6 @@ totalSize = 0
 beginTime = datetime.datetime.now()
 # number of 404 errors
 numberOf404 = 0
-parser = Parser()
 
 while len(queue) > 0 and number_collected_url < pagesNumber:
     number_collected_url += 1
@@ -163,8 +184,7 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
 
         pageToVisit.close()
 
-        # the depth of each page
-        parser.depth = depth + 1
+        parser = Parser(depth + 1, link)
         parser.feed(pageContent)
         parser.close()
 
