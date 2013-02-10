@@ -14,8 +14,7 @@ import CheckSite
 
 
 def Queue_Check_Push_Front(page):
-    """
-    Check the url and push into queue.
+    """Check the url and push into queue.
 
     If check is not needed, push into queue directly.
 
@@ -43,50 +42,64 @@ def Queue_Check_Push_Front(page):
 
 class Parser(htmllib.HTMLParser):
     def __init__(self, depth, base_url):
+        """Subclass (inherit) from HTMLParser.
+
+        :param depth: The depth of each page, i.e., its minimum distance from one of the 10 start pages.
+        :param base_url: The base URL to use for all relative URLs contained within a document.
+        """
         htmllib.HTMLParser.__init__(self, formatter.NullFormatter())
-        # the depth of each page, i.e., its minimum distance from one of the 10 start pages.
         self.depth = depth
-        # The base URL to use for all relative URLs contained within a document.
         self.base_url = base_url
-        # Usage Note: If multiple <base> elements are specified, only the first href and first target value are used; all others are ignored.
-        self.base_element_number = 0
+        # Usage Note: If multiple <base> elements are specified, only the first href and first target value are used;
+        # All others are ignored.
+        self.has_parsed_base_element = False
 
     def anchor_bgn(self, href, name, type):
         self.process_url(href)
 
-    # Override handler of <frame ...>...</frame> tags.
     def start_frame(self, attrs):
+        """Override handler of <frame ...>...</frame> tags.
+
+        :param attrs: A list of (name, value) pairs containing the attributes found inside the tag’s <> brackets.
+        """
         # process the attributes
         for attr in attrs:
             # ignore all non src attributes
             if attr[0] == "src":
                 self.process_url(attr[1])
 
-    # Ambiguity of URLs.
     def process_url(self, href):
+        """Ambiguity of URLs.
+
+        :param href: Current url to be processed.
+        """
         href = urlparse.urljoin(self.base_url, href)
         Queue_Check_Push_Front({
             "url": href,
             "depth": self.depth
         })
 
-    # Override handler of <base ...>...</base> tags.
     def start_base(self, attrs):
-        # Usage Note: If multiple <base> elements are specified, only the first href and first target value are used; all others are ignored.
-        if self.base_element_number > 0:
-            return
-        self.base_element_number += 1
-        # process the attributes
-        for attr in attrs:
-            # ignore all non href attributes
-            if attr[0] == "href":
-                href = attr[1]
-                if "://" in href:
-                    # Absolute URIs.
-                    self.base_url = href
-                else:
-                    # Relative URIs.
-                    self.base_url = urlparse.urljoin(self.base_url, href)
+        """Override handler of <base ...>...</base> tags.
+
+        Usage Note: If multiple <base> elements are specified, only the first href and first target value are used;
+        All others are ignored.
+
+        :param attrs: A list of (name, value) pairs containing the attributes found inside the tag’s <> brackets.
+        """
+        if self.has_parsed_base_element != True:
+            self.has_parsed_base_element = True
+            # process the attributes
+            for attr in attrs:
+                # ignore all non href attributes
+                if attr[0] == "href":
+                    href = attr[1]
+                    if "://" in href:
+                        # Absolute URIs.
+                        self.base_url = href
+                    else:
+                        # Relative URIs.
+                        self.base_url = urlparse.urljoin(self.base_url, href)
 
 #argv = sys.argv
 argv = [1, 1, 11]
@@ -151,7 +164,8 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
             # Open the URL
             pageToVisit = urllib2.urlopen(urllib2.Request(link, headers={
                 # change user agent
-                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17"
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.17 (KHTML, like Gecko) "
+                              "Chrome/24.0.1312.57 Safari/537.17"
             }))
         except urllib2.HTTPError as e:
             if e.code == 404:
@@ -171,14 +185,16 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
         totalSize += size
 
         # output a list of all visited URLs, in the order they are visited, into a file.
-        # In each line, in addition to the URL of the crawled page, you should also print the time when it was crawled, its size, and the return code (e.g., 200, 404).
+        # In each line, in addition to the URL of the crawled page, you should also print the time when it was crawled,
+        # its size, and the return code (e.g., 200, 404).
         visited.write(", ".join([
             "URL: " + link, "time: " + datetime.datetime.now().isoformat(),
             "size: " + str(size) + " bytes",
             "return code: " + str(pageToVisit.getcode()),
             "depth: " + str(depth)
         ]) + "\n")
-        # flush() does not necessarily write the file’s data to disk. Use flush() followed by os.fsync() to ensure this behavior.
+        # flush() does not necessarily write the file’s data to disk. Use flush() followed by os.fsync() to ensure this
+        # behavior.
         visited.flush()
         os.fsync(visited.fileno())
 
@@ -188,7 +204,8 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
         parser.feed(pageContent)
         parser.close()
 
-# It would also be good to have some statistics at the end of the file, like number of files, total size, total time, number of 404 errors etc.
+# It would also be good to have some statistics at the end of the file, like number of files, total size, total time,
+# number of 404 errors etc.
 visited.write(", ".join(
     ["number of files: " + str(number_collected_url),
      "total size: " + str(totalSize) + " bytes",
