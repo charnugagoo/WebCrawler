@@ -34,10 +34,6 @@ def Queue_Check_Push_Front(page):
                 queue.append(page)
                 hash_table[href] = number_visited_url #zhuoran
                 number_visited_url += 1 #zhuoran
-            else:
-                pass
-        else:
-            pass
 
 
 class Parser(htmllib.HTMLParser):
@@ -55,6 +51,12 @@ class Parser(htmllib.HTMLParser):
         self.has_parsed_base_element = False
 
     def anchor_bgn(self, href, name, type):
+        """This method is called at the start of an anchor region.
+
+        :param href:This is the single required attribute for anchors defining a hypertext source link.
+        :param name:This attribute is required in an anchor defining a target location within a page.
+        :param type:This attribute specifies the media type in the form of a MIME type for the link target.
+        """
         self.process_url(href)
 
     def start_frame(self, attrs):
@@ -105,7 +107,8 @@ class Parser(htmllib.HTMLParser):
 argv = [1, 1, 11]
 if len(argv) < 3:
     sys.exit("Please give a query (a set of keywords) and a number n!")
-#initial
+
+# To implement BFS, it is suggested that you use a simple class for queues in Python.
 queue = collections.deque([])
 
 #zhuoran begin
@@ -114,9 +117,16 @@ number_collected_url = 0 #number (all outside queue)
 hash_table = {} #hash table url:hash_number
 #zhuoran end
 
-url = "https://ajax.googleapis.com/ajax/services/search/web?v=1.0&" + urllib.urlencode({"q": argv[1]})
+query = argv[1]
+# Get results from Google (using APIs).
+url = "https://ajax.googleapis.com/ajax/services/search/web?v=1.0&" + urllib.urlencode({"q": query})
+# Key of result url.
 urlKey = "unescapedUrl"
+
+# This optional argument (rsz) supplies the number of results that the application would like to recieve. Values can be
+# any integer between 1 and 8.
 results0_7 = urllib2.urlopen(url + "&rsz=8")
+# Deserialize fp (a .read()-supporting file-like object containing a JSON document) to a Python object.
 for result in json.load(results0_7)["responseData"]["results"]:
     Queue_Check_Push_Front({
         "url": result[urlKey],
@@ -124,7 +134,11 @@ for result in json.load(results0_7)["responseData"]["results"]:
         "depth": 0
     })
 results0_7.close()
+
+# This optional argument (rsz) supplies the number of results that the application would like to recieve. Values can be
+# any integer between 1 and 8.
 results8_9 = urllib2.urlopen(url + "&rsz=2&start=8")
+# Deserialize fp (a .read()-supporting file-like object containing a JSON document) to a Python object.
 for result in json.load(results8_9)["responseData"]["results"]:
     Queue_Check_Push_Front({
         "url": result[urlKey],
@@ -132,11 +146,15 @@ for result in json.load(results8_9)["responseData"]["results"]:
         "depth": 0
     })
 results8_9.close()
+
+# Collect a total of n pages.
 pagesNumber = int(argv[2])
 number_visited_url = 0  #zhuoran
 
-# a list of all visited URLs
+# A list of all visited URLs.
 visited = open("visited.txt", "a")
+visited.write("Listing all pages crawled in BFS order for query: " + str(query) + ", for n: " + str(pagesNumber) + "\n")
+
 # Each page should be visited only once and stored in a file in directory.
 pagesDirectory = "pages"
 if not os.path.exists(pagesDirectory):
@@ -150,6 +168,7 @@ numberOf404 = 0
 while len(queue) > 0 and number_collected_url < pagesNumber:
     number_collected_url += 1
 
+    # In a Breadth-First manner.
     page = queue.popleft()
     link = page["url"]
     depth = page["depth"]
@@ -158,7 +177,7 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
     if flag == -1:
         continue
     elif flag == -2:
-        queue.append(link)
+        queue.append(page)
     else:
         try:
             # Open the URL
@@ -177,7 +196,7 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
                 numberOf404 += 1
             continue
 
-        # Ask for the MIME type of afile.
+        # Ask for the MIME type of a file.
         mime = pageToVisit.info().gettype()
         # Only html and xhtml are acceptable for the response.
         if mime != "text/html" and mime != "application/xhtml+xml":
@@ -210,15 +229,17 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
 
         pageToVisit.close()
 
+        # Parse the file in order to find links from this to other pages.
         parser = Parser(depth + 1, link)
         parser.feed(pageContent)
         parser.close()
 
-# It would also be good to have some statistics at the end of the file, like number of files, total size, total time,
-# number of 404 errors etc.
+# It would also be good to have some statistics at the end of the file, like number of files, total size (in MB), total
+# time, number of 404 errors etc.
+totalSizeInMB = divmod(totalSize, 1000000)
 visited.write(", ".join(
     ["number of files: " + str(number_collected_url),
-     "total size: " + str(totalSize) + " bytes",
+     "total size: " + "{0}.{1}".format(totalSizeInMB[0], totalSizeInMB[1]) + " MB",
      "total time: " + str((datetime.datetime.now() - beginTime).total_seconds()) + " seconds",
      "number of 404 errors: " + str(numberOf404)]) + "\n")
 visited.close()
