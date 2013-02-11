@@ -9,7 +9,7 @@ import collections
 import os
 import datetime
 import urlparse
-
+import CheckUrl
 import CheckSite
 
 
@@ -27,7 +27,9 @@ def Queue_Check_Push_Front(page):
 
     global hash_table
     global number_visited_url
-    # href = CheckUrl.checkUrl(href)
+    print "check url: " + href
+    href = CheckUrl.checkUrl(href)
+    print href
     if href != -1:
         if CheckSite.checkSite_Visitable(href) == 1:
             if not hash_table.has_key(href):

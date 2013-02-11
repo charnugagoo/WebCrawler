@@ -1,5 +1,5 @@
 import time, DeleteLastSlash
-
+import CheckRobots
 def toSiteUrl (href):
 #must check url before. this means, tail is not '/'
     href = DeleteLastSlash.DeleteLastSlash(href)
@@ -12,9 +12,6 @@ def toSiteUrl (href):
 #one: check could visit this site? before add url into the queue
 #two: check coudl process this site now? before process this page
 
-def checkRobot (href):
-    return True
-
 #-1 not visitable
 def checkSite_Visitable (href):
     global number_visited_site
@@ -26,7 +23,8 @@ def checkSite_Visitable (href):
     #visit this site the first time
     #check robots.txt
     #initial visit times
-        if checkRobot(href):
+#        print "check sites: " + href
+        if CheckRobots.checkRobotsFile(href):
             hash_table_site[href] = number_visited_site
             lastVisittime[number_visited_site] = -1
             visitTimes[number_visited_site] = 0
@@ -57,11 +55,17 @@ def checkSite_Processible (href):
         visitTimes[index] += 1
         return 1
 
-max_visit_times = 3
+max_visit_times = 30
 min_visit_delay = 0.1 #s
 number_visited_site = 0
 hash_table_site = {}
 lastVisittime = {}
 visitTimes = {}
-#todo: black list 
+#todo: black list
+
+
+#print checkSite_Visitable("http://www.baidu.com")
+#print checkSite_Visitable("http://www.sgamer.com")
+#print checkSite_Processible("http://www.sgamer.com")
+#print checkSite_Processible("http://www.sgamer.com")
 

@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<title>+1</title>
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="stylesheet" type="text/css" media="all" href="http://plusonemusic.net/new/wp-content/themes/plusone-white/style.css" />
+<link rel="pingback" href="http://plusonemusic.net/new/xmlrpc.php" />
+<link rel="alternate" type="application/rss+xml" title="+1 &raquo; Feed" href="http://plusonemusic.net/feed/" />
+<link rel="alternate" type="application/rss+xml" title="+1 &raquo; Comments Feed" href="http://plusonemusic.net/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="+1 &raquo; accordian index Comments Feed" href="http://plusonemusic.net/accordian-index/feed/" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://plusonemusic.net/new/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://plusonemusic.net/new/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='+1' href='http://plusonemusic.net/' />
+<link rel='prev' title='Clients' href='http://plusonemusic.net/clients/' />
+<link rel='next' title='The Heavy' href='http://plusonemusic.net/clients/the-heavy/' />
+<meta name="generator" content="WordPress 3.0.5" />
+<link rel='canonical' href='http://plusonemusic.net/' />
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+	<script type="text/javascript" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/js/fancybox/jquery.easing-1.3.pack.js"></script>
+	<script type="text/javascript" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+	<script type="text/javascript" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/js/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+	<script type="text/javascript" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/js/jquery.hrzAccordion.js"></script>
+	<!--<script type="text/javascript" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/js/jquery.hrzAccordion.min.js"></script>-->
+	<script type="text/javascript" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/js/jquery.color.js"></script>
+	<script type="text/javascript" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/js/swfobject.js"></script>
+	<script type="text/javascript" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/js/youtube.js"></script>
+	<script type="text/javascript" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/js/clients.js"></script>
+
+	<link rel="stylesheet" href="http://plusonemusic.net/new/wp-content/themes/plusone-white/js/fancybox/jquery.fancybox-1.3.4.css" type="text/css">
+	<link rel="stylesheet" href="http://plusonemusic.net/new/wp-content/themes/plusone-white/css/jquery.hrzAccordion.defaults.css" type="text/css">
+	<link rel="stylesheet" href="http://plusonemusic.net/new/wp-content/themes/plusone-white/css/jquery.hrzAccordion.examples.css" type="text/css">
+
+	<link rel="stylesheet" href="http://plusonemusic.net/new/wp-content/themes/plusone-white/css/about.css" type="text/css">
+	<link rel="stylesheet" href="http://plusonemusic.net/new/wp-content/themes/plusone-white/css/records.css" type="text/css">
+	<link rel="stylesheet" href="http://plusonemusic.net/new/wp-content/themes/plusone-white/css/contact.css" type="text/css">
+	<link rel="stylesheet" href="http://plusonemusic.net/new/wp-content/themes/plusone-white/css/d2f.css" type="text/css">
+
+		<script type="text/javascript" charset="utf-8">
+	$(document).ready(function(){
+		
+		$("#show-email-subscribe").click(function(){
+			$(this).hide();
+			$("form#email-subscribe").css('display', 'inline-block');
+		});
+		
+		$("#plusone-facebook").hover(function(){
+			$(this).children('img').attr('src', 'http://plusonemusic.net/new/wp-content/themes/plusone-white/images/facebook-grey.png');
+		}, function(){
+			$(this).children('img').attr('src', 'http://plusonemusic.net/new/wp-content/themes/plusone-white/images/facebook-black.png');
+		});
+		
+		$("#plusone-twitter").hover(function(){
+			$(this).children('img').attr('src', 'http://plusonemusic.net/new/wp-content/themes/plusone-white/images/twitter-grey.png');
+		}, function(){
+			$(this).children('img').attr('src', 'http://plusonemusic.net/new/wp-content/themes/plusone-white/images/twitter-black.png');
+		});
+		
+		$("#show-email-subscribe").hover(function(){
+			$(this).children('img').attr('src', 'http://plusonemusic.net/new/wp-content/themes/plusone-white/images/email-grey.png');
+		}, function(){
+			$(this).children('img').attr('src', 'http://plusonemusic.net/new/wp-content/themes/plusone-white/images/email-black.png');
+		});
+		
+		var accordian = $(".plusoneAccordian").hrzAccordion({
+			containerClass		: "container3",
+			listItemClass		: "listItem3",					
+			contentWrapper		: "contentWrapper3",
+			contentInnerWrapper	: "contentInnerWrapper3",
+			handleClass			: "accordian-handle",
+			handleClassOver		: "accordian-handle-hover",
+			handleClassSelected	: "accordian-handle-selected",
+			openOnLoad			: 1,
+			handlePosition		: 'right',
+		});
+		
+		$(window).bind('hashchange', function() {
+			console.log(accordian);
+		});
+		
+		$("#contact-form").submit(function(){
+			var values = $(this).serialize();
+			$.post('./submission.php', values, function(data) {
+				if (data.submitted == 'success') {
+					$("#response").html("Thank you for your submission. You'll hear back from us soon.").fadeIn();
+					$("#btn_send").hide();
+				};
+			}, 'json');
+			return false;
+		});
+		
+
+		$("#loading").hide();
+	});
+	
+	function showPanel(panel) {
+		// still to come...
+	}
+	</script>
+		<script type="text/javascript" charset="utf-8">
+	var ADAPT_CONFIG = {
+	  path: 'http://plusonemusic.net/new/wp-content/themes/plusone-white/css/',
+
+	  // false = Only run once, when page first loads.
+	  // true = Change on window resize and page tilt.
+	  // dynamic: true,
+	
+	  callback: function(i, width) {
+	  },
+
+	  // First range entry is the minimum.
+	  // Last range entry is the maximum.
+	  // Separate ranges by "to" keyword.
+	  range: [
+		// 	    '0px    to 760px  = mobile.min.css',
+		// 	    '760px  to 980px  = 720.min.css',
+		// '980px	to 1080px = 980.1080.css',
+		// '1080px	to 1180px = 1080.1180.css',
+		// '1180px	to 1270px = 1180.1280.css',
+		// 	    '1270px			  = 1280.min.css',
+
+	    // '980px  to 1279px = 960.min.css',
+	    // '1280px to 1600px = 1200.min.css',
+	    // '1600px			  = 1200.min.css',
+	  ]
+	};
+	</script>
+	// <script src="http://plusonemusic.net/new/wp-content/themes/plusone-white/js/adapt.min.js"></script>
+	
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-611666-15']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=0, maximum-scale=0">
+	
+</head>
+
+<body>
+
+<div id="loading">Loading...</div><div id="wrapper">
+	<div id="site-header">
+		<a id="plusone-facebook" href="http://www.facebook.com/plusonemusic" target="_blank"><img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/facebook-black.png" width="35" /></a>&nbsp;<a id="plusone-twitter" href="http://www.twitter.com/plusonemusic" target="_blank"><img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/twitter-black.png" width="35" /></a>
+		<a id="show-email-subscribe" href="javascript:;"><img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/email-black.png" width="35" /></a>
+		<form id="email-subscribe" action="#" method="post"><input type="text" name="email" value="email address" onclick="this.value=''" /><input type="submit" name="subscribe" value="subscribe" id="subscribe"></form>
+	</div>
+	<div id="main">
+		<div id="container">
+			<ul class="plusoneAccordian">
+					<li class="hometab">
+						<div class="accordian-handle"><a href="#!/home" id="home">home</a></div>
+						<style>
+#plusoneAccordianListItem0 .contentInnerWrapper3 {
+/*	float:right;*/
+}
+</style>
+<!-- <div class="followmouse" style="width:130px;height:400px;padding:200px 0 0 300px"> -->
+<!-- <div class="followmouse" style="padding:200px 0 0 300px"> -->
+	<table id="clients-puzzle" cellspacing="0" cellpadding="0" style="margin-top:50px;">
+	<!-- row 1 -->
+	<tbody>
+	<tr>
+	<td id="plusone" rowspan="6"><a href="#" onclick="showPanel('about')"><img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="about +1" /></a></td>
+	<td id="postelles" class="border"><a onclick="showArtist('the-postelles')" href="#!/artists/the-postelles"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="" width="105" /></a></td>
+	<td id="the-kooks" class="border"><a onclick="showArtist('the-kooks')" href="#!/artists/the-kooks"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="" width="105" /></a></td>
+	<td id="morning-benders" class="border"><a onclick="showArtist('the-morning-benders')" href="#!/artists/the-morning-benders"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="" width="105" /></a></td>
+	<td id="the-heavy" class="border"><a onclick="showArtist('the-heavy')" href="#!/artists/the-heavy"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="" width="105" /></a></td>
+	<td id="tvotr" class="border"><a onclick="showArtist('tvotr')" href="#!/artists/tvotr"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="" width="105" /></a></td>
+	<td id="jamie-t" class="border"><a onclick="showArtist('jamie-t')" href="#!/artists/jamie-t"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="" width="105" /></a></td>
+	</tr>
+	<!-- row 2 -->
+	<tr>
+	<td class="blank"></td>
+	<td id="caveman" class="border"><a onclick="showArtist('caveman')" href="#!/artists/caveman"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="" width="105" /></a></td>
+	<td id="lissie" class="border"><a onclick="showArtist('lissie')" href="#!/artists/lissie"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="" width="105" /></a></td>
+	<td id="michael-kiwanuka" class="border"><a onclick="showArtist('michael-kiwanuka')" href="#!/artists/michael-kiwanuka"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="" width="105" /></a></td>
+	<td id="tbllt" class="border"><a onclick="showArtist('the-boy-least-likely-to')" href="#!/artists/the-boy-least-likely-to"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="" width="105" /></a></td>
+	<td class="blank"></td>
+	</tr>
+	<!-- row 3 -->
+	<tr>
+	<td id="atlas-genius" class="border"><a onclick="showArtist('atlas-genius')" href="#!/artists/atlas-genius"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="" width="105" /></a></td>
+	<td id="gospels" class="border"><a onclick="showArtist('gospels')" href="#!/artists/gospels"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="" width="105" /></a></td>
+	<td id="kate-nash" class="border"><a onclick="showArtist('kate-nash')" href="#!/artists/kate-nash"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="" width="105" /></a></td>
+	<td id="white-lies" class="border"><a onclick="showArtist('white-lies')" href="#!/artists/white-lies"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="" width="105" /></a></td>
+	<td id="basement-jaxx" class="border"><a onclick="showArtist('basement-jaxx')" href="#!/artists/basement-jaxx"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="" width="105" /></a></td>
+	<td id="editors" class="border"><a onclick="showArtist('editors')" href="#!/artists/editors"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="" width="105" /></a></td>
+	</tr>
+	<!-- row 4 -->
+	<tr>
+	<td id="caught-a-ghost" class="border"><a onclick="showArtist('caught-a-ghost')" href="#!/artists/caught-a-ghost"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="" width="105" /></a></td>
+	<td id="them-swoops" class="border"><a onclick="showArtist('them-swoops')" href="#!/artists/them-swoops"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="" width="105" /></a></td>
+	<td id="bpa" class="border"><a onclick="showArtist('the-bpa')" href="#!/artists/the-bpa"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="" width="105" /></a></td>
+	<td id="stellastarr" class="border"><a onclick="showArtist('stellastarr')" href="#!/artists/stellastarr"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="" width="105" /></a></td>
+	<td id="the-cribs" class="border"><a onclick="showArtist('the-cribs')" href="#!/artists/the-cribs"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="" width="105" /></a></td>
+	<td class="blank"></td>
+	</tr>
+	<!-- row 5 -->
+	<tr>
+	<td class="blank"></td>
+	<td id="two-gallants" class="border"><a onclick="showArtist('two-gallants')" href="#!/artists/two-gallants"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="" width="105" /></a></td>
+	<td id="illinois" class="border"><a onclick="showArtist('illinois')" href="#!/artists/illinois"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="" width="105" /></a></td>
+	<td id="ambulance-ltd" class="border"><a onclick="showArtist('ambulance-ltd')" href="#!/artists/ambulance-ltd"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="" width="105" /></a></td>
+	<td id="chappo" class="border"><a onclick="showArtist('chappo')" href="#!/artists/chappo"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="" width="105" /></a></td>	
+	<td id="jelly" class="border"><a onclick="showArtist('jelly')" href="#!/artists/jelly"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="" width="105" /></a></td>	
+	</tr>
+	<!-- row 6 -->
+	<tr>
+	<td id="ghost-wave" class="border"><a onclick="showArtist('ghost-wave')" href="#!/artists/ghost-wave"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="" width="105" /></a></td>
+	<td id="playboy" class="border"><a onclick="showArtist('playboy')" href="#!/artists/playboy"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="" width="105" /></a></td>
+	<td id="diesel" class="border"><a onclick="showArtist('diesel')" href="#/artists/diesel"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="" width="105" /></a></td>
+	<td id="future-sounds" class="border"><a onclick="showArtist('future-sounds')" href="#!/artists/future-sounds"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="" width="105" /></a></td>
+	<td id="lebowski-fest" class="border"><a onclick="showArtist('lebowski-fest')" href="#!/artists/lebowski-fest"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="" width="105" /></a></td>
+	<td id="usag" class="border"><a onclick="showArtist('usag')" href="#!/artists/usag"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="" width="105" /></a></td>
+	</tr>
+	</tbody>
+	</table>
+<!-- </div> -->
+<script>
+// $(function(){
+// 	// alert($(document).width());
+// 	$('div.followmouse').css('width', $(document).width()/3.1);
+// 	$('div.followmouse').css('height', $(document).height()/2.5);
+// 	$('div.followmouse').css('padding-top', $(document).height()/5);
+// 	$('div.followmouse').css('padding-left', $(document).width()/4.5);
+// 
+// 	//Get our elements for faster access and set overlay width
+// 	var div = $('div.followmouse');
+// 	var table = $('table.clients-puzzle');
+// 
+// 	//Get menu width
+// 	var divWidth = div.width();
+// 	var divHeight = div.height();
+// 
+// 	//Remove scrollbars
+// 	div.css({overflow: 'hidden'});
+// 
+// 	//When user move mouse over menu
+// 	div.mousemove(function(e){
+// 		// var tableWidth = 800;
+// 		// var tableHeight = 2000;
+// 		var tableWidth = divWidth * 10;
+// 		var tableHeight = divHeight * 5;
+// 
+// 		var left = (e.pageX - div.offset().left) * (tableWidth-divWidth) / divWidth;
+// 		var top = (e.pageY - div.offset().top) * (tableHeight-divHeight) / divHeight;
+// 		div.scrollLeft(left);
+// 		div.scrollTop(top);
+// 	});
+// 
+// });
+</script>					</li>
+					<li>
+						<div class="accordian-handle"><a href="#!/about" id="about">ABOUT</a></div>
+						<!-- <iframe id="frame-about" src="/about" width="100%" height="600" frameborder="0" scrolling="no" style="background:#000;"></iframe> -->
+						<div id="about-content">
+	<div id="nav">
+		<ul id="about-menu" class="navigation">
+			<li class="overview"><a class="about-selector" href="#!/about/overview">OVERVIEW</a></li>
+			<li class="evolution"><a class="about-selector" href="#!/about/evolution">EVOLUTION</a></li>
+			<li class="today"><a class="about-selector" href="#!/about/today">TODAY</a></li>
+		</ul>
+		<div style="clear:both">&nbsp;</div>
+	</div>
+
+	<div id="slider">
+
+	  <!-- element with overflow applied -->
+	  <div class="scroll">
+	    <!-- the element that will be scrolled during the effect -->
+	    <div class="scrollContainer">
+	      <!-- our individual panels -->
+			<div id="about/overview" style="margin-top:80px;text-align:justify;font-size:1.2em" class="panel">
+				<div style="float:left;margin-right:10px;height:500px;"><img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/plusone-blue.png" height="165"></div>
+				+1 opened its doors in January 2004 by providing creative, forward-thinking, and highly effective services for record labels, managers and artists. The music industry has changed drastically since we first launched +1, and we have seamlessly evolved our strategies as well. Media platforms have shifted - from print magazines into blogs and now into social networks and new technologies - and we have tailored our company to the new, developing marketplace. But our philosophy remains the same. We have always approached our services from a Management perspective. Our priority has always been to use our unique expertise and experience to help our artists reach their goals. Those goals can include creating a buzz in the music industry, establishing a loyal fan-base, finding a record label, promoting an album release, and solidifying a tour. We introduce artists and releases and play a large part in creating positive momentum. We focus on establishing careers for artists. We exist in between the labels, the artists, the managers, the promoters and the fans; we bridge those gaps.
+			</div>
+
+			<div id="about/evolution" style="font-size:1.2em" class="panel">
+				<ul id="evolution">
+				<li><span style="font-size:1.6em;">In 2004</span> +1 was founded as one of the first music companies in the world to combine MANAGEMENT expertise and music industry relationships with a service that was centered around what was, at the time, a new and unique approach to PUBLIC RELATIONS that targeted the tastemaker magazines, and which paved a road to coverage in more mainstream print publications.</li>
+
+				<li><span style="font-size:1.6em;">In 2005</span> we expanded our Public Relations service into a DIGITAL strategy that targeted the new influencers of our industry -- Music Blogs – a medium that we formed deep relationships with from it’s inception, knowing that they would become the most important outlets for years to come. </li>
+
+				<li><span style="font-size:1.6em;">In 2006</span> corporate and media brands approached us seeking to align themselves with our music culture.  We began to conceive, plan, and implement SPECIAL EVENTS for Brands and Live Properties; always delivering a “who's who” Music Industry guest list that consisted of the right media, tastemakers, label reps, industry characters, and the hottest bands and DJs all partying together.</li>
+
+				<li><span style="font-size:1.6em;">In 2007</span> our Special Events service evolved into the creation of a full-fledged MARKETING service for corporate companies that credibly aligned each brand with music, and provided new opportunities for bands. </li>
+
+				<li><span style="font-size:1.6em;">In 2008</span> we applied our knowledge, relationships and unique reach to spawn the industry tide and created a RECORD LABEL as a vehicle to introduce new artists in an innovative manner, with a dedication to establishing a loyal fan-base and other areas of artist development that leads to long-term success The Record Label also provides an opportunity for other labels, companies and brands to enter into a strategic joint venture to promote, market and release various forms of content, and establish new models with which people experience music.</li>
+
+				<li><span style="font-size:1.6em;">In 2011</span> we evolved our Publicity, Digital and Marketing services, married it with new technology, and created a quite unique and essential DIRECT-TO-FAN ONLINE AND SOCIAL NETWORK MARKETING service that is dedicated to what really matters when it comes to promoting an artist in today’s music industry.</li>
+				</ul>
+			</div>
+
+			<div id="about/today" style="font-size:1.2em" class="panel">
+				<div id="about-records">
+					<img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/plusone-records-sm.jpg" style="float:left;" />
+					<div style="float:right;width:70%;">
+						<strong>RECORD LABEL</strong><br />
+						+1 Records specializes in artist development, which is something that most labels don't have the time, energy, resources and passion to commit to these days. We use our relationships and experience in Artist Management, Publicity, Blogs, Marketing, Direct-To-Fan, Touring and Special Events to implement creative and powerful campaigns to drive each release.  Our distribution is global (both physical and digital), and our strategies are built around creating high returns in digital retail and licensing.  We are very selective with whom we work with, and only release a handful of albums each yearr for a reason. The goals and the rewards are long-term for all.
+					</div>
+				</div>
+				<div class="clear"></div>
+				<div id="about-management" style="margin-top:30px;">
+					<img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/plusone-management-logo.jpg" width="237" style="float:left;" />
+					<div style="float:right;width:70%;">
+						<strong>MANAGEMENT</strong><br />
+						+1 Management is a full service, multi-faceted and forward-thinking management company and we work with our artists in every capacity to develop their careers. We tend to take on artists who are relatively unknown at the time, because one of our favorite things to do is to introduce an artist that we believe in and see great potential for. We craft a strategic plan of action to consistently achieve positive momentum that is unique to each artist. We view our artists as partners, rather than as clients, with a common goal of building things brick by brick in the most credible manner.
+					</div>
+				</div>
+				<div class="clear"></div>
+				<div id="about-d2f" style="margin-top:30px;">
+					<img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/plusone-d2f.png" width="237" style="float:left;" />
+					<div style="float:right;width:70%;">
+						<strong>DIRECT-TO-FAN </strong><br />
+						<strong>ONLINE &amp; SOCIAL NETWORK MARKETING</strong><br />
+						+1 has evolved it’s relationships, strategy and experience to create an essential Online and Social Network Marketing Service for bands, managers and labels that has never before existed.  The process uses uses tools such as Twitter, Facebook, Google Analytics and Topspin, and leverages our effectiveness with promotional outlets such as websites and blogs. The goals of a +1 D2F Campaign are concrete: to increase the artists fan-base through strategies that grow their email list, Twitter followers, and Facebook likes, connect artists with their fans, guide the communication in the most effective manner, maximize online visibility and connectivity, structure product offers, and increase sales.
+					</div>
+				</div>
+			</div>
+	    </div><!-- /scrollcontainer -->
+	  </div><!-- /scroll -->
+	</div><!-- /slider -->
+</div><!-- /about -->
+
+					</li>
+					<li><div class="accordian-handle"><a href="#!/records" id="records">RECORD LABEL</a></div>
+						<!-- <iframe id="frame-records" src="http://plusonemusic.net/records" width="100%" height="950" frameborder="0" scrolling="no" style="background:#000;"></iframe> -->
+						
+<div id="records-content">
+	<div id="nav" class="navigation">
+		<div id="records-home-container"><a id="records-home" class="records-selector" href="#!/records/records-home">home</a></div>
+		<div style="position:relative;top:64px;border:0;">
+			<div style="border-right:0;"><a id="caught-a-ghost" class="records-selector" href="#!/records/caught-a-ghost">caught a ghost</a></div>
+			<div><a id="ghost-wave" class="records-selector" href="#!/records/ghost-wave">ghost wave</a></div>
+		</div>
+		<div class="clear"></div>
+		<div><a id="the-heavy" class="records-selector" href="#!/records/the-heavy">the heavy</a></div>
+		<div><a id="morning-benders" class="records-selector" href="#!/records/morning-benders">morning benders</a></div>
+		<div><a id="postelles" class="records-selector" href="#!/records/postelles">postelles</a></div>
+		<div><a id="boy" class="records-selector" href="#!/records/boy">the boy least likely to</a></div>
+		<div><a id="illinois" class="records-selector" href="#!/records/illinois">illinois</a></div>
+	</div>
+	<div style="clear:both"></div>
+	<div id="slider">
+
+	  <!-- element with overflow applied -->
+	  <div class="scroll">
+	    <!-- the element that will be scrolled during the effect -->
+	    <div class="scrollContainer">
+	      <!-- our individual panels -->
+	      <div class="panel" id="records/records-home">
+			<p><strong>+1 RECORDS OVERVIEW</strong></p>
+			<p>+1 Records was launched in 2008 with releases from THE HEAVY and THE MORNING BENDERS, back when both were unknown artists, even to the music industry.  Since then, we have released subsequent album by THE HEAVY, brought THE MORNING BENDERS sophomore album to Rough Trade, and released albums by THE BOY LEAST LIKELY TO, ILLINOIS and THE POSTELLES.</p>
+			<p>+1 Records specializes in artist development, which is something that most labels don't have the time, energy, and resources to commit to these days. We introduce brand new artists first to the music industry, and media, and then to music fans worldwide with the utmost taste, credibility, and long-term thinking. Artists on our label benefit from the the full myriad of relationships and experience we have in Artist Management, Publicity, Blogs, Marketing, Direct-To-Fan, Touring and Special Events.  We specialize in implementing comprehensive and creative release campaigns that feel big-budget but are in actuality executed with relatively modest budgets, We develop a team around each artist that includes Radio, Publicity, Film/TV/Commercial Licensing, Digital & Physical Retail, and Touring. While our distribution is global (both physical and digital), when it makes sense, we work in joint ventures with other labels, both domestically or abroad.  We keep recoupable expenses very low, with a mission for the band or licensor to generate income much sooner than what is customary. We share the long-term interest of building a loyal fan-base and a career for our artists.</p>
+	      </div><!-- /home -->
+
+		<div class="panel" id="records/caught-a-ghost">
+			Coming soon
+		</div>
+		
+		<div class="panel" id="records/ghost-wave">
+			<div style="float:left;width:50%">
+				<img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/clients/ghost-wave/album-cover-ghost-wave.jpg" class="album-cover" /><br />
+				<strong>GHOST WAVE<br />'Ghost Wave'</strong>
+			</div>
+			<div style="clear:both"></div>
+			<p>Ghost Wave is a three-piece rock n' roll outfit hailing from Auckland, New Zealand. Their eponymous self-titled debut EP is out now on +1 Records.</p>
+		</div>
+
+	      <div class="panel" id="records/the-heavy">
+			<div style="float:left;width:50%">
+				<div id="heavy-house-purchase" class="itunes-purchase"><img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/itunes.png" /><br />PURCHASE</div>
+				<img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/clients/the-heavy/album-cover-house.jpg" class="album-cover" /><br />
+				<strong>THE HEAVY<br />'The House That Dirt Built'</strong>
+			</div>
+			<div style="float:right;width:50%">
+				<img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/clients/the-heavy/album-cover-vengeance.jpg" class="album-cover" /><br />
+				<strong>THE HEAVY<br />'Great Vengeance &amp; Furious Fire'</strong>
+			</div>
+			<div style="clear:both"></div>
+			<p>As a follow-up to critically acclaimed debut record Great Vengeance and Furious Fire, The Heavy have sold over 70,000 copies of their sophomore album The House That Dirt Built and over 400,000 individual track sales of their hit single 'How You Like Me Now?' in North America through +1 Records. They are the only performer in the history of The Late Show with David Letterman to be asked by Letterman personally (and spontaneously) to play an encore. They are one of the most licensed new artists in recent memory, with noteworthy placements  in a KIA TV Commercial that premiered during the Superbowl, as well as in The Fighter, Breaking Bad, True Blood, Entourage, Californication, How To Make It In America, American Idol, The Change-Up, Horrible Bosses, Green Hornet, Ninja Assassin, House Of Lies, Strike Back, Community, the MTV Movie Awards, The Oscars, The Emmy’s, The Golden Globes, and many, many, many more. ’How You Like Me Now?' has become a theme song in sports arenas and stadiums nationwide, as well as in TV promo spots for the Superbowl, the NBA Playoffs, the NCAA Tournament, the NHL Stanley Cup Finals, the French Open, and Major League Baseball. The Heavy have done a nationwide support tour of Sharon Jones & The Dap Kings and have now developed into a headlining band all across North America. In October 2010, The Heavy released How You Like Me Now? EP, which featured alternate recordings of some of their most popular songs featuring The Dap Kings on horns, as well as some exclusive new songs.</p>
+	      </div><!-- /the-heavy -->
+	      <div class="panel" id="records/morning-benders">
+			<div style="float:left;width:50%">
+				<img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/clients/morning-benders/album-cover-big-echo.jpg" class="album-cover" /><br />
+				<strong>THE MORNING BENDERS<br />'Big Echo'</strong>
+			</div>
+			<div style="float:right;width:50%">
+				<img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/clients/morning-benders/album-cover-tin-cans.jpg" class="album-cover" /><br />
+				<strong>THE MORNING BENDERS<br />'Talking Through Tin Cans'</strong>
+			</div>
+			<div style="clear:both"></div>
+			<p>The Morning Benders have sold over 20,000 copies in North America of their debut album Talking Through Tin Cans  through +1 Records, and it was selected as iTunes Independent Album Of The Year. +1 Records then A&R and recorded their sophomore album, Big Echo, co-produced by Chris Taylor (Grizzly Bear), and brought the album to Rough Trade to release, which was a dream come true for the band. The Morning Benders  have sold over 40,000 copies of Big Echo in North America, and the album is a critics favorite which was featured on many Best of 2010 lists. They have had licensing placements with SONY, Reese's and in NBC's Chuck. They have supported The Black Keys, Broken Bells, Grizzly Bear, and The Kooks, and are currently headlining venues such as as Webster Hall, The Fillmore, The Music Box on their nationwide tours.</p>
+	      </div><!-- /morning-benders -->
+	      <div class="panel" id="records/postelles">
+			<div style="float:left;width:50%">
+				<img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/clients/postelles/album-cover-postelles.jpg" class="album-cover" /><br />
+				<strong>THE POSTELLES<br />'The Postelles'</strong>
+			</div>
+			<div style="float:right;width:50%">
+				<img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/clients/postelles/album-cover-white-night.jpg" class="album-cover" /><br />
+				<strong>THE POSTELLES<br />'White Night' EP</strong>
+			</div>
+			<div style="clear:both"></div>
+			<p>The Postelles eponymous debut album (produced by Albert Hammond, Jr and The Postelles) was released in June 2011 on +1 Records. In July 2011, The Postelles released a Covers EP titled Summer Undercovers, as a free download from their website. Postelles have received extensive media coverage, with highlights including Rolling Stone, Spin, NME, E! News, Entertainment Weekly,Vanity Fair, New York Magazine, NYLON, Paper, BlackBook, Billboard, Alternative Press, Paste, Filter, CMJ, USA Today, NY Post, Chicago Tribune, LA Weekly, SF Weekly, and Huffington Post. The Postelles have consistently been in the top 5 on the KKBB Tracker Specialty Singles and Album Charts and have received spins from KROQ/Los Angeles, LIVE 105/San Francisco, KNDD/Seattle, KROX/Austin and others. They have performed on KCRW Morning Becomes Eclectic,WNYC Soundcheck, WFUV The Alternate Side, and Last.FM Discover. ‘White Night’ Video went into rotation on mtvU, MTV Subterranean, and Music Choice and was Fuse’s Video Of The Day. Licensing placements include a nationwide theatrical trailer for the film 'How Do You Know', Canon, Fox's Raising Hope, the CW's Vampire Diaries and 90210, ABC’s Revenge, and EA Sports’ Need For Speed The Run. They have toured with Kings Of Leon, Vampire Weekend, The Kooks, Interpol, Youn The Giant,The Kills, The Walkmen, The Wombats, Albert Hammond Jr., Richard Ashcroft, Free Energy, Fun, Manchester Orchestra, Hockey, and Chuck Berry. Festival performances include Bonnaroo, Lollapalooza, Music Midtown, All Points West, The Great Escape, Camden Crawl, and Iceland Airwaves.</p>
+	      </div><!-- /postelles -->
+	      <div class="panel" id="records/boy">
+			<div style="float:left;width:50%">
+				<img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/clients/boy/album-cover-playground.jpg" class="album-cover" /><br />
+				<strong>THE BOY LEAST LIKLEY TO<br />'The Law  Of The Playground'</strong>
+			</div>
+			<div style="float:right;width:50%">
+				<img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/clients/boy/album-cover-christmas.jpg" class="album-cover" /><br />
+				<strong>THE BOY LEAST LIKLEY TO<br />'Christmas Special'</strong>
+			</div>
+			<div style="clear:both"></div>
+			<p>the boy least likely released their album The Law Of The Playground through +1 Records, in addition to their holiday album Christmas Special. In addition to becoming indie critics darlings, with great support from Pitchfork, Rolling Stone, Spin, Entertainment Weekly, Stereogum, and many more, they are one of the most adored bands on blogs all across the internet. They have also become one of the most successful artists in licensing, with placements in a nationwide Apple iPhone commercial, Coca Cola, T-Mobile, Grey's Anatomy, The OC, Easy A and the trailer for indie smash movie Juno.</p>
+	      </div><!-- /boy -->
+	      <div class="panel" id="records/illinois">
+			<div style="float:left;width:49%">
+				<img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/clients/illinois/album-cover-kid-catastrophe.jpg" class="album-cover" /><br />
+				<strong>ILLINOIS<br />'The Adventures Of Kid Catastrophe'</strong>
+			</div>
+			<div style="float:right;width:49%">
+				<!-- <iframe width="386" height="290" src="http://www.youtube.com/embed/slqt2dxd6Bw" frameborder="0" allowfullscreen></iframe> -->
+				<a href="http://www.youtube.com/watch?v=slqt2dxd6Bw" style="color:#000;text-decoration:none;" target="_blank"><img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/clients/illinois/kid-catastrophe.jpg" class="album-cover"></a><br /><br />
+				<em><strong>Click above to watch short film</strong></em>
+			</div>
+			<div style="clear:both"></div>
+			<p>Instead of releasing the typical debut album, +1 Records worked with Illinois to produce and release a comprehensive multi-media campaign, album release and short film titled The Adventures of Kid Catastrophe. Over the course of six months, the band pounded the virtual pavement across the interweb by releasing a 3-song EP and corresponding chapter from the short film each month. After half a year of constant online activity on the band, in May 2009 a sprawling 20-song album titled The Adventures of Kid Catastrophe (Deluxe Edition) together with the 8 film chapters melded into a 22-minute short film hit physical and digital retail shelves in. Spin diagnosed the band with ‘stylistic schizophrenia’ – which is to say, there is something there for everyone: a manic mix of banjo-laced saloon anthems, hip hop beats, rip-roaring electric guitar riffs, and tender acoustic soul-searching – traversing fresh genre terrain seemingly with every passing track. The Adventures of Kid Catastrophe was tailored specifically to marry Illinois’ prolific supply of material with the infinite demand of online content by continually releasing video exclusives and free mp3 downloads on various digital outlets over a six month period. Throughout the process, the ‘Kid Catastrophe’ project took on a life of its own. Free MP3 downloads premiered on blogs and sites such as Spin.com, Brooklyn Vegan, RCRDLBL, URB, Blackbook, and Daytrotter, resulting in the main single ‘Hang On’ hitting #4 on the Elbo.ws blog aggregator ‘Hot Tracks’ chart.  MySpace and PureVolume featured the project on their homepage. And the film ran on various video outlets such as IFC, AOL, Fuel TV, Concert TV, Baeble Music, and on the YouTube Music Homepage. After a few months, the online traction carried over to the mainstream. Tastemaking radio stations such as KCRW, KEXP, and WXPN, amongst others, starting spinning the album. Sprint and Zune included the music in offers to their customers.  Amazon picked the single as 'Song Of The Day’, and iTunes honored the culmination of the series by making Illinois The Adventures of Kid Catastrophe their ‘Indie Spotlight’ featured artist. </p>
+	      </div><!-- /illinois -->
+	    </div><!-- /scrollcontainer -->
+	  </div><!-- /scroll -->
+	</div><!-- /slider -->
+</div>
+
+					</li>
+					<li><div class="accordian-handle"><a href="#!/d2f" id="d2f">D2F</a></div>
+						<div id="d2f-content">
+	<div id="d2f-header">
+		<img width="400" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/d2f/+1d2f-logo-noblurb-large.gif" id="d2f-logo" />
+		<div id="d2f-blurb">DIRECT TO FAN ONLINE MARKETING</div>
+		<div style="clear:both"></div>
+	</div>
+		<div id="nav">
+		  <ul id="d2f-menu" class="navigation">
+		    <li class="welcome selected"><a class="d2f-selector" href="#!/d2f/welcome">WELCOME</a></li>
+		    <li class="introduction"><a class="d2f-selector" href="#!/d2f/introduction">INTRODUCTION</a></li>
+		    <li class="evolution"><a class="d2f-selector" href="#!/d2f/evolution">EVOLUTION</a></li>
+		    <li class="overview"><a class="d2f-selector" href="#!/d2f/overview">OVERVIEW</a></li>
+		    <li class="partnership"><a class="d2f-selector" href="#!/d2f/partnership">PARTNERSHIP &amp; TOOLS</a></li>
+		    <li class="setup"><a class="d2f-selector" href="#!/d2f/setup">SET UP</a></li>
+		    <li class="strategy"><a class="d2f-selector" href="#!/d2f/strategy">STRATEGY &amp; EXECUTION</a></li>
+		    <li class="marketing"><a class="d2f-selector" href="#!/d2f/marketing">ONLINE MARKETING</a></li>
+		    <li class="social"><a class="d2f-selector" href="#!/d2f/social">SOCIAL NETWORKS</a></li>
+		    <li class="tour-mkting"><a class="d2f-selector" href="#!/d2f/tour-mkting">TOUR<br />MARKETING</a></li>
+		    <li class="monetization"><a class="d2f-selector" href="#!/d2f/monetization">MONETIZATION</a></li>
+		    <li class="contact"><a href="#!/contact" onclick="$('a#contact').trigger('click');">CONTACT</a></li>
+		  </ul>
+		</div>
+		<div style="clear:both"></div>
+		<div id="slider">
+
+		  <!-- element with overflow applied -->
+		  <div class="scroll">
+		    <!-- the element that will be scrolled during the effect -->
+		    <div class="scrollContainer">
+
+		      <!-- our individual panels -->
+		      <div class="panel" id="d2f/welcome" style="text-align:center;font-size:1.1em">
+				<!-- <img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/d2f/intro-blurb.gif" /> -->
+				<table id="clients-puzzle" cellspacing="0" cellpadding="0" style="margin-top:50px;">
+					<tbody>
+						<tr>
+							<td id="tvotr" class="border"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="tv on the radio" width="105" height="62" /></td>
+							<td class="blank"></td>
+							<td id="the-heavy" class="border"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="the heavy" width="105" height="62" /></td>
+							<td id="frankie" class="border"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="the heavy" width="105" height="62" /></td>
+						</tr>
+						<tr>
+							<td class="blank"></td>
+							<td id="the-kooks" class="border"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="the kooks" width="105" height="62" /></td>
+							<td id="postelles" class="border"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="the postelles" width="105" height="62" /></td>
+							<td id="white-lies" class="border"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="white lies" width="105" height="62" /></td>
+						</tr>
+						<tr>
+							<td id="caveman" class="border"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="caveman" width="105" height="62" /></td>
+							<td id="morning-benders" class="border"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="the morning benders" width="105" height="62" /></td>
+							<td id="lissie" class="border"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="lissie" width="105" height="62" /></td>
+							<td class="blank"></td>
+						</tr>
+					</tbody>
+				</table>
+		      </div><!-- /welcome -->
+		      <div class="panel" id="d2f/introduction">
+				<!-- <img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/d2f/intro-blurb.gif" /> -->
+				<h1 id="introduction">ONLINE MARKETING<br />FOR THE NEW DECADE OF THE MUSIC INDUSTRY</h1>
+				<p>What you are about to read is a brand new service.  It is Online Marketing, but not in the traditional ‘pitch every blog on the internet to post something about my band’ kind of way.  This is an intelligent, relevant, and forward-thinking way to use the new and powerful online tools that now exist (tools such as Twitter, Facebook, Google Analytics, Search Engine Optimization, etc) in ways that will increase your fan-base, capture and organize data, connect you with your fans, galvanize those fans to want to promote your band, and engage them to purchase your band’s products.  The term we use for this type of online marketing is Direct-To-Fan, or D2F for short.</p>
+				<p>+1 uses new technologies, and creates an Online Marketing Plan around it that will give you the ability to maximize opportunities by using blogs, social networks, publicity, radio, live shows, licensing, retail, and your band’s website like never before.  This Marketing Plan, which we will build with you and your team, will begin with getting eyeballs (i.e. how to get people to see/know about your band…the old fashioned stuff).  And we will build on that like never before.  The next step will be capturing data--Increasing your band’s email list, Twitter Followers, Facebook fans, and more.  And once your band connects with their audience, +1 will set a course of action for your band to grow that relationship, and ultimately convert your audience into sales.</p>
+		      </div><!-- /introduction -->
+			  <div class="panel" id="d2f/evolution" style="font-size:1.1em">
+				<div id="evolution-funnel">
+					Whilst the industry and our world has changed drastically over the<br />
+					past seven years—from print magazines into blogs and now<br />
+					into social networks and new technologies—the<br />
+					approach and the goals have remained the<br />
+					same. We have evolved our relationships,<br />
+
+					strategy and experience to create an<br />
+					essential service for bands,<br />
+					managers and labels<br />
+					that has never<br />
+					before existed.
+					<img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/d2f/+1d2f-logo-noblurb-large.gif" style="margin-top:100px;" />
+				</div>
+			  </div><!-- /evolution -->
+			  <div class="panel" id="d2f/overview">
+				<h1 style="text-align:left;margin-bottom:10px;">+1 D2F:</h1>
+				<ul id="overview-list">
+					<li>Allows an artist to <strong>TAKE ADVANTAGE OF THEIR WEBSITE</strong> the way major companies have been doing for years.</li>
+					<li>Uses the power of <strong>TWITTER, FACEBOOK, YOUTUBE, VEVO, MYSPACE AND OTHER SOCIAL NETWORKS</strong> as key drivers, and increases the volume of followers, fans, views, and website traffic.</li>
+					<li>Applies <strong>SEARCH ENGINE OPTIMIZATION (SEO)</strong> strategies for your artist’s main online destinations.</li>
+					<li>Has a <strong>PARTNERSHIP WITH TOPSPIN</strong> and an expertise with their technology, and will guide your artist on the most effective way to use the technology in your unique marketing plan.</li>
+					<li>Is a new strategy to <strong>RELEASING CONTENT</strong> that focuses on data capture and steers traffic to online destinations that the artist can control and benefit from.</li>
+					<li>Is a new approach to <strong>MUSIC BLOGS, PUBLICITY, RADIO, RETAIL, LIVE SHOWS AND LICENSING</strong> that connects those promotional vehicles to artists like never before.</li>
+					<li>Is a <strong>WORLDWIDE</strong> approach that connects your artist’s promotions in all the territories around the world.  A crucial tool to have in the internet age.</li>
+					<li>Is measured by <strong>REACH, FAN ACQUISITION, FAN ENGAGEMENT, AND MONETIZATION.</strong></li>
+					<li>Is about artists <strong>CONNECTING WITH THEIR FANS</strong>, creating a direct relationship, and then giving them a reason to transact.</li>
+				</ul>
+				<h1 id="overview">WHY SHOULD I INVEST IN DIRECT-TO-FAN MARKETING FOR MY BAND?</h1>				
+				<div id="geffen-quote">
+					<div id="geffen-pic"><img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/d2f/geffen.gif" width="250" /></div>
+					<div id="geffen-quote-box"><div id="geffen-quote-text"><p>While powerful D2F tools now exist, simply placing these tools on your band's website will not generate any new fans, awareness, or sales.</p>
+						<p>+1 becomes a part of the band, management and label’s team to create and execute a custom D2F marketing plan that uses these tools to their full potential, and that in turn will result in essential new opportunities and revenue for your band that would not exist otherwise." **</p>
+					 </div></div>
+					<div style="clear:both"></div>
+					<div style="margin:5px 0 0 50px;"><span style="font-size:12px;font-style:italic;">** DISCLAIMER: This quote is not from David Geffen...yet.</span></div>
+				</div>
+			  </div>
+		      <div class="panel" id="d2f/partnership">
+				<h1 id="partnerships">+1D2F ONLINE MARKETING TOOLS</h1>
+				<h2 id="partnerships-subhead">YOUR BAND'S ONLINE MARKETING CAMPAIGN WILL BE EXECUTED AND TRACKED USING THESE POWERFUL ONLINE TOOLS</h2>
+				<div style="font-size:1.2em">Using these tools is easy. Optimizing these tools as part of a large-scale integrated marketing campaign is complicated. +1 provides a service that takes full advantage of new technology to create effective Direct-To-Fan Marketing Campaigns that are integrated into the larger context of a band, management and label’s overall Marketing Plan.</div>
+				<img id="tools-image" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/d2f/tool-logos.gif" style="margin-top:10px;" />
+		      </div><!-- /partnership -->
+
+		      <div class="panel" id="d2f/setup">
+				<h1 id="setup">+1 WILL SET UP THE TOOLS YOUR BAND NEEDS TO EXECUTE ONLINE D2F MARKETING</h1>
+
+				<div id="setup-leftcol"><strong style="font-size:1.2em">SOCIAL NETWORKS</strong><br />Updating &amp; Optimizing Your Band’s Twitter, Facebook, Myspace, etc.<br /><br /><br /><br /><br /><br /><strong style="font-size:1.2em">EDUCATION</strong><br />Teaching Your Band & Team How To Use The New Tools They Have At Their Disposal. (Social Networks, Topspin Account, Google Analytics, etc.)</div>
+				<div id="setup-middlecol"><img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/d2f/band-website-circle.jpg" width="270" /><br /><br /><strong style="font-size:1.2em">SETTING D2F MARKETING GOALS</strong><br />Setting realistic yet ambitious goals for increasing the number Twitter followers, email addresses, Facebook activity, website traffic, etc. that your band has.</div>
+				<div id="setup-rightcol"><strong style="font-size:1.2em">SEARCH ENGINE OPTIMIZATION</strong><br />Making Your Website The Top Hit When Someone Google Searches For Your Band<br /><br /><br /><br /><br /><br /><strong style="font-size:1.2em">MEASUREMENT</strong><br >Making Sure Your Band is Set Up and Properly Using Google Analytics, Topspin Account, etc.</div>
+
+		      </div><!-- /setup -->
+
+		      <div class="panel" id="d2f/strategy">
+				<h1 id="strategy">CREATING ONLINE CONTENT, BUILDING A WEBSITE AND<br />OFFERING AN ONLINE STORE IS ONLY THE BEGINNING...</h1>
+				<img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/d2f/+1d2f-logo-noblurb.gif" style="float:right;margin:0 auto;margin-right:29em" />
+				<div id="strategy-left">
+					<img id="strategy-gekko" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/d2f/gekko.jpg" width="290" /><br /><br />
+					<img id="strategy-puzzle" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/d2f/puzzle.jpg" width="290" />
+				</div>
+				<div id="strategy-middle">
+					<ul id="strategy">
+						<li>WILL CONSTRUCT A CUSTOMIZED ONLINE MARKETING PLAN THAT WILL LEAD PEOPLE TO DISCOVER, CONNECT, ENGAGE, AND TRANSACT WITH YOUR BAND.</li>
+						<li>WILL LEAD YOUR D2F CAMPAIGN BY ACTIVELY PITCHING MUSIC BLOGS AND WEBSITES USING AN INTELLIGENT, EFFECTIVE AND PROVEN "TOP-DOWN" APPROACH.</li>
+						<li>WILL GROW YOUR BANDS EMAIL LIST AND SOCIAL MEDIA PORTALS.</li>
+						<li>WILL WORK WITH MANAGEMENT, BAND AND LABEL TO CREATE AND CONNECT YOUR D2F CAMPAIGN TO ALL ASPECTS OF YOUR MARKETING PLAN.</li>
+						<li>WILL TEST OFFERS ACROSS CHANNELS, MEASURE RESULTS, AND MANAGE YOUR WORKFLOW WITH DATA-DRIVEN FEEDBACK TO MAKE SMARTER MARKETING DECISIONS.</li>
+
+						<li>WILL HELP TO CREATE AND FUEL A VIRAL BUZZ SURROUNDING YOUR BAND.</li>
+					</ul>
+				</div>
+			  </div>
+			  <div class="panel" id="d2f/marketing">
+				<h1 id="marketing">A SMARTER APPROACH TO MUSIC BLOGS AND SITES</h1>
+
+				<div style="color:#1e63c2;margin:10px 0px;text-align:center;font-size:1.2em">
+				+1 Will Craft Your Direct-To-Fan Offers (such as free songs, ticket giveaways, etc.) And Will Secure<br />Online Coverage On The Most Influential Sites And Blogs.
+				<br /><br />
+				+1 Will Use New Technologies To Capture Data.
+				<br /><br />
+				+1 Reports To Clients Using Real Data Generated From The Campaign.
+				</div>
+				<div id="marketing-col1"><img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/d2f/streamingplayer.jpg" width="220" /><img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/d2f/e4m.jpg" width="220" style="margin-top:70px;" /></div>
+				<div id="marketing-col2"><img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/d2f/rt-arrow.jpg" width="100" /><br /><img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/d2f/rt-arrow.jpg" width="100" style="margin-top:200px" /></div>
+				<div id="marketing-col3"><img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/d2f/stereogum.jpg" width="220" /><br /><br /><br /><img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/d2f/rollingstone.jpg" width="220" /></div>
+				<div id="marketing-col4"><img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/d2f/rt-arrow.jpg" width="100" /><br /><img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/d2f/rt-arrow.jpg" width="100" style="margin-top:200px" /></div>
+				<div id="marketing-col5"><img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/d2f/streamer-results.gif" width="180" /><br /><br /><br /><br /><br /><img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/d2f/download-results.gif" width="180" style="margin-top:90px;" /></div>
+			  </div><!-- /strategy -->
+		      <div class="panel" id="d2f/social">
+				<h1 id="social">USING THE POWER OF SOCIAL NETWORKS</h1>
+				<div style="clear:both;height:20px"></div>
+				<div style="float:left;width:60%">
+					<span style="font-size:1.2em">+1 WILL CREATE TWITTER AND FACEBOOK MARKETING CAMPAIGNS THAT:</span>
+					<ul id="social">
+						<li>Set Up Your Social Networks to be properly OPTIMIZED</li>
+						<li>Increase your Facebook LIKES</li>
+						<li>Grow your Twitter FOLLOWERS</li>
+						<li>Collect emails and build REGIONALIZED EMAIL LISTS.</li>
+						<li>Increase engagement, conversion and trending by using the power of social networks.</li>
+					</ul>
+				</div>
+				<div style="float:right;width:38%;">
+					<img id="social-people" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/d2f/social-network-people.jpg" width="300" />
+				</div>
+				<div style="clear:both"></div>
+				<div style="width:100%;text-align:center;"><img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/twitter-black.gif" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/facebook-black.gif" width="220" /><br /><br /><img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/email-black.png" /><span style="font-size:2.8em;margin:12px 0 0 5px;display:inline-block;">EMAIL LIST</span></div>
+		      </div><!-- /social -->
+			  <div class="panel" id="d2f/tour-mkting">
+				<h1 id="tour-marketing">TOUR MARKETING</h1>
+				<div style="margin:0 auto;display:block;text-align:center;font-size:1.2em">+1 Will Create Regionalized Direct-to-Fan Marketing Campaigns That Increase Ticket Sales For Individual Shows, and Capture Data on Where Your Fans Live.<br /><br /></div>
+				<img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/d2f/tour-map.jpg" style="display:block;margin:0 auto;" />
+			  </div>
+			  <div class="panel" id="d2f/monetization">
+				<h1 id="monetization">CONVERTING MARKETING INTO SALES</h1>
+				<div id="monetization-leftcol" style="font-size:1.2em">
+					<p style="text-align:left;">+1 WILL WORK WITH YOUR BAND, MANAGER AND LABEL TO:</p>
+					<ul id="monetization">
+						<li>Structure sales offers into D2F Marketing Campaign for each phase of product availability.</li>
+						<li>Create specific offers that segment and target fans for higher conversion.</li>
+						<li>Effectively place and coordinate the timing of offers on your band’s website.</li>
+						<li>Properly utilize social networks to promote offers.</li>
+
+						<li>Segment and target fans for higher conversion.</li>
+						<li>Build strategies to increase click-through and conversion rates.</li>
+					</ul>
+				</div>
+				<div style="float:left;padding-top:20px;padding-left:20px;"><img id="monetization-store" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/d2f/generic-store.jpg" /></div>
+				<div style="clear:both"></div>
+			  </div><!-- /monetization -->
+			
+			<div class="panel" id="d2f/contact"><!-- placeholder --></div>
+	
+		    </div><!-- /scrollcontainer -->
+		  </div><!-- /scroll -->
+		</div><!-- /slider -->
+	
+</div><!-- /d2f-content -->
+
+					</li>
+					<li><div class="accordian-handle"><a href="#!/management" id="management">MANAGEMENT</a></div>
+						<div id="management-content" style="font-size:1.2em;height:500px;">
+	<img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/plusone-management-logo.jpg" />
+	<p>+1 Management was the foundation of +1’s launch in 2004, and became the backbone of every direction that the company evolved to over the years. We are a full service, multi-faceted and forward-thinking management company and we work with our artists in every capacity to develop their careers. We also use our management experience, perspective, skills, and relationships in everything we do. But while each of our other companies have been in an aggressive growth phase, we have decided to keep our management roster to a very select few bands in order to give each one our absolute full attention. Our first artist was stellastarr*, who quickly grew from an unknown New York City band in an over-populated scene, to one of the most exciting, talked about, and internationally successful NY bands of that era. More recent artists include The Morning Benders, The Postelles, and the newest member of our family: Atlas Genius. We tend to take on artists who are relatively unknown at the time, because one of our favorite things to do is to introduce an artist that we believe in and see great potential for. We craft a strategic plan of action to consistently achieve positive momentum that is unique to each artist. We view our artists as partners rather than as clients with a common goal of building things brick by brick in the most credible manner.</p>
+	<table id="clients-puzzle" cellspacing="0" cellpadding="0" style="margin-top:50px;margin-left:115px;">
+		<tbody>
+			<tr>
+				<td id="atlas-genius" class="border"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="atlas genius" width="115" height="68" /></td>
+				<td id="postelles" class="border"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="the postelles" width="115" height="68" /></td>
+				<td id="ghost-wave" class="border"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="ghost wave" width="115" height="68" /></td>
+				<td id="gospels" class="border"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="gospels" width="115" height="68" /></td>
+				<td id="them-swoops" class="border"><img class="blank" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/blank.gif" alt="them swoops" width="115" height="68" /></td>
+			</tr>
+		</tbody>
+	</table>
+</div>					</li>
+					<!-- li><div class="accordian-handle"><a href="#!/store" id="store">STORE</a></div>
+																	</li -->
+					<li><div class="accordian-handle"><a href="#!/contact" id="contact">CONTACT</a></div>
+																		
+<div id="contact-content">
+	<div id="nav">
+		<ul id="contact-menu" class="navigation">
+			<li class="general-inquiries"><a class="contact-selector" href="#!/contact/general-inquiries">General Inquiries</a></li>
+			<li class="band-submission"><a class="contact-selector" href="#!/contact/band-submission">Band Submissions</a></li>
+		</ul>
+		<div style="clear:both">&nbsp;</div>
+	</div>
+
+	<div id="slider">
+
+	  <!-- element with overflow applied -->
+	  <div class="scroll">
+	    <!-- the element that will be scrolled during the effect -->
+	    <div class="scrollContainer">
+	      <!-- our individual panels -->
+			<div id="contact/general-inquiries" class="panel" style="text-align:center">
+				<h1>For General Inquiries, contact <a href="mailto:info@plusonemusic.net">info@plusonemusic.net</a></h1>
+				<a href="http://www.facebook.com/plusonemusic" target="_blank"><img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/facebook-black.gif" width="210"></a>
+				<br />
+				<a href="http://www.twitter.com/plusonemusic" target="_blank"><img src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/twitter-black.gif" width="210"></a>
+			</div>
+		
+			<div id="contact/band-submission" class="panel">
+				<form action="#" id="contact-form">
+				<p><label style="color:#4D90FE"><strong>CONTACT INFO</strong></label></p>
+				<p style="clear:both;height:3px;line-height:3px;margin:0;padding:0;"></p>
+				<p><label for="name">Name</label><input type="text" name="name" value="" id="name" class="required"></p>
+				<p><label for="email">Email</label><input type="text" name="email" value="" id="email" class="required"></p>
+
+				<p><label for="band_name">Band Name</label><input type="text" name="band_name" value="" id="band_name" class="required"></p>
+				<p><label for="record_label">Record Label</label><input type="text" name="record_label" value="" id="record_label" class="required"></p>
+				<p><label style="color:#4D90FE"><strong>BAND INFO</strong></label></p>
+				<p style="clear:both;height:3px;line-height:3px;margin:0;padding:0;"></p>
+				<p><label for="website">Website</label><input type="text" name="website" value="" id="website" class="required"></p>
+				<p><label for="twitter">Twitter</label><input type="text" name="twitter" value="" id="twitter" class="required"></p>
+
+				<p><label for="facebook">Facebook</label><input type="text" name="facebook" value="" id="facebook" class="required"></p>
+				<p><label for="myspace">Myspace</label><input type="text" name="myspace" value="" id="myspace" class="required"></p>
+				<p><label for="album_release_date">Upcoming Album Release Date</label><input type="text" name="album_release_date" value="" id="album_release_date" class="required"></p>
+				<p><label for="stream_download_link">Link to Stream or Download Music</label><input type="text" name="stream_download_link" value="" id="stream_download_link" class="required"></p>
+				<p><label style="color:#4D90FE"><strong>MESSAGE</strong></label></p>
+				<p style="clear:both;height:3px;line-height:3px;margin:0;padding:0;"></p>
+				<p><label for="note">Write Us A Note</label><textarea name="note" rows="5" cols="40" class="required"></textarea></p>
+
+				<label></label><!-- <input type="submit" name="submit" value="SEND" id="submit"> -->
+				<input type="image" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/images/send-btn.jpg" alt="SEND" id="btn_send" style="padding:0px;">
+				</form>
+				<div id="response" style="background:#f7f1c4;padding:5px;display:none;"></div>
+			</div>
+			
+	    </div><!-- /scrollcontainer -->
+	  </div><!-- /scroll -->
+	</div><!-- /slider -->
+</div>
+
+						<!-- <iframe id="frame-contact" src="http://plusonemusic.net/contact" width="100%" height="1050" frameborder="0" scrolling="no" style="background:#000;"></iframe> -->
+					</li>
+				</ul>
+			
+		</div><!-- #container -->
+
+	</div><!-- #main -->
+
+	<div id="footer">
+	</div><!-- #footer -->
+
+</div><!-- #wrapper -->
+
+<!--<script type="text/javascript" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/js/jquery.localscroll-1.2.7-min.js"></script>-->
+<script type="text/javascript" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/js/jquery.localscroll-1.2.7.js"></script>
+<script type="text/javascript" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/js/jquery.scrollTo-1.4.2-min.js"></script>
+<script type="text/javascript" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/js/jquery.serialScroll-1.2.2-min.js"></script>
+<script type="text/javascript" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/js/slider-about.js"></script>
+<script type="text/javascript" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/js/slider-records.js"></script>
+<script type="text/javascript" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/js/slider-d2f.js"></script>
+<script type="text/javascript" src="http://plusonemusic.net/new/wp-content/themes/plusone-white/js/slider-contact.js"></script>
+<script>
+	// $('#about-tabs').tabify();
+</script>
+</body>
+</html>
