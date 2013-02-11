@@ -30,3 +30,63 @@ htmllib.HTMLParseError: unexpected '&' char in declaration
 #fixed by zhuoran by throw an exception
 "
 14.
+queue push front: http://sourceforge.net/projects/sevenzip
+IOErrorhttp://www.7-zip.org/
+
+queue push front: http://groups.google.com/group/rpi_fall2010/topics?hl=en
+IOErrorhttp://extremetracking.com/open?login=rarlab2
+
+IOErrorhttp://www.douban.com/note/227836317/
+IOErrorhttp://media.twitter.com
+IOErrorhttps://dev.twitter.com
+IOErrorhttp://douban.fm/
+IOErrorhttp://alphatown.com
+IOErrorhttp://www.douban.com/mobile/
+
+15. we should not take too much time on one url, continue sometime
+
+
+16.
+this query:
+python WebCrawler.py ElementaryStatisticsdouban 100
+
+
+Number: 90  http://book.douban.com/subject/7922176/
+Traceback (most recent call last):
+  File "WebCrawler.py", line 238, in <module>
+    parser.feed(pageContent)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/sgmllib.py", line 104, in feed
+    self.goahead(0)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/sgmllib.py", line 138, in goahead
+    k = self.parse_starttag(i)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/sgmllib.py", line 296, in parse_starttag
+    self.finish_starttag(tag, attrs)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/sgmllib.py", line 345, in finish_starttag
+    self.handle_starttag(tag, method, attrs)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/sgmllib.py", line 381, in handle_starttag
+    method(attrs)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/htmllib.py", line 395, in start_a
+    self.anchor_bgn(href, name, type)
+  File "WebCrawler.py", line 61, in anchor_bgn
+    self.process_url(href)
+  File "WebCrawler.py", line 82, in process_url
+    "depth": self.depth
+  File "WebCrawler.py", line 32, in Queue_Check_Push_Front
+    if CheckSite.checkSite_Visitable(href) == 1:
+  File "/Users/charnugagoo/Dropbox/Study/WebSearchEngine/WebCrawler/CheckSite.py", line 27, in checkSite_Visitable
+    if CheckRobots.checkRobotsFile(href):
+  File "/Users/charnugagoo/Dropbox/Study/WebSearchEngine/WebCrawler/CheckRobots.py", line 8, in checkRobotsFile
+    rp.read()
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/robotparser.py", line 57, in read
+    f = opener.open(self.url)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib.py", line 205, in open
+    return getattr(self, name)(url)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib.py", line 331, in open_http
+    h = httplib.HTTP(host)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/httplib.py", line 1061, in __init__
+    self._setup(self._connection_class(host, port, strict))
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/httplib.py", line 693, in __init__
+    self._set_hostport(host, port)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/httplib.py", line 718, in _set_hostport
+    raise InvalidURL("nonnumeric port: '%s'" % host[i+1:])
+httplib.InvalidURL: nonnumeric port: ''

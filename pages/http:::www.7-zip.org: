@@ -1,0 +1,282 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv="CONTENT-TYPE" content="TEXT/HTML; CHARSET=UTF-8">
+<LINK href="/style.css" rel="stylesheet" type="text/css">
+<TITLE>7-Zip</TITLE>
+<META name="keywords" content=", archiver, compression, zip, best, compress,
+  high, ratio, free, gnu, lgpl, unzip, far, win32, 7zip, long, file, names">
+</HEAD>
+<BODY>
+<TABLE cellspacing=10 cellpadding=10 border=0 width="100%"><TR>
+<TD class="MenuColumn" valign="top">
+<TABLE cellpadding=2 cellspacing=0 border=0 width="100%">
+<TR><TD><IMG width=110 height=63 src="/7ziplogo.png" alt="7-Zip" border=0></TD></TR>
+<TR><TD><HR></TD></TR></TABLE>
+<TABLE cellpadding="2" cellspacing="0" border="0">
+<TR><TD><SPAN class="MenuCurrent">Home</SPAN></TD></TR>
+<TR><TD><A href="7z.html" class="MenuLink">7z Format</A></TD></TR>
+<TR><TD><A href="sdk.html" class="MenuLink">LZMA SDK</A></TD></TR>
+<TR><TD><A href="download.html" class="MenuLink">Download</A></TD></TR>
+<TR><TD><A href="faq.html" class="MenuLink">FAQ</A></TD></TR>
+<TR><TD><A href="support.html" class="MenuLink">Support</A></TD></TR>
+<TR><TD><A href="links.html" class="MenuLink">Links</A></TD></TR>
+</TABLE>
+<TABLE cellpadding=2 cellspacing=0 border=0 width="100%">
+
+<TR><TD><HR></TD></TR>
+<TR><TD>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+</TD></TR>
+<TR><TD><A href="http://sourceforge.net/projects/sevenzip/"><IMG src="http://sourceforge.net/sflogo.php?group_id=14481&type=11" width=120 height=30 border=0 alt="7-Zip at SourceForge.net"></A></TD></TR>
+<TR><TD><HR></TD></TR>
+
+</TABLE>
+
+<P>
+<B>English</B><BR>
+<A href="http://7-zip.hit.bg/">Bulgarian</A><BR>
+<A href="http://sparanoid.com/lab/7z/">Chinese Simpl.</A><BR>
+<A href="http://www.developershome.com/7-zip/">Chinese Trad.</A><BR>
+<A href="http://7zip-eo.rnbastos.com/">Esperanto</A><BR>
+<A href="http://www.spiroo.be/7zip/">French</A><BR>
+<A href="http://www.7-zip.de/">German</A><BR>
+<A href="http://7-zip.hu/">Hungarian</A><BR>
+<A href="http://sevenzip.sourceforge.jp/">Japanese</A><BR>
+<A href="http://7-zip.org.pl/">Polish</A><BR>
+<A href="http://7zip.rnbastos.com/">Portuguese Brazil</A><BR>
+<A href="http://7-zip.org.ua/ru/">Russian</A><BR>
+<A href="http://7-zip.com.mx">Spanish</A><BR>
+<A href="http://7-zip.org.ua/">Ukrainian</A><BR>
+</P>
+
+          
+</TD>
+<TD valign="top">
+
+<TABLE cellspacing ="4" cellpadding ="4"><TR>
+
+<TD>
+
+<H1>7-Zip</H1>
+
+<P><B>7-Zip</B> is a file archiver with a high compression ratio.</P>
+
+<P><B>Download 7-Zip 9.20 (2010-11-18) for Windows</B>:</P>  
+<TABLE cellspacing ="1" cellpadding ="6" border = "0">
+  <TR>
+    <TH class="Title" align="center" width=60>Link</TH>
+    <TH class="Title" align="center" width=60>Type</TH>
+    <TH class="Title" align="center" width=80>Windows</TH>
+    <TH class="Title" align="center" width=55>Size</TH>
+  </TR>
+  <TR>
+    <TD class="Item" align="center"><A href="http://downloads.sourceforge.net/sevenzip/7z920.exe">Download</A></TD>
+    <TD class="Item" align="center">.exe</TD>
+    <TD class="Item" align="center">32-bit x86</TD>
+    <TD class="Item" align="center">1 MB</TD>
+  </TR>
+  <TR>
+    <TD class="Item" align="center"><A href="http://downloads.sourceforge.net/sevenzip/7z920-x64.msi">Download</A></TD>
+    <TD class="Item" align="center">.msi</TD>
+    <TD class="Item" align="center">64-bit x64</TD>
+    <TD class="Item" align="center">1 MB</TD>
+  </TR>
+</TABLE>
+
+<P>The download links above redirect you to download pages on SourceForge.net</P>
+
+<H2>License</H2>
+
+<P><B>7-Zip</B> is <B>open source</B> software. Most of the source code is under the <B>GNU LGPL</B> license.
+The unRAR code is under a mixed license: GNU LGPL + unRAR restrictions. Check 
+license information here: <A href="license.txt">7-Zip license</A>.</P> 
+
+<P>You can use 7-Zip on any computer, including a computer in a commercial organization. 
+You don't need to register or pay for 7-Zip.</P>
+
+<H2>The main features of 7-Zip</H2>
+<UL>
+  <LI>High compression ratio in <A href ="7z.html">7z format</A> with <B>LZMA</B> and <B>LZMA2</B> compression</LI>
+  <LI>Supported formats:
+    <UL>
+     <LI>Packing / unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM</LI>
+     <LI>Unpacking only: ARJ, CAB, CHM, CPIO, CramFS, DEB, DMG, FAT, HFS, ISO, LZH, LZMA, 
+                       MBR, MSI, NSIS, NTFS, RAR, RPM, SquashFS, UDF, VHD, WIM, XAR and Z.</LI>
+    </UL>
+  </LI>
+  <LI>For ZIP and GZIP formats, <B>7-Zip</B> provides a compression ratio that 
+      is 2-10 % better than the ratio provided by PKZip and WinZip</LI>
+  <LI>Strong AES-256 encryption in 7z and ZIP formats</LI>
+  <LI>Self-extracting capability for 7z format</LI>
+  <LI>Integration with Windows Shell</LI>
+  <LI>Powerful File Manager</LI>
+  <LI>Powerful command line version</LI>
+  <LI>Plugin for FAR Manager</LI>
+  <LI>Localizations for 79 languages</LI>
+</UL>
+
+<IMG width="352" height="320" src="7zfm.png" alt="7-Zip" border="0">
+
+<P><B>7-Zip</B> works in Windows 7 / Vista / XP / 2008 / 2003 / 2000 / NT / ME / 98.
+There is a port of the command line version to Linux/Unix.</P>
+
+<P>On <A href="http://sourceforge.net/projects/sevenzip/">7-Zip's Source Forge Page</A> 
+you can find a forum, bug reports, and feature request systems.</P>
+
+<H2>Compression ratio</H2>
+
+<P>We compared <B>7-Zip</B> with some of the leading archivers.</P>
+
+<P><B>FILE SETS:</B> 
+<A href="http://www.mozilla.org/products/firefox/">Mozilla Firefox</A> 1.0.7 for Windows 
+and 
+<A href="http://earth.google.com/">Google Earth</A> 3.0.0616 for Windows
+after full installation.</P>
+
+<TABLE cellspacing ="2" cellpadding ="6">
+  <TR>
+    <TH class="Title" rowspan = 3>Archiver</TH>
+    <TH class="Title" align="center" colspan = 2>Mozilla Firefox</TH>
+    <TH class="Title" align="center" colspan = 2>Google Earth</TH>
+  </TR>
+  <TR>
+    <TH class="Title" align="center" colspan = 2>161 files<BR>15,684,168 bytes</TH>
+    <TH class="Title" align="center" colspan = 2>115 files<BR>23,530,652 bytes</TH>
+  </TR>
+  <TR>
+    <TH class="Title" align="center">Compressed size</TH>
+    <TH class="Title" align="center">Ratio</TH>
+    <TH class="Title" align="center">Compressed size</TH>
+    <TH class="Title" align="center">Ratio</TH>
+  </TR>
+  <TR>
+    <TD class="Item"><B>7-Zip 4.23 (7z format)</B></TD>
+    <TD class="Item" align="center"><B>4621135</B></TD>
+    <TD class="Item" align="center"><B>100%</B></TD>
+    <TD class="Item" align="center"><B>6109183</B></TD>
+    <TD class="Item" align="center"><B>100%</B></TD>
+  </TR>
+  <TR>
+    <TD class="Item">WinRAR 3.50</TD>
+    <TD class="Item" align="center">5021556</TD>
+    <TD class="Item" align="center">109%</TD>
+    <TD class="Item" align="center">6824892</TD>
+    <TD class="Item" align="center">112%</TD>
+  </TR>
+  <TR>
+    <TD class="Item">CABARC 5.1</TD>
+    <TD class="Item" align="center">5131393</TD>
+    <TD class="Item" align="center">111%</TD>
+    <TD class="Item" align="center">7434325</TD>
+    <TD class="Item" align="center">122%</TD>
+  </TR>
+  <TR>
+    <TD class="Item">WinZip 10.0 beta (maximum-PPMd)</TD>
+    <TD class="Item" align="center">5277118</TD>
+    <TD class="Item" align="center">114%</TD>
+    <TD class="Item" align="center">8200708</TD>
+    <TD class="Item" align="center">134%</TD>
+  </TR>
+  <TR>
+    <TD class="Item"><B>7-Zip 4.23 (zip format)</B></TD>
+    <TD class="Item" align="center"><B>6222627</B></TD>
+    <TD class="Item" align="center"><B>135%</B></TD>
+    <TD class="Item" align="center"><B>8909446</B></TD>
+    <TD class="Item" align="center"><B>146%</B></TD>
+  </TR>
+  <TR>
+    <TD class="Item">WinZip 10.0 beta (maximum-portable)</TD>
+    <TD class="Item" align="center">6448666</TD>
+    <TD class="Item" align="center">140%</TD>
+    <TD class="Item" align="center">9153898</TD>
+    <TD class="Item" align="center">150%</TD>
+  </TR>
+</TABLE>
+
+<P>Compression ratio results are very dependent upon the data used for the tests. 
+Usually, <B>7-Zip</B> compresses to 7z format 30-70% better than to zip format.
+And <B>7-Zip</B> compresses to zip format 2-10% better than most of other zip compatible programs.</P>
+
+</TD>
+<TD vAlign=top align=right width=210>
+
+
+<form action="http://www.google.com/cse" id="cse-search-box">
+  <div>
+    <input type="hidden" name="cx" value="partner-pub-8875464887834608:2ol7pke0upx" />
+    <input type="hidden" name="ie" value="UTF-8" />
+    <input type="text" name="q" size="18" />
+    <input type="submit" name="sa" value="Search" />
+  </div>
+</form>
+<script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&amp;lang=en"></script> 
+
+<BR><BR>
+
+<TABLE class=News cellpadding=3 cellspacing=1 border=0>
+  <TR class=NewsHeader>
+    <TD class=NewsTitle>7-Zip 9.30 alpha</TD>
+    <TD class=NewsDate>2012-10-26</TD></TR>
+  <TR class=News>
+    <TD class=NewsText colSpan=2>
+      <A href="http://sourceforge.net/projects/sevenzip/forums/forum/45797/topic/6063877">7-Zip 9.30 alpha</A><BR>
+    </TD>
+  </TR>
+</TABLE>
+
+<BR>
+
+<TABLE class=News cellpadding=3 cellspacing=1 border=0>
+  <TR class=NewsHeader>
+    <TD class=NewsTitle>7-Zip 9.25 alpha</TD>
+    <TD class=NewsDate>2011-09-16</TD></TR>
+  <TR class=News>
+    <TD class=NewsText colSpan=2>
+      <A href="http://sourceforge.net/projects/sevenzip/forums/forum/45797/topic/4711128">Forum: 7-Zip 9.25 alpha</A><BR>
+      <A href="http://dl.7-zip.org/7z925.exe">Download 7-Zip 32-bit</A><BR>
+      <A href="http://dl.7-zip.org/7z925-x64.msi">Download 7-Zip x64</A>
+    </TD>
+  </TR>
+</TABLE>
+
+<BR>
+
+<TABLE class=News cellpadding=3 cellspacing=1 border=0>
+  <TR class=NewsHeader>
+    <TD class=NewsTitle>7-Zip 9.22 beta</TD>
+    <TD class=NewsDate>2011-04-18</TD></TR>
+  <TR class=News>
+    <TD class=NewsText colSpan=2>
+      <A href="http://sourceforge.net/projects/sevenzip/files/7-Zip/9.22/">7-Zip 9.22 beta</A><BR>
+    </TD>
+  </TR>
+</TABLE>
+
+<BR><BR>
+
+<TABLE class=News cellpadding=3 cellspacing=1 border=0>
+  <TR class=NewsHeader>
+    <TD class=NewsTitle>7-Zip 9.20</TD>
+    <TD class=NewsDate>2010-11-18</TD></TR>
+  <TR class=News>
+    <TD class=NewsText colSpan=2>
+      <A href="/history.txt">History of 7-zip changes</A><BR>
+    </TD>
+  </TR>
+</TABLE>
+
+</TD>
+</TR></TABLE>
+
+
+<HR>
+<P><SMALL>Copyright (C) 2013 Igor Pavlov.</SMALL></P>
+</TD></TR></TABLE>
+
+</BODY></HTML>

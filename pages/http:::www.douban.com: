@@ -1,0 +1,525 @@
+
+
+
+
+
+
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="ua-mac ua-webkit">
+<head>
+<meta charset="UTF-8">
+<meta content="提供图书、电影、音乐唱片的推荐、评论和价格比较，以及城市独特的文化生活。" name="description">
+<title>豆瓣</title>
+<script>
+window.Douban=window.Douban||{};var Do=function(){Do.actions.push([].slice.call(arguments))};Do.ready=function(){Do.actions.push([].slice.call(arguments))};Do.add=Do.define=function(a,b){Do.mods[a]=b};Do.global=function(){Do.global.mods=Array.prototype.concat(Do.global.mods,[].slice.call(arguments))};Do.global.mods=[];Do.mods={};Do.actions=[];function set_cookie(g,f,d,e){var b=new Date(),a,c;b.setTime(b.getTime()+((f||30)*24*60*60*1000));a="; expires="+b.toGMTString();for(c in g){document.cookie=c+"="+g[c]+a+"; domain="+(d||"douban.com")+"; path="+(e||"/")}}function get_cookie(b){var e=b+"=",a=document.cookie.split(";"),d,f;for(d=0;d<a.length;d++){f=a[d];while(f.charAt(0)==" "){f=f.substring(1,f.length)}if(f.indexOf(e)===0){return f.substring(e.length,f.length).replace(/\"/g,"")}}return null}Douban.init_show_login=function(a){Do("dialog",function(){var b="/j/misc/login_form";dui.Dialog({title:"登录",url:b,width:/device-mobile/i.test(document.documentElement.className)?document.documentElement.offsetWidth*0.9:350,cache:true,callback:function(c,d){d.node.addClass("dialog-login");d.node.find("h2").css("display","none");d.node.find(".hd h3").replaceWith(d.node.find(".bd h3"));d.node.find("form").css({border:"none",width:"auto",padding:"0"});d.update()}}).open()})};Do(function(){$.ajax_withck=function(a){if(a.type=="POST"){a.data=$.extend(a.data||{},{ck:get_cookie("ck")})}return $.ajax(a)};$.postJSON_withck=function(a,b,c){$.post_withck(a,b,c,"json")};$.post_withck=function(a,c,d,b){if($.isFunction(c)){b=d;d=c;c={}}return $.ajax({type:"POST",url:a,data:$.extend(c,{ck:get_cookie("ck")}),success:d,dataType:b||"text"})};$("html").click(function(c){var a=$(c.target),b=a.attr("class");if(!b){return}$(b.match(/a_(\w+)/gi)).each($.proxy(function(d,f){var e=Douban[f.replace(/^a_/,"init_")];if(typeof e==="function"){c.preventDefault();e.call(this,c)}},a[0]))})});
+Do.add('dialog', {path: 'http://img3.douban.com/js/ui/packed_dialog8321689615.js', type: 'js', requires: ['http://img3.douban.com/css/ui/packed_dialog4563741467.css']});
+Do.global('http://img3.douban.com/js/sns/fp/packed_base6505908882.js', 'dialog');
+</script>
+<link rel="stylesheet" href="http://img3.douban.com/css/core/packed__init_6312190557.css">
+<link rel="stylesheet" href="http://img3.douban.com/css/sns/fp/packed_old5891147418.css">
+<link rel="stylesheet" href="http://img3.douban.com/misc/mixed_static/4aeb9093ba4b942.css">
+</head>
+
+<body>
+    
+
+    <div class="anony-nav">
+        <div class="hd-wrap">
+            <div class="hd">
+                <div class="logo">
+                    <h1><a href="/">豆瓣</a></h1>
+                </div>
+                <div class="top-nav-items">
+                <ul>
+                <li> <a target="_blank" class="lnk-book" href="http://book.douban.com">豆瓣读书</a></li>
+                <li> <a target="_blank" class="lnk-movie" href="http://movie.douban.com">豆瓣电影</a></li>
+                <li> <a target="_blank" class="lnk-music" href="http://music.douban.com">豆瓣音乐</a></li>
+                <li> <a target="_blank" class="lnk-events" href="http://www.douban.com/location/">豆瓣同城</a></li>
+                <li> <a target="_blank" class="lnk-group" href="http://www.douban.com/group/">豆瓣小组</a></li>
+                <li> <a target="_blank" class="lnk-fm" href="http://douban.fm">豆瓣FM</a></li>
+                </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="bd">
+            
+<div class="login">
+    <form id="lzform" name="lzform" method="post" action="http://www.douban.com/accounts/login">
+        <fieldset>
+            <legend>登录</legend>
+            <input type="hidden" value="index_nav" name="source">
+            <div class="item">
+                <label for="form_email">帐号</label>
+                <input type="text" name="form_email" id="form_email" value="邮箱/手机号" tabIndex="1">
+            </div>
+            <div class="item">
+                <label for="form_password">密码</label>
+                <input name="form_password" id="form_password" class="text" type="password" tabIndex="2">
+                <a href="http://www.douban.com/accounts/resetpassword">忘记密码</a>
+            </div>
+            <div class="item1">
+                <label for="form_remember"><input name="remember" type="checkbox" id="form_remember" tabIndex="3">
+                记住我</label>
+            </div>
+            <div class="item1">
+                <input value="登 &nbsp; 录" type="submit" class="bn-submit" tabIndex="4">
+            </div>
+        </fieldset>
+    </form>
+    <div style="display:none;">
+        <img src="https://www.douban.com/pics/blank.gif"   onload="(function(url){document.getElementById('lzform').action=url;})('https://www.douban.com/accounts/login')"/>
+    </div>
+    
+</div>
+
+            <div class="reg">
+                
+                <strong>豆瓣</strong>
+                <div class="nb-info">
+                <b>820个城市</b>
+                <b>6801万居民</b>
+                <b>31万个兴趣小组</b>
+                <br/>
+                <em>103159个小站</em>
+                <em>22955个独立音乐人</em>
+                <em>3095个作者译者</em>
+                <em>2573家电影院</em>
+                </div>
+                <a href="/accounts/register" class="lnk-reg"><strong>加入我们</strong>注册</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="wrapper">
+        <div id="bd">
+            <div id="dale_anonymous_homepage_top_large"></div>
+            <h1>这里正在流行...</h1>
+            <div class="main">
+                
+    
+    <div class="guess-list">
+       
+
+
+
+
+    
+    
+<div class="section">
+  
+
+
+
+
+<div class="item-a">
+<a hidefocus href="http://www.douban.com/photos/album/68196533/" class="item" target="_blank" onclick="moreurl(this,{fromguess:'I_68196533-K_1026-T_U', row:0, index:0, random_key:'1360615275e84a6875'})">
+      
+
+
+<div class="pic">
+    <img height="160" width="161" alt="福禄帐" src="http://img3.douban.com/pics/blank.gif" data-src="http://img3.douban.com/view/photo/photo/public/p1501992977.jpg">
+</div>
+
+<div class="title">
+    <h3>福禄帐</h3>
+<div class="source">
+        toystory 的相册
+</div>
+</div>
+  <div class="desc"></div>
+</a>
+
+
+
+
+<div class="fav-btn">
+    <a class="a-show-login" data-tkind="1026" data-tid="68196533" href="http://www.douban.com/photos/album/68196533/" >320 <i>&hearts;</i></a>
+</div>
+</div>
+
+  
+
+
+
+
+<div class="item-a">
+<a hidefocus href="http://www.douban.com/photos/album/85921450/" class="item" target="_blank" onclick="moreurl(this,{fromguess:'I_85921450-K_1026-T_U', row:0, index:1, random_key:'1360615275e84a6875'})">
+      
+
+
+<div class="pic">
+    <img height="160" width="152" alt="13—18世纪各国传统织物纹饰" src="http://img3.douban.com/pics/blank.gif" data-src="http://img3.douban.com/view/photo/photo/public/p1864379090.jpg">
+</div>
+
+<div class="title">
+    <h3>13—18世纪各国传统织物纹饰</h3>
+<div class="source">
+        话痨镇顶级文盲 的相册
+</div>
+</div>
+  <div class="desc"></div>
+</a>
+
+
+
+
+<div class="fav-btn">
+    <a class="a-show-login" data-tkind="1026" data-tid="85921450" href="http://www.douban.com/photos/album/85921450/" >596 <i>&hearts;</i></a>
+</div>
+</div>
+
+  
+
+
+
+
+<div class="item-a">
+<a hidefocus href="http://www.douban.com/photos/album/41038178/" class="item" target="_blank" onclick="moreurl(this,{fromguess:'I_41038178-K_1026-T_U', row:0, index:2, random_key:'1360615275e84a6875'})">
+      
+
+
+<div class="pic">
+    <img height="160" width="106" alt="DIY 美好杂货（含步骤）" src="http://img3.douban.com/pics/blank.gif" data-src="http://img3.douban.com/view/photo/photo/public/p1839493887.jpg">
+</div>
+
+<div class="title">
+    <h3>DIY 美好杂货（含步骤）</h3>
+<div class="source">
+        我爱搜罗 的相册
+</div>
+</div>
+  <div class="desc"></div>
+</a>
+
+
+
+
+<div class="fav-btn">
+    <a class="a-show-login" data-tkind="1026" data-tid="41038178" href="http://www.douban.com/photos/album/41038178/" >13106 <i>&hearts;</i></a>
+</div>
+</div>
+
+</div>
+
+<script>
+Do(function(){
+    $('.guess-list img').each(function(){
+        this.src = this.getAttribute('data-src');
+    });
+});
+</script>
+
+    </div>
+
+            </div>
+
+            <div class="side">
+                
+    <div id="db-sidesrh" class="mod">
+    <form action="http://www.douban.com/search" method="get">
+      <span class="inp"><input type="text" id="q" maxlength="60" size="12" title="书籍、电影、音乐、小组、小站、成员" name="q" autocomplete="off"></span>
+    <span><input type="submit" value="搜索" class="bn-srh"></span>
+    </form>
+    </div>
+
+    
+
+    <!-- douban ad begin -->
+    
+    <div id="dale_anonymous_home_page_top_middle"></div>
+    <!-- douban ad end -->
+
+    <!-- douban tribe begin -->
+    <!-- douban tribe end -->
+
+
+
+                
+<div class="mod" id="db-online-events">
+    <div class="hd">
+        
+    <h2>
+        线上活动
+            &nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;
+            <span class="pl">&nbsp;(
+                    <a href="http://www.douban.com/online/?g=d">更多</a>
+                ) </span>
+    </h2>
+
+    </div>
+    <div class="bd">
+        
+        
+        
+<ul class="clearbox">
+        <li class="block clearfix">
+            <div class="title">
+                <a href="http://www.douban.com/online/11454257/">一部电影记住一句台词</a>
+            </div>
+            <div class="desc">
+                时间：1月17日 - 3月21日
+                <br><span class="num">3232人参加</span>
+            </div>
+        </li>
+        <li class="block clearfix">
+            <div class="title">
+                <a href="http://www.douban.com/online/11471129/">春节——《想家的人》说出你们想家的话</a>
+            </div>
+            <div class="desc">
+                时间：2月1日 - 3月3日
+                <br><span class="num">499人参加</span>
+            </div>
+        </li>
+        <li class="block clearfix">
+            <div class="title">
+                <a href="http://www.douban.com/online/11463780/">你敢做无刘海骚年吗！【第2啵~】</a>
+            </div>
+            <div class="desc">
+                时间：1月26日 - 4月10日
+                <br><span class="num">5133人参加</span>
+            </div>
+        </li>
+        <li class="block clearfix">
+            <div class="title">
+                <a href="http://www.douban.com/online/11471075/">快过年了，你的新年愿望是什么</a>
+            </div>
+            <div class="desc">
+                时间：2月1日 - 4月27日
+                <br><span class="num">3144人参加</span>
+            </div>
+        </li>
+        <li class="block clearfix">
+            <div class="title">
+                <a href="http://www.douban.com/online/11450733/">大家一起来翻包吧！哟吧扎黑</a>
+            </div>
+            <div class="desc">
+                时间：1月14日 - 2月28日
+                <br><span class="num">4049人参加</span>
+            </div>
+        </li>
+        <li class="block clearfix">
+            <div class="title">
+                <a href="http://www.douban.com/online/11470060/">对TA说 【过年跟我回家见爹妈！】</a>
+            </div>
+            <div class="desc">
+                时间：1月31日 - 3月2日
+                <br><span class="num">912人参加</span>
+            </div>
+        </li>
+        <li class="block clearfix">
+            <div class="title">
+                <a href="http://www.douban.com/online/11458796/">晒晒你的趣味借位照片</a>
+            </div>
+            <div class="desc">
+                时间：1月22日 - 2月21日
+                <br><span class="num">2840人参加</span>
+            </div>
+        </li>
+        <li class="block clearfix">
+            <div class="title">
+                <a href="http://www.douban.com/online/11471318/">春节到，亚航帮你寄明信片！</a>
+            </div>
+            <div class="desc">
+                时间：2月1日 - 2月24日
+                <br><span class="num">1578人参加</span>
+            </div>
+        </li>
+        <li class="block clearfix">
+          <div id="dale_homepage_online_activity_promo_1"></div>
+        </li>
+        <li class="block clearfix">
+          <div id="dale_homepage_online_activity_promo_2"></div>
+        </li>
+</ul>
+
+        
+    </div>
+</div>
+
+
+                <div class="mod">
+                    
+
+<div id="db-sites">
+    <div class="hd">
+        
+    <h2>
+        发现小组
+            &nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;
+            <span class="pl">&nbsp;(
+                    <a href="http://www.douban.com/group/explore">更多</a>
+                ) </span>
+    </h2>
+
+    </div>
+    <div class="bd">
+        <div class="content">
+            
+        <div class="item">
+            <div class="pic">
+                <a href="http://www.douban.com/group/26124/">
+                    <img src="http://img3.douban.com/icon/g26124-1.jpg" alt="中文配音" width="48" height="48" />
+                </a>
+            </div>
+            <div class="info">
+                <h3><a href="http://www.douban.com/group/26124/">中文配音</a></h3>
+                2492成员
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <a href="http://www.douban.com/group/283146/">
+                    <img src="http://img3.douban.com/icon/g283146-1.jpg" alt="日本生活" width="48" height="48" />
+                </a>
+            </div>
+            <div class="info">
+                <h3><a href="http://www.douban.com/group/283146/">日本生活</a></h3>
+                9379成员
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <a href="http://www.douban.com/group/biketouring/">
+                    <img src="http://img3.douban.com/icon/g338653-2.jpg" alt="单车征途。" width="48" height="48" />
+                </a>
+            </div>
+            <div class="info">
+                <h3><a href="http://www.douban.com/group/biketouring/">单车征途。</a></h3>
+                8827成员
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <a href="http://www.douban.com/group/191708/">
+                    <img src="http://img3.douban.com/icon/g191708-2.jpg" alt="重庆好吃狗2.0" width="48" height="48" />
+                </a>
+            </div>
+            <div class="info">
+                <h3><a href="http://www.douban.com/group/191708/">重庆好吃狗2.0</a></h3>
+                8885成员
+            </div>
+        </div>
+
+        </div>
+    </div>
+</div>
+
+                </div>
+
+                <!-- douban app begin -->
+                
+
+
+
+
+
+<div class="mobile-app-entrance block5 app-main">
+
+    <a class="entrance-link first-link" href="http://www.douban.com/mobile/">
+        <span class="app-icon icon-main"></span>
+        <span class="main-title">豆瓣移动应用</span>
+        <span class="sub-title">点击下载</span>
+    </a>
+</div>
+
+                <!-- douban app end -->
+
+            </div>
+        </div>
+
+        <div id="ft">
+            
+            
+
+<span id="icp" class="fleft gray-link">
+    &copy; 2005－2013 douban.com, all rights reserved
+  <br />
+  <a href="http://www.miibeian.gov.cn/">京ICP证090015号</a>&nbsp;&nbsp;京ICP备11027288号&nbsp;&nbsp;网络视听许可证<a href="http://www.douban.com/about?topic=licence" target="_blank">0110418</a>号&nbsp;&nbsp;文网文[2009]267号&nbsp;<img src="http://img3.douban.com/pics/biaoshi.gif" align="absmiddle" /><br> 京公网安备110105000728&nbsp;&nbsp;新出网证(京)字129号
+</span>
+
+<span class="fright">
+    <a href="http://www.douban.com/about">关于豆瓣</a>
+    · <a href="http://www.douban.com/jobs">在豆瓣工作</a>
+    · <a href="http://www.douban.com/about?topic=contactus">联系我们</a>
+    · <a href="http://www.douban.com/about?policy=disclaimer">免责声明</a>
+    
+    · <a href="http://www.douban.com/help/">帮助中心</a>
+    · <a href="http://developers.douban.com/" target="_blank">开发者</a>
+    · <a href="http://www.douban.com/mobile/">移动应用</a>
+    · <a href="http://www.douban.com/partner/">豆瓣广告</a>
+</span>
+
+
+        </div>
+    </div>
+    
+    <script src="http://img3.douban.com/js/core/do/packed__init_7701316160.js" data-cfg-corelib="http://img3.douban.com/js/packed_jquery.min6301986802.js"></script>
+    <script type="text/javascript">
+    var email_id='form_email';
+var pwd_id='form_password';
+Do(function(){var a=$("#"+email_id);var b="邮箱/手机号";a.focus(function(){var c=$(this);if(c.val()===b){c.val("").css("color","#000")}}).blur(function(){var c=$(this);if(!c.val()){c.val(b).css("color","#ccc")}});if(a.val()&&a.val()!=b){$("#"+pwd_id).focus()}else{a.css("color","#ccc")}});
+    
+    Do(function(){
+     $('#db-sidesrh form').prettyField(function(i, sel, frm){
+     });
+   });
+   
+    Do.ready(function(){
+        Do.preload(['http://img3.douban.com/js/separation/packed__all295341955.js','http://img3.douban.com/js/packed_douban2310601091.js']);
+        $('.guess-list', '#bd').find(".item").hover(function(){$(this).addClass("mover")},function(){$(this).removeClass("mover")})
+    });
+    </script>
+    
+    <!-- douban ad begin -->
+    
+
+
+
+
+<script type="text/javascript">
+    (function (global) {
+        var newNode = global.document.createElement('script'),
+            existingNode = global.document.getElementsByTagName('script')[0],
+            adSource = 'http://erebor.douban.com/',
+            userId = '',
+            browserId = 'J9/QTsz4ALc',
+            ipAddress = '128.238.252.251',
+            criteria = '3:/',
+            preview = '',
+            debug = false,
+            adSlots = ['dale_anonymous_homepage_top_large', 'dale_anonymous_home_page_top_middle', 'dale_anonymous_home_page_left_middle', 'dale_explore_home_right_bottom', 'dale_homepage_online_activity_promo_1', 'dale_homepage_online_activity_promo_2'];
+
+        global.DoubanAdRequest = {src: adSource, uid: userId, bid: browserId, ip: ipAddress, crtr: criteria, prv: preview, debug: debug};
+        global.DoubanAdSlots = (global.DoubanAdSlots || []).concat(adSlots);
+
+        newNode.setAttribute('type', 'text/javascript');
+        newNode.setAttribute('src', 'http://img3.douban.com/js/packed_ad3738113870.js');
+        newNode.setAttribute('async', true);
+        existingNode.parentNode.insertBefore(newNode, existingNode);
+    })(this);
+</script>
+
+
+
+
+    <!-- douban ad end -->
+
+<script>var _check_hijack = function () {
+            var _sig = "J9/QTsz4", _login = false, bid = get_cookie('bid');
+            if (location.protocol != "file:" && (typeof(bid) != "string" && _login || typeof(bid) == "string" && bid.substring(0,8) != _sig)) {
+                location.href+=(/\?/.test(location.href)?"&":"?") + "_r=" + Math.random().toString(16).substring(2);
+            }};
+            if (typeof(Do) != 'undefined') Do(_check_hijack);
+            else if (typeof(get_cookie) != 'undefined') _check_hijack();
+            </script></body>
+</html>
+
+
+
+
+
+
+
+

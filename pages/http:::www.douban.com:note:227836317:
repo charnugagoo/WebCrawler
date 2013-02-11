@@ -1,0 +1,933 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="ua-mac ua-webkit">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <title>
+    练习、检索、表达——写给R的初学者
+</title>
+    
+
+    
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="Sun, 6 Mar 2005 01:00:00 GMT">
+    
+    <script >var _head_start = new Date();</script>
+    <script src="http://img3.douban.com/js/packed_jquery.min6301986802.js"></script>
+    <script src="http://img3.douban.com/js/packed_douban2310601091.js"></script>
+    <link href="http://img3.douban.com/css/packed_douban7781657537.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+    
+        a:link { color: #259; }
+        a:visited { color: #769; }
+        a:hover { color: #fff; }
+        a:active { color: #fff; }
+        
+    .ui-tooltip { width: 270px }
+    .note-header h1 { margin:00;padding:0; font: 14px Arial, Helvetica, sans-serif; line-height: 150%; color: #060;  }
+    .note img { max-width:590px; }
+    .tabs{font-size:0;letter-spacing:-0.31em;*letter-spacing:normal;word-spacing:-0.43em}.tabs a{display:inline-block;*display:inline;zoom:1;padding:1px 8px;margin-right:5px}.tabs a:active,.tabs a:hover,.tabs a:link,.tabs a:visited{font-size:12px;line-height:1.2;letter-spacing:normal;word-spacing:normal}.tabs a:active,.tabs a:hover{-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}.tabs a.on:active,.tabs a.on:hover,.tabs a.on:link,.tabs a.on:visited{color:#fff;background:#83bf73;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}.tabs{margin:40px 0 10px;padding-bottom:8px;border-bottom:1px solid #e6e6e6}.list,.list .content{overflow:hidden;zoom:1}.list .pic{float:left;margin-right:12px}.list p{margin:8px 0 0 0;background:#f9f9f9;padding:8px}.list .pubtime{position:absolute;top:10px;right:0;color:#999}.list .pic img{width:24px;height:24px}.list ul{margin-top:-15px}.list li{position:relative;padding-top:10px;margin-top:10px;border-top:1px dashed #e6e6e6;overflow:hidden;color:#666}.topic-fav-list .content{margin-top:4px;width:70%}.topic-fav-list .pubtime{top:14px}.topic-rec-list .pubtime a:link,.topic-rec-list .pubtime a:visited{color:#666}.topic-rec-list .pubtime a:active,.topic-rec-list .pubtime a:hover{color:#fff}.topic-rec-list p{padding:0}.topic-rec-list p a{display:block;background:#f9f9f9;padding:8px}.topic-rec-list p a:link,.topic-rec-list p a:visited{color:#666}.topic-rec-list p a:active,.topic-rec-list p a:hover{background-color:#f6f6f6;color:#666}
+
+    </style>
+    
+    <meta http-equiv="mobile-agent" content="format=xhtml; url=http://m.douban.com/note/227836317/">
+    <link type="text/css" href="http://img3.douban.com/css/lib/packed_jquery.ui.tooltip8686620263.css" rel="stylesheet"/>
+    <script type="text/javascript" src="http://img3.douban.com/js/lib/packed_jquery.ui.min3996326299.js"></script>
+    <script type="text/javascript" src="http://img3.douban.com/js/lib/packed_jquery.ui.tooltip8906748537.js"></script>
+
+    <link rel="stylesheet" href="http://img3.douban.com/misc/mixed_static/7f0a3355f6d6b015.css">
+    <script></script>
+
+    <link rel="shortcut icon" href="http://img3.douban.com/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  
+    <script type="text/javascript">var _body_start = new Date();</script>
+    
+   
+
+
+
+
+
+
+
+<div id="db-global-nav" class="global-nav global-nav-a">
+  <div class="bd">
+    
+
+
+
+
+
+
+<div class="top-nav-info">
+    
+    <a href="http://www.douban.com/accounts/login" rel="nofollow">登录</a>
+    <a href="http://www.douban.com/accounts/register">注册</a>
+</div>
+
+
+
+    <div class="global-nav-items">
+      <ul>
+          
+            
+            <li class="on">
+              <a href="http://www.douban.com/">豆瓣</a>
+            </li>
+          
+            
+            <li>
+              <a href="http://book.douban.com/">读书</a>
+            </li>
+          
+            
+            <li>
+              <a href="http://movie.douban.com/">电影</a>
+            </li>
+          
+            
+            <li>
+              <a href="http://music.douban.com/">音乐</a>
+            </li>
+          
+            
+            <li>
+              <a href="http://www.douban.com/location/">同城</a>
+            </li>
+          
+            
+            <li>
+              <a href="http://www.douban.com/group/">小组</a>
+            </li>
+          
+            
+            <li>
+              <a href="http://read.douban.com/?dcs=top-nav&amp;dcm=douban" target="_blank">阅读</a>
+            </li>
+          
+            
+            <li>
+              <a href="http://douban.fm/" target="_blank">豆瓣FM</a>
+            </li>
+          
+            <li>
+              <a href="#more" class="bn-more"><span>更多</span></a>
+              <div class="more-items">
+                <table cellpadding="0" cellspacing="0">
+                    
+                    <tr><td><a href="http://9.douban.com" target="_blank">九点</a></td></tr>
+                    
+                    <tr><td><a href="http://alphatown.com" target="_blank">阿尔法城</a></td></tr>
+                    
+                    <tr><td><a href="http://www.douban.com/mobile/" target="_blank">移动应用</a></td></tr>
+                </table>
+              </div>
+            </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+   
+    
+
+
+
+
+
+
+
+<div id="db-nav-sns" class="nav">
+  <div class="nav-wrap">
+  <div class="nav-primary">
+
+    <div class="nav-search">
+      <form action="http://www.douban.com/search" method="get">
+        <fieldset>
+          <legend>搜索：</legend>
+          <label for="inp-query">书籍、电影、音乐、小组、小站、成员</label>
+          <div class="inp"><input id="inp-query" name="q" size="22" title="搜索书、电影、音乐、小组、小站、成员" maxlength="60" value=""></div>
+          <div class="inp-btn"><input type="submit" value="搜索"></div>
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="nav-logo">
+      <a href="http://www.douban.com">豆瓣社区</a>
+    </div>
+
+    <div class="nav-items">
+     <ul>
+      <li><a href="http://www.douban.com/">首页</a></li>
+          <li><a href="http://www.douban.com/group/explore">发现小组</a></li>
+          <li><a href="http://www.douban.com/explore/site/">发现小站</a></li>
+          <li><a href="http://www.douban.com/online/">线上活动</a></li>
+     </ul>
+     </div>
+
+  </div>
+  </div>
+</div>
+
+
+
+
+
+    
+    <div id="wrapper">
+        
+
+        
+    <div id="content">
+        
+
+    <div class="grid-16-8 clearfix">
+        
+        
+        <div class="article">
+	  
+        
+    
+
+<div id="db-usr-profile">
+<div class="pic">
+        <a href="http://www.douban.com/people/frankwang/">
+            <img src="http://img3.douban.com/icon/u1558440-39.jpg" alt="黠之大者"/>
+        </a>
+</div>
+<div class="info">
+        <h1>黠之大者的日记</h1>
+        
+    <ul>
+            <li><a href="http://www.douban.com/people/frankwang/">黠之大者的主页</a></li>
+            <li><a href="http://www.douban.com/people/frankwang/statuses">广播</a></li>
+            <li><a href="http://www.douban.com/people/frankwang/photos">相册</a></li>
+            <li><a href="http://www.douban.com/people/frankwang/likes">喜欢</a></li>
+            <li><a href="http://www.douban.com/people/frankwang/deals/">二手</a></li>
+            <li><a href="http://www.douban.com/people/frankwang/event">活动</a></li>
+            <li><a href="http://www.douban.com/accounts/register?reason=send-doumail">发豆邮</a></li>
+    </ul>
+
+</div>
+</div>
+    <div class="clear"></div>
+
+    
+    
+
+    <div id="note-227836317">
+
+    
+    
+        <div class="note-header">
+        <h1>练习、检索、表达——写给R的初学者</h1>
+
+    
+    <div>
+        <span class="pl">2012-07-27 17:47:20</span>
+    </div>
+    </div>
+    <div class="clear"></div>
+
+
+    <div class="note" id="note_227836317_short" style="display:none;"></div><div id="note_227836317_full" ><div class="note" id="link-report"><div class="cc"><table><tr><td><img src="http://img3.douban.com/view/note/large/public/p227836317-1.jpg" alt=""/></td></tr><tr><td align='center' class="wr pl"></td></tr></table></div><br><br><br>1. 我觉得学R上手很重要，第一关是学会读入和写出数据（主要以csv格式，或者txt格式，r一开始就是文本为王）<br>2. 每天都接触点r,写写博客。推荐rblogger这个博客，它汇集了主要的r使用者的博客。鲜活灵动。<br>3. 既然使用r了，那么google就是你最好的朋友！用英文检索。<br>4. 既然用r了，github不要错过。上传你的代码。便于保存和分享。r的精神是开放，开源。<br>5. 很多时候，最大的问题是你不知道自己面临的问题：我的经验是用英文一句话说出你的问题。然后借助搜索引擎。你一般都能找到答案。r的email list和stackoverflow中有很多想要的答案。<br>6. 实在找不到解决方案，不要过多寄希望于身边的朋友，stackoverflow上有更合适的回答你问题的人！去那里提问。<br>7. 熟悉一个package或library。看其package的index。<br><br>给一个我以前总结的list，很不完备，欢迎补充。<br><br>*R Community<br><a rel="nofollow" href="http://google-styleguide.googlecode.com/svn/trunk/google-r-style.html" target="_blank">http://google-styleguide.googlecode.com/svn/trunk/google-r-style.html</a><br>&nbsp;Google's R Style Guide<br><br><a rel="nofollow" href="http://cran.r-project.org/doc/manuals/R-lang.html" target="_blank">http://cran.r-project.org/doc/manuals/R-lang.html</a>  R Language Definition Manual<br><br><a rel="nofollow" href="http://127.0.0.1:24873/library/base/html/00Index.html" target="_blank">http://127.0.0.1:24873/library/base/html/00Index.html</a> R Base Package<br><br><a rel="nofollow" href="http://www.personality-project.org/r/r.commands.html" target="_blank">http://www.personality-project.org/r/r.commands.html</a> A short list of R commands<br><br><a rel="nofollow" href="https://sites.google.com/site/daishizuka/toolkits/" target="_blank">https://sites.google.com/site/daishizuka/toolkits/</a> Basic igraph and statnet<br><br><a rel="nofollow" href="http://nsaunders.wordpress.com/" target="_blank">http://nsaunders.wordpress.com/</a> NEIL F.W. SAUNDERS: what u r doing is<br>rather desperate?<br><br><a rel="nofollow" href="http://evolvingspaces.blogspot.com/" target="_blank">http://evolvingspaces.blogspot.com/</a> Agent-based models using R<br><br><a rel="nofollow" href="http://www.drewconway.com/zia/" target="_blank">http://www.drewconway.com/zia/</a> Drew Conway：R &amp; Python<br><a rel="nofollow" href="http://yihui.name/en/" target="_blank">http://yihui.name/en/</a> Xie Yihui<br><a rel="nofollow" href="http://www.r-statistics.com/" target="_blank">http://www.r-statistics.com/</a><br><a rel="nofollow" href="http://www.r-bloggers.com/" target="_blank">http://www.r-bloggers.com/</a><br><br><a rel="nofollow" href="http://sna.stanford.edu/rlabs.php" target="_blank">http://sna.stanford.edu/rlabs.php</a> Stanford Rlab for SNA<br><br><a rel="nofollow" href="http://www.michaelbommarito.com/blog/" target="_blank">http://www.michaelbommarito.com/blog/</a> Michael J Bommarito：python and R<br><br><a rel="nofollow" href="http://staff.washington.edu/lorenc2/" target="_blank">http://staff.washington.edu/lorenc2/</a>  RTextTools</div></div>
+
+    <br> 
+
+        
+    
+    
+    <div id="sep"></div>
+    <div id="note_227836317_footer" class="note-ft" >
+
+        <div class="note_upper_footer">
+
+
+
+
+            <span class="gtleft">
+            </span>
+        </div>
+
+
+        <div class="sns-bar">
+
+            
+
+
+
+            
+            <div class="sns-bar-rec">
+                    
+                    
+    
+    <span class="rec" id="Note-227836317">
+        <a href= "#" data-url="http://www.douban.com/note/227836317/" data-desc="" data-title="【练习、检索、表达——写给R的初学者】   1. 我觉得学R上手很重要，第一关是学会读入和写出数据（主要以csv格式，或者txt格式，r一开始就是文本为王） 2. 每天都接触点r,写写博客。推荐rblogger这个博客，它汇集了主要的r使用者的博客。鲜活灵..." data-pic="http://img3.douban.com/view/note/large/public/p227836317-1.jpg" class="bn-sharing ">分享到</a> &nbsp;&nbsp;
+    </span>
+    <script>
+    var cache_url = cache_url || {};
+    (function(u){ if(cache_url[u]){ return; } cache_url[u] = true; Do(function(){$.getScript(u);}); })('http://img3.douban.com/js/lib/packed_sharebutton1775626802.js');
+    </script>
+
+                    
+                    
+
+
+
+
+
+
+
+<div class="rec-sec">
+
+    <span class="rec">
+
+<a href="https://www.douban.com/accounts/register?reason=collect" class="j a_show_login lnk-sharing lnk-douban-sharing">推荐</a>
+</span>
+<span class="rec-num">24人</span>
+</div>
+
+            </div>
+
+            <div class="sns-bar-fav">
+                
+
+
+
+
+        <span class="fav-num" data-tid="227836317" data-tkind="1015">
+                    <a href="http://www.douban.com/note/227836317/?type=like#sep">73人</a>
+            喜欢
+        </span>
+            <a class="fav-add btn-fav j a_show_login" title="标为喜欢？" href="http://www.douban.com/accounts/register?reason=like" data-tid="227836317" data-tkind="1015">喜欢</a>
+
+        <script>
+        (typeof Do === 'function' ? Do : $).call(null, function(){
+                if (typeof hasInitFavBtn !== 'undefined') {
+                    return;
+                }
+                var fav_type = 'fav_note'; 
+                var fav_url = 'http://www.douban.com/note/227836317/?type=like#sep'; 
+                hasInitFavBtn = 1;
+
+                
+var api_userlist = 'http://www.douban.com/j/like',
+$win = $(window),
+updateFavNum = function(node, n) {
+  var p = node.parent(), favNum = p.find('.fav-num'), num;
+
+  if (favNum.length === 0) {
+  // 日记的情况
+    favNum = p.find('.fav-num-note');
+  }
+
+  $('#fav-userlist').hide();
+  if (favNum.length === 0) {
+    favNum = $(['<span class="fav-num" data-tkind="', node.data('tkind'),'" data-tid="', node.data('tid'),'"><a href="' + fav_url + '">0人</a>喜欢</span>'].join(''));
+    p.prepend(favNum);
+  }
+
+  num = parseInt(favNum.find('a').text(),10) + n;
+  if (num === 0) {
+    favNum.remove();
+    return;
+  }
+  favNum.find('a').text(num + '人');
+},
+renderUserList = function(node, da) {
+  if (!$.isArray(da)) {
+    $('#fav-userlist').hide();
+    return;
+  }
+
+  var i = 0, o, pos, h, htmlstr = ['<ul>'];
+  if (da.length > 0){
+      for (; o = da[i++]; ) {
+        htmlstr.push([
+         '<li>',
+         '<a href="http://www.douban.com/people/', o.uid, '" target="_blank" class="pic"><img src="', o.icon_avatar,'" width="24" height="24"></a>',
+         '<a href="http://www.douban.com/people/', o.uid, '" target="_blank">', o.screen_name,'</a>',
+         '</li>'
+        ].join(''));
+      }
+      htmlstr.push('</ul>');
+  } else {
+      htmlstr = ['<span>啊哦…喜欢这个的人都不愿意露脸</span>'];
+  }
+
+
+  node.removeClass('arrow-bottom').find('.bd').css({
+    height: i > 9 ? 220 : 'auto',
+    overflow: i > 9 ? 'auto' : 'hidden'
+  }).html(htmlstr.join(''));
+
+  pos = node.offset();
+  h = node.height();
+
+  if (pos.top - $win.scrollTop() + h > $win.height() - 40) {
+    node.addClass('arrow-bottom').css('top', pos.top - h - 55);
+  }
+};
+
+$('html').bind('click', function(e) {
+  var list = $('#fav-userlist');
+  if (list.length === 0 ||
+      list.css('display') === 'none' ||
+      e.target.tagName === 'A') {
+    return;
+  }
+  if (!$.contains(list[0], e.target)) {
+    list.hide();
+  }
+});
+
+$('html').delegate('.fav-num a', 'click', function(e) {
+  if (fav_type !== 'default') {
+    return;
+  }
+  e.preventDefault();
+  var el = $(e.currentTarget),
+  pos = el.offset(),
+  params = el.parent().data(),
+  dataId = [params.tkind, params.tid].join(''),
+  fav_user_list = $('#fav-userlist');
+
+  if (fav_user_list.length === 0) {
+    fav_user_list = $([
+    '<div id="fav-userlist" class="fav-userlist">',
+    '<div class="hd"><a href="" class="btn-close">X</a></div>',
+    '<div class="bd">',
+    '</div><i class="arrow"></i>',
+    '</div>'
+    ].join('')).appendTo('body');
+    fav_user_list.find('.btn-close').click(function(e){
+      e.preventDefault();
+      fav_user_list.hide();
+    });
+  }
+
+  fav_user_list.removeClass('arrow-bottom').
+      find('.bd').
+      css('height', 'auto').
+      html('加载中...');
+
+  fav_user_list.css({
+    top: pos.top + 22,
+    'margin-left': (function(con){
+      return -1 * Math.floor(con.width()/2 - pos.left + con.offset().left) -10;
+    })($('#content'))
+  }).show();
+
+  $.get(api_userlist,
+  {
+      tkind: params.tkind,
+      tid: params.tid,
+      alt: 'xd'
+  },
+  function(e){
+    renderUserList(fav_user_list, e);
+  }, 'jsonp');
+});
+
+            });
+        </script>
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    </div>
+    <div class="clear" ></div>
+    
+    <div class="tabs" id='reviews'>
+      <a href="http://www.douban.com/note/227836317/#sep" class=on>回应</a>
+      <a href="http://www.douban.com/note/227836317/?type=rec#sep" >推荐</a>
+      <a href="http://www.douban.com/note/227836317/?type=like#sep" >喜欢</a>
+    </div>
+    
+        
+
+
+
+
+
+
+
+
+
+
+<div id="comments">
+
+
+
+
+
+    
+
+<div class="comment-item" id=29337014 data-cid="29337014" data-target_id="227836317" data-target_kind="1015">
+    <div class="pic">
+        <a href="http://www.douban.com/people/24309161/"><img src="http://img3.douban.com/icon/u24309161-2.jpg" alt="charnugagoo"/></a>
+    </div>
+    <div class="content report-comment">
+        <div class="author">
+          2012-07-27 20:11:05 
+          <a href="http://www.douban.com/people/24309161/">charnugagoo</a> 
+        </div>
+
+
+        
+        <p>请问学cs的，像入门r，能推荐一本书或者在线教程么，谢谢</p>
+
+        <div class="op-lnks">
+        </div>
+
+        <div class="group_banned">
+            <span class="gact hidden p_u24309161 p_admin p_intern fright">&gt;
+                <a rel="nofollow" href="http://www.douban.com/note/227836317/remove_comment?cid=29337014" class="j a_confirm_link" title="删除charnugagoo的发言?">删除</a>
+            </span>
+        </div>
+    </div>
+</div>
+
+    
+
+<div class="comment-item" id=29338878 data-cid="29338878" data-target_id="227836317" data-target_kind="1015">
+    <div class="pic">
+        <a href="http://www.douban.com/people/frankwang/"><img src="http://img3.douban.com/icon/u1558440-39.jpg" alt="黠之大者"/></a>
+    </div>
+    <div class="content report-comment">
+        <div class="author">
+          2012-07-27 22:02:04 
+          <a href="http://www.douban.com/people/frankwang/">黠之大者</a>  (I am serious with python)
+        </div>
+
+            
+                
+                <div class="reply-quote">
+                <span class="short">请问学cs的，像入门r，能推荐一本书或者在线教程么，谢谢</span>
+                <span class="all">请问学cs的，像入门r，能推荐一本书或者在线教程么，谢谢</span>
+                <a href="#" class="toggle-reply">
+                </a><span class="pubdate"><a href="http://www.douban.com/people/24309161/">charnugagoo</a></span></div>
+
+        
+        <p>试试这本 A Beginner's Guide to R <a href="http://www.douban.com/link2?url=http%3A//book.douban.com/subject/4149600/">http://book.douban.c<wbr/>om/subject/4149600/</a><br/><br/></p>
+
+        <div class="op-lnks">
+        </div>
+
+        <div class="group_banned">
+            <span class="gact hidden p_u1558440 p_admin p_intern fright">&gt;
+                <a rel="nofollow" href="http://www.douban.com/note/227836317/remove_comment?cid=29338878" class="j a_confirm_link" title="删除黠之大者的发言?">删除</a>
+            </span>
+        </div>
+    </div>
+</div>
+
+    
+
+<div class="comment-item" id=29354585 data-cid="29354585" data-target_id="227836317" data-target_kind="1015">
+    <div class="pic">
+        <a href="http://www.douban.com/people/24309161/"><img src="http://img3.douban.com/icon/u24309161-2.jpg" alt="charnugagoo"/></a>
+    </div>
+    <div class="content report-comment">
+        <div class="author">
+          2012-07-29 04:09:06 
+          <a href="http://www.douban.com/people/24309161/">charnugagoo</a> 
+        </div>
+
+
+        
+        <p>谢谢</p>
+
+        <div class="op-lnks">
+        </div>
+
+        <div class="group_banned">
+            <span class="gact hidden p_u24309161 p_admin p_intern fright">&gt;
+                <a rel="nofollow" href="http://www.douban.com/note/227836317/remove_comment?cid=29354585" class="j a_confirm_link" title="删除charnugagoo的发言?">删除</a>
+            </span>
+        </div>
+    </div>
+</div>
+
+    
+
+<div class="comment-item" id=29662838 data-cid="29662838" data-target_id="227836317" data-target_kind="1015">
+    <div class="pic">
+        <a href="http://www.douban.com/people/little_mushroom/"><img src="http://img3.douban.com/icon/u52080931-4.jpg" alt="littlemushroom"/></a>
+    </div>
+    <div class="content report-comment">
+        <div class="author">
+          2012-08-16 02:24:49 
+          <a href="http://www.douban.com/people/little_mushroom/">littlemushroom</a> 
+        </div>
+
+            
+                
+                <div class="reply-quote">
+                <span class="short">谢谢</span>
+                <span class="all">谢谢</span>
+                <a href="#" class="toggle-reply">
+                </a><span class="pubdate"><a href="http://www.douban.com/people/24309161/">charnugagoo</a></span></div>
+
+        
+        <p>我有这本书的电子版，想要的话，留下email吧</p>
+
+        <div class="op-lnks">
+        </div>
+
+        <div class="group_banned">
+            <span class="gact hidden p_u52080931 p_admin p_intern fright">&gt;
+                <a rel="nofollow" href="http://www.douban.com/note/227836317/remove_comment?cid=29662838" class="j a_confirm_link" title="删除littlemushroom的发言?">删除</a>
+            </span>
+        </div>
+    </div>
+</div>
+
+    
+
+<div class="comment-item" id=30742307 data-cid="30742307" data-target_id="227836317" data-target_kind="1015">
+    <div class="pic">
+        <a href="http://www.douban.com/people/44670737/"><img src="http://img3.douban.com/icon/u44670737-19.jpg" alt="小怪兽戈斯拉"/></a>
+    </div>
+    <div class="content report-comment">
+        <div class="author">
+          2012-10-21 19:23:09 
+          <a href="http://www.douban.com/people/44670737/">小怪兽戈斯拉</a>  (好女不过百)
+        </div>
+
+
+        
+        <p>求书！！！<br/>179735730@qq.com<br/>谢了Ls</p>
+
+        <div class="op-lnks">
+        </div>
+
+        <div class="group_banned">
+            <span class="gact hidden p_u44670737 p_admin p_intern fright">&gt;
+                <a rel="nofollow" href="http://www.douban.com/note/227836317/remove_comment?cid=30742307" class="j a_confirm_link" title="删除小怪兽戈斯拉的发言?">删除</a>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div id="last"></div>
+    
+
+
+
+
+
+
+
+
+
+
+
+    <br/><span class="pl2" align="right"><a class="j a_show_login" href="https://www.douban.com/accounts/register?reason=comment">&gt; 我来回应</a></span>
+
+
+ 
+
+ 
+
+    
+    
+    
+
+
+
+
+
+
+
+</div>
+
+
+<script>
+Do(function(){
+  $('#comments').find('.comment-item').hover(function(){$(this).addClass('over');}, function(){$(this).removeClass('over');});
+  $('.reply-quote .toggle-reply').click(function(e) {
+    e.preventDefault();
+    var el = $(this);
+    el.prevAll('span').toggle(); 
+    el.find('span').toggle();
+  });
+});
+</script>
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+	</div>
+        <div class="aside">
+            
+<div class="mod">
+    <p class="pl2">
+        &gt; <a href="http://www.douban.com/people/frankwang/notes">黠之大者的日记</a>
+    </p>
+</div>
+
+<div class="mod">
+    
+
+        
+
+
+
+
+
+
+
+    <div class="sim-groups">
+        
+    <h2>
+        黠之大者参加的小组
+            &nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;
+            <span class="pl">&nbsp;(
+                    <a href="http://www.douban.com/people/frankwang/groups">全部</a>
+                ) </span>
+    </h2>
+
+        <div class="mbt">
+                <li class="mbtr2">
+                <div class="pic">
+                    <a href="http://www.douban.com/group/webmining/?from=noteside" title="互联网挖掘实验室" class="show-title">
+                        <img src="http://img3.douban.com/icon/g313098-3.jpg" alt="" width="48" height="48" />
+                    </a>
+                </div>
+                <div class="info">
+                    <p>
+                    <a href="http://www.douban.com/group/webmining/?from=noteside" title="互联网挖掘实验室" class="show-title">
+                        互联网挖掘实验室
+                    </a>
+                    </p>
+                    <p>
+                    873 成员
+                    </p>
+                </div>
+                </li>
+                <li class="mbtr2">
+                <div class="pic">
+                    <a href="http://www.douban.com/group/384820/?from=noteside" title="你需要的生活经验" class="show-title">
+                        <img src="http://img3.douban.com/icon/g384820-1.jpg" alt="" width="48" height="48" />
+                    </a>
+                </div>
+                <div class="info">
+                    <p>
+                    <a href="http://www.douban.com/group/384820/?from=noteside" title="你需要的生活经验" class="show-title">
+                        你需要的生活经验
+                    </a>
+                    </p>
+                    <p>
+                    9 成员
+                    </p>
+                </div>
+                </li>
+                <li class="mbtr2">
+                <div class="pic">
+                    <a href="http://www.douban.com/group/DeHuanLiu/?from=noteside" title="刘德寰" class="show-title">
+                        <img src="http://img3.douban.com/icon/g179838-2.jpg" alt="" width="48" height="48" />
+                    </a>
+                </div>
+                <div class="info">
+                    <p>
+                    <a href="http://www.douban.com/group/DeHuanLiu/?from=noteside" title="刘德寰" class="show-title">
+                        刘德寰
+                    </a>
+                    </p>
+                    <p>
+                    318 成员
+                    </p>
+                </div>
+                </li>
+                <li class="mbtr2">
+                <div class="pic">
+                    <a href="http://www.douban.com/group/python/?from=noteside" title="Python编程" class="show-title">
+                        <img src="http://img3.douban.com/icon/g10003-1.jpg" alt="" width="48" height="48" />
+                    </a>
+                </div>
+                <div class="info">
+                    <p>
+                    <a href="http://www.douban.com/group/python/?from=noteside" title="Python编程" class="show-title">
+                        Python编程
+                    </a>
+                    </p>
+                    <p>
+                    26869 成员
+                    </p>
+                </div>
+                </li>
+        </div>
+    </div>
+
+
+
+        </div>
+        <div class="extra">
+            
+
+        </div>
+    </div>
+    </div>
+
+        
+    <div id="footer">
+        
+
+<span id="icp" class="fleft gray-link">
+    &copy; 2005－2013 douban.com, all rights reserved
+</span>
+
+<span class="fright">
+    <a href="http://www.douban.com/about">关于豆瓣</a>
+    · <a href="http://www.douban.com/jobs">在豆瓣工作</a>
+    · <a href="http://www.douban.com/about?topic=contactus">联系我们</a>
+    · <a href="http://www.douban.com/about?policy=disclaimer">免责声明</a>
+    
+    · <a href="http://www.douban.com/help/">帮助中心</a>
+    · <a href="http://developers.douban.com/" target="_blank">开发者</a>
+    · <a href="http://www.douban.com/mobile/">移动应用</a>
+    · <a href="http://www.douban.com/partner/">豆瓣广告</a>
+</span>
+
+
+    </div>
+
+    </div>
+    <script type="text/javascript" src="http://img3.douban.com/misc/mixed_static/d9e01b81ced4783.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            $('#note_tooltip').tooltip();
+        })
+    </script>
+
+    
+    
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-7019765-1']);
+_gaq.push(['_addOrganic', 'baidu', 'word']);
+_gaq.push(['_addOrganic', 'soso', 'w']);
+_gaq.push(['_addOrganic', '3721', 'name']);
+_gaq.push(['_addOrganic', 'youdao', 'q']);
+_gaq.push(['_addOrganic', 'so.360.cn', 'q']);
+_gaq.push(['_addOrganic', 'vnet', 'kw']);
+_gaq.push(['_addOrganic', 'sogou', 'query']);
+_gaq.push(['_addIgnoredOrganic', '豆瓣']);
+_gaq.push(['_addIgnoredOrganic', 'douban']);
+_gaq.push(['_addIgnoredOrganic', '豆瓣网']);
+_gaq.push(['_addIgnoredOrganic', 'www.douban.com']);
+_gaq.push(['_setDomainName', '.douban.com']);
+
+
+    _gaq.push(['_setCustomVar', 1, 'responsive_view_mode', 'desktop', 3]); 
+
+_gaq.push(['_trackPageview']);
+_gaq.push(['_trackPageLoadTime']);
+
+
+window._ga_init = function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+};
+if (window.addEventListener) {
+    window.addEventListener('load', _ga_init, false);
+} else {
+    window.attachEvent('onload', _ga_init);
+}
+</script>
+
+
+
+
+
+
+
+
+    <!-- gardner6-->
+
+<script>var _check_hijack = function () {
+            var _sig = "afxUo7gb", _login = false, bid = get_cookie('bid');
+            if (location.protocol != "file:" && (typeof(bid) != "string" && _login || typeof(bid) == "string" && bid.substring(0,8) != _sig)) {
+                location.href+=(/\?/.test(location.href)?"&":"?") + "_r=" + Math.random().toString(16).substring(2);
+            }};
+            if (typeof(Do) != 'undefined') Do(_check_hijack);
+            else if (typeof(get_cookie) != 'undefined') _check_hijack();
+            </script></body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,2598 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="ua-mac ua-webkit">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <title>
+豆瓣音乐
+</title>
+    
+
+    
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="Sun, 6 Mar 2005 01:00:00 GMT">
+    
+    
+    <meta name="description" content="记录你想听的、在听和听过的唱片，顺便打分、添加标签及个人附注、写评论。根据你的口味，豆瓣会推荐适合的唱片给你。" />
+
+    <script >var _head_start = new Date();</script>
+    <script src="http://img3.douban.com/js/packed_jquery.min6301986802.js"></script>
+    <script src="http://img3.douban.com/js/packed_douban2310601091.js"></script>
+    <link href="http://img3.douban.com/css/packed_douban7781657537.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+    
+        a:link { color: #259; }
+        a:visited { color: #769; }
+        a:hover { color: #fff; }
+        a:active { color: #fff; }
+        
+    </style>
+    
+<script>var Do=function(){Do.actions.push([].slice.call(arguments))};Do.ready=function(){Do.actions.push([].slice.call(arguments))};Do.add=Do.define=function(a,b){Do.mods[a]=b};Do.global=function(){Do.global.mods=Array.prototype.concat(Do.global.mods,[].slice.call(arguments))};Do.global.mods=[];Do.mods={};Do.actions=[];</script>
+<link href="http://img3.douban.com/css/music/packed_home9019820658.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="http://img3.douban.com/misc/mixed_static/25c733af33bff4f9.css">
+    <script></script>
+
+    <link rel="shortcut icon" href="http://img3.douban.com/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  
+    <script type="text/javascript">var _body_start = new Date();</script>
+    
+   
+
+
+
+
+
+
+
+<div id="db-global-nav" class="global-nav global-nav-a">
+  <div class="bd">
+    
+
+
+
+
+
+
+<div class="top-nav-info">
+    
+    <a href="http://www.douban.com/accounts/login" rel="nofollow">登录</a>
+    <a href="http://www.douban.com/accounts/register">注册</a>
+</div>
+
+
+
+    <div class="global-nav-items">
+      <ul>
+          
+            
+            <li>
+              <a href="http://www.douban.com/">豆瓣</a>
+            </li>
+          
+            
+            <li>
+              <a href="http://book.douban.com/">读书</a>
+            </li>
+          
+            
+            <li>
+              <a href="http://movie.douban.com/">电影</a>
+            </li>
+          
+            
+            <li class="on">
+              <a href="http://music.douban.com/">音乐</a>
+            </li>
+          
+            
+            <li>
+              <a href="http://www.douban.com/location/">同城</a>
+            </li>
+          
+            
+            <li>
+              <a href="http://www.douban.com/group/">小组</a>
+            </li>
+          
+            
+            <li>
+              <a href="http://read.douban.com/?dcs=top-nav&amp;dcm=douban" target="_blank">阅读</a>
+            </li>
+          
+            
+            <li>
+              <a href="http://douban.fm/" target="_blank">豆瓣FM</a>
+            </li>
+          
+            <li>
+              <a href="#more" class="bn-more"><span>更多</span></a>
+              <div class="more-items">
+                <table cellpadding="0" cellspacing="0">
+                    
+                    <tr><td><a href="http://9.douban.com" target="_blank">九点</a></td></tr>
+                    
+                    <tr><td><a href="http://alphatown.com" target="_blank">阿尔法城</a></td></tr>
+                    
+                    <tr><td><a href="http://www.douban.com/mobile/" target="_blank">移动应用</a></td></tr>
+                </table>
+              </div>
+            </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+   
+    
+
+
+
+
+
+
+
+
+<div id="db-nav-music" class="nav">
+  <div class="nav-wrap">
+  <div class="nav-primary">
+    <div class="nav-logo">
+      <a href="http://music.douban.com">豆瓣音乐</a>
+    </div>
+    <div class="nav-search">
+      <form action="http://music.douban.com/subject_search" method="get">
+        <fieldset>
+          <legend>搜索：</legend>
+          <label for="inp-query">唱片名、表演者、条码、ISRC</label>
+          <div class="inp"><input id="inp-query" name="search_text" size="22" maxlength="60" value=""></div>
+          <div class="inp-btn"><input type="submit" value="搜索"></div>
+          <input type="hidden" name="cat" value="1003" />
+        </fieldset>
+      </form>
+    </div>
+  </div>
+  </div>
+  <div class="nav-secondary">
+    
+  
+  <div class="nav-items nav-anon">
+      <ul>
+        
+             
+                 <li><a href="/artists/">音乐人</a></li>
+             
+                 <li><a href="/chart">排行榜</a></li>
+             
+                 <li><a href="/tag/">分类浏览</a></li>
+                          
+                 <li><a href="http://douban.fm/">豆瓣FM</a></li>
+      
+      </ul>
+  </div>
+ 
+  </div>
+</div>
+
+    <script id="suggResult" type="text/template">
+        <li data-link="{{= url}}">
+            <a href="{{= url}}">
+                <img src="{{= pic}}" width="40" />
+                <div>
+                    <em>{{= title}}</em>
+                    {{if type == "m"}}
+                        <span>(艺术家)</span>
+                    {{/if}}
+                    {{if other_title}}
+                        <span>其他名称：{{= other_title}}</span>
+                    {{/if}}
+                    {{if performer}}
+                        <p>表演者：{{= performer}}</p>
+                    {{/if}}
+                    {{if cn_name}}
+                        <p>{{= cn_name}}</p>
+                    {{/if}}
+                    {{if en_name}}
+                        <p>{{= en_name}}</p>
+                    {{/if}}
+                </div>
+            </a>
+        </li>
+    </script>
+  
+  
+
+
+
+
+
+
+
+    
+    <div id="wrapper">
+        
+
+        
+    <div id="content">
+        
+
+    <div class="grid-16-8 clearfix">
+        
+        
+        <div class="article">
+	  
+    
+
+    <div>
+        <h2>本周流行音乐人<span class="pl"><a href="/artists/">更多 »</a></span></h2>
+        <div class="clearfix hot_artists">
+            <div class="first_artist">
+                <div class="artist_img">
+                <a class="artist_photo" href="http://site.douban.com/echo_/" target="_blank">
+                    <img class="artist_s"
+                    alt="回音哥"
+                    src="http://img3.douban.com/view/site/large/public/eaffda36c18ee45.jpg"/>
+                </a>
+                </div>
+                <div class="ll name">
+                    <span>1. <a href="http://site.douban.com/echo_/" target="_blank">回音哥</a></span>
+                    <br/>流派：流行 Pop<br/>7643人喜欢
+                </div>
+            </div>
+            <div class="hot_right">
+            <div class="photoin">
+                <a class="artist_photo" href="http://site.douban.com/zhonglifeng/" target="_blank">
+                    <img height="100" width="100" class="artist_s"
+                    alt="钟立风"
+                    src="http://img3.douban.com/view/site/median/public/dbe4e9769095e35.jpg"/>
+                </a>
+                <div class="ll">
+                    <span>2. <a href="http://site.douban.com/zhonglifeng/" target="_blank">钟立风</a></span>
+                </div>
+            </div>
+            <div class="photoin">
+                <a class="artist_photo" href="http://site.douban.com/donye/" target="_blank">
+                    <img height="100" width="100" class="artist_s"
+                    alt="宋冬野"
+                    src="http://img3.douban.com/view/site/median/public/953acc7e3178f91.jpg"/>
+                </a>
+                <div class="ll">
+                    <span>3. <a href="http://site.douban.com/donye/" target="_blank">宋冬野</a></span>
+                </div>
+            </div>
+            <div class="photoin">
+                <a class="artist_photo" href="http://site.douban.com/rockmui/" target="_blank">
+                    <img height="100" width="100" class="artist_s"
+                    alt="Rockmui盧凱彤"
+                    src="http://img3.douban.com/view/site/median/public/07ce99be725c246.jpg"/>
+                </a>
+                <div class="ll">
+                    <span>4. <a href="http://site.douban.com/rockmui/" target="_blank">Rockmui盧凱彤</a></span>
+                </div>
+            </div>
+            <div class="photoin">
+                <a class="artist_photo" href="http://site.douban.com/eddie/" target="_blank">
+                    <img height="100" width="100" class="artist_s"
+                    alt="Eddie.Beatz"
+                    src="http://img3.douban.com/view/site/median/public/6b9aa8af246aefe.jpg"/>
+                </a>
+                <div class="ll">
+                    <span>5. <a href="http://site.douban.com/eddie/" target="_blank">Eddie.Beatz</a></span>
+                </div>
+            </div>
+            <div class="photoin">
+                <a class="artist_photo" href="http://site.douban.com/zuoxiaozuzhou/" target="_blank">
+                    <img height="100" width="100" class="artist_s"
+                    alt="左小祖咒"
+                    src="http://img3.douban.com/view/site/median/public/41a05c67f29d832.jpg"/>
+                </a>
+                <div class="ll">
+                    <span>6. <a href="http://site.douban.com/zuoxiaozuzhou/" target="_blank">左小祖咒</a></span>
+                </div>
+            </div>
+            <div class="photoin">
+                <a class="artist_photo" href="http://site.douban.com/Y-Z/" target="_blank">
+                    <img height="100" width="100" class="artist_s"
+                    alt="Ying-Zi"
+                    src="http://img3.douban.com/view/site/median/public/7b8ad4eaed150e0.jpg"/>
+                </a>
+                <div class="ll">
+                    <span>7. <a href="http://site.douban.com/Y-Z/" target="_blank">Ying-Zi</a></span>
+                </div>
+            </div>
+            </div>
+        </div>
+
+    
+    
+<div id="song-chart" class="song-chart">
+    <h2 class="tabs clearfix">
+        <div class="ll">本周热门单曲</div>
+        <a id="sc-tab-0" class="on" href='javascript:void(0)'><span>最热</span></a>
+        <a id="sc-tab-1" href='javascript:void(0)'><span>摇滚</span></a>
+        <a id="sc-tab-2" href='javascript:void(0)'><span>民谣</span></a>
+        <a id="sc-tab-3" href='javascript:void(0)'><span>流行</span></a>
+        <a href='/chart'><span>更多</span></a>
+    </h2>
+    <ul id="song-chart-0" class="chart-content" style="display:block">
+        
+            <li class="clearfix" data-url="mr3.douban.com/201302120603/86a05697336fcadedc4ac1d28fa3b6b3/view/musician%/%/x14118980.%" data-sid="329197" data-seconds="274">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">43410次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/echo_/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/fad11006a25de64.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">又想起你</a>
+                </div>
+                <div class="artist">回音哥</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/echo_/">回音哥</a><br/>
+                            <span class="pl">流派</span>：流行 Pop<br/>
+
+
+                            <span class="pl">唱片公司</span>：伯乐爱乐 <br/>
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/echo_/#aslist?s=329325">LOVE  SONG </a><br/>
+                                <a target="_blank" href="http://site.douban.com/echo_/#aslist?s=329326">Nobody</a><br/>
+                                <a target="_blank" href="http://site.douban.com/echo_/#aslist?s=329327">volar</a><br/>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix" data-url="mr3.douban.com/201302120603/a38664ea656597d8ca185f17cf071ca9/view/musician%/%/x13394210.%" data-sid="268460" data-seconds="320">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">38631次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/donye/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/953acc7e3178f91.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">卡比巴拉的海</a>
+                </div>
+                <div class="artist">宋冬野</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/donye/">宋冬野</a><br/>
+                            <span class="pl">流派</span>：民谣 Folk<br/>
+
+                            <span class="pl">风格</span>：
+                                民谣 /
+                                Folk /
+                                独立 /
+                                Indie /
+                                陋狗叽王 /
+                                孤得奈特 
+                            <br/>
+
+                            <span class="pl">唱片公司</span>：摩登天空 <br/>
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/donye/#aslist?s=329830">Intro(粗制版小样)</a><br/>
+                                <a target="_blank" href="http://site.douban.com/donye/#aslist?s=330638">雪泥(Outro)</a><br/>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix" data-url="mr5.douban.com/201302120603/2e0417d1e8a5e84e059e1f281686b6f8/view/musician%/%/x14118876.%" data-sid="329189" data-seconds="219">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">12081次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/zhonglifeng/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/dbe4e9769095e35.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">河流</a>
+                </div>
+                <div class="artist">钟立风</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/zhonglifeng/">钟立风</a><br/>
+                            <span class="pl">流派</span>：民谣 Folk<br/>
+
+                            <span class="pl">风格</span>：
+                                民谣 /
+                                独立 /
+                                流行 /
+                                电影 /
+                                Folk /
+                                诗文 
+                            <br/>
+
+                            <span class="pl">唱片公司</span>：十三月 （经纪人：吴婷15201176468 演出、活动相关事宜） <br/>
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/zhonglifeng/#aslist?s=172652">傻瓜旅行</a><br/>
+                                <a target="_blank" href="http://site.douban.com/zhonglifeng/#aslist?s=172702">澜沧江</a><br/>
+                                <a target="_blank" href="http://site.douban.com/zhonglifeng/#aslist?s=172708">牧歌</a><br/>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix" data-url="mr3.douban.com/201302120603/9071a37a9a2b0a12735baf7e010cd3a2/view/musician%/%/x14140572.%" data-sid="330974" data-seconds="231">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">1379次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/rockmui/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/07ce99be725c246.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">01 美麗在心頭</a>
+                </div>
+                <div class="artist">Rockmui盧凱彤</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/rockmui/">Rockmui盧凱彤</a><br/>
+                            <span class="pl">流派</span>：流行 Pop<br/>
+
+                            <span class="pl">风格</span>：
+                                alternative/ /
+                                indie /
+                                rock/ /
+                                acoustic 
+                            <br/>
+
+                            <span class="pl">唱片公司</span>：人山人海/寰亞唱片 <br/>
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/rockmui/#aslist?s=330979">02 哽咽</a><br/>
+                                <a target="_blank" href="http://site.douban.com/rockmui/#aslist?s=330981">03 那誰</a><br/>
+                                <a target="_blank" href="http://site.douban.com/rockmui/#aslist?s=330985">04 無風的秋季</a><br/>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix" data-url="mr3.douban.com/201302120603/787ec773386c8b3da1ae5ee99df76771/view/musician%/%/x14099923.%" data-sid="327623" data-seconds="293">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">4218次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/thiswilldestroyyou/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/37b9e4d40a8d5ac.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">Quiet</a>
+                </div>
+                <div class="artist">This Will Destroy You</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/thiswilldestroyyou/">This Will Destroy You</a><br/>
+                            <span class="pl">流派</span>：摇滚 Rock<br/>
+
+                            <span class="pl">风格</span>：
+                                postrock, indie 
+                            <br/>
+
+                            <span class="pl">唱片公司</span>：Suicide Squeeze, New Noise <br/>
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/thiswilldestroyyou/#aslist?s=327717">The World Is Our ___</a><br/>
+                                <a target="_blank" href="http://site.douban.com/thiswilldestroyyou/#aslist?s=327728">I Believe in Your Victory</a><br/>
+                                <a target="_blank" href="http://site.douban.com/thiswilldestroyyou/#aslist?s=327723">A Three-Legged Workhorse</a><br/>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix" data-url="mr3.douban.com/201302120603/8ba808c8a0a185bc6a5552984933e577/view/musician%/%/x14093521.%" data-sid="327124" data-seconds="237">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">13036次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/mt/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/e8fa3fd060b31c2.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">全世界还有谁 &amp; 空城Remix &amp; 【豆瓣本周热门单曲】推荐</a>
+                </div>
+                <div class="artist">门徒（mt）</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/mt/">门徒（mt）</a><br/>
+                            <span class="pl">流派</span>：说唱 Rap<br/>
+
+                            <span class="pl">风格</span>：
+                                吹牛逼 
+                            <br/>
+
+                            <span class="pl">唱片公司</span>：比魄传媒(BPOWER CREW) <br/>
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/mt/#aslist?s=330819">2013新年快乐 &amp;团队所有人参与录制&amp; 说好的红包呢</a><br/>
+                                <a target="_blank" href="http://site.douban.com/mt/#aslist?s=321397">Do what you wanna do &amp;做你想做的事 &amp; 青春励志  </a><br/>
+                                <a target="_blank" href="http://site.douban.com/mt/#aslist?s=318043">那年 &amp; 【豆瓣本周热门单曲】</a><br/>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix" data-url="mr3.douban.com/201302120603/c76dabd64ff85fabbc00471ca89aed2c/view/musician%/%/x14129447.%" data-sid="330047" data-seconds="244">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">3618次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/zuoxiaozuzhou/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/41a05c67f29d832.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">新年快乐</a>
+                </div>
+                <div class="artist">左小祖咒</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/zuoxiaozuzhou/">左小祖咒</a><br/>
+                            <span class="pl">流派</span>：摇滚 Rock<br/>
+
+                            <span class="pl">风格</span>：
+                                民谣的根 
+                            <br/>
+
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/zuoxiaozuzhou/#aslist?s=333190">奶奶个腿</a><br/>
+                                <a target="_blank" href="http://site.douban.com/zuoxiaozuzhou/#aslist?s=326932">贼喊捉贼</a><br/>
+                                <a target="_blank" href="http://site.douban.com/zuoxiaozuzhou/#aslist?s=325270">桃树的故事（余果）</a><br/>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix" data-url="mr3.douban.com/201302120603/f55df21825d3b147609160794e282380/view/musician%/%/x13901604.%" data-sid="311017" data-seconds="104">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">4911次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/eddie/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/6b9aa8af246aefe.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">01.Star-Up</a>
+                </div>
+                <div class="artist">Eddie.Beatz</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/eddie/">Eddie.Beatz</a><br/>
+                            <span class="pl">流派</span>：电子 Electronica<br/>
+
+                            <span class="pl">风格</span>：
+                                标签你来贴 
+                            <br/>
+
+                            <span class="pl">唱片公司</span>：少先组 <br/>
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix" data-url="mr3.douban.com/201302120603/f7f9737151c2ba1b3f60cc83dcfb44be/view/musician%/%/x13822660.%" data-sid="304254" data-seconds="219">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">1397次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/eddie/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/6b9aa8af246aefe.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">小老虎-无人喝彩 (Eddie Remix)</a>
+                </div>
+                <div class="artist">Eddie.Beatz</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/eddie/">Eddie.Beatz</a><br/>
+                            <span class="pl">流派</span>：电子 Electronica<br/>
+
+                            <span class="pl">风格</span>：
+                                标签你来贴 
+                            <br/>
+
+                            <span class="pl">唱片公司</span>：少先组 <br/>
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix noborder" data-url="mr4.douban.com/201302120603/129f07d0b6e8bce886fd0669f61026de/view/musician%/%/x14102182.%" data-sid="327806" data-seconds="193">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">8919次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/zhonglifeng/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/dbe4e9769095e35.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">默默与粘粘</a>
+                </div>
+                <div class="artist">钟立风</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/zhonglifeng/">钟立风</a><br/>
+                            <span class="pl">流派</span>：民谣 Folk<br/>
+
+                            <span class="pl">风格</span>：
+                                民谣 /
+                                独立 /
+                                流行 /
+                                电影 /
+                                Folk /
+                                诗文 
+                            <br/>
+
+                            <span class="pl">唱片公司</span>：十三月 （经纪人：吴婷15201176468 演出、活动相关事宜） <br/>
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/zhonglifeng/#aslist?s=172652">傻瓜旅行</a><br/>
+                                <a target="_blank" href="http://site.douban.com/zhonglifeng/#aslist?s=172702">澜沧江</a><br/>
+                                <a target="_blank" href="http://site.douban.com/zhonglifeng/#aslist?s=172708">牧歌</a><br/>
+                    </div>
+                </div>
+            </li>
+    </ul>
+    <ul id="song-chart-1" class="chart-content" style="display:none">
+        
+            <li class="clearfix" data-url="mr3.douban.com/201302120603/787ec773386c8b3da1ae5ee99df76771/view/musician%/%/x14099923.%" data-sid="327623" data-seconds="293">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">4218次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/thiswilldestroyyou/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/37b9e4d40a8d5ac.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">Quiet</a>
+                </div>
+                <div class="artist">This Will Destroy You</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/thiswilldestroyyou/">This Will Destroy You</a><br/>
+                            <span class="pl">流派</span>：摇滚 Rock<br/>
+
+                            <span class="pl">风格</span>：
+                                postrock, indie 
+                            <br/>
+
+                            <span class="pl">唱片公司</span>：Suicide Squeeze, New Noise <br/>
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/thiswilldestroyyou/#aslist?s=327717">The World Is Our ___</a><br/>
+                                <a target="_blank" href="http://site.douban.com/thiswilldestroyyou/#aslist?s=327728">I Believe in Your Victory</a><br/>
+                                <a target="_blank" href="http://site.douban.com/thiswilldestroyyou/#aslist?s=327723">A Three-Legged Workhorse</a><br/>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix" data-url="mr3.douban.com/201302120603/c76dabd64ff85fabbc00471ca89aed2c/view/musician%/%/x14129447.%" data-sid="330047" data-seconds="244">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">3618次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/zuoxiaozuzhou/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/41a05c67f29d832.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">新年快乐</a>
+                </div>
+                <div class="artist">左小祖咒</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/zuoxiaozuzhou/">左小祖咒</a><br/>
+                            <span class="pl">流派</span>：摇滚 Rock<br/>
+
+                            <span class="pl">风格</span>：
+                                民谣的根 
+                            <br/>
+
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/zuoxiaozuzhou/#aslist?s=333190">奶奶个腿</a><br/>
+                                <a target="_blank" href="http://site.douban.com/zuoxiaozuzhou/#aslist?s=326932">贼喊捉贼</a><br/>
+                                <a target="_blank" href="http://site.douban.com/zuoxiaozuzhou/#aslist?s=325270">桃树的故事（余果）</a><br/>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix" data-url="mr3.douban.com/201302120603/e8207a697726d0525b1a60fe9a101f35/view/musician%/%/x14136113.%" data-sid="330585" data-seconds="164">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">253次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/makeuhopeless/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/49e71746dd9e5b5.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">your hope collapsed</a>
+                </div>
+                <div class="artist">make you hopeless</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/makeuhopeless/">make you hopeless</a><br/>
+                            <span class="pl">流派</span>：摇滚 Rock<br/>
+
+                            <span class="pl">风格</span>：
+                                Progressive/BrutalDeathcore /
+                                SlammingBrutalDeath 
+                            <br/>
+
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix" data-url="mr3.douban.com/201302120603/b70b4798d402f43205b1b43ed6607459/view/musician%/%/x14130327.%" data-sid="330122" data-seconds="270">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">277次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/AFBand/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/27a494d9a040fe3.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">不屈者的挽歌</a>
+                </div>
+                <div class="artist">圣殿骑士</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/AFBand/">圣殿骑士</a><br/>
+                            <span class="pl">流派</span>：摇滚 Rock<br/>
+
+                            <span class="pl">风格</span>：
+                                Rock /
+                                Metal /
+                                VikingMetal /
+                                Folkmetal /
+                                摇滚 /
+                                金属 /
+                                维京金属 /
+                                民谣金属 
+                            <br/>
+
+                            <span class="pl">唱片公司</span>：暂无 <br/>
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/AFBand/#aslist?s=330124">陷落之日</a><br/>
+                                <a target="_blank" href="http://site.douban.com/AFBand/#aslist?s=330123">盛夏酒馆</a><br/>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix" data-url="mr3.douban.com/201302120603/b6d1da19d91d3c342b89e761a566257a/view/musician%/%/x14155185.%" data-sid="332180" data-seconds="208">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">225次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/G2O/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/d4a4c95b6f84131.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">Dreamcatcher P 部分试听</a>
+                </div>
+                <div class="artist">Going 2 Ohio</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/G2O/">Going 2 Ohio</a><br/>
+                            <span class="pl">流派</span>：摇滚 Rock<br/>
+
+                            <span class="pl">风格</span>：
+                                Emo /
+                                Punk /
+                                Post-Hardcore /
+                                Pop-Punk /
+                                Alternative /
+                                Easycore /
+                                Screamo 
+                            <br/>
+
+                            <span class="pl">唱片公司</span>：无 <br/>
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix" data-url="mr3.douban.com/201302120603/2831fde1590973aa8f78d73ddff64cfd/view/musician%/%/x14114614.%" data-sid="328824" data-seconds="271">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">1079次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/jackydanny/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/d2faf5539720b1f.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">Lie to Live</a>
+                </div>
+                <div class="artist">Jacky Danny</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/jackydanny/">Jacky Danny</a><br/>
+                            <span class="pl">流派</span>：摇滚 Rock<br/>
+
+                            <span class="pl">风格</span>：
+                                ClassicRock 
+                            <br/>
+
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/jackydanny/#aslist?s=297081">I&#39;m Your Hoochie Coochie Man Cover</a><br/>
+                                <a target="_blank" href="http://site.douban.com/jackydanny/#aslist?s=99303">From The 80s &amp; Wild Horses (Live with Libo on vocal)</a><br/>
+                                <a target="_blank" href="http://site.douban.com/jackydanny/#aslist?s=99284">Bring The House Down (Live instrumental)</a><br/>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix" data-url="mr4.douban.com/201302120603/69de24d885e8bd126b787639b2e1af09/view/musician%/%/x14124536.%" data-sid="329670" data-seconds="264">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">825次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/topfloorcircus/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/333404a3a5dcc5d.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">我去SPA，你去死吧demo</a>
+                </div>
+                <div class="artist">顶楼的马戏团</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/topfloorcircus/">顶楼的马戏团</a><br/>
+                            <span class="pl">流派</span>：摇滚 Rock<br/>
+
+                            <span class="pl">风格</span>：
+                                朋克 /
+                                实验 /
+                                民谣 /
+                                流行 
+                            <br/>
+
+                            <span class="pl">唱片公司</span>：骡子唱片 <br/>
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/topfloorcircus/#aslist?s=329671">鬼和人demo</a><br/>
+                                <a target="_blank" href="http://site.douban.com/topfloorcircus/#aslist?s=329669">我不在火车站，就在去往火车站的路上demo</a><br/>
+                                <a target="_blank" href="http://site.douban.com/topfloorcircus/#aslist?s=329668">Sing a Melting Song(demo)</a><br/>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix" data-url="mr3.douban.com/201302120603/9f071fd13865d64e94a3750b56a25cc5/view/musician%/%/x14030359.%" data-sid="321910" data-seconds="282">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">1478次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/faf/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/3f293e5a46a6c3b.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">Parasite</a>
+                </div>
+                <div class="artist">Forget  And Forgive</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/faf/">Forget  And Forgive</a><br/>
+                            <span class="pl">流派</span>：摇滚 Rock<br/>
+
+                            <span class="pl">风格</span>：
+                                Rock 
+                            <br/>
+
+                            <span class="pl">唱片公司</span>：未签约 <br/>
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/faf/#aslist?s=321906">Intro</a><br/>
+                                <a target="_blank" href="http://site.douban.com/faf/#aslist?s=321908">Dream Need A Try</a><br/>
+                                <a target="_blank" href="http://site.douban.com/faf/#aslist?s=321911">Depression Girl (feat.Charity)</a><br/>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix" data-url="mr3.douban.com/201302120603/d3b1f4a3148ec5bf7b11ff1e705d697a/view/musician%/%/x14101153.%" data-sid="327717" data-seconds="432">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">2131次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/thiswilldestroyyou/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/37b9e4d40a8d5ac.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">The World Is Our ___</a>
+                </div>
+                <div class="artist">This Will Destroy You</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/thiswilldestroyyou/">This Will Destroy You</a><br/>
+                            <span class="pl">流派</span>：摇滚 Rock<br/>
+
+                            <span class="pl">风格</span>：
+                                postrock, indie 
+                            <br/>
+
+                            <span class="pl">唱片公司</span>：Suicide Squeeze, New Noise <br/>
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/thiswilldestroyyou/#aslist?s=327623">Quiet</a><br/>
+                                <a target="_blank" href="http://site.douban.com/thiswilldestroyyou/#aslist?s=327728">I Believe in Your Victory</a><br/>
+                                <a target="_blank" href="http://site.douban.com/thiswilldestroyyou/#aslist?s=327723">A Three-Legged Workhorse</a><br/>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix noborder" data-url="mr3.douban.com/201302120603/cf6b3b44b2f8236f5c6b040d34610cc2/view/musician%/%/x14030333.%" data-sid="321908" data-seconds="284">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">1111次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/faf/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/3f293e5a46a6c3b.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">Dream Need A Try</a>
+                </div>
+                <div class="artist">Forget  And Forgive</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/faf/">Forget  And Forgive</a><br/>
+                            <span class="pl">流派</span>：摇滚 Rock<br/>
+
+                            <span class="pl">风格</span>：
+                                Rock 
+                            <br/>
+
+                            <span class="pl">唱片公司</span>：未签约 <br/>
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/faf/#aslist?s=321906">Intro</a><br/>
+                                <a target="_blank" href="http://site.douban.com/faf/#aslist?s=321910">Parasite</a><br/>
+                                <a target="_blank" href="http://site.douban.com/faf/#aslist?s=321911">Depression Girl (feat.Charity)</a><br/>
+                    </div>
+                </div>
+            </li>
+    </ul>
+    <ul id="song-chart-2" class="chart-content" style="display:none">
+        
+            <li class="clearfix" data-url="mr3.douban.com/201302120603/a38664ea656597d8ca185f17cf071ca9/view/musician%/%/x13394210.%" data-sid="268460" data-seconds="320">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">38631次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/donye/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/953acc7e3178f91.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">卡比巴拉的海</a>
+                </div>
+                <div class="artist">宋冬野</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/donye/">宋冬野</a><br/>
+                            <span class="pl">流派</span>：民谣 Folk<br/>
+
+                            <span class="pl">风格</span>：
+                                民谣 /
+                                Folk /
+                                独立 /
+                                Indie /
+                                陋狗叽王 /
+                                孤得奈特 
+                            <br/>
+
+                            <span class="pl">唱片公司</span>：摩登天空 <br/>
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/donye/#aslist?s=329830">Intro(粗制版小样)</a><br/>
+                                <a target="_blank" href="http://site.douban.com/donye/#aslist?s=330638">雪泥(Outro)</a><br/>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix" data-url="mr3.douban.com/201302120603/e115194499ab748836be0052b6683844/view/musician%/%/x14118876.%" data-sid="329189" data-seconds="219">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">12081次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/zhonglifeng/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/dbe4e9769095e35.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">河流</a>
+                </div>
+                <div class="artist">钟立风</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/zhonglifeng/">钟立风</a><br/>
+                            <span class="pl">流派</span>：民谣 Folk<br/>
+
+                            <span class="pl">风格</span>：
+                                民谣 /
+                                独立 /
+                                流行 /
+                                电影 /
+                                Folk /
+                                诗文 
+                            <br/>
+
+                            <span class="pl">唱片公司</span>：十三月 （经纪人：吴婷15201176468 演出、活动相关事宜） <br/>
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/zhonglifeng/#aslist?s=172652">傻瓜旅行</a><br/>
+                                <a target="_blank" href="http://site.douban.com/zhonglifeng/#aslist?s=172702">澜沧江</a><br/>
+                                <a target="_blank" href="http://site.douban.com/zhonglifeng/#aslist?s=172708">牧歌</a><br/>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix" data-url="mr4.douban.com/201302120603/08c4fd898d08fd94b559b9e7750c4244/view/musician%/%/x14147363.%" data-sid="331539" data-seconds="271">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">3320次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/zhonglifeng/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/dbe4e9769095e35.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">没有过去的男人</a>
+                </div>
+                <div class="artist">钟立风</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/zhonglifeng/">钟立风</a><br/>
+                            <span class="pl">流派</span>：民谣 Folk<br/>
+
+                            <span class="pl">风格</span>：
+                                民谣 /
+                                独立 /
+                                流行 /
+                                电影 /
+                                Folk /
+                                诗文 
+                            <br/>
+
+                            <span class="pl">唱片公司</span>：十三月 （经纪人：吴婷15201176468 演出、活动相关事宜） <br/>
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/zhonglifeng/#aslist?s=172652">傻瓜旅行</a><br/>
+                                <a target="_blank" href="http://site.douban.com/zhonglifeng/#aslist?s=172702">澜沧江</a><br/>
+                                <a target="_blank" href="http://site.douban.com/zhonglifeng/#aslist?s=172708">牧歌</a><br/>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix" data-url="mr5.douban.com/201302120603/db5252d92ff0c7fd45c073a8ce1d0638/view/musician%/%/x14126728.%" data-sid="329830" data-seconds="122">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">3969次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/donye/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/953acc7e3178f91.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">Intro(粗制版小样)</a>
+                </div>
+                <div class="artist">宋冬野</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/donye/">宋冬野</a><br/>
+                            <span class="pl">流派</span>：民谣 Folk<br/>
+
+                            <span class="pl">风格</span>：
+                                民谣 /
+                                Folk /
+                                独立 /
+                                Indie /
+                                陋狗叽王 /
+                                孤得奈特 
+                            <br/>
+
+                            <span class="pl">唱片公司</span>：摩登天空 <br/>
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/donye/#aslist?s=268460">卡比巴拉的海</a><br/>
+                                <a target="_blank" href="http://site.douban.com/donye/#aslist?s=330638">雪泥(Outro)</a><br/>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix" data-url="mr3.douban.com/201302120603/5578e94db1cef34cd3c7216df349122e/view/musician%/%/x14133404.%" data-sid="330363" data-seconds="240">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">1668次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/falseman/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/e5771cb21492078.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">海咪咪小姐（伪新歌，公共场合请戴耳机，盒盒）</a>
+                </div>
+                <div class="artist">马頔</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/falseman/">马頔</a><br/>
+                            <span class="pl">流派</span>：民谣 Folk<br/>
+
+                            <span class="pl">风格</span>：
+                                民谣 
+                            <br/>
+
+                            <span class="pl">唱片公司</span>：麻油叶民间组织 <br/>
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/falseman/#aslist?s=271486">切尔西旅馆有没有8310</a><br/>
+                                <a target="_blank" href="http://site.douban.com/falseman/#aslist?s=276310">时间里的（合辑版）</a><br/>
+                                <a target="_blank" href="http://site.douban.com/falseman/#aslist?s=208789">凝而忧</a><br/>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix" data-url="mr3.douban.com/201302120603/be3936170233fc53b2937c85e921e479/view/musician%/%/x14102182.%" data-sid="327806" data-seconds="193">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">8919次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/zhonglifeng/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/dbe4e9769095e35.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">默默与粘粘</a>
+                </div>
+                <div class="artist">钟立风</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/zhonglifeng/">钟立风</a><br/>
+                            <span class="pl">流派</span>：民谣 Folk<br/>
+
+                            <span class="pl">风格</span>：
+                                民谣 /
+                                独立 /
+                                流行 /
+                                电影 /
+                                Folk /
+                                诗文 
+                            <br/>
+
+                            <span class="pl">唱片公司</span>：十三月 （经纪人：吴婷15201176468 演出、活动相关事宜） <br/>
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/zhonglifeng/#aslist?s=172652">傻瓜旅行</a><br/>
+                                <a target="_blank" href="http://site.douban.com/zhonglifeng/#aslist?s=172702">澜沧江</a><br/>
+                                <a target="_blank" href="http://site.douban.com/zhonglifeng/#aslist?s=172708">牧歌</a><br/>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix" data-url="mr4.douban.com/201302120603/3a5b6d5070a8ca77cf393d09faa77f86/view/musician%/%/x11073405.%" data-sid="74063" data-seconds="313">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">14799次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/zhuoyue/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/dec30de9dec896b.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">青年（2010.11.30）</a>
+                </div>
+                <div class="artist">卓越（音乐人）</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/zhuoyue/">卓越（音乐人）</a><br/>
+                            <span class="pl">流派</span>：民谣 Folk<br/>
+
+
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/zhuoyue/#aslist?s=332428">青年</a><br/>
+                                <a target="_blank" href="http://site.douban.com/zhuoyue/#aslist?s=332429">小时候的记忆</a><br/>
+                                <a target="_blank" href="http://site.douban.com/zhuoyue/#aslist?s=332430">永远的我们</a><br/>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix" data-url="mr4.douban.com/201302120603/d4e0083a326a80f2b7a7f708b355fc6b/view/musician%/%/x14136707.%" data-sid="330638" data-seconds="64">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">2630次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/donye/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/953acc7e3178f91.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">雪泥(Outro)</a>
+                </div>
+                <div class="artist">宋冬野</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/donye/">宋冬野</a><br/>
+                            <span class="pl">流派</span>：民谣 Folk<br/>
+
+                            <span class="pl">风格</span>：
+                                民谣 /
+                                Folk /
+                                独立 /
+                                Indie /
+                                陋狗叽王 /
+                                孤得奈特 
+                            <br/>
+
+                            <span class="pl">唱片公司</span>：摩登天空 <br/>
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/donye/#aslist?s=329830">Intro(粗制版小样)</a><br/>
+                                <a target="_blank" href="http://site.douban.com/donye/#aslist?s=268460">卡比巴拉的海</a><br/>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix" data-url="mr4.douban.com/201302120603/548be22510f30879468f32ae5643825d/view/musician%/%/x11506556.%" data-sid="111620" data-seconds="378">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">3957次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/zhuoyue/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/dec30de9dec896b.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">我看见的人(2011)</a>
+                </div>
+                <div class="artist">卓越（音乐人）</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/zhuoyue/">卓越（音乐人）</a><br/>
+                            <span class="pl">流派</span>：民谣 Folk<br/>
+
+
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/zhuoyue/#aslist?s=332428">青年</a><br/>
+                                <a target="_blank" href="http://site.douban.com/zhuoyue/#aslist?s=332429">小时候的记忆</a><br/>
+                                <a target="_blank" href="http://site.douban.com/zhuoyue/#aslist?s=332430">永远的我们</a><br/>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix noborder" data-url="mr4.douban.com/201302120603/c273bfdd96f3b97393e89f5af7b082a3/view/musician%/%/x14017561.%" data-sid="320854" data-seconds="210">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">751次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/zhuoyue/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/dec30de9dec896b.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">愚蠢的鸽子</a>
+                </div>
+                <div class="artist">卓越（音乐人）</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/zhuoyue/">卓越（音乐人）</a><br/>
+                            <span class="pl">流派</span>：民谣 Folk<br/>
+
+
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/zhuoyue/#aslist?s=332428">青年</a><br/>
+                                <a target="_blank" href="http://site.douban.com/zhuoyue/#aslist?s=332429">小时候的记忆</a><br/>
+                                <a target="_blank" href="http://site.douban.com/zhuoyue/#aslist?s=332430">永远的我们</a><br/>
+                    </div>
+                </div>
+            </li>
+    </ul>
+    <ul id="song-chart-3" class="chart-content" style="display:none">
+        
+            <li class="clearfix" data-url="mr3.douban.com/201302120603/86a05697336fcadedc4ac1d28fa3b6b3/view/musician%/%/x14118980.%" data-sid="329197" data-seconds="274">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">43410次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/echo_/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/fad11006a25de64.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">又想起你</a>
+                </div>
+                <div class="artist">回音哥</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/echo_/">回音哥</a><br/>
+                            <span class="pl">流派</span>：流行 Pop<br/>
+
+
+                            <span class="pl">唱片公司</span>：伯乐爱乐 <br/>
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/echo_/#aslist?s=329325">LOVE  SONG </a><br/>
+                                <a target="_blank" href="http://site.douban.com/echo_/#aslist?s=329326">Nobody</a><br/>
+                                <a target="_blank" href="http://site.douban.com/echo_/#aslist?s=329327">volar</a><br/>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix" data-url="mr4.douban.com/201302120603/4da2f849bd7c745af0bc17e1bc6d1431/view/musician%/%/x14140572.%" data-sid="330974" data-seconds="231">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">1379次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/rockmui/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/07ce99be725c246.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">01 美麗在心頭</a>
+                </div>
+                <div class="artist">Rockmui盧凱彤</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/rockmui/">Rockmui盧凱彤</a><br/>
+                            <span class="pl">流派</span>：流行 Pop<br/>
+
+                            <span class="pl">风格</span>：
+                                alternative/ /
+                                indie /
+                                rock/ /
+                                acoustic 
+                            <br/>
+
+                            <span class="pl">唱片公司</span>：人山人海/寰亞唱片 <br/>
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/rockmui/#aslist?s=330979">02 哽咽</a><br/>
+                                <a target="_blank" href="http://site.douban.com/rockmui/#aslist?s=330981">03 那誰</a><br/>
+                                <a target="_blank" href="http://site.douban.com/rockmui/#aslist?s=330985">04 無風的秋季</a><br/>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix" data-url="mr3.douban.com/201302120603/7f939630a8b54bda3201b0c1cc0b4c61/view/musician%/%/x14145922.%" data-sid="331425" data-seconds="91">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">2208次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/my1900/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/8b3a349022f663d.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">I miss you too【Demo Version】</a>
+                </div>
+                <div class="artist">1900studio</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/my1900/">1900studio</a><br/>
+                            <span class="pl">流派</span>：流行 Pop<br/>
+
+                            <span class="pl">风格</span>：
+                                流行为主 
+                            <br/>
+
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/my1900/#aslist?s=317043">叮叮当当</a><br/>
+                                <a target="_blank" href="http://site.douban.com/my1900/#aslist?s=307266">Mr.Lovable【Demo Version】</a><br/>
+                                <a target="_blank" href="http://site.douban.com/my1900/#aslist?s=307261">靠岸</a><br/>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix" data-url="mr3.douban.com/201302120603/fd8b3a8f200a69deb0158d6c403c38e4/view/musician%/%/x13606266.%" data-sid="286042" data-seconds="163">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">1284次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/amreasa/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/f14fffa56c2f7e5.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">你不知道我爱你</a>
+                </div>
+                <div class="artist">姜莲晶</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/amreasa/">姜莲晶</a><br/>
+                            <span class="pl">流派</span>：流行 Pop<br/>
+
+                            <span class="pl">风格</span>：
+                                原创，吉他。 
+                            <br/>
+
+                            <span class="pl">唱片公司</span>：无 <br/>
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/amreasa/#aslist?s=326842">隔着一道密不透风的墙</a><br/>
+                                <a target="_blank" href="http://site.douban.com/amreasa/#aslist?s=328189">Good Night</a><br/>
+                                <a target="_blank" href="http://site.douban.com/amreasa/#aslist?s=326874">我会一个人看日出</a><br/>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix" data-url="mr5.douban.com/201302120603/7df8b816f9a5df4ae4672c9437b3d74c/view/musician%/%/x14136469.%" data-sid="330616" data-seconds="241">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">192次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/huangjing/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/f6f795d5a7ba332.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">坠落（第二版）</a>
+                </div>
+                <div class="artist">黄晶</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/huangjing/">黄晶</a><br/>
+                            <span class="pl">流派</span>：流行 Pop<br/>
+
+                            <span class="pl">风格</span>：
+                                Folk /
+                                Pop 
+                            <br/>
+
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/huangjing/#aslist?s=330620">宠物（词：梁巧—小学6年级 曲：黄晶）为小学生诗歌节创作</a><br/>
+                                <a target="_blank" href="http://site.douban.com/huangjing/#aslist?s=330621">挑妈妈（词：朱尔—小学3年级  曲：黄晶）为小学生诗歌节创作</a><br/>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix" data-url="mr4.douban.com/201302120603/3e9ab828db462c99cd2a9f1cc60bb183/view/musician%/%/x14140658.%" data-sid="330981" data-seconds="238">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">938次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/rockmui/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/07ce99be725c246.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">03 那誰</a>
+                </div>
+                <div class="artist">Rockmui盧凱彤</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/rockmui/">Rockmui盧凱彤</a><br/>
+                            <span class="pl">流派</span>：流行 Pop<br/>
+
+                            <span class="pl">风格</span>：
+                                alternative/ /
+                                indie /
+                                rock/ /
+                                acoustic 
+                            <br/>
+
+                            <span class="pl">唱片公司</span>：人山人海/寰亞唱片 <br/>
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/rockmui/#aslist?s=330974">01 美麗在心頭</a><br/>
+                                <a target="_blank" href="http://site.douban.com/rockmui/#aslist?s=330979">02 哽咽</a><br/>
+                                <a target="_blank" href="http://site.douban.com/rockmui/#aslist?s=330985">04 無風的秋季</a><br/>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix" data-url="mr5.douban.com/201302120603/a80f90b27218e9f09bc212bb9ceb4a73/view/musician%/%/x13593553.%" data-sid="284984" data-seconds="233">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">1476次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/liaojunjia/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/3582c037dccaf2c.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">七月与安生 七月（喜欢你）</a>
+                </div>
+                <div class="artist">廖隽嘉</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/liaojunjia/">廖隽嘉</a><br/>
+                            <span class="pl">流派</span>：流行 Pop<br/>
+
+                            <span class="pl">风格</span>：
+                                Classical古典 /
+                                Soundtrack原声 /
+                                pop流行 
+                            <br/>
+
+                            <span class="pl">唱片公司</span>：Shine.me <br/>
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/liaojunjia/#aslist?s=249239">钢的琴 Theme of the piano in a factory</a><br/>
+                                <a target="_blank" href="http://site.douban.com/liaojunjia/#aslist?s=249256">钢的琴 桂林与淑娴 Guilin and Shuxian</a><br/>
+                                <a target="_blank" href="http://site.douban.com/liaojunjia/#aslist?s=249257">钢的琴 幻境 Dreamland</a><br/>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix" data-url="mr4.douban.com/201302120603/c1548799f9103bf6deb9d06e5cc22467/view/musician%/%/x13606273.%" data-sid="286043" data-seconds="141">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">432次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/amreasa/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/f14fffa56c2f7e5.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">我很喜欢你</a>
+                </div>
+                <div class="artist">姜莲晶</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/amreasa/">姜莲晶</a><br/>
+                            <span class="pl">流派</span>：流行 Pop<br/>
+
+                            <span class="pl">风格</span>：
+                                原创，吉他。 
+                            <br/>
+
+                            <span class="pl">唱片公司</span>：无 <br/>
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/amreasa/#aslist?s=286042">你不知道我爱你</a><br/>
+                                <a target="_blank" href="http://site.douban.com/amreasa/#aslist?s=326842">隔着一道密不透风的墙</a><br/>
+                                <a target="_blank" href="http://site.douban.com/amreasa/#aslist?s=328189">Good Night</a><br/>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix" data-url="mr5.douban.com/201302120603/38bf535b49d2b3a22b496333be67fca1/view/musician%/%/x13557881.%" data-sid="281923" data-seconds="261">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">1200次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/huangjing/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/f6f795d5a7ba332.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">骑单车去海边找你(demo版)</a>
+                </div>
+                <div class="artist">黄晶</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/huangjing/">黄晶</a><br/>
+                            <span class="pl">流派</span>：流行 Pop<br/>
+
+                            <span class="pl">风格</span>：
+                                Folk /
+                                Pop 
+                            <br/>
+
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/huangjing/#aslist?s=330620">宠物（词：梁巧—小学6年级 曲：黄晶）为小学生诗歌节创作</a><br/>
+                                <a target="_blank" href="http://site.douban.com/huangjing/#aslist?s=330621">挑妈妈（词：朱尔—小学3年级  曲：黄晶）为小学生诗歌节创作</a><br/>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="clearfix noborder" data-url="mr3.douban.com/201302120603/6caf30811024b374afcea5e1f6bc05d4/view/musician%/%/x10407376.%" data-sid="22166" data-seconds="199">
+                <div class="play-icon stopped"></div>
+                <div class="play-count">17256次播放</div>
+                <div class="play-time" style="display:none"></div>
+                <a target="_blank" class="artist-name" href="http://site.douban.com/candyshop/">
+                    <img class="icon" src="http://img3.douban.com/view/site/small/public/1b1489481c0a99e.jpg"/>
+                </a>
+                <div class="name">
+                    <a href="javascript:void(0);">甜蜜派对</a>
+                </div>
+                <div class="artist">甜品店乐团</div>
+                <div style="line-height:10px;" class="clearfix"></div>
+                <div class="detail clearfix">
+                    <div class="detail-left">
+                        <a target="_blank" class="artist-name" href="http://site.douban.com/candyshop/">甜品店乐团</a><br/>
+                            <span class="pl">流派</span>：流行 Pop<br/>
+
+                            <span class="pl">风格</span>：
+                                混合流行 
+                            <br/>
+
+                            <span class="pl">唱片公司</span>：未签约 <br/>
+                    </div>
+                    <div class="detail-right">
+                            <div class="title">其他单曲</div>
+                                <a target="_blank" href="http://site.douban.com/candyshop/#aslist?s=49008">单恋杀</a><br/>
+                                <a target="_blank" href="http://site.douban.com/candyshop/#aslist?s=33675">Love Song</a><br/>
+                                <a target="_blank" href="http://site.douban.com/candyshop/#aslist?s=264234">在路上(尊尼获加_语路问行动删减版)</a><br/>
+                    </div>
+                </div>
+            </li>
+    </ul>
+</div>
+<script>
+    Do(
+        "http://img3.douban.com/js/packed_swfobject4154961822.js",
+        "http://img3.douban.com/js/lib/packed_audio_player8599381459.js",
+        function(){
+            var playcount=function(b,a){if(!b){return}$.get("/j/artist/incplaycount",{song_id:b,worked:a?1:0})};$("#song-chart .tabs").delegate("a","click",function(a){if(this.id){$("#song-chart .tabs a").removeClass("on");$(this).addClass("on");$("#song-chart .chart-content").hide();$("#song-chart-"+this.id.slice(-1)).show()}});window.audio_player=new AudioPlayer();var prog_handler=function(b){var a=audio_player.total_ms||b.total;audio_player.time_txt.html("-"+audio_player.mmsstime(a-b.progress))},stop_audio=function(b){audio_player.pause();var a=$("#song-chart li.now");if(!a.length){return}if(b){playcount(a.data("sid"),true)}a.removeClass("now");a.find(".play-icon").removeClass("playing").addClass("stopped");a.find(".play-time").hide();a.find(".play-count").show();var c=a.find(".detail");c.slideUp("fast")},play_audio=function(a){if(!audio_player.prepared){return}a.addClass("now");a.find(".play-icon").removeClass("stopped").addClass("playing");a.find(".detail").slideDown("fast");a.find(".play-count").hide();a.find(".play-time").show().html("00:00");var b=parseInt(a.data("seconds"));audio_player.total_ms=b?b*1000:0;audio_player.time_txt=a.find(".play-time");audio_player.play("http://"+a.data("url").replace(/%/g,"mp3"));playcount(a.data("sid"),false)};audio_player.config({on_progress:prog_handler,on_end:function(){stop_audio(true)},on_error:stop_audio,on_prepared:function(){audio_player.prepared=true}});audio_player.init();$("#song-chart").delegate("li","mouseenter",function(){$(this).addClass("hover_on")}).delegate("li","mouseleave",function(){$(this).removeClass("hover_on")}).delegate("li","click",function(a){if(a.target.className=="icon"){return true}if(!$(this).hasClass("now")){stop_audio();play_audio($(this))}else{stop_audio()}});
+        }
+    );
+</script>
+
+
+    
+    
+    
+    <div class="music_new">
+        <h2 class="tabs clearfix">
+            <div class="ll">豆瓣新碟榜</div>
+            <a id="new1" class="on" href='javascript:void(0)'><span>华语</span></a>
+            <a id="new2" href='javascript:void(0)'><span>欧美</span></a>
+            <a id="new3" href='javascript:void(0)'><span>日韩</span></a>
+        </h2>
+
+        <ul class="content clearfix" id="newcontent1">
+
+            
+            <li class="clearfix">
+                <div class="img"><a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/21328081/"><img width="100%" src="http://img3.douban.com/spic/s24940363.jpg"/></a></div>
+                <div class="intro">
+                    <h3>1. <a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/21328081/">Jazz Channel 林宥嘉...</a></h3>
+                    
+                            林宥嘉<br/>
+                    <div class="star clearfix"><span class="allstar40"></span>7.4</div>
+                </div>
+            </li>
+            
+            <li class="clearfix">
+                <div class="img"><a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20436459/"><img width="100%" src="http://img3.douban.com/spic/s24923467.jpg"/></a></div>
+                <div class="intro">
+                    <h3>2. <a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20436459/">52赫茲</a></h3>
+                    
+                            The Verse<br/>
+                    <div class="star clearfix"><span class="allstar40"></span>7.6</div>
+                </div>
+            </li>
+            
+            <li class="clearfix">
+                <div class="img"><a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20470971/"><img width="100%" src="http://img3.douban.com/spic/s24579592.jpg"/></a></div>
+                <div class="intro">
+                    <h3>3. <a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20470971/">Somewhere I Belong</a></h3>
+                    
+                            莫文蔚<br/>
+                    <div class="star clearfix"><span class="allstar40"></span>7.6</div>
+                </div>
+            </li>
+            
+            <li class="clearfix">
+                <div class="img"><a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/19955914/"><img width="100%" src="http://img3.douban.com/spic/s21863328.jpg"/></a></div>
+                <div class="intro">
+                    <h3>4. <a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/19955914/">七月与安生</a></h3>
+                    
+                            江一燕<br/>
+                    <div class="star clearfix"><span class="allstar35"></span>6.8</div>
+                </div>
+            </li>
+            
+            <li class="clearfix">
+                <div class="img"><a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/21323551/"><img width="100%" src="http://img3.douban.com/spic/s24927135.jpg"/></a></div>
+                <div class="intro">
+                    <h3>5. <a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/21323551/">好好先生</a></h3>
+                    
+                            蕭煌奇<br/>
+                    <div class="star clearfix"><span class="allstar40"></span>7.4</div>
+                </div>
+            </li>
+            
+            <li class="clearfix">
+                <div class="img"><a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/21014708/"><img width="100%" src="http://img3.douban.com/spic/s24726796.jpg"/></a></div>
+                <div class="intro">
+                    <h3>6. <a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/21014708/">意外</a></h3>
+                    
+                            小巫师 / Little Wizard<br/>
+                    <div class="star clearfix"><span class="allstar35"></span>6.9</div>
+                </div>
+            </li>
+            
+            <li class="clearfix">
+                <div class="img"><a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/21328185/"><img width="100%" src="http://img3.douban.com/spic/s24938797.jpg"/></a></div>
+                <div class="intro">
+                    <h3>7. <a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/21328185/">E.d.M.O.N.D</a></h3>
+                    
+                            梁汉文<br/>
+                    <div class="star clearfix"><span class="allstar35"></span>6.6</div>
+                </div>
+            </li>
+            
+            <li class="clearfix">
+                <div class="img"><a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20469126/"><img width="100%" src="http://img3.douban.com/spic/s24520224.jpg"/></a></div>
+                <div class="intro">
+                    <h3>8. <a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20469126/">Concert YY 黄伟文作...</a></h3>
+                    
+                            Various Artists<br/>
+                    <div class="star clearfix"><span class="allstar50"></span>9.6</div>
+                </div>
+            </li>
+            
+            <li class="clearfix">
+                <div class="img"><a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20510465/"><img width="100%" src="http://img3.douban.com/spic/s24598958.jpg"/></a></div>
+                <div class="intro">
+                    <h3>9. <a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20510465/">海龟先生</a></h3>
+                    
+                            海龟先生<br/>
+                    <div class="star clearfix"><span class="allstar40"></span>8.1</div>
+                </div>
+            </li>
+            
+            <li class="clearfix">
+                <div class="img"><a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20445379/"><img width="100%" src="http://img5.douban.com/spic/s24511899.jpg"/></a></div>
+                <div class="intro">
+                    <h3>10. <a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20445379/">这小小的葡萄我从来没...</a></h3>
+                    
+                            左小祖咒 ZuoXiaoZuZhou <br/>
+                    <div class="star clearfix"><span class="allstar35"></span>6.9</div>
+                </div>
+            </li>
+        </ul>
+        <ul class="content clearfix" id="newcontent2">
+
+            
+            <li class="clearfix">
+                <div class="img"><a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20375609/"><img width="100%" src="http://img3.douban.com/spic/s24225670.jpg"/></a></div>
+                <div class="intro">
+                    <h3>1. <a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20375609/">Holy Fire</a></h3>
+                    
+                            Foals<br/>
+                    <div class="star clearfix"><span class="allstar45"></span>8.5</div>
+                </div>
+            </li>
+            
+            <li class="clearfix">
+                <div class="img"><a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/21338323/"><img width="100%" src="http://img3.douban.com/spic/s24951874.jpg"/></a></div>
+                <div class="intro">
+                    <h3>2. <a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/21338323/">m b v</a></h3>
+                    
+                            My Bloody Valentine<br/>
+                    <div class="star clearfix"><span class="allstar40"></span>7.2</div>
+                </div>
+            </li>
+            
+            <li class="clearfix">
+                <div class="img"><a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20271083/"><img width="100%" src="http://img3.douban.com/spic/s24579867.jpg"/></a></div>
+                <div class="intro">
+                    <h3>3. <a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20271083/">Cloud Atlas: Original ...</a></h3>
+                    
+                            Tom Tykwer <br/>
+                    <div class="star clearfix"><span class="allstar50"></span>9.3</div>
+                </div>
+            </li>
+            
+            <li class="clearfix">
+                <div class="img"><a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20663669/"><img width="100%" src="http://img3.douban.com/spic/s24711455.jpg"/></a></div>
+                <div class="intro">
+                    <h3>4. <a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20663669/">2013 GRAMMY Nomi...</a></h3>
+                    
+                            Various Artists<br/>
+                    <div class="star clearfix"><span class="allstar40"></span>7.4</div>
+                </div>
+            </li>
+            
+            <li class="clearfix">
+                <div class="img"><a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20379854/"><img width="100%" src="http://img3.douban.com/spic/s24228710.jpg"/></a></div>
+                <div class="intro">
+                    <h3>5. <a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20379854/">Anna</a></h3>
+                    
+                            The Courteeners<br/>
+                    <div class="star clearfix"><span class="allstar35"></span>7.1</div>
+                </div>
+            </li>
+            
+            <li class="clearfix">
+                <div class="img"><a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20468489/"><img width="100%" src="http://img3.douban.com/spic/s24519411.jpg"/></a></div>
+                <div class="intro">
+                    <h3>6. <a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20468489/">2012 Billboard年终单...</a></h3>
+                    
+                            欧美群星<br/>
+                    <div class="star clearfix"><span class="allstar45"></span>8.4</div>
+                </div>
+            </li>
+            
+            <li class="clearfix">
+                <div class="img"><a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20391463/"><img width="100%" src="http://img3.douban.com/spic/s24426004.jpg"/></a></div>
+                <div class="intro">
+                    <h3>7. <a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20391463/">We Are The 21st Cent...</a></h3>
+                    
+                            Foxygen<br/>
+                    <div class="star clearfix"><span class="allstar40"></span>7.8</div>
+                </div>
+            </li>
+            
+            <li class="clearfix">
+                <div class="img"><a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20272159/"><img width="100%" src="http://img3.douban.com/spic/s24950165.jpg"/></a></div>
+                <div class="intro">
+                    <h3>8. <a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20272159/">Wonderful, Glorious</a></h3>
+                    
+                            Eels<br/>
+                    <div class="star clearfix"><span class="allstar40"></span>7.8</div>
+                </div>
+            </li>
+            
+            <li class="clearfix">
+                <div class="img"><a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20433247/"><img width="100%" src="http://img3.douban.com/spic/s24582331.jpg"/></a></div>
+                <div class="intro">
+                    <h3>9. <a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20433247/">Temper Temper</a></h3>
+                    
+                            Bullet For My Valentine<br/>
+                    <div class="star clearfix"><span class="allstar30"></span>5.4</div>
+                </div>
+            </li>
+            
+            <li class="clearfix">
+                <div class="img"><a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20423764/"><img width="100%" src="http://img3.douban.com/spic/s24456941.jpg"/></a></div>
+                <div class="intro">
+                    <h3>10. <a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20423764/">Quentin Tarantino&#39;s D...</a></h3>
+                    
+                            Various Artists<br/>
+                    <div class="star clearfix"><span class="allstar50"></span>9.3</div>
+                </div>
+            </li>
+        </ul>
+        <ul class="content clearfix" id="newcontent3">
+
+            
+            <li class="clearfix">
+                <div class="img"><a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20443850/"><img width="100%" src="http://img3.douban.com/spic/s24510338.jpg"/></a></div>
+                <div class="intro">
+                    <h3>1. <a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20443850/">Real</a></h3>
+                    
+                            中島美嘉<br/>
+                    <div class="star clearfix"><span class="allstar40"></span>7.9</div>
+                </div>
+            </li>
+            
+            <li class="clearfix">
+                <div class="img"><a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20411291/"><img width="100%" src="http://img3.douban.com/spic/s24444795.jpg"/></a></div>
+                <div class="intro">
+                    <h3>2. <a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20411291/">neuron</a></h3>
+                    
+                            sleepy.ab<br/>
+                    <div class="star clearfix"><span class="allstar40"></span>8.1</div>
+                </div>
+            </li>
+            
+            <li class="clearfix">
+                <div class="img"><a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20471781/"><img width="100%" src="http://img3.douban.com/spic/s24961448.jpg"/></a></div>
+                <div class="intro">
+                    <h3>3. <a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20471781/">TRY AGAIN</a></h3>
+                    
+                            倉木麻衣<br/>
+                    <div class="star clearfix"><span class="allstar35"></span>7.2</div>
+                </div>
+            </li>
+            
+            <li class="clearfix">
+                <div class="img"><a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20458847/"><img width="100%" src="http://img3.douban.com/spic/s24524636.jpg"/></a></div>
+                <div class="intro">
+                    <h3>4. <a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20458847/">LOVE again</a></h3>
+                    
+                            浜崎あゆみ<br/>
+                    <div class="star clearfix"><span class="allstar40"></span>7.5</div>
+                </div>
+            </li>
+            
+            <li class="clearfix">
+                <div class="img"><a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20502454/"><img width="100%" src="http://img3.douban.com/spic/s24635697.jpg"/></a></div>
+                <div class="intro">
+                    <h3>5. <a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20502454/">I</a></h3>
+                    
+                            김재중 / 金在中<br/>
+                    <div class="star clearfix"><span class="allstar45"></span>8.4</div>
+                </div>
+            </li>
+            
+            <li class="clearfix">
+                <div class="img"><a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20507163/"><img width="100%" src="http://img3.douban.com/spic/s24594637.jpg"/></a></div>
+                <div class="intro">
+                    <h3>6. <a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20507163/">Re:Blue</a></h3>
+                    
+                            CNBLUE / 씨엔블루<br/>
+                    <div class="star clearfix"><span class="allstar40"></span>7.5</div>
+                </div>
+            </li>
+            
+            <li class="clearfix">
+                <div class="img"><a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20435513/"><img width="100%" src="http://img3.douban.com/spic/s24480970.jpg"/></a></div>
+                <div class="intro">
+                    <h3>7. <a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20435513/">Miss AOI - Bonjour Pa...</a></h3>
+                    
+                            手嶌葵<br/>
+                    <div class="star clearfix"><span class="allstar40"></span>7.6</div>
+                </div>
+            </li>
+            
+            <li class="clearfix">
+                <div class="img"><a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20382092/"><img width="100%" src="http://img3.douban.com/spic/s24478981.jpg"/></a></div>
+                <div class="intro">
+                    <h3>8. <a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20382092/">ARASHI アラフェス N...</a></h3>
+                    
+                            嵐<br/>
+                    <div class="star clearfix"><span class="allstar50"></span>9.8</div>
+                </div>
+            </li>
+            
+            <li class="clearfix">
+                <div class="img"><a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20269402/"><img width="100%" src="http://img3.douban.com/spic/s24922296.jpg"/></a></div>
+                <div class="intro">
+                    <h3>9. <a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20269402/">ファンキーモンキーベ...</a></h3>
+                    
+                            FUNKY MONKEY BABYS<br/>
+                    <div class="star clearfix"><span class="allstar40"></span>7.8</div>
+                </div>
+            </li>
+            
+            <li class="clearfix">
+                <div class="img"><a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20443848/"><img width="100%" src="http://img3.douban.com/spic/s24510336.jpg"/></a></div>
+                <div class="intro">
+                    <h3>10. <a onclick="moreurl(this, {from:'new'})" href="http://music.douban.com/subject/20443848/">REAL(初回生産限定盤...</a></h3>
+                    
+                            中島美嘉<br/>
+                    <div class="star clearfix"><span class="allstar45"></span>8.4</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+    
+    
+    
+    <div class="music_genre">
+        <h2 class="tabs clearfix">
+            <div class="ll">热门乐评</div>
+            <a id="gnew1" class="on" href='javascript:void(0)'><span>流行</span></a>
+            <a id="gnew2" href='javascript:void(0)'><span>摇滚</span></a>
+            <a id="gnew3" href='javascript:void(0)'><span>电子</span></a>
+            <a id="gnew4" href='javascript:void(0)'><span>古典与爵士</span></a>
+        </h2>
+
+            <ul class="content2 clearfix" id="grcontent1">
+
+                
+    <ul class="tlst clearfix" style="clear:both">
+    <li class="nlst"><h3><div id="tb-5753503" class="rr"><a id="af-5753503" rel="sw-False" href="http://music.douban.com/review/5753503/" class="j a_unfolder" style="background:none;">
+    <img src="http://img3.douban.com/pics/blank.gif" alt="&gt;" width="48" height="19" class="bn-arrow" title="展开全文" onclick="moreurl(this,{from:'review-show-full',owner:'20553868',itself:5753503})"/></a>
+    <a id="au-5753503" href="javascript:void(0);" class="j a_folder" style="background:none;display:none">
+    <img src="http://img3.douban.com/pics/blank.gif" alt="&lt;" width="48" height="19" class="bn-arrow" title="缩进全文"/></a>
+    </div><a title="歌词在此：" href="http://music.douban.com/review/5753503/">歌词在此：</a></h3></li>
+    <li class="ilst" style="clear:both;">
+            <a href="http://music.douban.com/subject/20553868/" title="Sweet Brown - Ain’t Nobody Got Time for That (feat. The Parody Factory) – Single"><img src="http://img3.douban.com/spic/s24629750.jpg" class="fil" alt="Sweet Brown - Ain’t Nobody Got Time for That (feat. The Parody Factory) – Single" style="max-width:85px;"/></a>
+            </li>
+    <li class="clst report-link"><span class="pl ll obss"><span class="starb"> <a href="http://music.douban.com/people/drdreamer/">Mr.枕头</a> &nbsp;评论 <a href="http://music.douban.com/subject/20553868/" onclick="moreurl(this, {from:'review'})">《Ain’t Nobody Got Time for That (feat. The Parody Factory) – Single》</a>
+            </span><span class="allstar50" title="力荐"></span></span><div id="review_5753503_short" class="review-short">Well, I woke up and go get me a cold pop. Then I thought somebody is barbecue. I said OH,Lord Jesus, this was a fire. th...... <a class="pl" href="http://music.douban.com/review/5753503/">(12回应)</a></div><div id="review_5753503_full" style="display:none"></div>
+    </li>
+    </ul>
+    <div class="clear"></div>
+    
+                
+    <ul class="tlst clearfix" style="clear:both">
+    <li class="nlst"><h3><div id="tb-5753523" class="rr"><a id="af-5753523" rel="sw-False" href="http://music.douban.com/review/5753523/" class="j a_unfolder" style="background:none;">
+    <img src="http://img3.douban.com/pics/blank.gif" alt="&gt;" width="48" height="19" class="bn-arrow" title="展开全文" onclick="moreurl(this,{from:'review-show-full',owner:'20553868',itself:5753523})"/></a>
+    <a id="au-5753523" href="javascript:void(0);" class="j a_folder" style="background:none;display:none">
+    <img src="http://img3.douban.com/pics/blank.gif" alt="&lt;" width="48" height="19" class="bn-arrow" title="缩进全文"/></a>
+    </div><a title="击败王心凌成新一代甜心教主，Sweet Brown处女单半日夺冠。" href="http://music.douban.com/review/5753523/">击败王心凌成新一代甜心教主，Sweet Brown处女单...</a></h3></li>
+    <li class="ilst" style="clear:both;">
+            <a href="http://music.douban.com/subject/20553868/" title="Sweet Brown - Ain’t Nobody Got Time for That (feat. The Parody Factory) – Single"><img src="http://img3.douban.com/spic/s24629750.jpg" class="fil" alt="Sweet Brown - Ain’t Nobody Got Time for That (feat. The Parody Factory) – Single" style="max-width:85px;"/></a>
+            </li>
+    <li class="clst report-link"><span class="pl ll obss"><span class="starb"> <a href="http://music.douban.com/people/ChannaDisco/">夏奈天天都很饿</a> &nbsp;评论 <a href="http://music.douban.com/subject/20553868/" onclick="moreurl(this, {from:'review'})">《Ain’t Nobody Got Time for That (feat. The Parody Factory) – Single》</a>
+            </span><span class="allstar50" title="力荐"></span></span><div id="review_5753523_short" class="review-short">【美国众婊惨遭宇宙评委批评，天后宝座无人接班】 
+
+美国本土音乐的不景气几乎是人尽皆知，尽管日日霉霉嘎嘎懒妮麻辣鸡和果婊坚持不懈为了美国音乐一脱再脱，但她们车祸般的现场几乎已经让音乐爱好者提不起任何兴趣。最公平公正的宇宙评委齐芹最近就对...... <a class="pl" href="http://music.douban.com/review/5753523/">(32回应)</a></div><div id="review_5753523_full" style="display:none"></div>
+    </li>
+    </ul>
+    <div class="clear"></div>
+    
+                
+    <ul class="tlst clearfix" style="clear:both">
+    <li class="nlst"><h3><div id="tb-5747835" class="rr"><a id="af-5747835" rel="sw-False" href="http://music.douban.com/review/5747835/" class="j a_unfolder" style="background:none;">
+    <img src="http://img3.douban.com/pics/blank.gif" alt="&gt;" width="48" height="19" class="bn-arrow" title="展开全文" onclick="moreurl(this,{from:'review-show-full',owner:'10554568',itself:5747835})"/></a>
+    <a id="au-5747835" href="javascript:void(0);" class="j a_folder" style="background:none;display:none">
+    <img src="http://img3.douban.com/pics/blank.gif" alt="&lt;" width="48" height="19" class="bn-arrow" title="缩进全文"/></a>
+    </div><a title="我终于明白为什么百度有人说搞不清麦当劳和麦当娜" href="http://music.douban.com/review/5747835/">我终于明白为什么百度有人说搞不清麦当劳和麦当娜</a></h3></li>
+    <li class="ilst" style="clear:both;">
+            <a href="http://music.douban.com/subject/10554568/" title="Madonna - MDNA (Deluxe Edition)"><img src="http://img3.douban.com/spic/s8967446.jpg" class="fil" alt="Madonna - MDNA (Deluxe Edition)" style="max-width:85px;"/></a>
+            </li>
+    <li class="clst report-link"><span class="pl ll obss"><span class="starb"> <a href="http://music.douban.com/people/jason1087/">渡辺純一</a> &nbsp;评论 <a href="http://music.douban.com/subject/10554568/" onclick="moreurl(this, {from:'review'})">《MDNA (Deluxe Edition)》</a>
+            </span><span class="allstar40" title="推荐"></span></span><div id="review_5747835_short" class="review-short">故技重施麦基因，平稳中庸麦满分。
+
+封面做的像百叶窗千层镜一样的酷炫迷离，很有动态的幻觉，盯着她烈焰红唇的经典造型，恍惚又傲然的眼神欲言又止。
+
+这张专辑曲风统一，旋律流畅，彻底走向pop，没什么惊心动魄，造型和美术设计都比歌曲制作...... <a class="pl" href="http://music.douban.com/review/5747835/">(22回应)</a></div><div id="review_5747835_full" style="display:none"></div>
+    </li>
+    </ul>
+    <div class="clear"></div>
+    
+            <div style="float:right">&gt; <a href="http://music.douban.com/review/pop/" >更多乐评</a></div>
+            </ul>
+            <ul class="content2 clearfix" id="grcontent2">
+
+                
+    <ul class="tlst clearfix" style="clear:both">
+    <li class="nlst"><h3><div id="tb-5717291" class="rr"><a id="af-5717291" rel="sw-False" href="http://music.douban.com/review/5717291/" class="j a_unfolder" style="background:none;">
+    <img src="http://img3.douban.com/pics/blank.gif" alt="&gt;" width="48" height="19" class="bn-arrow" title="展开全文" onclick="moreurl(this,{from:'review-show-full',owner:'1764282',itself:5717291})"/></a>
+    <a id="au-5717291" href="javascript:void(0);" class="j a_folder" style="background:none;display:none">
+    <img src="http://img3.douban.com/pics/blank.gif" alt="&lt;" width="48" height="19" class="bn-arrow" title="缩进全文"/></a>
+    </div><a title="这次还是没有题目" href="http://music.douban.com/review/5717291/">这次还是没有题目</a></h3></li>
+    <li class="ilst" style="clear:both;">
+            <a href="http://music.douban.com/subject/1764282/" title="哪吒 - 他在时间门外"><img src="http://img3.douban.com/spic/s24519618.jpg" class="fil" alt="哪吒 - 他在时间门外" style="max-width:85px;"/></a>
+            </li>
+    <li class="clst report-link"><span class="pl ll obss"><span class="starb"> <a href="http://music.douban.com/people/bob1984/">Bob</a> &nbsp;评论 <a href="http://music.douban.com/subject/1764282/" onclick="moreurl(this, {from:'review'})">《他在时间门外》</a>
+            </span><span class="allstar50" title="力荐"></span></span><div id="review_5717291_short" class="review-short">　　收到CD的时候发现寄件人那一栏写着“哪吒”两个字，然后就被煽到了，所有的不甘都在拆开这个包裹的过程中而烟消云散。
+　　这是一张等了太久的唱片，即使她早已经以mp3为载体在众多电脑里来来回回传了无数遍，但这并不妨碍我们的期盼之情。
+　...... <a class="pl" href="http://music.douban.com/review/5717291/">(12回应)</a></div><div id="review_5717291_full" style="display:none"></div>
+    </li>
+    </ul>
+    <div class="clear"></div>
+    
+                
+    <ul class="tlst clearfix" style="clear:both">
+    <li class="nlst"><h3><div id="tb-5750893" class="rr"><a id="af-5750893" rel="sw-False" href="http://music.douban.com/review/5750893/" class="j a_unfolder" style="background:none;">
+    <img src="http://img3.douban.com/pics/blank.gif" alt="&gt;" width="48" height="19" class="bn-arrow" title="展开全文" onclick="moreurl(this,{from:'review-show-full',owner:'10746137',itself:5750893})"/></a>
+    <a id="au-5750893" href="javascript:void(0);" class="j a_folder" style="background:none;display:none">
+    <img src="http://img3.douban.com/pics/blank.gif" alt="&lt;" width="48" height="19" class="bn-arrow" title="缩进全文"/></a>
+    </div><a title="The Start Of Something" href="http://music.douban.com/review/5750893/">The Start Of Something</a></h3></li>
+    <li class="ilst" style="clear:both;">
+            <a href="http://music.douban.com/subject/10746137/" title="DIIV - Oshin"><img src="http://img3.douban.com/spic/s9109286.jpg" class="fil" alt="DIIV - Oshin" style="max-width:85px;"/></a>
+            </li>
+    <li class="clst report-link"><span class="pl ll obss"><span class="starb"> <a href="http://music.douban.com/people/superjin/">GIV莲UP</a> &nbsp;评论 <a href="http://music.douban.com/subject/10746137/" onclick="moreurl(this, {from:'review'})">《Oshin》</a>
+            </span><span class="allstar50" title="力荐"></span></span><div id="review_5750893_short" class="review-short">咳咳，我可以通过维基百科+歌迷基站给大家翻译、传递、简述关于这个刚刚从地下冒出的新生力量的点点滴滴，嘿，等等，你真的没有意识到这不只是一张唱片，一支被冠以Beach Fossils分支的乐队，而是某种独立乐革新掀起的浪花。
+
+从2012...... <a class="pl" href="http://music.douban.com/review/5750893/">(7回应)</a></div><div id="review_5750893_full" style="display:none"></div>
+    </li>
+    </ul>
+    <div class="clear"></div>
+    
+                
+    <ul class="tlst clearfix" style="clear:both">
+    <li class="nlst"><h3><div id="tb-5756781" class="rr"><a id="af-5756781" rel="sw-False" href="http://music.douban.com/review/5756781/" class="j a_unfolder" style="background:none;">
+    <img src="http://img3.douban.com/pics/blank.gif" alt="&gt;" width="48" height="19" class="bn-arrow" title="展开全文" onclick="moreurl(this,{from:'review-show-full',owner:'20503026',itself:5756781})"/></a>
+    <a id="au-5756781" href="javascript:void(0);" class="j a_folder" style="background:none;display:none">
+    <img src="http://img3.douban.com/pics/blank.gif" alt="&lt;" width="48" height="19" class="bn-arrow" title="缩进全文"/></a>
+    </div><a title="宇宙超级大团$uede新年献礼" href="http://music.douban.com/review/5756781/">宇宙超级大团$uede新年献礼</a></h3></li>
+    <li class="ilst" style="clear:both;">
+            <a href="http://music.douban.com/subject/20503026/" title="Suede - Barriers"><img src="http://img3.douban.com/spic/s24591144.jpg" class="fil" alt="Suede - Barriers" style="max-width:85px;"/></a>
+            </li>
+    <li class="clst report-link"><span class="pl ll obss"><span class="starb"> <a href="http://music.douban.com/people/Sirensea/">.</a> &nbsp;评论 <a href="http://music.douban.com/subject/20503026/" onclick="moreurl(this, {from:'review'})">《Barriers》</a>
+            </span></span><div id="review_5756781_short" class="review-short">       03年的解散让歌迷们痛哭流涕，10年的重组让歌迷们喜极而泣，接着又用马不停蹄的巡演来回馈歌迷们的钱包。如今，他们又有了圈钱的新花样，通过发新专辑来抢走歌们为了追现场而仅剩的馍馍，他们就是——$uede。
+
+       约...... <a class="pl" href="http://music.douban.com/review/5756781/">(8回应)</a></div><div id="review_5756781_full" style="display:none"></div>
+    </li>
+    </ul>
+    <div class="clear"></div>
+    
+            <div style="float:right">&gt; <a href="http://music.douban.com/review/rock/" >更多乐评</a></div>
+            </ul>
+            <ul class="content2 clearfix" id="grcontent3">
+
+                
+    <ul class="tlst clearfix" style="clear:both">
+    <li class="nlst"><h3><div id="tb-5754511" class="rr"><a id="af-5754511" rel="sw-False" href="http://music.douban.com/review/5754511/" class="j a_unfolder" style="background:none;">
+    <img src="http://img3.douban.com/pics/blank.gif" alt="&gt;" width="48" height="19" class="bn-arrow" title="展开全文" onclick="moreurl(this,{from:'review-show-full',owner:'20436459',itself:5754511})"/></a>
+    <a id="au-5754511" href="javascript:void(0);" class="j a_folder" style="background:none;display:none">
+    <img src="http://img3.douban.com/pics/blank.gif" alt="&lt;" width="48" height="19" class="bn-arrow" title="缩进全文"/></a>
+    </div><a title="回归本源——谁是“陈绮贞”" href="http://music.douban.com/review/5754511/">回归本源——谁是“陈绮贞”</a></h3></li>
+    <li class="ilst" style="clear:both;">
+            <a href="http://music.douban.com/subject/20436459/" title="The Verse - 52赫茲"><img src="http://img3.douban.com/spic/s24923467.jpg" class="fil" alt="The Verse - 52赫茲" style="max-width:85px;"/></a>
+            </li>
+    <li class="clst report-link"><span class="pl ll obss"><span class="starb"> <a href="http://music.douban.com/people/4376475/">CheerRyan</a> &nbsp;评论 <a href="http://music.douban.com/subject/20436459/" onclick="moreurl(this, {from:'review'})">《52赫茲》</a>
+            </span><span class="allstar50" title="力荐"></span></span><div id="review_5754511_short" class="review-short">  关注陈绮贞的时间不算久，也不算短——正好十年。
+
+  以前闲聊时谈起听到的好嗓音，我会说起这位，常常得到的回应是：“谁是陈绮贞？”。那时候，我觉得有点郁闷，独白式娓娓道来的唱腔，毫不试图模仿和迎合什么的创作，让人眼前一亮的歌词——有...... <a class="pl" href="http://music.douban.com/review/5754511/">(8回应)</a></div><div id="review_5754511_full" style="display:none"></div>
+    </li>
+    </ul>
+    <div class="clear"></div>
+    
+                
+    <ul class="tlst clearfix" style="clear:both">
+    <li class="nlst"><h3><div id="tb-5753467" class="rr"><a id="af-5753467" rel="sw-False" href="http://music.douban.com/review/5753467/" class="j a_unfolder" style="background:none;">
+    <img src="http://img3.douban.com/pics/blank.gif" alt="&gt;" width="48" height="19" class="bn-arrow" title="展开全文" onclick="moreurl(this,{from:'review-show-full',owner:'20471506',itself:5753467})"/></a>
+    <a id="au-5753467" href="javascript:void(0);" class="j a_folder" style="background:none;display:none">
+    <img src="http://img3.douban.com/pics/blank.gif" alt="&lt;" width="48" height="19" class="bn-arrow" title="缩进全文"/></a>
+    </div><a title="WHO R U？" href="http://music.douban.com/review/5753467/">WHO R U？</a></h3></li>
+    <li class="ilst" style="clear:both;">
+            <a href="http://music.douban.com/subject/20471506/" title="吴俊达 Villy Vonka - Fight 4 Diamonds"><img src="http://img3.douban.com/spic/s24523181.jpg" class="fil" alt="吴俊达 Villy Vonka - Fight 4 Diamonds" style="max-width:85px;"/></a>
+            </li>
+    <li class="clst report-link"><span class="pl ll obss"><span class="starb"> <a href="http://music.douban.com/people/mikey_chou/">Tsuneyasu.Z</a> &nbsp;评论 <a href="http://music.douban.com/subject/20471506/" onclick="moreurl(this, {from:'review'})">《Fight 4 Diamonds》</a>
+            </span><span class="allstar40" title="推荐"></span></span><div id="review_5753467_short" class="review-short">       就像是他Intro中问的一样，“who am I”，初听到吴俊达这个名字，我们也会问相似的问题：“who r u？”。
+    不得不说这是一张创新的专辑，他玩出了一种新的音乐表达方式，如果不是他青涩的发音出卖了他，你可能会......</div><div id="review_5753467_full" style="display:none"></div>
+    </li>
+    </ul>
+    <div class="clear"></div>
+    
+                
+    <ul class="tlst clearfix" style="clear:both">
+    <li class="nlst"><h3><div id="tb-5755570" class="rr"><a id="af-5755570" rel="sw-False" href="http://music.douban.com/review/5755570/" class="j a_unfolder" style="background:none;">
+    <img src="http://img3.douban.com/pics/blank.gif" alt="&gt;" width="48" height="19" class="bn-arrow" title="展开全文" onclick="moreurl(this,{from:'review-show-full',owner:'20436459',itself:5755570})"/></a>
+    <a id="au-5755570" href="javascript:void(0);" class="j a_folder" style="background:none;display:none">
+    <img src="http://img3.douban.com/pics/blank.gif" alt="&lt;" width="48" height="19" class="bn-arrow" title="缩进全文"/></a>
+    </div><a title="仅为了那些年狂恋的老师" href="http://music.douban.com/review/5755570/">仅为了那些年狂恋的老师</a></h3></li>
+    <li class="ilst" style="clear:both;">
+            <a href="http://music.douban.com/subject/20436459/" title="The Verse - 52赫茲"><img src="http://img3.douban.com/spic/s24923467.jpg" class="fil" alt="The Verse - 52赫茲" style="max-width:85px;"/></a>
+            </li>
+    <li class="clst report-link"><span class="pl ll obss"><span class="starb"> <a href="http://music.douban.com/people/ztl-poppy/">ztlpoppy</a> &nbsp;评论 <a href="http://music.douban.com/subject/20436459/" onclick="moreurl(this, {from:'review'})">《52赫茲》</a>
+            </span><span class="allstar40" title="推荐"></span></span><div id="review_5755570_short" class="review-short">
+陈绮贞出了新的组合和新的专辑，马上听了一遍。打着法式电子的旗号我不予置评，如果作为一张“电子”，“实验”的专辑听，实在是不敢恭维。三位民谣小清新咖尝试着创新，听下来还是浓浓的民谣味儿。朋友说，只是写那些小清新情歌，或者一味的包装卢广仲，...... <a class="pl" href="http://music.douban.com/review/5755570/">(7回应)</a></div><div id="review_5755570_full" style="display:none"></div>
+    </li>
+    </ul>
+    <div class="clear"></div>
+    
+            <div style="float:right">&gt; <a href="http://music.douban.com/review/electro/" >更多乐评</a></div>
+            </ul>
+            <ul class="content2 clearfix" id="grcontent4">
+
+                
+    <ul class="tlst clearfix" style="clear:both">
+    <li class="nlst"><h3><div id="tb-5759570" class="rr"><a id="af-5759570" rel="sw-False" href="http://music.douban.com/review/5759570/" class="j a_unfolder" style="background:none;">
+    <img src="http://img3.douban.com/pics/blank.gif" alt="&gt;" width="48" height="19" class="bn-arrow" title="展开全文" onclick="moreurl(this,{from:'review-show-full',owner:'21328081',itself:5759570})"/></a>
+    <a id="au-5759570" href="javascript:void(0);" class="j a_folder" style="background:none;display:none">
+    <img src="http://img3.douban.com/pics/blank.gif" alt="&lt;" width="48" height="19" class="bn-arrow" title="缩进全文"/></a>
+    </div><a title="我们跟林宥嘉都是来真的-- by 音乐监制程杰" href="http://music.douban.com/review/5759570/">我们跟林宥嘉都是来真的-- by 音乐监制程杰</a></h3></li>
+    <li class="ilst" style="clear:both;">
+            <a href="http://music.douban.com/subject/21328081/" title="林宥嘉 - Jazz Channel 林宥嘉邂逅爵士慈善音樂會Live精華"><img src="http://img3.douban.com/spic/s24940363.jpg" class="fil" alt="林宥嘉 - Jazz Channel 林宥嘉邂逅爵士慈善音樂會Live精華" style="max-width:85px;"/></a>
+            </li>
+    <li class="clst report-link"><span class="pl ll obss"><span class="starb"> <a href="http://music.douban.com/people/33371681/">sisterwu</a> &nbsp;评论 <a href="http://music.douban.com/subject/21328081/" onclick="moreurl(this, {from:'review'})">《Jazz Channel 林宥嘉邂逅爵士慈善音樂會Live精華》</a>
+            </span><span class="allstar50" title="力荐"></span></span><div id="review_5759570_short" class="review-short">我非常期待今年二月五号的到来。因为宥嘉去年2／26在台北TICC办的爵士音乐会要发Live专辑了！
+
+这场音乐会是由华研施人诚大哥企画、台科大EMBA校友会主办、宥嘉和我负责音乐监制、必应创造负责演唱会制作，然后我找了另外五位我非常信任...... <a class="pl" href="http://music.douban.com/review/5759570/">(20回应)</a></div><div id="review_5759570_full" style="display:none"></div>
+    </li>
+    </ul>
+    <div class="clear"></div>
+    
+                
+    <ul class="tlst clearfix" style="clear:both">
+    <li class="nlst"><h3><div id="tb-5742880" class="rr"><a id="af-5742880" rel="sw-False" href="http://music.douban.com/review/5742880/" class="j a_unfolder" style="background:none;">
+    <img src="http://img3.douban.com/pics/blank.gif" alt="&gt;" width="48" height="19" class="bn-arrow" title="展开全文" onclick="moreurl(this,{from:'review-show-full',owner:'20470971',itself:5742880})"/></a>
+    <a id="au-5742880" href="javascript:void(0);" class="j a_folder" style="background:none;display:none">
+    <img src="http://img3.douban.com/pics/blank.gif" alt="&lt;" width="48" height="19" class="bn-arrow" title="缩进全文"/></a>
+    </div><a title="冷艳女伶的爵士" href="http://music.douban.com/review/5742880/">冷艳女伶的爵士</a></h3></li>
+    <li class="ilst" style="clear:both;">
+            <a href="http://music.douban.com/subject/20470971/" title="莫文蔚 - Somewhere I Belong"><img src="http://img3.douban.com/spic/s24579592.jpg" class="fil" alt="莫文蔚 - Somewhere I Belong" style="max-width:85px;"/></a>
+            </li>
+    <li class="clst report-link"><span class="pl ll obss"><span class="starb"> <a href="http://music.douban.com/people/jason1087/">渡辺純一</a> &nbsp;评论 <a href="http://music.douban.com/subject/20470971/" onclick="moreurl(this, {from:'review'})">《Somewhere I Belong》</a>
+            </span><span class="allstar40" title="推荐"></span></span><div id="review_5742880_short" class="review-short">莫文蔚带来新年新作，全新演绎各家名作。一首Trip-Hop醉人佳酿被改编成钢琴爵士的茶品，《心酸时刻》的莫文蔚颠覆经典，风采依然！
+
+莫文蔚一直是一个很有个性的女歌手，从《全身莫文蔚》一脱成名到《一朵金花》剑走偏锋的电子音乐，她说爱要很...... <a class="pl" href="http://music.douban.com/review/5742880/">(7回应)</a></div><div id="review_5742880_full" style="display:none"></div>
+    </li>
+    </ul>
+    <div class="clear"></div>
+    
+                
+    <ul class="tlst clearfix" style="clear:both">
+    <li class="nlst"><h3><div id="tb-5743202" class="rr"><a id="af-5743202" rel="sw-False" href="http://music.douban.com/review/5743202/" class="j a_unfolder" style="background:none;">
+    <img src="http://img3.douban.com/pics/blank.gif" alt="&gt;" width="48" height="19" class="bn-arrow" title="展开全文" onclick="moreurl(this,{from:'review-show-full',owner:'20516084',itself:5743202})"/></a>
+    <a id="au-5743202" href="javascript:void(0);" class="j a_folder" style="background:none;display:none">
+    <img src="http://img3.douban.com/pics/blank.gif" alt="&lt;" width="48" height="19" class="bn-arrow" title="缩进全文"/></a>
+    </div><a title="真正意义上的Classical Crossover" href="http://music.douban.com/review/5743202/">真正意义上的Classical Crossover</a></h3></li>
+    <li class="ilst" style="clear:both;">
+            <a href="http://music.douban.com/subject/20516084/" title="2Cellos - In2ition"><img src="http://img3.douban.com/spic/s24612687.jpg" class="fil" alt="2Cellos - In2ition" style="max-width:85px;"/></a>
+            </li>
+    <li class="clst report-link"><span class="pl ll obss"><span class="starb"> <a href="http://music.douban.com/people/selvaggia/">Monica Evana</a> &nbsp;评论 <a href="http://music.douban.com/subject/20516084/" onclick="moreurl(this, {from:'review'})">《In2ition》</a>
+            </span><span class="allstar50" title="力荐"></span></span><div id="review_5743202_short" class="review-short">实话说他们的首专曾经让我有点失望，所以在几个月前对这张专辑的期待度还相当低。
+不过这阵子以来先后听了MV版本的Highway 2 Hell和Supermassive Black Hole以及现场版本的We Found Love和Bened...... <a class="pl" href="http://music.douban.com/review/5743202/">(2回应)</a></div><div id="review_5743202_full" style="display:none"></div>
+    </li>
+    </ul>
+    <div class="clear"></div>
+    
+            <div style="float:right">&gt; <a href="http://music.douban.com/review/classic/" >更多乐评</a></div>
+            </ul>
+    </div>
+
+    </div>
+
+	</div>
+        <div class="aside">
+            
+
+    <!-- douban ad begin -->
+    <div id="dale_music_home_top_right"></div>
+    <div id="dale_music_home_top_right2"></div>
+    <!-- douban ad end -->
+
+    
+    
+    
+        <div class="newtags">
+            <h2>热门标签<span class="pl"><a href="http://music.douban.com/tag/?view=cloud">所有标签 »</a></span></h2>
+            <ul class="content clearfix last">
+                <li>[风格]</li>
+                <li><a href="/tag/OST">OST</a></li>
+                <li><a href="/tag/pop">pop</a></li>
+                <li><a href="/tag/indie">indie</a></li>
+                <li><a href="/tag/民谣">民谣</a></li>
+                <li><a href="/tag/J-POP">J-POP</a></li>
+                <li><a href="/tag/Folk">Folk</a></li>
+                <li><a href="/tag/rock">rock</a></li>
+                <li><a href="/tag/Electronic">Electronic</a></li>
+                <li><a href="/tag/流行">流行</a></li>
+                <li><a href="/tag/JPOP">JPOP</a></li>
+                <li><a href="/tag/摇滚">摇滚</a></li>
+                <li><a href="/tag/jazz">jazz</a></li>
+                <li><a href="/tag/post-rock">post-rock</a></li>
+                <li><a href="/tag/?view=type#风格">(更多)</a></li>
+            </ul>
+            <ul class="content clearfix last">
+                <li>[地区]</li>
+                <li><a href="/tag/台湾">台湾</a></li>
+                <li><a href="/tag/日本">日本</a></li>
+                <li><a href="/tag/欧美">欧美</a></li>
+                <li><a href="/tag/美国">美国</a></li>
+                <li><a href="/tag/香港">香港</a></li>
+                <li><a href="/tag/内地">内地</a></li>
+                <li><a href="/tag/英国">英国</a></li>
+                <li><a href="/tag/华语">华语</a></li>
+                <li><a href="/tag/UK">UK</a></li>
+                <li><a href="/tag/中国">中国</a></li>
+                <li><a href="/tag/韩国">韩国</a></li>
+                <li><a href="/tag/粤语">粤语</a></li>
+                <li><a href="/tag/英伦">英伦</a></li>
+                <li><a href="/tag/?view=type#地区">(更多)</a></li>
+            </ul>
+            <ul class="content clearfix last">
+                <li>[艺术家]</li>
+                <li><a href="/tag/陈绮贞">陈绮贞</a></li>
+                <li><a href="/tag/陈奕迅">陈奕迅</a></li>
+                <li><a href="/tag/王菲">王菲</a></li>
+                <li><a href="/tag/周杰伦">周杰伦</a></li>
+                <li><a href="/tag/孙燕姿">孙燕姿</a></li>
+                <li><a href="/tag/五月天">五月天</a></li>
+                <li><a href="/tag/苏打绿">苏打绿</a></li>
+                <li><a href="/tag/梁静茹">梁静茹</a></li>
+                <li><a href="/tag/Coldplay">Coldplay</a></li>
+                <li><a href="/tag/张悬">张悬</a></li>
+                <li><a href="/tag/久石让">久石让</a></li>
+                <li><a href="/tag/范晓萱">范晓萱</a></li>
+                <li><a href="/tag/蔡健雅">蔡健雅</a></li>
+                <li><a href="/tag/?view=type#艺术家">(更多)</a></li>
+            </ul>
+        </div>
+
+
+
+
+    <div class="block5 movie_show">
+        <h2>豆瓣音乐250<span class="pl"><a href="/top250">更多 »</a></span></h2>
+        <div class="content clearfix" id="music_rec">
+                
+                
+        <dl>
+            <dt><a href="http://music.douban.com/subject/1403802/"><img src="http://img3.douban.com/spic/s3530552.jpg" class="m_sub_img"/></a></dt>
+            <dd><a href="http://music.douban.com/subject/1403802/">恋爱的力量</a><span class="gact"></span><br/></dd>
+        </dl>
+        <dl>
+            <dt><a href="http://music.douban.com/subject/1394742/"><img src="http://img3.douban.com/spic/s1399998.jpg" class="m_sub_img"/></a></dt>
+            <dd><a href="http://music.douban.com/subject/1394742/">新长征路上的摇滚</a><span class="gact"></span><br/></dd>
+        </dl>
+        <dl>
+            <dt><a href="http://music.douban.com/subject/1407536/"><img src="http://img3.douban.com/spic/s3522345.jpg" class="m_sub_img"/></a></dt>
+            <dd><a href="http://music.douban.com/subject/1407536/">樂之路</a><span class="gact"></span><br/></dd>
+        </dl>
+        <div class="clearfix rr" style="width:100%"></div>
+        <dl>
+            <dt><a href="http://music.douban.com/subject/1395727/"><img src="http://img3.douban.com/spic/s4042496.jpg" class="m_sub_img"/></a></dt>
+            <dd><a href="http://music.douban.com/subject/1395727/">张学友2004活出生命Live演唱会</a><span class="gact"></span><br/></dd>
+        </dl>
+        <dl>
+            <dt><a href="http://music.douban.com/subject/1401398/"><img src="http://img3.douban.com/spic/s4230572.jpg" class="m_sub_img"/></a></dt>
+            <dd><a href="http://music.douban.com/subject/1401398/">CROSSOVER</a><span class="gact"></span><br/></dd>
+        </dl>
+        <dl>
+            <dt><a href="http://music.douban.com/subject/1395143/"><img src="http://img5.douban.com/spic/s8903729.jpg" class="m_sub_img"/></a></dt>
+            <dd><a href="http://music.douban.com/subject/1395143/">唐朝</a><span class="gact"></span><br/></dd>
+        </dl>
+        <div class="clearfix rr" style="width:100%"></div>
+        <dl>
+            <dt><a href="http://music.douban.com/subject/3837067/"><img src="http://img3.douban.com/spic/s3382040.jpg" class="m_sub_img"/></a></dt>
+            <dd><a href="http://music.douban.com/subject/3837067/">王菲 2001</a><span class="gact"></span><br/></dd>
+        </dl>
+        <dl>
+            <dt><a href="http://music.douban.com/subject/1418796/"><img src="http://img3.douban.com/spic/s3722893.jpg" class="m_sub_img"/></a></dt>
+            <dd><a href="http://music.douban.com/subject/1418796/">AFTER TEN 黃偉文十年選</a><span class="gact"></span><br/></dd>
+        </dl>
+        <dl>
+            <dt><a href="http://music.douban.com/subject/1427374/"><img src="http://img3.douban.com/spic/s1440221.jpg" class="m_sub_img"/></a></dt>
+            <dd><a href="http://music.douban.com/subject/1427374/">华丽的冒险</a><span class="gact"></span><br/></dd>
+        </dl>
+        <div class="clearfix rr" style="width:100%"></div>
+
+
+        </div>
+    </div>
+
+    <!-- douban app begin -->
+    
+
+
+
+
+
+<div class="mobile-app-entrance block5 app-music">
+
+    <a class="entrance-link first-link" href="http://www.douban.com/mobile/fm">
+        <span class="app-icon icon-fm"></span>
+        <span class="main-title">豆瓣FM客户端</span>
+        <span class="sub-title">和喜欢的音乐不期而遇</span>
+    </a>
+    <a class="entrance-link" href="http://www.douban.com/mobile/artists">
+        <span class="app-icon icon-artists"></span>
+        <span class="main-title">豆瓣音乐人客户端</span>
+        <span class="sub-title">帮你发现当下最酷的独立音乐</span>
+    </a>
+</div>
+
+    <!-- douban app end -->
+
+
+        </div>
+        <div class="extra">
+            
+        </div>
+    </div>
+    </div>
+
+        
+    <div id="footer">
+        
+
+<span id="icp" class="fleft gray-link">
+    &copy; 2005－2013 douban.com, all rights reserved
+</span>
+
+<span class="fright">
+    <a href="http://www.douban.com/about">关于豆瓣</a>
+    · <a href="http://www.douban.com/jobs">在豆瓣工作</a>
+    · <a href="http://www.douban.com/about?topic=contactus">联系我们</a>
+    · <a href="http://www.douban.com/about?policy=disclaimer">免责声明</a>
+    
+    · <a href="http://music.douban.com/help/">帮助中心</a>
+    · <a href="http://developers.douban.com/" target="_blank">开发者</a>
+    · <a href="http://www.douban.com/mobile/fm">手机音乐</a>
+    · <a href="http://www.douban.com/partner/">豆瓣广告</a>
+</span>
+
+
+    </div>
+
+    </div>
+    <script type="text/javascript" src="http://img3.douban.com/misc/mixed_static/2bef7b8af0da9225.js"></script>
+    
+<script>
+$(function(){
+    $("#menu1 .clearfix").addClass("on");
+    $("#content_menu1").show();
+
+    $(".music_new .content").hide();
+    $("#newcontent1").show();
+
+    $(".music_genre .content1").hide();
+    $("#gscontent1").show();
+
+    $(".music_genre .content2").hide();
+    $("#grcontent1").show();
+
+    (function bind_music_x(){
+        var c=arguments.callee
+            $('.music_x').click(function(){
+                    if(confirm("你确定要" + this.title)){
+                    $("#music_rec").load_withck(
+                        "/j/music/j_music_rec",{s:this.rel},c
+                        )
+                    }
+                    })
+    })();
+
+    function init_tab(e, t, c){
+        $(e).mousedown(function(){
+            $(t+" .tabs a").removeClass("on");
+            $(this).addClass("on");
+            $(t+" .content").hide();
+            $(c+this.id.slice(-1)).show();
+
+            $.get("/j/music/j_tab_count",{id:this.id})
+        })
+    }
+
+    function init_tab2(e, t, c1, c2){
+        $(e).mousedown(function(){
+            $(t+" .tabs a").removeClass("on");
+            $(this).addClass("on");
+
+            $(t+" .content1").hide();
+            $(t+" .content2").hide();
+            $(c1+this.id.slice(-1)).show();
+            $(c2+this.id.slice(-1)).show();
+
+            $.get("/j/music/j_tab_count",{id:this.id})
+
+        })
+    }
+    for(var i=3;i;--i){
+      init_tab("#new"+i, ".music_new", "#newcontent")
+    }
+
+    for(var i=4;i;--i){
+      init_tab2("#gnew"+i, ".music_genre", "#gscontent", "#grcontent")
+    }
+
+});
+</script>
+<script src="http://img3.douban.com/js/core/do/packed__init_7701316160.js"></script>
+
+<!-- douban ad begin -->
+
+
+
+
+
+<script type="text/javascript">
+    (function (global) {
+        var newNode = global.document.createElement('script'),
+            existingNode = global.document.getElementsByTagName('script')[0],
+            adSource = 'http://erebor.douban.com/',
+            userId = '',
+            browserId = 'hN7qKINGbDk',
+            ipAddress = '128.238.252.251',
+            criteria = '3:/',
+            preview = '',
+            debug = false,
+            adSlots = ['music_home_left_middle', 'dale_music_home_top_right', 'dale_music_home_top_right2'];
+
+        global.DoubanAdRequest = {src: adSource, uid: userId, bid: browserId, ip: ipAddress, crtr: criteria, prv: preview, debug: debug};
+        global.DoubanAdSlots = (global.DoubanAdSlots || []).concat(adSlots);
+
+        newNode.setAttribute('type', 'text/javascript');
+        newNode.setAttribute('src', 'http://img3.douban.com/js/packed_ad3738113870.js');
+        newNode.setAttribute('async', true);
+        existingNode.parentNode.insertBefore(newNode, existingNode);
+    })(this);
+</script>
+
+
+
+
+<!-- douban ad end -->
+
+    
+    
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-7019765-1']);
+_gaq.push(['_addOrganic', 'baidu', 'word']);
+_gaq.push(['_addOrganic', 'soso', 'w']);
+_gaq.push(['_addOrganic', '3721', 'name']);
+_gaq.push(['_addOrganic', 'youdao', 'q']);
+_gaq.push(['_addOrganic', 'so.360.cn', 'q']);
+_gaq.push(['_addOrganic', 'vnet', 'kw']);
+_gaq.push(['_addOrganic', 'sogou', 'query']);
+_gaq.push(['_addIgnoredOrganic', '豆瓣']);
+_gaq.push(['_addIgnoredOrganic', 'douban']);
+_gaq.push(['_addIgnoredOrganic', '豆瓣网']);
+_gaq.push(['_addIgnoredOrganic', 'www.douban.com']);
+_gaq.push(['_setDomainName', '.douban.com']);
+
+
+    _gaq.push(['_setCustomVar', 1, 'responsive_view_mode', 'desktop', 3]); 
+
+_gaq.push(['_trackPageview']);
+_gaq.push(['_trackPageLoadTime']);
+
+
+window._ga_init = function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+};
+if (window.addEventListener) {
+    window.addEventListener('load', _ga_init, false);
+} else {
+    window.attachEvent('onload', _ga_init);
+}
+</script>
+
+
+
+
+
+
+
+
+    <!-- dis12-->
+
+<script>var _check_hijack = function () {
+            var _sig = "hN7qKING", _login = false, bid = get_cookie('bid');
+            if (location.protocol != "file:" && (typeof(bid) != "string" && _login || typeof(bid) == "string" && bid.substring(0,8) != _sig)) {
+                location.href+=(/\?/.test(location.href)?"&":"?") + "_r=" + Math.random().toString(16).substring(2);
+            }};
+            if (typeof(Do) != 'undefined') Do(_check_hijack);
+            else if (typeof(get_cookie) != 'undefined') _check_hijack();
+            </script></body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

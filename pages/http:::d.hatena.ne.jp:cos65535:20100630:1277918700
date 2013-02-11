@@ -1,0 +1,602 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:og="http://ogp.me/ns#">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-jp">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<title>Ubuntu10.04 64bit版でBundlerとPMVS2を動かす - cos65535の日記</title>
+<link rel="start" href="/" title="cos65535の日記">
+<link rel="help" href="/help" title="ヘルプ">
+<link rel="prev" href="/cos65535/20100628/1277744090" title="[AOJ][Online Judge][Source]Ama...">
+<link rel="next" href="/cos65535/20100703/1278166899" title="[ICPC]ICPC2010 国内予選">
+
+<link rel="stylesheet" href="http://d.st-hatena.com/statics/css/base.css?5d7f38e4a6d82f044c81959ae4de5445d7f238cd" type="text/css" media="all">
+<link rel="stylesheet" href="http://d.st-hatena.com/statics/css/headerstyle_gr.css?1e7f1ae8a305b254105e3093bcf711b2af81c2a0" type="text/css" media="all">
+<link rel="stylesheet" href="http://d.st-hatena.com/statics/theme/hatena2-green/hatena2-green.css?1e7f1ae8a305b254105e3093bcf711b2af81c2a0" type="text/css" media="all">
+
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://d.hatena.ne.jp/cos65535/rss">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://d.hatena.ne.jp/cos65535/rss2">
+
+<link rel="meta" type="application/rdf+xml" title="FOAF" href="http://d.hatena.ne.jp/cos65535/foaf" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://d.hatena.ne.jp/cos65535/opensearch/diary.xml" title="cos65535の日記内日記検索" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://d.hatena.ne.jp/cos65535/opensearch/archive.xml" title="cos65535の日記内一覧検索" />
+
+
+
+<link rel="shortcut icon" href="http://d.hatena.ne.jp/images/gr_favicon.ico">
+
+
+
+
+<style type="text/css">
+<!-- 
+
+-->
+</style>
+
+
+<script type="text/javascript">if(/[\x3c\x3e\x22]/.test(location.hash))location.hash=location.hash.replace(/[\x3c\x3e\x22]/g,'');if(/[\x3c\x3e]/.test(document.referrer))location.href=location.href;</script>
+
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu10.04 64bit版でBundlerとPMVS2を動かす - cos65535の日記">
+<meta property="og:url" content="http://d.hatena.ne.jp/cos65535/20100630/1277918700">
+<meta property="og:description" content="32bit版Windowsの一つのプロセスは2GBまでしかメモリを確保できないという制限が厳しくてUbuntu10.04の64bi..">
+<meta property="og:site_name" content="はてなダイアリー">
+
+
+<!--
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:foaf="http://xmlns.com/foaf/0.1/">
+<rdf:Description rdf:about="http://d.hatena.ne.jp/cos65535/20100630/1277918700">
+   <foaf:maker rdf:parseType="Resource">
+     <foaf:holdsAccount>
+       <foaf:OnlineAccount foaf:accountName="cos65535">
+         <foaf:accountServiceHomepage rdf:resource="http://www.hatena.ne.jp/" />
+       </foaf:OnlineAccount>
+     </foaf:holdsAccount>
+   </foaf:maker>
+</rdf:Description>
+</rdf:RDF>
+-->
+
+<link rel="alternate" media="handheld" type="text/html" href="http://d.hatena.ne.jp/cos65535/mobile?date=20100630&section=1277918700" />
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://d.hatena.ne.jp/cos65535/20100630/1277918700"
+  trackback:ping="http://d.hatena.ne.jp/cos65535/20100630/1277918700"
+  dc:title="[Computer Vision][Software]Ubuntu10.04 64bit版でBundlerとPMVS2を動かす"
+  dc:identifier="http://d.hatena.ne.jp/cos65535/20100630/1277918700" />
+</rdf:RDF>
+-->
+
+
+
+<link rel="canonical" href="http://d.hatena.ne.jp/cos65535/20100630/1277918700">
+
+
+
+
+<script type="text/javascript" src="http://s.hatena.ne.jp/js/HatenaStar.js"></script>
+<script type="text/javascript">
+Hatena.Star.SiteConfig = {
+  entryNodes: {
+    'div.section': {
+      uri: 'h3 a',
+      title: 'h3',
+      container: 'h3'
+    }
+  }
+};
+Hatena.Author  = new Hatena.User('cos65535');
+Hatena.DiaryName  = new Hatena.User('cos65535');
+
+</script>
+
+
+
+
+
+<script type="text/javascript" src="http://d.st-hatena.com/statics/js/adcolor.js?1e7f1ae8a305b254105e3093bcf711b2af81c2a0"></script>
+
+
+<script type="text/javascript" src="http://d.st-hatena.com/statics/js/quick_pager.js?1e7f1ae8a305b254105e3093bcf711b2af81c2a0"></script>
+<script type="text/javascript" src="http://d.st-hatena.com/statics/js/diary_utils.js?1e7f1ae8a305b254105e3093bcf711b2af81c2a0"></script>
+<script type="text/javascript" src="http://d.st-hatena.com/statics/js/max_width_fotolife.js?1e7f1ae8a305b254105e3093bcf711b2af81c2a0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="http://d.st-hatena.com/statics/js/jquery-1.4.2.min.js?1e7f1ae8a305b254105e3093bcf711b2af81c2a0"></script>
+<script type="text/javascript">
+  jQuery.noConflict()(function($){
+    var j$ = jQuery;
+  });
+</script>
+
+
+
+
+</head>
+<body>
+
+<div id="simple-header">
+
+  <a href="http://www.hatena.ne.jp/"><img src="/images/hatena-simple_gr.gif" alt="Hatena::" title="Hatena::" id="logo-hatena" width="65" height="17"></a><a href="/"><img src="/images/diary-simple_gr.gif" alt="ブログ(Diary)" title="Diary" id="logo-diary" width="43" height="17"></a>
+  <form method="get" action="/search" class="search-form">
+    <input type="text" class="search-word" name="word" value=""><input name="name" value="cos65535" type="hidden"><input type="submit" name="diary" value="日記" class="search-button"><input type="submit" name="submit" value="検索" class="search-button">
+  </form>
+  <ul class="menu">
+    <li><a href="/cos65535/">ブログトップ</a></li>
+    <li><a href="/cos65535/archive">記事一覧</a></li>
+
+
+
+    <li><a href="https://www.hatena.ne.jp/login?backurl=http%3A%2F%2Fd.hatena.ne.jp%2Fcos65535%2F20100630%2F1277918700&add_timestamp=1">ログイン</a></li>
+    <li><a href="https://www.hatena.ne.jp/register?location=http://d.hatena.ne.jp/">無料ブログ開設</a></li>
+
+  </ul>
+</div>
+
+
+
+<h1><a href="http://d.hatena.ne.jp/cos65535/">cos65535の日記</a></h1>
+<div class="hatena-body">
+<div class="main">
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="calendar" id="pager-top">
+  <a rel="prev" href="/cos65535/20100628/1277744090" class="prev">&lt;[AOJ][Online Judge][Source]Ama...</a>&nbsp;<span class="delimiter">|</span>&nbsp;<a rel="next" href="/cos65535/20100703/1278166899" class="next">[ICPC]ICPC2010 国内予選&gt;</a><span id="edit-in-place-add"></span>
+</div>
+<div id="days">
+
+<div class="day">
+<h2><a href="http://d.hatena.ne.jp/cos65535/20100630" rel="nofollow"><span class="date">2010-06-30</span></a></h2>
+
+<div class="body">
+
+<!-- google_ad_section_start -->
+
+		<div class="section">
+			<h3 class="title"><a href="/cos65535/20100630/1277918700" name="1277918700">Ubuntu10.04 64bit版でBundlerとPMVS2を動かす</a></h3>
+			<p class="sectionheader"><span class="sectioncategory"><a href="/cos65535/searchdiary?word=%2A%5BComputer%20Vision%5D" class="sectioncategory">Computer Vision</a>, <a href="/cos65535/searchdiary?word=%2A%5BSoftware%5D" class="sectioncategory">Software</a></span></p>
+			<p>32bit版<a class="keyword" href="http://d.hatena.ne.jp/keyword/Windows">Windows</a>の一つの<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%D7%A5%ED%A5%BB%A5%B9">プロセス</a>は2GBまでしかメモリを確保できないという制限が厳しくてUbuntu10.04の64bit版を使うことにした。32bit版のことしか考えてないのか、ちょっとめんどかったけど動いたのでメモとしてどうやれば動くのかを書いておく。</p>
+			<p>64bitに対応してないものがいくつかあるのでそこは<a class="keyword" href="http://d.hatena.ne.jp/keyword/%C2%E5%C2%D8">代替</a>の物を使うようにすればいい。</p>
+
+			<ul>
+				<li>jheadは<a class="keyword" href="http://d.hatena.ne.jp/keyword/aptitude">aptitude</a>で<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%C8%A1%BC%A5%EB">インストール</a>してそちらを使うようにする。</li>
+				<li>SIFTは<a href="http://web.engr.oregonstate.edu/~hess/" target="_blank">http://web.engr.oregonstate.edu/~hess/</a>にある物を使えば良い。</li>
+				<li>PMVS2は<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%D0%A5%A4%A5%CA%A5%EA">バイナリ</a>が64bitで動くのでmakeする必要は無いがlibgfortran.so.1が入ってないので無理やり入れた。</li>
+			</ul>
+			<p>いろいろまずい点があるような気がするけど、これを動かすためだけにUbutu10.04 64bit版を入れたので気にしない。</p>
+			<p>以下は作業メモ。<a class="keyword" href="http://d.hatena.ne.jp/keyword/%B5%FE%C2%E7">京大</a>内からやったので<a class="keyword" href="http://d.hatena.ne.jp/keyword/proxy">proxy</a>の設定があるけど気にしない。</p>
+<pre>
+    #Install Ubuntu
+uname -a | grep x86_64
+sudo vi /etc/apt/apt.conf.d/00proxy
+  Acquire::http::Proxy &quot;http://proxy.kuins.net:8080&quot;;
+  Acquire::ftp::Proxy &quot;ftp://proxy.kuins.net:8080&quot;;
+sudo aptitude update
+sudo aptitude safe-upgrade
+sudo aptitude install vim
+sudo aptitude install zsh
+chsh
+  /bin/zsh
+vim .zshrc
+  export http_proxy=&quot;http://proxy.kuins.net:8080&quot;
+  export ftp_proxy=&quot;ftp://proxy.kuins.net:8080&quot;
+
+
+    #Install Bundler
+mkdir temp
+cd temp
+wget http://phototour.cs.washington.edu/bundler/distr/bundler-v0.4-source.tar.gz
+tar xzfv bundler-v0.4-source.tar.gz
+cd bundler-v0.4-source.tar.gz
+sudo aptitude install g++  #build-esentialを入れたほうがいい気がする
+sudo aptitude install gfortran
+sudo aptitude install zlib1g-dev
+sudo aptitude install libjpeg-dev
+sudo aptitude install liblapack-dev
+sudo aptitude install libmagick-dev
+sudo aptitude install jhead
+make
+sudo cp bin/libANN_char.so /lib/
+vim bin/extract_focal.pl
+  #$JHEAD_EXE = &quot;$BIN_PATH/jhead&quot;;
+  $JHEAD_EXE = &quot;jhead&quot;;
+
+
+    #Installing OpenCV2.1 for making SIFT
+    #http://d.hatena.ne.jp/pyopyopyo/20100410/p1
+cd ~/temp/
+wget http://downloads.sourceforge.net/project/opencvlibrary/opencv-unix/2.1/OpenCV-2.1.0.tar.bz2
+tar xfvj OpenCV-2.1.0.tar.bz2
+cd OpenCV-2.1.0
+mkdir build
+cd build
+sudo aptitude install cmake
+sudo aptitude install libtbb-dev
+sudo aptitude install libgtk2.0-dev
+sudo aptitude install libpng-dev libjpeg-dev
+sudo aptitude install libavformat-dev libswscale-dev 
+cmake -DWITH_TBB=1  ..
+sudo make install
+sudo /sbin/ldconfig
+
+
+    #make SIFT
+cd ~/temp/
+wget http://web.engr.oregonstate.edu/~hess/downloads/sift/sift-latest.tar.gz
+tar xzfv sift-latest.tar.gz
+cd sift
+sudo aptitude install doxygen
+make
+cp bin/siftfeat ~/temp/bundler-v0.4-source/bin/sift
+cd ~/temp/bundler-v0.4-source/bin/
+vim ToSift.sh
+  #echo &quot;mogrify -format pgm $IMAGE_DIR/$d; $SIFT &lt; $pgm_file &gt; $key_file; rm $pgm_file; gzip -f $key_file&quot;
+  echo &quot;mogrify -format pgm $IMAGE_DIR/$d; $SIFT -x -o $key_file $pgm_file; rm $pgm_file; gzip -f $key_file&quot;
+
+
+    #Install PMVS2
+    #download lobgfrotran1  http://packages.ubuntu.com/hardy/libs/libgfortran1
+cd ~/temp/
+wget http://mirrors.kernel.org/ubuntu/pool/universe/g/gcc-4.1/libgfortran1_4.1.2-21ubuntu1_amd64.deb
+guiで解凍
+tar xzfv data.tar.gz
+sudo cp libgfortran.so.1 libgfortran.so.1.0.0 /usr/lib/
+</pre>
+
+			<p class="sectionfooter"><a href="/cos65535/20100630/1277918700">Permalink</a> | <a href="/cos65535/20100630/1277918700#c">コメント(0)</a> | <a href="/cos65535/20100630/1277918700#tb">トラックバック(0)</a> | 02:25</p>
+
+		</div>
+<div id="google_afc_user" class="section">
+  <script type="text/javascript"><!--
+     hatena_dfp_tag       = '/4374287/diary_user';
+     hatena_dfp_size      = [300, 250];
+     hatena_dfp_target_id = 'google_afc_user';
+  --></script>
+  <script type="text/javascript" src="http://ad.hatena.ne.jp/js/hatena_dfp-compiled.js"></script>
+</div>
+
+<!-- google_ad_section_end -->
+
+</div>
+
+<form id="comment-form" method="post" action="/cos65535/comment#c" class="comment">
+<input type="hidden" name="mode" value="enter">
+<input type="hidden" name="rkm" value="">
+<input type="hidden" name="date" value="2010-06-30">
+<div class="comment">
+  <div class="caption"><a name="c">コメントを書く</a></div>
+  <div class="commentshort">
+    
+    
+
+    <a name="error-message"></a>
+    <p class="message" style="display:none"></p>
+
+    
+
+    
+            
+    <p class="commentform">
+      <span class="commentator">
+        <span class="usermailconfirm"><input name="usermail" size="1" value=""><input name="userurl" size="1" value="">スパム対策のためのダミーです。もし見えても何も入力しないでください<br></span>
+        <span class="username">
+        <img src="http://www.hatena.ne.jp/images/guest_icon.gif" class="hatena-id-icon" alt="ゲスト" title="ゲスト" height="16" width="16">
+        <input type="hidden" name="section" value="1277918700">
+        
+          <input id="comment-username" name="username" size="15">
+        
+        </span>
+        
+          <span class="usermail"><img src="/images/icon-usermail.gif" style="vertical-align:middle;margin-right:3px;"><input id="comment-usermail" name="useremail" size="15" value=""></span>
+          <span class="userurl"><img src="/images/icon-userurl.gif" style="vertical-align:middle;margin-right:3px;"><input id="comment-userurl" name="useruri" size="15" value=""></span>
+        
+      </span>
+<br>
+      <!-- NOT_VERIFIED_COMMENT_AUTH -->
+      <textarea id="comment-textarea" name="body" value="" cols="60" rows="3"></textarea><br>
+      
+          <div class="captcha">
+            <img src="/cos65535/captcha?1360621149" class="captcha-image">
+            <span class="captcha-message">画像認証</span><br />
+            <input type="text" name="captcha_code" size="10" class="captcha-string" id="comment-captcha">
+          </div>
+      
+      <span class="comment-submit"><input type="submit" id="comment-form-button" value="投稿"></span>
+    </p>
+
+      <script type="text/javascript" src="/js/diary_comment_edit_form.js"></script>
+    
+
+  </div>
+</div>
+
+</form>
+
+
+
+
+
+  
+  <div class="refererlist">
+    <div class="caption">
+      <a name="tb">トラックバック</a> - http://d.hatena.ne.jp/cos65535/20100630/1277918700
+    </div>
+    
+  </div>
+  
+  
+
+
+
+
+
+    <div class="refererlist">
+      <div class="caption">リンク元</div>
+      <ul>
+          <li>193 <a href="http://pipes.yahoo.com/pipes/pipe.info?_id=tDfBdGWF3RGl9XNm1L3fcQ" rel="nofollow">http://pipes.yahoo.com/pipes/pipe.info?_id=tDfBdGWF3RGl9XNm1L3fcQ</a></li>
+          <li>11 <a href="http://pipes.yahoo.com/pipes/pipe.info?_id=12e453e301454b799b3ac6642aa089b5" rel="nofollow">http://pipes.yahoo.com/pipes/pipe.info?_id=12e453e301454b799b3ac6642aa089b5</a></li>
+          <li>1 <a href="http://d.hatena.ne.jp/keyword/OpenCV" rel="nofollow">http://d.hatena.ne.jp/keyword/OpenCV</a></li>
+          <li>1 <a href="http://d.hatena.ne.jp/keyword/Ubuntu" rel="nofollow">http://d.hatena.ne.jp/keyword/Ubuntu</a></li>
+          <li>1 <a href="http://reader.livedoor.com/reader/" rel="nofollow">http://reader.livedoor.com/reader/</a></li>
+          <li>1 <a href="http://www.google.ch/search?source=ig&amp;hl=de&amp;rlz=1G1GGLQ_ENXX253&amp;q=spoj+SUMMUL&amp;aq=f&amp;aqi=&amp;aql=&amp;oq=&amp;gs_rfai=" rel="nofollow">http://www.google.ch/search?source=ig&amp;hl=de&amp;rlz=1G1GGLQ_ENXX253&amp;q=spoj+SUMMUL&amp;aq=f&amp;aqi=&amp;aql=&amp;oq=&amp;gs_rfai=</a></li>
+          <li>1 <a href="http://www.google.co.jp/search?q=sudo+aptitude+export+proxy&amp;lr=lang_ja&amp;ie=utf-8&amp;oe=utf-8&amp;aq=t&amp;client=firefox-a&amp;rlz=" rel="nofollow">http://www.google.co.jp/search?q=sudo+aptitude+export+proxy&amp;lr=lang_ja&amp;ie=utf-8&amp;oe=utf-8&amp;aq=t&amp;client=firefox-a&amp;rlz=</a></li>
+          <li>1 <a href="http://www.google.com/search?q=4502+%22How+Many+bases%3F%22&amp;btnG=Search&amp;hl=en&amp;client=firefox-a&amp;hs=eIU&amp;rls=com.ubuntu%3Aen-US%3Aunofficial&amp;sa=2" rel="nofollow">http://www.google.com/search?q=4502+&quot;How+Many+bases?&quot;&amp;btnG=Search&amp;hl=en&amp;client=firefox-a&amp;hs=eIU&amp;rls=com.ubuntu:en-US:unofficial&amp;sa=2</a></li>
+          <li>1 <a href="http://www.google.com/search?q=uva+wget&amp;ie=utf-8&amp;oe=utf-8&amp;aq=t&amp;rls=org.mozilla:ja-JP-mac:unofficial&amp;client=firefox-a" rel="nofollow">http://www.google.com/search?q=uva+wget&amp;ie=utf-8&amp;oe=utf-8&amp;aq=t&amp;rls=org.mozilla:ja-JP-mac:unofficial&amp;client=firefox-a</a></li>
+      </ul>
+      
+    </div>
+
+
+
+
+</div>
+
+
+
+</div>
+<div class="calendar" id="pager-bottom">
+  <a rel="prev" href="/cos65535/20100628/1277744090" class="prev">&lt;[AOJ][Online Judge][Source]Ama...</a>&nbsp;<span class="delimiter">|</span>&nbsp;<a rel="next" href="/cos65535/20100703/1278166899" class="next">[ICPC]ICPC2010 国内予選&gt;</a>
+</div>
+</div>
+<div class="sidebar">
+	<div class="hatena-module hatena-module-profile">
+  <div class="hatena-moduletitle">プロフィール</div>
+  <div class="hatena-modulebody">
+    <div class="hatena-profile">
+      <p class="hatena-profile-image"><a href="/cos65535/about"><img src="http://www.st-hatena.com/users/co/cos65535/profile.gif" alt="cos65535" /></a></p>
+      <p class="hatena-profile-id"><a href="/cos65535/about">cos65535</a></p>
+    </div>
+  </div>
+</div>
+
+	<div class="hatena-module hatena-module-calendar2">
+<div class="hatena-moduletitle">カレンダー</div>
+<div class="hatena-modulebody">
+<table class="calendar" summary="calendar">
+<tr>
+<td class="calendar-prev-month" colspan="2"><a href="/cos65535/201005" title="201005" rel="nofollow">&lt;&lt;</a></td>
+<td class="calendar-current-month" colspan="3"><a href="/cos65535/archive/201006" rel="nofollow">2010/06</a></td>
+<td class="calendar-next-month" colspan="2"><a href="/cos65535/201007" title="201007" rel="nofollow">&gt;&gt;</a></td>
+</tr>
+<tr>
+<td class="calendar-sunday">日</td>
+<td class="calendar-weekday">月</td>
+<td class="calendar-weekday">火</td>
+<td class="calendar-weekday">水</td>
+<td class="calendar-weekday">木</td>
+<td class="calendar-weekday">金</td>
+<td class="calendar-saturday">土</td>
+</tr>
+	<tr>
+		<td class="calendar-day"></td>
+		<td class="calendar-day"></td>
+		<td class="calendar-day"><a href="/cos65535/20100601" title="1">1</a></td>
+		<td class="calendar-day">2</td>
+		<td class="calendar-day">3</td>
+		<td class="calendar-day">4</td>
+		<td class="calendar-day">5</td>
+	</tr>
+	<tr>
+		<td class="calendar-day">6</td>
+		<td class="calendar-day">7</td>
+		<td class="calendar-day"><a href="/cos65535/20100608" title="8">8</a></td>
+		<td class="calendar-day">9</td>
+		<td class="calendar-day">10</td>
+		<td class="calendar-day">11</td>
+		<td class="calendar-day">12</td>
+	</tr>
+	<tr>
+		<td class="calendar-day">13</td>
+		<td class="calendar-day">14</td>
+		<td class="calendar-day"><a href="/cos65535/20100615" title="15">15</a></td>
+		<td class="calendar-day">16</td>
+		<td class="calendar-day"><a href="/cos65535/20100617" title="17">17</a></td>
+		<td class="calendar-day">18</td>
+		<td class="calendar-day">19</td>
+	</tr>
+	<tr>
+		<td class="calendar-day"><a href="/cos65535/20100620" title="20">20</a></td>
+		<td class="calendar-day">21</td>
+		<td class="calendar-day">22</td>
+		<td class="calendar-day">23</td>
+		<td class="calendar-day"><a href="/cos65535/20100624" title="24">24</a></td>
+		<td class="calendar-day">25</td>
+		<td class="calendar-day"><a href="/cos65535/20100626" title="26">26</a></td>
+	</tr>
+	<tr>
+		<td class="calendar-day">27</td>
+		<td class="calendar-day"><a href="/cos65535/20100628" title="28">28</a></td>
+		<td class="calendar-day">29</td>
+		<td class="calendar-day day-selected"><a href="/cos65535/20100630" title="30">30</a></td>
+		<td class="calendar-day"></td>
+		<td class="calendar-day"></td>
+		<td class="calendar-day"></td>
+	</tr>
+</table>
+	</div>
+</div>
+
+	<div class="hatena-module hatena-module-sectioncategory">
+<div class="hatena-moduletitle">カテゴリー</div>
+<div class="hatena-modulebody">
+<ul class="hatena-sectioncategory">
+<li><a href="/cos65535/searchdiary?word=%2A%5BPKU%5D">PKU</a></li>
+<li><a href="/cos65535/searchdiary?word=%2A%5BOnline%20Judge%5D">Online Judge</a></li>
+<li><a href="/cos65535/searchdiary?word=%2A%5BSPOJ%5D">SPOJ</a></li>
+<li><a href="/cos65535/searchdiary?word=%2A%5BUVa%20Live%20Archive%5D">UVa Live Archive</a></li>
+<li><a href="/cos65535/searchdiary?word=%2A%5BAOJ%5D">AOJ</a></li>
+<li><a href="/cos65535/searchdiary?word=%2A%5BSoftware%5D">Software</a></li>
+<li><a href="/cos65535/searchdiary?word=%2A%5BICPC%5D">ICPC</a></li>
+<li><a href="/cos65535/searchdiary?word=%2A%5BOther%5D">Other</a></li>
+<li><a href="/cos65535/searchdiary?word=%2A%5BUVa%5D">UVa</a></li>
+<li><a href="/cos65535/searchdiary?word=%2A%5BTopcoder%5D">Topcoder</a></li>
+<li><a href="/cos65535/searchdiary?word=%2A%5B%A4%D5%A4%AB%C7%D5%5D">ふか杯</a></li>
+<li><a href="/cos65535/searchdiary?word=%2A%5BCodeforces%5D">Codeforces</a></li>
+<li><a href="/cos65535/searchdiary?word=%2A%5BComputer%20Vision%5D">Computer Vision</a></li>
+<li><a href="/cos65535/searchdiary?word=%2A%5BSource%5D">Source</a></li>
+<li><a href="/cos65535/searchdiary?word=%2A%5BM%2DJudge%5D">M-Judge</a></li>
+<li><a href="/cos65535/searchdiary?word=%2A%5BKUPC%5D">KUPC</a></li>
+<li><a href="/cos65535/searchdiary?word=%2A%5BZOJ%5D">ZOJ</a></li>
+<li><a href="/cos65535/searchdiary?word=%2A%5BGCJ%5D">GCJ</a></li>
+<li><a href="/cos65535/searchdiary?word=%2A%5BAtCoder%5D">AtCoder</a></li>
+</ul>
+</div>
+</div>
+
+	<div class="hatena-module hatena-module-section">
+<div class="hatena-moduletitle"><a href="/cos65535/archive">最新タイトル</a></div>
+<div class="hatena-modulebody">
+<ul class="hatena-section">
+<li><a href="http://d.hatena.ne.jp/cos65535/20121208/1354943022">[SPOJ][Online Judge]Cards shuffing (SPOJ 4390)</a></li>
+<li><a href="http://d.hatena.ne.jp/cos65535/20121205/1354720011">[Other]O(sqrt(N))のアルゴリズム</a></li>
+<li><a href="http://d.hatena.ne.jp/cos65535/20121203/1354549128">[AOJ][Online Judge]Dungeon (AOJ 0553)</a></li>
+<li><a href="http://d.hatena.ne.jp/cos65535/20121016/1350382417">[UVa Live Archive][Online Judge]Location for a Power Generator (UVa Live Archive Asia - 2009 Hsinchu(Taiwan))</a></li>
+<li><a href="http://d.hatena.ne.jp/cos65535/20120913/1347523659">[UVa Live Archive][Online Judge]Space Elevator (UVa Live Archive Asia - 2008 Taipei(Taiwan))</a></li>
+<li><a href="http://d.hatena.ne.jp/cos65535/20120811/1344701741">[UVa Live Archive][Online Judge]Friend Numbers (UVa Live Archive Latin America - Mexico and Central America 2007)</a></li>
+<li><a href="http://d.hatena.ne.jp/cos65535/20120709/1341857049">[UVa Live Archive][UVa][Online Judge]The Game (UVa Live Archive Europe Southwestern 2008)</a></li>
+<li><a href="http://d.hatena.ne.jp/cos65535/20120709/1341856290">[UVa Live Archive][UVa][Online Judge]First Knight (UVa Live Archive Europe Southwestern 2008)</a></li>
+<li><a href="http://d.hatena.ne.jp/cos65535/20120709/1341856012">[UVa Live Archive][UVa][Online Judge]Wizards (UVa Live Archive Europe Southwestern 2008)</a></li>
+<li><a href="http://d.hatena.ne.jp/cos65535/20120709/1341855792">[UVa Live Archive][UVa][Online Judge]The Merchant Guild (UVa Live Archive Europe Southwestern 2008)</a></li>
+</ul>
+</div>
+</div>
+
+	<div class="hatena-module hatena-module-comment">
+<div class="hatena-moduletitle">最近のコメント</div>
+<div class="hatena-modulebody">
+<ul class="hatena-recentcomment">
+<li><a href="/cos65535/20111031/1320043699#c">2011-10-31</a>&nbsp;slon</li>
+<li><a href="/cos65535/20100624/1277360669#c">2010-06-24</a>&nbsp;cos65535</li>
+<li><a href="/cos65535/20100624/1277360669#c">2010-06-24</a>&nbsp;wangzhihao</li>
+<li><a href="/cos65535/20100624/1277360669#c">2010-06-24</a>&nbsp;charnugagoo</li>
+<li><a href="/cos65535/20100624/1277360669#c">2010-06-24</a>&nbsp;charnugagoo</li>
+</ul>
+</div>
+</div>
+
+	<div class="hatena-module hatena-module-trackback">
+<div class="hatena-moduletitle">最近のトラックバック</div>
+<div class="hatena-modulebody">
+<ul class="hatena-recentcomment">
+<li><a href="/cos65535/20120219/1329666952#tb">2012-02-19</a>&nbsp;<a href="http://d.hatena.ne.jp/iakasT/20120910/1347286154">UOA==3 - 解いた感想とか</a></li>
+<li><a href="/cos65535/20100908#tb">2010-09-08</a>&nbsp;<a href="http://d.hatena.ne.jp/ir5/20100919/1284857086">ICPC突破専用ザク -  ICPCオフ会2日目</a></li>
+</ul>
+</div>
+</div>
+
+	        <div class="hatena-module hatena-module-pv">
+                <div class="hatena-moduletitle">ページビュー</div>
+                <div class="hatena-modulebody">
+                        <span class="hatena-counter">82403</span>
+                </div>
+        </div>
+
+	<div class="hatena-module hatena-module-searchform">
+<div class="hatena-moduletitle">日記の検索</div>
+<div class="hatena-modulebody">
+<form method="GET" action="/cos65535/searchdiary" class="hatena-searchform"><input type="text" name="word" class="hatena-searchform searchform-word" value=""><input type="submit" name=".submit" value="検索" class="hatena-searchform searchform-button"><br><label class="searchform-label-detail"><input type="radio" name="type" value="detail" checked="checked" class="searchform-radio">詳細</label> <label class="searchform-label-list"><input type="radio" name="type" value="list" class="searchform-radio">一覧</label></form>
+
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  var days = document.getElementById('days');
+  if (days && days.innerHTML.indexOf("今週のお題") != -1) {
+    _gaq.push(['_setCustomVar', 2, 'campaign', 'odai', 3]);
+  }
+
+  if (days && /\u6d77\u5916\u30c9\u30e9\u30de\u300e\u30e9\u30a4\u30fb\u30c8\u30a5\u30fb\u30df\u30fc \u5618\u306e\u77ac\u9593\u300f\u89b3\u305f\u3044\uff01|\u300e\u30e9\u30a4\u30fb\u30c8\u30a5\u30fb\u30df\u30fc \u5618\u306e\u77ac\u9593\u300f\u7b2c1\u8a71\u306e\u611f\u60f3\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044|\u4eca\u3060\u304b\u3089\u8a00\u3048\u308b\u300c\u5618\u3092\u3064\u3044\u3066\u3057\u307e\u3063\u305f\u30a8\u30d4\u30bd\u30fc\u30c9\u300d\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044|\u3060\u307e\u3055\u308c\u305f\u3051\u3069\u3001\u8a31\u305b\u3066\u3057\u307e\u3063\u305f\u5618\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044/.test(days.innerHTML)) {
+    _gaq.push(['_setCustomVar', 2, 'campaign', 'lietome', 3]);
+  }
+
+  if (days && /Visa\u30d7\u30ea\u30da\u30a4\u30c9\u300cV\u30d7\u30ea\u30ab\u300d\u8a66\u3057\u305f\u3044\uff01|Visa\u30d7\u30ea\u30da\u30a4\u30c9\u300cV\u30d7\u30ea\u30ab\u300d\u3001\u81ea\u5206\u306a\u3089\u3053\u3046\u4f7f\u3046\uff01|V\u30d7\u30ea\u30ab\u304c1\u4e07\u5186\u5206\u3042\u3063\u305f\u3089\u3001\u30cd\u30c3\u30c8\u3067\u4f55\u3092\u8cb7\u3044\u307e\u3059\u304b\uff1f/.test(days.innerHTML)) {
+    _gaq.push(['_setCustomVar', 2, 'campaign', 'vpreca', 3]);
+  }
+
+  if (days && /\u30a2\u30a4\u30c7\u30e0 \u30a8\u30f3\u30b8\u30cb\u30a2\u30ad\u30e3\u30ea\u30a2Hacks\u5171\u6709\u30d7\u30ed\u30b8\u30a7\u30af\u30c8|\u30a8\u30f3\u30b8\u30cb\u30a2\u3068\u3057\u3066\u306e\u3001\u3068\u3063\u3066\u304a\u304d\u306e\u30ad\u30e3\u30ea\u30a2Hacks\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044|\u3042\u306a\u305f\u304c\u30a8\u30f3\u30b8\u30cb\u30a2\u8ee2\u8077\u30b5\u30a4\u30c8\u3092\u4f5c\u308b\u306a\u3089\u3001\u3069\u3093\u306a\u30b5\u30a4\u30c8\u306b\u3057\u307e\u3059\u304b\uff1f|5\u5e74\u5f8c\u306e\u300c\u30a8\u30f3\u30b8\u30cb\u30a2\u306e\u50cd\u304d\u65b9\u300d\u306f\u3001\u3069\u3046\u5909\u308f\u3063\u3066\u3044\u3066\u307b\u3057\u3044\u3067\u3059\u304b\uff1f/.test(days.innerHTML)) {
+    _gaq.push(['_setCustomVar', 2, 'campaign', 'aidemcareer', 3]);
+  }
+
+  _gaq.push(
+  ['_setAccount', 'UA-441387-31'],
+  ['_setCustomVar', 1, 'afc_type', 'point', 3],
+  ['_setCustomVar', 3, 'theme', 'hatena2-green', 3],
+  ['_setCustomVar', 4, 'usertype', 'guest', 1],
+  ['_trackPageview'],
+  ['b._setAccount', 'UA-7855606-1'],
+  ['b._setDomainName', '.hatena.ne.jp'],
+  ['b._trackPageview']
+  ,['c._setAccount', 'UA-23889028-1'],
+  ['c._trackPageview']
+  );
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- CG:1,CH:1,ICG:16,ICH:10,T: -->
+</body>
+</html>

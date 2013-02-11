@@ -31,6 +31,7 @@ def Queue_Check_Push_Front(page):
     if href != -1:
         if CheckSite.checkSite_Visitable(href) == 1:
             if not hash_table.has_key(href):
+                print "queue push front: " + href
                 queue.append(page)
                 hash_table[href] = number_visited_url #zhuoran
                 number_visited_url += 1 #zhuoran
@@ -166,8 +167,8 @@ beginTime = datetime.datetime.now()
 numberOf404 = 0
 
 while len(queue) > 0 and number_collected_url < pagesNumber:
-    number_collected_url += 1
-
+#    number_collected_url += 1
+#    ????? should I do something here?  zhuoran
     # In a Breadth-First manner.
     page = queue.popleft()
     link = page["url"]
@@ -179,6 +180,7 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
     elif flag == -2:
         queue.append(page)
     else:
+        number_collected_url += 1
         print "Number: " + str(number_collected_url) + "  " + link
         try:
             # Open the URL
@@ -237,7 +239,13 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
             parser.close()
         except htmllib.HTMLParseError as e:
             print "parse error: " + link
-        
+            raw_input("Press Enter")
+        except IOError as e:
+            print "IOError" + link
+            raw_input("Press Enter")
+        except httplib.InvalidURL as e:
+            print "InvalidURL" + link
+
 # It would also be good to have some statistics at the end of the file, like number of files, total size (in MB), total
 # time, number of 404 errors etc.
 totalSizeInMB = divmod(totalSize, 1000000)

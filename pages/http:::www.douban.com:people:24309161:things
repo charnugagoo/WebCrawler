@@ -1,0 +1,467 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="ua-mac ua-webkit">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <title>
+charnugagoo的东西
+</title>
+    
+
+    
+
+<script>
+  window.Douban=window.Douban||{};var Do=function(){Do.actions.push([].slice.call(arguments))};Do.ready=function(){Do.actions.push([].slice.call(arguments))};Do.add=Do.define=function(a,b){Do.mods[a]=b};Do.global=function(){Do.global.mods=Array.prototype.concat(Do.global.mods,[].slice.call(arguments))};Do.global.mods=[];Do.mods={};Do.actions=[];function set_cookie(g,f,d,e){var b=new Date(),a,c;b.setTime(b.getTime()+((f||30)*24*60*60*1000));a="; expires="+b.toGMTString();for(c in g){document.cookie=c+"="+g[c]+a+"; domain="+(d||"douban.com")+"; path="+(e||"/")}}function get_cookie(b){var e=b+"=",a=document.cookie.split(";"),d,f;for(d=0;d<a.length;d++){f=a[d];while(f.charAt(0)==" "){f=f.substring(1,f.length)}if(f.indexOf(e)===0){return f.substring(e.length,f.length).replace(/\"/g,"")}}return null}Douban.init_show_login=function(a){Do("dialog",function(){var b="/j/misc/login_form";dui.Dialog({title:"登录",url:b,width:/device-mobile/i.test(document.documentElement.className)?document.documentElement.offsetWidth*0.9:350,cache:true,callback:function(c,d){d.node.addClass("dialog-login");d.node.find("h2").css("display","none");d.node.find(".hd h3").replaceWith(d.node.find(".bd h3"));d.node.find("form").css({border:"none",width:"auto",padding:"0"});d.update()}}).open()})};Do(function(){$.ajax_withck=function(a){if(a.type=="POST"){a.data=$.extend(a.data||{},{ck:get_cookie("ck")})}return $.ajax(a)};$.postJSON_withck=function(a,b,c){$.post_withck(a,b,c,"json")};$.post_withck=function(a,c,d,b){if($.isFunction(c)){b=d;d=c;c={}}return $.ajax({type:"POST",url:a,data:$.extend(c,{ck:get_cookie("ck")}),success:d,dataType:b||"text"})};$("html").click(function(c){var a=$(c.target),b=a.attr("class");if(!b){return}$(b.match(/a_(\w+)/gi)).each($.proxy(function(d,f){var e=Douban[f.replace(/^a_/,"init_")];if(typeof e==="function"){c.preventDefault();e.call(this,c)}},a[0]))})});
+  Do.add('dialog', {path: 'http://img3.douban.com/js/ui/packed_dialog8321689615.js', type: 'js', requires: ['http://img3.douban.com/css/ui/packed_dialog4563741467.css']});
+  Do.global('http://img3.douban.com/js/sns/fp/packed_base6505908882.js', 'dialog');
+</script>
+<link rel="stylesheet" href="http://img3.douban.com/css/core/packed__init_6312190557.css">
+<link rel="stylesheet" href="http://img3.douban.com/css/sns/things/packed_common6317351096.css">
+  <link rel="stylesheet" href="http://img3.douban.com/misc/mixed_static/35e20f1080318c78.css">
+
+    <link rel="shortcut icon" href="http://img3.douban.com/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  
+    <script type="text/javascript">var _body_start = new Date();</script>
+    
+   
+
+
+
+
+
+
+
+<div id="db-global-nav" class="global-nav global-nav-a">
+  <div class="bd">
+    
+
+
+
+
+
+
+<div class="top-nav-info">
+    
+    <a href="http://www.douban.com/accounts/login" rel="nofollow">登录</a>
+    <a href="http://www.douban.com/accounts/register">注册</a>
+</div>
+
+
+
+    <div class="global-nav-items">
+      <ul>
+          
+            
+            <li class="on">
+              <a href="http://www.douban.com/">豆瓣</a>
+            </li>
+          
+            
+            <li>
+              <a href="http://book.douban.com/">读书</a>
+            </li>
+          
+            
+            <li>
+              <a href="http://movie.douban.com/">电影</a>
+            </li>
+          
+            
+            <li>
+              <a href="http://music.douban.com/">音乐</a>
+            </li>
+          
+            
+            <li>
+              <a href="http://www.douban.com/location/">同城</a>
+            </li>
+          
+            
+            <li>
+              <a href="http://www.douban.com/group/">小组</a>
+            </li>
+          
+            
+            <li>
+              <a href="http://read.douban.com/?dcs=top-nav&amp;dcm=douban" target="_blank">阅读</a>
+            </li>
+          
+            
+            <li>
+              <a href="http://douban.fm/" target="_blank">豆瓣FM</a>
+            </li>
+          
+            <li>
+              <a href="#more" class="bn-more"><span>更多</span></a>
+              <div class="more-items">
+                <table cellpadding="0" cellspacing="0">
+                    
+                    <tr><td><a href="http://9.douban.com" target="_blank">九点</a></td></tr>
+                    
+                    <tr><td><a href="http://alphatown.com" target="_blank">阿尔法城</a></td></tr>
+                    
+                    <tr><td><a href="http://www.douban.com/mobile/" target="_blank">移动应用</a></td></tr>
+                </table>
+              </div>
+            </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+   
+    
+
+
+
+
+
+
+
+<div id="db-nav-sns" class="nav">
+  <div class="nav-wrap">
+  <div class="nav-primary">
+
+    <div class="nav-search">
+      <form action="http://www.douban.com/search" method="get">
+        <fieldset>
+          <legend>搜索：</legend>
+          <label for="inp-query">书籍、电影、音乐、小组、小站、成员</label>
+          <div class="inp"><input id="inp-query" name="q" size="22" title="搜索书、电影、音乐、小组、小站、成员" maxlength="60" value=""></div>
+          <div class="inp-btn"><input type="submit" value="搜索"></div>
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="nav-logo">
+      <a href="http://www.douban.com">豆瓣社区</a>
+    </div>
+
+    <div class="nav-items">
+     <ul>
+      <li><a href="http://www.douban.com/">首页</a></li>
+          <li><a href="http://www.douban.com/group/explore">发现小组</a></li>
+          <li><a href="http://www.douban.com/explore/site/">发现小站</a></li>
+          <li><a href="http://www.douban.com/online/">线上活动</a></li>
+     </ul>
+     </div>
+
+  </div>
+  </div>
+</div>
+
+
+
+
+
+    
+    <div id="wrapper">
+        
+
+        
+    <div id="content">
+        
+    
+    
+
+<div id="db-usr-profile">
+<div class="pic">
+        <a href="http://www.douban.com/people/24309161/">
+            <img src="http://img3.douban.com/icon/u24309161-2.jpg" alt="charnugagoo"/>
+        </a>
+</div>
+<div class="info">
+        <h1>charnugagoo 的东西</h1>
+        
+    <ul>
+            <li><a href="http://www.douban.com/people/24309161/">charnugagoo的主页</a></li>
+            <li><a href="http://www.douban.com/people/24309161/statuses">广播</a></li>
+            <li><a href="http://www.douban.com/people/24309161/notes">日记</a></li>
+            <li><a href="http://www.douban.com/people/24309161/photos">相册</a></li>
+            <li><a href="http://www.douban.com/people/24309161/likes">喜欢</a></li>
+            <li><a href="http://www.douban.com/people/24309161/deals/">二手</a></li>
+            <li><a href="http://www.douban.com/people/24309161/event">活动</a></li>
+            <li><a href="http://www.douban.com/accounts/register?reason=send-doumail">发豆邮</a></li>
+    </ul>
+
+</div>
+</div>
+    <div class="clear"></div>
+
+
+    <div class="grid-16-8 clearfix">
+        
+        
+        <div class="article">
+	  
+
+
+<div class="list things-list">
+<ul>
+    <li>
+    <div class="pic">
+        <a href="http://www.douban.com/subject/10809532/"><img src="http://img3.douban.com/spic/s10389234.jpg"></a>
+    </div>
+    <span class="thing-title"><a href="http://www.douban.com/subject/10809532/">网易公开课</a></span>
+    <span class="thing-info">
+        软件
+        | 网易 / NetEase
+    </span>
+    </li>
+    <li>
+    <div class="pic">
+        <a href="http://www.douban.com/subject/10772128/"><img src="http://img5.douban.com/spic/s10433319.jpg"></a>
+    </div>
+    <span class="thing-title"><a href="http://www.douban.com/subject/10772128/">果壳网</a></span>
+    <span class="thing-info">
+        网站
+    </span>
+    </li>
+    <li>
+    <div class="pic">
+        <a href="http://www.douban.com/subject/10736849/"><img src="http://img3.douban.com/spic/s9095726.jpg"></a>
+    </div>
+    <span class="thing-title"><a href="http://www.douban.com/subject/10736849/">Evernote</a></span>
+    <span class="thing-info">
+        软件
+    </span>
+    </li>
+    <li>
+    <div class="pic">
+        <a href="http://www.douban.com/subject/10735030/"><img src="http://img3.douban.com/spic/s9125160.jpg"></a>
+    </div>
+    <span class="thing-title"><a href="http://www.douban.com/subject/10735030/">Gmail</a></span>
+    <span class="thing-info">
+        软件
+        | 谷歌 / Google
+    </span>
+    </li>
+    <li>
+    <div class="pic">
+        <a href="http://www.douban.com/subject/10757790/"><img src="http://img3.douban.com/spic/s9128841.jpg"></a>
+    </div>
+    <span class="thing-title"><a href="http://www.douban.com/subject/10757790/">arXiv</a></span>
+    <span class="thing-info">
+        网站
+    </span>
+    </li>
+    <li>
+    <div class="pic">
+        <a href="http://www.douban.com/subject/10810954/"><img src="http://img3.douban.com/spic/s10391237.jpg"></a>
+    </div>
+    <span class="thing-title"><a href="http://www.douban.com/subject/10810954/">Coursera</a></span>
+    <span class="thing-info">
+        网站
+    </span>
+    </li>
+    <li>
+    <div class="pic">
+        <a href="http://www.douban.com/subject/10749619/"><img src="http://img3.douban.com/spic/s9112500.jpg"></a>
+    </div>
+    <span class="thing-title"><a href="http://www.douban.com/subject/10749619/">Notepad++</a></span>
+    <span class="thing-info">
+        软件
+    </span>
+    </li>
+    <li>
+    <div class="pic">
+        <a href="http://www.douban.com/subject/10739835/"><img src="http://img3.douban.com/spic/s10528485.jpg"></a>
+    </div>
+    <span class="thing-title"><a href="http://www.douban.com/subject/10739835/">Python</a></span>
+    <span class="thing-info">
+        软件
+    </span>
+    </li>
+</ul>
+</div>
+
+
+    
+    
+
+    
+
+
+
+	</div>
+        <div class="aside">
+            
+  
+
+
+
+<div class="mod">
+  <div class="hd">
+      <h2>
+          什么是东西  · · · · · ·
+      </h2>
+  </div>
+  <div class="bd">
+    <p>
+    一件东西代表某一特定的产品或服务，它可能是食品、电器、软件、美容化妆用品、汽车等等。豆瓣将会帮助你发现喜欢的东西，并结识同好。
+    </p>
+    
+
+<div id="thing-side-search">
+    <form action="http://www.douban.com/subject/search" method="" onsubmit="return $.trim(this.elements['q'].value) !== '';">
+        <label for="thing-side-search-inp">东西名称、品牌</label>
+        <input id="thing-side-search-inp" name="q" size="50" class="inp" value=""> 
+        <span class="bn-flat"><input type="submit" value="搜索"></span>
+    </form>
+</div>
+
+
+  </div>
+</div>
+
+
+
+<div class="mod side-nav">
+    &gt; <a href="/subject/explore">发现更多喜欢的东西</a>
+</div>
+
+        </div>
+        <div class="extra">
+            
+        </div>
+    </div>
+    </div>
+
+        
+    <div id="footer">
+        
+
+<span id="icp" class="fleft gray-link">
+    &copy; 2005－2013 douban.com, all rights reserved
+</span>
+
+<span class="fright">
+    <a href="http://www.douban.com/about">关于豆瓣</a>
+    · <a href="http://www.douban.com/jobs">在豆瓣工作</a>
+    · <a href="http://www.douban.com/about?topic=contactus">联系我们</a>
+    · <a href="http://www.douban.com/about?policy=disclaimer">免责声明</a>
+    
+    · <a href="http://www.douban.com/help/">帮助中心</a>
+    · <a href="http://developers.douban.com/" target="_blank">开发者</a>
+    · <a href="http://www.douban.com/mobile/">移动应用</a>
+    · <a href="http://www.douban.com/partner/">豆瓣广告</a>
+</span>
+
+
+    </div>
+
+    </div>
+    <script src="http://img3.douban.com/js/core/do/packed__init_7701316160.js" data-cfg-corelib="http://img3.douban.com/js/packed_jquery.min6301986802.js"></script>
+    <script type="text/javascript" src="http://img3.douban.com/misc/mixed_static/6916cf6bb95b2fad.js"></script>
+    
+    
+    
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-7019765-1']);
+_gaq.push(['_addOrganic', 'baidu', 'word']);
+_gaq.push(['_addOrganic', 'soso', 'w']);
+_gaq.push(['_addOrganic', '3721', 'name']);
+_gaq.push(['_addOrganic', 'youdao', 'q']);
+_gaq.push(['_addOrganic', 'so.360.cn', 'q']);
+_gaq.push(['_addOrganic', 'vnet', 'kw']);
+_gaq.push(['_addOrganic', 'sogou', 'query']);
+_gaq.push(['_addIgnoredOrganic', '豆瓣']);
+_gaq.push(['_addIgnoredOrganic', 'douban']);
+_gaq.push(['_addIgnoredOrganic', '豆瓣网']);
+_gaq.push(['_addIgnoredOrganic', 'www.douban.com']);
+_gaq.push(['_setDomainName', '.douban.com']);
+
+
+    _gaq.push(['_setCustomVar', 1, 'responsive_view_mode', 'desktop', 3]); 
+
+_gaq.push(['_trackPageview']);
+_gaq.push(['_trackPageLoadTime']);
+
+
+window._ga_init = function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+};
+if (window.addEventListener) {
+    window.addEventListener('load', _ga_init, false);
+} else {
+    window.attachEvent('onload', _ga_init);
+}
+</script>
+
+
+
+
+
+
+
+
+    <!-- dis19-->
+
+<script>var _check_hijack = function () {
+            var _sig = "T387Bolt", _login = false, bid = get_cookie('bid');
+            if (location.protocol != "file:" && (typeof(bid) != "string" && _login || typeof(bid) == "string" && bid.substring(0,8) != _sig)) {
+                location.href+=(/\?/.test(location.href)?"&":"?") + "_r=" + Math.random().toString(16).substring(2);
+            }};
+            if (typeof(Do) != 'undefined') Do(_check_hijack);
+            else if (typeof(get_cookie) != 'undefined') _check_hijack();
+            </script></body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
