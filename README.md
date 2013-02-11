@@ -18,7 +18,7 @@ time, and number of 404 errors. (As start pages, we use the actual result URLs r
 
 A list of special features beyond the basic requirements:
 
-1. The program parses <base> elements.
+1. The program parses "base" elements.
 
    It will get the base URL and use it for all relative URLs contained within a document.
    It solves the issues of "the ambiguity of URLs".
