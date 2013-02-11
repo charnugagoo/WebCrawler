@@ -1,0 +1,746 @@
+
+<!DOCTYPE html>
+<html lang="en" class="devsite">
+
+  
+
+  <head>
+    <meta charset="utf-8" />
+    <script src="/_static/js/script_head.js"></script>
+    <link rel="stylesheet" type="text/css" href="/_static/css/screen.css" />
+    <link rel="shortcut icon" href="/_static/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/_static/images/apple-touch-icon.png">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script id="jqueryui" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"></script>
+    <script src="//www.google.com/jsapi?key=AIzaSyCZfHRnq7tigC-COeQRmoa9Cxr0vbrK6xw"></script>
+
+    <script type="text/javascript" src="//www.gstatic.com/feedback/api.js"></script>
+    <script type="text/javascript" src="/jsi18n/"></script>
+    <!--[if lt IE 9]>
+    <script src="/_static/js/html5shim/html5.js"></script>
+    <![endif]-->
+
+    
+  <script type="text/javascript">
+    var contentTimer = new window.jstiming.Timer();
+
+    var ___gcfg = ___gcfg || {};
+    ___gcfg.lang = 'en';
+  </script>
+  
+    
+    <title>Google+ Platform for iOS &mdash; Google Developers</title>
+    
+  
+  
+  
+  
+  
+  
+
+
+
+    
+    
+
+  </head>
+  <body class="two-column docs">
+    
+    <div id="sandbar">
+      
+      <a href="/sandbar?q=&page_url=/%2B/mobile/ios/getting-started"></a>
+      <div id="gc-googlebar"></div>
+      <img src="/_static/images/google-logo.png" style="display:none;"/>
+      
+    </div>
+    
+
+    
+    
+
+    <div id="gc-wrapper" itemscope itemtype="http://schema.org/Article">
+      
+      <input id="gc-analytics" type="hidden" value="UA-24532603-1" />
+      
+
+      
+
+      <div id="gc-topnav">
+        <div>
+
+          
+          
+
+          <ul>
+
+            
+            
+
+            
+            
+            
+            
+            <li class=""><a href="/">Home</a></li>
+            
+            <li class="active"><a href="/products/">Products</a></li>
+            
+            <li class=""><a href="/events/">Conferences</a></li>
+            
+            <li class=""><a href="/showcase/">Showcase</a></li>
+            
+            <li class=""><a href="/live/">Live</a></li>
+            
+            <li class=""><a href="/groups/">Groups</a></li>
+            
+
+            
+            
+            
+          </ul>
+        </div>
+      </div>
+      
+      
+
+      
+      
+      
+        <div id="gc-appbar">
+          
+          
+<h1>
+
+  <a href="/+/mobile/ios/">Google+ Platform for iOS</a>
+  <div class="plusone-container">
+    <div class="g-plusone"
+      data-href="https://developers.google.com/+/mobile/ios/"
+      data-size="medium"
+      data-source="google:developers"></div>
+  </div>
+
+
+<div style="float:right;">
+  
+  <a href="" class="google-feedback" data-p="74502" data-b="mobile-ios" data-context="">Feedback on this document</a>
+</div>
+
+
+
+
+
+</h1>
+
+
+          
+        </div>
+      
+      
+
+      
+        
+      <div id="gc-main">
+        
+        
+  
+  
+      
+      
+      <div id="gc-sidebar">
+        
+
+  
+
+
+
+  <nav class="gc-toc"><ul><li class=""><a href="/+/" data-title="Google+ platform"><span>Google+ platform</span></a></li><li class=""><a href="/+/mobile/android/" data-title="Android"><span>Android</span></a><ul><li class=""><a href="/+/mobile/android/getting-started" data-title="Getting started"><span>Getting started</span></a></li><li class=""><a href="/+/mobile/android/sign-in" data-title="Sign in"><span>Sign in</span></a></li><li class=""><a href="/+/mobile/android/share" data-title="Share"><span>Share</span></a></li><li class=""><a href="/+/mobile/android/write-moments" data-title="Write moments"><span>Write moments</span></a></li><li class=""><a href="/+/mobile/android/recommend" data-title="+1 button"><span>+1 button</span></a></li><li class=""><span class="tlw-title" data-title="Google Play services">Google Play services</span><ul><li class=""><a href="/android/google-play-services/" data-title="Overview"><span>Overview</span></a></li><li class=""><a href="/android/google-play-services/reference/" data-title="API Reference"><span>API Reference</span></a></li></ul></li></ul></li><li class=""><a href="/+/mobile/ios/" data-title="iOS"><span>iOS</span></a><ul><li class=""><a href="/+/mobile/ios/getting-started" data-title="Getting started"><span>Getting started</span></a></li><li class=""><a href="/+/mobile/ios/sign-in" data-title="Sign in"><span>Sign in</span></a></li><li class=""><a href="/+/mobile/ios/share" data-title="Share"><span>Share</span></a></li><li class=""><a href="/+/mobile/ios/write-moments" data-title="Write moments"><span>Write moments</span></a></li><li class=""><a href="/+/mobile/ios/api/" data-title="API Reference"><span>API Reference</span></a><ul><li class=""><a href="/+/mobile/ios/api/interface_g_p_p_sign_in" data-title="GPPSignIn"><span>GPPSignIn</span></a></li><li class=""><a href="/+/mobile/ios/api/interface_g_p_p_sign_in_button" data-title="GPPSignInButton"><span>GPPSignInButton</span></a></li><li class=""><a href="/+/mobile/ios/api/protocol_g_p_p_sign_in_delegate-p" data-title="GPPSignInDelegate"><span>GPPSignInDelegate</span></a></li><li class=""><a href="/+/mobile/ios/api/interface_g_p_p_share" data-title="GPPShare"><span>GPPShare</span></a></li><li class=""><a href="/+/mobile/ios/api/protocol_g_p_p_share_builder-p" data-title="GPPShareBuilder"><span>GPPShareBuilder</span></a></li><li class=""><a href="/+/mobile/ios/api/protocol_g_p_p_share_delegate-p" data-title="GPPShareDelegate"><span>GPPShareDelegate</span></a></li><li class=""><a href="/+/mobile/ios/api/interface_g_p_p_deep_link" data-title="GPPDeepLink"><span>GPPDeepLink</span></a><ul><li class=""><a href="/+/mobile/ios/source-values" data-title="Source Values"><span>Source Values</span></a></li></ul></li></ul></li></ul></li><li class=""><a href="/+/plugins/" data-title="Websites"><span>Websites</span></a><ul><li class=""><a href="/+/plugins/+1button/" data-title="+1 Button"><span>+1 Button</span></a></li><li class=""><a href="/+/plugins/badge/" data-title="Badge"><span>Badge</span></a><ul><li class=""><a href="/+/plugins/badge/branding-guidelines" data-title="Branding Guidelines"><span>Branding Guidelines</span></a></li></ul></li><li class=""><a href="/+/plugins/share/" data-title="Share"><span>Share</span></a></li><li class=""><a href="/+/plugins/snippet/" data-title="Snippet"><span>Snippet</span></a></li><li class=""><a href="/+/plugins/buttons-policy" data-title="Buttons Policy"><span>Buttons Policy</span></a></li></ul></li></ul><hr/><ul><li class=""><a href="/+/hangouts" data-title="Hangouts API"><span>Hangouts API</span></a><ul><li class=""><a href="/+/hangouts/getting-started" data-title="Getting Started"><span>Getting Started</span></a></li><li class=""><a href="/+/hangouts/sample-apps" data-title="Sample Apps"><span>Sample Apps</span></a></li><li class=""><a href="/+/hangouts/writing" data-title="Writing Apps"><span>Writing Apps</span></a><ul><li class=""><a href="/+/hangouts/shared-state" data-title="Shared state"><span>Shared state</span></a></li><li class=""><a href="/+/hangouts/resource-management" data-title="Manage resources"><span>Manage resources</span></a></li></ul></li><li class=""><a href="/+/hangouts/running" data-title="Running Apps"><span>Running Apps</span></a></li><li class=""><a href="/+/hangouts/publishing" data-title="Publishing Apps"><span>Publishing Apps</span></a></li><li class=""><a href="/+/hangouts/button" data-title="Hangout Button"><span>Hangout Button</span></a></li><li class=""><a href="/+/hangouts/api/" data-title="API"><span>API</span></a><ul><li class=""><a href="/+/hangouts/api/gapi.hangout" data-title="gapi.hangout"><span>gapi.hangout</span></a></li><li class=""><a href="/+/hangouts/api/gapi.hangout.av" data-title="gapi.hangout.av"><span>gapi.hangout.av</span></a></li><li class=""><a href="/+/hangouts/api/gapi.hangout.av.effects" data-title="gapi.hangout.av.effects"><span>gapi.hangout.av.effects</span></a></li><li class=""><a href="/+/hangouts/api/gapi.hangout.data" data-title="gapi.hangout.data"><span>gapi.hangout.data</span></a></li><li class=""><a href="/+/hangouts/api/gapi.hangout.layout" data-title="gapi.hangout.layout"><span>gapi.hangout.layout</span></a></li><li class=""><a href="/+/hangouts/api/gapi.hangout.onair" data-title="gapi.hangout.onair"><span>gapi.hangout.onair</span></a></li><li class=""><a href="/+/hangouts/api/index-all" data-title="Index"><span>Index</span></a></li></ul></li><li class=""><a href="/+/hangouts/faq" data-title="FAQ"><span>FAQ</span></a></li><li class=""><a href="/+/release-notes/hangouts" data-title="Release Notes"><span>Release Notes</span></a></li></ul></li><li class=""><span class="tlw-title" data-title="REST API">REST API</span><ul><li class=""><a href="/+/api" data-title="Public data API"><span>Public data API</span></a><ul><li class=""><a href="/+/api/latest/" data-title="Overview"><span>Overview</span></a></li><li class=""><a href="/+/api/latest/people" data-title="People"><span>People</span></a><ul><li class=""><a href="/+/api/latest/people/get" data-title="get"><span>get</span></a></li><li class=""><a href="/+/api/latest/people/search" data-title="search"><span>search</span></a></li><li class=""><a href="/+/api/latest/people/listByActivity" data-title="listByActivity"><span>listByActivity</span></a></li></ul></li><li class=""><a href="/+/api/latest/activities" data-title="Activities"><span>Activities</span></a><ul><li class=""><a href="/+/api/latest/activities/list" data-title="list"><span>list</span></a></li><li class=""><a href="/+/api/latest/activities/get" data-title="get"><span>get</span></a></li><li class=""><a href="/+/api/latest/activities/search" data-title="search"><span>search</span></a></li></ul></li><li class=""><a href="/+/api/latest/comments" data-title="Comments"><span>Comments</span></a><ul><li class=""><a href="/+/api/latest/comments/list" data-title="list"><span>list</span></a></li><li class=""><a href="/+/api/latest/comments/get" data-title="get"><span>get</span></a></li></ul></li></ul></li><li class=""><a href="/+/history/" data-title="History API"><span>History API</span></a><ul><li class=""><a href="/+/history/preview" data-title="Preview Sign-up"><span>Preview Sign-up</span></a><ul><li class=""><a href="/+/history/preview/opt-out" data-title="Opt-out"><span>Opt-out</span></a></li><li class=""><a href="/+/history/learn-more" data-title="Learn More"><span>Learn More</span></a></li></ul></li><li class=""><a href="/+/history/client-side-flow" data-title="Client Side Flow Example"><span>Client Side Flow Example</span></a></li><li class=""><a href="/+/history/server-side-flow" data-title="Server Side Flow Example"><span>Server Side Flow Example</span></a></li><li class=""><a href="/+/history/api/moments" data-title="API Reference"><span>API Reference</span></a><ul><li class=""><a href="/+/history/api/moments/insert" data-title="Insert"><span>Insert</span></a></li></ul></li></ul></li><li class=""><a href="/+/api/oauth" data-title="OAuth"><span>OAuth</span></a></li><li class=""><a href="/+/api/pages-signup" data-title="Pages API"><span>Pages API</span></a></li></ul></li></ul><hr/><ul><li class=""><a href="/+/downloads/" data-title="Downloads"><span>Downloads</span></a></li><li class=""><a href="/+/release-notes/" data-title="Release Notes"><span>Release Notes</span></a></li><li class=""><a href="/+/best-practices" data-title="Best Practices"><span>Best Practices</span></a></li></ul><hr/><ul><li class=""><span class="tlw-title" data-title="Community &amp; Support">Community &amp; Support</span><ul><li class=""><a href="/+/support" data-title="Get support"><span>Get support</span></a></li><li class=""><a href="/+/discussions" data-title="Discussions"><span>Discussions</span></a></li><li class=""><a href="/+/office-hours" data-title="Office Hours"><span>Office Hours</span></a></li><li class=""><a href="http://googleplusplatform.blogspot.com/" data-title="Blog"><span>Blog</span></a></li><li class=""><a href="/showcase/#tags=google+plus" data-title="Showcase"><span>Showcase</span></a></li></ul></li><li class=""><a href="https://code.google.com/apis/console" data-title="APIs Console"><span>APIs Console</span></a></li></ul><hr/><ul><li class=""><a href="/+/policies" data-title="Developer Policies"><span>Developer Policies</span></a></li><li class=""><a href="/+/terms" data-title="Terms of Service"><span>Terms of Service</span></a></li></ul></nav>
+
+
+
+      </div>
+      
+
+      <div id="gc-content"
+           
+           
+           >
+        
+        <div>
+  
+          
+  
+  <div itemprop="articleBody">
+  
+<p><link rel="stylesheet" href="/+/css/plus.css" /></p>
+
+<h1 class="page-title" id="getting_started_with_the_google_platform_for_ios">Getting Started with the Google+ Platform for iOS</h1>
+<nav class="inline-toc"><ol class="toc"><li><a href="#prerequisites">Prerequisites</a></li><li><a href="#creating_the_apis_console_project">Creating the APIs Console project</a><ol class="toc"><li><a href="#1_create_your_apis_console_project">1. Create your APIs Console project</a></li><li><a href="#2_register_your_ios_project_in_the_apis_console">2. Register your iOS project in the APIs Console</a></li></ol></li><li><a href="#download_the_sdk_and_run_the_sample_app">Download the SDK and run the sample app</a></li><li><a href="#initialize_the_google_client">Initialize the Google+ Client</a></li><li><a href="#add_a_url_type">Add a URL type</a></li><li><a href="#next_steps">Next steps</a></li><li><a href="#frequently_asked_questions">Frequently asked questions</a></li></ol></nav>
+<p>Before you can begin integrating your iOS app with the Google+ components, you
+must create an API Console project, download the SDK, and configure your Xcode
+project.</p>
+<p><a href="http://goo.gl/FF3pc" class="button-blue button" style="font-size:104%">Download the Google+ iOS SDK</a></p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Adding Google+ client features to iOS applications requires:</p>
+<ul>
+<li><a href="http://goo.gl/FF3pc">Download the latest Google+ iOS SDK</a></li>
+<li>Install <a href="http://developer.apple.com/xcode/">Xcode 4.2</a></li>
+<li>Include the following Xcode frameworks in your project:<ul>
+<li>Security.framework</li>
+<li>SystemConfiguration.framework</li>
+</ul>
+</li>
+</ul>
+<h2 id="creating_the_apis_console_project">Creating the APIs Console project</h2>
+<h3 id="1_create_your_apis_console_project">1. Create your APIs Console project</h3>
+<p>Before you can use the Google+ iOS SDK, you must create a project in the Google APIs Console:</p>
+<ol>
+<li>In the <a href="//code.google.com/apis/console" target="_blank">APIs Console
+<img src="/+/mobile/images/OpenInNewWindow14x14.png"></a>, select <strong>Create</strong>
+from the pull down menu in the left menu, and enter a project name (such as
+"iOS App").</li>
+<li>Click the <strong>Create project</strong> button. A list of all Google web services are displayed.</li>
+<li>Turn the <strong>Google+ API</strong> on by clicking its switch.  If you plan to use the
+<strong>Google+ history API</strong>, turn it on as well.  Read and accept the terms of service.</li>
+</ol>
+<h3 id="2_register_your_ios_project_in_the_apis_console">2. Register your iOS project in the APIs Console</h3>
+<p>Mobile apps require an OAuth 2.0 client ID, which allows your app to communicate
+with the Google+ APIs.</p>
+<ol>
+<li>
+<p>In the <a href="//code.google.com/apis/console" target=_"blank">APIs Console <img src="/+/mobile/images/OpenInNewWindow14x14.png"></a>, click <strong>API Access</strong> in the left menu.</p>
+</li>
+<li>
+<p>If you are creating your first client ID for this project, click <strong>Create an OAuth 2.0 client ID</strong>.
+<p><img class="drop-shadow" src="/+/mobile/images/api-access-create.png"></p></p>
+</li>
+<li>
+<p>Type an app name in the dialog box that pops up, and click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Choose <strong>Installed application</strong> as your <strong>Application type</strong> and select <strong>iOS</strong> as the type.
+<p><img class="drop-shadow" src="/+/mobile/images/client-id-create-ios.png"></p></p>
+</li>
+<li>
+<p>In the <strong>Bundle ID</strong> field, enter the bundle identifier as listed in your app's .plist file.
+If you are using the provided sample app, use:
+<pre class="prettyprint">com.google.GooglePlusSample</pre>
+<p>You are assigned a client ID that your app uses to communicate with the Google+ APIs.</p></p>
+</li>
+<li>
+<p>If your app is published in the Apple iTunes App Store, type your App Store ID
+in the App Store ID field. You can determine the ID from the URL to your app in
+the iTunes website. (e.g. http://itunes.apple.com/us/app/id&lt;Your App Store ID&gt;)</p>
+</li>
+<li>
+<p>(Optional) If you plan to build <a href="share#sharing_with_deep_links_to_your_app">content deep linking</a>
+into shared posts made from your app, enable <strong>Deep Linking</strong>.</p>
+</li>
+</ol>
+<h2 id="download_the_sdk_and_run_the_sample_app">Download the SDK and run the sample app</h2>
+<p>The Google+ iOS SDK provides a library, headers, and a sample app to help you integrate the Google+ components
+with your own app.</p>
+<ol>
+<li>
+<p>Download the <a href="http://goo.gl/FF3pc">SDK</a>. The SDK includes:</p>
+<ul>
+<li>The GooglePlus .a and .h files</li>
+<li>A directory containing open source Google Toolbox for Mac files.</li>
+<li>The sample Xcode project.</li>
+</ul>
+</li>
+<li>
+<p>Extract the SDK archive.</p>
+</li>
+<li>Double click the Xcode project file to open the project in the Xcode editor.</li>
+<li>
+<p>Locate the following line in <code>GooglePlusSampleAppDelegate.m</code> and update the client ID to the
+value that you were assigned in the previous step:</p>
+<pre class="prettyprint"><code>static NSString * const kClientId = @"YOUR_CLIENT_ID";
+</code></pre>
+</li>
+<li>
+<p>Click <strong>Product</strong> &gt; <strong>Run</strong> to run the sample app.</p>
+</li>
+</ol>
+<p>The sample app shows basic examples to help demonstate how to integrate the Google+ components in your app. The
+following sections provide instructions for integrating the various components with your app.</p>
+<h2 id="initialize_the_google_client">Initialize the Google+ Client</h2>
+<p>Initializing the client sets up your project with the minimal settings. Depending on your
+app's needs, you will further configure your project to handle signing in with Google+, sharing, and
+writing moments to a user's Google+ history.</p>
+<ol>
+<li>
+<p>Include the following frameworks in your Xcode project:</p>
+<ul>
+<li>Security.framework</li>
+<li>SystemConfiguration.framework</li>
+</ul>
+</li>
+<li>
+<p>Copy the following files into your Xcode project from the SDK:</p>
+<ul>
+<li>GPPShare.h</li>
+<li>libGooglePlusUniversal.a</li>
+</ul>
+</li>
+<li>
+<p>Include all files from the <code>OpenSource</code> directory in your Xcode project.</p>
+</li>
+<li>
+<p>Add the <a href="http://developer.apple.com/mac/library/qa/qa2006/qa1490.html">ObjC linker flag</a> to the
+app target's build settings, along with the all_load flags:</p>
+<pre class="prettyprint"><code>Other Linker Flags: -ObjC -all_load
+</code></pre>
+</li>
+<li>
+<p>In your app's controller, import the header files:</p>
+<pre class="prettyprint"><code>#import "GPPShare.h"
+</code></pre>
+</li>
+<li>
+<p>Initialize the client when appropriate:</p>
+<pre class="prettyprint"><code>static NSString * const kClientId = @"YOUR_CLIENT_ID";
+GPPShare *share = [[GPPShare alloc] initWithClientID:kClientId];
+</code></pre>
+</li>
+</ol>
+<h2 id="add_a_url_type">Add a URL type</h2>
+<p>In your app's Info tab, add a URL type and enter your bundle ID as the identifier and scheme:
+<img alt="Graphic that shows the identifier and URL Schemas fields with the value of com.google.GooglePlusSample entered." src="/+/mobile/images/xcode_infotab_url_type_values.png" /></p>
+<h2 id="next_steps">Next steps</h2>
+<p>Now that you created your APIs console project and configured your xcode
+project, you can add the Google+ components to your app:</p>
+<ul>
+<li><a href="sign-in">Sign in with Google+</a></li>
+<li><a href="share">Sharing to Google+</a></li>
+<li><a href="write-moments">Write moments to your user's Google+ history</a></li>
+</ul>
+<h2 id="frequently_asked_questions">Frequently asked questions</h2>
+<dl>
+<dt id="faq-older-versions">I'm getting the error ARC forbids explicit message send of 'autorelease'.</dt>
+<dd>
+  <p>
+    You need to disable "Automatic Reference Counting" for select files in the Google+ iOS SDK.
+    Navigate to your project's settings, click &lt; Targets &lt; Build Phases &lt; and add the
+    <code>-fno-obj-arc</code> compiler flag for every open source dependency provided by the
+    Google+ iOS SDK.
+  </p>
+</dd>
+
+</dl>
+
+  </div>
+
+  
+        </div>
+        
+<div id="gc-content-footer">
+
+
+
+<div itemprop="datePublished" content="2013-01-18T19:18:58.573630" id="gc-content-last-updated">Last updated January 18, 2013.</div>
+
+</div>
+
+
+
+
+      </div>
+  
+
+        
+      </div>
+        
+      
+
+      
+      
+      <footer id="gc-footer">
+        <div id="gc-copyright">
+          <a href="/">
+            <img id="developers-logo-footer" src="/_static/images/developers-logo-footer.png" alt="Google Developers logo" style="vertical-align: center; float: left"/>
+          </a>
+          <ul>
+            <li><a href="http://www.google.com/">Google</a></li>
+            <li><a href="/readme/terms">Terms of Service</a></li>
+            <li><a href="http://www.google.com/intl/en/privacy/">Privacy Policy</a></li>
+            <li><a href="/jobs">Jobs</a></li>
+            <li><a class="google-feedback" data-p="81425" data-b="Documentation"  data-v="devsite-20130211-rc00.365237837741032878" href="">Report a bug</a></li>
+          </ul>
+        </div>
+        
+        <div id="gc-language">
+          <ul>
+            <li>
+              <form id="setlang" action="/i18n/setlang/" method="post">
+                <div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='7d52840f8564b572a22229718b8c583b' /></div>
+                <select id="footer_language" name="language">
+                  
+                  
+                  <option
+                     value="ar"
+                     >
+                    العربيّة
+                  </option>
+                  
+                  <option
+                     value="bg"
+                     >
+                    български
+                  </option>
+                  
+                  <option
+                     value="ca"
+                     >
+                    català
+                  </option>
+                  
+                  <option
+                     value="zh-cn"
+                     >
+                    简体中文
+                  </option>
+                  
+                  <option
+                     value="zh-tw"
+                     >
+                    繁體中文
+                  </option>
+                  
+                  <option
+                     value="hr"
+                     >
+                    Hrvatski
+                  </option>
+                  
+                  <option
+                     value="cs"
+                     >
+                    česky
+                  </option>
+                  
+                  <option
+                     value="da"
+                     >
+                    Dansk
+                  </option>
+                  
+                  <option
+                     value="nl"
+                     >
+                    Nederlands
+                  </option>
+                  
+                  <option
+                     value="en"
+                      selected="selected" >
+                    English
+                  </option>
+                  
+                  <option
+                     value="fa"
+                     >
+                    فارسی
+                  </option>
+                  
+                  <option
+                     value="fi"
+                     >
+                    suomi
+                  </option>
+                  
+                  <option
+                     value="fr"
+                     >
+                    Français
+                  </option>
+                  
+                  <option
+                     value="de"
+                     >
+                    Deutsch
+                  </option>
+                  
+                  <option
+                     value="el"
+                     >
+                    Ελληνικά
+                  </option>
+                  
+                  <option
+                     value="he"
+                     >
+                    עברית
+                  </option>
+                  
+                  <option
+                     value="hi"
+                     >
+                    Hindi
+                  </option>
+                  
+                  <option
+                     value="hu"
+                     >
+                    Magyar
+                  </option>
+                  
+                  <option
+                     value="id"
+                     >
+                    Bahasa Indonesia
+                  </option>
+                  
+                  <option
+                     value="it"
+                     >
+                    italiano
+                  </option>
+                  
+                  <option
+                     value="ja"
+                     >
+                    日本語
+                  </option>
+                  
+                  <option
+                     value="ko"
+                     >
+                    한국어
+                  </option>
+                  
+                  <option
+                     value="lv"
+                     >
+                    latviešu
+                  </option>
+                  
+                  <option
+                     value="lt"
+                     >
+                    Lithuanian
+                  </option>
+                  
+                  <option
+                     value="nb"
+                     >
+                    Norsk (bokmål)
+                  </option>
+                  
+                  <option
+                     value="nn"
+                     >
+                    Norsk (nynorsk)
+                  </option>
+                  
+                  <option
+                     value="pl"
+                     >
+                    polski
+                  </option>
+                  
+                  <option
+                     value="pt-br"
+                     >
+                    Português Brasileiro
+                  </option>
+                  
+                  <option
+                     value="pt"
+                     >
+                    Português
+                  </option>
+                  
+                  <option
+                     value="ro"
+                     >
+                    Română
+                  </option>
+                  
+                  <option
+                     value="ru"
+                     >
+                    Русский
+                  </option>
+                  
+                  <option
+                     value="sr"
+                     >
+                    српски
+                  </option>
+                  
+                  <option
+                     value="sk"
+                     >
+                    slovenský
+                  </option>
+                  
+                  <option
+                     value="sl"
+                     >
+                    Slovenščina
+                  </option>
+                  
+                  <option
+                     value="es"
+                     >
+                    español
+                  </option>
+                  
+                  <option
+                     value="sv"
+                     >
+                    Svenska
+                  </option>
+                  
+                  <option
+                     value="th"
+                     >
+                    Thai
+                  </option>
+                  
+                  <option
+                     value="tr"
+                     >
+                    Türkçe
+                  </option>
+                  
+                  <option
+                     value="uk"
+                     >
+                    Українська
+                  </option>
+                  
+                  <option
+                     value="vi"
+                     >
+                    Vietnamese
+                  </option>
+                  
+                </select>
+              </form>
+            </li>
+          </ul>
+        </div>
+        
+      </footer>
+      
+      
+    </div>
+    <div id="needAuth" class="msgDialogContent">
+      
+      <h1>Authentication required</h1>
+      
+      <div>
+        You need to be signed in with <a href='http://www.google.com/+'>Google+</a> to do that.
+      </div>
+      <button>Sign in</button>
+      <button>Cancel</button>
+    </div>
+    <div id="signingIn" class="msgDialogContent">
+      
+      <h1>Signing you in...</h1>
+      <div>
+        
+        Google Developers needs your permission to do that.
+      </div>
+      
+      <button>Try again</button>
+      
+      <button>Cancel</button>
+    </div>
+    <script src="/_static/js/script_foot.js"></script>
+    <script>
+      (function($) {
+        devsite.devsite.Init($, null, '');
+      })(jQuery);
+
+      
+      devsite.localInit = function() {
+        
+      };
+      
+    </script>
+    <!-- Google Code for PXL - Developers - Codesite - HP - 90d Remarketing List -->
+    <script type="text/javascript">
+    $('#setlang select').each(function() {
+      if ($.browser.msie) {
+        $(this).change(function() {
+          $('#setlang').submit();
+        });
+      } else {
+        $(this).kdSelect({'change': function() {
+          $('#setlang').submit();
+        }});
+      }
+    });
+    </script>
+    <script type="text/javascript">
+      /* <![CDATA[ */
+      var google_conversion_id = 992540712;
+      var google_conversion_language = "en";
+      var google_conversion_format = "3";
+      var google_conversion_color = "ffffff";
+      var google_conversion_label = "qio2CKCPwQMQqPCj2QM";
+      var google_conversion_value = 0;
+      /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+
+    
+
+    <script>
+      
+      google.load('visualization', '1', {packages: ['table']});
+    </script>
+
+    <noscript>
+      <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/992540712/?label=qio2CKCPwQMQqPCj2QM&amp;guid=ON&amp;script=0"/>
+      </div>
+    </noscript>
+    
+
+
+
+
+
+<script type="text/javascript">
+$(document).ready(function(e) {
+    // Render any carousels on the page
+    $('.carousel').carousel();
+    // Render any feed widgets on the page
+    
+    $('.feed').rss();
+    $('.feed-plain').rss();
+    // Render any OSS widgets on the page.
+    $('.oss').oss();
+    });
+</script>
+
+<script type="text/javascript" defer>
+
+
+$(document).ready(function() {
+    contentTimer.name = 'content';
+    contentTimer.tick('ol');
+    window.jstiming.report(contentTimer);
+
+    // Boilerplate javascript to enable the plusone button
+    var po = document.createElement('script'); po.type = 'text/javascript';
+    po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js?onload=devsite_plusoneLoaded';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(po, s);
+});
+</script>
+
+
+
+
+  </body>
+
+  
+</html>

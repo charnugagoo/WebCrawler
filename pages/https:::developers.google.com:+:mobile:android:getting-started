@@ -1,0 +1,855 @@
+
+<!DOCTYPE html>
+<html lang="en" class="devsite">
+
+  
+
+  <head>
+    <meta charset="utf-8" />
+    <script src="/_static/js/script_head.js"></script>
+    <link rel="stylesheet" type="text/css" href="/_static/css/screen.css" />
+    <link rel="shortcut icon" href="/_static/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/_static/images/apple-touch-icon.png">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script id="jqueryui" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"></script>
+    <script src="//www.google.com/jsapi?key=AIzaSyCZfHRnq7tigC-COeQRmoa9Cxr0vbrK6xw"></script>
+
+    <script type="text/javascript" src="//www.gstatic.com/feedback/api.js"></script>
+    <script type="text/javascript" src="/jsi18n/"></script>
+    <!--[if lt IE 9]>
+    <script src="/_static/js/html5shim/html5.js"></script>
+    <![endif]-->
+
+    
+  <script type="text/javascript">
+    var contentTimer = new window.jstiming.Timer();
+
+    var ___gcfg = ___gcfg || {};
+    ___gcfg.lang = 'en';
+  </script>
+  
+    
+    <title>Google+ Platform for Android &mdash; Google Developers</title>
+    
+  
+  
+  
+  
+  
+  
+
+
+
+    
+    
+
+  </head>
+  <body class="two-column docs">
+    
+    <div id="sandbar">
+      
+      <a href="/sandbar?q=&page_url=/%2B/mobile/android/getting-started"></a>
+      <div id="gc-googlebar"></div>
+      <img src="/_static/images/google-logo.png" style="display:none;"/>
+      
+    </div>
+    
+
+    
+    
+
+    <div id="gc-wrapper" itemscope itemtype="http://schema.org/Article">
+      
+      <input id="gc-analytics" type="hidden" value="UA-24532603-1" />
+      
+
+      
+
+      <div id="gc-topnav">
+        <div>
+
+          
+          
+
+          <ul>
+
+            
+            
+
+            
+            
+            
+            
+            <li class=""><a href="/">Home</a></li>
+            
+            <li class="active"><a href="/products/">Products</a></li>
+            
+            <li class=""><a href="/events/">Conferences</a></li>
+            
+            <li class=""><a href="/showcase/">Showcase</a></li>
+            
+            <li class=""><a href="/live/">Live</a></li>
+            
+            <li class=""><a href="/groups/">Groups</a></li>
+            
+
+            
+            
+            
+          </ul>
+        </div>
+      </div>
+      
+      
+
+      
+      
+      
+        <div id="gc-appbar">
+          
+          
+<h1>
+
+  <a href="/+/mobile/android/">Google+ Platform for Android</a>
+  <div class="plusone-container">
+    <div class="g-plusone"
+      data-href="https://developers.google.com/+/mobile/android/"
+      data-size="medium"
+      data-source="google:developers"></div>
+  </div>
+
+
+<div style="float:right;">
+  
+  <a href="" class="google-feedback" data-p="74502" data-b="mobile-android" data-context="">Feedback on this document</a>
+</div>
+
+
+
+
+
+</h1>
+
+
+          
+        </div>
+      
+      
+
+      
+        
+      <div id="gc-main">
+        
+        
+  
+  
+      
+      
+      <div id="gc-sidebar">
+        
+
+  
+
+
+
+  <nav class="gc-toc"><ul><li class=""><a href="/+/" data-title="Google+ platform"><span>Google+ platform</span></a></li><li class=""><a href="/+/mobile/android/" data-title="Android"><span>Android</span></a><ul><li class=""><a href="/+/mobile/android/getting-started" data-title="Getting started"><span>Getting started</span></a></li><li class=""><a href="/+/mobile/android/sign-in" data-title="Sign in"><span>Sign in</span></a></li><li class=""><a href="/+/mobile/android/share" data-title="Share"><span>Share</span></a></li><li class=""><a href="/+/mobile/android/write-moments" data-title="Write moments"><span>Write moments</span></a></li><li class=""><a href="/+/mobile/android/recommend" data-title="+1 button"><span>+1 button</span></a></li><li class=""><span class="tlw-title" data-title="Google Play services">Google Play services</span><ul><li class=""><a href="/android/google-play-services/" data-title="Overview"><span>Overview</span></a></li><li class=""><a href="/android/google-play-services/reference/" data-title="API Reference"><span>API Reference</span></a></li></ul></li></ul></li><li class=""><a href="/+/mobile/ios/" data-title="iOS"><span>iOS</span></a><ul><li class=""><a href="/+/mobile/ios/getting-started" data-title="Getting started"><span>Getting started</span></a></li><li class=""><a href="/+/mobile/ios/sign-in" data-title="Sign in"><span>Sign in</span></a></li><li class=""><a href="/+/mobile/ios/share" data-title="Share"><span>Share</span></a></li><li class=""><a href="/+/mobile/ios/write-moments" data-title="Write moments"><span>Write moments</span></a></li><li class=""><a href="/+/mobile/ios/api/" data-title="API Reference"><span>API Reference</span></a><ul><li class=""><a href="/+/mobile/ios/api/interface_g_p_p_sign_in" data-title="GPPSignIn"><span>GPPSignIn</span></a></li><li class=""><a href="/+/mobile/ios/api/interface_g_p_p_sign_in_button" data-title="GPPSignInButton"><span>GPPSignInButton</span></a></li><li class=""><a href="/+/mobile/ios/api/protocol_g_p_p_sign_in_delegate-p" data-title="GPPSignInDelegate"><span>GPPSignInDelegate</span></a></li><li class=""><a href="/+/mobile/ios/api/interface_g_p_p_share" data-title="GPPShare"><span>GPPShare</span></a></li><li class=""><a href="/+/mobile/ios/api/protocol_g_p_p_share_builder-p" data-title="GPPShareBuilder"><span>GPPShareBuilder</span></a></li><li class=""><a href="/+/mobile/ios/api/protocol_g_p_p_share_delegate-p" data-title="GPPShareDelegate"><span>GPPShareDelegate</span></a></li><li class=""><a href="/+/mobile/ios/api/interface_g_p_p_deep_link" data-title="GPPDeepLink"><span>GPPDeepLink</span></a><ul><li class=""><a href="/+/mobile/ios/source-values" data-title="Source Values"><span>Source Values</span></a></li></ul></li></ul></li></ul></li><li class=""><a href="/+/plugins/" data-title="Websites"><span>Websites</span></a><ul><li class=""><a href="/+/plugins/+1button/" data-title="+1 Button"><span>+1 Button</span></a></li><li class=""><a href="/+/plugins/badge/" data-title="Badge"><span>Badge</span></a><ul><li class=""><a href="/+/plugins/badge/branding-guidelines" data-title="Branding Guidelines"><span>Branding Guidelines</span></a></li></ul></li><li class=""><a href="/+/plugins/share/" data-title="Share"><span>Share</span></a></li><li class=""><a href="/+/plugins/snippet/" data-title="Snippet"><span>Snippet</span></a></li><li class=""><a href="/+/plugins/buttons-policy" data-title="Buttons Policy"><span>Buttons Policy</span></a></li></ul></li></ul><hr/><ul><li class=""><a href="/+/hangouts" data-title="Hangouts API"><span>Hangouts API</span></a><ul><li class=""><a href="/+/hangouts/getting-started" data-title="Getting Started"><span>Getting Started</span></a></li><li class=""><a href="/+/hangouts/sample-apps" data-title="Sample Apps"><span>Sample Apps</span></a></li><li class=""><a href="/+/hangouts/writing" data-title="Writing Apps"><span>Writing Apps</span></a><ul><li class=""><a href="/+/hangouts/shared-state" data-title="Shared state"><span>Shared state</span></a></li><li class=""><a href="/+/hangouts/resource-management" data-title="Manage resources"><span>Manage resources</span></a></li></ul></li><li class=""><a href="/+/hangouts/running" data-title="Running Apps"><span>Running Apps</span></a></li><li class=""><a href="/+/hangouts/publishing" data-title="Publishing Apps"><span>Publishing Apps</span></a></li><li class=""><a href="/+/hangouts/button" data-title="Hangout Button"><span>Hangout Button</span></a></li><li class=""><a href="/+/hangouts/api/" data-title="API"><span>API</span></a><ul><li class=""><a href="/+/hangouts/api/gapi.hangout" data-title="gapi.hangout"><span>gapi.hangout</span></a></li><li class=""><a href="/+/hangouts/api/gapi.hangout.av" data-title="gapi.hangout.av"><span>gapi.hangout.av</span></a></li><li class=""><a href="/+/hangouts/api/gapi.hangout.av.effects" data-title="gapi.hangout.av.effects"><span>gapi.hangout.av.effects</span></a></li><li class=""><a href="/+/hangouts/api/gapi.hangout.data" data-title="gapi.hangout.data"><span>gapi.hangout.data</span></a></li><li class=""><a href="/+/hangouts/api/gapi.hangout.layout" data-title="gapi.hangout.layout"><span>gapi.hangout.layout</span></a></li><li class=""><a href="/+/hangouts/api/gapi.hangout.onair" data-title="gapi.hangout.onair"><span>gapi.hangout.onair</span></a></li><li class=""><a href="/+/hangouts/api/index-all" data-title="Index"><span>Index</span></a></li></ul></li><li class=""><a href="/+/hangouts/faq" data-title="FAQ"><span>FAQ</span></a></li><li class=""><a href="/+/release-notes/hangouts" data-title="Release Notes"><span>Release Notes</span></a></li></ul></li><li class=""><span class="tlw-title" data-title="REST API">REST API</span><ul><li class=""><a href="/+/api" data-title="Public data API"><span>Public data API</span></a><ul><li class=""><a href="/+/api/latest/" data-title="Overview"><span>Overview</span></a></li><li class=""><a href="/+/api/latest/people" data-title="People"><span>People</span></a><ul><li class=""><a href="/+/api/latest/people/get" data-title="get"><span>get</span></a></li><li class=""><a href="/+/api/latest/people/search" data-title="search"><span>search</span></a></li><li class=""><a href="/+/api/latest/people/listByActivity" data-title="listByActivity"><span>listByActivity</span></a></li></ul></li><li class=""><a href="/+/api/latest/activities" data-title="Activities"><span>Activities</span></a><ul><li class=""><a href="/+/api/latest/activities/list" data-title="list"><span>list</span></a></li><li class=""><a href="/+/api/latest/activities/get" data-title="get"><span>get</span></a></li><li class=""><a href="/+/api/latest/activities/search" data-title="search"><span>search</span></a></li></ul></li><li class=""><a href="/+/api/latest/comments" data-title="Comments"><span>Comments</span></a><ul><li class=""><a href="/+/api/latest/comments/list" data-title="list"><span>list</span></a></li><li class=""><a href="/+/api/latest/comments/get" data-title="get"><span>get</span></a></li></ul></li></ul></li><li class=""><a href="/+/history/" data-title="History API"><span>History API</span></a><ul><li class=""><a href="/+/history/preview" data-title="Preview Sign-up"><span>Preview Sign-up</span></a><ul><li class=""><a href="/+/history/preview/opt-out" data-title="Opt-out"><span>Opt-out</span></a></li><li class=""><a href="/+/history/learn-more" data-title="Learn More"><span>Learn More</span></a></li></ul></li><li class=""><a href="/+/history/client-side-flow" data-title="Client Side Flow Example"><span>Client Side Flow Example</span></a></li><li class=""><a href="/+/history/server-side-flow" data-title="Server Side Flow Example"><span>Server Side Flow Example</span></a></li><li class=""><a href="/+/history/api/moments" data-title="API Reference"><span>API Reference</span></a><ul><li class=""><a href="/+/history/api/moments/insert" data-title="Insert"><span>Insert</span></a></li></ul></li></ul></li><li class=""><a href="/+/api/oauth" data-title="OAuth"><span>OAuth</span></a></li><li class=""><a href="/+/api/pages-signup" data-title="Pages API"><span>Pages API</span></a></li></ul></li></ul><hr/><ul><li class=""><a href="/+/downloads/" data-title="Downloads"><span>Downloads</span></a></li><li class=""><a href="/+/release-notes/" data-title="Release Notes"><span>Release Notes</span></a></li><li class=""><a href="/+/best-practices" data-title="Best Practices"><span>Best Practices</span></a></li></ul><hr/><ul><li class=""><span class="tlw-title" data-title="Community &amp; Support">Community &amp; Support</span><ul><li class=""><a href="/+/support" data-title="Get support"><span>Get support</span></a></li><li class=""><a href="/+/discussions" data-title="Discussions"><span>Discussions</span></a></li><li class=""><a href="/+/office-hours" data-title="Office Hours"><span>Office Hours</span></a></li><li class=""><a href="http://googleplusplatform.blogspot.com/" data-title="Blog"><span>Blog</span></a></li><li class=""><a href="/showcase/#tags=google+plus" data-title="Showcase"><span>Showcase</span></a></li></ul></li><li class=""><a href="https://code.google.com/apis/console" data-title="APIs Console"><span>APIs Console</span></a></li></ul><hr/><ul><li class=""><a href="/+/policies" data-title="Developer Policies"><span>Developer Policies</span></a></li><li class=""><a href="/+/terms" data-title="Terms of Service"><span>Terms of Service</span></a></li></ul></nav>
+
+
+
+      </div>
+      
+
+      <div id="gc-content"
+           
+           
+           >
+        
+        <div>
+  
+          
+  
+  <div itemprop="articleBody">
+  
+<p><link rel="stylesheet" href="/+/css/plus.css" /></p>
+
+
+
+
+<h1 class="page-title" id="getting_started_with_the_google_platform_for_android">Getting Started with the Google+ Platform for Android</h1>
+<nav class="inline-toc"><ol class="toc"><li><a href="#creating_the_apis_console_project">Creating the APIs Console project</a><ol class="toc"><li><a href="#1_create_your_apis_console_project">1. Create your APIs Console project</a></li><li><a href="#2_register_your_android_project_in_the_apis_console">2. Register your Android project in the APIs Console</a></li></ol></li><li><a href="#run_the_google_sample_app">Run the Google+ sample app</a></li><li><a href="#initialize_the_plusclient">Initialize the PlusClient</a></li><li><a href="#next_steps">Next steps</a></li><li><a href="#frequently_asked_questions">Frequently asked questions</a></li></ol></nav>
+<p>Before you can start integrating Google+ features in your own app, you must
+create a APIs Console project and initialize the <code>PlusClient</code> within your app.</p>
+<p>The Google+ platform for Android has the following requirements:</p>
+<ul>
+<li>A physical device to use for developing and testing because Google Play
+  services cannot be installed on an emulator.</li>
+<li>The latest version of the Android SDK, including the SDK Tools
+  component.  The SDK is available from the <strong>Android SDK Manager</strong>.</li>
+<li>Your project to compile against Android 2.2 (Froyo) or higher.</li>
+<li>The Google Play services SDK:<ol>
+<li>Launch Eclipse and select <strong>Window</strong> &gt; <strong>Android SDK Manager</strong> or run <code>android</code>
+  from the command line.</li>
+<li>Scroll to the bottom of the package list and select <strong>Extras</strong> &gt;
+  <strong>Google Play services</strong>. The package is downloaded to your computer and installed
+  in your SDK environment at <code>&lt;android-sdk-folder&gt;/extras/google/google_play_services</code>.</li>
+<li>Reference the Google Play services client library project located in
+  <code>&lt;android-sdk-folder&gt;/extras/google/google_play_services/libproject/google-play-services_lib</code>
+  as a library project for your Android project.<p>
+  For more information, see the article on referencing a library project from
+  <a href="//developer.android.com/tools/projects/projects-eclipse.html#ReferencingLibraryProject" target="_blank">eclipse <img src="../images/OpenInNewWindow14x14.png"></a>
+  or the <a href="//developer.android.com/tools/projects/projects-cmdline.html#ReferencingLibraryProject" target="_blank">command line <img src="../images/OpenInNewWindow14x14.png"></a>.</li>
+</ol>
+</li>
+</ul>
+<p>If you are new to developing Android applications, see the
+  <a href="//developer.android.com/guide/topics/fundamentals.html" target="_blank">
+    Android Application Fundamentals <img src="../images/OpenInNewWindow14x14.png"></a>
+  article.</p>
+<h2 id="creating_the_apis_console_project">Creating the APIs Console project</h2>
+<h3 id="1_create_your_apis_console_project">1. Create your APIs Console project</h3>
+<ol>
+<li>In the <a href="//developers.google.com/console" target="_blank">APIs Console <img src="../images/OpenInNewWindow14x14.png"></a>,
+select <strong>Create</strong> from the pull down menu in the left menu, and enter a project name (such as "Android App").</li>
+<li>Click the <strong>Create project</strong> button.  A list of all Google web services are displayed.</li>
+<li>Turn on the <strong>Google+ API</strong> on by clicking its switch. If you are using the <strong>Google+ history API</strong>, turn it on as well.</li>
+</ol>
+<h3 id="2_register_your_android_project_in_the_apis_console">2. Register your Android project in the APIs Console</h3>
+<p>To authenticate and communicate with the Google+ APIs, you must register your digitally signed
+.apk file's public certificate in the APIs Console:</p>
+<ol>
+<li>In the APIs Console, click <strong>API Access</strong> in the left menu.</li>
+<li>
+<p>If you are creating your first client ID for this project, click <strong>Create an OAuth 2.0 client ID</strong>.
+<div><img class="drop-shadow" src="../images/api-access-create.png" alt="Shows clicking the Create an OAuth 2.0 Client ID button in the APIs Console."></div></p>
+</li>
+<li>
+<p>Type a product name in the dialog box that displays, and click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Choose <strong>Installed application</strong> as your <strong>Application type</strong> and select <strong>Android</strong> as the type.
+<div><img class="drop-shadow" src="../images/client-id-create-android.png" alt="Shows choosing Installed application in the APIs Console." ></div></p>
+</li>
+<li>
+<p>In the <strong>Package name</strong> field, enter your Android's application's
+<a href="//developer.android.com/guide/topics/manifest/manifest-element.html#package"
+target="_blank">package name <img src="../images/OpenInNewWindow14x14.png"></a>.</p>
+</li>
+<li>In a terminal, run the the <a href="//developer.android.com/guide/publishing/app-signing.html" target="_blank">
+  Keytool utility <img src="../images/OpenInNewWindow14x14.png"></a> to get the SHA-1 fingerprint of the certificate.
+<pre>keytool -exportcert -alias androiddebugkey -keystore <em>&lt;path-to-debug-or-production-keystore&gt;</em> -list -v</pre>
+<aside class="note"><strong>Note:</strong> For Eclipse, the debug keystore is typically located at <code>~/.android/debug.keystore</code>.</aside></li>
+<li>
+<p>The keytool prompts you to enter a password for the keystore. The default password for the debug keystore is <code>android</code>.
+Keytool then prints the fingerprint to the shell.  For example:
+<pre>Certificate fingerprint:
+SHA1: DA:39:A3:EE:5E:6B:4B:0D:32:55:BF:EF:95:60:18:90:AF:D8:07:09</pre></p>
+</li>
+<li>
+<p>Paste the <strong>SHA-1</strong> fingerprint into the <strong>Signing certificate fingerprint</strong> field and click the <strong>Create client ID</strong> button.</p>
+</li>
+<li>
+<p>(Optional) If you plan to build <a href="share#sharing_with_deep_links_to_your_app">deep linking</a>
+into shared posts made from your app,
+enable <strong>Dynamic Dispatch</strong>.</p>
+</li>
+</ol>
+<aside class="special"><strong>Important:</strong><span> When you are ready to publish your app, you must create a new client ID in the APIs Console.
+  You must then follow these steps again with your release signing certificate. For more information
+about signing applications, see <a
+href="//developer.android.com/guide/publishing/app-signing.html" target="_blank">signing applications</a>.</span></aside>
+<h2 id="run_the_google_sample_app">Run the Google+ sample app</h2>
+<p>The sample is an Eclipse project that you can run on your device as follows:</p>
+<ol>
+<li>Select <strong>File</strong> &gt; <strong>Import</strong> &gt; <strong>Android</strong> &gt; <strong>Existing Android Code Into Workspace</strong> and click <strong>Next</strong>.</li>
+<li>Select <strong>Browse...</strong>, enter <code>&lt;android-sdk-folder&gt;/extras/google/google_play_services/samples/plus</code>, and click <strong>Finish</strong>.</li>
+<li>Select <strong>Project</strong> &gt; <strong>Properties</strong>, select <strong>Java Build Path</strong>, and navigate to <strong>Libraries</strong>.</li>
+<li>Select <strong>Add External Jars</strong>, include the following jar files, and click <strong>OK</strong>:<ul>
+<li><code>&lt;android-sdk-folder&gt;/extras/android/compatibility/v4/android-support-v4.jar</code></li>
+<li><code>&lt;android-sdk-folder&gt;/extras/google/google_play_services/libs/google-play-services.jar</code></li>
+</ul>
+</li>
+<li>Select <strong>Run</strong> &gt; <strong>Run</strong> to test the sample app.</li>
+</ol>
+<h2 id="initialize_the_plusclient">Initialize the PlusClient</h2>
+<p>The <code>PlusClient</code> object is used to communicate with the Google+ service and becomes functional after
+an asynchronous connection has been established with the service. Because the client makes a connection
+to a service, you want to make sure the <code>PlusClient.disconnect</code> method is called when appropriate to ensure robustness.</p>
+<p>Typically, you want to manage the <code>PlusClient</code> in your activity's lifecycle.
+<ul>
+  <li>Initialize the <code>PlusClient</code> object in your <a href="//developer.android.com/reference/android/app/Activity.html#onCreate(android.os.Bundle)" target="_blank">Activity.onCreate <img src="../images/OpenInNewWindow14x14.png"></a> handler.</li>
+  <li>Invoke PlusClient.connect during <a href="//developer.android.com/reference/android/app/Activity.html#onStart()" target="_blank">Activity.onStart <img src="../images/OpenInNewWindow14x14.png"></a>.</li>
+  <li>Invoke PlusClient.disconnect during <a href="//developer.android.com/reference/android/app/Activity.html#onStop)" target="_blank">Activity.onStop <img src="../images/OpenInNewWindow14x14.png"></a>.</li>
+</ul></p>
+<p>Your activity will listen for when the connection has established or failed by implementing
+the <code>ConnectionCallbacks</code> and <code>OnConnectionFailedListener</code> interfaces.</p>
+<pre class="prettyprint"><code>import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks;
+import com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener;
+
+public class ExampleActivity extends Activity implements
+        ConnectionCallbacks, OnConnectionFailedListener {
+    private static final int REQUEST_CODE_RESOLVE_ERR = 9000;
+
+    private ProgressDialog mConnectionProgressDialog;
+    private PlusClient mPlusClient;
+    private ConnectionResult mConnectionResult;
+</code></pre>
+<p>When the <code>PlusClient</code> object is unable to establish a connection, your implementation has an opportunity
+to recover inside your implementation of <code>onConnectionFailed</code>, where you are passed a connection status
+that can be used to resolve any connection failures.  You should save this connection status in a member
+variable and invoke it by calling <code>ConnectionResult.startResolutionForResult</code> when the user presses the
+sign-in button or +1 button.</p>
+<pre class="prettyprint"><code>@Override
+public void onConnectionFailed(ConnectionResult status) {
+    if (mConnectionProgressDialog.isShowing()) {
+        // The user clicked the sign-in button already.
+        // Dismiss the progress dialog and start to resolve connection errors.
+        mConnectionProgressDialog.dismiss();
+
+        if (result.hasResolution()) {
+            try {
+                result.startResolutionForResult(this, REQUEST_CODE_RESOLVE_ERR);
+            } catch (SendIntentException e) {
+                mPlusClient.connect();
+            }
+        }
+    }
+
+    // Save the intent so that we can start an activity when the user clicks
+    // the sign-in button.
+    mConnectionResult = result;
+}
+</code></pre>
+<p>Because the resolution for the connection failure was started with
+<code>startActivityForResult</code> and the code <code>REQUEST_CODE_RESOLVE_ERR</code>, we can capture
+the result inside <a href="//developer.android.com/reference/android/app/Activity.html#onActivityResult(int, int, android.content.Intent)">Activity.onActivityResult</a>.</p>
+<pre class="prettyprint"><code>@Override
+protected void onActivityResult(int requestCode, int responseCode, Intent intent) {
+    if (requestCode == REQUEST_CODE_RESOLVE_ERR &amp;&amp; responseCode == RESULT_OK) {
+        mConnectionResult = null;
+        mPlusClient.connect();
+    }
+}
+</code></pre>
+<p>After adding the <code>PlusClient</code> to the lifecycle of your Activity, your class should resemble the following
+structure:</p>
+<pre class="prettyprint"><code>import com.google.android.gms.common.*;
+import com.google.android.gms.common.GooglePlayServicesClient.*;
+import com.google.android.gms.plus.PlusClient;
+
+public class ExampleActivity extends Activity implements View.OnClickListener,
+        ConnectionCallbacks, OnConnectionFailedListener {
+    private static final String TAG = "ExampleActivity";
+    private static final int REQUEST_CODE_RESOLVE_ERR = 9000;
+
+    private ProgressDialog mConnectionProgressDialog;
+    private PlusClient mPlusClient;
+    private ConnectionResult mConnectionResult;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mPlusClient = new PlusClient(this, this, this, Scopes.PLUS_PROFILE);
+        // Progress bar to be displayed if the connection failure is not resolved.
+        mConnectionProgressDialog = new ProgressDialog(this);
+        mConnectionProgressDialog.setMessage("Signing in...");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mPlusClient.connect();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mPlusClient.disconnect();
+    }
+
+    @Override
+    public void onConnectionFailed(ConnectionResult result) {
+        if (result.hasResolution()) {
+            try {
+                result.startResolutionForResult(this, REQUEST_CODE_RESOLVE_ERR);
+            } catch (SendIntentException e) {
+                mPlusClient.connect();
+            }
+        }
+        // Save the result and resolve the connection failure upon a user click.
+        mConnectionResult = result;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int responseCode, Intent intent) {
+        if (requestCode == REQUEST_CODE_RESOLVE_ERR &amp;&amp; responseCode == RESULT_OK) {
+            mConnectionResult = null;
+            mPlusClient.connect();
+        }
+    }
+
+    @Override
+    public void onConnected() {
+        String accountName = mPlusClient.getAccountName();
+        Toast.makeText(this, accountName + " is connected.", Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onDisconnected() {
+        Log.d(TAG, "disconnected");
+    }
+}
+</code></pre>
+<h2 id="next_steps">Next steps</h2>
+<p>Now that you have added <code>PlusClient</code> to your activity, you can integrate your choice of
+Google+ features:</p>
+<ul>
+<li><a href="sign-in">Sign in with Google+</a></li>
+<li><a href="share">Sharing to Google+</a></li>
+<li><a href="write-moments">Write moments to your user's Google+ history</a></li>
+<li><a href="recommend">+1 content in your app</a></li>
+</ul>
+<h2 id="frequently_asked_questions">Frequently asked questions</h2>
+<dl>
+<dt id="faq-older-versions">How do I continue to support older platforms, such as Eclair (v2.0)?</dt>
+<dd>
+  <p>Check system version at runtime, and only call <code>PlusClient</code> if the version is Froyo (v2.2) or higher.</p>
+  <pre class="prettyprint">
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.FROYO) {
+    // Make the call to PlusClient
+}</pre>
+</dd>
+
+<dt id="faq-older-versions">How do I check to see if the Google+ app is installed on the device?</dt>
+<dd>
+  <p>
+    The <code>GooglePlusUtil#checkGooglePlusApp</code> utility method returns
+    <code>GooglePlusUtil.SUCCESS</code> if the Google+ app is installed.  If the app is not
+    installed, you can prompt the user to install the app with the
+    <code>GooglePlusUtil#getErrorDialog</code> utility method.
+  </p>
+  <pre class="prettyprint">
+int errorCode = GooglePlusUtil.checkGooglePlusApp(this);
+if (errorCode != GooglePlusUtil.SUCCESS) {
+  GooglePlusUtil.getErrorDialog(errorCode, this, 0).show();
+}</pre>
+</dd>
+
+</dl>
+
+  </div>
+
+  
+        </div>
+        
+<div id="gc-content-footer">
+
+
+
+<div itemprop="datePublished" content="2012-12-03T18:32:53.940480" id="gc-content-last-updated">Last updated December 3, 2012.</div>
+
+</div>
+
+
+
+
+      </div>
+  
+
+        
+      </div>
+        
+      
+
+      
+      
+      <footer id="gc-footer">
+        <div id="gc-copyright">
+          <a href="/">
+            <img id="developers-logo-footer" src="/_static/images/developers-logo-footer.png" alt="Google Developers logo" style="vertical-align: center; float: left"/>
+          </a>
+          <ul>
+            <li><a href="http://www.google.com/">Google</a></li>
+            <li><a href="/readme/terms">Terms of Service</a></li>
+            <li><a href="http://www.google.com/intl/en/privacy/">Privacy Policy</a></li>
+            <li><a href="/jobs">Jobs</a></li>
+            <li><a class="google-feedback" data-p="81425" data-b="Documentation"  data-v="devsite-20130211-rc00.365237837741032878" href="">Report a bug</a></li>
+          </ul>
+        </div>
+        
+        <div id="gc-language">
+          <ul>
+            <li>
+              <form id="setlang" action="/i18n/setlang/" method="post">
+                <div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='82bc77b41c8ea33794b5d8ac78230e9b' /></div>
+                <select id="footer_language" name="language">
+                  
+                  
+                  <option
+                     value="ar"
+                     >
+                    العربيّة
+                  </option>
+                  
+                  <option
+                     value="bg"
+                     >
+                    български
+                  </option>
+                  
+                  <option
+                     value="ca"
+                     >
+                    català
+                  </option>
+                  
+                  <option
+                     value="zh-cn"
+                     >
+                    简体中文
+                  </option>
+                  
+                  <option
+                     value="zh-tw"
+                     >
+                    繁體中文
+                  </option>
+                  
+                  <option
+                     value="hr"
+                     >
+                    Hrvatski
+                  </option>
+                  
+                  <option
+                     value="cs"
+                     >
+                    česky
+                  </option>
+                  
+                  <option
+                     value="da"
+                     >
+                    Dansk
+                  </option>
+                  
+                  <option
+                     value="nl"
+                     >
+                    Nederlands
+                  </option>
+                  
+                  <option
+                     value="en"
+                      selected="selected" >
+                    English
+                  </option>
+                  
+                  <option
+                     value="fa"
+                     >
+                    فارسی
+                  </option>
+                  
+                  <option
+                     value="fi"
+                     >
+                    suomi
+                  </option>
+                  
+                  <option
+                     value="fr"
+                     >
+                    Français
+                  </option>
+                  
+                  <option
+                     value="de"
+                     >
+                    Deutsch
+                  </option>
+                  
+                  <option
+                     value="el"
+                     >
+                    Ελληνικά
+                  </option>
+                  
+                  <option
+                     value="he"
+                     >
+                    עברית
+                  </option>
+                  
+                  <option
+                     value="hi"
+                     >
+                    Hindi
+                  </option>
+                  
+                  <option
+                     value="hu"
+                     >
+                    Magyar
+                  </option>
+                  
+                  <option
+                     value="id"
+                     >
+                    Bahasa Indonesia
+                  </option>
+                  
+                  <option
+                     value="it"
+                     >
+                    italiano
+                  </option>
+                  
+                  <option
+                     value="ja"
+                     >
+                    日本語
+                  </option>
+                  
+                  <option
+                     value="ko"
+                     >
+                    한국어
+                  </option>
+                  
+                  <option
+                     value="lv"
+                     >
+                    latviešu
+                  </option>
+                  
+                  <option
+                     value="lt"
+                     >
+                    Lithuanian
+                  </option>
+                  
+                  <option
+                     value="nb"
+                     >
+                    Norsk (bokmål)
+                  </option>
+                  
+                  <option
+                     value="nn"
+                     >
+                    Norsk (nynorsk)
+                  </option>
+                  
+                  <option
+                     value="pl"
+                     >
+                    polski
+                  </option>
+                  
+                  <option
+                     value="pt-br"
+                     >
+                    Português Brasileiro
+                  </option>
+                  
+                  <option
+                     value="pt"
+                     >
+                    Português
+                  </option>
+                  
+                  <option
+                     value="ro"
+                     >
+                    Română
+                  </option>
+                  
+                  <option
+                     value="ru"
+                     >
+                    Русский
+                  </option>
+                  
+                  <option
+                     value="sr"
+                     >
+                    српски
+                  </option>
+                  
+                  <option
+                     value="sk"
+                     >
+                    slovenský
+                  </option>
+                  
+                  <option
+                     value="sl"
+                     >
+                    Slovenščina
+                  </option>
+                  
+                  <option
+                     value="es"
+                     >
+                    español
+                  </option>
+                  
+                  <option
+                     value="sv"
+                     >
+                    Svenska
+                  </option>
+                  
+                  <option
+                     value="th"
+                     >
+                    Thai
+                  </option>
+                  
+                  <option
+                     value="tr"
+                     >
+                    Türkçe
+                  </option>
+                  
+                  <option
+                     value="uk"
+                     >
+                    Українська
+                  </option>
+                  
+                  <option
+                     value="vi"
+                     >
+                    Vietnamese
+                  </option>
+                  
+                </select>
+              </form>
+            </li>
+          </ul>
+        </div>
+        
+      </footer>
+      
+      
+    </div>
+    <div id="needAuth" class="msgDialogContent">
+      
+      <h1>Authentication required</h1>
+      
+      <div>
+        You need to be signed in with <a href='http://www.google.com/+'>Google+</a> to do that.
+      </div>
+      <button>Sign in</button>
+      <button>Cancel</button>
+    </div>
+    <div id="signingIn" class="msgDialogContent">
+      
+      <h1>Signing you in...</h1>
+      <div>
+        
+        Google Developers needs your permission to do that.
+      </div>
+      
+      <button>Try again</button>
+      
+      <button>Cancel</button>
+    </div>
+    <script src="/_static/js/script_foot.js"></script>
+    <script>
+      (function($) {
+        devsite.devsite.Init($, null, '');
+      })(jQuery);
+
+      
+      devsite.localInit = function() {
+        
+      };
+      
+    </script>
+    <!-- Google Code for PXL - Developers - Codesite - HP - 90d Remarketing List -->
+    <script type="text/javascript">
+    $('#setlang select').each(function() {
+      if ($.browser.msie) {
+        $(this).change(function() {
+          $('#setlang').submit();
+        });
+      } else {
+        $(this).kdSelect({'change': function() {
+          $('#setlang').submit();
+        }});
+      }
+    });
+    </script>
+    <script type="text/javascript">
+      /* <![CDATA[ */
+      var google_conversion_id = 992540712;
+      var google_conversion_language = "en";
+      var google_conversion_format = "3";
+      var google_conversion_color = "ffffff";
+      var google_conversion_label = "qio2CKCPwQMQqPCj2QM";
+      var google_conversion_value = 0;
+      /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+
+    
+
+    <script>
+      
+      google.load('visualization', '1', {packages: ['table']});
+    </script>
+
+    <noscript>
+      <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/992540712/?label=qio2CKCPwQMQqPCj2QM&amp;guid=ON&amp;script=0"/>
+      </div>
+    </noscript>
+    
+
+
+
+
+
+<script type="text/javascript">
+$(document).ready(function(e) {
+    // Render any carousels on the page
+    $('.carousel').carousel();
+    // Render any feed widgets on the page
+    
+    $('.feed').rss();
+    $('.feed-plain').rss();
+    // Render any OSS widgets on the page.
+    $('.oss').oss();
+    });
+</script>
+
+<script type="text/javascript" defer>
+
+
+$(document).ready(function() {
+    contentTimer.name = 'content';
+    contentTimer.tick('ol');
+    window.jstiming.report(contentTimer);
+
+    // Boilerplate javascript to enable the plusone button
+    var po = document.createElement('script'); po.type = 'text/javascript';
+    po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js?onload=devsite_plusoneLoaded';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(po, s);
+});
+</script>
+
+
+
+
+  </body>
+
+  
+</html>

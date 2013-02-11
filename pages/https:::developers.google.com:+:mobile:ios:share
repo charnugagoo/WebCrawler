@@ -1,0 +1,828 @@
+
+<!DOCTYPE html>
+<html lang="en" class="devsite">
+
+  
+
+  <head>
+    <meta charset="utf-8" />
+    <script src="/_static/js/script_head.js"></script>
+    <link rel="stylesheet" type="text/css" href="/_static/css/screen.css" />
+    <link rel="shortcut icon" href="/_static/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/_static/images/apple-touch-icon.png">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script id="jqueryui" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"></script>
+    <script src="//www.google.com/jsapi?key=AIzaSyCZfHRnq7tigC-COeQRmoa9Cxr0vbrK6xw"></script>
+
+    <script type="text/javascript" src="//www.gstatic.com/feedback/api.js"></script>
+    <script type="text/javascript" src="/jsi18n/"></script>
+    <!--[if lt IE 9]>
+    <script src="/_static/js/html5shim/html5.js"></script>
+    <![endif]-->
+
+    
+  <script type="text/javascript">
+    var contentTimer = new window.jstiming.Timer();
+
+    var ___gcfg = ___gcfg || {};
+    ___gcfg.lang = 'en';
+  </script>
+  
+    
+    <title>Google+ Platform for iOS &mdash; Google Developers</title>
+    
+  
+  
+  
+  
+  
+  
+
+
+
+    
+    
+
+  </head>
+  <body class="two-column docs">
+    
+    <div id="sandbar">
+      
+      <a href="/sandbar?q=&page_url=/%2B/mobile/ios/share"></a>
+      <div id="gc-googlebar"></div>
+      <img src="/_static/images/google-logo.png" style="display:none;"/>
+      
+    </div>
+    
+
+    
+    
+
+    <div id="gc-wrapper" itemscope itemtype="http://schema.org/Article">
+      
+      <input id="gc-analytics" type="hidden" value="UA-24532603-1" />
+      
+
+      
+
+      <div id="gc-topnav">
+        <div>
+
+          
+          
+
+          <ul>
+
+            
+            
+
+            
+            
+            
+            
+            <li class=""><a href="/">Home</a></li>
+            
+            <li class="active"><a href="/products/">Products</a></li>
+            
+            <li class=""><a href="/events/">Conferences</a></li>
+            
+            <li class=""><a href="/showcase/">Showcase</a></li>
+            
+            <li class=""><a href="/live/">Live</a></li>
+            
+            <li class=""><a href="/groups/">Groups</a></li>
+            
+
+            
+            
+            
+          </ul>
+        </div>
+      </div>
+      
+      
+
+      
+      
+      
+        <div id="gc-appbar">
+          
+          
+<h1>
+
+  <a href="/+/mobile/ios/">Google+ Platform for iOS</a>
+  <div class="plusone-container">
+    <div class="g-plusone"
+      data-href="https://developers.google.com/+/mobile/ios/"
+      data-size="medium"
+      data-source="google:developers"></div>
+  </div>
+
+
+<div style="float:right;">
+  
+  <a href="" class="google-feedback" data-p="74502" data-b="mobile-ios" data-context="">Feedback on this document</a>
+</div>
+
+
+
+
+
+</h1>
+
+
+          
+        </div>
+      
+      
+
+      
+        
+      <div id="gc-main">
+        
+        
+  
+  
+      
+      
+      <div id="gc-sidebar">
+        
+
+  
+
+
+
+  <nav class="gc-toc"><ul><li class=""><a href="/+/" data-title="Google+ platform"><span>Google+ platform</span></a></li><li class=""><a href="/+/mobile/android/" data-title="Android"><span>Android</span></a><ul><li class=""><a href="/+/mobile/android/getting-started" data-title="Getting started"><span>Getting started</span></a></li><li class=""><a href="/+/mobile/android/sign-in" data-title="Sign in"><span>Sign in</span></a></li><li class=""><a href="/+/mobile/android/share" data-title="Share"><span>Share</span></a></li><li class=""><a href="/+/mobile/android/write-moments" data-title="Write moments"><span>Write moments</span></a></li><li class=""><a href="/+/mobile/android/recommend" data-title="+1 button"><span>+1 button</span></a></li><li class=""><span class="tlw-title" data-title="Google Play services">Google Play services</span><ul><li class=""><a href="/android/google-play-services/" data-title="Overview"><span>Overview</span></a></li><li class=""><a href="/android/google-play-services/reference/" data-title="API Reference"><span>API Reference</span></a></li></ul></li></ul></li><li class=""><a href="/+/mobile/ios/" data-title="iOS"><span>iOS</span></a><ul><li class=""><a href="/+/mobile/ios/getting-started" data-title="Getting started"><span>Getting started</span></a></li><li class=""><a href="/+/mobile/ios/sign-in" data-title="Sign in"><span>Sign in</span></a></li><li class=""><a href="/+/mobile/ios/share" data-title="Share"><span>Share</span></a></li><li class=""><a href="/+/mobile/ios/write-moments" data-title="Write moments"><span>Write moments</span></a></li><li class=""><a href="/+/mobile/ios/api/" data-title="API Reference"><span>API Reference</span></a><ul><li class=""><a href="/+/mobile/ios/api/interface_g_p_p_sign_in" data-title="GPPSignIn"><span>GPPSignIn</span></a></li><li class=""><a href="/+/mobile/ios/api/interface_g_p_p_sign_in_button" data-title="GPPSignInButton"><span>GPPSignInButton</span></a></li><li class=""><a href="/+/mobile/ios/api/protocol_g_p_p_sign_in_delegate-p" data-title="GPPSignInDelegate"><span>GPPSignInDelegate</span></a></li><li class=""><a href="/+/mobile/ios/api/interface_g_p_p_share" data-title="GPPShare"><span>GPPShare</span></a></li><li class=""><a href="/+/mobile/ios/api/protocol_g_p_p_share_builder-p" data-title="GPPShareBuilder"><span>GPPShareBuilder</span></a></li><li class=""><a href="/+/mobile/ios/api/protocol_g_p_p_share_delegate-p" data-title="GPPShareDelegate"><span>GPPShareDelegate</span></a></li><li class=""><a href="/+/mobile/ios/api/interface_g_p_p_deep_link" data-title="GPPDeepLink"><span>GPPDeepLink</span></a><ul><li class=""><a href="/+/mobile/ios/source-values" data-title="Source Values"><span>Source Values</span></a></li></ul></li></ul></li></ul></li><li class=""><a href="/+/plugins/" data-title="Websites"><span>Websites</span></a><ul><li class=""><a href="/+/plugins/+1button/" data-title="+1 Button"><span>+1 Button</span></a></li><li class=""><a href="/+/plugins/badge/" data-title="Badge"><span>Badge</span></a><ul><li class=""><a href="/+/plugins/badge/branding-guidelines" data-title="Branding Guidelines"><span>Branding Guidelines</span></a></li></ul></li><li class=""><a href="/+/plugins/share/" data-title="Share"><span>Share</span></a></li><li class=""><a href="/+/plugins/snippet/" data-title="Snippet"><span>Snippet</span></a></li><li class=""><a href="/+/plugins/buttons-policy" data-title="Buttons Policy"><span>Buttons Policy</span></a></li></ul></li></ul><hr/><ul><li class=""><a href="/+/hangouts" data-title="Hangouts API"><span>Hangouts API</span></a><ul><li class=""><a href="/+/hangouts/getting-started" data-title="Getting Started"><span>Getting Started</span></a></li><li class=""><a href="/+/hangouts/sample-apps" data-title="Sample Apps"><span>Sample Apps</span></a></li><li class=""><a href="/+/hangouts/writing" data-title="Writing Apps"><span>Writing Apps</span></a><ul><li class=""><a href="/+/hangouts/shared-state" data-title="Shared state"><span>Shared state</span></a></li><li class=""><a href="/+/hangouts/resource-management" data-title="Manage resources"><span>Manage resources</span></a></li></ul></li><li class=""><a href="/+/hangouts/running" data-title="Running Apps"><span>Running Apps</span></a></li><li class=""><a href="/+/hangouts/publishing" data-title="Publishing Apps"><span>Publishing Apps</span></a></li><li class=""><a href="/+/hangouts/button" data-title="Hangout Button"><span>Hangout Button</span></a></li><li class=""><a href="/+/hangouts/api/" data-title="API"><span>API</span></a><ul><li class=""><a href="/+/hangouts/api/gapi.hangout" data-title="gapi.hangout"><span>gapi.hangout</span></a></li><li class=""><a href="/+/hangouts/api/gapi.hangout.av" data-title="gapi.hangout.av"><span>gapi.hangout.av</span></a></li><li class=""><a href="/+/hangouts/api/gapi.hangout.av.effects" data-title="gapi.hangout.av.effects"><span>gapi.hangout.av.effects</span></a></li><li class=""><a href="/+/hangouts/api/gapi.hangout.data" data-title="gapi.hangout.data"><span>gapi.hangout.data</span></a></li><li class=""><a href="/+/hangouts/api/gapi.hangout.layout" data-title="gapi.hangout.layout"><span>gapi.hangout.layout</span></a></li><li class=""><a href="/+/hangouts/api/gapi.hangout.onair" data-title="gapi.hangout.onair"><span>gapi.hangout.onair</span></a></li><li class=""><a href="/+/hangouts/api/index-all" data-title="Index"><span>Index</span></a></li></ul></li><li class=""><a href="/+/hangouts/faq" data-title="FAQ"><span>FAQ</span></a></li><li class=""><a href="/+/release-notes/hangouts" data-title="Release Notes"><span>Release Notes</span></a></li></ul></li><li class=""><span class="tlw-title" data-title="REST API">REST API</span><ul><li class=""><a href="/+/api" data-title="Public data API"><span>Public data API</span></a><ul><li class=""><a href="/+/api/latest/" data-title="Overview"><span>Overview</span></a></li><li class=""><a href="/+/api/latest/people" data-title="People"><span>People</span></a><ul><li class=""><a href="/+/api/latest/people/get" data-title="get"><span>get</span></a></li><li class=""><a href="/+/api/latest/people/search" data-title="search"><span>search</span></a></li><li class=""><a href="/+/api/latest/people/listByActivity" data-title="listByActivity"><span>listByActivity</span></a></li></ul></li><li class=""><a href="/+/api/latest/activities" data-title="Activities"><span>Activities</span></a><ul><li class=""><a href="/+/api/latest/activities/list" data-title="list"><span>list</span></a></li><li class=""><a href="/+/api/latest/activities/get" data-title="get"><span>get</span></a></li><li class=""><a href="/+/api/latest/activities/search" data-title="search"><span>search</span></a></li></ul></li><li class=""><a href="/+/api/latest/comments" data-title="Comments"><span>Comments</span></a><ul><li class=""><a href="/+/api/latest/comments/list" data-title="list"><span>list</span></a></li><li class=""><a href="/+/api/latest/comments/get" data-title="get"><span>get</span></a></li></ul></li></ul></li><li class=""><a href="/+/history/" data-title="History API"><span>History API</span></a><ul><li class=""><a href="/+/history/preview" data-title="Preview Sign-up"><span>Preview Sign-up</span></a><ul><li class=""><a href="/+/history/preview/opt-out" data-title="Opt-out"><span>Opt-out</span></a></li><li class=""><a href="/+/history/learn-more" data-title="Learn More"><span>Learn More</span></a></li></ul></li><li class=""><a href="/+/history/client-side-flow" data-title="Client Side Flow Example"><span>Client Side Flow Example</span></a></li><li class=""><a href="/+/history/server-side-flow" data-title="Server Side Flow Example"><span>Server Side Flow Example</span></a></li><li class=""><a href="/+/history/api/moments" data-title="API Reference"><span>API Reference</span></a><ul><li class=""><a href="/+/history/api/moments/insert" data-title="Insert"><span>Insert</span></a></li></ul></li></ul></li><li class=""><a href="/+/api/oauth" data-title="OAuth"><span>OAuth</span></a></li><li class=""><a href="/+/api/pages-signup" data-title="Pages API"><span>Pages API</span></a></li></ul></li></ul><hr/><ul><li class=""><a href="/+/downloads/" data-title="Downloads"><span>Downloads</span></a></li><li class=""><a href="/+/release-notes/" data-title="Release Notes"><span>Release Notes</span></a></li><li class=""><a href="/+/best-practices" data-title="Best Practices"><span>Best Practices</span></a></li></ul><hr/><ul><li class=""><span class="tlw-title" data-title="Community &amp; Support">Community &amp; Support</span><ul><li class=""><a href="/+/support" data-title="Get support"><span>Get support</span></a></li><li class=""><a href="/+/discussions" data-title="Discussions"><span>Discussions</span></a></li><li class=""><a href="/+/office-hours" data-title="Office Hours"><span>Office Hours</span></a></li><li class=""><a href="http://googleplusplatform.blogspot.com/" data-title="Blog"><span>Blog</span></a></li><li class=""><a href="/showcase/#tags=google+plus" data-title="Showcase"><span>Showcase</span></a></li></ul></li><li class=""><a href="https://code.google.com/apis/console" data-title="APIs Console"><span>APIs Console</span></a></li></ul><hr/><ul><li class=""><a href="/+/policies" data-title="Developer Policies"><span>Developer Policies</span></a></li><li class=""><a href="/+/terms" data-title="Terms of Service"><span>Terms of Service</span></a></li></ul></nav>
+
+
+
+      </div>
+      
+
+      <div id="gc-content"
+           
+           
+           >
+        
+        <div>
+  
+          
+  
+  <div itemprop="articleBody">
+  
+<p><link rel="stylesheet" href="/+/css/plus.css" /></p>
+
+<h1 class="page-title" id="sharing_to_google_from_your_ios_app">Sharing to Google+ from your iOS app</h1>
+<nav class="inline-toc"><ol class="toc"><li><a href="#before_you_begin">Before you begin</a></li><li><a href="#basic_sharing">Basic sharing</a></li><li><a href="#sharing_with_deep_links_to_your_app">Sharing with deep links to your app</a><ol class="toc"><li><a href="#create_a_client_for_each_supported_platform">Create a client for each supported platform</a></li><li><a href="#writing_posts_with_deep_links">Writing posts with deep links</a></li><li><a href="#handling_incoming_deep_links">Handling incoming deep links</a></li></ol></li></ol></nav>
+<p>The Share dialog provides a means for users to share rich content from your app
+into the Google+ stream, including text, photos, URL attachments and location.</p>
+<p>Additionally, you can configure your app to use "<em>deep links</em>" in these shared
+posts that when clicked will launch your app and open the correct view
+within your app. If a user clicks a link and does not have your app installed,
+they will be prompted to install your app and when installation completes, the
+app will open to the correct view.</p>
+<section class="expandable" style="">
+  <span class="expand-control once more-info" title="Click to expand for more info">More on content deep linking &rsaquo;&rsaquo;</span>
+  <em>Content deep linking</em>
+  
+<div id="deep-link-scenario" style="clear: both;">
+  <img src="/+/images/share_deeplink.png" alt="Illustration of the following scenario" style="float: right; width: 340px; height: 467px; margin: 8px;"/>
+<p>
+  A typical scenario is as follows. Let's say you created a music-playing
+  app called MyApp that supports web, Android and iOS. You implemented the
+  Google+ Share button on each of the song-playing pages.
+</p>
+
+<ol>
+  <li>
+    Jojie is using MyApp on any of the three platforms and is playing a song
+    "Love" she particularly likes. She wants to share this song with her family,
+    so she taps the Share button.
+  </li>
+  <li>
+    This opens the Share dialog, with a preview of the song based on the content
+    in your app. Jojie writes "I love this album", fills in the names of the
+    three people she wants to share with, and sends it to them: Anne who uses
+    an Android device, Brit who uses an iOS device, and Fuller who uses a desktop
+    web browser.
+  </li>
+  <li>
+    All three people receive Jojie's post in their Google+ streams, read the post and
+    want to listen to Jojie's song:
+    <ul>
+      <li>
+        Anne already has MyApp installed, so when she taps the link in the post,
+        MyApp launches and deep-links directly to the song "Love" and starts playing it.
+      </li>
+      <li>
+        Brit does not have MyApp installed, so when she taps the link in the post,
+        the Apple App Store launches to the MyApp installation page. She installs MyApp,
+        which then launches and deep-links to the song and starts playing it,
+        just like it did for Anne.
+      </li>
+      <li>
+        Fuller is using a desktop web browser, so when he clicks the link in the
+        post, he is taken to the web page on your website that also starts playing the
+        song "Love".
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<p>
+  With deep-linking, users are taken to the page in your app that gives them the best
+  in-app experience for their device, and are prompted along the way to install your app
+  only when necessary.
+</p>
+</div>
+
+</section>
+
+<p>This pages demonstrates how to add <a href="#basic_sharing">basic sharing</a> and <a href="#sharing_with_deep_links_to_your_app">deep link
+sharing</a> to your app.</p>
+<h2 id="before_you_begin">Before you begin</h2>
+<p>You must <a href="getting-started">create a APIs Console project and initialize the Google+ client</a>.</p>
+<h2 id="basic_sharing">Basic sharing</h2>
+<p>To integrate, add a
+<a href="//developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UIButton_Class/UIButton/UIButton.html"><code>UIButton</code></a>
+and configure it with these steps:</p>
+<ol>
+<li>
+<p>Declare and synthesize the following property in your app's delegate:</p>
+<pre class="prettyprint"><code>@property (retain, nonatomic) GPPShare *share;
+</code></pre>
+</li>
+<li>
+<p>In your view controller, create the <a href="/+/mobile/ios/api/interface_g_p_p_share"><code>GPPShare</code></a> object:</p>
+<pre class="prettyprint"><code>GPPShare *share =
+    [[[GPPShare alloc] initWithClientID:clientID] autorelease];
+share.delegate = self;
+appDelegate.share = share;
+</code></pre>
+</li>
+<li>
+<p>Set the target of your <code>UIButton</code> to your <code>IBAction</code>, which is
+<code>didTapShare</code> in the example below. The parameters <code>setURLToShare</code> and <code>prefillText</code> are
+both optional:</p>
+<pre class="prettyprint"><code>- (IBAction) didTapShare: (id)sender {
+  // Add code here to retrieve the value of "share"
+  // This could be self.share if this is a property of your ViewController
+  // or ((MyAppDelegate *)[[UIApplication sharedApplication] delegate]).share
+
+  [[[[share shareDialog]
+      setURLToShare:[NSURL URLWithString:@"URL_TO_SHARE"]]
+          setPrefillText:@"YOUR TEXT HERE"] open];
+
+  // Or, without a URL or prefill text:
+  [[share shareDialog] open];
+}
+</code></pre>
+</li>
+<li>
+<p>Call the <code>GPPShare</code> URL handler from your app delegate's URL handler:</p>
+<pre class="prettyprint"><code>- (BOOL)application: (UIApplication *)application
+              openURL: (NSURL *)url
+    sourceApplication: (NSString *)sourceApplication
+           annotation: (id)annotation {
+  // ...
+
+  if ([self.share handleURL:url
+          sourceApplication:sourceApplication
+                 annotation:annotation]) {
+    return YES;
+  }
+
+  // ...
+}
+</code></pre>
+</li>
+<li>
+<p>(optional) If you want to capture if a post was successfully shared, in your view controller,
+implement the <a href="/+/mobile/ios/api/protocol_g_p_p_share_delegate-p"><code>GPPShareDelegate</code></a> protocol:</p>
+<pre class="prettyprint"><code>- (void)finishedSharing: (BOOL)shared {
+  // Display success message
+}
+</code></pre>
+</li>
+</ol>
+<h2 id="sharing_with_deep_links_to_your_app">Sharing with deep links to your app</h2>
+<p>When your users share from your app, you can enhance the links that they share
+so that when people follow the link on any platform (Android, iOS, or desktop),
+they can launch your app in the appropriate context.  For this cross-platform
+deep linking to work, you will create a client ID for each platform in the same
+APIs Console project and modify your apps to write deep links and to handle
+incoming deep links.</p>
+<h3 id="create_a_client_for_each_supported_platform">Create a client for each supported platform</h3>
+<ol>
+<li>
+<p>Open the <a href="https://code.google.com/apis/console/#:access">API Access pane of the APIs Console</a></p>
+</li>
+<li>
+<p>In <a href="getting-started">getting started</a>, you created an OAuth 2.0 client ID for
+iOS, to enable deep linking, click <strong>Edit settings</strong> for this client ID and
+click <strong>Enable</strong> in the <strong>Deep Linking</strong> section of the dialog.</p>
+<aside class="note"><strong>Note:</strong><span> You must enter a bundle ID and App Store ID for deep linking.</span></aside>
+</li>
+<li>
+<p>If you are supporting additional platforms (Android or Web), create a OAuth
+2.0 client ID for each in this same APIs Console project. If you are also
+creating a native Android app, enable deep linking for that client ID.</p>
+</li>
+</ol>
+<p>If you upload a logo for your app using the APIs Console, your logo might be
+displayed in any post to help users identify the origin and target of the post.
+By using the sharing feature, you agree that Google can display the name of your
+app and your logo within Google's products and services.</p>
+<h3 id="writing_posts_with_deep_links">Writing posts with deep links</h3>
+<p>Deep links require either a URI or an identifier that your app can use across
+its supported platforms to identify the correct context to launch in your app.
+If you use the identifier approach, you must specify additional data for the
+title, description, and thumbnail URL. For the URL approach, Google retrieves
+the content at the URL to render the share preview.</p>
+<p>You can build deep links in two ways:</p>
+<ul>
+<li>Specifying a URL as the deep-link identifier. Google retrieves the content at
+    the URL to populate the share details such as getting a thumbnail, description and title.</li>
+<li>Specifying a URI path as the deep-link identifier and passing meta-data for the thumbnail, description, and title in a bundle.</li>
+</ul>
+<p>The code examples below build on the <a href="#basic_sharing">basic sharing example code</a>.</p>
+<p><strong>Using a URL as the deep-link ID: </strong></p>
+<p>After allocating your <code>GPPShare</code> object, call methods <code>setContentDeepLinkId</code> and
+<code>setURLToShare</code>:</p>
+<pre class="prettyprint"><code>  GPPShare *share = [[[GPPShare alloc] initWithClientId:clientId] autorelease];
+  [[[[share shareDialog] setContentDeepLinkId:@"http://example.com/reviews/2142198183/"]
+    setURLToShare:@"http://example.com/reviews/2142198183/"] open];
+</code></pre>
+<p><strong>Using a native identifier as the deep-link ID:</strong></p>
+<p>After allocating your <code>GPPShare</code> object, call methods <code>setContentDeepLinkId</code> and
+<code>setTitle</code>:</p>
+<pre class="prettyprint"><code>  GPPShare *share = [[[GPPShare alloc] initWithClientId:clientId] autorelease];
+  [[[[share shareDialog] setContentDeepLinkId:@"reviewed_2142198183"] // Native identifier
+         setTitle:@"New review"
+      description:@"Read my review of Example restaurant."
+     thumbnailURL:@"http://example.com/images/2142198183/thumb.png"]
+          open];
+</code></pre>
+<h3 id="handling_incoming_deep_links">Handling incoming deep links</h3>
+<p>When a user clicks on a shared post that contains deep link data for your app,
+the app launches if installed, or the user is prompted to install your app. This
+process works for all platforms that your app supports regardless of which type
+of platform the post was created.</p>
+<p>When the app launches, it needs to check if the deep information is available
+and launch the correct view in the app.</p>
+<ol>
+<li>
+<p>After the app is installed or every time the app starts, in your
+<code>UIApplicationDelegate</code> check for incoming deep links by calling
+<code>readDeepLinkAfterInstall</code> in <a href="/+/mobile/ios/api/interface_g_p_p_deep_link"><code>GPPDeepLink</code></a>.</p>
+<pre class="prettyprint"><code>  - (BOOL)<application>UIApplication *</application>application <didFinishLaunchingWithOptions>NSDictionary *</didFinishLaunchingWithOptions>launchOptions {
+
+    GPPDeepLink *deepLink =
+        [GPPDeepLink readDeepLinkAfterInstall];
+    if (deepLink) {
+      // Handle deep-link ID from [deepLink deepLinkID].
+    }
+  }
+</code></pre>
+</li>
+<li>
+<p>In your <code>UIApplicationDelegate</code>, handle deep links when the app is opened by
+URL.</p>
+<pre class="prettyprint"><code>  - (BOOL)<application>UIApplication *</application>application
+              <openURL>NSURL *</openURL>url
+    <sourceApplication>NSString *</sourceApplication>sourceApplication
+           <annotation>id</annotation>annotation {
+    //...
+    GPPDeepLink *deepLink =
+        [GPPDeepLink handleURL:url
+                    sourceApplication:sourceApplication
+                           annotation:annotation];
+    if (deepLink) {
+      // Handle deep-link ID from [deepLink deepLinkID].
+      return YES;
+    }
+    //...
+  }
+</code></pre>
+</li>
+</ol>
+<aside class="caution"><strong>Caution:</strong><span> You should be careful about how your app responds to incoming deep links.
+You should <a href="http://developer.apple.com/library/ios/#documentation/Security/Conceptual/SecureCodingGuide/Articles/ValidatingInput.html#//apple_ref/doc/uid/TP40007246">validate all input</a>. Do not perform operations on behalf of a
+user when a deep link is clicked.</span></aside>
+
+  </div>
+
+  
+        </div>
+        
+<div id="gc-content-footer">
+
+
+
+<div itemprop="datePublished" content="2012-11-18T22:45:26.127720" id="gc-content-last-updated">Last updated November 18, 2012.</div>
+
+</div>
+
+
+
+
+      </div>
+  
+
+        
+      </div>
+        
+      
+
+      
+      
+      <footer id="gc-footer">
+        <div id="gc-copyright">
+          <a href="/">
+            <img id="developers-logo-footer" src="/_static/images/developers-logo-footer.png" alt="Google Developers logo" style="vertical-align: center; float: left"/>
+          </a>
+          <ul>
+            <li><a href="http://www.google.com/">Google</a></li>
+            <li><a href="/readme/terms">Terms of Service</a></li>
+            <li><a href="http://www.google.com/intl/en/privacy/">Privacy Policy</a></li>
+            <li><a href="/jobs">Jobs</a></li>
+            <li><a class="google-feedback" data-p="81425" data-b="Documentation"  data-v="devsite-20130211-rc00.365237837741032878" href="">Report a bug</a></li>
+          </ul>
+        </div>
+        
+        <div id="gc-language">
+          <ul>
+            <li>
+              <form id="setlang" action="/i18n/setlang/" method="post">
+                <div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='265dc8aa9f3bb2ad226b765dec1fc233' /></div>
+                <select id="footer_language" name="language">
+                  
+                  
+                  <option
+                     value="ar"
+                     >
+                    العربيّة
+                  </option>
+                  
+                  <option
+                     value="bg"
+                     >
+                    български
+                  </option>
+                  
+                  <option
+                     value="ca"
+                     >
+                    català
+                  </option>
+                  
+                  <option
+                     value="zh-cn"
+                     >
+                    简体中文
+                  </option>
+                  
+                  <option
+                     value="zh-tw"
+                     >
+                    繁體中文
+                  </option>
+                  
+                  <option
+                     value="hr"
+                     >
+                    Hrvatski
+                  </option>
+                  
+                  <option
+                     value="cs"
+                     >
+                    česky
+                  </option>
+                  
+                  <option
+                     value="da"
+                     >
+                    Dansk
+                  </option>
+                  
+                  <option
+                     value="nl"
+                     >
+                    Nederlands
+                  </option>
+                  
+                  <option
+                     value="en"
+                      selected="selected" >
+                    English
+                  </option>
+                  
+                  <option
+                     value="fa"
+                     >
+                    فارسی
+                  </option>
+                  
+                  <option
+                     value="fi"
+                     >
+                    suomi
+                  </option>
+                  
+                  <option
+                     value="fr"
+                     >
+                    Français
+                  </option>
+                  
+                  <option
+                     value="de"
+                     >
+                    Deutsch
+                  </option>
+                  
+                  <option
+                     value="el"
+                     >
+                    Ελληνικά
+                  </option>
+                  
+                  <option
+                     value="he"
+                     >
+                    עברית
+                  </option>
+                  
+                  <option
+                     value="hi"
+                     >
+                    Hindi
+                  </option>
+                  
+                  <option
+                     value="hu"
+                     >
+                    Magyar
+                  </option>
+                  
+                  <option
+                     value="id"
+                     >
+                    Bahasa Indonesia
+                  </option>
+                  
+                  <option
+                     value="it"
+                     >
+                    italiano
+                  </option>
+                  
+                  <option
+                     value="ja"
+                     >
+                    日本語
+                  </option>
+                  
+                  <option
+                     value="ko"
+                     >
+                    한국어
+                  </option>
+                  
+                  <option
+                     value="lv"
+                     >
+                    latviešu
+                  </option>
+                  
+                  <option
+                     value="lt"
+                     >
+                    Lithuanian
+                  </option>
+                  
+                  <option
+                     value="nb"
+                     >
+                    Norsk (bokmål)
+                  </option>
+                  
+                  <option
+                     value="nn"
+                     >
+                    Norsk (nynorsk)
+                  </option>
+                  
+                  <option
+                     value="pl"
+                     >
+                    polski
+                  </option>
+                  
+                  <option
+                     value="pt-br"
+                     >
+                    Português Brasileiro
+                  </option>
+                  
+                  <option
+                     value="pt"
+                     >
+                    Português
+                  </option>
+                  
+                  <option
+                     value="ro"
+                     >
+                    Română
+                  </option>
+                  
+                  <option
+                     value="ru"
+                     >
+                    Русский
+                  </option>
+                  
+                  <option
+                     value="sr"
+                     >
+                    српски
+                  </option>
+                  
+                  <option
+                     value="sk"
+                     >
+                    slovenský
+                  </option>
+                  
+                  <option
+                     value="sl"
+                     >
+                    Slovenščina
+                  </option>
+                  
+                  <option
+                     value="es"
+                     >
+                    español
+                  </option>
+                  
+                  <option
+                     value="sv"
+                     >
+                    Svenska
+                  </option>
+                  
+                  <option
+                     value="th"
+                     >
+                    Thai
+                  </option>
+                  
+                  <option
+                     value="tr"
+                     >
+                    Türkçe
+                  </option>
+                  
+                  <option
+                     value="uk"
+                     >
+                    Українська
+                  </option>
+                  
+                  <option
+                     value="vi"
+                     >
+                    Vietnamese
+                  </option>
+                  
+                </select>
+              </form>
+            </li>
+          </ul>
+        </div>
+        
+      </footer>
+      
+      
+    </div>
+    <div id="needAuth" class="msgDialogContent">
+      
+      <h1>Authentication required</h1>
+      
+      <div>
+        You need to be signed in with <a href='http://www.google.com/+'>Google+</a> to do that.
+      </div>
+      <button>Sign in</button>
+      <button>Cancel</button>
+    </div>
+    <div id="signingIn" class="msgDialogContent">
+      
+      <h1>Signing you in...</h1>
+      <div>
+        
+        Google Developers needs your permission to do that.
+      </div>
+      
+      <button>Try again</button>
+      
+      <button>Cancel</button>
+    </div>
+    <script src="/_static/js/script_foot.js"></script>
+    <script>
+      (function($) {
+        devsite.devsite.Init($, null, '');
+      })(jQuery);
+
+      
+      devsite.localInit = function() {
+        
+      };
+      
+    </script>
+    <!-- Google Code for PXL - Developers - Codesite - HP - 90d Remarketing List -->
+    <script type="text/javascript">
+    $('#setlang select').each(function() {
+      if ($.browser.msie) {
+        $(this).change(function() {
+          $('#setlang').submit();
+        });
+      } else {
+        $(this).kdSelect({'change': function() {
+          $('#setlang').submit();
+        }});
+      }
+    });
+    </script>
+    <script type="text/javascript">
+      /* <![CDATA[ */
+      var google_conversion_id = 992540712;
+      var google_conversion_language = "en";
+      var google_conversion_format = "3";
+      var google_conversion_color = "ffffff";
+      var google_conversion_label = "qio2CKCPwQMQqPCj2QM";
+      var google_conversion_value = 0;
+      /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+
+    
+
+    <script>
+      
+      google.load('visualization', '1', {packages: ['table']});
+    </script>
+
+    <noscript>
+      <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/992540712/?label=qio2CKCPwQMQqPCj2QM&amp;guid=ON&amp;script=0"/>
+      </div>
+    </noscript>
+    
+
+
+
+
+
+<script type="text/javascript">
+$(document).ready(function(e) {
+    // Render any carousels on the page
+    $('.carousel').carousel();
+    // Render any feed widgets on the page
+    
+    $('.feed').rss();
+    $('.feed-plain').rss();
+    // Render any OSS widgets on the page.
+    $('.oss').oss();
+    });
+</script>
+
+<script type="text/javascript" defer>
+
+
+$(document).ready(function() {
+    contentTimer.name = 'content';
+    contentTimer.tick('ol');
+    window.jstiming.report(contentTimer);
+
+    // Boilerplate javascript to enable the plusone button
+    var po = document.createElement('script'); po.type = 'text/javascript';
+    po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js?onload=devsite_plusoneLoaded';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(po, s);
+});
+</script>
+
+
+
+
+  </body>
+
+  
+</html>

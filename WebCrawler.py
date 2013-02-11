@@ -27,9 +27,7 @@ def Queue_Check_Push_Front(page):
 
     global hash_table
     global number_visited_url
-    print "check url: " + href
     href = CheckUrl.checkUrl(href)
-    print href
     if href != -1:
         if CheckSite.checkSite_Visitable(href) == 1:
             if not hash_table.has_key(href):
@@ -105,8 +103,8 @@ class Parser(htmllib.HTMLParser):
                         # Relative URIs.
                         self.base_url = urlparse.urljoin(self.base_url, href)
 
-#argv = sys.argv
-argv = [1, 1, 11]
+argv = sys.argv
+#argv = [1, 1, 100]
 if len(argv) < 3:
     sys.exit("Please give a query (a set of keywords) and a number n!")
 
@@ -181,6 +179,7 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
     elif flag == -2:
         queue.append(page)
     else:
+        print "Number: " + str(number_collected_url) + "  " + link
         try:
             # Open the URL
             pageToVisit = urllib2.urlopen(urllib2.Request(link, headers={
@@ -232,10 +231,13 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
         pageToVisit.close()
 
         # Parse the file in order to find links from this to other pages.
-        parser = Parser(depth + 1, link)
-        parser.feed(pageContent)
-        parser.close()
-
+        try:
+            parser = Parser(depth + 1, link)
+            parser.feed(pageContent)
+            parser.close()
+        except htmllib.HTMLParseError as e:
+            print "parse error: " + link
+        
 # It would also be good to have some statistics at the end of the file, like number of files, total size (in MB), total
 # time, number of 404 errors etc.
 totalSizeInMB = divmod(totalSize, 1000000)

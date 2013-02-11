@@ -11,3 +11,22 @@
 11.do not frequency log into one site, redundant code by zhuoran&jiankai, solve this later
 12.a bug found, some url name is "mailto:xxx" or "javascript xxx", zhuoran fixed this by a naive solution
 
+13.bug report:
+"
+Push into queue: https://developers.google.com/sandbar?q=&page_url=/showcase
+Traceback (most recent call last):
+  File "WebCrawler.py", line 236, in <module>
+    parser.feed(pageContent)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/sgmllib.py", line 104, in feed
+    self.goahead(0)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/sgmllib.py", line 174, in goahead
+    k = self.parse_declaration(i)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/markupbase.py", line 136, in parse_declaration
+    "unexpected %r char in declaration" % rawdata[j])
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/htmllib.py", line 45, in error
+    raise HTMLParseError(message)
+htmllib.HTMLParseError: unexpected '&' char in declaration
+
+#fixed by zhuoran by throw an exception
+"
+14.
