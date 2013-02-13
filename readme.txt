@@ -1,3 +1,12 @@
+A list of the files in our submission and what they do:
+
+1. WebCrawler.py
+
+The main web crawler file.
+Given a query (a set of keywords) and a number n provided by the user, the crawler will contact Google, get the top-10
+results for this query from Google, and then crawl starting from these top-10 results in a Breadth-First manner until
+we have collected a total of n pages.
+
 How to compile and run this program?
 
 1. Launch your terminal.
