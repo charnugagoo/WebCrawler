@@ -1,0 +1,396 @@
+ 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="Cache-control" content="no-store, no-cache, must-revalidate">
+<title>Волшебный форум  </title>
+<link href="/css/style.css" rel="stylesheet" type="text/css">
+<link href="/css/style-its.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35312829-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script type="text/javascript" src="/css/jquery.simpletip-1.3.1.js"></script>
+</head>
+<script src="/css/script4.js" type="text/javascript" language="JavaScript"></script>
+<script type="text/javascript" language="JavaScript">
+var full_filter = "";
+</script>
+
+
+<script type="text/javascript" language="JavaScript" src="/css/Subsys_JsHttpRequest_min.js"></script>
+
+<script type="text/javascript" language="JavaScript">
+//функция для подгрузки сообщения ("плюсики")
+function getmessage(k, topic_id, message_n, direction) 
+{
+       var req = new Subsys_JsHttpRequest_Js();
+
+        // Код, АВТОМАТИЧЕСКИ вызываемый при окончании загрузки.
+        req.onreadystatechange = function() {
+
+            if (req.readyState == 4) {
+                if (req.responseJS) 
+		  {
+
+			if (req.responseJS.client_action==1) //ok
+			{ 
+				msg = document.getElementById("msg" + k);
+				msg.innerHTML = '<blockquote>' + req.responseJS.message_html + '<\/blockquote>';
+				show(k);
+			}
+
+			else if (req.responseJS.client_action==2) //error
+			{ 
+//				alert(req.responseJS.error); 
+			}
+                }
+            }
+        }
+
+        req.caching = false; // Запрещаем кэширование
+        req.open('POST', 'ajax_getmessage.php', true);
+
+        // Посылаем данные запроса (задаются в виде хэша).
+        req.send({ k:k, topic_id:topic_id, message_n:message_n, direction:direction});
+} 
+</script>
+
+
+<script type="text/javascript" language="JavaScript">
+function find_ajax() 
+{
+    var req = new Subsys_JsHttpRequest_Js();
+	var keywords = '' + document.getElementById('keywords').value;
+
+	// Код, АВТОМАТИЧЕСКИ вызываемый при окончании загрузки.
+	req.onreadystatechange = function() {
+
+		if (req.readyState == 4) {
+			if (req.responseJS) 
+			{
+				if (req.responseJS.client_action == 1) 
+				{ 
+					find_result_div = document.getElementById('find_result');
+					find_result_div.innerHTML = req.responseJS.result;
+					find_link_a=document.getElementById('findlink');
+					find_link_a.href='/find.php?keyword='+document.getElementById('keywords').value;
+				}
+			}
+		}
+	}
+
+	req.caching = false; // Запрещаем кэширование
+	req.open('POST', 'ajax_find.php', true);
+
+	// Посылаем данные запроса (задаются в виде хэша).
+	req.send({ 	keywords : keywords }); 
+
+	return false; //to form onSubmit
+}
+</script>
+
+<body><div id="container">
+
+<table id="header-table" border="0">
+<tr>
+<td id="title-td" width="30%"><h1 class="forum-title"><a href="index.php">Волшебный форум</a></h1></td><td id="banner-center-td" align="right" valign="top"><a href="banners.php?click=201"><img src="css/1c-izhtc.gif"></img></a>&nbsp;</td><td id="banner-td" align="right" valign="top"><a href="banners.php?click=202"><img src="css/snegopat.png"></img></a></td></tr></table><table id="header-table" border="0"><tr><td id="user-td"><form name="enterform" method="post" action="users.php?"><table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td width="100%" valign="top">Имя:&nbsp;<input class="fieldbasic" name="user_name" type="text" id="user_name" size="10" maxlength="20"> Пароль:&nbsp;<input class="fieldbasic" name="user_password" id="user_password"  type="password" size="10" maxlength="20"> <input type="hidden" name="action" value="do_enter" /><input class="sendbutton" type="submit" name="Submit" value="Вход"><br><noindex><a rel="nofollow" href="user_registration.php">Регистрация</a></noindex> | <noindex><a rel="nofollow" href="remember_password.php">Забыли пароль?</a></noindex><br></td></tr></table></form></td>
+<td align="center" valign="bottom">
+
+<br>
+<!-- форма для БЫСТРОГО поиска с главной страницы -->
+<form name="find_form" onSubmit="return find_ajax()">
+<a id="findlink" href="/find.php" class="findlink" target="_blank">Поиск</a>&nbsp;
+<input class="findfield" type="text" name="keywords" id="keywords" onsubmit="find_ajax()">
+</form>
+</td>
+
+<td id="section-td"><span class="ah"><noindex>
+<a rel="nofollow" href="index.php">Все</a>&nbsp;|&nbsp;
+<a rel="nofollow" href="index.php?forum=1c">1C</a>&nbsp;/&nbsp;
+<a rel="nofollow" href="index.php?forum=1c&amp;v8=1">v8</a>&nbsp;/&nbsp;
+<a rel="nofollow" href="index.php?forum=1c&amp;v8=0">v7</a>&nbsp;|&nbsp; 
+<a rel="nofollow" href="index.php?forum=it">IT</a>&nbsp;</noindex>|&nbsp;&nbsp<noindex><a rel="nofollow" href="index.php?forum=life">LIFE</a></noindex><br/><script type="text/javascript" language="JavaScript">
+		function selectSection(s)
+		{
+			if (s.options[s.selectedIndex].value == "") { location.href="index.php"; } 
+			else { location.href = "index.php?" + s.value; }
+		}
+	</script><SELECT class="findfield" id="section_selector" name="section_selector" onChange="selectSection(this)"><OPTION value="" SELECTED >-- Все секции --</OPTION><optgroup label="IT"><OPTION value="section=admin" >Админ</OPTION><OPTION value="section=mobile" >Мобильный мир</OPTION><OPTION value="section=it-news" >IT-новости</OPTION><OPTION value="section=math" >Математика и алгоритмы</OPTION><OPTION value="section=nix" >Unix / Linux</OPTION><OPTION value="section=web" >Веб-мастеринг</OPTION></optgroup><optgroup label="LIFE"><OPTION value="section=politic" >Политика</OPTION><OPTION value="section=fear" >Как страшно жить</OPTION><OPTION value="section=job" >Работа</OPTION><OPTION value="section=forum" >Жизнь форума</OPTION><OPTION value="section=good" >Жизнь прекрасна</OPTION><OPTION value="section=car" >За рулём</OPTION><OPTION value="section=lol" >Юмор</OPTION><OPTION value="section=games" >Игры</OPTION><OPTION value="section=love" >Психология</OPTION><OPTION value="section=philosophy" >Философия</OPTION><OPTION value="section=culture" >Культура</OPTION><OPTION value="section=science" >Наука</OPTION><OPTION value="section=sport" >Спорт</OPTION><OPTION value="section=food" >Поесть и выпить</OPTION><OPTION value="section=events" >Примечательные события</OPTION><OPTION value="section=spam" >Спам</OPTION><OPTION value="section=digit-photo" >Цифровое фото</OPTION><OPTION value="section=realty" >Недвижимость</OPTION><OPTION value="section=chat" >Забегаловка</OPTION><OPTION value="section=history" >История</OPTION><OPTION value="section=travel" >Путешествия</OPTION></optgroup></SELECT></span>&nbsp;</td>
+</tr></table><div id="find_result"></div><br><table id="tm"><col class="cc" width="50"><col class="cc" width="30"><col width="" class="ct" ><col class="cl"width="150"><tr><th>Раздел</th><th>Re</th><th>Тема</th><th>Обновлено</th></tr>
+<tr data-topic_id='651687' data-updated_unixtime='1360772596'>
+<td  bgcolor=""  class="cc">
+LIFE</td>
+<td  bgcolor=""  class="cc">
+249</td>
+<td  bgcolor=""  class="ct" id="tt1">&nbsp;<span class="plus-minus"><span id="tmsg1" onClick='change(1, 651687, (!event.ctrlKey ? 0 : 249),(!event.ctrlKey ? -2 : +2))' style="cursor:hand; cursor:pointer">+</span></span>&nbsp;&nbsp;<a href="topic.php?id=651687" class="agb"><span class="longtopics">OFF: Папа Римский решил оставить престол</span></a>&nbsp;&nbsp;<a rel="nofollow" class="agh" href="topic.php?id=651687&amp;page=1">1&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=651687&amp;page=2">2&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=651687&amp;page=3">3&nbsp;</a><span class="agh">&nbsp;&nbsp;/&nbsp;</span><a rel="nofollow" class="sectionlink-gray" href="index.php?section=events">Примечательные события</a><span id="msg1" style="display:none; visibility:hidden;"></span></td>
+<td  bgcolor=""  class="cl">
+20:23&nbsp;<span class="userlink">unregistered</span></td>
+</tr>
+<tr data-topic_id='652114' data-updated_unixtime='1360772576'>
+<td  bgcolor=""  class="cc">
+1C</td>
+<td  bgcolor=""  class="cc">
+7</td>
+<td  bgcolor=""  class="ct" id="tt2">&nbsp;<span class="plus-minus"><span id="tmsg2" onClick='change(2, 652114, (!event.ctrlKey ? 0 : 7),(!event.ctrlKey ? -2 : +2))' style="cursor:hand; cursor:pointer">+</span></span>&nbsp;&nbsp;<a href="topic.php?id=652114" class="agb">v8: Регист накопления - глюк?</a><span id="msg2" style="display:none; visibility:hidden;"></span></td>
+<td  bgcolor=""  class="cl">
+20:22&nbsp;<span class="userlink">Elf_80_lvl</span></td>
+</tr>
+<tr data-topic_id='652088' data-updated_unixtime='1360772530'>
+<td  bgcolor=""  class="cc">
+LIFE</td>
+<td  bgcolor=""  class="cc">
+136</td>
+<td  bgcolor=""  class="ct" id="tt3">&nbsp;<span class="plus-minus"><span id="tmsg3" onClick='change(3, 652088, (!event.ctrlKey ? 0 : 136),(!event.ctrlKey ? -2 : +2))' style="cursor:hand; cursor:pointer">+</span></span>&nbsp;&nbsp;<a href="topic.php?id=652088" class="agb"><span class="longtopics">OFF: Защищать родину это обязанность или работа?</span></a><span class="agh">&nbsp;[&plusmn;]</span>&nbsp;&nbsp;<a rel="nofollow" class="agh" href="topic.php?id=652088&amp;page=1">1&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=652088&amp;page=2">2&nbsp;</a><span class="agh">&nbsp;&nbsp;/&nbsp;</span><a rel="nofollow" class="sectionlink-gray" href="index.php?section=love">Психология</a><span id="msg3" style="display:none; visibility:hidden;"></span></td>
+<td  bgcolor=""  class="cl">
+20:22&nbsp;<span class="userlink">sda553</span></td>
+</tr>
+<tr data-topic_id='652112' data-updated_unixtime='1360772526'>
+<td  bgcolor=""  class="cc">
+LIFE</td>
+<td  bgcolor=""  class="cc">
+27</td>
+<td  bgcolor=""  class="ct" id="tt4">&nbsp;<span class="plus-minus"><span id="tmsg4" onClick='change(4, 652112, (!event.ctrlKey ? 0 : 27),(!event.ctrlKey ? -2 : +2))' style="cursor:hand; cursor:pointer">+</span></span>&nbsp;&nbsp;<a href="topic.php?id=652112" class="agb">OFF: ОФ/3 Ну каким надо быть ? что бы...</a><span class="agh">&nbsp;&nbsp;/&nbsp;</span><a rel="nofollow" class="sectionlink-gray" href="index.php?section=fear">Как страшно жить</a><span id="msg4" style="display:none; visibility:hidden;"></span></td>
+<td  bgcolor=""  class="cl">
+20:22&nbsp;<span class="userlink">wade25</span></td>
+</tr>
+<tr data-topic_id='652065' data-updated_unixtime='1360772481'>
+<td  bgcolor=""  class="cc">
+LIFE</td>
+<td  bgcolor=""  class="cc">
+69</td>
+<td  bgcolor=""  class="ct" id="tt5">&nbsp;<span class="plus-minus"><span id="tmsg5" onClick='change(5, 652065, (!event.ctrlKey ? 0 : 69),(!event.ctrlKey ? -2 : +2))' style="cursor:hand; cursor:pointer">+</span></span>&nbsp;&nbsp;<a href="topic.php?id=652065" class="agb">OFF: На Чернобыльской АЭС рухнула кровля и часть стены машинного зала</a><span class="agh">&nbsp;[&plusmn;]</span><span class="agh">&nbsp;&nbsp;/&nbsp;</span><a rel="nofollow" class="sectionlink-gray" href="index.php?section=fear">Как страшно жить</a><span id="msg5" style="display:none; visibility:hidden;"></span></td>
+<td  bgcolor=""  class="cl">
+20:21&nbsp;<span class="userlink">фобка</span></td>
+</tr>
+<tr data-topic_id='652111' data-updated_unixtime='1360772457'>
+<td  bgcolor=""  class="cc">
+LIFE</td>
+<td  bgcolor=""  class="cc">
+34</td>
+<td  bgcolor=""  class="ct" id="tt6">&nbsp;<span class="plus-minus"><span id="tmsg6" onClick='change(6, 652111, (!event.ctrlKey ? 0 : 34),(!event.ctrlKey ? -2 : +2))' style="cursor:hand; cursor:pointer">+</span></span>&nbsp;&nbsp;<a href="topic.php?id=652111" class="agb">OFF: Кто рад, что 1с программист</a><span class="agh">&nbsp;[&plusmn;]</span><span id="msg6" style="display:none; visibility:hidden;"></span></td>
+<td  bgcolor=""  class="cl">
+20:20&nbsp;<span class="userlink">Лефмихалыч</span></td>
+</tr>
+<tr data-topic_id='651392' data-updated_unixtime='1360772442'>
+<td  bgcolor=""  class="cc">
+LIFE</td>
+<td  bgcolor=""  class="cc">
+778</td>
+<td  bgcolor=""  class="ct" id="tt7">&nbsp;<span class="plus-minus"><span id="tmsg7" onClick='change(7, 651392, (!event.ctrlKey ? 0 : 778),(!event.ctrlKey ? -2 : +2))' style="cursor:hand; cursor:pointer">+</span></span>&nbsp;&nbsp;<a href="topic.php?id=651392" class="agb"><span class="longtopics">OFF: WoT (Мир танков) продолжение (136)</span></a><span class="agh">&nbsp;[&plusmn;]</span>&nbsp;&nbsp;<a rel="nofollow" class="agh" href="topic.php?id=651392&amp;page=1">1&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=651392&amp;page=2">2&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=651392&amp;page=3">3&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=651392&amp;page=4">&#8226;&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=651392&amp;page=5">&#8226;&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=651392&amp;page=6">&#8226;&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=651392&amp;page=7">&#8226;&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=651392&amp;page=8">8&nbsp;</a><span class="agh">&nbsp;&nbsp;/&nbsp;</span><a rel="nofollow" class="sectionlink-gray" href="index.php?section=games">Игры</a><span id="msg7" style="display:none; visibility:hidden;"></span></td>
+<td  bgcolor=""  class="cl">
+20:20&nbsp;<span class="userlink">DomovoiVShoke</span></td>
+</tr>
+<tr data-topic_id='651959' data-updated_unixtime='1360772380'>
+<td  bgcolor=""  class="cc">
+LIFE</td>
+<td  bgcolor=""  class="cc">
+18</td>
+<td  bgcolor=""  class="ct" id="tt8">&nbsp;<span class="plus-minus"><span id="tmsg8" onClick='change(8, 651959, (!event.ctrlKey ? 0 : 18),(!event.ctrlKey ? -2 : +2))' style="cursor:hand; cursor:pointer">+</span></span>&nbsp;&nbsp;<a href="topic.php?id=651959" class="agb">OFF: ТехИнфо: Ещё больше данных в личных карточках</a><span class="agh">&nbsp;&nbsp;/&nbsp;</span><a rel="nofollow" class="sectionlink-gray" href="index.php?section=forum">Жизнь форума</a><span id="msg8" style="display:none; visibility:hidden;"></span></td>
+<td  bgcolor=""  class="cl">
+20:19&nbsp;<span class="userlink">Азазель</span></td>
+</tr>
+<tr data-topic_id='651585' data-updated_unixtime='1360772319'>
+<td  bgcolor=""  class="cc">
+LIFE</td>
+<td  bgcolor=""  class="cc">
+528</td>
+<td  bgcolor=""  class="ct" id="tt9">&nbsp;<span class="plus-minus"><span id="tmsg9" onClick='change(9, 651585, (!event.ctrlKey ? 0 : 528),(!event.ctrlKey ? -2 : +2))' style="cursor:hand; cursor:pointer">+</span></span>&nbsp;&nbsp;<a href="topic.php?id=651585" class="agb"><span class="longtopics">OFF: США хотят сократить ЯО вполовину</span></a><span class="agh">&nbsp;[&plusmn;]</span>&nbsp;&nbsp;<a rel="nofollow" class="agh" href="topic.php?id=651585&amp;page=1">1&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=651585&amp;page=2">2&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=651585&amp;page=3">3&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=651585&amp;page=4">&#8226;&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=651585&amp;page=5">&#8226;&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=651585&amp;page=6">6&nbsp;</a><span class="agh">&nbsp;&nbsp;/&nbsp;</span><a rel="nofollow" class="sectionlink-gray" href="index.php?section=politic">Политика</a><span id="msg9" style="display:none; visibility:hidden;"></span></td>
+<td  bgcolor=""  class="cl">
+20:18&nbsp;<span class="userlink">kotletka</span></td>
+</tr>
+<tr data-topic_id='651780' data-updated_unixtime='1360772292'>
+<td  bgcolor=""  class="cc">
+LIFE</td>
+<td  bgcolor=""  class="cc">
+471</td>
+<td  bgcolor=""  class="ct" id="tt10">&nbsp;<span class="plus-minus"><span id="tmsg10" onClick='change(10, 651780, (!event.ctrlKey ? 0 : 471),(!event.ctrlKey ? -2 : +2))' style="cursor:hand; cursor:pointer">+</span></span>&nbsp;&nbsp;<a href="topic.php?id=651780" class="agb"><span class="longtopics">OFF: &quot;Наши испытания направлены против США&quot;. Северная Корея.</span></a>&nbsp;&nbsp;<a rel="nofollow" class="agh" href="topic.php?id=651780&amp;page=1">1&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=651780&amp;page=2">2&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=651780&amp;page=3">3&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=651780&amp;page=4">&#8226;&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=651780&amp;page=5">5&nbsp;</a><span class="agh">&nbsp;&nbsp;/&nbsp;</span><a rel="nofollow" class="sectionlink-gray" href="index.php?section=politic">Политика</a><span id="msg10" style="display:none; visibility:hidden;"></span></td>
+<td  bgcolor=""  class="cl">
+20:18&nbsp;<span class="userlink">Протон</span></td>
+</tr>
+<tr data-topic_id='652003' data-updated_unixtime='1360772208'>
+<td  bgcolor=""  class="cc">
+1C</td>
+<td  bgcolor=""  class="cc">
+12</td>
+<td  bgcolor=""  class="ct" id="tt11">&nbsp;<span class="plus-minus"><span id="tmsg11" onClick='change(11, 652003, (!event.ctrlKey ? 0 : 12),(!event.ctrlKey ? -2 : +2))' style="cursor:hand; cursor:pointer">+</span></span>&nbsp;&nbsp;<a href="topic.php?id=652003" class="agb">v8: себестоимость в УПП</a><span id="msg11" style="display:none; visibility:hidden;"></span></td>
+<td  bgcolor=""  class="cl">
+20:16&nbsp;<span class="userlink">vip67</span></td>
+</tr>
+<tr data-topic_id='651960' data-updated_unixtime='1360772102'>
+<td  bgcolor=""  class="cc">
+LIFE</td>
+<td  bgcolor=""  class="cc">
+634</td>
+<td  bgcolor=""  class="ct" id="tt12">&nbsp;<span class="plus-minus"><span id="tmsg12" onClick='change(12, 651960, (!event.ctrlKey ? 0 : 634),(!event.ctrlKey ? -2 : +2))' style="cursor:hand; cursor:pointer">+</span></span>&nbsp;&nbsp;<a href="topic.php?id=651960" class="agb"><span class="longtopics">OFF: Госдума окончательно приняла &quot;антитабачный&quot; закон</span></a><span class="agh">&nbsp;[&plusmn;]</span>&nbsp;&nbsp;<a rel="nofollow" class="agh" href="topic.php?id=651960&amp;page=1">1&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=651960&amp;page=2">2&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=651960&amp;page=3">3&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=651960&amp;page=4">&#8226;&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=651960&amp;page=5">&#8226;&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=651960&amp;page=6">&#8226;&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=651960&amp;page=7">7&nbsp;</a><span class="agh">&nbsp;&nbsp;/&nbsp;</span><a rel="nofollow" class="sectionlink-gray" href="index.php?section=chat">Забегаловка</a><span id="msg12" style="display:none; visibility:hidden;"></span></td>
+<td  bgcolor=""  class="cl">
+20:15&nbsp;<span class="userlink">Азазель</span></td>
+</tr>
+<tr data-topic_id='652015' data-updated_unixtime='1360772099'>
+<td  bgcolor=""  class="cc">
+1C</td>
+<td  bgcolor=""  class="cc">
+11</td>
+<td  bgcolor=""  class="ct" id="tt13">&nbsp;<span class="plus-minus"><span id="tmsg13" onClick='change(13, 652015, (!event.ctrlKey ? 0 : 11),(!event.ctrlKey ? -2 : +2))' style="cursor:hand; cursor:pointer">+</span></span>&nbsp;&nbsp;<a href="topic.php?id=652015" class="agb">v8: НЗП в УПП</a><span id="msg13" style="display:none; visibility:hidden;"></span></td>
+<td  bgcolor=""  class="cl">
+20:14&nbsp;<span class="userlink">mihco</span></td>
+</tr>
+<tr data-topic_id='651958' data-updated_unixtime='1360772026'>
+<td  bgcolor=""  class="cc">
+1C</td>
+<td  bgcolor=""  class="cc">
+15</td>
+<td  bgcolor=""  class="ct" id="tt14">&nbsp;<span class="plus-minus"><span id="tmsg14" onClick='change(14, 651958, (!event.ctrlKey ? 0 : 15),(!event.ctrlKey ? -2 : +2))' style="cursor:hand; cursor:pointer">+</span></span>&nbsp;&nbsp;<a href="topic.php?id=651958" class="agb">v7: ТиС 7.7 Выбрать (Найти) ближайший к текщему другой Док другого вида.</a><span id="msg14" style="display:none; visibility:hidden;"></span></td>
+<td  bgcolor=""  class="cl">
+20:13&nbsp;<span class="userlink">Злопчинский</span></td>
+</tr>
+<tr data-topic_id='650698' data-updated_unixtime='1360771789'>
+<td  bgcolor=""  class="cc">
+LIFE</td>
+<td  bgcolor=""  class="cc">
+834</td>
+<td  bgcolor=""  class="ct" id="tt15">&nbsp;<span class="plus-minus"><span id="tmsg15" onClick='change(15, 650698, (!event.ctrlKey ? 0 : 834),(!event.ctrlKey ? -2 : +2))' style="cursor:hand; cursor:pointer">+</span></span>&nbsp;&nbsp;<a href="topic.php?id=650698" class="agb"><span class="longtopics">OFF: Хроники самых ленивых на земле (1с-никам посвящается)</span></a><span class="agh">&nbsp;[&plusmn;]</span>&nbsp;&nbsp;<a rel="nofollow" class="agh" href="topic.php?id=650698&amp;page=1">1&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=650698&amp;page=2">2&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=650698&amp;page=3">3&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=650698&amp;page=4">&#8226;&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=650698&amp;page=5">&#8226;&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=650698&amp;page=6">&#8226;&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=650698&amp;page=7">&#8226;&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=650698&amp;page=8">&#8226;&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=650698&amp;page=9">9&nbsp;</a><span class="agh">&nbsp;&nbsp;/&nbsp;</span><a rel="nofollow" class="sectionlink-gray" href="index.php?section=chat">Забегаловка</a><span id="msg15" style="display:none; visibility:hidden;"></span></td>
+<td  bgcolor=""  class="cl">
+20:09&nbsp;<span class="userlink">SED</span></td>
+</tr>
+<tr data-topic_id='651807' data-updated_unixtime='1360771640'>
+<td  bgcolor=""  class="cc">
+LIFE</td>
+<td  bgcolor=""  class="cc">
+188</td>
+<td  bgcolor=""  class="ct" id="tt16">&nbsp;<span class="plus-minus"><span id="tmsg16" onClick='change(16, 651807, (!event.ctrlKey ? 0 : 188),(!event.ctrlKey ? -2 : +2))' style="cursor:hand; cursor:pointer">+</span></span>&nbsp;&nbsp;<a href="topic.php?id=651807" class="agb"><span class="longtopics">OFF: Февральская стажировка для разработчиков 1С</span></a>&nbsp;&nbsp;<a rel="nofollow" class="agh" href="topic.php?id=651807&amp;page=1">1&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=651807&amp;page=2">2&nbsp;</a><span class="agh">&nbsp;&nbsp;/&nbsp;</span><a rel="nofollow" class="sectionlink-gray" href="index.php?section=job">Работа</a><span id="msg16" style="display:none; visibility:hidden;"></span></td>
+<td  bgcolor=""  class="cl">
+20:07&nbsp;<span class="userlink">Amra</span></td>
+</tr>
+<tr data-topic_id='652113' data-updated_unixtime='1360771456'>
+<td  bgcolor=""  class="cc">
+1C</td>
+<td  bgcolor=""  class="cc">
+1</td>
+<td  bgcolor=""  class="ct" id="tt17">&nbsp;<span class="plus-minus"><span id="tmsg17" onClick='change(17, 652113, (!event.ctrlKey ? 0 : 1),(!event.ctrlKey ? -2 : +2))' style="cursor:hand; cursor:pointer">+</span></span>&nbsp;&nbsp;<a href="topic.php?id=652113" class="agb">v8: Кто сдавал РСВ-2 ? подскажите</a><span id="msg17" style="display:none; visibility:hidden;"></span></td>
+<td  bgcolor=""  class="cl">
+20:04&nbsp;<span class="userlink">shuhard</span></td>
+</tr>
+<tr data-topic_id='651955' data-updated_unixtime='1360770820'>
+<td  bgcolor=""  class="cc">
+LIFE</td>
+<td  bgcolor=""  class="cc">
+136</td>
+<td  bgcolor=""  class="ct" id="tt18">&nbsp;<span class="plus-minus"><span id="tmsg18" onClick='change(18, 651955, (!event.ctrlKey ? 0 : 136),(!event.ctrlKey ? -2 : +2))' style="cursor:hand; cursor:pointer">+</span></span>&nbsp;&nbsp;<a href="topic.php?id=651955" class="agb"><span class="longtopics">OFF: Сколько стоит шкатулка, приносящая 500 рублей в месяц?</span></a>&nbsp;&nbsp;<a rel="nofollow" class="agh" href="topic.php?id=651955&amp;page=1">1&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=651955&amp;page=2">2&nbsp;</a><span class="agh">&nbsp;&nbsp;/&nbsp;</span><a rel="nofollow" class="sectionlink-gray" href="index.php?section=job">Работа</a><span id="msg18" style="display:none; visibility:hidden;"></span></td>
+<td  bgcolor=""  class="cl">
+19:53&nbsp;<span class="userlink">Aleksey_a_z</span></td>
+</tr>
+<tr data-topic_id='651906' data-updated_unixtime='1360770472'>
+<td  bgcolor=""  class="cc">
+1C</td>
+<td  bgcolor=""  class="cc">
+12</td>
+<td  bgcolor=""  class="ct" id="tt19">&nbsp;<span class="plus-minus"><span id="tmsg19" onClick='change(19, 651906, (!event.ctrlKey ? 0 : 12),(!event.ctrlKey ? -2 : +2))' style="cursor:hand; cursor:pointer">+</span></span>&nbsp;&nbsp;<a href="topic.php?id=651906" class="agb">v8: Как задать колонитул в шаблоне?</a><span id="msg19" style="display:none; visibility:hidden;"></span></td>
+<td  bgcolor=""  class="cl">
+19:47&nbsp;<span class="userlink">Мисти</span></td>
+</tr>
+<tr data-topic_id='652024' data-updated_unixtime='1360770430'>
+<td  bgcolor=""  class="cc">
+1C</td>
+<td  bgcolor=""  class="cc">
+127</td>
+<td  bgcolor=""  class="ct" id="tt20">&nbsp;<span class="plus-minus"><span id="tmsg20" onClick='change(20, 652024, (!event.ctrlKey ? 0 : 127),(!event.ctrlKey ? -2 : +2))' style="cursor:hand; cursor:pointer">+</span></span>&nbsp;&nbsp;<a href="topic.php?id=652024" class="agb"><span class="longtopics">v8: 1С медленно работает</span></a>&nbsp;&nbsp;<a rel="nofollow" class="agh" href="topic.php?id=652024&amp;page=1">1&nbsp;</a><a rel="nofollow" class="agh" href="topic.php?id=652024&amp;page=2">2&nbsp;</a><span id="msg20" style="display:none; visibility:hidden;"></span></td>
+<td  bgcolor=""  class="cl">
+19:47&nbsp;<span class="userlink">Demiurg</span></td>
+</tr></table><table id="tf">
+<tr>
+<td width="25%" align="left" valign="top">
+&nbsp;
+
+</td>
+<td> <span class="pages"><span class="curpage">1</span>&nbsp; &nbsp;<a href="index.php?page=2">2</a>&nbsp; &nbsp;<a href="index.php?page=3">3</a>&nbsp; &nbsp;<a href="index.php?page=4">4</a>&nbsp; &nbsp;<a href="index.php?page=5">5</a>&nbsp; &nbsp;<a href="index.php?page=6">6</a>&nbsp; &nbsp;<a href="index.php?page=7">7</a>&nbsp; &nbsp;<a href="index.php?page=8">8</a>&nbsp; &nbsp;<a href="index.php?page=9">9</a>&nbsp; &nbsp;<a href="index.php?page=10">10</a>&nbsp; &nbsp;<a rel="nofollow" href="index.php?id=652024&before=2013/02/13_19:47:10" class="prev-next-pagelink">&gt;&gt;</a></span><td width="25%" align="right" valign="top">
+
+
+
+</td></tr></table>
+
+<br>
+<div align="center">
+
+&nbsp;<a href="banners.php?click=204" title="Учебные материалы по 1С:УПП, КА8 и платформе 8.2"><img src="http://www.nasf.ru/ad/ad-mista/ad-mista.gif" alt="Учебные материалы по 1С:УПП, КА8 и платформе 8.2"></a><div class="advert"><a href="http://www.itunion.com.ua/">Монитор руководителя</a> &mdash; мобильное решение на Android для руководителей.</div></div>
+
+
+
+<div style="clear:both;">
+<div id="F" class="newtopic" style="margin-left:16px;float:left;">
+
+
+</div>
+
+
+<hr width="97%" size="1" noshade>
+<table width="100%"><tr><td><p class="navigation-link">
+<a href="rules.php">Правила</a>
+| <a href="about.php">Описание</a>
+| <b><a href="ad.php">Реклама на сайте</a>  </b>
+| <a href="find.php">Поиск</a>
+| <noindex><a rel="nofollow" href="sections_list.php">Секции</a>
+| <a rel="nofollow" href="rating.php">Рейтинг</a>
+| <a rel="nofollow" href="stat.php">Статистика</a>
+| <a rel="nofollow" href="lastmsg.php">Лента сообщений</a></noindex>
+| <a href="index.php?kb=1">База знаний</a>  
+| <a href="http://www.kb.mista.ru">Книга знаний</a>  
+| <noindex><a rel="nofollow" href="index.php?format=pda">КПК</a></noindex>
+| <a href="archive.php">Архив</a>  
+| <a href="moders.php">Модераторы</a>  
+| <a href="users_gallery.php">Галерея</a>  
+
+  
+<br>Сейчас на форуме 898 чел.</td>
+    <td width="9%" height="30" valign="middle"> <div align="right"> 
+
+<br>
+          <!-- HotLog -->
+
+          <script language="javascript">
+hotlog_js="1.0";
+hotlog_r=""+Math.random()+"&s=23314&im=103&r="+escape(document.referrer)+"&pg="+
+escape(window.location.href);
+document.cookie="hotlog=1; path=/"; hotlog_r+="&c="+(document.cookie?"Y":"N");
+    </script>
+          <script language="javascript1.1">
+hotlog_js="1.1";hotlog_r+="&j="+(navigator.javaEnabled()?"Y":"N")</script>
+          <script language="javascript1.2">
+hotlog_js="1.2";
+hotlog_r+="&wh="+screen.width+'x'+screen.height+"&px="+
+(((navigator.appName.substring(0,3)=="Mic"))?
+screen.colorDepth:screen.pixelDepth)</script>
+          <script language="javascript1.3">hotlog_js="1.3"</script>
+          <script language="javascript">hotlog_r+="&js="+hotlog_js;
+document.write("<a href='http://click.hotlog.ru/?23314' target='_top'><img "+
+" src='http://hit2.hotlog.ru/cgi-bin/hotlog/count?"+
+hotlog_r+"&' border=0 width=88 height=31 alt=HotLog></a>")</script>
+          <noscript>
+          <a href=http://click.hotlog.ru/?23314 target=_top><img
+src="http://hit2.hotlog.ru/cgi-bin/hotlog/count?s=23314&im=103" border=0 
+width="88" height="31" alt="HotLog"></a>
+          </noscript>
+
+          <!-- /HotLog -->
+
+
+      </div></td>
+<!--
+-->
+</tr></table>
+</div>
+</body></html>

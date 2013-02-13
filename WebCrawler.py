@@ -11,7 +11,7 @@ import datetime
 import urlparse
 import CheckUrl
 import CheckSite
-
+import httplib
 
 def Queue_Check_Push_Front(page):
     """Check the url and push into queue.
@@ -33,8 +33,8 @@ def Queue_Check_Push_Front(page):
             if not hash_table.has_key(href):
                 print "queue push front: " + href
                 queue.append(page)
-                hash_table[href] = number_visited_url #zhuoran
-                number_visited_url += 1 #zhuoran
+                hash_table[href] = number_visited_url
+                number_visited_url += 1
 
 
 class Parser(htmllib.HTMLParser):

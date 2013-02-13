@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
+       Remove this if you use the .htaccess -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Alibaba.com’s Inspection Service</title>
+    <meta name="keywords" content="Escrow LP Buyer" />
+    <meta name="description" content="null" />    
+    <meta name="viewport" content="width=device-width; initial-scale=1.0" />
+    <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />    
+    <link href="http://style.aliunicorn.com/6v/seeds/core/core|6v/seeds/mod/button/button-alibaba|6v/seeds/mod/box/box-alibaba|4v/rfq/common/gold_supplier_year/gold_supplier_year|MODERN_BROWSER|v_2_0.css" rel="stylesheet" type="text/css" media="all" />
+    <style>
+body{ text-align:center; -webkit-text-size-adjust:none; color:#333;}
+input{font-family: Arial,Helvetica,sans-senif; font-size: 75%;}
+ul,li{margin:0; padding:0; list-style:none;}
+a:link{color:#06c;text-decoration: none;}
+a:visited { color: #06c;}
+.p990{ width:990px; margin:0 auto 30px; text-align:left;} 
+.crumbs {padding-bottom:10px;padding-top:5px; position:relative;height: 16px;}
+.crumbs ul {font-size:0;}
+.crumbs li {display:inline-block;zoom:1;*display:inline;overflow:hidden;font-size:11px; font-family:Tahoma; color:#666;}
+.crumbs a:link,
+.crumbs a:visited{
+	color:#06c;
+}
+.crumbs a:hover{
+	color:#f90;
+}
+.crumbs .ellipsis{ font-weight:bold;}
+.crumbs span {padding:0 4px;font-size: 11px;font-family: arial; font-weight: bold;}
+.crumbs .quick-link{ position:absolute; right:0; top:10px;}
+.margin-bottom-normal{ margin-bottom:20px; }
+.margin-bottom-middle {margin-bottom:10px;}
+.ellipsis{white-space: nowrap;overflow: hidden;text-overflow: ellipsis;display: block;}
+.fl{ float:left; } 
+.fr{ float:right;}
+.lp-view-more,
+.lp-benefit span,
+.lp-benefit .ctrl span,
+.lp-use-escrow-buyer .step,
+.crumbs .quick-link
+{background-image:url(http://i03.i.aliimg.com/images/cms/upload/sourcing/escrow/lp_escrow.png);background-repeat:no-repeat;}
+.lp-benefit,.lp-bottom-ad{background-image:url(http://i02.i.aliimg.com/images/cms/upload/sourcing/buyer_guide/lp_line.png);background-repeat:no-repeat;}
+
+
+.crumbs .quick-link{padding-right:8px; background-position:right -46px; top: 6px;}
+.crumbs .quick-link a:link,.crumbs .quick-link a:visited{color:#333;}
+.crumbs .quick-link a:hover{color:#f90;}
+.crumbs .cn{font-size:12px;}
+
+.lp-ad{display:block;height:300px; position:relative; font-size:0;}
+.lp-article{width:750px;}
+.lp-aside{width:230px;}
+.lp-article div,
+.lp-aside div
+{
+	_zoom:1;
+}
+.lp-has-more{padding-bottom:30px !important;}
+
+/*.lp-view-more{z-index:1; position:absolute; bottom:10px; right:10px; background-position:right 3px; padding-right:8px; line-height:14px; height:14px; overflow:hidden;}
+.lp-view-more a{ text-decoration:none; display:inline-block;} 
+.lp-view-more a:hover{ text-decoration:underline;} */
+.lp-view-more{z-index:1; position:absolute;right:10px; bottom:10px;background-position:right 3px; padding-right:8px; line-height:14px; height:14px; overflow:hidden;}
+.lp-view-more a{ text-decoration:none; } 
+.lp-view-more a:hover{ text-decoration:underline; color:#f90;}
+.lp-ad img{ z-index:1;position:absolute;top:0;left:0;}
+
+.lp-banner-bg{width:100%; position:absolute; top:161px; left:0; background-color:#006f97; height:300px; z-index:0; display:block;}
+
+/*benefit*/
+.lp-benefit{background-position: 0 150px;height: 150px;margin-bottom: 5px;padding-bottom: 5px;}
+.lp-benefit li{ width:220px; float:left; padding:0 100px 0 40px; margin-top:30px; position:relative;}
+.lp-benefit .last{padding-right:0;}
+.lp-benefit li span{ position:absolute; left:0; top:0; width:30px; height:30px; display:block; }
+.lp-benefit li strong{font-size:18px; color:#333;}
+.lp-benefit li p{font-size:12px;color:#666; margin-top:5px;}
+.lp-benefit .verified-suppliers{background-position:0 -100px;}
+.lp-benefit .prompt-service{background-position:-100px -100px;}
+.lp-benefit .simple-easy{background-position:-200px -100px;}
+.lp-benefit .low-service-charges{background-position:0 -500px;}
+.lp-benefit .ctrl{padding-top:10px; text-align:left; line-height:22px;color:#999; font-size:11px; font-family:Tahoma;}
+.lp-benefit .ctrl span{background-position:0 -300px;line-height:22px; display:inline-block; height:22px;vertical-align: -8px;width: 92px;}
+
+.lp-benefit-buyer{background-position: 0 180px;height: 180px;}
+.lp-benefit-buyer li{padding: 0 75px 0 40px;width: 240px;}
+.lp-benefit-buyer li strong{ font-weight:normal;}
+
+
+/*aside*/
+.lp-common-list li{ padding:0 0 6px 8px; _height:18px;color:#666; position:relative;line-height:18px;}
+.lp-common-list li span{position:absolute; left:0; top:8px; height:3px; width:3px; background-color:#999; display:block; overflow:hidden;}
+.lp-common-list li a{line-height:18px; text-decoration:none; }
+.lp-common-list li a:link{color:#666;}
+.lp-common-list li a:visited{color:#666;}
+.lp-common-list li a:hover{ text-decoration:underline; }
+
+.lp-what-escrow li{width:348px; }
+
+/*如何使用阿里巴巴Escrow Service?*/
+.lp-use-escrow .item{ width:342px; text-align:left;}
+.lp-use-escrow h4{margin-bottom:6px; font-weight:bold; line-height:20px;}
+.lp-use-escrow .item-descript{ width:342px; height:92px;line-height: 18px; color:#666; overflow:hidden;}
+.lp-use-escrow .item-descript strong{ color:#999;}
+.lp-use-escrow .item-descript li{ width:324px; font-size: 12px;}
+
+.lp-use-escrow-buyer{ color:#666;}
+.lp-use-escrow-buyer h4{font-size:12px;}
+.lp-use-escrow-buyer p{margin-bottom:10px;}
+.lp-use-escrow-buyer .lp-use-escrow-buyer-link{ padding-top:10px;}
+.lp-use-escrow-buyer .lp-use-escrow-buyer-link a:hover{color:#f90; text-decoration:underline; }
+.lp-use-escrow-buyer .step{ background-position: 0 -550px;
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    width: 18px; vertical-align: 2px; margin-right:5px;}
+/*客户心声*/
+.lp-premium-suppliers li{ float:left; width:240px; border-right:1px dotted #ddd; position:relative; height:130px;margin-right:15px;color:#666; line-height:18px; }
+.lp-premium-suppliers li.last{width:236px;border:none;margin:0;}
+.lp-premium-suppliers .pic{ width:80px; height:80px; position:absolute; left:0; top:0; display:block; font-size:0;}
+.lp-premium-suppliers .title{ position:absolute; left:90px; top:0; font-weight:bold; width:140px;}
+.lp-premium-suppliers .content{ position:absolute; left:90px; top:39px;color:#666;  width:140px;}
+
+/*Buyer Testimonials*/
+.lp-buyer-testimonials li{ float:left; width:240px; border-right:1px dotted #ddd; position:relative; height:155px;margin-right:15px;color:#666; line-height:18px; }
+.lp-buyer-testimonials li.last{width:236px;border:none;margin:0;}
+.lp-buyer-testimonials .title{ position:absolute; left:40px; top:0; font-weight:bold; width:140px;}
+.lp-buyer-testimonials .content{ padding:10px 10px 0 0;}
+
+.lp-aside h4{ font-size:12px; font-weight:bold; margin-bottom:10px; }
+</style>
+	<style>
+		#what-inspector-box p {
+			line-height: 18px;
+			padding: 0 13px;
+		}
+		#what-inspector-box .lp-common-list li{
+			float: none;
+			clear: both;
+			width: 100%;
+		}
+		#what-inspector-box .lp-common-list li.fl {
+			font-weight: bold;
+		}
+		.lp-use-escrow-buyer .lp-use-escrow-buyer-link {
+			text-align: right;
+		}
+		section .ui-box-content {
+			border: 1px solid #DDD;
+			border-top: none;
+		}
+		.submit-button-wrapper {
+			text-align: center;
+		}
+		.submit-button-wrapper input {
+			font-size: 18px;
+			font-weight: bold;
+			padding: 6px 18px;
+		}
+		#inspector-entry-box li span {
+			background: url("http://img.alibaba.com/simg/sprites/env/aisn/inspecter-home.png") no-repeat scroll 0 0 transparent;
+		}
+		#inspector-entry-box .simple-easy {
+			background-position: 0 -60px;
+		}
+                #inspector-entry-box {
+	background-position: 0 210px;
+	height: 210px;
+}
+		#inspector-entry-box .low-service-charges {
+			background-position: 0 -120px;
+		}
+#inspector-entry-box .submit-button-wrapper {
+	padding-top: 8px;
+}
+		</style>
+    <script type="text/javascript" src="http://style.alibaba.com/js/ae.js" ></script>
+    <!--[if lt IE 9]>
+    <script src="http://style.alibaba.com/js/5v/lib/html5/html5.js" type="text/javascript"></script>
+    <![endif]-->
+</head>
+<body class="alibaba"><script type=text/javascript src="http://img.alibaba.com/js/beacon_en.js"></script>             <script type=text/javascript>var dmtrack_c='{-}'; var dmtrack_pageid='7f0000017f0000011360772943'; sk_dmtracking();</script>             <noscript><img src="http://dmtracking2.alibaba.com/b.jpg?cD0xJnU9ey9pbnNwZWN0aW9uLmFsaWJhYmEuY29tLz90cmFjZWxvZz1lZHVfbmV3c2NocF9pbnN9Jm09e0dFVH0mcz17MjAwfSZyPXstfSZhPXstfSZiPXstfSZjPXstfQ==&ver=40&pageid=7f0000017f0000011360772943&time=1360772943" width="1" height="1" style="display:none"></noscript>
+<div class="lp-banner-bg" style="background:url('http://img.alibaba.com/images/cms/upload/banner/1400x300_inspection_home_banner.jpg') no-repeat scroll center 0 #DCC47C;"></div>
+<div class="p990">
+	<link href="http://style.alibaba.com/css/6v/seeds/mod/header/header-alibaba-channel.css" rel="stylesheet" type="text/css">
+<script src="http://style.alibaba.com/js/5v/mod/common/header/header-alibaba-channel/header-alibaba-channel.js" type="text/javascript"></script>
+<!--[if lte IE 8]> 
+<script>document.createElement('header');document.createElement('footer');</script>
+<![endif]-->
+<header id="header2012" class="header header-big header-fixed header-big-module-action header-big-module-search-type">
+	<div id="header-nav" class="header-nav clearfix">
+    <div id="header-nav-user" class="header-nav-user"></div>
+    <ul class="header-nav-main">
+        <li class="header-nav-item J-nav-item-drop">
+            <a class="header-nav-item-link" rel="nofollow" href="http://www.alibaba.com/Products?cd=buyhome">Buy <span class="header-arrow header-arrow-down"></span></a>
+            <ul class="header-nav-subitems" style="display:none">
+                <li class="header-nav-subitem">
+                    <a class="header-nav-subitem-link" rel="nofollow" href="http://www.alibaba.com/help/user-guide-new.html?tracelog=HP_quickguide_20121010">How to buy</a>
+                </li>
+                <li class="header-nav-subitem">
+                    <a class="header-nav-subitem-link" rel="nofollow" href="http://hz.sourcing.alibaba.com/rfq/request/post_buy_request.htm?tracelog=new_guide_0418_newschp">Post Buying Requests</a>
+                </li>
+                <li class="header-nav-subitem">
+                    <a class="header-nav-subitem-link" rel="nofollow" href="http://trademanager.alibaba.com/">Download TradeManager</a>
+                </li>
+            </ul>
+        </li>
+        <li class="header-nav-item J-nav-item-drop">
+            <a class="header-nav-item-link" rel="nofollow" href="http://sourcing.alibaba.com/?tracelog=newschp_nav_sell">Sell <span class="header-arrow header-arrow-down"></span></a>
+            <ul class="header-nav-subitems" style="display:none">
+                <li class="header-nav-subitem">
+                    <a class="header-nav-subitem-link" rel="nofollow" href="http://sourcing.alibaba.com/rfq_search_list.htm?availability=y&tracelog=newschp_nav_narfq">Newly added RFQs</a>
+                </li>
+                <li class="header-nav-subitem">
+                    <a class="header-nav-subitem-link" rel="nofollow" href="http://sh.vip.alibaba.com/product/post_product_interface.htm?tracelog=newschp_nav_sell_dp">Display new products</a>
+                </li>
+                <li class="header-nav-subitem">
+                    <a class="header-nav-subitem-link" rel="nofollow" href="http://sh.vip.alibaba.com/product/manage_products.htm?tracelog=newschp_nav_sell_mng">Manage products</a>
+                </li>
+                <li class="header-nav-subitem">
+                    <a class="header-nav-subitem-link" rel="nofollow" href="http://www.alibaba.com/help/seller_membership.html">Seller Services</a>
+                </li>
+            </ul>
+        </li>
+        <li class="header-nav-item J-nav-item-drop">
+            <a class="header-nav-item-link" rel="nofollow" href="http://community.alibaba.com/">Community <span class="header-arrow header-arrow-down"></span></a>
+            <ul class="header-nav-subitems" style="display:none">
+                <li class="header-nav-subitem">
+                    <a class="header-nav-subitem-link" rel="nofollow" href="http://resources.alibaba.com/forum/trade_related.htm">Forums</a>
+                </li>
+                <li class="header-nav-subitem">
+                    <a class="header-nav-subitem-link" rel="nofollow" href="http://tradeshow.alibaba.com/">Trade Shows</a>
+                </li>
+                <li class="header-nav-subitem">
+                    <a class="header-nav-subitem-link" rel="nofollow" href="http://news.alibaba.com/success/SuccessStory.htm?tracelog=newschp_nav_ss">Success Stories</a>
+                </li>
+            </ul>
+        </li>
+        <li class="header-nav-item J-nav-item-drop">
+            <a class="header-nav-item-link" style="font-weight:bold" rel="nofollow" href="http://sh.vip.alibaba.com/">My Alibaba <span class="header-arrow header-arrow-down"></span></a>
+            <ul class="header-nav-subitems" style="display:none">
+                <li class="header-nav-subitem">
+                    <a class="header-nav-subitem-link" rel="nofollow" href="http://message.alibaba.com/feedback/default.htm?routeto=inbox">Message Center</a>
+                </li>
+                <li class="header-nav-subitem">
+                    <a class="header-nav-subitem-link" rel="nofollow" href="http://sh.vip.alibaba.com/product/post_product_interface.htm?tracelog=newschp_nav_madp">Display new products</a>
+                </li>
+                <li class="header-nav-subitem">
+                    <a class="header-nav-subitem-link" rel="nofollow" href="http://sh.vip.alibaba.com/product/manage_products.htm?tracelog=newschp_nav_mamng">Manage Products</a>
+                </li>
+                <li class="header-nav-subitem">
+                    <a class="header-nav-subitem-link" rel="nofollow" href="http://hz.sourcing.alibaba.com/rfq/request/post_buy_request.htm?tracelog=new_guide_0418_newschp">Post Buying Requests</a>
+                </li>
+                <li class="header-nav-subitem">
+                    <a class="header-nav-subitem-link" rel="nofollow" href="http://trademanager.alibaba.com/">Download TradeManager</a>
+                </li>
+                <li class="header-nav-subitem">
+                    <a class="header-nav-subitem-link" rel="nofollow" href="http://www.alibaba.com/help/premium_memberships.html">Premium Memberships</a>
+                </li>
+            </ul>
+        </li>
+        <li id="header-nav-item-message" class="header-nav-item J-nav-item-drop">
+            <a class="header-nav-item-link" rel="nofollow" href="javascript:;">Messages<span class="J-nav-item-message-count"></span></a>
+            <ul class="header-nav-subitems" style="display:none">
+                <li class="header-nav-subitem">
+                    <a class="header-nav-subitem-note" rel="nofollow" href="javascript:;">No new notifications</a>
+                </li>
+                <!--<li class="header-nav-subitem">
+                    <a class="header-nav-subitem-separator" rel="nofollow" href="javascript:;"></a>
+                </li>
+                <li class="header-nav-subitem">
+                    <a class="header-nav-subitem-entrance" rel="nofollow" href="javascript:;">View Inquires</a>
+                </li>
+                <li class="header-nav-subitem">
+                    <a class="header-nav-subitem-entrance" rel="nofollow" href="javascript:;">View Quotes</a>
+                </li>
+                <li class="header-nav-subitem">
+                    <a class="header-nav-subitem-entrance" rel="nofollow" href="javascript:;">View Buying Requests</a>
+                </li>
+                <li class="header-nav-subitem">
+                    <a class="header-nav-subitem-entrance" rel="nofollow" href="javascript:;">View Emails</a>
+                </li>-->
+            </ul>
+        </li>
+        <li class="header-nav-item">
+            <a class="header-nav-item-link" rel="nofollow" href="http://hz.favorite.alibaba.com/">My Favorites</a>
+        </li>
+        <li class="header-nav-item J-nav-item-drop header-nav-item-last">
+            <a class="header-nav-item-link" rel="nofollow" href="http://www.alibaba.com/help">Help <span class="header-arrow header-arrow-down"></span></a>
+            <ul class="header-nav-subitems" style="display:none">
+                <li class="header-nav-subitem">
+                    <a class="header-nav-subitem-link" rel="nofollow" href="http://www.alibaba.com/help/safety_security.html">Safety & Security Center</a>
+                </li>
+                <li class="header-nav-subitem">
+                    <a class="header-nav-subitem-link" rel="nofollow" href="http://resources.alibaba.com/suggestion">Suggestions</a>
+                </li>
+                <li class="header-nav-subitem">
+                    <a class="header-nav-subitem-link" rel="nofollow" href="http://www.alibaba.com/help/contact-us.html#askquestion">Contact Us</a>
+                </li>
+                <li class="header-nav-subitem">
+                    <a class="header-nav-subitem-link" rel="nofollow" href="http://channel.alibaba.com/complaint/home.htm?tracelog=newschp_help_complaint">Submit a Complaint</a>
+                </li>
+                <li class="header-nav-subitem">
+                    <a class="header-nav-subitem-link" rel="nofollow" href="http://legal.alibaba.com/index.htm?site_type=international&language_id=english&tracelog=newschp_help_ipr">Report IPR Infringement</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+	<div class="header-main clearfix">
+	    <div class="header-logo">
+	<a title="Manufacturers" href="http://www.alibaba.com">Alibaba.com</a>
+</div>
+	    <div id="header-extend" class="header-extend">
+</div>
+	    <div class="header-action clearfix">
+	<span class="header-action-sep">or</span>
+	<a rel="nofollow" class="header-action-rfq" href="http://us.my.alibaba.com/rfq/request/post_buy_request.htm?tracelog=47609_hp_post_botton&amp;source=searchbar" target="_blank">Post Buying Request</a>
+</div>
+	    <form method="get" id="header-search-form" action="http://www.alibaba.com/trade/search">
+    <input type="hidden" name="fsb" value="y"/>
+    <input type="hidden" id="header-field-type" name="IndexArea" value="product_en"/>
+    <input type="hidden" id="header-field-category" name="CatId" value=""/>
+    <div class="header-search">
+        
+		<div id="header-search-type" class="header-search-type">
+		    <div class="header-search-type-value">
+		        <span id="search-type-display">Products</span>
+		        <span class="header-arrow header-arrow-down header-search-type-arrow"></span>
+		    </div>
+		    <ul id="search-type-options" class="header-search-type-options" style="display: none; ">
+		        <li class="header-search-type-option"><a rel="nofollow" data-value="products" href="javascript:void(0)">Products</a></li>
+		        <li class="header-search-type-option"><a rel="nofollow" data-value="suppliers" href="javascript:void(0)">Suppliers</a></li>
+		        <li class="header-search-type-option"><a rel="nofollow" data-value="buyers" href="javascript:void(0)">Buyers</a></li>
+		    </ul>
+		</div>
+        
+        <div class="header-search-main">
+            <input id="SearchTextIdx" name="SearchText" class="header-search-keyword" type="text" autocomplete="off" placeholder="Please input a keyword">
+            <div id="header-suggest-dynamic" class="header-dynamic-search header-search-keyword-panel" style="display: none; "></div>
+        </div>
+    <input type="submit" class="header-action-submit" id="header-action-search" value="Search" />
+    </div>
+</form>
+	</div>
+	<a rel="nofollow" id="header-advanced-search" href="javascript:void(0);">
+	Advanced Search
+</a>
+	<div id="header-ae" class="header-ae">
+	Shopping online? <a class="J-header-ae-link" rel="nofollow" target="_blank" href="http://www.aliexpress.com">Buy it now</a>
+</div>
+</header>
+<script>
+AE.use(['common.header.headerChannel'], function(header){
+    var config = AE.use('common.header.config')[0] || {};
+    header.init(config);
+});
+</script>
+    <nav class="crumbs" rola="crumbs">
+        <ul class="clearfix"><li><a href="http://www.alibaba.com">Home</a><span>&gt;</span></li><li  class="ellipsis" >Inspection Service</li></ul>
+        <!--<span class="quick-link"><a href="http://www.alibaba.com/escrow/supplier.html" class="cn">我是卖家</a></span>-->
+    </nav>
+    
+    <section class="lp-ad">
+        
+    </section>
+    
+    <section class="lp-benefit lp-benefit-buyer" id="inspector-entry-box">
+        <!--<div class="ctrl"><span></span>Alibaba.com’s Escrow Service</div>-->
+        <ul class="clearfix">
+            <li><span class="verified-suppliers"></span><strong>Reliable Inspectors</strong><p>Alibaba.com will check every inspector's qualifications to confirm their authenticity and capabilities.</p></li>
+            <li><span class="simple-easy"></span><strong>Secure Payment</strong><p>Escrow Service makes sure that your payment is held securely and released to the inspector only after you confirm satisfactory receipt of the inspection report.</p></li>
+            <li class="last"><span class="low-service-charges"></span><strong>Affordable service</strong><p>we offer a wide price range from different types of inspectors to satisfy the specific inspection requirements of different buyers.</p></li>
+        </ul>
+		<div class="submit-button-wrapper">
+                   <a href="/1.html?tracelog=edu_newschp_ins_list" class="ui-button ui-button-primary" style="color:#fff;font-size:18px;font-weight:bold;padding: 8px 18px;border:1px solid #E87B0E;display:inline-block;*line-height:22px;">Find Inspectors</a>			
+		</div>
+    </section>
+    
+    <div style="display:block; height:20px; overflow:hidden; clear:both;"></div>
+    <div class="clearfix">
+        <article class="fl lp-article">
+            <section class="ui-box ui-box-normal margin-bottom-middle lp-what-escrow" id="what-inspector-box">
+                <h3 class="ui-box-title">What is Alibaba.com’s Inspection Service? </h3>
+                <div class="ui-box-content lp-has-more" style="border:none;">
+                	<p>With Alibaba.com’s Inspection Service, you can order services from professional 3rd party inspectors and inspection companies directly on the Internet at <a href="/">http://inspection.alibaba.com</a> The inspector will visit the manufacturing and/or port facilities anywhere in China and make reports including pictures to certify that the goods being produced and shipped reach quality standards.</p>
+                    <ul class="clearfix lp-common-list">
+                        <li class="fl"> Types of inspections generally offered:</li>
+                        <li class="fr"> • Initial Production Inspection  •  During Production Inspection  •  Final Random Inspection  •  Container Loading Check  •  Factory Audit.</li>
+                   </ul>
+                   <div class="lp-view-more"><a href="http://www.alibaba.com/help/safety_security/products/inspectionService/faq.html" title="View more">View more</a></div>
+                </div>
+            </section>
+            <section class="ui-box ui-box-normal margin-bottom-normal lp-use-escrow lp-use-escrow-buyer">
+                <h3 class="ui-box-title">How to use</h3>
+                <div class="ui-box-content lp-has-more">                	
+                    <div class="how-to-use clearfix"><img src="http://i03.i.aliimg.com/images/cms/upload/banner/inspector_guide.jpg" /></div>
+                    <div class="lp-view-more"><a href="http://www.alibaba.com/help/safety_security/products/inspectionService/marginRules.html" title="View more" target="_blank">View More</a></div>
+                </div>
+            </section>            
+        </article>
+        <aside class="fr lp-aside">
+            <section class="ui-box ui-box-normal ui-box-wrap margin-bottom-normal">
+                <h3 class="ui-box-title">Notice</h3>
+                <div class="ui-box-content">
+                    <ul class="lp-common-list">
+                        <li><span></span><a href="http://www.alibaba.com/help/safety_security/products/inspectionService.html" target="_blank">Inspection Transactions General Rules</a></li>
+                        <li><span></span><a href="http://www.alibaba.com/help/safety_security/products/inspectionService/rules.html" target="_blank">Time Limits for Inspection Transactions</a></li>
+						<li><span></span><a href="http://www.alibaba.com/help/safety_security/products/inspectionService/disputeRules.html" target="_blank">Alibaba.com Inspection Transactions Dispute Rules</a></li>
+                    </ul>
+                </div>
+            </section>
+            <section class="ui-box ui-box-normal ui-box-wrap margin-bottom-normal">
+                <h3 class="ui-box-title">FAQ</h3>
+                <div class="ui-box-content lp-has-more">                   
+                    <ul class="lp-common-list">
+                        <li><span></span><a href="http://www.alibaba.com/help/safety_security/products/inspectionService/faq.html#Q3" target="_blank">How does the Inspection Service work?</a></li>
+                        <li><span></span><a href="http://www.alibaba.com/help/safety_security/products/inspectionService/faq.html#Q10" target="_blank">How does payment work for the Inspection Service?</a></li>
+						<li><span></span><a href="http://www.alibaba.com/help/safety_security/products/inspectionService/faq.html#Q13" target="_blank">How do I leave feedback for my inspection order?</a></li>
+                    </ul>                    
+                    <div class="lp-view-more"><a href="http://www.alibaba.com/help/safety_security/products/inspectionService/faq.html" title="View more" target="_blank">View more</a></div>
+                </div>
+            </section>
+        </aside>
+    </div>
+	
+            <section class="ui-box ui-box-normal margin-bottom-normal lp-use-escrow lp-use-escrow-buyer">
+                <h3 class="ui-box-title">Inspection Information</h3>
+                <div class="ui-box-content lp-has-more" style="padding:0px; margin:0px;">                	
+                    <div class="how-to-use clearfix" style="padding:0px; margin:0px;"><a href="/1.html?tracelog=edu_newschp_ins_list"><img src="http://i03.i.aliimg.com/images/cms/upload/banner/20121211_988x500_yh_list.png" border="0" ></a></div>
+                </div>
+            </section>            
+			<div class="submit-button-wrapper">
+                   <a href="/1.html?tracelog=edu_newschp_ins_list" class="ui-button ui-button-primary" style="color:#fff;font-size:18px;font-weight:bold;padding: 8px 18px;border:1px solid #E87B0E;display:inline-block;*line-height:22px;">Find more Inspectors</a>			
+		</div>
+	
+</div>
+<link rel="stylesheet" href="http://style.aliunicorn.com/6v/apollo/mod/footer/footer-sc|null.css?t=20130130" media="screen" />
+<!--[if lte IE 8]>
+<script>document.createElement('footer');</script>
+<![endif]-->
+<footer id="ui-footer" class="ui-footer ui-footer-wrapper">
+	<div class="ui-footer-sociality util-clearfix clearfix">
+    <div class="ui-footer-col ui-footer-col-first share">
+        Follow us:
+        <span id="footer-sociality-share">
+        <a rel="nofollow" target="_blank" title="Follow us on facebook" href="http://www.facebook.com/AlibabaUS" class="facebook">Facebook</a>
+        <a rel="nofollow" target="_blank" title="Follow us on twitter" href="https://twitter.com/#!/AlibabaTalk" class="twitter">Twitter</a>
+        <a rel="nofollow" target="_blank" title="Follow us on youtube" href="http://www.youtube.com/user/TeamAlibaba" class="youtube">Youtube</a>
+        </span>
+    </div>
+    <div class="ui-footer-col app" >
+        Free APP:
+        <a rel="nofollow" target="_blank" title="Available on the App Store" href="http://www.alibaba.com/activities/wireless2012.html?tracelog=sourcing_mobile_lp_ios" class="app-store">Available on the App Store</a>
+        <a rel="nofollow" target="_blank" title="Available on Android" href="http://www.alibaba.com/activities/wireless2012.html?tracelog=sourcing_mobile_lp_ios" class="android">Available on Android</a>
+    </div>
+    <div class="ui-footer-col ta" >
+        <form target="_blank" method="get" action="http://us.my.alibaba.com/tradealert/myalibaba/sub_scription_trade_alert.htm">
+            <input type='hidden' name='_csrf_token_' value='6p14o9c5lsa3'>
+            <input class="text" type="text" name="keyword" placeholder="Input keywords" />
+            <input class="submit" type="submit" value="Subscribe" />
+        </form>
+    </div>
+    <div class="ui-footer-col atm" >
+        TradeManager:
+        <a rel="nofollow" target="_blank" title="Download Ali TradeManager for instant chat" href="http://trademanager.alibaba.com/" class="atm-download"></a>
+    </div>
+    <div class="ui-footer-col feedback" >
+        Feedback:
+        <a rel="nofollow" target="_blank"  onclick="javascript:this.href+='?c='+encodeURIComponent(document.location.href);"  title="We welcome your feedback!" href="https://www.surveymonkey.com/s/F7YM9WX"  class="feedback-link"></a>
+    </div>
+</div>
+	<hr/>
+	<div class="ui-footer-seo">
+    <p>
+        Industry channel:<a target="_blank" href="http://machinery.alibaba.com/">Machinery</a>
+        - <a target="_blank" href="http://construction.alibaba.com/">Construction</a>
+        - <a target="_blank" href="http://electronic.alibaba.com/">Electronic</a>
+        - <a target="_blank" href="http://automobile.alibaba.com/">Automobiles</a>
+        - <a target="_blank" href="http://furniture.alibaba.com/">Furniture</a>
+        - <a target="_blank" href="http://sports.alibaba.com/">Sports</a>
+        - <a target="_blank" href="http://electrical.alibaba.com/">Electrical</a>
+        - <a target="_blank" href="http://home.alibaba.com/">Home</a>
+        - <a target="_blank" href="http://packaging.alibaba.com/">Packaging</a>
+        - <a target="_blank" href="http://beauty.alibaba.com/">Beauty</a>
+    </p>
+    
+    <p>
+        Browse by:<a href="http://www.alibaba.com/">Manufacturers</a>
+        - <a target="_blank" href="http://www.aliexpress.com/">Online Shopping</a>
+        - <a href="http://chinasuppliers.alibaba.com/">China Gold Suppliers</a>
+        - <a href="http://www.alibaba.com/showroom/showroom.html">All Products</a>
+        - <a href="http://www.alibaba.com/countrysearch/continent.html">Countries</a>
+        - <a href="http://importer.alibaba.com/importers.html">Importers</a>
+        - <a href="http://importer.alibaba.com/">Buying Leads</a>
+        - <a href="http://www.alibaba.com/countrysearch/CN-China.html">China</a>
+        - <a href="http://india.alibaba.com">India</a>
+    </p>
+    
+    <p>
+        <a rel="nofollow" href="http://www.alibaba.com/aboutalibaba/aligroup/index.html">Alibaba Group</a>: 
+        <a target="_blank" href="http://china.alibaba.com">Alibaba China</a>
+        - <a target="_blank" href="http://www.alibaba.com">Alibaba International</a>
+        - <a target="_blank" href="http://www.aliexpress.com/">AliExpress</a>
+        | <a target="_blank" href="http://www.taobao.com">Taobao Marketplace</a>
+        | <a target="_blank" href="http://www.tmall.com">Tmall.com</a>
+        | <a target="_blank" href="http://www.etao.com">eTao</a>
+        | <a target="_blank" href="http://ju.taobao.com">Juhuasuan</a>
+        | <a target="_blank" href="http://www.aliyun.com">Alibaba Cloud Computing</a>
+        | <a target="_blank" href="http://cn.yahoo.com">China Yahoo!</a>
+        | <a target="_blank" href="https://www.alipay.com">Alipay</a>
+    </p>
+    
+    <p>
+        <a href="http://news.alibaba.com/article/detail/help/100454423-1-product-listing-policy.html" rel="nofollow">Product Listing Policy</a>
+        - <a href="http://news.alibaba.com/article/detail/help/100453304-1-intellectual-property-rights-%2528ipr%2529-protection.html" rel="nofollow">Intellectual Property Policy and Infringement Claims</a>
+        - <a href="http://news.alibaba.com/article/detail/help/100453303-1-privacy-policy.html" rel="nofollow">Privacy Policy</a>
+        - <a href="http://news.alibaba.com/article/detail/help/100453293-1-terms-use.html" rel="nofollow">Terms of Use</a>
+    </p>
+    
+    <p class="ui-footer-copyright">
+        <a rel="nofollow" href="http://www.alibaba.com/trade/servlet/page/static/copyright_policy">Copyright Notice</a> &copy; 1999-2013 Alibaba.com Hong Kong Limited and licensors. All rights reserved.
+    </p>
+</div>
+ </footer>
+</body>
+</html><!--  IntlCmsPageId=200016557  --><!--  IntlCmsPageId=200019536  -->

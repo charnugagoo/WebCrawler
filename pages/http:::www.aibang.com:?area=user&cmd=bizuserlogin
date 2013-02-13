@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/><title>爱帮生活搜索-注册登录</title>
+<link rel="stylesheet" type="text/css" href="http://i0.aibangjuxin.com/css12121318/BizUserLogin_1.css" />
+  </head>
+  <body>
+    <div class="page1000">
+      <div class="top_nav pr">
+  
+    <div class="head_login" id="loginTipUserInfo" bi="topnav|1">
+             <a onmousedown="sendHtmlReqForlog('loginTip_reg');" href="http://www.aibang.com/?area=user&amp;cmd=showregister" rel="nofollow" >快速注册</a>|
+        <a id="loginNew" onmousedown="sendHtmlReqForlog('loginTip_login_user');" href="javascript:;" rel="nofollow" >登录</a>|      
+        <a onmousedown="sendHtmlReqForlog('loginTip_login_biz');" href="http://www.aibang.com/?area=user&amp;cmd=bizuserlogin" rel="nofollow" >商户登录</a>
+          </div>   
+        <div class="quick_nav">
+    
+              <a  href="http://www.aibang.com/beijing/" onmousedown="Log.run('in_tip_frontpage')" rel="nofollow" >爱帮首页</a>|
+        <a class="sel" href="http://www.aibang.com/beijing/bizall" onmousedown="sendHtmlReqForlog('in_tip_searchbiz')" rel="nofollow" >找商户</a>|
+        <a  href="http://bus.aibang.com/beijing/" onmousedown="sendHtmlReqForlog('in_tip_traffic')" rel="nofollow" >查公交</a>|
+        <a href="http://tuan.aibang.com/beijing/" onmousedown="sendHtmlReqForlog('in_tip_abt')" target="_blank" rel="nofollow" >团购</a>|  
+        <a href="http://bbs.aibang.com" target="_blank" onmousedown="sendHtmlReqForlog('in_tip_bbs')" rel="nofollow" >社区</a>|       
+                <a href="http://youhui.aibang.com/beijing/list/" onmousedown="sendHtmlReqForlog('in_tip_youhui')" target="_blank" rel="nofollow" >优惠券</a>|
+                
+         
+      <a href="http://www.aibang.com/mobileclient/ablife/" target="_blank" onmousedown="sendHtmlReqForlog('in_tip_wappage');AB.biTraceEvent('topnav','2','手机版');" class="wap_nav" rel="nofollow" >手机版</a>|
+      <a href="http://www.aibang.com/wangzhan-shoulu-tijiao/" target="_blank" onmousedown="sendHtmlReqForlog('in_tip_life')">收录提交</a> |
+      <a class="nav_tab" id="quickNav" href="javascript:void(0)" onmousedown="AB.biTraceEvent('topnav','3','网站导航');" rel="nofollow" >网站导航</a>
+      <ul id="nav_list" bi="topnav|4">  
+                  <li><a  href="http://map.aibang.com/beijing/" onmousedown="sendHtmlReqForlog('in_tip_mapview')" rel="nofollow" >地图</a></li>
+                
+                  <li><a  href="http://z.aibang.com/" onmousedown="sendHtmlReqForlog('in_tip_tuanju')" rel="nofollow" >团购导航</a></li>
+             
+        <li><a  href="http://jipiao.aibang.com/" onmousedown="sendHtmlReqForlog('in_tip_qjipiao')" rel="nofollow" >机票</a></li>
+        <li><a  href="http://jingyan.aibang.com/" onmousedown="sendHtmlReqForlog('in_tip_exp')" rel="nofollow" >网友经验</a></li>        
+        <li><a  href="http://www.aibang.com/youbian" onmousedown="sendHtmlReqForlog('in_tip_youbian')" rel="nofollow" >邮编查询</a></li>
+        <li><a  href="http://www.aibang.com/?area=com&amp;cmd=uuu" onmousedown="sendHtmlReqForlog('in_tip_bianmin')" rel="nofollow" >便民工具</a></li>
+      </ul>          
+    </div>        
+  
+</div>            <div class="logo_t pr" bi="logo">
+          <a href="http://www.aibang.com/beijing/" bi="||logo">
+        <img src="http://i2.aibangjuxin.com/images/logo/ABheader_logo.png" width="182" height="48" onmousedown="AB.sendHtmlReqForlog('logo_left');" alt="爱帮网"/>
+      </a>
+        <div class="search_city">
+            
+            <a href="http://www.aibang.com/cities-www" id="city" onmousedown="AB.biTraceEvent('chgcity','1','北京');">北京</a>
+            <a href="javascript:void(0);" id="changeCity" class="switch" onmousedown="AB.sendHtmlReqForlog('in_change_city_a_m');AB.biTraceEvent('chgcity','2','切换城市');">[切换城市]</a>
+                           
+    </div>
+                                <div class="clear f0"></div>
+  </div>
+<div id="addr_drop_new" style="display: none;"></div>
+
+    <script type="text/javascript" src="http://i1.aibangjuxin.com/js12121318/jquery.min.js"></script>
+    <script></script>
+<script src="http://i1.aibangjuxin.com/js12121318/ABHeader_2.js" type="text/javascript"></script>
+<img src="http://i2.aibangjuxin.com/images/ajax-loader.gif" id="ajax_loading" style="display: none;"  width="100" height="65" alt=""/>
+<div id="msg1" class="hide dn">&nbsp;</div>
+      
+      <div class="abLogin biz_user_login">
+        <h1 class="login_tab">商家登录</h1>
+        <div class="right pr">
+          <div class="to_reg">
+            没有帐号？<a class="fb" href="/?area=user&cmd=showregister"  onmousedown="sendHtmlReqForlog('loginPage_reg_biz');" >立即注册</a>
+          </div>         
+          <a class="tuiguang" target="_blank" href="http://yingxiao.aibang.com/zhixiao/"  onmousedown="sendHtmlReqForlog('loginPage_promotion');" >申请商户推广&gt;&gt;</a>             
+        </div>
+        <div class="left">          
+          <form id="loginForm" action="http://yingxiao.aibang.com/v2/?area=newbiz&cmd=login" method="post">
+            <div id="bizTipDiv" style="display:none">请使用爱帮注册用户名和密码登录，登录后您将进入商户营销中心。</div>
+            <fieldset>                  
+              <div class="login_row">
+                <label >帐号</label>
+                <div class="rMsg_bg">
+                  <input id="name" name="name" type="text" maxlength="50" class="txt3" value="可以是您的昵称/Email/手机号"/>
+                  <span class="rMsg hide" id="unameTip">帐号不存在</span>
+                </div>
+              </div>
+              <div class="login_row">
+                <label>密码</label>
+                <div class="rMsg_bg">
+                  <input id="passwd" name="passwd" type="password" maxlength="16" class="txt3"/>
+                  <span class="rMsg hide" id="pwdTip">密码错误</span>
+                </div>
+              </div>
+               <div class="pt5">
+                <label>&nbsp;</label>&nbsp;&nbsp;&nbsp;
+                <input class="checkbox" name="r2" value="1" type="checkbox"  checked="checked" />
+                <span class="f12">下次自动登录</span>
+                <span class="grey">&nbsp;|&nbsp;</span>
+                <a class="f12" href="/?area=user&cmd=tofindpsw" onmousedown="sendHtmlReqForlog('loginPage_forgotPwd');">忘记密码？</a>
+              </div>
+              <div class="login_row" id="verifyCodeDiv" style="display:none" >
+                <label>验证码</label>
+                <div class="rMsg_bg">
+                  <input id="verifycode" name="verifycode" type="text" value="" class="txt" />&nbsp;&nbsp;
+                  <img id="cs" src="/authimg.php"/>&nbsp;&nbsp;
+                  <span><a class="u f12" href="javascript:;"  id="changeCheckCode">看不清？</a></span>
+                  <span class="rMsg hide" id="verifycodeTip">验证码错误</span>
+                </div>
+              </div>             
+              <div class="login_row mt15">
+                <label>&nbsp;</label>&nbsp;
+                <input id="loginBtn" type="submit"  value="登 录" class="redBtn"  onmousedown="sendHtmlReqForlog('loginPage_login');" />                
+                <input type="hidden" name="dest" value=""/>
+                <input type="hidden" name="backurl" value=""/>
+              </div>
+            </fieldset>
+          </form>                       
+        </div>        
+      </div>
+      <script src="http://i1.aibangjuxin.com/js12121318/page/BizUserLogin.js"></script>
+      <div class="h0 f0 clear"></div>    <div id="msg" onmousedown="AB.sendHtmlReqForlog('in_change_city_a_c')">
+  <div class="pop_window" id="cityBox" style="display: none;">
+    <div class="hotcitylist" bi="chgcity|3">
+                <a href="http://www.aibang.com/beijing/">北京</a>
+        <a href="http://www.aibang.com/shanghai/">上海</a>
+        <a href="http://www.aibang.com/guangzhou/">广州</a>
+        <a href="http://www.aibang.com/hangzhou/">杭州</a>
+        <a href="http://www.aibang.com/chengdu/">成都</a>
+        <a href="http://www.aibang.com/shenzhen/">深圳</a>
+        <a href="http://www.aibang.com/nanjing/">南京</a>
+        <a href="http://www.aibang.com/chongqing/">重庆</a>
+        <a href="http://www.aibang.com/wuhan/">武汉</a>
+        <a href="http://www.aibang.com/shenyang/">沈阳</a>
+        <a href="http://www.aibang.com/tianjin/">天津</a>
+        <a href="http://www.aibang.com/xian/">西安</a>
+        <a href="http://www.aibang.com/haerbin/">哈尔滨</a>
+        <a href="http://www.aibang.com/xiamen/">厦门</a>
+        <a href="http://www.aibang.com/jinan/">济南</a>
+        <a href="http://www.aibang.com/zhengzhou/">郑州</a>
+        <a href="http://www.aibang.com/ningbo/">宁波</a>
+        <a href="http://www.aibang.com/qingdao/">青岛</a>
+        <a href="http://www.aibang.com/dalian/">大连</a>
+        <a href="http://www.aibang.com/suzhou/">苏州</a>
+        <p><a href="http://www.aibang.com/cities-www" onmousedown="AB.biTraceEvent('chgcity','4','更多城市');">更多城市</a></p>
+            </div>
+    <span class="tri_pointer_out">◆<span class="tri_pointer">◆</span></span>
+</div></div>
+
+
+    <div class="footer">
+        <span>&copy; 2007-2013 Aibang&nbsp;<a class="icp" href="http://www.miibeian.gov.cn" target="_blank" onmousedown="sendHtmlReqForlog('in_home_foot_link');" rel="nofollow" >京ICP备07008439号</a>&nbsp;京公网安备110105005728号 </span>    
+    
+        <span class="footer_link dib f0 pr">           
+            <span class="divider f12">|</span><a class="f12" href="http://www.aibang.com/files/About.html" target="_blank" onmousedown="sendHtmlReqForlog('in_home_foot_guanyu');" rel="nofollow" >关于爱帮</a>
+            <span class="divider f12">|</span><a class="f12" href="http://www.aibang.com/files/ContactMain.html" target="_blank" onmousedown="sendHtmlReqForlog('in_home_foot_zhaopin');" rel="nofollow" >招聘</a>
+            <span class="divider f12">|</span><a class="f12" href="http://www.aibang.com/files/About.html#AibangContact" target="_blank" onmousedown="sendHtmlReqForlog('in_home_foot_lianxi');" rel="nofollow" >联系我们</a>
+            <span class="divider f12">|</span><a class="f12" href="http://www.aibang.com/files/Privacy.html" target="_blank" onmousedown="sendHtmlReqForlog('in_home_foot_shengming');" rel="nofollow" >免责声明</a>
+            <span class="divider f12">|</span><a class="f12" href="http://www.aibang.com/?area=com&amp;cmd=suggest" target="_blank" onmousedown="sendHtmlReqForlog('in_home_foot_yijian');" rel="nofollow" >建议意见</a>
+            <span class="divider f12">|</span><a class="f12" href="http://www.aibang.com/api/" target="_blank" onmousedown="sendHtmlReqForlog('in_openapi');" rel="nofollow" >API</a>
+            <span class="divider f12">|</span><a style="position:relative;padding-top:17px;margin-top:-17px;display:inline-block;background:url(http://i2.aibangjuxin.com/images/ppc/footwifi.gif) center top no-repeat;_background:transparent" class="f12" href="http://www.aibang.com/mobileclient/ablife/" target="_blank" onmousedown="sendHtmlReqForlog('in_home_foot_aibangshenghuo');" rel="nofollow" >手机版<!--[if lte ie 6]><img src="http://i2.aibangjuxin.com/images/ppc/footwifi.gif" style="position:absolute;top:0;margin-left:-30px;" /><![endif]--></a>
+            <span class="divider f12">|</span><a class="f12" href="http://yingxiao.aibang.com/promotion/" target="_blank" onmousedown="sendHtmlReqForlog('in_home_foot_tuiguang');" rel="nofollow" >商户推广</a>
+            <span class="divider f12">|</span><a class="f12" href="http://yingxiao.aibang.com/" target="_blank" onmousedown="sendHtmlReqForlog('in_home_foot_yingxiaozhongxin');" rel="nofollow" >营销中心</a>
+                           <span class="divider f12">|</span><a class="f12" href="http://www.aibang.com/files/AibangFriendLink.html" target="_blank" onmousedown="sendHtmlReqForlog('in_home_foot_lianjie');">友链</a> 
+                        
+        </span>    
+        
+                                                                                       
+              
+        		  
+
+<script type="text/javascript">
+
+    var  area = decodeURIComponent('user')
+         ,cmd = decodeURIComponent('bizuserlogin')
+         ,city = decodeURIComponent('%E5%8C%97%E4%BA%AC')
+         ,login = '' || 0 ,isAutoLogin = parseInt('0')
+         ,mode = decodeURIComponent('map')
+         ,type = decodeURIComponent('');
+         
+    var loginStatus = 0;
+    if(login){
+        loginStatus = 1;
+    }
+    if(isAutoLogin){
+        loginStatus = 2;
+    }
+    
+    var _biq_tmp =  [];
+    _biq_tmp.push(['_tracePage'] , [ 'city' , ''+city] , ['area' , ''+area] , ['cmd' , ''+cmd] , ['login' , ''+login] );
+
+        
+    
+        
+    
+        window['_biq'] = window['_biq'] || [];
+    window['_biq'].push(_biq_tmp);
+        
+</script>
+<script type="text/javascript" src="http://i1.aibangjuxin.com/js12121318/plugin/abbi.js"></script>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(
+    ['_setAccount', 'UA-10406695-1'],
+    ['_setDomainName', '.aibang.com'],
+    ['_addOrganic', 'baidu', 'word'],
+    ['_addOrganic', 'soso', 'w'], 
+    ['_addOrganic', 'sogou', 'query'],
+    ['_addOrganic', 'youdao', 'q'], 
+    //new
+    ['_setCustomVar', 1,'city', ""+city, 3], 
+    ['_setCustomVar', 2,'area-cmd', area+'-'+cmd, 3], 
+    ['_setCustomVar', 3,'login', ""+loginStatus, 3],
+        ['_setCustomVar', 5,'type', type+'', 3],
+        ['_trackPageview'],
+    ['_trackPageLoadTime']
+);
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+    (function() {
+        var ga = document.createElement('script');     ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:'   == document.location.protocol ? 'https://ssl'   : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+//]]>    
+</script>
+
+
+</div>
+    </div>
+  </body>
+</html>
