@@ -251,18 +251,14 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
 #            raw_input("Press Enter")
         except httplib.InvalidURL as e:
             print "InvalidURL" + link
-<<<<<<< HEAD
-        except:
-            # Unexpected error.
-            print "Unexpected error:", sys.exc_info()[0]
-            pass
-
-=======
         except KeyError as e:
             print "KeyError" + link
         except urllib2.URLError as e:
             print "URLError" + link
->>>>>>> CheckSite
+        except:
+            # Unexpected error.
+            print "Unexpected error:", sys.exc_info()[0]
+            pass
 # It would also be good to have some statistics at the end of the file, like number of files, total size (in MB), total
 # time, number of 404 errors etc.
 totalSizeInMB = divmod(totalSize, 1000000)
