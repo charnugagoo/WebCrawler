@@ -9,9 +9,11 @@ import collections
 import os
 import datetime
 import urlparse
+import httplib
+
 import CheckUrl
 import CheckSite
-import httplib
+
 
 def Queue_Check_Push_Front(page):
     """Check the url and push into queue.
@@ -103,6 +105,7 @@ class Parser(htmllib.HTMLParser):
                     else:
                         # Relative URIs.
                         self.base_url = urlparse.urljoin(self.base_url, href)
+
 
 argv = sys.argv
 #argv = [1, 1, 100]
@@ -246,6 +249,10 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
             raw_input("Press Enter")
         except httplib.InvalidURL as e:
             print "InvalidURL" + link
+        except:
+            # Unexpected error.
+            print "Unexpected error:", sys.exc_info()[0]
+            pass
 
 # It would also be good to have some statistics at the end of the file, like number of files, total size (in MB), total
 # time, number of 404 errors etc.
