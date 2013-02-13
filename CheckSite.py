@@ -5,6 +5,9 @@ def toSiteUrl (href):
     href = DeleteLastSlash.DeleteLastSlash(href)
     strlist = href.split('/')
     if len(strlist) > 2:
+        if strlist[2][0:4] == "www.":
+            strlist[2] = strlist[2][4:]
+        #no www format
         return strlist[0] + "//" + strlist[2]
     else:
         return href
@@ -46,6 +49,7 @@ def checkSite_Processible (href):
 #must been checked after checkSite_Visitable
 #so must be in hash table and checekd robots.txt
     index = hash_table_site[href]
+#    print href + " " + str(index) + " " + str(visitTimes[index])
     if visitTimes[index] > max_visit_times :
         return -1
     elif time.time() - lastVisittime[index] < min_visit_delay :
@@ -55,7 +59,7 @@ def checkSite_Processible (href):
         visitTimes[index] += 1
         return 1
 
-max_visit_times = 30
+max_visit_times = 10
 min_visit_delay = 0.1 #s
 number_visited_site = 0
 hash_table_site = {}

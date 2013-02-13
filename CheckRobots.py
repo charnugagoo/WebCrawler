@@ -17,4 +17,6 @@ def checkRobotsFile(href):
     rp.set_url(robot_url)
     rp.read()
     #    return rp.can_fetch("*", robot_url)
+#    print href
+#    print robot_url
     return rp.can_fetch("*", href)

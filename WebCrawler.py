@@ -33,7 +33,7 @@ def Queue_Check_Push_Front(page):
     if href != -1:
         if CheckSite.checkSite_Visitable(href) == 1:
             if not hash_table.has_key(href):
-                print "queue push front: " + href
+#                print "queue push front: " + href
                 queue.append(page)
                 hash_table[href] = number_visited_url
                 number_visited_url += 1
@@ -202,6 +202,8 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
                 # number of 404 errors
                 numberOf404 += 1
             continue
+        except urllib2.URLError as e:
+            continue
 
         # Ask for the MIME type of a file.
         mime = pageToVisit.info().gettype()
@@ -243,17 +245,24 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
             parser.close()
         except htmllib.HTMLParseError as e:
             print "parse error: " + link
-            raw_input("Press Enter")
+#            raw_input("Press Enter")
         except IOError as e:
             print "IOError" + link
-            raw_input("Press Enter")
+#            raw_input("Press Enter")
         except httplib.InvalidURL as e:
             print "InvalidURL" + link
+<<<<<<< HEAD
         except:
             # Unexpected error.
             print "Unexpected error:", sys.exc_info()[0]
             pass
 
+=======
+        except KeyError as e:
+            print "KeyError" + link
+        except urllib2.URLError as e:
+            print "URLError" + link
+>>>>>>> CheckSite
 # It would also be good to have some statistics at the end of the file, like number of files, total size (in MB), total
 # time, number of 404 errors etc.
 totalSizeInMB = divmod(totalSize, 1000000)
