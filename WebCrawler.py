@@ -14,7 +14,8 @@ import httplib
 import CheckUrl
 import CheckSite
 
-
+# zhuoran doesn't how to solve it without the next line, solve this later
+pagesNumber = 500
 def Queue_Check_Push_Front(page):
     """Check the url and push into queue.
 
@@ -25,6 +26,10 @@ def Queue_Check_Push_Front(page):
         depth: the depth of each page, i.e., its minimum distance from one of the 10 start pages
     }
     """
+    global number_collected_url
+    global pagesNumber
+    if len(queue) + number_collected_url > pagesNumber:
+        return
     href = page["url"]
 
     global hash_table
@@ -33,7 +38,7 @@ def Queue_Check_Push_Front(page):
     if href != -1:
         if CheckSite.checkSite_Visitable(href) == 1:
             if not hash_table.has_key(href):
-#                print "queue push front: " + href
+                print "queue push front: " + str(len(queue)) + " " + href
                 queue.append(page)
                 hash_table[href] = number_visited_url
                 number_visited_url += 1
@@ -171,8 +176,6 @@ beginTime = datetime.datetime.now()
 numberOf404 = 0
 
 while len(queue) > 0 and number_collected_url < pagesNumber:
-#    number_collected_url += 1
-#    ????? should I do something here?  zhuoran
     # In a Breadth-First manner.
     page = queue.popleft()
     link = page["url"]
