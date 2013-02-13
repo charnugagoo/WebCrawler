@@ -128,6 +128,7 @@ urlKey = "unescapedUrl"
 # any integer between 1 and 8.
 results0_7 = urllib2.urlopen(url + "&rsz=8")
 # Deserialize fp (a .read()-supporting file-like object containing a JSON document) to a Python object.
+
 for result in json.load(results0_7)["responseData"]["results"]:
     Queue_Check_Push_Front({
         "url": result[urlKey],
