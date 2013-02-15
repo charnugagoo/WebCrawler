@@ -1,7 +1,6 @@
 import time, DeleteLastSlash
 import CheckRobots
-    """This file contains functions that given a url, check the root site of the url, check whether we could visit this url, crawl this url or pase this url.
-    """
+    #This file contains functions that given a url, check the root site of the url, check whether we could visit this url, crawl this url or pase this url.
 def toSiteUrl (href):
     """
     Given a url, output the root site url of this page.
