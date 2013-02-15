@@ -256,18 +256,23 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
             parser.feed(pageContent)
             parser.close()
         except htmllib.HTMLParseError as e:
-            print "parse error: " + link
+#            print "parse error: " + link
+            pass
         except IOError as e:
-            print "IOError" + link
+#            print "IOError" + link
+            pass
         except httplib.InvalidURL as e:
-            print "InvalidURL" + link
+#            print "InvalidURL" + link
+            pass
         except KeyError as e:
-            print "KeyError" + link
+#            print "KeyError" + link
+            pass
         except urllib2.URLError as e:
-            print "URLError" + link
+#            print "URLError" + link
+            pass
         except:
             # Unexpected error.
-            print "Unexpected error:", sys.exc_info()[0]
+#            print "Unexpected error:", sys.exc_info()[0]
             pass
 # It would also be good to have some statistics at the end of the file, like number of files, total size (in MB), total
 # time, number of 404 errors etc.
