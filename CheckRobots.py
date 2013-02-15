@@ -1,5 +1,11 @@
 import robotparser, DeleteLastSlash
 
+"""Check the url by Robots protocol
+    If this url is not aloowed to crawl
+    
+"""
+
+
 def toSiteUrl (href):
     #must check url before. this means, tail is not '/'
     href = DeleteLastSlash.DeleteLastSlash(href)
