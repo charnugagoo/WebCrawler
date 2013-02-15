@@ -2,6 +2,11 @@
 
 #if not supported, return -1
 def isSupportType(href):
+    """This function is a pre-filter before using MIME type
+
+        We declare to crawl url end with ".avi" e.g.
+        
+    """
     return href
     # not_support_list = {"7z": 0, "flv": 1, "cgi": 2, "xml": 3, "avi": 4, "ram": 5, "mpg": 6, "mov": 7, "qt": 8,
     #                     "mp3": 9, "mp4": 10, "aiff": 11, "au": 12, "wav": 13, "ra": 14, "zip": 15, "sit": 16, "tar": 17,

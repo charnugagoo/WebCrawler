@@ -1,9 +1,8 @@
-#zhuoran
-#I write multi function for flexibility
-
-#main, index, default
-
 def isIndexPage (href):
+    """Check if the url ended with "index", "main" or "default".
+        
+        Pages under this rule is treated as the same as pages without "index", "main" or "default"
+    """
     strlist = href.split('.')
     str2 = strlist[len(href.split('.'))-2]
     str1 = strlist[len(href.split('.'))-1]
@@ -29,6 +28,9 @@ def isIndexPage (href):
         return -1
 
 def deleteIndexFile (href):
+    """
+        automately delete the "index" or "index.xxx" in the url
+    """
     flag = isIndexPage (href)
     if flag == 1:
         return href[0:href.rfind("index")]
@@ -38,12 +40,3 @@ def deleteIndexFile (href):
         return href[0:href.rfind("default")]
     else:
         return href
-#
-#print isIndexPage ("baidu.com/index.html")
-#print isIndexPage ("baidu.com/inde.html")
-#print isIndexPage ("baidu.com/main")
-#print isIndexPage ("baidu.com/index")
-#print isIndexPage ("baidu.com/default.html")
-#print isIndexPage ("baidu.com/main")
-#print deleteIndexFile("baidu.com/main")
-#print deleteIndexFile("baidu.com/index.html")
