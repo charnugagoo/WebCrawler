@@ -29,7 +29,7 @@ def Queue_Check_Push_Front(page):
     """
     global number_collected_url
     global pagesNumber
-    if len(queue) + number_collected_url > pagesNumber*1.1:
+    if len(queue) + number_collected_url > pagesNumber * 1.1:
         return
     href = page["url"]
 
@@ -186,8 +186,6 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
     elif flag == -2:
         queue.append(page)
     else:
-        number_collected_url += 1
-        print "Number: " + str(number_collected_url) + "  " + link
         try:
             # Open the URL
             pageToVisit = urllib2.urlopen(urllib2.Request(link, headers={
@@ -206,6 +204,9 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
             continue
         except urllib2.URLError as e:
             continue
+
+        number_collected_url += 1
+        print "Number: " + str(number_collected_url) + "  " + link
 
         # Ask for the MIME type of a file.
         mime = pageToVisit.info().gettype()
