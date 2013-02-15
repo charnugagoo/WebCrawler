@@ -59,7 +59,7 @@ def checkSite_Processible (href):
         visitTimes[index] += 1
         return 1
 
-max_visit_times = 10
+max_visit_times = 20
 min_visit_delay = 0.1 #s
 number_visited_site = 0
 hash_table_site = {}

@@ -14,7 +14,6 @@ import httplib
 import CheckUrl
 import CheckSite
 
-# zhuoran doesn't how to solve it without the next line, solve this later
 pagesNumber = 500
 def Queue_Check_Push_Front(page):
     """Check the url and push into queue.
@@ -28,7 +27,7 @@ def Queue_Check_Push_Front(page):
     """
     global number_collected_url
     global pagesNumber
-    if len(queue) + number_collected_url > pagesNumber:
+    if len(queue) + number_collected_url > pagesNumber*1.1:
         return
     href = page["url"]
 
@@ -120,11 +119,9 @@ if len(argv) < 3:
 # To implement BFS, it is suggested that you use a simple class for queues in Python.
 queue = collections.deque([])
 
-#zhuoran begin
 number_visited_url = 0 #number of visited urls (in queue)
 number_collected_url = 0 #number (all outside queue)
 hash_table = {} #hash table url:hash_number
-#zhuoran end
 
 query = argv[1]
 # Get results from Google (using APIs).
