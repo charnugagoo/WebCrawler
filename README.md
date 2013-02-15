@@ -17,9 +17,11 @@ pages that were downloaded, and the depth of each page, i.e., its minimum distan
 time, and number of 404 errors. (As start pages, we use the actual result URLs returned by Google.)
 
 A list of special features beyond the basic requirements:
+
 1. The program parses "base" elements.
    It will get the base URL and use it for all relative URLs contained within a document.
    It solves the issues of "the ambiguity of URLs".
+
 2. The program sends customized request headers to servers.
    The Accept request-header field can be used to specify certain media types which are acceptable for the response.
    Accept headers can be used to indicate that the request is specifically limited to a small set of desired types.
