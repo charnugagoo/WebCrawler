@@ -18,5 +18,5 @@ def checkRobotsFile(href):
     try:
         rp.read()
     except IOError as e:
-        print "RobotPaserIOError" + link
+        print "RobotPaserIOError" + href
     return rp.can_fetch("*", href)

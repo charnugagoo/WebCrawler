@@ -250,10 +250,8 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
             parser.close()
         except htmllib.HTMLParseError as e:
             print "parse error: " + link
-        #            raw_input("Press Enter")
         except IOError as e:
             print "IOError" + link
-        #            raw_input("Press Enter")
         except httplib.InvalidURL as e:
             print "InvalidURL" + link
         except KeyError as e:
