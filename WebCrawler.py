@@ -16,6 +16,8 @@ import CheckSite
 
 # zhuoran doesn't how to solve it without the next line, solve this later
 pagesNumber = 500
+
+
 def Queue_Check_Push_Front(page):
     """Check the url and push into queue.
 
@@ -216,10 +218,13 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
 
         # Each page should be stored in a file in your directory.
         linkFileName = pagesDirectory + "/" + link.replace("/", ":")
-        pageVisited = open(linkFileName, "w")
-        pageContent = pageToVisit.read()
-        pageVisited.write(pageContent)
-        pageVisited.close()
+        try:
+            pageVisited = open(linkFileName, "w")
+            pageContent = pageToVisit.read()
+            pageVisited.write(pageContent)
+            pageVisited.close()
+        except:
+            continue
 
         # page size
         size = os.stat(linkFileName).st_size
@@ -248,10 +253,10 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
             parser.close()
         except htmllib.HTMLParseError as e:
             print "parse error: " + link
-#            raw_input("Press Enter")
+        #            raw_input("Press Enter")
         except IOError as e:
             print "IOError" + link
-#            raw_input("Press Enter")
+        #            raw_input("Press Enter")
         except httplib.InvalidURL as e:
             print "InvalidURL" + link
         except KeyError as e:
