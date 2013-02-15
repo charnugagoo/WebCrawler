@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<head>
+<meta charset='utf-8'>
+<title>
+Refinements in Ruby
+—
+Timeless
+</title>
+<!--[if lt IE 9]>
+<script src='http://html5shim.googlecode.com/svn/trunk/html5.js'></script>
+<![endif]-->
+<link href='/changelog.xml' rel='alternate' title='Atom Feed' type='application/atom+xml'>
+<link href='/changelog.xml' rel='feed' title='Atom Feed' type='application/atom+xml'>
+<link href='/style.css' rel='stylesheet'>
+<script type='text/javascript'>
+  //<![CDATA[
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-132467-6']);
+    _gaq.push(['_trackPageview']);
+    
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  //]]>
+</script>
+</head>
+<body>
+<header class='main'>
+<h1>
+<a href='/'>
+The <strong>timeless</strong> repository
+</a>
+</h1>
+</header>
+<article>
+<header>
+<h1>Refinements in Ruby</h1>
+<p>
+Written by <a href="http://judofyr.net/">
+ Magnus Holm</a>.
+</p>
+</header>
+<p><p>At RubyConf 2010 Shugo Maeda <a href='http://www.rubyconf.org/presentations/51'>talked about <em>Refinements</em></a>: A proposal for a new feature in Ruby which allows you to easily override methods without affecting other parts of your program:</p>
+
+<pre><code class='ruby' lang='ruby'><span class='Keyword'>module</span> <span class='TypeName'>TimeExtensions</span>
+  refine <span class='Variable'>Fixnum</span> <span class='Keyword'>do</span>
+    <span class='Keyword'>def</span> <span class='FunctionName'>minutes</span>; <span class='Variable'>self</span> <span class='Keyword'>*</span> <span class='Number'>60</span>; <span class='Keyword'>end</span>
+  <span class='Keyword'>end</span>
+<span class='Keyword'>end</span>
+
+<span class='Keyword'>class</span> <span class='TypeName'>MyApp</span>
+  using <span class='Variable'>TimeExtensions</span>
+
+  <span class='Keyword'>def</span> <span class='FunctionName'>initialize</span>
+    p <span class='Number'>2</span>.<span class='FunctionName'>minutes</span>
+  <span class='Keyword'>end</span>
+<span class='Keyword'>end</span>
+
+<span class='LibraryClassType'>MyApp</span>.<span class='FunctionName'>new</span>    <span class='Comment'><span class='Comment'>#</span> =&gt; 120</span>
+p <span class='Number'>2</span>.<span class='FunctionName'>minutes</span>  <span class='Comment'><span class='Comment'>#</span> =&gt; NoMethodError</span>
+</code></pre>
+
+<p>Let&#8217;s have a look at the <em>why&#8217;s</em> and <em>how&#8217;s</em> of this proposal.</p>
+
+<h2 id='the_power_of_monkey_patching'>The Power of Monkey Patching</h2>
+
+<p>Ruby allows you to both open previously defined classes and redefine any method. In addition, Ruby doesn&#8217;t treat core classes any differently from user-defined classes, so this gives you a lot of power to completely change the behaviour Ruby. This is of course a double edged sword: You can more easily change Ruby to match your thoughts (rather than changing your thoughts to match Ruby), but it also means that everyone else now needs to follow your rules.</p>
+
+<p>Getting everyone to play along nicely has proven to be a challenge, and the solution has always been solved socially. As long as two core teams (let&#8217;s say Rails and DataMapper) work together, they can quite easily solve any problems, but the real issue is when you, as a user, want to use two libraries together. The libraries may work perfectly separately, but the moment you combine them you&#8217;ll get some weird behaviour. There&#8217;s not really much to can do, other than waiting for the library to be updated (or do the work yourself).</p>
+
+<h2 id='a_wild_classbox_appears'>A wild Classbox appears!</h2>
+
+<p>If you&#8217;ve been following the development of Ruby, you may have heard of <a href='http://scg.unibe.ch/research/classboxes'><em>classboxes</em></a>. They were first introduced by Alexandre Bergel, Stéphane Ducasse, and Roel Wuyts in 2003 by the paper <a href='http://scg.unibe.ch/archive/papers/Berg03aClassboxes.pdf'>Classboxes: A Minimal Module Model Supporting Local Rebinding</a>. It&#8217;s essentially a way to monkey patch classes and methods, but only within the context of <em>your</em> code and not globally. At the moment, it&#8217;s been implemented in Smalltalk (Squak), Java and .Net, but there&#8217;s also been some work at trying to apply it to Ruby.</p>
+
+<p>The refinements proposal by Shugo captures the same idea as classboxes, but it behaves slightly differently in certain cases (we&#8217;ll get back to those in a minute). The differences are not big enough to justify having both refinements and classboxes, so expect this to be the only way to safely monkey patch in Ruby in the following years (if the proposal gets accepted of course).</p>
+
+<p>While this is still only a proposal, Shugo has actually implemented it in Ruby 1.9 <em>and</em> provided a patch, so why not install it right away so you can play with it as we go through the features?</p>
+
+<h2 id='installing'>Installing</h2>
+
+<p>In order to install the refinements version of Ruby, you need to grab <strong>r29837</strong> of <a href='http://svn.ruby-lang.org/repos/ruby/trunk'>trunk</a> and apply <a href='http://stuff.judofyr.net/refinements.diff'>the refinements-patch</a>. If you&#8217;re using <a href='http://rvm.beginrescueend.com/'>rvm</a>, it&#8217;s as simple as:</p>
+
+<pre><code>$ curl -O http://stuff.judofyr.net/refinements.diff
+$ rvm install ruby-head-r29837 --patch refinements.diff
+$ rvm ruby-head-r29837</code></pre>
+
+<p>Or manually:</p>
+
+<pre><code>$ svn checkout -q -r 29837 http://svn.ruby-lang.org/repos/ruby/trunk ruby-refinements
+$ cd ruby-refinements
+$ curl http://stuff.judofyr.net/refinements.diff | patch -p1
+$ autoconf
+$ ./configure --prefix /usr/local/ruby-refinements
+$ make
+$ make install
+$ export PATH=&quot;/usr/local/ruby-refinements/bin:$PATH&quot;</code></pre>
+
+<p>Now you should be able to run all of the examples given in this article.</p>
+
+<h2 id='refine_dont_redefine'>Refine, don&#8217;t redefine</h2>
+
+<p>Instead of redefining or defining new methods directly on classes, you&#8217;ll create <em>refinements</em>:</p>
+
+<pre><code class='ruby' lang='ruby'><span class='Keyword'>module</span> <span class='TypeName'>JSONGenerator</span>
+  refine <span class='Variable'>String</span> <span class='Keyword'>do</span>
+    <span class='Keyword'>def</span> <span class='FunctionName'>to_json</span>; inspect <span class='Keyword'>end</span>
+  <span class='Keyword'>end</span>
+  
+  refine <span class='Variable'>Fixnum</span> <span class='Keyword'>do</span>
+    <span class='Keyword'>def</span> <span class='FunctionName'>to_json</span>; to_s <span class='Keyword'>end</span>
+  <span class='Keyword'>end</span>
+  
+  refine <span class='Variable'>Array</span> <span class='Keyword'>do</span>
+    <span class='Keyword'>def</span> <span class='FunctionName'>to_json</span>
+<span class='Comment'>      <span class='Comment'>#</span> Refinements can see one another, so we can use String#to_json and</span>
+<span class='Comment'>      <span class='Comment'>#</span> Fixnum#to_json as part of the definition of Array#to_json.</span>
+      <span class='String'><span class='String'>&quot;</span>[<span class='String'>&quot;</span></span> <span class='Keyword'>+</span> map { |<span class='Variable'>x</span>| x.<span class='FunctionName'>to_json</span> } <span class='Keyword'>+</span> <span class='String'><span class='String'>&quot;</span>]<span class='String'>&quot;</span></span>
+    <span class='Keyword'>end</span>
+  <span class='Keyword'>end</span>
+<span class='Keyword'>end</span>
+</code></pre>
+
+<p>If you don&#8217;t do anything other than that, you won&#8217;t notice anything at all. However, now you can choose to use this refinement at many different scopes:</p>
+
+<pre><code class='ruby' lang='ruby'>using <span class='Variable'>JSONGenerator</span>       <span class='Comment'><span class='Comment'>#</span> For the whole file</span>
+<span class='Number'>1</span>.<span class='FunctionName'>to_json</span>
+
+<span class='Keyword'>module</span> <span class='TypeName'>Application</span>
+  using <span class='Variable'>JSONGenerator</span>     <span class='Comment'><span class='Comment'>#</span> For this module and any nested classes and modules</span>
+<span class='Comment'>                          <span class='Comment'>#</span> E.g. this also applies to Application::Controller</span>
+  
+<span class='Comment'>  <span class='Comment'>#</span> It works directly inside the class definition:</span>
+  <span class='Number'>2</span>.<span class='FunctionName'>to_json</span>
+
+<span class='Comment'>  <span class='Comment'>#</span> And inside methods:</span>
+  <span class='Keyword'>def</span> <span class='FunctionName'>self.hello</span>
+    <span class='Number'>3</span>.<span class='FunctionName'>to_json</span>
+  <span class='Keyword'>end</span>
+  
+  <span class='Keyword'>class</span> <span class='TypeName'>Controllers</span>
+    using <span class='Variable'>JSONGenerator</span>   <span class='Comment'><span class='Comment'>#</span> For this class and any nested classes and modules</span>
+    
+    <span class='Keyword'>def</span> <span class='FunctionName'>get</span>
+      using <span class='Variable'>JSONGenerator</span> <span class='Comment'><span class='Comment'>#</span> For this method only</span>
+      [<span class='Number'>1</span>, <span class='Number'>2</span>, <span class='Number'>3</span>].<span class='FunctionName'>to_json</span>
+    <span class='Keyword'>end</span>
+  <span class='Keyword'>end</span>
+<span class='Keyword'>end</span>
+</code></pre>
+
+<p>The great thing about refinements, is that it&#8217;s technically impossible to globally leak them. They will always be restricted to the scope you specify, and there&#8217;s nothing &#8220;above&#8221; the file scope.</p>
+
+<p>That&#8217;s not <em>always</em> true though. Refinements are also enabled in subclasses and reopened classes, even if they are located in different files.</p>
+
+<pre><code class='ruby' lang='ruby'><span class='Keyword'>class</span> <span class='TypeName'>ApplicationController</span>
+  using <span class='Variable'>JSONGenerator</span>
+<span class='Keyword'>end</span>
+
+<span class='Comment'><span class='Comment'>#</span> Somewhere else:</span>
+<span class='Keyword'>class</span> <span class='TypeName'>ApplicationController</span>
+  p <span class='Number'>123</span>.<span class='FunctionName'>to_json</span>  <span class='Comment'><span class='Comment'>#</span> Still works</span>
+<span class='Keyword'>end</span>
+
+<span class='Keyword'>class</span> <span class='TypeName'>UsersController<span class='InheritedClass'> <span class='InheritedClass'>&lt;</span> ApplicationController</span></span>
+  p <span class='Number'>123</span>.<span class='FunctionName'>to_json</span>  <span class='Comment'><span class='Comment'>#</span> Still works</span>
+<span class='Keyword'>end</span>
+
+p <span class='Number'>123</span>.<span class='FunctionName'>to_json</span>  <span class='Comment'><span class='Comment'>#</span> This doesn&#39;t work however</span>
+</code></pre>
+
+<p>But here comes the best part: Refinements are also carried on in class_eval, module_eval and instance_eval:</p>
+
+<pre><code class='ruby' lang='ruby'><span class='Keyword'>module</span> <span class='TypeName'>Expectations</span>
+  refine <span class='Variable'>Object</span> <span class='Keyword'>do</span>
+    <span class='Keyword'>def</span> <span class='FunctionName'>should</span>; ... <span class='Keyword'>end</span>
+  <span class='Keyword'>end</span>
+<span class='Keyword'>end</span>
+
+<span class='Keyword'>def</span> <span class='FunctionName'>it</span>(<span class='FunctionArgument'>msg<span class='FunctionArgument'>,</span> <span class='Keyword'>&amp;</span>blk</span>)
+<span class='Comment'>  <span class='Comment'>#</span> Remember that refinements can see one another:</span>
+  <span class='LibraryClassType'>Expectations</span>.<span class='FunctionName'>module_eval</span>(<span class='Keyword'>&amp;</span>blk)
+<span class='Keyword'>end</span>
+
+it <span class='String'><span class='String'>&quot;</span>should be awesome<span class='String'>&quot;</span></span> <span class='Keyword'>do</span>
+  <span class='UserDefinedConstant'><span class='UserDefinedConstant'>:</span>refinements</span>.<span class='FunctionName'>level</span>.<span class='FunctionName'>should</span> <span class='Keyword'>==</span> <span class='UserDefinedConstant'><span class='UserDefinedConstant'>:</span>awesome</span>
+<span class='Keyword'>end</span>
+</code></pre>
+
+<p>Holy Schmoly, now we&#8217;re talking! Even this works as expected:</p>
+
+<pre><code class='ruby' lang='ruby'><span class='Keyword'>class</span> <span class='TypeName'>TestScope</span>
+  using <span class='Variable'>Expectations</span>
+  <span class='Keyword'>attr_reader</span> <span class='UserDefinedConstant'><span class='UserDefinedConstant'>:</span>msg</span>
+
+  <span class='Keyword'>def</span> <span class='FunctionName'>initialize</span>(<span class='FunctionArgument'>msg</span>)
+    <span class='Variable'><span class='Variable'>@</span>msg</span> <span class='Keyword'>=</span> msg
+  <span class='Keyword'>end</span>
+<span class='Keyword'>end</span>
+
+<span class='Keyword'>def</span> <span class='FunctionName'>it</span>(<span class='FunctionArgument'>msg<span class='FunctionArgument'>,</span> <span class='Keyword'>&amp;</span>blk</span>)
+  <span class='LibraryClassType'>TestScope</span>.<span class='FunctionName'>new</span>(msg).<span class='FunctionName'>instance_eval</span>(<span class='Keyword'>&amp;</span>blk)
+<span class='Keyword'>end</span>
+</code></pre>
+
+<p>Refinements are also inherited, so Rails 4 could provide this module:</p>
+
+<pre><code class='ruby' lang='ruby'><span class='Keyword'>module</span> <span class='TypeName'><span class='InheritedClass'>ActiveSupport<span class='InheritedClass'>::</span></span>All</span>
+  using <span class='LibraryClassType'>ActiveSupport</span>::<span class='FunctionName'>Autoload</span>
+  using <span class='LibraryClassType'>ActiveSupport</span>::<span class='FunctionName'>Callbacks</span>
+<span class='Comment'>  <span class='Comment'>#</span> and so on ...</span>
+<span class='Keyword'>end</span>
+</code></pre>
+
+<p>And because refinements are also enabled in subclasses:</p>
+
+<pre><code class='ruby' lang='ruby'><span class='Keyword'>class</span> <span class='TypeName'>ApplicationController<span class='InheritedClass'> <span class='InheritedClass'>&lt;</span> ActionController::Base</span></span>
+  using <span class='LibraryClassType'>ActiveSupport</span>::<span class='FunctionName'>All</span>
+<span class='Keyword'>end</span>
+
+<span class='Keyword'>class</span> <span class='TypeName'>ArticlesController<span class='InheritedClass'> <span class='InheritedClass'>&lt;</span> ApplicationController</span></span>
+  <span class='Keyword'>def</span> <span class='FunctionName'>index</span>
+    <span class='Variable'><span class='Variable'>@</span>articles</span> <span class='Keyword'>=</span> <span class='LibraryClassType'>Article</span>.<span class='FunctionName'>where</span>(<span class='String'><span class='String'>&quot;</span>created_at &gt; ?<span class='String'>&quot;</span></span>, <span class='Number'>3</span>.<span class='FunctionName'>days</span>.<span class='FunctionName'>ago</span>)
+  <span class='Keyword'>end</span>
+<span class='Keyword'>end</span>
+</code></pre>
+
+<p>You can continue developing <strong>in the exact same way</strong> as before, but now without leaking anything into the global namespace.</p>
+
+<p><em>(This is the moment where you&#8217;re proposing to marry Shugo.)</em></p>
+
+<h2 id='whats_the_catch'>What&#8217;s the catch?</h2>
+
+<p>There&#8217;s a few things you need to be aware of. First of all, there might be a little decrease in performance. Hopefully this will be resolved (or turn out to be insignificant) in the future. Other issues:</p>
+
+<h3 id='include_and_using_are_completely_separated'>#include and #using are completely separated:</h3>
+
+<pre><code class='ruby' lang='ruby'><span class='Keyword'>module</span> <span class='TypeName'><span class='InheritedClass'>Rack<span class='InheritedClass'>::</span></span>Utils</span>
+  refine <span class='Variable'>Object</span> <span class='Keyword'>do</span>
+    <span class='Keyword'>def</span> <span class='FunctionName'>call</span>; ... <span class='Keyword'>end</span>
+  <span class='Keyword'>end</span>
+  
+  <span class='Keyword'>def</span> <span class='FunctionName'>escape_html</span>; ... <span class='Keyword'>end</span>
+  <span class='Keyword'>end</span>
+<span class='Keyword'>end</span>
+
+<span class='Comment'><span class='Comment'>#</span> I want use both:</span>
+<span class='Keyword'>module</span> <span class='TypeName'>Camping</span>
+  <span class='Keyword'>include</span> <span class='LibraryClassType'>Rack</span>::<span class='FunctionName'>Utils</span>
+  using <span class='LibraryClassType'>Rack</span>::<span class='FunctionName'>Utils</span>
+<span class='Keyword'>end</span>
+</code></pre>
+
+<p>Because refinements are lexically scoped, it&#8217;s also not possible to combine them with an included hook:</p>
+
+<pre><code class='ruby' lang='ruby'><span class='Keyword'>module</span> <span class='TypeName'><span class='InheritedClass'>Rack<span class='InheritedClass'>::</span></span>Utils</span>
+  <span class='Keyword'>def</span> <span class='FunctionName'>self.included</span>(<span class='FunctionArgument'>mod</span>)
+<span class='Comment'>    <span class='Comment'>#</span> Doesn&#39;t work as expected:</span>
+    mod.<span class='FunctionName'>send</span>(<span class='UserDefinedConstant'><span class='UserDefinedConstant'>:</span>using</span>, <span class='Variable'>self</span>)
+  <span class='Keyword'>end</span>
+<span class='Keyword'>end</span>
+
+<span class='Keyword'>module</span> <span class='TypeName'>Camping</span>
+  <span class='Keyword'>include</span> <span class='LibraryClassType'>Rack</span>::<span class='FunctionName'>Utils</span>
+<span class='Keyword'>end</span>
+</code></pre>
+
+<p>You can however use the <em>used</em> hook:</p>
+
+<pre><code class='ruby' lang='ruby'><span class='Keyword'>module</span> <span class='TypeName'><span class='InheritedClass'>Rack<span class='InheritedClass'>::</span></span>Utils</span>
+  <span class='Keyword'>def</span> <span class='FunctionName'>self.used</span>(<span class='FunctionArgument'>mod</span>)
+    mod.<span class='FunctionName'>send</span>(<span class='UserDefinedConstant'><span class='UserDefinedConstant'>:</span>include</span>, <span class='Variable'>self</span>)
+  <span class='Keyword'>end</span>
+<span class='Keyword'>end</span>
+
+<span class='Keyword'>module</span> <span class='TypeName'>Camping</span>
+  using <span class='LibraryClassType'>Rack</span>::<span class='FunctionName'>Utils</span>
+<span class='Keyword'>end</span>
+</code></pre>
+
+<h3 id='singleton_methods_in_refinements_are_not_included'>Singleton methods in refinements are not included:</h3>
+
+<pre><code class='ruby' lang='ruby'><span class='Keyword'>module</span> <span class='TypeName'>FixnumExt</span>
+<span class='Comment'>  <span class='Comment'>#</span> This has no effect:</span>
+  refine <span class='Variable'>Fixnum</span> <span class='Keyword'>do</span>
+    <span class='Keyword'>def</span> <span class='FunctionName'>self.thing</span>; ... <span class='Keyword'>end</span>
+  <span class='Keyword'>end</span>
+  
+<span class='Comment'>  <span class='Comment'>#</span> Use this instead:</span>
+  refine <span class='LibraryClassType'>Fixnum</span>.<span class='FunctionName'>singleton_class</span> <span class='Keyword'>do</span>
+    <span class='Keyword'>def</span> <span class='FunctionName'>thing</span>; ... <span class='Keyword'>end</span>
+  <span class='Keyword'>end</span>
+<span class='Keyword'>end</span>
+</code></pre>
+
+<h3 id='you_cant_refine_modules'>You can&#8217;t refine modules:</h3>
+
+<pre><code class='ruby' lang='ruby'><span class='Keyword'>module</span> <span class='TypeName'>EnumerableExt</span>
+<span class='Comment'>  <span class='Comment'>#</span> Error:</span>
+  refine <span class='Variable'>Enumerable</span> <span class='Keyword'>do</span>
+  <span class='Keyword'>end</span>
+<span class='Keyword'>end</span>
+</code></pre>
+
+<h3 id='refinements_dont_have_local_rebinding'>Refinements don&#8217;t have local rebinding</h3>
+
+<p>Another important fact is that, unlike classboxes, refinements don&#8217;t have <em>local rebinding</em>. Let me show you an example:</p>
+
+<pre><code class='ruby' lang='ruby'><span class='Keyword'>class</span> <span class='TypeName'>CharArray</span>
+  <span class='Keyword'>def</span> <span class='FunctionName'>initialize</span>(<span class='FunctionArgument'>str</span>)
+    <span class='Variable'><span class='Variable'>@</span>array</span> <span class='Keyword'>=</span> str.<span class='FunctionName'>unpack</span>(<span class='String'><span class='String'>&quot;</span>C*<span class='String'>&quot;</span></span>)  <span class='Comment'><span class='Comment'>#</span> Unpacks to integers</span>
+  <span class='Keyword'>end</span>
+  
+  <span class='Keyword'>def</span> <span class='FunctionName'>each</span>(<span class='FunctionArgument'><span class='Keyword'>&amp;</span>blk</span>)
+    <span class='Variable'><span class='Variable'>@</span>array</span>.<span class='FunctionName'>each</span>(<span class='Keyword'>&amp;</span>blk)
+  <span class='Keyword'>end</span>
+  
+  <span class='Keyword'>def</span> <span class='FunctionName'>print_each</span>
+    each { |<span class='Variable'>chr</span>| p chr }
+  <span class='Keyword'>end</span>
+<span class='Keyword'>end</span>
+
+test <span class='Keyword'>=</span> <span class='LibraryClassType'>CharArray</span>.<span class='FunctionName'>new</span>(<span class='String'><span class='String'>&quot;</span>Hello World<span class='String'>&quot;</span></span>)
+test.<span class='FunctionName'>print_each</span>   <span class='Comment'><span class='Comment'>#</span> Prints a list of integers (expected)</span>
+
+<span class='Comment'><span class='Comment'>#</span> A refinement which overwrites CharArray#each to return one-char strings</span>
+<span class='Comment'><span class='Comment'>#</span> instead of integers:</span>
+<span class='Keyword'>module</span> <span class='TypeName'>CharArrayStr</span>
+  refine <span class='Variable'>CharArray</span> <span class='Keyword'>do</span>
+    <span class='Keyword'>def</span> <span class='FunctionName'>each</span>
+      <span class='Keyword'>super</span> { |<span class='Variable'>c</span>| <span class='Keyword'>yield</span> c.<span class='FunctionName'>chr</span> }
+    <span class='Keyword'>end</span>
+  <span class='Keyword'>end</span>
+<span class='Keyword'>end</span>
+
+using <span class='Variable'>CharArrayStr</span>
+test.<span class='FunctionName'>each</span> { |<span class='Variable'>x</span>| p x }  <span class='Comment'><span class='Comment'>#</span> Prints a list of strings</span>
+test.<span class='FunctionName'>print_each</span>        <span class='Comment'><span class='Comment'>#</span> Prints a list of integers?!</span>
+</code></pre>
+
+<p>At first, it might seem counter-intuitive. Why does the last line prints a list of integers? Why isn&#8217;t the refinement enabled in that method? As you might have guessed, it&#8217;s because refinements don&#8217;t have <em>local rebinding</em>. This means that the refinements will <em>only</em> apply to the scope they are enabled. The moment you call a method <em>outside</em> of the scope, none of the refinements apply anymore.</p>
+
+<p>The advantage of this is that you can safely override methods without thinking about breaking anything else. You simply can&#8217;t refine code in another scope. However, there&#8217;s a huge disadvantage: If there&#8217;s a &#8220;core&#8221; method (like #each above) which is used by several other methods, you can&#8217;t affect the other methods.</p>
+
+<p>Local rebinding might be implemented, but in that case, refinements will be renamed to classbox (since that&#8217;s what they are).</p>
+
+<h2 id='current_status'>Current status</h2>
+
+<p>As I&#8217;ve mentioned earlier, there is currently <a href='http://stuff.judofyr.net/refinements.diff'>a patch</a> available that builds cleanly on top of r29837. There are some implementation details which might need to be resolved, but as far as I know, <strong>both matz and ko1 are positive for merging the patch.</strong></p>
+
+<h2 id='resources'>Resources</h2>
+
+<ul>
+<li><a href='http://www.slideshare.net/ShugoMaeda/rc2010-refinements'>The slides to Shugo&#8217;s talk</a></li>
+
+<li><a href='http://redmine.ruby-lang.org/issues/show/4085'>The proposal at ruby-core</a></li>
+</ul>
+
+<p>Refinements are very much a work in progress, so if you have any more details or questions about how they work, feel free to contact me on <a href='mailto:timeless@judofyr.net'>&#116;&#105;&#109;&#101;&#108;&#101;&#115;&#115;&#064;&#106;&#117;&#100;&#111;&#102;&#121;&#114;&#046;&#110;&#101;&#116;</a> so I can keep this article up to date.</p>
+
+<p>(Thanks to Shugo Maeda for explaining in detail how refinements work, and <a href='http://runerb.com/'>Rune Botten</a> and <a href='http://ithaca.arpinum.org/'>Peter Aronoff</a> for reading drafts of this.)</p></p>
+
+<footer>
+<p>
+2013
+—
+All content is licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>
+—
+<a href='/comments'>Leave a comment</a>
+</p>
+</footer>
+</article>
+</body>

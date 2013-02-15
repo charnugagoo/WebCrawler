@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+  <head>
+    <title>Radiant 1.0.0 Release Candidate 1</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
+    
+    <style type="text/css">
+    <!--
+
+    -->
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <div id="logo">
+        <a href="/"><img src="/images/logo.gif" alt="Radiant - Content Management Simplified"/></a>
+      </div>
+      <div id="site-links">
+<a href="/">Home</a>
+<span class="separator"> | </span>
+<a href="/demo/">Demo</a> <span class="separator"> | </span> <a href="/download/">Download</a>
+<span class="separator"> | </span>
+<a href="http://github.com/radiant/radiant/wiki/">Documentation</a>
+<span class="separator"> | </span>
+<a href="http://ext.radiantcms.org/">Extensions</a>
+<span class="separator"> | </span>
+<a href="http://github.com/radiant/radiant/">Development</a>
+<span class="separator"> | </span>
+<a href="/mailing-list/">Mailing List</a> <span class="separator"> | </span> <strong><a href="/blog/">Weblog</a></strong> <span class="separator"> | </span> <a href="/podcast/">Podcast</a>
+      </div>
+    </div>
+    <div id="content">
+<h1>Radiant 1.0.0 Release Candidate 1</h1>
+
+<script type="text/javascript" src="http://www.haloscan.com/load/radiantcms"></script>
+<div class="info">Posted by Jim Gay on Tuesday, May 24, 2011 | <a href="javascript:HaloScan('blog-radiant-1-0-0-release-candidate-1');" target="_self"><script type="text/javascript">postCount('blog-radiant-1-0-0-release-candidate-1');</script></a> | <a href="javascript:HaloScanTB('blog-radiant-1-0-0-release-candidate-1');" target="_self"><script type="text/javascript">postCountTB('blog-radiant-1-0-0-release-candidate-1');</script></a></div>
+
+<p>Announcing the first release candidate of Radiant 1.0.0.</p>
+<p>The final 1.0 release will be the last on Rails 2. After that we&#8217;ll be focusing on moving forward with the rails framework.</p>
+<p>There are a couple of changes that are worth mentioning, but see the <a href="http://github.com/radiant/radiant/blob/master/CHANGELOG"><span class="caps">CHANGELOG</span></a> for the full details. What are some big changes?</p>
+<ul>
+	<li>You can manage multiple page fields</li>
+	<li>You have a default asset manager based on paperclipped</li>
+	<li>You have a default stylesheet and javascript manager with support for Sass</li>
+	<li>Radiant has moved to Rails 2.3.11</li>
+</ul>
+<p><strong>If you are an extension developer, begin upgrading now.</strong> The official release of 1.0 is just around the corner.</p>
+<p>As always we welcome your feedback and contributions.</p>
+<h4>Download &amp; Install</h4>
+<p>You can download the gem here http://github.com/radiant/radiant/downloads</p>
+<p>Install it with the gem command:</p>
+<pre><code>$ gem install radiant --prerelease</code></pre>
+<p>This will install the gem as &#8216;radiant-1.0.0.rc1&#8217;.</p>
+<h4>How to Upgrade an Existing Project or Site</h4>
+<p>1. Update the Radiant assets from in your project:</p>
+<pre><code>rake radiant:update</code></pre>
+<p>2. Migrate the database:</p>
+<pre><code>rake production db:migrate</code></pre>
+<p>3. Restart the web server</p>
+<div id="extended">
+
+</div>
+    </div>
+    <div id="footer">
+<p>Radiant <span class="caps">CMS</span> was created by <a href="http://wiseheartdesign.com/">John W. Long</a>, extended by <a href="http://seancribbs.com">Sean Cribbs</a>, and has been continuously improved by a <a href="https://github.com/radiant">team of core committers</a> with dozens of additional contributions from the Radiant community.</p>
+<p>This site is made with <a href="http://ruby-lang.org">Ruby</a> and powered by Radiant. Hosting is graciously provided by the kind folks at <a href="http://avlux.net"><span class="caps">AVLUX</span></a>.</p>
+<p>Web Site Design, Logo, Etc. Copyright &copy; 2006&#8211;2013, John W. Long. All Rights Reserved.</p>
+    </div>
+    <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-301205-1";
+urchinTracker();
+</script>
+    <script type="text/javascript">
+  (function() {
+    var t   = document.createElement('script');
+    t.type  = 'text/javascript';
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', '4e09fee9f5a1f50f03000001');
+    t.src = '//secure.gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+  </body>
+</html>

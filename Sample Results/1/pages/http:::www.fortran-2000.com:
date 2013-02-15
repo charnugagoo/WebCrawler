@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0028)http://www.fortran-2000.com/ -->
+<HTML><HEAD><TITLE>Fortran 90 +</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="A WEB site on the way to more Fortran public domain utilities." 
+name=description>
+<META 
+content="fortran 90 95 2000 77 public domain utilities sort rank order sorting  ranking ordering routines " 
+name=keywords>
+<META content="MSHTML 6.00.2800.1458" name=GENERATOR></HEAD>
+<BODY text=#000000 vLink=#3d0000 aLink=#cb0000 link=#a50000 
+bgColor=#fbf0df><FONT 
+face="Goudy Extra Bold CG ATT, arial, Arial, helvetica"><FONT size=6>
+<P align=center><A name=0.0>Fortran 90 +</A></FONT></P><FONT size=5>
+<P align=center>-- Fortran 90, Fortran 95, Fortran 2000 --</FONT></P><FONT 
+size=5>
+<P align=center>A WEB site on the way to more public domain 
+utilities.</FONT></P><FONT size=3>
+<HR>
+
+<H2></FONT><FONT size=5>Contents :</H2>
+<DL>
+  <DD></FONT><FONT size=3><A 
+  href="http://www.fortran-2000.com/#1.0">Rationale</A> </FONT></FONT><FONT 
+  face="Goudy Extra Bold CG ATT, arial, Arial, helvetica" size=3>
+  <DD><A href="http://www.fortran-2000.com/#3.0">ORDERPACK 2.0 — General and 
+  Specialized Ranking and Sorting Routines</A> 
+  <DD><A href="http://www.fortran-2000.com/#2.0">Some links</A> </DD></DL>
+<HR>
+<A name=1.0>
+<H2></FONT><FONT face="Goudy Extra Bold CG ATT, arial, Arial, helvetica" 
+size=5>Rationale</H2></A>
+<P></FONT><FONT face="Goudy Extra Bold CG ATT, arial, Arial, helvetica" 
+size=3>Fortran 90 and later variants (currently Fortran 95) aid scientific and 
+technical programmers working with vectors, matrices, and other higher 
+dimensional arrays containing binary, integer, real, and complex data. 
+Scientific programmers wish to write straightforward code performing 
+computationally challenging tasks. Straightforward means code which closely 
+follows the mathematical underpinnings of the task. It also means code that 
+follows good programming practices. In addition, scientific programmers need 
+excellent file handling capabilities to read and write data. Most scientific 
+programmers rely heavily on numerical libraries, such as IMSL and NAG, in 
+computing their results. </P>
+<P>While Fortran 90 and later variants have made life much easier for scientific 
+programmers than Fortran 77, the language still lacks depth in public domain 
+utilities. The following package, ORDERPACK 2.0, illustrates the type of 
+important but uncommon routines needed to complete the Fortran programming 
+environment.&nbsp; ORDERPACK 2.0 performs both conventional sorting and ranking 
+as well as the rarer specialized ordering tasks such as partial sorting, partial 
+ranking, unique sorting, unique ranking, inverse unique ranking, etcetera. These 
+partial sort and ranking routines can greatly accelerate many computations when 
+users need only the m largest or smallest elements out of a n element vector. As 
+an example of the speed, in 100,000 trials of picking the smallest 9 elements 
+out of 500 total elements it took in total only 2.7 seconds for the the 100,000 
+partial and unique rankings on a 600 Mhz PC using CVF 6.1a. A similar experiment 
+involved 100 trials of simulating a random vector of length 1,000,000 and 
+ranking the 20 smallest elements (keeping duplicates). On a 460 Mhz AlphaStation 
+with Compaq Fortran 90 V5.2, taking care to increase stacksize, partial ranking 
+by itself took 2.3 seconds, <I>i.e.</I> 23 milliseconds per vector.</P><A 
+name=3.0>
+<P></A></FONT><FONT face="Goudy Extra Bold CG ATT, arial, Arial, helvetica" 
+size=5><A href="http://www.fortran-2000.com/rank/index.html">ORDERPACK 
+2.0</A><B> Unconditional, Unique, and Partial Ranking, Sorting, and Permutation 
+Fortran 90 source code</B>.</P>
+<P>Note that ORDERPACK 2.0 is <A 
+href="http://www.fortran.com/F">F</A>-compatible.</P>
+<P>Illustrative Application</P>
+<P></FONT><FONT face="Goudy Extra Bold CG ATT, arial, Arial, helvetica" 
+size=3>In spatial-temporal applications one often wishes to know the nearby 
+observations (say the <EM>m</EM> closest) subject to having these nearby 
+observations also prior in time to the observation itself.&nbsp; Many of the 
+ways of forming purely spatial neighbors such as those based upon Delaunay 
+triangles do not function well in a spatial-temporal setting. However, partial 
+ranking always works and can function with many more dimensions. Since the 
+number of neighbors, <EM>m</EM>, is much smaller than the number of 
+observations, <EM>n</EM>, the partial ranking algorithm saves a great deal of 
+time relative to full ranking.&nbsp; For 7,000 observations, the partial 
+algorithm saves almost a factor of 200 in terms of time over the full algorithm. 
+Finding all the neighbors for 100,000 observations takes less than 8 minutes on 
+a 600 Mhz PC, thus making spatial-temporal methods feasible for large data sets 
+on desktop machines. This application was based upon work supported by the National Science Foundation under Grant No. BSC-0136229. Any opinions, findings and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation (NSF).&nbsp;&nbsp; <A 
+href="http://www.fortran-2000.com/tn1.pdf">Documentation</A> &nbsp; <A 
+href="http://www.fortran-2000.com/time_neighbors_files.zip">Complete Application 
+(source code, pc executable code, data, documentation)</A> &nbsp;</P>
+<HR>
+<A name=2.0>
+<H2>Some links</H2></A>
+<UL></FONT><FONT face="Goudy Extra Bold CG ATT, arial, Arial, helvetica" 
+  size=3>
+  <LI><B>Information:</B> <A 
+  href="http://www.fortran-2000.com/ArnaudRecipes/index.html">Arnaud Desitter's 
+  Recipes</A>: Compiler and Tools Tricks, Advices, sources of information, and a 
+  lot more. 
+  <LI><B>Information:</B> <A 
+  href="http://www.fortran-2000.com/MichelList/index.html">Michel Olagnon's 
+  Fortran 90 FAQ</A> and links to other useful software. If you wish to contact 
+  him, send an email to <A 
+  href="mailto:Michel.Olagnon@ifremer.fr">Michel.Olagnon@ifremer.fr</A>. 
+  <LI><B>Software:</B> <A href="http://www.bigpond.net.au/amiller">A huge 
+  repository</A> at Alan Miller's site, with statistical and other code 
+  <LI><B>Source code processing utilities:</B> <A 
+  href="http://www.ifremer.fr/ditigo/molagnon/fortran90/contenu.html">MOWARE 
+  1.0</A> Michel Olagnon's pre-processor, pretty-printer, automatic interface 
+  block generator, and PostScript listing utilities 
+  <LI><B>Information:</B> The sites <A 
+  href="http://www.fortran.com/">fortran.com</A> and <A 
+  href="http://www.fortranlib.com/">fortranlib.com</A> contain links to many 
+  other important fortran sites. 
+  <LI><B>Scientific libraries:</B> <A href="http://www.nag.com/">NAG</A> and <A 
+  href="http://www.vni.com/">IMSL</A> libraries greatly extend Fortran. 
+  <LI><B>Libraries:</B> Many libraries reside at <A 
+  href="http://www.netlib.org/">NETLIB</A>. 
+  <LI><B>Spatial statistics:</B> R. Kelley Pace has written some Fortran 90 
+  programs (SPACESTATPACK) which resides at <A 
+  href="http://www.spatial-statistics.com/">spatial-statistics.com</A>. If you 
+  wish to contact him, send an email to <A 
+  href="mailto:kelley@pace.am">kelley@pace.am</A>. </LI></UL>
+<HR>
+</FONT>
+<P>Last updated: 2004/01/14</P>
+<P><A href="http://www.fortran-2000.com/#0.0">Back to top</A></P>
+<HR>
+</BODY></HTML>

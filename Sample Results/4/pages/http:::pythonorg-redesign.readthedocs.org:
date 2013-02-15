@@ -1,0 +1,708 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+
+    <title>Request for Proposal &mdash; Python.org Redesign 1 documentation</title>
+<!-- RTD <head> -->
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript" src="//media.readthedocs.org/javascript/underscore.js"></script>
+<script type="text/javascript" src="//media.readthedocs.org/javascript/doctools.js"></script>
+
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+
+<script type="text/javascript">
+  // This is included here for Javascript that doesn't have access to the templates.
+  var doc_version = "latest";
+  var doc_slug = "pythonorg-redesign";
+</script>
+
+<script type="text/javascript" src="//media.readthedocs.org/javascript/rtd.js"></script>
+<!-- end RTD <head> -->
+
+    
+    <link rel="stylesheet" href="_static/rtd.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <link rel="top" title="Python.org Redesign 1 documentation" href="#" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="#">Python.org Redesign 1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="request-for-proposal">
+<h1>Request for Proposal<a class="headerlink" href="#request-for-proposal" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>The Python Software Foundation (PSF) is accepting proposals for
+architecture, design, development, and maintenance of the primary web
+site for the Python programming language, <a class="reference external" href="http://www.python.org">www.python.org</a>.</p>
+<p>The existing Python web site was originally discussed at
+PyCon 2003. The site was then designed, developed and deployed in
+Spring 2006. The site is currently maintained by a team of community
+volunteers using a custom suite of tools. To get a better
+understanding of the current system, you can review the redesign
+proposal, slideshow and system usage guide by checking out the
+following code through subversion:</p>
+<div class="highlight-python"><pre>svn co https://svn.python.org/www/trunk/beta.python.org/resources/docs/ beta-python-docs</pre>
+</div>
+<p>Python has grown significantly in the last few years, both in terms of
+audience and the amount of topical information about it. This
+(welcome) abundance of information has outgrown the current website&#8217;s
+taxonomy. The key goal of this project is to update Python&#8217;s official
+web presence with an eye to better organizing the information we have
+today (and expect to add in the future). The end result should aid the
+various audience roles in locating the information relevant to their
+needs.</p>
+</div>
+<div class="section" id="proposal-guidelines">
+<h2>Proposal guidelines<a class="headerlink" href="#proposal-guidelines" title="Permalink to this headline">¶</a></h2>
+<p>Proposals should be submitted by 11:59pm EST, 07/21/2012 via email to
+<a class="reference external" href="mailto:psf-redesign&#37;&#52;&#48;python&#46;org">psf-redesign</a> in PDF format. Proposals received after this date and
+time will not be considered. Proposals should be comprehensive,
+covering all aspects of this RFP.  The PSF will then take up to three months
+to review all the received proposals before making a decision.</p>
+<p>Note: Bids submitted by a collaborative team of professionals are
+acceptable as long as there is a single signatory to the contract. We
+encourage teams and individuals to collaborate on this project as we
+feel it will enrich the final product and reflects the Python
+community&#8217;s ethos.</p>
+<p>Officers and Directors of the Python Software Foundation can be part
+of a proposal team, but must declare their conflict of interest and
+recuse themselves from the final selection.</p>
+<p>Proposals should include:</p>
+<ul class="simple">
+<li>An overview of your company&#8217;s recommended process for the project</li>
+<li>A draft timeline with staggered deliverables for the project.
+(We envision the redesign requiring 3 to 6 months to build.)</li>
+<li>Sketches of potential layouts which express the team&#8217;s vision for
+<tt class="docutils literal"><span class="pre">python.org</span></tt> are extremely helpful in proposal selection, but are not
+required for submission.</li>
+<li>Your suggestions for each of the points identified in <a class="reference internal" href="#purpose"><em>Purpose</em></a>, below.</li>
+<li>Your qualifications for the areas identified in <a class="reference internal" href="#scope"><em>Scope</em></a>, below.</li>
+</ul>
+<p>Proposals must contain the following information about the proposer:</p>
+<ul class="simple">
+<li>Company name, contact information and website URL</li>
+<li>Background, including company history, team members, services</li>
+<li>Which company resources would be dedicated to the project</li>
+<li>Samples and designer portfolios of work similar in size and scope</li>
+<li>Contact information for references.</li>
+</ul>
+</div>
+<div class="section" id="purpose">
+<span id="id1"></span><h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h2>
+<p>Although the current implementation of the Python web site has served
+its purpose over the years, the time has come for the site to
+progress and complement the growth and maturity of the
+language itself as well as the vibrancy of the community.</p>
+<p>This project represents an opportunity to revamp the Python web site
+from the ground up.</p>
+<p>The next implementation of the site should:</p>
+<ul class="simple">
+<li>Boast a modern design and experience</li>
+<li>Provide concise and intuitive navigation</li>
+<li>Showcase the simplicity and elegance of the language</li>
+<li>Attract and convert potential Python users and Python Software
+Foundation sponsors</li>
+<li>Represent the vibrant, active community</li>
+<li>Make it easy for a wide range of contributors to add content</li>
+<li>Enhance the visibility of the PSF and its sponsors</li>
+<li>Provide examples of success stories</li>
+<li>Enhance the visibility of alternate implementations (Jython,
+IronPython, PyPy...)</li>
+<li>Exist atop stable and scalable infrastructure (99.99% availability;
+able to survive a slashdotting).</li>
+</ul>
+</div>
+<div class="section" id="scope">
+<span id="id2"></span><h2>Scope<a class="headerlink" href="#scope" title="Permalink to this headline">¶</a></h2>
+<p>The scope of the project work will encompass the primary web site,
+<tt class="docutils literal"><span class="pre">python.org</span></tt>.  There are four main areas that should be focused on:</p>
+<ul class="simple">
+<li>Information architecture</li>
+<li>Visual design and user experience</li>
+<li>Front- and back-end development</li>
+<li>System architecture and monitoring</li>
+</ul>
+<p>Examples of URLs that will be included in this project are:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://python.org/">http://python.org/</a></li>
+<li><a class="reference external" href="http://python.org/community/">http://python.org/community/</a></li>
+<li><a class="reference external" href="http://python.org/download/">http://python.org/download/</a></li>
+<li><a class="reference external" href="http://python.org/news/">http://python.org/news/</a></li>
+<li><a class="reference external" href="http://python.org/psf/">http://python.org/psf/</a></li>
+</ul>
+<p>The scope does not include sub-domains of <tt class="docutils literal"><span class="pre">python.org</span></tt> such as
+<tt class="docutils literal"><span class="pre">pypi.python.org</span></tt> or <tt class="docutils literal"><span class="pre">bugs.python.org</span></tt>. However, the work
+performed should be done in such a way that the brand can be applied
+to other PSF properties and applications (e.g. <tt class="docutils literal"><span class="pre">planet.python.org</span></tt>)
+at a later date.</p>
+</div>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">These requirements are hard requirements, and are non-negotiable in
+any proposal.</p>
+</div>
+<ul>
+<li><p class="first">Content must be editable offline, when there is no network
+availability.  Content may additionally be editable by both
+in-browser and external command line tools.</p>
+</li>
+<li><p class="first">Multiple versions of content must be saved as edits are made, with a
+facility for reverting an individual document to an older version.</p>
+</li>
+<li><p class="first">Permit the use of reStructuredText for content markup.</p>
+</li>
+<li><p class="first">Allow for easy localization of content and URLs.  For example, we
+might present a Spanish translation of the home page that links to
+Spanish documentation.</p>
+</li>
+<li><p class="first">Ability to quickly create sub-sites (e.g. <tt class="docutils literal"><span class="pre">edu.python.org</span></tt>,
+<tt class="docutils literal"><span class="pre">mentors.python.org</span></tt>, etc.)  A sub-site might contain some HTML
+pages of content, some images and PDF files, and a weblog; sub-sites
+are not full-blown web applications like Roundup or Drupal.</p>
+</li>
+<li><p class="first">Ability to quickly create blogs (e.g. <tt class="docutils literal"><span class="pre">python.org/blogs/psf</span></tt>)</p>
+</li>
+<li><p class="first">Aggregate and incorporate content from various sources (e.g. <tt class="docutils literal"><span class="pre">blip.tv</span></tt>, blogs,
+news feeds, etc.)</p>
+</li>
+<li><p class="first">Detailed plan for importing all existing site content.  This conversion does not
+need to be complete for an initial launch, but the process must be clear.</p>
+</li>
+<li><p class="first">Section 508 compliance (possibly WAI-ARIA compliance).  The site should
+comply with the spirit of the guidelines, but need not be 100%
+compliant with the letter of the law.  (100% compliance is not mandated in order to
+avoid the need for a full audit by an expert.)</p>
+</li>
+<li><p class="first">A well-documented (REST) API for retrieval and creation of content, with
+preference given to APIs supported by existing client-side tools such as
+common offline editing/blogging tools.</p>
+</li>
+<li><p class="first">Open and standards-based accessible APIs that can be used from any
+language.</p>
+</li>
+<li><p class="first">These APIs/tools should also be documented on the website itself. e.g. if a
+piece of content requires Mercurial, the page should contain simple
+instructions such as:</p>
+<div class="highlight-python"><pre>Get a local copy of the FOOBAR repository with this command:
+hg clone https://blah-blah-blah</pre>
+</div>
+</li>
+<li><p class="first">Provide 301 redirects for those URLs that change (or retain current
+URLs).</p>
+</li>
+<li><p class="first">Ability to add new 301 redirects in case the information
+architecture changes.</p>
+</li>
+<li><p class="first">Fast page speed/aggressive caching.  The target is an average
+front-end page load time (e.g. time until DOM load/document ready)
+of less than 3 seconds, with no outliers beyond 10 seconds.</p>
+</li>
+<li><p class="first">Monitoring of critical systems using modern monitoring tools, such
+as Munin, etc. Bidders should coordinate with the PSF Infrastructure
+team on tool selection.</p>
+</li>
+<li><p class="first">Must run on PSF servers; must not be locked to a single cloud hosting company&#8217;s
+infrastructure of tools.</p>
+</li>
+</ul>
+<p>Optional requirements:</p>
+<ul class="simple">
+<li>May support a workflow to allow content to be vetted before publication.</li>
+<li>May support a sub-site staging area where proposed subsites could be
+developed, only going public after approval by the overall site
+administrators.</li>
+</ul>
+<div class="section" id="migration-of-existing-data">
+<h3>Migration of Existing Data<a class="headerlink" href="#migration-of-existing-data" title="Permalink to this headline">¶</a></h3>
+<p>All content from the existing site must be migrated to the new system.
+Content of historical pages must not be modified, although they should
+be restyled to fit the new appearance.</p>
+</div>
+<div class="section" id="licensing">
+<h3>Licensing<a class="headerlink" href="#licensing" title="Permalink to this headline">¶</a></h3>
+<p>All content, code, visual design, imagery and other related work
+for the site must be done with a licensing scheme that allows for the
+Python Software Foundation to redistribute, relicense and otherwise
+disseminate the material.</p>
+<p>The Foundation requires that the construction of the system respect
+the principles behind Python&#8217;s own permissive licensing scheme and
+open source software in general. The <strong>required</strong> toolchain to build,
+operate and maintain the site, including all code deployed as part of
+the site itself, must consist entirely of open source software under
+OSI approved licenses.  Bidders may use proprietary software for
+their own internal purposes (e.g., checking site compatibility with
+closed source web browsers), but use of such tools must not be
+essential to working effectively with the system.</p>
+<p>The primary implementation language must be Python, though components
+in other languages can be used.  For example, a proposal can use Chef, which is
+written in Ruby; a proposal cannot use Drupal, which is written in
+PHP, for everything.</p>
+</div>
+</div>
+<div class="section" id="audiences">
+<h2>Audiences<a class="headerlink" href="#audiences" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="potential-users">
+<h3>Potential users<a class="headerlink" href="#potential-users" title="Permalink to this headline">¶</a></h3>
+<p>These users are new to Python or investigating it for potential
+use. Questions they may have include:</p>
+<ul class="simple">
+<li>What is Python?</li>
+<li>What does it look like (e.g. syntax)?</li>
+<li>Why would I want to use Python?</li>
+<li>How do I get started with Python?</li>
+<li>How do I learn Python?</li>
+<li>Who uses Python (success stories)?</li>
+<li>How do I communicate with other Python users?</li>
+<li>What are some ways Python is being used today?</li>
+<li>Who is using Python for XYZ industry?</li>
+</ul>
+</div>
+<div class="section" id="existing-users">
+<h3>Existing users<a class="headerlink" href="#existing-users" title="Permalink to this headline">¶</a></h3>
+<p>These users already use and/or contribute to Python. Examples of
+information they are trying to gather include:</p>
+<ul class="simple">
+<li>How do I do XYZ with Python?</li>
+<li>How do I become a Python expert?</li>
+<li>Where are the closest Python user groups?</li>
+<li>Which developers in my area are using Python?</li>
+<li>How do I find a Python job?</li>
+<li>Is our company&#8217;s version of Python current?</li>
+<li>What sources of information are there on XYZ in Python?</li>
+<li>What is the roadmap for Python?</li>
+<li>How do I donate to support Python?</li>
+<li>How do I download the current release of Python?</li>
+<li>How do I download an older release of Python?</li>
+<li>How do I tell if this is a bug in my code or in Python?</li>
+<li>How do I submit a bug report?</li>
+<li>How do I become a contributor?</li>
+<li>How do I write or contribute to the documentation for Python?</li>
+</ul>
+</div>
+<div class="section" id="users-of-other-languages">
+<h3>Users of other languages<a class="headerlink" href="#users-of-other-languages" title="Permalink to this headline">¶</a></h3>
+<p>These users primarily use other programming languages. Examples of
+what these users may be asking include:</p>
+<ul class="simple">
+<li>Why should I switch to Python?</li>
+<li>Can I use Python in tandem with the language(s) I&#8217;m using today?</li>
+<li>How does Python compare to language XYZ?</li>
+<li>Does Python have an implementation of a tool that exists in
+my language?</li>
+<li>Does Python have an implementation of a tool that does not exist in
+my language?</li>
+</ul>
+</div>
+<div class="section" id="managers">
+<h3>Managers<a class="headerlink" href="#managers" title="Permalink to this headline">¶</a></h3>
+<p>These users may be technical or non-technical. Examples of what these
+users may be looking for include:</p>
+<ul class="simple">
+<li>Who uses Python? Why?</li>
+<li>What are some ways others are using Python?</li>
+<li>Why does my staff insist on moving to Python?</li>
+<li>How high is the quality of the software?</li>
+<li>Python is popular. Should we be using it?</li>
+</ul>
+</div>
+<div class="section" id="contributors">
+<h3>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline">¶</a></h3>
+<p>These users are heavily vested in Python and contribute to the
+language. They may be asking:</p>
+<ul class="simple">
+<li>Who is working on which features for the next release?</li>
+<li>When is build XYZ due?</li>
+<li>What show-stopper bugs should I focus on?</li>
+<li>What easy bugs are available to work on?</li>
+<li>How do I contribute [code|bug reports]</li>
+</ul>
+</div>
+<div class="section" id="sponsors">
+<h3>Sponsors<a class="headerlink" href="#sponsors" title="Permalink to this headline">¶</a></h3>
+<p>These are potential contributors / sponsor members for the Python
+software foundation, the information they would be looking for
+includes:</p>
+<ul class="simple">
+<li>All information in the &#8220;Managers&#8221; section</li>
+<li>Information about the Python Software Foundation including what it
+is has done, current projects, and how to join.</li>
+<li>What benefits sponsorship includes.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="current-issues">
+<h2>Current Issues<a class="headerlink" href="#current-issues" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="architecture-and-maintenance">
+<h3>Architecture and Maintenance<a class="headerlink" href="#architecture-and-maintenance" title="Permalink to this headline">¶</a></h3>
+<p>Currently the site uses a custom-built content build system - this
+system requires technical knowledge (e.g. of Subversion and Make) to add
+the smallest news item to the system. We need the ability for
+individuals with limited coding experience to contribute and maintain
+content on the main site and sub-sites.</p>
+<p>We envision the new system as a markup-based document system that
+supports offline contribution.  (<a class="reference external" href="http://www.readthedocs.org">http://www.readthedocs.org</a> is a
+example of this approach.)  Since the existing markup/offline approach
+doesn&#8217;t work for less technical people and a more browser/forms-based
+approach is wanted by a certain fraction of expected site
+contributors, this RFP calls for APIs to manipulate the site content
+for supporting online and offline work as well as content federation
+and other uses.  Details of how to achieve this are left to the
+creativity of the bidder.</p>
+<p>The system must also be well-documented, providing an overview
+describing the general architecture, instructions for installing the
+system, and user documentation for the workflows to edit/add/publish
+content.  Developers or content authors may wish to run the
+application locally for their own purposes, so the system must be
+installable for them.</p>
+<p>Post-launch, we envision that PSF volunteers will perform most future
+improvements and maintenance tasks; the winner(s) of the bid may
+provide assistance, but does not carry the primary burden of
+supporting the system.</p>
+</div>
+<div class="section" id="information-architecture">
+<h3>Information Architecture<a class="headerlink" href="#information-architecture" title="Permalink to this headline">¶</a></h3>
+<p>If you examine the current home page, you will note the amount of
+information first presented to the user is overwhelming, and the
+navigation on the left hand side is as well. The latter - either
+through lack of organization or &#8220;informational spread&#8221; of information
+(the site has grown organically over time) - means that navigation is
+confusing/disjointed.  In addition, many sections of the site have
+overlapping use cases, so a strictly hierarchical navigation makes
+material difficult to find.</p>
+<p>The current site contains a lot of content because at one time the
+goal was to contain or at least link to every possible Python
+resource.  Today&#8217;s search engines are better and there are many
+relevant web sites, so the architecture may drop some of the current
+content and promote different material.  For example, do we want to
+discard the News or &#8220;Using Python For&#8221; sections from the home page?
+Vendors may wish to look at web sites for other programming languages,
+including but not limited to <a class="reference external" href="http://www.perl.org">http://www.perl.org</a>,
+<a class="reference external" href="http://www.ruby-lang.org/">http://www.ruby-lang.org/</a>, <a class="reference external" href="http://www.haskell.org/">http://www.haskell.org/</a>.</p>
+</div>
+<div class="section" id="visual-design">
+<h3>Visual Design<a class="headerlink" href="#visual-design" title="Permalink to this headline">¶</a></h3>
+<p>The current visual design is felt to be very dated, and lacking many
+of the new UX and UI attributes (cleanliness, color, etc) that
+represent the modern web.  The site does present a massive amount of
+information - in an overwhelming and unorganized fashion. The visual
+elements and cues used are inconsistent and disorganized.</p>
+<p>The new design should follow current best practices for web design,
+such as using valid HTML, using CSS instead of tables, following
+accessibility guidelines, degrading gracefully if the user&#8217;s browser
+does not run JavaScript, etc.</p>
+<p>The proposal must not feature a redesign of the
+<a class="reference external" href="http://www.python.org/community/logos/">Python logo</a>.
+The new design may feature the logo prominently or the design may omit
+it, but the logo cannot be changed.</p>
+<p>The proposal may feature a retheming of <a class="reference external" href="http://docs.python.org">http://docs.python.org</a> but
+need not do so.</p>
+</div>
+</div>
+<div class="section" id="project-management">
+<h2>Project Management<a class="headerlink" href="#project-management" title="Permalink to this headline">¶</a></h2>
+<p>Contact information for primary and secondary contacts for the
+proposing team should be be provided.  Proposals should include
+descriptions of the project management processes and tools typically
+used by the proposal organization.  After a proposal is accepted, the
+PSF will expect weekly status reports.</p>
+</div>
+<div class="section" id="cost-price-estimates">
+<h2>Cost/Price Estimates<a class="headerlink" href="#cost-price-estimates" title="Permalink to this headline">¶</a></h2>
+<p>We understand that the design and architecture (UI/UX) part is likely
+to be a number of rounds of back and forth between the
+designer/architect person and the PSF. We understand that it is
+impossible to put a fixed budget on a design process since by its very
+nature it should be iterative and back-and-forth.</p>
+<p>Therefore, quotes should be broken down to reflect appropriate
+rates instead of a single fixed-price estimate, in the following
+format:</p>
+<ul class="simple">
+<li>Back-end work: $(fixed amount)</li>
+<li>UI/UX: $(amount per iteration/hour) up to $(max)</li>
+<li>Ongoing stuff: $(amount)/month</li>
+</ul>
+</div>
+<div class="section" id="selection-process">
+<h2>Selection process<a class="headerlink" href="#selection-process" title="Permalink to this headline">¶</a></h2>
+<p>Proposals will be evaluated based on the following criteria:</p>
+<ul class="simple">
+<li>Proposal timeliness.</li>
+<li>Did the submitter follow the submission instructions?</li>
+<li>Was the proposal comprehensive?</li>
+<li>Did the proposal cover the five main points mentioned in <a class="reference internal" href="#scope"><em>scope</em></a>?</li>
+<li>Are the resources, experience and technical expertise of the company
+adequate?</li>
+<li>Is there a clear plan for follow-up and further requirements
+discussions and refinement?</li>
+</ul>
+<p>Final selection will be made by the Python Software Foundation board
+of directors. The primary point of contact for all inquiries should be
+<a class="reference external" href="mailto:psf-redesign&#37;&#52;&#48;python&#46;org">psf-redesign</a>.  Bidders should feel free to ask questions of the
+current maintainers or discuss their proposal before final submission
+by posting to <a class="reference external" href="mailto:pydotorg-www&#37;&#52;&#48;python&#46;org">pydotorg-www</a>.</p>
+<p>Additionally, if needed you can contact:</p>
+<ul class="simple">
+<li>Andrew Kuchling, PSF Board member: <a class="reference external" href="mailto:amk&#37;&#52;&#48;python&#46;org">amk<span>&#64;</span>python<span>&#46;</span>org</a></li>
+<li>Python Software Foundation board: <a class="reference external" href="mailto:psf&#37;&#52;&#48;python&#46;org">psf<span>&#64;</span>python<span>&#46;</span>org</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+
+
+
+    <h3>Project Versions</h3>
+    <ul id="sidebar_versions">
+
+  <li><a href="/en/latest/">latest</a></li>
+
+    </ul>
+
+<div id="searchbox" style="">
+  <h3>RTD Search</h3>
+    <form class="search" action="//readthedocs.org/search/project/" method="get">
+      <input type="text" name="q" size="18">
+      <input type="submit" value="Go">
+      <input type="hidden" name="selected_facets" value="project_exact:python.org redesign">
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+        Full-text doc search.
+    </p>
+</div>
+ 
+
+
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Request for Proposal</a><ul>
+<li><a class="reference internal" href="#summary">Summary</a></li>
+<li><a class="reference internal" href="#proposal-guidelines">Proposal guidelines</a></li>
+<li><a class="reference internal" href="#purpose">Purpose</a></li>
+<li><a class="reference internal" href="#scope">Scope</a></li>
+<li><a class="reference internal" href="#requirements">Requirements</a><ul>
+<li><a class="reference internal" href="#migration-of-existing-data">Migration of Existing Data</a></li>
+<li><a class="reference internal" href="#licensing">Licensing</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#audiences">Audiences</a><ul>
+<li><a class="reference internal" href="#potential-users">Potential users</a></li>
+<li><a class="reference internal" href="#existing-users">Existing users</a></li>
+<li><a class="reference internal" href="#users-of-other-languages">Users of other languages</a></li>
+<li><a class="reference internal" href="#managers">Managers</a></li>
+<li><a class="reference internal" href="#contributors">Contributors</a></li>
+<li><a class="reference internal" href="#sponsors">Sponsors</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#current-issues">Current Issues</a><ul>
+<li><a class="reference internal" href="#architecture-and-maintenance">Architecture and Maintenance</a></li>
+<li><a class="reference internal" href="#information-architecture">Information Architecture</a></li>
+<li><a class="reference internal" href="#visual-design">Visual Design</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#project-management">Project Management</a></li>
+<li><a class="reference internal" href="#cost-price-estimates">Cost/Price Estimates</a></li>
+<li><a class="reference internal" href="#selection-process">Selection process</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="#">Python.org Redesign 1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+
+    <div class="footer">
+        &copy; Copyright 2011, Python Software Foundation.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
+    </div>
+ <!-- End original user content -->
+
+
+
+<style type="text/css">
+  .rtd-badge {
+    position: fixed;
+    display: block;
+    bottom: 5px;
+    height: 40px;
+    text-indent: -9999em;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.2) inset;
+    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.2) inset;
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.2) inset;
+  }
+  #version_menu {
+    position: fixed;
+    display: none;
+    bottom: 11px;
+    right: 166px;
+    list-style-type: none;
+    margin: 0;
+  }
+  .footer_popout:hover #version_menu {
+    display: block;
+  }
+  #version_menu li {
+    display: block;
+    float: right;
+  }
+  #version_menu li a {
+    display: block;
+    padding: 6px 10px 4px 10px;
+    margin: 7px 7px 0 0;
+    font-weight: bold;
+    font-size: 14px;
+    height: 20px;
+    line-height: 17px;
+    text-decoration: none;
+    color: #fff;
+    background: #8ca1af url(../images/gradient-light.png) bottom left repeat-x;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    box-shadow: 0 1px 1px #465158;
+    -moz-box-shadow: 0 1px 1px #465158;
+    -webkit-box-shadow: 0 1px 1px #465158;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  }
+  #version_menu li a:hover {
+    text-decoration: none;
+    background-color: #697983;
+    box-shadow: 0 1px 0px #465158;
+    -moz-box-shadow: 0 1px 0px #465158;
+    -webkit-box-shadow: 0 1px 0px #465158;
+  }
+  .rtd-badge.rtd {
+    background: #3b4449 url(//media.readthedocs.org//images/badge-rtd.png) scroll 0px -46px no-repeat;
+    border: 1px solid #282E32;
+    width: 41px;
+    right: 5px;
+  }
+  .footer_popout:hover .rtd-badge.rtd {
+    background-position: top left;
+    width: 160px;
+  }
+  .rtd-badge.revsys { background: #465158 url(//media.readthedocs.org//images/badge-revsys.png) top left no-repeat;
+    border: 1px solid #1C5871;
+    width: 290px;
+    right: 173px;
+  }
+  .rtd-badge.revsys-inline-sponsored {
+    position: inherit;
+    margin-left: auto;
+    margin-right: 175px;
+    margin-bottom: 5px;
+    background: #465158 url(//media.readthedocs.org//images/badge-revsys.png) top left no-repeat;
+    border: 1px solid #1C5871;
+    width: 290px;
+    right: 173px;
+  }
+  .rtd-badge.revsys-inline {
+    position: inherit;
+    margin-left: auto;
+    margin-right: 175px;
+    margin-bottom: 5px;
+    background: #465158 url(//media.readthedocs.org//images/badge-revsys-sm.png) top left no-repeat;
+    border: 1px solid #1C5871;
+    width: 205px;
+    right: 173px;
+  }
+
+.rtd_doc_footer { background-color: #465158;}
+
+</style>
+<div class="rtd_doc_footer">
+  <div class="footer_popout">
+    <a href="//readthedocs.org/projects/pythonorg-redesign/?fromdocs=pythonorg-redesign" class="rtd-badge rtd"> Brought to you by Read the Docs</a>
+    <ul id="version_menu">
+      
+        <li><a href="/en/latest/">latest</a></li>
+      
+    </ul>
+  </div>
+</div>
+<!-- RTD Analytics Code -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17997319-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+  </body>
+</html>

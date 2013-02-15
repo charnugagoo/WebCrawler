@@ -1,0 +1,256 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <title>PyPy's Speed Center</title>
+    <meta name="description" content="A performance analysis tool for the PyPy project. It shows performance regresions and improvements and allows comparison to other implementations">
+    <meta name="keywords" content="performance, test, interpreter, plots, charts">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <link href="/static/css/main.css" rel="stylesheet" type="text/css">
+    <script type='text/javascript'>
+        var STATIC_URL = '/static/';
+    </script>
+    <link rel="shortcut icon" href="/static/images/favicon.ico" />
+    <script type="text/javascript" src="/static/js/codespeed.js"></script>
+    <script type="text/javascript" src="/static/js/jquery-1.6.2.min.js"></script>
+    
+
+<link rel="stylesheet" type="text/css" href="/static/js/jqplot/jquery.jqplot.min.css" />
+<script type="text/javascript" src="/static/js/jqplot/jquery.jqplot.min.js"></script>
+<script type="text/javascript" src="/static/js/jqplot/jqplot.barRenderer.min.js"></script>
+<script type="text/javascript" src="/static/js/jqplot/jqplot.canvasAxisTickRenderer.min.js"></script>
+<script type="text/javascript" src="/static/js/jqplot/jqplot.categoryAxisRenderer.min.js"></script>
+<script type="text/javascript" src="/static/js/jqplot/jqplot.canvasAxisLabelRenderer.min.js"></script>
+<script type="text/javascript" src="/static/js/jqplot/jqplot.pointLabels.min.js"></script>
+<script type="text/javascript" src="/static/js/jqplot/jqplot.canvasTextRenderer.min.js"></script>
+
+<script type="text/javascript">
+    function numOrd(a, b){ return (a-b); }
+
+    function renderplot(data) {
+        var plotoptions = {};
+        var plotdata = [new Array(), new Array()];
+        var labels = new Array();
+        var benchmarks = new Array();
+        if (data === null || data.length === 0) {
+            $("#cpythonplot").html(getLoadText('Error retrieving data', 0));
+            return 1;
+        }
+        var trunk_geomean = 1;
+        var tagged_data = new Array();
+        for (i in data['tagged_revs']) {
+           tagged_data[i] = new Array();
+        }
+        for (var bench in data['benchmarks']) {
+            var relative_value = 0;
+            benchname = data['benchmarks'][bench];
+            var add_to_tagged_data = true;
+            for (var i in data['tagged_revs']) {
+                var rev = data['tagged_revs'][i];
+                if (data['results'][benchname][rev] === 0) {
+                    add_to_tagged_data = false;
+                }
+                if (add_to_tagged_data === false) { break; }
+                relative_value = data['results'][benchname][rev]/data['results'][benchname][data['baseline']];
+                tagged_data[i].push(relative_value)
+            }
+            // Only add benchmark if there are no 0 values
+            if (add_to_tagged_data === false) { continue; }
+            // First add benchmark
+            benchmarks.push(benchname);
+            // Add PyPy trunk and CPython's 1.0 value
+            relative_value = data['results'][benchname]['PyPy trunk']/data['results'][benchname][data['baseline']];
+            plotdata[0].push(relative_value);
+            plotdata[1].push(1.0);
+            labels.push(relative_value.toFixed(2));
+            trunk_geomean *= relative_value;
+        }
+        trunk_geomean = Math.pow(trunk_geomean, 1/plotdata[0].length);
+        var geofaster = 1/trunk_geomean;
+        $('#geomean').html(trunk_geomean.toFixed(2));
+        $('#geofaster').html(geofaster.toFixed(1));
+        // Render first plot
+        plotoptions1 = {
+            legend:{show:true},
+            seriesDefaults: {
+                showMarker: false,
+                rendererOptions:{barPadding: 2, barMargin:5}
+            },
+            axesDefaults: {
+                tickRenderer: $.jqplot.CanvasAxisTickRenderer
+            },
+            series:[
+                {
+                    label: 'PyPy trunk',
+                    renderer:$.jqplot.BarRenderer,
+                    pointLabels:{labels:labels}
+                },
+                {
+                    label: data['baseline'],
+                    pointLabels:{show:false}
+                }
+            ],
+            axes: {
+                xaxis: {
+                    renderer: $.jqplot.CategoryAxisRenderer,
+                    ticks: benchmarks,
+                    tickOptions: {angle: -40}
+                },
+                yaxis:{
+                    ticks: [0, 0.25, 0.5, 0.75, 1, 1.25],
+                    tickOptions:{formatString:'%.2f'}
+                }
+            }
+        };
+        plot1 = $.jqplot("cpythonplot", plotdata, plotoptions1);
+        
+        // Prepare and render second plot
+        var geomeans = [1.0];
+        var num_of_benchs = 0;
+        for (var i in data['tagged_revs']) {
+            num_of_benchs = tagged_data[i].length;
+            var tempgeo = 1;
+            for (var j in tagged_data[i]) {
+                tempgeo *= tagged_data[i][j];
+            }
+            tempgeo = Math.pow(tempgeo, 1/tagged_data[i].length);
+            tempgeo = 1/tempgeo;
+            geomeans.push(tempgeo);
+        }
+        geomeans.push(1/trunk_geomean);
+        var ticks = [data['baseline']];
+        for (var i in data['tagged_revs']) {
+            ticks.push(data['tagged_revs'][i]);
+        }
+        ticks.push('PyPy trunk');
+        var geolabels = new Array();
+        for (var i in geomeans) {
+//             geolabels.push(geomeans[i].toFixed(2) + " (" + (1/geomeans[i]).toFixed(1) + "x)");
+            geolabels.push(geomeans[i].toFixed(2) + "x");
+        }
+        $('#num_of_benchs').html(num_of_benchs)
+        
+        plotoptions2 = {
+            seriesDefaults: {
+                renderer:$.jqplot.BarRenderer,
+                showMarker: false
+            },
+            series:[
+                {
+                    pointLabels:{labels:geolabels}
+                }
+            ],
+            axes: {
+                xaxis: {
+                    renderer: $.jqplot.CategoryAxisRenderer,
+                    ticks: ticks
+                },
+                yaxis:{
+//                     ticks: [0.0, 0.25, 0.5, 0.75, 1.0, 1.25],
+                    min: 0,
+                    tickOptions:{formatString:'%.2f'}
+                }
+            }
+        };
+        plot2 = $.jqplot("cpythonplot2", [geomeans], plotoptions2);
+    }
+
+    function permalinkToChanges(permalink) {
+        window.location="/changes/?" + permalink;
+    }
+
+    function updateTable() {
+        //Add permalink events to table rows
+        $("div#reports table tbody tr").each(function() {
+            $(this).click(function () {
+                permalink_string = $(this).find("td:eq(0) label").text();
+                permalinkToChanges(permalink_string);
+            });
+        });
+        //Add hover effect to rows
+        $("div#reports table tbody tr td").hover(function() {
+            $(this).parents('tr').addClass('highlight');
+        }, function() {
+            $(this).parents('tr').removeClass('highlight');
+        });
+    }
+
+    $(function() {
+        $("#changes").click(function () { window.location="/changes/"; });
+        $("#timeline").click(function () { window.location="/timeline/"; });
+        $("#comparison").click(function () { window.location="/comparison/"; });
+        $.getJSON("json/", renderplot);
+//         $("#reports").html(getLoadText("Loading...", 0, true))
+//             .load("/reports/", function(responseText) { updateTable(); });
+  });
+</script>
+
+  </head>
+  <body>
+    <div id="container">
+      
+      <div id="title" class="clearfix">
+        
+          
+            <img src="/static/images/logo.png" height="48" alt="logo"/>
+          
+          <h2>SPEED CENTER</h2>
+          
+            <ul id="links" class="inline">
+              <li><a href="/">&#187;Home</a></li><li><a href="../about/">&#187;About</a></li>
+            </ul>
+          
+        
+      </div>
+
+<div id="wrapper">
+<div id="nav">
+
+
+</div>
+<div id="workarea" class="clearfix">
+
+<div id="presentation" class="clearfix">
+    <div id="changes" class="menubox">
+      <h2>Changes</h2>
+      <p>Track performance changes in the latest revisions</p>
+    </div>
+    <div id="timeline" class="menubox">
+      <h2>Timeline</h2>
+      <p>Analyze performance over time</p>
+    </div>
+    <div id="comparison" class="menubox">
+      <h2>Comparison</h2>
+      <p>Compare different executables and revisions</p>
+    </div>
+    <br />
+<!--     <div id="reports"></div> -->
+    <div id="cpython_comp" style="width:800px;;margin: 0 auto;">
+        <h3>How fast is PyPy?</h3>
+        <div id="cpythonplot" style="width:750px;height:400px;margin: 0 auto;"></div>
+        <p style="font-size:smaller;">Plot 1: The above plot represents PyPy trunk (with JIT) benchmark times normalized to CPython. Smaller is better.</p>
+        <p>It depends greatly on the type of task being performed. The geometric average of all benchmarks is <span id="geomean"></span> or <strong id="geofaster"></strong> times <em>faster</em> than CPython</p>
+        <h3>How has PyPy performance evolved over time?</h3>
+
+        <div id="cpythonplot2" style="width:600px;height:400px;margin: 0 auto;"></div>
+        <p style="font-size:smaller;">Plot 2: Speedup compared to CPython, using the inverse of the geometric average of normalized times, out of <span id="num_of_benchs"></span> benchmarks (see <a href="http://dl.acm.org/citation.cfm?id=5673" title="How not to lie with statistics: the correct way to summarize benchmark results">paper</a> on why the geometric mean is better for normalized results).</p>
+    </div>
+</div>
+
+</div>
+</div>
+
+<div class="footer">Powered by <a href="https://github.com/tobami/codespeed/">Codespeed</a>, <a href="http://www.djangoproject.com/">Django</a> and <a href="http://www.python.org">Python</a></div>
+
+</div>
+<script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+  try {
+    var pageTracker = _gat._getTracker("UA-13176393-1");
+    pageTracker._trackPageview();
+  } catch(err) {}
+</script>
+</body>
+</html>

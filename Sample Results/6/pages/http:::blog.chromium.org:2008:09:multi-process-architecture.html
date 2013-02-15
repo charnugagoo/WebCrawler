@@ -1,0 +1,976 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html dir='ltr' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<script type="text/javascript">(function() { var a=window,b="jstiming",d="tick";var e=function(c){this.t={};this.tick=function(c,p,h){h=void 0!=h?h:(new Date).getTime();this.t[c]=[h,p]};this[d]("start",null,c)},f=new e;a.jstiming={Timer:e,load:f};if(a.performance&&a.performance.timing){var g=a.performance.timing,j=a[b].load,k=g.navigationStart,l=g.responseStart;0<k&&l>=k&&(j[d]("_wtsrt",void 0,k),j[d]("wtsrt_","_wtsrt",l),j[d]("tbsd_","wtsrt_"))}
+try{var m=null;a.chrome&&a.chrome.csi&&(m=Math.floor(a.chrome.csi().pageT),j&&0<k&&(j[d]("_tbnd",void 0,a.chrome.csi().startE),j[d]("tbnd_","_tbnd",k)));null==m&&a.gtbExternal&&(m=a.gtbExternal.pageT());null==m&&a.external&&(m=a.external.pageT,j&&0<k&&(j[d]("_tbnd",void 0,a.external.startE),j[d]("tbnd_","_tbnd",k)));m&&(a[b].pt=m)}catch(n){};a.tickAboveFold=function(c){var i=0;if(c.offsetParent){do i+=c.offsetTop;while(c=c.offsetParent)}c=i;750>=c&&a[b].load[d]("aft")};var q=!1;function r(){q||(q=!0,a[b].load[d]("firstScrollTime"))}a.addEventListener?a.addEventListener("scroll",r,!1):a.attachEvent("onscroll",r);
+ })();</script>
+<meta content='true' name='MSSmartTagsPreventParsing'/>
+<meta content='blogger' name='generator'/>
+<link href='http://blog.chromium.org/favicon.ico' rel='icon' type='image/x-icon'/>
+<link href='http://blog.chromium.org/2008/09/multi-process-architecture.html' rel='canonical'/>
+<link rel="alternate" type="application/atom+xml" title="Chromium Blog - Atom" href="http://blog.chromium.org/feeds/posts/default" />
+<link rel="alternate" type="application/rss+xml" title="Chromium Blog - RSS" href="http://blog.chromium.org/feeds/posts/default?alt=rss" />
+<link rel="service.post" type="application/atom+xml" title="Chromium Blog - Atom" href="http://www.blogger.com/feeds/2471378914199150966/posts/default" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.blogger.com/rsd.g?blogID=2471378914199150966" />
+<link rel="alternate" type="application/atom+xml" title="Chromium Blog - Atom" href="http://blog.chromium.org/feeds/3532286548361325434/comments/default" />
+<link rel="image_src" href="http://3.bp.blogspot.com/_LJuAPqyUVas/SMmPyMh7lEI/AAAAAAAAAAM/QzfafK31Kr4/s72-c/google_chrome_task_manager.png" />
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<title>Chromium Blog: Multi-process Architecture</title>
+<link href='http://www.google.com/uds/css/gsearch.css' rel='stylesheet' type='text/css'/>
+<link href='http://www.google.com/uds/css/gsearch_darkgrey.css' rel='stylesheet' type='text/css'/>
+<link href='http://www.google.com/css/gooey.css' rel='stylesheet' type='text/css'/>
+<link href='http://www.google.com/googleblogs/css/template_styles.css' rel='stylesheet' type='text/css'/>
+<link type='text/css' rel='stylesheet' href='//www.blogger.com/static/v1/widgets/3950009988-widget_css_bundle.css' />
+<link type="text/css" rel="stylesheet" href="//www.blogger.com/dyn-css/authorization.css?targetBlogID=2471378914199150966&zx=84f29ee7-e90b-41be-ae31-434ef7db3831"/>
+<style id='page-skin-1' type='text/css'><!--
+/*
+/* custom header */
+.template_white h2, .template_white .post h3 a {color:#182E5F;}
+.template_white .post h3 a:hover  {color:#182E5F;}
+#template_fixed #footer-graphic {text-align:center; align:center; width:750px; margin-left:auto; margin-right:auto;}
+.template_white #footer-graphic {background-color:#fff; border-color:#4F94EA;}
+.header_img {margin-bottom:2em; margin-top:0; padding-top:0;}
+
+--></style>
+<script src='http://www.google.com/uds/api?file=uds.js&v=1.0&key=ABQIAAAA_YJR13Pfd1DLDQs4kgKbQxTxAb0xtwQQCqJhhTH0tdrRSrWJ4RR2PabXite0o1TcEPO2djBsg9GdFg' type='text/javascript'></script>
+<script language='Javascript' type='text/javascript'>
+var blogURL='http://blog.chromium.org/2008/09/multi-process-architecture.html';
+ //<![CDATA[
+	 var coreSearch;
+
+
+    function SolutionLoad() {
+     var controlRoot = document.getElementById("searchControl");
+
+    // create the search control
+    coreSearch = new GSearchControl();
+    coreSearch.setLinkTarget(GSearch.LINK_TARGET_SELF);
+    coreSearch.setResultSetSize(GSearch.LARGE_RESULTSET);
+
+    // prep for decoupled search form
+    var searchFormElement = document.getElementById("searchform");
+    var drawOptions = new GdrawOptions();
+    drawOptions.setSearchFormRoot(searchFormElement);
+    drawOptions.setDrawMode(GSearchControl.DRAW_MODE_TABBED);
+  
+    // populate - web, this blog, all blogs
+    searcher = new GblogSearch();
+    searcher.setSiteRestriction(blogURL);
+    searcher.setUserDefinedLabel('This Blog');
+    coreSearch.addSearcher(searcher);
+ 
+    var searcher = new GwebSearch();
+    searcher.setUserDefinedLabel('');
+    coreSearch.addSearcher(searcher);
+
+    searcher = new GblogSearch();
+    searcher.setUserDefinedLabel('All Blogs');
+    coreSearch.addSearcher(searcher);
+
+
+    coreSearch.draw(controlRoot, drawOptions);
+    var submitBtn = (document.getElementById('searchform').getElementsByTagName('input'))[1];
+    submitBtn.onclick = clearPosts;
+    }
+
+
+function clearPosts() {
+ var main = document.getElementById('main-wrapper');
+ var posts = document.getElementById('post-wrapper');
+ posts.style.display='none';
+}
+
+  function registerLoadHandler(handler) {
+      //var node = window;
+      alert(document.getElementById('searchform'));
+      var node = (window.document.getElementById('searchform').getElementsByTagName("input"))[2];
+
+      if (node.addEventListener) {
+        node.addEventListener("onClick", handler, false);
+      } else if (node.attachEvent) {
+        node.attachEvent("onClick", handler);
+      } else {
+        node['onClick'] = handler;
+      }
+      return true;
+    }
+
+    //]]>
+</script>
+<script type='text/javascript'>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1870203-59']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<script type="text/javascript">var a=navigator,b="userAgent",c="indexOf",f="&m=1",g="(^|&)m=",h="?",i="?m=1";function j(){var d=window.location.href,e=d.split(h);switch(e.length){case 1:return d+i;case 2:return 0<=e[1].search(g)?null:d+f;default:return null}}if(-1!=a[b][c]("Mobile")&&-1!=a[b][c]("WebKit")&&-1==a[b][c]("iPad")||-1!=a[b][c]("Opera Mini")||-1!=a[b][c]("IEMobile")){var k=j();k&&window.location.replace(k)};
+</script><script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('headEnd');
+</script></head>
+<body>
+<div class='navbar section' id='navbar'><div class='widget Navbar' id='Navbar1'><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener('load',
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<div id="navbar-iframe-container"></div>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript">
+        gapi.load("iframes-styles-bubble", function() {
+          if (window.iframes && iframes.open) {
+            iframes.open(
+                '//www.blogger.com/navbar.g?targetBlogID\0752471378914199150966\46blogName\75Chromium+Blog\46publishMode\75PUBLISH_MODE_HOSTED\46navbarType\75SILVER\46layoutType\75LAYOUTS\46searchRoot\75http://blog.chromium.org/search\46blogLocale\75en\46v\0752\46homepageUrl\75http://blog.chromium.org/\46targetPostID\0753532286548361325434\46blogPostOrPageUrl\75http://blog.chromium.org/2008/09/multi-process-architecture.html\46vt\0755749896971215853493',
+                {
+                  container: "navbar-iframe-container",
+                  id: "navbar-iframe"
+                },
+                {
+                });
+          }
+        });
+      </script><script type="text/javascript">
+(function() {
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = '//pagead2.googlesyndication.com/pagead/js/google_top_exp.js';
+var head = document.getElementsByTagName('head')[0];
+if (head) {
+head.appendChild(script);
+}})();
+</script>
+</div></div>
+<div class='template_white' id='template_fixed'>
+<div id='main-wrapper'>
+<!-- skip links for text browsers -->
+<span id='skiplinks' style='display:none;'>
+<a href='#main'>skip to main </a> |
+      <a href='#sidebar'>skip to sidebar</a>
+</span>
+<a href='http://blog.chromium.org/' style='text-decoration:none;'>
+<img class='header_img' src='http://2.bp.blogspot.com/-De8puPczd5A/TZYKPOblNXI/AAAAAAAAHx0/1UHlbb_uHgw/s1600/chromium_header.png'/>
+</a>
+<br style='clear:both;'/>
+<div id='content-wrapper'>
+<div id='sidebar'>
+<div class='sidebar section' id='sidebar'><div class='widget HTML' id='HTML2'>
+<h2 class='small'>Search our Blog</h2>
+<div class='widget-content'>
+<div id='searchform'></div>
+</div>
+</div><div class='widget BlogArchive' id='BlogArchive1'>
+<h2 class='small'>Archive</h2>
+<div class='widget-content'>
+<div id='ArchiveList'>
+<div id='BlogArchive1_ArchiveList'>
+<select id='BlogArchive1_ArchiveMenu'>
+<option value='http://blog.chromium.org/2013_02_01_archive.html'>February (4)</option>
+<option value='http://blog.chromium.org/2013_01_01_archive.html'>January (5)</option>
+<option value='http://blog.chromium.org/2012_12_01_archive.html'>December (3)</option>
+<option value='http://blog.chromium.org/2012_11_01_archive.html'>November (7)</option>
+<option value='http://blog.chromium.org/2012_10_01_archive.html'>October (11)</option>
+<option value='http://blog.chromium.org/2012_09_01_archive.html'>September (2)</option>
+<option value='http://blog.chromium.org/2012_08_01_archive.html'>August (7)</option>
+<option value='http://blog.chromium.org/2012_07_01_archive.html'>July (2)</option>
+<option value='http://blog.chromium.org/2012_06_01_archive.html'>June (9)</option>
+<option value='http://blog.chromium.org/2012_05_01_archive.html'>May (4)</option>
+<option value='http://blog.chromium.org/2012_04_01_archive.html'>April (4)</option>
+<option value='http://blog.chromium.org/2012_03_01_archive.html'>March (6)</option>
+<option value='http://blog.chromium.org/2012_02_01_archive.html'>February (9)</option>
+<option value='http://blog.chromium.org/2012_01_01_archive.html'>January (6)</option>
+<option value='http://blog.chromium.org/2011_12_01_archive.html'>December (2)</option>
+<option value='http://blog.chromium.org/2011_11_01_archive.html'>November (3)</option>
+<option value='http://blog.chromium.org/2011_10_01_archive.html'>October (4)</option>
+<option value='http://blog.chromium.org/2011_09_01_archive.html'>September (1)</option>
+<option value='http://blog.chromium.org/2011_08_01_archive.html'>August (8)</option>
+<option value='http://blog.chromium.org/2011_07_01_archive.html'>July (3)</option>
+<option value='http://blog.chromium.org/2011_06_01_archive.html'>June (5)</option>
+<option value='http://blog.chromium.org/2011_05_01_archive.html'>May (8)</option>
+<option value='http://blog.chromium.org/2011_04_01_archive.html'>April (5)</option>
+<option value='http://blog.chromium.org/2011_03_01_archive.html'>March (4)</option>
+<option value='http://blog.chromium.org/2011_02_01_archive.html'>February (7)</option>
+<option value='http://blog.chromium.org/2011_01_01_archive.html'>January (3)</option>
+<option value='http://blog.chromium.org/2010_12_01_archive.html'>December (6)</option>
+<option value='http://blog.chromium.org/2010_11_01_archive.html'>November (2)</option>
+<option value='http://blog.chromium.org/2010_10_01_archive.html'>October (2)</option>
+<option value='http://blog.chromium.org/2010_09_01_archive.html'>September (9)</option>
+<option value='http://blog.chromium.org/2010_08_01_archive.html'>August (7)</option>
+<option value='http://blog.chromium.org/2010_07_01_archive.html'>July (3)</option>
+<option value='http://blog.chromium.org/2010_06_01_archive.html'>June (13)</option>
+<option value='http://blog.chromium.org/2010_05_01_archive.html'>May (10)</option>
+<option value='http://blog.chromium.org/2010_04_01_archive.html'>April (3)</option>
+<option value='http://blog.chromium.org/2010_03_01_archive.html'>March (7)</option>
+<option value='http://blog.chromium.org/2010_02_01_archive.html'>February (3)</option>
+<option value='http://blog.chromium.org/2010_01_01_archive.html'>January (5)</option>
+<option value='http://blog.chromium.org/2009_12_01_archive.html'>December (11)</option>
+<option value='http://blog.chromium.org/2009_11_01_archive.html'>November (4)</option>
+<option value='http://blog.chromium.org/2009_09_01_archive.html'>September (3)</option>
+<option value='http://blog.chromium.org/2009_08_01_archive.html'>August (3)</option>
+<option value='http://blog.chromium.org/2009_07_01_archive.html'>July (2)</option>
+<option value='http://blog.chromium.org/2009_06_01_archive.html'>June (7)</option>
+<option value='http://blog.chromium.org/2009_05_01_archive.html'>May (2)</option>
+<option value='http://blog.chromium.org/2009_04_01_archive.html'>April (2)</option>
+<option value='http://blog.chromium.org/2009_03_01_archive.html'>March (2)</option>
+<option value='http://blog.chromium.org/2009_02_01_archive.html'>February (3)</option>
+<option value='http://blog.chromium.org/2009_01_01_archive.html'>January (5)</option>
+<option value='http://blog.chromium.org/2008_12_01_archive.html'>December (4)</option>
+<option value='http://blog.chromium.org/2008_11_01_archive.html'>November (2)</option>
+<option value='http://blog.chromium.org/2008_10_01_archive.html'>October (7)</option>
+<option value='http://blog.chromium.org/2008_09_01_archive.html'>September (8)</option>
+</select>
+</div>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=2471378914199150966&widgetType=BlogArchive&widgetId=BlogArchive1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("BlogArchive1"));' target='configBlogArchive1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget HTML' id='HTML1'>
+<h2 class='title'>Subscribe</h2>
+<div class='widget-content'>
+<p style="font-size:12px;"><a href="http://blog.chromium.org/feeds/posts/default" rel="alternate" type="application/rss+xml"><img alt="" style="vertical-align:middle;border:0; padding-right:5px;" src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png"/></a>&nbsp;<a href="http://blog.chromium.org/feeds/posts/default" rel="alternate" type="application/rss+xml">RSS Feed</a></p>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=2471378914199150966&widgetType=HTML&widgetId=HTML1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML1"));' target='configHTML1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget HTML' id='HTML4'>
+<div class='widget-content'>
+<link href="https://plus.google.com/102860501900098846931" rel="publisher" /><script type="text/javascript">
+window.___gcfg = {lang: 'en'};
+(function() 
+{var po = document.createElement("script");
+po.type = "text/javascript"; po.async = true;po.src = "https://apis.google.com/js/plusone.js";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(po, s);
+})();</script>
+<div class="g-plus" data-href="https://plus.google.com/102860501900098846931" data-width="200" data-height="131" data-theme="light"></div>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=2471378914199150966&widgetType=HTML&widgetId=HTML4&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML4"));' target='configHTML4' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget HTML' id='HTML3'>
+<h2 class='title'>More Blogs from Google</h2>
+<div class='widget-content'>
+Visit our <a href="http://www.google.com/press/blogs/directory.html#tab0"> directory</a> for more information about Google blogs.
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=2471378914199150966&widgetType=HTML&widgetId=HTML3&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML3"));' target='configHTML3' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget LinkList' id='LinkList2'>
+<h2>Useful links</h2>
+<div class='widget-content'>
+<ul>
+<li><a href='http://www.chromium.org/'>Chromium Homepage</a></li>
+<li><a href='http://www.google.com/chrome'>Google Chrome</a></li>
+<li><a href='http://chrome.blogspot.com/'>Google Chrome Blog</a></li>
+<li><a href='http://googlechromereleases.blogspot.com/'>Google Chrome Release Notes</a></li>
+<li><a href='http://google-opensource.blogspot.com/'>Google Open Source Blog.</a></li>
+<li><a href='http://google-code-updates.blogspot.com/'>Google Code Blog</a></li>
+<li><a href='http://webkit.org/blog/'>WebKit Blog</a></li>
+</ul>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=2471378914199150966&widgetType=LinkList&widgetId=LinkList2&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("LinkList2"));' target='configLinkList2' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget Label' id='Label1'>
+<h2>Labels</h2>
+<div class='widget-content list-label-widget-content'>
+<ul>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/accessibility'>accessibility</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/benchmarks'>benchmarks</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/beta'>beta</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/chrome%20apps'>chrome apps</a>
+<span dir='ltr'>(2)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/chrome%20web%20store'>chrome web store</a>
+<span dir='ltr'>(26)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/chromeframe'>chromeframe</a>
+<span dir='ltr'>(3)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/chromeos'>chromeos</a>
+<span dir='ltr'>(3)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/chromium'>chromium</a>
+<span dir='ltr'>(3)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/cloud%20print'>cloud print</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/dart'>dart</a>
+<span dir='ltr'>(6)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/devtools'>devtools</a>
+<span dir='ltr'>(11)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/extensions'>extensions</a>
+<span dir='ltr'>(22)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/gdd'>gdd</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/googlechrome'>googlechrome</a>
+<span dir='ltr'>(12)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/html5'>html5</a>
+<span dir='ltr'>(11)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/incognito'>incognito</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/javascript'>javascript</a>
+<span dir='ltr'>(3)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/linux'>linux</a>
+<span dir='ltr'>(2)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/mac'>mac</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/mobile'>mobile</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/na'>na</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/native%20client'>native client</a>
+<span dir='ltr'>(8)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/New%20Features'>New Features</a>
+<span dir='ltr'>(5)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/octane'>octane</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/open%20web'>open web</a>
+<span dir='ltr'>(2)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/releases'>releases</a>
+<span dir='ltr'>(2)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/rlz'>rlz</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/security'>security</a>
+<span dir='ltr'>(22)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/spdy'>spdy</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/ssl'>ssl</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/v8'>v8</a>
+<span dir='ltr'>(5)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/web%20intents'>web intents</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/webaudio'>webaudio</a>
+<span dir='ltr'>(3)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/webgl'>webgl</a>
+<span dir='ltr'>(7)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/webkit'>webkit</a>
+<span dir='ltr'>(4)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/webp'>webp</a>
+<span dir='ltr'>(4)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/webrtc'>webrtc</a>
+<span dir='ltr'>(4)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/websockets'>websockets</a>
+<span dir='ltr'>(4)</span>
+</li>
+<li>
+<a dir='ltr' href='http://blog.chromium.org/search/label/webtiming'>webtiming</a>
+<span dir='ltr'>(1)</span>
+</li>
+</ul>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=2471378914199150966&widgetType=Label&widgetId=Label1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("Label1"));' target='configLabel1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget HTML' id='HTML7'>
+<div class='widget-content'>
+<a href='http://www.blogger.com'><img alt='Powered By Blogger' src='http://www.blogger.com/buttons/blogger-powerby-blue.gif'/></a>
+</div>
+</div><div class='widget PageList' id='PageList1'>
+<h2>Pages</h2>
+<div class='widget-content'>
+<ul>
+<li><a href='http://blog.chromium.org/'>Home</a></li>
+</ul>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=2471378914199150966&widgetType=PageList&widgetId=PageList1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("PageList1"));' target='configPageList1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div></div>
+</div>
+<div id='main-content'>
+<div class='main section' id='main'><div class='widget HTML' id='HTML8'>
+<div id='searchControl'></div>
+</div><div class='widget Blog' id='Blog1'>
+<div id='post-wrapper'>
+<div class='blog-posts hfeed'>
+<!-- google_ad_section_start -->
+<div class='post'>
+<a name='3532286548361325434'></a>
+<h3>
+<a href='http://blog.chromium.org/2008/09/multi-process-architecture.html'>Multi-process Architecture</a>
+</h3>
+<p class='post-subhead'>
+Thursday, September 11, 2008
+</p>
+<p class='post-subhead'>
+</p>
+<div class='post-body'>
+<p><div>Unlike most current web browsers, Google Chrome uses many operating system processes to keep web sites separate from each other and from the rest of your computer. &#160;In this blog post, I'll explain why using a multi-process architecture can be a big win for browsers on today's web. &#160;I'll also talk about which parts of the browser belong in each process and in which situations Google Chrome creates new processes.</div><div><br /></div><div><span class="Apple-style-span" style="font-weight: bold;">1. Why use multiple processes in a browser?</span></div><div><br /></div><div>In the days when most current browsers were designed, web pages were simple and had little or no active code in them. &#160;It made sense for the browser to render all the pages you visited in the same process, to keep resource usage low.</div><div><br /></div><div>Today, however, we've seen a major shift towards active web content, ranging from pages with lots of JavaScript and Flash to full-blown "web apps" like Gmail. &#160;Large parts of these apps run inside the browser, just like normal applications run on an operating system. &#160;Just like an operating system, the browser must keep these apps separate from each other.</div><div><br /></div><div>On top of this, the parts of the browser that render HTML, JavaScript, and CSS have become extraordinarily complex over time. &#160;These rendering engines frequently have bugs as they continue to evolve, and some of these bugs may cause the rendering engine to occasionally crash. &#160;Also, rendering engines routinely face untrusted and even malicious code from the web, which may try to exploit these bugs to install malware on your computer.</div><div><br /></div><div>In this world, browsers that put everything in one process face real challenges for robustness, responsiveness, and security. &#160;If one web app causes a crash in the rendering engine, it will take the rest of the browser with it, including any other web apps that are open. &#160;Web apps often have to compete with each other for CPU time on a single thread, sometimes causing the entire browser to become unresponsive. &#160;Security is also a concern, because a web page that exploits a vulnerability in the rendering engine can often take over your entire computer.</div><div><br /></div><div>It doesn't have to be this way, though. &#160;Web apps are designed to be run independently of each other in your browser, and they could be run in parallel. &#160;They don't need much access to your disk or devices, either. &#160;The security policy used throughout the web ensures this, so that you can visit most web pages without worrying about your data or your computer's safety. &#160;This means that it's possible to more completely isolate web apps from each other in the browser without breaking them. &#160;The same is true of browser plug-ins like Flash, which are loosely coupled with the browser and can be separated from it without much trouble.</div><div><br /></div><div>Google Chrome takes advantage of these properties and puts web apps and plug-ins in separate processes from the browser itself. &#160;This means that a rendering engine crash in one web app won't affect the browser or other web apps. &#160;It means the OS can run web apps in parallel to increase their responsiveness, and it means the browser itself won't lock up if a particular web app or plug-in stops responding. &#160;It also means we can run the rendering engine processes in a restrictive sandbox that helps limit the damage if an exploit does occur.</div><div><br /></div><div>Interestingly, using multiple processes means Google Chrome can have its own Task Manager (shown below), which you can get to by right clicking on the browser's title bar. &#160;This Task Manager lets you track resource usage for each web app and plug-in, rather than for the entire browser. &#160;It also lets you kill any web apps or plug-ins that have stopped responding, without having to restart the entire browser.</div><div><br /></div><div><img src="http://3.bp.blogspot.com/_LJuAPqyUVas/SMmPyMh7lEI/AAAAAAAAAAM/QzfafK31Kr4/s400/google_chrome_task_manager.png" style="margin:0" 10px="" border="0" alt="" id="BLOGGER_PHOTO_ID_5244881333569426498" /></div><br /><div>For all of these reasons, Google Chrome's multi-process architecture can help it be more robust, responsive, and secure than single process browsers.</div><div><br /></div><div><span class="Apple-style-span" style="font-weight: bold;">2. What goes in each process?</span></div><div><br /></div><div>Google Chrome creates three different types of processes: browser, renderers, and plug-ins.</div><div><br /></div><div><span class="Apple-style-span" style="font-style: italic;">Browser</span>. &#160;There's only one browser process, which manages the tabs, windows, and "chrome" of the browser. &#160;This process also handles all interactions with the disk, network, user input, and display, but it makes no attempt to parse or render any content from the web.</div><div><br /></div><div><span class="Apple-style-span" style="font-style: italic;">Renderers</span>. &#160;The browser process creates many renderer processes, each responsible for rendering web pages. &#160;The renderer processes contain all the complex logic for handling HTML, JavaScript, CSS, images, and so on. &#160;We achieve this using the open source WebKit rendering engine, which is also used by Apple's Safari web browser. &#160;Each renderer process is run in a sandbox, which means it has almost no direct access to your disk, network, or display. &#160;All interactions with web apps, including user input events and screen painting, must go through the browser process. &#160;This lets the browser process monitor the renderers for suspicious activity, killing them if it suspects an exploit has occurred.</div><div><br /></div><div><span class="Apple-style-span" style="font-style: italic;">Plug-ins</span>. &#160;The browser process also creates one process for each type of plug-in that is in use, such as Flash, Quicktime, or Adobe Reader. &#160;These processes just contain the plug-ins themselves, along with some glue code to let them interact with the browser and renderers.</div><div><br /></div><div><span class="Apple-style-span" style="font-weight: bold;">3. When should the browser create processes?</span></div><div><br /></div><div>Once Google Chrome has created its browser process, it will generally create one renderer process for each instance of a web site you visit. &#160;This approach aims to keep pages from different web sites isolated from each other.</div><div><br /></div><div>You can think of this as using a different process for each tab in the browser, but allowing two tabs to share a process if they are related to each other and are showing the same site. &#160;For example, if one tab opens another tab using JavaScript, or if you open a link to the same site in a new tab, the tabs will share a renderer process. &#160;This lets the pages in these tabs communicate via JavaScript and share cached objects. &#160;Conversely, if you type the URL of a different site into the location bar of a tab, we will swap in a new renderer process for the tab.</div><div><br /></div><div>Compatibility with existing web pages is important for us. &#160;For this reason, we define a web site as a registered domain name, like google.com or bbc.co.uk. &#160;This means we'll consider sub-domains like mail.google.com and maps.google.com as part of the same site. &#160;This is necessary because there are cases where tabs from different sub-domains may try to communicate with each other via JavaScript, so we want to keep them in the same renderer process.</div><div><br /></div><div>There are a few caveats to this basic approach, however. &#160;Your computer would start to slow down if we created too many processes, so we place a limit on the number of renderer processes that we create (20 in most cases). &#160;Once we hit this limit, we'll start re-using the existing renderer processes for new tabs. &#160;Thus, it's possible that the same renderer process could be used for more than one web site. &#160;We also don't yet put cross-site frames in their own processes, and we don't yet swap a tab's renderer process for all types of cross-site navigations. &#160;So far, we only swap a tab's process for navigations via the browser's "chrome," like the location bar or bookmarks. &#160;Despite these caveats, Google Chrome will generally keep instances of different web sites isolated from each other in common usage.</div><div><br /></div><div>For each type of plug-in, Google Chrome will create a plug-in process when you first visit a page that uses it. &#160;A short time after you close all pages using a particular plug-in, we will destroy its process.</div><div><br /></div><div>We'll post future blog entries as we refine our policies for creating and swapping among renderer processes. &#160;In the mean time, we hope you see some of the benefits of a multi-process architecture when using Google Chrome.</div><div><br /></div><span class="post-author">Posted by Charlie Reis</span>
+</p>
+</div>
+<div class='post-footer'>
+<p>
+<span class='post-footer-link'>
+</span>
+<span class='post-footer-link'>
+</span>
+<span class='post-footer-link'>
+</span>
+<div class='post-share-buttons'>
+<a class='goog-inline-block share-button sb-email' href='http://www.blogger.com/share-post.g?blogID=2471378914199150966&postID=3532286548361325434&target=email' target='_blank' title='Email This'><span class='share-button-link-text'>Email This</span></a><a class='goog-inline-block share-button sb-blog' href='http://www.blogger.com/share-post.g?blogID=2471378914199150966&postID=3532286548361325434&target=blog' onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target='_blank' title='BlogThis!'><span class='share-button-link-text'>BlogThis!</span></a><a class='goog-inline-block share-button sb-twitter' href='http://www.blogger.com/share-post.g?blogID=2471378914199150966&postID=3532286548361325434&target=twitter' target='_blank' title='Share to Twitter'><span class='share-button-link-text'>Share to Twitter</span></a><a class='goog-inline-block share-button sb-facebook' href='http://www.blogger.com/share-post.g?blogID=2471378914199150966&postID=3532286548361325434&target=facebook' onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target='_blank' title='Share to Facebook'><span class='share-button-link-text'>Share to Facebook</span></a><div class='goog-inline-block dummy-container'><g:plusone source='blogger:blog:plusone' href='http://blog.chromium.org/2008/09/multi-process-architecture.html' size='medium' width='300' annotation='inline'/></div>
+</div>
+</p>
+</div>
+</div>
+<div class='comments' id='comments'>
+<a name='comments'></a>
+<h4>
+19
+comments:
+        
+</h4>
+<dl id='comments-block'>
+<dt class='comment-author ' id='c4500212923298454264'>
+<a name='c4500212923298454264'></a>
+<p>
+<a href='http://www.blogger.com/profile/04683783635633455753' rel='nofollow'>grfgguvf</a>
+said...</p>
+</dt>
+<dd class='comment-body'>
+<p>This is how browsers should have always worked. I filed a bug with the Mozilla bug tracker many years ago but it got little response. Glad that someone at Google had the same idea!<BR/><BR/>I think "swapping" in a new renderer process for every type of navigation to a new site would make sense, what is the reason for avoiding it? Only thing I can imagine is trying to provide smoother page transitions (or page-transition effects in the future), but keeping a bitmap snapshot of the page in the browser process should be enough for that...</p>
+</dd>
+<dd class='comment-footer'>
+<p class='comment-timestamp'>
+September 11, 2008 at 9:22 PM
+<span class='item-control blog-admin pid-1304777473'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=2471378914199150966&postID=4500212923298454264' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</p>
+</dd>
+<dt class='comment-author ' id='c5889559867578584532'>
+<a name='c5889559867578584532'></a>
+<p>
+<a href='http://www.blogger.com/profile/00745975678007856467' rel='nofollow'>bacon</a>
+said...</p>
+</dt>
+<dd class='comment-body'>
+<p>Does the lack of fork() in Windows force Chrome to use more memory than it otherwise would per process?  Is this the reason there is a relatively low limit for the number of processes that will spawn?</p>
+</dd>
+<dd class='comment-footer'>
+<p class='comment-timestamp'>
+September 11, 2008 at 11:13 PM
+<span class='item-control blog-admin pid-1281373132'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=2471378914199150966&postID=5889559867578584532' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</p>
+</dd>
+<dt class='comment-author ' id='c3943250147243928520'>
+<a name='c3943250147243928520'></a>
+<p>
+<a href='http://www.blogger.com/profile/04683783635633455753' rel='nofollow'>Γριφεγ</a>
+said...</p>
+</dt>
+<dd class='comment-body'>
+<p>@bacon<BR/><BR/>Windows API doesn't call it <I>fork()</I> but it does have the equivalent -- intuitively named <I><A HREF="http://msdn.microsoft.com/en-us/library/ms682425.aspx" REL="nofollow">CreateProces()</A></I>, and pages of shared libraries (.DLL) and process images (.EXE), etc only appear once in memory like on Multics/Unix.</p>
+</dd>
+<dd class='comment-footer'>
+<p class='comment-timestamp'>
+September 11, 2008 at 11:22 PM
+<span class='item-control blog-admin pid-1304777473'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=2471378914199150966&postID=3943250147243928520' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</p>
+</dd>
+<dt class='comment-author ' id='c1771832281672862691'>
+<a name='c1771832281672862691'></a>
+<p>
+<a href='http://www.blogger.com/profile/11245441044612050215' rel='nofollow'>Charlie Reis</a>
+said...</p>
+</dt>
+<dd class='comment-body'>
+<p>grfgguvf: There's more information about the caveats I mentioned on the <A HREF="http://dev.chromium.org/developers/design-documents/process-models" REL="nofollow">process models</A> page of our developer docs.  The first and last bullet points under "Caveats" should answer your question.<BR/><BR/>Thanks for the comment!</p>
+</dd>
+<dd class='comment-footer'>
+<p class='comment-timestamp'>
+September 12, 2008 at 8:39 AM
+<span class='item-control blog-admin pid-1844543533'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=2471378914199150966&postID=1771832281672862691' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</p>
+</dd>
+<dt class='comment-author ' id='c7595691824742012294'>
+<a name='c7595691824742012294'></a>
+<p>
+<a href='http://www.blogger.com/profile/09562770732952167210' rel='nofollow'>Jeroen-bart Engelen</a>
+said...</p>
+</dt>
+<dd class='comment-body'>
+<p>It's funny that Google gets so much press about their "each tab is it's own process", while Internet Explorer 8 (of which I've installed the beta for a couple of months now) also does this, but for some reason no one seems to notice.</p>
+</dd>
+<dd class='comment-footer'>
+<p class='comment-timestamp'>
+September 12, 2008 at 2:10 PM
+<span class='item-control blog-admin pid-1816065942'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=2471378914199150966&postID=7595691824742012294' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</p>
+</dd>
+<dt class='comment-author ' id='c2563891829992227994'>
+<a name='c2563891829992227994'></a>
+<p>
+<a href='http://www.blogger.com/profile/08639399249887412076' rel='nofollow'>Arthur Kalmenson</a>
+said...</p>
+</dt>
+<dd class='comment-body'>
+<p>@jeroen-bart engelen<BR/><BR/>Because they're not the same.<BR/><BR/>From here: http://www.pcworld.com/article/150623/chrome_vs_explorer_8.html?tk=rss_news<BR/><BR/>"Like Chrome, IE 8 uses multiple, discrete processes to isolate and protect each tab's contents. However, while Chrome takes a purist approach and literally launches a new process with each opened tab, IE 8 uses more of a hybrid model: It creates multiple instances of the iexplore.exe process but doesn't specifically assign each tab to its own instance. Thus a look at Task Manager under Windows will show an equal or greater number of Chrome instances than running tabs, whereas IE 8 will generate a fewer number of instances -- for example, six copies of iexplore.exe to support 10 discrete tabs -- and share them among the running tabs."</p>
+</dd>
+<dd class='comment-footer'>
+<p class='comment-timestamp'>
+September 13, 2008 at 9:49 PM
+<span class='item-control blog-admin pid-969613391'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=2471378914199150966&postID=2563891829992227994' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</p>
+</dd>
+<dt class='comment-author ' id='c4424444102819190940'>
+<a name='c4424444102819190940'></a>
+<p>
+<a href='http://www.blogger.com/profile/10909370954543526983' rel='nofollow'>Darky</a>
+said...</p>
+</dt>
+<dd class='comment-body'>
+<p>@ Arthur Kalmenson,<BR/>actually by default Google Chrome does not "literally launches a new process with each opened tab", but uses the "process-per-site-instance" setting, which is indeed quite similar to IE8's LCIE. Each new tab opened with the new tab button launches a new process, but tabs opened from links within an existing tab will share the same process as the originating tab. Google Chrome does launch a new process specifically for plugins, but other than that, its default behavior is indeed practically the same as that of LCIE in IE8.<BR/><BR/>and the multi-process architecture/approach in a web browser was first introduced by IE8b1 to the public months ago, that's the fact.</p>
+</dd>
+<dd class='comment-footer'>
+<p class='comment-timestamp'>
+September 15, 2008 at 10:13 PM
+<span class='item-control blog-admin pid-171385495'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=2471378914199150966&postID=4424444102819190940' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</p>
+</dd>
+<dt class='comment-author ' id='c6468935563732681295'>
+<a name='c6468935563732681295'></a>
+<p>
+<a href='http://www.blogger.com/profile/04683783635633455753' rel='nofollow'>Γριφεγ</a>
+said...</p>
+</dt>
+<dd class='comment-body'>
+<p>@Darky<BR/><BR/>That's not a fact, one of the first browsers, NCSA Mosaic used separate processes for each window, for example.<BR/><BR/>Of course pages were just HTML back then so it was the natural thing to do.<BR/><BR/>Anyway, the most annoying thing on the web currently is crashing plugins, at least for me, so running them in a separate process is a very important improvement.</p>
+</dd>
+<dd class='comment-footer'>
+<p class='comment-timestamp'>
+September 16, 2008 at 12:26 AM
+<span class='item-control blog-admin pid-1304777473'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=2471378914199150966&postID=6468935563732681295' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</p>
+</dd>
+<dt class='comment-author ' id='c1516139637654211180'>
+<a name='c1516139637654211180'></a>
+<p>
+<a href='http://www.blogger.com/profile/10909370954543526983' rel='nofollow'>Darky</a>
+said...</p>
+</dt>
+<dd class='comment-body'>
+<p>@ Γριφεγ <BR/><BR/>Nope what I said IS a fact, try read my post more clearly instead of distorting it with your blind bias. I said "multi-process architecture/approach", NOT "used separate processes for each window". Every single non-tabbed browser (IE6 for example) use separate processes for each different window, because they are basically launched multiple times. However that's NOT what "multi-process architecture" is about here in this article, which is what IE8b1 first introduced to the public.<BR/><BR/>Anyway, this is not about whether plugins are run in separate processes or not, the point is, Chrome's "multi-process architecture" is indeed very similar to LCIE in IE8, and IE8b1 introduced this concept to the public first. Not NCSA Mosaic. That's not just a fact, that's THE fact.</p>
+</dd>
+<dd class='comment-footer'>
+<p class='comment-timestamp'>
+September 16, 2008 at 5:36 AM
+<span class='item-control blog-admin pid-171385495'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=2471378914199150966&postID=1516139637654211180' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</p>
+</dd>
+<dt class='comment-author ' id='c3692018914303179597'>
+<a name='c3692018914303179597'></a>
+<p>
+<a href='http://www.blogger.com/profile/04683783635633455753' rel='nofollow'>Γριφεγ</a>
+said...</p>
+</dt>
+<dd class='comment-body'>
+<p>@Darky<BR/><BR/>If you think I have a blind bias against Microsoft read above where "Bacon" says Windows lacks fork() and I reply it has CreateProcess().<BR/><BR/>I have never used IE6 but I thought launching it a second time just opens a new window from the already existing IE process. That's what Netscape did for example.<BR/><BR/>Anyway, it's not exactly revolutionary to start a new process for (almost) each tab. Maybe my view is skewed because I hate tabs, I regard them as redundant because the graphical system can handle windows better, tabs are just windows in a frame with restricted arrangement options.<BR/><BR/>And I think it is very much about separating plugins. That's one reason why Chrome gets more praise than IE8.</p>
+</dd>
+<dd class='comment-footer'>
+<p class='comment-timestamp'>
+September 16, 2008 at 5:59 AM
+<span class='item-control blog-admin pid-1304777473'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=2471378914199150966&postID=3692018914303179597' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</p>
+</dd>
+<dt class='comment-author ' id='c1959793013752656983'>
+<a name='c1959793013752656983'></a>
+<p>
+<a href='http://www.blogger.com/profile/02397839550090715753' rel='nofollow'>Patrick Roberts</a>
+said...</p>
+</dt>
+<dd class='comment-body'>
+<p>i keep learning about more and more little advantages and quirks with Chrome, such as with privacy, for example<A HREF="http://www.kogmedia.com" REL="nofollow">...</A> now if only they would take care of it's cookie management glitches</p>
+</dd>
+<dd class='comment-footer'>
+<p class='comment-timestamp'>
+September 16, 2008 at 3:37 PM
+<span class='item-control blog-admin pid-1589742994'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=2471378914199150966&postID=1959793013752656983' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</p>
+</dd>
+<dt class='comment-author ' id='c3334790276713639129'>
+<a name='c3334790276713639129'></a>
+<p>
+<a href='http://www.blogger.com/profile/00745975678007856467' rel='nofollow'>bacon</a>
+said...</p>
+</dt>
+<dd class='comment-body'>
+<p>@γριφεγ<BR/><BR/>Why limit the number of processes if shared pages aren't duplicated?  If you or anyone has any insight on that...</p>
+</dd>
+<dd class='comment-footer'>
+<p class='comment-timestamp'>
+September 18, 2008 at 11:12 PM
+<span class='item-control blog-admin pid-1281373132'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=2471378914199150966&postID=3334790276713639129' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</p>
+</dd>
+<dt class='comment-author ' id='c1288747716491971262'>
+<a name='c1288747716491971262'></a>
+<p>
+<a href='http://www.blogger.com/profile/11123081753070652004' rel='nofollow'>liang cai</a>
+said...</p>
+</dt>
+<dd class='comment-body'>
+<p>Charlie: I have a feeling that the upper bound of process number has defeated the efforts to separate contents from different origin. Furthermore, sometime users just want to read a lot of web pages which don't have any javascript. It is not needed to use different process for them in that case. <BR/>Why the process model has to be stable as long as the browser has been built. Is it possible for the application designer to have some control over the process model in Chrome, or intelligently decide which model based on the content of the web page. At least it can be an new alternative of process model:</p>
+</dd>
+<dd class='comment-footer'>
+<p class='comment-timestamp'>
+September 18, 2008 at 11:47 PM
+<span class='item-control blog-admin pid-421215123'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=2471378914199150966&postID=1288747716491971262' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</p>
+</dd>
+<dt class='comment-author ' id='c7899410239373825035'>
+<a name='c7899410239373825035'></a>
+<p>
+<a href='http://www.blogger.com/profile/14868395692165098767' rel='nofollow'>Bryn</a>
+said...</p>
+</dt>
+<dd class='comment-body'>
+<p>@Γριφεγ<BR/>IE6 uses both 1 or multiple processes per window.<BR/><BR/>If you go to an existing IE window and click file-&gt;new window, or right click-&gt;open in new window, the same process just creates a new window.  If something goes wrong in one, you loose the lot.<BR/><BR/>If you go to an IE shortcut and launch a new window, it is indeed a seperate process.<BR/><BR/>I don&#39;t think this is by design, I think it just happened and no one bothered to put any &quot;if instance running get it to open a new window&quot; logic in.</p>
+</dd>
+<dd class='comment-footer'>
+<p class='comment-timestamp'>
+September 21, 2008 at 10:09 AM
+<span class='item-control blog-admin pid-1142108111'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=2471378914199150966&postID=7899410239373825035' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</p>
+</dd>
+<dt class='comment-author ' id='c4352141838799746333'>
+<a name='c4352141838799746333'></a>
+<p>
+<a href='http://www.blogger.com/profile/04683783635633455753' rel='nofollow'>Γριφεγ</a>
+said...</p>
+</dt>
+<dd class='comment-body'>
+<p>@bryn<BR/><BR/>If it isn't by design, then they accidentally got it right. Sometimes there is a reason why an architecture naturally lends itself.<BR/><BR/>Anyway, <A HREF="http://grfgguvf.blogspot.com/2008/09/tabbed-browsing-sucks-bay-leaves.html" REL="nofollow">I dislike tabs intensely, here's a shameless plug of my anti-tab rant provoked partly by my frustration using Google Chrome</A>.</p>
+</dd>
+<dd class='comment-footer'>
+<p class='comment-timestamp'>
+September 21, 2008 at 6:51 PM
+<span class='item-control blog-admin pid-1304777473'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=2471378914199150966&postID=4352141838799746333' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</p>
+</dd>
+<dt class='comment-author ' id='c2270279229081886912'>
+<a name='c2270279229081886912'></a>
+<p>
+<a href='http://www.blogger.com/profile/17899322393589902108' rel='nofollow'>Lars Schouw</a>
+said...</p>
+</dt>
+<dd class='comment-body'>
+<p>Is the build download manager also working parallel so it can use all my bandwidth on my 100 bps fiber Internet at home when downloading files?<BR/><BR/>Lars</p>
+</dd>
+<dd class='comment-footer'>
+<p class='comment-timestamp'>
+December 11, 2008 at 9:43 PM
+<span class='item-control blog-admin pid-1813945397'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=2471378914199150966&postID=2270279229081886912' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</p>
+</dd>
+<dt class='comment-author ' id='c7184900118339074986'>
+<a name='c7184900118339074986'></a>
+<p>
+<a href='http://www.blogger.com/profile/13848667929264842525' rel='nofollow'>swilhite</a>
+said...</p>
+</dt>
+<dd class='comment-body'>
+<p>Why would Chrome.exe processes be instantiated before I&#39;ve even launched the browser (i.e., on system startup)? This has been happening consistently for a while now, but it hasn&#39;t always been that way. I&#39;m guessing it has to do with an extension I installed recently?</p>
+</dd>
+<dd class='comment-footer'>
+<p class='comment-timestamp'>
+December 22, 2011 at 9:54 AM
+<span class='item-control blog-admin pid-920037583'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=2471378914199150966&postID=7184900118339074986' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</p>
+</dd>
+<dt class='comment-author ' id='c3370749990136778064'>
+<a name='c3370749990136778064'></a>
+<p>
+<a href='http://www.blogger.com/profile/00805235881527246463' rel='nofollow'>dabear</a>
+said...</p>
+</dt>
+<dd class='comment-body'>
+<p>Just curious why Chrome has 1 page open and 7 processes and my machine is putting around like a 1 legged dog. This problem started after the last update?</p>
+</dd>
+<dd class='comment-footer'>
+<p class='comment-timestamp'>
+July 26, 2012 at 9:04 PM
+<span class='item-control blog-admin pid-1062311175'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=2471378914199150966&postID=3370749990136778064' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</p>
+</dd>
+<dt class='comment-author ' id='c7778190105594611126'>
+<a name='c7778190105594611126'></a>
+<p>
+<a href='http://www.blogger.com/profile/11571951354157602146' rel='nofollow'>Rene&#39;</a>
+said...</p>
+</dt>
+<dd class='comment-body'>
+<p>I&#39;m sure for many folks the multi-process architecture works fine but, for me, it&#39;s a real pain to have my brand new Samsung choke up if I have more than five tabs open.  I read online about using the  -single-process addition but that doesn&#39;t work consistently.<br /><br />I like Chrome, but and I would like to discover how to utilize multiple tabs without choking my CPU, otherwise I&#39;ll have to find something that can handle the workload.</p>
+</dd>
+<dd class='comment-footer'>
+<p class='comment-timestamp'>
+October 20, 2012 at 7:34 AM
+<span class='item-control blog-admin pid-1575883475'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=2471378914199150966&postID=7778190105594611126' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</p>
+</dd>
+</dl>
+<p class='comment-footer'>
+<a href='http://www.blogger.com/comment.g?blogID=2471378914199150966&amp;postID=3532286548361325434' onclick=''>Post a Comment</a>
+</p>
+<div id='backlinks-container'>
+<div id='Blog1_backlinks-container'>
+</div>
+</div>
+</div>
+<!-- google_ad_section_end -->
+</div>
+<div class='blog-pager' id='blog-pager'><p>
+<a class='blog-pager-newer-link' href='http://blog.chromium.org/2008/09/dns-prefetching-or-pre-resolving.html' id='Blog1_blog-pager-newer-link' title='Newer Post'>Newer Post</a>
+<a class='blog-pager-older-link' href='http://blog.chromium.org/2008/09/security-architecture.html' id='Blog1_blog-pager-older-link' title='Older Post'>Older Post</a>
+<a class='home-link' href='http://blog.chromium.org/'>Home</a>
+</p>
+</div>
+<div class='clear'></div>
+<div class='post-feeds'>
+<div class='feed-links'>
+Subscribe to:
+<a class='feed-link' href='http://blog.chromium.org/feeds/3532286548361325434/comments/default' target='_blank' type='application/atom+xml'>Post Comments (Atom)</a>
+</div>
+</div>
+<script type="text/javascript">window.___gcfg = {'lang': 'en'};</script>
+</div>
+</div></div>
+</div>
+</div>
+<!-- end content-wrapper -->
+</div>
+<!-- end outer-wrapper -->
+<div id='footer-graphic'>
+<div class='footer section' id='footer'><div class='widget HTML' id='HTML5'>
+<p class='widget-content'>
+  &copy;2008 Google - <a href='http://google.com/intl/en/privacy.html'>Privacy Policy</a> - <a href='http://www.google.com/accounts/TOS?hl=en'>Terms of Service</a>
+</p>
+</div></div>
+</div>
+</div>
+<script language='Javascript' type='text/javascript'>SolutionLoad();</script>
+<script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('widgetJsBefore');
+</script><script type="text/javascript" src="//www.blogger.com/static/v1/widgets/2134638198-widgets.js"></script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<script type='text/javascript'>
+if (typeof(BLOG_attachCsiOnload) != 'undefined' && BLOG_attachCsiOnload != null) { window['blogger_templates_experiment_id'] = "templatesV1";window['blogger_blog_id'] = '2471378914199150966';BLOG_attachCsiOnload('item_'); }_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d2471378914199150966','//blog.chromium.org/2008/09/multi-process-architecture.html','2471378914199150966');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '2471378914199150966', 'bloggerUrl': 'http://www.blogger.com', 'title': 'Chromium Blog', 'pageType': 'item', 'url': 'http://blog.chromium.org/2008/09/multi-process-architecture.html', 'canonicalUrl': 'http://blog.chromium.org/2008/09/multi-process-architecture.html', 'canonicalHomepageUrl': 'http://blog.chromium.org/', 'homepageUrl': 'http://blog.chromium.org/', 'blogspotFaviconUrl': 'http://blog.chromium.org/favicon.ico', 'enabledCommentProfileImages': true, 'adultContent': false, 'disableAdSenseWidget': false, 'analyticsAccountNumber': 'UA-37592578-1', 'searchLabel': '', 'searchQuery': '', 'pageName': 'Multi-process Architecture', 'pageTitle': 'Chromium Blog: Multi-process Architecture', 'encoding': 'UTF-8', 'locale': 'en', 'localeLanguage': 'en', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'languageDirection': 'ltr', 'feedLinks': '\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42Chromium Blog - Atom\42 href\75\42http://blog.chromium.org/feeds/posts/default\42 /\76\n\74link rel\75\42alternate\42 type\75\42application/rss+xml\42 title\75\42Chromium Blog - RSS\42 href\75\42http://blog.chromium.org/feeds/posts/default?alt\75rss\42 /\76\n\74link rel\75\42service.post\42 type\75\42application/atom+xml\42 title\75\42Chromium Blog - Atom\42 href\75\42http://www.blogger.com/feeds/2471378914199150966/posts/default\42 /\76\n\74link rel\75\42EditURI\42 type\75\42application/rsd+xml\42 title\75\42RSD\42 href\75\42http://www.blogger.com/rsd.g?blogID\0752471378914199150966\42 /\76\n\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42Chromium Blog - Atom\42 href\75\42http://blog.chromium.org/feeds/3532286548361325434/comments/default\42 /\76\n', 'meTag': '', 'openIdOpTag': '', 'postImageThumbnailUrl': 'http://3.bp.blogspot.com/_LJuAPqyUVas/SMmPyMh7lEI/AAAAAAAAAAM/QzfafK31Kr4/s72-c/google_chrome_task_manager.png', 'imageSrcTag': '\74link rel\75\42image_src\42 href\75\42http://3.bp.blogspot.com/_LJuAPqyUVas/SMmPyMh7lEI/AAAAAAAAAAM/QzfafK31Kr4/s72-c/google_chrome_task_manager.png\42 /\76\n', 'latencyHeadScript': '\74script type\75\42text/javascript\42\76(function() { var a\75window,b\75\42jstiming\42,d\75\42tick\42;var e\75function(c){this.t\75{};this.tick\75function(c,p,h){h\75void 0!\75h?h:(new Date).getTime();this.t[c]\75[h,p]};this[d](\42start\42,null,c)},f\75new e;a.jstiming\75{Timer:e,load:f};if(a.performance\46\46a.performance.timing){var g\75a.performance.timing,j\75a[b].load,k\75g.navigationStart,l\75g.responseStart;0\74k\46\46l\76\75k\46\46(j[d](\42_wtsrt\42,void 0,k),j[d](\42wtsrt_\42,\42_wtsrt\42,l),j[d](\42tbsd_\42,\42wtsrt_\42))}\ntry{var m\75null;a.chrome\46\46a.chrome.csi\46\46(m\75Math.floor(a.chrome.csi().pageT),j\46\0460\74k\46\46(j[d](\42_tbnd\42,void 0,a.chrome.csi().startE),j[d](\42tbnd_\42,\42_tbnd\42,k)));null\75\75m\46\46a.gtbExternal\46\46(m\75a.gtbExternal.pageT());null\75\75m\46\46a.external\46\46(m\75a.external.pageT,j\46\0460\74k\46\46(j[d](\42_tbnd\42,void 0,a.external.startE),j[d](\42tbnd_\42,\42_tbnd\42,k)));m\46\46(a[b].pt\75m)}catch(n){};a.tickAboveFold\75function(c){var i\0750;if(c.offsetParent){do i+\75c.offsetTop;while(c\75c.offsetParent)}c\75i;750\76\75c\46\46a[b].load[d](\42aft\42)};var q\75!1;function r(){q||(q\75!0,a[b].load[d](\42firstScrollTime\42))}a.addEventListener?a.addEventListener(\42scroll\42,r,!1):a.attachEvent(\42onscroll\42,r);\n })();\74/script\076', 'mobileHeadScript': '', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/415c4782c5b3e5f8', 'plusOneApiSrc': 'https://apis.google.com/js/plusone.js'}}, {'name': 'skin', 'data': {'vars': {}, 'override': ''}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '/?view\75classic'}, 'flipcard': {'name': 'flipcard', 'url': '/?view\75flipcard'}, 'magazine': {'name': 'magazine', 'url': '/?view\75magazine'}, 'mosaic': {'name': 'mosaic', 'url': '/?view\75mosaic'}, 'sidebar': {'name': 'sidebar', 'url': '/?view\75sidebar'}, 'snapshot': {'name': 'snapshot', 'url': '/?view\75snapshot'}, 'timeslide': {'name': 'timeslide', 'url': '/?view\75timeslide'}}}]);
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML5', 'footer', null, document.getElementById('HTML5'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML2', 'sidebar', null, document.getElementById('HTML2'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogArchiveView', new _WidgetInfo('BlogArchive1', 'sidebar', null, document.getElementById('BlogArchive1'), {'languageDirection': 'ltr'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML1', 'sidebar', null, document.getElementById('HTML1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML4', 'sidebar', null, document.getElementById('HTML4'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML3', 'sidebar', null, document.getElementById('HTML3'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LinkListView', new _WidgetInfo('LinkList2', 'sidebar', null, document.getElementById('LinkList2'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LabelView', new _WidgetInfo('Label1', 'sidebar', null, document.getElementById('Label1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML7', 'sidebar', null, document.getElementById('HTML7'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PageListView', new _WidgetInfo('PageList1', 'sidebar', null, document.getElementById('PageList1'), {'title': 'Pages', 'links': [{'href': 'http://blog.chromium.org/', 'title': 'Home', 'isCurrentPage': false}], 'mobile': false}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_NavbarView', new _WidgetInfo('Navbar1', 'navbar', null, document.getElementById('Navbar1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML8', 'main', null, document.getElementById('HTML8'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main', null, document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'lightboxEnabled': true, 'lightboxModuleUrl': '//www.blogger.com/static/v1/jsbin/2258955905-lbx.js', 'lightboxCssUrl': '//www.blogger.com/static/v1/v-css/228702327-lightbox_bundle.css'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PageListView', new _WidgetInfo('PageList1', 'null', null, document.getElementById('PageList1'), {'title': 'Pages', 'links': [{'href': 'http://blog.chromium.org/', 'title': 'Home', 'isCurrentPage': false}], 'mobile': false}, 'displayModeFull'));
+</script>
+</body>
+</html>

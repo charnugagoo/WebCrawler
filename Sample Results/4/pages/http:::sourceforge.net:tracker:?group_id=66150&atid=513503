@@ -1,0 +1,1462 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"><![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en" class="no-js"><!--<![endif]-->
+    <head>
+        
+        <meta charset="utf-8">
+        <!--SourceForge.net: Find and Build Open Source Software-->
+        <!--Copyright (c) 1999-2013 SourceForge, Inc. All rights reserved.-->
+        <!-- Create Server: sfs-web-6 -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="description" content="The Python Package Index is a service that collates information about modules and applications written in Python and distributed using the Python distutils mechanism (or that support PKG-INFO). PyPI will run initially on python.org only." />
+        <meta name="keywords" content="Python Package Index, Front-Ends, Software Development, Open Source, Development, Community, Source Code, Downloads, Software" />
+                <title>SourceForge.net: Python Package Index: Bugs</title>        <link href='//fonts.googleapis.com/css?family=Ubuntu:regular,bold' rel='stylesheet' type='text/css'>
+                <style type="text/css">
+            @font-face {
+                font-family: "Pictos";
+                src: url('http://static.sourceforge.net/include/fonts/sftheme/pictos-web.eot');
+                src: local("☺"), url('http://static.sourceforge.net/include/fonts/sftheme/pictos-web.woff') format('woff'), url('http://static.sourceforge.net/include/fonts/sftheme/pictos-web.ttf') format('truetype'), url('http://static.sourceforge.net/include/fonts/sftheme/pictos-web.svg') format('svg');
+            }
+            #site-header .logo span {
+              background-image: url("http://static.sourceforge.net/images/neotheme/sftheme/logo.png");
+            }
+            #site-footer .wrapper {
+              background-image: url("http://static.sourceforge.net/images/neotheme/sftheme/sf-footer-logo.png") !important;
+            }
+        </style>
+        <link rel="stylesheet" type="text/css" href="http://static.sourceforge.net/css/develop/style.php?secure=0&amp;1359735489" media="all" />
+        <link rel="stylesheet" type="text/css" href="http://static.sourceforge.net/css/develop/global.php?secure=0&amp;1359735489" media="all" />
+        
+        <link rel="stylesheet" type="text/css" href="http://static.sourceforge.net/css/neotheme/sfx.css?1359735489" media="all" />
+                       <link rel="stylesheet" type="text/css" href="http://static.sourceforge.net/css/phoneix/table.php?secure=0&amp;1359735489" media="all" />
+                        <link rel="stylesheet" type="text/css" href="http://static.sourceforge.net/css/develop/droppy.php?secure=0&amp;1359735489" media="all" />
+                                        <!--   -->
+        <script type="text/javascript" src="http://static.sourceforge.net/include/js/sftheme/modernizr.custom.90514.js"></script>
+        <script type="text/javascript" src="http://static.sourceforge.net/include/jquery/jquery-1.3.2.min.js"></script>
+        <script type="text/javascript">
+            
+                jQuery.noConflict();
+            
+        </script>
+
+        <script type="text/javascript" src="http://static.sourceforge.net/include/jquery/jquery.cookie.js"></script>
+                        <script type='text/javascript'>
+          jQuery(function() {
+            jQuery('#fad19 p, .project_summary .downloadbar, .vertical_widget, .horizontal_widget').wrap('<div class="sc"><div class="l1"><div class="l2"><div class="l3"><div class="l4"></div></div></div></div></div>');
+          });
+        </script>
+                <script type="text/javascript" src="http://static.sourceforge.net/include/jquery/jquery.droppy.js"></script>
+        <script type="text/javascript" src="http://static.sourceforge.net/include/js/sylvester.js"></script>
+        <script type="text/javascript" src="http://static.sourceforge.net/include/js/pb.transformie.js"></script>
+        <script type='text/javascript'>
+            jQuery(function(){
+                jQuery('.b-hornav > li:last-child').addClass('last');
+                jQuery('.b-hornav > li').each(function() {
+                    jQuery('li[class!=disabled]', this).eq(0).addClass('first');
+                });
+                jQuery('.b-hornav').droppy({speed:0, delay:0});
+            });
+        </script>
+                
+                            <script type="text/javascript" src="http://static.sourceforge.net/include/js/preferences.js"></script>
+            <script type="text/javascript">
+                            var sf_proj_home = 'http://sourceforge.net/projects/pypi';
+                        var _visitor = "";
+            var jsonly = document.createElement('link');
+            jsonly.setAttribute('rel', 'stylesheet');
+            jsonly.setAttribute('type', 'text/css');
+            jsonly.setAttribute('href', 'http://static.sourceforge.net/css/phoneix/jsonly.css?secure=0&amp;1359735489');
+            document.getElementsByTagName('head')[0].appendChild(jsonly);
+                    </script>
+                                <script type="text/javascript" src="http://static.sourceforge.net/include/c_jquerytip.js"></script>
+        <link rel="stylesheet" href="http://static.sourceforge.net/css/phoneix/jquery.cluetip.php?secure=0" media="screen"/>
+                <script type="text/javascript">
+        //<![CDATA[
+
+            var ie6SelectsShowing = true;
+            function toggleIE6Selects(){
+                if(jQuery.browser.msie && jQuery.browser.version == '6.0'){
+                    if(ie6SelectsShowing){
+                        jQuery('select').hide();
+                        ie6SelectsShowing = false;
+                    } else {
+                        jQuery('select').show();
+                        ie6SelectsShowing = true;
+                    }
+                }
+            }
+            jQuery(function(){
+                jQuery('.pop').cluetip({sticky: true, titleAttribute: 'title', local:true, cursor: 'pointer', dropShadow: true, activation: 'click' });
+                jQuery('.jt').cluetip({cluetipClass: 'jtip', positionBy: false, arrows: false, dropShadow: true, local:true, mouseOutClose: true});
+                jQuery('.jt_sticky').cluetip({cluetipClass: 'jtip', positionBy: false, arrows: false, dropShadow: true, local:true, closePosition: 'title', sticky:true});
+                jQuery('.ph_sticky').click(toggleIE6Selects).cluetip({cluetipClass: 'default', arrows: false, cursor: 'pointer', dropShadow: true, local:true, closePosition: 'title', sticky:true, activation: 'click', onShow: function(){jQuery('#cluetip-close a').click(toggleIE6Selects);}});
+                jQuery('.ajax_sticky').cluetip({cluetipClass: 'default', width: '400', cursor: 'pointer', positionBy: 'mouse', arrows: false, dropShadow: true, closePosition: 'title', sticky:true, ajaxSettings: {success: function(msg){alert( "Data Saved: " + msg );}}});
+            });
+        //]]>
+        </script>
+                            <script type="text/javascript" src="http://static.sourceforge.net/include/jquery/jquery.columnmanager.pack.js"></script>
+                            <!-- DoubleClick Random Number -->
+    <script type="text/javascript">var dfp_ord=Math.random()*10000000000000000; var dfp_tile = 1; var dfp_ptile = 1;</script>
+    <!-- End DoubleClick Random Number -->
+    <!-- After META tags -->
+                                    
+        <script type="text/javascript" src="http://static.sourceforge.net/sfx.js"></script>
+        
+            <script type="text/javascript">
+                        var _gaq = _gaq || [];
+                        _gaq.push(['t1._setAccount', 'UA-32013-6']);
+                        _gaq.push(['t1._trackPageview']);
+                        _gaq.push(['t2._setAccount', 'UA-36130941-1']);
+                        _gaq.push(['t2._trackPageview']);
+                        (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+            })();
+        </script>
+        <script type="text/javascript" src="http://static.sourceforge.net/include/jquery/jquery.notify.js"></script>
+    <script type="text/javascript" src="http://static.sourceforge.net/include/js/header.js"></script>
+    </head>
+
+    <body id="c2" class="short-head">
+    
+    <!--[if IE 7]><div id="ie7only"><![endif]-->
+    <!--[if IE 6]><div id="ie6only"><![endif]-->
+    <!--[if IE]><div id="ieonly"><![endif]-->
+        
+        <div class="browse_artifacts">
+            <header id="site-header">
+                <div class="wrapper">
+                    <a href="/" class="logo">
+                        <span>SourceForge</span>
+                    </a>
+                    <form method="get" action="/directory/">
+                        <input type="text" id="words" name="q" placeholder="Search">
+                    </form>
+                    <nav id="nav-site">
+                        <a href="/directory/" title="Browse our software.">Browse</a>
+                        <a href="/blog/" title="Read the latest news from the SF HQ.">Blog</a>
+                        <a href="/support" title="Contact us for help and feedback.">Help</a>
+                        <a href="/jobs?source=header" title="Search 80k+ tech jobs." class="featured-link">Jobs</a>
+                    </nav>
+                    <nav id="nav-account">
+                                                  <div class="logged_out">
+                            <a href="https://sourceforge.net/account/login.php">Log In</a>
+                            <span>or</span>
+                            <a href="https://sourceforge.net/user/registration">Join</a>
+                          </div>
+                                            </nav>
+                </div>
+            </header>
+            <header id="site-sec-header">
+                <div class="wrapper">
+                    <nav id="nav-hubs">
+                        <h4>Solution Centers</h4>
+                        <a href="http://ibmsmartercommerce.sourceforge.net/">Smarter Commerce</a>
+                        <a href="http://goparallel.sourceforge.net/">Go Parallel</a>
+                        <a href="http://html5center.sourceforge.net/">HTML5</a>
+                        <a href="http://ibmsmarteritservices.sourceforge.net/">Smarter IT</a>
+                    </nav>
+                    <nav id="nav-collateral">
+                        <a href="http://library.geeknetmedia.com">Resources</a>
+                                                <a href="https://sourceforge.net/user/registration/">Newsletters</a>
+                                            </nav>
+                </div>
+            </header>
+                                    <div id="page-body">
+            <div id="bd" class="inner-bd">
+                <div id="doc4" class="yui-t6">
+                                                            <div id="breadcrumbs">
+                                                    <a href="/">Home</a>
+ / <a href="/directory/" >Browse</a>
+ / <a href="/projects/pypi/" >Python Package Index</a>
+ / <a href="/tracker/?group_id=66150" >Tracker</a>
+ / <a href="/tracker/?group_id=66150&amp;atid=513503" >Bugs</a>
+ / <a href="/tracker/?group_id=66150&amp;atid=513503"  class="selected">Browse Tracker Items</a>
+                                            </div>
+                    <!-- begin content -->
+            <a name="projectnav"></a>
+        <div id="project_nav_container">
+            <div class="b-proj__side">
+                                
+                
+                
+                <span class="award-bar"></span>
+            </div>
+            <h1>
+                <a href="/projects/pypi/">Python Package Index</a>
+                            </h1>
+                    <div class="firstwave">
+                <ul class="b-hornav">
+                    <li id="menu_consume_summary"><a href="/projects/pypi/"><span><span>Summary</span></span></a></li>
+<li id="menu_consume_files"><a href="/projects/pypi/files/"><span><span>Files</span></span></a></li>
+<li id="menu_consume_reviews"><a href="/projects/pypi/reviews/"><span><span>Reviews</span></span></a></li>
+<li id="menu_project_support"><a href="/projects/pypi/support"><span><span>Support</span></span></a></li>
+<li id="menu_project_develop"><a href="/projects/pypi/develop"><span><span>Develop</span></span></a>
+<ul>
+<li id="menu_project_website"><a href="http://www.python.org/pypi">Web Site</a></li>
+<li id="menu_project_screenshots" class="disabled" style="display: none;"><a href="/project/screenshots.php?group_id=66150">Screenshots</a></li>
+<li id="menu_project_news" class="disabled" style="display: none;"><a href="/news/?group_id=66150">News</a></li>
+<li id="menu_stats"><a href="/projects/pypi/stats/traffic">Project Statistics</a></li>
+<li id="menu_download_stats_dist"><a href="/downloads/pypi/stats_timeline">Download Stats</a></li>
+</ul>
+</li>
+<li id="menu_hostedapps" class="disabled tier" style="display: none;"><a href="/hostedapp/?group_id=66150"><span><span>Hosted&nbsp;Apps</span></span></a></li>
+<li id="menu_tracker" class="selected tier"><a href="/tracker/?group_id=66150"><span><span>Tracker</span></span></a>
+<ul>
+<li id="menu_tracker_513503"><a href="/tracker/?group_id=66150&amp;atid=513503">Bugs</a></li>
+<li id="menu_tracker_513504"><a href="/tracker/?group_id=66150&amp;atid=513504">Support Requests</a></li>
+<li id="menu_tracker_stats" class="tools"><a href="/projects/pypi/stats/tracker">Statistics for Trackers</a></li>
+<li id="menu_tracker_reports" class="disabled" style="display: none;"><a href="/tracker/reporting/?group_id=66150">Reporting for Trackers</a></li>
+<li id="menu_tracker_search"><a href="/search/?group_id=66150&amp;type_of_search=artifact">Search Trackers</a></li>
+</ul>
+<div class="diamond"></div></li>
+<li id="menu_mail" class="disabled tier" style="display: none;"><a href="/mail/?group_id=66150"><span><span>Mailing&nbsp;Lists</span></span></a>
+<ul>
+<li id="menu_mail_search" class="tools"><a href="/search/?group_id=66150&amp;type_of_search=mlists">Search Mail Lists</a></li>
+</ul>
+</li>
+<li id="menu_forums" class="disabled tier" style="display: none;"><a href="/projects/pypi/forums"><span><span>Forums</span></span></a>
+<ul>
+<li id="menu_forum_224317"><a href="/projects/pypi/forums/forum/224317">Help</a></li>
+<li id="menu_forum_224316"><a href="/projects/pypi/forums/forum/224316">Open Discussion</a></li>
+<li id="menu_forums_stats" class="tools"><a href="/projects/pypi/stats/forums">Statistics for Forums</a></li>
+<li id="menu_forums_search"><a href="/search/?group_id=66150&amp;type_of_search=forums">Search Forums</a></li>
+</ul>
+</li>
+<li id="menu_code" class="disabled tier" style="display: none;"><a href="#"><span><span>Code</span></span></a>
+<ul>
+<li id="menu_git_about" class="disabled" style="display: none;"><a href="/scm/?type=git&amp;group_id=66150">Git</a></li>
+<li id="menu_git_browse" class="disabled" style="display: none;"><a href="http://pypi.git.sourceforge.net/">Git Browse</a></li>
+<li id="menu_git_stats" class="disabled" style="display: none;"><a href="/projects/pypi/stats/scm?repo=GitRepository">Git Statistics</a></li>
+<li id="menu_hg_about" class="disabled" style="display: none;"><a href="/scm/?type=hg&amp;group_id=66150">Mercurial</a></li>
+<li id="menu_hg_browse" class="disabled" style="display: none;"><a href="http://pypi.hg.sourceforge.net/hgweb/pypi/">Mercurial Browse</a></li>
+<li id="menu_hg_stats" class="disabled" style="display: none;"><a href="/projects/pypi/stats/scm?repo=HgRepository">Mercurial Statistics</a></li>
+<li id="menu_bzr_about" class="disabled" style="display: none;"><a href="/scm/?type=bzr&amp;group_id=66150">Bazaar</a></li>
+<li id="menu_bzr_browse" class="disabled" style="display: none;"><a href="http://pypi.bzr.sourceforge.net/bzr/pypi/">Bazaar Browse</a></li>
+<li id="menu_bzr_stats" class="disabled" style="display: none;"><a href="/projects/pypi/stats/scm?repo=BazaarBranch">Bazaar Statistics</a></li>
+<li id="menu_cvs_about" class="disabled" style="display: none;"><a href="/scm/?type=cvs&amp;group_id=66150">CVS</a></li>
+<li id="menu_cvs_browse" class="disabled" style="display: none;"><a href="http://pypi.cvs.sourceforge.net/pypi/">CVS Browse</a></li>
+<li id="menu_cvs_stats" class="disabled" style="display: none;"><a href="/projects/pypi/stats/scm?repo=CVSRepository">CVS Statistics</a></li>
+<li id="menu_svn_about" class="disabled" style="display: none;"><a href="/scm/?type=svn&amp;group_id=66150">SVN</a></li>
+<li id="menu_svn_browse" class="disabled" style="display: none;"><a href="http://pypi.svn.sourceforge.net/viewvc/pypi/">SVN Browse</a></li>
+<li id="menu_svn_stats" class="disabled" style="display: none;"><a href="/projects/pypi/stats/scm?repo=SVNRepository">SVN Statistics</a></li>
+</ul>
+</li>
+<li id="menu_newadmin" class="disabled tier" style="display: none;"><a href="/project/admin/?group_id=66150"><span><span>Project&nbsp;Admin</span></span></a>
+<ul>
+<li id="menu_editgroupinfo" class="disabled" style="display: none;"><a href="/project/admin/public_info.php?group_id=66150">Settings</a></li>
+<li id="menu_features" class="disabled" style="display: none;"><a href="/project/admin/features.php?group_id=66150">Features</a></li>
+<li id="menu_userperms" class="disabled" style="display: none;"><a href="/project/admin/project_membership.php?group_id=66150">Members</a></li>
+<li id="menu_stats_admin" class="disabled" style="display: none;"><a href="/project/admin/stats.php?group_id=66150">Analytics</a></li>
+</ul>
+</li>
+
+                </ul>
+            </div>
+                </div>
+        <div style="clear: both;"></div>
+                    <div class="subset">
+            <ul>
+                <li id="menu_add" class="begin tier"><a href="/tracker/?func=add&amp;group_id=66150&amp;atid=513503"><span><span>Add&nbsp;new</span></span></a></li>
+<li id="menu_browse" class="selected tier"><a href="/tracker/?func=browse&amp;group_id=66150&amp;atid=513503"><span><span>Browse</span></span></a><div class="diamond"></div></li>
+<li id="menu_reporting" class="disabled tier" style="display: none;"><a href="/tracker/reporting/?group_id=66150&amp;atid=513503"><span><span>Reporting</span></span></a></li>
+<li id="menu_admin" class="disabled tier" style="display: none;"><a href="/tracker/admin/?group_id=66150"><span><span>Admin</span></span></a></li>
+
+            </ul>
+            </div>
+            <div style="clear: both;"></div>
+            
+
+
+
+<h2 style="margin-top:1em">Tracker: Bugs</h2>
+
+<br>
+
+<script type="text/javascript">
+jQuery(document).ready(function(){
+        jQuery('.tracker').columnManager({listTargetID:'cluetip', onClass: 'accept', offClass: 'blank', hideInList: [1,2], saveState: true}); 
+        jQuery('#cluetip ul').css('background','#fff').css('margin','0').css('padding','0 2em 2em').css('z-index','100');
+        jQuery('#cluetip-inner').css('border','none');
+        jQuery('#cluetip li').css('list-style','none').css('position','relative');
+});
+
+function change_limit(limit_selector) {
+    jQuery('#limit').val(limit_selector.options[limit_selector.selectedIndex].value);
+    jQuery('#filter_submit').click();
+}
+</script>
+
+<div class="yui-g" style="margin-bottom: 1em;">
+    <div class="yui-u first">
+    <form action="/search/" method="get">
+        <input type="hidden" name="group_artifact_id" value="513503"/>        <input type="hidden" name="type_of_search" value="artifact"/>
+        <input type="hidden" name="group_id" value="66150"/>
+        <label>Search: </label><input type="text" class="searchword passive" id="projectsearchbox" name="words" tabindex="4"/>
+        <input type="submit" value="Search" class="submit" tabindex="5"/>
+        <a href="/search/?type_of_search=artifact&amp;group_id=66150">Advanced</a>
+    </form>    
+    </div>
+    <div class="yui-u" style="text-align: right;">
+        <a href="#options" class="ph_sticky options" rel="#options" title="Show/Hide Columns">Options</a> &nbsp; 
+        <div id="options"></div>
+        <a class="rss" href="http://sourceforge.net/tracker/?func=rssfeed&amp;group_id=66150&amp;atid=513503">RSS</a>
+    </div>
+</div>
+<form id="stresults" name="stresults" method="get" action="">
+<input type="hidden" id="limit" name="limit" value="25">
+<input type="hidden" id="func" name="func">
+<input type="hidden" name="group_id" value="66150" />
+<input type="hidden" name="atid" value="513503" />
+<input type="hidden" name="assignee" value="" />
+<input type="hidden" name="status" value="" />
+<input type="hidden" name="category" value="" />
+<input type="hidden" name="artgroup" value="" />
+<input type="hidden" name="keyword" value="" />
+<input type="hidden" name="submitter" value="" />
+<input type="hidden" name="artifact_id" value="" />
+
+<div class="yui-g">
+	<div class="yui-u first results">
+		Page: <strong class="btn active">Page 1</strong><a class="btn" href="/tracker/?words=tracker_browse&amp;sort=open_date&amp;sortdir=desc&amp;offset=25&amp;group_id=66150&amp;atid=513503&amp;assignee=&amp;status=&amp;category=&amp;artgroup=&amp;keyword=&amp;submitter=&amp;artifact_id=">Next &rarr;</a>
+	</div>
+	<div class="yui-u page">
+		1&nbsp;-&nbsp;25&nbsp;of&nbsp;400&nbsp;Results&nbsp;-&nbsp;Display&nbsp;
+		<select class="limitselect" onchange="change_limit(this);">
+		<option value="10">10</option>
+		<option value="15">15</option>
+		<option value="20">20</option>
+		<option selected="selected" value="25">25</option>
+		<option value="30">30</option>
+		<option value="35">35</option>
+		<option value="50">50</option>
+		<option value="75">75</option>
+		<option value="100">100</option>
+		</select>
+
+	</div>
+</div>
+<table id="tracker_513503" summary="Search Results for tracker_browse" border="0" cellspacing="0" cellpadding="0" class="tracker">
+	<caption>Search Results</caption>
+
+<thead>
+	<tr style="display: none;">
+						<th>
+	<a href="/tracker/?words=tracker_browse&amp;sort=artifact_id&amp;sortdir=desc&amp;offset=0&amp;group_id=66150&amp;atid=513503&amp;assignee=&amp;status=&amp;category=&amp;artgroup=&amp;keyword=&amp;submitter=&amp;artifact_id="
+	    	class="sort"
+	>ID</a>
+</th>								<th>
+	<a href="/tracker/?words=tracker_browse&amp;sort=summary&amp;sortdir=desc&amp;offset=0&amp;group_id=66150&amp;atid=513503&amp;assignee=&amp;status=&amp;category=&amp;artgroup=&amp;keyword=&amp;submitter=&amp;artifact_id="
+	    	class="sort"
+	>Summary</a>
+</th>								<th>
+	<a href="/tracker/?words=tracker_browse&amp;sort=status&amp;sortdir=desc&amp;offset=0&amp;group_id=66150&amp;atid=513503&amp;assignee=&amp;status=&amp;category=&amp;artgroup=&amp;keyword=&amp;submitter=&amp;artifact_id="
+	    	class="sort"
+	>Status</a>
+</th>								<th class=" select">
+	<a href="/tracker/?words=tracker_browse&amp;sort=open_date&amp;sortdir=asc&amp;offset=0&amp;group_id=66150&amp;atid=513503&amp;assignee=&amp;status=&amp;category=&amp;artgroup=&amp;keyword=&amp;submitter=&amp;artifact_id="
+	 
+		    		class="sortd"
+			>Opened</a>
+</th>								<th>
+	<a href="/tracker/?words=tracker_browse&amp;sort=assigned_to&amp;sortdir=desc&amp;offset=0&amp;group_id=66150&amp;atid=513503&amp;assignee=&amp;status=&amp;category=&amp;artgroup=&amp;keyword=&amp;submitter=&amp;artifact_id="
+	    	class="sort"
+	>Assignee</a>
+</th>								<th>
+	<a href="/tracker/?words=tracker_browse&amp;sort=submitted_by&amp;sortdir=desc&amp;offset=0&amp;group_id=66150&amp;atid=513503&amp;assignee=&amp;status=&amp;category=&amp;artgroup=&amp;keyword=&amp;submitter=&amp;artifact_id="
+	    	class="sort"
+	>Submitter</a>
+</th>								<th>
+	<a href="/tracker/?words=tracker_browse&amp;sort=resolution&amp;sortdir=desc&amp;offset=0&amp;group_id=66150&amp;atid=513503&amp;assignee=&amp;status=&amp;category=&amp;artgroup=&amp;keyword=&amp;submitter=&amp;artifact_id="
+	    	class="sort"
+	>Resolution</a>
+</th>								<th>
+	<a href="/tracker/?words=tracker_browse&amp;sort=priority&amp;sortdir=desc&amp;offset=0&amp;group_id=66150&amp;atid=513503&amp;assignee=&amp;status=&amp;category=&amp;artgroup=&amp;keyword=&amp;submitter=&amp;artifact_id="
+	    	class="sort"
+	>Priority</a>
+</th>				</tr>
+	<tr>
+						<th>
+	<a href="/tracker/?words=tracker_browse&amp;sort=artifact_id&amp;sortdir=desc&amp;offset=0&amp;group_id=66150&amp;atid=513503&amp;assignee=&amp;status=&amp;category=&amp;artgroup=&amp;keyword=&amp;submitter=&amp;artifact_id="
+	    	class="sort"
+	>ID</a>
+</th>								<th>
+	<a href="/tracker/?words=tracker_browse&amp;sort=summary&amp;sortdir=desc&amp;offset=0&amp;group_id=66150&amp;atid=513503&amp;assignee=&amp;status=&amp;category=&amp;artgroup=&amp;keyword=&amp;submitter=&amp;artifact_id="
+	    	class="sort"
+	>Summary</a>
+</th>								<th>
+	<a href="/tracker/?words=tracker_browse&amp;sort=status&amp;sortdir=desc&amp;offset=0&amp;group_id=66150&amp;atid=513503&amp;assignee=&amp;status=&amp;category=&amp;artgroup=&amp;keyword=&amp;submitter=&amp;artifact_id="
+	    	class="sort"
+	>Status</a>
+</th>								<th class=" select">
+	<a href="/tracker/?words=tracker_browse&amp;sort=open_date&amp;sortdir=asc&amp;offset=0&amp;group_id=66150&amp;atid=513503&amp;assignee=&amp;status=&amp;category=&amp;artgroup=&amp;keyword=&amp;submitter=&amp;artifact_id="
+	 
+		    		class="sortd"
+			>Opened</a>
+</th>								<th>
+	<a href="/tracker/?words=tracker_browse&amp;sort=assigned_to&amp;sortdir=desc&amp;offset=0&amp;group_id=66150&amp;atid=513503&amp;assignee=&amp;status=&amp;category=&amp;artgroup=&amp;keyword=&amp;submitter=&amp;artifact_id="
+	    	class="sort"
+	>Assignee</a>
+</th>								<th>
+	<a href="/tracker/?words=tracker_browse&amp;sort=submitted_by&amp;sortdir=desc&amp;offset=0&amp;group_id=66150&amp;atid=513503&amp;assignee=&amp;status=&amp;category=&amp;artgroup=&amp;keyword=&amp;submitter=&amp;artifact_id="
+	    	class="sort"
+	>Submitter</a>
+</th>								<th>
+	<a href="/tracker/?words=tracker_browse&amp;sort=resolution&amp;sortdir=desc&amp;offset=0&amp;group_id=66150&amp;atid=513503&amp;assignee=&amp;status=&amp;category=&amp;artgroup=&amp;keyword=&amp;submitter=&amp;artifact_id="
+	    	class="sort"
+	>Resolution</a>
+</th>								<th>
+	<a href="/tracker/?words=tracker_browse&amp;sort=priority&amp;sortdir=desc&amp;offset=0&amp;group_id=66150&amp;atid=513503&amp;assignee=&amp;status=&amp;category=&amp;artgroup=&amp;keyword=&amp;submitter=&amp;artifact_id="
+	    	class="sort"
+	>Priority</a>
+</th>				</tr>
+	<tr class="filter">
+		<th colspan="8">
+			Assignee:
+			<select name="assignee">
+				<option value="">Any</option>
+									<option value="100" >Nobody</option>
+									<option value="9300" >acapnotic</option>
+									<option value="11375" >akuchling</option>
+									<option value="3172" >amk</option>
+									<option value="1242541" >camarajm</option>
+									<option value="3066" >fdrake</option>
+									<option value="469548" >jlgijsbers</option>
+									<option value="21627" >loewis</option>
+									<option value="1004574" >micktwomey</option>
+									<option value="44345" >montanaro</option>
+									<option value="6405" >richard</option>
+							</select>
+
+			Status:
+			<select name="status">
+				<option value="">Any</option>
+									<option value="1" >Open</option>
+									<option value="2" >Closed</option>
+									<option value="3" >Deleted</option>
+									<option value="4" >Pending</option>
+							</select>
+
+			Category:
+			<select name="category">
+				<option value="">Any</option>
+									<option value="100" >No Category</option>
+									<option value="5034709" >API</option>
+									<option value="5034710" >distutils / setup.py interface</option>
+									<option value="5034711" >Mirroring</option>
+									<option value="5034720" >Security</option>
+									<option value="473172" >Web Interface</option>
+							</select>
+
+			Group:
+			<select name="artgroup">
+				<option value="">Any</option>
+									<option value="100" >No Group</option>
+									<option value="251395" >v1.0 (example)</option>
+							</select>
+
+			Submitter:
+			<input name="submitter" value="" size="10">
+
+			Keyword:
+			<input name="keyword" value="" size="10">
+
+			Artifact ID:
+			<input name="artifact_id" value="" size="10">
+
+			<input type="submit" id="filter_submit" name="submit" value="Filter">
+			<input type="submit" name="reset" value="Reset">
+
+			<span><a style="display: inline;" href="/tracker/?func=browse&amp;group_id=66150&amp;atid=513503">Permalink</a></span>
+		</th>
+	</tr>
+	</thead><tfoot>
+</tfoot><tbody>
+			<tr>
+			 
+							<td class="p5">
+						 
+				3604030						</td>
+					 
+							<td class="p5">
+						 
+				<a href="/tracker/?func=detail&aid=3604030&group_id=66150&atid=513503">OpenID discovery failure</a>						</td>
+					 
+							<td class="p5">
+										Open
+						</td>
+					 
+							<td class="p5">
+										2013-02-10
+						</td>
+					 
+							<td class="p5">
+									    			    nobody
+						</td>
+					 
+							<td class="p5">
+									    			    <a href="/users/pitrou/" title="Antoine Pitrou">pitrou</a>
+						</td>
+					 
+							<td class="p5">
+										None
+						</td>
+					 
+							<td class="p5">
+										5
+						</td>
+			</tr>
+
+												<tr>
+			 
+							<td class="p5">
+						 
+				3603910						</td>
+					 
+							<td class="p5">
+						 
+				<a href="/tracker/?func=detail&aid=3603910&group_id=66150&atid=513503">Add new response headers Etag / Last-Modified</a>						</td>
+					 
+							<td class="p5">
+										Open
+						</td>
+					 
+							<td class="p5">
+										2013-02-08
+						</td>
+					 
+							<td class="p5">
+									    			    nobody
+						</td>
+					 
+							<td class="p5">
+									    			    <a href="/users/jimmyislive/" title="Jimmy">jimmyislive</a>
+						</td>
+					 
+							<td class="p5">
+										None
+						</td>
+					 
+							<td class="p5">
+										5
+						</td>
+			</tr>
+
+												<tr>
+			 
+							<td class="p5">
+						 
+				3602389						</td>
+					 
+							<td class="p5">
+						 
+				<a href="/tracker/?func=detail&aid=3602389&group_id=66150&atid=513503">ZODB3 Persistent installation broken</a>						</td>
+					 
+							<td class="p5">
+										Deleted
+						</td>
+					 
+							<td class="p5">
+										2013-01-28
+						</td>
+					 
+							<td class="p5">
+									    			    nobody
+						</td>
+					 
+							<td class="p5">
+									    			    <a href="/users/guilhermecapile/" title="Guilherme Capilé">guilhermecapile</a>
+						</td>
+					 
+							<td class="p5">
+										None
+						</td>
+					 
+							<td class="p5">
+										5
+						</td>
+			</tr>
+
+												<tr>
+			 
+							<td class="p5">
+						 
+				3602360						</td>
+					 
+							<td class="p5">
+						 
+				<a href="/tracker/?func=detail&aid=3602360&group_id=66150&atid=513503">testpypi server failing with 502 Bad Gateway</a>						</td>
+					 
+							<td class="p5">
+										Closed
+						</td>
+					 
+							<td class="p5">
+										2013-01-28
+						</td>
+					 
+							<td class="p5">
+									    			    nobody
+						</td>
+					 
+							<td class="p5">
+									    			    <a href="/users/cjerdonek/" title="Chris Jerdonek">cjerdonek</a>
+						</td>
+					 
+							<td class="p5">
+										Fixed
+						</td>
+					 
+							<td class="p5">
+										5
+						</td>
+			</tr>
+
+												<tr>
+			 
+							<td class="p5">
+						 
+				3601760						</td>
+					 
+							<td class="p5">
+						 
+				<a href="/tracker/?func=detail&aid=3601760&group_id=66150&atid=513503">Link to different versions at the top</a>						</td>
+					 
+							<td class="p5">
+										Closed
+						</td>
+					 
+							<td class="p5">
+										2013-01-22
+						</td>
+					 
+							<td class="p5">
+									    			    nobody
+						</td>
+					 
+							<td class="p5">
+									    			    <a href="/users/?user_id=3771021" title="https://www.google.com/accounts">https://www.google.com/accounts</a>
+						</td>
+					 
+							<td class="p5">
+										Fixed
+						</td>
+					 
+							<td class="p5">
+										5
+						</td>
+			</tr>
+
+												<tr>
+			 
+							<td class="p5">
+						 
+				3601588						</td>
+					 
+							<td class="p5">
+						 
+				<a href="/tracker/?func=detail&aid=3601588&group_id=66150&atid=513503">Pycluster - numpy module missing during installation</a>						</td>
+					 
+							<td class="p5">
+										Closed
+						</td>
+					 
+							<td class="p5">
+										2013-01-20
+						</td>
+					 
+							<td class="p5">
+									    			    nobody
+						</td>
+					 
+							<td class="p5">
+									    			    <a href="/users/gcetusic/" title="Goran Cetusic">gcetusic</a>
+						</td>
+					 
+							<td class="p5">
+										Rejected
+						</td>
+					 
+							<td class="p5">
+										5
+						</td>
+			</tr>
+
+												<tr>
+			 
+							<td class="p5">
+						 
+				3601509						</td>
+					 
+							<td class="p5">
+						 
+				<a href="/tracker/?func=detail&aid=3601509&group_id=66150&atid=513503">No distributions at all found for pypm==1.3.4</a>						</td>
+					 
+							<td class="p5">
+										Closed
+						</td>
+					 
+							<td class="p5">
+										2013-01-19
+						</td>
+					 
+							<td class="p5">
+									    			    nobody
+						</td>
+					 
+							<td class="p5">
+									    			    <a href="/users/dhdrhwlqjws/" title="pythonherokudeployment">dhdrhwlqjws</a>
+						</td>
+					 
+							<td class="p5">
+										Rejected
+						</td>
+					 
+							<td class="p5">
+										5
+						</td>
+			</tr>
+
+												<tr>
+			 
+							<td class="p5">
+						 
+				3601492						</td>
+					 
+							<td class="p5">
+						 
+				<a href="/tracker/?func=detail&aid=3601492&group_id=66150&atid=513503">Nester Spam is not being filtered out</a>						</td>
+					 
+							<td class="p5">
+										Closed
+						</td>
+					 
+							<td class="p5">
+										2013-01-19
+						</td>
+					 
+							<td class="p5">
+									    			    nobody
+						</td>
+					 
+							<td class="p5">
+									    			    <a href="/users/?user_id=4125649" title="https://me.yahoo.com/a/LctHMQx_">https://me.yahoo.com/a/LctHMQx_</a>
+						</td>
+					 
+							<td class="p5">
+										Wont Fix
+						</td>
+					 
+							<td class="p5">
+										5
+						</td>
+			</tr>
+
+												<tr>
+			 
+							<td class="p5">
+						 
+				3601248						</td>
+					 
+							<td class="p5">
+						 
+				<a href="/tracker/?func=detail&aid=3601248&group_id=66150&atid=513503">Rest parsing errors are not available</a>						</td>
+					 
+							<td class="p5">
+										Closed
+						</td>
+					 
+							<td class="p5">
+										2013-01-17
+						</td>
+					 
+							<td class="p5">
+									    			    nobody
+						</td>
+					 
+							<td class="p5">
+									    			    <a href="/users/godchap/" title="Godefroid Chapelle">godchap</a>
+						</td>
+					 
+							<td class="p5">
+										Wont Fix
+						</td>
+					 
+							<td class="p5">
+										5
+						</td>
+			</tr>
+
+												<tr>
+			 
+							<td class="p5">
+						 
+				3600777						</td>
+					 
+							<td class="p5">
+						 
+				<a href="/tracker/?func=detail&aid=3600777&group_id=66150&atid=513503">Website misbehaving</a>						</td>
+					 
+							<td class="p5">
+										Open
+						</td>
+					 
+							<td class="p5">
+										2013-01-14
+						</td>
+					 
+							<td class="p5">
+									    			    nobody
+						</td>
+					 
+							<td class="p5">
+									    			    <a href="/users/?user_id=4014912" title="kermit666">kermit666</a>
+						</td>
+					 
+							<td class="p5">
+										None
+						</td>
+					 
+							<td class="p5">
+										5
+						</td>
+			</tr>
+
+												<tr>
+			 
+							<td class="p5">
+						 
+				3600625						</td>
+					 
+							<td class="p5">
+						 
+				<a href="/tracker/?func=detail&aid=3600625&group_id=66150&atid=513503">Irrelevant search result &quot;gitfow&quot; for search &quot;sherpa&quot;</a>						</td>
+					 
+							<td class="p5">
+										Closed
+						</td>
+					 
+							<td class="p5">
+										2013-01-12
+						</td>
+					 
+							<td class="p5">
+									    			    nobody
+						</td>
+					 
+							<td class="p5">
+									    			    <a href="/users/cdeil/" title="Christoph Deil">cdeil</a>
+						</td>
+					 
+							<td class="p5">
+										Invalid
+						</td>
+					 
+							<td class="p5">
+										5
+						</td>
+			</tr>
+
+												<tr>
+			 
+							<td class="p5">
+						 
+				3600174						</td>
+					 
+							<td class="p5">
+						 
+				<a href="/tracker/?func=detail&aid=3600174&group_id=66150&atid=513503">Problem with installation on debian</a>						</td>
+					 
+							<td class="p5">
+										Closed
+						</td>
+					 
+							<td class="p5">
+										2013-01-09
+						</td>
+					 
+							<td class="p5">
+									    			    nobody
+						</td>
+					 
+							<td class="p5">
+									    			    <a href="/users/gantech/" title="Ganesh Vijayakumar">gantech</a>
+						</td>
+					 
+							<td class="p5">
+										Rejected
+						</td>
+					 
+							<td class="p5">
+										5
+						</td>
+			</tr>
+
+												<tr>
+			 
+							<td class="p5">
+						 
+				3598622						</td>
+					 
+							<td class="p5">
+						 
+				<a href="/tracker/?func=detail&aid=3598622&group_id=66150&atid=513503">ReST parser chokes on alternate link protocols.</a>						</td>
+					 
+							<td class="p5">
+										Open
+						</td>
+					 
+							<td class="p5">
+										2012-12-27
+						</td>
+					 
+							<td class="p5">
+									    			    nobody
+						</td>
+					 
+							<td class="p5">
+									    			    <a href="/users/melinath/" title="Stephen Burrows">melinath</a>
+						</td>
+					 
+							<td class="p5">
+										Fixed
+						</td>
+					 
+							<td class="p5">
+										5
+						</td>
+			</tr>
+
+												<tr>
+			 
+							<td class="p5">
+						 
+				3598308						</td>
+					 
+							<td class="p5">
+						 
+				<a href="/tracker/?func=detail&aid=3598308&group_id=66150&atid=513503">Unable to login with Google OpenID: Replay attack detected</a>						</td>
+					 
+							<td class="p5">
+										Open
+						</td>
+					 
+							<td class="p5">
+										2012-12-24
+						</td>
+					 
+							<td class="p5">
+									    			    nobody
+						</td>
+					 
+							<td class="p5">
+									    			    <a href="/users/?user_id=4097108" title="Michał Górny">Michał Górny</a>
+						</td>
+					 
+							<td class="p5">
+										None
+						</td>
+					 
+							<td class="p5">
+										5
+						</td>
+			</tr>
+
+												<tr>
+			 
+							<td class="p5">
+						 
+				3595370						</td>
+					 
+							<td class="p5">
+						 
+				<a href="/tracker/?func=detail&aid=3595370&group_id=66150&atid=513503">Creating a pypi mirror - 404 on azb_nester</a>						</td>
+					 
+							<td class="p5">
+										Open
+						</td>
+					 
+							<td class="p5">
+										2012-12-12
+						</td>
+					 
+							<td class="p5">
+									    			    nobody
+						</td>
+					 
+							<td class="p5">
+									    			    <a href="/users/?user_id=4085562" title="kelfish">kelfish</a>
+						</td>
+					 
+							<td class="p5">
+										None
+						</td>
+					 
+							<td class="p5">
+										5
+						</td>
+			</tr>
+
+												<tr>
+			 
+							<td class="p5">
+						 
+				3588513						</td>
+					 
+							<td class="p5">
+						 
+				<a href="/tracker/?func=detail&aid=3588513&group_id=66150&atid=513503">pycrypto.org is down</a>						</td>
+					 
+							<td class="p5">
+										Closed
+						</td>
+					 
+							<td class="p5">
+										2012-11-19
+						</td>
+					 
+							<td class="p5">
+									    			    nobody
+						</td>
+					 
+							<td class="p5">
+									    			    <a href="/users/bierek/" title="bierek">bierek</a>
+						</td>
+					 
+							<td class="p5">
+										None
+						</td>
+					 
+							<td class="p5">
+										5
+						</td>
+			</tr>
+
+												<tr>
+			 
+							<td class="p5">
+						 
+				3583924						</td>
+					 
+							<td class="p5">
+						 
+				<a href="/tracker/?func=detail&aid=3583924&group_id=66150&atid=513503">maintainer incorrectly displays as author</a>						</td>
+					 
+							<td class="p5">
+										Open
+						</td>
+					 
+							<td class="p5">
+										2012-11-04
+						</td>
+					 
+							<td class="p5">
+									    			    nobody
+						</td>
+					 
+							<td class="p5">
+									    			    <a href="/users/cjerdonek/" title="Chris Jerdonek">cjerdonek</a>
+						</td>
+					 
+							<td class="p5">
+										None
+						</td>
+					 
+							<td class="p5">
+										5
+						</td>
+			</tr>
+
+												<tr>
+			 
+							<td class="p5">
+						 
+				3583137						</td>
+					 
+							<td class="p5">
+						 
+				<a href="/tracker/?func=detail&aid=3583137&group_id=66150&atid=513503">classifiers missing from PKG-INFO link</a>						</td>
+					 
+							<td class="p5">
+										Closed
+						</td>
+					 
+							<td class="p5">
+										2012-11-04
+						</td>
+					 
+							<td class="p5">
+									    			    nobody
+						</td>
+					 
+							<td class="p5">
+									    			    <a href="/users/cjerdonek/" title="Chris Jerdonek">cjerdonek</a>
+						</td>
+					 
+							<td class="p5">
+										None
+						</td>
+					 
+							<td class="p5">
+										5
+						</td>
+			</tr>
+
+												<tr>
+			 
+							<td class="p5">
+						 
+				3582325						</td>
+					 
+							<td class="p5">
+						 
+				<a href="/tracker/?func=detail&aid=3582325&group_id=66150&atid=513503">Package name is being squatted</a>						</td>
+					 
+							<td class="p5">
+										Open
+						</td>
+					 
+							<td class="p5">
+										2012-10-31
+						</td>
+					 
+							<td class="p5">
+									    			    nobody
+						</td>
+					 
+							<td class="p5">
+									    			    <a href="/users/?user_id=2745575" title="https://www.google.com/accounts">https://www.google.com/accounts</a>
+						</td>
+					 
+							<td class="p5">
+										None
+						</td>
+					 
+							<td class="p5">
+										5
+						</td>
+			</tr>
+
+												<tr>
+			 
+							<td class="p5">
+						 
+				3582188						</td>
+					 
+							<td class="p5">
+						 
+				<a href="/tracker/?func=detail&aid=3582188&group_id=66150&atid=513503">haufe.sharepoint not accessible from cmd </a>						</td>
+					 
+							<td class="p5">
+										Closed
+						</td>
+					 
+							<td class="p5">
+										2012-10-31
+						</td>
+					 
+							<td class="p5">
+									    			    nobody
+						</td>
+					 
+							<td class="p5">
+									    			    <a href="/users/mangeshkathale/" title="Mangesh">mangeshkathale</a>
+						</td>
+					 
+							<td class="p5">
+										Rejected
+						</td>
+					 
+							<td class="p5">
+										5
+						</td>
+			</tr>
+
+												<tr>
+			 
+							<td class="p5">
+						 
+				3577818						</td>
+					 
+							<td class="p5">
+						 
+				<a href="/tracker/?func=detail&aid=3577818&group_id=66150&atid=513503">Error shown after submitting a new ssh key</a>						</td>
+					 
+							<td class="p5">
+										Closed
+						</td>
+					 
+							<td class="p5">
+										2012-10-17
+						</td>
+					 
+							<td class="p5">
+									    			    nobody
+						</td>
+					 
+							<td class="p5">
+									    			    <a href="/users/imarius/" title="Marius Ionescu">imarius</a>
+						</td>
+					 
+							<td class="p5">
+										Fixed
+						</td>
+					 
+							<td class="p5">
+										5
+						</td>
+			</tr>
+
+												<tr>
+			 
+							<td class="p5">
+						 
+				3577132						</td>
+					 
+							<td class="p5">
+						 
+				<a href="/tracker/?func=detail&aid=3577132&group_id=66150&atid=513503">pyftdi dependence</a>						</td>
+					 
+							<td class="p5">
+										Closed
+						</td>
+					 
+							<td class="p5">
+										2012-10-13
+						</td>
+					 
+							<td class="p5">
+									    			    nobody
+						</td>
+					 
+							<td class="p5">
+									    			    <a href="/users/?user_id=4013154" title="https://www.google.com/accounts">https://www.google.com/accounts</a>
+						</td>
+					 
+							<td class="p5">
+										Rejected
+						</td>
+					 
+							<td class="p5">
+										5
+						</td>
+			</tr>
+
+												<tr>
+			 
+							<td class="p5">
+						 
+				3576320						</td>
+					 
+							<td class="p5">
+						 
+				<a href="/tracker/?func=detail&aid=3576320&group_id=66150&atid=513503">Trove classifiers Natural Language</a>						</td>
+					 
+							<td class="p5">
+										Open
+						</td>
+					 
+							<td class="p5">
+										2012-10-11
+						</td>
+					 
+							<td class="p5">
+									    			    nobody
+						</td>
+					 
+							<td class="p5">
+									    			    <a href="/users/?user_id=4010417" title="https://www.google.com/accounts">https://www.google.com/accounts</a>
+						</td>
+					 
+							<td class="p5">
+										None
+						</td>
+					 
+							<td class="p5">
+										5
+						</td>
+			</tr>
+
+												<tr>
+			 
+							<td class="p5">
+						 
+				3575935						</td>
+					 
+							<td class="p5">
+						 
+				<a href="/tracker/?func=detail&aid=3575935&group_id=66150&atid=513503">Cobbler pip has invalid and outdated URLs</a>						</td>
+					 
+							<td class="p5">
+										Open
+						</td>
+					 
+							<td class="p5">
+										2012-10-09
+						</td>
+					 
+							<td class="p5">
+									    			    nobody
+						</td>
+					 
+							<td class="p5">
+									    			    <a href="/users/dscoular/" title="Doug Scoular">dscoular</a>
+						</td>
+					 
+							<td class="p5">
+										None
+						</td>
+					 
+							<td class="p5">
+										5
+						</td>
+			</tr>
+
+												<tr>
+			 
+							<td class="p5">
+						 
+				3575352						</td>
+					 
+							<td class="p5">
+						 
+				<a href="/tracker/?func=detail&aid=3575352&group_id=66150&atid=513503">Please restore full width of code examples on PyPI</a>						</td>
+					 
+							<td class="p5">
+										Open
+						</td>
+					 
+							<td class="p5">
+										2012-10-07
+						</td>
+					 
+							<td class="p5">
+									    			    nobody
+						</td>
+					 
+							<td class="p5">
+									    			    <a href="/users/shh42/" title="Stefan H. Holek">shh42</a>
+						</td>
+					 
+							<td class="p5">
+										None
+						</td>
+					 
+							<td class="p5">
+										5
+						</td>
+			</tr>
+
+									</tbody></table>
+
+
+<div class="yui-g">
+	<div class="yui-u first results">
+		Page: <strong class="btn active">Page 1</strong><a class="btn" href="/tracker/?words=tracker_browse&amp;sort=open_date&amp;sortdir=desc&amp;offset=25&amp;group_id=66150&amp;atid=513503&amp;assignee=&amp;status=&amp;category=&amp;artgroup=&amp;keyword=&amp;submitter=&amp;artifact_id=">Next &rarr;</a>
+	</div>
+	<div class="yui-u page">
+		1&nbsp;-&nbsp;25&nbsp;of&nbsp;400&nbsp;Results&nbsp;-&nbsp;Display&nbsp;
+		<select class="limitselect" onchange="change_limit(this);">
+		<option value="10">10</option>
+		<option value="15">15</option>
+		<option value="20">20</option>
+		<option selected="selected" value="25">25</option>
+		<option value="30">30</option>
+		<option value="35">35</option>
+		<option value="50">50</option>
+		<option value="75">75</option>
+		<option value="100">100</option>
+		</select>
+
+	</div>
+</div>
+</form>
+
+            </div>
+        </div>
+      </div>
+    
+    <footer id="site-footer">
+        <div class="wrapper">
+            <nav>
+                <h5>SourceForge</h5>
+                <a href="/about">About</a>
+                <a href="/blog/category/sitestatus/">Site Status</a>
+                <a href="http://twitter.com/sfnet_ops">@sfnet_ops</a>
+            </nav>
+            <nav>
+                <h5>Find and Develop Software</h5>
+                <a href="/create/">Create a Project</a>
+                <a href="/directory/">Software Directory</a>
+                <a href="/top">Top Downloaded Projects</a>
+            </nav>
+            <nav>
+                <h5>Community</h5>
+                <a href="/blog/">Blog</a>
+                <a href="http://twitter.com/sourceforge">@sourceforge</a>
+                <a href="/jobs?source=footer">Job Board</a>
+            </nav>
+            <nav>
+                <h5>Help</h5>
+                <a href="/apps/trac/sourceforge/wiki/WikiStart">Site Documentation</a>
+                <a href="/support">Support Request</a>
+                <a href="http://sourceforge.net/p/forge/documentation/Support%20via%20IRC/">Real-Time Support</a>
+            </nav>
+        </div>
+    </footer>
+    <footer id="site-copyright-footer">
+        <div class="wrapper">
+            <div id="copyright">
+                Copyright &copy; 2013 SourceForge. All Rights Reserved.<br />
+                SourceForge is a <a href="http://www.diceholdingsinc.com/phoenix.zhtml?c=211152&amp;p=irol-landing">Dice Holdings, Inc.</a> company.
+            </div>
+            <nav>
+                <a href="http://geeknetmedia.com/terms-of-use">Terms</a>
+                <a href="http://geeknetmedia.com/privacy-statement/">Privacy</a>
+                <a href="http://geeknetmedia.com/opt-out-choices">Cookies/Opt Out</a>
+                <a href="http://geeknetmedia.com">Advertise</a>
+                <a href="http://sourceforge.jp/">SourceForge.JP</a>
+            </nav>
+        </div>
+    </footer>
+        <!--[if lt IE 7 ]>
+    <script type="text/javascript" src="http://static.sourceforge.net/include/js/sftheme/dd_belatedpng.js"></script>
+    <script> DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images </script>
+    <![endif]-->
+<!--[if IE]></div><![endif]-->
+<!--[if IE 6]></div><![endif]-->
+<!--[if IE 7]></div><![endif]-->
+
+    
+    <!-- Begin comScore Tag -->
+    <script>
+        document.write(unescape("%3Cscript src='" + (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js' %3E%3C/script%3E"));
+    </script>
+    <script>
+        COMSCORE.beacon({
+            c1:2,
+            c2:6035546,
+            c3:"",
+            c4:"",
+            c5:"",
+            c6:"",
+            c15:""
+        });
+    </script>
+    <noscript>
+        <img src="http://b.scorecardresearch.com/p?c1=2&amp;c2=6035546&amp;c3=&amp;c4=&amp;c5=&amp;c6=&amp;c15=&amp;cj=1" />
+    </noscript>
+    <!-- End comScore Tag -->
+    
+
+
+
+
+        </div>
+    </body>
+</html>

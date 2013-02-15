@@ -1,0 +1,385 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+
+<html>
+  <head> <!-- faq -->
+            <title>C-- FAQ</title>
+            <!-- navtree[faq] == Array -->
+            <!-- navtree[faq][leaf] == Array[leaf] -->
+            <meta http-equiv = 'Content-Type' 
+                  content    = 'text/html; charset=iso-8859-1'>
+            <style type='text/css'>
+/*
+ * Cascading Style Sheet for http://cminusminus.eecs.harvard.edu/
+ */
+
+body {
+    background:         white;
+    color:              black;
+//    font-family:        Times, serif;
+}
+
+p {
+//    font-family:        Times, serif;
+}
+
+i, em {
+//    font-family:        Times, serif;
+}
+
+tt, code, pre {
+    font-family:        monospace;
+}
+
+pre {
+    margin-left:        2em;
+}
+
+/* don't mess with people's header fonts -- results look bad on IE 
+ * 
+ * h1, h2, h3, h4 {
+ *     font-family:        Verdana, Helvetica, Arial, sans-serif;
+ *     text-align:         left;
+ * }
+ * 
+ * h1 {
+ *     font:               140% sans-serif
+ * }
+ * 
+ * h2 {
+ *     font:               100% sans-serif;
+ * }
+ * 
+ */
+
+.small {
+    font-family:        Verdana, Helvetica, Arial, sans-serif;
+    color:              black;
+    background:         white;
+    font-size:          small;
+}
+
+.blue {
+    font-family:        Verdana, Helvetica, Arial, sans-serif;
+    background:         blue;
+    color:              white;
+}
+
+.red {
+    font-family:        Verdana, Helvetica, Arial, sans-serif;
+    background:         white;
+    color:              red;
+}
+.grey {
+    font-family:        Verdana, Helvetica, Arial, sans-serif;
+    background:         #cccccc;
+    color:              black;
+}
+        
+.smallblue {
+    font-family:        Verdana, Helvetica, Arial, sans-serif;
+    background:         blue;
+    color:              white;
+    font-size:          small;
+}
+
+.smallgrey {
+    font-family:        Verdana, Helvetica, Arial, sans-serif;
+    background:         #cccccc;
+    color:              black;
+    font-size:          small;
+}
+
+
+
+/* page map */
+DIV.pagemap {background: #CCF; } 
+DIV.pagemap {float: left; margin-right: 0.1cm; margin-left: 0.1cm;
+             font-family: sans-serif; width : 15%}
+DIV.pagemap P {margin-top : 1.5ex; margin-bottom : 0ex }
+DIV.pagemap P.sub {text-indent : 2em}
+/*LI.outdent {text-indent : -2em}*/
+DIV.pagemap { padding-left: 1em; padding-right: 1em;
+              padding-top: 1em; padding-bottom : 1em; line-height: 1.1}
+DIV.pagemap MENU, DIV.pagemap MENU LI, DIV.pagemap MENU LI P {
+  margin-top : 0cm; margin-bottom : 0cm; padding-top : 0cm; padding-bottom : 0cm;
+}
+DIV.footer {font-style : italic; font-size : smaller }
+DIV.pagemap { border-style : solid;
+              border-right-width : normal; border-left-width: none;
+              border-top-width : none; border-bottom-width: none }
+DIV.pagemap UL, DIV.pagemap DL, DIV.pagemap MENU {list-style: none}
+DIV.pagemap UL UL, DIV.pagemap DL DL {list-style: none}
+DIV.pagemap-header {text-align: center}
+DIV.pagemap DL, DIV.pagemap UL {text-align: left}
+  
+            </style>
+          </head>
+  <body>
+    <!-- faq -->
+        <table width='100%' cellpadding='3' cellspacing='0' border='0'>
+          <tr>
+            <td class='smallblue' width='10%'><strong>C--</strong></td>
+            <td class='smallgrey' width='90%'><a href='http://www.eecs.harvard.edu/'>Harvard EECS</a>
+<img width='13' height='9' alt='->' 
+     src='./images/arrow_yellow.gif'>
+<a href='./index.html'>C-- Home</a>
+<img width='13' height='9' alt='->' 
+     src='./images/arrow_yellow.gif'>
+<a href='./faq.html'>C-- FAQ</a>
+   
+            </td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td class='small'>
+            <a href='./index.html'>C-- Home</a>            |
+            <a href='./code.html'>Specification &amp; Downloads</a>          |
+            <a href='./news/2001.10.html'>Old News</a>          |
+            <a href='./papers.html'>Papers</a>             | 
+    <!--       <a href='./progress.html'>Work in Progress</a> |  -->
+            <a href='./mail.html'>Mailing List</a>         | 
+            <a href='./people.html'>People</a>             |
+            <a href='./faq.html'>FAQ</a>                   
+     <!-- |       <a href='./links.html'>Related Work</a> -->
+
+            </td>
+          </tr>
+        </table> 
+    <h2>Frequently Asked Questions about <tt>C--</tt></h2>
+
+    <h3>What machines does the compiler support?</h3>
+
+    As of May 2004, only
+    the <strong>Pentium</strong> back end is as expressive as a C&nbsp;compiler.
+    The <strong>Alpha</strong> and <strong>Mips</strong> back ends can
+    run hello, world.
+    We are working on back ends for <strong>PowerPC</strong> (Mac OS&nbsp;X),
+    <strong>ARM</strong>, and <strong>IA-64</strong>.
+    Let us know what other platforms you are interested in.
+
+    <h3>How is C-- different from JVM or CLR?</h3>
+
+
+   A major purpose of C-- is to give you the power to make all the
+   same choices about performance tradeoffs that you would get to make
+   if you were building a custom code generator.
+   This attitude distinguishes
+   C-- from the Java Virtual Machine or Microsoft's Common Language
+   Runtime, which pre-package JIT
+   compilation, type checking, class loading, garbage collection,
+   exception dispatch, and much more besides.  If the JVM is a mansion
+   (great if you like its design), then C-- is the bricks (from which you
+   can build all sorts of houses).
+
+    <h3>Why doesn't the system include a garbage collector?</h3>
+
+   A garbage collector fixes many design choices, such
+   as heap object layout and relocatability, allocation strategy, real-time
+   bounds and so on.  If we made these choices for you, we would be
+   guaranteed to make the wrong ones!
+   Instead C-- provides the hooks you can use to attach your
+   <em>own</em>
+   garbage collector.  You write your garbage collector in C (a
+   programming language), not C-- (an assembly language).  At some point
+   in your collector you probably need to traverse the stack to find the
+   live roots; you use the C interface to the C-- runtime system to do
+   that.
+    
+
+    <h3>Relationship to C</h3>
+
+    <h4>Why isn't <tt>C--</tt> a superset of C?</h4>
+
+    <ul>
+      <li>C&nbsp; is a <em>programming language</em> designed for
+      human programmers, whereas <tt>C--</tt> is a <em>compiler
+      target language</em>. So C&nbsp; has many things that are
+      entirely unnecessary for <tt>C--</tt>; requiring a <tt>
+      C--</tt> compiler to support them would be exceptionally
+      burdensome. Most notably, C&nbsp;has an elaborate type system
+      that we don't need for code generation (struct, union,
+      prototype, and all that).</li>
+
+      <li>There are a few features in C&nbsp; that are actually
+      incompatible with <tt>C--</tt>, most notably support for
+      varargs procedures (that is, procedures with a variable
+      number of arguments). It seems impossible to have both
+      C-style varargs and efficient, fully-general tail calls (which <tt>
+      C--</tt> must have).  
+
+      <li><tt>C--</tt> deliberately provides different notation for
+      many things that C can do. For example, where C would have
+      "<tt>*p</tt>", we write "<tt>bits32[p]</tt>" in <tt>
+      C--</tt>.</li>
+
+      <li>The C&nbsp;standard leaves too much up to the
+      implementation, including the representations of structures,
+      the sizes of the built-in types, and the meanings of the
+      operators. C&nbsp;operators can have side effects, and the
+      order of their evaluation is unspecified. Implementing other
+      languages on top of <tt>C--</tt> requires finer control. For
+      example, Modula-3 requires division that rounds towards minus
+      infinity, not towards zero. Standard&nbsp;ML requires
+      arithmetic operations that detect overflow.</li>
+    </ul>
+
+    <h4>OK, then why isn't <tt>C--</tt> a subset of C?</h4>
+    For efficient compilation of modern languages, we need features
+    that C&nbsp;just doesn't provide efficiently: 
+
+    <ul>
+      <li>Ability to return multiple values in registers</li>
+
+      <li>Optimized tail calls to any procedure</li>
+
+      <li>Global variables bound to registers
+
+      <li>Ways to tie garbage-collection information to particular
+      program points</li>
+
+      <li>Support for exceptions</li>
+
+      <li>Support for lightweight concurrency</li>
+    </ul>
+    The latter three are the real killers: <tt>C--</tt> provides a
+    run-time interface that allows the state of a suspended <tt>
+    C--</tt> computation to be inspected and modified at runtime. C
+    has no equivalent for this. 
+
+    <h3><A name=notypes>How does C-- differ from UNCOL?</notypes></h3>
+
+    The goal of UNCOL was to provide a universal intermediate language.
+    The goal of C-- is more modest: to encapsulate what code generators 
+    already do well.
+    We don't claim you could do any more with C-- than you could do with a standard 
+    code generator; we're just trying to make it easier to do those
+    things.
+    <p>
+    A key distinguishing feature of C-- is the data model.
+    Put simply, C-- has no high-level types---it does not even
+    distinguish floating-point variables from integer variables.
+    This model gives the front end total control of representation and
+    type system, which is quite different from an UNCOL.
+    This data model also helps distinguish C-- from systems like the
+    Java Virtual Machine and the Microsoft Common Language Runtime.
+
+    <h3>Why is the syntax of C-- so C-like?</h3>
+
+We expect that compiler writers will have to read a lot of C-- while
+they're debugging their front ends.   Many compiler writers
+have significant experience reading low-level C code; making the
+syntax C-like helps them benefit from this experience.
+There are a number of syntactic tweaks in C-- that make it easier to
+generate than&nbsp;C; for example, every operator has a prefix form,
+so it's not necessary to use infix operators.
+
+    <h3>Why is the domain name not <tt>c--.org</tt>?</h3>
+    The <a href="http://www.networksolutions.com/">Evil Empire</a>
+    refuses even to consider registering a domain name that ends
+    with a dash. 
+
+    <h3>Where is the Source Code?</h3>
+    Get it from our <a href='./rsync.html'>rsync</a> server or try the
+    <a href='./code.html'>C-- Downloads</a> page.
+
+    <h3>What about that other <tt>C--</tt>?</h3>
+    C-- is such a good name that others have also used it. 
+
+    <ul> <li>Peter Cellik developed <i>Sphinx C--</i> as a programming
+      language for the x86 only; it is like a mix of C and x86 assembly
+      language. The project was
+      <a href=http://c--sphinx.narod.ru/indexe.htm>taken over</a> by <a
+      href="http://www.sheker.chat.ru/index_e.htm">Michael Sheker</a>.
+      Barry Kauler has <a href="http://www.goosee.com/cmm/">more
+      information</a> about Sphinx C-- and a translation of the <a
+      href="http://www.goosee.com/cmm/c--doc.htm">documentation</a> to
+      English. 
+    
+      
+      </li>
+
+      <li>The <a href="http://www.cs.ucr.edu/~thpproj/RIF/">
+      Riverside Intermediate Format</a> uses a source language
+      called C--, which is a subset of Gnu&nbsp;C.</li>
+ 
+      <li>One of the intermediate codes of the 
+          <A href="http://caml.inria.fr">Objective Caml</a> compiler
+          is called C--.  Simon has been suspected of stealing the
+          name from this source.
+
+      <li><a href=http://www.personal.leeds.ac.uk/~ecldh/>David Holdsworth</a>
+ and colleagues are using the name C-- 
+  for an
+  <a href=http://www.leeds.ac.uk/CAMiLEON/dh/cingahd.html>emulation platform.</a> 
+
+
+    </ul>
+
+    <h3>Is this a secret Microsoft project?</h3>
+    <a href='./people.html'>Simon Peyton Jones</a> does work for <a href= 
+    "http://research.microsoft.com">Microsoft Research</a>, but
+    <tt>C--</tt> is not a Microsoft project. C-- is open source;
+    the <a href='./code.html'>code</a> is available to everyone. 
+
+<!--
+    <h3>Have you been Slashdotted?</h3>
+    <a href= 
+    "http://slashdot.org/article.pl?sid=00/06/22/1643237&amp;mode=thread">
+     Not recently</a>. 
+-->
+
+    <h3>Does <tt>C--</tt> provide the <tt>%xyz</tt> primitive?</h3>
+    Eventually we will divide the primitive operations into two
+    categories:<br>
+     <br>
+     
+
+    <ul>
+      <li>Required operations, which must be supported by every
+      implementation, at at least one size.</li>
+
+      <li>Optional operations, which if supported, must have the
+      standard semantics.</li>
+    </ul>
+
+    <p> The picture about sizes is less clear. For example,
+    although we expect to require every implementation to implement
+    two's-complement add, we can't imagine requiring every
+    implementation to implement 32-bit two's-complement add.</p>
+
+    <p>The reason for adding all known operations to C-- as
+    standard opcodes is to encourage different implementations to
+    use the same name for the same operation. Eventually we hope to
+    have a <i>register a new primitive operator</i> page at
+    cminusminus.org.</p>
+
+<p>
+    <h3><tt>C--</tt>  has no primitive operators that return multiple
+        results.  But my target machine has a single instruction that performs both
+        quotient and remainder.  What do I do?</h3>
+
+
+  Ideally,  the <tt>C--</tt> compiler would
+     spot separate <tt>%quot</tt> and <tt>%rem</tt> operations and combine
+ them.  But you might want to use a multiple
+assignment to communicate your intentions to the code generator, e.g.,
+<pre>
+  q, r = %quot(x, y), %rem(x, y);
+</pre>
+We don't have enough peephole optimization yet to know
+if this style will make a difference, but it can't hurt.
+
+
+
+
+
+    <br><hr size='1'><span class='small'>Contact: <a href='mailto:webmaster@cminusminus.org'>C-- Webmaster</a>. 
+URL: <tt><a href='http://www.cminusminus.org/'>http://www.cminusminus.org/</a></tt>.
+Last edited: Mon 05 Feb 2007 14:02 EST.</span>
+<!-- last edited by  -->
+  </body>
+</html>
+
+
+

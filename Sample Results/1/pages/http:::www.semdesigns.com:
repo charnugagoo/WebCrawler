@@ -1,0 +1,512 @@
+ <!-- Quirk on -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="X-UA-Compatible" content="IE=8" >
+
+
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <title>Semantic Designs</title>
+  <meta content="software, analysis, translation, porting, modification, generation, synthesis,
+  reengineering, reverse engineering, testing, Hogan System, PLEX, AS/400, migration,
+  program transformation, rules, parser,
+  domain-specific, legacy, C/C++, Java, XML, COBOL, Ada, Fortran, PL/1, Agile, Testing, refactoring" name="keywords">
+  <meta name="author" content="Semantic Designs, Inc.">
+  <meta name="google-site-verification" content="I-kCk2cQy_UrVLVWrcxvi_sO40S__E38c6HZBYzwq1M">
+
+<meta name="author" content="Semantic Designs, Inc.">
+<!--
+<link rel="stylesheet" href="/SDprint.css" type="text/css" media="print">
+<link rel="stylesheet" href="./BBstyle.css" type="text/css" media="screen">
+-->
+
+<link rel="stylesheet" href="/SDstyle.css" type="text/css" media="screen">
+<link rel="stylesheet" href="/SDmenustyle.css" type="text/css" media="screen">
+
+</head>
+
+<script type="text/javascript" src="/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/jquery.masonry.min.js"></script>
+<script type="text/javascript" src="/LanguagesAndProducts.js"></script>
+<script type="text/javascript" src="/jquery.getUrlParam.js"></script>
+
+<script type="text/javascript">
+
+$(window).load(function () {
+
+	var speed = 1000;
+
+  	$('.posts').masonry({
+  	columnWidth: 185,
+  	// only apply masonry layout to visible elements
+ 		itemSelector: '.post-block:not(.invis)',
+ 		animate: true,
+ 		animationOptions: {
+ 	  		duration: speed,
+ 	  		queue: false }
+  		  })
+
+  		   var catClass = '.' + $(document).getUrlParam("class");
+
+  		  	if(catClass=='.cat-all' || catClass=='.null') {
+  		  	 // show all hidden boxes
+  		  	 $('.posts').children('.invis')
+  		  		 .toggleClass('invis').animate({opacity: 1},{ duration: speed });
+  		  		 $('.posts').masonry();
+  		  	} else {
+  		  	 // hide visible boxes
+  		  	 $('.posts').children().not(catClass).not('.invis')
+  		  		 .toggleClass('invis').animate({opacity: 0},{ duration: speed });
+  		  	 // show hidden boxes
+  		  	 $('.posts').children(catClass+'.invis')
+  		  		 .toggleClass('invis').animate({opacity: 1},{ duration: speed });
+  		  		$('.posts').masonry();
+  		  	}
+
+
+ });
+
+  $(document).ready(function(){
+
+
+ 	$("#cats li a").click(function(){
+  	 var catClass = '.' + $(this).attr('class');
+ 	 var speed = 1000;
+ 	 if(window.location.pathname!= "/index.html") window.location.assign("/index.html" + '?class=' + $(this).attr('class'));
+  	 if(catClass=='.cat-all') {
+  		 // show all hidden boxes
+  		 $('.posts').children('.invis')
+  			 .toggleClass('invis').animate({opacity: 1},{ duration: speed });
+  	 } else {
+  		 // hide visible boxes
+  		 $('.posts').children().not(catClass).not('.invis')
+  			 .toggleClass('invis').animate({opacity: 0},{ duration: speed });
+  		 // show hidden boxes
+  		 $('.posts').children(catClass+'.invis')
+  			 .toggleClass('invis').animate({opacity: 1},{ duration: speed });
+  	 }
+
+  	   $('.posts').masonry();
+
+  	   return false;
+   	});
+
+  });
+
+</script>
+
+<!-- google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-189709-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<!-- Google Code for All Revisitors Remarketing List -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1072422730;
+var google_conversion_language = "en";
+var google_conversion_format = "3";
+var google_conversion_color = "666666";
+var google_conversion_label = "wbv7CKPMmAIQyr6v_wM"; var google_conversion_value = 0;
+/* ]]> */
+</script>
+
+<script type="text/javascript" src="http://www.googleadservices.com/pagead/conversion.js">
+</script>
+
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="http://www.googleadservices.com/pagead/conversion/1072422730/?label=wbv7CKPMmAIQyr6v_wM&amp;guid=ON&amp;script=0">
+</div>
+</noscript>
+
+<body onload="changeListRand(document.forms['drops'].language)">
+	<!--<div class="mainpage">-->
+
+ <div id="container">
+    <div id="home">
+        <div id="header">
+<!-- THIS IS WHAT I WANT
+-->
+          <h3>The Truth is in the Details&#0153;</h3>
+          <h1><a href="/index.html">Semantic Designs</a></h1>
+          <p>
+              Automated Large-Scale Software System Analysis, Modification, Translation and Generation&#0153;
+          </p>
+<!--
+          System Analysis, Modification, Translation and Generation</a></h2>
+<!--
+          <h3>Automated Large-Scale Software System Analysis, Modification, Translation and Generation</h3>
+		            <h1><a href="/index.html">Semantic Designs</a></h1>
+          <h2><a href="/index.html">The Truth is in the Details</a></h2>
+
+
+         <h3>Audomated Large-Scale Software System Analysis, Modification, Translation and Generation&#0153;</h3>
+          <h1><a href="/index.html">Semantic Designs</a></h1>
+          <h2><a href="/index.html">The Truf is in the ARF Details&#0153;</a></h2>
+-->
+        </div>
+
+<ul id="css3menu">
+	<li class="topfirst"><a href="/index.html" title="Semantic Designs Home Page"><span>Home</span></a></li>
+
+	<li class="topitem"><a href="/Products/Services" title="Services"><span>Services</span></a>
+	<ul>
+		<li class="subfirst"><a href="/Products/Services/LegacyMigration.html" title="Automated Migration">Automated Migration</a></li>
+		<li><a href="/Products/DMS/DMSToolkit.html" title="Custom Analysis and Transformation">Custom Analysis and Transformation</a></li>
+		<li><a href="/Products/FrontEnds/" title="Custom Development Toolkit">Custom Development Toolkit</a></li>
+		<li> <a href="/Products/Services/SoftwareModernization.html" title="Application Modernization">Application Modernization</a></li>
+		<li><a href="/Products/Tools.html" title="Software Quality Analysis">Software Quality Analysis</a></li>
+		<li><a href="/Products/Understanding/index.html" title="Understanding Software Structure">Understanding Software Structure</a></li>
+	</ul>
+	</li>
+
+	<li class="topitem"><a href="/Products" title="Products"><span>Products</span></a>
+	<ul>
+
+        	<li class="subfirst"><a href="/Products/DMS/DMSToolkit.html" title="DMS"><span>DMS<sup>&reg;</sup></span></a></li>
+
+                <li><a href="/Products/LanguageTools" title="By Language"><span>By Language</span></a>
+		<ul>
+			<li class="subfirst"><a href="/Products/LanguageTools/CTools.html" title="C">C</a></li>
+			<li><a href="/Products/LanguageTools/CppTools.html" title="C++">C++</a></li>
+			<li><a href="/Products/LanguageTools/JavaTools.html" title="Java">Java</a></li>
+			<li><a href="/Products/LanguageTools/COBOLTools.html" title="COBOL">COBOL</a></li>
+			<li><a href="/Products/LanguageTools/CSharpTools.html" title="C#/.Net">C#/.Net</a></li>
+			<li><a href="/Products/LanguageTools/PHPTools.html" title="PHP">PHP</a></li>
+			<li><a href="/Products/LanguageTools/VHDLTools.html" title="VHDL">VHDL</a></li>
+			<li><a href="/Products/LanguageTools/VerilogTools.html" title="Verilog">Verilog</a></li>
+			<li><a href="/Products/LanguageTools" title="More...">More...</a></li>
+		</ul>
+                </li>
+
+                <li><a href="/Products/Tools.html" title="By Tool"><span>By Tool</span></a>
+		<ul>
+			<li class="subfirst"><a href="/Products/SearchEngine/" title="Search Engine">Search Engine</a></li>
+			<li><a href="/Products/Clone/" title="Clone Detection">Clone Detection</a></li>
+			<li><a href="/Products/TestCoverage/" title="Test Coverage">Test Coverage</a></li>
+			<li><a href="/Products/Formatters/" title="Formatters">Formatters</a></li>
+			<li><a href="/Products/Obfuscators/" title="Obfuscators">Obfuscators</a></li>
+			<li><a href="/Products/Metrics/index.html" title="Metrics">Metrics</a></li>
+			<li><a href="/Products/Profilers/index.html" title="Profilers">Profilers</a></li>
+			<li><a href="/Products/SmartDifferencer/" title="Smart Differencer">Smart Differencer</a></li>
+			<li><a href="/Products/Tools.html" title="More...">More...</a></li>
+		</ul>
+		</li>
+
+                <li><a href="/Products/Applications/" title="By Application"><span>By Application</span></a>
+		<ul>
+			<li class="subfirst"><a href="/Products/Architecture/HoganSystems.html" title="Hogan Analysis">Hogan (Banking) Analysis</a></li>
+			<li><a href="/Products/Applications/MoreEffectiveTesting.html" title="Effective Testing">More Effective Testing</a></li>
+			<li><a href="/Products/Applications/PatentInfringement/" title="Patent Infringement">Detecting Infringement</a></li>
+			<li><a href="/Products/Applications/Agile/AgileTesting.html" title="Agile Testing">Agile Testing</a></li>
+		</ul>
+		</li>
+
+		<li><a href="/Purchase/Justifications.html" title="Why Buy">Why Buy</a></li>
+		<li><a href="/Purchase" title="Purchase">Prices</a></li>
+		<li><a href="/Registration" title="Register">Register</a></li>
+		<li><a href="/Products/Downloads.html" title="Downloads">Downloads</a></li>
+	</ul>
+	</li>
+
+	<li class="topitem"><a href="/Company" title="Company"><span>Company</span></a>
+	<ul>
+		<li class="subfirst"><a href="/Company" title="About SD">About SD</a></li>
+		<li><a href="/Announce" title="News and Events">News and Events</a></li>
+		<li><a href="/Partners" title="Partners">Partners</a></li>
+		<li><a href="/Company/CustomerList.html" title="Customers">Customers</a></li>
+		<li><a href="/Careers" title="Careers">Careers</a></li>
+		<li><a href="/Company/Publications" title="Papers">Papers</a></li>
+	</ul>
+	</li>
+
+	<li class="topitem"><a href="/Contact/Support.html" title="Support"><span>Support</span></a>
+	<ul>
+		<li class="subfirst"><a href="/Contact/Support.html" title="Support Policies">Support Policies</a></li>
+		<li><a href="/Registration" title="Register">Register</a></li>
+		<li><a href="/Products/Downloads.html" title="Downloads">Downloads</a></li>
+	</ul>
+	</li>
+
+	<li class="toplast"><a href="/Contact" title="Contact"><span>Contact</span></a></li>
+</ul>
+
+        <div id="main">
+<!--          <h3>Semantic Designs provides <a href="./Products/DMS/DMSToolkit.html?Home=Main">generalized compiler technology</a> and <a href="./Products/?Home=Main">services</a> across a wide variety of computer languages, application types, and architectures.</h3>
+          -->
+
+
+
+          <div id="home-posts" class="block">
+            <div class="outer">
+              <div class="inner">
+                <div class="posts">
+
+
+                    <div class="post-block cat-assessment">
+                    <a href="./Announce/ANZ.html?Home=Main"><span class="post-meta"><span class="post-meta-left">Assessment</span><span class="post-meta-right"><img src="./images/NEW.gif" alt="New!"></span></span> <strong>ANZ and SD</strong>
+                    <img src="./images/ANZ.png" alt="Australia and New Zealand Bank" >
+                    <span class="post-excerpt">Australia and New Zealand Bank uses Semantic Designs tools to gain a deep understanding of their core banking systems.</span> </a>
+                  </div>
+
+
+                  <div class="post-block cat-reengineering">
+                    <a href="./Products/Services/NaturalMigration.html?Home=Main"><span class="post-meta"><span class="post-meta-left">Re-engineering</span>
+                    </span> <strong>Natural/ADABAS Migration</strong>
+                     <span class="post-excerpt">Applications coded in Natural or that use ADABAS often run critical business operations. Yet they are becoming difficult to maintain due to lack of available skilled people, and increasingly expensive to support in terms of licensing and mainframe costs.</span> </a>
+                  </div>
+
+                  <div class="post-block cat-improvement">
+                    <a href="http://www.youtube.com/watch?v=C-_dw9iEzhA"><span class="post-meta"><span class="post-meta-left">Improvement</span></span> <strong>Google TechTalk:    Dr. Ira Baxter</strong>  <img src="./images/lecture.png" alt="Techtalk" width="150" height="84">
+                    <span class="post-excerpt">The purpose of analysis is to support "change". This talk will describe the DMS Software Reengineering Toolkit, a general purpose source code analysis and transformation system.</span> </a>
+                  </div>
+
+
+                  <div class="post-block cat-reengineering">
+                    <a href="./Products/Services/NorthropGrummanB2.html"><span class="post-meta"><span class="post-meta-left">Re-engineering</span></span> <strong>B-2 Embedded Systems Migration</strong>
+                    <img src="./images/b-2.jpg" alt="B2 Bomber" width="150" height="200"> <span class="post-excerpt">Read how SD's automated tools were used to refresh mission critical software for the Air Force's strategic aircraft.</span> </a>
+                  </div>
+
+
+                <div class="post-block cat-hdl">
+                  <a href="./Products/LanguageTools/VHDLTools.html?Home=Main"><span class="post-meta"><span class="post-meta-left">HDL</span></span> <strong>VHDL Tools</strong>
+                  <span class="post-excerpt">You have synthesis and simulation tools, but other tools can help speed your design process.  SmartDifferencing allows you to understand what exactly got changed, and avoid wasted simulations. IP protection enables you to ship your designs to others. VHDL parsers enable you to build custom generators and checkers.</span> </a>
+                </div>
+
+                <div class="post-block cat-assessment">
+                  <a href="./Announce/Mobile.html?Home=Main"><span class="post-meta"><span class="post-meta-left">Assessment</span><span class="post-meta-right"><img src="./images/NEW.gif" alt="New!"></span></span><strong>SmartPhone Software Test</strong>
+                  <img src="./images/WinMobile.jpeg" alt="Smartphone Software Testing" width="150" height="130">
+                  <span class="post-excerpt">SD's test tools are being used successfully for multiple mobile computing platforms.</span> </a>
+                </div>
+
+                <div class="post-block cat-assessment">
+                	<a href="./Announce/KnowCode.html?Home=Main"><span class="post-meta"><span class="post-meta-left">Assessment</span></span>
+                	<strong>You Know the Science</strong>
+                 <strong>But Do You Know the Code?</strong>
+                	<span class="post-excerpt">You've spent a lifetime learning the science that comprises your field. You're not a programmer, but you've written programs to model, test, or simulate the science. You expect the results to be accurate, but code is often full of surprises.</span> </a>
+                  </div>
+
+
+                 <div class="post-block cat-hdl">
+                  <a href="./Products/LanguageTools/VerilogTools.html?Home=Main"><span class="post-meta"><span class="post-meta-left">HDL</span></span> <strong>(System) Verilog Tools</strong>
+                  <span class="post-excerpt">Time to market matters, so additional tools can help. You can avoid simultations if a design change isn't semantically interesting.   Shipping IP to customers is scary without protection.  Finding your way around in a million lines mixed Verilog and/or VHDL is hard. We can help. </span> </a>
+                </div>
+
+				<div class="post-block cat-improvement">
+				   <a href="./Products/StyleChecker/index.html?Home=Main"><span class="post-meta"><span class="post-meta-left">Improvement</span></span> <strong>Style Checking</strong>
+				    <span class="post-excerpt">Finding code that violates good design principles or organization style rules speeds development and lowers long-term maintenance costs.</span> </a>
+				  </div>
+
+				<div class="post-block cat-assessment">
+					<a href="./Products/Metrics/index.html?Home=Main"><span class="post-meta"><span class="post-meta-left">Assessment</span></span> <strong>Software Metrics Tools</strong>
+				<span class="post-excerpt">Software metrics are a special kind of analysis focused on measuring the complexity of the source code based on its structure. Classic software metrics range in variety from the very simple Source Lines of Code (SLOC) to more complex measures such as Cyclomatic Complexity for measuring the complexity of conditional logic and Halstead Complexity for measuring the complexity of inline computation.</span> </a>
+  				</div>
+
+
+				<div class="post-block cat-reengineering">
+ 				 <a href="./Products/Services/LegacyMigration.html?Home=Main"><span class="post-meta"><span class="post-meta-left">Re-engineering</span>
+				  </span> <strong>Legacy System Migration</strong>
+ 				  <span class="post-excerpt">Legacy means "successful". Software runs companies, and cannot simply be waved away with a magic wand. Whatever the existing software does must be preserved.</span> </a>
+				</div>
+
+				<div class="post-block cat-assessment">
+				  <a href="./Products/TestCoverage/index.html?Home=Main"><span class="post-meta"><span class="post-meta-left">Assessment</span></span> <strong>Test Coverage Tools</strong>
+				  <img src="./images/tcb.png" alt="Test Coverage" width="150" height="160">
+				  <span class="post-excerpt">SD's test coverage tools make it clear what code has been tested and what code has not. Incremental coverage minimizes the costs of re-running tests. Works with workstations and embedded systems.</span> </a>
+				</div>
+
+                 <div class="post-block cat-hdl">
+                  <a href="./Products/LanguageTools/SystemCTools.html?Home=Main"><span class="post-meta"><span class="post-meta-left">HDL</span></span> <strong>SystemC Tools</strong>
+                  <span class="post-excerpt">Harnessing SystemC's relation to C++ allows SD to provide support for your SystemC design. Test coverage can help you verify that you have exercised your design. Source code browsing enables faster understanding of a particular design element.  Formatting can make the design more readable. </span> </a>
+                </div>
+
+
+  				<div class="post-block cat-codegen">
+     				<a href="./Products/DMS/DMSToolkit.html?Home=Main"><span class="post-meta"><span class="post-meta-left">Code Generation</span></span> <strong>Domain-Specific Language Compilers</strong>
+    				 <span class="post-excerpt">DMS enables the development of sophisticated Domain Specific Language compilers.</span> </a>
+  				 </div>
+
+                <div class="post-block cat-codegen">
+                	<a href="./Announce/parallelize.html?Home=Main"><span class="post-meta"><span class="post-meta-left">Code Generation</span></span> <strong>Paralyzed? Parallelize!</strong>
+                	 <span class="post-excerpt">Big projects require lots of cycles. You can achieve more computational efficiency and throughput via parallelism: Let Semantic Designs help you make the most of your processing power.
+                	 </span> </a>
+                 </div>
+
+               <div class="post-block cat-documentation">
+                  <a href="./Products/SearchEngine/index.html?Home=Main"><span class="post-meta"><span class="post-meta-left"> Documentation</span></span> <strong>Large System Source Search</strong>
+                  <span class="post-excerpt">Finding where code is in a large software system is hard.  Tools that search across many files in multiple computer languages can make this easy, and enhance your ability to do accurate impact analysis.</span></a>
+                </div>
+
+                <div class="post-block cat-reengineering">
+                  <a href="./Products/FrontEnds/index.html?Home=Main"><span class="post-meta"><span class="post-meta-left">Re-engineering</span></span> <strong>Language Parsers</strong>
+                  <span class="post-excerpt">Semantic Designs offers predefined language front ends ("domains") to enable the construction of custom compilers, analysis tools, or source transformation tools, based on first-class infrastructure (DMS) for implementing those custom tools.</span></a>
+                </div>
+
+                <div class="post-block cat-improvement">
+				                  <a href="./Products/Applications/MoreEffectiveTesting.html?Home=Main"><span class="post-meta"><span class="post-meta-left">Improvement</span></span> <strong>More Effective Testing</strong>
+				                  <span class="post-excerpt">According the Pareto Principle your customers spend 80% of their time using 20% of the features of your software product. Learn how to identify that 20% and make it bulletproof.</span> </a>
+                </div>
+
+               <div class="post-block cat-improvement">
+                  <a href="./Products/Formatters/index.html?Home=Main"><span class="post-meta"><span class="post-meta-left">Improvement</span></span> <strong>Source Code Formatters</strong>
+                  <span class="post-excerpt">Programmers spend 50% of their time looking at code.  Poor formatting slows down their understanding and thus the rate at which code gets fixed.  Formatting tools establish a consistent, readable style for everyone in your organization.</span> </a>
+                </div>
+               <div class="post-block cat-improvement">
+                  <a href="./Products/Applications/Agile/AgileTesting.html?Home=Main"><span class="post-meta"><span class="post-meta-left">Improvement</span></span> <strong>Agile Testing & Refactoring</strong>
+                  <span class="post-excerpt">Quality Assurance is vital in an Agile environment. The Sprint process has its own special challenges. See how SD tools can help
+                  with several phases of Agile Quality Assurance.</span> </a>
+                </div>
+
+
+                <div class="post-block cat-improvement">
+                  <a href="./Products/Clone/index.html?Home=Main"><span class="post-meta"><span class="post-meta-left">Improvement</span></span> <strong>Cloned Code Detection and Removal</strong>
+                  <span class="post-excerpt">Large software systems typically contain 10-25% duplicated code. Changing a code line means there's a corresponding chance the same line exists somewhere else, and failing to fix that will create an expensive bug in the field. Tools that find and track clones help avoid this cost.</span> </a>
+                </div>
+
+               <div class="post-block cat-improvement">
+                  <a href="./Products/Tools.html?Home=Main"><span class="post-meta"><span class="post-meta-left">Improvement</span></span> <strong>Dead Code Detection and Removal</strong>
+                  <span class="post-excerpt">Dead code clutters the source and wastes programmer time.  Automated tools can find this code and optionally remove it.</span> </a>
+                </div>
+
+                <div class="post-block cat-hdl">
+                  <a href="./Products/DMS/DMSToolkit.html?Home=Main"><span class="post-meta"><span class="post-meta-left">HDL</span></span> <strong>Custom HDL Analyzers</strong>
+                  <span class="post-excerpt">The <i> DMS Platform</i> provides the tools required to analyze and optimize code written in any HDL.</span> </a>
+                </div>
+
+                 <div class="post-block cat-improvement">
+                  <a href="./Products/DMS/Refactoring.html?Home=Main"><span class="post-meta"><span class="post-meta-left">Improvement</span></span> <strong>Refactoring Tools</strong>
+                   <span class="post-excerpt">Making changes to code for any language reliably requires precise program analysis and transformation, which explains why refactoring tools are so rare. <i>DMS</i> is up to the job.</span> </a>
+                 </div>
+
+                 <div class="post-block cat-reengineering">
+                  <a href="./Products/DMS/Refactoring.html?Home=Main"><span class="post-meta"><span class="post-meta-left">Re-engineering</span></span> <strong>Architectural Reshaping</strong>
+                   <span class="post-excerpt">Sweeping structural changes to applications (such as inserting a data access layer) are often needed but nearly impossible to do by hand.  Automated change machinery can carry out massive changes to accomplish this task reliably.<i>DMS</i> is up to the job.</span> </a>
+                 </div>
+
+                <div class="post-block cat-documentation">
+                   <a href="./Products/Obfuscators/index.html?Home=Main"><span class="post-meta"><span class="post-meta-left">Documentation</span></span> <strong>Obfuscation: IP Protection</strong>
+                   <span class="post-excerpt">A source code obfuscator accepts a program source file, and generates another functionally equivalent source file which is much harder to understand or reverse-engineer.</span> </a>
+                 </div>
+
+                <div class="post-block cat-documentation">
+                   <a href="./Products/Formatters/JavaBrowser.html?Home=Main"><span class="post-meta"><span class="post-meta-left">Documentation</span></span> <strong>Source Code Browsers</strong>
+                   <span class="post-excerpt">Having your system of source code, with its embedded documentation information, and cross reference data all hyperlinked minimizes the time to find and understand code.</span> </a>
+                 </div>
+
+                <div class="post-block cat-documentation">
+                   <a href="./Products/Architecture/ComponentConnectivity.html?Home=Main"><span class="post-meta"><span class="post-meta-left">Documentation</span></span> <strong>Architectural Analysis</strong>
+                   <span class="post-excerpt">When you have thousands of modules, databases and screens, just being able to understand how they are related is key to long-term planning and minimizing short-term implementation errors.</span> </a>
+                 </div>
+
+                 <div class="post-block cat-codegen">
+                 	<a href="./Products/Parlanse/index.html?Home=Main"><span class="post-meta"><span class="post-meta-left">Code Generation</span></span> <strong>Parallel Programming Tools and Languages</strong>
+                 	<img src="./images/threads.png" alt="Threads" width="150" height="94"> <span class="post-excerpt"> PARLANSE is an inherently parallel programming language designed to support computationally expensive symbolic applications with medium grain irregular parallelism.</span> </a>
+                 </div>
+
+                 <div class="post-block cat-assessment">
+                  <a href="./Products/Profilers/index.html?Home=Main"><span class="post-meta"><span class="post-meta-left">Assessment</span></span> <strong>Performance Profiling Tools</strong>
+                  <span class="post-excerpt">SD's profiling tools can collect frequency information on basic blocks and/or timing information on functions and methods, to show you where your code spends its time.</span> </a>
+                </div>
+
+
+
+              </div>
+            </div>
+           </div>
+		</div>
+  </div>
+ </div>
+
+       <div id="sidebar">
+          <div class="block block-series block-list">
+          <a href="/index.html"><img border="0" src="/images/SDLogo-nowords.png" width="160" height="58" alt="Semantic Designs, Inc. logo"></a>
+
+            <form name="SDSearch" action="http://www.google.com/search" method="get" onsubmit="SDSiteSearch(this)" id="SDSearch">
+              <input id="hiddenquery" type="hidden" name="q"> <input name="qfront" type="text" style="width: 150px" value=""> <input type="submit" value="Search SD"><br>
+              <script type="text/javascript">
+
+				//Enter domain of site to search.
+				var domainroot="www.semanticdesigns.com"
+				function SDSiteSearch(curobj){
+				document.getElementById("hiddenquery").value="site:www.semanticdesigns.com "+curobj.qfront.value
+				}
+				</script>
+            </form>
+
+
+
+            <div class="block block-categories">
+              <h3>Topics</h3>
+              <ul id="cats">
+				<li class="cat-reengineering"><a class="cat-reengineering" href="/index.html">Re-engineering</a></li>
+				<li class="cat-documentation"><a class="cat-documentation" href="/index.html">Documentation</a></li>
+				<li class="cat-assessment"><a class="cat-assessment" href= "/index.html">Assessment</a></li>
+				<li class="cat-improvement"><a class="cat-improvement" href="/index.html">Improvement</a></li>
+				<li class="cat-codegen"><a class="cat-codegen" href="/index.html">Code Generation</a></li>
+				<li class="cat-hdl"><a class="cat-hdl" href="/index.html">Hardware Description Languages</a></li>
+				<li class="cat-all"><a class="cat-all" href="/index.html">All Topics</a></li>
+              </ul>
+            </div>
+
+            <form name="drops" method="post" action="http://semanticdesigns.com" id="drops">
+              Language:<br>
+              <select name="language" size="1" onchange="changeList(this)">
+                <option value="AdaProducts">
+                  language
+                </option>
+              </select><br>
+              Product:<br>
+              <select name="product" size="1">
+                <option>
+                  products
+                </option>
+              </select> <input type="button" onclick="location = ''+document.drops.product.options[document.drops.product.selectedIndex].value;" value="Go!">
+            </form>
+
+
+
+           </div>
+
+          <h3>Semantic Designs- Our Goal</h3>
+          <div id="home-mission">
+            To enable our customers to produce and maintain timely, robust and economical software by providing world-class Software Engineering tools using deep language and problem knowledge with high degrees of automation.
+          </div>
+
+      </div>
+
+	<div class="push"></div>
+	</div> <!--Container-->
+
+
+      <div class="block-masthead">For more information: <a href="mailto:info@semanticdesigns.com">Info@semanticdesigns.com</a>&nbsp;&nbsp;&nbsp;&nbsp;Follow us at Twitter: @SemanticDesigns<br>
+      <br>
+      <div class="copyright" >Copyright 1995-2013 Semantic Designs, Incorporated<br>
+      DMS and "Design Maintenance System" are registered trademarks of Semantic Designs, Inc.<br>
+      The SD logo and "Semantic Designs" are registered service marks of Semantic Designs, Inc.<br>
+      CloneDR, PARLANSE, JOVIAL2C, Thicket, Smart Differencer are trademarks of Semantic Designs, Inc.<br>
+      The OMG logo is a registered trademark of the Object Management Group, Inc. in the United States and other countries.<br>
+      To view our Privacy Policy, click <a href="/PrivacyPolicy.html">here</a><br>
+      <br>
+      Comments or problems: <a
+      href="mailto:webmaster@semanticdesigns.com">Webmaster@semanticdesigns.com</a>
+      <font size="-1"><br></font>
+      </div>
+
+    </div>
+
+
+
+
+
+</body>
+</html>

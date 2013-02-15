@@ -1,0 +1,104 @@
+<HTML><HEAD><TITLE>[ruby-core:49119] ID_ALLOCATOR ?</TITLE>
+<script language="javascript">
+<!--
+  function chk() {
+    var name = navigator.appName;
+    var ver = navigator.appVersion;
+    if (name.charAt(0) == "M") {
+      if (ver.charAt(0) >= 5 ||
+        ver.indexOf(" 5.5") >= 0 ||
+        ver.indexOf(" 6") >= 0
+         )
+        return(true);
+      return(false);
+    } else if (name.charAt(0) == "N") {
+      if (ver.charAt(0) >= 5)
+        return(true);
+      return(false);
+    } else {
+      return(false);
+    }
+  }
+
+  function hilight(x) {
+    if (!chk()) return;
+    if (parent) {
+      try {
+        parent.frames[0].hilight(x);
+      } catch(e) {
+       //alert(e);
+      }
+    }
+  }
+
+  //Navigation Bar
+  var IE = document.all;
+  var PosTimer;
+  function stickNavi() {
+    var y = document.body.scrollTop;
+    var s = document.getElementById('navi').style
+    s.top = y + 7;
+    s.left = 8;
+  }
+  function stickNaviLoop() {
+    if (PosTimer){clearTimeout(PosTimer);}
+    stickNavi();
+    PosTimer = setTimeout("stickNaviLoop()", 10);
+  }
+
+  function setNavi() {
+    if (IE) {document.body.onscroll = stickNavi;}
+    else {stickNaviLoop();}
+  }
+
+//-->
+</script>
+<link rel="stylesheet" href="http://blade.nagaokaut.ac.jp/css/blade-old.css" type="text/css" title="blade"></HEAD><BODY onLoad="setNavi()">
+<A NAME=head></A><div id="navi" style="position:absolute;top:7px;left:8px;"><A HREF="49118" class="a-button" onclick="hilight(49118)"><span id="normal" title="&lt;">&nbsp;&lt;&nbsp;</span></A><A HREF="/ruby/ruby-core/49001-49200.shtml#49119" class="a-button" target="_top"><span id="normal" title="^">^</span></A><A HREF="49120" class="a-button" onclick="hilight(49120)"><span id="normal" title="&gt;">&nbsp;&gt;&nbsp;</span></A> <a href="49118" onclick="hilight(49118)" class="a-button"><span id="red" title="[previous]">&nbsp;P&nbsp;</span></a><a href="49128" onclick="hilight(49128)" class="a-button"><span id="green" title="[next]">&nbsp;N&nbsp;</span></a> <a href="49118" onclick="hilight(49118)" class="a-button"><span id="red" title="[previous thread]">|&lt;</span></a><a href="49120" onclick="hilight(49120)" class="a-button"><span id="red" title="[next thread]">&gt;|</span></a><span id="normal" title="[parent]">^</span><a href="49128" onclick="hilight(49128)" class="a-button"><span id="normal" title="[child]">_</span></a><span id="normal" title="[elder]">&gt;</span><span id="normal" title="[younger]">&lt;</span> <a href="/cgi-bin/vframe.rb/ruby/ruby-core/49119?49071-49945" target="_top" class="a-button"><span id="normal" title="[thread frame]">---</span></a><a href="/cgi-bin/vframe.rb/ruby/ruby-core/49119?49071-49945+split-mode-vertical" target="_top" class="a-button"><span id="normal" title="[thread frame vertical]">&nbsp;|&nbsp;</span></a><a href="49119" target="_top" onclick="hilight(49119)" class="a-button"><span id="normal" title="[frame close]">&nbsp;~&nbsp;</span></a><a href="/ruby/ruby-core/index.shtml" target="_top" class="a-button"><span id="normal" title="[index]">.</span></a><a href="/ruby/ruby-core/../index.shtml" target="_top" class="a-button"><span id="normal" title="[iindex]">..</span></a><a href="/cgi-bin/scat.rb/ruby/ruby-core/49119?help-en" class="a-button"><span id="normal" title="[Help]">Help</span></a></div>
+<div id="header"><br>
+Subject: [ruby-core:<strong>49119</strong>] <strong>ID_ALLOCATOR ?</strong><br>
+From: <strong>Roger Pack </strong>&lt;rogerdpack2 gmail.com&gt;<br>
+Date: Fri, 9 Nov 2012 02:38:20 +0900</div>
+<pre>--bcaec550b4daf4525204cdff4ca6
+Content-Type: text/plain; charset=windows-1252
+Content-Transfer-Encoding: quoted-printable
+
+Hello.
+
+Ruby 2.0 is all about &quot;non breaking backward compatibility&quot; right? &lt;wink
+wink&gt;<span style="color: #007700;">.</span>
+Anyway, I used to use this code in the ruby-prof gem to see a method is the
+allocator:
+
+if (method_id == ID_ALLOCATOR)
+
+        result = rb_str_new2(&quot;allocate&quot;);
+
+
+This fails to compile with 2.0 however:
+
+rp_method.c:101: error: ÁªD_ALLOCATORundeclared (first use in this function)
+
+Any help/work arounds available?
+
+Thanks.
+
+-r
+
+--bcaec550b4daf4525204cdff4ca6
+Content-Type: text/html; charset=windows-1252
+Content-Transfer-Encoding: quoted-printable
+
+Hello.&lt;div&gt;&lt;br&gt;&lt;div&gt;Ruby 2.0 is all about &amp;quot;non breaking backward compatibility&amp;quot; right? &amp;lt;wink wink&amp;gt;.&lt;/div&gt;&lt;div&gt;Anyway, I used to use this code in the ruby-prof gem to see a method is the allocator:&lt;br&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;pre&gt;&lt;div id=&quot;LC101&quot; class=&quot;&quot;&gt;&lt;span class=&quot;&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;&quot;&gt;method_id&lt;/span&gt; &lt;span class=&quot;&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;&quot;&gt;ID_ALLOCATOR&lt;/span&gt;&lt;span class=&quot;&quot;&gt;)&lt;/span&gt;&lt;/div&gt;&lt;div id=&quot;LC102&quot; class=&quot;&quot;&gt;
+
+        &lt;span class=&quot;&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;&quot;&gt;rb_str_new2&lt;/span&gt;&lt;span class=&quot;&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;&quot;&gt;&amp;quot;allocate&amp;quot;&lt;/span&gt;&lt;span class=&quot;&quot;&gt;);&lt;/span&gt;&lt;/div&gt;&lt;div id=&quot;LC102&quot; class=&quot;&quot;&gt;&lt;span class=&quot;&quot;&gt;&lt;br&gt;
+
+&lt;/span&gt;&lt;/div&gt;&lt;div id=&quot;LC102&quot; class=&quot;&quot;&gt;&lt;span class=&quot;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div id=&quot;LC102&quot; class=&quot;&quot;&gt;This fails to compile with 2.0 however:&lt;/div&gt;&lt;div id=&quot;LC102&quot; class=&quot;&quot;&gt;&lt;pre&gt;&lt;code&gt;rp_method.c:101: error: ÁªD_ALLOCATORundeclared (first use in this function)
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;Any help/work arounds available?&lt;br&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;Thanks.&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;-r&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+--bcaec550b4daf4525204cdff4ca6--
+
+<a name=tail></a></pre>
+</BODY></HTML>

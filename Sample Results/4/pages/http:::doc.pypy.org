@@ -1,0 +1,483 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+
+    <title>Welcome to PyPy Development &mdash; PyPy 2.0-beta1 documentation</title>
+<!-- RTD <head> -->
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript" src="//media.readthedocs.org/javascript/underscore.js"></script>
+<script type="text/javascript" src="//media.readthedocs.org/javascript/doctools.js"></script>
+
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+
+<script type="text/javascript">
+  // This is included here for Javascript that doesn't have access to the templates.
+  var doc_version = "latest";
+  var doc_slug = "pypy";
+</script>
+
+<script type="text/javascript" src="//media.readthedocs.org/javascript/rtd.js"></script>
+<!-- end RTD <head> -->
+
+    
+    <link rel="stylesheet" href="_static/rtd.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '2.0-beta1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <link rel="top" title="PyPy 2.0-beta1 documentation" href="#" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="#">PyPy 2.0-beta1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="welcome-to-pypy-development">
+<h1>Welcome to PyPy Development<a class="headerlink" href="#welcome-to-pypy-development" title="Permalink to this headline">¶</a></h1>
+<p>The PyPy project aims at producing a flexible and fast <a class="reference external" href="http://docs.python.org/index.html">Python</a>
+implementation.  The guiding idea is to translate a Python-level
+description of the Python language itself to lower level languages.
+Rumors have it that the secret goal is being faster-than-C which is
+nonsense, isn&#8217;t it?  <a class="reference external" href="architecture.html#mission-statement">more...</a></p>
+</div>
+<div class="section" id="getting-into-pypy">
+<h1>Getting into PyPy ...<a class="headerlink" href="#getting-into-pypy" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference external" href="getting-started.html">Getting started</a>: how to install and run the PyPy Python interpreter</li>
+<li><a class="reference external" href="faq.html">FAQ</a>: some frequently asked questions.</li>
+<li><a class="reference external" href="http://pypy.org/download.html">Release 2.0 beta 1</a>: the latest official release</li>
+<li><a class="reference external" href="http://morepypy.blogspot.com/">PyPy Blog</a>: news and status info about PyPy</li>
+<li><a class="reference external" href="extradoc.html">Papers</a>: Academic papers, talks, and related projects</li>
+<li><a class="reference external" href="http://speed.pypy.org">speed.pypy.org</a>: Daily benchmarks of how fast PyPy is</li>
+<li><a class="reference external" href="project-ideas.html">potential project ideas</a>: In case you want to get your feet wet...</li>
+</ul>
+</div>
+<div class="section" id="documentation-for-the-pypy-python-interpreter">
+<h1>Documentation for the PyPy Python Interpreter<a class="headerlink" href="#documentation-for-the-pypy-python-interpreter" title="Permalink to this headline">¶</a></h1>
+<p>New features of PyPy&#8217;s Python Interpreter and
+Translation Framework:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a href="#id17"><span class="problematic" id="id18">`Differences between PyPy and CPython`_</span></a></li>
+<li><a href="#id19"><span class="problematic" id="id20">`What PyPy can do for your objects`_</span></a></li>
+<li><a href="#id21"><span class="problematic" id="id22">`Continulets and greenlets`_</span></a></li>
+<li><a href="#id23"><span class="problematic" id="id24">`JIT Generation in PyPy`_</span></a></li>
+<li><a class="reference external" href="sandbox.html">Sandboxing Python code</a></li>
+</ul>
+</div></blockquote>
+<p><a class="reference internal" href="#status">Status</a> of the project.</p>
+</div>
+<div class="section" id="mailing-lists-bug-tracker-irc-channel">
+<h1>Mailing lists, bug tracker, IRC channel<a class="headerlink" href="#mailing-lists-bug-tracker-irc-channel" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference external" href="http://python.org/mailman/listinfo/pypy-dev">Development mailing list</a>: development and conceptual
+discussions.</li>
+<li><a class="reference external" href="http://python.org/mailman/listinfo/pypy-commit">Mercurial commit mailing list</a>: updates to code and
+documentation.</li>
+<li><a class="reference external" href="https://bugs.pypy.org">Development bug/feature tracker</a>: filing bugs and feature requests.</li>
+<li><strong>IRC channel #pypy on freenode</strong>: Many of the core developers are hanging out
+at #pypy on irc.freenode.net.  You are welcome to join and ask questions
+(if they are not already developed in the <a class="reference external" href="faq.html">FAQ</a>).
+You can find logs of the channel <a class="reference external" href="http://tismerysoft.de/pypy/irc-logs/pypy">here</a>.</li>
+</ul>
+</div>
+<div class="section" id="meeting-pypy-developers">
+<h1>Meeting PyPy developers<a class="headerlink" href="#meeting-pypy-developers" title="Permalink to this headline">¶</a></h1>
+<p>The PyPy developers are organizing sprints and presenting results at
+conferences all year round. They will be happy to meet in person with
+anyone interested in the project.  Watch out for sprint announcements
+on the <a class="reference external" href="http://python.org/mailman/listinfo/pypy-dev">development mailing list</a>.</p>
+</div>
+<div class="section" id="project-documentation">
+<h1>Project Documentation<a class="headerlink" href="#project-documentation" title="Permalink to this headline">¶</a></h1>
+<p>PyPy was funded by the EU for several years. See the <a class="reference external" href="http://pypy.org">web site of the EU
+project</a> for more details.</p>
+<p><a class="reference external" href="architecture.html">architecture</a> gives a complete view of PyPy&#8217;s basic design.</p>
+<p><a class="reference external" href="coding-guide.html">coding guide</a> helps you to write code for PyPy (especially also describes
+coding in RPython a bit).</p>
+<p><a class="reference external" href="sprint-reports.html">sprint reports</a> lists reports written at most of our sprints, from
+2003 to the present.</p>
+<p><a class="reference external" href="extradoc.html">papers, talks and related projects</a> lists presentations
+and related projects as well as our published papers.</p>
+<p><a class="reference external" href="video-index.html">PyPy video documentation</a> is a page linking to the videos (e.g. of talks and
+introductions) that are available.</p>
+<p><a class="reference external" href="index-report.html">Technical reports</a> is a page that contains links to the
+reports that we submitted to the European Union.</p>
+<p><a class="reference external" href="dev_method.html">development methodology</a> describes our sprint-driven approach.</p>
+<p><a class="reference external" href="https://bitbucket.org/pypy/pypy/src/default/LICENSE">LICENSE</a> contains licensing details (basically a straight MIT-license).</p>
+<p><a class="reference external" href="glossary.html">Glossary</a> of PyPy words to help you align your inner self with
+the PyPy universe.</p>
+</div>
+<div class="section" id="status">
+<h1>Status<a class="headerlink" href="#status" title="Permalink to this headline">¶</a></h1>
+<p>PyPy can be used to run Python programs on Linux, OS/X,
+Windows, on top of .NET, and on top of Java.
+To dig into PyPy it is recommended to try out the current
+Mercurial default branch, which is always working or mostly working,
+instead of the latest release, which is <a class="reference external" href="release-2.0.0-beta1.html">2.0 beta1</a>.</p>
+<p>PyPy is mainly developed on Linux and Mac OS X.  Windows is supported,
+but platform-specific bugs tend to take longer before we notice and fix
+them.  Linux 64-bit machines are supported (though it may also take some
+time before we notice and fix bugs).</p>
+<p>PyPy&#8217;s own tests <a class="reference external" href="http://buildbot.pypy.org/summary">summary</a>, daily updated, run through BuildBot infrastructure.
+You can also find CPython&#8217;s compliance tests run with compiled <tt class="docutils literal"><span class="pre">pypy-c</span></tt>
+executables there.</p>
+</div>
+<div class="section" id="source-code-documentation">
+<h1>Source Code Documentation<a class="headerlink" href="#source-code-documentation" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="objspace.html">object spaces</a> discusses the object space interface
+and several implementations.</p>
+<p><a class="reference external" href="interpreter.html">bytecode interpreter</a> explains the basic mechanisms
+of the bytecode interpreter and virtual machine.</p>
+<p><a class="reference external" href="interpreter-optimizations.html">interpreter optimizations</a> describes our various strategies for
+improving the performance of our interpreter, including alternative
+object implementations (for strings, dictionaries and lists) in the
+standard object space.</p>
+<p><a class="reference external" href="translation.html">translation</a> is a detailed overview of our translation process.  The
+<a href="#id25"><span class="problematic" id="id26">rtyper_</span></a> is the largest component of our translation process.</p>
+<p><a class="reference external" href="https://bitbucket.org/pypy/extradoc/raw/tip/eu-report/D05.1_Publish_on_translating_a_very-high-level_description.pdf">dynamic-language translation</a> is a paper that describes
+the translation process, especially the flow object space
+and the annotator in detail. (This document is one
+of the <a class="reference external" href="index-report.html">EU reports</a>.)</p>
+<p><a class="reference external" href="low-level-encapsulation.html">low-level encapsulation</a> describes how our approach hides
+away a lot of low level details. This document is also part
+of the <a class="reference external" href="index-report.html">EU reports</a>.</p>
+<p><a class="reference external" href="translation-aspects.html">translation aspects</a> describes how we weave different
+properties into our interpreter during the translation
+process. This document is also part of the <a class="reference external" href="index-report.html">EU reports</a>.</p>
+<p><a href="#id27"><span class="problematic" id="id28">`garbage collector`_</span></a> strategies that can be used by the virtual
+machines produced by the translation process.</p>
+<p><a class="reference external" href="parser.html">parser</a> contains (outdated, unfinished) documentation about
+the parser.</p>
+<p><a class="reference external" href="rlib.html">rlib</a> describes some modules that can be used when implementing programs in
+RPython.</p>
+<p><a class="reference external" href="config/">configuration documentation</a> describes the various configuration options that
+allow you to customize PyPy.</p>
+<p><a href="#id29"><span class="problematic" id="id30">`CLI backend`_</span></a> describes the details of the .NET backend.</p>
+<p><a href="#id31"><span class="problematic" id="id32">`JIT Generation in PyPy`_</span></a> describes how we produce the Python Just-in-time Compiler
+from our Python interpreter.</p>
+<div class="section" id="pypy-directory-cross-reference">
+<h2>PyPy directory cross-reference<a class="headerlink" href="#pypy-directory-cross-reference" title="Permalink to this headline">¶</a></h2>
+<p>Here is a fully referenced alphabetical two-level deep
+directory overview of PyPy:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="43%" />
+<col width="57%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Directory</td>
+<td>explanation/links</td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference external" href="https://bitbucket.org/pypy/pypy/src/default/pypy/bin/">pypy/bin/</a>                       command-line scripts, mainly <a href="#id33"><span class="problematic" id="id34">`pyinteractive.py`_</span></a></p>
+<p><a class="reference external" href="https://bitbucket.org/pypy/pypy/src/default/pypy/config/">pypy/config/</a>                    handles the numerous options for building and running PyPy</p>
+<p><a class="reference external" href="https://bitbucket.org/pypy/pypy/src/default/pypy/doc/">pypy/doc/</a>                       text versions of PyPy developer documentation</p>
+<p><a class="reference external" href="https://bitbucket.org/pypy/pypy/src/default/pypy/doc/config/">pypy/doc/config/</a>                documentation for the numerous translation options</p>
+<p><a class="reference external" href="https://bitbucket.org/pypy/pypy/src/default/pypy/doc/discussion/">pypy/doc/discussion/</a>            drafts of ideas and documentation</p>
+<p><tt class="docutils literal"><span class="pre">doc/*/</span></tt>                         other specific documentation topics or tools</p>
+<dl class="docutils">
+<dt><a class="reference external" href="https://bitbucket.org/pypy/pypy/src/default/pypy/interpreter/">pypy/interpreter/</a>               <a class="reference external" href="interpreter.html">bytecode interpreter</a> and related objects</dt>
+<dd>(frames, functions, modules,...)</dd>
+</dl>
+<p><a class="reference external" href="https://bitbucket.org/pypy/pypy/src/default/pypy/interpreter/pyparser/">pypy/interpreter/pyparser/</a>      interpreter-level Python source parser</p>
+<dl class="docutils">
+<dt><a class="reference external" href="https://bitbucket.org/pypy/pypy/src/default/pypy/interpreter/astcompiler/">pypy/interpreter/astcompiler/</a>   interpreter-level bytecode compiler, via an AST</dt>
+<dd>representation</dd>
+<dt><a class="reference external" href="https://bitbucket.org/pypy/pypy/src/default/pypy/module/">pypy/module/</a>                    contains <a href="#id35"><span class="problematic" id="id36">`mixed modules`_</span></a> implementing core modules with</dt>
+<dd>both application and interpreter level code.
+Not all are finished and working.  Use the <tt class="docutils literal"><span class="pre">--withmod-xxx</span></tt>
+or <tt class="docutils literal"><span class="pre">--allworkingmodules</span></tt> translation options.</dd>
+</dl>
+<p><a class="reference external" href="https://bitbucket.org/pypy/pypy/src/default/pypy/objspace/">pypy/objspace/</a>                  <a href="#id37"><span class="problematic" id="id38">`object space`_</span></a> implementations</p>
+<p><a class="reference external" href="https://bitbucket.org/pypy/pypy/src/default/pypy/objspace/std/">pypy/objspace/std/</a>              the <a href="#id39"><span class="problematic" id="id40">StdObjSpace_</span></a> implementing CPython&#8217;s objects and types</p>
+<p><a class="reference external" href="https://bitbucket.org/pypy/pypy/src/default/pypy/tool/">pypy/tool/</a>                      various utilities and hacks used from various places</p>
+<dl class="docutils">
+<dt><a class="reference external" href="https://bitbucket.org/pypy/pypy/src/default/pypy/tool/algo/">pypy/tool/algo/</a>                 general-purpose algorithmic and mathematic</dt>
+<dd>tools</dd>
+</dl>
+<p><a class="reference external" href="https://bitbucket.org/pypy/pypy/src/default/pypy/tool/pytest/">pypy/tool/pytest/</a>               support code for our <a href="#id41"><span class="problematic" id="id42">`testing methods`_</span></a></p>
+<p><a href="#id43"><span class="problematic" id="id44">`rpython/annotator/`_</span></a>              <a href="#id45"><span class="problematic" id="id46">`type inferencing code`_</span></a> for <a href="#id47"><span class="problematic" id="id48">`RPython`_</span></a> programs</p>
+<p><a href="#id49"><span class="problematic" id="id50">`rpython/config/`_</span></a>                 handles the numerous options for RPython</p>
+<p><a href="#id51"><span class="problematic" id="id52">`rpython/flowspace/`_</span></a>              the <a href="#id53"><span class="problematic" id="id54">FlowObjSpace_</span></a> implementing <a href="#id55"><span class="problematic" id="id56">`abstract interpretation`_</span></a></p>
+<p><a href="#id57"><span class="problematic" id="id58">`rpython/rlib/`_</span></a>                   a <a href="#id59"><span class="problematic" id="id60">`&#8221;standard library&#8221;`_</span></a> for <a href="#id61"><span class="problematic" id="id62">RPython_</span></a> programs</p>
+<p><a href="#id63"><span class="problematic" id="id64">`rpython/rtyper/`_</span></a>                 the <a href="#id65"><span class="problematic" id="id66">`RPython Typer`_</span></a></p>
+<p><a href="#id67"><span class="problematic" id="id68">`rpython/rtyper/lltypesystem/`_</span></a>    the <a href="#id69"><span class="problematic" id="id70">`low-level type system`_</span></a> for C-like backends</p>
+<p><a href="#id71"><span class="problematic" id="id72">`rpython/rtyper/ootypesystem/`_</span></a>    the <a href="#id73"><span class="problematic" id="id74">`object-oriented type system`_</span></a> for OO backends</p>
+<p><a href="#id75"><span class="problematic" id="id76">`rpython/rtyper/memory/`_</span></a>          the <a href="#id77"><span class="problematic" id="id78">`garbage collector`_</span></a> construction framework</p>
+<p><a href="#id79"><span class="problematic" id="id80">`rpython/translator/`_</span></a>             <a class="reference external" href="translation.html">translation</a> backends and support code</p>
+<p><a href="#id81"><span class="problematic" id="id82">`rpython/translator/backendopt/`_</span></a>  general optimizations that run before a backend generates code</p>
+<dl class="docutils">
+<dt><a href="#id83"><span class="problematic" id="id84">`rpython/translator/c/`_</span></a>           the <a href="#id85"><span class="problematic" id="id86">`GenC backend`_</span></a>, producing C code from an</dt>
+<dd>RPython program (generally via the <a href="#id87"><span class="problematic" id="id88">rtyper_</span></a>)</dd>
+</dl>
+<p><a href="#id89"><span class="problematic" id="id90">`rpython/translator/cli/`_</span></a>         the <a href="#id91"><span class="problematic" id="id92">`CLI backend`_</span></a> for <a href="#id93"><span class="problematic" id="id94">`.NET`_</span></a> (Microsoft CLR or <a href="#id95"><span class="problematic" id="id96">Mono_</span></a>)</p>
+<p><a href="#id97"><span class="problematic" id="id98">`pypy/goal/`_</span></a>                      our <a href="#id99"><span class="problematic" id="id100">`main PyPy-translation scripts`_</span></a> live here</p>
+<p><a href="#id101"><span class="problematic" id="id102">`rpython/translator/jvm/`_</span></a>         the Java backend</p>
+<dl class="docutils">
+<dt><a href="#id103"><span class="problematic" id="id104">`rpython/translator/tool/`_</span></a>        helper tools for translation, including the Pygame</dt>
+<dd><a href="#id105"><span class="problematic" id="id106">`graph viewer`_</span></a></dd>
+<dt><tt class="docutils literal"><span class="pre">*/test/</span></tt>                        many directories have a test subdirectory containing test</dt>
+<dd>modules (see <a href="#id107"><span class="problematic" id="id108">`Testing in PyPy`_</span></a>)</dd>
+<dt><tt class="docutils literal"><span class="pre">_cache/</span></tt>                        holds cache files from internally <a href="#id4"><span class="problematic" id="id5">`</span></a>translating application</dt>
+<dd>level to interpreterlevel`_ code.</dd>
+</dl>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><em>Index</em></a></li>
+<li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
+<li><a class="reference internal" href="glossary.html#glossary"><em>Glossary</em></a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+
+
+    
+            <h3>Project Versions</h3>
+            <ul id="sidebar_versions">
+        
+          <li><a href="/en/latest/">latest</a></li>
+        
+            </ul>
+    
+    <div id="searchbox" style="">
+      <h3>RTD Search</h3>
+        <form class="search" action="//readthedocs.org/search/project/" method="get">
+          <input type="text" name="q" size="18">
+          <input type="submit" value="Go">
+          <input type="hidden" name="selected_facets" value="project_exact:pypy">
+        </form>
+        <p class="searchtip" style="font-size: 90%">
+            Full-text doc search.
+        </p>
+    </div>
+
+
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Welcome to PyPy Development</a></li>
+<li><a class="reference internal" href="#getting-into-pypy">Getting into PyPy ...</a></li>
+<li><a class="reference internal" href="#documentation-for-the-pypy-python-interpreter">Documentation for the PyPy Python Interpreter</a></li>
+<li><a class="reference internal" href="#mailing-lists-bug-tracker-irc-channel">Mailing lists, bug tracker, IRC channel</a></li>
+<li><a class="reference internal" href="#meeting-pypy-developers">Meeting PyPy developers</a></li>
+<li><a class="reference internal" href="#project-documentation">Project Documentation</a></li>
+<li><a class="reference internal" href="#status">Status</a></li>
+<li><a class="reference internal" href="#source-code-documentation">Source Code Documentation</a><ul>
+<li><a class="reference internal" href="#pypy-directory-cross-reference">PyPy directory cross-reference</a></li>
+</ul>
+</li>
+</ul>
+
+  
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      
+        <li><a href="_sources/index.txt"
+               rel="nofollow">Show Source</a></li>
+      
+      
+    </ul>
+  
+
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="#">PyPy 2.0-beta1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+
+    <div class="footer">
+        &copy; Copyright 2013, The PyPy Project.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
+    </div>
+ <!-- End original user content -->
+
+
+
+<style type="text/css">
+  .rtd-badge {
+    position: fixed;
+    display: block;
+    bottom: 5px;
+    height: 40px;
+    text-indent: -9999em;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.2) inset;
+    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.2) inset;
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.2) inset;
+  }
+  #version_menu {
+    position: fixed;
+    display: none;
+    bottom: 11px;
+    right: 166px;
+    list-style-type: none;
+    margin: 0;
+  }
+  .footer_popout:hover #version_menu {
+    display: block;
+  }
+  #version_menu li {
+    display: block;
+    float: right;
+  }
+  #version_menu li a {
+    display: block;
+    padding: 6px 10px 4px 10px;
+    margin: 7px 7px 0 0;
+    font-weight: bold;
+    font-size: 14px;
+    height: 20px;
+    line-height: 17px;
+    text-decoration: none;
+    color: #fff;
+    background: #8ca1af url(../images/gradient-light.png) bottom left repeat-x;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    box-shadow: 0 1px 1px #465158;
+    -moz-box-shadow: 0 1px 1px #465158;
+    -webkit-box-shadow: 0 1px 1px #465158;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  }
+  #version_menu li a:hover {
+    text-decoration: none;
+    background-color: #697983;
+    box-shadow: 0 1px 0px #465158;
+    -moz-box-shadow: 0 1px 0px #465158;
+    -webkit-box-shadow: 0 1px 0px #465158;
+  }
+  .rtd-badge.rtd {
+    background: #3b4449 url(//media.readthedocs.org//images/badge-rtd.png) scroll 0px -46px no-repeat;
+    border: 1px solid #282E32;
+    width: 41px;
+    right: 5px;
+  }
+  .footer_popout:hover .rtd-badge.rtd {
+    background-position: top left;
+    width: 160px;
+  }
+  .rtd-badge.revsys { background: #465158 url(//media.readthedocs.org//images/badge-revsys.png) top left no-repeat;
+    border: 1px solid #1C5871;
+    width: 290px;
+    right: 173px;
+  }
+  .rtd-badge.revsys-inline-sponsored {
+    position: inherit;
+    margin-left: auto;
+    margin-right: 175px;
+    margin-bottom: 5px;
+    background: #465158 url(//media.readthedocs.org//images/badge-revsys.png) top left no-repeat;
+    border: 1px solid #1C5871;
+    width: 290px;
+    right: 173px;
+  }
+  .rtd-badge.revsys-inline {
+    position: inherit;
+    margin-left: auto;
+    margin-right: 175px;
+    margin-bottom: 5px;
+    background: #465158 url(//media.readthedocs.org//images/badge-revsys-sm.png) top left no-repeat;
+    border: 1px solid #1C5871;
+    width: 205px;
+    right: 173px;
+  }
+
+.rtd_doc_footer { background-color: #465158;}
+
+</style>
+<div class="rtd_doc_footer">
+  <div class="footer_popout">
+    <a href="//readthedocs.org/projects/pypy/?fromdocs=pypy" class="rtd-badge rtd"> Brought to you by Read the Docs</a>
+    <ul id="version_menu">
+      
+        <li><a href="/en/latest/">latest</a></li>
+      
+    </ul>
+  </div>
+</div>
+<!-- RTD Analytics Code -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17997319-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+<!-- User Analytics Code -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'None']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

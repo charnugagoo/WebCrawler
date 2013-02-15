@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <!DOCTYPE html
+            PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+            "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  
+     <head>
+ 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rev="made" href="mailto:gcc@gcc.gnu.org" />
+    <link rel="shortcut icon" href="http://gcc.gnu.org/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="http://gcc.gnu.org/gcc.css" />
+  
+ <meta name="google-site-verification" content="FUv_3eEIkimd6LAoWned4TPMqmKKQmw3aA2_PBJ5SAY" />
+<title>
+GCC, the GNU Compiler Collection
+- GNU Project - Free Software Foundation (FSF)</title>
+<style type="text/css">
+  h2 { font-size: 1.2em; margin-bottom:1%; }
+</style>
+   </head>
+ 
+
+
+<body>
+
+  <table border="0" cellspacing="0" cellpadding="2">
+  <tr>
+
+  <td valign="top" width="99%">                           <!-- main frame -->
+ 
+
+
+<h1 style="margin-top:0;">GCC, the GNU Compiler Collection</h1>
+
+<img src="img/gccegg-65.png" alt="" align="right" />
+
+<p>The GNU Compiler Collection includes front ends for
+<a href="c99status.html">C</a>,
+<a href="projects/cxx0x.html">C++</a>,
+Objective-C, <a href="fortran/">Fortran</a>,
+<a href="java/">Java</a>, Ada, and Go, as well as libraries for these
+languages (<a href="libstdc++/">libstdc++</a>, libgcj,...).
+GCC was originally written as the compiler for the <a
+href="http://www.gnu.org/gnu/thegnuproject.html">GNU operating system</a>.
+The GNU system was developed to be 100% free software, free in the sense
+that it <a  href="http://www.gnu.org/philosophy/free-sw.html">respects
+the user's freedom</a>.</p>
+
+<p>We strive to provide regular, high quality
+<a href="releases.html">releases</a>, which we want to work well on a variety
+of native and cross targets (including GNU/Linux), and encourage everyone 
+to <a href="contribute.html">contribute</a> changes or help
+<a href="testing/">testing</a> GCC.
+Our sources are readily and freely available via
+<a href="svn.html">SVN</a> and weekly
+<a href="snapshots.html">snapshots</a>.</p>
+
+<p>Major decisions about GCC are made by the <a href="steering.html">
+steering committee</a>, guided by the <a href="gccmission.html">
+mission statement</a>.</p>
+
+
+<hr />
+<!-- ==================================================================== -->
+
+
+<table><tr>
+<td style="width: 50%; padding-right: 8px;" valign="top">
+
+
+
+<h2 style="margin-top:0pt;" id="news">News</h2>
+
+<dl class="news">
+
+<dt><span>GCC internals documentation</span>
+    <span class="date">[2013-01-23]</span></dt>
+<dd>The
+<a href="http://www.cse.iitb.ac.in/grc/">GCC Resource Center</a>
+at IITB is providing documentation, tutorials and videos
+about GCC internals with support from the Government of India.</dd>
+
+<dt><span>ARM AArch64 support</span>
+    <span class="date">[2012-10-24]</span></dt>
+<dd>A port for AArch64, the 64-bit execution state in the ARMv8 architecture,
+has been contributed by ARM Ltd.</dd>
+
+<dt><span>IBM zEnterprise EC12 support</span>
+    <span class="date">[2012-10-10]</span></dt>
+<dd>Support for the latest release of the System z mainframe zEC12 has
+been added to the architecture back end.  This work was contributed by
+Andreas Krebbel of IBM.</dd>
+
+<dt><span><a href="gcc-4.7/">GCC 4.7.2</a> released</span>
+    <span class="date">[2012-09-20]</span></dt>
+    <dd></dd>
+
+<dt><span>GCC now uses C++ as its implementation language</span>
+    <span class="date">[2012-08-14]</span></dt>
+<dd>The <a href="http://gcc.gnu.org/wiki/cxx-conversion">cxx-conversion</a>
+branch has been merged into trunk.  This switches GCC's implementation
+language from C to <a href="codingconventions.html#Cxx_Conventions">C++</a>.
+Additionally, some data structures have been re-implemented in C++
+(more details in the <a
+href="http://gcc.gnu.org/ml/gcc-patches/2012-08/msg00711.html">merge
+announcement</a>).  This work was contributed by Lawrence Crowl and
+Diego Novillo of Google.</dd>
+
+<dt><span><a href="gcc-4.5/">GCC 4.5.4</a> released</span>
+    <span class="date">[2012-07-02]</span></dt>
+    <dd></dd>
+
+<dt><span><a href="gcc-4.7/">GCC 4.7.1</a> released</span>
+    <span class="date">[2012-06-14]</span></dt>
+    <dd></dd>
+
+<dt><span><a href="gcc-4.7/">GCC 4.7.0</a> released</span>
+    <span class="date">[2012-03-22]</span></dt>
+    <dd></dd>
+
+<dt><span><a href="gcc-4.4/">GCC 4.4.7</a> released</span>
+    <span class="date">[2012-03-13]</span></dt>
+    <dd></dd>
+
+<dt><span><a href="gcc-4.6/">GCC 4.6.3</a> released</span>
+    <span class="date">[2012-03-01]</span></dt>
+    <dd></dd>
+
+<dt><span>CR16 processor support</span>
+    <span class="date">[2012-02-02]</span></dt>
+<dd>A port for National Semiconductor's CR16 processor has been contributed by
+Sumanth Gundapaneni and Jayant Sonar of KPIT Cummins.</dd>
+
+<dt><span>TILE-Gx and TILEPro processor support</span>
+    <span class="date">[2012-02-14]</span></dt>
+<dd>Ports for the TILE-Gx and TILEPro families of processors have been
+contributed by Walter Lee from Tilera.</dd>
+
+<dt><span>Atomic memory model support</span>
+    <span class="date">[2011-11-06]</span></dt>
+<dd>C++11/C11 <a href="http://gcc.gnu.org/wiki/Atomic/GCCMM">memory model</a>
+support has been added through a new set of built-in <code>__atomic</code>
+functions.  Code was contributed by Andrew MacLeod, Richard Henderson, and
+Aldy Hernandez, all of Red Hat, Inc. 
+</dd>
+
+<dt><span>GNU Tools Cauldron 2012</span>
+    <span class="date">[2011-11-18]</span></dt>
+<dd>IUUK (Computer Science Institute, Charles University), CE-ITI
+(Institute for Theoretical Computer Science) and Google are organizing
+a <a href="http://gcc.gnu.org/wiki/cauldron2012">workshop for GNU
+Tools developers</a>.  The workshop will be held in July 2012 at
+Charles University, Prague.</dd>
+
+</dl>
+
+<div >
+<a href="http://gcc.gnu.org/news.html">Older news</a> |
+<span style="font-size: 80%;">
+Any additions?  Don't be shy, send them to gerald@pfeifer.com!
+</span>
+</div>
+
+
+
+</td><td style="width: 50%; padding-left: 12px; border-left: #3366cc thin solid;" valign="top">
+
+
+
+<h2 style="margin-top:0pt;">Release Series and Status</h2>
+
+<dl class="status">
+
+<dt><span class="version"><a href="gcc-4.7/">GCC 4.7.2</a></span>
+  (<a href="gcc-4.7/changes.html">changes</a>)
+</dt><dd>
+  Status:
+  <!--GCC 4.7 status below-->
+  <a href="http://gcc.gnu.org/ml/gcc/2012-09/msg00182.html">2012-09-20</a>
+  <!--GCC 4.7 status above-->
+  (regression fixes and docs only).
+  <br />
+  <span class="regress">
+  <a
+  href="http://gcc.gnu.org/bugzilla/buglist.cgi?query_format=advanced&amp;short_desc_type=allwordssubstr&amp;short_desc=4.7&amp;target_milestone=4.6.4&amp;target_milestone=4.7.3&amp;known_to_fail_type=allwordssubstr&amp;known_to_work_type=allwordssubstr&amp;long_desc_type=allwordssubstr&amp;long_desc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;gcchost_type=allwordssubstr&amp;gcchost=&amp;gcctarget_type=allwordssubstr&amp;gcctarget=&amp;gccbuild_type=allwordssubstr&amp;gccbuild=&amp;keywords_type=allwords&amp;keywords=&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=SUSPENDED&amp;bug_status=WAITING&amp;bug_status=REOPENED&amp;priority=P1&amp;priority=P2&amp;priority=P3&amp;emailtype1=substring&amp;email1=&amp;emailtype2=substring&amp;email2=&amp;bugidtype=include&amp;bug_id=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;order=Reuse+same+sort+as+last+time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">Serious
+  regressions</a>.
+  <a
+  href="http://gcc.gnu.org/bugzilla/buglist.cgi?query_format=advanced&amp;short_desc_type=allwordssubstr&amp;short_desc=4.7&amp;target_milestone=4.6.4&amp;target_milestone=4.7.3&amp;known_to_fail_type=allwordssubstr&amp;known_to_work_type=allwordssubstr&amp;long_desc_type=allwordssubstr&amp;long_desc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;gcchost_type=allwordssubstr&amp;gcchost=&amp;gcctarget_type=allwordssubstr&amp;gcctarget=&amp;gccbuild_type=allwordssubstr&amp;gccbuild=&amp;keywords_type=allwords&amp;keywords=&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=SUSPENDED&amp;bug_status=WAITING&amp;bug_status=REOPENED&amp;emailtype1=substring&amp;email1=&amp;emailtype2=substring&amp;email2=&amp;bugidtype=include&amp;bug_id=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;order=Reuse+same+sort+as+last+time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">All
+  regressions</a>.
+  </span>
+</dd>
+
+<dt><span class="version"><a href="gcc-4.6/">GCC 4.6.3</a></span>
+  (<a href="gcc-4.6/changes.html">changes</a>) (oldest maintained release)
+</dt><dd>
+  Status:
+  <!--GCC 4.6 status below-->
+  <a href="http://gcc.gnu.org/ml/gcc/2012-03/msg00006.html">2012-03-01</a>
+  <!--GCC 4.6 status above-->
+  (regression fixes and docs only).
+  <br />
+  <span class="regress">
+  <a
+  href="http://gcc.gnu.org/bugzilla/buglist.cgi?query_format=advanced&amp;short_desc_type=allwordssubstr&amp;short_desc=4.6&amp;target_milestone=4.6.4&amp;known_to_fail_type=allwordssubstr&amp;known_to_work_type=allwordssubstr&amp;long_desc_type=allwordssubstr&amp;long_desc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;gcchost_type=allwordssubstr&amp;gcchost=&amp;gcctarget_type=allwordssubstr&amp;gcctarget=&amp;gccbuild_type=allwordssubstr&amp;gccbuild=&amp;keywords_type=allwords&amp;keywords=&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=SUSPENDED&amp;bug_status=WAITING&amp;bug_status=REOPENED&amp;priority=P1&amp;priority=P2&amp;priority=P3&amp;emailtype1=substring&amp;email1=&amp;emailtype2=substring&amp;email2=&amp;bugidtype=include&amp;bug_id=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;order=Reuse+same+sort+as+last+time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">Serious
+  regressions</a>.
+  <a
+  href="http://gcc.gnu.org/bugzilla/buglist.cgi?query_format=advanced&amp;short_desc_type=allwordssubstr&amp;short_desc=4.6&amp;target_milestone=4.6.4&amp;known_to_fail_type=allwordssubstr&amp;known_to_work_type=allwordssubstr&amp;long_desc_type=allwordssubstr&amp;long_desc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;gcchost_type=allwordssubstr&amp;gcchost=&amp;gcctarget_type=allwordssubstr&amp;gcctarget=&amp;gccbuild_type=allwordssubstr&amp;gccbuild=&amp;keywords_type=allwords&amp;keywords=&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=SUSPENDED&amp;bug_status=WAITING&amp;bug_status=REOPENED&amp;emailtype1=substring&amp;email1=&amp;emailtype2=substring&amp;email2=&amp;bugidtype=include&amp;bug_id=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;order=Reuse+same+sort+as+last+time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">All
+  regressions</a>.
+  </span>
+</dd>
+
+<dt><span class="version">Development:</span>
+  GCC 4.8.0 (<a href="gcc-4.8/changes.html">changes</a>, <a href="gcc-4.8/criteria.html">release criteria</a>)
+</dt><dd>
+  Status:
+  <!--GCC 4.8 status below-->
+  <a href="http://gcc.gnu.org/ml/gcc/2013-01/msg00071.html">2013-01-08</a>
+  <!--GCC 4.8 status above-->
+  (regression fixes and docs only).
+  <br />
+  <span class="regress">
+  <a
+  href="http://gcc.gnu.org/bugzilla/buglist.cgi?query_format=advanced&amp;short_desc_type=allwordssubstr&amp;short_desc=4.8&amp;target_milestone=4.6.4&amp;target_milestone=4.7.3&amp;target_milestone=4.8.0&amp;known_to_fail_type=allwordssubstr&amp;known_to_work_type=allwordssubstr&amp;long_desc_type=allwordssubstr&amp;long_desc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;gcchost_type=allwordssubstr&amp;gcchost=&amp;gcctarget_type=allwordssubstr&amp;gcctarget=&amp;gccbuild_type=allwordssubstr&amp;gccbuild=&amp;keywords_type=allwords&amp;keywords=&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=SUSPENDED&amp;bug_status=WAITING&amp;bug_status=REOPENED&amp;priority=P1&amp;priority=P2&amp;priority=P3&amp;emailtype1=substring&amp;email1=&amp;emailtype2=substring&amp;email2=&amp;bugidtype=include&amp;bug_id=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;order=Reuse+same+sort+as+last+time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">Serious
+  regressions</a>.
+  <a
+  href="http://gcc.gnu.org/bugzilla/buglist.cgi?query_format=advanced&amp;short_desc_type=allwordssubstr&amp;short_desc=4.8&amp;target_milestone=4.6.4&amp;target_milestone=4.7.3&amp;target_milestone=4.8.0&amp;known_to_fail_type=allwordssubstr&amp;known_to_work_type=allwordssubstr&amp;long_desc_type=allwordssubstr&amp;long_desc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;gcchost_type=allwordssubstr&amp;gcchost=&amp;gcctarget_type=allwordssubstr&amp;gcctarget=&amp;gccbuild_type=allwordssubstr&amp;gccbuild=&amp;keywords_type=allwords&amp;keywords=&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=SUSPENDED&amp;bug_status=WAITING&amp;bug_status=REOPENED&amp;emailtype1=substring&amp;email1=&amp;emailtype2=substring&amp;email2=&amp;bugidtype=include&amp;bug_id=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;order=Reuse+same+sort+as+last+time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">All
+  regressions</a>.
+  </span>
+</dd>
+
+</dl>
+
+
+<h2>Search our site</h2>
+
+<div style="font-size:90%;">
+
+<form method="get" action="http://gcc.gnu.org/cgi-bin/search.cgi">
+<input type="text" size="30" name="q" value="" style="font-size:90%;" />
+<input type="hidden" name="cmd" value="Search" />
+<input type="submit" value="Search" style="font-size:90%;" />
+<br />
+<span>Match: <select name="m" style="font-size:90%;">
+  <option value="all">All words</option>
+  <option value="any">Any word</option>
+  <option value="bool">Boolean expression</option>
+  </select></span>
+<span>Sort by: <select name="s" style="font-size:90%;">
+  <option value="DRP">Newest</option>
+  <option value="RPD">Best Match</option>
+  </select></span>
+</form>
+
+</div>
+
+<p>There is also a <a href="search.html">detailed search form</a>.</p>
+
+
+<h2>Get our announcements</h2>
+
+  <form method="get" action="http://gcc.gnu.org/cgi-bin/ml-request">
+    <input type="hidden" name="digest"    value="off" />
+    <input type="hidden" name="operation" value="subscribe" />
+    <input type="hidden" name="listname"  value="gcc-announce" />
+    <input type="text"   name="username"  value="your e-mail address" size="20" style="font-size:90%;" />
+    <input type="submit" name="submit"    value="Subscribe" style="font-size:90%;" />
+  </form>
+
+
+
+</td>
+</tr></table>
+
+
+  </td>                                            <!-- end of main frame -->
+
+  <td valign="top" style="padding-left: 36px;">            <!-- nav frame -->
+  <table border="0" cellspacing="0" cellpadding="2" width="10em">
+
+  
+
+  
+
+  <tr><td><table cellspacing="0" width="100%">
+  <tr><td class="td_title"  >About GCC</td></tr>
+  <tr><td class="td_con"  >
+  <a href="gccmission.html">Mission Statement</a><br />
+  <a href="releases.html">Releases</a><br />
+  <a href="snapshots.html">Snapshots</a><br />
+  <a href="lists.html">Mailing lists</a><br />
+  <a href="http://gcc.gnu.org/onlinedocs/gcc/Contributors.html">Contributors</a><br />
+  <a href="steering.html">Steering Committee</a><br />
+  </td></tr>
+  </table></td></tr>
+
+  <tr><td><table cellspacing="0" width="100%">
+  <tr><td class="td_title"  >Documentation</td></tr>
+  <tr><td class="td_con"  >
+  <a href="http://gcc.gnu.org/install/">Installation</a><br />
+  &middot;&nbsp;<a href="http://gcc.gnu.org/install/specific.html">Platforms</a><br />
+  &middot;&nbsp;<a href="http://gcc.gnu.org/install/test.html">Testing</a><br />
+  <a href="onlinedocs/">Manual</a><br />
+  <a href="faq.html">FAQ</a><br />
+  <a href="http://gcc.gnu.org/wiki">Wiki</a><br />
+  <a href="readings.html">Further Readings</a>
+  </td></tr>
+  </table></td></tr>
+ 
+  <tr><td><table cellspacing="0" width="100%">
+  <tr><td class="td_title"  >Download</td></tr>
+  <tr><td class="td_con"  >
+  <a href="mirrors.html">Mirror sites</a><br />
+  <a href="http://gcc.gnu.org/install/binaries.html">Binaries</a>
+  </td></tr>
+  </table></td></tr>
+
+  <tr><td><table cellspacing="0" width="100%">
+  <tr><td class="td_title"  >"Live" Sources</td></tr>
+  <tr><td class="td_con"  >
+  <a href="svn.html">SVN read access</a><br />
+  <a href="http://gcc.gnu.org/wiki/GitMirror">Git read access</a><br />
+  <a href="rsync.html">Rsync read access</a><br />
+  <a href="svnwrite.html">SVN write access</a><br />
+  </td></tr>
+  </table></td></tr>
+
+  <tr><td><table cellspacing="0" width="100%">
+  <tr><td class="td_title"  >Development</td></tr>
+  <tr><td class="td_con"  >
+  <a href="develop.html">Development Plan</a><br />
+  &middot;&nbsp;<a href="develop.html#timeline">Tentative&nbsp;Timeline</a><br />
+  <a href="contribute.html">Contributing</a><br />
+  <a href="contributewhy.html">Why&nbsp;contribute?</a><br />
+  <a href="projects/">Open projects</a><br />
+  <a href="frontends.html">Front ends</a><br />
+  <a href="backends.html">Back ends</a><br />
+  <a href="extensions.html">Extensions</a><br />
+  <a href="benchmarks/">Benchmarks</a><br />
+  <a href="translation.html">Translations</a><br />
+  </td></tr>
+  </table></td></tr>
+
+  <tr><td><table cellspacing="0" width="100%">
+  <tr><td class="td_title"  >Bugs</td></tr>
+  <tr><td class="td_con"  >
+  <a href="bugs/#known">Known bugs</a><br />
+  <a href="bugs/">How to report</a><br />
+  <a href="http://gcc.gnu.org/bugzilla/">Bug&nbsp;database</a><br />
+  &middot;&nbsp;<a href="bugs/management.html">Management</a>
+  </td></tr>
+  </table></td></tr>
+
+  </table>
+  </td>                                             <!-- end of nav frame -->
+
+  </tr>
+  </table>
+ 
+
+<!-- ==================================================================== -->
+
+<div class="copyright">
+
+<address style="margin-top:0;">For questions related to the use of GCC,
+please consult these web pages and the
+<a href="http://gcc.gnu.org/onlinedocs/">GCC manuals</a>. If that fails,
+the <a href="mailto:gcc-help@gcc.gnu.org">gcc-help@gcc.gnu.org</a>
+mailing list might help.
+Comments on these web pages and the development of GCC are welcome on our
+developer list at <a href="mailto:gcc@gcc.gnu.org">gcc@gcc.gnu.org</a>.
+All of <a href="http://gcc.gnu.org/lists.html">our lists</a>
+have public archives.
+</address>
+
+<p>Copyright (C)
+<a href="http://www.fsf.org">Free Software Foundation, Inc.</a>
+Verbatim copying and distribution of this entire article is
+permitted in any medium, provided this notice is preserved.</p>
+
+<p style="margin-bottom:0;">These pages are
+<a href="http://gcc.gnu.org/about.html">maintained by the GCC team</a>.
+Last modified 2013-01-23<!-- IGNORE DIFF
+--><a href="http://validator.w3.org/check/referer">.</a></p>
+
+</div>
+
+<!-- ==================================================================== -->
+
+</body>
+     </html>
+  
+ 

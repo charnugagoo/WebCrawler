@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+
+<html>
+  <head> <!-- news/2001.10 -->
+            <title>C-- News</title>
+            <!-- navtree[news/2001.10] == Array -->
+            <!-- navtree[news/2001.10][leaf] == Array[leaf] -->
+            <meta http-equiv = 'Content-Type' 
+                  content    = 'text/html; charset=iso-8859-1'>
+            <style type='text/css'>
+
+Warning: readfile(../cmm.css): failed to open stream: No such file or directory in /home/nr/c--/www/cmm.inc on line 250
+  
+            </style>
+          </head>
+  <body>
+    <!-- news/2001.10 -->
+        <table width='100%' cellpadding='3' cellspacing='0' border='0'>
+          <tr>
+            <td class='smallblue' width='10%'><strong>C--</strong></td>
+            <td class='smallgrey' width='90%'><a href='http://www.eecs.harvard.edu/'>Harvard EECS</a>
+<img width='13' height='9' alt='->' 
+     src='../images/arrow_yellow.gif'>
+<a href='../index.html'>C-- Home</a>
+<img width='13' height='9' alt='->' 
+     src='../images/arrow_yellow.gif'>
+<a href='../news/2001.10.html'>C-- News</a>
+   
+            </td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td class='small'>
+            <a href='../index.html'>C-- Home</a>            |
+            <a href='../code.html'>Specification &amp; Downloads</a>          |
+            <a href='../news/2001.10.html'>Old News</a>          |
+            <a href='../papers.html'>Papers</a>             | 
+    <!--       <a href='../progress.html'>Work in Progress</a> |  -->
+            <a href='../mail.html'>Mailing List</a>         | 
+            <a href='../people.html'>People</a>             |
+            <a href='../faq.html'>FAQ</a>                   
+     <!-- |       <a href='../links.html'>Related Work</a> -->
+
+            </td>
+          </tr>
+        </table>     <br>
+     <br>
+     
+
+    <h1>C-- News for October, 2001</h1>
+
+    <p>(There is <a href="2001.05.html">old news</a> from earlier this year
+    still available.)</p>
+
+    <p>Basile Starynkevitch has asked us on the <a href='../mail.html'>C--
+            mailing list</a>     where <a href='../qc--.html'>Quick C--</a>     is heading. Good question. Here is <a href='../people.html'>Norman's</a>     answer:</p>
+
+    <blockquote>
+      <i>I am quite impressed by the ongoing work on QuickC--. But
+      I did not have the time to study it with big care.</i> 
+
+      <p><i>I also have the impression that this mailing list is
+      really silent...</i></p>
+    </blockquote>
+    We are too busy working on the compiler :-) 
+
+    <blockquote>
+      <i>What are the first (real machine) targets of QC--?</i> 
+
+      <p><i>It seems to me that the first target are Sparcs. Why
+      not x86 under Linux? I understand that compiling to x86 might
+      be a bit more difficult than compiling to Sparc (because
+      Sparc is more RISC-y and, most importantly, more orthogonal
+      ISA than x86) but I naively believe that x86 is a more common
+      target (i.e. a much bigger market).</i></p>
+    </blockquote>
+    We want to knock off sparc, x86, and probably alpha and arm in
+    fairly short order. We're starting with sparc primarily because
+    the instruction set is simpler and therefore the
+    not-ready-for-prime-time tools we're using to manage the
+    instruction set have an easier time. We are also concerned
+    about the that x86 register-allocation constraints may be hard
+    to deal with. 
+
+    <blockquote>
+      <i>Why is a Lua interpreter included in QC--?</i> 
+
+      <p><i>I understand quite well the usefulness of a
+      [Turing-complete] scripting language in an application, at
+      least in the development phase. However, I have no idea why a
+      scripting language would be useful in a mature C--
+      compiler!</i></p>
+    </blockquote>
+    It's not a mature compiler---it's an experimental compiler. We
+    want to be able to reconfigure the compiler on the command line
+    and to describe calling conventions in source code. 
+
+    <blockquote>
+      <i>But I cannot see why Ocaml is not used as a scripting
+      language (I know that bytecode [compiled with ocamlc] and
+      machinecode [compiled with ocamlopt] Ocaml are not mixable,
+      but I would believe that for testing and debugging purpose an
+      Ocaml-bytecode C-- compiler would be enough, ie that Lua is
+      not really useful, but we could have a custom Ocaml
+      interpreter containing all QC-- code).</i>
+    </blockquote>
+    The technology we would need to make this work is beyond us. A
+    Lua interpreter is quite simple and is sufficient for our
+    needs. 
+
+    <blockquote>
+      <i>How should I run QC-- on some example to see actual
+      generated assembly code (in Sparc, or preferably x86 when it
+      would happen).</i>
+    </blockquote>
+    For the moment, 
+<pre>
+  
+  qc-- -c foo.c--
+</pre>
+    will do something moderately interesting. In the long run,
+    something like 
+<pre>
+  qc-- -target=x86/linux -S foo.c--
+</pre>
+    is likely to be the eventual interface. 
+
+    <blockquote>
+      <i>What are the medium term roadmap of QC--? What about
+      targetting x86 and PIC (position independent code) for shared
+      library?</i>
+    </blockquote>
+
+    <ol>
+      <li>Emit proper assembly language</li>
+
+      <li>Get it to run on parameterless procedures</li>
+
+      <li>Support sensible calling conventions</li>
+
+      <li>Support C calling conventions</li>
+
+      <li>Get a real code generator</li>
+
+      <li>Start work on the run-time system</li>
+
+      <li>Get some front ends</li>
+    </ol>
+    We're trying to make multiple targets and PIC easy. 
+    <br><hr size='1'><span class='small'>Contact: <a href='mailto:webmaster@cminusminus.org'>C-- Webmaster</a>. 
+URL: <tt><a href='http://www.cminusminus.org/'>http://www.cminusminus.org/</a></tt>.
+Last edited: Mon 05 Feb 2007 14:02 EST.</span>
+<!-- last edited by  -->
+  </body>
+</html>
+

@@ -1,0 +1,196 @@
+<HTML>
+
+<HEAD>
+  <TITLE> IDL and FORTRAN FFT Comparison </TITLE>
+<HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#FF0000" ALINK="#FFFF00" TEXT="#000000">
+
+<A NAME="top"><H1 ALIGN=CENTER>IDL and FORTRAN FFT Comparison</H1></A>
+<P>
+<CENTER>
+<STRONG>Index</STRONG><P>
+<A HREF="#osd">Original Spectrum Data</A> | <A HREF="#fid">FFT Input Data</A> | 
+<A HREF="#fod">FFT Output Data</A> | <A HREF="#dfasc">Data Files and Source Code</A>
+</CENTER>
+<HR WIDTH=100%>
+
+Seeing as we here at CIMSS/SSEC do lots and lots of FFT's for spectrum -> interferogram
+transformation and vice versa, I put out the following data so that we can be sure that 
+the particular FFT algorithm (in whatever language) does not introduce artifacts into
+our work.<P>
+
+The software that gets shipped with the AERI systems uses the Numerical Recipes FFT code
+REALFT and FOUR1. A description of how these algorithms work can be found on pp498-508
+in Press <EM>et al</EM>, "Numerical Recipes in FORTRAN. The Art of Scientific Computing", 
+2nd Ed, Cambridge University Press 1992. The IDL FFT employs a prime factor algorithm that
+returns the complex discrete Fourier transform of the input.<P>
+
+While the Fortran and IDL FFT's produce essentially the same result, the structure of the
+input and output data arrays, while consistent within algorithms,  is not always clear. The
+purpose of this web page is to explain how to input data to these routines and provide an
+example.<P>
+
+<H3><A NAME="osd">Original Spectrum Data</A></H3>
+
+  The spectral data used was an average of the AERI-TWP1 hot blackbody (HBB) 
+  uncalibrated spectrum, shown in <A NAME="figure1_text"><A HREF="#figure1">figure 1</A></A>,
+  derived from the forward scan data. The data was collected from 200-2000cm<SUP>-1</SUP> and 
+  placed in an array that extended from 0cm<SUP>-1</SUP> to the Nyquist frequency, in this case
+  7899.5cm<SUP>-1</SUP> for a laser wavenumber of 15799cm<SUP>-1</SUP>.<P>
+
+  The number of points in the real and imaginary spectra is 16385. The first point
+  corresponds to 0cm<SUP>-1</SUP> and the last point, 16385, corresponds to the
+  Nyquist frequency. The total number of complex valued points is thus 2<SUP>14</SUP> + 1.<P>
+
+  <TABLE ALIGN=CENTER>
+    <TR ALIGN=CENTER>
+      <TD><A NAME="figure1"><IMG SRC="./orig_input.gif"></A></TD>
+    </TR>
+    <TR>
+      <TH>Figure 1.</TH>
+    </TR>
+  </TABLE>
+  <A HREF="#figure1_text">To referring text</A><P>
+     
+
+<H3><A NAME="fid">FFT Input Data</A></H3>
+
+  The input to the IDL and Fortran FOUR1 FFT algorithms is required to include both
+  the positive and negative frequencies of the real and imaginary components.
+  <A NAME="figure2_text"><A HREF="#figure2">figure 2</A></A> shows how the data was reflected
+  about the Nyquist frequency to give a power of 2 number of points, 2<SUP>15</SUP>.<P>
+
+  <TABLE ALIGN=CENTER>
+    <TR ALIGN=CENTER>
+      <TD><A NAME="figure2"><IMG SRC="./fft_reflect.gif"></A></TD>
+    </TR>
+    <TR>
+      <TH>Figure 2.</TH>
+    </TR>
+  </TABLE>
+  <A HREF="#figure2_text">To referring text</A><P>
+
+  To provide a real, asymmetric interferogram upon Fourier transformation, the input spectrum
+  must be Hermitian. Thus the imaginary component is multiplied by -1 after being reflected. This
+  gives the FFT input spectrum as shown in <A NAME="figure3_text"><A HREF="#figure3">figure 3</A></A>.<P>
+
+  <TABLE ALIGN=CENTER>
+    <TR ALIGN=CENTER>
+      <TD><A NAME="figure3"><IMG SRC="./fft_input.gif"></A></TD>
+    </TR>
+    <TR>
+      <TH>Figure 3.</TH>
+    </TR>
+  </TABLE>
+  <A HREF="#figure3_text">To referring text</A><P>
+     
+  The data as shown in figure 3 is what is used directly in the IDL FFT function. For the Fortran
+  FOUR1 the real and imaginary parts of the reflected data are provided in a REAL*4 array with
+  the real and imaginary components alternating as shown in
+  <A NAME="figure4_text"><A HREF="#figure4">figure 4</A></A>.<P>
+
+  <TABLE ALIGN=CENTER>
+    <TR ALIGN=CENTER>
+      <TD><A NAME="figure4"><IMG SRC="./four1_input.gif"></A></TD>
+    </TR>
+    <TR>
+      <TH>Figure 4.</TH>
+    </TR>
+  </TABLE>
+  <A HREF="#figure4_text">To referring text</A><P>
+
+  This format of spectrum input is also used by REALFT <EM>except</EM> that only the positive
+  spectral frequencies are input and the Nyquist frequency is not included, i.e. only 2<SUP>14</SUP>
+  points are used with the real and imaginary components of each point alternating in the REALFT
+  input array. It is not altogether clear as to what happens to the Nyquist point. In this example 
+  the Nyquist point is zero (due to the spectral extension) but this may not always be the case.<P>
+
+
+<H3><A NAME="fod">FFT Output Data</A></H3>
+
+  The output of the FFT's are shown in <A NAME="figure5_text"><A HREF="#figure5">figure 5</A></A>.
+  As is evident they do not agree. However, a number
+  of things can be done. Firstly, both the IDL and FOUR1 FFT results should be divided by 2 as they
+  use twice the number of input points and thus the 1/N scaling that occurs in the inverse FFT will
+  be different from REALFT by a factor of 2. The result of scaling the interferograms is shown in
+  <A NAME="figure6_text"><A HREF="#figure6">figure 6</A></A>.
+  Scaling the FOUR1 result makes it agree with the REALFT result. In addition, the scaled
+  IDL FFT result magnitudes is now comparable to the other two interferograms. Closer inspection of 
+  figure 6 shows that the FOUR1/REALFT and IDL interferograms appear to be reversed with respect to
+  each other. By flipping the FOUR1/REALFT interferograms about ZPD, we achieve agreement between all
+  three results, as shown in <A NAME="figure7_text"><A HREF="#figure7">figure 7</A></A>!
+  Yay. There thus appears to be some ambiguity between the 
+  FOUR1/REALFT and IDL FFT as to what are exactly the negative and positive parts of the inverse 
+  transform. This is not a problem as the magnitudes are exactly the same - you just have to be 
+  careful about how you interpret the results, which is true <EM>any</EM> time you use Fourier
+  transforms.<P>
+
+  <TABLE ALIGN=CENTER>
+    <TR ALIGN=CENTER>
+      <TD><A NAME="figure5"><IMG SRC="./fft_output.gif"></A></TD>
+    </TR>
+    <TR>
+      <TH>Figure 5.</TH>
+    </TR>
+  </TABLE>
+  <A HREF="#figure5_text">To referring text</A><P>
+     
+  <TABLE ALIGN=CENTER>
+    <TR ALIGN=CENTER>
+      <TD><A NAME="figure6"><IMG SRC="./s_fft_output.gif"></A></TD>
+    </TR>
+    <TR>
+      <TH>Figure 6.</TH>
+    </TR>
+  </TABLE>
+  <A HREF="#figure6_text">To referring text</A><P>
+
+  <TABLE ALIGN=CENTER>
+    <TR ALIGN=CENTER>
+      <TD><A NAME="figure7"><IMG SRC="./rs_fft_output.gif"></A></TD>
+    </TR>
+    <TR>
+      <TH>Figure 7.</TH>
+    </TR>
+  </TABLE>
+  <A HREF="#figure7_text">To referring text</A><P>
+
+
+<H3><A NAME="dfasc">Data Files and Source Code</A></H3>
+
+  The following links provide the original input data file and the Fortran and IDL code I used
+  to perform the above analysis.<P>
+
+  <UL>
+    <LI> Input data (binary), <A HREF="./fft_input.dat">fft_input.dat</A>
+    <LI> IDL FFT test program, <A HREF="./test_idlfft.pro">test_idlfft.pro</A>
+    <LI> Fortran FFT test code,
+      <UL>
+        <LI> <A HREF="./test_realft.f">test_realft.f</A>
+        <LI> <A HREF="./realft.f">realft.f</A>
+        <LI> <A HREF="./four1.f">four1.f</A>
+        <LI> <A HREF="./makefile">makefile</A>
+      </UL>
+    <LI> Ancillary IDL code,
+      <UL>
+        <LI> Function to read input data, <A HREF="./read_fft_input.pro">read_fft_input.pro</A>
+        <LI> Function to read REALFT output, <A HREF="./read_realft.pro">read_realft.pro</A>
+        <LI> Function to read FOUR1 output, <A HREF="./read_four1.pro">read_four1.pro</A>
+        <LI> Procedure to create the data plots, <A HREF="./plot_fft_test.pro">plot_fft_test.pro</A>
+      </UL>
+  </UL><P>
+
+<HR WIDTH="100%">
+[ <A HREF="#top">TOP OF PAGE</A> | <A HREF="http://airs2.ssec.wisc.edu/~paulv">UP</A> ]
+<HR WIDTH="100%"><P>
+<EM>This page maintained by <A HREF="mailto:paul.vandelst@ssec.wisc.edu">Paul
+van Delst</A><BR>
+Last updated January 22, 1997</EM>
+
+  
+<BODY>
+
+<HTML>
+
+

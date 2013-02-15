@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      Buildbot
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="search" href="/search" />
+        <link rel="help" href="/wiki/TracGuide" />
+        <link rel="alternate" href="/wiki/WikiStart?format=txt" type="text/x-trac-wiki" title="Plain Text" />
+        <link rel="start" href="/wiki" />
+        <link rel="stylesheet" href="/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/chrome/common/css/wiki.css" type="text/css" />
+        <link rel="shortcut icon" href="/chrome/site/buildbot-icon.png" type="image/png" />
+        <link rel="icon" href="/chrome/site/buildbot-icon.png" type="image/png" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/search/opensearch" title="Search Buildbot" />
+    <script type="text/javascript" src="/chrome/common/js/jquery.js"></script><script type="text/javascript" src="/chrome/common/js/babel.js"></script><script type="text/javascript" src="/chrome/common/js/trac.js"></script><script type="text/javascript" src="/chrome/common/js/search.js"></script><script type="text/javascript" src="/chrome/common/js/folding.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $("#content").find(".wikianchor").each(function() {
+          $(this).addAnchor(babel.format(_("Link to #%(id)s"), {id: $(this).attr('id')}));
+        });
+        $(".foldable").enableFolding(true, true);
+      });
+    </script>
+    <link rel="stylesheet" type="text/css" href="/chrome/site/style.css" />
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="http://trac.buildbot.net/"><img src="/chrome/site/header-text-transparent.png" alt="[Buildbot Logo]" /></a>
+      </div>
+      <form id="search" action="/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/login">Login</a></li><li><a href="/prefs">Preferences</a></li><li><a href="/wiki/TracGuide">Help/Guide</a></li><li><a href="/about">About Trac</a></li><li><a href="http://buildbot.net/buildbot/docs/current">Documentation</a></li><li class="last"><a href="http://buildbot.buildbot.net/">Metabuildbot</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first active"><a href="/wiki">Wiki</a></li><li><a href="/timeline">Timeline</a></li><li><a href="/roadmap">Roadmap</a></li><li><a href="/browser">Browse Source</a></li><li><a href="/query">View Tickets</a></li><li><a href="/search">Search</a></li><li class="last"><a href="/tags">Tags</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="pagepath" class="noprint">
+  <a class="pathentry first" title="View WikiStart" href="/wiki">wiki:</a><a class="pathentry" href="/wiki/WikiStart" title="View WikiStart">WikiStart</a>
+</div>
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+              <li class="first"><a href="/wiki/WikiStart">Start Page</a></li><li><a href="/wiki/TitleIndex">Index</a></li><li class="last"><a href="/wiki/WikiStart?action=history">History</a></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="wiki">
+      <div class="wikipage searchable">
+        
+          
+          <div class="trac-modifiedby"><a href="/wiki/WikiStart?action=diff&amp;version=189" title="Version 189 by dustin">Last modified</a> <a class="timeline" href="/timeline?from=2013-02-10T22%3A53%3A46%2B01%3A00&amp;precision=second" title="2013-02-10T22:53:46+01:00 in Timeline">5 days</a> ago</div>
+          <div id="wikipage"><div style="margin-right:3em; float:left" class="wikipage"><h1 id="Explore">Explore</h1>
+<ul><li><a class="wiki" href="/wiki/ScreenShots">ScreenShots</a>
+</li><li><a class="wiki" href="/wiki/SuccessStories">SuccessStories</a>
+</li><li><a class="wiki" href="/wiki/Press">Press</a>
+</li><li><a class="wiki" href="/wiki/FAQ">FAQ</a>
+</li><li><a class="wiki" href="/wiki/Support">Support</a> (and <a class="wiki" href="/wiki/PaidSupport">Paid Support</a>)
+</li><li><a class="wiki" href="/wiki/Utilities">Utilities</a>
+</li><li><a class="wiki" href="/wiki/Security">Security</a>
+</li><li><a class="wiki" href="/wiki/Licensing">Licensing</a>
+</li></ul><h1 id="Documentation">Documentation</h1>
+<ul><li><a href="http://buildbot.net/buildbot/docs/current/tutorial/">Buildbot Tutorial</a>
+</li><li><a href="http://buildbot.net/buildbot/docs/current/index.html">Buildbot Manual</a> (latest release - <a href="http://buildbot.net/buildbot/docs">see older versions</a>)
+</li><li><a class="wiki" href="/wiki/HelpfulPages">HelpfulPages</a>
+</li></ul><h1 id="DevelopmentandAdministrivia">Development and Administrivia</h1>
+<ul><li><a class="wiki" href="/wiki/Development">Development</a>
+<ul><li><a class="wiki" href="/wiki/GSoC">GSoC</a> and GSoC <a class="wiki" href="/wiki/ProjectIdeas">ProjectIdeas</a>
+</li><li><a class="wiki" href="/wiki/BuildbotSprint2013">BuildbotSprint2013</a>
+</li></ul></li><li>Administration
+<ul><li><a class="wiki" href="/wiki/BuildbotNetAdmin">BuildbotNetAdmin</a>
+</li><li><a class="wiki" href="/wiki/AdminProject">AdminProject</a>
+</li></ul></li></ul></div><div style="margin-right:3em" class="wikipage"><h1 id="WelcometoBuildbot">Welcome to Buildbot!</h1>
+<div style="float: right">
+<a href="https://plus.google.com/communities/109210901993926528208" style="text-decoration: none; color: #333"><div style="display: inline-block"><span style="float: left; font: bold 13px/16px arial,sans-serif; margin-right: 4px; margin-top: 7px">Buildbot</span><span style="float: left; font: 13px/16px arial,sans-serif; margin-right: 11px; margin-top: 7px">on</span><div style="float: left"><img src="https://ssl.gstatic.com/images/icons/gplus-32.png" width="32" height="32" style="border: 0" /></div><div style="clear: both"></div></div></a>
+</div>
+<p>
+Buildbot is a continuous integration system designed to automate the build/test cycle. By automatically rebuilding and testing the tree each time something has changed, build problems are pinpointed quickly, before other developers are inconvenienced by the failure. <a class="wiki" href="/wiki/AboutBuildbot">read more...</a>
+</p>
+<h1 id="Announcements">Announcements</h1>
+<ul><li>Buildbot will be at PyCon 2013 - <a class="wiki" href="/wiki/BuildbotSprint2013">sprinting</a> and a <a class="wiki" href="/wiki/BuildbotClinic">BuildbotClinic</a> for users on Saturday
+</li><li><a href="http://buildbot.net/buildbot/docs/0.8.7p1/relnotes/index.html">Buildbot-0.8.7p1</a> was released on November 21, 2012.
+</li><li><a class="wiki" href="/wiki/BuildbotReleases">older releases..</a>
+</li></ul><h1 id="Downloads">Downloads</h1>
+<h2 id="Master">Master</h2>
+<ul><li><a class="ext-link" href="http://buildbot.googlecode.com/files/buildbot-0.8.7p1.tar.gz"><span class="icon"> </span>buildbot-0.8.7p1.tar.gz</a> (<a class="ext-link" href="http://buildbot.googlecode.com/files/buildbot-0.8.7p1.tar.gz.asc"><span class="icon"> </span>sig</a>),
+</li><li><a class="ext-link" href="http://buildbot.googlecode.com/files/buildbot-0.8.7p1.zip"><span class="icon"> </span>buildbot-0.8.7p1.zip</a> (<a class="ext-link" href="http://buildbot.googlecode.com/files/buildbot-0.8.7p1.zip.asc"><span class="icon"> </span>sig</a>)
+</li><li><a class="wiki" href="/wiki/DownloadInstall">more downloads..</a>
+</li></ul><h2 id="Slave">Slave</h2>
+<ul><li><a class="ext-link" href="http://buildbot.googlecode.com/files/buildbot-slave-0.8.7p1.tar.gz"><span class="icon"> </span>buildbot-slave-0.8.7p1.tar.gz</a> (<a class="ext-link" href="http://buildbot.googlecode.com/files/buildbot-slave-0.8.7p1.tar.gz.asc"><span class="icon"> </span>sig</a>),
+</li><li><a class="ext-link" href="http://buildbot.googlecode.com/files/buildbot-slave-0.8.7p1.zip"><span class="icon"> </span>buildbot-slave-0.8.7p1.zip</a> (<a class="ext-link" href="http://buildbot.googlecode.com/files/buildbot-slave-0.8.7p1.zip.asc"><span class="icon"> </span>sig</a>)
+</li><li><a class="wiki" href="/wiki/DownloadInstall">more downloads..</a>
+</li></ul></div><br style="clear:both" />
+</div>
+        
+        
+      </div>
+      
+
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="last first">
+          <a rel="nofollow" href="/wiki/WikiStart?format=txt">Plain Text</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">Powered by <a href="/about"><strong>Trac 0.12.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  
+<!-- Google Analytics Widget Code -->
+<script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+  try {
+    jQuery(document).ready( function() {
+      var pageTracker = _gat._getTracker("UA-12313843-4");
+      pageTracker._setDomainName("none");
+      pageTracker._setAllowLinker()
+      jQuery('a').each( function() {
+        var url;
+        if ( this.href.match("http:\/\/trac.buildbot.net") ) {
+          if ( this.href.match(/\.(zip|tar|tar.gz|tar.bzip|egg)$/) ) {
+            url = this.pathname + this.search;
+          };
+        } else {
+          var port = '';
+          if ( this.port != '') port = ':'+this.port;
+          url = '/external/' + this.hostname + port + this.pathname + this.search;
+        };
+        if ( url ) {
+          if ( ! url.match('^\/attachment\/') ) {
+            jQuery(this).click( function() {
+              pageTracker._trackPageview(url);
+            });
+          };
+        };
+      });
+    pageTracker._trackPageview();
+    });
+  } catch(err) {}
+</script>
+<!-- Google Analytics Widget Code Ended -->
+</body>
+</html>

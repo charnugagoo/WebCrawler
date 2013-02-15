@@ -1,0 +1,338 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="keywords" content="Jim Gay, Radiant CMS, Ruby on Rails, Rockport Publishers, LogoLounge, Logo Lounge, kryptosima, search engine optimization, logo, brand strategy, graphic design, web designer, site design, designer, website promotion, accessibility, usability, 508, WCAG, WAI, guidelines, development, marketing, webpage, branding, logos, graphics, print design, flash, shockwave, trademarks, CSS, HTML, XHTML, XML, Saturn Flyer, e-commerce solution, Ecommerce, affordable" />
+<meta name="description" content="Saturn Flyer is a graphic design and software development studio that provides it clients with creative and functional solutions. Application development, logo design, interaction architecture, stationery, website design, brochures, interactive marketing and  brand strategy are just some of our offerings." />
+<meta name="author" content="Jim Gay" />
+<meta name="Copyright" content="Copyright (c) 1999 - 2013 Saturn Flyer" />
+<meta name="ROBOTS" content="ALL" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta name="google-site-verification" content="IQhXF5pYUaEKMELzZAWkcJASAwN3fTeFRwf1SRCtB8I" /
+<link rel="alternate" type="application/rss+xml" title="Blog feed" href="http://feeds2.feedburner.com/saturnflyer/blog" />
+<link rel="alternate" type="application/rss+xml" title="Articles feed" href="http://feeds2.feedburner.com/saturnflyer/articles" />
+<link rel="alternate" type="application/rss+xml" title="Articles and Blog feed" href="http://feeds2.feedburner.com/saturnflyer" />
+	<link rel="stylesheet" href="/stylesheets/site.css" type="text/css" media="screen" />
+	<title>Radiant Page#find_by_url - Saturn Flyer with Jim Gay </title>
+</head>
+<body>
+<div id="galaxy">
+	<div id="header">
+		<h1><a href="http://www.saturnflyer.com/"><img src="/images/saturnflyer.gif" alt="Saturn Flyer" width="124" height="28" /></a></h1>
+	</div>
+<div id="content" class="spaced">
+
+
+
+
+
+  
+
+  <h1>Radiant Page#find_by_url</h1>
+  <p class="info">by Jim Gay</p>
+  <p>On a recent project a client asked about overriding <code>Page#find_by_url</code> and when that actually occurs. I think the answer should be explained for everyone working with it.</p>
+
+<h2>20 second summary</h2>
+
+<p>This is an in-depth look at the method that gathers pages within Radiant. In short, if you want to do special page finding, create a subclass of <code>Page</code> and write your own <code>find_by_url</code> method to adjust the way Radiant behaves. Every page will respond to this method and return appropriate pages according to the requested url. In the admin interface, you can select  your special page type to make that page behave as you have specified.</p>
+
+<h2>Simple finding</h2>
+
+<p><code>find_by_url</code> is defined both as a class method and an instance method. Let&rsquo;s look at the class method <code>Page.find_by_url</code> from the <a href="http://github.com/radiant/radiant/blob/master/app/models/page.rb#L187-L191">Page model</a>:</p>
+
+<pre><code>class &lt;&lt; self
+  def find_by_url(url, live = true)
+    root = find_by_parent_id(nil)
+    raise MissingRootPageError unless root
+    root.find_by_url(url, live)
+  end
+  # ...
+end
+</code></pre>
+
+<p>First, it looks for the root page, which is considered the page with no <code>parent_id</code>. If no root page is found it raises a <code>MissingRootPageError</code> exception; otherwise, it calls the instance method <code>find_by_url</code> on the root page.</p>
+
+<p>This class method takes 2 arguments: the <code>url</code> (really the path matched in the routes from request) to be found, and a <code>live</code> flag which defaults to true (more about that later).</p>
+
+<h2>Finding the first page</h2>
+
+<p>The <code>find_by_url</code> instance method is a bit more complex. Let&rsquo;s take a look:</p>
+
+<pre><code>def find_by_url(url, live = true, clean = true)
+  return nil if virtual?
+  url = clean_url(url) if clean
+  my_url = self.url
+  if (my_url == url) &amp;&amp; (not live or published?)
+    self
+  elsif (url =~ /^\#{Regexp.quote(my_url)}([^\\/]*)/)
+    slug_child = children.find_by_slug($1)
+    if slug_child
+      found = slug_child.find_by_url(url, live, clean)
+      return found if found
+    end
+    children.each do |child|
+      found = child.find_by_url(url, live, clean)
+      return found if found
+    end
+    file_not_found_types = ([FileNotFoundPage] + FileNotFoundPage.descendants)
+    file_not_found_names = file_not_found_types.collect { |x| x.name }
+    condition = (['class_name = ?'] * file_not_found_names.length).join(' or ')
+    condition = \"status_id = \#{Status[:published].id} and (\#{condition})\" if live
+    children.find(:first, :conditions =&gt; [condition] + file_not_found_names)
+  end
+end
+</code></pre>
+
+<p>Wow. There&rsquo;s a lot going on there and there&rsquo;s room for some refactoring, but for now let&rsquo;s just walk through it.</p>
+
+<p>First, <code>nil</code> will be returned if the page is <code>virtual?</code>. A page, by default, is not virtual. This is stored in the database in a boolean field, but you may override this in any subclass of Page that you create. For now, let&rsquo;s assume that your page isn&rsquo;t and won&rsquo;t be virtual and we&rsquo;ll get back to what it means.</p>
+
+<p>Next, we clean the url if the <code>clean</code> flag is set to true (which it is by default). <code>clean_url</code> simply ensures that the url being checked is properly formatted and that any doubling of slashes is fixed. So this <code>right//here////</code> becomes this <code>/right/here/</code>.</p>
+
+<p>The next step shows us why we clean the url. A local variable is setup to compare against the page&rsquo;s url.</p>
+
+<pre><code>my_url = self.url
+if (my_url == url) #...
+</code></pre>
+
+<p>What is a page&rsquo;s url? It&rsquo;s <a href="http://github.com/radiant/radiant/blob/master/app/models/page.rb#L102-L108">calculated</a> by the page&rsquo;s slug and the slugs of it&rsquo;s ancestors. In short, if your current page&rsquo;s slug is &lsquo;here&rsquo; and it&rsquo;s parent page is &lsquo;right&rsquo;, and that page&rsquo;s parent is the home page (with a slug of &lsquo;/&rsquo;) then your current page&rsquo;s <code>url</code> is &lsquo;/right/here/&rsquo;.</p>
+
+<p>So we check to see that to see if it is the same as the url in the request. But also, in this comparison, we check to see if the <code>live</code> flag is set and is false or if the page is <code>published?</code>.</p>
+
+<p>This <code>live</code> flag is a bit strange in appearance:</p>
+
+<pre><code>my_url = self.url
+if (my_url == url) &amp;&amp; (not live or published?)
+</code></pre>
+
+<p>By default, this <code>not live</code> returns false (since <code>live</code> is true by default and we reverse it with <code>not</code>) so it moves on to <code>published?</code>. You might set <code>live</code> to false in other situations, but for now we&rsquo;ll just go with this.</p>
+
+<p>A page is <code>published?</code> if it&rsquo;s status (as stored in the database) is the <a href="http://github.com/radiant/radiant/blob/master/app/models/status.rb#L29">&lsquo;Published&rsquo; Status</a>.</p>
+
+<p>So if the incoming url matches the current page&rsquo;s url (which at the first pass is the root or home page), then we return with the current page:</p>
+
+<pre><code>my_url = self.url
+if (my_url == url) &amp;&amp; (not live or published?)
+  self
+</code></pre>
+
+<h2>Finding deeper pages</h2>
+
+<p>If it isn&rsquo;t true that the incoming url and the current page&rsquo;s url are equal, then we move on to the next step:</p>
+
+<pre><code>my_url = self.url
+if (my_url == url) &amp;&amp; (not live or published?)
+  self
+elsif (url =~ /^#{Regexp.quote(my_url)}([^\/]*)/)
+</code></pre>
+
+<p>Here it matches the incoming url against a Regexp of the current page&rsquo;s url. When it starts, we&rsquo;re matching the root page which has a url of &lsquo;/&rsquo;. If that&rsquo;s the incoming url, it would have been caught in the original <code>if</code> block, but we ended up at the <code>elsif</code>. The Regexp that&rsquo;s used matches the next slug in the incoming url. So if the incoming url is &lsquo;/right/here/&rsquo; then it will match the slug &lsquo;right&rsquo;.</p>
+
+<p>From that match, we find the current page&rsquo;s children by their slug (remembering that the current page is the root, with a slug of &lsquo;/&rsquo;):</p>
+
+<pre><code>elsif (url =~ /^#{Regexp.quote(my_url)}([^\/]*)/)
+  slug_child = children.find_by_slug($1)
+</code></pre>
+
+<p>If it finds that &lsquo;slug_child&rsquo;, then we call <code>find_by_url</code> on that page to loop down the tree to find the final page that we want (which would be the page that responds to the url &lsquo;/right/here&rsquo; or in this simple case, the page with a slug of &lsquo;here&rsquo;). If it finds the page, then it returns the found page:</p>
+
+<pre><code>  slug_child = children.find_by_slug($1)
+  if slug_child
+    found = slug_child.find_by_url(url, live, clean)
+    return found if found
+  end
+</code></pre>
+
+<p>In that <code>if slug_child</code> block, the <code>slug_child.find_by_url</code> acts as a loop. Because every page responds to this method and will do exactly what is happening here for the root page, each page will search it&rsquo;s children for a slug matching the slug from the incoming url and any found page will likewise call <code>find_by_url</code> to search it&rsquo;s children as well.</p>
+
+<p>There is some room here for some optimization in the way we do a lookup for a page, but for now it works and we can get to the refactoring another time.</p>
+
+<h2>When no slug is found: customizing the finder</h2>
+
+<p>If the <code>slug_child</code> is not found (and no child matches that slug) then this <code>if slug_child</code> block is never hit and we move to the next step. This is where the magic happens for subclasses of Page:</p>
+
+<pre><code>  children.each do |child|
+    found = child.find_by_url(url, live, clean)
+    return found if found
+  end
+</code></pre>
+
+<p>It asks each child of the current page if it responds to <code>find_by_url</code> and returns any found page.</p>
+
+<p>So even if none of the pages are found by the slug, we still ask the children if they respond to <code>find_by_url</code>. Why would we do this?</p>
+
+<p>The answer lies in one of the included extensions: <a href="http://github.com/radiant/radiant-archive-extension/blob/master/app/models/archive_page.rb#L18-L34">Archive</a>.</p>
+
+<p>The ArchivePage is a subclass of page which provides it&rsquo;s own <code>find_by_url</code> method. The <code>ArchivePage#find_by_url</code> will check the incoming url for it&rsquo;s details and if it meets certain requirements (namely that there is a standard date format in the url such as &lsquo;articles/2010/06/22&rsquo;) then it will find the appropriate page type such as <code>ArchiveDayIndexPage</code>, <code>ArchiveMonthIndexPage</code> or <code>ArchiveYearIndexPage</code> and return the proper page. If none of those are found it just calls <code>super</code> and calls the original <code>Page#find_by_url</code>.</p>
+
+<p>This can act as your router for your custom page types. If you want to return a particular page type, such as a <code>ProductsPage</code> and your url is &lsquo;/products/1234&rsquo; then you can create a ProductPage which has it&rsquo;s own <code>find_by_url</code> method and would find your <code>ProductDetailsPage</code> to display a standard view of all of your products based upon the slug &lsquo;1234&rsquo; which I&rsquo;d assume would be a product id, but could be anything you want.</p>
+
+<h2>Handling 404</h2>
+
+<p>Lastly, if none of this finds any pages to return, Radiant has a <code>FileNotFoundPage</code> page which allows you to easily create your own 404 error message for content that isn&rsquo;t found. You can subclass a <code>FileNotFoundPage</code> page to provide your own behavior there too. But when searching for a match to an incoming url, Radiant will find deeply nested 404 pages. So you can create a <code>FileNotFoundPage</code> as a child of your root page, but you can also create a <code>FileNotFoundPage</code> as a child of your <code>ProductsPage</code> to return an appropriate message to someone looking for &lsquo;/products/not-a-valid-url&rsquo;.</p>
+
+<p>Here&rsquo;s the code for that last step:</p>
+
+<pre><code>  file_not_found_types = ([FileNotFoundPage] + FileNotFoundPage.descendants)
+  file_not_found_names = file_not_found_types.collect { |x| x.name }
+  condition = (['class_name = ?'] * file_not_found_names.length).join(' or ')
+  condition = "status_id = #{Status[:published].id} and (#{condition})" if live
+  children.find(:first, :conditions =&gt; [condition] + file_not_found_names)
+</code></pre>
+
+<p>The <code>live</code> flag comes into play here again and optionally allows you to find pages that are not published. By default <code>live</code> is true, so in this instance we only check for a <code>FileNotFoundPage</code> that is published.</p>
+
+<p>Radiant has a &lsquo;development&rsquo; mode which would find unpublished pages, but that&rsquo;s a subject for another discussion.</p>
+
+<p>I hope this gives you a good understanding of how Radiant finds its content, and how you can easily bend it to behave differently by creating a subclass of <code>Page</code> and writing your own <code>find_by_url</code> method. If I&rsquo;ve left anything out or if you want me to cover some other aspect, let me know in the comments.</p>
+  
+  <div class="comments">
+    <h2>Comments</h2>
+    
+      
+  <div class="comment" id="comment-102">
+    <p class="author">
+      <a href="http://tknetwork.de">Tristan</a><img src="http://www.gravatar.com/avatar/ac61b1d3a29b24a5ac78e36f136cfbbb?s=40" class="gravatar" />
+      said on Wednesday, June 23, 2010:
+    </p>
+    
+    <div class="content_html"><p>Thanks alot for the clarification. I recently stumbled upon #find_by_url. Searched the Wiki, but couldn&#8217;t find anything useful. Actually I wasn&#8217;t sure if it is the correct approach to overwrite this method in extensions.</p>
+<p>One problem I came across was that I needed to capture a substring of the url for later reference in custom tags (say, an ID). It didn&#8217;t feel right to initialize instance variables in a method called #find_by_url so I refactored it in private methods (say, #product_from_url). But still, this method is called in #find_by_url. Are there any other „hooks“?</p>
+<p>What approach would you recommend for this scenario? What do you think about an <span class="caps">API</span> for extension developers providing something like params[:id]?</p></div>
+    
+    
+  </div>
+
+
+    
+      
+  <div class="comment" id="comment-103">
+    <p class="author">
+      <a href="http://www.saturnflyer.com">Jim Gay</a><img src="http://www.gravatar.com/avatar/09477c358c5897d44121a248326e16d7?s=40" class="gravatar" />
+      said on Wednesday, June 23, 2010:
+    </p>
+    
+    <div class="content_html"><p>Tristan,</p>
+<p>You&#8217;ll have a @request object within your tags through which you can get the request_uri.</p>
+<p>This is from an app developed on 0.6.9 originally (I think) but some example code is:</p>
+<pre><code>uri_parts = @request.request_uri.split(/\//)
+    tag.locals.resource_tag = MetaTag.find_by_name(CGI.unescape(uri_parts[-1]))
+</code></pre>
+<p>But I think we might even have a request method now that does the same thing (instead of the instance variable). I&#8217;d need to look back at the code, but allowing an accessor like params[:id] would be attractive if there is a standard use for it. I&#8217;m open to the idea, but currently unconvinced that there is a need for it. Do you have a project or extension I could view to get a feel for the use case?</p>
+<p>A very long time ago I played with the idea of sending requests to controllers and then back to a Page, but never got anywhere satisfactory with it.</p></div>
+    
+    
+  </div>
+
+
+    
+      
+  <div class="comment" id="comment-115">
+    <p class="author">
+      <a href="http://edmund.haselwanter.com">Edmund Haselwanter</a><img src="http://www.gravatar.com/avatar/cc1d242447b7ea086e7723effe86fe1d?s=40" class="gravatar" />
+      said on Thursday, September 09, 2010:
+    </p>
+    
+    <div class="content_html"><p>is it possible to return with a page_not_found from a tag definition.</p>
+<p>I would like to use the uri and a tag parameter to determine if I can display something. if not I would like to do something like super in find_by_url</p></div>
+    
+    
+  </div>
+
+
+    
+      
+  <div class="comment" id="comment-116">
+    <p class="author">
+      <a href="http://www.saturnflyer.com">Jim Gay</a><img src="http://www.gravatar.com/avatar/09477c358c5897d44121a248326e16d7?s=40" class="gravatar" />
+      said on Tuesday, September 14, 2010:
+    </p>
+    
+    <div class="content_html"><p>You can use super.</p>
+<p>What would you want with a page_not_found from a tag?</p>
+<p>If you&#39;re collecting pages (for example) with r:page:each you&#39;d just not expand the tag if a given page is not found. But I&#39;m not sure I understand the use case. Can you elaborate?</p></div>
+    
+    
+  </div>
+
+
+    
+  </div>
+
+
+  
+      <h3>Post a comment</h3>
+     <form action="/blog/jim/2010/06/22/radiant-pagefind_by_url/comments" method="post" >
+      
+      <p><label for="comment_author">Your Name</label><br />
+      
+      <input type="text" id="comment_author" name="comment[author]" class="required" /></p>
+
+      <p><label for="comment_author_email">Your Email Address</label> (required, but not displayed)<br />
+      
+      <input type="text" id="comment_author_email" name="comment[author_email]" class="required" /></p>
+
+      <p><label for="comment_author_url">Your Web Address</label> (optional)<br />
+      
+      <input type="text" id="comment_author_url" name="comment[author_url]" /></p>
+
+      <p><label for="comment_content">Your Comment</label><br />
+      
+      <label for="comment_filter_id">Filter: <select name="comment[filter_id]"><option value="SCSS">SCSS</option><option value="Sass">Sass</option><option value="SmartyPants">SmartyPants</option><option value="Markdown">Markdown</option><option value="Textile" selected="selected">Textile</option></select></label><br />
+      <textarea id="comment_content" name="comment[content]" class="required" rows="9" cols="40"></textarea></p>
+
+
+      <p><label for="comment_spam_answer">What day follows Wednesday?</label> (required)<br />
+      <input type="text" id="comment_spam_answer" name="comment[spam_answer]" value=""  /><input type="hidden" name="comment[valid_spam_answer]" value="c395246f710b0e2c86b7ed82f7f56ce3" /></p>
+
+
+      <input type="submit" id="submit" name="submit" value="Save Comment"  />
+
+    </form>
+  
+
+
+
+
+
+
+<div class="sidebar">
+
+<div class="addition extra">
+<h2>Get more information.</h2>
+
+<p>Jim Gay also posts on the <a href="http://www.radiantcms.org/blog">Radiant CMS blog</a> along other core members.</p>
+
+<h2>In-depth thoughts</h2>
+
+<p>Check out some of our <a href="http://www.saturnflyer.com/articles/">articles</a>.</p>
+</div>
+
+
+</div>
+
+</div>
+<div id="navigation" class="spaced">
+<ul class="inline_list">
+<li><a href="/about/">About Us</a></li>
+<li><a href="/services/">Services</a></li>
+<li><a href="/projects/">Client Projects</a></li>
+<li><a href="/products/">Our Products</a></li>
+<li class="literature"><a href="/blog/">Blog</a></li>
+</ul>
+</div>
+
+<div class="addition spaced" style="width: 800px; margin: 1em auto">
+		<p>1999 - 2013 &copy; <a href="http://www.saturnflyer.com/">Saturn Flyer LLC</a> 2321 S. Buchanan St. Arlington, VA 22206</p>
+		<p>Call Jim Gay at 571 403 0338</p>
+	</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-3894220-1");
+pageTracker._trackPageview();
+</script></div>
+</body>
+</html>

@@ -1,0 +1,852 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ja-JP">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=EUC-JP">
+	<meta name="generator" content="tDiary 2.2.0">
+	<meta http-equiv="Last-Modified" content="Sat, 20 Nov 2010 09:01:22 GMT">
+	<meta http-equiv="Content-Script-Type" content="text/javascript; charset=EUC-JP">
+	<meta name="author" content="Yukihiro -matz- Matsumoto">
+	
+	<link rel="prev" title="前の日(11-13)" href="http://www.rubyist.net/~matz/1113.html">
+	<link rel="next" title="次の日(11-15)" href="http://www.rubyist.net/~matz/1115.html">
+	<link rel="start" title="最新" href="http://www.rubyist.net/~matz/">
+	
+	
+	
+	<meta http-equiv="content-style-type" content="text/css">
+	<link rel="stylesheet" href="theme/base.css" type="text/css" media="all">
+	<link rel="stylesheet" href="theme/sagegreen/sagegreen.css" title="sagegreen" type="text/css" media="all">
+	<title>Matzにっき(11-14[長年日記])</title>
+	
+  <script type="text/javascript">
+  <!--
+  // http://www.din.or.jp/~hagi3/JavaScript/JSTips/Mozilla/
+  // _dom : kind of DOM.
+  //        IE4 = 1, IE5+ = 2, NN4 = 3, NN6+ = 4, others = 0
+  _dom = document.all?(document.getElementById?2:1)
+                     :(document.getElementById?4
+                     :(document.layers?3:0));
+  var _calendar3_popElement = null;
+  var _calendar3_popCount = 0;
+
+  if (document.compatMode){
+    if (_dom==2 && document.compatMode=="CSS1Compat") _dom = 2.5;
+  } // Win IE6
+
+  function getLeft(div){
+    result = 0;
+    while (1){
+      div = div.offsetParent;
+      result += div.offsetLeft;
+      if (div.tagName=="BODY") return result;
+    }
+  }
+
+  function getTop(div){
+    result = 0;
+    while (1){
+      div = div.offsetParent;
+      result += div.offsetTop;
+      if (div.tagName=="BODY") return result;
+    }
+  }
+
+  function moveDivTo(div,left,top){
+    if(_dom==4){
+      div.style.left=left+'px';
+      div.style.top =top +'px';
+      return;
+    }
+    if(_dom==2.5 || _dom==2 || _dom==1){
+      div.style.pixelLeft=left;
+      div.style.pixelTop =top;
+      return;
+    }
+    if(_dom==3){
+      div.moveTo(left,top);
+      return;
+    }
+  }
+
+  function moveDivBy(div,left,top){
+    if(_dom==4){
+      div.style.left=div.offsetLeft+left;
+      div.style.top =div.offsetTop +top;
+      return;
+    }
+    if(_dom==2.5 || _dom==2){
+      div.style.pixelLeft=div.offsetLeft+left;
+      div.style.pixelTop =div.offsetTop +top;
+      return;
+    }
+    if(_dom==1){
+      div.style.pixelLeft+=left;
+      div.style.pixelTop +=top;
+      return;
+    }
+    if(_dom==3){
+      div.moveBy(left,top);
+      return;
+    }
+  }
+
+  function getDivLeft(div){
+    if(_dom==2.5) return div.offsetLeft+getLeft(div);
+    if(_dom==4 || _dom==2) return div.offsetLeft;
+    if(_dom==1)            return div.style.pixelLeft;
+    if(_dom==3)            return div.left;
+    return 0;
+  }
+
+  function getDivTop(div){
+    if(_dom==2.5) return div.offsetTop+getTop(div);
+    if(_dom==4 || _dom==2) return div.offsetTop;
+    if(_dom==1)            return div.style.pixelTop;
+    if(_dom==3)            return div.top;
+    return 0;
+  }
+
+  function getDivWidth (div){
+    if(_dom==4 || _dom==2.5 || _dom==2) return div.offsetWidth;
+    if(_dom==1)            return div.style.pixelWidth;
+    if(_dom==3)            return div.clip.width;
+    return 0;
+  }
+
+  function getDivHeight(div){
+    if(_dom==4 || _dom==2.5 || _dom==2) return div.offsetHeight;
+    if(_dom==1)            return div.style.pixelHeight;
+    if(_dom==3)            return div.clip.height;
+    return 0;
+  }
+
+  function popup(target,element,notitle) {
+    _calendar3_popCount++;
+    popdownNow();
+    if (navigator.appName=='Microsoft Internet Explorer') {
+      moveDivTo(element,getDivLeft(target)+getDivWidth(target),getDivTop(target)+getDivHeight(target)*13/8);
+    } else {
+      moveDivTo(element,getDivLeft(target)+getDivWidth(target)/2,getDivTop(target)+(getDivHeight(target)*2)/3);
+    }
+    element.style.display="block";
+    notitle.title="";
+  }
+
+  function popdown(element) {
+    _calendar3_popElement=element;
+    setTimeout('popdownDelay()', 2000);
+  }
+
+  function popdownDelay() {
+    _calendar3_popCount--;
+    if (_calendar3_popCount==0) {
+      popdownNow();
+    }
+  }
+
+  function popdownNow() {
+    if (_calendar3_popElement!=null) {
+      _calendar3_popElement.style.display="none";
+      _calendar3_popElement=null;
+    }
+  }
+  // -->
+</script>
+	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+	</script>
+	<script type="text/javascript">
+	_uacct = "UA-58636-2";
+	urchinTracker();
+	</script>
+	<link rel="alternate" type="application/rss+xml" title="RSS(with comments and spams)" href="http://www.rubyist.net/~matz/comments.rdf">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.rubyist.net/~matz/index.rdf">
+	<meta name="robots" content="noindex,follow">
+</head>
+<body>
+
+
+<div class="adminmenu">
+<span class="adminmenu"><a href="http://www.rubyist.net/~matz/1113.html">&laquo;前の日(11-13)</a></span>
+<span class="adminmenu"><a href="http://www.rubyist.net/~matz/">最新</a></span>
+<span class="adminmenu"><a href="http://www.rubyist.net/~matz/1115.html">次の日(11-15)&raquo;</a></span>
+<span class="adminmenu"><a href="https://www.rubyist.net/~matz/update.rb" rel="nofollow">追記</a></span>
+</div>
+
+<h1>Matzにっき</h1>
+<div class="right">
+<form method="get" action="rast-search.rb" class="grepform">
+<input type="text" name="query" size="20" value="" class="search">
+<input type="submit" value="検索"></p>
+</form>
+</div>
+<span class="calendar-prev-month"><a href="http://www.rubyist.net/~matz/200310.html">&lt;&lt;</a></span>
+<span class="calendar-current-month"><a href="http://www.rubyist.net/~matz/200311.html">2003/11</a>/</span>
+<span class="calendar-normal"><a class="calendar-saturday">1</a></span>
+<span class="calendar-normal"><a class="calendar-sunday">2</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">3</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">4</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">5</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">6</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">7</a></span>
+<span class="calendar-normal"><a class="calendar-saturday">8</a></span>
+<span class="calendar-normal"><a class="calendar-sunday">9</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">10</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">11</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">12</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">13</a></span>
+<span class="calendar-day" id="target-14" onmouseover="popup(document.getElementById('target-14'),document.getElementById('popup-14'), document.getElementById('title-14'));" onmouseout="popdown(document.getElementById('popup-14'));">
+  <a class="calendar-weekday" id="title-14" title="1. Ruby Conference 1日め
+&#13;&#10;2. 深夜放送
+" href="http://www.rubyist.net/~matz/20031114.html">14</a>
+  <span class="calendar-popup" id="popup-14">
+    <a href="http://www.rubyist.net/~matz/20031114.html#p01" title=" Working in the Garden: Web Apps with Borges - Eric Hodel 各ページの状態をContinuationとして保存するWebアプリケーション..">1</a>. Ruby Conference 1日め
+<br>
+    <a href="http://www.rubyist.net/~matz/20031114.html#p02" title="明日のスライドの最終修正をしながら、 部屋のケーブルテレビで映画を見る。 『Transporter』 えーと、なんというか、フランス版..">2</a>. 深夜放送
+<br>
+  </span>
+</span>
+<span class="calendar-normal"><a class="calendar-saturday">15</a></span>
+<span class="calendar-normal"><a class="calendar-sunday">16</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">17</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">18</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">19</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">20</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">21</a></span>
+<span class="calendar-normal"><a class="calendar-saturday">22</a></span>
+<span class="calendar-normal"><a class="calendar-sunday">23</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">24</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">25</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">26</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">27</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">28</a></span>
+<span class="calendar-normal"><a class="calendar-saturday">29</a></span>
+<span class="calendar-normal"><a class="calendar-sunday">30</a></span>
+<span class="calendar-next-month"><a href="http://www.rubyist.net/~matz/200312.html">&gt;&gt;</a></span>
+
+
+
+
+<hr class="sep">
+
+
+	
+<div class="day">
+<h2><span class="date">
+<a href="http://www.rubyist.net/~matz/20031114.html">2003-11-14</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="http://www.rubyist.net/~matz/20031114.html#p01"><span class="sanchor">_</span></a> [<a href="http://www.rubyist.net/~matz/?year=2003;month=4Q;category=Ruby">Ruby</a>]Ruby Conference 1日め</h3>
+<ul>
+<li><p>Working in the Garden: Web Apps with Borges - Eric Hodel</p>
+<p>各ページの状態をContinuationとして保存するWebアプリケーションフレームワーク、
+Borgesの説明。元々は
+Avi Briantが作ったもの。Smalltalk版のSeasideからの逆移植。
+おもしろい仕組みではあるが、どこまで実用になるんだろうか。</p>
+<p><a href="http://www.zenspider.com/dl/rubyconf2003/Borges.pdf">資料</a>。</p></li>
+<li><p>The State of XML Processing in Ruby - James Britt</p>
+<p>RubyにおけるXMLの現状。なんとたくさんのライブラリがあることか。</p></li>
+<li><p>Object-relational mapping with Lafcadio - Francis Hwang</p>
+<p>リレーショナルデータベースをオブジェクトにマップするフレームワークLafcadioの紹介。
+<a href="http://madeleine.sourceforge.net/">Madeleine</a>のような
+<a href="http://www.prevayler.org/wiki.jsp?topic=PrevalenceSkepticalFAQ">Object Prevalence</a>を
+使うアプローチもあるが、既存のデータベース資産を活用したかったということ。
+彼自身が開発したいくつかのWebサイトで活用されているということ。</p>
+<p>しかし、Francisは早口でついていくのがやっとだったりする。</p></li>
+<li><p>Ruby World: (not) Implemented - Steve Tuckner</p>
+<p>発表を申し込んだ時にはRuby Worldの実装について語ろうと思ったが、
+全然時間が取れなかったので、企業にRubyを導入するというテーマに変更した、というもの。
+次の日のJim Freezeの発表とちょっとカブってるかな。</p>
+<p>しかし、結局Ruby Worldがなんであるかはよくわからなかった。次回に期待。</p>
+<p><a href="http://www.zenspider.com/dl/rubyconf2003/RubyNotImplemented.tar.gz">資料</a>。</p></li>
+<li><p>Generating Code in Ruby - Jack Herrington</p>
+<p>タイトルにも表紙にもRubyとは一言も書いてないが、例題は全部Rubyで書いてあるという
+『<a href="http://www.amazon.co.jp/exec/obidos/redirect?tag=ruby-22%26link_code=xm2%26camp=2025%26creative=165953%26path=http://www.amazon.co.jp/gp/redirect.html%253fASIN=1930110979%2526tag=ruby-22%2526lcode=xm2%2526cID=2025%2526ccmID=165953%2526location=/o/ASIN/1930110979%25253FSubscriptionId=1CVA98NEF1G753PFESR2">Code Generation in Action</a>』の著者、
+Jack Herringtonがコード生成のパワーについて語る。</p>
+<p><a href="http://www.zenspider.com/dl/rubyconf2003/GeneratingCode.pdf">資料</a>。</p></li>
+<li><p>Roundtable</p>
+<p>Rubyの作者まつもとを囲んで質疑応答。なんについて語ったっけ。覚えてない。</p></li>
+</ul>
+<p>カンファレンス全体の
+<a href="http://www.zenspider.com/Languages/Ruby/RubyConf2003.html">資料はここ</a>。</p>
+<p>このホテルにはインターネット接続がない。来年の会場にはネットアクセスを希望したい。
+夕食にSchlotzsky's Deliにいき、ワイアレス接続。</p>
+
+</div>
+<div class="section">
+
+<h3><a href="http://www.rubyist.net/~matz/20031114.html#p02"><span class="sanchor">_</span></a> [<a href="http://www.rubyist.net/~matz/?year=2003;month=4Q;category=%B1%C7%B2%E8">映画</a>]深夜放送</h3>
+<p>明日のスライドの最終修正をしながら、
+部屋のケーブルテレビで映画を見る。</p>
+<ul>
+<li><p>『Transporter』</p>
+<p>えーと、なんというか、フランス版ダイ・ハード？
+主人公、クールな仕事人という最初の印象と後半の印象が全然違う。</p></li>
+<li><p>『Blind Fury』</p>
+<p>ルトガー・ハウアー主演、西洋版座頭市。
+ただ単に似ているというだけでなく、本当に座頭市の翻案らしい。
+実は前から好きな映画である。</p></li>
+</ul>
+<p>結局早朝まで起きている。時差ぼけというわけではないようだが。</p>
+
+</div>
+
+<div style="text-align: center;"><script type="text/javascript"><!--
+google_ad_client = "pub-1068577065829336";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_channel ="1130103482";
+google_color_border = "CCCCCC";
+google_color_bg = "FFFFFF";
+google_color_link = "000000";
+google_color_url = "666666";
+google_color_text = "333333";
+//--></script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+
+<div class="comment">
+
+	<div class="caption">[<a href="http://www.rubyist.net/~matz/20031114.html#c">ツッコミを入れる</a>]</div>
+</div>
+
+
+
+	<div class="comment trackbacks">
+		<div class="caption">
+			[TrackBack URL: <a href="http://www.rubyist.net/~matz/tb.rb/20031114">http://www.rubyist.net/~matz/tb.rb/20031114</a>]
+		</div>
+		<div class="commentshort trackbackshort">
+		</div>
+	</div>
+
+
+
+
+
+		<div class="referer">
+		
+		</div>
+</div>
+
+
+	<hr class="sep">
+	
+<div class="day">
+<h2><span class="date">
+<a href="http://www.rubyist.net/~matz/20041114.html">2004-11-14</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="http://www.rubyist.net/~matz/20041114.html#p01"><span class="sanchor">_</span></a> [<a href="http://www.rubyist.net/~matz/?year=2003;month=4Q;category=%B6%B5%B2%F1">教会</a>]松江</h3>
+<p>先週ステーク大会だったので、今日が断食安息日。松江出席。</p>
+<p>日曜学校の時間、突然妻が現れて驚いた。家で休んでいるはずだったのに。
+結果的に「ちび」のお披露目になった。もっとも、1時間ほどで先に帰ったんだけど。</p>
+<p>午後、息子の自転車の練習につきあう。
+というか、全然乗れない子供の練習ってのは毎回支えないといけないし、
+結構な時間走り回ることになって、体力の衰え著しいプログラマには相当辛いんですけど。</p>
+<p>ぐったりした休日であった。まだまだ練習につきあわなくてはいけなそうだ。</p>
+
+</div>
+
+<div style="text-align: center;"><script type="text/javascript"><!--
+google_ad_client = "pub-1068577065829336";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_channel ="1130103482";
+google_color_border = "CCCCCC";
+google_color_bg = "FFFFFF";
+google_color_link = "000000";
+google_color_url = "666666";
+google_color_text = "333333";
+//--></script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+
+<div class="comment">
+
+	<div class="caption">[<a href="http://www.rubyist.net/~matz/20041114.html#c">ツッコミを入れる</a>]</div>
+</div>
+
+
+
+	<div class="comment trackbacks">
+		<div class="caption">
+			[TrackBack URL: <a href="http://www.rubyist.net/~matz/tb.rb/20041114">http://www.rubyist.net/~matz/tb.rb/20041114</a>]
+		</div>
+		<div class="commentshort trackbackshort">
+		</div>
+	</div>
+
+
+
+
+
+		<div class="referer">
+		
+		</div>
+</div>
+
+
+	<hr class="sep">
+	
+<div class="day">
+<h2><span class="date">
+<a href="http://www.rubyist.net/~matz/20051114.html">2005-11-14</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="http://www.rubyist.net/~matz/20051114.html#p01"><span class="sanchor">_</span></a> [<a href="http://www.rubyist.net/~matz/?year=2003;month=4Q;category=%B8%B6%B9%C6">原稿</a>] オープンソースマガジン 1月号</h3>
+<p>月例のハッカーズライフ。今月は「ソースコードを読む」話。</p>
+<p>まあ、2ページしかないんであまり突っ込んだ話は書けないが、
+どう読むか、とか、どういうツールを使うかとか。</p>
+<p>でも、普段、私がソースコードを読むときには近代的なツールは使わないで
+grepに頼りきってるんだよなあ。ctagsすら使わないのはいかがなものか、という気もしないでもない。</p>
+<p>Rubyではデバッガも使わないし、IDEも使えないし。
+完全にオールドタイプだな。</p>
+
+</div>
+<div class="section">
+
+<h3><a href="http://www.rubyist.net/~matz/20051114.html#p02"><span class="sanchor">_</span></a> [<a href="http://www.rubyist.net/~matz/?year=2003;month=4Q;category=OSS">OSS</a>] <a href="http://japan.linux.com/enterprise/05/11/14/0152256.shtml?topic=1">Sleepycat -- 健全な収益構造を持つオープンソース企業の見事な例</a></h3>
+<p>まあ、ちゃんとつぶれないで事業を継続している点は尊敬に値する。</p>
+<p>でも、MySQL AB (MySQL)もTrolltec (Qt) もSleepycat (BDBM) も、自らのビジネスモデルのために外部からのコードは基本的に受け取らない(か、著作権<del>上と</del>譲渡契約を行う)必要があるんだよね。それはバザールモデルを強調するオープンソースの立場からは、「見事な例」とはちょっと違うような気がする。</p>
+<p>ま、ソースコードが自由なライセンスで提供されているという、私が一番欲しい自由が提供されている以上、文句を言うつもりはないけれども。</p>
+
+</div>
+<div class="section">
+
+<h3><a href="http://www.rubyist.net/~matz/20051114.html#p03"><span class="sanchor">_</span></a> [<a href="http://www.rubyist.net/~matz/?year=2003;month=4Q;category=Ruby">Ruby</a>] <a href="http://jooto.com/blog/index.php/2005/11/13/superior-or-just-easier/">Ethical Software by Alex Bunardzic &amp;raquo; Superior or Just Easier?</a></h3>
+<p>「優れている」とはタフな問題を解決することだ、と考えがちだが、
+もっと「簡単な」道があるかもしれない。</p>
+<blockquote>
+<p>What really caught my attention in that comment is the underlying assumption that something could either be superior, or easy. This belies the heroic mentality of the tough, battle hardened modern man, who is used to struggling in life, knowing that it don’t come easy.</p>
+<p>Along come these wacky dudes, like for example Matz and the aforementioned David, and gently tap these people on the shoulder, and try to make them see that, hey, you don’t have to always suffer for your work. Maybe there is a way to make it easer?</p>
+</blockquote>
+
+<p>肩の力を抜いて生きよう。</p>
+
+</div>
+
+<div style="text-align: center;"><script type="text/javascript"><!--
+google_ad_client = "pub-1068577065829336";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_channel ="1130103482";
+google_color_border = "CCCCCC";
+google_color_bg = "FFFFFF";
+google_color_link = "000000";
+google_color_url = "666666";
+google_color_text = "333333";
+//--></script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+
+<div class="comment">
+
+		<div class="caption">本日のツッコミ(全6件) [<a href="http://www.rubyist.net/~matz/20051114.html#c">ツッコミを入れる</a>]</div>
+		<div class="commentshort">
+				<p><a href="http://www.rubyist.net/~matz/20051114.html#c01"><span class="canchor">_</span></a>
+				<span class="commentator">び</span>&nbsp;[s/上と/譲渡/ でしょうか。]</p>
+				<p><a href="http://www.rubyist.net/~matz/20051114.html#c02"><span class="canchor">_</span></a>
+				<span class="commentator">まつもと</span>&nbsp;[その通りです。「び」さん、チェックが早いですね。]</p>
+				<p><a href="http://www.rubyist.net/~matz/20051114.html#c03"><span class="canchor">_</span></a>
+				<span class="commentator">babie</span>&nbsp;[挙げられた2社が基本的に受け取らないかどうかは知らないですが、FSFも譲渡を要求しますよね。  なぜFSFは貢献者に..]</p>
+				<p><a href="http://www.rubyist.net/~matz/20051114.html#c04"><span class="canchor">_</span></a>
+				<span class="commentator">まつもと</span>&nbsp;[その通りです。まあ、FSFは元々オープンソースに関心ありませんしね。]</p>
+				<p><a href="http://www.rubyist.net/~matz/20051114.html#c05"><span class="canchor">_</span></a>
+				<span class="commentator">通りすがり</span>&nbsp;[「バザールモデルを強調するオープンソースの立場」という言葉は二通りに解釈できて曖昧なので、そのうち事実に反しない方を..]</p>
+				<p><a href="http://www.rubyist.net/~matz/20051114.html#c06"><span class="canchor">_</span></a>
+				<span class="commentator">まつもと</span>&nbsp;[あ、そんな感じです。明確にしてくださってありがとうございます。＞ 通りすがりさん。  いつもお世話になってます。いや..]</p>
+		</div>
+</div>
+
+
+
+	<div class="comment trackbacks">
+		<div class="caption">
+			[TrackBack URL: <a href="http://www.rubyist.net/~matz/tb.rb/20051114">http://www.rubyist.net/~matz/tb.rb/20051114</a>]
+		</div>
+		<div class="commentshort trackbackshort">
+		</div>
+	</div>
+
+
+
+
+
+		<div class="referer">
+		
+		</div>
+</div>
+
+
+	<hr class="sep">
+	
+<div class="day">
+<h2><span class="date">
+<a href="http://www.rubyist.net/~matz/20061114.html">2006-11-14</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="http://www.rubyist.net/~matz/20061114.html#p01"><span class="sanchor">_</span></a> [<a href="http://www.rubyist.net/~matz/?year=2003;month=4Q;category=%B8%B6%B9%C6">原稿</a>] オープンソースマガジン 2006年1月号</h3>
+<p>なんか、原稿ばっかり書いてるな。</p>
+<p>オープンソースマガジン最終号でライセンスについて取り扱うということで、
+以前の「<a href="http://www.rubyist.net/~matz/20030608.html#p02">フリーソフトウェアライセンス診断</a>」なんかに似た線でなにか、という依頼。</p>
+<p>以前書いたネタだからと思って気楽に書きはじめたら、
+いろいろ難しかったり、分量に納めるのに苦労したり。</p>
+<p>あと、「ハッカーズライフ」とちょっとかぶったり、
+特集のほかの記事とかぶったりしそうだ。</p>
+
+</div>
+<div class="section">
+
+<h3><a href="http://www.rubyist.net/~matz/20061114.html#p02"><span class="sanchor">_</span></a> [<a href="http://www.rubyist.net/~matz/?year=2003;month=4Q;category=OSS">OSS</a>] <a href="http://opentechpress.jp/news/article.pl?sid=06/11/13/1012253&amp;from=rss">ISID、Seasar2商用サポートサービスを拡張、バージョン固定サポートを導入</a></h3>
+<p>ISIDがSeaser2の商用サポートサービスで、特定のバージョンをサポートしつづけるオプションを提供する、という話。</p>
+<p>商売としてはいろいろなオプションが増えるのを見るのはありがたい。
+そうやって、市場の理解が進めば、ひいては私たちにも恩恵がある(可能性がないとまでは言えない)。</p>
+
+</div>
+<div class="section">
+
+<h3><a href="http://www.rubyist.net/~matz/20061114.html#p03"><span class="sanchor">_</span></a> [<a href="http://www.rubyist.net/~matz/?year=2003;month=4Q;category=OSS">OSS</a>] <a href="http://japan.zdnet.com/news/software/story/0,2000056195,20313407,00.htm?ref=rss">サン、「Java ME」と「Java SE」のソースコードをGPLライセンスで公開へ</a></h3>
+<p>えーと、GPLを選ぶというのは正直意外であった。
+望ましいことであると思う。</p>
+<p>あと、この件については<a href="http://headius.blogspot.com/2006/11/java-open-sourced-under-gpl-sun-shines.html">JRubyのCharles Nutterのエントリ</a>も紹介しておく。</p>
+
+</div>
+
+<div style="text-align: center;"><script type="text/javascript"><!--
+google_ad_client = "pub-1068577065829336";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_channel ="1130103482";
+google_color_border = "CCCCCC";
+google_color_bg = "FFFFFF";
+google_color_link = "000000";
+google_color_url = "666666";
+google_color_text = "333333";
+//--></script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+
+<div class="comment">
+
+	<div class="caption">[<a href="http://www.rubyist.net/~matz/20061114.html#c">ツッコミを入れる</a>]</div>
+</div>
+
+
+
+	<div class="comment trackbacks">
+		<div class="caption">
+			[TrackBack URL: <a href="http://www.rubyist.net/~matz/tb.rb/20061114">http://www.rubyist.net/~matz/tb.rb/20061114</a>]
+		</div>
+		<div class="commentshort trackbackshort">
+		</div>
+	</div>
+
+
+
+
+
+		<div class="referer">
+		
+		</div>
+</div>
+
+
+	<hr class="sep">
+	
+<div class="day">
+<h2><span class="date">
+<a href="http://www.rubyist.net/~matz/20101114.html">2010-11-14</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="http://www.rubyist.net/~matz/20101114.html#p01"><span class="sanchor">_</span></a> [<a href="http://www.rubyist.net/~matz/?year=2003;month=4Q;category=Ruby">Ruby</a>] RubyConf 2010 キーノート(3)</h3>
+<p>で、最後に「Diversity(多様性)」である。</p>
+<p>初日のDave Thomasのキーノートでも3つの重要なこととして、
+Diversifyをあげていた。多様性は重要なのである。</p>
+<p>とはいえ、多様性はいいことばかりでもない。
+Rubyにおける多様性といえば、昨今数々登場している別実装である。</p>
+<ul>
+<li>CRuby (1.9, 1.8)</li>
+<li>JRuby</li>
+<li>Rubinius</li>
+<li>IronRuby</li>
+<li>MacRuby</li>
+<li>MagLev</li>
+</ul>
+<p>などなど、多くのRuby実装がある。これら以外にも「Rubyっぽい言語」まで含めると
+本当にいくつあるのか見当もつかない。</p>
+<p>昔はPythonの人たちに「Ruby(とPerl)は複雑すぎて、別実装は登場しそうにない。
+Pythonを見てみろ、CPythonとJytonとIronPythonがある」などと言われたものだが、
+今や別実装の数ではRubyの方がしのいでいる。Pythonの方もPyPyとか新しいものも登場してるが。</p>
+<p>が、一方、このような多様性にはコストがかかる。
+まあ、プラットフォームの違うJRubyはおいておくとしても、
+CRubyとRubiniusとMacRubyで分散しているリソースを集約すれば、
+もっと早く言語(実装)が進歩するような気もしないでもない。</p>
+<p>しかし、オープンソースプロジェクトでは結局はそれぞれの参加者がやりたいように関わって
+モチベーションを維持することの方がはるかに重要だ。</p>
+<p>多様性は善で、コストは必要経費であるというのが私の認識である。</p>
+<p>さて、多様性は善であるので、さらにそれを豊かにするために
+私自ら新たな処理系を送り込もうと思う。</p>
+<p>それは RiteVM であり、組み込みなど小規模なデバイス向けをターゲットとした処理系である。</p>
+<p>現在のRubyは元々Unixをベースにして開発されたものであり、
+UnixやPOSIX APIを提供しないような小さなデバイスや、
+アプリケーションへの組み込みなどはあまり重視されてこなかった。</p>
+<p>しかし、一方、組み込み分野などではデバイス性能の向上で
+ソフトウェアの比重が高まりつつあり、
+実行速度やリアルタイム性がそれほど要求されない分野で
+Rubyのような「高級」な言語を使いたいという要求はそれなりにあるようだ。</p>
+<p>そこで、以下のような処理系を新規に開発する</p>
+<ul>
+<li>小規模なRuby言語処理系</li>
+<li>機能はほぼRuby標準規格を満たす最小限。
+    さらにファイルI/Oなどは取り除く(後で追加可能)</li>
+<li>実装はLuaを意識</li>
+<li>VM構造体を提供。グローバル変数を使わない</li>
+<li>機能はコンポーネントとして提供。必要に応じて外せる。
+    たとえばコンパイラを外してevalもなし、などが実現できる</li>
+<li>ターゲットの要求に合わせてコンパイル時にさまざまに設定可能。
+    たとえば浮動小数点数をdoubleにするかfloatにするか、
+    Fixnumをintにするか、longにするか、long longにするか、など。
+    逆にいうと「どこでも同じように動く」は追求しない</li>
+<li>浮動小数点数はimmediate(shootout対策w)。</li>
+<li>VMは32ビットワード命令、レジスタベース。命令セットもLuaに類似。</li>
+<li>GCはレイテンシを重視。インクリメンタルアルゴリズムを採用。
+    世代別についても検討したい</li>
+</ul>
+<p>このVM開発のプロジェクトコードネームは Rite と称することにする。
+RiteVMの開発は、経済産業省 平成22年度「地域イノベーション創出研究開発事業」の一環として行われる。</p>
+<p>これにより、たとえば</p>
+<ul>
+<li>ゲームの組み込みスクリプト</li>
+<li>デジタル家電のソフトウェア開発</li>
+<li>組み込み機器やロボットの非リアルタイム制御</li>
+</ul>
+<p>などにRuby(のサブセット)が使えるようにする。</p>
+<p>もちろん、今すぐにそうなるとは思っていないが、
+今から準備すれば数年後には現実にできると考えている(ビジネス上の成功は別だけど）。</p>
+<p>と、ぶちあげてしまったので、もう後に引けなくなったな。</p>
+<h4>FAQ</h4>
+<dl>
+<dt>いつ Rite が使えるようになるの？</dt>
+<dd>
+わかりません。が、上述の通り、経済産業省の事業なので事業が終了する2011年度末には
+なんらかの成果をあげないと、いろいろまずいことに...。
+</dd>
+<dt>RiteVMはオープンソースになるの？</dt>
+<dd>
+はい。MITライセンスを考えています。ただし、今回(とその周辺)の開発で
+ビジネスモデルを確立する必要があるので、あるいはGPL＋商用ライセンスの
+MySQLモデルになるかもしれません。
+いずれにせよ、オープンソースになることは期待して良いでしょう。
+</dd>
+<dt>RiteVMが登場したらCRubyはお蔵入り？</dt>
+<dd>
+そんなことはありません。Riteは分野限定の小規模実装ですから、
+フル機能実装であるCRubyの代替にはならないでしょう。
+</dd>
+<dt>C APIはどうなるの？</dt>
+<dd>
+今までのCRubyのAPIとは異なるものになります。CRubyのAPIは非常に使いやすいけれども
+組み込みにはあまり向かないからです。技術的には不可能ではなさそうですが、
+互換レイヤーを導入する予定は当面ありません。
+</dd>
+<dt>RiteVMはM17Nを提供しますか？</dt>
+<dd>
+いいえ、コンパイル時にASCIIかUTF-8を選択してください。
+エンコード変換機能も(標準では)提供しません。
+</dd>
+<dt>native threadをサポートしますか？</dt>
+<dd>
+いいえ、RiteVMそのものはスレッドをサポートしません。
+native threadを活用したい時には各スレッドにVMを割り当ててください。
+fiberはVMで提供するかもしれませんが、予定は未定です。
+</dd>
+<dt>RiteVMはYARV/JRuby/Rubiniusより高い性能が出ますか？</dt>
+<dd>
+たぶんそんなに性能は出ません。ただし、Floatの即値化とかのおかげで
+いくつかのベンチマークでは良い性能がでるかもしれません。
+</dd>
+<dt>RiteVMの開発に貢献できますか？</dt>
+<dd>
+オープンソース化されるまで待ってください。
+githubで公開されると思います。gitの勉強しないとな
+</dd>
+<dt>Riteって聞いたことあるんだけど</dt>
+<dd>
+2003年のRubyConfキーノートでRuby 2.0の実装コードネームとして提案した名称です。
+結局、新しいVMはYARVが採用されたわけですが、まさかこんな形で復活するとは。
+</dd>
+<dt>まつもとさんはCRubyの開発から引退するんですか？</dt>
+<dd>
+今でも十分貢献できてないんですが、引退するつもりはありません。
+CRubyはRubyの第一実装であり続けますし、
+私もRubyの設計者であり、コミュニティーのリーダーであり続けます。
+</dd>
+</dl>
+
+</div>
+
+<div style="text-align: center;"><script type="text/javascript"><!--
+google_ad_client = "pub-1068577065829336";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_channel ="1130103482";
+google_color_border = "CCCCCC";
+google_color_bg = "FFFFFF";
+google_color_link = "000000";
+google_color_url = "666666";
+google_color_text = "333333";
+//--></script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+
+<div class="comment">
+
+		<div class="caption">本日のツッコミ(全5件) [<a href="http://www.rubyist.net/~matz/20101114.html#c">ツッコミを入れる</a>]</div>
+		<div class="commentshort">
+				<p><a href="http://www.rubyist.net/~matz/20101114.html#c01"><span class="canchor">_</span></a>
+				<span class="commentator">ささだ</span>&nbsp;[RiteVM を (C)Ruby 2.0 のベースにしたほうが、色々幸せになれそうな気がします。性能とかも。]</p>
+				<p><a href="http://www.rubyist.net/~matz/20101114.html#c02"><span class="canchor">_</span></a>
+				<span class="commentator">とりまん</span>&nbsp;[ゲームに組み込むならバインダー周りの整備も期待したいです。]</p>
+				<p><a href="http://www.rubyist.net/~matz/20101114.html#c03"><span class="canchor">_</span></a>
+				<span class="commentator">まつもと</span>&nbsp;[バインダーってなんでしょう？ swigとかtoluaのようなもの？]</p>
+				<p><a href="http://www.rubyist.net/~matz/20101114.html#c04"><span class="canchor">_</span></a>
+				<span class="commentator">morita</span>&nbsp;[たぶんそうでしょうね。&lt; バインダ IDL をつかわずテンプレートでちょこっと細工すると C++ のネイティブメソッ..]</p>
+				<p><a href="http://www.rubyist.net/~matz/20101114.html#c05"><span class="canchor">_</span></a>
+				<span class="commentator">yachi</span>&nbsp;[組込み、期待してます！スクリプトの再利用、機器間移動、クロス開発などが容易なようにプロファイルみたいな仕組みもできる..]</p>
+		</div>
+</div>
+
+
+
+	<div class="comment trackbacks">
+		<div class="caption">
+			[TrackBack URL: <a href="http://www.rubyist.net/~matz/tb.rb/20101114">http://www.rubyist.net/~matz/tb.rb/20101114</a>]
+		</div>
+		<div class="commentshort trackbackshort">
+		</div>
+	</div>
+
+
+
+
+
+		<div class="referer">
+		
+		</div>
+</div>
+
+
+	<hr class="sep">
+
+<div class="adminmenu">
+<span class="adminmenu"><a href="http://www.rubyist.net/~matz/1113.html">&laquo;前の日(11-13)</a></span>
+<span class="adminmenu"><a href="http://www.rubyist.net/~matz/">最新</a></span>
+<span class="adminmenu"><a href="http://www.rubyist.net/~matz/1115.html">次の日(11-15)&raquo;</a></span>
+<span class="adminmenu"><a href="https://www.rubyist.net/~matz/update.rb" rel="nofollow">追記</a></span>
+</div>
+<center>
+<!-- Rakuten Dynamicad FROM HERE -->
+<script type="text/javascript">
+<!-- 
+rakuten_template = "728_90_txt";
+rakuten_affiliateId = "059c6b10.b3eb768e.059c6b11.e98254f4";
+rakuten_target = "_blank";
+rakuten_color_bg = "FFFFFF";
+rakuten_color_border = "BF0000";
+rakuten_color_text = "000000";
+rakuten_color_link = "0000FF";
+rakuten_color_price = "CC0000";
+//--></script>
+<script type="text/javascript"
+  src="http://dynamic.rakuten.co.jp/js/rakuten_dynamic.js">
+</script>
+<!-- Rakuten Dynamicad TO HERE -->
+</center><br>
+
+<a href="http://trackfeed.com/"><img name="trackfeed_banner" src="http://img.trackfeed.com/img/tfg.gif" alt="track feed" border="0" align="absmiddle" /></a>
+<nobr><a href="http://trackfeed.com/u/8812bdcfc0b3f5e81039fbe7e75967d58b534a24/Matz%E3%81%AB%E3%81%A3%E3%81%8D/http%3A%2F%2Fwww.rubyist.net%2F%7Ematz%2F/ca1b4d15">Matzにっき</a></nobr>
+<script type="text/javascript">
+document.write(unescape("%3Cscript src='http://script.trackfeed.com/usr/f/5/0257873c.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<!-- Creative Commons License -->
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/2.1/jp/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.gif" /></a>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/2.0/jp/">Creative Commons License</a>.
+<!-- /Creative Commons License -->
+
+<!--
+
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <dc:type rdf:resource="http://purl.org/dc/dcmitype/Text" />
+   <license rdf:resource="http://creativecommons.org/licenses/by-nc/2.0/jp/" />
+</Work>
+
+<License rdf:about="http://creativecommons.org/licenses/by-nc/2.0/jp/">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+
+</rdf:RDF>
+
+-->
+
+
+
+
+<div class="footer">
+Generated by <a href="http://www.tdiary.org/">tDiary</a> version 2.2.0<br>
+Powered by <a href="http://www.ruby-lang.org/">Ruby</a> version 1.8.7
+</div>
+</body>
+</html>

@@ -1,0 +1,472 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+
+<title>GuiProgramming - Python Wiki</title>
+<script type="text/javascript" src="/wiki/common/js/common.js"></script>
+
+<script type="text/javascript">
+<!--
+var search_hint = "Search";
+//-->
+</script>
+
+
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/wiki/europython/css/common.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="/wiki/europython/css/screen.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="/wiki/europython/css/print.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="/wiki/europython/css/projection.css">
+
+<!-- css only for MS IE6/IE7 browsers -->
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/wiki/europython/css/msie.css">
+<![endif]-->
+
+
+<link rel="alternate" title="Python Wiki: GuiProgramming" href="/moin/GuiProgramming?diffs=1&amp;show_att=1&amp;action=rss_rc&amp;unique=0&amp;page=GuiProgramming&amp;ddiffs=1" type="application/rss+xml">
+
+
+<link rel="Start" href="/moin/FrontPage">
+<link rel="Alternate" title="Wiki Markup" href="/moin/GuiProgramming?action=raw">
+<link rel="Alternate" media="print" title="Print View" href="/moin/GuiProgramming?action=print">
+<link rel="Search" href="/moin/FindPage">
+<link rel="Index" href="/moin/TitleIndex">
+<link rel="Glossary" href="/moin/WordIndex">
+<link rel="Help" href="/moin/HelpOnFormatting">
+</head>
+
+<body  lang="en" dir="ltr">
+<p class="red"><b>Please note:</b> This wiki is
+    currently running in test mode after an attack on January 5 2013. 
+    <b>All passwords were reset</b>, so you will have to use the <a
+    href="?action=recoverpass">password recovery function</a> to get a new
+    password.  <b>To edit wiki pages, please log in first.</b> See the <a
+    href="/moin/WikiAttack2013">wiki attack description page</a> for more
+    details.  If you find problems, please report them to the <a
+    href="mailto:pydotorg-www@python.org">pydotorg-www mailing list</a>. 
+    </p> 
+<div id="header">
+
+<form id="searchform" method="get" action="/moin/GuiProgramming">
+<div>
+<input type="hidden" name="action" value="fullsearch">
+<input type="hidden" name="context" value="180">
+<label for="searchinput">Search:</label>
+<input id="searchinput" type="text" name="value" value="" size="20"
+    onfocus="searchFocus(this)" onblur="searchBlur(this)"
+    onkeyup="searchChange(this)" onchange="searchChange(this)" alt="Search">
+<input id="titlesearch" name="titlesearch" type="submit"
+    value="Titles" alt="Search Titles">
+<input id="fullsearch" name="fullsearch" type="submit"
+    value="Text" alt="Search Full Text">
+</div>
+</form>
+<script type="text/javascript">
+<!--// Initialize search form
+var f = document.getElementById('searchform');
+f.getElementsByTagName('label')[0].style.display = 'none';
+var e = document.getElementById('searchinput');
+searchChange(e);
+searchBlur(e);
+//-->
+</script>
+
+<div id="logo"><a href="/moin/FrontPage"></a><a href="http://python.org"><img src="http://www.python.org/images/python-logo.gif" alt="Python" ></a><a name="logo"></a></div>
+<div id="locationline">
+
+
+<ul id="pagelocation">
+<li><a class="backlink" href="/moin/GuiProgramming?action=fullsearch&amp;context=180&amp;value=linkto%3A%22GuiProgramming%22" rel="nofollow" title="Click to do a full-text search for this title">GuiProgramming</a></li>
+</ul>
+
+</div>
+
+<ul id="pagetrail">
+<li><a href="/moin/GuiProgramming">GuiProgramming</a></li>
+</ul>
+</div>
+
+<div id="sidebar">
+<div id="star">
+
+</div>
+<div class="sidepanel">
+
+<ul id="navibar">
+<li class="wikilink"><a href="/moin/FrontPage">FrontPage</a></li><li class="wikilink"><a href="/moin/RecentChanges">RecentChanges</a></li><li class="wikilink"><a href="/moin/FindPage">FindPage</a></li><li class="wikilink"><a href="/moin/HelpContents">HelpContents</a></li><li class="current"><a href="/moin/GuiProgramming">GuiProgramming</a></li>
+</ul>
+
+</div>
+<div class="sidepanel">
+<h1>Page</h1>
+<ul class="editbar"><li><span class="disabled">Immutable Page</span></li><li class="toggleCommentsButton" style="display:none;"><a href="#" class="nbcomment" onClick="toggleComments();return false;">Comments</a></li><li><a class="nbinfo" href="/moin/GuiProgramming?action=info" rel="nofollow">Info</a></li><li><a class="nbattachments" href="/moin/GuiProgramming?action=AttachFile" rel="nofollow">Attachments</a></li><li>
+<form class="actionsmenu" method="GET" action="/moin/GuiProgramming">
+<div>
+    <label>More Actions:</label>
+    <select name="action"
+        onchange="if ((this.selectedIndex != 0) &&
+                      (this.options[this.selectedIndex].disabled == false)) {
+                this.form.submit();
+            }
+            this.selectedIndex = 0;">
+        <option value="raw">Raw Text</option>
+<option value="print">Print View</option>
+<option value="refresh">Delete Cache</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="SpellCheck">Check Spelling</option>
+<option value="LikePages">Like Pages</option>
+<option value="LocalSiteMap">Local Site Map</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="RenamePage" disabled class="disabled">Rename Page</option>
+<option value="DeletePage" disabled class="disabled">Delete Page</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="show" disabled class="disabled">Remove Spam</option>
+<option value="show" disabled class="disabled">Revert to this revision</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="SlideShow">SlideShow</option>
+    </select>
+    <input type="submit" value="Do">
+    
+</div>
+<script type="text/javascript">
+<!--// Init menu
+actionsMenuInit('More Actions:');
+//-->
+</script>
+</form>
+</li></ul>
+
+</div>
+<div class="sidepanel">
+<h1>User</h1>
+<ul id="username"><li><a href="/moin/GuiProgramming?action=login" id="login" rel="nofollow">Login</a></li></ul>
+</div>
+</div>
+
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1"></span><span class="anchor" id="line-2"></span><p class="line867">
+<h1 id="GUI_Programming_in_Python">GUI Programming in Python</h1>
+<span class="anchor" id="line-3"></span><p class="line874">Python has a huge number of GUI frameworks (or toolkits) available for it, from Tkinter (traditionally bundled with Python, using Tk) to a number of other cross-platform solutions, as well as bindings to platform-specific (also known as "native") technologies. <span class="anchor" id="line-4"></span><span class="anchor" id="line-5"></span><p class="line867"><span class="anchor" id="line-6"></span><span class="anchor" id="line-7"></span><div class="note"><span class="anchor" id="line-1-1"></span><p class="line867"><a href="/moin/GUI%20Programming%20in%20Python">GUI Programming in Python</a> is a similar page whose content could arguably complement this page with some editing. </div><span class="anchor" id="line-8"></span><span class="anchor" id="line-9"></span><p class="line867">
+<h2 id="Cross-Browser_Frameworks">Cross-Browser Frameworks</h2>
+<span class="anchor" id="line-10"></span><span class="anchor" id="line-11"></span><div><table><tbody><tr>  <td><p class="line862"> <strong>Package</strong> </td>
+  <td><p class="line862"> <strong>Target</strong> </td>
+  <td><p class="line862"> <strong>Notes</strong> </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-12"></span><p class="line862"> <a href="/moin/PyJamas">PyJamas</a> </td>
+  <td><p class="line862"> All major Web Browsers </td>
+  <td><p class="line862"> Comprehensive Widget toolkit, Python-to-Javascript compiler and AJAX library. Provides the "V" in MVC. See also <a href="/moin/PyjamasDesktop">PyjamasDesktop</a> </td>
+</tr>
+</tbody></table></div><span class="anchor" id="line-13"></span><span class="anchor" id="line-14"></span><p class="line867">
+<h2 id="Cross-Platform_Frameworks">Cross-Platform Frameworks</h2>
+<span class="anchor" id="line-15"></span><p class="line874">The major cross-platform technologies upon which Python frameworks are based include Gtk, Qt, Tk and wxWidgets, although many other technologies provide actively maintained Python bindings. <span class="anchor" id="line-16"></span><span class="anchor" id="line-17"></span><div><table><tbody><tr>  <td><p class="line862"> <strong>Package</strong> </td>
+  <td><p class="line862"> <strong>Target</strong> </td>
+  <td><p class="line862"> <strong>Notes</strong> </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-18"></span><p class="line862"> <a href="/moin/AnyGui">AnyGui</a> </td>
+  <td><p class="line862"> many </td>
+  <td><p class="line862"> ("Anygui is no longer being actively developed or supported.") single source code runs on many GUI back-ends, including many in this table, plus ncurses </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-19"></span><p class="line862"> <a class="http" href="http://avc.inrim.it/">AVC</a> </td>
+  <td><p class="line862"> Linux / many </td>
+  <td><p class="line862"> Fully automatic, live connection among graphical interface widgets and application variables. </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-20"></span><p class="line862"> <a class="http" href="http://dabodev.com/">Dabo</a> </td>
+  <td><p class="line862"> <a href="/moin/WxPython">WxPython</a> </td>
+  <td><p class="line862"> Dabo is a 3-tier, cross-platform application development framework, written in Python atop the wxPython GUI toolkit </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-21"></span><p class="line862"> <a href="/moin/EasyGui">EasyGui</a> </td>
+  <td><p class="line862"> Tk </td>
+  <td><p class="line862"> EasyGUI is a module for very simple, very easy GUI programming in Python. </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-22"></span><p class="line862"> FXPy </td>
+  <td><p class="line862"> FOX </td>
+  <td><p class="line862"> Last released 2002; presumed dead. </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-23"></span><p class="line862"> <a href="/moin/GnomePython">GnomePython</a> </td>
+  <td><p class="line862"> Gnome </td>
+  <td><p class="line862"> Gnome Platform bindings: bonobo, bonoboui, gconf, gnome, gnomecanvas, gnomevfs, gnomeui </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-24"></span><p class="line862"> GnomePythonDesktop </td>
+  <td><p class="line862"> Gnome </td>
+  <td><p class="line862"> Gnome Desktop bindings: metacity, nautilus, gnomeprint, gtksourceview, gtop, media-profiles, totem, wnck </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-25"></span><p class="line862"> GnomePythonExtras </td>
+  <td><p class="line862"> Gnome </td>
+  <td><p class="line862"> Additional Gnome bindings: libegg, gda, gtkmozembed, gtkspell, gksu, gdl, gtkhtml2 </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-26"></span><p class="line862"> <a class="nonexistent" href="/moin/lwickjr/Modules/">GWiz</a> </td>
+  <td><p class="line862"> <a href="/moin/Tix">Tix</a> </td>
+  <td><p class="line862">GUI engine with integrated GUI builder. Need Alpha testers. </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-27"></span><p class="line862"> <a href="/moin/IronPython">IronPython</a> </td>
+  <td><p class="line862"> .NET/Mono </td>
+  <td><p class="line862"> Python for (originally MS') .NET platform. See <a class="http" href="http://www.codeplex.com/Wiki/View.aspx?ProjectName=IronPython">http://www.codeplex.com/Wiki/View.aspx?ProjectName=IronPython</a> for more info. </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-28"></span><p class="line862"> <a href="/moin/Jython">Jython</a> </td>
+  <td><p class="line862"> Java </td>
+  <td><p class="line862"> Jython is an implementation of the high-level, dynamic, object-oriented language Python seamlessly integrated with the Java platform.  <a class="http" href="http://www.jython.org/Project/index.html">Jython website</a> </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-29"></span><p class="line862"> <a class="http" href="http://kivy.org/">Kivy</a> </td>
+  <td><p class="line862"> Windows, MacOSX, Linux, Android, iOS </td>
+  <td><p class="line862"> OpenGL ES accelerated framework for creating new user interfaces. Kivy have a native multitouch support for every platform, mouse simulator, widgets multitouch ready, integrated virtual keyboard, rst renderer... </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-30"></span><p class="line862"> <a class="http" href="http://www.libavg.de/">libavg</a> </td>
+  <td><p class="line862"> Windows, MacOS, Linux </td>
+  <td><p class="line862"> Not strictly a GUI toolkit, but a high-level multimedia framework that allows construction of media-rich guis. </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-31"></span><p class="line862"> <a class="http" href="http://www.lucidtoolkit.org/">Lucid</a> </td>
+  <td><p class="line862"> Windows, GTK, MacOS </td>
+  <td><p class="line862"> An abstraction layer and clever layout engine that uses the native GUI widgets of each operating system. Previously known as "Claro Framework." </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-32"></span><p class="line862"> <a class="http" href="http://nufox.berlios.de/">Nufox</a> </td>
+  <td><p class="line862"> XUL (many) </td>
+  <td><p class="line862"> Nufox is a python, XUL toolkit written ontop of the Twisted Networking Framework and Nevow. The idea is that you should be able to write server-side cross platform XUL applications without writing XUL markup, with little javascript, all from the comfort of Python. </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-33"></span><p class="line862"> <a href="/moin/Ocean">Ocean</a> </td>
+  <td><p class="line862"> many </td>
+  <td><p class="line862"> GUI library. Python only "pythonic javax.swing". Model/View/Controller, skinning.  <a class="http" href="http://ocean.sourceforge.net/">Ocean website</a> </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-34"></span><p class="line862"> <a href="/moin/OcempGUI">OcempGUI</a> </td>
+  <td><p class="line862"> Pygame </td>
+  <td><p class="line862"> A small GUI toolkit written in Python based on Pygame. Provides accessibility support. </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-35"></span><p class="line862"> <a class="http" href="http://pyfltk.sourceforge.net">PyFltk</a> </td>
+  <td><p class="line862"> <a href="/moin/FLTK">FLTK</a> </td>
+  <td><p class="line862"> supports Windows/Unix/Mac </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-36"></span><p class="line862"> <a href="/moin/PyGtk">PyGtk</a> </td>
+  <td><p class="line862"> Gtk </td>
+  <td><p class="line862"> Bindings for pango, atk, gtk and libglade </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-37"></span><p class="line862"> <a class="http" href="http://code.google.com/p/pygir-ctypes/">pygir-ctypes</a> </td>
+  <td><p class="line862"> GObject Introspection </td>
+  <td><p class="line862"> Pure Python GObject Introspection Repository (GIR) wrapper using ctypes. Supported CPython &gt;= 2.6, CPython 3.x, <a href="/moin/PyPy">PyPy</a> &gt;= 1.4.0, and on all platforms where gobject introspection is supported. </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-38"></span><p class="line862"> <a href="/moin/PyGtk2Tk">PyGtk2Tk</a> </td>
+  <td><p class="line862"> Tkinter </td>
+  <td><p class="line862"> <a href="/moin/PyGtk">PyGtk</a> to Tkinter Wrapper runs <a href="/moin/PyGtk">PyGtk</a> based code unchanged using Tkinter (Tk). </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-39"></span><p class="line862"> <a href="/moin/PyGUI">PyGUI</a> </td>
+  <td><p class="line862"> Cocoa / Gtk / Win32 </td>
+  <td><p class="line862"> Abstract, pythonic API encapsulating different platforms. Runs on GNU/Linux, MacOSX, &amp; MS Windows. </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-40"></span><p class="line862"> <a href="/moin/PyjamasDesktop">PyjamasDesktop</a> </td>
+  <td><p class="line862"> Many </td>
+  <td><p class="line862"> Comprehensive Widget toolkit that uses <a href="/moin/PyWebkitGtk">PyWebkitGtk</a> to do the heavy lifting. Provides the "V" in MVC. See also Pyjamas </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-41"></span><p class="line862"> <a href="/moin/PyKDE">PyKDE</a> </td>
+  <td><p class="line862"> Qt / KDE </td>
+  <td><p class="line862"> Python wrappers for the <a class="http" href="http://www.kde.org/">KDE</a> libraries </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-42"></span><p class="line862"> <a class="http" href="http://pymt.eu/">PyMT</a> </td>
+  <td><p class="line862"> OpenGL, all platform </td>
+  <td><p class="line862"> Python framework for doing multitouch GUI / Application (Deprecated, in favor of Kivy) </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-43"></span><p class="line862"> PyPicoGUI </td>
+  <td><p class="line862"> <a class="http" href="http://picogui.org/">PicoGUI</a> </td>
+  <td><p class="line862"> python library is included in the main PicoGUI release </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-44"></span><p class="line862"> <a href="/moin/PyQt">PyQt</a> </td>
+  <td><p class="line862"> Qt </td>
+  <td><p class="line862"> Python bindings for the <a class="http" href="http://www.trolltech.com/products/qt/">Qt</a> application development framework </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-45"></span><p class="line862"> <a class="http" href="http://www.pyside.org/">PySide</a> </td>
+  <td><p class="line862"> Qt </td>
+  <td><p class="line862"> The <a href="/moin/PySide">PySide</a> project provides LGPL-licensed Python bindings for the <a class="http" href="http://www.trolltech.com/products/qt/">Qt</a> cross-platform application and UI framework. </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-46"></span><p class="line862"> PySWT </td>
+  <td><p class="line862"> SWT </td>
+  <td><p class="line862"> PySWT is a Python Binding to the IBM Eclipse SWT library, to provide Python with a cross platform native looking GUI, see <a class="http" href="http://www.cs.nyu.edu/zilin/pyswt/pmwiki.php?n=PySWT.Introduction">http://www.cs.nyu.edu/zilin/pyswt/pmwiki.php?n=PySWT.Introduction</a> </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-47"></span><p class="line862"> <a href="/moin/PythonCard">PythonCard</a> </td>
+  <td><p class="line862"> <a href="/moin/WxWidgets">WxWidgets</a> </td>
+  <td><p class="line862"> Both a framework and GUI builder. Can include wxPython code in <a href="/moin/PythonCard">PythonCard</a> apps <a class="http" href="http://showmedo.com/videos/series?name=LIIBqnWDo">PythonCard tutorial videos</a> at <a href="/moin/ShowMeDo">ShowMeDo</a> </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-48"></span><p class="line862"> <a href="/moin/PyWebkitGtk">PyWebkitGtk</a> </td>
+  <td><p class="line862"> Web Browsers </td>
+  <td><p class="line862"> <a href="/moin/PyWebkitGtk">PyWebkitGtk</a> is a Python Binding to <a class="http" href="http://webkit.org">webkit</a>, including DOM model manipulation, Javascript execution, plugin support (e.g. Flash) and (on the TODO list) SVG Canvas support, for extremely powerful and comprehensive applications development. See <a href="/moin/PyjamasDesktop">PyjamasDesktop</a> for an easy-to-use API. </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-49"></span><p class="line862"> <a href="/moin/PyUi">PyUi</a> </td>
+  <td><p class="line862"> OpenGL </td>
+  <td><p class="line862"> Specialized GUI Toolkit for generating GUIs for OpenGL programs. </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-50"></span><p class="line862"> <a class="http" href="http://wiki.laptop.org/go/Sugar">Sugar</a> </td>
+  <td><p class="line862"> OLPC XO with Linux </td>
+  <td><p class="line862"> User interface for collaborative educational software </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-51"></span><p class="line862"> <a href="/moin/TkInter">TkInter</a> </td>
+  <td><p class="line862"> Tk </td>
+  <td><p class="line862"> Python's "standard" GUI library </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-52"></span><p class="line862"> <a href="/moin/TkZinc">TkZinc</a> </td>
+  <td><p class="line862"> Tk extension </td>
+  <td><p class="line862"> <a href="/moin/TkZinc">TkZinc</a> is a extension of the Tk Canvas, with transparency, gradient, transformations </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-53"></span><p class="line862"> <a class="http" href="http://public.kitware.com/VTK/index.php">VTK</a> </td>
+  <td><p class="line862"> many </td>
+  <td><p class="line862"> The Visualization <a class="nonexistent" href="/moin/ToolKit">ToolKit</a> (VTK) is an open source, freely available software system for 3D computer graphics, image processing, and visualization. </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-54"></span><p class="line862"> <a href="/moin/Wax">Wax</a> </td>
+  <td><p class="line862"> <a href="/moin/WxWidgets">WxWidgets</a> </td>
+  <td><p class="line862"> A wrapper to <a href="/moin/WxPython">WxPython</a>, easier and more "pythonic" </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-55"></span><p class="line862"> <a href="/moin/WxPython">WxPython</a> </td>
+  <td><p class="line862"> <a href="/moin/WxWidgets">WxWidgets</a> </td>
+  <td><p class="line862"> supports Windows/Unix/Mac for now - visit <a class="http" href="http://www.wxwidgets.org">http://www.wxwidgets.org</a>, <a class="http" href="http://showmedo.com/videos/series?name=PythonWxPythonBeginnersSeries">wxPython tutorial videos</a> at <a href="/moin/ShowMeDo">ShowMeDo</a> on writing a graphical application </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-56"></span><p class="line862"> <a class="http" href="http://www.objectblues.net/wiki/show/XGui">XGui</a> </td>
+  <td><p class="line862"> XGui </td>
+  <td><p class="line862"> XGui is a cross-platform widget set with C,C++ and Python bindings. Actually supports *nix over Gtk and Windows over Win32 </td>
+</tr>
+</tbody></table></div><span class="anchor" id="line-57"></span><span class="anchor" id="line-58"></span><p class="line867">
+<h2 id="Platform-specific_Frameworks">Platform-specific Frameworks</h2>
+<span class="anchor" id="line-59"></span><span class="anchor" id="line-60"></span><div><table><tbody><tr>  <td><p class="line862"> <strong>Package</strong> </td>
+  <td><p class="line862"> <strong>Target</strong> </td>
+  <td><p class="line862"> <strong>Notes</strong> </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-61"></span><p class="line862"> <a href="/moin/BeThon">BeThon</a> </td>
+  <td><p class="line862"> BeOS </td>
+  <td><p class="line862"> </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-62"></span><p class="line862"> <a href="/moin/MacPython">MacPython</a> </td>
+  <td><p class="line862"> MacOS </td>
+  <td><p class="line862"> Supports both OSX and OS9 </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-63"></span><p class="line862"> <a class="http" href="http://pyobjc.sourceforge.net/">PyObjC</a> </td>
+  <td><p class="line862"> MacOSX </td>
+  <td><p class="line862"> Supports Cocoa Aqua GUIs on the Mac </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-64"></span><p class="line862"> <a class="http" href="http://www.yomgui.fr/yiki/doku.php/en:dev:pymui:start">PyMUI</a> </td>
+  <td><p class="line862"> MorphOS </td>
+  <td><p class="line862"> MagicUserInterface wrapper for Python. Support for MorphOS 2.x. </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-65"></span><p class="line862"> <a class="http" href="http://www.codeplex.com/IronPythonStudio">IronPython Studio</a> </td>
+  <td><p class="line862"> Windows </td>
+  <td><p class="line862"> A free GUI implementation of <a href="/moin/IronPython">IronPython</a> with the same interface as Visual Studio. </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-66"></span><p class="line862"> <a href="/moin/venster">venster</a> </td>
+  <td><p class="line862"> Windows </td>
+  <td><p class="line862"> <a class="http" href="http://venster.sf.net">Venster</a> is a highly native Windows GUI toolkit for Python based on the ctypes ffi library. The aim of Venster is to be a very lightweight wrapper around the standard Win32 API, making it easy to write slick windows applications in pure Python. </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-67"></span><p class="line862"> <a href="/moin/Win32All">Win32All</a> </td>
+  <td><p class="line862"> Windows </td>
+  <td><p class="line862"> Also known by the names of its components: <a href="/moin/PythonWin">PythonWin</a> (for the UI), <a class="nonexistent" href="/moin/Win32Com">Win32Com</a> (for COM/ActiveX), Win32 (for some other parts of the API) </td>
+</tr>
+</tbody></table></div><span class="anchor" id="line-68"></span><span class="anchor" id="line-69"></span><p class="line867">
+<h2 id="GUI_Design_Tools_and_IDEs">GUI Design Tools and IDEs</h2>
+<span class="anchor" id="line-70"></span><span class="anchor" id="line-71"></span><div><table><tbody><tr>  <td><p class="line862"> <strong>IDE</strong> </td>
+  <td><p class="line891"><strong>Target</strong> </td>
+  <td><p class="line891"><strong>Notes</strong> </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-72"></span><p class="line862"> <a class="http" href="http://autoglade.sf.net/">Autoglade</a> </td>
+  <td><p class="line862"> <a href="/moin/PyGtk">PyGtk</a> </td>
+  <td><p class="line862"> Automagically creates GUI applications from <a class="http" href="http://glade.gnome.org/">Glade</a> GUI definition, GPL </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-73"></span><p class="line862"> <a href="/moin/BlackAdder">BlackAdder</a> </td>
+  <td><p class="line862"> <a href="/moin/PyQt">PyQt</a> </td>
+  <td><p class="line862">Commercial, $50-400 </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-74"></span><p class="line891"><a href="/moin/BoaConstructor">BoaConstructor</a> </td>
+  <td><p class="line862"> <a href="/moin/WxPython">WxPython</a> </td>
+  <td><p class="line862">GPL, Alpha, looks rather dead </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-75"></span><p class="line862"> <a class="http" href="http://eric-ide.python-projects.org/index.html">Eric3 and Eric4</a> </td>
+  <td><p class="line862"> <a href="/moin/PyQt">PyQt</a> </td>
+  <td><p class="line862">GPL </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-76"></span><p class="line862"> <a class="http" href="http://farpy.holev.com">FarPy GUIE</a> </td>
+  <td><p class="line862"> <a href="/moin/WxPython">WxPython</a> </td>
+  <td><p class="line862"> Freeware. Open-Source. Support wxRuby &amp; wxPerl aswell. </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-77"></span><p class="line862"> <a class="http" href="http://gazpacho.sicem.biz/">Gazpacho</a> </td>
+  <td><p class="line862"> <a href="/moin/PyGtk">PyGtk</a> </td>
+  <td><p class="line862">GPL </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-78"></span><p class="line862"> <a class="http" href="http://glade.gnome.org/">Glade</a> </td>
+  <td><p class="line862"> <a href="/moin/PyGtk">PyGtk</a> </td>
+  <td><p class="line862">GPL </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-79"></span><p class="line862"> <a class="nonexistent" href="/moin/lwickjr/Modules/">GWiz</a> </td>
+  <td><p class="line862"> <a href="/moin/Tix">Tix</a> </td>
+  <td><p class="line862">GUI engine with integrated GUI builder. Need Alpha testers. </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-80"></span><p class="line862"> <a class="http" href="http://www.codeplex.com/IronPythonStudio">IronPython Studio</a> </td>
+  <td><p class="line862"> Windows Application </td>
+  <td><p class="line862"> A free GUI implementation of <a href="/moin/IronPython">IronPython</a> with the same interface as Visual Studio. </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-81"></span><p class="line862"> <a class="http" href="http://www.activestate.com">Komodo</a> </td>
+  <td><p class="line862"> <a href="/moin/TkInter">TkInter</a> </td>
+  <td><p class="line862">Commercial </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-82"></span><p class="line862"> <a class="http" href="http://page.sourceforge.net/">PAGE</a> </td>
+  <td><p class="line862"> Tkinter, Tix </td>
+  <td><p class="line862">GUI editor for Windows and Linux </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-83"></span><p class="line862"> <a href="/moin/PyScripter">PyScripter</a> </td>
+  <td><p class="line862"> Windows </td>
+  <td><p class="line862"> An <a href="/moin/OpenSource">OpenSource</a> IDE developed using Python and Delphi </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-84"></span><p class="line862"> <a href="/moin/PythonCard">PythonCard</a> </td>
+  <td><p class="line862"> <a href="/moin/PythonCard">PythonCard</a>, <a href="/moin/WxPython">WxPython</a> </td>
+  <td><p class="line862">Python License. Alpha. </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-85"></span><p class="line862"> <a class="http" href="http://pythontoolkit.sourceforge.net/">PythonToolkit (PTK)</a> </td>
+  <td><p class="line862"> Windows/Linux/Mac </td>
+  <td><p class="line862"> An interactive environment for python, suitable for interactive GUI programming with different GUI toolkits (wxPython, <a href="/moin/TkInter">TkInter</a>, pyGTK, pyQT4 and <a href="/moin/PySide">PySide</a>)</td>
+</tr>
+<tr>  <td><span class="anchor" id="line-86"></span><p class="line862"> <a href="/moin/PythonWorks">PythonWorks</a> </td>
+  <td><p class="line862"> <a href="/moin/TkInter">TkInter</a> </td>
+  <td><p class="line891"><a href="/moin/PythonWorks">PythonWorks</a> is no longer being developed. They still support their existing customers, but licenses are no longer available to new customers. </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-87"></span><p class="line862"> <a class="http" href="http://www.trolltech.com/products/qt/features/designer">Qt Designer</a> </td>
+  <td><p class="line862"> <a href="/moin/PyQt">PyQt</a> </td>
+  <td><p class="line862">A form design tool, available with both Commercial and GPL editions of Qt. Can be used with Eric3 and Eric4. </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-88"></span><p class="line862"> <a href="/moin/WxDesigner">WxDesigner</a> </td>
+  <td><p class="line862"> <a href="/moin/WxPython">WxPython</a> </td>
+  <td><p class="line862">Commercial Student EUR 29, Single user EUR 129 </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-89"></span><p class="line862"> <a class="http" href="http://wxformbuilder.org/">WxFormBuilder</a> </td>
+  <td><p class="line862"> <a href="/moin/WxPython">WxPython</a> </td>
+  <td><p class="line862"> GPL cross-platform WYSIWYG GUI builder. Can produce XRC/XML, wxWidgets/C++, or wxPython/python. </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-90"></span><p class="line862"> <a href="/moin/WxGlade">WxGlade</a> </td>
+  <td><p class="line862"> <a href="/moin/WxPython">WxPython</a> </td>
+  <td><p class="line862">MIT License, Alpha. </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-91"></span><p class="line862"> <a class="http" href="http://sourceforge.net/projects/xrope/">xrope</a> </td>
+  <td><p class="line862"> Python Tkinter </td>
+  <td><p class="line862"> GUI, class browser, file manager, with code completion. Licensed under the GPL. </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-92"></span><p class="line862"> <a class="http" href="http://pythontr.org/">Visual Python IDE</a> </td>
+  <td><p class="line862"> Tkinter </td>
+  <td><p class="line862">Visual Python IDE for Python 2.6 to TKINTER </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-93"></span><p class="line862"> <a class="http" href="http://visualpython.org/">Visual Python</a> </td>
+  <td><p class="line862"> Tkinter </td>
+  <td><p class="line862">Visual Python </td>
+</tr>
+</tbody></table></div><span class="anchor" id="line-94"></span><span class="anchor" id="line-95"></span><p class="line867">
+<h2 id="Links">Links</h2>
+<span class="anchor" id="line-96"></span><span class="anchor" id="line-97"></span><p class="line867"><a href="/moin/CameronLaird">CameronLaird</a>'s personal notes on Python GUIs <a class="http" href="http://phaseit.net/claird/comp.lang.python/python_GUI.html">http://phaseit.net/claird/comp.lang.python/python_GUI.html</a> includes over 25 links to toolkits and techniques for connecting python with a GUI. <span class="anchor" id="line-98"></span><span class="anchor" id="line-99"></span><p class="line862">Other places to look are <a class="interwiki" href="http://www.thinkware.se/cgi-bin/thinki.cgi/PythonGuis" title="Thinki">PythonGuis</a> at Thinki, and <a class="http" href="http://sensei.co.il/python/ui.html">http://sensei.co.il/python/ui.html</a> . <span class="anchor" id="line-100"></span><span class="anchor" id="line-101"></span><p class="line862">Opendocs previously had some material on Qt programming with Python for on-line reading, but ownership of the domain appears to have lapsed. An online version of Boudewijn Rempt's book about <a href="/moin/PyQt">PyQt</a> for Qt 3, <a class="http" href="http://www.commandprompt.com/community/pyqt/">GUI Programming with Python: QT Edition</a>, is still available. An up-to-date book covering <a href="/moin/PyQt4">PyQt4</a>, <a class="http" href="http://www.qtrac.eu/pyqtbook.html">Rapid GUI Programming with Python and Qt</a> by Mark Summerfield, is now available in print and as an online "rough cut". More details can be found on the <a class="http" href="http://www.diotavelli.net/PyQtWiki/Books">PyQt Wiki</a>. <span class="anchor" id="line-102"></span><span class="anchor" id="line-103"></span><p class="line867"><a class="http" href="http://www.awaretek.com/toolkits.html">http://www.awaretek.com/toolkits.html</a> - Choose Your GUI Toolkit: Find Your GUI Toolkit for Python based on your preferences. Quick cgi application which helps you make a choice. See also <a class="http" href="http://awaretek.com/plf.html">Python City</a>. <span class="anchor" id="line-104"></span><span class="anchor" id="line-105"></span><p class="line867"><a class="http" href="http://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments#Python">http://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments#Python</a> - Wikipedia article describing several IDE's and GUI Builders. <span class="anchor" id="line-106"></span><span class="anchor" id="line-107"></span><p class="line867">
+<h2 id="Editorial_Notes">Editorial Notes</h2>
+<span class="anchor" id="line-108"></span><span class="anchor" id="line-109"></span><p class="line874">The above lists should be arranged in ascending alphabetical order - please respect this when adding new frameworks or tools. <span class="anchor" id="line-110"></span><span class="anchor" id="line-111"></span><p class="line862">Currently, this section is rather incomplete. Don't be too disappointed if you can't find the information you need, but please add any information you can contribute. It might be useful to have information about the GUIs and development tools in a fixed format to make them more easily comparable (see <a href="/moin/WebProgrammingTemplate">WebProgrammingTemplate</a> and <a href="/moin/WebProgrammingTemplateHelp">WebProgrammingTemplateHelp</a>). Some categories: directly supported widgets, add-on widgets, layout managers, etc. Maybe it could answer the questions in <a href="/moin/ChoosingGuiToolkits">ChoosingGuiToolkits</a> for each toolkit. <span class="anchor" id="line-112"></span><span class="anchor" id="bottom"></span></div><p id="pageinfo" class="info" lang="en" dir="ltr">GuiProgramming  (last edited 2012-04-15 06:53:53 by <span title="DavidCuthbert @ 173-160-253-190-Washington.hfc.comcastbusiness.net[173.160.253.190]"><a class="nonexistent" href="/moin/DavidCuthbert" title="DavidCuthbert @ 173-160-253-190-Washington.hfc.comcastbusiness.net[173.160.253.190]">DavidCuthbert</a></span>)</p>
+
+<div id="pagebottom"></div>
+</div>
+
+
+<div id="footer">
+<ul id="credits">
+<li><a href="http://moinmo.in/" title="This site uses the MoinMoin Wiki software.">MoinMoin Powered</a></li><li><a href="http://moinmo.in/Python" title="MoinMoin is written in Python.">Python Powered</a></li><li><a href="http://moinmo.in/GPL" title="MoinMoin is GPL licensed.">GPL licensed</a></li><li><a href="http://validator.w3.org/check?uri=referer" title="Click here to validate this page.">Valid HTML 4.01</a></li>
+</ul>
+
+
+</div>
+</body>
+</html>
+

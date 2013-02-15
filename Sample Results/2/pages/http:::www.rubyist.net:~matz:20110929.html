@@ -1,0 +1,671 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ja-JP">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=EUC-JP">
+	<meta name="generator" content="tDiary 2.2.0">
+	<meta http-equiv="Last-Modified" content="Sun, 02 Oct 2011 07:22:04 GMT">
+	<meta http-equiv="Content-Script-Type" content="text/javascript; charset=EUC-JP">
+	<meta name="author" content="Yukihiro -matz- Matsumoto">
+	
+	<link rel="prev" title="前の日記(2010-11-30)" href="http://www.rubyist.net/~matz/20101130.html">
+	<link rel="start" title="最新" href="http://www.rubyist.net/~matz/">
+	<link rel="alternate" media="handheld" type="text/html" href="http://www.rubyist.net/~matz/20110929.html">
+	
+	
+	<meta http-equiv="content-style-type" content="text/css">
+	<link rel="stylesheet" href="theme/base.css" type="text/css" media="all">
+	<link rel="stylesheet" href="theme/sagegreen/sagegreen.css" title="sagegreen" type="text/css" media="all">
+	<title>Matzにっき(2011-09-29)</title>
+	
+  <script type="text/javascript">
+  <!--
+  // http://www.din.or.jp/~hagi3/JavaScript/JSTips/Mozilla/
+  // _dom : kind of DOM.
+  //        IE4 = 1, IE5+ = 2, NN4 = 3, NN6+ = 4, others = 0
+  _dom = document.all?(document.getElementById?2:1)
+                     :(document.getElementById?4
+                     :(document.layers?3:0));
+  var _calendar3_popElement = null;
+  var _calendar3_popCount = 0;
+
+  if (document.compatMode){
+    if (_dom==2 && document.compatMode=="CSS1Compat") _dom = 2.5;
+  } // Win IE6
+
+  function getLeft(div){
+    result = 0;
+    while (1){
+      div = div.offsetParent;
+      result += div.offsetLeft;
+      if (div.tagName=="BODY") return result;
+    }
+  }
+
+  function getTop(div){
+    result = 0;
+    while (1){
+      div = div.offsetParent;
+      result += div.offsetTop;
+      if (div.tagName=="BODY") return result;
+    }
+  }
+
+  function moveDivTo(div,left,top){
+    if(_dom==4){
+      div.style.left=left+'px';
+      div.style.top =top +'px';
+      return;
+    }
+    if(_dom==2.5 || _dom==2 || _dom==1){
+      div.style.pixelLeft=left;
+      div.style.pixelTop =top;
+      return;
+    }
+    if(_dom==3){
+      div.moveTo(left,top);
+      return;
+    }
+  }
+
+  function moveDivBy(div,left,top){
+    if(_dom==4){
+      div.style.left=div.offsetLeft+left;
+      div.style.top =div.offsetTop +top;
+      return;
+    }
+    if(_dom==2.5 || _dom==2){
+      div.style.pixelLeft=div.offsetLeft+left;
+      div.style.pixelTop =div.offsetTop +top;
+      return;
+    }
+    if(_dom==1){
+      div.style.pixelLeft+=left;
+      div.style.pixelTop +=top;
+      return;
+    }
+    if(_dom==3){
+      div.moveBy(left,top);
+      return;
+    }
+  }
+
+  function getDivLeft(div){
+    if(_dom==2.5) return div.offsetLeft+getLeft(div);
+    if(_dom==4 || _dom==2) return div.offsetLeft;
+    if(_dom==1)            return div.style.pixelLeft;
+    if(_dom==3)            return div.left;
+    return 0;
+  }
+
+  function getDivTop(div){
+    if(_dom==2.5) return div.offsetTop+getTop(div);
+    if(_dom==4 || _dom==2) return div.offsetTop;
+    if(_dom==1)            return div.style.pixelTop;
+    if(_dom==3)            return div.top;
+    return 0;
+  }
+
+  function getDivWidth (div){
+    if(_dom==4 || _dom==2.5 || _dom==2) return div.offsetWidth;
+    if(_dom==1)            return div.style.pixelWidth;
+    if(_dom==3)            return div.clip.width;
+    return 0;
+  }
+
+  function getDivHeight(div){
+    if(_dom==4 || _dom==2.5 || _dom==2) return div.offsetHeight;
+    if(_dom==1)            return div.style.pixelHeight;
+    if(_dom==3)            return div.clip.height;
+    return 0;
+  }
+
+  function popup(target,element,notitle) {
+    _calendar3_popCount++;
+    popdownNow();
+    if (navigator.appName=='Microsoft Internet Explorer') {
+      moveDivTo(element,getDivLeft(target)+getDivWidth(target),getDivTop(target)+getDivHeight(target)*13/8);
+    } else {
+      moveDivTo(element,getDivLeft(target)+getDivWidth(target)/2,getDivTop(target)+(getDivHeight(target)*2)/3);
+    }
+    element.style.display="block";
+    notitle.title="";
+  }
+
+  function popdown(element) {
+    _calendar3_popElement=element;
+    setTimeout('popdownDelay()', 2000);
+  }
+
+  function popdownDelay() {
+    _calendar3_popCount--;
+    if (_calendar3_popCount==0) {
+      popdownNow();
+    }
+  }
+
+  function popdownNow() {
+    if (_calendar3_popElement!=null) {
+      _calendar3_popElement.style.display="none";
+      _calendar3_popElement=null;
+    }
+  }
+  // -->
+</script>
+	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+	</script>
+	<script type="text/javascript">
+	_uacct = "UA-58636-2";
+	urchinTracker();
+	</script>
+	<link rel="alternate" type="application/rss+xml" title="RSS(with comments and spams)" href="http://www.rubyist.net/~matz/comments.rdf">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.rubyist.net/~matz/index.rdf">
+	<meta name="robots" content="index,follow">
+</head>
+<body>
+
+
+<div class="adminmenu">
+<span class="adminmenu"><a href="http://www.rubyist.net/~matz/20101130.html">&laquo;前の日記(2010-11-30)</a></span>
+<span class="adminmenu"><a href="http://www.rubyist.net/~matz/">最新</a></span>
+<span class="adminmenu"><a href="https://www.rubyist.net/~matz/update.rb?edit=true;year=2011;month=9;day=29" rel="nofollow">編集</a></span>
+</div>
+
+<h1>Matzにっき</h1>
+<div class="right">
+<form method="get" action="rast-search.rb" class="grepform">
+<input type="text" name="query" size="20" value="" class="search">
+<input type="submit" value="検索"></p>
+</form>
+</div>
+<span class="calendar-prev-month"><a href="http://www.rubyist.net/~matz/201108.html">&lt;&lt;</a></span>
+<span class="calendar-current-month"><a href="http://www.rubyist.net/~matz/201109.html">2011/09</a>/</span>
+<span class="calendar-normal"><a class="calendar-weekday">1</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">2</a></span>
+<span class="calendar-normal"><a class="calendar-saturday">3</a></span>
+<span class="calendar-normal"><a class="calendar-sunday">4</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">5</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">6</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">7</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">8</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">9</a></span>
+<span class="calendar-normal"><a class="calendar-saturday">10</a></span>
+<span class="calendar-normal"><a class="calendar-sunday">11</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">12</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">13</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">14</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">15</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">16</a></span>
+<span class="calendar-normal"><a class="calendar-saturday">17</a></span>
+<span class="calendar-normal"><a class="calendar-sunday">18</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">19</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">20</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">21</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">22</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">23</a></span>
+<span class="calendar-normal"><a class="calendar-saturday">24</a></span>
+<span class="calendar-normal"><a class="calendar-sunday">25</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">26</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">27</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">28</a></span>
+<span class="calendar-day" id="target-29" onmouseover="popup(document.getElementById('target-29'),document.getElementById('popup-29'), document.getElementById('title-29'));" onmouseout="popdown(document.getElementById('popup-29'));">
+  <a class="calendar-weekday" id="title-29" title="1. RubyConf 2011 New Orleans
+" href="http://www.rubyist.net/~matz/20110929.html">29</a>
+  <span class="calendar-popup" id="popup-29">
+    <a href="http://www.rubyist.net/~matz/20110929.html#p01" title="一年ぶりの更新か。「年刊Matzにっき」だな。 今年もニューオーリンズで開催されたRubyConf。同じ都市で二度開催は初めて。 で、..">1</a>. RubyConf 2011 New Orleans
+<br>
+  </span>
+</span>
+<span class="calendar-normal"><a class="calendar-weekday">30</a></span>
+<span class="calendar-next-month"><a href="http://www.rubyist.net/~matz/201110.html">&gt;&gt;</a></span>
+
+
+
+
+<hr class="sep">
+
+
+	
+<div class="day">
+<h2><span class="date">
+<a href="http://www.rubyist.net/~matz/20110929.html">2011-09-29</a>
+</span> 
+<span class="title"></span> <span class="nyear">[<a href="http://www.rubyist.net/~matz/0929.html" title="長年日記">長年日記</a>]</span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a name="p01" href="http://www.rubyist.net/~matz/20110929.html#p01"><span class="sanchor">_</span></a> RubyConf 2011 New Orleans</h3>
+<p>一年ぶりの更新か。「年刊Matzにっき」だな。</p>
+<p>今年もニューオーリンズで開催されたRubyConf。同じ都市で二度開催は初めて。</p>
+<p>で、しょっぱなが私のキーノート。</p>
+<p>まあ、あんまり語ることはないので。スライドを見てもらおうか。</p>
+<p><div style="width:425px" id="__ss_9506323"> <strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/yukihiro_matz/ruby-everywhere" title="Ruby everywhere" target="_blank">Ruby everywhere</a></strong> <iframe src="http://www.slideshare.net/slideshow/embed_code/9506323" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe> <div style="padding:5px 0 12px"> View more <a href="http://www.slideshare.net/" target="_blank">presentations</a> from <a href="http://www.slideshare.net/yukihiro_matz" target="_blank">yukihiro_matz</a> </div> </div></p>
+<p>こんな感じ。</p>
+<p>角谷さんオススメのspeakerdeck.comも使ってみた。</p>
+<p><script src="http://speakerdeck.com/embed/4e880de1536f230053005e7f.js?size=preview"></script></p>
+
+</div>
+
+<div style="text-align: center;"><script type="text/javascript"><!--
+google_ad_client = "pub-1068577065829336";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_channel ="1130103482";
+google_color_border = "CCCCCC";
+google_color_bg = "FFFFFF";
+google_color_link = "000000";
+google_color_url = "666666";
+google_color_text = "333333";
+//--></script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div><!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+	rdf:about="http://www.rubyist.net/~matz/20110929.html"
+	dc:identifier="http://www.rubyist.net/~matz/20110929.html"
+	dc:title=""
+	trackback:ping="http://www.rubyist.net/~matz/tb.rb/20110929" />
+</rdf:RDF>
+-->
+
+</div>
+
+<div class="comment">
+
+	<div class="caption">[<a href="http://www.rubyist.net/~matz/20110929.html#c">ツッコミを入れる</a>]</div>
+</div>
+
+			<div class="form">
+					<div class="caption"><a name="c">ツッコミ・コメントがあればどうぞ! E-mailアドレスは公開されません。</a></div>
+					<form class="comment" name="comment-form" method="post" action="http://www.rubyist.net/~matz/"><div>
+					<input type="hidden" name="date" value="20110929">
+					<div class="field name">
+						お名前:<input class="field" name="name" value="">
+					</div>
+					<div class="field mail">
+						E-mail:<input class="field" name="mail" value="">
+					</div>
+					<div class="textarea">
+						コメント:<textarea name="body" cols="60" rows="5"></textarea>
+					</div>
+					<div class="button">
+						<input type="submit" name="comment" value="投稿">
+					</div>
+					</div></form>
+			</div>
+
+
+	<div class="comment trackbacks">
+		<div class="caption">
+			[TrackBack URL: <a href="http://www.rubyist.net/~matz/tb.rb/20110929" name="t">http://www.rubyist.net/~matz/tb.rb/20110929</a>]
+		</div>
+		<div class="commentbody trackbackbody">
+		</div>
+	</div>
+
+
+
+
+
+		<div class="refererlist">
+		<div class="caption">本日のリンク元</div>
+<ul><li><a rel="nofollow" href="http://www.kt.rim.or.jp/~kbk/zakkicho/">http://www.kt.rim.or.jp/~kbk/zakkicho/</a> &times;50</li>
+<li><a rel="nofollow" href="http://www.kt.rim.or.jp/~kbk/zakkicho/index.html">http://www.kt.rim.or.jp/~kbk/zakkicho/index.html</a> &times;36</li>
+<li><a rel="nofollow" href="http://t.co/0C3yfABG">http://t.co/0C3yfABG</a> &times;19</li>
+<li><a rel="nofollow" href="https://www.google.co.jp/">https://www.google.co.jp/</a> &times;16</li>
+<li><a rel="nofollow" href="http://www.kt.rim.or.jp/~kbk/zakkicho/11/zakkicho1110a.html">http://www.kt.rim.or.jp/~kbk/zakkicho/11/zakkicho1...</a> &times;9</li>
+<li><a rel="nofollow" href="http://t.co/c8KUrfIp">http://t.co/c8KUrfIp</a> &times;9</li>
+<li><a rel="nofollow" href="http://t.co/MBdTDUTY">http://t.co/MBdTDUTY</a> &times;8</li>
+<li><a rel="nofollow" href="http://t.co/gnaivHx3">http://t.co/gnaivHx3</a> &times;7</li>
+<li><a rel="nofollow" href="http://t.co/hE1IAYb6">http://t.co/hE1IAYb6</a> &times;7</li>
+<li><a rel="nofollow" href="http://fastladder.com/reader/">http://fastladder.com/reader/</a> &times;7</li>
+<li><a rel="nofollow" href="http://labs.ceek.jp/hbnews/list.cgi">http://labs.ceek.jp/hbnews/list.cgi</a> &times;5</li>
+<li><a rel="nofollow" href="http://t.co/unAlkvzu">http://t.co/unAlkvzu</a> &times;4</li>
+<li><a rel="nofollow" href="http://www.feedly.com/home">http://www.feedly.com/home</a> &times;4</li>
+<li><a rel="nofollow" href="http://tech.voyagegroup.com/archives/5191602.html">http://tech.voyagegroup.com/archives/5191602.html</a> &times;3</li>
+<li><a rel="nofollow" href="http://t.co/MZQFP4Nm">http://t.co/MZQFP4Nm</a> &times;3</li>
+<li><a rel="nofollow" href="http://htn.to/gonupT">http://htn.to/gonupT</a> &times;3</li>
+<li><a rel="nofollow" href="http://ruby.g.hatena.ne.jp/">http://ruby.g.hatena.ne.jp/</a> &times;3</li>
+<li><a rel="nofollow" href="http://t.co/62CDb8Fp">http://t.co/62CDb8Fp</a> &times;3</li>
+<li><a rel="nofollow" href="http://t.co/G6vqyqZK">http://t.co/G6vqyqZK</a> &times;2</li>
+<li><a rel="nofollow" href="http://t.co/SNtcAe93">http://t.co/SNtcAe93</a> &times;2</li>
+<li><a rel="nofollow" href="http://www.facebook.com/l.php?u=http%3A%2F%2Fj.mp%2FoK2lQm&amp;h=tAQCGBKTTAQAouuudq3P_WcBE9XOnX5x4vv-7Su7zmiWkaA">http://www.facebook.com/l.php?u=http://j.mp/oK2lQm...</a> &times;2</li>
+<li><a rel="nofollow" href="http://www.rubyist.net/">http://www.rubyist.net/</a> &times;2</li>
+<li><a rel="nofollow" href="http://t.co/IOk0aGPt">http://t.co/IOk0aGPt</a> &times;2</li>
+<li><a rel="nofollow" href="http://htn.to/2HVU4R">http://htn.to/2HVU4R</a> &times;2</li>
+<li><a rel="nofollow" href="http://bit.ly/nsK3o3">http://bit.ly/nsK3o3</a> &times;2</li>
+<li><a rel="nofollow" href="http://ruby.designiddatabase.net/">http://ruby.designiddatabase.net/</a> &times;2</li>
+<li><a rel="nofollow" href="http://dlvr.it/p0BTl">http://dlvr.it/p0BTl</a> &times;1</li>
+<li><a rel="nofollow" href="http://disegniediparole.it/forum/profile.php?mode=viewprofile&amp;u=422539">http://disegniediparole.it/forum/profile.php?mode=...</a> &times;1</li>
+<li><a rel="nofollow" href="http://labs.ceek.jp/hbnews/list.cgi?p=4&amp;c=0">http://labs.ceek.jp/hbnews/list.cgi?p=4&amp;c=0</a> &times;1</li>
+<li><a rel="nofollow" href="http://mixi.jp/show_friend.pl?id=1653&amp;route_trace=010001800000">http://mixi.jp/show_friend.pl?id=1653&amp;route_trace=...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.bing.com/search?q=speakerdeck&amp;form=MOZSBR">http://www.bing.com/search?q=speakerdeck&amp;form=MOZS...</a> &times;1</li>
+<li><a rel="nofollow" href="http://codezine.jp/bookmark/?dt=20111002&amp;g=ruby">http://codezine.jp/bookmark/?dt=20111002&amp;g=ruby</a> &times;1</li>
+<li><a rel="nofollow" href="http://twitter.com/">http://twitter.com/</a> &times;1</li>
+<li><a rel="nofollow" href="http://pex.jp/search?Keywords=matz">http://pex.jp/search?Keywords=matz</a> &times;1</li>
+<li><a rel="nofollow" href="http://my.yahoo.co.jp/p/1.html?_sli=1">http://my.yahoo.co.jp/p/1.html?_sli=1</a> &times;1</li>
+<li><a rel="nofollow" href="http://clip.livedoor.com/">http://clip.livedoor.com/</a> &times;1</li>
+<li><a rel="nofollow" href="http://delicious.com/tag/rubyconf">http://delicious.com/tag/rubyconf</a> &times;1</li>
+<li><a rel="nofollow" href="http://t.co/zHKQwsOY">http://t.co/zHKQwsOY</a> &times;1</li>
+<li><a rel="nofollow" href="http://websearch.rakuten.co.jp/Web?qt=matz&amp;col=OW&amp;svx=101102">http://websearch.rakuten.co.jp/Web?qt=matz&amp;col=OW&amp;...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.instapaper.com/u">http://www.instapaper.com/u</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.ameba.jp/">http://www.ameba.jp/</a> &times;1</li>
+<li><a rel="nofollow" href="http://topsy.com/s/ruby?allow_lang=ja&amp;offset=148&amp;om=baaaaaaaaadacc&amp;page=15&amp;window=d">http://topsy.com/s/ruby?allow_lang=ja&amp;offset=148&amp;o...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.youtube.com/redirect?q=http%3A%2F%2Fpcinternetbanking.com%2Fsuntrust-online-banking">http://www.youtube.com/redirect?q=http://pcinterne...</a> &times;1</li>
+<li><a rel="nofollow" href="http://translate.googleusercontent.com/translate_c?hl=id&amp;prev=/search%3Fq%3Dsoftware%2Bruby%26hl%3Did%26biw%3D1024%26bih%3D563%26prmd%3Dimvns&amp;rurl=translate.google.co.id&amp;sl=en&amp;u=http://www.facebook.com/l.php%3Fu%3Dhttp%253A%252F%252Fj.mp%252FoK2lQm%26h%3DtAQCGBKTTAQAouuudq3P_WcBE9XOnX5x4vv-7Su7zmiWkaA&amp;usg=ALkJrhjmcK2Rrs9dRvDsO0tj00xh5AbTXQ">http://translate.googleusercontent.com/translate_c...</a> &times;1</li>
+<li><a rel="nofollow" href="http://pcinternetbanking.com/suntrust-online-banking/">http://pcinternetbanking.com/suntrust-online-banki...</a> &times;1</li>
+<li><a rel="nofollow" href="http://labs.ceek.jp/hbnews/list.cgi?p=0&amp;c=1">http://labs.ceek.jp/hbnews/list.cgi?p=0&amp;c=1</a> &times;1</li>
+<li><a rel="nofollow" href="http://bit.ly/oYEmZ5">http://bit.ly/oYEmZ5</a> &times;1</li>
+<li><a rel="nofollow" href="http://labs.ceek.jp/hbnews/list.cgi?p=1&amp;c=0">http://labs.ceek.jp/hbnews/list.cgi?p=1&amp;c=0</a> &times;1</li>
+<li><a rel="nofollow" href="http://read2ch.com/r/tech/1346200748/">http://read2ch.com/r/tech/1346200748/</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.bing.com/search?q=speakerdeck&amp;src=IE-SearchBox&amp;lf=1&amp;FORM=R5FD">http://www.bing.com/search?q=speakerdeck&amp;src=IE-Se...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.facebook.com/l.php?u=http%3A%2F%2Fj.mp%2FoK2lQm&amp;h=gAQBJHYv3AQCEkWhdbkfIMdnFmug0bGPr6WRXFx21tAKZIg">http://www.facebook.com/l.php?u=http://j.mp/oK2lQm...</a> &times;1</li>
+<li><a rel="nofollow" href="http://j.mp/oK2lQm">http://j.mp/oK2lQm</a> &times;1</li>
+<li><a rel="nofollow" href="http://bit.ly/nh37Vn">http://bit.ly/nh37Vn</a> &times;1</li>
+<li><a rel="nofollow" href="http://labs.ceek.jp/hbnews/">http://labs.ceek.jp/hbnews/</a> &times;1</li>
+<li><a rel="nofollow" href="http://labs.ceek.jp/hbnews/list.cgi?k=5&amp;p=3&amp;c=0">http://labs.ceek.jp/hbnews/list.cgi?k=5&amp;p=3&amp;c=0</a> &times;1</li>
+<li><a rel="nofollow" href="http://t.co/2qifZoKj">http://t.co/2qifZoKj</a> &times;1</li>
+<li><a rel="nofollow" href="https://www.google.com/">https://www.google.com/</a> &times;1</li>
+<li><a rel="nofollow" href="https://www.google.es/">https://www.google.es/</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.bing.com/search?q=SpeakerDeck&amp;src=IE-SearchBox&amp;FORM=IE8SRC">http://www.bing.com/search?q=SpeakerDeck&amp;src=IE-Se...</a> &times;1</li>
+<li><a rel="nofollow" href="http://tech.voyagegroup.com/lite/archives/5191602.html">http://tech.voyagegroup.com/lite/archives/5191602....</a> &times;1</li>
+<li><a rel="nofollow" href="http://readitlaterlist.com/unread">http://readitlaterlist.com/unread</a> &times;1</li>
+<li><a rel="nofollow" href="http://bit.ly/ph2PfR">http://bit.ly/ph2PfR</a> &times;1</li>
+<li><a rel="nofollow" href="http://websearch.rakuten.co.jp/Web?qt=rubyconf&amp;col=OW&amp;svx=101102">http://websearch.rakuten.co.jp/Web?qt=rubyconf&amp;col...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.bruxpats.com/member.php?u=372207">http://www.bruxpats.com/member.php?u=372207</a> &times;1</li>
+<li><a rel="nofollow" href="http://hootsuite.com/dashboard">http://hootsuite.com/dashboard</a> &times;1</li>
+<li><a rel="nofollow" href="http://bit.ly/qsXxhI">http://bit.ly/qsXxhI</a> &times;1</li>
+</ul>
+<div class="caption">アンテナ</div>
+<ul><li><a rel="nofollow" href="http://www.hatena.ne.jp/jacopetti/antenna">http://www.hatena.ne.jp/jacopetti/antenna</a> &times;1</li>
+<li><a rel="nofollow" href="http://getpocket.com/a/queue/">http://getpocket.com/a/queue/</a> &times;1</li>
+<li><a rel="nofollow" href="http://articlesbacklink.com/Art/502089/24/Chase-Internet-Banking-How-To-Proceed-In-Case-Your-Big-Bank-Obtains-Acquistion-Proposal.html">http://articlesbacklink.com/Art/502089/24/Chase-In...</a> &times;1</li>
+<li><a rel="nofollow" href="http://mylink.tv/matome/">http://mylink.tv/matome/</a> &times;1</li>
+<li><a rel="nofollow" href="http://m.ctor.org/f2p/entry/tweets">http://m.ctor.org/f2p/entry/tweets</a> &times;1</li>
+</ul>
+<div class="caption">検索</div>
+<ul><li><a rel="nofollow" href="http://search.yahoo.co.jp/search?p=matz&amp;search.x=1&amp;fr=bb_top_v2&amp;tid=bb_top_v2&amp;ei=UTF-8">matz</a> &times;6  / <a rel="nofollow" href="http://cgi.search.biglobe.ne.jp/cgi-bin/search-tb46nb?jc=%B8%A1%BA%F7&amp;q=Matz%A4%CB%A4%C3%A4%AD&amp;num=10">Matzにっき</a> &times;3  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=Matz&amp;aq=-1&amp;oq=&amp;ei=UTF-8&amp;fr=top_ga1_sa&amp;x=wrt">Matz</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=RubyConf&amp;search.x=1&amp;fr=top_ga1_sa&amp;tid=top_ga1_sa&amp;ei=UTF-8&amp;aq=&amp;oq=">RubyConf</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=Matz%E6%97%A5%E8%A8%98&amp;search.x=1&amp;fr=top_of3_sa&amp;tid=top_of3_sa&amp;ei=UTF-8&amp;aq=&amp;oq=">Matz日記</a> &times;1  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=%E3%81%AB%E3%81%A3%E3%81%8D%E3%80%802011&amp;aq=-1&amp;oq=&amp;ei=UTF-8&amp;fr=top_ga1_sa&amp;x=wrt">にっき 2011</a> &times;1  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=matz+%E6%97%A5%E8%A8%98&amp;search.x=1&amp;fr=top_ga1_sa&amp;tid=top_ga1_sa&amp;ei=UTF-8&amp;aq=&amp;oq=">matz 日記</a> &times;1  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?tt=c&amp;ei=UTF-8&amp;fr=sfp_as&amp;aq=-1&amp;oq=&amp;p=matz%E6%97%A5%E8%A8%98&amp;meta=vc%3D">matz日記</a> &times;1 </li></ul>
+<div class="caption">以前の日記へのリンク元</div>
+<ul><li><a rel="nofollow" href="http://pcinternetbanking.com/suntrust-online-banking/">http://pcinternetbanking.com/suntrust-online-banki...</a> &times;2513</li>
+<li><a rel="nofollow" href="http://www.youtube.com/redirect?q=http%3A%2F%2Fpcinternetbanking.com%2Fsuntrust-online-banking">http://www.youtube.com/redirect?q=http://pcinterne...</a> &times;2126</li>
+<li><a rel="nofollow" href="http://www.corporatekeys.co.nz/best-cheap-hotel-wellington-hotels.php">http://www.corporatekeys.co.nz/best-cheap-hotel-we...</a> &times;2087</li>
+<li><a rel="nofollow" href="http://labaq.com/archives/50727659.html">http://labaq.com/archives/50727659.html</a> &times;1736</li>
+<li><a rel="nofollow" href="http://bestrealarticles.com/tight-budget-okay-for-futons">http://bestrealarticles.com/tight-budget-okay-for-...</a> &times;1325</li>
+<li><a rel="nofollow" href="http://www.environmentalsculpturing.com/naturalswimmingpools.htm">http://www.environmentalsculpturing.com/naturalswi...</a> &times;1306</li>
+<li><a rel="nofollow" href="http://slashdot.jp/">http://slashdot.jp/</a> &times;696</li>
+<li><a rel="nofollow" href="http://blog.livedoor.jp/dankogai/archives/50993137.html">http://blog.livedoor.jp/dankogai/archives/50993137...</a> &times;689</li>
+<li><a rel="nofollow" href="http://d.hatena.ne.jp/yomoyomo/20111011/rms">http://d.hatena.ne.jp/yomoyomo/20111011/rms</a> &times;664</li>
+<li><a rel="nofollow" href="https://www.google.co.jp/">https://www.google.co.jp/</a> &times;561</li>
+<li><a rel="nofollow" href="http://www.geekpage.jp/blog/?id=2010/11/9/2">http://www.geekpage.jp/blog/?id=2010/11/9/2</a> &times;504</li>
+<li><a rel="nofollow" href="http://www.thehungrywife.com/vegetables/oven-roasted-potatoes/">http://www.thehungrywife.com/vegetables/oven-roast...</a> &times;462</li>
+<li><a rel="nofollow" href="http://www.thehungrywife.com/meats/baked-pork-chops/">http://www.thehungrywife.com/meats/baked-pork-chop...</a> &times;437</li>
+<li><a rel="nofollow" href="http://www.thehungrywife.com/salad/broccoli-salad/">http://www.thehungrywife.com/salad/broccoli-salad/...</a> &times;428</li>
+<li><a rel="nofollow" href="http://anond.hatelabo.jp/20080130215148">http://anond.hatelabo.jp/20080130215148</a> &times;424</li>
+<li><a rel="nofollow" href="http://labaq.com/lite/archives/50727659.html">http://labaq.com/lite/archives/50727659.html</a> &times;424</li>
+<li><a rel="nofollow" href="http://www.thehungrywife.com/">http://www.thehungrywife.com/</a> &times;422</li>
+<li><a rel="nofollow" href="http://www.gesource.jp/weblog/?p=424">http://www.gesource.jp/weblog/?p=424</a> &times;410</li>
+<li><a rel="nofollow" href="http://en.yummy.stripper.jp/?eid=811810">http://en.yummy.stripper.jp/?eid=811810</a> &times;383</li>
+<li><a rel="nofollow" href="http://hiroki.jp/2011/03/27/1767/">http://hiroki.jp/2011/03/27/1767/</a> &times;364</li>
+<li><a rel="nofollow" href="http://developers.slashdot.jp/story/11/11/02/0949232/">http://developers.slashdot.jp/story/11/11/02/09492...</a> &times;344</li>
+<li><a rel="nofollow" href="http://developers.slashdot.jp/story/11/11/02/0949232/Ruby-1.9.3-p0%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%E3%80%81%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%81%8C%E5%A4%89%E6%9B%B4">http://developers.slashdot.jp/story/11/11/02/09492...</a> &times;344</li>
+<li><a rel="nofollow" href="http://www.rubyist.net/">http://www.rubyist.net/</a> &times;341</li>
+<li><a rel="nofollow" href="http://takagi-hiromitsu.jp/diary/20051118.html">http://takagi-hiromitsu.jp/diary/20051118.html</a> &times;301</li>
+<li><a rel="nofollow" href="http://jp.rubyist.net/magazine/?0009-YAML">http://jp.rubyist.net/magazine/?0009-YAML</a> &times;299</li>
+<li><a rel="nofollow" href="http://www.manholecovers.org/about">http://www.manholecovers.org/about</a> &times;268</li>
+<li><a rel="nofollow" href="http://www.manholecovers.org/products">http://www.manholecovers.org/products</a> &times;255</li>
+<li><a rel="nofollow" href="http://www.manholecovers.org/catalog">http://www.manholecovers.org/catalog</a> &times;241</li>
+<li><a rel="nofollow" href="http://www.naturally-beautiful-enhancements.com/MALE-transgender-transexual-full-potential-natural-breast-enhancements-bust-enlargement-enhancer-enlarger.php">http://www.naturally-beautiful-enhancements.com/MA...</a> &times;239</li>
+<li><a rel="nofollow" href="http://ssquare.cocolog-nifty.com/tsubuyaki/2005/04/post_c6f5.html">http://ssquare.cocolog-nifty.com/tsubuyaki/2005/04...</a> &times;238</li>
+<li><a rel="nofollow" href="http://www.naturally-beautiful-enhancements.com/HOWITWORKS-full-potential-natural-breast-enhancements-bust-enlargement-enhancer-enlarger.php">http://www.naturally-beautiful-enhancements.com/HO...</a> &times;231</li>
+<li><a rel="nofollow" href="http://www.thehungrywife.com/meats/homemade-meatballs-recipe/">http://www.thehungrywife.com/meats/homemade-meatba...</a> &times;228</li>
+<li><a rel="nofollow" href="http://blog.webcreativepark.net/2008/01/31-010847.html">http://blog.webcreativepark.net/2008/01/31-010847....</a> &times;228</li>
+<li><a rel="nofollow" href="http://t.co/5NPltgAq">http://t.co/5NPltgAq</a> &times;221</li>
+<li><a rel="nofollow" href="http://www.couplesadvice.com/">http://www.couplesadvice.com/</a> &times;219</li>
+<li><a rel="nofollow" href="http://www.naturally-beautiful-enhancements.com/CREAM-full-potential-natural-breast-enhancements-bust-enlargement-enhancer-enlarger.php">http://www.naturally-beautiful-enhancements.com/CR...</a> &times;216</li>
+<li><a rel="nofollow" href="http://www.montregps.org/">http://www.montregps.org/</a> &times;212</li>
+<li><a rel="nofollow" href="http://www.naturally-beautiful-enhancements.com/PRODUCTS-full-potential-natural-breast-enhancements-bust-enlargement-enhancer-enlarger.php">http://www.naturally-beautiful-enhancements.com/PR...</a> &times;207</li>
+<li><a rel="nofollow" href="http://www.youtube.com/watch?v=_jfqGDrMo-0">http://www.youtube.com/watch?v=_jfqGDrMo-0</a> &times;201</li>
+<li><a rel="nofollow" href="http://www.youtube.com/watch?v=g_i2sbhOUEs">http://www.youtube.com/watch?v=g_i2sbhOUEs</a> &times;200</li>
+<li><a rel="nofollow" href="http://www.youtube.com/watch?v=hFgZZE_2WhA">http://www.youtube.com/watch?v=hFgZZE_2WhA</a> &times;198</li>
+<li><a rel="nofollow" href="http://www.naturally-beautiful-enhancements.com/FAQS-full-potential-natural-breast-enhancements-bust-enlargement-enhancer-enlarger.php">http://www.naturally-beautiful-enhancements.com/FA...</a> &times;195</li>
+<li><a rel="nofollow" href="http://www.naturally-beautiful-enhancements.com/CLINICAL-TEST-full-potential-natural-breast-enhancements-bust-enlargement-enhancer-enlarger.php">http://www.naturally-beautiful-enhancements.com/CL...</a> &times;193</li>
+<li><a rel="nofollow" href="http://www.naturally-beautiful-enhancements.com/PILLS-full-potential-natural-breast-enhancements-bust-enlargement-enhancer-enlarger.php">http://www.naturally-beautiful-enhancements.com/PI...</a> &times;189</li>
+<li><a rel="nofollow" href="http://d.hatena.ne.jp/essa/20080130/p1">http://d.hatena.ne.jp/essa/20080130/p1</a> &times;189</li>
+<li><a rel="nofollow" href="http://www.thehungrywife.com/pies-and-desserts/cranberry-apple-pie/">http://www.thehungrywife.com/pies-and-desserts/cra...</a> &times;185</li>
+<li><a rel="nofollow" href="http://www.montuori.net/">http://www.montuori.net/</a> &times;183</li>
+<li><a rel="nofollow" href="http://www.naturally-beautiful-enhancements.com/TESTIMONIALS-full-potential-natural-breast-enhancements-bust-enlargement-enhancer-enlarger.php">http://www.naturally-beautiful-enhancements.com/TE...</a> &times;182</li>
+<li><a rel="nofollow" href="http://eggplant.to/software/192-168-0-1%E3%81%AF%E3%82%8F%E3%81%9F%E3%81%97%E3%81%8C%E6%89%80%E6%9C%89%E3%81%97%E3%81%A6%E3%81%84%E3%82%8Bip%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%E3%81%A7%E3%81%99/">http://eggplant.to/software/192-168-0-1はわたしが所有している...</a> &times;179</li>
+<li><a rel="nofollow" href="http://www.ekidsmma.com/">http://www.ekidsmma.com/</a> &times;178</li>
+<li><a rel="nofollow" href="http://www.thehungrywife.com/poultry/cheesy-slow-cooker-chicken/">http://www.thehungrywife.com/poultry/cheesy-slow-c...</a> &times;176</li>
+<li><a rel="nofollow" href="http://www.bedroomfurniturelot.com/">http://www.bedroomfurniturelot.com/</a> &times;165</li>
+<li><a rel="nofollow" href="http://www.thehungrywife.com/tag/chicken/">http://www.thehungrywife.com/tag/chicken/</a> &times;164</li>
+<li><a rel="nofollow" href="http://www.oiax.jp/rails/zakkan/will_rails_reign_supreme.html">http://www.oiax.jp/rails/zakkan/will_rails_reign_s...</a> &times;164</li>
+<li><a rel="nofollow" href="http://www.thehungrywife.com/tag/slow-cooker/">http://www.thehungrywife.com/tag/slow-cooker/</a> &times;163</li>
+<li><a rel="nofollow" href="http://www.youtube.com/watch?v=qzap99B7XTE">http://www.youtube.com/watch?v=qzap99B7XTE</a> &times;162</li>
+<li><a rel="nofollow" href="http://www.youtube.com/watch?v=76X-JOJug6w">http://www.youtube.com/watch?v=76X-JOJug6w</a> &times;153</li>
+<li><a rel="nofollow" href="http://www.bedroomfurniturelot.com/daybeds.html">http://www.bedroomfurniturelot.com/daybeds.html</a> &times;151</li>
+<li><a rel="nofollow" href="http://www.bedroomfurniturelot.com/bedroom-sets.html">http://www.bedroomfurniturelot.com/bedroom-sets.ht...</a> &times;150</li>
+<li><a rel="nofollow" href="http://www.bedroomfurniturelot.com/bedroom-chests.html">http://www.bedroomfurniturelot.com/bedroom-chests....</a> &times;149</li>
+<li><a rel="nofollow" href="http://www.bedroomfurniturelot.com/full-beds.html">http://www.bedroomfurniturelot.com/full-beds.html</a> &times;141</li>
+<li><a rel="nofollow" href="http://developers.slashdot.jp/story/08/02/03/0022251/PHP%E3%81%AF%E9%A7%84%E7%9B%AE%E3%81%AA%E8%A8%80%E8%AA%9E%E3%81%AA%E3%81%AE%E3%81%8B">http://developers.slashdot.jp/story/08/02/03/00222...</a> &times;141</li>
+<li><a rel="nofollow" href="http://www.bedroomfurniturelot.com/bedroom-dressers.html">http://www.bedroomfurniturelot.com/bedroom-dresser...</a> &times;136</li>
+<li><a rel="nofollow" href="http://www.bedroomfurniturelot.com/nightstands.html">http://www.bedroomfurniturelot.com/nightstands.htm...</a> &times;134</li>
+<li><a rel="nofollow" href="http://idle.slashdot.jp/story/12/06/22/1020200/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E%E3%81%AE%E6%88%90%E5%8A%9F%E3%81%AB%E3%81%AF%E3%81%82%E3%81%94%E9%AB%AD%E3%81%8C%E5%BF%85%E9%A0%88%EF%BC%9F">http://idle.slashdot.jp/story/12/06/22/1020200/プログ...</a> &times;130</li>
+<li><a rel="nofollow" href="http://maxodermexposed.com/">http://maxodermexposed.com/</a> &times;130</li>
+<li><a rel="nofollow" href="http://ja.wikipedia.org/wiki/%E3%81%BE%E3%81%A4%E3%82%82%E3%81%A8%E3%82%86%E3%81%8D%E3%81%B2%E3%82%8D">http://ja.wikipedia.org/wiki/まつもとゆきひろ</a> &times;129</li>
+<li><a rel="nofollow" href="http://kaoriha.org/nikki/archives/000354.html">http://kaoriha.org/nikki/archives/000354.html</a> &times;128</li>
+<li><a rel="nofollow" href="http://maxidermreview.com/maxiderm-review">http://maxidermreview.com/maxiderm-review</a> &times;125</li>
+<li><a rel="nofollow" href="http://www.bedroomfurniturelot.com/king-beds.html">http://www.bedroomfurniturelot.com/king-beds.html</a> &times;124</li>
+<li><a rel="nofollow" href="http://www.bedroomfurniturelot.com/beds.html">http://www.bedroomfurniturelot.com/beds.html</a> &times;122</li>
+<li><a rel="nofollow" href="http://maxodermexposed.com/maxoderm-review">http://maxodermexposed.com/maxoderm-review</a> &times;114</li>
+<li><a rel="nofollow" href="http://blog.goo.ne.jp/scalar_001/e/c56b8eb3eb3f3278aa431f31aa50d0c2">http://blog.goo.ne.jp/scalar_001/e/c56b8eb3eb3f327...</a> &times;114</li>
+<li><a rel="nofollow" href="http://maxidermreview.com/is-maxiderm-patch-a-scam-or-does-it-really-work">http://maxidermreview.com/is-maxiderm-patch-a-scam...</a> &times;114</li>
+<li><a rel="nofollow" href="http://slashdot.jp/story/07/10/31/0311203/itojun%E6%B0%8F%E3%80%81%E9%80%9D%E5%8E%BB">http://slashdot.jp/story/07/10/31/0311203/itojun氏、...</a> &times;112</li>
+<li><a rel="nofollow" href="http://zapanet.info/blog/item/1217">http://zapanet.info/blog/item/1217</a> &times;111</li>
+<li><a rel="nofollow" href="http://developers.slashdot.jp/story/08/01/02/0046222/Ruby-on-Rails%E3%81%AF%E3%82%B2%E3%83%83%E3%83%88%E3%83%BC%E3%81%A0">http://developers.slashdot.jp/story/08/01/02/00462...</a> &times;109</li>
+<li><a rel="nofollow" href="http://maxidermreview.com/">http://maxidermreview.com/</a> &times;109</li>
+<li><a rel="nofollow" href="http://maxodermexposed.com/is-maxoderm-topical-lotion-an-effective-male-enhancement">http://maxodermexposed.com/is-maxoderm-topical-lot...</a> &times;108</li>
+<li><a rel="nofollow" href="http://maxodermexposed.com/maxoderm-get-the-maxoderm-facts">http://maxodermexposed.com/maxoderm-get-the-maxode...</a> &times;107</li>
+<li><a rel="nofollow" href="http://maxidermreview.com/get-the-maxiderm-penis-patch-facts-before-you-buy">http://maxidermreview.com/get-the-maxiderm-penis-p...</a> &times;106</li>
+<li><a rel="nofollow" href="http://gynexinscam.com/how-quick-does-gynexin-work">http://gynexinscam.com/how-quick-does-gynexin-work...</a> &times;106</li>
+<li><a rel="nofollow" href="http://gynexinscam.com/does-gynexin-help-reduce-manboobs">http://gynexinscam.com/does-gynexin-help-reduce-ma...</a> &times;103</li>
+<li><a rel="nofollow" href="http://maxidermreview.com/maxiderm-penis-patch-the-best-method-for-male-enhancement">http://maxidermreview.com/maxiderm-penis-patch-the...</a> &times;102</li>
+<li><a rel="nofollow" href="http://proextenderexposed.com/proextender-review">http://proextenderexposed.com/proextender-review</a> &times;102</li>
+<li><a rel="nofollow" href="http://valvallow.blogspot.com/2010/05/lisp_09.html">http://valvallow.blogspot.com/2010/05/lisp_09.html...</a> &times;102</li>
+<li><a rel="nofollow" href="http://capsctrl.que.jp/kdmsnr/wiki/bliki/?ClassInstanceVariable">http://capsctrl.que.jp/kdmsnr/wiki/bliki/?ClassIns...</a> &times;101</li>
+<li><a rel="nofollow" href="http://gynexinscam.com/why-choose-gynexin">http://gynexinscam.com/why-choose-gynexin</a> &times;101</li>
+<li><a rel="nofollow" href="http://blog.livedoor.jp/dankogai/archives/50707970.html">http://blog.livedoor.jp/dankogai/archives/50707970...</a> &times;100</li>
+<li><a rel="nofollow" href="http://gynexinscam.com/can-gynexin-reduce-my-breast-size">http://gynexinscam.com/can-gynexin-reduce-my-breas...</a> &times;100</li>
+<li><a rel="nofollow" href="http://www.geekpage.jp/blog/?id=2008/2/13">http://www.geekpage.jp/blog/?id=2008/2/13</a> &times;99</li>
+<li><a rel="nofollow" href="http://vigrxplusrevealed.com/vigrx-plus-review">http://vigrxplusrevealed.com/vigrx-plus-review</a> &times;99</li>
+<li><a rel="nofollow" href="http://blog.livedoor.jp/dankogai/archives/50538384.html">http://blog.livedoor.jp/dankogai/archives/50538384...</a> &times;97</li>
+<li><a rel="nofollow" href="http://gynexinscam.com/how-does-gynexin-work">http://gynexinscam.com/how-does-gynexin-work</a> &times;97</li>
+<li><a rel="nofollow" href="http://gynexinscam.com/what-ingredients-are-in-gynexin">http://gynexinscam.com/what-ingredients-are-in-gyn...</a> &times;96</li>
+<li><a rel="nofollow" href="http://d.hatena.ne.jp/nobyu/20090724/1248442523">http://d.hatena.ne.jp/nobyu/20090724/1248442523</a> &times;95</li>
+<li><a rel="nofollow" href="http://semenaxrevealed.com/benefits-of-using-semenax">http://semenaxrevealed.com/benefits-of-using-semen...</a> &times;94</li>
+<li><a rel="nofollow" href="http://proenhancereview.com/penis-pills-versus-penis-patches-a-comparison">http://proenhancereview.com/penis-pills-versus-pen...</a> &times;94</li>
+<li><a rel="nofollow" href="http://proextenderexposed.com/proextender-does-it-work-or-is-proextender-a-scam">http://proextenderexposed.com/proextender-does-it-...</a> &times;94</li>
+<li><a rel="nofollow" href="http://www.forexclub.it/forum/member.php?u=556056">http://www.forexclub.it/forum/member.php?u=556056</a> &times;93</li>
+</ul>
+<div class="caption">アンテナ</div>
+<ul><li><a rel="nofollow" href="http://dic.nicovideo.jp/a/%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%E3%83%8F%E3%82%AB%E3%83%BC">http://dic.nicovideo.jp/a/スーパーハカー</a> &times;2375</li>
+<li><a rel="nofollow" href="http://dic.nicovideo.jp/a/%E3%82%88%E3%81%8F%E3%82%8F%E3%81%8B%E3%82%8B%E7%8F%BE%E4%BB%A3%E9%AD%94%E6%B3%95">http://dic.nicovideo.jp/a/よくわかる現代魔法</a> &times;72</li>
+<li><a rel="nofollow" href="http://blog.64p.org/entry/2012/09/05/110623">http://blog.64p.org/entry/2012/09/05/110623</a> &times;41</li>
+<li><a rel="nofollow" href="http://alohakun.blog7.fc2.com/blog-entry-957.html">http://alohakun.blog7.fc2.com/blog-entry-957.html</a> &times;33</li>
+<li><a rel="nofollow" href="http://yojik.hatenablog.jp/entry/2013/01/25/010932">http://yojik.hatenablog.jp/entry/2013/01/25/010932...</a> &times;28</li>
+<li><a rel="nofollow" href="http://rssniches.com/index.php?page=article&amp;article_id=534318">http://rssniches.com/index.php?page=article&amp;articl...</a> &times;28</li>
+<li><a rel="nofollow" href="http://alohakun.blog7.fc2.com/blog-entry-593.html">http://alohakun.blog7.fc2.com/blog-entry-593.html</a> &times;19</li>
+<li><a rel="nofollow" href="http://duncanzimmer24.bravejournal.com/entry/79392">http://duncanzimmer24.bravejournal.com/entry/79392...</a> &times;19</li>
+<li><a rel="nofollow" href="http://jp.rubyist.net/magazine/?0014-Hotlinks">http://jp.rubyist.net/magazine/?0014-Hotlinks</a> &times;17</li>
+<li><a rel="nofollow" href="http://www.blogcatalog.com/discuss/entry/constructing-high-mast-lighting-in-asian-countries-design-fabrication-and-quality-criteria">http://www.blogcatalog.com/discuss/entry/construct...</a> &times;15 : 9, <a rel="nofollow" href="http://www.blogcatalog.com/discuss/entry/constructing-high-mast-lighting-in-parts-of-asia-model-manufacturing-and-quality-requirements">4</a>, <a rel="nofollow" href="http://www.blogcatalog.com/discuss/entry/constructing-high-mast-lighting-in-parts-of-asia-model-fabrication-and-quality-requirements">2</a></li>
+<li><a rel="nofollow" href="http://derrickfinch13.bravejournal.com/entry/82057">http://derrickfinch13.bravejournal.com/entry/82057...</a> &times;15</li>
+<li><a rel="nofollow" href="http://urin.take-uma.net/Entry/18/">http://urin.take-uma.net/Entry/18/</a> &times;13</li>
+<li><a rel="nofollow" href="http://www.articleforbacklinks.com/Art/471760/24/Chase-Online-Banking-How-To-Proceed-If-Your-Big-Bank-Receives-Acquistion-Proposal.html">http://www.articleforbacklinks.com/Art/471760/24/C...</a> &times;12</li>
+<li><a rel="nofollow" href="http://ruby-game-dev.org/wiki/index.php?%E3%83%AA%E3%83%B3%E3%82%AF%E9%9B%86">http://ruby-game-dev.org/wiki/index.php?リンク集</a> &times;11</li>
+<li><a rel="nofollow" href="http://takenosuke.blog32.fc2.com/blog-entry-463.html">http://takenosuke.blog32.fc2.com/blog-entry-463.ht...</a> &times;10</li>
+<li><a rel="nofollow" href="http://articlesbacklink.com/Art/502089/24/Chase-Internet-Banking-How-To-Proceed-In-Case-Your-Big-Bank-Obtains-Acquistion-Proposal.html">http://articlesbacklink.com/Art/502089/24/Chase-In...</a> &times;9</li>
+<li><a rel="nofollow" href="http://www.blogcatalog.com/discuss/entry/production-high-mast-lighting-within-parts-of-asia-design-manufacturing-and-quality-requirements">http://www.blogcatalog.com/discuss/entry/productio...</a> &times;8 : 4, <a rel="nofollow" href="http://www.blogcatalog.com/discuss/entry/production-high-mast-lighting-within-asian-countries-design-fabrication-and-quality-specifications">4</a></li>
+<li><a rel="nofollow" href="http://www.blogcatalog.com/discuss/entry/manufacturing-high-mast-lighting-within-parts-of-asia-design-manufacturing-and-quality-guidelines">http://www.blogcatalog.com/discuss/entry/manufactu...</a> &times;8 : 3, <a rel="nofollow" href="http://www.blogcatalog.com/discuss/entry/manufacturing-high-mast-lighting-in-asian-countries-model-manufacturing-and-quality-specifications">3</a>, <a rel="nofollow" href="http://www.blogcatalog.com/discuss/entry/manufacture-high-mast-lighting-throughout-asia-design-production-and-quality-specifications">2</a></li>
+<li><a rel="nofollow" href="http://www.kiwibox.com/brodylcook/blog/entry/91641179/constructing_high_mast_lighting_in_asian_countries_model_fabrication_and_quality_requirements_">http://www.kiwibox.com/brodylcook/blog/entry/91641...</a> &times;7</li>
+<li><a rel="nofollow" href="http://www.blogcatalog.com/discuss/entry/summary-of-high-mast-lighting-developing-plus-manufacturing-throughout-asian-countries-for-worldwide-purchasers">http://www.blogcatalog.com/discuss/entry/summary-o...</a> &times;7 : 3, <a rel="nofollow" href="http://www.blogcatalog.com/discuss/entry/summary-of-high-mast-lighting-designing-plus-manufacturing-in-parts-of-asia-for-world-wide-purchasers">3</a>, <a rel="nofollow" href="http://www.blogcatalog.com/discuss/entry/summary-of-high-mast-lighting-creating-and-production-throughout-asia-for-worldwide-clients">1</a></li>
+<li><a rel="nofollow" href="http://www.mhatta.org/natsu/">http://www.mhatta.org/natsu/</a> &times;7</li>
+<li><a rel="nofollow" href="http://www.blogcatalog.com/discuss/entry/introduction-of-high-mast-lighting-conceptualizing-plus-manufacturing-within-parts-of-asia-for-worldwide-purchasers">http://www.blogcatalog.com/discuss/entry/introduct...</a> &times;7 : 4, <a rel="nofollow" href="http://www.blogcatalog.com/discuss/entry/introduction-of-high-mast-lighting-design-plus-production-within-parts-of-asia-for-global-clients">3</a></li>
+<li><a rel="nofollow" href="http://jp.rubyist.net/magazine/?0028-Hotlinks">http://jp.rubyist.net/magazine/?0028-Hotlinks</a> &times;7</li>
+<li><a rel="nofollow" href="http://nobyu.hatenadiary.jp/entry/20090724/1248442523">http://nobyu.hatenadiary.jp/entry/20090724/1248442...</a> &times;6</li>
+<li><a rel="nofollow" href="http://mineko.fc2web.com/box/my-room/link/techlink.html">http://mineko.fc2web.com/box/my-room/link/techlink...</a> &times;6</li>
+<li><a rel="nofollow" href="http://www.blogcatalog.com/discuss/entry/brief-summary-of-high-mast-lighting-conceptualizing-and-production-in-asia-for-international-clients">http://www.blogcatalog.com/discuss/entry/brief-sum...</a> &times;6</li>
+<li><a rel="nofollow" href="http://www.kiwibox.com/milesjcart/blog/entry/91641353/manufacturing_high_mast_lighting_within_asian_countries_design_fabrication_and_quality_guidelines_">http://www.kiwibox.com/milesjcart/blog/entry/91641...</a> &times;5</li>
+<li><a rel="nofollow" href="http://jp.rubyist.net/magazine/?0008-Hotlinks-1">http://jp.rubyist.net/magazine/?0008-Hotlinks-1</a> &times;5</li>
+<li><a rel="nofollow" href="http://www.kiwibox.com/huntersnel/blog/entry/91640491/outline_of_high_mast_lighting_creating_and_production_in_asian_countries_for_overseas_purchasers_">http://www.kiwibox.com/huntersnel/blog/entry/91640...</a> &times;5</li>
+<li><a rel="nofollow" href="http://mkosaki.blog46.fc2.com/blog-entry-128.html">http://mkosaki.blog46.fc2.com/blog-entry-128.html</a> &times;4</li>
+<li><a rel="nofollow" href="http://alohakun.blog7.fc2.com/blog-entry-591.html">http://alohakun.blog7.fc2.com/blog-entry-591.html</a> &times;4</li>
+<li><a rel="nofollow" href="http://alohakun.blog7.fc2.com/blog-entry-806.html">http://alohakun.blog7.fc2.com/blog-entry-806.html</a> &times;4</li>
+<li><a rel="nofollow" href="http://www.blogcatalog.com/discuss/entry/outline-of-high-mast-lighting-designing-and-fabrication-in-asia-for-intercontinental-clientele">http://www.blogcatalog.com/discuss/entry/outline-o...</a> &times;4</li>
+<li><a rel="nofollow" href="http://www.kiwibox.com/austinqlop/blog/entry/91642121/manufacture_high_mast_lighting_in_parts_of_asia_model_fabrication_and_quality_expectations_">http://www.kiwibox.com/austinqlop/blog/entry/91642...</a> &times;4</li>
+<li><a rel="nofollow" href="http://www.blogcatalog.com/discuss/entry/developing-high-mast-lighting-throughout-parts-of-asia-model-fabrication-and-quality-guidelines">http://www.blogcatalog.com/discuss/entry/developin...</a> &times;4</li>
+<li><a rel="nofollow" href="http://alohakun.blog7.fc2.com/blog-entry-731.html">http://alohakun.blog7.fc2.com/blog-entry-731.html</a> &times;3</li>
+<li><a rel="nofollow" href="http://feature-link.com/who-chose-the-bedroom-accessories-in-your-house/">http://feature-link.com/who-chose-the-bedroom-acce...</a> &times;3</li>
+<li><a rel="nofollow" href="http://www.blogcatalog.com/discuss/entry/overview-of-high-mast-lighting-design-plus-production-within-parts-of-asia-for-global-clientele">http://www.blogcatalog.com/discuss/entry/overview-...</a> &times;3</li>
+<li><a rel="nofollow" href="http://www.kiwibox.com/sethxriver/blog/entry/92388402/summary_of_high_mast_lighting_conceptualizing_and_fabrication_throughout_asia_for_global_customers_">http://www.kiwibox.com/sethxriver/blog/entry/92388...</a> &times;3</li>
+<li><a rel="nofollow" href="http://alohakun.blog7.fc2.com/blog-entry-782.html">http://alohakun.blog7.fc2.com/blog-entry-782.html</a> &times;3</li>
+<li><a rel="nofollow" href="http://mkosaki.blog46.fc2.com/blog-entry-568.html">http://mkosaki.blog46.fc2.com/blog-entry-568.html</a> &times;3</li>
+<li><a rel="nofollow" href="http://www.thelinkportal.com/education/77356">http://www.thelinkportal.com/education/77356</a> &times;3</li>
+<li><a rel="nofollow" href="http://dic.nicomoba.jp/k/a/%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%E3%83%8F%E3%82%AB%E3%83%BC">http://dic.nicomoba.jp/k/a/スーパーハカー</a> &times;3</li>
+<li><a rel="nofollow" href="http://connectlinks.info/user.php?login=moliva&amp;view=history">http://connectlinks.info/user.php?login=moliva&amp;vie...</a> &times;2</li>
+<li><a rel="nofollow" href="http://booksadicto.com/blogs/entry/Production-high-mast-lighting-within-Asia-design-manufacturing-and-quality-criteria">http://booksadicto.com/blogs/entry/Production-high...</a> &times;2</li>
+<li><a rel="nofollow" href="http://japan.cnet.com/blog/umeda/2003/10/08/entry_post_81/">http://japan.cnet.com/blog/umeda/2003/10/08/entry_...</a> &times;2</li>
+<li><a rel="nofollow" href="http://www.blinklist.com/users/kentgibbs1128">http://www.blinklist.com/users/kentgibbs1128</a> &times;2</li>
+<li><a rel="nofollow" href="http://www.grienlinks.nl/2012/01/19/3353/">http://www.grienlinks.nl/2012/01/19/3353/</a> &times;2</li>
+<li><a rel="nofollow" href="http://emasaka.blog65.fc2.com/blog-entry-353.html">http://emasaka.blog65.fc2.com/blog-entry-353.html</a> &times;2</li>
+<li><a rel="nofollow" href="http://mkosaki.blog46.fc2.com/blog-entry-466.html">http://mkosaki.blog46.fc2.com/blog-entry-466.html</a> &times;2</li>
+<li><a rel="nofollow" href="http://www.linker.zemby.pl/user.php?login=cfermin&amp;view=history">http://www.linker.zemby.pl/user.php?login=cfermin&amp;...</a> &times;2</li>
+<li><a rel="nofollow" href="http://1travel.org/rss/category/queued/">http://1travel.org/rss/category/queued/</a> &times;2</li>
+<li><a rel="nofollow" href="http://rss-extensions.org/wiki/An_Internet-based_Debt_Plan_Would_Likely_Work_Out_A_Economic_Troubles">http://rss-extensions.org/wiki/An_Internet-based_D...</a> &times;2</li>
+<li><a rel="nofollow" href="http://www.kiwibox.com/hunterqnel/blog/entry/91642027/developing_high_mast_lighting_throughout_asia_design_production_and_quality_criteria_">http://www.kiwibox.com/hunterqnel/blog/entry/91642...</a> &times;2</li>
+<li><a rel="nofollow" href="http://jp.rubyist.net/magazine/?0010-Hotlinks">http://jp.rubyist.net/magazine/?0010-Hotlinks</a> &times;2</li>
+<li><a rel="nofollow" href="http://booksadicto.com/blogs/entry/Manufacture-high-mast-lighting-within-parts-of-Asia-design-fabrication-and-quality-requirements">http://booksadicto.com/blogs/entry/Manufacture-hig...</a> &times;2</li>
+<li><a rel="nofollow" href="http://www.kiwibox.com/adamhevans/blog/entry/92388606/constructing_high_mast_lighting_in_parts_of_asia_model_manufacturing_and_quality_requirements_">http://www.kiwibox.com/adamhevans/blog/entry/92388...</a> &times;2</li>
+<li><a rel="nofollow" href="http://ugandalogs.com/storyrss.php?title=everything-you-have-to-know-about-online-banking-">http://ugandalogs.com/storyrss.php?title=everythin...</a> &times;2</li>
+<li><a rel="nofollow" href="http://whatsmypotential987.blog.fc2.com/blog-entry-8.html">http://whatsmypotential987.blog.fc2.com/blog-entry...</a> &times;2</li>
+<li><a rel="nofollow" href="http://www.yoomark.com/rssfeeds.php">http://www.yoomark.com/rssfeeds.php</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.oneview.com/rss/user/mauricesalin1127">http://www.oneview.com/rss/user/mauricesalin1127</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.millionrss.net/user.php?login=pbrain&amp;view=history">http://www.millionrss.net/user.php?login=pbrain&amp;vi...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.linkmanagerz.com/user.php?login=lmoman&amp;view=history">http://www.linkmanagerz.com/user.php?login=lmoman&amp;...</a> &times;1</li>
+<li><a rel="nofollow" href="http://srssource.mecharpg.com/index.php?title=Make_Certain_Wheeled_To_Reduced_Dimpled_Skin">http://srssource.mecharpg.com/index.php?title=Make...</a> &times;1</li>
+<li><a rel="nofollow" href="http://search.auone.jp/?q=LINQ+Ruby&amp;sr=0001&amp;link_u=&amp;lr=&amp;ie=SJIS">http://search.auone.jp/?q=LINQ Ruby&amp;sr=0001&amp;link_u...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.jquerylink.com/user.php?login=cecarbonneau&amp;view=history">http://www.jquerylink.com/user.php?login=cecarbonn...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.blurty.com/talkpost.bml?journal=glollinkambi102&amp;itemid=326">http://www.blurty.com/talkpost.bml?journal=glollin...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.fishlinkcentral.com/user_detail.php?u=christopherh1025">http://www.fishlinkcentral.com/user_detail.php?u=c...</a> &times;1</li>
+<li><a rel="nofollow" href="http://search.auone.jp/?q=XML+S%8E%AE&amp;sr=0001&amp;link_u=&amp;lr=&amp;ie=SJIS">http://search.auone.jp/?q=XML S式&amp;sr=0001&amp;link_u=&amp;l...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.addlinksto.com/user.php?login=rteman&amp;view=history">http://www.addlinksto.com/user.php?login=rteman&amp;vi...</a> &times;1</li>
+<li><a rel="nofollow" href="http://skenny.info/archives/618?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=low-vs-max-crysis-2-low-dx9-vs-ultra-dx11-high-res">http://skenny.info/archives/618?utm_source=rss&amp;utm...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.fishlinkcentral.com/user_detail.php?u=judeswest8">http://www.fishlinkcentral.com/user_detail.php?u=j...</a> &times;1</li>
+<li><a rel="nofollow" href="http://secretofferssite.info/index.php?title=Young_Perished_Softball_Bats_In_The_Us.">http://secretofferssite.info/index.php?title=Young...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.wtflinks.com/user.php?login=peroderick&amp;view=history">http://www.wtflinks.com/user.php?login=peroderick&amp;...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.quechup.com/blog/entry/view/id/428716">http://www.quechup.com/blog/entry/view/id/428716</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.linkguiden.se/user.php?login=sroderick&amp;view=history">http://www.linkguiden.se/user.php?login=sroderick&amp;...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.textlinksforum.com/member.php?u=381489">http://www.textlinksforum.com/member.php?u=381489</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.freebacklinks.eu/using-directory-submission-services">http://www.freebacklinks.eu/using-directory-submis...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.textlinksforum.com/member.php?u=350899">http://www.textlinksforum.com/member.php?u=350899</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.linkingjunction.com/user.php?login=efettig&amp;view=history">http://www.linkingjunction.com/user.php?login=efet...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.dofollowonewaylink.info/user.php?login=ryasuko&amp;view=history">http://www.dofollowonewaylink.info/user.php?login=...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.wtflinks.com/user.php?login=feroy&amp;view=history">http://www.wtflinks.com/user.php?login=feroy&amp;view=...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.sitebookmarking.com/storyrss.php?title=seven-tips-for-safe-online-banking">http://www.sitebookmarking.com/storyrss.php?title=...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.seo-strategis.com/digg-like/storyrss.php?title=everything-to-consider-about-online-banking-">http://www.seo-strategis.com/digg-like/storyrss.ph...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.powerlinkings.info/user.php?login=tluigi&amp;view=history">http://www.powerlinkings.info/user.php?login=tluig...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.linksweb.org/user.php?login=eldeharo&amp;view=history">http://www.linksweb.org/user.php?login=eldeharo&amp;vi...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.linkscafe.in/user.php?login=nemushett&amp;view=history">http://www.linkscafe.in/user.php?login=nemushett&amp;v...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.gesource.jp/weblog/?menu=cats&amp;img=link&amp;paged=89">http://www.gesource.jp/weblog/?menu=cats&amp;img=link&amp;...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.linkkipelle.com/user.php?login=fathibert&amp;view=history">http://www.linkkipelle.com/user.php?login=fathiber...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.newdofollowlinks.com/user.php?login=jfeatherston&amp;view=history">http://www.newdofollowlinks.com/user.php?login=jfe...</a> &times;1</li>
+<li><a rel="nofollow" href="http://vielbesucher.de/fragen/fragen/storyrss.php?title=seven-tips-for-harmless-online-banking">http://vielbesucher.de/fragen/fragen/storyrss.php?...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.w3pagelinks.com/user.php?login=ademanuel&amp;view=history">http://www.w3pagelinks.com/user.php?login=ademanue...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.mhatta.org/natsu/index.shtml">http://www.mhatta.org/natsu/index.shtml</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.linktales.co.cc/user.php?login=cengelmeyer&amp;view=history">http://www.linktales.co.cc/user.php?login=cengelme...</a> &times;1</li>
+<li><a rel="nofollow" href="http://way2bookmarks.com/userrss.php?user=afredrickelli513">http://way2bookmarks.com/userrss.php?user=afredric...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.blogcatalog.com/discuss/entry/seven-tips-for-risk-free-online-banking">http://www.blogcatalog.com/discuss/entry/seven-tip...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.freebacklinks.eu/google-and-yahoo-promotional/">http://www.freebacklinks.eu/google-and-yahoo-promo...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.linkablogs.com/user.php?login=vikemoto&amp;view=history">http://www.linkablogs.com/user.php?login=vikemoto&amp;...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.linktales.co.cc/user.php?login=albaena&amp;view=history">http://www.linktales.co.cc/user.php?login=albaena&amp;...</a> &times;1</li>
+<li><a rel="nofollow" href="http://socialnetwork.e-weblinks.com/user.php?login=geranallo&amp;view=history">http://socialnetwork.e-weblinks.com/user.php?login...</a> &times;1</li>
+</ul>
+<div class="caption">検索</div>
+<ul><li><a rel="nofollow" href="http://images.google.co.jp/images?q=%E4%B8%AD%E5%B7%9D%E7%BF%94%E5%AD%90&amp;hl=ja&amp;lr=&amp;ie=UTF-8&amp;inlang=ja&amp;sout=1&amp;start=140&amp;sa=N&amp;filter=0">中川翔子</a> &times;11  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=matz&amp;search.x=1&amp;fr=top_ga1_sa&amp;tid=top_ga1_sa&amp;ei=UTF-8&amp;aq=&amp;oq=">matz</a> &times;8  / <a rel="nofollow" href="http://fruitmail.excite.co.jp/search.gw?search=Matz%82%C9%82%C1%82%AB&amp;target=combined&amp;look=fruitmail_jp">Matzにっき</a> &times;5  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=%E5%A4%89%E6%95%B0%E6%A6%82%E5%BF%B5+%E6%95%B0%E5%AD%A6%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B&amp;aq=-1&amp;ei=UTF-8&amp;pstart=1&amp;fr=top_ga1_sa&amp;b=11">変数概念 数学における</a> &times;5  / <a rel="nofollow" href="http://search.nifty.com/websearch/search?select=2&amp;ss=nifty_top_tp&amp;cflg=%E6%A4%9C%E7%B4%A2&amp;q=code%20reading&amp;otype=web_nifty_1">code reading</a> &times;5  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=%E6%90%8D%E3%81%97%E3%81%A6%E5%BE%97%E5%8F%96%E3%82%8C++%E8%81%96%E6%9B%B8&amp;tid=top_ga1_sa&amp;ei=UTF-8&amp;pstart=1&amp;fr=top_ga1_sa&amp;b=11">損して得取れ 聖書</a> &times;4  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=127.0.0.1&amp;search.x=1&amp;fr=top_ga1_sa&amp;tid=top_ga1_sa&amp;ei=UTF-8&amp;aq=&amp;oq=">127.0.0.1</a> &times;4  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=arc+lisp&amp;aq=-1&amp;oq=&amp;ei=UTF-8&amp;fr=top_ga1_sa&amp;x=wrt">arc lisp</a> &times;4  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=ruby+%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%8C%87%E5%90%91&amp;search.x=1&amp;fr=top_ga1_sa&amp;tid=top_ga1_sa&amp;ei=UTF-8&amp;aq=&amp;oq=">ruby オブジェクト指向</a> &times;3  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?ei=UTF-8&amp;fr=crmas&amp;p=scheme+%E5%86%86%E5%91%A8%E7%8E%87%E3%80%80%E8%A8%88%E7%AE%97">scheme 円周率 計算</a> &times;3  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=%E6%89%8B%E7%B4%99%E3%80%80%E6%AC%A1%E3%81%AE%E5%A0%B4%E6%89%80&amp;aq=-1&amp;oq=&amp;ei=UTF-8&amp;fr=top_ga1_sa&amp;x=wrt">手紙 次の場所</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?fr=slv1-ytpprn&amp;p=Matz&amp;ei=UTF-8">Matz</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AE%E4%B8%96%E7%95%8C%E3%80%80%E6%AD%A3%E8%AA%A4&amp;search.x=1&amp;fr=top_ga1_sa&amp;tid=top_ga1_sa&amp;ei=UTF-8&amp;aq=&amp;oq=">コードの世界 正誤</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=rails+distinct&amp;aq=-1&amp;oq=&amp;ei=UTF-8&amp;fr=top_ga1_sa&amp;x=wrt">rails distinct</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=ruby+%E3%83%A1%E3%83%A2%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%AF+%E8%AA%BF%E6%9F%BB&amp;search.x=1&amp;fr=top_ga1_sa&amp;tid=top_ga1_sa&amp;ei=UTF-8&amp;aq=-1&amp;oq=">ruby メモリリーク 調査</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=%E3%83%8E%E3%83%BC%E3%83%88%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3+%E8%B5%A4%E3%81%84%E3%82%B4%E3%83%A0&amp;tid=top_ga1_sa&amp;ei=UTF-8&amp;pstart=1&amp;fr=top_ga1_sa&amp;b=11">ノートパソコン 赤いゴム</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?fr=slv1-ytpprn&amp;p=matz%20%E4%B8%AD%E5%9B%BD&amp;ei=UTF-8">matz 中国</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%BD%E3%83%BC%E3%82%B9+%E6%9C%89%E5%90%8D%E4%BA%BA%E3%81%AB%E3%81%AA%E3%82%8B%E3%81%AB%E3%81%AF&amp;ei=UTF-8&amp;fr=applep1&amp;pcarrier=KDDI&amp;pmcc=440&amp;pmnc=38">オープンソース 有名人になるには</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=Ruby%E3%80%80OpenOffice&amp;aq=-1&amp;oq=&amp;ei=UTF-8&amp;fr=top_ga1_sa&amp;x=wrt">Ruby OpenOffice</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=%E8%A8%80%E8%AA%9E%E5%B1%8B&amp;aq=-1&amp;oq=&amp;ei=UTF-8&amp;fr=top_ga1_sa&amp;x=wrt">言語屋</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=%E5%8D%98%E4%BD%8D%E8%90%BD%E3%81%A8%E3%81%97%E3%81%9F%E3%80%80%E7%B7%9A%E5%BD%A2%E4%BB%A3%E6%95%B0&amp;search.x=1&amp;fr=top_ga1_sa&amp;tid=top_ga1_sa&amp;ei=UTF-8&amp;aq=&amp;oq=">単位落とした 線形代数</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=StringValueCStr&amp;search.x=1&amp;fr=top_ga1_sa&amp;tid=top_ga1_sa&amp;ei=UTF-8&amp;aq=&amp;oq=">StringValueCStr</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%80%80%E3%82%BD%E3%83%BC%E3%82%B7%E3%83%B3%E3%82%B0%E3%81%A8%E3%81%AF&amp;aq=-1&amp;oq=&amp;ei=UTF-8&amp;fr=top_ga1_sa&amp;x=wrt">オープン ソーシングとは</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=%E3%83%93%E3%83%BC%E3%82%BA%E6%89%8B%E8%8A%B8%E7%B1%B3%E5%AD%90%E9%A7%85%E5%89%8D%E3%82%B5%E3%83%86%E3%82%A3&amp;aq=-1&amp;oq=&amp;ei=UTF-8&amp;fr=top_ga1_sa&amp;x=wrt">ビーズ手芸米子駅前サティ</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=%E4%B8%B8%E5%B1%B1%E5%85%89%E4%BF%A1&amp;search.x=1&amp;fr=top_ga1_sa&amp;tid=top_ga1_sa&amp;ei=UTF-8&amp;aq=&amp;oq=">丸山光信</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=office+MATZ%E3%80%80%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88&amp;ei=UTF-8&amp;fr=snmsie7&amp;x=wrt">office MATZ イベント</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=ruby+%E5%B3%B6%E6%A0%B9&amp;aq=-1&amp;oq=&amp;ei=UTF-8&amp;fr=top_ga1_sa&amp;x=wrt">ruby 島根</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=%E3%83%89%E3%83%AD%E3%83%83%E3%83%97%E3%82%A4%E3%83%B3%E3%81%95%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8B%E3%81%AE%E6%84%8F%E5%91%B3%3F&amp;x=wrt&amp;aq=-1&amp;oq=&amp;clone=&amp;ei=UTF-8&amp;fr=applep1">ドロップインされたとかの意味?</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=revactor&amp;aq=-1&amp;oq=&amp;ei=UTF-8&amp;fr=top_ga1_sa&amp;x=wrt">revactor</a> &times;2  / <a rel="nofollow" href="http://green.search.goo.ne.jp/search?MT=alsa+%E9%9F%B3%E3%81%8C%E5%87%BA%E3%81%AA%E3%81%84&amp;IE=UTF-8&amp;from=eco_search&amp;bt_search.x=0&amp;bt_search.y=0&amp;bt_search=%E6%A4%9C%E7%B4%A2">alsa 音が出ない</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?ei=UTF-8&amp;fr=crmas&amp;p=NATIVETHREAD+SUPPORT+MODE+WARNING">NATIVETHREAD SUPPORT MODE WARNING</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=%E8%A8%80%E8%AA%9E%E8%A8%BA%E6%96%AD%E3%80%80&amp;aq=-1&amp;oq=&amp;ei=UTF-8&amp;fr=top_ga1_sa&amp;x=wrt">言語診断</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=xml+yaml&amp;search.x=1&amp;fr=top_ga1_sa&amp;tid=top_ga1_sa&amp;ei=UTF-8&amp;aq=&amp;oq=">xml yaml</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=DRY%E3%81%AE%E5%8E%9F%E5%89%87&amp;search.x=1&amp;fr=top_ga1_sa&amp;tid=top_ga1_sa&amp;ei=UTF-8&amp;aq=&amp;oq=">DRYの原則</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=ruby+%E3%83%A1%E3%83%A2%E3%83%AA%E8%A7%A3%E6%94%BE&amp;search.x=1&amp;fr=top_ga1_sa&amp;tid=top_ga1_sa&amp;ei=UTF-8&amp;aq=&amp;oq=">ruby メモリ解放</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=%E3%81%B2%E3%82%89%E3%81%8C%E3%81%AA%E3%81%AE%E5%90%8D%E5%89%8D&amp;tid=top_ga1&amp;ei=UTF-8&amp;pstart=1&amp;fr=top_ga1&amp;b=21">ひらがなの名前</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=perl+x-eucJP-Open&amp;search.x=1&amp;fr=top_ga1_sa&amp;tid=top_ga1_sa&amp;ei=UTF-8&amp;aq=6&amp;oq=">perl x-eucJP-Open</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=macruby&amp;ei=UTF-8&amp;pcarrier=SoftBank&amp;pmcc=440&amp;pmnc=20&amp;pstart=1&amp;fr=applep1&amp;b=11">macruby</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=%E2%80%9D%E8%87%AA%E5%88%86%E3%82%92%E6%BC%A2%E5%AD%97%E4%B8%80%E6%96%87%E5%AD%97%E2%80%9D&amp;aq=-1&amp;ei=UTF-8&amp;pstart=1&amp;fr=slv1-snvaio&amp;b=41">”自分を漢字一文字”</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=ruby+module+iclude+%E5%90%8D%E5%89%8D+%E8%A1%9D%E7%AA%81&amp;aq=-1&amp;oq=&amp;ei=UTF-8&amp;fr=top_ga1_sa&amp;x=wrt">ruby module iclude 名前 衝突</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=Ada%E8%A8%80%E8%AA%9E&amp;aq=-1&amp;ei=UTF-8&amp;pstart=1&amp;fr=top_ga1_sa&amp;b=11">Ada言語</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=%E5%BF%83%E3%81%AB%E6%A3%9A%E3%82%92%E4%BD%9C%E3%82%8C&amp;search.x=1&amp;fr=top_ga1_sa&amp;tid=top_ga1_sa&amp;ei=UTF-8&amp;aq=&amp;oq=">心に棚を作れ</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=FULL+OF+WOE%E3%80%80%E6%84%8F%E5%91%B3&amp;aq=-1&amp;oq=&amp;ei=UTF-8&amp;fr=slv1-necpc4&amp;x=wrt">FULL OF WOE 意味</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=xml%E3%80%80%E3%83%A1%E3%83%AA%E3%83%83%E3%83%88&amp;aq=-1&amp;oq=&amp;ei=UTF-8&amp;fr=top_ga1_sa&amp;x=wrt">xml メリット</a> &times;2  / <a rel="nofollow" href="http://search.goo.ne.jp/web.jsp?MT=%B7%D1%BE%B5%A1%A1%B0%AD&amp;from=Firefox20&amp;PT=Firefox20">継承 悪</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=%E9%9B%BB%E6%BA%90%E3%82%A2%E3%83%80%E3%83%97%E3%82%BF%E3%80%80%E3%82%AA%E3%83%BC%E3%83%95%E3%82%B9&amp;aq=-1&amp;oq=&amp;ei=UTF-8&amp;fr=top_ga1_sa&amp;x=wrt">電源アダプタ オーフス</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=%E3%81%82%E3%82%8B%E3%83%8F%E3%83%83%E3%82%AB%E3%83%BC&amp;aq=-1&amp;oq=&amp;ei=UTF-8&amp;fr=slv1-tbtop&amp;x=wrt">あるハッカー</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?fr=sb-kingbrw1&amp;ei=UTF-8&amp;p=%E5%A0%B1%E5%9C%8B%E6%8C%BA%E8%BA%AB%E6%97%A5%E8%A8%98">報國挺身日記</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=matz+%E6%97%A5%E8%A8%98&amp;search.x=1&amp;fr=top_ga1_sa&amp;tid=top_ga1_sa&amp;ei=UTF-8&amp;aq=&amp;oq=">matz 日記</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=Matz%E6%97%A5%E8%A8%98&amp;search.x=1&amp;fr=top_of3_sa&amp;tid=top_of3_sa&amp;ei=UTF-8&amp;aq=&amp;oq=">Matz日記</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=%E3%81%BE%E3%81%A4%E3%82%82%E3%81%A8%E3%82%86%E3%81%8D%E3%81%B2%E3%82%8D%20%E3%83%96%E3%83%AD%E3%82%B0&amp;sp=1&amp;aq=-1&amp;ei=UTF-8&amp;fr=crmas&amp;SpellState=">まつもとゆきひろ ブログ</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=MATZ+%E5%8D%97%E9%9D%92%E5%B1%B1&amp;search.x=1&amp;fr=top_ga1_sa&amp;tid=top_ga1_sa&amp;ei=UTF-8&amp;aq=&amp;oq=">MATZ 南青山</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=%E6%97%A5%E6%9C%AC%E3%82%BF%E3%82%A4%E3%83%A0%E3%82%B7%E3%82%A7%E3%82%A2+ruby&amp;aq=-1&amp;oq=&amp;ei=UTF-8&amp;fr=top_ga1_sa&amp;x=wrt">日本タイムシェア ruby</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=%E3%82%A2%E3%82%AF%E3%82%BF%E3%83%BC%E3%83%A2%E3%83%87%E3%83%AB&amp;aq=-1&amp;ei=UTF-8&amp;pstart=1&amp;fr=top_ga1_sa&amp;b=41">アクターモデル</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?&amp;p=getaddrinfo%283%29&amp;fr=msie7&amp;ei=utf-8">getaddrinfo(3)</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?ei=UTF-8&amp;p=%E6%BA%80%E6%9C%88+%E5%87%BA%E7%94%A3&amp;aq=-1&amp;pstart=1&amp;fr=applep2&amp;b=11">満月 出産</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=ma%EF%BD%94z+%E8%BB%8A%E7%A8%AE&amp;aq=-1&amp;oq=&amp;ei=UTF-8&amp;fr=top_of3_sa&amp;x=wrt">maｔz 車種</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=sanyo++%E3%82%82%E3%81%A1%E3%81%A4%E3%81%8D%E3%83%99%E3%83%BC%E3%82%AB%E3%83%AA%E3%83%BC&amp;aq=-1&amp;ei=UTF-8&amp;pstart=1&amp;fr=top_ga1_sa&amp;b=111">sanyo もちつきベーカリー</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=epson+%E3%83%93%E3%82%B8%E3%83%8D%E3%82%B9%E3%82%B8%E3%82%A7%E3%83%83%E3%83%88&amp;aq=-1&amp;oq=&amp;ei=UTF-8&amp;fr=ie8sc&amp;n=10&amp;x=wrt">epson ビジネスジェット</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=HSP+Ruby&amp;search.x=1&amp;fr=top_ga1_sa&amp;tid=top_ga1_sa&amp;ei=UTF-8&amp;aq=&amp;oq=">HSP Ruby</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=gforth&amp;search.x=1&amp;fr=top_ga1_sa&amp;tid=top_ga1_sa&amp;ei=UTF-8&amp;aq=&amp;oq=gfor">gforth</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=ruby+lisp&amp;search.x=1&amp;fr=top_ga1_sa&amp;tid=top_ga1_sa&amp;ei=UTF-8&amp;aq=&amp;oq=">ruby lisp</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=%E3%83%87%E3%83%BC%E3%82%BF%E9%80%9A%E4%BF%A1%E3%82%AB%E3%83%BC%E3%83%89+%E5%86%B7%E5%8D%B4&amp;aq=-1&amp;ei=UTF-8&amp;pstart=1&amp;fr=top_of3_sa&amp;b=11">データ通信カード 冷却</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=%E3%82%B0%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B9%E3%83%91%E3%83%B3%E3%81%AE%EF%BC%91%EF%BC%90%E3%81%AE%E8%A6%8F%E5%89%87&amp;aq=-1&amp;oq=&amp;ei=UTF-8&amp;fr=top_ga1_sa&amp;x=wrt">グリーンスパンの１０の規則</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=%E3%83%96%E3%83%AB%E3%83%BC%E3%82%AF%E3%83%AA%E3%82%B9%E3%83%9E%E3%82%B9&amp;tid=top_ga1_sa&amp;ei=UTF-8&amp;pstart=1&amp;fr=top_ga1_sa&amp;b=21">ブルークリスマス</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=PHP+Ruby+%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3+%E6%AF%94%E8%BC%83&amp;tid=top_ga1_sa&amp;ei=UTF-8&amp;pstart=1&amp;fr=top_ga1_sa&amp;b=11">PHP Ruby セキュリティ 比較</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=RiteVM&amp;ei=UTF-8&amp;fr=mozff">RiteVM</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=%E2%80%9D%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%83%89%E3%83%AA%E3%83%BC%E3%83%A0%E2%80%9D+%E2%80%9D%E8%AC%9B%E7%BF%92%E4%BC%9A%E2%80%9D&amp;ei=UTF-8&amp;fr=top_ga1_sa&amp;x=wrt&amp;meta=vc%3D">”オープンドリーム” ”講習会”</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=ruby+%E9%9D%99%E7%9A%84%E8%A7%A3%E6%9E%90&amp;search.x=1&amp;fr=top_ga1_sa&amp;tid=top_ga1_sa&amp;ei=UTF-8&amp;aq=&amp;oq=">ruby 静的解析</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=NTT%E3%82%B3%E3%83%9F%E3%83%A5%E3%83%8B%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%BA%E3%82%B7%E3%83%A3%E3%81%B9%E3%83%AA%E3%83%83%E3%83%81%E3%81%AE%E7%94%B3%E3%81%97%E8%BE%BC%E3%81%BF&amp;aq=-1&amp;oq=&amp;ei=UTF-8&amp;fr=top_ga1_sa&amp;x=wrt">NTTコミュニケーションズシャべリッチの申し込み</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?&amp;p=2006%2F01%2F20%28&amp;fr=tbtopie&amp;ei=UTF-8">2006/01/20(</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=ruby%E3%80%80gensym&amp;aq=-1&amp;oq=ruby+%E5%A4%89%E6%95%B0%E8%87%AA%E5%8B%95%E7%94%9F%E6%88%90&amp;ei=UTF-8&amp;fr=top_ga1_sa&amp;x=wrt">ruby gensym</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=%E6%A5%BD%E5%A4%A9+%E3%83%87%E3%83%BC%E3%82%BF%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC+%E5%A0%B4%E6%89%80&amp;aq=-1&amp;oq=&amp;ei=UTF-8&amp;fr=applpd&amp;x=wrt">楽天 データセンター 場所</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=%E5%B0%8F%E8%BF%AB++%E3%81%84%E3%81%98%E3%82%81&amp;ei=UTF-8&amp;fr=top_ga1_sa&amp;x=wrt&amp;meta=vc%3D">小迫 いじめ</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=7rwc09ww.exe&amp;search.x=1&amp;fr=top_ga1_sa&amp;tid=top_ga1_sa&amp;ei=UTF-8&amp;aq=&amp;oq=">7rwc09ww.exe</a> &times;2  / <a rel="nofollow" href="http://www.excite.co.jp/search.gw?search=ruby+to_&amp;target=combined&amp;look=bbiq_jp&amp;Directory=www.bbiq.jp%2F%3BBBIQ%83%7C%81%5B%83%5E%83%8B%83T%83C%83g&amp;SearchServiceProvider=%83C%81%5B%81E%83%7D%81%5B%83P%83e%83B%83%93%83O&amp;SentencePerPage=10&amp;Summary=1&amp;x=57&amp;y=9">ruby to_</a> &times;1  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=x-eucjp-open-19970715-ms&amp;ei=UTF-8&amp;fr=mozff">x-eucjp-open-19970715-ms</a> &times;1  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=x60+4965&amp;aq=-1&amp;ei=UTF-8&amp;pstart=1&amp;fr=top_ga1_sa&amp;b=81">x60 4965</a> &times;1  / <a rel="nofollow" href="http://www.excite.co.jp/search.gw?submit=&amp;target=combined&amp;look=excite%5Fjp&amp;sstype=excite%5Fd&amp;search=%8F%E3%8AC+%93d%8BC%8AX&amp;FirstResult=20">上海 電気街</a> &times;1  / <a rel="nofollow" href="http://www.google.as/search?q=%E3%82%A4%E3%83%BC%E3%82%B9%E3%82%BF%E3%83%BC+%E7%AE%97%E5%87%BA%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0&amp;btnG=&amp;hl=en&amp;client=safari&amp;sa=2">イースター 算出プログラム</a> &times;1  / <a rel="nofollow" href="http://www.excite.co.jp/search.gw?c=japan&amp;look=excite%5Fjp&amp;target=combined&amp;search=%8C%F6%82%C9%8Ew%93E&amp;FirstResult=20">公に指摘</a> &times;1  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=xml+%E5%86%97%E9%95%B7&amp;aq=-1&amp;oq=&amp;ei=UTF-8&amp;fr=applpd&amp;x=wrt">xml 冗長</a> &times;1  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?tt=c&amp;ei=UTF-8&amp;fr=sfp_as&amp;aq=-1&amp;oq=&amp;p=emacs+%E6%81%90%E7%AB%9C&amp;meta=vc%3D">emacs 恐竜</a> &times;1  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=winny+leak&amp;tid=top_ga1_sa&amp;ei=UTF-8&amp;pstart=1&amp;fr=top_ga1_sa&amp;b=181">winny leak</a> &times;1  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=yforth&amp;ei=UTF-8">yforth</a> &times;1  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?tt=c&amp;ei=UTF-8&amp;fr=sfp_as&amp;aq=-1&amp;oq=&amp;p=vb%E3%80%80%E5%BC%95%E6%95%B0+%E3%82%AD%E3%83%BC%E3%83%AF%E3%83%BC%E3%83%89&amp;meta=vc%3D">vb 引数 キーワード</a> &times;1  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=wizpy+%E3%82%B9%E3%82%AF%E3%83%BC%E3%82%BF%E3%83%BC%E3%83%90%E3%82%A4%E3%82%AF&amp;aq=-1&amp;oq=&amp;ei=UTF-8&amp;fr=top_ga1_sa&amp;x=wrt">wizpy スクーターバイク</a> &times;1  / <a rel="nofollow" href="http://www.excite.co.jp/search.gw?search=%E5%AD%90%E3%81%A9%E3%82%82+%E9%9D%9E%E8%A8%80%E8%AA%9E%E3%82%B3%E3%83%9F%E3%83%A5%E3%83%8B%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3&amp;charset=utf8&amp;look=excite_jp&amp;target=combined&amp;sstype=search_referral">子ども 非言語コミュニケーション</a> &times;1  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=xml+%E3%83%87%E3%83%BC%E3%82%BF%E5%87%A6%E7%90%86+%E3%83%A1%E3%83%AA%E3%83%83%E3%83%88&amp;aq=-1&amp;oq=&amp;ei=UTF-8&amp;fr=top_ga1_sa&amp;x=wrt">xml データ処理 メリット</a> &times;1  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=w-8ben+%E8%A9%90%E6%AC%BA+e%E3%83%A1%E3%83%BC%E3%83%AB&amp;ei=UTF-8&amp;pstart=1&amp;fr=top_ga1_sa&amp;b=21">w-8ben 詐欺 eメール</a> &times;1  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=xml+%E3%83%87%E3%83%A1%E3%83%AA%E3%83%83%E3%83%88&amp;aq=-1&amp;oq=&amp;ei=UTF-8&amp;fr=slv1-ytpprn&amp;x=wrt">xml デメリット</a> &times;1  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?tt=c&amp;ei=UTF-8&amp;fr=sfp_as&amp;aq=-1&amp;oq=&amp;p=clos+%E3%82%AB%E3%83%97%E3%82%BB%E3%83%AB%E5%8C%96&amp;meta=vc%3D">clos カプセル化</a> &times;1  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=xp+%E3%83%AA%E3%83%95%E3%83%AC%E3%83%83%E3%82%B7%E3%83%A5%E3%83%AC%E3%83%BC%E3%83%88+%E3%82%B9%E3%83%94%E3%83%BC%E3%82%AB%E3%83%BC+-%E3%83%A2%E3%83%8B%E3%82%BF%E3%80%80-%E3%83%87%E3%82%A3%E3%82%B9%E3%83%97%E3%83%AC%E3%82%A4&amp;aq=-1&amp;oq=&amp;ei=UTF-8&amp;fr=top_ga1_sa&amp;x=wrt">xp リフレッシュレート スピーカー -モニタ -ディスプレイ</a> &times;1  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=yaml+%E4%BA%BA%E9%96%93%E3%81%8C&amp;search.x=1&amp;fr=top_of3_sa&amp;tid=top_of3_sa&amp;ei=UTF-8&amp;aq=&amp;oq=">yaml 人間が</a> &times;1  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=x61+%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89&amp;tid=top_ga1&amp;ei=UTF-8&amp;pstart=1&amp;fr=top_ga1&amp;b=11">x61 サウンド</a> &times;1  / <a rel="nofollow" href="http://www.google.fr/search?q=%E5%87%BA%E7%94%A3+%E6%BA%80%E6%9C%88&amp;hl=ja&amp;client=safari&amp;prmd=imvns&amp;ei=QT6TTqbrFqfb4QTcqP2DBQ&amp;start=10&amp;sa=N&amp;biw=320&amp;bih=417">出産 満月</a> &times;1  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=x61+whitelist&amp;search.x=1&amp;fr=top_ga1_sa&amp;tid=top_ga1_sa&amp;ei=UTF-8&amp;aq=&amp;oq=">x61 whitelist</a> &times;1  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=x61+wi+fi+4965&amp;aq=-1&amp;ei=UTF-8&amp;pstart=1&amp;fr=top_ga1_sa&amp;b=11">x61 wi fi 4965</a> &times;1  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=vaio+tr&amp;ei=UTF-8&amp;pstart=1&amp;fr=top_ga1_sa&amp;b=21">vaio tr</a> &times;1  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=warning+define_method&amp;ei=UTF-8&amp;meta=vc%3D&amp;pstart=1&amp;fr=top_ga1_sa&amp;b=21">warning define_method</a> &times;1 </li></ul>
+
+		</div>
+</div>
+
+
+<hr class="sep">
+
+<div class="adminmenu">
+<span class="adminmenu"><a href="http://www.rubyist.net/~matz/20101130.html">&laquo;前の日記(2010-11-30)</a></span>
+<span class="adminmenu"><a href="http://www.rubyist.net/~matz/">最新</a></span>
+<span class="adminmenu"><a href="https://www.rubyist.net/~matz/update.rb?edit=true;year=2011;month=9;day=29" rel="nofollow">編集</a></span>
+</div>
+<center>
+<!-- Rakuten Dynamicad FROM HERE -->
+<script type="text/javascript">
+<!-- 
+rakuten_template = "728_90_txt";
+rakuten_affiliateId = "059c6b10.b3eb768e.059c6b11.e98254f4";
+rakuten_target = "_blank";
+rakuten_color_bg = "FFFFFF";
+rakuten_color_border = "BF0000";
+rakuten_color_text = "000000";
+rakuten_color_link = "0000FF";
+rakuten_color_price = "CC0000";
+//--></script>
+<script type="text/javascript"
+  src="http://dynamic.rakuten.co.jp/js/rakuten_dynamic.js">
+</script>
+<!-- Rakuten Dynamicad TO HERE -->
+</center><br>
+
+<a href="http://trackfeed.com/"><img name="trackfeed_banner" src="http://img.trackfeed.com/img/tfg.gif" alt="track feed" border="0" align="absmiddle" /></a>
+<nobr><a href="http://trackfeed.com/u/8812bdcfc0b3f5e81039fbe7e75967d58b534a24/Matz%E3%81%AB%E3%81%A3%E3%81%8D/http%3A%2F%2Fwww.rubyist.net%2F%7Ematz%2F/ca1b4d15">Matzにっき</a></nobr>
+<script type="text/javascript">
+document.write(unescape("%3Cscript src='http://script.trackfeed.com/usr/f/5/0257873c.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<!-- Creative Commons License -->
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/2.1/jp/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.gif" /></a>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/2.0/jp/">Creative Commons License</a>.
+<!-- /Creative Commons License -->
+
+<!--
+
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <dc:type rdf:resource="http://purl.org/dc/dcmitype/Text" />
+   <license rdf:resource="http://creativecommons.org/licenses/by-nc/2.0/jp/" />
+</Work>
+
+<License rdf:about="http://creativecommons.org/licenses/by-nc/2.0/jp/">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+
+</rdf:RDF>
+
+-->
+
+
+
+<div class="footer">
+Generated by <a href="http://www.tdiary.org/">tDiary</a> version 2.2.0<br>
+Powered by <a href="http://www.ruby-lang.org/">Ruby</a> version 1.8.7
+</div>
+</body>
+</html>

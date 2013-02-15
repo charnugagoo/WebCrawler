@@ -1,0 +1,362 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html >
+<head><title>
+	CHCOC - Media Center
+</title><meta name="description" /><meta name="keywords" /><meta http-equiv="Content-Type" content="text/html;charset=10646" /><meta name="Expires" /><meta name="TemplateVersion" content="1.0" /><link rel="stylesheet" type="text/css" media="screen,projection" href="/css/chcoc2.css" />
+<link rel="stylesheet" type="text/css" media="screen,projection" href="/css/spotlight.css" />
+<link rel="stylesheet" type="text/css" media="screen,projection" href="/css/styles.css" />
+<link rel="stylesheet" type="text/css" media="screen,projection" href="/css/MediaCenter_Base.css" />
+<link rel="stylesheet" type="text/css" media="screen,projection" href="/css/MediaCenter.css" />
+<script src="/js/jquery.js" language="Javascript"></script>
+<script src="/js/jquery.blockUI.js" language="Javascript"></script>
+<script src="/js/standard.js" language="Javascript"></script>
+<script src="https://www.opm.gov/js/GSAAnalytics-min.js" language="Javascript"></script>
+
+<script type="text/javascript"> 
+var AlwaysShowAjaxWorking = false;
+</script>
+
+
+<script type="text/javascript" language="javascript">		
+		var AccessibilityMode = false;
+</script></head>
+<body id="ctl01_htmBody">
+<form name="aspnetForm" method="post" action="/MediaCenter/index.aspx" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTc0OTYzMDg1OQ9kFgJmD2QWAgIBD2QWBAIBD2QWBAIGDxYCHgdWaXNpYmxlaGQCBw8WAh8AaGQCAw9kFgICARAWAh4HZW5jdHlwZWRkFgoCAQ8WAh8AZ2QCBQ9kFgICAQ8PZBYCHgdvbmNsaWNrBQ10aGlzLnZhbHVlPScnZAIHDxYEHglpbm5lcmh0bWwF6wE8YSBocmVmPSIvaW5kZXguYXNweCI+TWFpbjwvYT48YSBocmVmPSIvYWJvdXQuYXNweCI+QWJvdXQgVGhlIENvdW5jaWw8L2E+PGEgaHJlZj0iL21lZXRpbmdzL2luZGV4LmFzcHgiPkV2ZW50czwvYT48YSBocmVmPSIvbWVtYmVycy9pbmRleC5hc3B4Ij5NZW1iZXJzPC9hPjxhIGhyZWY9Ii9uZXdzLmFzcHgiPk5ld3M8L2E+PGEgaHJlZj0iL3RyYW5zbWl0dGFscy9pbmRleC5hc3B4Ij5UcmFuc21pdHRhbHM8L2E+HwBnZAILD2QWAgIBDxYCHgRUZXh0BQxNZWRpYSBDZW50ZXJkAg8PZBYCAgEPFgIeBWNsYXNzBQ1Db250YWluZXJCb2R5FgQCAQ8WAh8AZxYCAgEPFgIfAwVaPGEgaHJlZj0iI2NvbnRlbnQiIGNsYXNzPSJza2lwbmF2Ij5Ta2lwIE5hdmlnYXRpb248L2E+PGRpdiBpZD0iTGVmdE5hdkJveCI+PHVsPjwvdWw+PC9kaXY+ZAIDD2QWBgIBD2QWAgIGDxYCHwBnFgJmDxYCHwMFJENIQ09DIEFjYWRlbXk6IFJldGlyZW1lbnQgRGlzYWJpbGl0eWQCAw9kFgICAg8PFgIfAGdkZAIFD2QWAmYPFgIfAGcWAmYPFgIeC18hSXRlbUNvdW50AgUWCmYPZBYIZg8VBAVWaWRlbwVWaWRlbwExY2h0dHA6Ly93d3cuY2hjb2MuZ292L21lZGlhY2VudGVyL3ZpZGVvcy9DSENPQy1NZWRpYS1DZW50ZXIvQ0hDT0MtQWNhZGVteS1SZXRpcmVtZW50LURpc2FiaWxpdHkuYXNweGQCAQ8WCh4Dc3JjBS9odHRwOi8vaS55dGltZy5jb20vdmkvTWE1NWZpRkIxbHcvbXFkZWZhdWx0LmpwZx4Fd2lkdGgFAzEzNB4GaGVpZ2h0BQI3NR4DYWx0BSRDSENPQyBBY2FkZW15OiBSZXRpcmVtZW50IERpc2FiaWxpdHkeBXRpdGxlBSRDSENPQyBBY2FkZW15OiBSZXRpcmVtZW50IERpc2FiaWxpdHlkAgIPFQJjaHR0cDovL3d3dy5jaGNvYy5nb3YvbWVkaWFjZW50ZXIvdmlkZW9zL0NIQ09DLU1lZGlhLUNlbnRlci9DSENPQy1BY2FkZW15LVJldGlyZW1lbnQtRGlzYWJpbGl0eS5hc3B4JENIQ09DIEFjYWRlbXk6IFJldGlyZW1lbnQgRGlzYWJpbGl0eWQCAw9kFgJmDxUCRWh0dHA6Ly93d3cuY2hjb2MuZ292L21lZGlhY2VudGVyL3ZpZGVvcy9DSENPQy1NZWRpYS1DZW50ZXIvaW5kZXguYXNweBJDSENPQyBNZWRpYSBDZW50ZXJkAgEPZBYIZg8VBAVWaWRlbwVWaWRlbwEyYGh0dHA6Ly93d3cuY2hjb2MuZ292L21lZGlhY2VudGVyL3ZpZGVvcy9DSENPQy1NZWRpYS1DZW50ZXIvQ0hDT0MtSW5jbGVtZW50LVdlYXRoZXItQnJpZWZpbmcuYXNweGQCAQ8WCh8HBS9odHRwOi8vaS55dGltZy5jb20vdmkvUV9qbHVGdm9EcDgvbXFkZWZhdWx0LmpwZx8IBQMxMzQfCQUCNzUfCgUgQ0hDT0MgSW5jbGVtZW50IFdlYXRoZXIgQnJpZWZpbmcfCwUgQ0hDT0MgSW5jbGVtZW50IFdlYXRoZXIgQnJpZWZpbmdkAgIPFQJgaHR0cDovL3d3dy5jaGNvYy5nb3YvbWVkaWFjZW50ZXIvdmlkZW9zL0NIQ09DLU1lZGlhLUNlbnRlci9DSENPQy1JbmNsZW1lbnQtV2VhdGhlci1CcmllZmluZy5hc3B4IENIQ09DIEluY2xlbWVudCBXZWF0aGVyIEJyaWVmaW5nZAIDD2QWAmYPFQJFaHR0cDovL3d3dy5jaGNvYy5nb3YvbWVkaWFjZW50ZXIvdmlkZW9zL0NIQ09DLU1lZGlhLUNlbnRlci9pbmRleC5hc3B4EkNIQ09DIE1lZGlhIENlbnRlcmQCAg9kFghmDxUEBVZpZGVvBVZpZGVvATNUaHR0cDovL3d3dy5jaGNvYy5nb3YvbWVkaWFjZW50ZXIvdmlkZW9zL0NIQ09DLU1lZGlhLUNlbnRlci9BLUhlYWx0aHktUmV0aXJlbWVudC5hc3B4ZAIBDxYKHwcFL2h0dHA6Ly9pLnl0aW1nLmNvbS92aS9oTjBzc3JscTRkMC9tcWRlZmF1bHQuanBnHwgFAzEzNB8JBQI3NR8KBRRBIEhlYWx0aHkgUmV0aXJlbWVudB8LBRRBIEhlYWx0aHkgUmV0aXJlbWVudGQCAg8VAlRodHRwOi8vd3d3LmNoY29jLmdvdi9tZWRpYWNlbnRlci92aWRlb3MvQ0hDT0MtTWVkaWEtQ2VudGVyL0EtSGVhbHRoeS1SZXRpcmVtZW50LmFzcHgUQSBIZWFsdGh5IFJldGlyZW1lbnRkAgMPZBYCZg8VAkVodHRwOi8vd3d3LmNoY29jLmdvdi9tZWRpYWNlbnRlci92aWRlb3MvQ0hDT0MtTWVkaWEtQ2VudGVyL2luZGV4LmFzcHgSQ0hDT0MgTWVkaWEgQ2VudGVyZAIDD2QWCGYPFQQFVmlkZW8FVmlkZW8BNGxodHRwOi8vd3d3LmNoY29jLmdvdi9tZWRpYWNlbnRlci92aWRlb3MvQ0hDT0MtTWVkaWEtQ2VudGVyL0ZlZHMtRmVlZC1GYW1pbGllcy1hbmQtdGhlLVN0ZXZlLUhhcnZleS1TaG93LmFzcHhkAgEPFgofBwUvaHR0cDovL2kueXRpbWcuY29tL3ZpL1FSZWk1TUZxdnpNL21xZGVmYXVsdC5qcGcfCAUDMTM0HwkFAjc1HwoFLEZlZHMgRmVlZCBGYW1pbGllcyBhbmQgdGhlIFN0ZXZlIEhhcnZleSBTaG93HwsFLEZlZHMgRmVlZCBGYW1pbGllcyBhbmQgdGhlIFN0ZXZlIEhhcnZleSBTaG93ZAICDxUCbGh0dHA6Ly93d3cuY2hjb2MuZ292L21lZGlhY2VudGVyL3ZpZGVvcy9DSENPQy1NZWRpYS1DZW50ZXIvRmVkcy1GZWVkLUZhbWlsaWVzLWFuZC10aGUtU3RldmUtSGFydmV5LVNob3cuYXNweCxGZWRzIEZlZWQgRmFtaWxpZXMgYW5kIHRoZSBTdGV2ZSBIYXJ2ZXkgU2hvd2QCAw9kFgJmDxUCRWh0dHA6Ly93d3cuY2hjb2MuZ292L21lZGlhY2VudGVyL3ZpZGVvcy9DSENPQy1NZWRpYS1DZW50ZXIvaW5kZXguYXNweBJDSENPQyBNZWRpYSBDZW50ZXJkAgQPZBYIZg8VBAVWaWRlbwVWaWRlbwE1bGh0dHA6Ly93d3cuY2hjb2MuZ292L21lZGlhY2VudGVyL3ZpZGVvcy9DSENPQy1NZWRpYS1DZW50ZXIvRmVkcy1GZWVkLUZhbWlsaWVzLWFuZC10aGUtU3RldmUtSGFydmV5LVNob3cuYXNweGQCAQ8WCh8HBS9odHRwOi8vaS55dGltZy5jb20vdmkvLVZHY0twY2x1WU0vbXFkZWZhdWx0LmpwZx8IBQMxMzQfCQUCNzUfCgUsRmVkcyBGZWVkIEZhbWlsaWVzIGFuZCB0aGUgU3RldmUgSGFydmV5IFNob3cfCwUsRmVkcyBGZWVkIEZhbWlsaWVzIGFuZCB0aGUgU3RldmUgSGFydmV5IFNob3dkAgIPFQJsaHR0cDovL3d3dy5jaGNvYy5nb3YvbWVkaWFjZW50ZXIvdmlkZW9zL0NIQ09DLU1lZGlhLUNlbnRlci9GZWRzLUZlZWQtRmFtaWxpZXMtYW5kLXRoZS1TdGV2ZS1IYXJ2ZXktU2hvdy5hc3B4LEZlZHMgRmVlZCBGYW1pbGllcyBhbmQgdGhlIFN0ZXZlIEhhcnZleSBTaG93ZAIDD2QWAmYPFQJFaHR0cDovL3d3dy5jaGNvYy5nb3YvbWVkaWFjZW50ZXIvdmlkZW9zL0NIQ09DLU1lZGlhLUNlbnRlci9pbmRleC5hc3B4EkNIQ09DIE1lZGlhIENlbnRlcmQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgEFD2N0bDAxJGJ0blNlYXJjaMCTe9DND5CvlK8X3DyC0/h5SEdc" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=mxUMery9lisWK9YbcZNzLiobb_WMTM6c8Z7wB_HqPxlDu9YeXaBTCp8GdjqcuwhpjoaYcva8Ao0W6-NUC99C0Yn_TNo1&amp;t=634935364663906250" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=-Hoyu9YxlXTef6t2UeivZYnSM7pm5yMu3jP5vALNVQ2_6R3gR7428Xeu1zzANYd04i9vX9Z6Tfd5n7GZhnWu-_O42H_H6kU4xhWwEBW27LjeWflHfHW_lSa3SNSJKUkG-dy49DeSRGGsLEyPYYgsQWw474gLxzStloC_32teK0nKb7gb0&amp;t=ffffffff940d030f" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="/ScriptResource.axd?d=4H5ZSS6cL5-eh1a-mcWXMHBbGRvX_1Jikyrz8IHJbx0kOIcbMd5E93YUVE6whC3EyfcNRcOoUyBLAGN2i0LnY-nJxPtw7vjXKgOlSkHSBb3zwk63mcsAcaog6I2IHOB5L3jfKFRxkteN0Ec3SK_wo2q0tR7vZuuMDCIXO3_uypCeQQ6a0&amp;t=ffffffff940d030f" type="text/javascript"></script>
+<div id="ContainerHeaderOutter">
+    <div id="ContainerHeader">
+    	<a class="skipnav" href="#content">Click here to skip navigation</a>
+        <div id="ctl01_AccessibilityInfoDisabled" class="AccessibilityInfo"> This website uses features which update page content based on user actions. If you are using assistive technology to view web content, please ensure your settings allow for the page content to update after initial load (this is sometimes called "forms mode"). Additionally, if you are using assistive technology and would like to be notified of items via alert boxes, please <a href="/MediaCenter/?ShowValidationPopups=true">follow this link to enable alert boxes for your session profile</a>.</div>
+        
+        <div id="HeaderLogo"><a href="/index.aspx"><img src="/img/site/Logo.gif" alt="Chief Human Capital Officers Council" border="0" /></a></div>
+        <div id="HeaderSearch">
+			<div id="ctl01_Panel1" onkeypress="javascript:return WebForm_FireDefaultButton(event, &#39;ctl01_btnSearch&#39;)">
+	
+					<input name="ctl01$q" id="ctl01_q" name="q" title="Search the OPM Site" class="SearchBox" value="Search..." type="text" onclick="this.value=&#39;&#39;" /><input type="image" name="ctl01$btnSearch" id="ctl01_btnSearch" class="SearchButton" src="/img/site/btnSearch.gif" style="border-width:0px;" />
+			
+</div>
+		</div>
+        <div id="HeaderNav">
+            <div id="ctl01_MainNavigation"><a href="/index.aspx">Main</a><a href="/about.aspx">About The Council</a><a href="/meetings/index.aspx">Events</a><a href="/members/index.aspx">Members</a><a href="/news.aspx">News</a><a href="/transmittals/index.aspx">Transmittals</a></div>
+        </div>
+        <div class="clear"></div>
+    </div><!-- ContainerHeader -->
+</div><!-- ContainerHeaderOutter -->
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl01$manager', 'aspnetForm', [], [], [], 90, 'ctl01');
+//]]>
+</script>
+
+        <div id="ctl01_InteriorSpotlight" class="ContainerSpotlightOutter">
+                <div id="ContainerSectionHeader">
+                    <H1>Media Center</H1>
+                </div><!-- ContainerSectionHeader -->
+         </div><!-- ContainerSpotlightOutter -->
+         
+        
+            <div id="ctl01_ContainerBodyOutter" class="ContainerBodyOutter">
+                <div id="ctl01_ContainerBody" class="ContainerBody">
+                    <div id="ctl01_LeftNavContainer">
+                            <div id="LeftNav">
+                                <div id="ctl01_LeftNavBox" class="LeftNavBox"><a href="#content" class="skipnav">Skip Navigation</a><div id="LeftNavBox"><ul></ul></div></div>
+                            </div>
+                    </div>
+                    <a id="content"></a>
+                    
+
+	<div class="LandingPageItem">
+		
+
+
+
+	<script type="text/javascript">
+		function toggleVideoLink() {
+			var obj = document.getElementById('MediaCenter_VideoItem_URL');
+			if (obj.style["display"] == "")
+				obj.style["display"] = "none";
+			else
+				obj.style["display"] = "";
+		}
+	</script>
+	<div id="ctl01_MainContentPlaceHolder_CurrentItem_VideoTitle" class="MediaCenter_Title MediaCenter_VideoTitle">CHCOC Academy: Retirement Disability</div>
+	<div class="MediaCenter_BoxContainer MediaCenter_VideoBoxContainer">
+		<div class="MediaCenter_ItemContainer MediaCenter_VideoContainer">
+			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>    
+			<div id="ytapiplayer">
+				You need Flash player 8+ and JavaScript enabled to view this video.
+			</div>
+			<script type="text/javascript">
+				var params = { allowScriptAccess: "always", wmode: "transparent" };
+				var atts = { id: "myytplayer" };
+				swfobject.embedSWF("http://www.youtube-nocookie.com/v/Ma55fiFB1lw&amp;showinfo=0&amp;rel=0&amp;border=0&amp;enablejsapi=1&amp;playerapiid=ytplayer",
+								   "ytapiplayer", "500", "300", "8", null, null, params, atts);
+			</script>
+		</div>
+		<div id="ctl01_MainContentPlaceHolder_CurrentItem_VideoLinkbar" class="MediaCenter_Linkbar MediaCenter_VideoLinkbar">
+			<a class="MediaCenter_PermLink MediaCenter_VideoPermLink" href="" onclick="javascript:toggleVideoLink(); return false;">Perm Link</a> <input id="MediaCenter_VideoItem_URL" value="http://www.chcoc.gov/mediacenter/videos/CHCOC-Media-Center/CHCOC-Academy-Retirement-Disability.aspx" style="display: none" />
+			<a class="MediaCenter_Email MediaCenter_VideoEmail" href="mailto:?subject=Video: CHCOC Academy: Retirement Disability&body=Look at the video I found on CHCOC!%0Ahttp://www.chcoc.gov/mediacenter/videos/CHCOC-Media-Center/CHCOC-Academy-Retirement-Disability.aspx">Email Video</a>
+		</div>
+	</div>
+	<div id="ctl01_MainContentPlaceHolder_CurrentItem_VideoAccessories" class="MediaCenter_Accessories MediaCenter_VideoAccessories">
+		<div id="ctl01_MainContentPlaceHolder_CurrentItem_VideoDate" class="MediaCenter_Date MediaCenter_VideoDate">
+			December 17, 2012
+		</div>
+		<div id="ctl01_MainContentPlaceHolder_CurrentItem_VideoDescription" class="MediaCenter_Description MediaCenter_VideoDescription">
+			
+		</div>
+	</div>
+	<div style="clear: both"></div>
+
+
+
+
+
+	</div>
+
+	<div class="LatestPhotosWrapper">
+		<h3>Latest Photos</h3>
+		
+
+<div id="ctl01_MainContentPlaceHolder_RecentPhotos_NoRecentItems" class="NoRecentItemsContainer">
+	
+	There are currently no photos available.
+
+</div>
+
+
+		<div class="MoreItems">
+			<a href="/mediacenter/photos/">More Photos</a>
+		</div>
+	</div>
+	<div class="LatestVideosWrapper">
+		<h3>Latest Videos</h3>
+		
+			<div class="RecentItem_Container RecentVideoItem_Container RecentVideoItem_Container1">
+				<div class="RecentItem_ImageContainer">
+					<a href="http://www.chcoc.gov/mediacenter/videos/CHCOC-Media-Center/CHCOC-Academy-Retirement-Disability.aspx">
+						<img src="http://i.ytimg.com/vi/Ma55fiFB1lw/mqdefault.jpg" id="ctl01_MainContentPlaceHolder_RecentVideos_Template_OPM_RecentItemsRepeater_ctl00_RecentItem_Image" class="RecentItem_Image" border="0" width="134" height="75" alt="CHCOC Academy: Retirement Disability" title="CHCOC Academy: Retirement Disability" />
+					</a>
+				</div>
+				<div class="RecentItem_Title">
+					<a href="http://www.chcoc.gov/mediacenter/videos/CHCOC-Media-Center/CHCOC-Academy-Retirement-Disability.aspx">
+						CHCOC Academy: Retirement Disability
+					</a>
+				</div>
+				<div class="RecentItem_FromAlbum">
+					Album: <a href="http://www.chcoc.gov/mediacenter/videos/CHCOC-Media-Center/index.aspx">CHCOC Media Center</a>
+				</div>
+			</div>
+		
+			<div class="RecentItem_Container RecentVideoItem_Container RecentVideoItem_Container2">
+				<div class="RecentItem_ImageContainer">
+					<a href="http://www.chcoc.gov/mediacenter/videos/CHCOC-Media-Center/CHCOC-Inclement-Weather-Briefing.aspx">
+						<img src="http://i.ytimg.com/vi/Q_jluFvoDp8/mqdefault.jpg" id="ctl01_MainContentPlaceHolder_RecentVideos_Template_OPM_RecentItemsRepeater_ctl01_RecentItem_Image" class="RecentItem_Image" border="0" width="134" height="75" alt="CHCOC Inclement Weather Briefing" title="CHCOC Inclement Weather Briefing" />
+					</a>
+				</div>
+				<div class="RecentItem_Title">
+					<a href="http://www.chcoc.gov/mediacenter/videos/CHCOC-Media-Center/CHCOC-Inclement-Weather-Briefing.aspx">
+						CHCOC Inclement Weather Briefing
+					</a>
+				</div>
+				<div class="RecentItem_FromAlbum">
+					Album: <a href="http://www.chcoc.gov/mediacenter/videos/CHCOC-Media-Center/index.aspx">CHCOC Media Center</a>
+				</div>
+			</div>
+		
+			<div class="RecentItem_Container RecentVideoItem_Container RecentVideoItem_Container3">
+				<div class="RecentItem_ImageContainer">
+					<a href="http://www.chcoc.gov/mediacenter/videos/CHCOC-Media-Center/A-Healthy-Retirement.aspx">
+						<img src="http://i.ytimg.com/vi/hN0ssrlq4d0/mqdefault.jpg" id="ctl01_MainContentPlaceHolder_RecentVideos_Template_OPM_RecentItemsRepeater_ctl02_RecentItem_Image" class="RecentItem_Image" border="0" width="134" height="75" alt="A Healthy Retirement" title="A Healthy Retirement" />
+					</a>
+				</div>
+				<div class="RecentItem_Title">
+					<a href="http://www.chcoc.gov/mediacenter/videos/CHCOC-Media-Center/A-Healthy-Retirement.aspx">
+						A Healthy Retirement
+					</a>
+				</div>
+				<div class="RecentItem_FromAlbum">
+					Album: <a href="http://www.chcoc.gov/mediacenter/videos/CHCOC-Media-Center/index.aspx">CHCOC Media Center</a>
+				</div>
+			</div>
+		
+			<div class="RecentItem_Container RecentVideoItem_Container RecentVideoItem_Container4">
+				<div class="RecentItem_ImageContainer">
+					<a href="http://www.chcoc.gov/mediacenter/videos/CHCOC-Media-Center/Feds-Feed-Families-and-the-Steve-Harvey-Show.aspx">
+						<img src="http://i.ytimg.com/vi/QRei5MFqvzM/mqdefault.jpg" id="ctl01_MainContentPlaceHolder_RecentVideos_Template_OPM_RecentItemsRepeater_ctl03_RecentItem_Image" class="RecentItem_Image" border="0" width="134" height="75" alt="Feds Feed Families and the Steve Harvey Show" title="Feds Feed Families and the Steve Harvey Show" />
+					</a>
+				</div>
+				<div class="RecentItem_Title">
+					<a href="http://www.chcoc.gov/mediacenter/videos/CHCOC-Media-Center/Feds-Feed-Families-and-the-Steve-Harvey-Show.aspx">
+						Feds Feed Families and the Steve Harvey Show
+					</a>
+				</div>
+				<div class="RecentItem_FromAlbum">
+					Album: <a href="http://www.chcoc.gov/mediacenter/videos/CHCOC-Media-Center/index.aspx">CHCOC Media Center</a>
+				</div>
+			</div>
+		
+			<div class="RecentItem_Container RecentVideoItem_Container RecentVideoItem_Container5">
+				<div class="RecentItem_ImageContainer">
+					<a href="http://www.chcoc.gov/mediacenter/videos/CHCOC-Media-Center/Feds-Feed-Families-and-the-Steve-Harvey-Show.aspx">
+						<img src="http://i.ytimg.com/vi/-VGcKpcluYM/mqdefault.jpg" id="ctl01_MainContentPlaceHolder_RecentVideos_Template_OPM_RecentItemsRepeater_ctl04_RecentItem_Image" class="RecentItem_Image" border="0" width="134" height="75" alt="Feds Feed Families and the Steve Harvey Show" title="Feds Feed Families and the Steve Harvey Show" />
+					</a>
+				</div>
+				<div class="RecentItem_Title">
+					<a href="http://www.chcoc.gov/mediacenter/videos/CHCOC-Media-Center/Feds-Feed-Families-and-the-Steve-Harvey-Show.aspx">
+						Feds Feed Families and the Steve Harvey Show
+					</a>
+				</div>
+				<div class="RecentItem_FromAlbum">
+					Album: <a href="http://www.chcoc.gov/mediacenter/videos/CHCOC-Media-Center/index.aspx">CHCOC Media Center</a>
+				</div>
+			</div>
+		
+
+
+
+
+		<div class="MoreItems">
+			<a href="/mediacenter/videos/">More Videos</a>
+		</div>
+	</div>
+
+                     
+                </div>
+            </div>
+        
+        <div id="ContainerFooter">
+            <div>
+				<a href="/Section508.aspx">Accessibility</a> <span class="divider">|</span>
+				<a href="/Privacy.aspx">Privacy Policy</a> <span class="divider">|</span>
+				<a href="/ContactUs.aspx">Contact Us</a> <span class="divider">|</span>
+				<a href="http://www.opm.gov">OPM.gov</a> <span class="divider">|</span>
+				<a href="http://www.usa.gov">USA.gov</a> <span class="divider">|</span>
+				<a href="/OtherCouncils.aspx">Other Councils</a> <span class="divider">|</span>
+            	<a href="http://www.opm.gov/html/acrobat.asp">PDF Help</a> <img width="12" height="12" border="0" align="absmiddle" alt="PDF" src="/img/site/Icon_PDF.gif">
+			</div>   
+			<div class="FooterText">Official website of the U.S. Government operated by the Office of Personnel Management</div>
+        </div>       
+        
+<script type="text/javascript" language="javascript">
+		
+		
+		
+		function FadeItem(){
+			$(".ResponseMessage").each(function(i) { 
+				FadeIt(this);
+			});
+				
+			$(".ResponseErrorMessage").each(function(i) { 
+				$(this).removeAttr("style");
+				FadeIt(this);
+			});
+		}
+		
+		function FadeIt(itemToFade){
+			if (jQuery.trim($(itemToFade).html()) != ""){
+				$(itemToFade).fadeIn("slow");
+			}
+		}
+		
+		function TemplateMasterRewireWebForm(){
+			if(typeof( WebForm_OnSubmit ) == 'function') { 
+				WebForm_OnSubmitCoreTemplate = WebForm_OnSubmit; 
+				WebForm_OnSubmit = function() { 
+						isValid = WebForm_OnSubmitCoreTemplate(); 
+						if(!isValid)
+							FadeItem();
+						return isValid; 
+				} 
+			}
+		}
+		TemplateMasterRewireWebForm();
+		
+
+		if (typeof fireFadeItem != 'undefined' && fireFadeItem) {
+			FadeItem();
+		}
+	</script>
+		
+
+
+	<script type="text/javascript" language="javascript">
+		var manager;
+
+		function pageLoad(){
+			manager = Sys.WebForms.PageRequestManager.getInstance();
+			if(manager)
+				manager.add_endRequest(endRequest);	
+		}
+
+		function endRequest(sender, args){
+			var Error = args.get_error();
+			if (Error){
+				if (typeof(HandleAjaxError) == 'function')
+					HandleAjaxError(sender,args);
+				else{
+					if ($.fn.colorbox){
+						$.fn.colorbox({html:Error.message + ' - ' + Error.description});
+					}else{
+						alert(Error.message + ' - ' + Error.description);
+					}
+
+				}
+				args.set_errorHandled(true);
+			}
+		}	
+	</script>
+
+<script type="text/javascript" language="javascript">		
+		function AlertItem(){}
+
+		function AlertUser(){}
+
+		if (typeof fireAlertItem != 'undefined' && fireAlertItem) {
+			AlertItem();
+		}
+</script>
+        
+    
+<div>
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWAwKkg4q6DwKbkcPUBQL6l+COAqhJxHYSZCJYQ0yvNzaqRQ3CwRaG" />
+</div></form>
+</body>
+</html>
+

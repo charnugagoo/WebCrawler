@@ -1,0 +1,159 @@
+<html> <head>
+<title>Fortran 90 for the Fortran 77 Programmer</title>
+</head>
+
+<body bgcolor="#e0ffe0">
+<center><h1>
+<img alt="StudyWeb" src="gifs/sw_award.gif" border ="1">
+<img alt="Look Smart" src="gifs/ecfin48.gif">
+<img alt="Links 2 Go" src="gifs/links2go.gif" border ="0"> 
+</h1></center>
+<center><h1><img alt="" src="gifs/f90_e.gif"> 
+</h1></center>
+<h1>                                Fortran&#160;90
+                       for the Fortran&#160;77 Programmer
+</h1>
+            &#169; 1993 and 1996, Bo Einarsson and Yurij Shokin
+<p>
+Version 2.3
+<p>
+   This tutorial is written in order to ease the transition from the very
+common and popular programming language Fortran 77 to the more modern
+Fortran 90.  This transition uses the fact that Fortran 77 is a pure
+subset of Fortran 90. 
+<p>
+This HTML version can be used from both UNIX and Windows.
+It is recommended that the reader has the following 
+features implemented in such a way that the following four fonts  are easily 
+distinguished: 
+<b>Bold font</b>, <i>Italic font</i>, <tt>Courier or TTY 
+font</tt>, and normal font. The Courier font is being used for all 
+<tt>Fortran words </tt> and all <tt>code</tt>.
+<p>
+This hypertext version is available on the net as
+<a href="http://www.nsc.liu.se/~boein/f77to90/f77to90.html">
+<tt>http://www.nsc.liu.se/~boein/f77to90/f77to90.html</tt></a>.
+
+<p>
+When reading a chapter (or appendix) the arrows at the bottom will bring you to the 
+previous chapter, the tutorial home page (this page, at the start of the contents) or the next chapter.
+<p>
+<img alt="" src="gifs/vanster.gif"> 
+<a href="#index"><img alt="" src="gifs/upp.gif"></a>
+<img alt="" src="gifs/hoger.gif"> 
+<p>
+	Permission is granted to copy and/or print this hypertext as long
+	as the copyright notice and this permission is included on
+	all copies. 
+<p>
+	This material is also available (with some exceptions) as
+ <a href="references.html#shokin">one 
+book in Russian</a> and a manuscript in Chinese.
+<p>
+	A complete textbook in Swedish on Fortran 90/95
+	has been prepared, and is available both electronically in a 
+        <a href="http://www.nsc.liu.se/~boein/f90/">hypertext version</a> and in printed form.
+<p>
+Further information on Fortran 90 is available via Bo Einarsson's 
+<a href="http://www.nsc.liu.se/~boein/fortran.html">Fortran page</a>.
+<p>
+   Views, suggestions and corrections are most welcome for the next
+edition of this tutorial. The HTML version will be continuously updated.
+<p>
+<img alt="" src="gifs/se.gif"> 
+<img alt="" src="gifs/flag_rus.gif"> 
+<p>     Link&ouml;ping and Novosibirsk, August 1993<br>
+     <a href="bo.html"><i>Bo Einarsson</i></a>
+ and <a href="yurij.html"><i>Yurij Shokin</i></a>
+<br>
+<hr>
+<a Name="index"><h2>Contents</h2></a>
+
+<div id="searchframe">
+<form method=get action="http://www.google.com/search">
+
+<font size="-4">
+
+<input type=hidden name=ie value=UTF-8>
+<input type=hidden name=oe value=UTF-8>
+<input type=hidden name=domains value="nsc.liu.se">
+<input type=hidden name=sitesearch value="nsc.liu.se">
+
+<input type="text" name=q size=22 maxlength=255 value=""><br/>
+<input type="submit" name=btnG value="Google Search locally" class="searchbutton">
+
+</font>
+</form>
+</div>
+
+<ul>
+<li><a href="pc_e.html"><b>Technical information</b></a>
+<li><a href="preface.html"><b>Preface</b></a>
+<li><a href="intro.html"><b>Introduction</b></a>
+<!--li><a href="search.html"><b>Search</b></a-->
+<li><b>    Chapters</b>
+<ul>
+<li><a href="c1.html">1. Notables in the transition from Fortran 77 to Fortran 90</a>
+<li><a href="c2.html">2. Specifications</a>
+<li><a href="c3.html">3. The layout of a program (free form and fix form)</a>
+<li><a href="c4.html">4. Format</a>
+<li><a href="c5.html">5. The same source code for Fortran 77 and Fortran 90 ?</a>
+<li><a href="c6.html">6. Control statements</a>
+<li><a href="c7.html">7. Program units</a> 
+<li><a href="c8.html">8. Keyword arguments and default arguments</a>
+<li><a href="c9.html">9. Recursion</a>
+<li><a href="c10.html">10. Generic routines</a>
+<li><a href="c11.html">11. The use of arrays and array sections</a>
+<li><a href="c12.html">12. Pointers</a>
+<li><a href="c13.html">13. The new precision concept</a>
+<li><a href="c14.html">14. Additional problems at the transition</a>
+<li><a href="c15.html">15. Use of program libraries</a>
+<li><a href="c16.html">16. Peculiarities in the language Fortran 90</a>
+<li><a href="f95.html">17. Status of Fortran 95</a>
+<li><a href="c18.html">18. Different Fortran standards</a>
+</ul>
+<li><a href="answers.html"><b>Answers and comments to the user exercises</b></a>
+<li><a href="references.html"><b>References</b></a> 
+
+<li><b><a Name="appendix">Appendices</a></b>
+<ul>
+<li><a href="a1.html">App. 1. Fortran and Pascal</a>
+<li><a href="a2.html">App.  2.  Summary of Fortran 77 statements</a>
+<li><a href="a3.html">App.  3.  Summary of the new features in Fortran 90</a>              
+<li><a href="a4.html">App.  4.  Backward and Forward compatibility</a>          
+<li><a href="a5.html">App.  5.  Intrinsic functions and subroutines in Fortran 90</a>
+<li><a href="a6.html">App.  6.  Fortran 90/95 systems</a>
+<ul>
+<li> <a href="a6.html#following">Apogee</a>
+<li> <a href="absoft.html">Absoft</a> 
+<li> <a href="cray.html">Cray</a>
+<li> <a href="digital.html">Digital</a>
+<li> <a href="a6.html#following">Fujitsu</a>
+<li> <a href="a6.html#following">IBM</a>
+<li> <a href="a6.html#following">Lahey</a>
+<li> <a href="nag.html">NAG</a> 
+<li> <a href="a6.html#following">Portland Group</a>
+<li> <a href="a6.html#following">Salford</a>
+<li> <a href="sgi.html">SGI</a>
+<li> <a href="sun.html">SunSoft</a>
+</ul>
+<li><a href="a7.html">App.  7.  The historical development of Fortran</a>                
+<li><a href="a8.html">App.  8.  High Performance Fortran</a>                             
+<li><a href="a9.html">App.  9.  Explanation of certain terms</a>
+<li><a href="a10.html">App. 10.  Argument association</a>					
+<li><a href="a11.html">App. 11.  Computer Exercises</a>	
+<li><a href="a12.html">App. 12.  Editors</a>
+<li><a href="a13.html">App. 13.  Computer Environments</a>
+
+</ul>
+<li><b>     Marketing information</b>
+<ul>
+<li><a href="tutorial.html">The Tutorial</a> 
+<li><a href="bo.html">Bo Einarsson</a>
+<li><a href="yurij.html">Yurij Shokin</a> 
+</ul>
+</ul>
+<hr>
+Last modified: December 21, 2006<br>
+<a href="mailto:boein@nsc.liu.se"><tt>boein@nsc.liu.se</tt></a>
+</body> </html>

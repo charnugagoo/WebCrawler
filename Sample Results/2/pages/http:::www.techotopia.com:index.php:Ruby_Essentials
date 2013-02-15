@@ -1,0 +1,595 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+<!-- Techotopia -->
+
+<style type="text/css">
+#bookcover_sky {
+        background:white;
+        opacity: 100;
+
+        padding: 5px 5px 5px 5px;
+        margin: 0px 3px 0px 0px;
+        text-align:center;
+        //float:right;
+        border:1px solid #808080;
+}
+a.booklink:link {
+        color: #FFFFFF;
+        font-size: 12px;
+        text-decoration: none;
+        font-weight: bold;
+}
+
+a.booklink:active {
+        color: #FFFFFF;
+        font-size: 12px;
+        text-decoration: none;
+        font-weight: bold;
+}
+a.booklink:visited {
+        color: #FFFFFF;
+        font-size: 12px;
+        text-decoration: none;
+        font-weight: bold;
+}
+a.booklink:hover {
+        color: #FFFFFF;
+        font-size: 12px;
+        text-decoration: none;
+        font-weight: bold;
+}
+#bookcaption {
+        font-size:0.8em;
+}
+#booktitle {
+        font-size:1.1em;
+}
+
+#bookprice {
+        font-size:1.1em;
+        color:red;
+}
+</style>
+
+
+<script type="text/javascript" src="/scripts/techotopia.js">
+</script>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="keywords" content="Ruby Essentials,About Ruby Essentials,Advanced Ruby Arrays,Commenting Ruby Code,Getting and Installing Ruby,Looping with for and the Ruby Looping Methods,Ruby Directory Handling,Ruby Flow Control,Ruby Math Functions and Methods,Ruby Methods,Ruby Number Classes and Conversions" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="Techotopia (English)" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+		<title>Ruby Essentials - Techotopia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins/monobook/main.css?42b"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print" href="/skins/common/commonPrint.css?42b" />
+		<link rel="stylesheet" type="text/css" media="handheld" href="/skins/monobook/handheld.css?42b" />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins/monobook/IE50Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins/monobook/IE55Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins/monobook/IE60Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins/monobook/IE70Fixes.css?42b";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?42b"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">/*<![CDATA[*/
+var skin = "monobook";
+var stylepath = "/skins";
+var wgArticlePath = "/index.php/$1";
+var wgScriptPath = "";
+var wgServer = "http://www.techotopia.com";
+var wgCanonicalNamespace = "";
+var wgCanonicalSpecialPageName = false;
+var wgNamespaceNumber = 0;
+var wgPageName = "Ruby_Essentials";
+var wgTitle = "Ruby Essentials";
+var wgArticleId = "439";
+var wgIsArticle = true;
+var wgUserName = null;
+var wgUserLanguage = "en";
+var wgContentLanguage = "en";
+var wgBreakFrames = false;
+var wgCurRevisionId = "14314";
+/*]]>*/</script>
+                
+		<script type="text/javascript" src="/skins/common/wikibits.js?42b"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/index.php?title=-&action=raw&gen=css&maxage=18000";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+			</head>
+<body  class="mediawiki ns-0 ltr page-Ruby_Essentials">
+<div>
+
+<!-- Techotopia -->
+<div class="mainlogo" id="p-logo">
+<a href="http://www.techotopia.com"><img src="/skins/common/images/Techotopia_icon.png"></a>
+</div>
+<div id="bannerAd">
+<script type="text/javascript"><!--
+	writeAdsdaqBanner();
+//-->
+</script>
+</div>
+
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		
+<!-- Techotopia ADHERE -->
+<br>
+<div style="float:right; margin-top:0px; margin-right:10px;"><a href="https://www.e-junkie.com/ecom/gb.php?c=cart&cl=56328&ejc=2" target="ej_ejc" class="ec_ejc_thkbx" onClick="javascript:return EJEJC_lc(this);"></a>
+<script language="javascript" type="text/javascript">
+<!--
+function EJEJC_lc(th) { return false; }
+// -->
+</script>
+<script src='http://www.e-junkie.com/ecom/box.js' type='text/javascript'></script></div>
+<script type="text/javascript"><!--
+google_ad_client = "pub-7393409044112403";
+/* 728x15, created 7/22/08 */
+google_ad_slot = "4205930665";
+google_ad_width = 728;
+google_ad_height = 15;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+		<h1 class="firstHeading">Ruby Essentials</h1>
+<div style="float:left">
+<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like show_faces="false" width="450"></fb:like>
+</div>
+<div style="float:right">
+<table>
+<tr>
+<td>
+<!-- Place this tag where you want the +1 button to render -->
+<g:plusone></g:plusone>
+
+<!-- Place this render call where appropriate -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+</td>
+<td>
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_32x32_style addthis_default_style">
+<a class="addthis_button_facebook_follow" addthis:userid="techotopia"></a>
+</div>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=neilsmyth"></script>
+<!-- AddThis Button END -->
+</td>
+<td>
+<a href="http://www.twitter.com/Techotopia"><img src="http://twitter-badges.s3.amazonaws.com/follow_bird_us-a.png" alt="Follow Techotopia on Twitter"/></a>
+</td>
+<td>
+<!-- AddThis Button BEGIN -->
+<a class="addthis_button" href="http://www.addthis.com/bookmark.php?v=250&amp;pub=neilsmyth"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" style="border:0"/></a><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pub=neilsmyth"></script>
+<!-- AddThis Button END -->
+</td>
+</tr>
+</table>
+</div>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Techotopia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<p>Ruby Essentials is a free on-line book designed to provide a concise and easy to follow guide to learning Ruby.
+</p><p><br />
+</p>
+<table border="0" cellspacing="0" width="100%">
+<tr>
+<td width="20%"><td align="center"><strong class="selflink">Table of Contents</strong><td width="20%" align="right"><a href="/index.php/About_Ruby_Essentials" title="About Ruby Essentials">Next</a></td>
+<tr>
+<td width="20%"><td align="center"><td width="20%" align="right">About Ruby Essentials</td>
+</table>
+<hr />
+<p><br />
+</p>
+<style type="text/css">   @import "/extensions/GoogleAdSense/GoogleAdSense.css";</style><div align="center"><b>Purchase and download the PDF and ePub versions of this Ruby eBook for only $8.99</b>&nbsp;&nbsp;<a href="https://www.e-junkie.com/ecom/gb.php?c=cart&amp;i=PLDM-1&amp;cl=56328&amp;ejc=2" target="ej_ejc" class="ec_ejc_thkbx" onClick="javascript:return EJEJC_lc(this);"><img src="/extensions/images/Buy_Now.png" border="0" alt="Add to Cart"/></a>
+</div>
+<p><br />
+© 2012 Neil Smyth / Payload Media. This eBook is provided for personal use only. Unauthorized use, reproduction and/or distribution strictly prohibited. All rights reserved.
+</p><p><br />
+</p>
+<table>
+<tr>
+<td>
+<ol><li> <a href="/index.php/About_Ruby_Essentials" title="About Ruby Essentials">About Ruby Essentials</a><br /><br />
+</li><li> <a href="/index.php/What_is_Ruby%3F" title="What is Ruby?">What is Ruby?</a>
+<ul><li> <a href="/index.php/What_is_Ruby%3F" title="What is Ruby?">The History of Ruby</a>
+</li><li> <a href="/index.php/What_is_Ruby%3F" title="What is Ruby?">What is Ruby?</a>
+</li><li> <a href="/index.php/What_is_Ruby%3F" title="What is Ruby?">Why is Ruby so Popular?</a><br /><br />
+</li></ul>
+</li><li> <a href="/index.php/Getting_and_Installing_Ruby" title="Getting and Installing Ruby">Getting and Installing Ruby</a>
+<ul><li> <a href="/index.php/Getting_and_Installing_Ruby" title="Getting and Installing Ruby">Installing Ruby on Linux</a>
+</li><li> <a href="/index.php/Getting_and_Installing_Ruby" title="Getting and Installing Ruby">Ruby on Red Hat Enterprise and Fedora Linux</a>
+</li><li> <a href="/index.php/Getting_and_Installing_Ruby" title="Getting and Installing Ruby">Ruby on Ubuntu and Debian Linux</a>
+</li><li> <a href="/index.php/Getting_and_Installing_Ruby" title="Getting and Installing Ruby">Ruby on Microsoft Windows</a><br /><br />
+</li></ul>
+</li><li> <a href="/index.php/Simple_Ruby_Examples" title="Simple Ruby Examples">Simple Ruby Examples</a>
+<ul><li> <a href="/index.php/Simple_Ruby_Examples" title="Simple Ruby Examples">The Most Basic Ruby Example</a>
+</li><li> <a href="/index.php/Simple_Ruby_Examples" title="Simple Ruby Examples">Executing Ruby from the Command Line</a>
+</li><li> <a href="/index.php/Simple_Ruby_Examples" title="Simple Ruby Examples">Interactive Ruby Execution</a>
+</li><li> <a href="/index.php/Simple_Ruby_Examples" title="Simple Ruby Examples">Executing Ruby from a File</a>
+</li><li> <a href="/index.php/Simple_Ruby_Examples" title="Simple Ruby Examples">Creating a Self Contained Ruby Executable on Linux or UNIX</a>
+</li><li> <a href="/index.php/Simple_Ruby_Examples" title="Simple Ruby Examples">Associating Ruby Files on Windows</a><br /><br />
+</li></ul>
+</li><li> <a href="/index.php/Commenting_Ruby_Code" title="Commenting Ruby Code">Commenting Ruby Code</a>
+<ul><li> <a href="/index.php/Commenting_Ruby_Code" title="Commenting Ruby Code">What is Exactly is Commenting</a>
+</li><li> <a href="/index.php/Commenting_Ruby_Code" title="Commenting Ruby Code">Single Line Ruby Comments</a>
+</li><li> <a href="/index.php/Commenting_Ruby_Code" title="Commenting Ruby Code">Comments on Lines of Code</a>
+</li><li> <a href="/index.php/Commenting_Ruby_Code" title="Commenting Ruby Code">Multi Line or Block Ruby Comments</a><br /><br />
+</li></ul>
+</li><li> <a href="/index.php/Understanding_Ruby_Variables" title="Understanding Ruby Variables">Understanding Ruby Variables</a>
+<ul><li> <a href="/index.php/Understanding_Ruby_Variables" title="Understanding Ruby Variables">Ruby Constants</a>
+</li><li> <a href="/index.php/Understanding_Ruby_Variables" title="Understanding Ruby Variables">Ruby and Variable Dynamic Typing</a>
+</li><li> <a href="/index.php/Understanding_Ruby_Variables" title="Understanding Ruby Variables">Declaring a Variable</a>
+</li><li> <a href="/index.php/Understanding_Ruby_Variables" title="Understanding Ruby Variables">Identifying a Ruby Variable Type</a>
+</li><li> <a href="/index.php/Understanding_Ruby_Variables" title="Understanding Ruby Variables">Changing Variable Type</a>
+</li><li> <a href="/index.php/Understanding_Ruby_Variables" title="Understanding Ruby Variables">Converting Variable Values</a><br /><br />
+</li></ul>
+</li><li> <a href="/index.php/Ruby_Variable_Scope" title="Ruby Variable Scope">Ruby Variable Scope</a>
+<ul><li> <a href="/index.php/Ruby_Variable_Scope" title="Ruby Variable Scope">What is Variable Scope?</a>
+</li><li> <a href="/index.php/Ruby_Variable_Scope" title="Ruby Variable Scope">Detecting the Scope of a Ruby Variable</a>
+</li><li> <a href="/index.php/Ruby_Variable_Scope" title="Ruby Variable Scope">Ruby Local Variables</a>
+</li><li> <a href="/index.php/Ruby_Variable_Scope" title="Ruby Variable Scope">Ruby Global Variables</a>
+</li><li> <a href="/index.php/Ruby_Variable_Scope" title="Ruby Variable Scope">Ruby Class Variables</a>
+</li><li> <a href="/index.php/Ruby_Variable_Scope" title="Ruby Variable Scope">Ruby Instance Variables</a>
+</li><li> <a href="/index.php/Ruby_Variable_Scope" title="Ruby Variable Scope">Ruby Constant Scope</a><br /><br />
+</li></ul>
+</li><li> <a href="/index.php/Ruby_Number_Classes_and_Conversions" title="Ruby Number Classes and Conversions">Ruby Number Classes and Conversions</a>
+<ul><li> <a href="/index.php/Ruby_Number_Classes_and_Conversions" title="Ruby Number Classes and Conversions">Ruby Number Classes</a>
+</li><li> <a href="/index.php/Ruby_Number_Classes_and_Conversions" title="Ruby Number Classes and Conversions">Converting Numbers in Ruby</a><br /><br />
+</li></ul>
+</li><li> <a href="/index.php/Ruby_Methods" title="Ruby Methods">Ruby Methods</a>
+<ul><li> <a href="/index.php/Ruby_Methods" title="Ruby Methods">Declaring and Calling a Ruby Method</a>
+</li><li> <a href="/index.php/Ruby_Methods" title="Ruby Methods">Passing Arguments to a Method</a>
+</li><li> <a href="/index.php/Ruby_Methods" title="Ruby Methods">Passing a Variable Number of Arguments to a Method</a>
+</li><li> <a href="/index.php/Ruby_Methods" title="Ruby Methods">Returning a Value from a Function</a>
+</li><li> <a href="/index.php/Ruby_Methods" title="Ruby Methods">Ruby Method Aliases</a><br /><br />
+</li></ul>
+</li><li> <a href="/index.php/Ruby_Ranges" title="Ruby Ranges">Ruby Ranges</a>
+<ul><li> <a href="/index.php/Ruby_Ranges" title="Ruby Ranges">Ruby Sequence Ranges</a>
+</li><li> <a href="/index.php/Ruby_Ranges" title="Ruby Ranges">Using Range Methods</a>
+</li><li> <a href="/index.php/Ruby_Ranges" title="Ruby Ranges">Ruby Ranges as Conditional Expressions</a>
+</li><li> <a href="/index.php/Ruby_Ranges" title="Ruby Ranges">Ruby Range Intervals</a>
+</li><li> <a href="/index.php/Ruby_Ranges" title="Ruby Ranges">Ranges in case Statements</a><br /><br />
+</li></ul>
+</li><li> <a href="/index.php/Understanding_Ruby_Arrays" title="Understanding Ruby Arrays">Understanding Ruby Arrays</a>
+<ul><li> <a href="/index.php/Understanding_Ruby_Arrays" title="Understanding Ruby Arrays">What is a Ruby Array</a>
+</li><li> <a href="/index.php/Understanding_Ruby_Arrays" title="Understanding Ruby Arrays">How to Create a Ruby Array</a>
+</li><li> <a href="/index.php/Understanding_Ruby_Arrays" title="Understanding Ruby Arrays">Populating an Array with Data</a>
+</li><li> <a href="/index.php/Understanding_Ruby_Arrays" title="Understanding Ruby Arrays">Finding Out Information About a Ruby Array</a>
+</li><li> <a href="/index.php/Understanding_Ruby_Arrays" title="Understanding Ruby Arrays">Accessing Array Elements</a>
+</li><li> <a href="/index.php/Understanding_Ruby_Arrays" title="Understanding Ruby Arrays">Finding the Index of an Element</a><br /><br />
+</li></ul>
+</li><li> <a href="/index.php/Advanced_Ruby_Arrays" title="Advanced Ruby Arrays">Advanced Ruby Arrays</a>
+<ul><li> <a href="/index.php/Advanced_Ruby_Arrays" title="Advanced Ruby Arrays">Combining Ruby Arrays</a>
+</li><li> <a href="/index.php/Advanced_Ruby_Arrays" title="Advanced Ruby Arrays">Intersection, Union and Difference</a>
+</li><li> <a href="/index.php/Advanced_Ruby_Arrays" title="Advanced Ruby Arrays">Identifying Unique Array Elements</a>
+</li><li> <a href="/index.php/Advanced_Ruby_Arrays" title="Advanced Ruby Arrays">Pushing and Popping Array Elements</a>
+</li><li> <a href="/index.php/Advanced_Ruby_Arrays" title="Advanced Ruby Arrays">Ruby Array Comparisons</a>
+</li><li> <a href="/index.php/Advanced_Ruby_Arrays" title="Advanced Ruby Arrays">Modifying Arrays</a>
+</li><li> <a href="/index.php/Advanced_Ruby_Arrays" title="Advanced Ruby Arrays">Deleting Array Elements</a>
+</li><li> <a href="/index.php/Advanced_Ruby_Arrays" title="Advanced Ruby Arrays">Sorting Arrays</a><br /><br />
+</li></ul>
+</li><li> <a href="/index.php/Ruby_Operators" title="Ruby Operators">Ruby Operators</a>
+<ul><li> <a href="/index.php/Ruby_Operators" title="Ruby Operators">The Anatomy of a Ruby Operation</a>
+</li><li> <a href="/index.php/Ruby_Operators" title="Ruby Operators">Performing Ruby Arithmetic using Operators</a>
+</li><li> <a href="/index.php/Ruby_Operators" title="Ruby Operators">Ruby Assignment Operators</a>
+</li><li> <a href="/index.php/Ruby_Operators" title="Ruby Operators">Parallel Assignment</a>
+</li><li> <a href="/index.php/Ruby_Operators" title="Ruby Operators">Ruby Comparison Operators</a>
+</li><li> <a href="/index.php/Ruby_Operators" title="Ruby Operators">Ruby Bitwise Operators</a><br /><br />
+</li></ul>
+</li><li> <a href="/index.php/Ruby_Operator_Precedence" title="Ruby Operator Precedence">Ruby Operator Precedence</a>
+<ul><li> <a href="/index.php/Ruby_Operator_Precedence" title="Ruby Operator Precedence">An Example of Ruby Operator Precedence</a><br /><br />
+</li></ul>
+</li><li> <a href="/index.php/Ruby_Math_Functions_and_Methods" title="Ruby Math Functions and Methods">Ruby Math Functions and Methods</a>
+<ul><li> <a href="/index.php/Ruby_Math_Functions_and_Methods" title="Ruby Math Functions and Methods">Ruby Math Constants</a>
+</li><li> <a href="/index.php/Ruby_Math_Functions_and_Methods" title="Ruby Math Functions and Methods">Ruby Math Methods</a>
+</li><li> <a href="/index.php/Ruby_Math_Functions_and_Methods" title="Ruby Math Functions and Methods">Some Examples</a><br /><br />
+</li></ul>
+</li><li> <a href="/index.php/Understanding_Ruby_Logical_Operators" title="Understanding Ruby Logical Operators">Understanding Ruby Logical Operators</a><br /><br />
+</li><li> <a href="/index.php/Ruby_Object_Oriented_Programming" title="Ruby Object Oriented Programming">Ruby Object Oriented Programming</a>
+<ul><li> <a href="/index.php/Ruby_Object_Oriented_Programming" title="Ruby Object Oriented Programming">What is an Object?</a>
+</li><li> <a href="/index.php/Ruby_Object_Oriented_Programming" title="Ruby Object Oriented Programming">What is a Class?</a>
+</li><li> <a href="/index.php/Ruby_Object_Oriented_Programming" title="Ruby Object Oriented Programming">Defining a Ruby Class</a>
+</li><li> <a href="/index.php/Ruby_Object_Oriented_Programming" title="Ruby Object Oriented Programming">Creating an Object from a Class</a>
+</li><li> <a href="/index.php/Ruby_Object_Oriented_Programming" title="Ruby Object Oriented Programming">Instance Variables and Accessor Methods</a>
+</li><li> <a href="/index.php/Ruby_Object_Oriented_Programming" title="Ruby Object Oriented Programming">Ruby Class Variables</a>
+</li><li> <a href="/index.php/Ruby_Object_Oriented_Programming" title="Ruby Object Oriented Programming">Instance Methods</a>
+</li><li> <a href="/index.php/Ruby_Object_Oriented_Programming" title="Ruby Object Oriented Programming">Ruby Class Inheritance</a><br /><br />
+</li></ul>
+</li><li> <a href="/index.php/Ruby_Flow_Control" title="Ruby Flow Control">Ruby Flow Control</a>
+<ul><li> <a href="/index.php/Ruby_Flow_Control" title="Ruby Flow Control">The Ruby if Statement</a>
+</li><li> <a href="/index.php/Ruby_Flow_Control" title="Ruby Flow Control">Using else and elsif Constructs</a>
+</li><li> <a href="/index.php/Ruby_Flow_Control" title="Ruby Flow Control">The Ruby Ternary Operator</a><br /><br />
+</li></ul>
+</li><li> <a href="/index.php/The_Ruby_case_Statement" title="The Ruby case Statement">The Ruby case Statement</a>
+<ul><li> <a href="/index.php/The_Ruby_case_Statement" title="The Ruby case Statement">Number Ranges and the case statement</a><br /><br />
+</li></ul>
+</li><li> <a href="/index.php/Ruby_While_and_Until_Loops" title="Ruby While and Until Loops">Ruby While and Until Loops</a>
+<ul><li> <a href="/index.php/Ruby_While_and_Until_Loops" title="Ruby While and Until Loops">The Ruby While Loop</a>
+</li><li> <a href="/index.php/Ruby_While_and_Until_Loops" title="Ruby While and Until Loops">Breaking from While Loops</a>
+</li><li> <a href="/index.php/Ruby_While_and_Until_Loops" title="Ruby While and Until Loops">unless and until</a><br /><br />
+</li></ul>
+</li><li> <a href="/index.php/Looping_with_for_and_the_Ruby_Looping_Methods" title="Looping with for and the Ruby Looping Methods">Looping with for and the Ruby Looping Methods</a>
+<ul><li> <a href="/index.php/Looping_with_for_and_the_Ruby_Looping_Methods" title="Looping with for and the Ruby Looping Methods">The Ruby for Loop</a>
+</li><li> <a href="/index.php/Looping_with_for_and_the_Ruby_Looping_Methods" title="Looping with for and the Ruby Looping Methods">The Ruby times Method</a>
+</li><li> <a href="/index.php/Looping_with_for_and_the_Ruby_Looping_Methods" title="Looping with for and the Ruby Looping Methods">The Ruby upto Method</a>
+</li><li> <a href="/index.php/Looping_with_for_and_the_Ruby_Looping_Methods" title="Looping with for and the Ruby Looping Methods">The Ruby downto Method</a><br /><br />
+</li></ul>
+</li><li> <a href="/index.php/Ruby_Strings_-_Creation_and_Basics" title="Ruby Strings - Creation and Basics">Ruby Strings - Creation and Basics</a>
+<ul><li> <a href="/index.php/Ruby_Strings_-_Creation_and_Basics" title="Ruby Strings - Creation and Basics">Creating Strings in Ruby</a>
+</li><li> <a href="/index.php/Ruby_Strings_-_Creation_and_Basics" title="Ruby Strings - Creation and Basics">Quoting Ruby Strings</a>
+</li><li> <a href="/index.php/Ruby_Strings_-_Creation_and_Basics" title="Ruby Strings - Creation and Basics">General Delimited Strings</a>
+</li><li> <a href="/index.php/Ruby_Strings_-_Creation_and_Basics" title="Ruby Strings - Creation and Basics">Ruby Here Documents</a>
+</li><li> <a href="/index.php/Ruby_Strings_-_Creation_and_Basics" title="Ruby Strings - Creation and Basics">Getting Information About String Objects</a><br /><br />
+</li></ul>
+</li><li> <a href="/index.php/Ruby_String_Concatenation_and_Comparison" title="Ruby String Concatenation and Comparison">Ruby String Concatenation and Comparison</a>
+<ul><li> <a href="/index.php/Ruby_String_Concatenation_and_Comparison" title="Ruby String Concatenation and Comparison">Concatenating Strings in Ruby</a>
+</li><li> <a href="/index.php/Ruby_String_Concatenation_and_Comparison" title="Ruby String Concatenation and Comparison">Freezing a Ruby String</a>
+</li><li> <a href="/index.php/Ruby_String_Concatenation_and_Comparison" title="Ruby String Concatenation and Comparison">Accessing String Elements</a>
+</li><li> <a href="/index.php/Ruby_String_Concatenation_and_Comparison" title="Ruby String Concatenation and Comparison">Comparing Ruby Strings</a>
+</li><li> <a href="/index.php/Ruby_String_Concatenation_and_Comparison" title="Ruby String Concatenation and Comparison">Case Insensitive String Comparisons</a><br /><br />
+</li></ul>
+</li><li> <a href="/index.php/Ruby_String_Replacement%2C_Substitution_and_Insertion" title="Ruby String Replacement, Substitution and Insertion">Ruby String Replacement, Substitution and Insertion</a>
+<ul><li> <a href="/index.php/Ruby_String_Replacement%2C_Substitution_and_Insertion" title="Ruby String Replacement, Substitution and Insertion">Changing a Section of a String</a>
+</li><li> <a href="/index.php/Ruby_String_Replacement%2C_Substitution_and_Insertion" title="Ruby String Replacement, Substitution and Insertion">Ruby String Substitution</a>
+</li><li> <a href="/index.php/Ruby_String_Replacement%2C_Substitution_and_Insertion" title="Ruby String Replacement, Substitution and Insertion">Repeating Ruby Strings</a>
+</li><li> <a href="/index.php/Ruby_String_Replacement%2C_Substitution_and_Insertion" title="Ruby String Replacement, Substitution and Insertion">Inserting Text Into a Ruby String</a>
+</li><li> <a href="/index.php/Ruby_String_Replacement%2C_Substitution_and_Insertion" title="Ruby String Replacement, Substitution and Insertion">Ruby chomp and chop Methods</a>
+</li><li> <a href="/index.php/Ruby_String_Replacement%2C_Substitution_and_Insertion" title="Ruby String Replacement, Substitution and Insertion">Reversing the Characters in a String</a><br /><br />
+</li></ul>
+</li><li> <a href="/index.php/Ruby_String_Conversions" title="Ruby String Conversions">Ruby String Conversions</a>
+<ul><li> <a href="/index.php/Ruby_String_Conversions" title="Ruby String Conversions">Converting a Ruby String to an Array</a>
+</li><li> <a href="/index.php/Ruby_String_Conversions" title="Ruby String Conversions">Changing the Case of a Ruby String</a>
+</li><li> <a href="/index.php/Ruby_String_Conversions" title="Ruby String Conversions">Performing String Conversions</a><br /><br />
+</li></ul>
+</li><li> <a href="/index.php/Ruby_Directory_Handling" title="Ruby Directory Handling">Ruby Directory Handling</a>
+<ul><li> <a href="/index.php/Ruby_Directory_Handling" title="Ruby Directory Handling">Changing Directory in Ruby</a>
+</li><li> <a href="/index.php/Ruby_Directory_Handling" title="Ruby Directory Handling">Creating New Directories</a>
+</li><li> <a href="/index.php/Ruby_Directory_Handling" title="Ruby Directory Handling">Directory Listings in Ruby</a><br /><br />
+</li></ul>
+</li><li> <a href="/index.php/Working_with_Files_in_Ruby" title="Working with Files in Ruby">Working with Files in Ruby</a>
+<ul><li> <a href="/index.php/Working_with_Files_in_Ruby" title="Working with Files in Ruby">Creating a New File with Ruby</a>
+</li><li> <a href="/index.php/Working_with_Files_in_Ruby" title="Working with Files in Ruby">Opening Existing Files</a>
+</li><li> <a href="/index.php/Working_with_Files_in_Ruby" title="Working with Files in Ruby">Renaming and Deleting Files in Ruby</a>
+</li><li> <a href="/index.php/Working_with_Files_in_Ruby" title="Working with Files in Ruby">Getting Information About Files</a>
+</li><li> <a href="/index.php/Working_with_Files_in_Ruby" title="Working with Files in Ruby">Reading and Writing Files</a><br /><br />
+</li></ul>
+</li><li> <a href="/index.php/Working_with_Dates_and_Times_in_Ruby" title="Working with Dates and Times in Ruby">Working with Dates and Times in Ruby</a>
+<ul><li> <a href="/index.php/Working_with_Dates_and_Times_in_Ruby" title="Working with Dates and Times in Ruby">Accessing the Date and DateTime Classes in Ruby</a>
+</li><li> <a href="/index.php/Working_with_Dates_and_Times_in_Ruby" title="Working with Dates and Times in Ruby">Working with Dates in Ruby</a>
+</li><li> <a href="/index.php/Working_with_Dates_and_Times_in_Ruby" title="Working with Dates and Times in Ruby">Calculating the Difference Between Dates</a><br /><br />
+</li></ul>
+</li><li> <a href="/index.php/Useful_Ruby_Links_and_Resources" title="Useful Ruby Links and Resources">Useful Ruby Links and Resources</a><br /><br />
+</li></ol>
+</td>
+<td valign="top">
+<p><style type="text/css">   @import "/extensions/GoogleAdSense/GoogleAdSense.css";</style><script  src="http://tag.contextweb.com/TagPublish/getjs.aspx?action=VIEWAD&amp;cwrun=200&amp;cwadformat=300X250&amp;cwpid=502380&amp;cwwidth=300&amp;cwheight=250&amp;cwpnet=1&amp;cwtagid=38508"></script>
+</p>
+</td>
+</tr>
+</table>
+<p><br />
+</p>
+<style type="text/css">   @import "/extensions/GoogleAdSense/GoogleAdSense.css";</style><table align="center">
+<tr>
+<td>
+<div style="background:white; opacity: 100; padding: 3px 3px 3px 3px; margin: 3px 3px 3px 5px; text-align:center; border:1px solid #808080;">
+<p><a class="booklink" href="http://www.ebookfrenzy.com/ebookpages/ruby_ebook.html"><img id="coverthumb" src="/cover_images/rubycover_small.png" /></a><br>
+</p>
+<a style="font-size:0.6em;" href="http://www.ebookfrenzy.com">eBookFrenzy.com</a></div>
+</td>
+<td><b>Purchase and download the full PDF and ePub editions of this Ruby eBook for only $8.99</b></td>
+<td>
+<p><a href="https://www.e-junkie.com/ecom/gb.php?c=cart&amp;i=PLDM-1&amp;cl=56328&amp;ejc=2" target="ej_ejc" class="ec_ejc_thkbx" onClick="javascript:return EJEJC_lc(this);"><img src="/extensions/images/Buy_Now.png" border="0" alt="Add to Cart"/></a>
+</p>
+</td>
+</tr>
+</table>
+<p><br />
+</p>
+<hr />
+<table border="0" cellspacing="0" width="100%">
+<tr>
+<td width="20%"><td align="center"><strong class="selflink">Table of Contents</strong><td width="20%" align="right"><a href="/index.php/About_Ruby_Essentials" title="About Ruby Essentials">Next</a></td>
+<tr>
+<td width="20%"><td align="center"><td width="20%" align="right">About Ruby Essentials</td>
+</table>
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:439-0!1!0!!en!2 and timestamp 20130215054144 -->
+<div class="printfooter">
+Retrieved from "<a href="http://www.techotopia.com/index.php/Ruby_Essentials">http://www.techotopia.com/index.php/Ruby_Essentials</a>"</div>
+						<!-- end content -->
+<!-- Techotopia ADHERE -->
+<br>
+<script>
+var cwfl = "http://www.techotopia.com/cwfl.htm";
+</script>
+<script  src="http://tag.contextweb.com/TagPublish/getjs.aspx?action=VIEWAD&cwrun=200&cwadformat=728X90&cwpid=502380&cwwidth=728&cwheight=90&cwpnet=1&cwtagid=52844"></script>
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+				</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-Navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-Home"><a href="/index.php/Main_Page">Home</a></li>
+				<li id="n--iOS-.2F-iPhone-.2F-iPad"><a href="/index.php/IOS_iPhone_iPad_eBooks"> iOS / iPhone / iPad</a></li>
+				<li id="n--Objective-C"><a href="/index.php/Objective-C_2.0_Essentials"> Objective-C</a></li>
+				<li id="n--PowerShell"><a href="/index.php/Windows_PowerShell_1.0_Essentials"> PowerShell</a></li>
+				<li id="n--Hyper-V"><a href="http://www.virtuatopia.com/index.php/Hyper-V_Essentials"> Hyper-V</a></li>
+				<li id="n--VMM-2008"><a href="http://www.virtuatopia.com/index.php/VMM_2008_Essentials"> VMM 2008</a></li>
+				<li id="n--VMware-Server"><a href="http://www.virtuatopia.com/index.php/VMware_Server_2.0_Essentials"> VMware Server</a></li>
+				<li id="n--Xen-Virtualization"><a href="http://www.virtuatopia.com/index.php/Xen_Virtualization_Essentials"> Xen Virtualization</a></li>
+				<li id="n--Windows-Server-2008"><a href="/index.php/Windows_Server_2008_Essentials"> Windows Server 2008</a></li>
+				<li id="n--Security.2B"><a href="/index.php/Security%2B_Essentials"> Security+</a></li>
+				<li id="n-Red-Hat-Linux"><a href="/index.php/Red_Hat_Enterprise_Linux_eBooks">Red Hat Linux</a></li>
+				<li id="n-Linux-eBooks"><a href="/index.php/Linux_eBooks">Linux eBooks</a></li>
+				<li id="n--Ubuntu-Linux"><a href="/index.php/Ubuntu_Linux_eBooks"> Ubuntu Linux</a></li>
+				<li id="n--Fedora-Linux"><a href="/index.php/Fedora_Linux_Essentials"> Fedora Linux</a></li>
+				<li id="n--Fedora-Desktop"><a href="/index.php/Fedora_Desktop_Essentials"> Fedora Desktop</a></li>
+				<li id="n--OpenSUSE-Desktop"><a href="/index.php/OpenSUSE_Desktop_Essentials"> OpenSUSE Desktop</a></li>
+				<li id="n--C.23"><a href="/index.php/C_Sharp_Essentials"> C#</a></li>
+				<li id="n--Visual-Basic"><a href="/index.php/Visual_Basic_Essentials"> Visual Basic</a></li>
+				<li id="n--MySQL"><a href="/index.php/MySQL_Essentials"> MySQL</a></li>
+				<li id="n--PHP"><a href="/index.php/PHP_Essentials"> PHP</a></li>
+				<li id="n--JavaScript"><a href="/index.php/JavaScript_Essentials"> JavaScript</a></li>
+				<li id="n--Ruby"><a href="/index.php/Ruby_Essentials"> Ruby</a></li>
+				<li id="n--Windows"><a href="/index.php/Category:Windows"> Windows</a></li>
+				<li id="n--Networking"><a href="/index.php/Category:Networking"> Networking</a></li>
+				<li id="n--Web-Development"><a href="/index.php/Category:Web_Development"> Web Development</a></li>
+				<li id="n--Feedback"><a href="/index.php/Techotopia_Feedback"> Feedback</a></li>
+				<li id="n--Linuxtopia.org"><a href="http://www.linuxtopia.org"> Linuxtopia.org</a></li>
+				<li id="n--Virtuatopia.com"><a href="http://www.virtuatopia.com"> Virtuatopia.com</a></li>
+				<li id="n--eBook-Store"><a href="http://www.ebookfrenzy.com/index.html"> eBook Store</a></li>
+			</ul>
+		</div>
+	</div>
+		<div class="portlet" id="p-tb">
+        	</div>
+<div class="adportlet" id="p-skyads">
+<div class="adpBody">
+
+<table>
+<tr>
+<td>
+<br>
+<a href="http://www.facebook.com/techotopia">
+<img src="/cover_images/Find-Us-On-Facebook.jpg" width="160" height="38" border="0" align="middle" alt="Find us on Facebook"/></a>
+<br><br>
+&nbsp;<a href="http://goo.gl/QYxL5">
+<img src="/cover_images/eBookStore.png" /></a>
+</td>
+</tr>
+<tr>
+<td>
+<h5><label for="searchInput">Search</label></h5>
+                <div id="searchBody" class="pBody">
+<form action="http://www.techotopia.com/SearchResults.html" id="cse-search-box">
+  <div>
+    <input type="hidden" name="cx" value="partner-pub-7393409044112403:ik9yl7-82ri" />
+    <input type="hidden" name="cof" value="FORID:10" />
+    <input type="hidden" name="ie" value="ISO-8859-1" />
+    <input type="text" name="q" size="16" />
+    <input type="submit" name="sa" value="Search" />
+  </div>
+</form>
+<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>
+                </div>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<div id="bookcover_sky">
+<a class="booklink" href="http://www.ebookfrenzy.com/ebookpages/iphone_ios_6_ebook.html"><img id="coverthumb" src="/cover_images/iphone_ios_6_cover_100x80.png" /></a><br>
+
+<a id="booktitle" href="http://www.ebookfrenzy.com/ebookpages/iphone_ios_6_ebook.html">iPhone iOS 6<br>Development Essentials<br>eBook</a><div id="bookprice">$12.99</div>
+
+<a href="https://www.e-junkie.com/ecom/gb.php?c=cart&i=PLDM-30&cl=56328&ejc=2" target="ej_ejc" class="ec_ejc_thkbx" onClick="javascript:return EJEJC_lc(this);"><img src="/cover_images/BuyeBook2.png" style="border:5px solid #ffffff;" alt="Buy eBook"/></a>
+<br>
+
+<a id="bookcaption" href="http://www.ebookfrenzy.com">eBookFrenzy.com</a></div>
+
+</td>
+</tr>
+
+<tr>
+<td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-7393409044112403";
+/* 160x600, created 7/22/08 */
+google_ad_slot = "6748861133";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</td>
+</tr>
+<tr>
+<td>
+<script type="text/javascript"><!--
+        writeAdsdaqSky();
+//-->
+</script>
+</td>
+</tr>
+<tr>
+<td>
+<script type="text/javascript"><!--
+        writeAdsdaqSky2();
+//-->
+</script>
+</td>
+</tr>
+</table>
+</div>
+</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-350808-4";
+urchinTracker();
+</script>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 13:56, 29 May 2012.</li>
+				<li id="viewcount">This page has been accessed 613,398 times.</li>
+				<li id="copyright">Copyright 2012 Techotopia.com. All Rights Reserved.</li>
+				<li id="privacy"><a href="/index.php/Techotopia:Privacy_policy" title="Techotopia:Privacy policy">Privacy policy</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by Payload2 in 0.127 secs. --><!-- Kontera ContentLink(TM);-->
+<script type='text/javascript'>
+var dc_AdLinkColor = 'blue' ;
+var dc_PublisherID = 37155 ;
+</script>
+<script type='text/javascript' src='http://kona.kontera.com/javascript/lib/KonaLibInline.js'>
+</script>
+<!-- Kontera ContentLink(TM) -->
+<script type="text/javascript">
+	doclix_pid = 16409;
+	doclix_cid = 880;
+</script>
+<script type="text/javascript" src="http://ads.doclix.com/adserver/serve/js/doclix_synd_overlay.js" async defer charset="utf-8"></script>
+</body></html>

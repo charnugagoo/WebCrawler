@@ -1,0 +1,794 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN" "hmpro6.dtd">
+<!--This is the second generation of the website. -->
+<HTML> 
+  <HEAD> 
+	 <TITLE>Fortran 95 Program coco</TITLE>
+<!--$Id: coco.html 2.7 2003/10/18 18:45:27Z Dan Release $ -->
+<!--Copyright 2002 Purple Sage Computing Solutions, Inc. -->
+	 <STYLE TYPE="text/css">
+	<!--
+		TD P { color: #000000 }
+		H2 { color: #000000 }
+		P { color: #000000 }
+		A:visited { color: #000000 }
+	-->
+	</STYLE> 
+  </HEAD> 
+  <BODY BGCOLOR="#ffffff" TEXT="#000000">
+<!--This is a part of the table based version of the website. -->
+	 <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="2" WIDTH="550"
+	  STYLE="page-break-before: always"> 
+		<TR VALIGN="TOP">
+<!--This is the narrower left side column. -->
+		  <TD ROWSPAN="3"> 
+  <!--This heading introduces the direct links on the left column. -->
+			 <H2 ALIGN="LEFT"><FONT FACE="sans-serif">goto</FONT> </H2>
+<!--line below the goto header -->
+			 <HR ALIGN="CENTER" WIDTH="75%" SIZE="1" NOSHADE="NOSHADE">
+<!--This paragraph links to yet another way to the home page. -->
+			 <H2 ALIGN="LEFT"><FONT FACE="sans-serif"><A HREF="index.html"
+				TYPE="text/html">Home</A></FONT><A HREF="index.html"></A></H2>
+<!--This paragraph links to the free source code page. -->
+			 <H2 ALIGN="LEFT"><FONT FACE="sans-serif"><A
+				HREF="download.html" TYPE="text/html">Free Source Code</A></FONT> </H2>
+<!--This heading shows the location of this page. -->
+			 <H4 ALIGN="RIGHT"><FONT FACE="sans-serif">Program coco</FONT> </H4>
+<!--This paragraph links to the fact sheet page. -->
+			 <H2 ALIGN="LEFT"><FONT FACE="sans-serif"><A HREF="fact.html"
+				TYPE="text/html">Fact Sheet</A></FONT> </H2>
+<!--This graphic solicits email to PSCS. -->
+			 <H2 ALIGN="LEFT"><FONT FACE="sans-serif"><A
+				HREF="mailto:dnagle@erols.com">Email us</A></FONT> </H2>
+<!--line below the last link on the left column -->
+			 <HR ALIGN="CENTER" WIDTH="75%" SIZE="1" NOSHADE="NOSHADE"> </TD>
+<!--The PSCS Banner running across the top -->
+		  <TD> 
+			 <H1 ALIGN="CENTER"><FONT FACE="sans-serif"><EM>Purple Sage Computing
+				Solutions, Inc.</EM></FONT> </H1> </TD> 
+		</TR> 
+		<TR>
+<!--This is the wider right side column. -->
+		  <TD VALIGN="TOP" ALIGN="LEFT"> 
+  <!--The main page starts here. -->
+			 <P ALIGN="CENTER"><EM> <A NAME="top">Program coco</A></EM> </P>
+<!--This is the navigation bar across the top. -->
+			 <P ALIGN="CENTER"><A HREF="index.html" TYPE="text/html">Home</A>
+				<FONT FACE="Symbol">--&gt;</FONT> <A HREF="fact.html" TYPE="text/html">Fact
+				Sheet</A> <FONT FACE="Symbol">--&gt;</FONT>
+				<A HREF="download.html" TYPE="text/html">Free Source Code</A>
+				<FONT FACE="Symbol">--&gt;</FONT> coco </P>
+<!--This is the main title. -->
+			 <H2 ALIGN="CENTER"><FONT FACE="sans-serif">About the Program
+				coco</FONT> </H2> 
+			 <P ALIGN="CENTER"><A HREF="#download">Go directly to Downloads</A>
+				</P> 
+			 <P ALIGN="CENTER"><A HREF="#intro">Go directly to Introduction to
+				coco</A> </P> 
+			 <P ALIGN="CENTER"><A HREF="#setfile">Go directly to The coco
+				setfile</A> </P> 
+			 <P ALIGN="CENTER"><A HREF="#using">Go directly to Using coco</A> </P>
+			 
+			 <P ALIGN="CENTER"><A HREF="#extensions">Go directly to Extensions to
+				the Standard coco</A> </P> 
+			 <P ALIGN="CENTER"><A HREF="#example">Go directly to An Example of
+				Using coco</A> </P> 
+<!--The main page content starts here. -->
+			 <P ALIGN="LEFT">The program coco provides preprocessing as per Part 3
+				of the Fortran Standard (coco stands for "conditional compilation"). It
+				implements the auxiliary third part of ISO/IEC 1539-1:1997 (better known as
+				Fortran 95). (Part 2 is the ISO_VARYING_STRINGS standard, which is sometimes
+				implemented as a module.) A <A HREF="#download">restore program</A>, similar to
+				that described in the standard, is also available for download.</P> 
+			 <P ALIGN="LEFT">Generally, coco programs are interpreted line by
+				line. A line is either a coco directive or a source line. The coco directives
+				start with the characters "??" in columns 1 and 2. Lines are continued by
+				placing an "&amp;" as the last character of the line to be continued. Except
+				for the "??" characters in columns 1 and 2, coco lines follow the same rules as
+				free format lines in Fortran source code. A coco comment is any text following
+				a "!" following the "??" characters. A coco comment may not follow the "&amp;"
+				at the end of a line containing a continued string. </P> 
+			 <P ALIGN="LEFT">The <A HREF="make_pm.html"
+				TYPE="text/html">make_processor_model</A> program optionally creates a file of
+				symbol definitions which may be used by coco to control the conditional
+				compilation according to which kinds are present on a particular processor. The
+				programmer may then write programs with code supporting all kinds available on
+				all processors of interest, and use coco and the other software of the
+				<A HREF="port.html" TYPE="text/html">Portability Project</A> to select source
+				code suitable for each processor. The coco.inc file contains the symbol
+				definitions written by make_processor_model and may be included in the Fortran
+				source file via the coco include directive, or the programmer may manually
+				copy-and-paste it into the Fortran source. This means that a programmer may
+				base coco's preprocessing decisions automaticly on the processor dependent
+				kinds actually supported by the processor being used.</P>
+<!--Return to top of this page. -->
+			 <P ALIGN="CENTER"><A HREF="#top">Back to the Top</A> </P>
+<!--Explain a little about coco. -->
+			 <H2 ALIGN="CENTER"><FONT FACE="sans-serif"><A
+				NAME="intro">Introduction to coco</A></FONT> </H2> 
+			 <P ALIGN="LEFT">A coco program consists of coco lines and source
+				lines. A coco program may have an optional <A HREF="#setfile">setfile</A>
+				associated with it. The setfile may be used to control what coco does with coco
+				lines or with source lines which are not intended to be effective in the output
+				source file. The setfile may define coco variables, if so, the setfile
+				definitions override the value contained in the program itself. The definitions
+				must match, however, as far as type and whether the symbol is a constant (this
+				keeps a coco program self contained and consistent).</P> 
+			 <P ALIGN="LEFT">The standard coco directives are integer and logical
+				declarations and assignments, if/elseif/else/endif directives, and message and
+				stop directives. An integer or logical variable may be given a value where
+				declared, and may be declared to be a constant. As extensions to the standard,
+				a macro capability is provided, as is the ability to specify directories to be
+				searched for include files not found in the current directory <A
+				HREF="#incdir">(see below)</A>. A further extension is the text &amp; copy
+				mechanism, which is a block of text which may be copied to several places
+				within the source program. A text block may have dummy arguments associated
+				with it, which may be replaced by actual arguments when the text block is
+				copied.</P> 
+			 <P ALIGN="LEFT">The standard coco directives may appear in upper or
+				lower case interchangeably and are summarized on the list below: </P> 
+			 <UL> 
+				<LI><STRONG>INCLUDE Directive</STRONG> 
+				  <P ALIGN="LEFT">?? INCLUDE 'filename' </P> 
+				  <P ALIGN="LEFT">The filename may appear in single quotes or
+					 double quotes. The include directive may <EM>not</EM> be continued onto
+					 subsequent lines. </P> </LI> 
+				<LI><STRONG>Simple Integer Declaration:</STRONG> 
+				  <P ALIGN="LEFT">?? INTEGER :: name [, name] ...</P> </LI> 
+				<LI><STRONG>Integer Declaration with Initial Value</STRONG> 
+				  <P ALIGN="LEFT">?? INTEGER :: name=value [, name=value] ...</P> 
+				  <P ALIGN="LEFT">The name and name=value forms may be mixed. </P>
+				  </LI> 
+				<LI><STRONG>Integer Constant Declaration</STRONG> 
+				  <P ALIGN="LEFT">?? INTEGER, PARAMETER :: name=value [,
+					 name=value] ...</P> </LI> 
+				<LI><STRONG>Simple Logical Declaration:</STRONG> 
+				  <P ALIGN="LEFT">?? LOGICAL :: name [, name] ...</P> </LI> 
+				<LI><STRONG>Logical Declaration with Initial Value</STRONG> 
+				  <P ALIGN="LEFT">?? LOGICAL :: name=value [, name=value] ...</P> 
+				  <P ALIGN="LEFT">The name and name=value forms may be mixed. </P>
+				  </LI> 
+				<LI><STRONG>Logical Constant Declaration</STRONG> 
+				  <P ALIGN="LEFT">?? LOGICAL, PARAMETER :: name=value [,
+					 name=value] ...</P> </LI> 
+				<LI><STRONG>IF Directive</STRONG> 
+				  <P ALIGN="LEFT">?? IF( logical-expression )THEN </P> </LI> 
+				<LI><STRONG>ELSEIF Directive</STRONG> 
+				  <P ALIGN="LEFT">?? ELSEIF( logical-expression )THEN </P> </LI> 
+				<LI><STRONG>ELSE Directive</STRONG> 
+				  <P ALIGN="LEFT">?? ELSE </P> </LI> 
+				<LI><STRONG>ENDIF Directive</STRONG> 
+				  <P ALIGN="LEFT">?? ENDIF </P> </LI> 
+				<LI><STRONG>MESSAGE Directive</STRONG> 
+				  <P ALIGN="LEFT">?? MESSAGE [ item [, item ]...] </P> 
+				  <P ALIGN="LEFT">The items may be coco variables or expressions,
+					 or a string enclosed in single quotes or double quotes. </P> </LI> 
+				<LI><STRONG>STOP Directive</STRONG> 
+				  <P ALIGN="LEFT">?? STOP </P> </LI> 
+				<LI><STRONG>Assignment Directive</STRONG> 
+				  <P ALIGN="LEFT">?? name=value </P> 
+				  <P ALIGN="LEFT">The value may be a literal value (e.g., 42 or
+					 .true.), a coco variable, or a coco expression using coco operators (+, -, *, /
+					 with integers; .and., .or., .eqv., .neqv., .not. with logicals; .eq.,==, .ne.,
+					 /=, .lt., &lt;, .le., &lt;=, .ge., &gt;=, and .gt., &gt; produce a logical
+					 result from integer operands). The usual Fortran precedence rules apply.
+					 Parentheses are honored. </P> </LI> 
+			 </UL> 
+			 <P ALIGN="LEFT">The name and name=value forms of the integer and
+				logical declarations may be mixed, a name declared to be a constant, of ocurse,
+				must be supplied with a value.</P>
+<!--Return to top of this page. -->
+			 <P ALIGN="CENTER"><A HREF="#top">Back to the Top</A> </P>
+<!--Explain a little about the setfile. -->
+			 <H2 ALIGN="CENTER"><FONT FACE="sans-serif"><A NAME="setfile">The coco
+				setfile</A></FONT> </H2> 
+			 <P ALIGN="LEFT">The programmer may use a separate file, called a
+				<EM>setfile</EM>, which permits the programmer to change the values of
+				variables and constants outside the coco program, and to specify what happens
+				to elided source text and coco directives. Within the setfile, variable and
+				constant declarations may appear, the values supplied override those (of the
+				same name) appearing in the coco program proper. There must be a definition of
+				the same variable within the coco program proper, only the value may be changed
+				by the setfile. The setfile is appended to the end of the coco program's output
+				(depending on the value of the ALTER directive, see the following). </P> 
+			 <P ALIGN="LEFT">The setfile is named according to the output file
+				name, any ".fpp" or ".f90" suffix is discarded and ".set" is appended to make
+				the setfile name. If a file with that name is not found, a file with the
+				default name of "coco.set" is sought. This allows a programmer to have a
+				default setfile for a project or directory, or to control the output on a
+				file-by-file basis. There is only one setfile read for a multi input file
+				invocation of coco. See <A HREF="#using">Using coco</A> for more on the command
+				line.</P> <A NAME="alterdir"></A> 
+			 <P ALIGN="LEFT">The fate of source lines not appearing in the coco
+				output and of coco directives is controlled by the ALTER directive. At most one
+				alter directive may appear in a setfile. The <A HREF="#alteropt">-a command
+				line option</A> overrides the alter directive. Examples of alter directives and
+				their effects are described in the following: </P> 
+			 <UL> 
+				<LI><STRONG>?? ALTER: DELETE</STRONG> 
+				  <P ALIGN="LEFT">All coco lines and source lines not selected for
+					 output are deleted from the output file. Of course, these lines will not be
+					 seen by the compiler at all.</P> </LI> 
+				<LI><STRONG>?? ALTER: BLANK</STRONG> 
+				  <P ALIGN="LEFT">All coco lines and source lines not selected for
+					 output are replaced by blank lines in the output file. Of course, these lines
+					 will be seen by the compiler as comments.</P> </LI> 
+				<LI><STRONG>?? ALTER: SHIFT0</STRONG> 
+				  <P ALIGN="LEFT">All coco lines are printed with the leading "?"
+					 replaced by a "!". Source lines not selected for output are printed with a "!"
+					 in place of the character in column one. Of course, these lines will be seen by
+					 the compiler as comments. </P> </LI> 
+				<LI><STRONG>?? ALTER: SHIFT1</STRONG> 
+				  <P ALIGN="LEFT">All coco lines are printed with a leading "!"
+					 before the leading "?". Source lines not selected for output are printed with a
+					 "!" preceding the leading character, coco issues a warning if a line so
+					 extended exceeds 132 characters. Of course, these lines will be seen by the
+					 compiler as comments. </P> </LI> 
+				<LI><STRONG>?? ALTER: SHIFT3</STRONG> 
+				  <P ALIGN="LEFT">All coco lines are printed with a leading
+					 "!?&gt;" before the leading "?". Source lines not selected for output are
+					 printed with "!?&gt;" preceding the leading character, coco issues a warning if
+					 a line so extended exceeds 132 characters. Of course, these lines will be seen
+					 by the compiler as comments. The leading "!?&gt;" makes it easy to write a
+					 program to undo the effects of the coco preprocessor (at least so long as the
+					 use of coco conforms to the standard and doesn't use any extensions). See the
+					 restore program available in the <A HREF="#download">Downloads</A> section.</P>
+				  </LI> 
+			 </UL> 
+<!--Explain a little about using this coco. -->
+			 <H2 ALIGN="CENTER"><FONT FACE="sans-serif"><A NAME="using">Using
+				coco</A></FONT></H2> 
+			 <P ALIGN="LEFT">The coco program is written in standard Fortran 95,
+				using two extensions from Fortran 2003. These are the
+				<STRONG>get_command_count()</STRONG> procedure to retrieve the number of
+				command line arguments and the <STRONG>get_command_argument()</STRONG>
+				procedure to retrieve the command line arguments themselves. You will have to
+				find a replacement for these routines if your processor does not support them.
+				These procedures are available from I.S.S. Ltd. via the free
+				<A HREF="http://www.winteracter.com/f2kcli" TYPE="text/html">F2KCLI Module</A>
+				for a very wide variety of compilers. </P> 
+			 <H3 ALIGN="LEFT"><STRONG>SYNOPSIS:</STRONG></H3> 
+			 <P ALIGN="LEFT"><STRONG>coco</STRONG> <EM>-V</EM> </P> 
+			 <P ALIGN="LEFT"><STRONG>coco</STRONG> <EM>-h</EM> </P> 
+			 <P ALIGN="LEFT"><STRONG>coco</STRONG> [[<EM>options</EM>] [--]] [
+				<EM>basename</EM> | <EM>output input</EM> [...]]</P> 
+			 <P ALIGN="LEFT">The coco program reads its input on stdin and writes
+				its output to stdout if it finds no filename arguments on its command line. The
+				coco program responds to "-V" option by printing its version information and
+				quitting. The coco program responds to the "-h" option by printing a short help
+				message and quitting. Any single filename command line argument has ".fpp"
+				appended to it and used as the single input filename, ".f90" is appended and
+				used as the output filename. If more than one filename argument appears on the
+				command line the <EM>first</EM> is taken to be the <EM>output</EM> filename,
+				the rest are treated, in the order of occurrence, as input filenames. Examples
+				follow: </P> 
+			 <UL> 
+				<LI><STRONG>coco &lt;input.f &gt;output.f90</STRONG> 
+				  <P ALIGN="LEFT">causes coco to read the file input.f and write
+					 the file output.f90. A setfile named "coco.set" is sought. </P> </LI> 
+				<LI><STRONG>coco -V</STRONG> 
+				  <P ALIGN="LEFT">causes coco to print its version information to
+					 stderr and stop. </P> </LI> 
+				<LI><STRONG>coco -h</STRONG> 
+				  <P ALIGN="LEFT">causes coco to print short summary of its command
+					 line options to stderr and stop. </P> </LI> 
+				<LI><STRONG>coco source</STRONG> 
+				  <P ALIGN="LEFT">causes coco to read source.fpp and write
+					 source.f90. The filename source.set is checked to see if it exists, if so, it
+					 is processed as the setfile. If source.set is not found, coco.set is checked to
+					 see if it exists, if so, it is processed as the setfile. </P> </LI> 
+				<LI><STRONG>coco output.f90 input1.f90 input2.f90
+				  input3.f90</STRONG> 
+				  <P ALIGN="LEFT">causes coco to read input1.f90, input2.f90,
+					 input3.f90 in that order and to write output.f90. The filename output.set is
+					 checked to see if it exists, if so, it is processed as the setfile. If
+					 output.set is not found, coco.set is checked to see if it exists, if so, it is
+					 processed as the setfile. If coco.set is not found, no setfile is processed.
+					 </P> </LI> 
+			 </UL> 
+			 <P ALIGN="LEFT">A good default setfile contains the line <STRONG>??
+				ALIGN: DELETE</STRONG>, which overrides the standard specified default of
+				SHIFT3. </P> 
+			 <P ALIGN="LEFT"><STRONG>Options</STRONG> coco recognizes the
+				following command line options: </P> 
+			 <UL> 
+				<LI><STRONG>-a</STRONG><EM>?</EM><A NAME="alteropt"></A> sets the
+				  alter state, with ? being one of d (delete), b (blank), 0 (shift0), 1 (shift1),
+				  3 (shift3). The -a option overrides an <A HREF="#alterdir">ALTER directive</A>
+				  in the setfile.</LI> 
+				<LI><STRONG>-d</STRONG> turns off date and time editing
+				  <A HREF="#extensions"> (see below)</A>. </LI> 
+				<LI><STRONG>-D</STRONG><EM>name[=val]</EM> defines a logical or
+				  integer constant, as if in the setfile <A HREF="#drules">(see below for
+				  rules)</A>. </LI> 
+				<LI><STRONG>-e</STRONG><A NAME="editopt"></A> turns off all source
+				  editing <A HREF="#editdir">(see below)</A> (equivalent to -d, -f, -i, -m).
+				  </LI> 
+				<LI><STRONG>-f</STRONG> turns off file name and line number editing
+				  <A HREF="#extensions">(see below)</A>. </LI> 
+				<LI><STRONG>-F</STRONG><EM>file</EM><A NAME="docfileopt"></A> names
+				  a file to receive documentation output (contained between <A
+				  HREF="#doctext">??doc and ??end doc</A> directives <A HREF="#docfiledir">(see
+				  below)</A>. </LI> 
+				<LI><STRONG>-h</STRONG> makes coco print a short summary of coco's
+				  options to stderr and quit. </LI> 
+				<LI><STRONG>-i</STRONG> turns off integer and logical editing
+				  <A HREF="#extensions">(see below)</A>. </LI> 
+				<LI><STRONG>-I</STRONG><EM>dir</EM> <A NAME="incopt"></A> causes
+				  coco to search dir for include files not found in the current directory
+				  <A HREF="#incdir"> (see below)</A>. </LI> 
+				<LI><STRONG>-l</STRONG><EM>file</EM><A NAME="logopt"></A> names a
+				  file to receive coco's reports, stderr is the default <A HREF="#logdir">(see
+				  below)</A>. </LI> 
+				<LI><STRONG>-m</STRONG> turns off macro editing
+				  <A HREF="#extensions">(see below)</A>. </LI> 
+				<LI><STRONG>-n</STRONG><A NAME="numberopt"></A> turns on source
+				  line numbering <A HREF="#numbering">(see below)</A>. </LI> 
+				<LI><STRONG>-p</STRONG><A NAME="parenopt"></A> turns on reporting
+				  of actual arguments to macros and text blocks which may need enclosing
+				  parenthesis <A HREF="#parendir">(see below)</A>. </LI> 
+				<LI><STRONG>-r</STRONG> turns on reporting of <A
+				  HREF="#extensions">extensions</A> to the coco standard in the logfile (stderr
+				  by default). </LI> 
+				<LI><STRONG>-s</STRONG> makes coco work silently, suppressing all
+				  reports, including the default report, made at the end of preprocessing
+				  (overrides -p, -r, -u, -v). </LI> 
+				<LI><STRONG>-u</STRONG><A NAME="warnopt"></A> makes coco report
+				  symbols declared in the setfile or on the command line, but not declared in any
+				  source file <A HREF="#warndir">(see below)</A>. </LI> 
+				<LI><STRONG>-v</STRONG><A NAME="verboseopt"></A> makes coco work
+				  verbosely, reporting all file opening and closing, and a few other events, to
+				  the logfile <A HREF="#verbosedir">See below</A>.</LI> 
+				<LI><STRONG>-V</STRONG> makes coco print its version information to
+				  stderr and quit.</LI> 
+				<LI><STRONG>-w</STRONG><EM>n</EM><A NAME="wrapopt"></A> controls
+				  the wrapping of lines which exceed n characters in length. The default is 132.
+				  It may be desirable to leave line wrapping on if macros are being expanded. The
+				  number n is an unsigned integer which sets the width. Set n to zero to disable
+				  wrapping of source lines. Setting n to 72 causes the continuation character to
+				  be placed beyond column 72 for fixed format source code, and the continued line
+				  is indented to column 7 with a continuation character in column 6 (for fixed
+				  format files) <A HREF="#wrapdir">(see below)</A>.</LI> 
+			 </UL> 
+			 <P ALIGN="LEFT"><STRONG><A NAME="drules">-D rules</A></STRONG> The
+				following rule applies to the -D option: if the "=" is present, it must be
+				followed by an integer literal and name is defined to be an integer constant
+				with the value specified. There should be an integer constant with the same
+				name defined within the source file. If no "=" is present, then name is defined
+				to be a logical constant with a value of ".true.". There should be a logical
+				constant with the same name defined within the source file.</P> 
+			 <P ALIGN="LEFT">The search rule for directories specified by the -I
+				argument and ??directory directive is that the directories specified by the -I
+				argument are searched first. This way, the command line may override the
+				setfile. Directory directives may not appear in the coco program proper so all
+				include files with the same name are known to come from the same directory, and
+				thus each occurance of any one named include file will be the same file. Since
+				coco doesn't know what kind of operating system is in use, the user must append
+				the appropriate separator (i.e., "/", "\" or ":") after the directory name,
+				whether it appears in the -I argument, or the ??directory directive
+				<A HREF="#extensions">(see below)</A>.</P>
+				<!--Explain the extensions to standard coco. -->
+			 <H2 ALIGN="CENTER"><FONT FACE="sans-serif"><A
+				NAME="extensions">Extensions to Standard coco</A></FONT> </H2> 
+			 <P ALIGN="LEFT">This program supports some extensions to standard
+				coco. The string ?file? is replaced in source code by the current input file
+				name and the string ?line? is replaced by the current input file line number.
+				This editing is prevented by the -f or -e command line options. The strings
+				?date? is replaced by the date of the preprocessing and the string ?time? is
+				replaced by the time of the preprocessing. This editing is prevented by the -d
+				or -e options. The string ?coco? is replaced by the coco version and may be
+				prevented by the -e option. These strings are internally defined and may not be
+				changed. They may appear in either case. If they appear in an assert condition
+				or within a text block, the line number is that of the directive.</P> 
+			 <P ALIGN="LEFT">The string ?name? is checked to see if name is the
+				name of a coco integer or logical. If it is, it is replaced by the value of the
+				coco integer or logical name. The name may be in either case. This editing is
+				prevented by the -i or -e command line options.</P> 
+			 <P ALIGN="LEFT">A directive has been added to allow macro definition.
+				If a ?name? is found which is not an integer or a logical, it is checked to see
+				if it is the name of a macro. If so, it is replaced with the value of the
+				macro. Arguments may be present, if so, they are substituted in the value. </P>
+			 
+			 <UL> 
+				<LI><STRONG>?? ASSERT "condition"</STRONG> 
+				  <P ALIGN="LEFT">This causes code to be written to the output
+					 Fortran source to verify that the logical condition is true during program
+					 execution, and to halt execution with an error message written to error_unit if
+					 it is false. The error message includes the file name and line number where the
+					 assert directive was found. The assert directive should be placed only where
+					 executable Fortran code is allowed, and the condition should refer to only
+					 those Fortran symbols in scope at that location in the source file. The
+					 condition may be delimited with single quotes or double quotes. This directive
+					 uses quotes around the condition in order to preserve the programmer's case and
+					 spacing.</P></LI> 
+				<LI><STRONG>?? ASSERTIF( expression ) "condition"</STRONG> 
+				  <P ALIGN="LEFT">?? ASSERTIF( <EM>logical expression</EM> ) "
+					 condition " acts similarly to the assert above, except that it is only active
+					 if the logical expression evaluates to true. This directive acts like an IF,
+					 ASSERT, ENDIF sequence. </P> </LI> 
+				<LI><STRONG>?? DUMP</STRONG> 
+				  <P ALIGN="LEFT">Causes coco to write to the logfile a summary of
+					 all symbols (integers, logicals, macros and text blocks) known at the point
+					 where the directive is encountered.</P> </LI> 
+				<LI><STRONG>?? ENDFILE</STRONG> 
+				  <P ALIGN="LEFT">Causes coco to act as if the end of the current
+					 input file has been encountered. The file is closed and the next input file is
+					 opened. If there is no next input file, processing is terminated and normal end
+					 of input actions occur.</P> </LI> 
+				<LI><STRONG>?? MACRO :: NAME=STRING</STRONG> 
+				  <P ALIGN="LEFT">This causes subsequent strings of the form ?NAME?
+					 to be replaced by STRING in the source code. This processing is prevented by
+					 the -m or -e command line options. There must not be an "(" immediately
+					 following ?NAME? (including white space). A macro definition must appear in the
+					 coco program proper, not in the setfile. A macro may not be redefined.</P></LI>
+				
+				<LI><STRONG>?? MACRO :: NAME( arg[, arg]... )=STRING</STRONG> 
+				  <P ALIGN="LEFT">This causes subsequent strings of the form
+					 ?NAME?( str[, str]... ) to be replaced by STRING in the source code, with
+					 <EM>str</EM>s substituted for the corresponding ?arg? within STRING. A macro
+					 definition must appear in the coco program proper, not in the setfile. A macro
+					 may not be redefined. If a macro NAME definition has args, the ?name? must also
+					 (it must be followed by a "(" immediately, without any white space).</P> </LI> 
+				<LI><STRONG>?? OPTIONS</STRONG> 
+				  <P ALIGN="LEFT">Causes coco to print the currently in effect
+					 options to the logfile, or to stderr.</P> </LI> 
+				<LI><STRONG>?? OUTPUT "filename"</STRONG> 
+				  <P ALIGN="LEFT">Causes coco to use the named file as the new
+					 output file. The current output file is closed. This may be useful, for
+					 example, when one wants to write an include file using the particular set of
+					 variables, macros and text that was used to write a source file. If enabled, an
+					 end of file report is also written to the logfile, or stderr. The setfile is
+					 copied to the end of each output file.</P> </LI> 
+				<LI><STRONG>?? REPORT</STRONG> 
+				  <P ALIGN="LEFT">Causes coco to print its end of processing report
+					 to the logfile, with data current as of the position where the directive is
+					 encountered.</P> </LI> 
+				<LI><STRONG>?? TEXT :: NAME</STRONG> 
+				  <P ALIGN="LEFT">Defines the lines which follow, up to the next
+					 end text directive, as being the text block named NAME. The name must not be
+					 the name of an integer, logical, macro or another text block. This text may be
+					 copied into the coco output by using the copy directive <A HREF="#copydir">(see
+					 below)</A>. See below for information about which directives may appear between
+					 the text directive and the matching end text directive.</P></LI> 
+				<LI><STRONG>?? END TEXT [NAME]</STRONG> 
+				  <P ALIGN="LEFT">Marks the end of the text block which started
+					 with the previous text directive. The name, if present, must match the name on
+					 the preceeding text directive.</P> </LI> 
+				<LI><STRONG>?? TEXT :: NAME( arg[, arg]... )</STRONG> 
+				  <P ALIGN="LEFT">Defines the lines which follow, up to the next
+					 end text directive, as being the text block named NAME. The name must be
+					 unique. This text may be copied into the coco output by using the copy
+					 directive, see below. See below for information about which directives may
+					 appear between the text directive and the matching end text directive. Each arg
+					 will be substituted for ?arg? when the text is copied, see the copy directive
+					 below.</P></LI> 
+				<LI><STRONG>?? COPY :: NAME</STRONG> <A NAME="copydir"></A> 
+				  <P ALIGN="LEFT">Copies the text block named by NAME into the
+					 output.</P> </LI> 
+				<LI><STRONG>?? COPY :: NAME( str[, str]... )</STRONG> 
+				  <P ALIGN="LEFT">Copies the text block named by NAME into the
+					 output. The <EM>str</EM>s are substituted for the corresponding ?arg? within
+					 the text block definition during the copy. The copy directive may have args
+					 only if the text directive with the same name had args. Each arg on the copy
+					 directive is substituted for the corresponding arg on the text directive
+					 wherever ?arg? appears within the text block.</P></LI> 
+				<LI><STRONG>?? COPYIF ( expression ) NAME [(...)]</STRONG> 
+				  <P ALIGN="LEFT">?? COPYIF( <EM> logical expression </EM> ) NAME
+					 acts similarly to the copy directives above, except it is only active if the
+					 logical expression evaluates to true. The argument list is optional, and must
+					 match the corresponding TEXT directive. </P> </LI> 
+				<LI><STRONG>?? IFDEF ( symbol )THEN</STRONG> 
+				  <P ALIGN="LEFT">?? IFDEF( symbol )THEN introduces an if-block
+					 which is active if the symbol is defined. It must be followed by an ?? ENDIF
+					 statement, no ELSEIF or ELSE directives are allowed. </P> </LI> 
+				<LI><STRONG>?? IFNDEF ( symbol )THEN</STRONG> 
+				  <P ALIGN="LEFT">?? IFNDEF( symbol )THEN introduces an if-block
+					 which is active if the symbol is not defined. It must be followed by an ??
+					 ENDIF statement, no ELSEIF or ELSE directives are allowed. </P> </LI> 
+				<LI><STRONG>?? UNDEFINE :: NAME [,NAME]...</STRONG> 
+				  <P ALIGN="LEFT">Causes coco to remove the definition of the named
+					 symbol(s). An error occurs if the symbol is not defined as an integer, logical,
+					 macro or text symbol.</P> </LI> 
+				<LI><STRONG>?? DOC</STRONG> <A NAME="doctext"></A> 
+				  <P ALIGN="LEFT">Causes coco to divert lines of text, with editing
+					 if enabled, to the documentation file named on the docfile directive in the
+					 setfile. It is an error to have an active DOC ... END DOC sequence if no
+					 DOCFILE directive opened a documentation file. No assumption is made regarding
+					 the format of the documentation text, it may be man format, HTML, LaTex, plain
+					 text, or any other text lines. </P> </LI> 
+				<LI><STRONG>?? END DOC</STRONG> 
+				  <P ALIGN="LEFT">Ends the text diverted to the documentation file.
+					 Further lines are treated as source lines and processed to the output
+					 file.</P></LI> 
+			 </UL> 
+			 <P ALIGN="LEFT">There is one name space for all integers, logicals,
+				macros and text blocks. They are processed in the following order: file, line,
+				date, time, integers and logicals, and lastly, macros. Also, to avoid
+				ambiguity, dummy arguments (to macro or to text blocks) may not have the same
+				name as variables, macros or text blocks.</P> 
+			 <P ALIGN="LEFT">Only the following directives may appear between the
+				text and end text directives: the assert, if, elseif, else, endif, message,
+				stop and assignment directives. While a text block may appear in an include
+				file, an include directive may not appear within a text block. Declaration
+				directives may not appear because each declaration may only occur once per
+				program. Text blocks may not be nested.</P> 
+			 <P ALIGN="LEFT">If coco is being used as part of
+				<A HREF="port.html" TYPE="text/html">The Portability Project</A>, the
+				<STRONG>coco.inc</STRONG> file can be used to define coco symbols for the
+				compiler targeted by the coco.inc file. The definitions contained in the
+				coco.inc file match those in the <A HREF="stdtype.html">standard_types
+				module</A>, these two files <EM>must</EM> both refer to the <EM>same</EM>
+				processor, otherwise, suboptimal or incorrect results may occur.</P> 
+			 <P ALIGN="LEFT">Other directives may appear in the setfile, and are
+				intended to allow the programmer to access extensions to the standard coco
+				otherwise controlled from the command line (in case the program was compiled
+				without the <A HREF="www.winteracter.com/f2kcli" TYPE="text/html"> f2kcli
+				module</A>, or other access to the command line). These directives are listed
+				below.</P> 
+			 <UL> 
+				<LI><STRONG>?? DIRECTORY "dirname"</STRONG> <A NAME="incdir"></A> 
+				  <P ALIGN="LEFT">The directory dirname is searched if an include
+					 file is not found in the current directory. Several DIRECTORY directives may
+					 each specify a dirname, they are searched in the order they are declared. A
+					 directory directive must appear in the setfile so each include file is known to
+					 come from the same directory, and thus be the same file. See also
+					 <A HREF="#incopt">the -I command line option</A>.</P> </LI> 
+				<LI><STRONG>?? EDIT: [ON|OFF]</STRONG><A NAME="editdir"></A> 
+				  <P ALIGN="LEFT">Turns on of off the editing of integers, logicals
+					 and macros. Only one EDIT directive may occur in a setfile. See also
+					 <A HREF="#editopt">the -e command line option</A>.</P> </LI> 
+				<LI><STRONG>?? LOGFILE "filename"</STRONG><A NAME="logdir"></A> 
+				  <P ALIGN="LEFT">The logfile is set to the named file. The file is
+					 created. Only one LOGFILE directives may occur in a setfile. See also
+					 <A HREF="#logopt">the -l command line option</A>.</P> </LI> 
+				<LI><STRONG>?? DOCFILE "filename"</STRONG><A NAME="docfiledir"></A>
+				  
+				  <P ALIGN="LEFT">Causes coco to open a documentation file to
+					 receive lines of text found between <A HREF="#doctext">?? DOC and ?? END
+					 DOC</A> directives in the source file(s). See also <A HREF="#docfileopt">the -F
+					 command line option</A>. </P> </LI> 
+				<LI><STRONG>?? NUMBER: [ON|OFF]</STRONG><A NAME="numbering"></A> 
+				  <P ALIGN="LEFT">Turns on of off the numbering of source lines. If
+					 on, source lines appearing in the output as active source lines have the input
+					 file name and line number appearing as a Fortran comment starting in column 75.
+					 See also <A HREF="#numberopt">the -n command line option</A>. </P> </LI> 
+				<LI><STRONG>?? PARENS: [ON|OFF]</STRONG><A NAME="parendir"></A> 
+				  <P ALIGN="LEFT">Turns on of off the reporting of actual arguments
+					 to macros and text blocks which may require enclosing parenthesis to have the
+					 effect intended. Only one PARENS directives may occur in a setfile. For
+					 exmaple, an actual argument of a+b may result in a+b*a+b when (a+b)*(a+b) was
+					 intended. This warning is based on the argument alone, without regard to the
+					 text of the macro or text block. See also <A HREF="#parenopt">the -p command
+					 line option</A>. </P> </LI> 
+				<LI><STRONG>?? VERBOSE: [ON|OFF]</STRONG><A NAME="verbosedir"></A> 
+				  <P ALIGN="LEFT">Turns on of off the reporting of file openings
+					 and closings. Note that the opening of the setfile cannot be reported this way,
+					 because the setfile is already being read when this directive is executed. Only
+					 one VERBOSE directives may occur in a setfile. See also <A
+					 HREF="#verboseopt">the -v command line option</A>. </P> </LI> 
+				<LI><STRONG>?? WARN: [ON|OFF]</STRONG><A NAME="warndir"></A> 
+				  <P ALIGN="LEFT">Turns on or off the reporting of integers and
+					 logicals declared in the setfile, but not in any source file. Only one WARN
+					 directives may occur in a setfile. See also <A HREF="#warnopt">the -u command
+					 line option</A>.</P></LI> 
+				<LI><STRONG>?? WRAP: <EM>n</EM></STRONG><A NAME="wrapdir"></A> 
+				  <P ALIGN="LEFT">The integer <EM>n</EM> is taken as the new value
+					 of the wrapping length, if possible. A wrap directive must appear in the
+					 setfile. Only one WRAP directives may occur in a setfile. See also
+					 <A HREF="#wrapopt">the -w command line option</A>.</P></LI> 
+			 </UL>				
+<!--Return to top of this page. -->
+			 <P ALIGN="CENTER"><A HREF="#top">Back to the Top</A> </P>
+<!--Give an example -->
+			 <H2 ALIGN="CENTER"><FONT FACE="sans-serif"><A NAME="example">An
+				Example of Using coco</A></FONT> </H2> 
+			 <P ALIGN="LEFT">Statement of the problem to be solved: A single
+				source file is to be prepared which will specify a Fortran 95 Module containing
+				a cube root function to support all kinds of reals on any processor at a
+				computer center. Using the programs of the <A HREF="port.html"
+				TYPE="text/html">Portability Project</A>, specifically, the
+				<A HREF="stdtype.html">standard_types module</A> to provide kind parameters and
+				the coco.inc include file, this module may be written as follows: </P> 
+			 <PRE>
+?? include 'coco.inc'
+			
+module cube_root
+			
+use standard_types
+			
+implicit none
+
+private
+			
+public cbrt
+			
+interface cbrt
+?? if( single_k )then
+   module procedure single_cbrt
+?? endif
+?? if( double_k )then
+   module procedure double_cbrt
+?? endif
+?? if( quad_k )then
+   module procedure quad_cbrt
+?? endif
+end interface
+			
+contains
+			
+?? if( single_k )then
+elemental real( kind= single_k) function single_cbrt( x)
+real( kind= single_k), intent( in) :: x
+	
+   single_cbrt = sign( exp( log( abs( x)) / 3.0_single_k), x)
+			
+end function single_cbrt
+?? endif
+			
+?? if( double_k )then
+elemental real( kind= double_k) function double_cbrt( x)
+real( kind= double_k), intent( in) :: x
+			
+   double_cbrt = sign( exp( log( abs( x)) / 3.0_double_k), x)
+			
+end function double_cbrt
+?? endif
+			
+?? if( quad_k )then
+elemental real( kind= quad_k) function quad_cbrt( x)
+real( kind= quad_k), intent( in) :: x
+			
+   quad_cbrt = sign( exp( log( abs( x)) / 3.0_quad_k), x)
+			
+end function quad_cbrt
+?? endif
+			
+end module cube_root
+			</PRE> 
+			 <P ALIGN="LEFT">Note that the single_k, double_k, and quad_k which
+				appear in the Fortran source proper are the three kind parameters which are
+				defined in the module <A HREF="stdtype.html"
+				TYPE="text/html">standard_types</A>. The single_k, double_k and quad_k which
+				appear in the coco if directives are coco logical variables which are defined
+				in the coco.inc coco include file. Both coco.inc and the source code for
+				standard_types are made (semi-)automatically by the
+				<A HREF="make_pm.html" TYPE="text/html">make_processor_model</A> program of
+				<A HREF="port.html" TYPE="text/html">the Portability Project</A> All the
+				Fortran kind parameters are valid on any processor, because if the kind isn't
+				supported, the corresponding coco logical variable is set to false, thereby
+				preventing the code from being present in the verison of the source for that
+				processor. </P> 
+			 <P ALIGN="LEFT">Solving the same problem, but this time using the
+				text-copy mechanism, is shown below:</P> 
+			 <PRE>
+?? include 'coco.inc'
+			
+module cube_root
+
+?? text :: cbrt( kind)
+elemental real( kind= ?kind?_k) function ?kind?_cbrt( x)
+real( kind= ?kind?_k), intent( in) :: x
+	
+   ?kind?_cbrt = exp( log( abs( x)) / 3.0_?kind?_k)
+			
+end function ?kind?_cbrt
+?? end text cbrt
+			
+use standard_types
+			
+implicit none
+			
+public cbrt
+			
+interface cbrt
+?? if( single_k )then
+   module procedure single_cbrt
+?? endif
+?? if( double_k )then
+   module procedure double_cbrt
+?? endif
+?? if( quad_k )then
+   module procedure quad_cbrt
+?? endif
+end interface
+			
+contains
+			
+?? if( single_k )then
+?? copy :: cbrt( single)
+?? endif
+			
+?? if( double_k )then
+?? copy :: cbrt( double)
+?? endif
+			
+?? if( quad_k )then
+?? copy :: cbrt( quad)
+?? endif
+			
+end module cube_root
+			</PRE> 
+			 <P ALIGN="LEFT">Note that this time, the source for the cbrt()
+				function need be specified only once, the text-copy mechanism performs the
+				copy-paste-substitute operation on demand. A further simplification is to
+				replace the if ... copy ... endif sequences with copyif directives, as shown
+				below:</P> 
+			 <PRE>
+?? include 'coco.inc'
+			
+module cube_root
+
+?? text :: cbrt( kind)
+elemental real( kind= ?kind?_k) function ?kind?_cbrt( x)
+real( kind= ?kind?_k), intent( in) :: x
+	
+   ?kind?_cbrt = exp( log( abs( x)) / 3.0_?kind?_k)
+			
+end function ?kind?_cbrt
+?? end text cbrt
+			
+use standard_types
+			
+implicit none
+			
+public cbrt
+			
+interface cbrt
+?? if( single_k )then
+   module procedure single_cbrt
+?? endif
+?? if( double_k )then
+   module procedure double_cbrt
+?? endif
+?? if( quad_k )then
+   module procedure quad_cbrt
+?? endif
+end interface
+			
+contains
+			
+?? copyif( single_k) cbrt( single)
+			
+?? copyif( double_k) cbrt( double)
+			
+?? copyif( quad_k) cbrt( quad)
+			
+end module cube_root
+			</PRE> 
+			 
+<!--Return to top of this page. -->
+			 <P ALIGN="CENTER"><A HREF="#top">Back to the Top</A> </P>
+<!--The download links start here. -->
+			 <H2 ALIGN="CENTER"><FONT FACE="sans-serif"><A
+				NAME="download">Downloads</A></FONT> </H2> 
+			 <P ALIGN="LEFT">To download a source code for the coco program, click
+				<A HREF="pub/coco.f90" TYPE="text/plain">coco preprocessor</A>. You will need
+				the free <A HREF="http://www.winteracter.com/f2kcli" TYPE="text/html">F2KCLI
+				Module</A> from I.S.S. to compile <A HREF="pub/coco.f90" TYPE="text/plain">coco
+				program</A> if your compiler doesn"t support the Fortran 2003 command line
+				access intrinsic procedures. Download the
+				<A HREF="pub/restore.f90" TYPE="text/plain">restore program</A> which can un-do
+				coco processing under certain circumstances. Coco no longer needs a
+				standard_types module.</P> 
+			 <P ALIGN="LEFT">For more information about the standard_types module,
+				click <A HREF="port.html" TYPE="text/html">here</A>. </P>
+<!--Return to top of this page. -->
+			 <P ALIGN="CENTER"><A HREF="#top">Back to the Top</A> </P>
+<!--Solicit email here. -->
+			 <P ALIGN="CENTER">Please see our Fact Sheet, or
+				<A HREF="mailto:dnagle@erols.com">E-mail us</A> for more information. </P>
+			 </TD> 
+		</TR>
+<!--The page footer -->
+		<TR> 
+		  <TD> <HR SIZE="1" NOSHADE="NOSHADE">
+<!--Yet another batch of links to other pages. -->
+			 <P ALIGN="CENTER"> <A HREF="index.html" TYPE="text/html">Home</A> -
+				<A HREF="fact.html" TYPE="text/html">Fact Sheet</A> -
+				<A HREF="download.html" TYPE="text/html">Free Source Code</A> -
+				<A HREF="sites.html" TYPE="text/html">Fortran Links</A> -
+				<A HREF="mailto:dnagle@erols.com">Email us</A> </P>
+<!--Return to top of this page. -->
+			 <P ALIGN="CENTER"><A HREF="#top">Back to the Top</A> </P> </TD> 
+		</TR> 
+	 </TABLE> </BODY>
+</HTML>

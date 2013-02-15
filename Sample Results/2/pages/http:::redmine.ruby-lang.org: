@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Ruby Issue Tracking System</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="NSdYWkXUNcul99n2M6/pzT5t59enqIUGHafcBQG37mM="/>
+<link rel='shortcut icon' href='/favicon.ico?1342147382' />
+<link href="/themes/ruby-lang/stylesheets/application.css?1342147382" media="all" rel="stylesheet" type="text/css" />
+
+<script src="/javascripts/prototype.js?1342147382" type="text/javascript"></script>
+<script src="/javascripts/effects.js?1342147382" type="text/javascript"></script>
+<script src="/javascripts/dragdrop.js?1342147382" type="text/javascript"></script>
+<script src="/javascripts/controls.js?1342147382" type="text/javascript"></script>
+<script src="/javascripts/application.js?1342147382" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+<!--[if IE 6]>
+    <style type="text/css">
+      * html body{ width: expression( document.documentElement.clientWidth < 900 ? '900px' : '100%' ); }
+      body {behavior: url(/stylesheets/csshover.htc?1342147382);}
+    </style>
+<![endif]-->
+<link href="/plugin_assets/redmine_mailing_list_integration/stylesheets/mailing_list_integration.css?1349261129" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+
+<link href="/stylesheets/scm.css?1342147382" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://bugs.ruby-lang.org/news.atom" rel="alternate" title="Ruby Issue Tracking System: Latest news" type="application/atom+xml" />
+<link href="http://bugs.ruby-lang.org/activity.atom" rel="alternate" title="Ruby Issue Tracking System: Activity" type="application/atom+xml" />
+</head>
+<body class="theme-Ruby-lang controller-welcome action-index">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li>
+<li><a href="/account/register" class="register">Register</a></li></ul>    </div>
+    
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
+<div id="header">
+    
+    <div id="quick-search">
+        <form action="/search" method="get">
+        
+        <label for='q'>
+          <a href="/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+        </form>
+        
+    </div>
+    
+
+    <h1><a href="/">Ruby Issue Tracking System</a></h1>
+
+    
+</div>
+
+<div class="nosidebar" id="main">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        <h2>Home</h2>
+
+<div class="splitcontentleft">
+  <p>Ruby is a dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write. This system is hosting the development of Ruby language and its related projects.</p><p>You must <a href="http://redmine.ruby-lang.org/account/register">register your account</a> and activate it via an email before reporting issues.
+Or <a href="http://redmine.ruby-lang.org/login">login</a> if you have an account.</p><a name="How-to-report-a-bug"></a>
+<h2 ><a name="label-0" id="label-0">How to report a bug</a><a href="#How-to-report-a-bug" class="wiki-anchor">&para;</a></h2><!-- RDLabel: "How to report a bug" --><p>See <a href="/projects/ruby/wiki/HowtoReport" class="wiki-page">HowtoReport</a> (English) or <a href="/projects/ruby/wiki/HowtoReportJa" class="wiki-page">HowtoReportJa</a> (Japanese).</p><a name="Popular-Projects"></a>
+<h2 ><a name="label-1" id="label-1">Popular Projects</a><a href="#Popular-Projects" class="wiki-anchor">&para;</a></h2><!-- RDLabel: "Popular Projects" --><ul>
+<li><a href="/projects/ruby-trunk" class="project">ruby-trunk</a> - Developing version of Ruby
+<ul>
+<li><a href="/projects/ruby-193" class="project">Backport93</a> - The new stable release of Ruby 1.9 series.</li>
+<li><a href="/projects/ruby-192" class="project">Backport92</a> - The latest stable release of Ruby 1.9 series.</li>
+<li><a href="/projects/ruby-191" class="project">Archive91</a> - The first stable release of Ruby 1.9 series.</li>
+</ul></li>
+<li><a href="/projects/ruby-18" class="project">Ruby 1.8</a> - Old version of Ruby
+<ul>
+<li><a href="/projects/ruby-187" class="project">Backport87</a> - A stable release of Ruby for bridging a gap between the 1.8 and 1.9.</li>
+<li><a href="/projects/ruby-186" class="project">Backport86</a> - An ancient stable release of Ruby that Rails users love</li>
+</ul></li>
+<li><a href="/projects/ruby" class="project">Ruby</a> - Version-independent topics</li>
+</ul><a name="Help"></a>
+<h2 ><a name="label-2" id="label-2">Help</a><a href="#Help" class="wiki-anchor">&para;</a></h2><!-- RDLabel: "Help" --><ul>
+<li><a href="/projects/redmine/wiki/Issue" class="wiki-page new">Issue</a> - <a href="/projects/redmine/wiki/VersionControlSystem" class="wiki-page">VCS integration</a> - <a href="/projects/redmine/wiki/Wiki" class="wiki-page new">Wiki Syntax</a> (English; translation required)</li>
+<li><a href="/projects/redmine/wiki/IssueJa" class="wiki-page">Issue</a> - <a href="/projects/redmine/wiki/VersionControlSystemJa" class="wiki-page">VCS連携</a> - <a href="/projects/redmine/wiki/WikiJa" class="wiki-page">Wiki記法</a> (Japanese)</li>
+</ul><a name="About-Security-Reports"></a>
+<h2 ><a name="label-3" id="label-3">About Security Reports</a><a href="#About-Security-Reports" class="wiki-anchor">&para;</a></h2><!-- RDLabel: "About Security Reports" --><p>Please <em>DO NOT</em> report security issues via this system, because the system publishes them immediately.
+In order to report, send a mail to security@ruby-lang.org instead. Reported problems will be published after fixes.</p><a name="Ruby-Language-Home"></a>
+<h2 ><a name="label-4" id="label-4">Ruby Language Home</a><a href="#Ruby-Language-Home" class="wiki-anchor">&para;</a></h2><!-- RDLabel: "Ruby Language Home" --><p><a href="http://www.ruby-lang.org">http://www.ruby-lang.org</a></p>
+  
+  <div class="news box">
+  <h3>Latest news</h3>
+    <p><a href="/projects/redmine">Customized version of Redmine</a>: 
+<a href="/news/3">Wiki format a little changed</a>
+
+<br />
+
+<span class="author">Added by <a href="/users/3">yugui (Yuki Sonoda)</a> <acronym title="04/30/2011 10:37 pm">almost 2 years</acronym> ago</span></p>
+<p><a href="/projects/redmine">Customized version of Redmine</a>: 
+<a href="/news/2">redmine.ruby-lang.org is updated</a>
+
+<br />
+
+<span class="author">Added by <a href="/users/3">yugui (Yuki Sonoda)</a> <acronym title="02/23/2011 09:02 pm">almost 2 years</acronym> ago</span></p>
+
+    <a href="/news">View all news</a>
+  </div>
+  
+  
+</div>
+
+<div class="splitcontentright">
+    
+  <div class="projects box">
+  <h3>Latest projects</h3>
+    <ul>
+    
+      
+      <li>
+      <a href="/projects/ruby-200">Backport 200</a> (02/14/2013 10:44 am)
+      <div style="padding:1%;border:solid 2px #eee;white-space:pre-wrap;margin-left:5%;background-color:#eef">Backport request for 200</div>
+      </li>
+    
+      
+      <li>
+      <a href="/projects/common-ruby">CommonRuby</a> (12/21/2012 10:58 am)
+      <p>A common set of Ruby(?). Don't report MRI dependent bugs here.</p>
+      </li>
+    
+      
+      <li>
+      <a href="/projects/ruby-193">Backport93</a> (08/24/2011 11:31 pm)
+      <p>Don't report issues here.
+Report it to <a href="/projects/ruby-trunk" class="project">ruby-trunk</a></p>
+      </li>
+    
+      
+      <li>
+      <a href="/projects/ruby-192">Backport92</a> (08/02/2010 04:45 pm)
+      <p>Don't report issues here.</p>
+      </li>
+    
+      
+      <li>
+      <a href="/projects/ruby-186">Backport86</a> (05/12/2009 05:50 pm)
+      <p>Don't report issues here.</p>
+      </li>
+    
+    
+    </ul>
+  </div>
+  
+    
+</div>
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="http://www.redmine.org/">Redmine</a> &copy; 2006-2012 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

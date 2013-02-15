@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+  <head>
+
+
+    <meta name="description" content="" />
+    <meta name="robots" content="nofollow" />
+    <link href="/_css/main.css" rel="stylesheet" type="text/css" />
+    <link href="/_css/main.css" rel="stylesheet" type="text/css" />
+    <link href="/_css/main.css" rel="shortcut icon" />
+
+    <script language="JavaScript" type="text/javascript"></script>
+
+
+    <script language="JavaScript" type="text/javascript"></script>
+
+
+    <script type="text/javascript"></script>
+
+    <script language="JavaScript" type="text/javascript"></script>
+
+
+    <script type="text/javascript"></script>
+
+    <script></script>
+
+    <title>Ruby Documentation Submission Guidelines</title>
+
+
+
+
+    <style>
+
+      BODY, P, DIV, H1, H2, H3, H4, H5, H6, ADDRESS, OL, UL, TITLE, TD, OPTION, SELECT {
+        font-family: Verdana;
+
+      }
+
+      BODY, P, DIV, ADDRESS, OL, UL, LI, TITLE, TD, OPTION, SELECT {  
+        font-size: 10.0pt;
+        margin-top:0pt;  
+        margin-bottom:0pt;  
+      } 
+
+      BODY, P {
+        margin-left:0pt; 
+        margin-right:0pt;
+      }
+
+      BODY {
+        line-height: normal;
+
+        margin: 6px;
+        padding: 0px;
+      }
+
+      h6 { font-size: 10pt }
+      h5 { font-size: 11pt }
+      h4 { font-size: 12pt }
+      h3 { font-size: 13pt }
+      h2 { font-size: 14pt }
+      h1 { font-size: 16pt }
+
+      blockquote {padding: 10px; border: 1px #DDDDDD dashed }
+
+      a img {border: 0}
+
+      #doc-contents {
+        background-color: #ffffff;
+      }
+
+
+
+    </style>
+
+
+    <style>
+
+      BODY, P, DIV, TD {
+        direction: inherit;
+      </style>
+
+
+      <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+
+
+
+    </head>
+
+    <body topmargin="10px" rightmargin="10px" id="guidelines" bottommargin="0" onload="" onclick="" leftmargin="10px" style="margin: 2px 40px;">
+
+
+
+
+
+
+
+
+      <div id="decoration1" style="">
+        <div id="publishinfo" style="">
+
+        </div>
+      </div>
+
+
+
+      <div dir="ltr" id="doc-contents" style="">
+
+
+
+        <h1>
+          Contributing to Ruby Documentation
+        </h1>
+        <h2>
+          Getting Started
+        </h2>
+        Contributing to Ruby documentation involves working directly on the Ruby source
+        code.&nbsp; Your additions (if they are accepted) will become part of the Ruby
+        source and distributions and you'll have your name in the credits for everyone
+        to see.&nbsp; Cool, isn't it?&nbsp; But to work with the Ruby source, you'll
+        need to use Subversion.&nbsp; If you're unfamiliar with Subversion, check out
+        the Subversion Homepage or its book for more information.<br />
+        <br />
+        <a href="http://subversion.tigris.org/" title="http://subversion.tigris.org/">http://subversion.tigris.org/</a><br />
+        <a href="http://svnbook.red-bean.com/" title="http://svnbook.red-bean.com/">http://svnbook.red-bean.com/</a><br />
+        <br />
+        <br />
+        Once you're comfortable with Subversion (also known as svn or SVN), use your
+        favorite svn tool to get a copy of the Ruby source code. The repository's
+        address is http://svn.ruby-lang.org/repos/ruby/trunk - and that will give you
+        the HEAD version of Ruby.<br />
+        <br />
+        If you are working from the command line, use the following commands (from
+        http://www.ruby-lang.org/en/community/ruby-core): Check out the trunk as 'ruby'
+        like this:<br />
+        <br />
+        &nbsp;&nbsp;&nbsp; $ svn co http://svn.ruby-lang.org/repos/ruby/trunk ruby<br />
+        <br />
+        This will get you the HEAD of Ruby, which at the time of writing is called 1.9.
+        You should also grab a copy of the Ruby 1.8 branch.&nbsp; When writing
+        documentation always check that your contributions can be easily added to Ruby
+        1.8.&nbsp; If not, you will need to submit separate patches for both the Ruby
+        HEAD and the 1.8 version.&nbsp; Again, from the command line, use:<br />
+        <br />
+        &nbsp;&nbsp;&nbsp; $ svn co http://svn.ruby-lang.org/repos/ruby/ruby_1_8 ruby<br />
+        <br />
+        To check your additions to the Ruby source, you will compile the documentation
+        yourself, using
+        <a href="http://stdlib-doc.rubyforge.org/rdoc/index.html" title="stdlib-doc">stdlib-doc</a>.&nbsp;
+        stdlib-doc is a specialized tool for building the Ruby source
+        documentation.&nbsp; As such, the installation process is a little bit
+        difficult.&nbsp; For now, read stdlib-doc's
+        <a href="http://stdlib-doc.rubyforge.org/rdoc/files/doc/GettingStarted_txt.html" title="Getting Started">Getting
+          Started</a> document.&nbsp; Go slow and make sure you have all the necessary
+        dependencies.<br />
+        <h2>
+          Style Guidelines<br />
+        </h2>
+        Because your documentation will be added in to the Ruby source code, it's
+        important that it be properly formatted.&nbsp; Use the following guidelines when
+        writing to ensure that your contribution will be accepted by the Ruby
+        maintainers.&nbsp; It's a long list, but don't let it scare you.&nbsp; The
+        ruby-doc mailing list is a great source of help if you're unsure about how to write
+        your documentation.<br />
+        <br />
+        <ul>
+          <li>
+            Documentation embedded in code must be wrapped to 80 characters, including
+            comment characters and white space.
+            <ul>
+              <li>
+                When the inline comments are processed by rdoc, the hard-coded line
+                breaks will be replaced with flowing paragraphs. But when viewing the
+                code the 80-character limit plays nicer with code editors.<br />
+              </li>
+            </ul>
+          </li>
+          <li>
+            Use :: for describing class methods, # for describing instance methods, and
+            use . for example code.
+          </li>
+          <li>
+            C methods must have call-seq.&nbsp; This describes the arguments and return
+            values of a function.&nbsp; For example:
+          </li>
+        </ul>
+        <div style="">
+          /*<br />
+          &nbsp;*&nbsp; call-seq:<br />
+          &nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;
+          array.delete(obj)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          -&gt; obj or nil<br />
+          &nbsp;*&nbsp;&nbsp;&nbsp;&nbsp; array.delete(obj) { block }&nbsp; -&gt; obj or
+          nil<br />
+          &nbsp;* ...<br />
+        </div>
+        <ul>
+          <li>
+            All documentation should be written in full sentences that start with a
+            capital letter and end in a period.
+          </li>
+          <li>
+            Separate documentation from the comment character by one space.
+          </li>
+          <li>
+            Example code within comments should be indented 2 spaces in from the
+            surrounding text.&nbsp; This will signal rdoc to parse it as a code block
+            and apply the correct formatting.<br />
+          </li>
+          <li>
+            Include plenty of examples.&nbsp; Also, include the appropriate 'require'
+            statements in any examples.<br />
+          </li>
+          <li>
+            Don't document the internal behavior of methods. Describe them from a
+            perspective of purpose and function.
+          </li>
+          <li>
+            Try to include information on every page of the generated documentation or
+            at least a link to relevant information.
+          </li>
+        </ul>
+        <h2>
+          Submission Guidelines
+        </h2>
+        Once your documentation is complete, you'll submit your changes to the ruby-doc mailing list as a patch.&nbsp; If you are relatively new to handling patches
+        the article
+        <a href="http://www.gnu.org/software/diffutils/manual/html_node/Merging-with-patch.html#Merging%20with%20patch" title="Comparing and Merging Files">Comparing
+          and Merging Files</a> explains this, and be sure to read the next section in
+        that document called
+        <a href="http://www.gnu.org/software/diffutils/manual/html_node/Making-Patches.html#Making%20Patches" title="Making Patches">Making
+          Patches</a>.&nbsp; You'll use 'svn diff' instead of 'diff', but the syntax is
+        the same.<br />
+        <br />
+        &nbsp;&nbsp;&nbsp; $ svn diff &gt; rdoc_changes_to_some_module.patch<br />
+        <br />
+        Check to see if your changes can be easily added to Ruby 1.8.&nbsp; If they
+        can't you'll need to make the changes to both Ruby HEAD and Ruby 1.8 and submit
+        separate patches.&nbsp; If the changes can be easily added to Ruby 1.8, one of
+        the Ruby maintainers can port it to 1.8 for you.<br />
+        <br />
+        Once you've got nice clean patches and your documentation meets the guidelines,
+        post it to the mailing list.&nbsp; The list is fairly active and you should see
+        a response within a day or so.&nbsp; If you followed all the guidelines and your
+        patch was accepted, congratulations!&nbsp; Enjoy that nice warm feeling that
+        comes from helping out an open source project.&nbsp; If there were some
+        problems, enjoy the collaboration with other contributors as you work to make
+        your patch perfect.&nbsp; That's fun too.<br />
+        <h3>
+          Questions? Comments?
+        </h3>
+        If you have any questions or comments, subscribe to the ruby-doc mailing list and post it there.&nbsp; The Ruby community is helpful and
+        responsive, so don't be afraid to ask.<br />
+        <br />
+        Thanks for helping!<br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+      </div>
+
+
+      <div id="decoration2" style="">
+
+      </div>
+
+
+
+
+
+      <script></script>
+
+      <script type="text/javascript"></script>
+
+
+      <script type="text/javascript"></script>
+
+
+
+    </body>
+  </html>

@@ -1,0 +1,1581 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Riding Rails</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=720">
+    <link rel="alternate" type="application/atom+xml" title="Atom" href="/feed/atom.xml">
+    <link href="/styles.css" type="text/css" media="screen" rel="stylesheet">
+    <link href="/print.css" type="text/css" media="print" rel="stylesheet">
+    <script type="text/javascript" async="" src="http://platform.twitter.com/widgets.js"></script>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1959218-2']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="navigation" class="nav"><nav>
+      <a href="http://rubyonrails.org/">Overview</a> |
+      <a href="http://rubyonrails.org/download/">Download</a> |
+      <a href="http://rubyonrails.org/deploy/">Deploy</a> |
+      <a href="https://github.com/rails/rails/issues">Bugs/Patches</a> |
+      <a href="http://rubyonrails.org/screencasts/">Screencasts</a> |
+      <a href="http://rubyonrails.org/documentation/">Documentation</a> |
+      <a href="http://rubyonrails.org/ecosystem/">Ecosystem</a> |
+      <a href="http://rubyonrails.org/community/">Community</a> |
+      <a href="/">Blog</a>
+    </nav></div>
+    <div id="wrapper">
+      <div id="content" class="section"><section>
+<!-- Begin Content -->
+
+        <div class="hentry article"><article>
+          <div class="entry-header header"><header>
+            <h2 class="entry-title">
+              <a href="/2013/2/11/SEC-ANN-Rails-3-2-12-3-1-11-and-2-3-17-have-been-released/" rel="bookmark">[SEC][ANN] Rails 3.2.12, 3.1.11, and 2.3.17 have been released!</a>
+            </h2>
+            <p class="entry-meta">
+              Posted by <span class="vcard"><span class="fn">tenderlove</span></span>,
+              <span class="published" title="Mon Feb 11 00:00:00 -0800 2013">February 11, 2013 @ 12:00 am</span>
+            </p>
+          </header></div>
+          <div class="entry-content section"><section>
+<!-- Begin Post -->
+<p>Hi everybody.</p>
+
+<p>I'd like to announce that Rails 3.2.12, 3.1.11, and 2.3.17 have been released.</p>
+
+<p>3.2.12 and 3.1.11 contain one security fix, and 2.3.17 contains two security fixes.  It is recommended that you update immediately.</p>
+
+<p>You can read about the security fixes by following these links:</p>
+
+<ul>
+<li><a href="https://groups.google.com/forum/?fromgroups=#!topic/rubyonrails-security/AFBKNY7VSH8">CVE-2013-0276</a></li>
+<li><a href="https://groups.google.com/forum/?fromgroups=#!topic/rubyonrails-security/KtmwSbEpzrU">CVE-2013-0277</a></li>
+</ul>
+
+
+<p>Please note that today a new JSON gem was released, and it also contains an important security fix.  You should update the JSON gem as soon as possible.  You can read about the security issue in the JSON gem here:</p>
+
+<ul>
+<li><a href="https://groups.google.com/forum/?fromgroups=#!topic/rubyonrails-security/4_YvCpLzL58">CVE-2013-0269</a></li>
+</ul>
+
+
+<p>In order to ease upgrading, the only major changes in each gem is the security fix.  To see the detailed changes for each version, follow the links below:</p>
+
+<ul>
+<li><a href="https://github.com/rails/rails/compare/v3.2.11...v3.2.12">Changes in 3.2.12</a></li>
+<li><a href="https://github.com/rails/rails/compare/v3.1.10...v3.1.11">Changes in 3.1.11</a></li>
+<li><a href="https://github.com/rails/rails/compare/v2.3.16...v2.3.17">Changes in 2.3.17</a></li>
+</ul>
+
+
+<p>Thanks to the people who responsibly reported these security issues.</p>
+
+<p>Please note that per our <a href="https://groups.google.com/forum/?fromgroups=#!topic/rubyonrails-security/G4TTUDDYbNA">maintenance policy</a> there will be no 3.0.x version released.</p>
+
+<p>Here are the SHA-1 checksums for each gem:</p>
+
+<h2>Rails 3.2.12</h2>
+
+<p><code>
+[aaron@higgins dist]$ shasum *3.2.*
+5627c6d044cc52876128459d960f8805006b5f97  actionmailer-3.2.12.gem
+336f76c045b6bcbd204831897131182cff82ddf8  actionpack-3.2.12.gem
+89bec5d68861ad5d79ca776ef5d6df7c1cfc2b11  activemodel-3.2.12.gem
+7d4327c54900f45c60947a63350e865843e193ef  activerecord-3.2.12.gem
+4b8ed4190f98a85b800ee7893bae5afd1bee0874  activeresource-3.2.12.gem
+c9e44eed288140f556e6543b93fc45f8dd57a415  activesupport-3.2.12.gem
+24b3b4633d7f131e61e50decc3aa11590941c6e2  rails-3.2.12.gem
+a84262f1968e83141d290c034b20a28d38886d10  railties-3.2.12.gem
+</code></p>
+
+<h2>Rails 3.1.11</h2>
+
+<p><code>
+[aaron@higgins dist]$ shasum *3.1.*
+d80816e69614c1f0d96cb7d0f4a38bfdc8d84ff5  actionmailer-3.1.11.gem
+f65cea0682b6051869d4125f7b441a7c6f59fcbe  actionpack-3.1.11.gem
+549ec2b67d4332b38cef1620b23e00e50e0774e6  activemodel-3.1.11.gem
+3d342764b7ba3bae05190f15bcb35d401cd8121e  activerecord-3.1.11.gem
+19bd70bad6c4e4a555127a7738e71ac4829e6f61  activeresource-3.1.11.gem
+7267b2f87bea5bd285f5d1bfe49bb2ba19df7c94  activesupport-3.1.11.gem
+ca57e1243451385689343dbe2bb42e23058284df  rails-3.1.11.gem
+48cc801bdb7c31c4b6939235a60ef3e5008f5dbb  railties-3.1.11.gem
+</code></p>
+
+<h2>Rails 2.3.17</h2>
+
+<p><code>
+[aaron@higgins dist]$ shasum *2.3.*
+5df1fe13db46ac10dec8bb607ef515881dcf09c5  actionmailer-2.3.17.gem
+d1165517a185ae73ca8a4ac89549e695a23fedfa  actionpack-2.3.17.gem
+b24ff71e46b798d7c38504531cb7622955d9a20c  activerecord-2.3.17.gem
+9cc2a7bd60a959dcba099425954a1b9c53235ce5  activeresource-2.3.17.gem
+4ccc935fdc4d7ede78a1c376453ecb502e48b7ed  activesupport-2.3.17.gem
+9613a97cb726f00de59ad6d0f901f7434f9c4733  rails-2.3.17.gem
+</code></p>
+
+<p>&lt;3&lt;3&lt;3</p>
+
+<!-- End Post -->
+          </section></div>
+          <div class="entry-footer footer"><footer>
+            <p>
+
+              <span class="categories">Posted in
+
+
+                <a href="/releases/" rel="category tag">Releases</a>
+
+
+              </span> |
+
+              <a href="/2013/2/11/SEC-ANN-Rails-3-2-12-3-1-11-and-2-3-17-have-been-released/#disqus_thread" data-disqus-identifier="/2013/2/11/SEC-ANN-Rails-3-2-12-3-1-11-and-2-3-17-have-been-released/">Comments</a>
+            </p>
+          </footer></div>
+        </article></div>
+
+
+        <div class="hentry article"><article>
+          <div class="entry-header header"><header>
+            <h2 class="entry-title">
+              <a href="/2013/1/28/Rails-3-0-20-and-2-3-16-have-been-released/" rel="bookmark">[SEC][ANN] Rails 3.0.20, and 2.3.16 have been released!</a>
+            </h2>
+            <p class="entry-meta">
+              Posted by <span class="vcard"><span class="fn">tenderlove</span></span>,
+              <span class="published" title="Mon Jan 28 00:00:00 -0800 2013">January 28, 2013 @ 12:00 am</span>
+            </p>
+          </header></div>
+          <div class="entry-content section"><section>
+<!-- Begin Post -->
+<p>Hi everybody.</p>
+
+<p>I'd like to announce that 3.0.20, and 2.3.16 have been released.  These releases contain one <strong>extremely critical security fix</strong> so please update <strong>IMMEDIATELY</strong>.</p>
+
+<p>You can read about the security fix by following this link:</p>
+
+<ul>
+<li><a href="https://groups.google.com/forum/?fromgroups=#!topic/rubyonrails-security/1h2DR63ViGo">CVE-2013-0333</a></li>
+</ul>
+
+
+<p>In order to ease upgrading, the only major changes in each gem is the security fix.  To see the detailed changes for each version, follow the links below:</p>
+
+<ul>
+<li><a href="https://github.com/rails/rails/compare/v3.0.19...v3.0.20">Changes in 3.0.20</a></li>
+<li><a href="https://github.com/rails/rails/compare/v2.3.15...v2.3.16">Changes in 2.3.16</a></li>
+</ul>
+
+
+<p>Thanks to the people who responsibly reported these security issues.</p>
+
+<p>Please note that per our <a href="https://groups.google.com/forum/?fromgroups=#!topic/rubyonrails-security/G4TTUDDYbNA">maintenance policy</a> this will be the last release for the 3.0.x series.</p>
+
+<p>Here are the SHA-1 checksums for each gem:</p>
+
+<h3>3.0.20</h3>
+
+<p><code>
+[aaron@higgins dist]$ shasum *3.0.20*
+c5b1a446d921dbd512a2d418c50f144b4540a657  actionmailer-3.0.20.gem
+79ec243f6ec301b0a73ad45f89d4ea2335f90346  actionpack-3.0.20.gem
+80c7d881ed64ed7a66f4d82b12c2b98b43f6fbde  activemodel-3.0.20.gem
+d8fc6e02bf46f9b5f86c3a954932d67da211302b  activerecord-3.0.20.gem
+e465e7d582c6d72c487d132e5fac3c3af4626353  activeresource-3.0.20.gem
+5bc7b2f1ad70a2781c4a41a2f4eaa75b999750e4  activesupport-3.0.20.gem
+ba9fb9dba41ce047feef11b4179cd9c3f81b2857  rails-3.0.20.gem
+42b0025e4cb483d491a809b9d9deb6fd182c2a57  railties-3.0.20.gem
+</code></p>
+
+<h3>2.3.16</h3>
+
+<p><code>
+[aaron@higgins dist]$ shasum *2.3.16*
+ab1a47a08d42352d9e8c276d28e6ed6990c23556  actionmailer-2.3.16.gem
+f81ac75eb9edbb363a6d7bbe175a208e97ea3d4f  actionpack-2.3.16.gem
+4ce36062f1f0b326b16e42b9fde5f1ab0610bffc  activerecord-2.3.16.gem
+3698787f9ab8432f0c10268e22fbfcf682fa79cc  activeresource-2.3.16.gem
+90490f62db73c4be9ed69d96592afa0b98e79738  activesupport-2.3.16.gem
+239253159f9793e2372c83dcf9d0bd7bff343f7d  rails-2.3.16.gem
+</code></p>
+
+<p>&lt;3&lt;3&lt;3</p>
+
+<!-- End Post -->
+          </section></div>
+          <div class="entry-footer footer"><footer>
+            <p>
+
+              <span class="categories">Posted in
+
+
+                <a href="/releases/" rel="category tag">Releases</a>
+
+
+              </span> |
+
+              <a href="/2013/1/28/Rails-3-0-20-and-2-3-16-have-been-released/#disqus_thread" data-disqus-identifier="/2013/1/28/Rails-3-0-20-and-2-3-16-have-been-released/">Comments</a>
+            </p>
+          </footer></div>
+        </article></div>
+
+
+        <div class="hentry article"><article>
+          <div class="entry-header header"><header>
+            <h2 class="entry-title">
+              <a href="/2013/1/8/Rails-3-2-11-3-1-10-3-0-19-and-2-3-15-have-been-released/" rel="bookmark">[SEC][ANN] Rails 3.2.11, 3.1.10, 3.0.19, and 2.3.15 have been released!</a>
+            </h2>
+            <p class="entry-meta">
+              Posted by <span class="vcard"><span class="fn">tenderlove</span></span>,
+              <span class="published" title="Tue Jan 08 00:00:00 -0800 2013">January 8, 2013 @ 12:00 am</span>
+            </p>
+          </header></div>
+          <div class="entry-content section"><section>
+<!-- Begin Post -->
+<p>Hi everybody.</p>
+
+<p>I'd like to announce that 3.2.11, 3.1.10, 3.0.19, and 2.3.15 have been released.  These releases contain two <strong>extremely critical security fixes</strong> so please update <strong>IMMEDIATELY</strong>.</p>
+
+<p>You can read about the security fixes by following these links:</p>
+
+<ul>
+<li><a href="https://groups.google.com/group/rubyonrails-security/browse_thread/thread/b75585bae4326af2">CVE-2013-0155</a></li>
+<li><a href="https://groups.google.com/group/rubyonrails-security/browse_thread/thread/eb56e482f9d21934">CVE-2013-0156</a></li>
+</ul>
+
+
+<p>In order to ease upgrading, the only major changes in each gem are the security fixes.  To see the detailed changes for each version, follow the links below:</p>
+
+<ul>
+<li><a href="https://github.com/rails/rails/compare/v3.2.10...v3.2.11">Changes in 3.2.11</a></li>
+<li><a href="https://github.com/rails/rails/compare/v3.1.9...v3.1.10">Changes in 3.1.10</a></li>
+<li><a href="https://github.com/rails/rails/compare/v3.0.18...v3.0.19">Changes in 3.0.19</a></li>
+<li><a href="https://github.com/rails/rails/compare/v2.3.14...v2.3.15">Changes in 2.3.15</a></li>
+</ul>
+
+
+<p>Thanks to the people who responsibly reported these security issues.</p>
+
+<p>Here are the SHA-1 checksums for each gem:</p>
+
+<h3>3.2.11</h3>
+
+<p><code>
+[aaron@higgins dist]$ shasum *3.2.11*
+933cd2821b30cdff4a2e0b5cc63f4d2c6b29affe  actionmailer-3.2.11.gem
+54731c51b55bf0215392971b982139775c0bfa2b  actionpack-3.2.11.gem
+5ccde66568d8051405c01063f1afaed13bd01082  activemodel-3.2.11.gem
+f360c17968486479b0a4207e7eccbe379186a9d2  activerecord-3.2.11.gem
+c61ff513be8a8aef898d2e5c4c9508d60727c556  activeresource-3.2.11.gem
+41a4e8c382594283026d977554c1e18233198ca8  activesupport-3.2.11.gem
+8fa6d19a0daea910e39a0911b2240c2a7b630fb1  rails-3.2.11.gem
+ffaec7c3e5211283108cf5afab8e79be76090a0d  railties-3.2.11.gem
+</code></p>
+
+<h3>3.1.10</h3>
+
+<p><code>
+[aaron@higgins dist]$ shasum *3.1.10*
+e3dce983ebd0ee8970c5ddab46b05ac432c8b029  actionmailer-3.1.10.gem
+84e536e732255e5dfd3d8053c10ed98dcb45ac80  actionpack-3.1.10.gem
+db1a3ac836d988dc1fc7c64d29ded7a277047419  activemodel-3.1.10.gem
+ea3ad8514265516033009d97efc1fe7b3d2b09ed  activerecord-3.1.10.gem
+0843646278b42d9ca796e157295851fd9938fe96  activeresource-3.1.10.gem
+b55ef7f66de0bb79fcfa480e8df3696bffbff7f8  activesupport-3.1.10.gem
+4ed7d159191faa1a469cd9efdf9e6a4cdc907195  rails-3.1.10.gem
+f288986df0fabd2035569199ea3d5f1f46a56db7  railties-3.1.10.gem
+</code></p>
+
+<h3>3.0.19</h3>
+
+<p><code>
+[aaron@higgins dist]$ shasum *3.0.19*
+f8376f907b2230ac75882e1a3cfa8d5cdd6df800  actionmailer-3.0.19.gem
+68b319d86530a5d4291e13d6ab5f357a1e52c05b  actionpack-3.0.19.gem
+f0fb577ea7446ff229752bc799ca86dd53aa9cda  activemodel-3.0.19.gem
+c12324d78b22697d426148010901f79b366c0502  activerecord-3.0.19.gem
+8dbc7c8c80f5baeec823966aa225b23f4c2a799c  activeresource-3.0.19.gem
+b525b778f82f844a56ff993211825b9811bf82bd  activesupport-3.0.19.gem
+c2beb0711d28a07cb2747c83962c7d453951e2d6  rails-3.0.19.gem
+de286ada16b3fc76129767dc612926e0b4f71dda  railties-3.0.19.gem
+</code></p>
+
+<h3>2.3.15</h3>
+
+<p><code>
+[aaron@higgins dist]$ shasum *2.3.15*
+5ce45c70851dd534a72814620a6e57b42d360b88  actionmailer-2.3.15.gem
+fa174c40f17fa5db952ba3a7c95a4ab0b5467594  actionpack-2.3.15.gem
+e7391c92c82f974be7e65765819824e87bdb3cfd  activerecord-2.3.15.gem
+4644b7a27993f7860d9e176f51dfa52d8f029ec9  activeresource-2.3.15.gem
+64843e3676c20a49060605546dfcdddaef2ea1a8  activesupport-2.3.15.gem
+c8c0c49c63ca0f9acc3e0967b38d92b1c0b115af  rails-2.3.15.gem
+</code></p>
+
+<p>&lt;3&lt;3&lt;3</p>
+
+<!-- End Post -->
+          </section></div>
+          <div class="entry-footer footer"><footer>
+            <p>
+
+              <span class="categories">Posted in
+
+
+                <a href="/releases/" rel="category tag">Releases</a>
+
+
+              </span> |
+
+              <a href="/2013/1/8/Rails-3-2-11-3-1-10-3-0-19-and-2-3-15-have-been-released/#disqus_thread" data-disqus-identifier="/2013/1/8/Rails-3-2-11-3-1-10-3-0-19-and-2-3-15-have-been-released/">Comments</a>
+            </p>
+          </footer></div>
+        </article></div>
+
+
+        <div class="hentry article"><article>
+          <div class="entry-header header"><header>
+            <h2 class="entry-title">
+              <a href="/2013/1/2/Rails-3-2-10--3-1-9--and-3-0-18-have-been-released/" rel="bookmark">[ANN] Rails 3.2.10, 3.1.9, and 3.0.18 have been released!</a>
+            </h2>
+            <p class="entry-meta">
+              Posted by <span class="vcard"><span class="fn">tenderlove</span></span>,
+              <span class="published" title="Wed Jan 02 00:00:00 -0800 2013">January 2, 2013 @ 12:00 am</span>
+            </p>
+          </header></div>
+          <div class="entry-content section"><section>
+<!-- Begin Post -->
+<p>Rails versions 3.2.10, 3.1.9, and 3.0.18 have been released.  These releases contain an important security fix.  It is recommended that <strong>all users upgrade immediately</strong>.</p>
+
+<p>The security identifier is CVE-2012-5664, and you can read about the issue <a href="https://groups.google.com/group/rubyonrails-security/browse_thread/thread/c2353369fea8c53">here</a>.</p>
+
+<p>For other change in each particular release, please see the CHANGELOG corresponding to that version.  For all commits in each release, please follow the links below:</p>
+
+<ul>
+<li><a href="https://github.com/rails/rails/compare/v3.2.9...v3.2.10">Changes in 3.2.10</a></li>
+<li><a href="https://github.com/rails/rails/compare/v3.1.8...v3.1.9">Changes in 3.1.9</a></li>
+<li><a href="https://github.com/rails/rails/compare/v3.0.17...v3.0.18">Changes in 3.0.18</a></li>
+</ul>
+
+
+<p>We're sorry to drop a release like this so close to the holidays but regrettably the exploit has already been publicly disclosed and we don't feel we can delay the release.</p>
+
+<p>To that end, we've minimized the number of changes in each release so that upgrading should be as smooth as possible.</p>
+
+<p>Happy Holidays!</p>
+
+<p>&lt;3&lt;3&lt;3</p>
+
+<!-- End Post -->
+          </section></div>
+          <div class="entry-footer footer"><footer>
+            <p>
+
+              <span class="categories">Posted in
+
+
+                <a href="/releases/" rel="category tag">Releases</a>
+
+
+              </span> |
+
+              <a href="/2013/1/2/Rails-3-2-10--3-1-9--and-3-0-18-have-been-released/#disqus_thread" data-disqus-identifier="/2013/1/2/Rails-3-2-10--3-1-9--and-3-0-18-have-been-released/">Comments</a>
+            </p>
+          </footer></div>
+        </article></div>
+
+
+        <div class="hentry article"><article>
+          <div class="entry-header header"><header>
+            <h2 class="entry-title">
+              <a href="/2012/12/28/what-is-new-in-rails-contributors/" rel="bookmark">What Is New in Rails Contributors</a>
+            </h2>
+            <p class="entry-meta">
+              Posted by <span class="vcard"><span class="fn">fxn</span></span>,
+              <span class="published" title="Fri Dec 28 00:00:00 -0800 2012">December 28, 2012 @ 12:00 am</span>
+            </p>
+          </header></div>
+          <div class="entry-content section"><section>
+<!-- Begin Post -->
+<h2>What is Rails Contributors?</h2>
+
+<p><a href="http://contributors.rubyonrails.org">Rails Contributors</a> is a website that keeps track of all contributions made to the Ruby on Rails code base.</p>
+
+<p>The application tries hard to give credit as accurately as possible, which is something you cannot do with <code>git log</code>. For example, according to Git the author of <a href="https://github.com/rails/rails/commit/ef91cddb48d1fa8d1a34e8e5ac68fe9eb56c160f">this commit</a> is "@schneems and @mattt", but you do not want to credit "@schneems and @mattt" right? Rails Contributors automatically splits the string, applies <a href="https://github.com/fxn/rails-contributors/blob/master/app/models/names_manager.rb">mappings</a>, and gives credit both to Richard Schneeman, and Mattt Thompson.</p>
+
+<p>Known typos, emails, and handles are associated to a canonical name to have everything aggregated per contributor rather than scattered in several unrelated listings. Heuristics also capture contributors from commit messages, and even from CHANGELOGs in the diff of commits imported from Subversion.</p>
+
+<p>The purpose of all this work is to give credit, provide visibility to your contributions to Rails, and last but not least, to say thank you.</p>
+
+<h2>What Is New?</h2>
+
+<p>A new version of the website has just been published, changes are:</p>
+
+<ul>
+<li><p>More mappings: the application knows about <a href="https://github.com/fxn/rails-contributors/blob/master/app/models/names_manager.rb">more mappings and false positives</a>.</p></li>
+<li><p>New page for releases: There is a <a href="http://contributors.rubyonrails.org/releases">new shiny page for releases</a> where you can see who contributed what in any of them. The breakdown is approximate for old releases, since all we have from Subversion is the Git history. Commits are classified with <code>git rev-list</code>.</p></li>
+<li><p>Better Unicode handling: Some names with non-ASCII characters came up from Git using different UTF8 byte representations. The application applies now NFC normalization thoroughly to address that.</p></li>
+<li><p>Robust commit import: about one thousand commits were missing in the previous version because they were unreachable from the branch tips due to rarities in the git history. The commit importer is now more aggressive looking for commits.</p></li>
+<li><p>Credit for Rails core in Subversion commits: Rails used Subversion in about its first four years. Subversion does not distinguish author and committer, you only have the committer. If the application determines that the author is not the committer using its heuristics, the committer now gets also credited. This is fair with what happens nowadays, where the committer gets credited by his work on a pull request via the merge commit.</p></li>
+<li><p>Internal changes: A lot of work has no external visibility indeed, you know. We migrated from <a href="https://github.com/mojombo/grit">grit</a> to <a href="https://github.com/libgit2/rugged">rugged</a>, and there were significant refactors and speedups.</p></li>
+</ul>
+
+
+<p>Enjoy!</p>
+
+<!-- End Post -->
+          </section></div>
+          <div class="entry-footer footer"><footer>
+            <p>
+
+              <span class="categories">Posted in
+
+
+                <a href="/praise/" rel="category tag">Praise</a>
+
+
+              </span> |
+
+              <a href="/2012/12/28/what-is-new-in-rails-contributors/#disqus_thread" data-disqus-identifier="/2012/12/28/what-is-new-in-rails-contributors/">Comments</a>
+            </p>
+          </footer></div>
+        </article></div>
+
+
+        <div class="hentry article"><article>
+          <div class="entry-header header"><header>
+            <h2 class="entry-title">
+              <a href="/2012/11/21/the-people-behind-rails-4/" rel="bookmark">The People Behind Rails 4</a>
+            </h2>
+            <p class="entry-meta">
+              Posted by <span class="vcard"><span class="fn">fxn</span></span>,
+              <span class="published" title="Wed Nov 21 00:00:00 -0800 2012">November 21, 2012 @ 12:00 am</span>
+            </p>
+          </header></div>
+          <div class="entry-content section"><section>
+<!-- Begin Post -->
+<p>Rails 4 is coming along nicely <a href="http://blog.wyeworks.com/2012/11/13/rails-4-compilation-links/">with a ton of new stuff</a>, but this major release would have not been possible without the help of some people whose contributions have been outstanding. We want to dedicate this post to them, to show our appreciation and recognition for their extraordinary work:</p>
+
+<p><a href="http://contributors.rubyonrails.org/contributors/arun-agrawal/commits">Arun Agrawal</a> has been helping with some housekeeping tasks. He puts a lot of effort to remove warnings, fix broken builds, remove some unneeded code, and ensure Rails works well with JRuby.</p>
+
+<p><a href="http://contributors.rubyonrails.org/contributors/vijay-dev/commits">Vijay Dev</a> leads the docrails front. He reviews documentation patches, which is a lot of work, and cross-merges docrails and Rails master periodically.</p>
+
+<p><a href="http://contributors.rubyonrails.org/contributors/guillermo-iguaran/commits">Guillermo Iguaran</a> is a regular active core contributor. Recently he has extracted old-style mass-assignment protection to the new <a href="https://github.com/rails/protected_attributes">protected_attributes gem</a>, and is helping with the assets pipeline related projects.</p>
+
+<p><a href="http://contributors.rubyonrails.org/contributors/kennyj/commits">Toshinori Kajihara (kennyj)</a> helps to fix and give attention to Active Record issues, which are the most part of Rails open issues.</p>
+
+<p><a href="http://contributors.rubyonrails.org/contributors/steve-klabnik/commits">Steve Klabnik</a> is working on Rails issues like crazy. I mean, GitHub notifications generated by his activity flood your inbox. Giving sensible feedback, dynamizeing threads, and closing issues. He has been key in halving the number of open issues.</p>
+
+<p><a href="http://contributors.rubyonrails.org/contributors/francesco-rodriguez/commits">Francesco Rodríguez</a> has mainly contributed to the documentation, and also helps with tickets and code. Francesco has extracted page and action caching out to gems.</p>
+
+<p><a href="http://contributors.rubyonrails.org/contributors/piotr-sarnacki/commits">Piotr Sarnacki</a> is an old-timer. Piotr helps constantly in the project and has done a remarkable work on Rails engines and Action Pack.</p>
+
+<p><a href="http://contributors.rubyonrails.org/contributors/prem-sichanugrist/commits">Prem Sichanugrist</a> has been helping regularly since the Rails 3 days in many ways. He recently performed the daunting task of converting all Rails guides from Textile to Markdown.</p>
+
+<p><a href="http://contributors.rubyonrails.org/contributors/carlos-antonio-da-silva/commits">Carlos Antonio da Silva</a> is among the most prolific Rails committers. He contributes in all fronts, code, docs, issues, discussions, etc.</p>
+
+<p><a href="http://contributors.rubyonrails.org/contributors/andrew-white/commits">Andrew White</a> has also been helping regularly for a couple of years or so. He is a solid contributor in several areas and in particular knows routing very well.</p>
+
+<p>:metal:</p>
+
+<!-- End Post -->
+          </section></div>
+          <div class="entry-footer footer"><footer>
+            <p>
+
+              <span class="categories">Posted in
+
+
+                <a href="/praise/" rel="category tag">Praise</a>
+
+
+              </span> |
+
+              <a href="/2012/11/21/the-people-behind-rails-4/#disqus_thread" data-disqus-identifier="/2012/11/21/the-people-behind-rails-4/">Comments</a>
+            </p>
+          </footer></div>
+        </article></div>
+
+
+        <div class="hentry article"><article>
+          <div class="entry-header header"><header>
+            <h2 class="entry-title">
+              <a href="/2012/11/12/ann-rails-3-2-9-has-been-released/" rel="bookmark">Rails 3.2.9 has been released!</a>
+            </h2>
+            <p class="entry-meta">
+              Posted by <span class="vcard"><span class="fn">spastorino</span></span>,
+              <span class="published" title="Mon Nov 12 00:00:00 -0800 2012">November 12, 2012 @ 12:00 am</span>
+            </p>
+          </header></div>
+          <div class="entry-content section"><section>
+<!-- Begin Post -->
+<p>Hi everyone,</p>
+
+<p>Rails 3.2.9 has been released without new changes since 3.2.9.rc3.</p>
+
+<h2>IMPORTANT!</h2>
+
+<p>A DoS attack was recently found in Ruby that uses specially-crafted input to dramatically reduce the performance of hashes, thus using up lots of CPU time. Rails applications may be vulnerable to an attacker sending a specially-crafted HTTP request to exploit this.</p>
+
+<p>A good way to limit the effectiveness of such attacks is to configure your frontend servers to limit the size of the HTTP request line, headers and body. Nginx does this by default. Apache can be configured to do this by setting the LimitRequestBody directive.</p>
+
+<p>In addition, all Ruby 1.9 users are recommended to upgrade to <a href="http://www.ruby-lang.org/en/news/2012/11/09/ruby-1-9-3-p327-is-released/">ruby-1.9.3 patchlevel 327</a> to get this security fix.</p>
+
+<h2>CHANGES since 3.2.8</h2>
+
+<p><em>Action Mailer</em></p>
+
+<ul>
+<li><p>Do not render views when mail() isn't called.
+Fix #7761</p>
+
+<p><em>Yves Senn</em></p></li>
+</ul>
+
+
+<p><em>Action Pack</em></p>
+
+<ul>
+<li><p>Lock sprockets to 2.2.x
+REASON: We had some pending fixes in sprockets and sass-rails to make possible to use sprockets version > 2.2. We will do a more conservative sprockets upgrade for this release.
+In a next release we can relax the dependency again.
+See #8099 for more information.</p>
+
+<p><em>Guillermo Iguaran</em></p></li>
+<li><p>Clear url helpers when reloading routes.</p>
+
+<p><em>Santiago Pastorino</em></p></li>
+<li><p>Revert the shorthand routes scoped with <code>:module</code> option fix
+This added a regression since it is changing the URL mapping.
+This makes the stable release backward compatible.</p>
+
+<p><em>Rafael Mendonça França</em></p></li>
+<li><p>Revert the <code>assert_template</code> fix to not pass with ever string that matches the template name.
+This added a regression since people were relying on this buggy behavior.
+This will introduce back #3849 but this stable release will be backward compatible.
+Fixes #8068.</p>
+
+<p><em>Rafael Mendonça França</em></p></li>
+<li><p>Revert the rename of internal variable on ActionController::TemplateAssertions to prevent
+naming collisions. This added a regression related with shoulda-matchers, since it is
+expecting the <a href="https://github.com/thoughtbot/shoulda-matchers/blob/9e1188eea68c47d9a56ce6280e45027da6187ab1/lib/shoulda/matchers/action_controller/render_with_layout_matcher.rb#L74">instance variable @layouts</a>.
+This will introduce back #7459 but this stable release will be backward compatible.
+Fixes #8068.</p>
+
+<p><em>Rafael Mendonça França</em></p></li>
+<li><p>Accept :remote as symbolic option for <code>link_to</code> helper. <em>Riley Lynch</em></p></li>
+<li><p>Warn when the <code>:locals</code> option is passed to <code>assert_template</code> outside of a view test case
+Fix #3415</p>
+
+<p><em>Yves Senn</em></p></li>
+<li><p>Rename internal variables on ActionController::TemplateAssertions to prevent
+naming collisions. @partials, @templates and @layouts are now prefixed with an underscore.
+Fix #7459</p>
+
+<p><em>Yves Senn</em></p></li>
+<li><p><code>resource</code> and <code>resources</code> don't modify the passed options hash
+Fix #7777</p>
+
+<p><em>Yves Senn</em></p></li>
+<li><p>Precompiled assets include aliases from foo.js to foo/index.js and vice versa.</p>
+
+<pre><code># Precompiles phone-&lt;digest&gt;.css and aliases phone/index.css to phone.css.
+config.assets.precompile = [ 'phone.css' ]
+
+# Precompiles phone/index-&lt;digest&gt;.css and aliases phone.css to phone/index.css.
+config.assets.precompile = [ 'phone/index.css' ]
+
+# Both of these work with either precompile thanks to their aliases.
+&lt;%= stylesheet_link_tag 'phone', media: 'all' %&gt;
+&lt;%= stylesheet_link_tag 'phone/index', media: 'all' %&gt;
+</code></pre>
+
+<p><em>Jeremy Kemper</em></p></li>
+<li><p><code>assert_template</code> is no more passing with what ever string that matches
+with the template name.</p>
+
+<p>Before when we have a template <code>/layout/hello.html.erb</code>, <code>assert_template</code>
+was passing with any string that matches. This behavior allowed false
+positive like:</p>
+
+<pre><code>assert_template "layout"
+assert_template "out/hello"
+</code></pre>
+
+<p>Now it only passes with:</p>
+
+<pre><code>assert_template "layout/hello"
+assert_template "hello"
+</code></pre>
+
+<p>Fixes #3849.</p>
+
+<p><em>Hugolnx</em></p></li>
+<li><p>Handle <code>ActionDispatch::Http::UploadedFile</code> like <code>Rack::Test::UploadedFile</code>, don't call to_param on it. Since
+<code>Rack::Test::UploadedFile</code> isn't API compatible this is needed to test file uploads that rely on <code>tempfile</code>
+being available.</p>
+
+<p><em>Tim Vandecasteele</em></p></li>
+<li><p>Fixed a bug with shorthand routes scoped with the <code>:module</code> option not
+adding the module to the controller as described in issue #6497.
+This should now work properly:</p>
+
+<pre><code>scope :module =&gt; "engine" do
+  get "api/version" # routes to engine/api#version
+end
+</code></pre>
+
+<p><em>Luiz Felipe Garcia Pereira</em></p></li>
+<li><p>Respect <code>config.digest = false</code> for <code>asset_path</code></p>
+
+<p>Previously, the <code>asset_path</code> internals only respected the <code>:digest</code>
+option, but ignored the global config setting. This meant that
+<code>config.digest = false</code> could not be used in conjunction with
+<code>config.compile = false</code> this corrects the behavior.</p>
+
+<p><em>Peter Wagenet</em></p></li>
+<li><p>Fix #7646, the log now displays the correct status code when an exception is raised.</p>
+
+<p><em>Yves Senn</em></p></li>
+<li><p>Fix handling of date selects when using both disabled and discard options.
+Fixes #7431.</p>
+
+<p><em>Vasiliy Ermolovich</em></p></li>
+<li><p>Fix select_tag when option_tags is nil.
+Fixes #7404.</p>
+
+<p><em>Sandeep Ravichandran</em></p></li>
+<li><p><code>javascript_include_tag :all</code> will now not include <code>application.js</code> if the file does not exists. <em>Prem Sichanugrist</em></p></li>
+<li><p>Support cookie jar options (e.g., domain :all) for all session stores.
+Fixes GH#3047, GH#2483.</p>
+
+<p><em>Ravil Bayramgalin</em></p></li>
+<li><p>Performance Improvement to send_file: Avoid having to pass an open file handle as the response body. Rack::Sendfile
+will usually intercept the response and just uses the path directly, so no reason to open the file. This performance
+improvement also resolves an issue with jRuby encodings, and is the reason for the backport, see issue #6844.</p>
+
+<p><em>Jeremy Kemper &amp; Erich Menge</em></p></li>
+</ul>
+
+
+<p><em>Active Model</em></p>
+
+<ul>
+<li><p>Due to a change in builder, nil values and empty strings now generates
+closed tags, so instead of this:</p>
+
+<pre><code>&lt;pseudonyms nil=\"true\"&gt;&lt;/pseudonyms&gt;
+</code></pre>
+
+<p>It generates this:</p>
+
+<pre><code>&lt;pseudonyms nil=\"true\"/&gt;
+</code></pre>
+
+<p><em>Carlos Antonio da Silva</em></p></li>
+</ul>
+
+
+<p><em>Active Record</em></p>
+
+<ul>
+<li><p>Fix issue with collection associations calling first(n)/last(n) and attempting
+to set the inverse association when <code>:inverse_of</code> was used. Fixes #8087.</p>
+
+<p><em>Carlos Antonio da Silva</em></p></li>
+<li><p>Fix ActiveRecord#update_column return value.</p>
+
+<p><em>Aliaxandr</em></p></li>
+<li><p>Fix bug when Column is trying to type cast boolean values to integer.
+Fixes #8067.</p>
+
+<p><em>Rafael Mendonça França</em></p></li>
+<li><p>Fix bug where <code>rake db:test:prepare</code> tries to load the structure.sql into development database.
+Fixes #8032.</p>
+
+<p><em>Grace Liu + Rafael Mendonça França</em></p></li>
+<li><p>Fixed support for <code>DATABASE_URL</code> environment variable for rake db tasks. <em>Grace Liu</em></p></li>
+<li><p>Fix bug where <code>update_columns</code> and <code>update_column</code> would not let you update the primary key column.</p>
+
+<p><em>Henrik Nyh</em></p></li>
+<li><p>Decode URI encoded attributes on database connection URLs.</p>
+
+<p><em>Shawn Veader</em></p></li>
+<li><p>Fix AR#dup to nullify the validation errors in the dup'ed object. Previously the original
+and the dup'ed object shared the same errors.</p>
+
+<ul>
+<li>Christian Seiler*</li>
+</ul>
+</li>
+<li><p>Synchronize around deleting from the reserved connections hash.
+Fixes #7955</p></li>
+<li><p>PostgreSQL adapter correctly fetches default values when using
+multiple schemas and domains in a db. Fixes #7914</p>
+
+<p><em>Arturo Pie</em></p></li>
+<li><p>Fix deprecation notice when loading a collection association that
+selects columns from other tables, if a new record was previously
+built using that association.</p>
+
+<p><em>Ernie Miller</em></p></li>
+<li><p>The postgres adapter now supports tables with capital letters.
+Fix #5920</p>
+
+<p><em>Yves Senn</em></p></li>
+<li><p><code>CollectionAssociation#count</code> returns <code>0</code> without querying if the
+parent record is not persisted.</p>
+
+<p>Before:</p>
+
+<pre><code>person.pets.count
+# SELECT COUNT(*) FROM "pets" WHERE "pets"."person_id" IS NULL
+# =&gt; 0
+</code></pre>
+
+<p>After:</p>
+
+<pre><code>person.pets.count
+# fires without sql query
+# =&gt; 0
+</code></pre>
+
+<p><em>Francesco Rodriguez</em></p></li>
+<li><p>Fix <code>reset_counters</code> crashing on <code>has_many :through</code> associations.
+Fix #7822.</p>
+
+<p><em>lulalala</em></p></li>
+<li><p>ConnectionPool recognizes checkout_timeout spec key as taking
+precedence over legacy wait_timeout spec key, can be used to avoid
+conflict with mysql2 use of wait_timeout.  Closes #7684.</p>
+
+<p><em>jrochkind</em></p></li>
+<li><p>Rename field_changed? to _field_changed? so that users can create a field named field</p>
+
+<p><em>Akira Matsuda</em>, backported by <em>Steve Klabnik</em></p></li>
+<li><p>Fix creation of through association models when using <code>collection=[]</code>
+on a <code>has_many :through</code> association from an unsaved model.
+Fix #7661.</p>
+
+<p><em>Ernie Miller</em></p></li>
+<li><p>Explain only normal CRUD sql (select / update / insert / delete).
+Fix problem that explains unexplainable sql. Closes #7544 #6458.</p>
+
+<p><em>kennyj</em></p></li>
+<li><p>Backport test coverage to ensure that PostgreSQL auto-reconnect functionality
+remains healthy.</p>
+
+<p><em>Steve Jorgensen</em></p></li>
+<li><p>Use config['encoding'] instead of config['charset'] when executing
+databases.rake in the mysql/mysql2. A correct option for a database.yml
+is 'encoding'.</p>
+
+<p><em>kennyj</em></p></li>
+<li><p>Fix ConnectionAdapters::Column.type_cast_code integer conversion,
+to always convert values to integer calling #to_i. Fixes #7509.</p>
+
+<p><em>Thiago Pradi</em></p></li>
+<li><p>Fix time column type casting for invalid time string values to correctly return nil.</p>
+
+<p><em>Adam Meehan</em></p></li>
+<li><p>Fix <code>becomes</code> when using a configured <code>inheritance_column</code>.</p>
+
+<p><em>Yves Senn</em></p></li>
+<li><p>Fix <code>reset_counters</code> when there are multiple <code>belongs_to</code> association with the
+same foreign key and one of them have a counter cache.
+Fixes #5200.</p>
+
+<p><em>Dave Desrochers</em></p></li>
+<li><p>Round usec when comparing timestamp attributes in the dirty tracking.
+Fixes #6975.</p>
+
+<p><em>kennyj</em></p></li>
+<li><p>Use inversed parent for first and last child of has_many association.</p>
+
+<p><em>Ravil Bayramgalin</em></p></li>
+<li><p>Fix Column.microseconds and Column.fast_string_to_date to avoid converting
+timestamp seconds to a float, since it occasionally results in inaccuracies
+with microsecond-precision times. Fixes #7352.</p>
+
+<p><em>Ari Pollak</em></p></li>
+<li><p>Fix <code>increment!</code>, <code>decrement!</code>, <code>toggle!</code> that was skipping callbacks.
+Fixes #7306.</p>
+
+<p><em>Rafael Mendonça França</em></p></li>
+<li><p>Fix AR#create to return an unsaved record when AR::RecordInvalid is
+raised. Fixes #3217.</p>
+
+<p><em>Dave Yeu</em></p></li>
+<li><p>Remove unnecessary transaction when assigning has_one associations with a nil or equal value.
+Fix #7191.</p>
+
+<p><em>kennyj</em></p></li>
+<li><p>Allow store to work with an empty column.
+Fix #4840.</p>
+
+<p><em>Jeremy Walker</em></p></li>
+<li><p>Remove prepared statement from system query in postgresql adapter.
+Fix #5872.</p>
+
+<p><em>Ivan Evtuhovich</em></p></li>
+<li><p>Make sure <code>:environment</code> task is executed before <code>db:schema:load</code> or <code>db:structure:load</code>
+Fixes #4772.</p>
+
+<p><em>Seamus Abshere</em></p></li>
+</ul>
+
+
+<p><em>Active Resource</em></p>
+
+<ul>
+<li>No changes</li>
+</ul>
+
+
+<p><em>Active Support</em></p>
+
+<ul>
+<li><p>Add logger.push_tags and .pop_tags to complement logger.tagged:</p>
+
+<pre><code>class Job
+  def before
+    Rails.logger.push_tags :jobs, self.class.name
+  end
+
+  def after
+    Rails.logger.pop_tags 2
+  end
+end
+</code></pre>
+
+<p><em>Jeremy Kemper</em></p></li>
+<li><p>Add %:z and %::z format string support to ActiveSupport::TimeWithZone#strftime. [fixes #6962] <em>kennyj</em></p></li>
+</ul>
+
+
+<p><em>Railties</em></p>
+
+<ul>
+<li><p>Revert "Respect children paths filter settings"
+This reverts commit 53778ec2d716f860646fd43957fd53c8db4da2fe.
+Closes #8146</p>
+
+<p><em>Santiago Pastorino</em></p></li>
+<li><p>Don't eager-load app/assets and app/views <em>Elia Schito</em></p></li>
+<li><p>Update supported ruby versions error message in ruby_version_check.rb <em>Lihan Li</em></p></li>
+</ul>
+
+
+<h2>SHA-1</h2>
+
+<ul>
+<li>0b460ffdac39cee7f3321bb430e212c2a42b5dec  actionmailer-3.2.9.gem</li>
+<li>8c3657514132ae21d2da2abcad896d8f37c4f1ca  actionpack-3.2.9.gem</li>
+<li>3e95d49bca396663d0cc4e94056f2d4e20923200  activemodel-3.2.9.gem</li>
+<li>92f9f3aad6ae63786cc916baedda46801b423aab  activerecord-3.2.9.gem</li>
+<li>fff833587b753eb0d17e7102f635e769138113f5  activeresource-3.2.9.gem</li>
+<li>0989647ca08bb01bf3ab9490ea9b623f4deb065d  activesupport-3.2.9.gem</li>
+<li>b2172077c391721bc008723fec92c986c6881e62  rails-3.2.9.gem</li>
+<li>bd3e0418546e142cf6afb7fc0e0240545ec96e5c  railties-3.2.9.gem</li>
+</ul>
+
+
+<p>You can find a list of changes between v3.2.8 and v3.2.9 <a href="https://github.com/rails/rails/compare/v3.2.8...v3.2.9">here</a></p>
+
+<p>Thanks to everyone!</p>
+
+<!-- End Post -->
+          </section></div>
+          <div class="entry-footer footer"><footer>
+            <p>
+
+              <a href="/2012/11/12/ann-rails-3-2-9-has-been-released/#disqus_thread" data-disqus-identifier="/2012/11/12/ann-rails-3-2-9-has-been-released/">Comments</a>
+            </p>
+          </footer></div>
+        </article></div>
+
+
+        <div class="hentry article"><article>
+          <div class="entry-header header"><header>
+            <h2 class="entry-title">
+              <a href="/2012/11/9/ann-rails-3-2-9-rc3-has-been-released/" rel="bookmark">Rails 3.2.9.rc3 has been released!</a>
+            </h2>
+            <p class="entry-meta">
+              Posted by <span class="vcard"><span class="fn">spastorino</span></span>,
+              <span class="published" title="Fri Nov 09 00:00:00 -0800 2012">November 9, 2012 @ 12:00 am</span>
+            </p>
+          </header></div>
+          <div class="entry-content section"><section>
+<!-- Begin Post -->
+<p>Hi everyone,</p>
+
+<p>Rails 3.2.9.rc3 has been released. If no regressions are found I will
+release 3.2.9 final this Monday 12th. If you find a regression open an
+issue on github and mention me on it, mail me or tweet me, whatever but
+let me know :).</p>
+
+<h2>CHANGES since 3.2.9.rc2</h2>
+
+<p><em>Action Mailer</em></p>
+
+<ul>
+<li>No changes</li>
+</ul>
+
+
+<p><em>Action Pack</em></p>
+
+<ul>
+<li><p>Lock sprockets to 2.2.x
+REASON: We had some pending fixes in sprockets and sass-rails to make possible to use sprockets version > 2.2. We will do a more conservative sprockets upgrade for this release.
+In a next release we can relax the dependency again.
+See #8099 for more information.</p>
+
+<p><em>Guillermo Iguaran</em></p></li>
+<li><p>Clear url helpers when reloading routes.</p>
+
+<p><em>Santiago Pastorino</em></p></li>
+<li><p>Revert the shorthand routes scoped with <code>:module</code> option fix
+This added a regression since it is changing the URL mapping.
+This makes the stable release backward compatible.</p>
+
+<p><em>Rafael Mendonça França</em></p></li>
+</ul>
+
+
+<p><em>Active Model</em></p>
+
+<ul>
+<li>No changes</li>
+</ul>
+
+
+<p><em>Active Record</em></p>
+
+<ul>
+<li>No changes</li>
+</ul>
+
+
+<p><em>Active Resource</em></p>
+
+<ul>
+<li>No changes</li>
+</ul>
+
+
+<p><em>Active Support</em></p>
+
+<ul>
+<li>No changes</li>
+</ul>
+
+
+<p><em>Railties</em></p>
+
+<ul>
+<li><p>Revert "Respect children paths filter settings"
+This reverts commit 53778ec2d716f860646fd43957fd53c8db4da2fe.
+Closes #8146</p>
+
+<p><em>Santiago Pastorino</em></p></li>
+</ul>
+
+
+<h2>SHA-1</h2>
+
+<ul>
+<li>e830dbe5d93f6ea6ed8e32ac75e5c5a5dd4bd0fa  actionmailer-3.2.9.rc3.gem</li>
+<li>f50456d082164447d149540a144515877cd714b2  actionpack-3.2.9.rc3.gem</li>
+<li>60eca0f399779799e8ea7a8be6b68f3101fe5fe4  activemodel-3.2.9.rc3.gem</li>
+<li>0cfec8581690d4a6072c686464ddd66e80ac094e  activerecord-3.2.9.rc3.gem</li>
+<li>5414975de41a1dfbb6dbd9cd74b53969c63f2e96  activeresource-3.2.9.rc3.gem</li>
+<li>e67293cf746f315cc631155c28d3891a3532bb74  activesupport-3.2.9.rc3.gem</li>
+<li>8e62b4db1249024bbb1ea3a87fee701a0cfa5674  rails-3.2.9.rc3.gem</li>
+<li>6b4365046903bcd60c99f81bd48cccd1b3faae39  railties-3.2.9.rc3.gem</li>
+</ul>
+
+
+<p>You can find a list of changes between v3.2.9.rc2 and v3.2.9.rc3 <a href="https://github.com/rails/rails/compare/v3.2.9.rc2...v3.2.9.rc3">here</a>
+and an exhaustive list of changes since v3.2.8 <a href="https://github.com/rails/rails/compare/v3.2.8...v3.2.9.rc3">here</a>.</p>
+
+<p>Thanks to everyone!</p>
+
+<!-- End Post -->
+          </section></div>
+          <div class="entry-footer footer"><footer>
+            <p>
+
+              <a href="/2012/11/9/ann-rails-3-2-9-rc3-has-been-released/#disqus_thread" data-disqus-identifier="/2012/11/9/ann-rails-3-2-9-rc3-has-been-released/">Comments</a>
+            </p>
+          </footer></div>
+        </article></div>
+
+
+        <div class="hentry article"><article>
+          <div class="entry-header header"><header>
+            <h2 class="entry-title">
+              <a href="/2012/11/1/ann-rails-3-2-9-rc2-has-been-released/" rel="bookmark">Rails 3.2.9.rc2 has been released!</a>
+            </h2>
+            <p class="entry-meta">
+              Posted by <span class="vcard"><span class="fn">spastorino</span></span>,
+              <span class="published" title="Thu Nov 01 00:00:00 -0700 2012">November 1, 2012 @ 12:00 am</span>
+            </p>
+          </header></div>
+          <div class="entry-content section"><section>
+<!-- Begin Post -->
+<p>Hi everyone,</p>
+
+<p>Rails 3.2.9.rc2 has been released. If no regressions are found I will
+release 3.2.9 final this Monday 5th. If you find a regression open an
+issue on github and mention me on it, mail me or tweet me, whatever but
+let me know :).</p>
+
+<h2>CHANGES since 3.2.9.rc1</h2>
+
+<p><em>Action Mailer</em></p>
+
+<ul>
+<li>No changes</li>
+</ul>
+
+
+<p><em>Action Pack</em></p>
+
+<ul>
+<li><p>Revert the <code>assert_template</code> fix to not pass with ever string that matches the template name.
+This added a regression since people were relying on this buggy behavior.
+This will introduce back #3849 but this stable release will be backward compatible.
+Fixes #8068.</p>
+
+<p><em>Rafael Mendonça França</em></p></li>
+<li><p>Revert the rename of internal variable on ActionController::TemplateAssertions to prevent
+naming collisions. This added a regression related with shoulda-matchers, since it is
+expecting the <a href="https://github.com/thoughtbot/shoulda-matchers/blob/9e1188eea68c47d9a56ce6280e45027da6187ab1/lib/shoulda/matchers/action_controller/render_with_layout_matcher.rb#L74">instance variable @layouts</a>.
+This will introduce back #7459 but this stable release will be backward compatible.
+Fixes #8068.</p>
+
+<p><em>Rafael Mendonça França</em></p></li>
+</ul>
+
+
+<p><em>Active Model</em></p>
+
+<ul>
+<li>No changes</li>
+</ul>
+
+
+<p><em>Active Record</em></p>
+
+<ul>
+<li><p>Fix issue with collection associations calling first(n)/last(n) and attempting
+to set the inverse association when <code>:inverse_of</code> was used. Fixes #8087.</p>
+
+<p><em>Carlos Antonio da Silva</em></p></li>
+<li><p>Fix ActiveRecord#update_column return value.</p>
+
+<p><em>Aliaxandr</em></p></li>
+<li><p>Fix bug when Column is trying to type cast boolean values to integer.
+Fixes #8067.</p>
+
+<p><em>Rafael Mendonça França</em></p></li>
+<li><p>Fix bug where <code>rake db:test:prepare</code> tries to load the structure.sql into development database.
+Fixes #8032.</p>
+
+<p><em>Grace Liu + Rafael Mendonça França</em></p></li>
+<li><p>Fixed support for <code>DATABASE_URL</code> environment variable for rake db tasks. <em>Grace Liu</em></p></li>
+</ul>
+
+
+<p><em>Active Resource</em></p>
+
+<ul>
+<li>No changes</li>
+</ul>
+
+
+<p><em>Active Support</em></p>
+
+<ul>
+<li>No changes</li>
+</ul>
+
+
+<p><em>Railties</em></p>
+
+<ul>
+<li>No changes</li>
+</ul>
+
+
+<h2>SHA-1</h2>
+
+<ul>
+<li>3aaf1d1e6057177988b646b86650c5cb5bf0e16e  actionmailer-3.2.9.rc2.gem</li>
+<li>c2ff861876ed951a33c01caacf2c17301319c7b1  actionpack-3.2.9.rc2.gem</li>
+<li>642da29371a877fda18fc69c51daa882429d609a  activemodel-3.2.9.rc2.gem</li>
+<li>f695caa3cac3b1d3f316bfd7d8f0ec69d61211ae  activerecord-3.2.9.rc2.gem</li>
+<li>baec057af0cf2a6146b000282b86cf6eb87989e2  activeresource-3.2.9.rc2.gem</li>
+<li>b15f9f13de730343448f35ed3b2f26af1ddd76e9  activesupport-3.2.9.rc2.gem</li>
+<li>40b5e77a5123545b4e4b6c2e993a30cdb3a38bae  rails-3.2.9.rc2.gem</li>
+<li>7921cbcd52302d31188537fb62fa5c75c2be5b2d  railties-3.2.9.rc2.gem</li>
+</ul>
+
+
+<p>You can find a list of changes between v3.2.9.rc1 and v3.2.9.rc2 <a href="https://github.com/rails/rails/compare/v3.2.9.rc1...v3.2.9.rc2">here</a>
+and an exhaustive list of changes since v3.2.8 <a href="https://github.com/rails/rails/compare/v3.2.8...v3.2.9.rc2">here</a>.</p>
+
+<p>Thanks to everyone!</p>
+
+<!-- End Post -->
+          </section></div>
+          <div class="entry-footer footer"><footer>
+            <p>
+
+              <a href="/2012/11/1/ann-rails-3-2-9-rc2-has-been-released/#disqus_thread" data-disqus-identifier="/2012/11/1/ann-rails-3-2-9-rc2-has-been-released/">Comments</a>
+            </p>
+          </footer></div>
+        </article></div>
+
+
+        <div class="hentry article"><article>
+          <div class="entry-header header"><header>
+            <h2 class="entry-title">
+              <a href="/2012/10/29/ann-rails-3-2-9-rc1-has-been-released/" rel="bookmark">Rails 3.2.9.rc1 has been released!</a>
+            </h2>
+            <p class="entry-meta">
+              Posted by <span class="vcard"><span class="fn">spastorino</span></span>,
+              <span class="published" title="Mon Oct 29 00:00:00 -0700 2012">October 29, 2012 @ 12:00 am</span>
+            </p>
+          </header></div>
+          <div class="entry-content section"><section>
+<!-- Begin Post -->
+<p>Hi everyone,</p>
+
+<p>Rails 3.2.9.rc1 has been released. If no regressions are found I will
+release 3.2.9 final this Thursday 1st. If you find a regression open an
+issue on github and mention me on it, mail me or tweet me, whatever but
+let me know :).</p>
+
+<h2>CHANGES since 3.2.8</h2>
+
+<p><em>Action Mailer</em></p>
+
+<ul>
+<li><p>Do not render views when mail() isn't called.
+Fix #7761</p>
+
+<p><em>Yves Senn</em></p></li>
+</ul>
+
+
+<p><em>Action Pack</em></p>
+
+<ul>
+<li><p>Accept :remote as symbolic option for <code>link_to</code> helper. <em>Riley Lynch</em></p></li>
+<li><p>Warn when the <code>:locals</code> option is passed to <code>assert_template</code> outside of a view test case
+Fix #3415</p>
+
+<p><em>Yves Senn</em></p></li>
+<li><p>Rename internal variables on ActionController::TemplateAssertions to prevent
+naming collisions. @partials, @templates and @layouts are now prefixed with an underscore.
+Fix #7459</p>
+
+<p><em>Yves Senn</em></p></li>
+<li><p><code>resource</code> and <code>resources</code> don't modify the passed options hash
+Fix #7777</p>
+
+<p><em>Yves Senn</em></p></li>
+<li><p>Precompiled assets include aliases from foo.js to foo/index.js and vice versa.</p>
+
+<pre><code># Precompiles phone-&lt;digest&gt;.css and aliases phone/index.css to phone.css.
+config.assets.precompile = [ 'phone.css' ]
+
+# Precompiles phone/index-&lt;digest&gt;.css and aliases phone.css to phone/index.css.
+config.assets.precompile = [ 'phone/index.css' ]
+
+# Both of these work with either precompile thanks to their aliases.
+&lt;%= stylesheet_link_tag 'phone', media: 'all' %&gt;
+&lt;%= stylesheet_link_tag 'phone/index', media: 'all' %&gt;
+</code></pre>
+
+<p><em>Jeremy Kemper</em></p></li>
+<li><p><code>assert_template</code> is no more passing with what ever string that matches
+with the template name.</p>
+
+<p>Before when we have a template <code>/layout/hello.html.erb</code>, <code>assert_template</code>
+was passing with any string that matches. This behavior allowed false
+positive like:</p>
+
+<pre><code>assert_template "layout"
+assert_template "out/hello"
+</code></pre>
+
+<p>Now it only passes with:</p>
+
+<pre><code>assert_template "layout/hello"
+assert_template "hello"
+</code></pre>
+
+<p>Fixes #3849.</p>
+
+<p><em>Hugolnx</em></p></li>
+<li><p>Handle <code>ActionDispatch::Http::UploadedFile</code> like <code>Rack::Test::UploadedFile</code>, don't call to_param on it. Since
+<code>Rack::Test::UploadedFile</code> isn't API compatible this is needed to test file uploads that rely on <code>tempfile</code>
+being available.</p>
+
+<p><em>Tim Vandecasteele</em></p></li>
+<li><p>Fixed a bug with shorthand routes scoped with the <code>:module</code> option not
+adding the module to the controller as described in issue #6497.
+This should now work properly:</p>
+
+<pre><code>scope :module =&gt; "engine" do
+  get "api/version" # routes to engine/api#version
+end
+</code></pre>
+
+<p><em>Luiz Felipe Garcia Pereira</em></p></li>
+<li><p>Respect <code>config.digest = false</code> for <code>asset_path</code></p>
+
+<p>Previously, the <code>asset_path</code> internals only respected the <code>:digest</code>
+option, but ignored the global config setting. This meant that
+<code>config.digest = false</code> could not be used in conjunction with
+<code>config.compile = false</code> this corrects the behavior.</p>
+
+<p><em>Peter Wagenet</em></p></li>
+<li><p>Fix #7646, the log now displays the correct status code when an exception is raised.</p>
+
+<p><em>Yves Senn</em></p></li>
+<li><p>Fix handling of date selects when using both disabled and discard options.
+Fixes #7431.</p>
+
+<p><em>Vasiliy Ermolovich</em></p></li>
+<li><p>Fix select_tag when option_tags is nil.
+Fixes #7404.</p>
+
+<p><em>Sandeep Ravichandran</em></p></li>
+<li><p><code>javascript_include_tag :all</code> will now not include <code>application.js</code> if the file does not exists. <em>Prem Sichanugrist</em></p></li>
+<li><p>Support cookie jar options (e.g., domain :all) for all session stores.
+Fixes GH#3047, GH#2483.</p>
+
+<p><em>Ravil Bayramgalin</em></p></li>
+<li><p>Performance Improvement to send_file: Avoid having to pass an open file handle as the response body. Rack::Sendfile
+will usually intercept the response and just uses the path directly, so no reason to open the file. This performance
+improvement also resolves an issue with jRuby encodings, and is the reason for the backport, see issue #6844.</p>
+
+<p><em>Jeremy Kemper &amp; Erich Menge</em></p></li>
+</ul>
+
+
+<p><em>Active Model</em></p>
+
+<ul>
+<li><p>Due to a change in builder, nil values and empty strings now generates
+closed tags, so instead of this:</p>
+
+<pre><code>&lt;pseudonyms nil=\"true\"&gt;&lt;/pseudonyms&gt;
+</code></pre>
+
+<p>It generates this:</p>
+
+<pre><code>&lt;pseudonyms nil=\"true\"/&gt;
+</code></pre>
+
+<p><em>Carlos Antonio da Silva</em></p></li>
+</ul>
+
+
+<p><em>Active Record</em></p>
+
+<ul>
+<li><p>Fix bug where <code>update_columns</code> and <code>update_column</code> would not let you update the primary key column.</p>
+
+<p><em>Henrik Nyh</em></p></li>
+<li><p>Decode URI encoded attributes on database connection URLs.</p>
+
+<p><em>Shawn Veader</em></p></li>
+<li><p>Fix AR#dup to nullify the validation errors in the dup'ed object. Previously the original
+and the dup'ed object shared the same errors.</p>
+
+<ul>
+<li>Christian Seiler*</li>
+</ul>
+</li>
+<li><p>Synchronize around deleting from the reserved connections hash.
+Fixes #7955</p></li>
+<li><p>PostgreSQL adapter correctly fetches default values when using
+multiple schemas and domains in a db. Fixes #7914</p>
+
+<p><em>Arturo Pie</em></p></li>
+<li><p>Fix deprecation notice when loading a collection association that
+selects columns from other tables, if a new record was previously
+built using that association.</p>
+
+<p><em>Ernie Miller</em></p></li>
+<li><p>The postgres adapter now supports tables with capital letters.
+Fix #5920</p>
+
+<p><em>Yves Senn</em></p></li>
+<li><p><code>CollectionAssociation#count</code> returns <code>0</code> without querying if the
+parent record is not persisted.</p>
+
+<p>Before:</p>
+
+<pre><code>person.pets.count
+# SELECT COUNT(*) FROM "pets" WHERE "pets"."person_id" IS NULL
+# =&gt; 0
+</code></pre>
+
+<p>After:</p>
+
+<pre><code>person.pets.count
+# fires without sql query
+# =&gt; 0
+</code></pre>
+
+<p><em>Francesco Rodriguez</em></p></li>
+<li><p>Fix <code>reset_counters</code> crashing on <code>has_many :through</code> associations.
+Fix #7822.</p>
+
+<p><em>lulalala</em></p></li>
+<li><p>ConnectionPool recognizes checkout_timeout spec key as taking
+precedence over legacy wait_timeout spec key, can be used to avoid
+conflict with mysql2 use of wait_timeout.  Closes #7684.</p>
+
+<p><em>jrochkind</em></p></li>
+<li><p>Rename field_changed? to _field_changed? so that users can create a field named field</p>
+
+<p><em>Akira Matsuda</em>, backported by <em>Steve Klabnik</em></p></li>
+<li><p>Fix creation of through association models when using <code>collection=[]</code>
+on a <code>has_many :through</code> association from an unsaved model.
+Fix #7661.</p>
+
+<p><em>Ernie Miller</em></p></li>
+<li><p>Explain only normal CRUD sql (select / update / insert / delete).
+Fix problem that explains unexplainable sql. Closes #7544 #6458.</p>
+
+<p><em>kennyj</em></p></li>
+<li><p>Backport test coverage to ensure that PostgreSQL auto-reconnect functionality
+remains healthy.</p>
+
+<p><em>Steve Jorgensen</em></p></li>
+<li><p>Use config['encoding'] instead of config['charset'] when executing
+databases.rake in the mysql/mysql2. A correct option for a database.yml
+is 'encoding'.</p>
+
+<p><em>kennyj</em></p></li>
+<li><p>Fix ConnectionAdapters::Column.type_cast_code integer conversion,
+to always convert values to integer calling #to_i. Fixes #7509.</p>
+
+<p><em>Thiago Pradi</em></p></li>
+<li><p>Fix time column type casting for invalid time string values to correctly return nil.</p>
+
+<p><em>Adam Meehan</em></p></li>
+<li><p>Fix <code>becomes</code> when using a configured <code>inheritance_column</code>.</p>
+
+<p><em>Yves Senn</em></p></li>
+<li><p>Fix <code>reset_counters</code> when there are multiple <code>belongs_to</code> association with the
+same foreign key and one of them have a counter cache.
+Fixes #5200.</p>
+
+<p><em>Dave Desrochers</em></p></li>
+<li><p>Round usec when comparing timestamp attributes in the dirty tracking.
+Fixes #6975.</p>
+
+<p><em>kennyj</em></p></li>
+<li><p>Use inversed parent for first and last child of has_many association.</p>
+
+<p><em>Ravil Bayramgalin</em></p></li>
+<li><p>Fix Column.microseconds and Column.fast_string_to_date to avoid converting
+timestamp seconds to a float, since it occasionally results in inaccuracies
+with microsecond-precision times. Fixes #7352.</p>
+
+<p><em>Ari Pollak</em></p></li>
+<li><p>Fix <code>increment!</code>, <code>decrement!</code>, <code>toggle!</code> that was skipping callbacks.
+Fixes #7306.</p>
+
+<p><em>Rafael Mendonça França</em></p></li>
+<li><p>Fix AR#create to return an unsaved record when AR::RecordInvalid is
+raised. Fixes #3217.</p>
+
+<p><em>Dave Yeu</em></p></li>
+<li><p>Remove unnecessary transaction when assigning has_one associations with a nil or equal value.
+Fix #7191.</p>
+
+<p><em>kennyj</em></p></li>
+<li><p>Allow store to work with an empty column.
+Fix #4840.</p>
+
+<p><em>Jeremy Walker</em></p></li>
+<li><p>Remove prepared statement from system query in postgresql adapter.
+Fix #5872.</p>
+
+<p><em>Ivan Evtuhovich</em></p></li>
+<li><p>Make sure <code>:environment</code> task is executed before <code>db:schema:load</code> or <code>db:structure:load</code>
+Fixes #4772.</p>
+
+<p><em>Seamus Abshere</em></p></li>
+</ul>
+
+
+<p><em>Active Resource</em></p>
+
+<ul>
+<li>No changes</li>
+</ul>
+
+
+<p><em>Active Support</em></p>
+
+<ul>
+<li><p>Add logger.push_tags and .pop_tags to complement logger.tagged:</p>
+
+<pre><code>class Job
+  def before
+    Rails.logger.push_tags :jobs, self.class.name
+  end
+
+  def after
+    Rails.logger.pop_tags 2
+  end
+end
+</code></pre>
+
+<p><em>Jeremy Kemper</em></p></li>
+<li><p>Add %:z and %::z format string support to ActiveSupport::TimeWithZone#strftime. [fixes #6962] <em>kennyj</em></p></li>
+</ul>
+
+
+<p><em>Railties</em></p>
+
+<ul>
+<li><p>Don't eager-load app/assets and app/views <em>Elia Schito</em></p></li>
+<li><p>Update supported ruby versions error message in ruby_version_check.rb <em>Lihan Li</em></p></li>
+</ul>
+
+
+<h2>SHA-1</h2>
+
+<ul>
+<li>24af6eff6b7c647d04eee9585184ba89f0746d40  actionmailer-3.2.9.rc1.gem</li>
+<li>c34ea8f12308c9f6fc4d6b31ce8caa2a562b210a  actionpack-3.2.9.rc1.gem</li>
+<li>8b3171fdde905c76a541286192e6cef211d83a70  activemodel-3.2.9.rc1.gem</li>
+<li>0752e47880da4bb9be2b0309bce5a444a9271420  activerecord-3.2.9.rc1.gem</li>
+<li>d8c1eeedbf3bc33d1560700cc70cb1752cdc811a  activeresource-3.2.9.rc1.gem</li>
+<li>8ad917f70cc3b0a04864c8aa705a0e4997736872  activesupport-3.2.9.rc1.gem</li>
+<li>6fdc627a032f1f3ded7830e044298e20fd3fc6ce  rails-3.2.9.rc1.gem</li>
+<li>444da0c3f2a1e3200d2a613973062c2d3e4ad7d0  railties-3.2.9.rc1.gem</li>
+</ul>
+
+
+<p>You can find a list of changes between v3.2.8 and v3.2.9.rc1 <a href="https://github.com/rails/rails/compare/v3.2.8...v3.2.9.rc1">here</a></p>
+
+<p>Thanks to everyone!</p>
+
+<!-- End Post -->
+          </section></div>
+          <div class="entry-footer footer"><footer>
+            <p>
+
+              <a href="/2012/10/29/ann-rails-3-2-9-rc1-has-been-released/#disqus_thread" data-disqus-identifier="/2012/10/29/ann-rails-3-2-9-rc1-has-been-released/">Comments</a>
+            </p>
+          </footer></div>
+        </article></div>
+
+
+
+<!-- End Content -->
+      </section></div>
+      <div id="sidebar" class="aside"><aside>
+          <div id="search" class="section"><section>
+            <h3>Search</h3>
+            <form action="http://www.google.com/search" method="get">
+              <input type="hidden" name="q" value="site:weblog.rubyonrails.org">
+              <input type="text" name="q" value="">
+            </form>
+          </section></div>
+          <div id="job" class="section"><section>
+            <h3>Job Board</h3>
+            <script language="JavaScript" src="http://www.37signals.com/svn/job.fcgi"></script>
+          </section></div>
+          <div id="podcasts" class="section"><section>
+            <h3>Podcasts</h3>
+            <ul class="list">
+              <li><a href="http://ruby5.envylabs.com/">Ruby5 Podcast</a></li>
+              <li><a href="http://5by5.tv/rubyshow">Ruby Show</a></li>
+              <li><a href="http://podcast.rubyonrails.org/">RoR Podcast</a></li>
+            </ul>
+          </section></div>
+          <div id="categories" class="section"><section>
+            <h3>Categories</h3>
+            <ul class="list">
+            
+              <li><a href="/releases/">Releases</a></li>
+            
+              <li><a href="/tricks/">Tricks</a></li>
+            
+              <li><a href="/jobs/">Jobs</a></li>
+            
+              <li><a href="/launches/">Launches</a></li>
+            
+              <li><a href="/activism/">Activism</a></li>
+            
+              <li><a href="/tools/">Tools</a></li>
+            
+              <li><a href="/horizon/">Horizon</a></li>
+            
+              <li><a href="/documentation/">Documentation</a></li>
+            
+              <li><a href="/sightings/">Sightings</a></li>
+            
+              <li><a href="/edge/">Edge</a></li>
+            
+              <li><a href="/praise/">Praise</a></li>
+            
+              <li><a href="/general/">General</a></li>
+            
+            </ul>
+          </section></div>
+          <div id="syndication" class="section"><section>
+            <h3>Syndicate</h3>
+            <ul class="list">
+              <li class="rss icon"><a href="http://weblog.rubyonrails.org/feed/atom.xml" title="Articles feed">Articles</a></li>
+            </ul>
+          </section></div>
+          <div id="follow" class="section"><section>
+            <p><a href="http://twitter.com/rubyonrails" class="twitter-follow-button" data-show-count="false">Follow @rubyonrails</a></p>
+          </section></div>
+
+      </aside></div>
+    </div>
+    <div id="footer" class="footer"><footer>
+      <p>“Rails”, “Ruby on Rails”, and the Rails logo are registered trademarks of David Heinemeier Hansson. All rights reserved.</p>
+      <p>Rails is released under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT license</a>. Ruby under the <a href="http://www.ruby-lang.org/en/LICENSE.txt">Ruby License</a>.</p>
+      <p id="sponsored_by"><span>Sponsored by</span> <a href="http://37signals.com"><img src="/images/37slogo-trans.gif" width="100" height="22"></a>
+    </footer></div>
+
+    <script type="text/javascript">
+      var disqus_shortname = 'ridingrails';
+      
+    
+      (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+      }());
+    </script>
+
+  </body>
+</html>

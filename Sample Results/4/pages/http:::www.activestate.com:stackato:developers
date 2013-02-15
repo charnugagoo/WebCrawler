@@ -1,0 +1,907 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr" class="no-js">
+
+    <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	    <title>Stackato for developers: micro cloud, private PaaS for Java, Python, Perl, Ruby, PHP, and more!</title>
+	<meta name="viewport" content="width=1080" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="/sites/all/themes/active/favicon.ico" type="image/x-icon" />
+<meta name="description" content="Stackato PaaS includes a free micro cloud for developers! Whether you code in Java, Python, Perl, Ruby, PHP, or other language - try Stackato micro cloud and get your applications to the cloud faster." />
+<meta name="keywords" content="paas,platform-as-a-service,java,python,perl,ruby,php,cloud,platform" />
+<link rel="canonical" href="http://www.activestate.com/stackato/developers" />
+<meta name="revisit-after" content="1 day" />
+    <link type="text/css" rel="stylesheet" media="all" href="/modules/node/node.css?G" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/defaults.css?G" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/system.css?G" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/system-menus.css?G" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/user/user.css?G" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/contrib/cck/theme/content-module.css?G" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/contrib/ctools/css/ctools.css?G" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/contrib/date/date.css?G" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/contrib/filefield/filefield.css?G" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/contrib/google_cse/google_cse.css?G" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/contrib/mollom/mollom.css?G" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/contrib/nice_menus/nice_menus.css?G" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/contrib/nice_menus/nice_menus_default.css?G" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/libraries/shadowbox/shadowbox.css?G" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/contrib/shadowbox/shadowbox.css?G" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/contrib/tagadelic/tagadelic.css?G" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/contrib/cck/modules/fieldgroup/fieldgroup.css?G" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/contrib/views/css/views.css?G" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/active/css/default.css?G" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/active/css/layout.css?G" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/active/css/style.css?G" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/active/css/tiptip.css?G" />
+<link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/active/css/print.css?G" />
+<link type="text/css" rel="stylesheet" media="screen" href="/sites/all/themes/active/css/tabs.css?G" />
+    <!--[if lte IE 6]><style type="text/css" media="all">@import "/sites/all/themes/active/css/ie6.css";</style><![endif]-->
+    <!--[if IE 7]><style type="text/css" media="all">@import "/sites/all/themes/active/css/ie7.css";</style><![endif]-->
+	<!--[if IE]><style type="text/css" media="all">@import "/sites/all/themes/active/css/ie.css";</style><![endif]-->
+	<!--[if gte IE 9]>
+	  <style type="text/css">
+		.gradient {
+		   filter: none !important;
+		}
+	  </style>
+	<![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Passion+One:400,700' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="/misc/jquery.js?G"></script>
+<script type="text/javascript" src="/misc/drupal.js?G"></script>
+<script type="text/javascript" src="/sites/all/libraries/jquery/jquery-1.8.2.min.js?G"></script>
+<script type="text/javascript" src="/sites/all/libraries/jquery.iosslider/jquery.iosslider.min.js?G"></script>
+<script type="text/javascript" src="/sites/all/modules/contrib/jqmulti/js/switch.js?G"></script>
+<script type="text/javascript" src="/sites/all/modules/contrib/mollom/mollom.js?G"></script>
+<script type="text/javascript" src="/sites/all/modules/contrib/nice_menus/superfish/js/superfish.js?G"></script>
+<script type="text/javascript" src="/sites/all/modules/contrib/nice_menus/superfish/js/jquery.bgiframe.min.js?G"></script>
+<script type="text/javascript" src="/sites/all/modules/contrib/nice_menus/superfish/js/jquery.hoverIntent.minified.js?G"></script>
+<script type="text/javascript" src="/sites/all/modules/contrib/nice_menus/nice_menus.js?G"></script>
+<script type="text/javascript" src="/sites/all/libraries/shadowbox/shadowbox.js?G"></script>
+<script type="text/javascript" src="/sites/all/modules/contrib/shadowbox/shadowbox_auto.js?G"></script>
+<script type="text/javascript" src="/sites/all/modules/contrib/spamspan/spamspan.compressed.js?G"></script>
+<script type="text/javascript" src="/sites/all/themes/active/js/modernizr-1.1.min.js?G"></script>
+<script type="text/javascript" src="/sites/all/themes/active/js/jquery-ui-1.8.1.custom.min.js?G"></script>
+<script type="text/javascript" src="/sites/all/themes/active/js/jquery.cookie.js?G"></script>
+<script type="text/javascript" src="/sites/all/themes/active/js/jquery.coda-slider-2.0.js?G"></script>
+<script type="text/javascript" src="/sites/all/themes/active/js/jquery.easing.1.3.js?G"></script>
+<script type="text/javascript" src="/sites/all/themes/active/js/nav.js?G"></script>
+<script type="text/javascript" src="/sites/all/themes/active/js/contact.js?G"></script>
+<script type="text/javascript" src="/sites/all/themes/active/js/jquery.url.packed.js?G"></script>
+<script type="text/javascript" src="/sites/all/themes/active/js/jquery.tipTip.minified.js?G"></script>
+<script type="text/javascript" src="/sites/all/themes/active/js/jquery.validate.min.js?G"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","nice_menus_options":{"delay":800,"speed":1},"shadowbox":{"animate":1,"animateFade":1,"animSequence":"wh","auto_enable_all_images":0,"auto_gallery":0,"autoplayMovies":true,"continuous":0,"counterLimit":"10","counterType":"default","displayCounter":1,"displayNav":1,"enableKeys":1,"fadeDuration":"0.35","handleOversize":"resize","handleUnsupported":"link","initialHeight":160,"initialWidth":320,"language":"en","modal":false,"overlayColor":"#000","overlayOpacity":"0.85","players":null,"resizeDuration":"0.35","showMovieControls":1,"slideshowDelay":"0","viewportPadding":20,"useSizzle":0},"spamspan":{"m":"spamspan","u":"u","d":"d","h":"h","t":"t"}});
+//--><!]]>
+</script>
+    <link rel="alternate" type="application/rss+xml" title="ActiveState Blog" href="http://feeds.feedburner.com/activestate/blog" />
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+	  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+	  _gaq.push(['_setAccount', 'UA-20072-24']);
+	  _gaq.push(['_setDomainName', '.activestate.com']);
+	  _gaq.push(['_setAllowLinker', true]);
+	  _gaq.push(['_setAllowHash', false]);
+	  _gaq.push(['_trackPageview']);
+	  (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async =
+	  true;
+	  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+  </head>  
+  <body class="not-front not-logged-in page-node node-type-page one-sidebar sidebar-left with-navigation with-secondary page-stackato-developers section-stackato coda-slider-no-js">
+  
+  <div id="skip"><a href="#content">Skip to Content</a> <a href="#navigation">Skip to Navigation</a></div>  
+    <div id="page">
+
+    <!-- ______________________ HEADER _______________________ -->
+
+        <div id="header">
+
+        <div id="header_logobar">
+            <div class="header_container">
+                <div id="logo-title">
+                    <a href="/" title="Home" rel="home" id="logo">
+                      <img src="/sites/all/themes/active/images/as_logo_2012.png" alt="Home"/>
+                      <!-- <div id="as_tagline">Code to Cloud: Smarter, Safer, Faster.<sup>&trade;</sup></div> -->
+                    </a>
+                </div> <!-- /logo-title -->
+                    
+				<div id="header_navbar">
+				  <div id="header-region">
+				  <div id="block-nice_menus-1" class="block block-nice_menus block-header block-id-73 clearfix odd">
+  <div class="block-inner">
+
+    
+    <div class="content">
+      <ul class="nice-menu nice-menu-down" id="nice-menu-1"><li class="menu-7759 menuparent menu-path-node-3532 active-trail first  odd "><a href="/stackato" title="Stackato: The Enterprise Private PaaS">Stackato</a><ul><li class="menu-6600 menu-path-node-3324 first  odd "><a href="/stackato/get_stackato" title="Get Stackato">Get Stackato</a></li>
+<li class="menu-5991 menu-path-node-3281 even "><a href="/stackato/private-paas" title="Why a Private PaaS?">Why a Private PaaS?</a></li>
+<li class="menu-5992 menu-path-node-3280 odd "><a href="/stackato/features" title="Stackato Features">Features &amp; Benefits</a></li>
+<li class="menu-5995 menu-path-node-3278 active-trail even "><a href="/stackato/developers" title="Stackato for Developers: Java, Python, Perl, Ruby, PHP and more!" class="active">Stackato by Language</a></li>
+<li class="menu-6563 menu-path-node-3325 odd "><a href="/stackato/compare-editions" title="Stackato: Compare Micro Cloud to Enterprise">Compare Editions</a></li>
+<li class="menu-5994 menu-path-node-3277 even "><a href="/stackato/compare-with-cloud-foundry" title="Stackato: Based on Cloud Foundry, Enterprise-Ready">Compare to Cloud Foundry</a></li>
+<li class="menu-5996 menu-path-node-3276 odd  last "><a href="/stackato/resources" title="Stackato Resources: Learn more about Private PaaS">Resources</a></li>
+</ul>
+</li>
+<li class="menu-7757 menuparent menu-path-node-3530 even "><a href="/developer-tools" title="Developer Tools">Developer Tools</a><ul><li class="menu-7473 menuparent menu-path-node-3415 first  odd "><a href="/komodo" title="Komodo">Komodo</a><ul><li class="menu-6284 menu-path-node-3291 first  odd "><a href="/komodo-ide/whats-new" title="Komodo IDE 7: What&#039;s New">What&#039;s New</a></li>
+<li class="menu-6281 menu-path-node-3288 even "><a href="/komodo-ide/features" title="Komodo IDE 7: Loaded with Features for Faster Editing, Debugging, Deploying">Features</a></li>
+<li class="menu-6283 menu-path-node-3290 odd "><a href="/komodo-edit" title="Komodo Edit for Python, PHP, Ruby, JavaScript, Perl and Web Dev">Komodo Edit</a></li>
+<li class="menu-6280 menu-path-node-3287 even "><a href="/komodo-edit/compare-with-komodo-ide" title="Compare Komodo IDE to Komodo Edit">Compare Editions</a></li>
+<li class="menu-6285 menu-path-node-3292 odd "><a href="/komodo-ide/teams" title="Komodo IDE for Teams">Komodo For Teams</a></li>
+<li class="menu-6282 menu-path-node-3289 even  last "><a href="/komodo-ide/requirements" title="Komodo System Requirements">System Requirements</a></li>
+</ul>
+</li>
+<li class="menu-4382 menu-path-node-2988 even "><a href="/perl-dev-kit" title="Perl Dev Kit (PDK)">Perl Dev Kit</a></li>
+<li class="menu-7762 menu-path-node-3538 odd "><a href="/pro-studio" title="Pro Studio: Komodo IDE, Perl/Tcl Dev Kit, Safari Books Online">Pro Studio</a></li>
+<li class="menu-8111 menu-path-node-3578 even  last "><a href="/tcl-dev-kit" title="Tcl Dev Kit (TDK)">Tcl Dev Kit</a></li>
+</ul>
+</li>
+<li class="menu-7758 menuparent menu-path-node-3531 odd "><a href="/dynamic-languages" title="Languages">Languages</a><ul><li class="menu-714 menu-path-node-25 first  odd "><a href="/activeperl" title="ActivePerl">ActivePerl</a></li>
+<li class="menu-715 menu-path-node-26 even "><a href="/activepython" title="ActivePython">ActivePython</a></li>
+<li class="menu-716 menu-path-node-27 odd "><a href="/activetcl" title="ActiveTcl">ActiveTcl</a></li>
+<li class="menu-720 menuparent menu-path-node-31 even  last "><a href="/compare-editions" title="Compare Editions">Compare Editions</a><ul><li class="menu-717 menu-path-node-28 first  odd "><a href="/business-edition" title="Business Edition">Business Edition</a></li>
+<li class="menu-718 menu-path-node-29 even "><a href="/enterprise-edition" title="Enterprise Edition">Enterprise Edition</a></li>
+<li class="menu-719 menu-path-node-30 odd  last "><a href="/oem" title="OEM">OEM Solutions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="menu-710 menuparent menu-path-node-21 even "><a href="/support" title="Support and Resources">Support</a><ul><li class="menu-1399 menu-path-communityactivestatecom-forum first  odd "><a href="http://community.activestate.com/forum" title="">Forums</a></li>
+<li class="menu-752 menu-path-node-62 even "><a href="/white-papers" title="Whitepapers">Whitepapers</a></li>
+<li class="menu-1317 menu-path-node-1428 odd "><a href="/webinars" title="Webinars">Webinars</a></li>
+<li class="menu-1249 menuparent menu-path-node-967 even "><a href="/customers" title="Customers">Customers</a><ul><li class="menu-1711 menu-path-node-1458 first  odd "><a href="/customers/alterpoint" title="Alterpoint Case Study">Alterpoint</a></li>
+<li class="menu-1611 menu-path-node-936 even "><a href="/customers/ca" title="CA Case Study">CA</a></li>
+<li class="menu-1712 menu-path-node-1459 odd "><a href="/customers/finisar" title="Finisar Corporation Case Study">Finisar</a></li>
+<li class="menu-1713 menu-path-node-1460 even "><a href="/customers/numara" title="Numara Software, Inc. Case Study">Numara</a></li>
+<li class="menu-4768 menu-path-node-3068 odd "><a href="/customers/parallels" title="Parallels Case Study">Parallels</a></li>
+<li class="menu-1610 menu-path-node-966 even "><a href="/customers/plixer" title="Plixer International Case Study">Plixer</a></li>
+<li class="menu-1717 menu-path-node-1464 odd "><a href="/customers/rev2" title="Rev2 Networks Case Study">Rev2</a></li>
+<li class="menu-4717 menu-path-node-3061 even "><a href="/customers/rockwell-collins" title="Rockwell Collins Case Study">Rockwell Collins</a></li>
+<li class="menu-1714 menu-path-node-1461 odd "><a href="/customers/technology-pathways" title="Technology Pathways, LLC Case Study">Technology Pathways</a></li>
+<li class="menu-3067 menu-path-node-2773 even "><a href="/customers/toolbox-solution" title="ToolBox Solution">Toolbox Solution</a></li>
+<li class="menu-1856 menu-path-node-1635 odd  last "><a href="/customers/ilinc" title="iLinc Communications, Inc. Case Study">iLinc</a></li>
+</ul>
+</li>
+<li class="menu-756 menu-path-node-63 odd "><a href="/screencasts" title="Screencasts">Screencasts</a></li>
+<li class="menu-1397 menu-path-docsactivestatecom even "><a href="http://docs.activestate.com" title="">Documentation</a></li>
+<li class="menu-1398 menu-path-codeactivestatecom-recipes odd "><a href="http://code.activestate.com/recipes" title="">Code Recipes</a></li>
+<li class="menu-741 menu-path-node-51 even "><a href="/support/open-source-training" title="Training">Training</a></li>
+<li class="menu-742 menu-path-node-52 odd "><a href="/support/open-source-consulting" title="Professional Consulting Services">Professional Services</a></li>
+<li class="menu-1857 menu-path-node-1636 even  last "><a href="/support/faqs" title="FAQs">FAQ</a></li>
+</ul>
+</li>
+<li class="menu-1055 menu-path-blog odd  last "><a href="/blog" title="">Blog</a></li>
+</ul>
+    </div>
+
+    
+  </div> <!-- /block-inner -->
+</div> <!-- /block -->				  <!-- Stackato | Developer Solutions | Support & Resources | Blog-->
+				  </div>
+				</div>
+				
+                <div id="cart-region">
+                  <div id="cart-region-inner">
+					<div id="as_account_nav">
+					  <ul class="menu">
+					<li class="leaf cart"><a href="https://store.activestate.com/">Store</a></li>
+					<li class="leaf contact_toggle"><a href="/company/contact_us">Contact Us</a></li>
+					<li class="leaf last search_toggle"><a href="/search">Search</a></li>
+					  </ul>
+					</div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- /header -->
+	<div id="as_search_block" class="top_nav_slideout" style="display: none">
+		<form action="/stackato/developers"  accept-charset="UTF-8" method="post" id="search-theme-form">
+<div><div id="search" class="container-inline">
+  <div class="form-item form-type-textfield" id="edit-search-theme-form-1-wrapper">
+ <label for="edit-search-theme-form-1">Search this site: </label>
+<input type="text" maxlength="128" name="search_theme_form" id="edit-search-theme-form-1" size="15" value="" title="Enter the terms you wish to search for." class="form-text" /></div>
+<input type="submit" name="op" id="edit-submit" value="Search"  class="form-submit" />
+<input type="hidden" name="form_build_id" id="form-0dbf1953edc1a01cd60a3bc71b3fb61a" value="form-0dbf1953edc1a01cd60a3bc71b3fb61a"  />
+<input type="hidden" name="form_id" id="edit-search-theme-form" value="search_theme_form"  />
+</div>
+
+</div></form>
+	</div>
+	<div id="as_contact_block" class="top_nav_slideout" style="display: none">
+		<div class="slideout_container">
+            <div class="as_email">
+				Have a question?  Need some help?
+				<br/>
+				<a href="/company/contact-us">Send us an email &raquo;</a>
+			</div>
+            <div class="as_phone">
+              General Enquiries: 778.786.1100
+              <br>
+              Fax: 778.786.1133
+              <br>
+              Sales: 1.866.631.4581
+            </div>
+            <div class="as_location">
+              ActiveState.com
+			  <br/>
+			  Suite 1700-409 Granville St.,
+			  <br/>
+			  Vancouver, BC,
+			  <br/>
+			  V6C 1T2, Canada
+            </div>
+		</div>
+	</div>
+	<div id="as_user_block" class="top_nav_slideout" style="display: none">
+		<div class="slideout_container">
+			<div class="as_account_details">
+				<div class="as_user_name"></div>
+				<div class="as_user_email"></div>
+				<div class="as_signout">
+				</div>
+			</div>
+			<div class="as_account_links">
+				<ul>
+					<li><a href="https://account.activestate.com/">View Account Information</a></li>
+					<li><a href="https://account.activestate.com/profile/edit">Edit Profile</a></li>
+					<li><a href="https://account.activestate.com/password/change">Change Password</a></li>
+					<li><a href="https://account.activestate.com/settings">Account Settings</a></li>
+				</ul>
+			</div>
+			<div class="as_store_links">
+				<ul>
+					<li><a href="https://billing.activestate.com/update.php">Edit Billing Details</a></li>
+					<li><a href="https://store.activestate.com/as/user/orders">Order History</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="slideout_close" style="display: none">x</div>
+    <!-- ______________________ MAIN _______________________ -->
+	
+    <div class="content_page_banner page_banner gradient">
+		<div class="page_banner_content">
+				<h1 class="title"><a href="/stackato/developers">Stackato by Language</a></h1>
+				<div class="cta">
+						<p><a class="awesome blue" href="/stackato/get_stackato" style="line-height: 60px; height: 75px;">Download Stackato</a></p>				</div>
+				<h2 class="section_blurb">
+                    <p>Stackato is THE polyglot application platform for creating a secure and flexible enterprise Private PaaS on any cloud</p>				</h2>
+				
+		</div>
+</div>
+<div id="main" class="clearfix">
+		<div id="content-area">
+          <div class="node node clearfix node-type-page" id="node-3278">
+            <div class="node-inner">
+          
+                        
+                        
+                        
+              <div class="content">
+                <p>Whether you use Java, Perl, Python, .NET, PHP, Ruby, Node.js, Erlang, Scala, or Clojure for your applications, Stackato helps you deploy them to any private, public or hybrid cloud faster. Check out the resources below and see how easily Stackato supports the language of your choice. </p>
+
+<script type="text/javascript">
+    $().ready(function() {
+            $('#coda-slider-1').codaSlider({dynamicArrows: 0, autoHeight: 0});
+    });
+</script>
+
+<div class="coda-slider-wrapper">
+    <div class="coda-slider preload" id="coda-slider-1">
+        <div class="panel">
+            <div class="panel-wrapper stkjava_features">
+                <h2 class="title"><span style="font-size: 16px"><a id="stkjava_features" name="stkjava_features"></a>Java</span></h2>
+
+                <p class="top-paragraph">Stackato offers in-depth support for <a href="http://www.java.com" title="Java">Java</a>, and includes several popular frameworks (including JBoss, Java Web, Spring, Java EE, Grails, Lift, and Buildpack - Java).</p>
+
+<p>You can push bytecode built on on your local machine (a WAR archive) with tools like Apache Ant and Apache Maven, or build the Java bytecode on Stackato itself (using Buildpack - Java).</p>
+
+<p>Stackato uses the Apache TomEE+ application server for serving Java applications. TomEE+ is the new Java EE 6/7 Web Profile certified version of Tomcat, supporting more JEE features such as EJB, JPA, JTA, JSF.</p>
+
+  
+                <div class="row">
+  <ul>
+    <li><a href="http://www.activestate.com/blog/2012/12/enterprise-java-and-stackato" title="Blog Post: Enterprise Java and Stackato">Blog: Enterprise Java and Stackato</a></li>
+
+    <li><a href="http://www.activestate.com/blog/2012/05/deploying-java-stackato-buildpacks" title="Blog Post: Java Buildpacks with Stackato">Blog: Deploying Java to Stackato with Buildpacks</a></li>
+
+    <li><a href="http://www.activestate.com/blog/2012/08/stackato-20-and-apache-tomee" title="Blog Post: Stackato 2.0 and Apache TomEE">Blog: Stackato 2.0 and Apache TomEE</a></li>
+
+    <li><a href="http://docs.stackato.com/deploy/languages/java.html" title="Stackato Documentation: Deploying Java to Stackato">Documentation: Java</a></li>
+
+    <li><a href="https://github.com/Stackato-Apps/jaspersoft/blob/stackato/README.md" title="Sample Application: Jaspersoft BI Suite">Sample App: Jaspersoft BI Suite</a></li>
+
+    <li><a href="https://github.com/Stackato-Apps/pet-clinic/blob/stackato/README.md" title="Sample Application: Spring Pet Clinic">Sample App: Spring Pet Clinic for Stackato</a></li>
+
+  </ul>
+</div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-wrapper net">
+                <h2 class="title"><span style="font-size: 16px"><a id="net" name="net"></a>.NET</span></h2>
+
+                <p class="top-paragraph">Stackato 2.0 has integrated <a href="http://www.microsoft.com/net" title=".NET">.NET</a> support via the <a href="http://ironfoundry.org" title="Iron Foundry">Iron Foundry</a> project. Iron Foundry is an open source project that extends .NET to any Cloud Foundry-based Platform as Service (PaaS).</p>
+
+<p>By integrating Iron Foundry with Stackato, Windows DEAs are available on any Stackato cluster with the ability to run the full spectrum of .NET Web Applications, SQL Server, and more. The combination of Iron Foundry and Stackato places the Microsoft application stack on even footing with Linux-based stacks.</p>
+
+   <div class="row">
+  <ul>
+
+    <li><a href="http://docs.stackato.com/deploy/languages/aspdotnet.html" title="Stackato Documentation: Deploying ASP.NET to Stackato">Documentation: ASP.NET</a></li>
+
+    <li><a href="http://www.activestate.com/blog/2012/07/how-deploy-net-apps-stackato-20" title="Blog: Deploying .NET on Stackato with Iron Foundry">How to Deploy .NET Apps to Stackato 2.0</a></li>
+
+    <li><a href="http://ironfoundry.org/">Iron Foundry</a> - VM and DEA distributions for Windows-native .NET support.</li>
+
+    <li>A <a href="http://www.mono-project.com/Main_Page">Mono</a> runtime add-on is available (contact <a href="mailto://stackato-sales@activestate.com">stackato-sales@activestate.coms</a>)</li>
+  </ul>
+</div>
+ 
+            </div>
+        </div>
+<div class="panel">
+            <div class="panel-wrapper ruby">
+                <h2 class="title"><span style="font-size: 16px"><a id="net" name="ruby"></a>Ruby</span></h2>
+
+                <p><a href="http://www.ruby-lang.org">Ruby</a> is one of the most popular and powerful dynamic languages for agile web application development. Stackato offers in-depth support for Ruby 1.8 and 1.9, the popular <a href="http://www.sinatrarb.com/">Sinatra</a> and <a href="http://rubyonrails.org">Ruby on Rails</a> web frameworks, and customized application environments using <a href="http://docs.stackato.com/deploy/buildpack.html">Heroku Buildpacks</a>.</p>
+
+                <p>Stackato automatically installs supporting Ruby gems, dynamically configures your applications to work with provisioned data services (MySQL, PostgreSQL, MongoDB, Redis), and serves the application with your choice of Ruby server and NGINX.</p>
+
+   <div class="row">
+ <ul>
+
+    <li><a href="http://docs.stackato.com/deploy/languages/ruby.html" title="Stackato Documentation: Ruby">Documentation: Ruby</a></li>
+
+    <li><a href="http://www.activestate.com/blog/2012/06/static-site-stackato-using-heroku-buildpacks-jekyll" title="Blog: Using Heroku Buildpacks for Jekyll">Static Site Stackato: Using Heroku Buildpacks for Jekyll</a></li>
+
+    <li><a href="https://github.com/Stackato-Apps/rails-movie/blob/master/README.md" title="Sample Application: Rails Movies">Sample App: Rails Movies</a></li>
+    
+    <li><a href="https://github.com/Stackato-Apps/sinatra-rabbitmq/blob/master/README.md">Sample App: Sinatra-Rabbitmq</a></li>
+    
+  </ul>
+</div>
+ 
+            </div>
+        </div>
+
+     <div class="panel">
+            <div class="panel-wrapper node">
+                <h2 class="title"><span style="font-size: 16px"><a id="node" name="node"></a>Node.js</span></h2>
+
+                <p class="top-paragraph"><a href="http://nodejs.org" title="Node.js">Node.js</a> is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.</p>
+
+<p>Deploying Node applications to Stackato requires changing some application settings to use instance-specific values. These values are provided on Stackato with environment variables.</p>
+
+              
+  <div class="row">
+
+  <ul>
+
+    <li><a href="http://docs.stackato.com/deploy/languages/node.html" title="Documentation: Deploying Node.js apps to Stackato">Documentation: Node.js</a></li>
+
+    <li><a href="https://github.com/Stackato-Apps/etherpad-lite#readme" title="Etherpad Lite sample for Stackato">Sample App: Etherpad Lite for Stackato</a></li>
+
+    <li><a href="https://github.com/Stackato-Apps/Smallest-Federated-Wiki/tree/stackato/.paas/stackato#readme" title="Smallest Federated Wiki sample for Stackato">Sample App: Smallest Federated Wiki for Stackato</a></li>
+
+    <li><a href="https://github.com/Stackato-Apps/tty.js#readme" title="tty.js sample for Stackato">Sample App: tty.js for Stackato</a></li>
+
+  </ul>
+</div>
+               
+            </div>
+        </div>
+
+
+     <div class="panel">
+            <div class="panel-wrapper perl">
+                <h2 class="title"><span style="font-size: 16px"><a id="perl" name="perl"></a>Perl</span></h2>
+
+                <p class="top-paragraph">Millions of developers trust Perl for computational and integration tasks: system administration, scripting, running database applications, and more. As an open source programming language, Perl immediately reduces up-front project costs.</p>
+
+<p>Stackato includes enterprise-ready support for <a href="/perl" title="Perl">Perl</a> and <a href="/activeperl" title="ActivePerl">ActivePerl</a>.</p>
+
+<p>All Perl applications deployed to Stackato are run with PSGI. Applications are started from a top-level script, which must be called <i>app.psgi</i>.</p>
+
+              
+  <div class="row">
+
+  <ul>
+    <li><a href="http://docs.stackato.com/deploy/languages/perl/index.html" title="Documentation: Deploying Perl apps to Stackato">Documentation: Perl</a></li>
+
+    <li><a href="https://github.com/Stackato-Apps/bugzilla#readme" title="Bugzilla sample for Stackato">Sample App: Bugzilla for Stackato</a></li>
+
+    <li><a href="https://github.com/Stackato-Apps/perlcritic.com#readme" title="Perl::Critic sample for Stackato">Sample App: Perl::Critic for Stackato</a></li>
+
+  </ul>
+</div>
+               
+            </div>
+        </div>
+
+
+        <div class="panel">
+            <div class="panel-wrapper php">
+                <h2 class="title"><span style="font-size: 16px"><a id="php" name="php"></a>PHP</span></h2>
+
+                <p class="top-paragraph"><a href="http://www.php.net" title="PHP">PHP</a> is a widely-used HTML-embedded scripting language. Much of its syntax is borrowed from C, Java and Perl with a couple of unique PHP-specific features thrown in. The goal of the language is to allow web developers to write dynamically generated pages quickly.</p>
+
+<p>In Stackato, PHP applications are supported through Apache and mod_php, and require very little configuration to deploy.</p>
+
+              
+  <div class="row">
+
+  <ul>
+    <li><a href="http://www.activestate.com/blog/2012/05/owncloud-app-store-how-stackato-ize-php-cloud-app" title="Blog: PHP - ownCloud in the App Store">How to Stackato-ize a PHP cloud app</a></li>
+
+    <li><a href="http://docs.stackato.com/deploy/languages/php.html" title="Documentation: Deploying PHP apps to Stackato">Documentation: PHP</a></li>
+
+    <li><a href="https://github.com/Stackato-Apps/wordpress/blob/stackato/README.md" title="Wordpress sample for Stackato">Sample App: Wordpress for Stackato</a></li>
+  </ul>
+</div>
+               
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-wrapper python">
+                <h2 class="title"><span style="font-size: 16px"><a id="python" name="python"></a>Python</span></h2>
+
+               <p class="top-paragraph">Python is now one of the fastest-growing programing languages. Millions of developers around the globe use Python's flexibility to build powerful web applications, applications for testing, build control and management, and more. Since Python is an open source programming language, you immediately reduce up-front project costs by leveraging Python in your development.
+</p>
+
+<p>Stackato includes enterprise-ready support for <a href="/perl" title="Python">Python</a> and <a href="/activepython" title="ActivePython">ActivePython</a>.</p>
+
+<p>All Python applications deployed to Stackato are, by default, run with WSGI. Applications are started from a top-level script called <i>wsgi.py</i> defining a global application variable containing the WSGI application object.
+</p>
+
+              <div class="row">
+
+  <ul>
+    <li><a href="http://docs.stackato.com/deploy/languages/python/index.html" title="Deploying Python Apps to Stackato">Documentation: Python</a></li>
+
+    <li><a href="https://github.com/Stackato-Apps/django-gtd/blob/stackato/README.md" title="Python Django Sample for Stackato">Sample App: Django GTD</a></li>
+
+    <li><a href="https://github.com/Stackato-Apps/bottle-currency/blob/master/README.md">Sample App: Bottle Currency Converter</a></li>
+  </ul>
+</div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+            </div>
+</div>
+
+<p><a href="/get-quote">Request more information</a></p><div class="field field-type-text field-field-page-tracking">
+    <div class="field-items">
+            <div class="field-item odd">
+                    <!-- Google Code for Those who visited Stackato pages on as.com Remarketing List --><!-- Google Code for Those who visited Stackato pages on as.com Remarketing List --><script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1071420929;
+var google_conversion_language = "en";
+var google_conversion_format = "3";
+var google_conversion_color = "ffffff";
+var google_conversion_label = "kKvDCLP34AIQgazy_gM";
+var google_conversion_value = 0;
+/* ]]> */
+</![cdata[></script><script type="text/javascript" src="http://www.googleadservices.com/pagead/conversion.js">
+</script><p><noscript></noscript></p>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="http://www.googleadservices.com/pagead/conversion/1071420929/?label=kKvDCLP34AIQgazy_gM&amp;guid=ON&amp;script=0" />
+</div>
+<p></p>
+<style id="_clearly_component__css" type="text/css">
+#next_pages_container { width: 5px; hight: 5px; position: absolute; top: -100px; left: -100px; z-index: 2147483647 !important; }<br /><br /><br /><br /><br /><br /><br /><br /></style><style id="_clearly_component__css" type="text/css">
+#next_pages_container { width: 5px; hight: 5px; position: absolute; top: -100px; left: -100px; z-index: 2147483647 !important; }</style><style id="_clearly_component__css" type="text/css">
+#next_pages_container { width: 5px; hight: 5px; position: absolute; top: -100px; left: -100px; z-index: 2147483647 !important; }</style><style id="_clearly_component__css" type="text/css">
+#next_pages_container { width: 5px; hight: 5px; position: absolute; top: -100px; left: -100px; z-index: 2147483647 !important; }</style><style id="_clearly_component__css" type="text/css">
+#next_pages_container { width: 5px; hight: 5px; position: absolute; top: -100px; left: -100px; z-index: 2147483647 !important; }</style><style id="_clearly_component__css" type="text/css">
+#next_pages_container { width: 5px; hight: 5px; position: absolute; top: -100px; left: -100px; z-index: 2147483647 !important; }</style><style id="_clearly_component__css" type="text/css">
+#next_pages_container { width: 5px; hight: 5px; position: absolute; top: -100px; left: -100px; z-index: 2147483647 !important; }</style><style id="_clearly_component__css" type="text/css">
+#next_pages_container { width: 5px; hight: 5px; position: absolute; top: -100px; left: -100px; z-index: 2147483647 !important; }</style><style id="_clearly_component__css" type="text/css">
+#next_pages_container { width: 5px; hight: 5px; position: absolute; top: -100px; left: -100px; z-index: 2147483647 !important; }</style><style id="_clearly_component__css" type="text/css">
+#next_pages_container { width: 5px; hight: 5px; position: absolute; top: -100px; left: -100px; z-index: 2147483647 !important; }</style><style id="_clearly_component__css" type="text/css">
+#next_pages_container { width: 5px; hight: 5px; position: absolute; top: -100px; left: -100px; z-index: 2147483647 !important; }</style><style id="_clearly_component__css" type="text/css">
+#next_pages_container { width: 5px; hight: 5px; position: absolute; top: -100px; left: -100px; z-index: 2147483647 !important; }</style><style id="_clearly_component__css" type="text/css">
+#next_pages_container { width: 5px; hight: 5px; position: absolute; top: -100px; left: -100px; z-index: 2147483647 !important; }</style><style id="_clearly_component__css" type="text/css">
+#next_pages_container { width: 5px; hight: 5px; position: absolute; top: -100px; left: -100px; z-index: 2147483647 !important; }</style><style id="_clearly_component__css" type="text/css">
+#next_pages_container { width: 5px; hight: 5px; position: absolute; top: -100px; left: -100px; z-index: 2147483647 !important; }</style><style id="_clearly_component__css" type="text/css">
+#next_pages_container { width: 5px; hight: 5px; position: absolute; top: -100px; left: -100px; z-index: 2147483647 !important; }</style><style id="_clearly_component__css" type="text/css">
+#next_pages_container { width: 5px; hight: 5px; position: absolute; top: -100px; left: -100px; z-index: 2147483647 !important; }</style><style id="_clearly_component__css" type="text/css">
+#next_pages_container { width: 5px; hight: 5px; position: absolute; top: -100px; left: -100px; z-index: 2147483647 !important; }</style><style id="_clearly_component__css" type="text/css">
+#next_pages_container { width: 5px; hight: 5px; position: absolute; top: -100px; left: -100px; z-index: 2147483647 !important; }</style>        </div>
+        </div>
+</div>
+              </div>
+          
+                        
+                        
+            </div> <!-- /node-inner -->
+          </div> <!-- /node-->
+
+
+	
+	
+              
+          
+        </div> <!-- /content-inner /content -->
+                <div id="sidebar_container">
+          <div id="sidebar-first" class="column sidebar first sidebar-content-yes">
+
+                        <div id="sidebar-first-inner" class="inner">
+              <div id="block-menu_block-1" class="block block-menu_block block-left block-id-72 clearfix odd">
+  <div class="block-inner">
+
+          <h3 class="title block-title">Stackato</h3>
+    
+    <div class="content">
+      <div class="menu-block-1 menu-name-primary-links parent-mlid-0 menu-level-2">
+  <ul class="menu"><li class="leaf first menu-mlid-6600 get_stackato"><a href="/stackato/get_stackato" title="Get Stackato">Get Stackato</a></li>
+<li class="leaf menu-mlid-5991 why_a_private_paas-"><a href="/stackato/private-paas" title="Why a Private PaaS?">Why a Private PaaS?</a></li>
+<li class="leaf menu-mlid-5992 features_-amp-_benefits"><a href="/stackato/features" title="Stackato Features">Features &amp; Benefits</a></li>
+<li class="leaf menu-mlid-5995 active active-trail stackato_by_language"><a href="/stackato/developers" title="Stackato for Developers: Java, Python, Perl, Ruby, PHP and more!" class="active-trail active">Stackato by Language</a></li>
+<li class="leaf menu-mlid-6563 compare_editions"><a href="/stackato/compare-editions" title="Stackato: Compare Micro Cloud to Enterprise">Compare Editions</a></li>
+<li class="leaf menu-mlid-5994 compare_to_cloud_foundry"><a href="/stackato/compare-with-cloud-foundry" title="Stackato: Based on Cloud Foundry, Enterprise-Ready">Compare to Cloud Foundry</a></li>
+<li class="leaf last menu-mlid-5996 resources"><a href="/stackato/resources" title="Stackato Resources: Learn more about Private PaaS">Resources</a></li>
+</ul></div>
+    </div>
+
+    
+  </div> <!-- /block-inner -->
+</div> <!-- /block -->            </div>
+                        
+            
+          </div>
+        </div> <!-- /sidebar_container -->  
+                </div>
+
+      <!-- ______________________ FOOTER _______________________ -->
+      <div id="footer" class="clearfix gradient">
+        <div class="footer_container">
+                    <div class="as_logo_copy as_footer_block">
+                        <img class="footer_logo" src="/sites/all/themes/active/css/images/as-footer-logo.png"/>
+            <ul>
+              <li><a href="/company">About</a></li>
+              <li><a href="/company/news">Press Room</a></li>
+              <li><a href="/company/news/events">Events</a></li>
+              <li><a href="/company/contact-us">Contact</a></li>
+              <li><a href="/company/careers">Careers</a></li>
+              <li><a href="/partners">Partners</a></li>
+              <li><a href="/company/management">Management</a></li>
+              <li><a href="/privacy-policy">Privacy Policy</a></li>
+              <li><a href="/get-quote">Request Information</a></li>
+            </ul>
+            
+          </div>
+          <div class="as_footer_link_block as_footer_block">
+            <h3>Resources</h3>
+            <ul>
+              <li><a href="/blog">Blog</a></li>
+              <li><a href="/white-papers">Whitepapers</a></li>
+              <li><a href="/webinars">Webinars</a></li>
+              <li><a href="/screencasts">Screencasts</a></li>
+              <li><a href="/customers">Case Studies</a></li>
+              <li><a href="/support/open-source-training">Training</a></li>
+              <li><a href="http://code.activestate.com/recipes/">Code Recipes</a></li>
+            </ul>
+          </div>
+          <div class="as_footer_link_block as_footer_block">
+            <h3>Support</h3>
+            <ul>
+              <li><a href="/company/contact-us">Contact Support</a></li>
+              <li><a href="/support/commercial">Support Plans</a></li>
+              <li><a href="http://docs.activestate.com/">Documentation</a></li>
+              <li><a href="http://community.activestate.com/forum">Forums</a></li>
+            </ul>
+          </div>
+          <div class="as_footer_contact_block as_footer_block">
+            <h3>Sign up for the ActiveState Newsletter</h3>
+            <form action="/stackato/developers"  accept-charset="UTF-8" method="post" id="activestate-footer-newsletter-form">
+<div><input type="hidden" name="campaign" id="edit-campaign" value="Footer"  />
+<input type="hidden" name="list" id="edit-list" value="Newsletter Subscribers,Newsletter Sign Up Form - Footer"  />
+<input type="hidden" name="marketoCookie" id="mktotrk" value=""  />
+<input type="hidden" name="ppcKeyword" id="ppcKeyword" value=""  />
+<div class="form-item form-type-textfield" id="edit-firstName-wrapper">
+ <label for="edit-firstName">First Name: <span class="form-required" title="This field is required.">*</span></label>
+<input type="text" maxlength="128" name="firstName" id="edit-firstName" size="60" value="" class="form-text required" /></div>
+<div class="form-item form-type-textfield" id="edit-lastName-wrapper">
+ <label for="edit-lastName">Last Name: <span class="form-required" title="This field is required.">*</span></label>
+<input type="text" maxlength="128" name="lastName" id="edit-lastName" size="60" value="" class="form-text required" /></div>
+<div class="form-item form-type-textfield" id="edit-email-wrapper">
+ <label for="edit-email">Email Address: <span class="form-required" title="This field is required.">*</span></label>
+<input type="text" maxlength="128" name="email" id="edit-email" size="60" value="" class="form-text required" /></div>
+<input type="submit" name="op" id="edit-submit-1" value="Sign up"  class="form-submit awesome" />
+<input type="hidden" name="form_build_id" id="form-582afb44af3e8e1cbf433bef44478a2b" value="form-582afb44af3e8e1cbf433bef44478a2b"  />
+<input type="hidden" name="form_id" id="edit-activestate-footer-newsletter-form" value="activestate_footer_newsletter_form"  />
+
+</div></form>
+<script>$(document).ready(function() {marketo_tracker = $.cookie('_mkto_trk');$('form#activestate-footer-newsletter-form input#mktotrk').val(marketo_tracker);});ppc_tracker = $.cookie('mktoPPCKeyword');$('form#activestate-footer-newsletter-form input#ppcKeyword').val(ppc_tracker);</script><script>$(document).ready(function() {$('form#activestate-footer-newsletter-form').validate({ });});</script>            <div class="as_newsletter_footnote">Your information is safe with us. We will never sell or share your contact information.</div>
+          </div>
+          <div class="as_copy">
+            &copy; 2012 ActiveState Software Inc. All rights reserved. ActiveState&reg;, Komodo&reg;, ActivePerl&reg;, ActivePython&reg;, ActiveTcl&reg;, and Stackato&reg; are registered trademarks of ActiveState. All other marks are property of their respective owners.
+          </div>
+        </div>
+          
+          <!-- Start Leadlander code.  Inside footer so that the 1px image doesn't create space below the footer. -->  
+                    <script type="text/javascript" language="javascript">llactid=13284;</script>
+          <script type="text/javascript" language="javascript" src="http://t3.trackalyzer.com/trackalyze.js"></script>
+          <!-- End Leadlander code -->
+      </div> <!-- /footer -->
+    <script type="text/javascript" src="/sites/all/modules/contrib/google_cse/google_cse.js?G"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"googleCSE":{"language":"en"}});
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+
+      Shadowbox.path = "/sites/all/libraries/shadowbox/";
+      Shadowbox.init(Drupal.settings.shadowbox);
+    
+//--><!]]>
+</script>
+	<script type="text/javascript" language="javascript">
+    $.fn.equalHeights = function(px) {
+        $(this).each(function(){
+            var currentTallest = 0;
+            $(this).children().each(function(i){
+                if ($(this).height() > currentTallest)
+                    currentTallest = $(this).height();
+            });
+            // for ie6, set height since min-height isn't supported
+            if ($.browser.msie && $.browser.version == 6.0)
+                $(this).children().css({'height': currentTallest});
+            $(this).children().css({'min-height': currentTallest});
+        });
+        return this;
+    };
+    
+    $("document").ready(function() {
+        // tiptip for all badges
+        $("span.as_badge").tipTip({edgeOffset: 10});
+        
+        // tipTip for the chat with sales link
+        $("li.chat_with_sales a").tipTip({maxWidth: "250px", edgeOffset: -20}).attr('title', '');
+        $("li.chat_with_sales a img").attr('title', '');
+        
+        // tipTip for image popups
+        $('a.as_img_tip').each(function() { $(this).tipTip({content: "<img src='" + this.href + "' width='400px'>", maxWidth: "420px", edgeOffset: -50 }); })
+        $('img.as_img_tip').each(function() { $(this).tipTip({content: "<img src='" + this.src + "' width='400px'>", maxWidth: "420px", edgeOffset: -50 }); })
+        
+        // expandable images
+        $('.as_expandable').wrap('<div class="as_expandable_wrapper" title="Click to expand/shrink this image" />');
+        $('.as_expandable_wrapper').tipTip({edgeOffset: 10, defaultPosition: "top"});
+        $('.as_expandable').click( function() {
+          $(this).toggleClass("as_fullwidth").attr("style", "");
+        });
+        
+        // general tiptips
+        $('.tiptip').tipTip({defaultPosition: "top"});
+        
+        
+        cookie_json = $.cookie("SSO_DATA");
+        if (cookie_json) {
+          cookie = eval('(' + cookie_json + ')');
+          $("div#as_user_block div.slideout_container div.as_user_name").html(cookie['fullname']);
+          $("div#as_user_block div.slideout_container div.as_user_email").html(cookie['email']);
+          $("div#as_user_block div.slideout_container div.as_signout").html('<a class="awesome" href="https://account.activestate.com/signout/?next=' + escape(location.href) + '">Sign Out</a>');
+          $("div#as_account_nav ul").prepend('<li class="leaf first activestate-user"><a href="https://account.activestate.com" id="profile_nav" class="user_toggle">' + cookie['email'] + '</a></li>');	    
+        } 
+        else {
+          $("div#as_account_nav ul").prepend('<li class="leaf sign_in"><a href="https://account.activestate.com/signin/?next=' + escape(location.href) + '" id="signin_nav">Sign In</a></li>');
+        }
+        
+        function top_nav_slider_toggle(slider_element_selector) {
+			var slider_element = $(slider_element_selector);
+			// if the slider element is visible, hide it
+			if (slider_element.is(":visible")) {
+				$('#slideout_close').fadeToggle('normal', function() {
+						slider_element.slideToggle();
+					});
+			}
+			// otherwise, hide any visible sliders and show the requested one
+			else {
+				if ($('.top_nav_slideout').is(":visible")) {
+					$('#slideout_close').fadeOut('normal', function() {
+						$('.top_nav_slideout:visible').slideToggle('normal', function() {
+							slider_element.slideToggle();
+							$('#slideout_close').fadeToggle();
+						});
+					});
+				}
+				else {
+					slider_element.slideToggle('normal', function() {
+						$('#slideout_close').fadeToggle();
+					});
+				}
+			}
+		}
+		
+		$('#slideout_close').click(function(event) {
+			event.preventDefault();
+			$(this).fadeToggle('normal', function() {
+				$('.top_nav_slideout:visible').slideToggle();
+			});
+		});
+		
+		$('.search_toggle').click(function(event) {
+			event.preventDefault();
+			if (!$('.page-search').length) { // don't want to toggle the search box on search result pages
+				top_nav_slider_toggle('#as_search_block');
+				$('#as_search_block #edit-search-theme-form-1').focus();
+			}
+		})
+		
+		$('.contact_toggle').click(function(event) {
+			event.preventDefault();
+			if (!$('.page-company-contact-us').length) { // don't want to toggle the contact us box on the contact us page
+				top_nav_slider_toggle('#as_contact_block');
+			}
+		})
+		
+		$('.user_toggle').click(function(event) {
+			event.preventDefault();
+			top_nav_slider_toggle('#as_user_block');
+		})
+        
+        var recent_tweets = $("#recent_tweets").length; // easy test for element existence
+        if (recent_tweets) {
+          $("#recent_tweets").tweet({
+              username: "activestate",
+              join_text: "auto",
+              avatar_size: 0,
+              count: 100,
+              auto_join_text_default: "",
+              auto_join_text_ed: "",
+              auto_join_text_ing: "",
+              auto_join_text_reply: "",
+              auto_join_text_url: "",
+              loading_text: "loading tweets..."
+          });
+        }
+        
+        $('#main').equalHeights();
+        
+        // prettify any code blocks
+        $(function() {
+          if (typeof prettyPrint == 'function') {
+            prettyPrint();
+          }
+        });
+        
+        // set the marketo PPC tracking cookie
+        var as_ppc = $.url.param("gclid");
+        
+        // we only want the search keyword if this is coming in via a PPC campaign
+        if (as_ppc) {
+          
+          var refer = document.referrer;
+          var searchString;
+          var searchEngine;
+          var excludedReferrers = [ "activestate.com" ];
+        
+          if ( (refer != undefined) && (refer != "") ) {
+          
+            // get the domain of the referring website -- http://[[this-thing.com]]/
+            var referrerDomain =
+                refer.substr(refer.indexOf("\/\/") + 2,
+                             refer.indexOf("\/",8) - refer.indexOf("\/\/") - 2).toLowerCase();
+        
+            var excludedDomainFound = false;
+            var i = 0;
+        
+            // search the excluded domain list to see if the referrer domain is on it
+            while ( (i < excludedReferrers.length) && !excludedDomainFound) {
+              var thisExcludedDomain = excludedReferrers[i].toLowerCase();
+              excludedDomainFound = (referrerDomain.indexOf(thisExcludedDomain) != -1);
+              i++;
+            }
+        
+              // only if the referrer isn't in our excluded domain list...
+            if( !excludedDomainFound ) {
+        
+              var searchEngines = [
+                   { name: "Yahoo", url: /\.yahoo\.co/i, query: "p" },
+                   { name: "Google", url: /\.google\./i, query: "q" },
+                   { name: "Microsoft Live", url: /\.live\.com/i, query: "q" },
+                   { name: "MSN Search", url: /search\.msn\./i, query: "q" },
+                   { name: "AOL", url: /\.aol\./i, query: "query" },
+                   { name: "Bing", url: /\.bing\.com/i, query: "q" },
+                   { name: "Ask", url: /\.ask\.com/i, query: "q" }
+                 ];
+        
+              // find the referring search engine (if any)
+              i = 0;
+              while (i < searchEngines.length) {
+                if (refer.match(searchEngines[i].url)) {
+                  searchEngine = searchEngines[i].name;
+                  searchString = $.url.setUrl(refer).param(searchEngines[i].query);
+                  break;
+                }
+                i++;
+              }
+        
+              // If no search engine is found, this person probably used a less
+              // popular one.  Use the referring doman, then guess the query parameter
+              if (i == searchEngines.length) {
+        
+                searchEngine = referrerDomain;
+      
+                var queries = ["q","p","query"];
+                var i = 0;
+                while ((i < queries.length) && (searchString == undefined)) {
+                  searchString = $.url.setUrl(refer).param(queries[i]);
+                  i++;
+                }
+      
+                // no search strings found -- use this text instead.
+                if (searchString == undefined) {
+                  searchString = "None";
+                }
+              }
+            }
+            
+            $.cookie('mktoPPCKeyword', searchString, {expires: 730, path: '\/', domain: 'activestate.com'} );
+            
+          }
+        }
+    });
+	  
+</script>
+    
+<!-- attach upsell function -->
+<script type="text/javascript">
+// <![CDATA[
+function attach_upsell(nodeid) {
+$.getJSON("https://store.activestate.com/json/catalog?callback=?", function(data) { 
+    
+    $.each(data, function(i, item) {
+    
+    if (item.nid == nodeid ) {
+    
+    var is_upsell  = 0;
+    var upsell_url = "https://store.activestate.com/as/upsell/" + nodeid;
+    
+    // see if there's an upgrade for the product & pop up a shadowbox if there is
+    is_upsell = item.has_upsell;
+      
+    if (is_upsell) {
+      var cartlink_id = "cartlink_" + nodeid;
+      $("#" + cartlink_id).click(function() {
+        Shadowbox.open({
+          content: upsell_url,
+          player: "iframe",
+          width: "600px",
+          height: "550px"
+        });
+        return false;
+      });
+    }
+    
+    }
+})
+})
+}
+// ]]>
+</script>
+
+
+<!-- LivePerson -->
+<script type="text/javascript" charset="UTF-8" src="http://server.iad.liveperson.net/hc/88203588/?cmd=mTagRepstate&site=88203588&buttonID=12&divID=lpButDivID-1279824964197&bt=1&c=1"></script>
+
+<!-- Marketo tracking -->
+<script src="http://munchkin.marketo.net/munchkin.js" type="text/javascript"></script> <script>mktoMunchkin("894-ACS-622");</script>
+
+	
+  </body>
+</html>

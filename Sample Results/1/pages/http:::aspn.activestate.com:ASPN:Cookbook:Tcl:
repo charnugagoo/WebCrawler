@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html>
+
+
+
+
+<head>
+  <title>
+Popular Tcl recipes  &laquo; ActiveState Code
+</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=8" />
+  <link rel="stylesheet" href="/static/css/activestyle.css" type="text/css"/>
+  <!--[if IE]>
+    <link rel="stylesheet" href="/static/css/ie.css" type="text/css" />
+  <![endif]-->
+  <!--[if IE 7]>
+    <link rel="stylesheet" href="/static/css/ie7.css" type="text/css" />
+  <![endif]-->
+  <!--[if IE 6]>
+    <link rel="stylesheet" href="/static/css/ie6.css" type="text/css" />
+  <![endif]-->
+  <link href="/static/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:bold&subset=latin' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans:bold' rel='stylesheet' type='text/css'>
+  
+  
+  <link rel="alternate" href="/feeds/news/" type="application/atom+xml" title="ActiveState Code News" />
+
+  <link type="image/x-icon" href="/static/activestyle/img/favicon.ico" rel="shortcut icon"/>
+
+  <script src="/static/js/jquery-1.3.2.min.js" type="text/javascript"></script>
+  <script src="/static/js/jquery-ui-1.7.2.custom.min.js" type="text/javascript"></script>
+  <script src="/static/js/jquery-form-2.36.js" type="text/javascript"></script>
+  
+  
+
+<link rel="alternate" type="application/atom+xml" title="Popular Tcl recipes "
+      href="/feeds/recipes/langs/tcl/"/>
+<link rel="canonical" href="/recipes/langs/tcl/"/>
+
+  
+  
+  <!-- Start Google Analytics tracking code -->
+  <script type="text/javascript"> var _gaq = _gaq || [];
+  var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-20072-24']); _gaq.push(['_setDomainName', '.activestate.com']); _gaq.push(['_setAllowLinker', true]); _gaq.push(['_setAllowHash', false]); _gaq.push(['_trackPageview']);
+  (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async =
+  true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })(); </script>
+  <!-- End Google Analytics tracking code -->
+  
+  
+</head>
+<body >
+<div id="as_wrapper">
+ 
+<ul class="as_skip">
+  <li><a href="#q">Skip to Search</a></li>
+  <li><a href="#site_nav">Skip to Navigation</a></li>
+  <li><a href="#as_content">Skip to Content</a></li>
+</ul>
+
+<div id="as_header_wrapper" class="nosearchhi">
+<div id="as_header">
+  <div id="as_navbar" class="as_navbar_short">
+    <ul id="as_sitesnav">
+      <li class="as_logo"><a href="http://www.activestate.com/"><img height="18" width="90" src="/static/activestyle/img/activestate.png" title="ActiveState | The Dynamic Language Experts"></a></li>
+      <span class="as_navsep"></span>
+      <li><a href="http://community.activestate.com/">Community</a></li>
+      <span class="as_navsep">|</span>
+      <li><b><a href="/">Code</a></b></li>
+      <span class="as_navsep">|</span>
+      <li><a href="http://docs.activestate.com/">Docs</a></li>
+      <span class="as_navsep">|</span>
+      <li class="as_sitesnav_more"><a onclick="$('#as_sitesnav_downloads').slideToggle(100); return false;" href="http://www.activestate.com/downloads" ><u>Downloads</u>  <small>&#9660;</small></a>
+        <ul style="display: none;" id="as_sitesnav_downloads">
+          <li><a href="http://www.activestate.com/stackato/download_vm" title="Download Stackato">Stackato</a></li>
+          <li><a href="http://www.activestate.com/activeperl/downloads" title="Download Perl">ActivePerl</a></li>
+          <li><a href="http://www.activestate.com/activepython/downloads" title="Download Python">ActivePython</a></li>
+          <li><a href="http://www.activestate.com/activetcl/downloads" title="Download Tcl">ActiveTcl</a></li>
+          <li><a href="http://www.activestate.com/activeperl-pro-studio/downloads" title="Download ActivePerl Pro Studio">ActivePerl Pro Studio</a></li>
+          <li><a href="http://www.activestate.com/activetcl-pro-studio/downloads" title="Download ActiveTcl Pro Studio">ActiveTcl Pro Studio</a></li>
+          <li><a href="http://www.activestate.com/perl-dev-kit/downloads" title="Download Perl Dev Kit">Perl Dev Kit</a></li>
+          <li><a href="http://www.activestate.com/tcl-dev-kit/downloads" title="Download Tcl Dev Kit">Tcl Dev Kit</a></li>
+          <li><a href="http://www.activestate.com/komodo-ide/downloads" title="Download Komodo IDE">Komodo IDE</a></li>
+        </ul>
+      </li>
+      <span class="as_navsep">|</span>
+      <li class="as_sitesnav_more"><a href="http://www.activestate.com/community" onclick="$('#as_sitesnav_more').slideToggle(100); return false;"><u>more</u> <small>&#9660;</small></a>
+        <ul id="as_sitesnav_more" style="display: none;">
+          <li><a href="http://lists.activestate.com/">Lists</a></li>
+          <li><a href="http://bugs.activestate.com/">Bugs</a></li>
+          <li><a href="http://code.activestate.com/ppm">PPM Index</a></li>
+          <li><a href="http://code.activestate.com/pypm">PyPM Index</a></li>
+        </ul>
+      </li>
+    </ul>
+    <script type="text/javascript">
+      $('body').click(function() { $('#as_sitesnav_more').hide(); $('#as_sitesnav_downloads').hide(); });
+    </script>
+
+    <div id="as_accountnav">
+    
+      Welcome, guest
+      <span class="as_navsep">|</span> <a href="https://account.activestate.com/signin/?next=http%3A//code.activestate.com/recipes/langs/tcl/">Sign In</a>
+    
+      <span class="as_navsep">|</span> <a href="https://account.activestate.com/">My Account</a>
+      <span class="as_navsep">|</span> <a href="https://store.activestate.com/">Store</a>
+      <span class="as_navsep">|</span> <a href="https://store.activestate.com/cart" class="icon-cart">Cart</a>
+    </div>
+  </div>
+  
+  <div id="as_bannerbar">
+    
+<div id="site_logo" class="as_banner_text">
+  <a class="as_banner_text" href="/">ActiveState Code</a> &raquo; <a href="/recipes/" class="as_banner_text">Recipes</a>
+</div>
+
+<div id="site_nav">
+  <form id="search_form" action="/search/recipes/">
+    <input size="24" id="q" name="q" accesskey="s"/>
+    <input type="submit" value="Search" />
+  </form>
+</div>
+
+    <div style="clear:both"></div>
+  </div>
+  
+</div> <!-- end of as_header -->
+
+<div id="as_sub_banner">
+  <div id="as_sub_site_nav">
+    <div id="as_sub_site_links">
+      
+  <a href="/recipes/add/" title="Add a Recipe">Add a Recipe</a>
+  <a href="/recipes/langs/">Languages</a>
+  <a href="/recipes/tags/">Tags</a>
+  <a href="/recipes/users/">Authors</a>
+  <a href="/recipes/sets/">Sets</a>
+  
+
+    </div>
+  </div>
+</div> <!-- end of as_sub_banner -->
+
+</div> <!-- end of as_header_wrapper -->
+
+
+<div id="as_middle">
+  <div id="as_content_wrapper">
+    <div id="as_content">
+      
+      <div id="page_header">
+        <h1>
+Popular Tcl recipes 
+</h1>
+      </div>
+      
+
+      <div id="content">
+        
+
+
+
+<div id="tagbar"><span class="start">
+    &nbsp;Tags: <img src="/static/img/arrowL.png" align="absmiddle" class="tagbar_arrow"/></span><span class="newtags"><img src="/static/img/arrowR.png" align="absmiddle" class="tagbar_arrow"/><form action="." method="get">&nbsp;<input type="text" name="tags" title="Type tags here"/>&nbsp;</form><img src="/static/img/arrowL.png" align="absmiddle" class="tagbar_arrow"/></span></div>
+
+
+
+
+<div class="pages-top"><div class="pages">
+<span class="results">Recipe 1 to 20 of 156</span>
+<div class="paginator">
+
+    <span class="prev disabled">&laquo; Prev</span>
+
+
+
+    
+        
+            <span class="this-page">1</span>
+        
+    
+
+    
+        
+            <a href="?page=2">2</a>
+        
+    
+
+    
+        
+            <a href="?page=3">3</a>
+        
+    
+
+    
+        
+            <a href="?page=4">4</a>
+        
+    
+
+    
+        
+            <a href="?page=5">5</a>
+        
+    
+
+    
+        
+            <a href="?page=6">6</a>
+        
+    
+
+    
+        
+            <a href="?page=7">7</a>
+        
+    
+
+    
+        
+            <a href="?page=8">8</a>
+        
+    
+
+
+
+    <a class="next" href="?page=2">Next &raquo;</a>
+
+</div>
+</div>
+</div>
+
+
+
+
+  <ul class="recipes">
+  
+    <li class="odd">
+    
+        
+        
+
+<div class="recipe-summary-compact" id="recipe578351">
+  <div class="recipe-summary-box recipe-summary-views">
+    336<div class="recipe-summary-caption">views</div>
+  </div>
+  <div class="recipe-summary-box recipe-summary-score">
+    1<div class="recipe-summary-caption">score</div>
+  </div>
+  
+  <span class="recipe-title"><a href="/recipes/578351-sample-script-for-tcl-socket-load-distribution-acr/?in=lang-tcl">Sample script for TCL socket load distribution across many CPUs / hosts </a></span>
+  <div class="secondary">
+    <a href="/recipes/langs/tcl/">Tcl</a>
+    /
+    
+    <a href="/recipes/tags/distribution/" class="tag">distribution</a>, 
+    <a href="/recipes/tags/load/" class="tag">load</a>, 
+    <a href="/recipes/tags/socket/" class="tag">socket</a>, 
+    <a href="/recipes/tags/tcl/" class="tag">tcl</a>
+    
+    /
+    <span class="nowrap">by <a href="/recipes/users/4184423/">John Brearley</a></span>
+    
+    (2 months ago)
+    
+  </div>
+  <div style="clear:both;"></div>
+</div>
+
+        
+    
+  
+    <li class="even">
+    
+        
+        
+
+<div class="recipe-summary-compact" id="recipe577617">
+  <div class="recipe-summary-box recipe-summary-views">
+    2<small>k</small><div class="recipe-summary-caption">views</div>
+  </div>
+  <div class="recipe-summary-box recipe-summary-score">
+    0<div class="recipe-summary-caption">score</div>
+  </div>
+  
+  <span class="recipe-title"><a href="/recipes/577617-basic-text-editor/?in=lang-tcl">Basic Text Editor</a></span>
+  <div class="secondary">
+    <a href="/recipes/langs/tcl/">Tcl</a>
+    /
+    
+    <a href="/recipes/tags/basic/" class="tag">basic</a>, 
+    <a href="/recipes/tags/editor/" class="tag">editor</a>, 
+    <a href="/recipes/tags/text/" class="tag">text</a>
+    
+    /
+    <span class="nowrap">by <a href="/recipes/users/4169413/">Jonathan Fenech</a></span>
+    
+    (1 year ago)
+    
+  </div>
+  <div style="clear:both;"></div>
+</div>
+
+        
+    
+  
+    <li class="odd">
+    
+        
+        
+
+<div class="recipe-summary-compact" id="recipe577408">
+  <div class="recipe-summary-box recipe-summary-views">
+    2<small>k</small><div class="recipe-summary-caption">views</div>
+  </div>
+  <div class="recipe-summary-box recipe-summary-score">
+    1<div class="recipe-summary-caption">score</div>
+  </div>
+  
+  <span class="recipe-title"><a href="/recipes/577408-spawn-command-not-found-error/?in=lang-tcl">Spawn command not found error</a></span>
+  <div class="secondary">
+    <a href="/recipes/langs/tcl/">Tcl</a>
+    /
+    
+    
+    no tags
+    
+    /
+    <span class="nowrap">by <a href="/recipes/users/4175066/">siva prasad</a></span>
+    
+    (2 years ago)
+    
+  </div>
+  <div style="clear:both;"></div>
+</div>
+
+        
+    
+  
+    <li class="even">
+    
+        
+        
+
+<div class="recipe-summary-compact" id="recipe577165">
+  <div class="recipe-summary-box recipe-summary-views">
+    2<small>k</small><div class="recipe-summary-caption">views</div>
+  </div>
+  <div class="recipe-summary-box recipe-summary-score">
+    3<div class="recipe-summary-caption">score</div>
+  </div>
+  
+  <span class="recipe-title"><a href="/recipes/577165-itunes-control/?in=lang-tcl">iTunes control</a></span>
+  <div class="secondary">
+    <a href="/recipes/langs/tcl/">Tcl</a>
+    /
+    
+    <a href="/recipes/tags/itunes/" class="tag">itunes</a>, 
+    <a href="/recipes/tags/tcom/" class="tag">tcom</a>
+    
+    /
+    <span class="nowrap">by <a href="/recipes/users/4167503/">Frank Bannon</a></span>
+    
+    (2 years ago)
+    
+  </div>
+  <div style="clear:both;"></div>
+</div>
+
+        
+    
+  
+    <li class="odd">
+    
+        
+        
+
+<div class="recipe-summary-compact" id="recipe576892">
+  <div class="recipe-summary-box recipe-summary-views">
+    3<small>k</small><div class="recipe-summary-caption">views</div>
+  </div>
+  <div class="recipe-summary-box recipe-summary-score">
+    1<div class="recipe-summary-caption">score</div>
+  </div>
+  
+  <span class="recipe-title"><a href="/recipes/576892-parse-a-dis-pdu/?in=lang-tcl">Parse a DIS PDU</a></span>
+  <div class="secondary">
+    <a href="/recipes/langs/tcl/">Tcl</a>
+    /
+    
+    <a href="/recipes/tags/dis/" class="tag">dis</a>, 
+    <a href="/recipes/tags/pdu/" class="tag">pdu</a>, 
+    <a href="/recipes/tags/udp/" class="tag">udp</a>
+    
+    /
+    <span class="nowrap">by <a href="/recipes/users/4167503/">Frank Bannon</a></span>
+    
+    (3 years ago)
+    
+  </div>
+  <div style="clear:both;"></div>
+</div>
+
+        
+    
+  
+    <li class="even">
+    
+        
+        
+
+<div class="recipe-summary-compact" id="recipe576568">
+  <div class="recipe-summary-box recipe-summary-views">
+    4<small>k</small><div class="recipe-summary-caption">views</div>
+  </div>
+  <div class="recipe-summary-box recipe-summary-score">
+    1<div class="recipe-summary-caption">score</div>
+  </div>
+  
+  <span class="recipe-title"><a href="/recipes/576568-distributed-interactive-simulation/?in=lang-tcl">Distributed Interactive Simulation</a></span>
+  <div class="secondary">
+    <a href="/recipes/langs/tcl/">Tcl</a>
+    /
+    
+    <a href="/recipes/tags/dis/" class="tag">dis</a>, 
+    <a href="/recipes/tags/pdu/" class="tag">pdu</a>, 
+    <a href="/recipes/tags/udp/" class="tag">udp</a>
+    
+    /
+    <span class="nowrap">by <a href="/recipes/users/4167503/">Frank Bannon</a></span>
+    
+    (8 months ago, revision 2)
+    
+  </div>
+  <div style="clear:both;"></div>
+</div>
+
+        
+    
+  
+    <li class="odd">
+    
+        
+        
+
+<div class="recipe-summary-compact" id="recipe544293">
+  <div class="recipe-summary-box recipe-summary-views">
+    6<small>k</small><div class="recipe-summary-caption">views</div>
+  </div>
+  <div class="recipe-summary-box recipe-summary-score">
+    2<div class="recipe-summary-caption">score</div>
+  </div>
+  
+  <span class="recipe-title"><a href="/recipes/544293-pronouncable-password-generator/?in=lang-tcl">Pronouncable password generator</a></span>
+  <div class="secondary">
+    <a href="/recipes/langs/tcl/">Tcl</a>
+    /
+    
+    
+    no tags
+    
+    /
+    <span class="nowrap">by <a href="/recipes/users/4119868/">Rob Haeusler</a></span>
+    
+    (5 years ago)
+    
+  </div>
+  <div style="clear:both;"></div>
+</div>
+
+        
+    
+  
+    <li class="even">
+    
+        
+        
+
+<div class="recipe-summary-compact" id="recipe528899">
+  <div class="recipe-summary-box recipe-summary-views">
+    6<small>k</small><div class="recipe-summary-caption">views</div>
+  </div>
+  <div class="recipe-summary-box recipe-summary-score">
+    1<div class="recipe-summary-caption">score</div>
+  </div>
+  
+  <span class="recipe-title"><a href="/recipes/528899-script-checking-availability-of-network-servers/?in=lang-tcl">Script checking availability of network servers</a></span>
+  <div class="secondary">
+    <a href="/recipes/langs/tcl/">Tcl</a>
+    /
+    
+    <a href="/recipes/tags/sysadmin/" class="tag">sysadmin</a>
+    
+    /
+    <span class="nowrap">by <a href="/recipes/users/4078056/">Alex Khokhlov</a></span>
+    
+    (5 years ago, revision 2)
+    
+  </div>
+  <div style="clear:both;"></div>
+</div>
+
+        
+    
+  
+    <li class="odd">
+    
+        
+        
+
+<div class="recipe-summary-compact" id="recipe528866">
+  <div class="recipe-summary-box recipe-summary-views">
+    7<small>k</small><div class="recipe-summary-caption">views</div>
+  </div>
+  <div class="recipe-summary-box recipe-summary-score">
+    1<div class="recipe-summary-caption">score</div>
+  </div>
+  
+  <span class="recipe-title"><a href="/recipes/528866-what-words-and-phrases-phone-number-spells/?in=lang-tcl">what words and phrases phone number spells</a></span>
+  <div class="secondary">
+    <a href="/recipes/langs/tcl/">Tcl</a>
+    /
+    
+    
+    no tags
+    
+    /
+    <span class="nowrap">by <a href="/recipes/users/4074276/">Slava Lysunkin</a></span>
+    
+    (5 years ago)
+    
+  </div>
+  <div style="clear:both;"></div>
+</div>
+
+        
+    
+  
+    <li class="even">
+    
+        
+        
+
+<div class="recipe-summary-compact" id="recipe523001">
+  <div class="recipe-summary-box recipe-summary-views">
+    7<small>k</small><div class="recipe-summary-caption">views</div>
+  </div>
+  <div class="recipe-summary-box recipe-summary-score">
+    1<div class="recipe-summary-caption">score</div>
+  </div>
+  
+  <span class="recipe-title"><a href="/recipes/523001-minor-enhancement-to-the-base-tk-console-additiona/?in=lang-tcl">Minor enhancement to the base Tk Console. Additional change.</a></span>
+  <div class="secondary">
+    <a href="/recipes/langs/tcl/">Tcl</a>
+    /
+    
+    
+    no tags
+    
+    /
+    <span class="nowrap">by <a href="/recipes/users/1127585/">Mike Collins</a></span>
+    
+    (5 years ago, revision 2)
+    
+  </div>
+  <div style="clear:both;"></div>
+</div>
+
+        
+    
+  
+    <li class="odd">
+    
+        
+        
+
+<div class="recipe-summary-compact" id="recipe502208">
+  <div class="recipe-summary-box recipe-summary-views">
+    7<small>k</small><div class="recipe-summary-caption">views</div>
+  </div>
+  <div class="recipe-summary-box recipe-summary-score">
+    1<div class="recipe-summary-caption">score</div>
+  </div>
+  
+  <span class="recipe-title"><a href="/recipes/502208-dumpthreads/?in=lang-tcl">dumpThreads</a></span>
+  <div class="secondary">
+    <a href="/recipes/langs/tcl/">Tcl</a>
+    /
+    
+    <a href="/recipes/tags/websphere/" class="tag">websphere</a>
+    
+    /
+    <span class="nowrap">by <a href="/recipes/users/475144/">Patrick Finnegan</a></span>
+    
+    (6 years ago, revision 2)
+    
+  </div>
+  <div style="clear:both;"></div>
+</div>
+
+        
+    
+  
+    <li class="even">
+    
+        
+        
+
+<div class="recipe-summary-compact" id="recipe502196">
+  <div class="recipe-summary-box recipe-summary-views">
+    8<small>k</small><div class="recipe-summary-caption">views</div>
+  </div>
+  <div class="recipe-summary-box recipe-summary-score">
+    1<div class="recipe-summary-caption">score</div>
+  </div>
+  
+  <span class="recipe-title"><a href="/recipes/502196-create-properties-object-return-loaded-property-ob/?in=lang-tcl">Create Properties Object.  Return loaded property object.</a></span>
+  <div class="secondary">
+    <a href="/recipes/langs/tcl/">Tcl</a>
+    /
+    
+    <a href="/recipes/tags/tclblend/" class="tag">tclblend</a>
+    
+    /
+    <span class="nowrap">by <a href="/recipes/users/475144/">Patrick Finnegan</a></span>
+    
+    (6 years ago)
+    
+  </div>
+  <div style="clear:both;"></div>
+</div>
+
+        
+    
+  
+    <li class="odd">
+    
+        
+        
+
+<div class="recipe-summary-compact" id="recipe502195">
+  <div class="recipe-summary-box recipe-summary-views">
+    10<small>k</small><div class="recipe-summary-caption">views</div>
+  </div>
+  <div class="recipe-summary-box recipe-summary-score">
+    1<div class="recipe-summary-caption">score</div>
+  </div>
+  
+  <span class="recipe-title"><a href="/recipes/502195-connect-to-oracle-db/?in=lang-tcl">Connect to Oracle DB.</a></span>
+  <div class="secondary">
+    <a href="/recipes/langs/tcl/">Tcl</a>
+    /
+    
+    <a href="/recipes/tags/tclblend/" class="tag">tclblend</a>
+    
+    /
+    <span class="nowrap">by <a href="/recipes/users/475144/">Patrick Finnegan</a></span>
+    
+    (6 years ago)
+    
+  </div>
+  <div style="clear:both;"></div>
+</div>
+
+        
+    
+  
+    <li class="even">
+    
+        
+        
+
+<div class="recipe-summary-compact" id="recipe496990">
+  <div class="recipe-summary-box recipe-summary-views">
+    12<small>k</small><div class="recipe-summary-caption">views</div>
+  </div>
+  <div class="recipe-summary-box recipe-summary-score">
+    1<div class="recipe-summary-caption">score</div>
+  </div>
+  
+  <span class="recipe-title"><a href="/recipes/496990-scripted-telnet-client-class/?in=lang-tcl">Scripted Telnet Client Class</a></span>
+  <div class="secondary">
+    <a href="/recipes/langs/tcl/">Tcl</a>
+    /
+    
+    <a href="/recipes/tags/network/" class="tag">network</a>
+    
+    /
+    <span class="nowrap">by <a href="/recipes/users/2418930/">Flavio Salgueiro</a></span>
+    
+    (6 years ago, revision 2)
+    
+  </div>
+  <div style="clear:both;"></div>
+</div>
+
+        
+    
+  
+    <li class="odd">
+    
+        
+        
+
+<div class="recipe-summary-compact" id="recipe461612">
+  <div class="recipe-summary-box recipe-summary-views">
+    6<small>k</small><div class="recipe-summary-caption">views</div>
+  </div>
+  <div class="recipe-summary-box recipe-summary-score">
+    2<div class="recipe-summary-caption">score</div>
+  </div>
+  
+  <span class="recipe-title"><a href="/recipes/461612-recursive-ftp/?in=lang-tcl">Recursive FTP.</a></span>
+  <div class="secondary">
+    <a href="/recipes/langs/tcl/">Tcl</a>
+    /
+    
+    <a href="/recipes/tags/network/" class="tag">network</a>
+    
+    /
+    <span class="nowrap">by <a href="/recipes/users/1220635/">Patrick Finnegan</a></span>
+    
+    (7 years ago)
+    
+  </div>
+  <div style="clear:both;"></div>
+</div>
+
+        
+    
+  
+    <li class="even">
+    
+        
+        
+
+<div class="recipe-summary-compact" id="recipe464560">
+  <div class="recipe-summary-box recipe-summary-views">
+    18<small>k</small><div class="recipe-summary-caption">views</div>
+  </div>
+  <div class="recipe-summary-box recipe-summary-score">
+    1<div class="recipe-summary-caption">score</div>
+  </div>
+  
+  <span class="recipe-title"><a href="/recipes/464560-websphere-log-was-session-performance-data-to-a-cl/?in=lang-tcl">WebSphere - log WAS SESSION performance data to a cloudscape database.</a></span>
+  <div class="secondary">
+    <a href="/recipes/langs/tcl/">Tcl</a>
+    /
+    
+    <a href="/recipes/tags/websphere/" class="tag">websphere</a>
+    
+    /
+    <span class="nowrap">by <a href="/recipes/users/1220635/">Patrick Finnegan</a></span>
+    
+    (7 years ago)
+    
+  </div>
+  <div style="clear:both;"></div>
+</div>
+
+        
+    
+  
+    <li class="odd">
+    
+        
+        
+
+<div class="recipe-summary-compact" id="recipe464559">
+  <div class="recipe-summary-box recipe-summary-views">
+    16<small>k</small><div class="recipe-summary-caption">views</div>
+  </div>
+  <div class="recipe-summary-box recipe-summary-score">
+    1<div class="recipe-summary-caption">score</div>
+  </div>
+  
+  <span class="recipe-title"><a href="/recipes/464559-websphere-log-was-jvm-performance-data-to-a-clouds/?in=lang-tcl">WebSphere - log WAS JVM performance data to a cloudscape database.</a></span>
+  <div class="secondary">
+    <a href="/recipes/langs/tcl/">Tcl</a>
+    /
+    
+    <a href="/recipes/tags/websphere/" class="tag">websphere</a>
+    
+    /
+    <span class="nowrap">by <a href="/recipes/users/1220635/">Patrick Finnegan</a></span>
+    
+    (7 years ago)
+    
+  </div>
+  <div style="clear:both;"></div>
+</div>
+
+        
+    
+  
+    <li class="even">
+    
+        
+        
+
+<div class="recipe-summary-compact" id="recipe464545">
+  <div class="recipe-summary-box recipe-summary-views">
+    10<small>k</small><div class="recipe-summary-caption">views</div>
+  </div>
+  <div class="recipe-summary-box recipe-summary-score">
+    1<div class="recipe-summary-caption">score</div>
+  </div>
+  
+  <span class="recipe-title"><a href="/recipes/464545-websphere-log-was-jvm-performance-data-to-a-clouds/?in=lang-tcl">WebSphere - log WAS JVM performance data to a cloudscape database.</a></span>
+  <div class="secondary">
+    <a href="/recipes/langs/tcl/">Tcl</a>
+    /
+    
+    <a href="/recipes/tags/websphere/" class="tag">websphere</a>
+    
+    /
+    <span class="nowrap">by <a href="/recipes/users/1220635/">Patrick Finnegan</a></span>
+    
+    (7 years ago)
+    
+  </div>
+  <div style="clear:both;"></div>
+</div>
+
+        
+    
+  
+    <li class="odd">
+    
+        
+        
+
+<div class="recipe-summary-compact" id="recipe464546">
+  <div class="recipe-summary-box recipe-summary-views">
+    17<small>k</small><div class="recipe-summary-caption">views</div>
+  </div>
+  <div class="recipe-summary-box recipe-summary-score">
+    1<div class="recipe-summary-caption">score</div>
+  </div>
+  
+  <span class="recipe-title"><a href="/recipes/464546-websphere-log-was-jdbc-performance-data-to-a-cloud/?in=lang-tcl">WebSphere - log WAS JDBC performance data to a cloudscape database.</a></span>
+  <div class="secondary">
+    <a href="/recipes/langs/tcl/">Tcl</a>
+    /
+    
+    <a href="/recipes/tags/websphere/" class="tag">websphere</a>
+    
+    /
+    <span class="nowrap">by <a href="/recipes/users/1220635/">Patrick Finnegan</a></span>
+    
+    (7 years ago)
+    
+  </div>
+  <div style="clear:both;"></div>
+</div>
+
+        
+    
+  
+    <li class="even">
+    
+        
+        
+
+<div class="recipe-summary-compact" id="recipe461732">
+  <div class="recipe-summary-box recipe-summary-views">
+    5<small>k</small><div class="recipe-summary-caption">views</div>
+  </div>
+  <div class="recipe-summary-box recipe-summary-score">
+    1<div class="recipe-summary-caption">score</div>
+  </div>
+  
+  <span class="recipe-title"><a href="/recipes/461732-cloudscape-run-ddl-against-a-cloudscape-database-u/?in=lang-tcl">Cloudscape - Run DDL against a Cloudscape database using batchupdate SQL.</a></span>
+  <div class="secondary">
+    <a href="/recipes/langs/tcl/">Tcl</a>
+    /
+    
+    <a href="/recipes/tags/database/" class="tag">database</a>
+    
+    /
+    <span class="nowrap">by <a href="/recipes/users/1220635/">Patrick Finnegan</a></span>
+    
+    (7 years ago)
+    
+  </div>
+  <div style="clear:both;"></div>
+</div>
+
+        
+    
+  
+  </ul>
+
+
+
+
+<div class="pages-bottom"><div class="pages">
+<span class="results">Recipe 1 to 20 of 156</span>
+<div class="paginator">
+
+    <span class="prev disabled">&laquo; Prev</span>
+
+
+
+    
+        
+            <span class="this-page">1</span>
+        
+    
+
+    
+        
+            <a href="?page=2">2</a>
+        
+    
+
+    
+        
+            <a href="?page=3">3</a>
+        
+    
+
+    
+        
+            <a href="?page=4">4</a>
+        
+    
+
+    
+        
+            <a href="?page=5">5</a>
+        
+    
+
+    
+        
+            <a href="?page=6">6</a>
+        
+    
+
+    
+        
+            <a href="?page=7">7</a>
+        
+    
+
+    
+        
+            <a href="?page=8">8</a>
+        
+    
+
+
+
+    <a class="next" href="?page=2">Next &raquo;</a>
+
+</div>
+</div>
+</div>
+
+
+
+      </div> <!-- end of content -->
+    </div> <!-- end of as_content -->
+  </div> <!-- end of as_content_wrapper -->
+  
+  <div id="as_sidebar_wrapper">
+    <div id="as_sidebar">
+    
+
+
+
+<p>
+View
+<a href="/recipes/langs/tcl/popular/">popular</a>,
+<a href="/recipes/langs/tcl/new/">latest</a>,
+<a href="/recipes/langs/tcl/top/">top-rated</a> or
+<a href="/recipes/langs/tcl/views/">most viewed</a>
+</p>
+
+<p>
+<a href="/feeds/recipes/langs/tcl/"><img src="/static/img/feed.png"/> Feed of the popular Tcl recipes </a>
+</p>
+
+
+
+
+
+<h4 id="top-rated">Top-rated recipes</h4>
+<ul class="flat">
+
+<li><a href="/recipes/146220-inserts-thousand-separators-into-a-number/">Inserts thousand separators into a&hellip;</a>
+<span class="secondary">(Tcl)</span>
+</li>
+
+<li><a href="/recipes/68393-repeat-procedure-every-x-seconds/">Repeat procedure every X seconds</a>
+<span class="secondary">(Tcl)</span>
+</li>
+
+<li><a href="/recipes/577165-itunes-control/">iTunes control</a>
+<span class="secondary">(Tcl)</span>
+</li>
+
+<li><a href="/recipes/544293-pronouncable-password-generator/">Pronouncable password generator</a>
+<span class="secondary">(Tcl)</span>
+</li>
+
+<li><a href="/recipes/461612-recursive-ftp/">Recursive FTP.</a>
+<span class="secondary">(Tcl)</span>
+</li>
+
+<li><a href="/recipes/154433-wscp-showserverstatus/">WSCP - showServerStatus</a>
+<span class="secondary">(Tcl)</span>
+</li>
+
+<li><a href="/recipes/146221-check-creditcard-numbers-for-wellformed-ness/">Check creditcard numbers for wellf&hellip;</a>
+<span class="secondary">(Tcl)</span>
+</li>
+
+<li><a href="/recipes/117247-inline-gif-image-into-code/">Inline GIF image into code</a>
+<span class="secondary">(Tcl)</span>
+</li>
+
+<li><a href="/recipes/116653-flexible-string-splittingparsing-routine/">Flexible string splitting/parsing &hellip;</a>
+<span class="secondary">(Tcl)</span>
+</li>
+
+<li><a href="/recipes/68386-multi-character-split/">Multi-character split</a>
+<span class="secondary">(Tcl)</span>
+</li>
+
+</ul>
+
+
+
+
+
+<h4 id="tags">Tcl tags</h4>
+<span class="small right"><a href="/recipes/langs/tcl/tags/">more&hellip;</a></span>
+
+  <p class="tag-cloud">
+
+  <a style="font-size: 9px;" href="/recipes/langs/tcl/tags/basic/" title="1 Tcl recipe tagged with 'basic'">basic</a>
+
+  <a style="font-size: 17px;" href="/recipes/langs/tcl/tags/binding/" title="17 Tcl recipes tagged with 'binding'">binding</a>
+
+  <a style="font-size: 16px;" href="/recipes/langs/tcl/tags/database/" title="11 Tcl recipes tagged with 'database'">database</a>
+
+  <a style="font-size: 15px;" href="/recipes/langs/tcl/tags/datastructures/" title="8 Tcl recipes tagged with 'datastructures'">datastructures</a>
+
+  <a style="font-size: 14px;" href="/recipes/langs/tcl/tags/debugging/" title="7 Tcl recipes tagged with 'debugging'">debugging</a>
+
+  <a style="font-size: 10px;" href="/recipes/langs/tcl/tags/dis/" title="2 Tcl recipes tagged with 'dis'">dis</a>
+
+  <a style="font-size: 10px;" href="/recipes/langs/tcl/tags/distributed/" title="2 Tcl recipes tagged with 'distributed'">distributed</a>
+
+  <a style="font-size: 17px;" href="/recipes/langs/tcl/tags/graphics/" title="18 Tcl recipes tagged with 'graphics'">graphics</a>
+
+  <a style="font-size: 12px;" href="/recipes/langs/tcl/tags/ldap/" title="3 Tcl recipes tagged with 'ldap'">ldap</a>
+
+  <a style="font-size: 17px;" href="/recipes/langs/tcl/tags/math/" title="18 Tcl recipes tagged with 'math'">math</a>
+
+  <a style="font-size: 13px;" href="/recipes/langs/tcl/tags/network/" title="5 Tcl recipes tagged with 'network'">network</a>
+
+  <a style="font-size: 10px;" href="/recipes/langs/tcl/tags/pdu/" title="2 Tcl recipes tagged with 'pdu'">pdu</a>
+
+  <a style="font-size: 10px;" href="/recipes/langs/tcl/tags/platform/" title="2 Tcl recipes tagged with 'platform'">platform</a>
+
+  <a style="font-size: 9px;" href="/recipes/langs/tcl/tags/tcl/" title="1 Tcl recipe tagged with 'tcl'">tcl</a>
+
+  <a style="font-size: 12px;" href="/recipes/langs/tcl/tags/tclblend/" title="4 Tcl recipes tagged with 'tclblend'">tclblend</a>
+
+  <a style="font-size: 16px;" href="/recipes/langs/tcl/tags/text/" title="14 Tcl recipes tagged with 'text'">text</a>
+
+  <a style="font-size: 10px;" href="/recipes/langs/tcl/tags/udp/" title="2 Tcl recipes tagged with 'udp'">udp</a>
+
+  <a style="font-size: 18px;" href="/recipes/langs/tcl/tags/websphere/" title="28 Tcl recipes tagged with 'websphere'">websphere</a>
+
+  <a style="font-size: 15px;" href="/recipes/langs/tcl/tags/windows/" title="8 Tcl recipes tagged with 'windows'">windows</a>
+
+  <a style="font-size: 9px;" href="/recipes/langs/tcl/tags/xml/" title="1 Tcl recipe tagged with 'xml'">xml</a>
+
+</p>
+
+
+
+
+
+
+
+
+
+
+<div style="margin: 30px 15px;">
+
+<script type='text/javascript'><!--//<![CDATA[
+  var m3_u = (location.protocol=='https:'?'https://ads.activestate.com/www/delivery/ajs.php':'http://ads.activestate.com/www/delivery/ajs.php');
+  var m3_r = Math.floor(Math.random()*99999999999);
+  if (!document.MAX_used) document.MAX_used = ',';
+  document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+  document.write ("?zoneid=1");
+  document.write ('&amp;cb=' + m3_r);
+  if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+  document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+  document.write ("&amp;loc=" + escape(window.location));
+  if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+  if (document.context) document.write ("&context=" + escape(document.context));
+  if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+  document.write ("'><\/scr"+"ipt>");
+//]]>--></script><noscript><a href='http://ads.activestate.com/www/delivery/ck.php?n=aa9dea02&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.activestate.com/www/delivery/avw.php?zoneid=1&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=aa9dea02' border='0' alt='' /></a></noscript>
+</div>
+
+
+
+    </div> <!-- end of sidebar -->
+  </div> <!-- end of as_sidebar_wrapper -->
+
+  <div class="as_clear">&nbsp;</div>
+</div> <!-- end of as_middle -->
+
+
+<div id="as_footer_wrapper" class="as_footer2 nosearchhi">
+<div id="as_footer">
+<div class="as_footer2_section">
+  <h4 class="as_footer2_header">Accounts</h4>
+  <ul>
+    
+    <li><a href="https://account.activestate.com/signup/?activationnext=http%3A//code.activestate.com/recipes/langs/tcl/">Create Account (Free!)</a></li>
+    <li><a href="https://account.activestate.com/signin/?next=http%3A//code.activestate.com/recipes/langs/tcl/">Sign In</a></li>
+    
+    
+  </ul>
+</div>
+<div class="as_footer2_section">
+  <h4 class="as_footer2_header">Code Recipes</h4>
+  <ul>
+    
+<li><a href="/recipes/add/">Add a recipe</a></li>
+<li><a href="/recipes/">Recipes</a></li>
+<li><a href="/recipes/langs/">Languages</a></li>
+<li><a href="/recipes/tags/">Tags</a></li>
+<li><a href="/recipes/users/">Authors</a></li>
+<li><a href="/recipes/sets/">Sets</a></li>
+
+  </ul>
+</div>
+<div class="as_footer2_section">
+  <h4 class="as_footer2_header">Feedback & Information</h4>
+  <ul>
+    <li><a href="/help/feedback/?type=general">Give Site Feedback</a></li>
+    <li><a href="/help/feedback/?type=bug&subject=Problem on page '/recipes/langs/tcl/'">Report a Site Problem</a></li>
+    <li style="margin-top: 10px;"><a href="/about/">About</a></li>
+    <li><a href="/help/faq/">FAQ</a></li>
+    <li><a href="/help/terms/">Terms of Service</a></li>
+  </ul>
+</div>
+<div class="as_footer2_section">
+  <h4 class="as_footer2_header">ActiveState</h4>
+  <ul>
+    <li class="as_footer2_feed"><a href="http://www.activestate.com/blog">ActiveState Blog</a></li>
+    <li><a title="Perl Solutions" href="http://www.activestate.com/perl">Perl Solutions</a></li>
+    <li><a title="Python Solutions" href="http://www.activestate.com/python">Python Solutions</a></li>
+    <li><a title="Tcl Solutions" href="http://www.activestate.com/tcl">Tcl Solutions</a></li>
+    <li><a title="Download Perl" href="http://www.activestate.com/activeperl/downloads">Download ActivePerl</a></li>
+    <li><a title="Download Python" href="http://www.activestate.com/activepython/downloads">Download ActivePython</a></li>
+    <li><a title="Download Tcl" href="http://www.activestate.com/activetcl/downloads">Download ActiveTcl</a></li>
+    <li style="margin-top: 10px"><a href="http://www.activestate.com/company">About ActiveState</a></li>
+    <li><a href="http://www.activestate.com/company/careers">Careers</a></li>
+  </ul>
+</div>
+<div class="as_footer2_copyright">
+  <p>
+  <a href="http://www.activestate.com/privacy-policy">Privacy Policy</a>
+  | <a href="http://www.activestate.com/company/contact-us">Contact Us</a>
+  | <a href="http://www.activestate.com/support">Support</a>
+  </p>
+  <p>&copy; 2013 ActiveState Software Inc. All rights reserved.
+  ActiveState&reg;, Komodo&reg;, ActivePerl&reg;, ActivePython&reg;, ActiveTcl&reg;,
+  and Stackato&reg; are registered trademarks of ActiveState.
+  All other marks are property of their respective owners.</p>
+</div>
+</div> <!-- end of as_footer -->
+</div> <!-- end of as_footer_wrapper -->
+
+<div id="as_messagebar" style="display: none;">
+  <span style="float: right;">
+    <b onclick="$('#as_messagebar').slideUp(150);" style="cursor: pointer;">&nbsp;x&nbsp;</b>
+  </span>
+  <span class="message">&nbsp;</span>
+  <span class="message-undo" style="display: none;">
+    <form method="POST" action=""><button type="submit"><div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='204d9d6509e8789af82e1bba515ace28' /></div><u>Undo</u></button></form>
+  </span>
+</div>
+
+</div> <!-- end of as_wrapper -->
+
+
+<script src="/static/prettify/prettify.js"></script> 
+<script type="text/javascript"> 
+ $(function() {
+    prettyPrint();
+ });
+</script> 
+
+
+
+
+
+
+
+
+<script src="/static/js/jquery.autocomplete.min.js" type="text/javascript"></script>
+<script src="/static/js/recipes.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(Recipes.setup_tagbar({"user_str": "", "tags_str": "", "sort_str": "", "lang_str": "tcl"}));
+</script>
+
+
+</body>
+</html>

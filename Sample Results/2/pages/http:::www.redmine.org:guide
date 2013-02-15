@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Guide - Redmine</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="qdV7CbMNsfSwZssxi92GCKb9CDxJuPMyH36mO/wQDIA=" name="csrf-token" />
+<link rel='shortcut icon' href='/favicon.ico?1322400152' />
+<link href="/stylesheets/jquery/jquery-ui-1.9.2.css?1357736700" media="all" rel="stylesheet" type="text/css" />
+<link href="/themes/redmine/stylesheets/application.css?1359199822" media="all" rel="stylesheet" type="text/css" />
+
+<script src="/javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js?1357736700" type="text/javascript"></script>
+<script src="/javascripts/application.js?1357736700" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+<!-- page specific tags -->
+</head>
+<body class="theme-Redmine controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li>
+<li><a href="/account/register" class="register">Register</a></li></ul>    </div>
+    
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
+<div id="header">
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/projects/redmine/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="wiki_pages" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/projects/redmine/search" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1>Redmine</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="/projects/redmine" class="overview">Overview</a></li>
+<li><a href="/projects/redmine/wiki/Download" class="download">Download</a></li>
+<li><a href="/projects/redmine/activity" class="activity">Activity</a></li>
+<li><a href="/projects/redmine/roadmap" class="roadmap">Roadmap</a></li>
+<li><a href="/projects/redmine/issues" class="issues">Issues</a></li>
+<li><a href="/projects/redmine/news" class="news">News</a></li>
+<li><a href="/projects/redmine/wiki" class="wiki selected">Wiki</a></li>
+<li><a href="/projects/redmine/boards" class="boards">Forums</a></li>
+<li><a href="/projects/redmine/repository" class="repository">Repository</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+            <a name="Latest-releases"></a>
+<h3 >Latest releases<a href="#Latest-releases" class="wiki-anchor">&para;</a></h3>
+
+
+	<p><a href="/projects/redmine/wiki/Download" class="wiki-page">2.2.3 (2013-02-12)</a></p>
+
+
+	<a name="Resources"></a>
+<h3 >Resources<a href="#Resources" class="wiki-anchor">&para;</a></h3>
+
+
+	<p><a href="/projects/redmine/wiki/Guide" class="wiki-page">User's Guide</a><br /><a href="/projects/redmine/wiki/Changelog" class="wiki-page">Changelog</a>, <a href="/projects/redmine/wiki/Security_Advisories" class="wiki-page">Security</a><br /><a href="/projects/redmine/wiki/FAQ" class="wiki-page">FAQ</a>, <a href="/projects/redmine/wiki/HowTos" class="wiki-page">HowTo's</a><br /><a href="/plugins">Plugins</a>, <a href="/projects/redmine/wiki/Theme_List" class="wiki-page">Themes</a></p>
+
+<h3>Wiki</h3>
+
+<a href="/">Start page</a><br />
+<a href="/projects/redmine/wiki/index">Index by title</a><br />
+<a href="/projects/redmine/wiki/date_index">Index by date</a><br />
+
+		<br />
+		<script type="text/javascript"><!--
+		google_ad_client = "pub-0447284344517370";
+		google_alternate_color = "FFFFFF";
+		google_ad_width = 160;
+		google_ad_height = 600;
+		google_ad_format = "160x600_as";
+		google_ad_type = "text_image";
+		google_ad_channel = "";
+		google_color_border = "EEEEEE";
+		google_color_bg = "FFFFFF";
+		google_color_link = "484848";
+		google_color_text = "484848";
+		google_color_url = "2A5685";
+		//-->
+		</script>
+		<script type="text/javascript"
+		  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+		</script>
+                <br />
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+<a href="/projects/redmine/wiki/Guide/history" class="icon icon-history">History</a>
+</div>
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="Redmine-guide"></a>
+<h1 >Redmine guide<a href="#Redmine-guide" class="wiki-anchor">&para;</a></h1>
+
+
+	<p><a name="Installation-guide"></a>
+<h2 >Installation guide<a href="#Installation-guide" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="/projects/redmine/wiki/RedmineInstall" class="wiki-page">Installing Redmine</a>
+	<ul>
+	<li><a href="/projects/redmine/wiki/EmailConfiguration" class="wiki-page"> Email configuration</a></li>
+	</ul>
+	</li>
+		<li><a href="/projects/redmine/wiki/RedmineUpgrade" class="wiki-page">Upgrading an existing installation</a></li>
+		<li><a href="/projects/redmine/wiki/RedmineMigrate" class="wiki-page">Migrating from other systems</a></li>
+	</ul></p>
+
+
+	<p><a name="Administrator-guide"></a>
+<h2 >Administrator guide<a href="#Administrator-guide" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="/projects/redmine/wiki/RedmineProjects" class="wiki-page">Managing projects</a></li>
+		<li><a href="/projects/redmine/wiki/RedmineUsers" class="wiki-page">Managing users</a></li>
+		<li><a href="/projects/redmine/wiki/RedmineGroups" class="wiki-page">Managing groups</a></li>
+		<li><a href="/projects/redmine/wiki/RedmineRoles" class="wiki-page">Roles and permissions</a></li>
+		<li><a href="/projects/redmine/wiki/RedmineIssueTrackingSetup" class="wiki-page">Issue tracking system</a></li>
+		<li><a href="/projects/redmine/wiki/RedmineCustomFields" class="wiki-page">Custom fields</a></li>
+		<li><a href="/projects/redmine/wiki/RedmineEnumerations" class="wiki-page">Enumerations</a></li>
+		<li><a href="/projects/redmine/wiki/RedmineSettings" class="wiki-page">Application settings</a></li>
+	</ul>
+
+
+	<a name="Advanced-configuration"></a>
+<h3 >Advanced configuration<a href="#Advanced-configuration" class="wiki-anchor">&para;</a></h3>
+
+
+	<ul>
+	<li><a href="/projects/redmine/wiki/RedmineRepositories" class="wiki-page">Configuring repositories</a></li>
+		<li><a href="/projects/redmine/wiki/RedmineReceivingEmails" class="wiki-page">Receiving emails</a></li>
+		<li><a href="/projects/redmine/wiki/RedmineReminderEmails" class="wiki-page">Sending reminder emails</a></li>
+		<li><a href="/projects/redmine/wiki/RedmineLDAP" class="wiki-page">LDAP Authentication</a></li>
+	</ul></p>
+
+
+	<p><a name="User-guide"></a>
+<h2 >User guide<a href="#User-guide" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="/projects/redmine/wiki/Getting_Started" class="wiki-page">Getting Started</a></li>
+		<li><a href="/projects/redmine/wiki/RedmineAccounts" class="wiki-page">User accounts</a></li>
+		<li><a href="/projects/redmine/wiki/RedmineLogin" class="wiki-page">Login</a></li>
+		<li><a href="/projects/redmine/wiki/RedmineRegister" class="wiki-page">Register</a></li>
+	</ul>
+
+
+	<ul>
+	<li><a href="/projects/redmine/wiki/RedmineProjectsList" class="wiki-page">Projects</a></li>
+		<li><a href="/projects/redmine/wiki/RedmineSearch" class="wiki-page">Search</a></li>
+	</ul>
+
+
+	<ul>
+	<li><a href="/projects/redmine/wiki/RedmineProjectOverview" class="wiki-page">Project overview</a></li>
+		<li><a href="/projects/redmine/wiki/RedmineProjectActivity" class="wiki-page">Project activity</a></li>
+		<li><a href="/projects/redmine/wiki/RedmineIssues" class="wiki-page">Issue tracking</a>
+	<ul>
+	<li><a href="/projects/redmine/wiki/RedmineIssueList" class="wiki-page">Issue list</a>
+	<ul>
+	<li><a href="/projects/redmine/wiki/RedmineIssueChangelog" class="wiki-page">Change log</a></li>
+		<li><a href="/projects/redmine/wiki/RedmineIssueSummary" class="wiki-page">Issue summary</a></li>
+	</ul>
+	</li>
+		<li><a href="/projects/redmine/wiki/RedmineRoadmap" class="wiki-page">Roadmap</a>
+	<ul>
+	<li><a href="/projects/redmine/wiki/RedmineVersion" class="wiki-page">Version overview</a></li>
+	</ul>
+	</li>
+	</ul>
+	</li>
+		<li><a href="/projects/redmine/wiki/RedmineTimeTracking" class="wiki-page">Time tracking</a>
+	<ul>
+	<li><a href="/projects/redmine/wiki/RedmineTimelogDetails" class="wiki-page">Spent-time details</a></li>
+		<li><a href="/projects/redmine/wiki/RedmineTimelogReport" class="wiki-page">Spent-time report</a></li>
+	</ul>
+	</li>
+		<li><a href="/projects/redmine/wiki/RedmineGantt" class="wiki-page">Gantt</a></li>
+		<li><a href="/projects/redmine/wiki/RedmineCalendar" class="wiki-page">Calendar</a></li>
+		<li><a href="/projects/redmine/wiki/RedmineNews" class="wiki-page">News</a></li>
+		<li><a href="/projects/redmine/wiki/RedmineDocuments" class="wiki-page">Documents</a></li>
+		<li><a href="/projects/redmine/wiki/RedmineFiles" class="wiki-page">Files</a></li>
+		<li><a href="/projects/redmine/wiki/RedmineForums" class="wiki-page">Forums</a></li>
+		<li><a href="/projects/redmine/wiki/RedmineWikis" class="wiki-page">Wikis</a></li>
+		<li><a href="/projects/redmine/wiki/RedmineRepository" class="wiki-page">Repository</a>
+	<ul>
+	<li><a href="/projects/redmine/wiki/RedmineRepositoryStatistics" class="wiki-page">Statistics</a></li>
+	</ul>
+	</li>
+		<li><a href="/projects/redmine/wiki/RedmineProjectSettings" class="wiki-page">Project settings</a></li>
+	</ul>
+
+
+	<ul>
+	<li><a href="/projects/redmine/wiki/RedmineAttachedFiles" class="wiki-page">Files attached to Redmine resources</a></li>
+	</ul>
+
+
+	<ul>
+	<li><a href="/projects/redmine/wiki/RedmineTextFormatting" class="wiki-page">Text formatting in Redmine</a></li>
+	</ul></p>
+
+
+	<p><a name="Developer-guide"></a>
+<h2 >Developer guide<a href="#Developer-guide" class="wiki-anchor">&para;</a></h2>
+
+
+	<a name="General-development"></a>
+<h3 >General development<a href="#General-development" class="wiki-anchor">&para;</a></h3>
+
+
+	<ul>
+	<li><a href="/projects/redmine/wiki/Rest_api" class="wiki-page">Redmine REST API</a></li>
+		<li><a href="/projects/redmine/wiki/Contribute#Code-Related" class="wiki-page">Code related topics</a></li>
+		<li>Creating and applying <a href="/projects/redmine/wiki/Patch" class="wiki-page">patches</a></li>
+		<li>An <a href="/projects/redmine/wiki/ReleaseManagement" class="wiki-page">explanation</a> of what changes may be in future Redmine releases</li>
+	</ul>
+
+
+	<a name="Plugin-development"></a>
+<h3 >Plugin development<a href="#Plugin-development" class="wiki-anchor">&para;</a></h3>
+
+
+	<ul>
+	<li>A step-by-step <a href="/projects/redmine/wiki/Plugin_Tutorial" class="wiki-page">tutorial</a> on writing a Redmine plugin</li>
+		<li>A description of the <a href="/projects/redmine/wiki/Plugin_Internals" class="wiki-page">internal handling of Redmine plugins</a></li>
+		<li>A description of the <a href="/projects/redmine/wiki/Hooks" class="wiki-page">Redmine plugin hooks API</a></li>
+		<li>An incomplete <a href="/projects/redmine/wiki/Hooks_List" class="wiki-page">list of available Redmine plugin hooks</a></li>
+	</ul>
+
+
+	<a name="Theme-development"></a>
+<h3 >Theme development<a href="#Theme-development" class="wiki-anchor">&para;</a></h3>
+
+
+	<ul>
+	<li>A howto (<a href="/projects/redmine/wiki/HowTo_create_a_custom_Redmine_theme" class="wiki-page">HowTo create a custom Redmine theme</a>) which explains how to create a custom Redmine theme</li>
+	</ul>
+
+
+	<a name="AlternativeCustom-Authentication"></a>
+<h3 >Alternative/Custom Authentication<a href="#AlternativeCustom-Authentication" class="wiki-anchor">&para;</a></h3>
+
+
+	<ul>
+	<li>A howto (<a href="/projects/redmine/wiki/Alternativecustom_authentication_HowTo" class="wiki-page">Alternative/custom authentication HowTo</a>) for implementing authentication against a different database.</li>
+	</ul></p>
+
+
+	<a name="Translations-of-the-Redmine-guide"></a>
+<h2 >Translations of the Redmine guide<a href="#Translations-of-the-Redmine-guide" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Note that the following translations may not be up to date. Please refer to the original english documentation if needed.</p>
+
+
+	<ul>
+	<li><a href="/projects/redmine/wiki/FrGuide" class="wiki-page">French</a></li>
+		<li><a href="/projects/redmine/wiki/JaGuide" class="wiki-page">Japanese</a></li>
+		<li><a href="http://redmine.jp/guide/" class="external">Japanese</a></li>
+		<li><a href="/projects/redmine/wiki/RusGuide" class="wiki-page">Russian</a></li>
+		<li><a href="http://redprojects.net/wiki/doku.php/guide/start" class="external">Russian</a></li>
+		<li><a href="http://ezwork.techcon.thtf.com.cn/projects/ezwork/wiki/ZhGuide" class="external">Simplified Chinese</a></li>
+		<li><a href="/projects/redmine/wiki/EsGuide" class="wiki-page">Spanish</a></li>
+	</ul>
+</div>
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="http://www.redmine.org/">Redmine</a> &copy; 2006-2012 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

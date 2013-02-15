@@ -1,0 +1,752 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ja-JP">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=EUC-JP">
+	<meta name="generator" content="tDiary 2.2.0">
+	<meta http-equiv="Last-Modified" content="Thu, 15 Jul 2010 17:38:46 GMT">
+	<meta http-equiv="Content-Script-Type" content="text/javascript; charset=EUC-JP">
+	<meta name="author" content="Yukihiro -matz- Matsumoto">
+	
+	<link rel="start" title="最新" href="http://www.rubyist.net/~matz/">
+	<link rel="alternate" media="handheld" type="text/html" href="http://www.rubyist.net/~matz/">
+	
+	
+	<meta http-equiv="content-style-type" content="text/css">
+	<link rel="stylesheet" href="theme/base.css" type="text/css" media="all">
+	<link rel="stylesheet" href="theme/sagegreen/sagegreen.css" title="sagegreen" type="text/css" media="all">
+	<title>Matzにっき</title>
+	
+  <script type="text/javascript">
+  <!--
+  // http://www.din.or.jp/~hagi3/JavaScript/JSTips/Mozilla/
+  // _dom : kind of DOM.
+  //        IE4 = 1, IE5+ = 2, NN4 = 3, NN6+ = 4, others = 0
+  _dom = document.all?(document.getElementById?2:1)
+                     :(document.getElementById?4
+                     :(document.layers?3:0));
+  var _calendar3_popElement = null;
+  var _calendar3_popCount = 0;
+
+  if (document.compatMode){
+    if (_dom==2 && document.compatMode=="CSS1Compat") _dom = 2.5;
+  } // Win IE6
+
+  function getLeft(div){
+    result = 0;
+    while (1){
+      div = div.offsetParent;
+      result += div.offsetLeft;
+      if (div.tagName=="BODY") return result;
+    }
+  }
+
+  function getTop(div){
+    result = 0;
+    while (1){
+      div = div.offsetParent;
+      result += div.offsetTop;
+      if (div.tagName=="BODY") return result;
+    }
+  }
+
+  function moveDivTo(div,left,top){
+    if(_dom==4){
+      div.style.left=left+'px';
+      div.style.top =top +'px';
+      return;
+    }
+    if(_dom==2.5 || _dom==2 || _dom==1){
+      div.style.pixelLeft=left;
+      div.style.pixelTop =top;
+      return;
+    }
+    if(_dom==3){
+      div.moveTo(left,top);
+      return;
+    }
+  }
+
+  function moveDivBy(div,left,top){
+    if(_dom==4){
+      div.style.left=div.offsetLeft+left;
+      div.style.top =div.offsetTop +top;
+      return;
+    }
+    if(_dom==2.5 || _dom==2){
+      div.style.pixelLeft=div.offsetLeft+left;
+      div.style.pixelTop =div.offsetTop +top;
+      return;
+    }
+    if(_dom==1){
+      div.style.pixelLeft+=left;
+      div.style.pixelTop +=top;
+      return;
+    }
+    if(_dom==3){
+      div.moveBy(left,top);
+      return;
+    }
+  }
+
+  function getDivLeft(div){
+    if(_dom==2.5) return div.offsetLeft+getLeft(div);
+    if(_dom==4 || _dom==2) return div.offsetLeft;
+    if(_dom==1)            return div.style.pixelLeft;
+    if(_dom==3)            return div.left;
+    return 0;
+  }
+
+  function getDivTop(div){
+    if(_dom==2.5) return div.offsetTop+getTop(div);
+    if(_dom==4 || _dom==2) return div.offsetTop;
+    if(_dom==1)            return div.style.pixelTop;
+    if(_dom==3)            return div.top;
+    return 0;
+  }
+
+  function getDivWidth (div){
+    if(_dom==4 || _dom==2.5 || _dom==2) return div.offsetWidth;
+    if(_dom==1)            return div.style.pixelWidth;
+    if(_dom==3)            return div.clip.width;
+    return 0;
+  }
+
+  function getDivHeight(div){
+    if(_dom==4 || _dom==2.5 || _dom==2) return div.offsetHeight;
+    if(_dom==1)            return div.style.pixelHeight;
+    if(_dom==3)            return div.clip.height;
+    return 0;
+  }
+
+  function popup(target,element,notitle) {
+    _calendar3_popCount++;
+    popdownNow();
+    if (navigator.appName=='Microsoft Internet Explorer') {
+      moveDivTo(element,getDivLeft(target)+getDivWidth(target),getDivTop(target)+getDivHeight(target)*13/8);
+    } else {
+      moveDivTo(element,getDivLeft(target)+getDivWidth(target)/2,getDivTop(target)+(getDivHeight(target)*2)/3);
+    }
+    element.style.display="block";
+    notitle.title="";
+  }
+
+  function popdown(element) {
+    _calendar3_popElement=element;
+    setTimeout('popdownDelay()', 2000);
+  }
+
+  function popdownDelay() {
+    _calendar3_popCount--;
+    if (_calendar3_popCount==0) {
+      popdownNow();
+    }
+  }
+
+  function popdownNow() {
+    if (_calendar3_popElement!=null) {
+      _calendar3_popElement.style.display="none";
+      _calendar3_popElement=null;
+    }
+  }
+  // -->
+</script>
+	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+	</script>
+	<script type="text/javascript">
+	_uacct = "UA-58636-2";
+	urchinTracker();
+	</script>
+	<link rel="alternate" type="application/rss+xml" title="RSS(with comments and spams)" href="http://www.rubyist.net/~matz/comments.rdf">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.rubyist.net/~matz/index.rdf">
+	<meta name="robots" content="noindex,follow">
+</head>
+<body>
+
+
+<div class="adminmenu">
+<span class="adminmenu"><a href="http://www.rubyist.net/~matz/20100219-5.html">&laquo;前5日分</a></span>
+<span class="adminmenu"><a href="http://www.rubyist.net/~matz/">最新</a></span>
+<span class="adminmenu"><a href="http://www.rubyist.net/~matz/20110929-5.html">次5日分&raquo;</a></span>
+<span class="adminmenu"><a href="https://www.rubyist.net/~matz/update.rb" rel="nofollow">追記</a></span>
+</div>
+
+<h1>Matzにっき</h1>
+<div class="right">
+<form method="get" action="rast-search.rb" class="grepform">
+<input type="text" name="query" size="20" value="" class="search">
+<input type="submit" value="検索"></p>
+</form>
+</div>
+<span class="calendar-prev-month"><a href="http://www.rubyist.net/~matz/201301.html">&lt;&lt;</a></span>
+<span class="calendar-current-month"><a href="http://www.rubyist.net/~matz/201302.html">2013/02</a>/</span>
+<span class="calendar-normal"><a class="calendar-weekday">1</a></span>
+<span class="calendar-normal"><a class="calendar-saturday">2</a></span>
+<span class="calendar-normal"><a class="calendar-sunday">3</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">4</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">5</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">6</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">7</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">8</a></span>
+<span class="calendar-normal"><a class="calendar-saturday">9</a></span>
+<span class="calendar-normal"><a class="calendar-sunday">10</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">11</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">12</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">13</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">14</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">15</a></span>
+<span class="calendar-normal"><a class="calendar-saturday">16</a></span>
+<span class="calendar-normal"><a class="calendar-sunday">17</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">18</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">19</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">20</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">21</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">22</a></span>
+<span class="calendar-normal"><a class="calendar-saturday">23</a></span>
+<span class="calendar-normal"><a class="calendar-sunday">24</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">25</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">26</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">27</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">28</a></span>
+<span class="calendar-next-month"><a href="http://www.rubyist.net/~matz/201303.html">&gt;&gt;</a></span>
+
+
+
+
+<hr class="sep">
+
+
+	
+<div class="day">
+<h2><span class="date">
+<a href="http://www.rubyist.net/~matz/20100618.html">2010-06-18</a>
+</span> 
+<span class="title"></span> <span class="nyear">[<a href="http://www.rubyist.net/~matz/0618.html" title="長年日記">長年日記</a>]</span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="http://www.rubyist.net/~matz/20100618.html#p01"><span class="sanchor">_</span></a> [<a href="http://www.rubyist.net/~matz/?year=2010;month=2Q;category=Ruby">Ruby</a>] Ruby2.0の新機能(かもしれないもの)(4) keyword arguments</h3>
+<blockquote>
+注意。このエントリはRuby 2.0に入るかもしれない機能について述べていますが、本機能が本当に2.0に採用されるかどうかは、未定です。
+</blockquote>
+
+<p>「まだあるのか」とか思われそうだけど、まだあるんです。</p>
+<p>今度は長年採用すると言いつつ、ほったらかしの最右翼、キーワード引数である。
+調べたら、キーワード引数については、2003年のRubyConfではすでに話題にしている。
+どんだけ前から口にしてたんだ。「やるやる詐欺」だな(苦笑)。</p>
+<p>その時の仕様はこんな感じ。</p>
+<pre>def foo(a, b: 42, **keys)
+   p [a,b,keys]
+end
+foo(1)             # =&gt; [1,42,{}]
+foo(2, b: 5)       # =&gt; [2,5,{}]
+foo(3, b: 4, c: 6) # =&gt; [3,4,{:c=&gt;6}]</pre>
+<p>まあ、そんなに悪くない。基本的にはこの線を踏襲しようと思う。
+文法としては、ブロック引数の直前に</p>
+<pre>keyword: value,..., **keys</pre>
+<p>というキーワード引数を置くことができる、というもの。
+Pythonと違ってキーワード引数は明示的に指定しなければならない。
+通常の引数名が勝手にキーワードになったりはしない。</p>
+<p>問題はrest引数と組み合わさった時。</p>
+<pre>def baz(*rest, a:4, b:0, **keys)
+  ...
+end</pre>
+<p>として、以下の呼び出しを行ったらどうなるか。</p>
+<pre>baz()           # rest=[],a=4,b=0,keys={}
+baz(1)          # rest=[1],a=4,b=0,keys={}
+baz(a:1)        # rest=[],a=1,b=0,keys={}
+baz(a:1,b:2)    # rest=[],a=1,b=2,keys={}
+baz(1,2,b:2)    # rest=[1,2],a=4,b=2,keys={}
+baz(c:2)        # rest=[],a=4,b=0,keys={c:2}</pre>
+<p>つまり、以下のルールに従う。</p>
+<ul>
+<li>引数が0の場合、キーワード指定は{}とみなす。</li>
+<li>引数が1個以上の時、末尾の引数がHashでなければ、キーワード指定は{}とみなす。</li>
+<li>引数が1個以上で、末尾がHashであればそれがキーワード指定。引数リストから取り除く※
+<ul>
+<li>キーワード指定に、キーワード引数があればそれを取り除き、キーワードと同じ名前の変数に代入</li>
+<li>キーワード指定にキーワードが含まれていなければ、デフォルト値を代入</li>
+<li>「**keys」が指定されていない時に、キーワード指定がキーワード引数として定義されていないキーを含む時には、ArgumentError例外</li>
+</ul></li>
+</ul>
+<p>なお、※の部分はRubyConf 2005のキーノートで紹介したものと動作が違う。</p>
+<p>この仕様ではキーワード指定はあくまでも通常引数の一部なので、
+通常引数の引渡の時には *rest で受けて、 foo(*rest) と呼び出せばよい(はず)。</p>
+<p>呼び出し側のキーワード引数は結局は引数リスト末尾のハッシュに過ぎないので、
+呼び出し側では foo(**keys) のような文法は(本来は)不要。
+ただし、対称性と型チェックのために採用する可能性は、なきにしもあらず(あんまり積極的ではない)。</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+		<div class="caption">本日のツッコミ(全6件) [<a href="http://www.rubyist.net/~matz/20100618.html#c">ツッコミを入れる</a>]</div>
+		<div class="commentshort">
+				<p><a href="http://www.rubyist.net/~matz/20100618.html#c01"><span class="canchor">_</span></a>
+				<span class="commentator">whiteleaf</span>&nbsp;[これが実装された場合、現在の def f(a);p a;end; f(b:10)#=&gt;{:b=&gt;10} のような書き..]</p>
+				<p><a href="http://www.rubyist.net/~matz/20100618.html#c02"><span class="canchor">_</span></a>
+				<span class="commentator">まつもと</span>&nbsp;[ご心配なく。defの引数でキーワード引数定義がなければ、現状となにも変わりません。]</p>
+				<p><a href="http://www.rubyist.net/~matz/20100618.html#c03"><span class="canchor">_</span></a>
+				<span class="commentator">KL1</span>&nbsp;[RubyもPythonのように、猫でも分かるようなキーワード引数形式を採用する訳には行かないのでしょうか?]</p>
+				<p><a href="http://www.rubyist.net/~matz/20100618.html#c04"><span class="canchor">_</span></a>
+				<span class="commentator">まつもと</span>&nbsp;[Pythonのキーワード引数が「猫でも分かる」という意見には同意しません。あれ、実際には、位置引数と名前引数が混じる..]</p>
+				<p><a href="http://www.rubyist.net/~matz/20100618.html#c05"><span class="canchor">_</span></a>
+				<span class="commentator">KL1</span>&nbsp;[そういう事でしたか。 ご教示をいただきまして、大変ありがとうございました。]</p>
+				<p><a href="http://www.rubyist.net/~matz/20100618.html#c06"><span class="canchor">_</span></a>
+				<span class="commentator">Bogdan Gusiev</span>&nbsp;[&quot;def foo&quot;  ^ yes, I guess that.]</p>
+		</div>
+</div>
+
+
+
+	<div class="comment trackbacks">
+		<div class="caption">
+			[TrackBack URL: <a href="http://www.rubyist.net/~matz/tb.rb/20100618">http://www.rubyist.net/~matz/tb.rb/20100618</a>]
+		</div>
+		<div class="commentshort trackbackshort">
+		</div>
+	</div>
+
+
+
+
+
+		<div class="referer">
+		
+		</div>
+</div>
+
+
+	<hr class="sep">
+	
+<div class="day">
+<h2><span class="date">
+<a href="http://www.rubyist.net/~matz/20100617.html">2010-06-17</a>
+</span> 
+<span class="title"></span> <span class="nyear">[<a href="http://www.rubyist.net/~matz/0617.html" title="長年日記">長年日記</a>]</span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="http://www.rubyist.net/~matz/20100617.html#p01"><span class="sanchor">_</span></a> [<a href="http://www.rubyist.net/~matz/?year=2010;month=2Q;category=Ruby">Ruby</a>] Ruby2.0の新機能(かもしれないもの)(3) module operations</h3>
+<blockquote>
+注意。このエントリはRuby 2.0に入るかもしれない機能について述べていますが、本機能が本当に2.0に採用されるかどうかは、未定です。
+</blockquote>
+
+<p>新しめのSmalltlakにはTraitという機能があって、
+これは基本的にRubyのmoduleのようなものなのだが、
+includeで継承関係をつくる代わりに、そのTraitの機能がクラスに「注入」される。</p>
+<p>で、Trait機能の面白いところは、Traitの演算ができる点だ。</p>
+<p>つまり、aおよびbがTraitであった時、+演算でaとbの両方の機能を持つ、無名のTraitを作ることができる。</p>
+<pre>a + b  # =&gt; aとb両方の機能を持つTraitを返す</pre>
+<p>この時、属性(メソッド)に重複があるとエラーになる。</p>
+<p>では、重複がある時にはどうするか、というと、Traitから重複するメソッドを取り除く。</p>
+<pre>a - :foo          # aからfooメソッドを取り除いたTrait
+a - [:foo, :bar]  # aからfooメソッド、barメソッドを取り除いたTrait</pre>
+<p>Rubyにこの「モジュール演算」を取り込むとして、
+問題になる点は、定数をどうするか、という点である。
+Rubyには名前空間が複数あるので、上記の演算でメソッドの重複を解消できても
+定数が重複してしまう可能性はある。</p>
+<p>これはたぶん、</p>
+<ul>
+<li>定数も重複したらエラー</li>
+<li>定数の名称重複を解消する仕組みを用意する</li>
+<li>または、定数が重複したら結合は潔くあきらめる</li>
+</ul>
+<p>ことになるのではないだろうか。</p>
+<p>ということで、API案。</p>
+<ul>
+<li>ModuleをClassのスーパークラスでなくす (または + および - メソッドをClassでundef)</li>
+<li>Module#+の追加(メソッド、定数の重複はエラー)</li>
+<li>Module#-の追加
+<ul>
+<li>引数がシンボルの時、そのメソッドを削除</li>
+<li>引数が配列の時、要素で指定されるメソッドを削除</li>
+<li>引数がハッシュの時、メソッドをrename(alias+undef)</li>
+</ul></li>
+</ul>
+<p>当面、定数の名称重複の仕組みは提供しない。</p>
+<p>というのも、定数の名称が重複した場合、ほとんどのケースでは単なる削除や名称の置き換えでは解決できそうにないから。もし、本気でやるとしたら、メソッド定義全部をスキャンして、定数への参照部分を書き換えるようなことをしなければならない。それはできれば避けたい。</p>
+<p>で、この機能がなんでうれしいかと言うと、「名称重複でエラーが出る」ところ。
+includeで関係ないモジュール間で名称が重複しても、継承ラインに並んでしまうので、
+エラーにもならず、実際に実行してわけのわからないことになるまで気がつかないが、
+モジュール演算を使えば、名称重複によるエラーを(ある程度)事前に検出できる。</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+	<div class="caption">[<a href="http://www.rubyist.net/~matz/20100617.html#c">ツッコミを入れる</a>]</div>
+</div>
+
+
+
+	<div class="comment trackbacks">
+		<div class="caption">
+			[TrackBack URL: <a href="http://www.rubyist.net/~matz/tb.rb/20100617">http://www.rubyist.net/~matz/tb.rb/20100617</a>]
+		</div>
+		<div class="commentshort trackbackshort">
+		</div>
+	</div>
+
+
+
+
+
+		<div class="referer">
+		
+		</div>
+</div>
+
+
+	<hr class="sep">
+	
+<div class="day">
+<h2><span class="date">
+<a href="http://www.rubyist.net/~matz/20100616.html">2010-06-16</a>
+</span> 
+<span class="title"></span> <span class="nyear">[<a href="http://www.rubyist.net/~matz/0616.html" title="長年日記">長年日記</a>]</span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="http://www.rubyist.net/~matz/20100616.html#p01"><span class="sanchor">_</span></a> [<a href="http://www.rubyist.net/~matz/?year=2010;month=2Q;category=Ruby">Ruby</a>] Ruby2.0の新機能(かもしれないもの)(2) nested def as local function</h3>
+<blockquote>
+注意。このエントリはRuby 2.0に入るかもしれない機能について述べていますが、本機能が本当に2.0に採用されるかどうかは、未定です。
+</blockquote>
+
+<p>Rubyではメソッド定義のdefの中でdefを書くことができるが、
+実際にはメソッド定義が遅延されるだけで、あまり役に立たない。</p>
+<p>その理由については
+<a href="http://jp.rubyist.net/magazine/?0029-Hotlinks">原くんのHotlinkインタビュー</a>を見てもらうと良いと思う。</p>
+<blockquote>
+<p><em>まつもと</em> たとえばネストしたメソッドになにか意味をつけるとしたら、それは多分、そのスコープでだけ有効なメソッドを導入するっていうことだよね。</p>
+<p><em>yhara</em> 「ネストしたメソッド」になってしまうんですね。「ネストした関数」でなくて。</p>
+<p><em>まつもと</em> うん、まあ「ネストした関数」でもいいんだけど、でも Ruby にいま「関数」は無い。</p>
+<p><em>yhara</em> 無いですね。</p>
+<p><em>まつもと</em> だから、「関数」って言う新しいものを導入するって形になってしまう、のかな？</p>
+<p><em>yhara</em> 「ネストしたメソッド」っていうのは、なんか不自然な雰囲気がしますね。</p>
+<p><em>まつもと</em> メソッドの中で def を定義した時に何が定義されるかって言う時に、もしそれがメソッドであるとすれば、どっかのオブジェクトに属してないとダメだよね。で、そのスコープにいる時だけ存在するメソッドって何なんだろうって。</p>
+<p><em>ささだ</em> Argument オブジェクトとか作ってとかなんとか、ってなるかもしれませんね。</p>
+<p><em>まつもと</em> でもそれレシーバじゃないからね。「レシーバを省略すると self に行く」っていうルールと違うものを導入しないといけないことになるんだよね。</p>
+<p><em>yhara</em> すごく納得したのでもういいです。僕はもうその主張はしないことにします。</p>
+</blockquote>
+
+<p>で、それに対するひとつのアイディアとして、「レシーバに対する特異メソッドを定義する」というものを考えていた。</p>
+<p>最近思いついた、もうひとつ別のアイディアとして、「ネストしたメソッド定義は関数定義」にするというのもはどうだろうか、と考えた。</p>
+<p>具体的には</p>
+<pre>def foo
+   def bar(*args)
+     ...
+   end
+   bar(1)
+end</pre>
+<p>をコンパイル時に</p>
+<pre>def foo
+   bar = -&gt;(*args) do
+     ...
+   end
+   bar.call(1)
+end</pre>
+<p>と展開するというものだ。ローカル変数としてのbarにアクセスできるかどうかは未定だけど、
+barは「関数」を引数なしで呼び出すことにするのか、lambdaが入っている
+リードオンリーの変数とするかどちらかだとと思う。</p>
+<p>基本的にコンパイル時の問題なので、実装はさほど難しくないと思う。</p>
+<p>ただし、問題(デメリット)もあって、十分な議論なしで安易に導入すべきではないとも思う。</p>
+<ul>
+<li>ネストしたメソッドだけLisp-1的動作をするのは、モデルの統一性として問題ではないか。</li>
+<li>ネストしたメソッドで定義された識別子をリードオンリーの変数とするならば、新しい変数種別を導入することになる。</li>
+<li>単体の識別子を引数なしの呼び出しとするならば、lambdaを取り出す手段がない</li>
+<li>いずれにしてもコンテキストの情報が増えるので、bindingに手を入れなくてはいけない</li>
+</ul>
+<p>やっぱ、導入は難しいかな。</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+		<div class="caption">本日のツッコミ(全25件) [<a href="http://www.rubyist.net/~matz/20100616.html#c">ツッコミを入れる</a>]</div>
+		<div class="commentshort">
+			<p><a href="http://www.rubyist.net/~matz/20100616.html#c00">Before...</a></p>
+				<p><a href="http://www.rubyist.net/~matz/20100616.html#c16"><span class="canchor">_</span></a>
+				<span class="commentator">KL1</span>&nbsp;[http://www.rubyist.net/~matz/20080306.html中の元職業プログラマという人の以..]</p>
+				<p><a href="http://www.rubyist.net/~matz/20100616.html#c17"><span class="canchor">_</span></a>
+				<span class="commentator">まつもと</span>&nbsp;[Rubyでは、変数を明示的に削除しても、変数が参照しているオブジェクトに対する参照がすべてなくなるとは限りません。の..]</p>
+				<p><a href="http://www.rubyist.net/~matz/20100616.html#c18"><span class="canchor">_</span></a>
+				<span class="commentator">KL1</span>&nbsp;[&gt;Rubyでは、変数を明示的に削除しても、変数が参照しているオブジェクトに対する参照がすべてなくなるとは限りません。..]</p>
+				<p><a href="http://www.rubyist.net/~matz/20100616.html#c19"><span class="canchor">_</span></a>
+				<span class="commentator">まつもと</span>&nbsp;[「積極的に参照を無くし易くする」というのは、変数にnilを代入することで実現できますね。  「メモリバグ」とは、..]</p>
+				<p><a href="http://www.rubyist.net/~matz/20100616.html#c20"><span class="canchor">_</span></a>
+				<span class="commentator">KL1</span>&nbsp;[&gt;「積極的に参照を無くし易くする」というのは、変数にnilを代入することで実現できますね。  というのは、先の私が..]</p>
+				<p><a href="http://www.rubyist.net/~matz/20100616.html#c21"><span class="canchor">_</span></a>
+				<span class="commentator">まつもと</span>&nbsp;[私が想定した「変数の削除」は、そのようなエラーの発見を念頭に置いていませんから、そういう目的に使いにくいというのは、..]</p>
+				<p><a href="http://www.rubyist.net/~matz/20100616.html#c22"><span class="canchor">_</span></a>
+				<span class="commentator">KL1</span>&nbsp;[まつもとさま この度は、お忙しい中、いろいろとご回答をいただき、大変有難うございした。 ところで、世の中には、私..]</p>
+				<p><a href="http://www.rubyist.net/~matz/20100616.html#c23"><span class="canchor">_</span></a>
+				<span class="commentator">まつもと</span>&nbsp;[あらゆる局面に万能な言語は存在しないので、そういう人はRubyじゃない言語を使うんじゃないかと。実際、KL1さんはR..]</p>
+				<p><a href="http://www.rubyist.net/~matz/20100616.html#c24"><span class="canchor">_</span></a>
+				<span class="commentator">KL1</span>&nbsp;[&gt;実際、KL1さんはRuby使っていないのではないでしょうか。  Rubyは、1.6の時から使わせていただいており..]</p>
+				<p><a href="http://www.rubyist.net/~matz/20100616.html#c25"><span class="canchor">_</span></a>
+				<span class="commentator">KL1</span>&nbsp;[因みに、私はKL1用のマシンを間近に見た事はありますが、KL1のプログラムを作成したことはありません。]</p>
+		</div>
+</div>
+
+
+
+	<div class="comment trackbacks">
+		<div class="caption">
+			[TrackBack URL: <a href="http://www.rubyist.net/~matz/tb.rb/20100616">http://www.rubyist.net/~matz/tb.rb/20100616</a>]
+		</div>
+		<div class="commentshort trackbackshort">
+		</div>
+	</div>
+
+
+
+
+
+		<div class="referer">
+		
+		</div>
+</div>
+
+
+	<hr class="sep">
+	
+<div class="day">
+<h2><span class="date">
+<a href="http://www.rubyist.net/~matz/20100615.html">2010-06-15</a>
+</span> 
+<span class="title"></span> <span class="nyear">[<a href="http://www.rubyist.net/~matz/0615.html" title="長年日記">長年日記</a>]</span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="http://www.rubyist.net/~matz/20100615.html#p01"><span class="sanchor">_</span></a> [<a href="http://www.rubyist.net/~matz/?year=2010;month=2Q;category=Ruby">Ruby</a>] Ruby2.0の新機能(かもしれないもの)(1) argument delegation</h3>
+<p>ひさしぶりのポスト。</p>
+<p>なんだか1.9.2のリリースが現実的になってきて、
+長い長いRuby2.0のためのモラトリアム期間も終了の気配。
+そろそろ真面目に2.0について考えねばならないかも。</p>
+<p>いや、考えてきてたのだよ、実際。そこで少しずつリークしておくことにしよう。
+私が、万が一にもトラックにはねられた時のためにも。</p>
+<blockquote>
+注意。このエントリはRuby 2.0に入るかもしれない機能について述べていますが、本機能が本当に2.0に採用されるかどうかは、未定です。
+</blockquote>
+
+<p>Rubyのブロックは「暗黙の引数」なので、通常の引数リストに入らない。
+ので、あるメソッドが受けとった引数を他のメソッドにすべて引き渡す時、</p>
+<pre>def bar(*args)
+  foo(*args)
+end</pre>
+<p>とやってもブロックが渡らなくて悲しい、ということになる。正確には</p>
+<pre>def bar(*args, &amp;blk)
+  foo(*args, &amp;blk)
+end</pre>
+<p>としなければならない。が、考えてみると「引数を全部渡したい」というひとつのコンセプトを実現するために、複数の「もの」を渡さねばならないのはめんどくさい。</p>
+<p>もっとも、いちばんひんぱんに発生しそうなスーパークラスのメソッドの呼び出しについては、</p>
+<pre>super</pre>
+<p>と呼べば、全部渡ることになっているので、問題は少ないのだが。</p>
+<p>というわけで、「メソッド引数を全部渡す」文法を追加することを漠然と考えている。</p>
+<p>文法はこんな感じ。</p>
+<pre>def bar(*args)
+  foo(...)
+end</pre>
+<p>つまり「...」のみが引数に登場した時には、それは「渡された引数を(ブロックも含めて)全部転送」という意味に解釈しようということだ。あるいは、</p>
+<pre>def bar(*args)
+  foo(:bar, ...)
+end</pre>
+<p>のように、先頭に引数を追加することができてもよいかもしれないが、
+たぶん、それはやりすぎだろう。</p>
+<p>それから、今までのsuperは</p>
+<pre>super(...)</pre>
+<p>の省略形であると解釈する。</p>
+<p>実装は、現状のsuperの引数渡しの部分をそのまま流用すればよいはずだから、そんなに難しくないはず。</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+		<div class="caption">本日のツッコミ(全1件) [<a href="http://www.rubyist.net/~matz/20100615.html#c">ツッコミを入れる</a>]</div>
+		<div class="commentshort">
+				<p><a href="http://www.rubyist.net/~matz/20100615.html#c01"><span class="canchor">_</span></a>
+				<span class="commentator">なかだ</span>&nbsp;[途中 http://www.atdot.net/sp/raw/phi14l ]</p>
+		</div>
+</div>
+
+
+
+	<div class="comment trackbacks">
+		<div class="caption">
+			[TrackBack URL: <a href="http://www.rubyist.net/~matz/tb.rb/20100615">http://www.rubyist.net/~matz/tb.rb/20100615</a>]
+		</div>
+		<div class="commentshort trackbackshort">
+		</div>
+	</div>
+
+
+
+
+
+		<div class="referer">
+		
+		</div>
+</div>
+
+
+	<hr class="sep">
+	
+<div class="day">
+<h2><span class="date">
+<a href="http://www.rubyist.net/~matz/20100510.html">2010-05-10</a>
+</span> 
+<span class="title"></span> <span class="nyear">[<a href="http://www.rubyist.net/~matz/0510.html" title="長年日記">長年日記</a>]</span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="http://www.rubyist.net/~matz/20100510.html#p01"><span class="sanchor">_</span></a> [<a href="http://www.rubyist.net/~matz/?year=2010;month=2Q;category=Ruby">Ruby</a>] GC mark改善案</h3>
+<p>おひさしぶり。</p>
+<p>GC sweep時間はわりと短縮できそうなので(authorNariくんがLazySweepパッチを書いてくれたし)、
+このところGC mark時間を短縮するアイディアはないか、考えている。
+今のRubyに入れたいので、制約として、</p>
+<ul>
+<li>保守的</li>
+<li>mark&amp;sweep</li>
+<li>write barrierを導入しない</li>
+</ul>
+<p>というものがある。</p>
+<p>しばらく前にTwitterで、「いくつかのオブジェクトをまとめて、その単位でマークする」というアイディアを披露してみたが、すぐに三浦さんから「トラバースのコストが減らないから効果ないんじゃない」との指摘が。ちょっと考えてみたら、確かにその通り。かっくり。</p>
+<p>まあ、50年間、いろんな人が考えてきたGCで、画期的なアイディアを思いつくのは難しいよね。</p>
+<p>まあ、そういう「誰も知らない系」ではなくて、mark時間短縮に効果のありそうなアイディアは、私の思いつく限り3つ。</p>
+<p>ひとつはビットマップマーキング。GC markをオブジェクトヘッダ内ではなく、外に用意したビットマップに置く。 マークチェックにメモリ中オブジェクトにアクセスしなくて済むこと、それによりワーキングセットが小さくなることと、仮想記憶のページを汚さないことがメリット。</p>
+<p>もうひとつはGC markフェーズの並列化。スレッドを活用する。markは相互依存が少ないので、マルチコアマシンでは効果的。ただし、ビットマップ操作はアトミックではないので前日のビットマップマーキングとは相性が悪い。ビットマップのチェックや更新のたびにロックをかけてちゃコストが高すぎる。
+大概のCPUはバイト単位の操作ならアトミックに行うことができるので、
+ビットマップじゃなくて、1オブジェクトあたり1バイト使う、バイトマップにすることでロックは回避可能だと思う(だよね)。
+バイトマップにするとメモリ消費量が8倍になっちゃうけど、この領域は他の最適化に使えるかも。</p>
+<p>最後はGC mark対象のオブジェクトそのものを減らしちゃうこと。たとえば、ノードやメソッド、組み込みクラスなどをmark対象から外しちゃう。あとはオブジェクトのimmediate化。ある意味、もっとも正統的なアプローチ。1.9.2ではだいぶ外したから、後は組み込みクラスかな。</p>
+<p>組み込みクラスを別扱いすると、ユーザー定義クラスだけ一気に消去のようなことが可能になって、mod_rubyのようなタイプがうれしいかも。あと、MVMで組み込みクラスを共有できて、初期化コストが下がるとか。これらを直接書き換えないようにしないといけないけど、それは隠しクラスで実現できそう。</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+		<div class="caption">本日のツッコミ(全3件) [<a href="http://www.rubyist.net/~matz/20100510.html#c">ツッコミを入れる</a>]</div>
+		<div class="commentshort">
+				<p><a href="http://www.rubyist.net/~matz/20100510.html#c01"><span class="canchor">_</span></a>
+				<span class="commentator">とおりすがり</span>&nbsp;[http://www.publickey1.jp/blog/10/ssdrethinkdb.html にある考えを..]</p>
+				<p><a href="http://www.rubyist.net/~matz/20100510.html#c02"><span class="canchor">_</span></a>
+				<span class="commentator">vmi_jp</span>&nbsp;[&gt; 更新のたびにロックをかけてちゃコストが高すぎる CAS命令でロックフリーにするのはだめなんでしょうか? 1オペ..]</p>
+				<p><a href="http://www.rubyist.net/~matz/20100510.html#c03"><span class="canchor">_</span></a>
+				<span class="commentator">KT</span>&nbsp;[過去にもこんな論議があったようですね。 http://www.rubyist.net/~matz/20080306..]</p>
+		</div>
+</div>
+
+
+
+	<div class="comment trackbacks">
+		<div class="caption">
+			[TrackBack URL: <a href="http://www.rubyist.net/~matz/tb.rb/20100510">http://www.rubyist.net/~matz/tb.rb/20100510</a>]
+		</div>
+		<div class="commentshort trackbackshort">
+		</div>
+	</div>
+
+
+
+
+
+		<div class="referer">
+		
+		</div>
+</div>
+
+
+	<hr class="sep">
+
+<div class="adminmenu">
+<span class="adminmenu"><a href="http://www.rubyist.net/~matz/20100219-5.html">&laquo;前5日分</a></span>
+<span class="adminmenu"><a href="http://www.rubyist.net/~matz/">最新</a></span>
+<span class="adminmenu"><a href="http://www.rubyist.net/~matz/20110929-5.html">次5日分&raquo;</a></span>
+<span class="adminmenu"><a href="https://www.rubyist.net/~matz/update.rb" rel="nofollow">追記</a></span>
+</div>
+<center>
+<!-- Rakuten Dynamicad FROM HERE -->
+<script type="text/javascript">
+<!-- 
+rakuten_template = "728_90_txt";
+rakuten_affiliateId = "059c6b10.b3eb768e.059c6b11.e98254f4";
+rakuten_target = "_blank";
+rakuten_color_bg = "FFFFFF";
+rakuten_color_border = "BF0000";
+rakuten_color_text = "000000";
+rakuten_color_link = "0000FF";
+rakuten_color_price = "CC0000";
+//--></script>
+<script type="text/javascript"
+  src="http://dynamic.rakuten.co.jp/js/rakuten_dynamic.js">
+</script>
+<!-- Rakuten Dynamicad TO HERE -->
+</center><br>
+
+<a href="http://trackfeed.com/"><img name="trackfeed_banner" src="http://img.trackfeed.com/img/tfg.gif" alt="track feed" border="0" align="absmiddle" /></a>
+<nobr><a href="http://trackfeed.com/u/8812bdcfc0b3f5e81039fbe7e75967d58b534a24/Matz%E3%81%AB%E3%81%A3%E3%81%8D/http%3A%2F%2Fwww.rubyist.net%2F%7Ematz%2F/ca1b4d15">Matzにっき</a></nobr>
+<script type="text/javascript">
+document.write(unescape("%3Cscript src='http://script.trackfeed.com/usr/f/5/0257873c.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<!-- Creative Commons License -->
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/2.1/jp/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.gif" /></a>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/2.0/jp/">Creative Commons License</a>.
+<!-- /Creative Commons License -->
+
+<!--
+
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <dc:type rdf:resource="http://purl.org/dc/dcmitype/Text" />
+   <license rdf:resource="http://creativecommons.org/licenses/by-nc/2.0/jp/" />
+</Work>
+
+<License rdf:about="http://creativecommons.org/licenses/by-nc/2.0/jp/">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+
+</rdf:RDF>
+
+-->
+
+
+
+
+<div class="footer">
+Generated by <a href="http://www.tdiary.org/">tDiary</a> version 2.2.0<br>
+Powered by <a href="http://www.ruby-lang.org/">Ruby</a> version 1.8.7
+</div>
+</body>
+</html>

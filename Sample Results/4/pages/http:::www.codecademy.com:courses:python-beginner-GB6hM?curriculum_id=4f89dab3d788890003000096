@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html class='' lang='en' xmlns:fb='https://www.facebook.com/2008/fbml' xmlns:og='http://ogp.me/ns#' xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<script>
+  // Google Analytics
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-25136408-1']);
+  _gaq.push(['_trackPageview']);
+
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+  // chartbeat
+  var _sf_startpt=(new Date()).getTime();
+
+  // Generic
+  var root_url = "http://www.codecademy.com/";
+
+  // CCDATA
+  window.CCDATA = {};
+  CCDATA.env = 'production'
+  CCDATA.asset_host = ''
+
+
+
+</script>
+
+
+<title>Spam, Eggs, and Arithmetic - Tip Calculator | Codecademy</title>
+<meta charset='utf-8'>
+<meta content='IE=edge,chrome=1' http='{:equiv=&gt;"X-UA-Compatible"}'>
+<meta content='You&#x27;ve just finished a delicious meal of Spam and eggs. Unfortunately (and very strangely), the diner&#x27;s computer is down, but you happen to have yours. With the power of Python, you can correctly calculate the cost of your meal + tax and tip!' name='description'>
+<link href='/favicon.ico' rel='shortcut icon'>
+<link href='/blog.rss' rel='alternate' title='Codecademy Blog' type='application/rss+xml'>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<link href="http://www.codecademy.com/courses/python-beginner-GB6hM/0" rel="canonical" />
+
+<meta property="fb:app_id" content="212500508799908"/>
+<meta property="og:url" content="http://www.codecademy.com/courses/python-beginner-GB6hM/0?curriculum_id=4f89dab3d788890003000096"/>
+<meta property="og:site_name" content="Codecademy"/>
+
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="Spam, Eggs, and Arithmetic"/>
+  <meta property="og:description" content="You&#x27;ve just finished a delicious meal of Spam and eggs. Unfortunately (and very strangely), the diner&#x27;s computer is down, but you happen to have yours. With the power of Python, you can correctly calculate the cost of your meal + tax and tip!"/>
+
+
+
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="EMLmbN8INwP/5HSVKjBU23MKtpGKT0XpdbC24pY2aV0=" name="csrf-token" />
+<link href="/assets/bootstrap-e8791d4fc3ea3d421ea3a8001d8caa62.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/application-ltr-d88d4c0fa88a85c2df1b2ae12c2a9b81.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/application-ltr2-d89605e27034eec5f9785cd457e19c0b.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://fonts.googleapis.com/css?family=Lobster" media="screen" rel="stylesheet" type="text/css" />
+<!--[if lt IE 9]>
+<style>
+  /*<![CDATA[*/
+    #overlay {
+      background-color: #323232;
+      display: block;
+    }
+  /*]]>*/
+</style>
+<![endif]-->
+<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {filter: none;}
+  </style>
+<![endif]-->
+<script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script></head>
+<!-- Temporary logic to ensure that non-admins don't see any pages with the dashboard class -->
+<body class='sections show'>
+<div id='wrapper'>
+<div id='overlay'>
+</div>
+
+
+<noscript>
+  <h4 style="background: #fffacd; margin: 0; padding: 15px; text-align: center;">
+    For a better experience on Codecademy, <a target="_blank" href="http://enable-javascript.com/">enable JavaScript in your browser</a>.
+  </h4>
+</noscript>
+
+<header id="header">
+  <div class="container">
+    <h1 class="logo">
+      <a href="/">
+        Codecademy
+</a>    </h1>
+
+
+
+      <nav class="left">
+        <ul class="cf">
+          <li>
+            <a href="/learn" class="">Learn</a>
+          </li>
+
+            <li>
+              <a href="/create" class="">Teach</a>
+            </li>
+
+        </ul>
+      </nav>
+
+      <nav class="right">
+        <ul class="cf">
+            <li>
+              <a href="/sign_in" class="sign_in">Sign In</a>
+            </li>
+
+            <li>
+              <a href="/register/sign_up" class="sign_up">Create Account</a>
+            </li>
+
+        </ul>
+      </nav>
+
+
+  </div>
+
+  <div id="notices"></div>
+</header>
+
+<div class='container'>
+  <script src="/assets/sockjs-0.3.min.js" type="text/javascript"></script>
+
+<script src="/assets/templates/learner-en-a877ae5f349b64a9394fa4a8bddb61ba.js" type="text/javascript"></script>
+<div id='flash'>
+</div>
+
+
+
+<div id='section' class='learner'>
+  <div id='breadcrumb'>
+<p class='breadcrumb'>
+<a href='/tracks/python'>Python</a>
+&raquo;
+<b>
+<a href='/courses/python-beginner-GB6hM'>Tip Calculator</a>
+(Section 1 of 1)
+</b>
+</p>
+
+</div>
+<div class='field switch' id='section_scratch_pad_toggle'>
+<label class='section selected'>
+<span>Section</span>
+</label>
+<label class='forum '>
+<a href='/forums/python-beginner-GB6hM/0' target='_blank'>
+Q&amp;A Forum (46)
+</a>
+</label>
+<label class='glossary '>
+<a href='/glossary/python' target='_blank'>Glossary</a>
+</label>
+
+<label class='scratch_pad'>
+<a href='/courses/python-beginner-GB6hM/0'>Scratch Pad</a>
+</label>
+</div>
+<div id='section_details'>
+<h2 class='name'>Spam, Eggs, and Arithmetic</h2>
+<p class='byline'>
+Course written by
+<a href='/profiles/4f04f1847057120003006c12'>Eric Weinstein</a>
+
+
+</p>
+</div>
+
+  <div id='section_views'>
+    <div id='exercises_view'>
+      <div id='exercise_sidebar'>
+        <div class='columns exercises'>
+<ul class='exercises exercises_old' id='exercise_list'>
+<li class='exercise not_started'>
+<div class='name'>
+<a href='javascript:void(0);'>
+<span>1.</span>
+Your Favorite Meal
+</a>
+</div>
+<div class='block'>
+<div class='entry'>
+<p><strong>This project is designed to complement <a href="http://www.codecademy.com/courses/introduction-to-python-6WeG3">Unit 1: Python Syntax</a>. It assumes familiarity with <em>only</em> the material covered in that course.</strong></p>&#x000A;&#x000A;<p>You&#39;ve just beasted a truly delicious meal of Spam and eggs. The diner&#39;s computer is down, however, so you&#39;ll need to compute the cost of your meal yourself.</p>&#x000A;&#x000A;<p>Here&#39;s how it&#39;ll break down:</p>&#x000A;&#x000A;<p><strong>Cost of meal</strong>: $44.50</p>&#x000A;&#x000A;<p><strong>Restaurant tax</strong>: 6.75%</p>&#x000A;&#x000A;<p><strong>Tip</strong>: 15%</p>&#x000A;&#x000A;<p>You&#39;ll want to apply the tip to the overall cost of the meal (including tax).</p>&#x000A;&#x000A;
+</div>
+<div class='instruction'>
+<p>First, let&#39;s declare a variable <code>meal</code> and assign it the value <code>44.50</code>.</p>
+
+</div>
+<!-- / TODO(amasad): Remove show me experiment. -->
+<div class='hint'>
+<p>
+<a class='button gray show_hint' href='javascript:void(0);'>Show hint</a>
+</p>
+<div class='entry'>
+<p>Don&#39;t use any dollar signs (<code>$</code>)—just the numerical cost of the meal, <code>44.50</code>.</p>
+
+</div>
+</div>
+<div class='clear'></div>
+<div class='feedback'>
+Rate this exercise
+<div class='votes'>
+<form accept-charset="UTF-8" action="/votes" class="button_to upvote_form" data-remote="true" id="new_vote" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="EMLmbN8INwP/5HSVKjBU23MKtpGKT0XpdbC24pY2aV0=" /></div>
+<input id="vote_o_type" name="vote[o_type]" type="hidden" value="Exercise" />
+<input class="o_id" id="vote_o_id" name="vote[o_id]" type="hidden" value="4fd55e6703a5f100030463ce" />
+<input id="vote_is_up" name="vote[is_up]" type="hidden" value="true" />
+<input class="upvote clear_button" name="commit" type="submit" value="upvote" />
+</form>
+
+<form accept-charset="UTF-8" action="/votes" class="button_to downvote_form" data-remote="true" id="new_vote" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="EMLmbN8INwP/5HSVKjBU23MKtpGKT0XpdbC24pY2aV0=" /></div>
+<input id="vote_o_type" name="vote[o_type]" type="hidden" value="Exercise" />
+<input class="o_id" id="vote_o_id" name="vote[o_id]" type="hidden" value="4fd55e6703a5f100030463ce" />
+<input id="vote_is_up" name="vote[is_up]" type="hidden" value="false" />
+<input class="downvote clear_button" name="commit" type="submit" value="downvote" />
+</form>
+
+</div>
+</div>
+
+</div>
+</li>
+
+<li class='exercise not_started'>
+<div class='name'>
+<a href='javascript:void(0);'>
+<span>2.</span>
+The Tax
+</a>
+</div>
+<div class='block'>
+<div class='entry'>
+<p>Good! Now let&#39;s create a variable for the tax percentage.</p>&#x000A;&#x000A;<p>The tax on your meal at this diner is 6.75%. Because we&#39;ll be multiplying with floats and not percentages, however, you&#39;ll have to divide 6.75 by 100 in order to get the decimal form of the number. Do you understand why? (See the <strong>hint</strong> if you don&#39;t.)</p>&#x000A;&#x000A;
+</div>
+<div class='instruction'>
+<p>Create the variable <code>tax</code> and set it equal to the decimal value of 6.75%.</p>
+
+</div>
+<!-- / TODO(amasad): Remove show me experiment. -->
+<div class='hint'>
+<p>
+<a class='button gray show_hint' href='javascript:void(0);'>Show hint</a>
+</p>
+<div class='entry'>
+<p>6.75% is another way of saying &quot;6.75 out of 100.&quot; If you want to figure out the decimal form of 6.75%, then, you have to divide 6.75 by 100, which equals 0.0675.</p>
+
+</div>
+</div>
+<div class='clear'></div>
+<div class='feedback'>
+Rate this exercise
+<div class='votes'>
+<form accept-charset="UTF-8" action="/votes" class="button_to upvote_form" data-remote="true" id="new_vote" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="EMLmbN8INwP/5HSVKjBU23MKtpGKT0XpdbC24pY2aV0=" /></div>
+<input id="vote_o_type" name="vote[o_type]" type="hidden" value="Exercise" />
+<input class="o_id" id="vote_o_id" name="vote[o_id]" type="hidden" value="4fd55e80b280710003046062" />
+<input id="vote_is_up" name="vote[is_up]" type="hidden" value="true" />
+<input class="upvote clear_button" name="commit" type="submit" value="upvote" />
+</form>
+
+<form accept-charset="UTF-8" action="/votes" class="button_to downvote_form" data-remote="true" id="new_vote" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="EMLmbN8INwP/5HSVKjBU23MKtpGKT0XpdbC24pY2aV0=" /></div>
+<input id="vote_o_type" name="vote[o_type]" type="hidden" value="Exercise" />
+<input class="o_id" id="vote_o_id" name="vote[o_id]" type="hidden" value="4fd55e80b280710003046062" />
+<input id="vote_is_up" name="vote[is_up]" type="hidden" value="false" />
+<input class="downvote clear_button" name="commit" type="submit" value="downvote" />
+</form>
+
+</div>
+</div>
+
+</div>
+</li>
+
+<li class='exercise not_started'>
+<div class='name'>
+<a href='javascript:void(0);'>
+<span>3.</span>
+The Tip
+</a>
+</div>
+<div class='block'>
+<div class='entry'>
+<p>Nice work! You received good service at this diner, so you&#39;d like to leave a 15% tip on top the cost of the meal (including tax).</p>&#x000A;&#x000A;<p>Before we compute the tip for your overall bill, let&#39;s set a variable for the tip (15%). Again, this is a percentage, so you&#39;ll need to divide 15.0 by 100 in order to get the decimal form of the tip.</p>&#x000A;&#x000A;
+</div>
+<div class='instruction'>
+<p>Set the variable <code>tip</code> to 15% (in decimal form!) on <a href="javascript:void(0)" class="line-no" data-from="5" data-to="">line 5</a>.</p>
+
+</div>
+<!-- / TODO(amasad): Remove show me experiment. -->
+<div class='hint'>
+<p>
+<a class='button gray show_hint' href='javascript:void(0);'>Show hint</a>
+</p>
+<div class='entry'>
+<p>Try doing 15.0 / 100.</p>
+
+</div>
+</div>
+<div class='clear'></div>
+<div class='feedback'>
+Rate this exercise
+<div class='votes'>
+<form accept-charset="UTF-8" action="/votes" class="button_to upvote_form" data-remote="true" id="new_vote" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="EMLmbN8INwP/5HSVKjBU23MKtpGKT0XpdbC24pY2aV0=" /></div>
+<input id="vote_o_type" name="vote[o_type]" type="hidden" value="Exercise" />
+<input class="o_id" id="vote_o_id" name="vote[o_id]" type="hidden" value="4fd55e81fd55260003046724" />
+<input id="vote_is_up" name="vote[is_up]" type="hidden" value="true" />
+<input class="upvote clear_button" name="commit" type="submit" value="upvote" />
+</form>
+
+<form accept-charset="UTF-8" action="/votes" class="button_to downvote_form" data-remote="true" id="new_vote" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="EMLmbN8INwP/5HSVKjBU23MKtpGKT0XpdbC24pY2aV0=" /></div>
+<input id="vote_o_type" name="vote[o_type]" type="hidden" value="Exercise" />
+<input class="o_id" id="vote_o_id" name="vote[o_id]" type="hidden" value="4fd55e81fd55260003046724" />
+<input id="vote_is_up" name="vote[is_up]" type="hidden" value="false" />
+<input class="downvote clear_button" name="commit" type="submit" value="downvote" />
+</form>
+
+</div>
+</div>
+
+</div>
+</li>
+
+<li class='exercise not_started'>
+<div class='name'>
+<a href='javascript:void(0);'>
+<span>4.</span>
+Reassign in a Single Line
+</a>
+</div>
+<div class='block'>
+<div class='entry'>
+<p>Okay! We&#39;ve got the three variables we need to perform our calculation, and we know a bunch of arithmetic operators that will be able to help us out.</p>&#x000A;&#x000A;<p>We saw in <a href="http://www.codecademy.com/courses/4fcba68767e7c1000304119b?">Unit 1</a> that we could <strong>reassign</strong> a variable when needed—for example, we could say <code>spam = 7</code> at one point in the program, then later change our minds and say <code>spam = 3</code>.</p>&#x000A;&#x000A;
+</div>
+<div class='instruction'>
+<p>On <a href="javascript:void(0)" class="line-no" data-from="7" data-to="">line 7</a> in the editor, reassign <code>meal</code> to the value of itself + itself * tax (this will add the dollar amount of the tax to the cost of the meal). You&#39;re completely allowed to reassign a variable in terms of itself!</p>
+
+</div>
+<!-- / TODO(amasad): Remove show me experiment. -->
+<div class='hint'>
+<p>
+<a class='button gray show_hint' href='javascript:void(0);'>Show hint</a>
+</p>
+<div class='entry'>
+<p>Let&#39;s see: <code>meal * tax</code> will give you the number of tax dollars to put on your bill, and <code>meal</code> + that number will give you the cost of the meal + tax!</p>
+
+<p>The interpreter will evaluate the right-hand side of the equation first. It will ask itself, &quot;What&#39;s <code>meal</code> * <code>tax</code>?&quot; Once it does this and gets the result (about 3.00), it will ask itself, &quot;What&#39;s <code>meal</code> + this number?&quot; (44.50 + about 3.00 = about 47.50.) Finally, it&#39;ll move to the left-hand side of the equation and say, &quot;Oh man, I should totally reassign <code>meal</code> (which was 44.50) to this new value of about 47.50.&quot; And that&#39;s how <code>meal</code> gets reassigned!</p>
+
+</div>
+</div>
+<div class='clear'></div>
+<div class='feedback'>
+Rate this exercise
+<div class='votes'>
+<form accept-charset="UTF-8" action="/votes" class="button_to upvote_form" data-remote="true" id="new_vote" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="EMLmbN8INwP/5HSVKjBU23MKtpGKT0XpdbC24pY2aV0=" /></div>
+<input id="vote_o_type" name="vote[o_type]" type="hidden" value="Exercise" />
+<input class="o_id" id="vote_o_id" name="vote[o_id]" type="hidden" value="4fd55e81f72d500003046266" />
+<input id="vote_is_up" name="vote[is_up]" type="hidden" value="true" />
+<input class="upvote clear_button" name="commit" type="submit" value="upvote" />
+</form>
+
+<form accept-charset="UTF-8" action="/votes" class="button_to downvote_form" data-remote="true" id="new_vote" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="EMLmbN8INwP/5HSVKjBU23MKtpGKT0XpdbC24pY2aV0=" /></div>
+<input id="vote_o_type" name="vote[o_type]" type="hidden" value="Exercise" />
+<input class="o_id" id="vote_o_id" name="vote[o_id]" type="hidden" value="4fd55e81f72d500003046266" />
+<input id="vote_is_up" name="vote[is_up]" type="hidden" value="false" />
+<input class="downvote clear_button" name="commit" type="submit" value="downvote" />
+</form>
+
+</div>
+</div>
+
+</div>
+</li>
+
+<li class='exercise not_started'>
+<div class='name'>
+<a href='javascript:void(0);'>
+<span>5.</span>
+Second Verse, Same as the First
+</a>
+</div>
+<div class='block'>
+<div class='entry'>
+<p>Well, <em>almost</em> the same. Here, we&#39;re going to introduce a new variable instead of resetting an existing variable.</p>&#x000A;&#x000A;<p>Now that <code>meal</code> points to the value of the cost of the food + tax, let&#39;s introduce a new variable on <a href="javascript:void(0)" class="line-no" data-from="8" data-to="">line 8</a>, <code>total</code>, that&#39;s equal to the new <code>meal</code> + <code>meal</code> * <code>tip</code>. (This should be very similar to what you just did in the last exercise.)</p>&#x000A;&#x000A;<p>The code on <a href="javascript:void(0)" class="line-no" data-from="10" data-to="">line 10</a> will nicely format the value of <code>total</code> and will ensure it <code>print</code>s to the <strong>console</strong> with two numbers after the decimal. (We&#39;ll learn all about string formatting, the console, and the <code>print</code> keyword in <a href="http://www.codecademy.com/courses/python-beginner-sRXwR/0#!/exercises/0">Unit 2</a>!)</p>&#x000A;&#x000A;
+</div>
+<div class='instruction'>
+<p>Assign the variable <code>total</code> to the sum of <code>meal</code> + <code>meal</code> * <code>tip</code> on <a href="javascript:void(0)" class="line-no" data-from="8" data-to="">line 8</a>, then hit &quot;run&quot; to see the total cost of your meal!</p>
+
+</div>
+<!-- / TODO(amasad): Remove show me experiment. -->
+<div class='clear'></div>
+<div class='feedback'>
+Rate this exercise
+<div class='votes'>
+<form accept-charset="UTF-8" action="/votes" class="button_to upvote_form" data-remote="true" id="new_vote" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="EMLmbN8INwP/5HSVKjBU23MKtpGKT0XpdbC24pY2aV0=" /></div>
+<input id="vote_o_type" name="vote[o_type]" type="hidden" value="Exercise" />
+<input class="o_id" id="vote_o_id" name="vote[o_id]" type="hidden" value="4fd55e82d7fc680003044d2b" />
+<input id="vote_is_up" name="vote[is_up]" type="hidden" value="true" />
+<input class="upvote clear_button" name="commit" type="submit" value="upvote" />
+</form>
+
+<form accept-charset="UTF-8" action="/votes" class="button_to downvote_form" data-remote="true" id="new_vote" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="EMLmbN8INwP/5HSVKjBU23MKtpGKT0XpdbC24pY2aV0=" /></div>
+<input id="vote_o_type" name="vote[o_type]" type="hidden" value="Exercise" />
+<input class="o_id" id="vote_o_id" name="vote[o_id]" type="hidden" value="4fd55e82d7fc680003044d2b" />
+<input id="vote_is_up" name="vote[is_up]" type="hidden" value="false" />
+<input class="downvote clear_button" name="commit" type="submit" value="downvote" />
+</form>
+
+</div>
+</div>
+
+</div>
+</li>
+
+</ul>
+</div>
+
+        <div id='section_nav'>
+
+        </div>
+      </div>
+      <div id='repl' class='python tab_block js-tabs'>
+        <ul class="nav nav-tabs">
+          <li class="tab active code">
+            <a href="javascript: void(0);">Code</a>
+          </li>
+          <li class="tab files">
+            <a href="javascript: void(0);">Files</a>
+          </li>
+        </ul>
+        <ul class="pages">
+          <li class="page default">
+            <div id='editor' class='editor'>
+              <div class='scratch'></div>
+              <div class='actions'>
+                  <button class='button light-green run'>
+                      Run</button>
+                  <button class='button red reset'>Reset</button>
+                <div class='submissions'></div>
+                <button class='button gray save'>Save</button>
+              </div>
+            </div>
+          </li>
+          <li class="page files">
+            <div class="file_manager"></div>
+            <div class="show_file"><div class="editor"></div></div>
+          </li>
+        </ul>
+        <div id='console' class='console'>
+          <span class='label'></span>
+          <!--[if lt IE 10 ]>
+  <div id="throbber" class="ieprogress"></div>
+  <style>#progress {display: none}</style>
+<![endif]-->
+<div id="progress">
+  <span></span>
+</div>
+
+        </div>
+      </div>
+    </div>
+    <div id='scratch_pad_view'>
+      <div id='scratch_pad_editor' class='editor'>
+        <div class='full_width'>
+          <div class='scratch'></div>
+          <div class='actions'>
+            <button class='light-green run'>Run</button>
+          </div>
+        </div>
+      </div>
+      <div id='scratch_pad_console' class='console'></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  //<![CDATA[
+  var languagePath = "/courses/lang/python";
+  var curriculaPath = "/tracks";
+  var coursesPath = "/courses";
+  var currentCurriculumPath = "";
+  var curriculumId = "4f89dab3d788890003000096";
+  var feedbackId = "";
+  var userExists = false;
+  var isBetaTester = false;
+  var isBetaCourse = false;
+
+  var exerciseData = [{"_id":"4fd55e6703a5f100030463ce","section_id":"4fd55e66b280710003045fb6","name":"Your%20Favorite%20Meal","entry":"%3Cp%3E%3Cstrong%3EThis%20project%20is%20designed%20to%20complement%20%3Ca%20href%3D%22http%3A%2F%2Fwww.codecademy.com%2Fcourses%2Fintroduction-to-python-6WeG3%22%3EUnit%201%3A%20Python%20Syntax%3C%2Fa%3E.%20It%20assumes%20familiarity%20with%20%3Cem%3Eonly%3C%2Fem%3E%20the%20material%20covered%20in%20that%20course.%3C%2Fstrong%3E%3C%2Fp%3E%0A%0A%3Cp%3EYou%26%2339%3Bve%20just%20beasted%20a%20truly%20delicious%20meal%20of%20Spam%20and%20eggs.%20The%20diner%26%2339%3Bs%20computer%20is%20down%2C%20however%2C%20so%20you%26%2339%3Bll%20need%20to%20compute%20the%20cost%20of%20your%20meal%20yourself.%3C%2Fp%3E%0A%0A%3Cp%3EHere%26%2339%3Bs%20how%20it%26%2339%3Bll%20break%20down%3A%3C%2Fp%3E%0A%0A%3Cp%3E%3Cstrong%3ECost%20of%20meal%3C%2Fstrong%3E%3A%20%2444.50%3C%2Fp%3E%0A%0A%3Cp%3E%3Cstrong%3ERestaurant%20tax%3C%2Fstrong%3E%3A%206.75%25%3C%2Fp%3E%0A%0A%3Cp%3E%3Cstrong%3ETip%3C%2Fstrong%3E%3A%2015%25%3C%2Fp%3E%0A%0A%3Cp%3EYou%26%2339%3Bll%20want%20to%20apply%20the%20tip%20to%20the%20overall%20cost%20of%20the%20meal%20(including%20tax).%3C%2Fp%3E%0A","instruction":"%3Cp%3EFirst%2C%20let%26%2339%3Bs%20declare%20a%20variable%20%3Ccode%3Emeal%3C%2Fcode%3E%20and%20assign%20it%20the%20value%20%3Ccode%3E44.50%3C%2Fcode%3E.%3C%2Fp%3E%0A","hint":"%3Cp%3EDon%26%2339%3Bt%20use%20any%20dollar%20signs%20(%3Ccode%3E%24%3C%2Fcode%3E)%E2%80%94just%20the%20numerical%20cost%20of%20the%20meal%2C%20%3Ccode%3E44.50%3C%2Fcode%3E.%3C%2Fp%3E%0A","index":0,"expect_error":false,"default_code":"%23Assign%20the%20variable%20meal%20the%20value%2044.50%20on%20line%203!%0A%0A","test_functions":"try%3A%0A%09meal%0Aexcept%20NameError%3A%0A%09return%20%22Make%20sure%20that%20you%20declared%20the%20variable%20'meal'.%22%0A%0Aif%20meal%20!%3D%2044.50%3A%0A%09return%20%22The%20variable%20'meal'%20should%20have%20the%20value%2044.50%22%0A%09%0Areturn%20True","submissions":[],"completed":false,"path":"%2Fsections%2F4fd55e66b280710003045fb6%2Fexercises%2F4fd55e6703a5f100030463ce.json","prog_lang":"python","view":"console_and_editor","tabs":[],"library":["https%3A%2F%2Fajax.googleapis.com%2Fajax%2Flibs%2Fjquery%2F1.7.1%2Fjquery.min.js"],"load_submission_from_previous_exercise":false,"from_console":false,"solution_code":"","solution_entry":""},{"_id":"4fd55e80b280710003046062","section_id":"4fd55e66b280710003045fb6","name":"The%20Tax","entry":"%3Cp%3EGood!%20Now%20let%26%2339%3Bs%20create%20a%20variable%20for%20the%20tax%20percentage.%3C%2Fp%3E%0A%0A%3Cp%3EThe%20tax%20on%20your%20meal%20at%20this%20diner%20is%206.75%25.%20Because%20we%26%2339%3Bll%20be%20multiplying%20with%20floats%20and%20not%20percentages%2C%20however%2C%20you%26%2339%3Bll%20have%20to%20divide%206.75%20by%20100%20in%20order%20to%20get%20the%20decimal%20form%20of%20the%20number.%20Do%20you%20understand%20why%3F%20(See%20the%20%3Cstrong%3Ehint%3C%2Fstrong%3E%20if%20you%20don%26%2339%3Bt.)%3C%2Fp%3E%0A","instruction":"%3Cp%3ECreate%20the%20variable%20%3Ccode%3Etax%3C%2Fcode%3E%20and%20set%20it%20equal%20to%20the%20decimal%20value%20of%206.75%25.%3C%2Fp%3E%0A","hint":"%3Cp%3E6.75%25%20is%20another%20way%20of%20saying%20%26quot%3B6.75%20out%20of%20100.%26quot%3B%20If%20you%20want%20to%20figure%20out%20the%20decimal%20form%20of%206.75%25%2C%20then%2C%20you%20have%20to%20divide%206.75%20by%20100%2C%20which%20equals%200.0675.%3C%2Fp%3E%0A","index":1,"expect_error":false,"default_code":"meal%20%3D%2044.50%0A","test_functions":"try%3A%0A%09tax%0Aexcept%20NameError%3A%0A%09return%20%22Make%20sure%20that%20you%20declared%20the%20variable%20'tax'.%22%0A%0Aif%20tax%20!%3D%200.0675%3A%0A%09return%20%22The%20value%20of%20the%20variable%20'tax'%20doesn't%20seem%20correct.%22%0A%09%0Areturn%20True","submissions":[],"completed":false,"path":"%2Fsections%2F4fd55e66b280710003045fb6%2Fexercises%2F4fd55e80b280710003046062.json","prog_lang":"python","view":"console_and_editor","tabs":[],"library":["https%3A%2F%2Fajax.googleapis.com%2Fajax%2Flibs%2Fjquery%2F1.7.1%2Fjquery.min.js"],"load_submission_from_previous_exercise":false,"from_console":false,"solution_code":"","solution_entry":""},{"_id":"4fd55e81fd55260003046724","section_id":"4fd55e66b280710003045fb6","name":"The%20Tip","entry":"%3Cp%3ENice%20work!%20You%20received%20good%20service%20at%20this%20diner%2C%20so%20you%26%2339%3Bd%20like%20to%20leave%20a%2015%25%20tip%20on%20top%20the%20cost%20of%20the%20meal%20(including%20tax).%3C%2Fp%3E%0A%0A%3Cp%3EBefore%20we%20compute%20the%20tip%20for%20your%20overall%20bill%2C%20let%26%2339%3Bs%20set%20a%20variable%20for%20the%20tip%20(15%25).%20Again%2C%20this%20is%20a%20percentage%2C%20so%20you%26%2339%3Bll%20need%20to%20divide%2015.0%20by%20100%20in%20order%20to%20get%20the%20decimal%20form%20of%20the%20tip.%3C%2Fp%3E%0A","instruction":"%3Cp%3ESet%20the%20variable%20%3Ccode%3Etip%3C%2Fcode%3E%20to%2015%25%20(in%20decimal%20form!)%20on%20%3Ca%20href%3D%22javascript%3Avoid(0)%22%20class%3D%22line-no%22%20data-from%3D%225%22%20data-to%3D%22%22%3Eline%205%3C%2Fa%3E.%3C%2Fp%3E%0A","hint":"%3Cp%3ETry%20doing%2015.0%20%2F%20100.%3C%2Fp%3E%0A","index":2,"expect_error":false,"default_code":"%23You're%20almost%20there!%20Assign%20the%20variable%20tip%20on%20line%205.%0A%0Ameal%20%3D%2044.50%0Atax%20%3D%200.0675%0A","test_functions":"try%3A%0A%09tip%0Aexcept%20NameError%3A%0A%09return%20%22Make%20sure%20that%20you%20declared%20the%20variable%20'tip'.%22%0A%0Aif%20tip%20!%3D%200.15%3A%0A%09return%20%22The%20value%20of%20the%20variable%20'tip'%20doesn't%20seem%20correct.%22%0A%0Areturn%20True","submissions":[],"completed":false,"path":"%2Fsections%2F4fd55e66b280710003045fb6%2Fexercises%2F4fd55e81fd55260003046724.json","prog_lang":"python","view":"console_and_editor","tabs":[],"library":["https%3A%2F%2Fajax.googleapis.com%2Fajax%2Flibs%2Fjquery%2F1.7.1%2Fjquery.min.js"],"load_submission_from_previous_exercise":false,"from_console":false,"solution_code":"","solution_entry":""},{"_id":"4fd55e81f72d500003046266","section_id":"4fd55e66b280710003045fb6","name":"Reassign%20in%20a%20Single%20Line","entry":"%3Cp%3EOkay!%20We%26%2339%3Bve%20got%20the%20three%20variables%20we%20need%20to%20perform%20our%20calculation%2C%20and%20we%20know%20a%20bunch%20of%20arithmetic%20operators%20that%20will%20be%20able%20to%20help%20us%20out.%3C%2Fp%3E%0A%0A%3Cp%3EWe%20saw%20in%20%3Ca%20href%3D%22http%3A%2F%2Fwww.codecademy.com%2Fcourses%2F4fcba68767e7c1000304119b%3F%22%3EUnit%201%3C%2Fa%3E%20that%20we%20could%20%3Cstrong%3Ereassign%3C%2Fstrong%3E%20a%20variable%20when%20needed%E2%80%94for%20example%2C%20we%20could%20say%20%3Ccode%3Espam%20%3D%207%3C%2Fcode%3E%20at%20one%20point%20in%20the%20program%2C%20then%20later%20change%20our%20minds%20and%20say%20%3Ccode%3Espam%20%3D%203%3C%2Fcode%3E.%3C%2Fp%3E%0A","instruction":"%3Cp%3EOn%20%3Ca%20href%3D%22javascript%3Avoid(0)%22%20class%3D%22line-no%22%20data-from%3D%227%22%20data-to%3D%22%22%3Eline%207%3C%2Fa%3E%20in%20the%20editor%2C%20reassign%20%3Ccode%3Emeal%3C%2Fcode%3E%20to%20the%20value%20of%20itself%20%2B%20itself%20*%20tax%20(this%20will%20add%20the%20dollar%20amount%20of%20the%20tax%20to%20the%20cost%20of%20the%20meal).%20You%26%2339%3Bre%20completely%20allowed%20to%20reassign%20a%20variable%20in%20terms%20of%20itself!%3C%2Fp%3E%0A","hint":"%3Cp%3ELet%26%2339%3Bs%20see%3A%20%3Ccode%3Emeal%20*%20tax%3C%2Fcode%3E%20will%20give%20you%20the%20number%20of%20tax%20dollars%20to%20put%20on%20your%20bill%2C%20and%20%3Ccode%3Emeal%3C%2Fcode%3E%20%2B%20that%20number%20will%20give%20you%20the%20cost%20of%20the%20meal%20%2B%20tax!%3C%2Fp%3E%0A%0A%3Cp%3EThe%20interpreter%20will%20evaluate%20the%20right-hand%20side%20of%20the%20equation%20first.%20It%20will%20ask%20itself%2C%20%26quot%3BWhat%26%2339%3Bs%20%3Ccode%3Emeal%3C%2Fcode%3E%20*%20%3Ccode%3Etax%3C%2Fcode%3E%3F%26quot%3B%20Once%20it%20does%20this%20and%20gets%20the%20result%20(about%203.00)%2C%20it%20will%20ask%20itself%2C%20%26quot%3BWhat%26%2339%3Bs%20%3Ccode%3Emeal%3C%2Fcode%3E%20%2B%20this%20number%3F%26quot%3B%20(44.50%20%2B%20about%203.00%20%3D%20about%2047.50.)%20Finally%2C%20it%26%2339%3Bll%20move%20to%20the%20left-hand%20side%20of%20the%20equation%20and%20say%2C%20%26quot%3BOh%20man%2C%20I%20should%20totally%20reassign%20%3Ccode%3Emeal%3C%2Fcode%3E%20(which%20was%2044.50)%20to%20this%20new%20value%20of%20about%2047.50.%26quot%3B%20And%20that%26%2339%3Bs%20how%20%3Ccode%3Emeal%3C%2Fcode%3E%20gets%20reassigned!%3C%2Fp%3E%0A","index":3,"expect_error":false,"default_code":"%23Reassign%20meal%20on%20line%207!%0A%0Ameal%20%3D%2044.50%0Atax%20%3D%200.0675%0Atip%20%3D%200.15%0A%0A","test_functions":"if%20round(meal%2C2)%20!%3D%2047.50%3A%0A%09return%20%22The%20value%20of%20'meal'%20doesn't%20seem%20correct.%22%0A%09%0Areturn%20True","submissions":[],"completed":false,"path":"%2Fsections%2F4fd55e66b280710003045fb6%2Fexercises%2F4fd55e81f72d500003046266.json","prog_lang":"python","view":"console_and_editor","tabs":[],"library":["https%3A%2F%2Fajax.googleapis.com%2Fajax%2Flibs%2Fjquery%2F1.7.1%2Fjquery.min.js"],"load_submission_from_previous_exercise":false,"from_console":false,"solution_code":"","solution_entry":""},{"_id":"4fd55e82d7fc680003044d2b","section_id":"4fd55e66b280710003045fb6","name":"Second%20Verse%2C%20Same%20as%20the%20First","entry":"%3Cp%3EWell%2C%20%3Cem%3Ealmost%3C%2Fem%3E%20the%20same.%20Here%2C%20we%26%2339%3Bre%20going%20to%20introduce%20a%20new%20variable%20instead%20of%20resetting%20an%20existing%20variable.%3C%2Fp%3E%0A%0A%3Cp%3ENow%20that%20%3Ccode%3Emeal%3C%2Fcode%3E%20points%20to%20the%20value%20of%20the%20cost%20of%20the%20food%20%2B%20tax%2C%20let%26%2339%3Bs%20introduce%20a%20new%20variable%20on%20%3Ca%20href%3D%22javascript%3Avoid(0)%22%20class%3D%22line-no%22%20data-from%3D%228%22%20data-to%3D%22%22%3Eline%208%3C%2Fa%3E%2C%20%3Ccode%3Etotal%3C%2Fcode%3E%2C%20that%26%2339%3Bs%20equal%20to%20the%20new%20%3Ccode%3Emeal%3C%2Fcode%3E%20%2B%20%3Ccode%3Emeal%3C%2Fcode%3E%20*%20%3Ccode%3Etip%3C%2Fcode%3E.%20(This%20should%20be%20very%20similar%20to%20what%20you%20just%20did%20in%20the%20last%20exercise.)%3C%2Fp%3E%0A%0A%3Cp%3EThe%20code%20on%20%3Ca%20href%3D%22javascript%3Avoid(0)%22%20class%3D%22line-no%22%20data-from%3D%2210%22%20data-to%3D%22%22%3Eline%2010%3C%2Fa%3E%20will%20nicely%20format%20the%20value%20of%20%3Ccode%3Etotal%3C%2Fcode%3E%20and%20will%20ensure%20it%20%3Ccode%3Eprint%3C%2Fcode%3Es%20to%20the%20%3Cstrong%3Econsole%3C%2Fstrong%3E%20with%20two%20numbers%20after%20the%20decimal.%20(We%26%2339%3Bll%20learn%20all%20about%20string%20formatting%2C%20the%20console%2C%20and%20the%20%3Ccode%3Eprint%3C%2Fcode%3E%20keyword%20in%20%3Ca%20href%3D%22http%3A%2F%2Fwww.codecademy.com%2Fcourses%2Fpython-beginner-sRXwR%2F0%23!%2Fexercises%2F0%22%3EUnit%202%3C%2Fa%3E!)%3C%2Fp%3E%0A","instruction":"%3Cp%3EAssign%20the%20variable%20%3Ccode%3Etotal%3C%2Fcode%3E%20to%20the%20sum%20of%20%3Ccode%3Emeal%3C%2Fcode%3E%20%2B%20%3Ccode%3Emeal%3C%2Fcode%3E%20*%20%3Ccode%3Etip%3C%2Fcode%3E%20on%20%3Ca%20href%3D%22javascript%3Avoid(0)%22%20class%3D%22line-no%22%20data-from%3D%228%22%20data-to%3D%22%22%3Eline%208%3C%2Fa%3E%2C%20then%20hit%20%26quot%3Brun%26quot%3B%20to%20see%20the%20total%20cost%20of%20your%20meal!%3C%2Fp%3E%0A","hint":"","index":4,"expect_error":false,"default_code":"%23Assign%20the%20variable%20total%20on%20line%208!%0A%0Ameal%20%3D%2044.50%0Atax%20%3D%200.0675%0Atip%20%3D%200.15%0A%0Ameal%20%3D%20meal%20%2B%20meal%20*%20tax%0A%0A%0Aprint(%22%25.2f%22%20%25%20total)","test_functions":"try%3A%0A%09total%0Aexcept%20NameError%3A%0A%09return%20%22Make%20sure%20that%20you%20declared%20the%20variable%20'total'.%22%0A%0Aif%20not%20CC.printed(%2254.63%22)%3A%0A%09return%20%22The%20output%20doesn't%20seem%20correct.%22%0A%09%0Areturn%20True","submissions":[],"completed":false,"path":"%2Fsections%2F4fd55e66b280710003045fb6%2Fexercises%2F4fd55e82d7fc680003044d2b.json","prog_lang":"python","view":"console_and_editor","tabs":[],"library":["https%3A%2F%2Fajax.googleapis.com%2Fajax%2Flibs%2Fjquery%2F1.7.1%2Fjquery.min.js"],"load_submission_from_previous_exercise":false,"from_console":false,"solution_code":"","solution_entry":""}];
+  CCDATA.codexCredentials = "";
+  CCDATA.codexHost = "http://54.243.202.158:80";
+
+
+  //]]>
+</script>
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+</div>
+<div id='footer-clear'></div>
+</div>
+<footer id='footer'>
+<div class="wrapper">
+  <div class="container">
+    <div class="about">
+      <h1>
+        <span class="logo">Codecademy</span>
+        <span class="comma">,</span>
+        teaching the world to code
+      </h1>
+      <ul>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/jobs">We&#x27;re hiring</a></li>
+        <li><a href="/blog">Our Blog</a></li>
+      </ul>
+    </div>
+    <ul class="links">
+      <li>
+        <h4>Learn to Code</h4>
+        <ul>
+          <li><a href="/tracks/javascript"><span class='arraow'>&rarr;</span> JavaScript</a></li>
+          <li><a href="/tracks/web"><span class='arraow'>&rarr;</span> HTML/CSS</a></li>
+          <li><a href="/tracks/python"><span class='arraow'>&rarr;</span> Python</a></li>
+          <li><a href="/tracks/ruby"><span class='arraow'>&rarr;</span> Ruby</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <h4>Other Programs</h4>
+        <ul>
+          <li><a href="/afterschool"><span class='arraow'>&rarr;</span>Afterschool Programming</a></li>
+          <li><a href="/stories"><span class='arraow'>&rarr;</span>Success Stories</a></li>
+          <li><a href="http://labs.codecademy.com"><span class='arraow'>&rarr;</span>Codecademy Labs</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <h4>Codecademy Online</h4>
+        <ul class="external">
+          <li class="twitter"><span class="icon-twitter"></span><a href="http://www.twitter.com/codecademy">Follow us on Twitter</a></li>
+          <li class="facebook"><span class="icon-facebook"></span><a href="http://www.facebook.com/codecademy">Find us on Facebook</a></li>
+          <li class="blog"><span class="icon-blog"></span><a href="/blog">Read our Blog</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="container secondary">
+    <ul>
+      <li><a href="/help">Help</a></li>
+      <li><a href="/policy">Privacy Policy</a></li>
+      <li><a href="/terms">Terms</a></li>
+      <li>Made in NYC</li>
+      <li>&copy; 2013 Codecademy</li>
+    </ul>
+
+
+  </div>
+</div>
+
+
+</footer>
+<div class='ajax-loader offscreen'></div>
+<div class='ajax-loader-large offscreen'></div>
+<div id='user-registration-modal'>
+<div class="cf module" id="user-registration-form">
+
+  <header>
+    <h2 class="sign-up-to">Sign up to Codecademy</h2>
+    <h2 class="sign-up-encourage">
+      You&#x27;re doing great! <span>Sign up to keep track of what you’ve learned!</span>
+</h2>  </header>
+
+
+  <div class="cell social-signin">
+    <h4>Sign up with...</h4>
+
+      <a href="/auth/facebook" class="bttn social-signup facebook sign-up"><span class="icon-social-facebook"></span>Sign up with Facebook</a>
+      <a href="#" class="bttn social-signup twitter sign-up"><span class="icon-social-twitter"></span>Sign up with Twitter</a>
+      <a href="/auth/google_oauth2" class="bttn social-signup google sign-up"><span class="icon-social-google"></span>Sign up with Google</a>
+
+  </div>
+
+  <div class="cell email-signin">
+    <h4>Or sign up with email</h4>
+    <span class="or module">or</span>
+    <form accept-charset="UTF-8" action="/register" class="new_user" id="new-user" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="EMLmbN8INwP/5HSVKjBU23MKtpGKT0XpdbC24pY2aV0=" /></div>
+  
+  <input id="user_email" name="user[email]" placeholder="Email" size="30" tabindex="1" type="email" />
+  <input id="user_username" name="user[username]" placeholder="Username" size="30" tabindex="2" type="text" />
+  <input id="user_password" name="user[password]" placeholder="Password" size="30" tabindex="3" type="password" />
+  <input id="user_password_confirmation" name="user[password_confirmation]" placeholder="Confirm password" size="30" tabindex="4" type="password" />
+
+  <input name="user[remember_me]" type="hidden" value="0" /><input checked="checked" class="hidden" id="user_remember_me" name="user[remember_me]" type="checkbox" value="1" />
+
+  <p class="note">By signing up, you agree to our <a href="/terms">Terms of Service</a></p>
+
+  <input class="bttn blue" name="commit" type="submit" value="Get started!" />
+</form>
+  </div>
+</div>
+
+<script type="text/x-underscore-template" id="tmpl-twitter-email-modal">
+  <form name="twitter-email" class="form-horizontal" id="twitter-email"
+   action="/auth/twitter" >
+    <h3>You&#x27;re almost done!</h3>
+    <p>We need your email to finish creating your account.</p>
+    <table class="control-group" id="email-group">
+      <tr>
+        <td class="controls">
+          <input type="text" id="twitter-email-field" name="email" placeholder="Enter your email address"/>
+          <span class="help-inline">Please enter a valid email address</span>
+        </td>
+      </tr>
+    </table>
+    <div class="actions">
+      <button type="submit" class="bttn green" id="submit-twitter" disabled="disabled">
+        Continue
+      </button>
+    </div>
+  </form>
+</script>
+
+</div>
+<div id='user-session-modal'>
+<div class="cf module" id="user-session-form">
+  <header>
+    <h2>Sign in to Codecademy</h2>
+  </header>
+
+  <div class="cell social-signin">
+    <h4>Sign in with...</h4>
+
+      <a href="/auth/facebook" class="bttn social-signup facebook sign-up"><span class="icon-social-facebook"></span>Sign in with Facebook</a>
+      <a href="/auth/twitter" class="bttn social-signup twitter sign-up"><span class="icon-social-twitter"></span>Sign in with Twitter</a>
+      <a href="/auth/google_oauth2" class="bttn social-signup google sign-up"><span class="icon-social-google"></span>Sign in with Google</a>
+
+  </div>
+
+  <div class="cell neutral email-signin">
+    <h4>Sign in with email</h4>
+    <span class="or module">or</span>
+    <form accept-charset="UTF-8" action="/sign_in" class="new_user" id="new-session" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="EMLmbN8INwP/5HSVKjBU23MKtpGKT0XpdbC24pY2aV0=" /></div>
+
+
+  <input id="user_login" name="user[login]" placeholder="Email or username" size="30" tabindex="1" type="text" />
+  <input id="user_password" name="user[password]" placeholder="Password" size="30" tabindex="2" type="password" />
+    <div class="remember-me">
+      <input name="user[remember_me]" type="hidden" value="0" /><input checked="checked" id="user_remember_me" name="user[remember_me]" type="checkbox" value="1" />
+      <label for="user_remember_me">Remember me</label>
+
+      <a href="/secret/new" class="secondary">Forgot your password?</a>
+    </div>
+
+  <div>
+  <input class="sign-in-button bttn blue" name="commit" type="submit" value="Login" />
+  <a href="/register/sign_up" class="create-account secondary">Create Account</a>
+  </div>
+</form>
+
+  </div>
+</div>
+
+</div>
+<script type="text/javascript">
+  CCDATA.showCrashButterBar = false;
+  CCDATA.showCrashModal = false;
+</script>
+</script>
+
+<script src="/assets/templates/common-en-cb7aa23eb6549e840bb7db4d0d14dc87.js" type="text/javascript"></script>
+
+  <script src="/assets/dist/common-50c15a54afbd8273ec7890193cba510b.js" type="text/javascript"></script>
+  <script src="/assets/dist/controllers/learner_controller-78d64eb8defc299dafc0babd77f0b685.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+  require(['common', 'controllers/learner_controller'], function (common, controller) {
+    if (common) common.init();
+    if (controller) controller['init']();
+  });
+</script>
+
+  <div id="fb-root"></div>
+  <script>
+    // Facebook
+    var FB_APP_ID = '212500508799908';
+    window.fbAsyncInit = function() {
+      var FB = (window.FB || undefined);
+      if (FB) {
+        FB.init({
+          appId      : FB_APP_ID
+        , channelUrl : window.root_url+'/channel.html'
+        , status     : true
+        , cookie     : true
+        , xfbml      : true
+        });
+      }
+    };
+
+    (function(d){
+      var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      ref.parentNode.insertBefore(js, ref);
+    }(document));
+  </script>
+
+  <script>
+    // Overlay loader
+    var overlay = document.getElementById('overlay');
+    if (overlay && overlay.children.length > 0) {
+      overlay.style.cssText = "display: block;";
+    }
+  </script>
+
+  <script>
+    // Mixpanel
+    (function(d,c){var a,b,g,e;a=d.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===d.location.protocol?"https:":"http:")+'//api.mixpanel.com/site_media/js/api/mixpanel.2.js';b=d.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b);c._i=[];c.init=function(a,d,f){var b=c;"undefined"!==typeof f?b=c[f]=[]:f="mixpanel";g="disable track track_links track_forms register register_once unregister identify name_tag set_config".split(" ");for(e=0;e<
+    g.length;e++)(function(a){b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,0)))}})(g[e]);c._i.push([a,d,f])};window.mixpanel=c})(document,[]);
+    mixpanel.init("85aa7a8376729f417441179fbccf9d22");
+
+    // Chartbeat
+    var _sf_async_config={uid:27714,domain:"codecademy.com"};
+    (function(){
+      function loadChartbeat() {
+        window._sf_endpt=(new Date()).getTime();
+        var e = document.createElement('script');
+        e.setAttribute('language', 'javascript');
+        e.setAttribute('type', 'text/javascript');
+        e.setAttribute('src',
+        (("https:" == document.location.protocol) ? "https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" : "http://static.chartbeat.com/") +
+        "js/chartbeat.js");
+        document.body.appendChild(e);
+      }
+      var oldonload = window.onload;
+      window.onload = (typeof window.onload != 'function') ?
+      loadChartbeat : function() { oldonload(); loadChartbeat(); };
+    })();
+
+  </script>
+
+<!-- Typekit scripts -->
+<script type="text/javascript" src="//use.typekit.net/rwa3ozy.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+
+<script id='tmpl-versions-label' type='text/x-underscore-template'>
+<label>Versions</label>
+</script>
+<script id='tmpl-versions-item' type='text/x-underscore-template'>
+<option value="<%= index %>"><%= label %></option>
+</script>
+<script id='tmpl-wrong-answer' type='text/x-underscore-template'>
+<span style="color: crimson">Oops, try again. <%
+  if (qa) {
+    %>If you're stuck learn more from fellow users at our <a href="<%= qa %>" target="_blank">Q&A section!</a><%
+  } %><%
+  if (hint) {
+    %><br><span style="color: #F80"><%= hint %></span><%
+  }
+%></span>
+
+</script>
+<script id='tmpl-correct-answer' type='text/x-underscore-template'>
+<span style="color: green">That's correct!<%
+  if (showNextExerciseLink) {
+    %><a href="javascript:void(0)" data-index=<%= index %> class="nextExerciseLink"> Next Exercise: <%= nextExerciseName %></a><%
+   }
+%></span>
+
+</script>
+<script id='tmpl-finish' type='text/x-underscore-template'>
+<%
+  if (nextSectionPath) {
+  %>Good work completing this section! <a class='next_lesson_in_console' href='<%= nextSectionPath %>'>Start the next section</a>.<%
+} else if (languageCoursesPath && currentCurriculumPath !== "") {
+%>Nice! You've completed this course! Continue on <a href='<%= currentCurriculumPath %>'>this track</a>, browse <a class='next_lesson_in_console' href='<%= curriculaPath %>'>other tracks</a>, or experiment with <a class='next_lesson_in_console' href='http://labs.codecademy.com'>Codecademy Labs</a>.<%
+} else if (languageCoursesPath) {
+  %>You've completed this course! Start <a href='<%= curriculaPath %>'>a track</a>, tackle a <a href='<%= coursesPath %>'>non-track course</a>, or experiment with <a class='next_lesson_in_console' href='http://labs.codecademy.com'>Codecademy Labs</a>.<%
+}%>
+
+</script>
+<script id='tmpl-keyboard-shortcuts' type='text/x-underscore-template'>
+<div id='keyboard-shortcuts'>
+  <!-- Frequently Used Shortcuts -->
+  <div class="frequently-used">
+    <div class="shortcut-item span3">
+      <b>Run Exercise</b>
+      <div class='shortcut'>
+        <kbd>&#8984; + <kbd>Enter</kbd>
+      </div>
+    </div>
+
+    <div class="shortcut-item span3">
+      <b>Save Progress</b>
+      <div class='shortcut'>
+        <kbd>&#8984; + <kbd>S</kbd>
+      </div>
+    </div>
+    <div class="shortcut-item span3">
+      <b>Reset Exercise</b>
+      <div class='shortcut'>
+        <kbd>&#8997 + <kbd>R</kbd>
+      </div>
+    </div>
+  </div>
+
+  <!-- Extra Shortcuts -->
+  <div class="extra-shortcuts">
+    <div class="shortcut-item span3">
+      <b>Next Exercise</b>
+      <div class='shortcut'>
+        <kbd>&#8997 + <kbd>T</kbd>
+      </div>
+    </div>
+    <div class="shortcut-item span3">
+      <b>Previous Exercise</b>
+      <div class='shortcut'>
+        <kbd>&#8997 + <kbd>P</kbd>
+      </div>
+    </div>
+  </div>
+  <div class="keyboard">
+    <div class="keyboard-toggle">
+      <a href="javascript:void(0);">
+        <b class="show-more">Show More</b>
+        <b class="show-less">Show Fewer</b>
+        <span class="caret"></span>
+      </a>
+    </div>
+  </div>
+</div><!-- keyboard-shortcuts-learner -->
+
+</script>
+<script id='tmpl-keyboard-shortcuts-creator' type='text/x-underscore-template'>
+<div id='keyboard-shortcuts'>
+  <!-- Frequently Used Shortcuts -->
+  <div class="frequently-used">
+    <div class="shortcut-item span5">
+      <b>Preview Exercise</b>
+      <div class='shortcut'>
+        <kbd>&#8984; + <kbd>P</kbd>
+      </div>
+    </div>
+    <div class="shortcut-item span5">
+      <b>Save Progress</b>
+      <div class='shortcut'>
+        <kbd>&#8984; + <kbd>S</kbd>
+      </div>
+    </div>
+    <div class="shortcut-item span5">
+      <b>Show Feedback</b>
+      <div class='shortcut'>
+        <kbd>&#8997 + <kbd>F</kbd>
+      </div>
+    </div>
+  </div>
+  <!-- Extra Shortcuts -->
+  <div class="extra-shortcuts">
+    <div class="items">
+      <div class="shortcut-item span4">
+        <b>Add Exercise</b>
+        <div class='shortcut'>
+          <kbd>&#8997 + <kbd>A</kbd>
+        </div>
+      </div>
+      <div class="shortcut-item span4">
+        <b>Delete Exercise</b>
+        <div class='shortcut'>
+          <kbd>&#8997 + <kbd>D</kbd>
+        </div>
+      </div>
+      <div class="shortcut-item span4">
+        <b>Edit Next</b>
+        <div class='shortcut'>
+          <kbd>&#8997 + <kbd>T</kbd>
+        </div>
+      </div>
+      <div class="shortcut-item span4">
+        <b>Edit Previous</b>
+        <div class='shortcut'>
+          <kbd>&#8997 + <kbd>P</kbd>
+        </div>
+      </div>
+      <div class="shortcut-item span4">
+        <b>Edit Default Code</b>
+        <div class='shortcut'>
+          <kbd>&#8997 + <kbd>1</kbd>
+        </div>
+      </div>
+      <div class="shortcut-item span4">
+        <b>Edit SCT</b>
+        <div class='shortcut'>
+          <kbd>&#8997 + <kbd>2</kbd>
+        </div>
+      </div>
+    </div>
+  </div><!-- end extra-shortcuts -->
+  <div class="keyboard">
+    <div class="keyboard-toggle">
+      <a href="javascript:void(0);">
+        <b class="show-more">Show More</b>
+        <b class="show-less">Show Fewer</b>
+        <span class="caret"></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+</script>
+<script id='tmpl-share-course-project' type='text/x-underscore-template'>
+<div class='aside share-course-project'>
+  <p>
+    Share this link with friends and others to show off your project:
+    <br>
+    <input type='text' id='url' readonly='readonly' name='url' value='<%= project_url %>'/> or
+    <a target='_blank' class='button light-green' href='<%= project_url %>'>View Project</a>
+  </p>
+</div>
+</script>
+
+<script type="text/javascript">if (!NREUMQ.f) { NREUMQ.f=function() {
+NREUMQ.push(["load",new Date().getTime()]);
+var e=document.createElement("script");
+e.type="text/javascript";
+e.src=(("http:"===document.location.protocol)?"http:":"https:") + "//" +
+  "d1ros97qkrwjf5.cloudfront.net/42/eum/rum.js";
+document.body.appendChild(e);
+if(NREUMQ.a)NREUMQ.a();
+};
+NREUMQ.a=window.onload;window.onload=NREUMQ.f;
+};
+NREUMQ.push(["nrfj","beacon-4.newrelic.com","df7a84d5e5",927180,"dApaQRAKCFhcQBtLBFQRXVoMFktHUV1D",0,461,new Date().getTime(),"","","","",""]);</script></body>
+</html>

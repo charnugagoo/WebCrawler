@@ -1,0 +1,3235 @@
+<!DOCTYPE html>
+<!-- this template contains two modifications: it adds flattr buttons, and adds an image of the logo just before the title --><html b:version='2' class='v2' dir='ltr' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+<script type='text/javascript'>
+  /*  <![CDATA[ */
+    (function() {
+      var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+        
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = 'https://api.flattr.com/js/0.6/load.js?mode=manual&uid=cfbolz&category=text&language=en_GB';
+      t.parentNode.insertBefore(s, t);
+    })();
+    function displayFlattrButton(postid, url, tags) {
+      var flattr_tle = document.getElementById("flattr_title_" + postid).innerHTML;  
+      if (flattr_tle.length > 80) {
+        flattr_tle = flattr_tle.replace(/(.{0,71}) .*/, "$1 &#8230;");
+        flattr_tle = flattr_tle.slice(0,79);
+      }
+      var flattr_dsc = document.getElementById("flattr_summary_" + postid).innerHTML;  
+      flattr_dsc = flattr_dsc.replace(/<.*?>/g, "");
+      if (flattr_dsc.length > 980) {
+        flattr_dsc = flattr_dsc.replace(/\n/g, " ");
+        flattr_dsc = flattr_dsc.replace(/(.{0,971}) .*/, "$1 &#8230;");
+        flattr_dsc = flattr_dsc.slice(0,979);
+      }
+      if (tags.length > 230) {
+        tags = tags.replace(/(.{0,230}),/, "$1");
+        tags = tags.slice(0,229);
+      }
+      tags = tags + ';';
+     
+      document.write('<a class="FlattrButton" style="display:none;" title="' +
+flattr_tle + '" href="' + url + '" rev="flattr;button:compact;tags:' + tags + '">' + flattr_dsc + '</a>');
+    }
+  /* ]]> */
+  </script>
+<meta content='IE=EmulateIE7' http-equiv='X-UA-Compatible'/>
+<meta content='width=1100' name='viewport'/>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<script type="text/javascript">(function() { var a=window,b="jstiming",d="tick";var e=function(c){this.t={};this.tick=function(c,p,h){h=void 0!=h?h:(new Date).getTime();this.t[c]=[h,p]};this[d]("start",null,c)},f=new e;a.jstiming={Timer:e,load:f};if(a.performance&&a.performance.timing){var g=a.performance.timing,j=a[b].load,k=g.navigationStart,l=g.responseStart;0<k&&l>=k&&(j[d]("_wtsrt",void 0,k),j[d]("wtsrt_","_wtsrt",l),j[d]("tbsd_","wtsrt_"))}
+try{var m=null;a.chrome&&a.chrome.csi&&(m=Math.floor(a.chrome.csi().pageT),j&&0<k&&(j[d]("_tbnd",void 0,a.chrome.csi().startE),j[d]("tbnd_","_tbnd",k)));null==m&&a.gtbExternal&&(m=a.gtbExternal.pageT());null==m&&a.external&&(m=a.external.pageT,j&&0<k&&(j[d]("_tbnd",void 0,a.external.startE),j[d]("tbnd_","_tbnd",k)));m&&(a[b].pt=m)}catch(n){};a.tickAboveFold=function(c){var i=0;if(c.offsetParent){do i+=c.offsetTop;while(c=c.offsetParent)}c=i;750>=c&&a[b].load[d]("aft")};var q=!1;function r(){q||(q=!0,a[b].load[d]("firstScrollTime"))}a.addEventListener?a.addEventListener("scroll",r,!1):a.attachEvent("onscroll",r);
+ })();</script>
+<meta content='true' name='MSSmartTagsPreventParsing'/>
+<meta content='blogger' name='generator'/>
+<link href='http://morepypy.blogspot.com/favicon.ico' rel='icon' type='image/x-icon'/>
+<link href='http://morepypy.blogspot.com/2009/10/gc-improvements.html' rel='canonical'/>
+<link rel="alternate" type="application/atom+xml" title="PyPy Status Blog - Atom" href="http://morepypy.blogspot.com/feeds/posts/default" />
+<link rel="alternate" type="application/rss+xml" title="PyPy Status Blog - RSS" href="http://morepypy.blogspot.com/feeds/posts/default?alt=rss" />
+<link rel="service.post" type="application/atom+xml" title="PyPy Status Blog - Atom" href="http://www.blogger.com/feeds/3971202189709462152/posts/default" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.blogger.com/rsd.g?blogID=3971202189709462152" />
+<link rel="alternate" type="application/atom+xml" title="PyPy Status Blog - Atom" href="http://morepypy.blogspot.com/feeds/6174120095428192954/comments/default" />
+<!--[if IE]><script type="text/javascript" src="//www.blogger.com/static/v1/jsbin/1029386593-ieretrofit.js"></script>
+<![endif]-->
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<title>PyPy Status Blog: GC improvements</title>
+<link type='text/css' rel='stylesheet' href='//www.blogger.com/static/v1/widgets/1158881256-widget_css_2_bundle.css' />
+<link type="text/css" rel="stylesheet" href="//www.blogger.com/dyn-css/authorization.css?targetBlogID=3971202189709462152&zx=443abd04-36dc-4809-ab79-dd81def3b775"/>
+<style id='page-skin-1' type='text/css'><!--
+/*
+-----------------------------------------------
+Blogger Template Style
+Name:     Simple
+Designer: Josh Peterson
+URL:      www.noaesthetic.com
+----------------------------------------------- */
+/* Variable definitions
+====================
+<Variable name="keycolor" description="Main Color" type="color" default="#66bbdd"/>
+<Group description="Page Text" selector="body">
+<Variable name="body.font" description="Font" type="font"
+default="normal normal 12px Arial, Tahoma, Helvetica, FreeSans, sans-serif"/>
+<Variable name="body.text.color" description="Text Color" type="color" default="#222222"/>
+</Group>
+<Group description="Backgrounds" selector=".body-fauxcolumns-outer">
+<Variable name="body.background.color" description="Outer Background" type="color" default="#66bbdd"/>
+<Variable name="content.background.color" description="Main Background" type="color" default="#ffffff"/>
+<Variable name="header.background.color" description="Header Background" type="color" default="transparent"/>
+</Group>
+<Group description="Links" selector=".main-outer">
+<Variable name="link.color" description="Link Color" type="color" default="#2288bb"/>
+<Variable name="link.visited.color" description="Visited Color" type="color" default="#888888"/>
+<Variable name="link.hover.color" description="Hover Color" type="color" default="#33aaff"/>
+</Group>
+<Group description="Blog Title" selector=".header h1">
+<Variable name="header.font" description="Font" type="font"
+default="normal normal 60px Arial, Tahoma, Helvetica, FreeSans, sans-serif"/>
+<Variable name="header.text.color" description="Title Color" type="color" default="#3399bb" />
+</Group>
+<Group description="Blog Description" selector=".header .description">
+<Variable name="description.text.color" description="Description Color" type="color"
+default="#777777" />
+</Group>
+<Group description="Tabs Text" selector=".tabs-inner .widget li a">
+<Variable name="tabs.font" description="Font" type="font"
+default="normal normal 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif"/>
+<Variable name="tabs.text.color" description="Text Color" type="color" default="#999999"/>
+<Variable name="tabs.selected.text.color" description="Selected Color" type="color" default="#000000"/>
+</Group>
+<Group description="Tabs Background" selector=".tabs-outer .PageList">
+<Variable name="tabs.background.color" description="Background Color" type="color" default="#f5f5f5"/>
+<Variable name="tabs.selected.background.color" description="Selected Color" type="color" default="#eeeeee"/>
+</Group>
+<Group description="Post Title" selector="h3.post-title, .comments h4">
+<Variable name="post.title.font" description="Font" type="font"
+default="normal normal 22px Arial, Tahoma, Helvetica, FreeSans, sans-serif"/>
+</Group>
+<Group description="Date Header" selector=".date-header">
+<Variable name="date.header.color" description="Text Color" type="color"
+default="#222222"/>
+<Variable name="date.header.background.color" description="Background Color" type="color"
+default="transparent"/>
+</Group>
+<Group description="Post Footer" selector=".post-footer">
+<Variable name="post.footer.text.color" description="Text Color" type="color" default="#666666"/>
+<Variable name="post.footer.background.color" description="Background Color" type="color"
+default="#f9f9f9"/>
+<Variable name="post.footer.border.color" description="Shadow Color" type="color" default="#eeeeee"/>
+</Group>
+<Group description="Gadgets" selector="h2">
+<Variable name="widget.title.font" description="Title Font" type="font"
+default="normal bold 11px Arial, Tahoma, Helvetica, FreeSans, sans-serif"/>
+<Variable name="widget.title.text.color" description="Title Color" type="color" default="#000000"/>
+<Variable name="widget.alternate.text.color" description="Alternate Color" type="color" default="#999999"/>
+</Group>
+<Group description="Images" selector=".main-inner">
+<Variable name="image.background.color" description="Background Color" type="color" default="#ffffff"/>
+<Variable name="image.border.color" description="Border Color" type="color" default="#eeeeee"/>
+<Variable name="image.text.color" description="Caption Text Color" type="color" default="#222222"/>
+</Group>
+<Group description="Accents" selector=".content-inner">
+<Variable name="body.rule.color" description="Separator Line Color" type="color" default="#eeeeee"/>
+<Variable name="tabs.border.color" description="Tabs Border Color" type="color" default="#eeeeee"/>
+</Group>
+<Variable name="body.background" description="Body Background" type="background"
+color="#66bbdd" default="$(color) none repeat scroll top left"/>
+<Variable name="body.background.override" description="Body Background Override" type="string" default=""/>
+<Variable name="body.background.gradient.cap" description="Body Gradient Cap" type="url"
+default="url(http://www.blogblog.com/1kt/simple/gradients_light.png)"/>
+<Variable name="body.background.gradient.tile" description="Body Gradient Tile" type="url"
+default="url(http://www.blogblog.com/1kt/simple/body_gradient_tile_light.png)"/>
+<Variable name="content.background.color.selector" description="Content Background Color Selector" type="string" default=".content-inner"/>
+<Variable name="content.padding" description="Content Padding" type="length" default="10px"/>
+<Variable name="content.padding.horizontal" description="Content Horizontal Padding" type="length" default="10px"/>
+<Variable name="content.shadow.spread" description="Content Shadow Spread" type="length" default="40px"/>
+<Variable name="content.shadow.spread.webkit" description="Content Shadow Spread (WebKit)" type="length" default="5px"/>
+<Variable name="content.shadow.spread.ie" description="Content Shadow Spread (IE)" type="length" default="10px"/>
+<Variable name="main.border.width" description="Main Border Width" type="length" default="0"/>
+<Variable name="header.background.gradient" description="Header Gradient" type="url" default="none"/>
+<Variable name="header.shadow.offset.left" description="Header Shadow Offset Left" type="length" default="-1px"/>
+<Variable name="header.shadow.offset.top" description="Header Shadow Offset Top" type="length" default="-1px"/>
+<Variable name="header.shadow.spread" description="Header Shadow Spread" type="length" default="1px"/>
+<Variable name="header.padding" description="Header Padding" type="length" default="30px"/>
+<Variable name="header.border.size" description="Header Border Size" type="length" default="1px"/>
+<Variable name="header.bottom.border.size" description="Header Bottom Border Size" type="length" default="1px"/>
+<Variable name="header.border.horizontalsize" description="Header Horizontal Border Size" type="length" default="0"/>
+<Variable name="description.text.size" description="Description Text Size" type="string" default="140%"/>
+<Variable name="tabs.margin.top" description="Tabs Margin Top" type="length" default="0" />
+<Variable name="tabs.margin.side" description="Tabs Side Margin" type="length" default="30px" />
+<Variable name="tabs.background.gradient" description="Tabs Background Gradient" type="url"
+default="url(http://www.blogblog.com/1kt/simple/gradients_light.png)"/>
+<Variable name="tabs.border.width" description="Tabs Border Width" type="length" default="1px"/>
+<Variable name="tabs.bevel.border.width" description="Tabs Bevel Border Width" type="length" default="1px"/>
+<Variable name="date.header.padding" description="Date Header Padding" type="string" default="inherit"/>
+<Variable name="date.header.letterspacing" description="Date Header Letter Spacing" type="string" default="inherit"/>
+<Variable name="date.header.margin" description="Date Header Margin" type="string" default="inherit"/>
+<Variable name="post.margin.bottom" description="Post Bottom Margin" type="length" default="25px"/>
+<Variable name="image.border.small.size" description="Image Border Small Size" type="length" default="2px"/>
+<Variable name="image.border.large.size" description="Image Border Large Size" type="length" default="5px"/>
+<Variable name="page.width.selector" description="Page Width Selector" type="string" default=".region-inner"/>
+<Variable name="page.width" description="Page Width" type="string" default="auto"/>
+<Variable name="main.section.margin" description="Main Section Margin" type="length" default="0px"/>
+<Variable name="main.padding" description="Main Padding" type="length" default="15px"/>
+<Variable name="main.padding.top" description="Main Padding Top" type="length" default="30px"/>
+<Variable name="main.padding.bottom" description="Main Padding Bottom" type="length" default="30px"/>
+<Variable name="paging.background"
+color="#ffffff"
+description="Background of blog paging area" type="background"
+default="transparent none no-repeat scroll top center"/>
+<Variable name="footer.bevel" description="Bevel border length of footer" type="length" default="0"/>
+<Variable name="startSide" description="Side where text starts in blog language" type="automatic" default="left"/>
+<Variable name="endSide" description="Side where text ends in blog language" type="automatic" default="right"/>
+*/
+/* Content
+----------------------------------------------- */
+body {
+font: normal normal 12px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+color: #222222;
+background: #66bbdd none repeat scroll top left;
+padding: 0 40px 40px 40px;
+}
+html body .region-inner {
+min-width: 0;
+max-width: 100%;
+width: auto;
+}
+a:link {
+text-decoration:none;
+color: #2288bb;
+}
+a:visited {
+text-decoration:none;
+color: #888888;
+}
+a:hover {
+text-decoration:underline;
+color: #33aaff;
+}
+.body-fauxcolumn-outer .fauxcolumn-inner {
+background: transparent url(http://www.blogblog.com/1kt/simple/body_gradient_tile_light.png) repeat scroll top left;
+_background-image: none;
+}
+.body-fauxcolumn-outer .cap-top {
+position: absolute;
+z-index: 1;
+height: 400px;
+width: 100%;
+background: #66bbdd none repeat scroll top left;
+}
+.body-fauxcolumn-outer .cap-top .cap-left {
+width: 100%;
+background: transparent url(http://www.blogblog.com/1kt/simple/gradients_light.png) repeat-x scroll top left;
+_background-image: none;
+}
+.content-outer {
+-moz-box-shadow: 0 0 40px rgba(0, 0, 0, .15);
+-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .15);
+-goog-ms-box-shadow: 0 0 10px #333333;
+box-shadow: 0 0 40px rgba(0, 0, 0, .15);
+margin-bottom: 1px;
+}
+.content-inner {
+padding: 10px 10px;
+}
+.content-inner {
+background-color: #ffffff;
+}
+/* Header
+----------------------------------------------- */
+.header-outer {
+background: transparent none repeat-x scroll 0 -400px;
+_background-image: none;
+}
+.Header h1 {
+font: normal normal 60px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+color: #3399bb;
+text-shadow: -1px -1px 1px rgba(0, 0, 0, .2);
+}
+.Header h1 a {
+color: #3399bb;
+}
+.Header .description {
+font-size: 140%;
+color: #777777;
+}
+.header-inner .Header .titlewrapper {
+padding: 22px 30px;
+}
+.header-inner .Header .descriptionwrapper {
+padding: 0 30px;
+}
+/* Tabs
+----------------------------------------------- */
+.tabs-inner .section:first-child {
+border-top: 1px solid #eeeeee;
+}
+.tabs-inner .section:first-child ul {
+margin-top: -1px;
+border-top: 1px solid #eeeeee;
+border-left: 0 solid #eeeeee;
+border-right: 0 solid #eeeeee;
+}
+.tabs-inner .widget ul {
+background: #f5f5f5 url(http://www.blogblog.com/1kt/simple/gradients_light.png) repeat-x scroll 0 -800px;
+_background-image: none;
+border-bottom: 1px solid #eeeeee;
+margin-top: 0;
+margin-left: -30px;
+margin-right: -30px;
+}
+.tabs-inner .widget li a {
+display: inline-block;
+padding: .6em 1em;
+font: normal normal 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+color: #999999;
+border-left: 1px solid #ffffff;
+border-right: 1px solid #eeeeee;
+}
+.tabs-inner .widget li:first-child a {
+border-left: none;
+}
+.tabs-inner .widget li.selected a, .tabs-inner .widget li a:hover {
+color: #000000;
+background-color: #eeeeee;
+text-decoration: none;
+}
+/* Columns
+----------------------------------------------- */
+.main-outer {
+border-top: 0 solid #eeeeee;
+}
+.fauxcolumn-left-outer .fauxcolumn-inner {
+border-right: 1px solid #eeeeee;
+}
+.fauxcolumn-right-outer .fauxcolumn-inner {
+border-left: 1px solid #eeeeee;
+}
+/* Headings
+----------------------------------------------- */
+h2 {
+margin: 0 0 1em 0;
+font: normal bold 11px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+color: #000000;
+text-transform: uppercase;
+}
+/* Widgets
+----------------------------------------------- */
+.widget .zippy {
+color: #999999;
+text-shadow: 2px 2px 1px rgba(0, 0, 0, .1);
+}
+.widget .popular-posts ul {
+list-style: none;
+}
+/* Posts
+----------------------------------------------- */
+.date-header span {
+background-color: transparent;
+color: #222222;
+padding: inherit;
+letter-spacing: inherit;
+margin: inherit;
+}
+.main-inner {
+padding-top: 30px;
+padding-bottom: 30px;
+}
+.main-inner .column-center-inner {
+padding: 0 15px;
+}
+.main-inner .column-center-inner .section {
+margin: 0 0px;
+}
+.post {
+margin: 0 0 25px 0;
+}
+h3.post-title, .comments h4 {
+font: normal normal 22px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+margin: .75em 0 0;
+}
+.post-body {
+font-size: 110%;
+line-height: 1.4;
+position: relative;
+}
+.post-body img, .post-body .tr-caption-container, .Profile img, .Image img,
+.BlogList .item-thumbnail img {
+padding: 2px;
+background: #ffffff;
+border: 1px solid #eeeeee;
+-moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
+-webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
+box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
+}
+.post-body img, .post-body .tr-caption-container {
+padding: 5px;
+}
+.post-body .tr-caption-container {
+color: #222222;
+}
+.post-body .tr-caption-container img {
+padding: 0;
+background: transparent;
+border: none;
+-moz-box-shadow: 0 0 0 rgba(0, 0, 0, .1);
+-webkit-box-shadow: 0 0 0 rgba(0, 0, 0, .1);
+box-shadow: 0 0 0 rgba(0, 0, 0, .1);
+}
+.post-header {
+margin: 0 0 1.5em;
+line-height: 1.6;
+font-size: 90%;
+}
+.post-footer {
+margin: 20px -2px 0;
+padding: 5px 10px;
+color: #666666;
+background-color: #f9f9f9;
+border-bottom: 1px solid #eeeeee;
+line-height: 1.6;
+font-size: 90%;
+}
+#comments .comment-author {
+padding-top: 1.5em;
+border-top: 1px solid #eeeeee;
+background-position: 0 1.5em;
+}
+#comments .comment-author:first-child {
+padding-top: 0;
+border-top: none;
+}
+.avatar-image-container {
+margin: .2em 0 0;
+}
+#comments .avatar-image-container img {
+border: 1px solid #eeeeee;
+}
+/* Accents
+---------------------------------------------- */
+.section-columns td.columns-cell {
+border-left: 1px solid #eeeeee;
+}
+.blog-pager {
+background: transparent none no-repeat scroll top center;
+}
+.blog-pager-older-link, .home-link,
+.blog-pager-newer-link {
+background-color: #ffffff;
+padding: 5px;
+}
+.footer-outer {
+border-top: 0 dashed #bbbbbb;
+}
+/* Mobile
+----------------------------------------------- */
+.mobile .content-outer {
+-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .15);
+box-shadow: 0 0 3px rgba(0, 0, 0, .15);
+padding: 0 40px;
+}
+body.mobile .AdSense {
+margin-left: -40px;
+}
+.mobile .tabs-inner .widget ul {
+margin-left: 0;
+margin-right: 0;
+}
+.mobile .post {
+margin: 0;
+}
+.mobile .main-inner .column-center-inner .section {
+margin: 0;
+}
+.mobile .date-header span {
+padding: 0.4em 10px;
+margin: 0 -10px;
+}
+.mobile h3.post-title {
+margin: 0;
+}
+.mobile .blog-pager {
+background: transparent;
+}
+.mobile .footer-outer {
+border-top: none;
+}
+.mobile .main-inner, .mobile .footer-inner {
+background-color: #ffffff;
+}
+.mobile-index-contents {
+color: #222222;
+}
+.mobile-link-button {
+background-color: #2288bb;
+}
+.mobile-link-button a:link, .mobile-link-button a:visited {
+color: #ffffff;
+}
+
+--></style>
+<style id='template-skin-1' type='text/css'><!--
+body {
+min-width: 930px;
+}
+.content-outer, .content-fauxcolumn-outer, .region-inner {
+min-width: 930px;
+max-width: 930px;
+_width: 930px;
+}
+.main-inner .columns {
+padding-left: 250px;
+padding-right: 0px;
+}
+.main-inner .fauxcolumn-center-outer {
+left: 250px;
+right: 0px;
+/* IE6 does not respect left and right together */
+_width: expression(this.parentNode.offsetWidth -
+parseInt("250px") -
+parseInt("0px") + 'px');
+}
+.main-inner .fauxcolumn-left-outer {
+width: 250px;
+}
+.main-inner .fauxcolumn-right-outer {
+width: 0px;
+}
+.main-inner .column-left-outer {
+width: 250px;
+right: 100%;
+margin-left: -250px;
+}
+.main-inner .column-right-outer {
+width: 0px;
+margin-right: -0px;
+}
+#layout {
+min-width: 0;
+}
+#layout .content-outer {
+min-width: 0;
+width: 800px;
+}
+#layout .region-inner {
+min-width: 0;
+width: auto;
+}
+--></style>
+<script type="text/javascript">var a=navigator,b="userAgent",c="indexOf",f="&m=1",g="(^|&)m=",h="?",i="?m=1";function j(){var d=window.location.href,e=d.split(h);switch(e.length){case 1:return d+i;case 2:return 0<=e[1].search(g)?null:d+f;default:return null}}if(-1!=a[b][c]("Mobile")&&-1!=a[b][c]("WebKit")&&-1==a[b][c]("iPad")||-1!=a[b][c]("Opera Mini")||-1!=a[b][c]("IEMobile")){var k=j();k&&window.location.replace(k)};
+</script><script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('headEnd');
+</script></head>
+<body class='loading'>
+<div class='navbar section' id='navbar'><div class='widget Navbar' id='Navbar1'><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener('load',
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<div id="navbar-iframe-container"></div>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript">
+        gapi.load("iframes-styles-bubble", function() {
+          if (window.iframes && iframes.open) {
+            iframes.open(
+                '//www.blogger.com/navbar.g?targetBlogID\0753971202189709462152\46blogName\75PyPy+Status+Blog\46publishMode\75PUBLISH_MODE_BLOGSPOT\46navbarType\75LIGHT\46layoutType\75LAYOUTS\46searchRoot\75http://morepypy.blogspot.com/search\46blogLocale\75en_US\46v\0752\46homepageUrl\75http://morepypy.blogspot.com/\46targetPostID\0756174120095428192954\46blogPostOrPageUrl\75http://morepypy.blogspot.com/2009/10/gc-improvements.html\46vt\759121789552365508979',
+                {
+                  container: "navbar-iframe-container",
+                  id: "navbar-iframe"
+                },
+                {
+                });
+          }
+        });
+      </script><script type="text/javascript">
+(function() {
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = '//pagead2.googlesyndication.com/pagead/js/google_top_exp.js';
+var head = document.getElementsByTagName('head')[0];
+if (head) {
+head.appendChild(script);
+}})();
+</script>
+</div></div>
+<div class='body-fauxcolumns'>
+<div class='fauxcolumn-outer body-fauxcolumn-outer'>
+<div class='cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left'>
+<div class='fauxborder-right'></div>
+<div class='fauxcolumn-inner'>
+</div>
+</div>
+<div class='cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+</div>
+<div class='content'>
+<div class='content-fauxcolumns'>
+<div class='fauxcolumn-outer content-fauxcolumn-outer'>
+<div class='cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left'>
+<div class='fauxborder-right'></div>
+<div class='fauxcolumn-inner'>
+</div>
+</div>
+<div class='cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+</div>
+<div class='content-outer'>
+<div class='content-cap-top cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left content-fauxborder-left'>
+<div class='fauxborder-right content-fauxborder-right'></div>
+<div class='content-inner'>
+<header>
+<div class='header-outer'>
+<div class='header-cap-top cap-top'>
+<div class='cap-left'>
+<img src='http://2.bp.blogspot.com/-iO_dZU_FAR0/Tbre-StkIhI/AAAAAAAAAM4/m3P9wi1e-ng/s150/pypy_small128.png'/>
+</div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left header-fauxborder-left'>
+<div class='fauxborder-right header-fauxborder-right'></div>
+<div class='region-inner header-inner' style='margin-left: 128px'>
+<div class='header section' id='header'><div class='widget Header' id='Header1'>
+<div id='header-inner'>
+<div class='titlewrapper'>
+<h1 class='title'>
+<a href='http://morepypy.blogspot.com/'>PyPy Status Blog</a>
+</h1>
+</div>
+<div class='descriptionwrapper'>
+<p class='description'><span>
+</span></p>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+<div class='header-cap-bottom cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+</header>
+<div class='tabs-outer'>
+<div class='tabs-cap-top cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left tabs-fauxborder-left'>
+<div class='fauxborder-right tabs-fauxborder-right'></div>
+<div class='region-inner tabs-inner'>
+<div class='tabs section' id='crosscol'></div>
+<div class='tabs section' id='crosscol-overflow'></div>
+</div>
+</div>
+<div class='tabs-cap-bottom cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+<div class='main-outer'>
+<div class='main-cap-top cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left main-fauxborder-left'>
+<div class='fauxborder-right main-fauxborder-right'></div>
+<div class='region-inner main-inner'>
+<div class='columns fauxcolumns'>
+<div class='fauxcolumn-outer fauxcolumn-center-outer'>
+<div class='cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left'>
+<div class='fauxborder-right'></div>
+<div class='fauxcolumn-inner'>
+</div>
+</div>
+<div class='cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+<div class='fauxcolumn-outer fauxcolumn-left-outer'>
+<div class='cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left'>
+<div class='fauxborder-right'></div>
+<div class='fauxcolumn-inner'>
+</div>
+</div>
+<div class='cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+<div class='fauxcolumn-outer fauxcolumn-right-outer'>
+<div class='cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left'>
+<div class='fauxborder-right'></div>
+<div class='fauxcolumn-inner'>
+</div>
+</div>
+<div class='cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+<!-- corrects IE6 width calculation -->
+<div class='columns-inner'>
+<div class='column-center-outer'>
+<div class='column-center-inner'>
+<div class='main section' id='main'><div class='widget Blog' id='Blog1'>
+<div class='blog-posts hfeed'>
+<!-- google_ad_section_start(name=default) -->
+
+          <div class="date-outer">
+        
+<h2 class='date-header'><span>Friday, October 16, 2009</span></h2>
+
+          <div class="date-posts">
+        
+<div class='post-outer'>
+<div class='post hentry'>
+<a name='6174120095428192954'></a>
+<h3 class='post-title entry-title'>
+GC improvements
+</h3>
+<div class='post-header'>
+<div class='post-header-line-1'></div>
+</div>
+<div class='post-body entry-content' id='post-body-6174120095428192954'>
+<p>In the last week, I (Armin) have been taking some time off the
+JIT work to improve our GCs.  More precisely, our GCs now take
+one or two words less for every object.  This further reduce the
+memory usage of PyPy, as we will show at the end.</p>
+
+<h2>Background information: RPython object model</h2>
+
+<p>We first need to understand the RPython object model as
+implemented by our GCs and our C backend.  (Note that the
+object model of the Python interpreter is built on top of
+that, but is more complicated -- e.g. Python-level objects
+are much more flexible than RPython objects.)</p>
+
+<p>Consider these two RPython classes:</p>
+    
+<pre>
+class A:
+    def __init__(self, x):
+        self.x = x
+    def f(self):
+        return self.x * 42
+
+class B(A):
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    def f(self):
+        return self.x + self.y
+</pre>
+
+<p>The instances of A and B look like this in memory (all cells
+are one word):</p>
+
+<p><table border=1><tr>
+<td>GC header</td>
+<td>vtable ptr of A</td>
+<td>hash</td>
+<td>x</td>
+</tr></table></p>
+
+<p><table border=1><tr>
+<td>GC header</td>
+<td>vtable ptr of B</td>
+<td>hash</td>
+<td>x</td>
+<td>y</td>
+</tr></table></p>
+
+<p>The first word, the GC header, describes the layout.  It
+encodes on half a word the shape of the object, including where it
+contains further pointers, so that the GC can trace it.  The
+other half contains GC flags (e.g. the mark bit of a
+mark-and-sweep GC).</p>
+
+<p>The second word is used for method dispatch.  It is similar to a
+C++ vtable pointer.  It points to static data that is mostly a
+table of methods (as function pointers), containing e.g. the method f
+of the example.</p>
+
+<p>The hash field is not necessarily there; it is only present in classes
+whose hash is ever taken in the RPython program (which includes being
+keys in a dictionary).  It is an "identity hash": it works like
+object.__hash__() in Python, but it cannot just be the address of
+the object in case of a GC that moves objects around.</p>
+
+<p>Finally, the x and y fields are, obviously, used to store the value
+of the fields.  Note that instances of B can be used in places that
+expect a pointer to an instance of A.</p>
+
+<h2>Unifying the vtable ptr with the GC header</h2>
+
+<p>The first idea of saving a word in every object is the observation
+that both the vtable ptr and the GC header store information about
+the class of the object.  Therefore it is natural to try to only have
+one of them.  The problem is that we still need bits for the GC flags,
+so the field that we have to remove is the vtable pointer.</p>
+
+<p>This means that method dispatch needs to be more clever: it
+cannot directly read the vtable ptr, but needs to compute it
+from the half-word of the GC header.  Fortunately, this can be
+done with no extra instruction on the assembler level.  Here is
+how things will look like in the end, assuming a 32-bit x86
+machine (but note that as usual we just generate portable C).</p>
+
+<p>The trick for achieving efficiency is that we store all
+vtables together in memory, and make sure that they don't take
+more than 256 KB in total (16 bits, plus 2 bits of alignment).
+Here is how the assembler code (produced by the normal C
+compiler, e.g. gcc) for calling a method looks like.  Before
+the change:</p>
+
+<pre>
+MOV EDX, [EAX + 4]               # load the vtable ptr from object EAX
+MOV EDX, [EDX + method_offset]   # load the function pointer from the vtable
+CALL EDX
+</pre>
+
+<p>Instead, we now have:</p>
+
+<pre>
+MOVZX EDX, [EAX]     # load the 16-bit part of the GC header from EAX
+MOV EDX, [vtable_start + 4*EDX + method_offset]
+CALL EDX
+</pre>
+
+<p>Note that the complex addressing scheme done by the second MOV
+is still just one instruction: the vtable_start and
+method_offset are constants, so they are combined.  And as the
+vtables are anyway aligned at a word boundary, we can use
+4*EDX to address them, giving us 256 KB instead of just 64 KB
+of vtables.</p>
+
+<h2>Optimizing the hash field</h2>
+
+<p>In PyPy's Python interpreter, all application-level objects
+are represented as an instance of some subclass of W_Root.
+Since all of these objects could potentially be stored in a
+dictionary by the application Python program, all these
+objects need a hash field.  Of course, in practice, only a
+fraction of all objects in a Python program end up having
+their hash ever taken.  Thus this field of W_Root is wasted
+memory most of the time.</p>
+
+<p>(Up to now, we had a hack in place to save the hash field
+on a few classes like W_IntegerObject, but that meant that
+the Python expression ``object.__hash__(42)'' would raise
+a TypeError in PyPy.)</p>
+
+<p>The solution we implemented now (done by some Java GCs, among
+others) is to add a hash field to an object when the
+(identity) hash of that object is actually taken.  This means
+that we had to enhance our GCs to support this.  When objects
+are allocated, we don't reserve any space for the hash:</p>
+
+object at 0x74B028
+<table border=1><tr>
+<td>...00...</td>
+<td>x</td>
+<td>y</td>
+</tr></table>
+    
+<p>When the hash of an object is taken, we use its current memory
+address, and set a flag in the GC header saying that this
+particular object needs a hash:</p>
+
+object at 0x74B028
+<table border=1><tr>
+<td>...01...</td>
+<td>x</td>
+<td>y</td>
+</tr></table>
+
+<p>If the GC needs to move the object to another memory location,
+it will make the new version of the object bigger, i.e. it
+will also allocate space for the hash field:</p>
+
+object at 0x825F60
+<table border=1><tr>
+<td>...11...</td>
+<td>x</td>
+<td>y</td>
+<td>0x74B028</td>
+</tr></table>
+
+<p>This hash field is immediately initialized with the old memory
+address, which is the hash value that we gave so far for the
+object.  To not disturb the layout of the object, we always
+put the extra hash field at the end.  Of course, once set,
+the hash value does not change even if the object needs to
+move again.</p>
+
+<h2>Results</h2>
+
+<p>Running the following program on PyPy's Python interpreter
+with n=4000000:</p>
+
+<pre>
+def make_linked_list(n):
+    a = None
+    i = 0
+    while i < n:
+        b = X()
+        b.next = a
+        a = b
+        i += 1
+</pre>
+
+<p>the two optimizations together save 32 MB of RAM (i.e. 8 bytes
+per object).  The version of PyPy we measured this with was built
+as follows:</p>
+
+<pre>
+./translate.py --gcremovetypeptr targetpypystandalone --objspace-std-withsharingdict
+</pre>
+
+<p>The total amount of RAM used on a 32-bit Linux is 247 MB,
+completing in 10.3 seconds.  On CPython, it consumes 684 MB
+and takes 89 seconds to complete...  This nicely shows that
+our GCs are much faster at allocating objects, and that our
+objects can be much smaller than CPython's.</p>
+
+<p>Armin Rigo & Carl Friedrich Bolz</p>
+<div style='clear: both;'></div>
+</div>
+<div class='post-footer'>
+<div class='post-footer-line post-footer-line-1'><span class='post-author vcard'>
+<div id='flattr_summary_6174120095428192954' style='display: none;'>
+<p>In the last week, I (Armin) have been taking some time off the
+JIT work to improve our GCs.  More precisely, our GCs now take
+one or two words less for every object.  This further reduce the
+memory usage of PyPy, as we will show at the end.</p>
+
+<h2>Background information: RPython object model</h2>
+
+<p>We first need to understand the RPython object model as
+implemented by our GCs and our C backend.  (Note that the
+object model of the Python interpreter is built on top of
+that, but is more complicated -- e.g. Python-level objects
+are much more flexible than RPython objects.)</p>
+
+<p>Consider these two RPython classes:</p>
+    
+<pre>
+class A:
+    def __init__(self, x):
+        self.x = x
+    def f(self):
+        return self.x * 42
+
+class B(A):
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    def f(self):
+        return self.x + self.y
+</pre>
+
+<p>The instances of A and B look like this in memory (all cells
+are one word):</p>
+
+<p><table border=1><tr>
+<td>GC header</td>
+<td>vtable ptr of A</td>
+<td>hash</td>
+<td>x</td>
+</tr></table></p>
+
+<p><table border=1><tr>
+<td>GC header</td>
+<td>vtable ptr of B</td>
+<td>hash</td>
+<td>x</td>
+<td>y</td>
+</tr></table></p>
+
+<p>The first word, the GC header, describes the layout.  It
+encodes on half a word the shape of the object, including where it
+contains further pointers, so that the GC can trace it.  The
+other half contains GC flags (e.g. the mark bit of a
+mark-and-sweep GC).</p>
+
+<p>The second word is used for method dispatch.  It is similar to a
+C++ vtable pointer.  It points to static data that is mostly a
+table of methods (as function pointers), containing e.g. the method f
+of the example.</p>
+
+<p>The hash field is not necessarily there; it is only present in classes
+whose hash is ever taken in the RPython program (which includes being
+keys in a dictionary).  It is an "identity hash": it works like
+object.__hash__() in Python, but it cannot just be the address of
+the object in case of a GC that moves objects around.</p>
+
+<p>Finally, the x and y fields are, obviously, used to store the value
+of the fields.  Note that instances of B can be used in places that
+expect a pointer to an instance of A.</p>
+
+<h2>Unifying the vtable ptr with the GC header</h2>
+
+<p>The first idea of saving a word in every object is the observation
+that both the vtable ptr and the GC header store information about
+the class of the object.  Therefore it is natural to try to only have
+one of them.  The problem is that we still need bits for the GC flags,
+so the field that we have to remove is the vtable pointer.</p>
+
+<p>This means that method dispatch needs to be more clever: it
+cannot directly read the vtable ptr, but needs to compute it
+from the half-word of the GC header.  Fortunately, this can be
+done with no extra instruction on the assembler level.  Here is
+how things will look like in the end, assuming a 32-bit x86
+machine (but note that as usual we just generate portable C).</p>
+
+<p>The trick for achieving efficiency is that we store all
+vtables together in memory, and make sure that they don't take
+more than 256 KB in total (16 bits, plus 2 bits of alignment).
+Here is how the assembler code (produced by the normal C
+compiler, e.g. gcc) for calling a method looks like.  Before
+the change:</p>
+
+<pre>
+MOV EDX, [EAX + 4]               # load the vtable ptr from object EAX
+MOV EDX, [EDX + method_offset]   # load the function pointer from the vtable
+CALL EDX
+</pre>
+
+<p>Instead, we now have:</p>
+
+<pre>
+MOVZX EDX, [EAX]     # load the 16-bit part of the GC header from EAX
+MOV EDX, [vtable_start + 4*EDX + method_offset]
+CALL EDX
+</pre>
+
+<p>Note that the complex addressing scheme done by the second MOV
+is still just one instruction: the vtable_start and
+method_offset are constants, so they are combined.  And as the
+vtables are anyway aligned at a word boundary, we can use
+4*EDX to address them, giving us 256 KB instead of just 64 KB
+of vtables.</p>
+
+<h2>Optimizing the hash field</h2>
+
+<p>In PyPy's Python interpreter, all application-level objects
+are represented as an instance of some subclass of W_Root.
+Since all of these objects could potentially be stored in a
+dictionary by the application Python program, all these
+objects need a hash field.  Of course, in practice, only a
+fraction of all objects in a Python program end up having
+their hash ever taken.  Thus this field of W_Root is wasted
+memory most of the time.</p>
+
+<p>(Up to now, we had a hack in place to save the hash field
+on a few classes like W_IntegerObject, but that meant that
+the Python expression ``object.__hash__(42)'' would raise
+a TypeError in PyPy.)</p>
+
+<p>The solution we implemented now (done by some Java GCs, among
+others) is to add a hash field to an object when the
+(identity) hash of that object is actually taken.  This means
+that we had to enhance our GCs to support this.  When objects
+are allocated, we don't reserve any space for the hash:</p>
+
+object at 0x74B028
+<table border=1><tr>
+<td>...00...</td>
+<td>x</td>
+<td>y</td>
+</tr></table>
+    
+<p>When the hash of an object is taken, we use its current memory
+address, and set a flag in the GC header saying that this
+particular object needs a hash:</p>
+
+object at 0x74B028
+<table border=1><tr>
+<td>...01...</td>
+<td>x</td>
+<td>y</td>
+</tr></table>
+
+<p>If the GC needs to move the object to another memory location,
+it will make the new version of the object bigger, i.e. it
+will also allocate space for the hash field:</p>
+
+object at 0x825F60
+<table border=1><tr>
+<td>...11...</td>
+<td>x</td>
+<td>y</td>
+<td>0x74B028</td>
+</tr></table>
+
+<p>This hash field is immediately initialized with the old memory
+address, which is the hash value that we gave so far for the
+object.  To not disturb the layout of the object, we always
+put the extra hash field at the end.  Of course, once set,
+the hash value does not change even if the object needs to
+move again.</p>
+
+<h2>Results</h2>
+
+<p>Running the following program on PyPy's Python interpreter
+with n=4000000:</p>
+
+<pre>
+def make_linked_list(n):
+    a = None
+    i = 0
+    while i < n:
+        b = X()
+        b.next = a
+        a = b
+        i += 1
+</pre>
+
+<p>the two optimizations together save 32 MB of RAM (i.e. 8 bytes
+per object).  The version of PyPy we measured this with was built
+as follows:</p>
+
+<pre>
+./translate.py --gcremovetypeptr targetpypystandalone --objspace-std-withsharingdict
+</pre>
+
+<p>The total amount of RAM used on a 32-bit Linux is 247 MB,
+completing in 10.3 seconds.  On CPython, it consumes 684 MB
+and takes 89 seconds to complete...  This nicely shows that
+our GCs are much faster at allocating objects, and that our
+objects can be much smaller than CPython's.</p>
+
+<p>Armin Rigo & Carl Friedrich Bolz</p>
+</div>
+<div id='flattr_title_6174120095428192954' style='display: none;'>
+GC improvements
+</div>
+<div class='post-share-buttons goog-inline-block'>
+<script type='text/javascript'>  
+          displayFlattrButton('6174120095428192954', 'http://morepypy.blogspot.com/2009/10/gc-improvements.html', '');
+        </script>
+</div>
+Posted by
+<span class='fn'>Armin Rigo</span>
+</span>
+<span class='post-timestamp'>
+at
+<a class='timestamp-link' href='http://morepypy.blogspot.com/2009/10/gc-improvements.html' rel='bookmark' title='permanent link'><abbr class='published' title='2009-10-16T16:27:00+02:00'>16:27</abbr></a>
+</span>
+<span class='post-comment-link'>
+</span>
+<span class='post-icons'>
+<span class='item-control blog-admin pid-1181195972'>
+<a href='http://www.blogger.com/post-edit.g?blogID=3971202189709462152&postID=6174120095428192954&from=pencil' title='Edit Post'>
+<img alt='' class='icon-action' height='18' src='http://img2.blogblog.com/img/icon18_edit_allbkg.gif' width='18'/>
+</a>
+</span>
+</span>
+<div class='post-share-buttons goog-inline-block'>
+<a class='goog-inline-block share-button sb-email' href='http://www.blogger.com/share-post.g?blogID=3971202189709462152&postID=6174120095428192954&target=email' target='_blank' title='Email This'><span class='share-button-link-text'>Email This</span></a><a class='goog-inline-block share-button sb-blog' href='http://www.blogger.com/share-post.g?blogID=3971202189709462152&postID=6174120095428192954&target=blog' onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target='_blank' title='BlogThis!'><span class='share-button-link-text'>BlogThis!</span></a><a class='goog-inline-block share-button sb-twitter' href='http://www.blogger.com/share-post.g?blogID=3971202189709462152&postID=6174120095428192954&target=twitter' target='_blank' title='Share to Twitter'><span class='share-button-link-text'>Share to Twitter</span></a><a class='goog-inline-block share-button sb-facebook' href='http://www.blogger.com/share-post.g?blogID=3971202189709462152&postID=6174120095428192954&target=facebook' onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target='_blank' title='Share to Facebook'><span class='share-button-link-text'>Share to Facebook</span></a><div class='goog-inline-block dummy-container'><g:plusone source='blogger:blog:plusone' href='http://morepypy.blogspot.com/2009/10/gc-improvements.html' size='medium' width='300' annotation='inline'/></div>
+</div>
+</div>
+<div class='post-footer-line post-footer-line-2'><span class='post-labels'>
+</span>
+</div>
+<div class='post-footer-line post-footer-line-3'><span class='post-backlinks post-comment-link'>
+</span>
+</div>
+</div>
+</div>
+<div class='comments' id='comments'>
+<a name='comments'></a>
+<h4>31 comments:</h4>
+<div id='Blog1_comments-block-wrapper'>
+<dl class='avatar-comment-indent' id='comments-block'>
+<dt class='comment-author ' id='c4138744294808123446'>
+<a name='c4138744294808123446'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/00799196834273346407" rel="nofollow" onclick="" class="avatar-hovercard" id="av-0-00799196834273346407"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="Shahms">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/00799196834273346407' rel='nofollow'>Shahms</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-4138744294808123446'>
+<p>
+Not really GC related and you may have covered this in another post, but how does PyPy handle id() in a world where the object may move?  Is the hash field reused for this when necessary as well?  If so, how do you deal with the possibility of another object being allocated at the same address as the original object?  If not, how do you avoid having an object&#39;s id() change when it&#39;s moved?
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://morepypy.blogspot.com/2009/10/gc-improvements.html?showComment=1255712036976#c4138744294808123446' title='comment permalink'>
+October 16, 2009 at 6:53 PM
+</a>
+<span class='item-control blog-admin pid-330504547'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=3971202189709462152&postID=4138744294808123446' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c2560461028198237210'>
+<a name='c2560461028198237210'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/11512820963025257647" rel="nofollow" onclick="" class="avatar-hovercard" id="av-1-11512820963025257647"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="kbob">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/11512820963025257647' rel='nofollow'>kbob</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-2560461028198237210'>
+<p>
+Very nice.  Using the address for the hash value was especially clever.  But how random are those hash values?
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://morepypy.blogspot.com/2009/10/gc-improvements.html?showComment=1255715725047#c2560461028198237210' title='comment permalink'>
+October 16, 2009 at 7:55 PM
+</a>
+<span class='item-control blog-admin pid-1217584982'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=3971202189709462152&postID=2560461028198237210' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author blog-author' id='c6764762434532667269'>
+<a name='c6764762434532667269'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/14054821112394577330" rel="nofollow" onclick="" class="avatar-hovercard" id="av-2-14054821112394577330"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="Alex">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/14054821112394577330' rel='nofollow'>Alex</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-6764762434532667269'>
+<p>
+kbob:  If PyPy is anything like CPython the randomness isn&#39;t so important.  The CPython dictionary hash collision resolution strategy is extremely efficient, even amongst hashes with very similar values.
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://morepypy.blogspot.com/2009/10/gc-improvements.html?showComment=1255720556171#c6764762434532667269' title='comment permalink'>
+October 16, 2009 at 9:15 PM
+</a>
+<span class='item-control blog-admin pid-1808485394'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=3971202189709462152&postID=6764762434532667269' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c8563199730015491812'>
+<a name='c8563199730015491812'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/07775013906985712587" rel="nofollow" onclick="" class="avatar-hovercard" id="av-3-07775013906985712587"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="Lucian">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/07775013906985712587' rel='nofollow'>Lucian</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-8563199730015491812'>
+<p>
+This is all sorts of cool. I can&#39;t wait for a mostly-production-ready PyPy with JIT.<br /><br />On a somewhat related note, how do the JIT and ctypes interact right now, if at all?
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://morepypy.blogspot.com/2009/10/gc-improvements.html?showComment=1255721952914#c8563199730015491812' title='comment permalink'>
+October 16, 2009 at 9:39 PM
+</a>
+<span class='item-control blog-admin pid-2123356555'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=3971202189709462152&postID=8563199730015491812' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author blog-author' id='c6996458863074526402'>
+<a name='c6996458863074526402'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/00518922641059511014" rel="nofollow" onclick="" class="avatar-hovercard" id="av-4-00518922641059511014"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="Carl Friedrich Bolz">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/00518922641059511014' rel='nofollow'>Carl Friedrich Bolz</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-6996458863074526402'>
+<p>
+Shams: Excellent question! The implementation of id that we have is basically a weak key dict mapping objects to ids on demand. This has the fun side-effect that the ids of PyPy&#39;s object start with 1 on count up from there.<br /><br />This is rather inefficient (e.g. your garbage collections become linearly slower the more objects you have that have their id taken), but there is not much else you can do. Jython uses a similar solution. For this reason, calling id a lot is essentially discouraged in code you want to run on PyPy.
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://morepypy.blogspot.com/2009/10/gc-improvements.html?showComment=1255722183808#c6996458863074526402' title='comment permalink'>
+October 16, 2009 at 9:43 PM
+</a>
+<span class='item-control blog-admin pid-1689882618'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=3971202189709462152&postID=6996458863074526402' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author blog-author' id='c8759579803973381607'>
+<a name='c8759579803973381607'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/00518922641059511014" rel="nofollow" onclick="" class="avatar-hovercard" id="av-5-00518922641059511014"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="Carl Friedrich Bolz">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/00518922641059511014' rel='nofollow'>Carl Friedrich Bolz</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-8759579803973381607'>
+<p>
+kbob: I think they should be random enough. You get a collision if you ask the hash of object a, then a collection happens that moves a, then you ask object b for its hash and object b happens to be in the place where object a was before. That sounds unlikely.<br /><br />If you write contrived code that has a loop that repeatedly allocates an object, asks its hash by putting it into a dict and then forces a nursery collection, you can get collision: all those objects will be at the beginning of the nursery when their hash is taken. Unlikely again to occur in practise.
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://morepypy.blogspot.com/2009/10/gc-improvements.html?showComment=1255722626882#c8759579803973381607' title='comment permalink'>
+October 16, 2009 at 9:50 PM
+</a>
+<span class='item-control blog-admin pid-1689882618'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=3971202189709462152&postID=8759579803973381607' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author blog-author' id='c3521139735744920154'>
+<a name='c3521139735744920154'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/00518922641059511014" rel="nofollow" onclick="" class="avatar-hovercard" id="av-6-00518922641059511014"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="Carl Friedrich Bolz">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/00518922641059511014' rel='nofollow'>Carl Friedrich Bolz</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-3521139735744920154'>
+<p>
+Alex: you are right. We use exactly CPython&#39;s algorithm for implementing dicts, so having bad hash functions is not a big problem. However, if you really have hash value collisions (e.g. everything hashes to 1) your dict still degenerates to essentially a linear search.
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://morepypy.blogspot.com/2009/10/gc-improvements.html?showComment=1255723050076#c3521139735744920154' title='comment permalink'>
+October 16, 2009 at 9:57 PM
+</a>
+<span class='item-control blog-admin pid-1689882618'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=3971202189709462152&postID=3521139735744920154' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c5086560234154354172'>
+<a name='c5086560234154354172'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/03657421926790640934" rel="nofollow" onclick="" class="avatar-hovercard" id="av-7-03657421926790640934"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="Skandalfo">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/03657421926790640934' rel='nofollow'>Skandalfo</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-5086560234154354172'>
+<p>
+Wow! You guys that you are my computing heroes.<br /><br />Whenever I talk to other people about your project, I always state you are the best example I can imagine of REAL innovation in computer languages.<br /><br />That said, I gather the only thing making id() different from hash() is that you need to guarantee that the values for live objects are always unique.<br /><br />You could just use the same strategy as with the hash, sticking the id value along the object the next time the object is moved by the GC.<br /><br />Meanwhile, from the time id() is called to the time the object is moved, you can just temporarily store an {address: id} mapping somewhere. Entries would be removed from the map once the objects get moved. From then on the id would be attached to the object.<br /><br />If GC cycles are frequent, the map doesn&#39;t have to grow too large.<br /><br />I don&#39;t know if the need for id reuse after the id space gets exhausted is important or not. Once you get to the end of the space, you would have to scan the map and heap to find a convenient &quot;hole&quot; to reuse, I suppose.
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://morepypy.blogspot.com/2009/10/gc-improvements.html?showComment=1255723514192#c5086560234154354172' title='comment permalink'>
+October 16, 2009 at 10:05 PM
+</a>
+<span class='item-control blog-admin pid-1498481358'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=3971202189709462152&postID=5086560234154354172' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c307720489198582034'>
+<a name='c307720489198582034'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/00799196834273346407" rel="nofollow" onclick="" class="avatar-hovercard" id="av-8-00799196834273346407"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="Shahms">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/00799196834273346407' rel='nofollow'>Shahms</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-307720489198582034'>
+<p>
+Thanks, Carl.  Following up what Skandalfo said, (although this is probably a poor forum for such discussions), it seems like you could reuse the hash field for id as well.  Given that the minimum size for a Python object is &gt; 1 byte, you should have at least that much space for offsetting the hash/id. As the GC/allocator has to store information about addresses and blocks anyway it should be a relatively simple matter of building and maintaining a bloom filter of offsets in use for a particular base address.<br /><br />Of course, this also constraints the addresses at which Python objects may be allocated and the lower bits in the address may already be used for other purposes...
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://morepypy.blogspot.com/2009/10/gc-improvements.html?showComment=1255724357390#c307720489198582034' title='comment permalink'>
+October 16, 2009 at 10:19 PM
+</a>
+<span class='item-control blog-admin pid-330504547'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=3971202189709462152&postID=307720489198582034' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author blog-author' id='c2893985594264539038'>
+<a name='c2893985594264539038'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/00518922641059511014" rel="nofollow" onclick="" class="avatar-hovercard" id="av-9-00518922641059511014"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="Carl Friedrich Bolz">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/00518922641059511014' rel='nofollow'>Carl Friedrich Bolz</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-2893985594264539038'>
+<p>
+Skandalof, Shahms: I guess there are possible ways to make id a bit faster than what we have now. What we have now is well-tested and works reasonably enough. I assume anyway that there is not too much Python code whose performance depends critically on having an extremely efficient implementation of id (and if there is, I am prepared to ask the author to rewrite the code instead :-) ).
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://morepypy.blogspot.com/2009/10/gc-improvements.html?showComment=1255725446620#c2893985594264539038' title='comment permalink'>
+October 16, 2009 at 10:37 PM
+</a>
+<span class='item-control blog-admin pid-1689882618'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=3971202189709462152&postID=2893985594264539038' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c4743519438810038405'>
+<a name='c4743519438810038405'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/03657421926790640934" rel="nofollow" onclick="" class="avatar-hovercard" id="av-10-03657421926790640934"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="Skandalfo">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/03657421926790640934' rel='nofollow'>Skandalfo</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-4743519438810038405'>
+<p>
+Shahms: I confess I don&#39;t understand your proposal. Do you mean you can have at most as many live objects as the available address space divided by the object alignment?<br /><br />When I talked about id space I wasn&#39;t referring to the memory required to store the per-object id value, but the fact that if you assign the id values using sequential values, and those values are, for instance, 64 bit integers, you could theoretically create and destroy a lot of objects in a long lived process and the sequence would wrap around.<br /><br />About making hash/id the same, I&#39;ve just checked that CPython does indeed use the id() value as the value returned by the default hash() implementation.<br /><br />You could just do the same, and use the id value as the &quot;master&quot; one. For hash() you would just call id(). This allows you to use just one value attached to the objects for both functions.<br /><br />The cost of that approach would be having to assign an id immediately (having to put it into the temporary map, then having to look it up in the map until the next time the object is moved) for the call to hash() (with no call to id()) too.<br /><br />The good thing compared to the weak key dict, is that the temporary map doesn&#39;t need to be garbage collected at all. The entries are removed when objects are moved (or collected).
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://morepypy.blogspot.com/2009/10/gc-improvements.html?showComment=1255725481426#c4743519438810038405' title='comment permalink'>
+October 16, 2009 at 10:38 PM
+</a>
+<span class='item-control blog-admin pid-1498481358'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=3971202189709462152&postID=4743519438810038405' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c935270509823463314'>
+<a name='c935270509823463314'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/00799196834273346407" rel="nofollow" onclick="" class="avatar-hovercard" id="av-11-00799196834273346407"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="Shahms">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/00799196834273346407' rel='nofollow'>Shahms</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-935270509823463314'>
+<p>
+Carl, no doubt you&#39;re right.  I know that I can probably count the number of times I&#39;ve needed to use id() on one hand and I&#39;m pretty sure the vast majority of those cases was sticking an-hashable object in a dict.
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://morepypy.blogspot.com/2009/10/gc-improvements.html?showComment=1255725872836#c935270509823463314' title='comment permalink'>
+October 16, 2009 at 10:44 PM
+</a>
+<span class='item-control blog-admin pid-330504547'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=3971202189709462152&postID=935270509823463314' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c939338816408069972'>
+<a name='c939338816408069972'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/03657421926790640934" rel="nofollow" onclick="" class="avatar-hovercard" id="av-12-03657421926790640934"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="Skandalfo">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/03657421926790640934' rel='nofollow'>Skandalfo</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-939338816408069972'>
+<p>
+Carl, Shahms: I couldn&#39;t agree more about id() not being important.<br /><br />Probably Guido should have refrained from making it available in CPython at the time. I suppose it was just easy to add it to the language with the memory allocation model of CPython. The fact is that I don&#39;t really see any use for id() once you have the &quot;is&quot; operator and the hash() method...
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://morepypy.blogspot.com/2009/10/gc-improvements.html?showComment=1255726416538#c939338816408069972' title='comment permalink'>
+October 16, 2009 at 10:53 PM
+</a>
+<span class='item-control blog-admin pid-1498481358'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=3971202189709462152&postID=939338816408069972' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c8747417424663324570'>
+<a name='c8747417424663324570'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/08800334898826186482" rel="nofollow" onclick="" class="avatar-hovercard" id="av-13-08800334898826186482"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="Michael Hudson-Doyle">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/08800334898826186482' rel='nofollow'>Michael Hudson-Doyle</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-8747417424663324570'>
+<p>
+Yay, I remember talking about removing the gc type pointer, oh, about 3.5 years ago :)  Cool that it got done, sounds like a neat pair of hacks.
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://morepypy.blogspot.com/2009/10/gc-improvements.html?showComment=1255731575827#c8747417424663324570' title='comment permalink'>
+October 17, 2009 at 12:19 AM
+</a>
+<span class='item-control blog-admin pid-157487540'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=3971202189709462152&postID=8747417424663324570' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author blog-author' id='c4729760952106351632'>
+<a name='c4729760952106351632'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/11410841070239382771" rel="nofollow" onclick="" class="avatar-hovercard" id="av-14-11410841070239382771"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="Maciej Fijalkowski">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/11410841070239382771' rel='nofollow'>Maciej Fijalkowski</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-4729760952106351632'>
+<p>
+@Lucian:<br /><br />ctypes and JIT works just fine together.
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://morepypy.blogspot.com/2009/10/gc-improvements.html?showComment=1255742239144#c4729760952106351632' title='comment permalink'>
+October 17, 2009 at 3:17 AM
+</a>
+<span class='item-control blog-admin pid-1633129755'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=3971202189709462152&postID=4729760952106351632' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c7865452285925058195'>
+<a name='c7865452285925058195'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><img src="http://img1.blogblog.com/img/blank.gif" width="16" height="16" alt="" title="Anonymous">
+
+</span></div>
+Anonymous
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-7865452285925058195'>
+<p>
+Doesn&#39;t deepcopy use id() a lot? I remember once using deepcopy on a complicated structure, resulting in thousands of id() calls.
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://morepypy.blogspot.com/2009/10/gc-improvements.html?showComment=1255773445801#c7865452285925058195' title='comment permalink'>
+October 17, 2009 at 11:57 AM
+</a>
+<span class='item-control blog-admin pid-511917919'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=3971202189709462152&postID=7865452285925058195' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c502798326186827138'>
+<a name='c502798326186827138'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/06295961645811499445" rel="nofollow" onclick="" class="avatar-hovercard" id="av-16-06295961645811499445"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="RonnyPfannschmidt">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/06295961645811499445' rel='nofollow'>RonnyPfannschmidt</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-502798326186827138'>
+<p>
+what about pickle - as far as i remember its memo code for dealing with object cycles is using id, too
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://morepypy.blogspot.com/2009/10/gc-improvements.html?showComment=1255774135752#c502798326186827138' title='comment permalink'>
+October 17, 2009 at 12:08 PM
+</a>
+<span class='item-control blog-admin pid-1979009401'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=3971202189709462152&postID=502798326186827138' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author blog-author' id='c5176703414200677688'>
+<a name='c5176703414200677688'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/06300515270104686574" rel="nofollow" onclick="" class="avatar-hovercard" id="av-17-06300515270104686574"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="Armin Rigo">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/06300515270104686574' rel='nofollow'>Armin Rigo</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-5176703414200677688'>
+<p>
+Too bad for the current implementation of pickle and deepcopy.  The fault in that case is CPython&#39;s general view that id() is cheap, despite repeated attempts to convince them otherwise.  These attempts have been done notably by guys from Jython, even before PyPy time; indeed id() is a mess for any implementation apart from CPython&#39;s simple non-moving GC).<br /><br />A suitable replacement would be e.g. a &#39;collections.identitydict&#39; type, if someone feels like going Yet Another Time to python-dev with this issue.
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://morepypy.blogspot.com/2009/10/gc-improvements.html?showComment=1255797167862#c5176703414200677688' title='comment permalink'>
+October 17, 2009 at 6:32 PM
+</a>
+<span class='item-control blog-admin pid-1181195972'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=3971202189709462152&postID=5176703414200677688' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c8752552790881908676'>
+<a name='c8752552790881908676'></a>
+<div class="avatar-image-container vcard"><span dir="ltr"><a href="http://www.blogger.com/profile/15155998626202067226" rel="nofollow" onclick="" class="avatar-hovercard" id="av-18-15155998626202067226"><img src="http://img1.blogblog.com/img/blank.gif" width="35" height="35" alt="" class="delayLoad" style="display: none;" longdesc="http://3.bp.blogspot.com/_krv8BoCPKTQ/SaqKK1ufAGI/AAAAAAAAAG4/KQtfrJWj2GU/S45/mugshot2.jpg" title="Marius Gedminas">
+
+<noscript><img src="http://3.bp.blogspot.com/_krv8BoCPKTQ/SaqKK1ufAGI/AAAAAAAAAG4/KQtfrJWj2GU/S45/mugshot2.jpg" width="35" height="35" class="photo" alt=""></noscript></a></span></div>
+<a href='http://www.blogger.com/profile/15155998626202067226' rel='nofollow'>Marius Gedminas</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-8752552790881908676'>
+<p>
+When I was writing <a href="http://mg.pov.lt/objgraph/" rel="nofollow">objgraph</a> I saw no way of traversing arbitrary object graphs without using id().<br /><br />collections.identitydict sounds like a nice idea.  Has anyone written a PEP for it?
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://morepypy.blogspot.com/2009/10/gc-improvements.html?showComment=1255818000881#c8752552790881908676' title='comment permalink'>
+October 18, 2009 at 12:20 AM
+</a>
+<span class='item-control blog-admin pid-1586530252'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=3971202189709462152&postID=8752552790881908676' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c8744316541446985068'>
+<a name='c8744316541446985068'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><img src="http://img1.blogblog.com/img/blank.gif" width="16" height="16" alt="" title="Anonymous">
+
+</span></div>
+Anonymous
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-8744316541446985068'>
+<p>
+Is there any possibility to translate pypy under OSX 10.6 as 32bit? Translation works but I get an &quot;ValueError: bad marshal data&quot; when running pypy-c. I assume that is due to the fact that I got a 64bit binary.
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://morepypy.blogspot.com/2009/10/gc-improvements.html?showComment=1255857258091#c8744316541446985068' title='comment permalink'>
+October 18, 2009 at 11:14 AM
+</a>
+<span class='item-control blog-admin pid-528031006'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=3971202189709462152&postID=8744316541446985068' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author blog-author' id='c8592258030787825626'>
+<a name='c8592258030787825626'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/11410841070239382771" rel="nofollow" onclick="" class="avatar-hovercard" id="av-20-11410841070239382771"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="Maciej Fijalkowski">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/11410841070239382771' rel='nofollow'>Maciej Fijalkowski</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-8592258030787825626'>
+<p>
+@Anonymous:<br /><br />Try deleting all your .pyc files and see what happens.
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://morepypy.blogspot.com/2009/10/gc-improvements.html?showComment=1255891747618#c8592258030787825626' title='comment permalink'>
+October 18, 2009 at 8:49 PM
+</a>
+<span class='item-control blog-admin pid-1633129755'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=3971202189709462152&postID=8592258030787825626' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author blog-author' id='c5752853702762801202'>
+<a name='c5752853702762801202'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/06300515270104686574" rel="nofollow" onclick="" class="avatar-hovercard" id="av-21-06300515270104686574"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="Armin Rigo">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/06300515270104686574' rel='nofollow'>Armin Rigo</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-5752853702762801202'>
+<p>
+Marius: as I said, feel free to :-)  but the current situation is, no, not as far as I know.
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://morepypy.blogspot.com/2009/10/gc-improvements.html?showComment=1255948244013#c5752853702762801202' title='comment permalink'>
+October 19, 2009 at 12:30 PM
+</a>
+<span class='item-control blog-admin pid-1181195972'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=3971202189709462152&postID=5752853702762801202' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c5651059578076147039'>
+<a name='c5651059578076147039'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/05255172019231560487" rel="nofollow" onclick="" class="avatar-hovercard" id="av-22-05255172019231560487"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="Claudio">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/05255172019231560487' rel='nofollow'>Claudio</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-5651059578076147039'>
+<p>
+Wouldn&#39;t it free up the GC from all that burden if only a set of live ids were kept? (ie: no weak dict)<br /><br />So, when you get an id() call, you check the object to see if there&#39;s a cached id (much like the hash hack) - if not, you generate a random (or sequential) unused id and store it both in the &quot;live ids&quot; set and in the object&#39;s structure, as done with hash values.<br /><br />So, successive calls to id() would be as fast as in CPython, and garbage collection would be fast too (only an extra set deletion per object whose id was obtained).<br /><br />In fact, this set could be implemented as a bit array with &quot;free lists&quot;, which could be very very efficient, given that its size will be bound by the number of live objects.
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://morepypy.blogspot.com/2009/10/gc-improvements.html?showComment=1255970325155#c5651059578076147039' title='comment permalink'>
+October 19, 2009 at 6:38 PM
+</a>
+<span class='item-control blog-admin pid-1055196864'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=3971202189709462152&postID=5651059578076147039' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author blog-author' id='c8122338287648204923'>
+<a name='c8122338287648204923'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/06300515270104686574" rel="nofollow" onclick="" class="avatar-hovercard" id="av-23-06300515270104686574"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="Armin Rigo">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/06300515270104686574' rel='nofollow'>Armin Rigo</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-8122338287648204923'>
+<p>
+Claudio: this doesn&#39;t work (unless I misunderstood).  You cannot add a field like the hash field at any point in time, but only during collections when the object moves.
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://morepypy.blogspot.com/2009/10/gc-improvements.html?showComment=1256112677195#c8122338287648204923' title='comment permalink'>
+October 21, 2009 at 10:11 AM
+</a>
+<span class='item-control blog-admin pid-1181195972'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=3971202189709462152&postID=8122338287648204923' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c1558437326706983881'>
+<a name='c1558437326706983881'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/05255172019231560487" rel="nofollow" onclick="" class="avatar-hovercard" id="av-24-05255172019231560487"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="Claudio">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/05255172019231560487' rel='nofollow'>Claudio</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-1558437326706983881'>
+<p>
+Yes, I&#39;ve been thinking about that too.<br /><br />But that can be patched - the weak key dict could still be used for those objects that haven&#39;t been collected yet. Since addition of the id would most likely happen in the nursery, or the first generation at most (big assumption), I don&#39;t think the dict would grow very big even under heavy id() usage.
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://morepypy.blogspot.com/2009/10/gc-improvements.html?showComment=1256132076659#c1558437326706983881' title='comment permalink'>
+October 21, 2009 at 3:34 PM
+</a>
+<span class='item-control blog-admin pid-1055196864'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=3971202189709462152&postID=1558437326706983881' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c5527715439287612568'>
+<a name='c5527715439287612568'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/03065040375317980599" rel="nofollow" onclick="" class="avatar-hovercard" id="av-25-03065040375317980599"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="omul cu 6233">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/03065040375317980599' rel='nofollow'>omul cu 6233</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-5527715439287612568'>
+<p>
+Wohoo, nice performance
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://morepypy.blogspot.com/2009/10/gc-improvements.html?showComment=1257198694988#c5527715439287612568' title='comment permalink'>
+November 2, 2009 at 10:51 PM
+</a>
+<span class='item-control blog-admin pid-1329929072'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=3971202189709462152&postID=5527715439287612568' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c554411241418185276'>
+<a name='c554411241418185276'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/04485097839438234853" rel="nofollow" onclick="" class="avatar-hovercard" id="av-26-04485097839438234853"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="Paolo Giarrusso">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/04485097839438234853' rel='nofollow'>Paolo Giarrusso</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-554411241418185276'>
+<p>
+I&#39;m astonished a bit by your need to pack vtables together within 256KB. How many bits do you need for mark-and-sweep marking or similar stuff? The usual solution I&#39;ve seen for this is to use the low two bits of the vtable pointer for flags, usually, and mask them off when reading the vtable pointer. Would it work here?<br /><br />If that isn&#39;t enough, then you have to pack vtables together as you do (maybe in a bigger space if you can use more bits).
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://morepypy.blogspot.com/2009/10/gc-improvements.html?showComment=1271254498203#c554411241418185276' title='comment permalink'>
+April 14, 2010 at 4:14 PM
+</a>
+<span class='item-control blog-admin pid-995647743'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=3971202189709462152&postID=554411241418185276' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c8264193420134666882'>
+<a name='c8264193420134666882'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/04688223805457202941" rel="nofollow" onclick="" class="avatar-hovercard" id="av-27-04688223805457202941"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="PJE">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/04688223805457202941' rel='nofollow'>PJE</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-8264193420134666882'>
+<p>
+I can think of one place where I use a lot of id() calls, and that&#39;s in PEAK-Rules&#39; generic function implementation, for indexing &quot;is&quot; tests.<br /><br />For example, if you have a bunch of methods that test if &quot;x is Something&quot; (for different values of Something), then a dictionary of id()&#39;s is used to identify which of these tests went off.  While the total number of Somethings isn&#39;t likely to be high, the weakref dict in PyPy means that every &#39;x&#39; the function is called with will end up burning memory and speed to hold an id forever.<br /><br />While it&#39;s perhaps the case that I could avoid this by using a linear search (ugh) in cases where the number of Somethings is small, it&#39;s an example of a place where id() makes an operation neat, fast, and simple in regular Python.<br /><br />Of course, if there were another way to put arbitrary (i.e possibly-unhashable, comparable only by identity) objects in a dictionary, and then determine whether a given object was one of them, that&#39;d certainly be a suitable substitute.<br /><br />Or, if PyPI offered a temp_id() that would simply let you *check* identity, without forcing the object to hold onto it, that&#39;d work fine too.  Say, if there was a has_id() that told you if an id() is outstanding for the object already, or a get_id() that returned None for an object whose id() had never been taken.<br /><br />With an API like that, I could prevent memory/speed blowup by not having each call of the function adding more objects to PyPy&#39;s id() dict.<br /><br />(Heck, perhaps such an API should be added across Python versions, i.e., to CPython and Jython as well.)
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://morepypy.blogspot.com/2009/10/gc-improvements.html?showComment=1285179736358#c8264193420134666882' title='comment permalink'>
+September 22, 2010 at 8:22 PM
+</a>
+<span class='item-control blog-admin pid-932120647'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=3971202189709462152&postID=8264193420134666882' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author blog-author' id='c5805635183672605635'>
+<a name='c5805635183672605635'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/11410841070239382771" rel="nofollow" onclick="" class="avatar-hovercard" id="av-28-11410841070239382771"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="Maciej Fijalkowski">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/11410841070239382771' rel='nofollow'>Maciej Fijalkowski</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-5805635183672605635'>
+<p>
+@PJE PyPy offers collections.identity_dict, or something similar which would have the effect how you like (but internally doesn&#39;t use id operation, just the object identity).
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://morepypy.blogspot.com/2009/10/gc-improvements.html?showComment=1285180210535#c5805635183672605635' title='comment permalink'>
+September 22, 2010 at 8:30 PM
+</a>
+<span class='item-control blog-admin pid-1633129755'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=3971202189709462152&postID=5805635183672605635' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c845509913398361197'>
+<a name='c845509913398361197'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><img src="http://img1.blogblog.com/img/blank.gif" width="16" height="16" alt="" title="Anonymous">
+
+</span></div>
+Anonymous
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-845509913398361197'>
+<p>
+This program in C# takes 589 miliseconds, and 52 MB RAM. 17x faster, 4.75x less RAM.
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://morepypy.blogspot.com/2009/10/gc-improvements.html?showComment=1304732061508#c845509913398361197' title='comment permalink'>
+May 7, 2011 at 3:34 AM
+</a>
+<span class='item-control blog-admin pid-1537626389'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=3971202189709462152&postID=845509913398361197' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c2577386069974257578'>
+<a name='c2577386069974257578'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><img src="http://img1.blogblog.com/img/blank.gif" width="16" height="16" alt="" title="Anonymous">
+
+</span></div>
+Anonymous
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-2577386069974257578'>
+<p>
+And in assembly it will be even faster and smaller.  <br /><br />Python has many lovely attributes, but efficiency is not its primary virtue.  That said, making it more efficient is still a plus, which this work is doing
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://morepypy.blogspot.com/2009/10/gc-improvements.html?showComment=1316079472832#c2577386069974257578' title='comment permalink'>
+September 15, 2011 at 11:37 AM
+</a>
+<span class='item-control blog-admin pid-611530257'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=3971202189709462152&postID=2577386069974257578' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+</dl>
+</div>
+<p class='comment-footer'>
+<a href='http://www.blogger.com/comment.g?blogID=3971202189709462152&amp;postID=6174120095428192954' onclick=''>Post a Comment</a>
+</p>
+<div id='backlinks-container'>
+<div id='Blog1_backlinks-container'>
+<a name='links'></a><h4>
+</h4>
+<p class='comment-footer'>
+<a class='comment-link' href='' id='Blog1_backlinks-create-link' target='_blank'>
+</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+
+        </div></div>
+      
+<!-- google_ad_section_end -->
+</div>
+<div class='blog-pager' id='blog-pager'>
+<span id='blog-pager-newer-link'>
+<a class='blog-pager-newer-link' href='http://morepypy.blogspot.com/2009/11/hi-all-this-week-i-worked-on-improving.html' id='Blog1_blog-pager-newer-link' title='Newer Post'>Newer Post</a>
+</span>
+<span id='blog-pager-older-link'>
+<a class='blog-pager-older-link' href='http://morepypy.blogspot.com/2009/10/first-pypy-cli-jit-benchmarks.html' id='Blog1_blog-pager-older-link' title='Older Post'>Older Post</a>
+</span>
+<a class='home-link' href='http://morepypy.blogspot.com/'>Home</a>
+</div>
+<div class='clear'></div>
+<div class='post-feeds'>
+<div class='feed-links'>
+Subscribe to:
+<a class='feed-link' href='http://morepypy.blogspot.com/feeds/6174120095428192954/comments/default' target='_blank' type='application/atom+xml'>Post Comments (Atom)</a>
+</div>
+</div>
+<script type="text/javascript">window.___gcfg = {'lang': 'en_US'};</script>
+</div></div>
+</div>
+</div>
+<div class='column-left-outer'>
+<div class='column-left-inner'>
+<aside>
+<div class='sidebar section' id='sidebar-left-1'><div class='widget LinkList' id='LinkList1'>
+<h2>Links of Interest</h2>
+<div class='widget-content'>
+<ul>
+<li><a href='http://pypy.org/'>PyPy Homepage</a></li>
+<li><a href='http://doc.pypy.org/'>Dev Documentation</a></li>
+<li><a href='http://mail.python.org/mailman/listinfo/pypy-dev'>Mailing List</a></li>
+</ul>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=3971202189709462152&widgetType=LinkList&widgetId=LinkList1&action=editWidget&sectionId=sidebar-left-1' onclick='return _WidgetManager._PopupConfig(document.getElementById("LinkList1"));' target='configLinkList1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget HTML' id='HTML2'>
+<h2 class='title'>Donate</h2>
+<div class='widget-content'>
+<a href="http://pypy.org/py3donate.html">Donation page</a>
+
+<!--
+
+<script type="text/javascript">
+function validateAmount(amount){
+       if(amount.value.match( /^[0-9]+(\.([0-9]+))?$/)){
+               return true;
+       }else{
+               alert('You must enter a valid donation.');
+               amount.focus();
+               return false;
+       }
+}
+</script>
+<form action="https://checkout.google.com/cws/v2/Donations/622836985124940/checkoutForm" id="BB_BuyButtonForm" method="post" name="BB_BuyButtonForm" onsubmit="return validateAmount(this.item_price_1)" target="_top">
+   <input name="item_name_1" type="hidden" value="PyPy Directed Donation via Software Freedom Conservancy, Inc."/>
+   <input name="item_description_1" type="hidden" value="This is a donation to the Software Freedom Conservancy, Inc. The donation will be directed for the PyPy project."/>
+   <input name="item_quantity_1" type="hidden" value="1"/>
+   <input name="item_currency_1" type="hidden" value="USD"/>
+   <input name="item_is_modifiable_1" type="hidden" value="true"/>
+   <input name="item_min_price_1" type="hidden" value="5.0"/>
+   <input name="item_max_price_1" type="hidden" value="25000.0"/>
+   <input name="_charset_" type="hidden" value="utf-8"/>
+   <table cellpadding="5" cellspacing="0" width="1%">
+       <tr>
+           <td align="left" nowrap="nowrap" width="1%">&#x24; <input id="item_price_1" name="item_price_1" onfocus="this.style.color='black'; this.value='';" size="11" style="color:grey;" type="text" value="Enter Amount"/>
+           </td>
+       </tr>
+       <tr>
+           <td align="left" width="1%">
+               <input alt="Donate" src="https://checkout.google.com/buttons/donateNow.gif?merchant_id=622836985124940&amp;w=115&amp;h=50&amp;style=white&amp;variant=text&amp;loc=en_US" type="image"/>
+           </td>
+       </tr>
+   </table>
+</form>
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick" />
+<input type="hidden" name="hosted_button_id" value="J268ZTLRE2BW8" />
+<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" />
+<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+</form>
+-->
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=3971202189709462152&widgetType=HTML&widgetId=HTML2&action=editWidget&sectionId=sidebar-left-1' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML2"));' target='configHTML2' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget BlogArchive' id='BlogArchive1'>
+<h2>Blog Archive</h2>
+<div class='widget-content'>
+<div id='ArchiveList'>
+<div id='BlogArchive1_ArchiveList'>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/search?updated-min=2013-01-01T00:00:00%2B01:00&amp;updated-max=2014-01-01T00:00:00%2B01:00&amp;max-results=4'>2013</a>
+<span class='post-count' dir='ltr'>(4)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2013_02_01_archive.html'>February</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2013_01_01_archive.html'>January</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/search?updated-min=2012-01-01T00:00:00%2B01:00&amp;updated-max=2013-01-01T00:00:00%2B01:00&amp;max-results=44'>2012</a>
+<span class='post-count' dir='ltr'>(44)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2012_12_01_archive.html'>December</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2012_11_01_archive.html'>November</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2012_10_01_archive.html'>October</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2012_09_01_archive.html'>September</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2012_08_01_archive.html'>August</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2012_07_01_archive.html'>July</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2012_06_01_archive.html'>June</a>
+<span class='post-count' dir='ltr'>(6)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2012_05_01_archive.html'>May</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2012_04_01_archive.html'>April</a>
+<span class='post-count' dir='ltr'>(5)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2012_03_01_archive.html'>March</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2012_02_01_archive.html'>February</a>
+<span class='post-count' dir='ltr'>(6)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2012_01_01_archive.html'>January</a>
+<span class='post-count' dir='ltr'>(7)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/search?updated-min=2011-01-01T00:00:00%2B01:00&amp;updated-max=2012-01-01T00:00:00%2B01:00&amp;max-results=43'>2011</a>
+<span class='post-count' dir='ltr'>(43)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2011_12_01_archive.html'>December</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2011_11_01_archive.html'>November</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2011_10_01_archive.html'>October</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2011_09_01_archive.html'>September</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2011_08_01_archive.html'>August</a>
+<span class='post-count' dir='ltr'>(5)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2011_07_01_archive.html'>July</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2011_06_01_archive.html'>June</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2011_05_01_archive.html'>May</a>
+<span class='post-count' dir='ltr'>(6)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2011_04_01_archive.html'>April</a>
+<span class='post-count' dir='ltr'>(5)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2011_03_01_archive.html'>March</a>
+<span class='post-count' dir='ltr'>(7)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2011_02_01_archive.html'>February</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2011_01_01_archive.html'>January</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/search?updated-min=2010-01-01T00:00:00%2B01:00&amp;updated-max=2011-01-01T00:00:00%2B01:00&amp;max-results=44'>2010</a>
+<span class='post-count' dir='ltr'>(44)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2010_12_01_archive.html'>December</a>
+<span class='post-count' dir='ltr'>(6)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2010_11_01_archive.html'>November</a>
+<span class='post-count' dir='ltr'>(6)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2010_10_01_archive.html'>October</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2010_09_01_archive.html'>September</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2010_08_01_archive.html'>August</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2010_07_01_archive.html'>July</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2010_06_01_archive.html'>June</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2010_05_01_archive.html'>May</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2010_04_01_archive.html'>April</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2010_03_01_archive.html'>March</a>
+<span class='post-count' dir='ltr'>(7)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2010_02_01_archive.html'>February</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2010_01_01_archive.html'>January</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate expanded'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy toggle-open'>&#9660;&#160;</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/search?updated-min=2009-01-01T00:00:00%2B01:00&amp;updated-max=2010-01-01T00:00:00%2B01:00&amp;max-results=38'>2009</a>
+<span class='post-count' dir='ltr'>(38)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2009_12_01_archive.html'>December</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2009_11_01_archive.html'>November</a>
+<span class='post-count' dir='ltr'>(6)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate expanded'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy toggle-open'>&#9660;&#160;</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2009_10_01_archive.html'>October</a>
+<span class='post-count' dir='ltr'>(3)</span>
+<ul class='posts'>
+<li><a href='http://morepypy.blogspot.com/2009/10/gc-improvements.html'>GC improvements</a></li>
+<li><a href='http://morepypy.blogspot.com/2009/10/first-pypy-cli-jit-benchmarks.html'>First pypy-cli-jit benchmarks</a></li>
+<li><a href='http://morepypy.blogspot.com/2009/10/pypys-jit-now-supports-floats.html'>PyPy&#39;s JIT now supports floats</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2009_09_01_archive.html'>September</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2009_08_01_archive.html'>August</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2009_07_01_archive.html'>July</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2009_06_01_archive.html'>June</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2009_05_01_archive.html'>May</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2009_04_01_archive.html'>April</a>
+<span class='post-count' dir='ltr'>(7)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2009_03_01_archive.html'>March</a>
+<span class='post-count' dir='ltr'>(7)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2009_02_01_archive.html'>February</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2009_01_01_archive.html'>January</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/search?updated-min=2008-01-01T00:00:00%2B01:00&amp;updated-max=2009-01-01T00:00:00%2B01:00&amp;max-results=50'>2008</a>
+<span class='post-count' dir='ltr'>(62)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2008_12_01_archive.html'>December</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2008_11_01_archive.html'>November</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2008_10_01_archive.html'>October</a>
+<span class='post-count' dir='ltr'>(5)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2008_09_01_archive.html'>September</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2008_08_01_archive.html'>August</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2008_07_01_archive.html'>July</a>
+<span class='post-count' dir='ltr'>(5)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2008_06_01_archive.html'>June</a>
+<span class='post-count' dir='ltr'>(10)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2008_05_01_archive.html'>May</a>
+<span class='post-count' dir='ltr'>(8)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2008_04_01_archive.html'>April</a>
+<span class='post-count' dir='ltr'>(5)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2008_03_01_archive.html'>March</a>
+<span class='post-count' dir='ltr'>(5)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2008_02_01_archive.html'>February</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2008_01_01_archive.html'>January</a>
+<span class='post-count' dir='ltr'>(9)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/search?updated-min=2007-01-01T00:00:00%2B01:00&amp;updated-max=2008-01-01T00:00:00%2B01:00&amp;max-results=19'>2007</a>
+<span class='post-count' dir='ltr'>(19)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2007_12_01_archive.html'>December</a>
+<span class='post-count' dir='ltr'>(9)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2007_11_01_archive.html'>November</a>
+<span class='post-count' dir='ltr'>(9)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://morepypy.blogspot.com/2007_10_01_archive.html'>October</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=3971202189709462152&widgetType=BlogArchive&widgetId=BlogArchive1&action=editWidget&sectionId=sidebar-left-1' onclick='return _WidgetManager._PopupConfig(document.getElementById("BlogArchive1"));' target='configBlogArchive1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget Profile' id='Profile1'>
+<h2>Contributors</h2>
+<div class='widget-content'>
+<ul>
+<li><a class='profile-name-link g-profile' href='http://www.blogger.com/profile/00985924698593515074' style='background-image: url(//www.blogger.com/img/logo-16.png);'>holger krekel</a></li>
+<li><a class='profile-name-link g-profile' href='http://www.blogger.com/profile/06300515270104686574' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Armin Rigo</a></li>
+<li><a class='profile-name-link g-profile' href='http://www.blogger.com/profile/14054821112394577330' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Alex</a></li>
+<li><a class='profile-name-link g-profile' href='http://www.blogger.com/profile/17017456817083804792' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Antonio Cuni</a></li>
+<li><a class='profile-name-link g-profile' href='http://www.blogger.com/profile/08077054122516411452' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Samuele Pedroni</a></li>
+<li><a class='profile-name-link g-profile' href='http://www.blogger.com/profile/15466911074154154640' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Hakan Ardo</a></li>
+<li><a class='profile-name-link g-profile' href='http://www.blogger.com/profile/08851437269223332169' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Alexander Schremmer</a></li>
+<li><a class='profile-name-link g-profile' href='http://www.blogger.com/profile/00518922641059511014' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Carl Friedrich Bolz</a></li>
+<li><a class='profile-name-link g-profile' href='http://www.blogger.com/profile/05365013582304921306' style='background-image: url(//www.blogger.com/img/logo-16.png);'>David Schneider</a></li>
+<li><a class='profile-name-link g-profile' href='http://www.blogger.com/profile/11410841070239382771' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Maciej Fijalkowski</a></li>
+<li><a class='profile-name-link g-profile' href='http://www.blogger.com/profile/06229713779852499022' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Michael Foord</a></li>
+<li><a class='profile-name-link g-profile' href='http://www.blogger.com/profile/07891333377712029026' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Wim Lavrijsen</a></li>
+<li><a class='profile-name-link g-profile' href='http://www.blogger.com/profile/06955536323236904839' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Benjamin</a></li>
+<li><a class='profile-name-link g-profile' href='http://www.blogger.com/profile/09838979615980113137' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Philip Jenvey</a></li>
+</ul>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=3971202189709462152&widgetType=Profile&widgetId=Profile1&action=editWidget&sectionId=sidebar-left-1' onclick='return _WidgetManager._PopupConfig(document.getElementById("Profile1"));' target='configProfile1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget HTML' id='HTML1'>
+<h2 class='title'>Subscribe Now</h2>
+<div class='widget-content'>
+<a 
+href="http://feeds.feedburner.com/PyPyStatusBlog" rel="alternate" title="Subscribe to the newsfeed" type="application/rss+xml"><img alt="" style="border:0" src="http://www.feedburner.com/fb/images/pub/feed-icon32x32.png"/></a><a href="http://feeds.feedburner.com/PyPyStatusBlog" rel="alternate" title="Subscribe to my feed" type="application/rss+xml"> Subscribe in a reader</a>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=3971202189709462152&widgetType=HTML&widgetId=HTML1&action=editWidget&sectionId=sidebar-left-1' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML1"));' target='configHTML1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget HTML' id='HTML3'>
+<h2 class='title'>Subscriber Count</h2>
+<div class='widget-content'>
+<p><a href="http://feeds.feedburner.com/PyPyStatusBlog"><img width="88" style="border:0" alt="" src="http://feeds.feedburner.com/~fc/PyPyStatusBlog?bg=FF9900&amp;fg=000000&amp;anim=0" height="26"/></a></p>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=3971202189709462152&widgetType=HTML&widgetId=HTML3&action=editWidget&sectionId=sidebar-left-1' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML3"));' target='configHTML3' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget HTML' id='HTML4'>
+<h2 class='title'>Google Analytics</h2>
+<div class='widget-content'>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-7778406-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=3971202189709462152&widgetType=HTML&widgetId=HTML4&action=editWidget&sectionId=sidebar-left-1' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML4"));' target='configHTML4' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div></div>
+<table border='0' cellpadding='0' cellspacing='0' class='section-columns columns-2'>
+<tbody>
+<tr>
+<td class='first columns-cell'>
+<div class='sidebar section' id='sidebar-left-2-1'></div>
+</td>
+<td class='columns-cell'>
+<div class='sidebar section' id='sidebar-left-2-2'></div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class='sidebar section' id='sidebar-left-3'></div>
+</aside>
+</div>
+</div>
+<div class='column-right-outer'>
+<div class='column-right-inner'>
+<aside>
+</aside>
+</div>
+</div>
+</div>
+<div style='clear: both'></div>
+<!-- columns -->
+</div>
+<!-- main -->
+</div>
+</div>
+<div class='main-cap-bottom cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+<footer>
+<div class='footer-outer'>
+<div class='footer-cap-top cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left footer-fauxborder-left'>
+<div class='fauxborder-right footer-fauxborder-right'></div>
+<div class='region-inner footer-inner'>
+<div class='foot section' id='footer-1'></div>
+<table border='0' cellpadding='0' cellspacing='0' class='section-columns columns-2'>
+<tbody>
+<tr>
+<td class='first columns-cell'>
+<div class='foot section' id='footer-2-1'></div>
+</td>
+<td class='columns-cell'>
+<div class='foot section' id='footer-2-2'></div>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- outside of the include in order to lock Attribution widget -->
+<div class='foot section' id='footer-3'><div class='widget Attribution' id='Attribution1'>
+<div class='widget-content' style='text-align: center;'>
+Powered by <a href='http://www.blogger.com' target='_blank'>Blogger</a>.
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=3971202189709462152&widgetType=Attribution&widgetId=Attribution1&action=editWidget&sectionId=footer-3' onclick='return _WidgetManager._PopupConfig(document.getElementById("Attribution1"));' target='configAttribution1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div></div>
+</div>
+</div>
+<div class='footer-cap-bottom cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+</footer>
+<!-- content -->
+</div>
+</div>
+<div class='content-cap-bottom cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+</div>
+<script type='text/javascript'>
+    window.setTimeout(function() {
+        document.body.className = document.body.className.replace('loading', '');
+      }, 10);
+  </script>
+<script type='text/javascript'>
+  // http://stackoverflow.com/questions/3484924/javascript-using-flattr-api-how-to-wait-until-api-is-loaded
+  function loadFlattr() {
+    if(typeof(FlattrLoader) == "undefined")
+        setTimeout(loadFlattr, 100);
+    else
+        FlattrLoader.setup(); 
+  }
+  loadFlattr();
+</script>
+<script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('widgetJsBefore');
+</script><script type="text/javascript" src="//www.blogger.com/static/v1/widgets/2134638198-widgets.js"></script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<script type='text/javascript'>
+if (typeof(BLOG_attachCsiOnload) != 'undefined' && BLOG_attachCsiOnload != null) { window['blogger_templates_experiment_id'] = "templatesV2";window['blogger_blog_id'] = '3971202189709462152';BLOG_attachCsiOnload('item_'); }_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d3971202189709462152','//morepypy.blogspot.com/2009/10/gc-improvements.html','3971202189709462152');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '3971202189709462152', 'bloggerUrl': 'http://www.blogger.com', 'title': 'PyPy Status Blog', 'pageType': 'item', 'url': 'http://morepypy.blogspot.com/2009/10/gc-improvements.html', 'canonicalUrl': 'http://morepypy.blogspot.com/2009/10/gc-improvements.html', 'canonicalHomepageUrl': 'http://morepypy.blogspot.com/', 'homepageUrl': 'http://morepypy.blogspot.com/', 'blogspotFaviconUrl': 'http://morepypy.blogspot.com/favicon.ico', 'enabledCommentProfileImages': true, 'adultContent': false, 'disableAdSenseWidget': false, 'analyticsAccountNumber': '', 'searchLabel': '', 'searchQuery': '', 'pageName': 'GC improvements', 'pageTitle': 'PyPy Status Blog: GC improvements', 'encoding': 'UTF-8', 'locale': 'en-US', 'localeLanguage': 'en', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'languageDirection': 'ltr', 'feedLinks': '\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42PyPy Status Blog - Atom\42 href\75\42http://morepypy.blogspot.com/feeds/posts/default\42 /\76\n\74link rel\75\42alternate\42 type\75\42application/rss+xml\42 title\75\42PyPy Status Blog - RSS\42 href\75\42http://morepypy.blogspot.com/feeds/posts/default?alt\75rss\42 /\76\n\74link rel\75\42service.post\42 type\75\42application/atom+xml\42 title\75\42PyPy Status Blog - Atom\42 href\75\42http://www.blogger.com/feeds/3971202189709462152/posts/default\42 /\76\n\74link rel\75\42EditURI\42 type\75\42application/rsd+xml\42 title\75\42RSD\42 href\75\42http://www.blogger.com/rsd.g?blogID\0753971202189709462152\42 /\76\n\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42PyPy Status Blog - Atom\42 href\75\42http://morepypy.blogspot.com/feeds/6174120095428192954/comments/default\42 /\76\n', 'meTag': '', 'openIdOpTag': '', 'imageSrcTag': '', 'latencyHeadScript': '\74script type\75\42text/javascript\42\76(function() { var a\75window,b\75\42jstiming\42,d\75\42tick\42;var e\75function(c){this.t\75{};this.tick\75function(c,p,h){h\75void 0!\75h?h:(new Date).getTime();this.t[c]\75[h,p]};this[d](\42start\42,null,c)},f\75new e;a.jstiming\75{Timer:e,load:f};if(a.performance\46\46a.performance.timing){var g\75a.performance.timing,j\75a[b].load,k\75g.navigationStart,l\75g.responseStart;0\74k\46\46l\76\75k\46\46(j[d](\42_wtsrt\42,void 0,k),j[d](\42wtsrt_\42,\42_wtsrt\42,l),j[d](\42tbsd_\42,\42wtsrt_\42))}\ntry{var m\75null;a.chrome\46\46a.chrome.csi\46\46(m\75Math.floor(a.chrome.csi().pageT),j\46\0460\74k\46\46(j[d](\42_tbnd\42,void 0,a.chrome.csi().startE),j[d](\42tbnd_\42,\42_tbnd\42,k)));null\75\75m\46\46a.gtbExternal\46\46(m\75a.gtbExternal.pageT());null\75\75m\46\46a.external\46\46(m\75a.external.pageT,j\46\0460\74k\46\46(j[d](\42_tbnd\42,void 0,a.external.startE),j[d](\42tbnd_\42,\42_tbnd\42,k)));m\46\46(a[b].pt\75m)}catch(n){};a.tickAboveFold\75function(c){var i\0750;if(c.offsetParent){do i+\75c.offsetTop;while(c\75c.offsetParent)}c\75i;750\76\75c\46\46a[b].load[d](\42aft\42)};var q\75!1;function r(){q||(q\75!0,a[b].load[d](\42firstScrollTime\42))}a.addEventListener?a.addEventListener(\42scroll\42,r,!1):a.attachEvent(\42onscroll\42,r);\n })();\74/script\076', 'mobileHeadScript': '', 'ieCssRetrofitLinks': '\74!--[if IE]\76\74script type\75\42text/javascript\42 src\75\42//www.blogger.com/static/v1/jsbin/1029386593-ieretrofit.js\42\76\74/script\76\n\74![endif]--\076', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/415c4782c5b3e5f8', 'plusOneApiSrc': 'https://apis.google.com/js/plusone.js'}}, {'name': 'skin', 'data': {'vars': {'content_padding': '10px', 'paging_background': 'transparent none no-repeat scroll top center', 'image_border_small_size': '2px', 'body_background_gradient_cap': 'url(http://www.blogblog.com/1kt/simple/gradients_light.png)', 'tabs_selected_background_color': '#eeeeee', 'body_rule_color': '#eeeeee', 'header_shadow_spread': '1px', 'header_shadow_offset_left': '-1px', 'header_padding': '30px', 'link_visited_color': '#888888', 'post_title_font': 'normal normal 22px Arial, Tahoma, Helvetica, FreeSans, sans-serif', 'tabs_text_color': '#999999', 'date_header_margin': 'inherit', 'header_background_gradient': 'none', 'content_shadow_spread_webkit': '5px', 'header_bottom_border_size': '1px', 'header_shadow_offset_top': '-1px', 'widget_title_font': 'normal bold 11px Arial, Tahoma, Helvetica, FreeSans, sans-serif', 'main_section_margin': '0px', 'keycolor': '#66bbdd', 'content_shadow_spread': '40px', 'image_background_color': '#ffffff', 'header_font': 'normal normal 60px Arial, Tahoma, Helvetica, FreeSans, sans-serif', 'header_background_color': 'transparent', 'main_border_width': '0', 'main_padding': '15px', 'tabs_border_color': '#eeeeee', 'image_text_color': '#222222', 'description_text_size': '140%', 'post_footer_background_color': '#f9f9f9', 'body_background_gradient_tile': 'url(http://www.blogblog.com/1kt/simple/body_gradient_tile_light.png)', 'page_width': 'auto', 'tabs_background_gradient': 'url(http://www.blogblog.com/1kt/simple/gradients_light.png)', 'main_padding_bottom': '30px', 'tabs_background_color': '#f5f5f5', 'image_border_large_size': '5px', 'post_margin_bottom': '25px', 'body_background_override': '', 'tabs_margin_side': '30px', 'link_hover_color': '#33aaff', 'description_text_color': '#777777', 'body_text_color': '#222222', 'content_padding_horizontal': '10px', 'endSide': 'right', 'page_width_selector': '.region-inner', 'date_header_padding': 'inherit', 'post_footer_text_color': '#666666', 'startSide': 'left', 'date_header_color': '#222222', 'tabs_font': 'normal normal 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif', 'post_footer_border_color': '#eeeeee', 'body_font': 'normal normal 12px Arial, Tahoma, Helvetica, FreeSans, sans-serif', 'footer_bevel': '0', 'tabs_bevel_border_width': '1px', 'date_header_background_color': 'transparent', 'content_shadow_spread_ie': '10px', 'widget_title_text_color': '#000000', 'header_border_horizontalsize': '0', 'image_border_color': '#eeeeee', 'tabs_border_width': '1px', 'content_background_color': '#ffffff', 'link_color': '#2288bb', 'header_text_color': '#3399bb', 'date_header_letterspacing': 'inherit', 'tabs_margin_top': '0', 'main_padding_top': '30px', 'header_border_size': '1px', 'tabs_selected_text_color': '#000000', 'content_background_color_selector': '.content-inner', 'body_background_color': '#66bbdd', 'widget_alternate_text_color': '#999999'}, 'override': ''}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '/?view\75classic'}, 'flipcard': {'name': 'flipcard', 'url': '/?view\75flipcard'}, 'magazine': {'name': 'magazine', 'url': '/?view\75magazine'}, 'mosaic': {'name': 'mosaic', 'url': '/?view\75mosaic'}, 'sidebar': {'name': 'sidebar', 'url': '/?view\75sidebar'}, 'snapshot': {'name': 'snapshot', 'url': '/?view\75snapshot'}, 'timeslide': {'name': 'timeslide', 'url': '/?view\75timeslide'}}}]);
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'header', null, document.getElementById('Header1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_AttributionView', new _WidgetInfo('Attribution1', 'footer-3', null, document.getElementById('Attribution1'), {'attribution': 'Powered by \74a href\75\47http://www.blogger.com\47 target\75\47_blank\47\76Blogger\74/a\76.'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main', null, document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'showBacklinks': true, 'postId': '6174120095428192954', 'lightboxEnabled': true, 'lightboxModuleUrl': '//www.blogger.com/static/v1/jsbin/2258955905-lbx.js', 'lightboxCssUrl': '//www.blogger.com/static/v1/v-css/228702327-lightbox_bundle.css'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LinkListView', new _WidgetInfo('LinkList1', 'sidebar-left-1', null, document.getElementById('LinkList1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML2', 'sidebar-left-1', null, document.getElementById('HTML2'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogArchiveView', new _WidgetInfo('BlogArchive1', 'sidebar-left-1', null, document.getElementById('BlogArchive1'), {'languageDirection': 'ltr'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_ProfileView', new _WidgetInfo('Profile1', 'sidebar-left-1', null, document.getElementById('Profile1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML1', 'sidebar-left-1', null, document.getElementById('HTML1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML3', 'sidebar-left-1', null, document.getElementById('HTML3'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML4', 'sidebar-left-1', null, document.getElementById('HTML4'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_NavbarView', new _WidgetInfo('Navbar1', 'navbar', null, document.getElementById('Navbar1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PageListView', new _WidgetInfo('PageList1', 'null', null, document.getElementById('PageList1'), {'title': 'Pages', 'links': [{'href': 'http://morepypy.blogspot.com/', 'title': 'Home', 'isCurrentPage': false}, {'href': 'http://morepypy.blogspot.com/p/temp.html', 'title': '***Preview***', 'isCurrentPage': false}], 'mobile': false}, 'displayModeFull'));
+</script>
+</body>
+</html>

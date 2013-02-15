@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>200UpgradeNotesDraft - Ruby - Ruby Issue Tracking System</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="SsGymDhTdYXdqOW48eVrfOCMkYr+9hA+dPD6qxrcwv4="/>
+<link rel='shortcut icon' href='/favicon.ico?1342147382' />
+<link href="/themes/ruby-lang/stylesheets/application.css?1342147382" media="all" rel="stylesheet" type="text/css" />
+
+<script src="/javascripts/prototype.js?1342147382" type="text/javascript"></script>
+<script src="/javascripts/effects.js?1342147382" type="text/javascript"></script>
+<script src="/javascripts/dragdrop.js?1342147382" type="text/javascript"></script>
+<script src="/javascripts/controls.js?1342147382" type="text/javascript"></script>
+<script src="/javascripts/application.js?1342147382" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+<!--[if IE 6]>
+    <style type="text/css">
+      * html body{ width: expression( document.documentElement.clientWidth < 900 ? '900px' : '100%' ); }
+      body {behavior: url(/stylesheets/csshover.htc?1342147382);}
+    </style>
+<![endif]-->
+<link href="/plugin_assets/redmine_mailing_list_integration/stylesheets/mailing_list_integration.css?1349261129" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+
+  <link href="/stylesheets/scm.css?1342147382" media="screen" rel="stylesheet" type="text/css" />
+  <link href="http://bugs.ruby-lang.org/projects/activity?format=atom&amp;project_id=ruby&amp;show_wiki_pages=1" rel="alternate" title="ATOM" type="application/atom+xml" />
+</head>
+<body class="theme-Ruby-lang controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li>
+<li><a href="/account/register" class="register">Register</a></li></ul>    </div>
+    
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
+<div id="header">
+    
+    <div id="quick-search">
+        <form action="/search/index/ruby" method="get">
+        <input name="wiki_pages" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/search/index/ruby" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+        </form>
+        
+    </div>
+    
+
+    <h1>Ruby</h1>
+
+    
+    <div id="main-menu">
+        <ul><li><a href="/projects/ruby" class="overview">Overview</a></li>
+<li><a href="/projects/ruby/activity" class="activity">Activity</a></li>
+<li><a href="/projects/ruby/issues/gantt" class="gantt">Gantt</a></li>
+<li><a href="/projects/ruby/issues/calendar" class="calendar">Calendar</a></li>
+<li><a href="/projects/ruby/wiki" class="wiki selected">Wiki</a></li></ul>
+    </div>
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+  
+<h3>Wiki</h3>
+
+<a href="/projects/ruby/wiki">Start page</a><br />
+<a href="/projects/ruby/wiki/index">Index by title</a><br />
+<a href="/projects/ruby/wiki/date_index">Index by date</a><br />
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+<span class="wiki_page-145-watcher"></span>
+
+
+
+
+
+
+<a href="/projects/ruby/wiki/200UpgradeNotesDraft/history" class="icon icon-history">History</a>
+</div>
+
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="200-Upgrade-Notes-Draft"></a>
+<h1 ><a name="label-0" id="label-0">2.0.0 Upgrade Notes (Draft)</a><a href="#200-Upgrade-Notes-Draft" class="wiki-anchor">&para;</a></h1><!-- RDLabel: "2.0.0 Upgrade Notes (Draft)" --><a name="The-standard-YAML-library-is-replaced"></a>
+<h2 ><a name="label-1" id="label-1">The standard YAML library is replaced</a><a href="#The-standard-YAML-library-is-replaced" class="wiki-anchor">&para;</a></h2><!-- RDLabel: "The standard YAML library is replaced" --><p>The traditional YAML library Syck was deleted, and Psych is bundled instead.
+Psych provides an almost-compatible APIs with Syck.  Almost all existing programs will work without modification.</p><a name="Pros"></a>
+<h3 ><a name="label-2" id="label-2">Pros</a><a href="#Pros" class="wiki-anchor">&para;</a></h3><!-- RDLabel: "Pros" --><ul>
+<li>YAML 1.1 compliant</li>
+<li>You will not suffer many bugs of Syck</li>
+</ul><a name="Cons"></a>
+<h3 ><a name="label-3" id="label-3">Cons</a><a href="#Cons" class="wiki-anchor">&para;</a></h3><!-- RDLabel: "Cons" --><ul>
+<li>Psych depends on libyaml</li>
+<li>Some existing programs that depends on the wrong behavior of Syck will not work</li>
+</ul><a name="Typical-probrem-1-dependency-on-libyaml"></a>
+<h3 ><a name="label-4" id="label-4">Typical probrem (1): dependency on libyaml</a><a href="#Typical-probrem-1-dependency-on-libyaml" class="wiki-anchor">&para;</a></h3><!-- RDLabel: "Typical probrem (1): dependency on libyaml" --><p>If libyaml is not installed properly, you cannot compile Psych; no YAML library is available by default.
+You will see the following message in the build log:</p><pre>configuring psych
+yaml.h is missing. Please install libyaml.
+Failed to configure psych. It will not be installed.</pre><p>More concretely, you cannot invoke <kbd>gem</kbd> command:</p><pre>$ gem
+.../lib/ruby/2.0.0/yaml.rb:6:in `&lt;top (required)&gt;':
+It seems your ruby installation is missing psych (for YAML output).
+To eliminate this warning, please install libyaml and reinstall your ruby.
+.../custom_require.rb:36:in `require': cannot load such file -- psych (LoadError)</pre><p>To address this issue, you should install libyaml first:</p><pre>$ wget http://pyyaml.org/download/libyaml/yaml-0.1.4.tar.gz
+$ tar -zxvf yaml-0.1.4.tar.gz
+$ cd yaml-0.1.4
+$ ./configure
+$ make
+$ sudo make install</pre><p>It will be installed in <kbd>/usr/local</kbd> by default.  If you have no root privilege, you may want to specify <kbd>--prefix</kbd> option to <kbd>./configure</kbd>:</p><pre>$ ./configure --prefix=$HOME/local
+$ make
+$ make install</pre><p>After that, <em>you should re-expand a Ruby package</em> and then rebuild it.  It will make no sense if you just type "make" again in the directory built once.
+If you gave --prefix for libyaml, you should give <kbd>--with-libyaml-dir</kbd> option to Ruby's configure.</p><pre>$ ./configure --with-libyaml-dir=$HOME/local
+$ make
+$ make install</pre><p>Consider the fragment of YAML "123_456".  Syck wrongly read it as a String "123_456".  But the YAML spec requires to handle it as an integer 123456, and Psych complies with the spec.</p><pre>p Syck.load("123_456") #=&gt; "123_456"
+p YAML.load("123_456") #=&gt; 123456</pre><p>There was a bug of an array handling in syck.</p><pre>p Syck.load("[0,1,2]") #=&gt; "10"
+p YAML.load("[0,1,2]") #=&gt; [0,1,2]</pre><p>The fixes of this kind of bugs may affect some existing programs that handles legacy YAML documents.
+Note that Syck does not emit YAML like "123_456" and "[0,1,2]" by default.  Therefore, We are expecting that Psych will successfully load (almost) all YAML documents generated by Syck.  You may be in trouble if you want to load YAML documents generated by other tools, or written in hand.</p><a name="標準添付-YAML-ライブラリの変更"></a>
+<h2 ><a name="label-5" id="label-5">標準添付 YAML ライブラリの変更</a><a href="#標準添付-YAML-ライブラリの変更" class="wiki-anchor">&para;</a></h2><!-- RDLabel: "標準添付 YAML ライブラリの変更" --><p>従来の YAML ライブラリ syck が削除され、代わりに psych に置き換わりました。
+psych は syck とほぼ互換の API を提供しているので、既存のコードのほとんどはそのまま動作するはずです。</p><a name="メリット"></a>
+<h3 ><a name="label-6" id="label-6">メリット</a><a href="#メリット" class="wiki-anchor">&para;</a></h3><!-- RDLabel: "メリット" --><ul>
+<li>YAML 1.1 準拠</li>
+<li>syck のバグに悩まされなくて済む</li>
+</ul><a name="デメリット"></a>
+<h3 ><a name="label-7" id="label-7">デメリット</a><a href="#デメリット" class="wiki-anchor">&para;</a></h3><!-- RDLabel: "デメリット" --><ul>
+<li>libyaml が必須となる</li>
+<li>syck のバグに依存していた既存コードの挙動が変わる</li>
+</ul><a name="典型的な問題ケース-1-libyaml-依存性"></a>
+<h3 ><a name="label-8" id="label-8">典型的な問題ケース (1): libyaml 依存性</a><a href="#典型的な問題ケース-1-libyaml-依存性" class="wiki-anchor">&para;</a></h3><!-- RDLabel: "典型的な問題ケース (1): libyaml 依存性" --><p>libyaml が適切にインストールされていないと、psych がビルドされず、yaml ライブラリを使うことができません。
+ビルド時に以下のようなメッセージが出ます。</p><pre>configuring psych
+yaml.h is missing. Please install libyaml.
+Failed to configure psych. It will not be installed.</pre><p>より具体的な影響としては、<kbd>gem</kbd> コマンドを起動できません。</p><pre>$ gem
+.../lib/ruby/2.0.0/yaml.rb:6:in `&lt;top (required)&gt;':
+It seems your ruby installation is missing psych (for YAML output).
+To eliminate this warning, please install libyaml and reinstall your ruby.
+.../custom_require.rb:36:in `require': cannot load such file -- psych (LoadError)</pre><p>対策としては、まず libyaml をインストールしてください。</p><pre>$ wget http://pyyaml.org/download/libyaml/yaml-0.1.4.tar.gz
+$ tar -zxvf yaml-0.1.4.tar.gz
+$ cd yaml-0.1.4
+$ ./configure
+$ make
+$ sudo make install</pre><p>デフォルトで <kbd>/usr/local</kbd> にインストールされます。root 権限がない場合は <kbd>./configure</kbd> に <kbd>--prefix</kbd> を指定してください。</p><pre>$ ./configure --prefix=$HOME/local
+$ make
+$ make install</pre><p>その後、<em>Ruby のパッケージを新たに展開して</em>再ビルドしてください。一度 make したディレクトリで再度 make しても無効です。
+libyaml のビルドで --prefix を指定した場合は、同じディレクトリを Ruby の configure に <kbd>--with-libyaml-dir</kbd> オプションで指定してください。</p><pre>$ ./configure --with-libyaml-dir=$HOME/local
+$ make
+$ make install</pre><a name="典型的な問題ケース-2-Syck-のバグに依存"></a>
+<h3 ><a name="label-9" id="label-9">典型的な問題ケース (2): Syck のバグに依存</a><a href="#典型的な問題ケース-2-Syck-のバグに依存" class="wiki-anchor">&para;</a></h3><!-- RDLabel: "典型的な問題ケース (2): Syck のバグに依存" --><p>Syck は "123_456" という YAML を文字列 "123_456" と解釈していました。しかし YAML の仕様上は整数 123456 になるべきで、Psych は整数として解釈します。</p><pre>p Syck.load("123_456") #=&gt; "123_456"
+p YAML.load("123_456") #=&gt; 123456</pre><p>Syck には配列の扱いにも不具合がありました。</p><pre>p Syck.load("[0,1,2]") #=&gt; "10"
+p YAML.load("[0,1,2]") #=&gt; [0,1,2]</pre><p>以上のような挙動の変更により、レガシーな YAML ドキュメントを扱うコードに影響が出る可能性があります。
+ただし、Syck はデフォルトでは 123_456 や [0,1,2] のような YAML を出力しないので、 Syck を用いて生成した YAML は Psych で問題なくロードできるはずです。
+他のツールで生成した YAML ドキュメントや手で書いた YAML ドキュメントの扱いに問題が出る可能性があります。</p><a name="A-script-encoding-is-now-UTF-8-by-default"></a>
+<h2 ><a name="label-10" id="label-10">A script encoding is now UTF-8 by default</a><a href="#A-script-encoding-is-now-UTF-8-by-default" class="wiki-anchor">&para;</a></h2><!-- RDLabel: "A script encoding is now UTF-8 by default" --><p>The default script encoding was changed from US-ASCII to UTF-8.</p><a name="Pros-2"></a>
+<h3 ><a name="label-11" id="label-11">Pros</a><a href="#Pros-2" class="wiki-anchor">&para;</a></h3><!-- RDLabel: "Pros" --><ul>
+<li>You can write UTF-8 string literal with no magic comment.</li>
+</ul><a name="Cons-2"></a>
+<h3 ><a name="label-12" id="label-12">Cons</a><a href="#Cons-2" class="wiki-anchor">&para;</a></h3><!-- RDLabel: "Cons" --><ul>
+<li>A string literal that contains such as "\xff", called "binary string literal", now yields (invalid) UTF-8 string object rather than ASCII-8BIT one.</li>
+</ul><a name="Typical-case"></a>
+<h3 ><a name="label-13" id="label-13">Typical case</a><a href="#Typical-case" class="wiki-anchor">&para;</a></h3><!-- RDLabel: "Typical case" --><p>For example, when you attempt to concatenate a ASCII-8BIT string (e.g, the result of File.binread) and a binary string literal, you may encounter an exception:</p><pre>p File.binread("binfile") + "\xff"
+  #=&gt; 1.9: "\xFF\xFF"
+  #=&gt; 2.0: incompatible character encodings: ASCII-8BIT and UTF-8 (Encoding::CompatibilityError)</pre><a name="When-to-encounter-the-problem"></a>
+<h3 ><a name="label-14" id="label-14">When to encounter the problem</a><a href="#When-to-encounter-the-problem" class="wiki-anchor">&para;</a></h3><!-- RDLabel: "When to encounter the problem" --><p>You may encounter such an exception when you are loading a script that satisfies the following two conditions:</p><pre>- it omits a magic comment, and
+- it uses a binary string literal.</pre><p>Note that you will not always see the exception; if an either string is compatible to US-ASCII (i.e., contains only ASCII code 0--127), it will be implicitly converted to the same encoding as the other string.
+If you are using a third-parties' libraries (gem) that satisfy the two conditions, you need to ask the author to fix and update it.</p><a name="How-to-fix"></a>
+<h3 ><a name="label-15" id="label-15">How to fix</a><a href="#How-to-fix" class="wiki-anchor">&para;</a></h3><!-- RDLabel: "How to fix" --><p>As a workaround that makes it 1.9-compatible, please set the encoding to US-ASCII by explicitly add a magic comment to the script in question.</p><pre># coding: US-ASCII</pre><p>If you want to use both non-US-ASCII string literal and binary one at a time, please use String#b method for the latter.</p><pre>"\xff\xff".b #=&gt; "\xFF\xFF"</pre><p>Note that a magic comment is also mandatory when you use non-US-ASCII string literal (as 1.9 does).</p><a name="スクリプトエンコーディングがデフォルトで-UTF-8-に"></a>
+<h2 ><a name="label-16" id="label-16">スクリプトエンコーディングがデフォルトで UTF-8 に</a><a href="#スクリプトエンコーディングがデフォルトで-UTF-8-に" class="wiki-anchor">&para;</a></h2><!-- RDLabel: "スクリプトエンコーディングがデフォルトで UTF-8 に" --><p>デフォルトのスクリプトエンコーディングが US-ASCII から UTF-8 に変更されました。</p><a name="メリット-2"></a>
+<h3 ><a name="label-17" id="label-17">メリット</a><a href="#メリット-2" class="wiki-anchor">&para;</a></h3><!-- RDLabel: "メリット" --><ul>
+<li>マジックコメント無しで UTF-8 文字列リテラルが使えます。</li>
+</ul><a name="デメリット-2"></a>
+<h3 ><a name="label-18" id="label-18">デメリット</a><a href="#デメリット-2" class="wiki-anchor">&para;</a></h3><!-- RDLabel: "デメリット" --><ul>
+<li>"\xff" などを含む文字列リテラル (バイナリ文字列リテラルと呼びます) が、ASCII-8BIT ではなく、(不正な) UTF-8 文字列オブジェクトを生成します。</li>
+</ul><a name="典型的な問題"></a>
+<h3 ><a name="label-19" id="label-19">典型的な問題</a><a href="#典型的な問題" class="wiki-anchor">&para;</a></h3><!-- RDLabel: "典型的な問題" --><p>例えば、ASCII-8BIT 文字列 (File.binread の返り値など) とバイナリ文字列リテラルを結合しようとすると、例外が発生します。</p><pre>p File.binread("binfile") + "\xff"
+  #=&gt; 1.9: "\xFF\xFF"
+  #=&gt; 2.0: incompatible character encodings: ASCII-8BIT and UTF-8 (Encoding::CompatibilityError)</pre><a name="発生条件"></a>
+<h3 ><a name="label-20" id="label-20">発生条件</a><a href="#発生条件" class="wiki-anchor">&para;</a></h3><!-- RDLabel: "発生条件" --><p>以下の 2 条件を満たすスクリプトをロードすると、例外が発生することがあります。</p><pre>- マジックコメントを省略している
+- バイナリ文字列を使用している</pre><p>常に例外が起きるわけではないことに注意してください。いずれかの文字列が US-ASCII 互換な場合 (ASCII コードで 0 から 127 の文字しか含んでいない場合) 、もう片方の文字列のエンコーディングに自動的に変換されます。
+この 2 条件を満たすサードパーティのライブラリ (gem) を使用している場合は、その作者に連絡して修正してもらう必要があります。</p><a name="修正方法"></a>
+<h3 ><a name="label-21" id="label-21">修正方法</a><a href="#修正方法" class="wiki-anchor">&para;</a></h3><!-- RDLabel: "修正方法" --><p>差し当たり 1.9 互換にするには、問題のスクリプトにマジックコメントを追加して US-ASCII を明示してください。</p><pre># coding: US-ASCII</pre><p>非 US-ASCII 文字列リテラルとバイナリ文字列リテラルを同時に扱いたい場合は、バイナリ文字列リテラルに対して String#b メソッドを使用してください。</p><pre>"\xff\xff".b #=&gt; "\xFF\xFF"</pre><p>非 US-ASCII 文字列リテラルを使用する場合は、マジックコメントが必須であることに注意してください (1.9 と同様) 。</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="http://www.redmine.org/">Redmine</a> &copy; 2006-2012 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

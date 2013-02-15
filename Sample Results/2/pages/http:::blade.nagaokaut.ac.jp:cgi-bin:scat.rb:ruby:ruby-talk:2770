@@ -1,0 +1,88 @@
+<HTML><HEAD><TITLE>[ruby-talk:02770] </TITLE>
+<script language="javascript">
+<!--
+  function chk() {
+    var name = navigator.appName;
+    var ver = navigator.appVersion;
+    if (name.charAt(0) == "M") {
+      if (ver.charAt(0) >= 5 ||
+        ver.indexOf(" 5.5") >= 0 ||
+        ver.indexOf(" 6") >= 0
+         )
+        return(true);
+      return(false);
+    } else if (name.charAt(0) == "N") {
+      if (ver.charAt(0) >= 5)
+        return(true);
+      return(false);
+    } else {
+      return(false);
+    }
+  }
+
+  function hilight(x) {
+    if (!chk()) return;
+    if (parent) {
+      try {
+        parent.frames[0].hilight(x);
+      } catch(e) {
+       //alert(e);
+      }
+    }
+  }
+
+  //Navigation Bar
+  var IE = document.all;
+  var PosTimer;
+  function stickNavi() {
+    var y = document.body.scrollTop;
+    var s = document.getElementById('navi').style
+    s.top = y + 7;
+    s.left = 8;
+  }
+  function stickNaviLoop() {
+    if (PosTimer){clearTimeout(PosTimer);}
+    stickNavi();
+    PosTimer = setTimeout("stickNaviLoop()", 10);
+  }
+
+  function setNavi() {
+    if (IE) {document.body.onscroll = stickNavi;}
+    else {stickNaviLoop();}
+  }
+
+//-->
+</script>
+<link rel="stylesheet" href="http://blade.nagaokaut.ac.jp/css/blade-old.css" type="text/css" title="blade"></HEAD><BODY onLoad="setNavi()">
+<A NAME=head></A><div id="navi" style="position:absolute;top:7px;left:8px;"><A HREF="2769" class="a-button" onclick="hilight(2769)"><span id="normal" title="&lt;">&nbsp;&lt;&nbsp;</span></A><A HREF="/ruby/ruby-talk/2601-2800.shtml#2770" class="a-button" target="_top"><span id="normal" title="^">^</span></A><A HREF="2771" class="a-button" onclick="hilight(2771)"><span id="normal" title="&gt;">&nbsp;&gt;&nbsp;</span></A> <a href="2786" onclick="hilight(2786)" class="a-button"><span id="red" title="[previous]">&nbsp;P&nbsp;</span></a><a href="2774" onclick="hilight(2774)" class="a-button"><span id="green" title="[next]">&nbsp;N&nbsp;</span></a> <a href="2764" onclick="hilight(2764)" class="a-button"><span id="red" title="[previous thread]">|&lt;</span></a><a href="2782" onclick="hilight(2782)" class="a-button"><span id="red" title="[next thread]">&gt;|</span></a><span id="normal" title="[parent]">^</span><a href="2774" onclick="hilight(2774)" class="a-button"><span id="normal" title="[child]">_</span></a><span id="normal" title="[elder]">&gt;</span><span id="normal" title="[younger]">&lt;</span> <a href="/cgi-bin/vframe.rb/ruby/ruby-talk/2770?2625-2873" target="_top" class="a-button"><span id="normal" title="[thread frame]">---</span></a><a href="/cgi-bin/vframe.rb/ruby/ruby-talk/2770?2625-2873+split-mode-vertical" target="_top" class="a-button"><span id="normal" title="[thread frame vertical]">&nbsp;|&nbsp;</span></a><a href="2770" target="_top" onclick="hilight(2770)" class="a-button"><span id="normal" title="[frame close]">&nbsp;~&nbsp;</span></a><a href="/ruby/ruby-talk/index.shtml" target="_top" class="a-button"><span id="normal" title="[index]">.</span></a><a href="/ruby/ruby-talk/../index.shtml" target="_top" class="a-button"><span id="normal" title="[iindex]">..</span></a><a href="/cgi-bin/scat.rb/ruby/ruby-talk/2770?help-en" class="a-button"><span id="normal" title="[Help]">Help</span></a></div>
+<div id="header"><br>
+Subject: <strong></strong><strong>[ruby-talk:02770] </strong><br>
+From: <strong>Andrew Hunt </strong>&lt;Andy Toolshed.Com&gt;<br>
+Date: Thu, 11 May 2000 23:43:41 -0400</div>
+<pre>
+
+Hi,
+
+I'm trying to install mod_ruby 0.17 with the latest Ruby from CVS,
+and I'm running into a spot of trouble.
+
+Using the Makefile produced by Makefile.rb, the module fails to load --
+it complains that:
+
+Cannot load /toolshed/local/libexec/mod_ruby.so into server: 
+/toolshed/local/libexec/mod_ruby.so: undefined symbol: rb_io_close
+/toolshed/local/bin/apachectl start: httpd could not be started
+
+And indeed, there's nothing in the Makefile that indicates Ruby should 
+be linked in.  So I thought I'd be daring and add libruby.a into the 
+shared obejct link.
+
+It comes up, but then SEGVs.
+
+Any hints?
+
+Thanks,
+
+/\ndy
+<a name=tail></a></pre>
+</BODY></HTML>

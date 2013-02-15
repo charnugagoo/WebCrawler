@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<!--[if IE 7 | IE 8]>
+<html class="ie" lang="en-US" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:addthis="http://www.addthis.com/help/api-spec" >
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:addthis="http://www.addthis.com/help/api-spec"   class="no-js">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="initial-scale=1.0 ,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Riak Control | Basho</title>
+<!--this conditional was written to call some meta content for home because SEO pack wasn't doing so well. Can add in functionality for other pages with else statements-->
+<meta name="description" content="
+">
+<!--end meta function-->
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="pingback" href="http://basho.com/xmlrpc.php" />
+<!--[if lt IE 9]>
+<script src="http://basho.com/wp-content/themes/twentytwelve/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+<!-- javascript -->
+     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+    
+     <script type='text/javascript'>
+     jQuery(function($){
+        $(".tweet").tweet({
+          join_text: "auto",
+          username: "basho",
+          avatar_size: 48,
+          count: 1,
+          auto_join_text_default: "",
+          auto_join_text_ed: "",
+          auto_join_text_ing: "",
+          auto_join_text_reply: "",
+          auto_join_text_url: " ",
+          loading_text: ""
+        });
+      });
+	  </script> 
+      
+      
+<link rel="shortcut icon" href="http://basho.com/wp-content/themes/basho-theme/images/favicon.ico"/>
+
+<link rel="alternate" type="application/rss+xml" title="Basho &raquo; Feed" href="http://basho.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Basho &raquo; Comments Feed" href="http://basho.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Basho &raquo; Riak Control Comments Feed" href="http://basho.com/riak-control/feed/" />
+<link rel='stylesheet' id='contact-form-7-css'  href='http://basho.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=3.3.3' type='text/css' media='all' />
+<link rel='stylesheet' id='twentytwelve-fonts-css'  href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&#038;subset=latin,latin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='twentytwelve-style-css'  href='http://basho.com/wp-content/themes/basho-theme/style.css?ver=3.5' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentytwelve-ie-css'  href='http://basho.com/wp-content/themes/twentytwelve/css/ie.css?ver=20121010' type='text/css' media='all' />
+<![endif]-->
+<script type='text/javascript' src='http://basho.com/wp-content/themes/basho-theme/js/jquery.tweet.js?ver=3.5'></script>
+<script type='text/javascript' src='http://basho.com/wp-content/themes/basho-theme/js/modernizr.js?ver=3.5'></script>
+<script type='text/javascript' src='http://basho.com/wp-includes/js/jquery/jquery.js?ver=1.8.3'></script>
+<script type='text/javascript' src='http://basho.com/wp-content/plugins/anti-spam/js/anti-spam.js?ver=1.2'></script>
+<script type='text/javascript' src='http://basho.com/wp-includes/js/comment-reply.min.js?ver=3.5'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://basho.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://basho.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Basho is a Proud Sponsor of Travis CI' href='http://basho.com/basho-is-a-proud-sponsor-of-travis-ci/' />
+<link rel='next' title='How Eventual is Eventual Consistency?' href='http://basho.com/how-eventual-is-eventual-consistency/' />
+<meta name="generator" content="WordPress 3.5" />
+<link rel='shortlink' href='http://wp.me/p39wUr-5d' />
+
+<!-- All in One SEO Pack 1.6.15.3 by Michael Torbert of Semper Fi Web Design[-1,-1] -->
+<meta name="description" content="Riak Control is Basho's new OSS, REST-driven, user-interface for their NoSQL database 'Riak'. You can find more information on setting up RIak Control on the Basho Wiki." />
+<meta name="keywords" content="basho,cluster management,riak,riak control,blog,community,open source" />
+<link rel="canonical" href="http://basho.com/riak-control/" />
+<!-- /all in one seo pack -->
+		<script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-10051263-5']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>
+	<link rel="Shortcut Icon" type="image/x-icon" href="http://basho.com/images/favicon.ico" /></head>
+
+<body class="single single-post postid-323 single-format-standard custom-font-enabled">
+<a name="top" id="top"></a>
+
+<div id="outer-wrap">
+	<div id="inner-wrap">
+        	<div id="site-navigation" role="navigation">
+            	<div class="main-navigation">
+               		<h3 class="menu-toggle">Menu</h3>
+                		<a href="http://basho.com"><img class="basho-logo" src="http://basho.com/wp-content/themes/basho-theme/images/background/nav/basho-logo2.png"></a>
+                		<ul class="nav-links">
+                        	                             	<a href="http://basho.com/riak/"><li>Riak</li></a>
+                                  
+                                
+                                                          	 <a href="http://basho.com/riak-enterprise/"><li>Riak Enterprise</li></a>
+                                
+                            
+                             <a href="http://basho.com/riak-cloud-storage/"><li>Riak Cloud Storage</li></a>
+                             <a href="http://basho.com/riak-users/"><li>Users</li></a>
+                             <a href="http://basho.com/contact/"><li>Contact</li></a>
+                 		</ul><!--nav-links-->
+                		<form role="search" method="get" id="searchform" action="http://basho.com/" >
+	<div><label class="screen-reader-text" for="s">Search for:</label>
+	<input type="text" value="" name="s" id="s" />
+	<input type="submit" id="searchsubmit" value="Search" />
+	</div>
+	</form>                 </div><!--main-navigation-->
+           	</div><!-- #site-navigation -->
+        			
+            <div class="mobile-nav">
+                    <!--<div class="head">
+                          <div id="activator">
+                               <ul class="bars">
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                               </ul>
+                           </div>
+                     </div>-->
+                     <div id="top">
+                        <div class="block">
+                           
+                            <a class="nav-btn" id="nav-open-btn" href="#nav">
+                            <div class="head">
+                                  <div id="activator">
+                                       <ul class="bars">
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                       </ul>
+                                   </div>
+                             </div>
+                            </a>
+                            <img class="basho-logo-mobile" src="http://basho.com/wp-content/themes/basho-theme/images/background/nav/basho-logo.png">
+                        </div>
+                    </div>
+                    <div id="nav">
+        				<div class="block">
+                        <h2 class="block-title">Riak Control</h2>
+                        <ul>
+                            <li class="is-active"><a href="http://basho.com">Basho Home</a></li>
+                            <li><a href="http://basho.com/riak/">Riak</a></li>
+                            <li><a href="http://basho.com/riak-enterprise/">Riak Enterprise</a></li>
+                            <li><a href="http://basho.com/riak-cloud-storage/">Riak Cloud Storage</a></li>
+                            <li><a href="http://basho.com/riak-users/">Riak Users</a></li>
+                            <li><a href="http://basho.com/contact/">Contact</a></li>
+                            <li><a href="http://basho.com/company/">Company</a></li>
+                            <li><a href="http://basho.com/news/">News</a></li>
+                            <li><a href="http://basho.com/blog/">Blog</a></li>
+                            <li><a href="http://docs.basho.com/" target="_blank">Docs</a></li>
+                            <li><a href="http://basho.com/events/">Events</a></li>
+                            <li><a href="http://basho.co.jp/" target="_blank">Basho Japan</a></li>
+                        </ul>
+                        <a class="close-btn" id="nav-close-btn" href="#top">Return to Content</a>
+                        </div><!--block-->
+             		</div><!--nav-->
+             </div><!--mobile-nav-->
+             
+		<div class="page-contain">
+			 <div id="page" class="hfeed site">
+            
+       			 <header id="masthead" class="site-header" role="banner">
+            
+						                             <div class="header-img">
+                                <div class="entry-header">
+                                    <div class="single-e-title"> <p>Riak Control</p> </div>                 
+                                </div><!--entry-header-->
+                             </div><!--header-img-->
+                             
+            
+        			</header><!-- #masthead -->
+        
+				<div id="main" class="wrapper">
+	<div id="primary" class="site-content">
+		<div id="content" role="main">
+
+			            
+             			 
+				
+	<article id="post-323" class="post-323 post type-post status-publish format-standard hentry category-blog category-community category-open-source category-riak category-riak-control tag-basho tag-cluster-management tag-riak tag-riak-control">
+				<header class="entry-header">
+									
+										<div class="comments-link">
+					<a href="http://basho.com/riak-control/#respond" title="Comment on Riak Control"><span class="leave-reply">Leave a reply</span></a>				</div><!-- .comments-link -->
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p><em>February 22, 2012</em></p>
+<p>Riak Control is Basho&#8217;s new OSS, REST-driven, user-interface for Riak. The code has been available for a few months now, but it&#8217;s officially supported in <a href="http://lists.basho.com/pipermail/riak-users_lists.basho.com/2012-February/007573.html">Riak 1.1</a>, so we wanted share some details on what it&#8217;s about and why you should be excited about it.</p>
+<h3>Lowering the Barrier for Entry</h3>
+<p>Once a Riak cluster is up and running we want it to be as hands-free to administer as possible. Things should &#8220;just work,&#8221; like plumbing. But we&#8217;ll be the first to admit that a new user&#8217;s initial welcoming with Riak isn&#8217;t always as pleasant as it should be.</p>
+<p>Some steps are unavoidable: downloading, installing, and/or building from source, etc. But once the initial work is done, the experience should be as inviting as possible. Riak is a very powerful database with numerous options and commands. <strong>Riak Control</strong> allows you to easily manage/inspect your cluster while ignoring many of these until needed.</p>
+<h3>Empowering Riak Administrators</h3>
+<p>When we first sat down to decide what the more important features for any Riak interface should be, one theme stood out above all the others: cluster management. We wanted to give developers and administrators the ability to quickly build a cluster, inspect nodes, and diagnose the health of their cluster. And we wanted it to happen <strong>fast</strong>.</p>
+<p>Riak is about large datasets and clusters replicating that dataset for maximum availability and persistence. We&#8217;re working hard to help companies that write many, many GBs per day to clusters containing 50+ nodes. Riak Control is a tool that brings issues and risks front-and-center. And it gives customers the ability to take action in real-time.</p>
+<h2>The Two-Minute Tour</h2>
+<p>Riak Control is currently broken up into nested levels of detail. Each page in Riak Control is designed to give you just as much information as you need, nothing more. As you navigate the UI, you&#8217;ll gradually be taken deeper into the rabbit hole.</p>
+<h3>The Overview/Snapshot</h3>
+<p><img alt="Snapshot" src="http://basho.com/wp-content/uploads/2012/02/control_snapshot.png" /></p>
+<p>The Snapshot is what you&#8217;ll see when you first fire up Riak Control. It should give you a warm-fuzzy feeling when everything is A-okay: an unmistakable, beautiful green check mark.</p>
+<p>For times when things aren&#8217;t perfect, you will be presented with a list of concern areas. Each will have links to other pages of Riak Control where you can take a closer look at the problem.</p>
+<h3>The Cluster</h3>
+<p><img alt="Custer" src="http://basho.com/wp-content/uploads/2012/02/control_cluster.png" /></p>
+<p>The cluster page is where you can get a quick look at all of the nodes in your cluster and manage membership.</p>
+<p>With a glance you can see which nodes are partitioned from the rest of the cluster or offline, which are leaving or joining the cluster, view partition ownership, monitor memory, and more. And with a click you can add nodes to the cluster, take nodes offline for maintenance, and leave the cluster.</p>
+<h3>The Ring</h3>
+<p><img alt="Ring" src="http://basho.com/wp-content/uploads/2012/02/control_ring.png" /></p>
+<p>One level deeper than the cluster view is the ring page. This is where you can see the health of each partition. Most of the time, your ring will be too large to really manage from the ring view. But with the filters you can immediately find which partitions are owned by which nodes, partitions whose primary nodes are unreachable, current handoffs, and more.</p>
+<h2>What&#8217;s Next?</h2>
+<p>Riak Control is not standing still. Riak 1.1 includes Riak Control in its early stages so we can begin to gather feedback. We want to know what it does right and what it does wrong. Your feedback and ideas are encouraged. Additionally, we have a list of features and functionality slated for future releases. None of these are set in stone, but here is a list of what we have planned…</p>
+<h3>Pluggable</h3>
+<p>While Riak Control is &#8211; at its heart &#8211; a simple REST API, we&#8217;re working to modularize it in a way that allows you to write your own modules/plugins. We want to see Riak Control become a collection of pieces that all snap and work together, empowering you to manage your cluster in the way that best fits your needs.</p>
+<h3>Event streaming</h3>
+<p>Currently Riak Control uses a pull model to gather information about the cluster. While this isn&#8217;t a performance issue, we very much want to make it a push-system. As things happen to the cluster, the cluster should notify Riak Control of the changes, which in-turn will notify the user.</p>
+<h3>Node Statistics</h3>
+<p>Clicking on a node name from anywhere should take you to a page giving details specifically about that node, similar to the data you would get from a <code>riak-admin status</code> command.</p>
+<h3>Bucket &amp; Object Inspection</h3>
+<p>While low-level object manipulation isn&#8217;t designed to be a primary feature of Riak Control, it is a very handy tool to have, and extremely valuable when initially setting up Riak for the first time. More importantly, Riak buckets will be available to create and inspect.</p>
+<h3>MapReduce Queries</h3>
+<p>Riak Control will feature a powerful interface for creating MapReduce queries. You will be able to debug, save, load, and execute previously saved queries with ease.</p>
+<h3>Customer Support Tools</h3>
+<p>In addition to the general tools provided for manipulation of the cluster and data, we also are planning for improve monitoring tools.</p>
+<ol>
+<li>View the log files of individual nodes</li>
+<li>See graphs of load, memory latency, disk usage, etc.</li>
+<li>Coalesce and bundle data for support tickets</li>
+<li>File support tickets</li>
+</ol>
+<h2>Any Comments, Questions, or Feature Requests?</h2>
+<p>Anything you&#8217;d like to share or ask? Join the <a href="http://lists.basho.com/mailman/listinfo/riak-users_lists.basho.com">Riak-Users Mailing List</a> and tell us what you think. The other option is to <a href="https://github.com/basho/riak_control">fork the code</a> and make your opinions known with a pull request or by filing an issue. You can also find some <a href="http://wiki.basho.com/Riak-Control.html">formal documentation on the Riak Wiki</a>.</p>
+<p>Thanks for being a part of Riak.</p>
+<p><a href="http://twitter.com/risrr">Jeff Massung</a></p>
+<script type="text/javascript">
+
+var addthis_config = {"data_track_clickback":false,"data_track_addressbar":false,"data_track_textcopy":false,"ui_atversion":"300"};
+var addthis_product = 'wpp-3.0.2';
+</script><script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5111b54b25d15dc1"></script><script type="text/javascript"></script><div class='yarpp-related'>
+<h3>Related Posts</h3>
+<ol>
+		<li><a href="http://basho.com/cluster-management-improvements-in-riak-1-2/" rel="bookmark">Cluster Management Improvements in Riak 1.2</a><!-- (11.5)--></li>
+		<li><a href="http://basho.com/riak-docs-get-an-overhaul/" rel="bookmark">Riak Docs Get an Overhaul</a><!-- (9.6)--></li>
+		<li><a href="http://basho.com/introducing-riak-core/" rel="bookmark">Introducing Riak Core</a><!-- (8.7)--></li>
+		<li><a href="http://basho.com/riak-1-2-is-official/" rel="bookmark">Riak 1.2 Is Official!</a><!-- (8)--></li>
+	</ol>
+</div>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			This entry was posted in <a href="http://basho.com/category/blog/" title="View all posts in blog" rel="category tag">blog</a>, <a href="http://basho.com/category/blog/community/" title="View all posts in Community" rel="category tag">Community</a>, <a href="http://basho.com/category/blog/open-source/" title="View all posts in Open Source" rel="category tag">Open Source</a>, <a href="http://basho.com/category/blog/riak/" title="View all posts in Riak" rel="category tag">Riak</a>, <a href="http://basho.com/category/blog/riak-control/" title="View all posts in Riak Control" rel="category tag">Riak Control</a> and tagged <a href="http://basho.com/tag/basho/" rel="tag">Basho</a>, <a href="http://basho.com/tag/cluster-management/" rel="tag">cluster management</a>, <a href="http://basho.com/tag/riak/" rel="tag">Riak</a>, <a href="http://basho.com/tag/riak-control/" rel="tag">Riak Control</a> on <a href="http://basho.com/riak-control/" title="12:00 am" rel="bookmark"><time class="entry-date" datetime="2012-02-22T00:00:00+00:00">February 22, 2012</time></a><span class="by-author"> by <span class="author vcard"><a class="url fn n" href="http://basho.com/author/basho/" title="View all posts by basho" rel="author">basho</a></span></span>.								</footer><!-- .entry-meta -->
+	</article><!-- #post -->
+            
+                    <div class="rt-post-nav">
+                    	<h2 class="related">Previous Post</h2>
+                        	<div class="post-nav"><a href="http://basho.com/basho-is-a-proud-sponsor-of-travis-ci/" rel="prev"><span class="meta-nav"></span> Basho is a Proud Sponsor of Travis CI</a></div>
+                           
+                                                <h2 class="related" style="margin-top:1.5rem;">Next Post</h2>
+						 
+                        	<div class="post-nav"><a href="http://basho.com/how-eventual-is-eventual-consistency/" rel="next">How Eventual is Eventual Consistency? <span class="meta-nav"></span></a></div>
+                            
+                        <div class="clear"></div>
+                        <div class="social-wrap">
+                            <div class="related-button back-to-blog"><a href="http://basho.com/blog/">&larr; Back to the Basho Blog</a></div>
+                            <div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing"><div class="sd-content"><ul><li class="share-facebook"><a rel="nofollow" class="share-facebook sd-button share-icon no-text" href="http://basho.com/riak-control/?share=facebook" target="_blank" title="Share on Facebook" id="sharing-facebook-323"><span></span></a></li><li class="share-twitter"><a rel="nofollow" class="share-twitter sd-button share-icon no-text" href="http://basho.com/riak-control/?share=twitter" target="_blank" title="Click to share on Twitter" id="sharing-twitter-323"><span></span></a></li><li class="share-end"></li></ul><div class="sharing-clear"></div></div></div></div>                            <!--<div class="related-button soc-t"><i class="icon-twitter"></i></div>
+                            <div class="related-button soc-f"><i class="icon-facebook"></i></div>-->
+                        </div><!--social-wrap-->
+                        
+                    </div><!--rt-post-nav-->
+                
+                <div class="clear spacer"></div>
+
+				
+<div id="comments" class="comments-area paper-box">
+
+	
+	
+									<div id="respond">
+				<h3 id="reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/riak-control/#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="http://basho.com/wp-comments-post.php" method="post" id="commentform">
+																			<p class="comment-notes">Your email address will not be published. Required fields are marked <span class="required">*</span></p>							<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" aria-required='true' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" aria-required='true' /></p>
+<p class="comment-form-url"><label for="url">Website</label><input id="url" name="url" type="text" value="" size="30" /></p>
+												<p class="comment-form-comment"><label for="comment">Comment</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>						<p class="form-allowed-tags">You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:  <code>&lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; </code></p>						<p class="form-submit">
+							<input name="submit" type="submit" id="submit" value="Post Comment" />
+							<input type='hidden' name='comment_post_ID' value='323' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+						</p>
+						<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="afbc52ef65" /></p>
+<p class="comment-form-anti-spam" style="clear:both;">
+	<label for="anti-spam">Current ye@r</label> <span class="required">*</span>
+	<input type="hidden" name="anti-spam-0" id="anti-spam-0" value="2013" />
+	<input type="text" name="anti-spam" id="anti-spam" size="30" value="" />
+</p>
+
+<p class="comment-form-anti-spam-2" style="display:none;">
+	<label for="anti-spam-2">Leave this field empty</label> <span class="required">*</span>
+	<input type="text" name="anti-spam-2" id="anti-spam-2" size="30" value=""/>
+</p>
+<p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;" /> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p><p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;" /> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p>					</form>
+							</div><!-- #respond -->
+						
+</div><!-- #comments .comments-area .pull-box -->
+
+
+			            
+            
+
+		</div><!-- #content -->
+	</div><!-- #primary -->
+    
+     <div class="clear"></div>
+             <div class="c-boxes-blog">
+              <div class="cb-hold">
+                <a href="http://info.basho.com/IntroToRiakFeb19.html" target="_blank"><div class="beige c-box">
+                   <i class="icon-calendar"></i><h4>Intro to Riak Webcast</h4>
+                   <p>Sign Up: Riak Basics, Tuesday, Feb. 19</p>
+                </div><!--beige--></a>
+                <div class="cb-shadow"></div>
+              </div><!--cb-hold-->
+                    
+              <div class="cb-hold">
+                 <a href="http://info.basho.com/RiakonRetail.html" target="_blank"><div class="blue c-box">
+                   <i class="icon-shopping-cart"></i><h4>Riak on Retail</h4>
+                   <p>Whitepaper: Riak for Retail and eCommerce Services</p>
+                 </div><!--blue--></a>
+                 <div class="cb-shadow"></div>
+               </div><!--cb-hold-->
+                    
+              <div class="cb-hold">
+                <a href="http://basho.com/riak-users/" target="_blank"><div class="grey c-box">
+                   <i class="icon-group"></i><h4>Riak Users</h4>
+                   <p>Learn More About Companies Running Riak in Production</p>
+                </div><!--grey--></a>
+                <div class="cb-shadow"></div>
+               </div><!--cb-hold-->
+                    
+              <div class="cb-hold">
+                <a href="https://github.com/basho" target="_blank"><div class="orange c-box">
+                   <div class="icon-github"></div><h4>Github</h4>
+                   <p>Watch Our Code on Github</p>
+                </div><!--orange--></a>
+                <div class="cb-shadow"></div>
+               </div><!--cb-hold-->
+            
+            </div><!--.c-boxes-contain-->
+            <div class="clear"></div>
+
+
+		</div><!-- #main .wrapper -->
+        
+	
+	</div><!-- #page -->
+</div><!-- .page-contain-->
+
+<footer id="colophon" role="contentinfo">
+		<ul class="footer-nav">
+            	<li><a href="http://basho.com/company/">Company</a></li>
+                <li><a href="http://basho.com/news/">News</a></li>
+                <li><a href="http://basho.com/blog/">Blog</a></li>
+                <li><a href="http://docs.basho.com/" target="_blank">Docs</a></li>
+                <li><a href="http://basho.com/events/">Events</a></li>
+        </ul><!-- .footer-nav -->
+        
+        <div class="clear"></div>
+        
+        <div class="twitter">
+            	<a href="https://twitter.com/basho" target="_blank" style="display:block;float:left;height:70px;width:70px;"><img src="http://basho.com/wp-content/themes/basho-theme/images/pg-elements/ft-twitter2.png" class="twitter-icon"/></a><div class='tweet query'><script type="text/javascript"><!--//--><![CDATA[//><!--
+ tweet();
+ //--><!]]></script></div>
+        </div><!-- .twitter -->
+        
+        <div class="clear"></div>
+        
+        <div class="copyright small">Copyright &copy; 2013 <strong>Basho Technologies, Inc.</strong> All rights reserved. <a rel="license" href="http://basho.com/privacy-policy/">Terms & Conditions</a></div>
+        
+<script type='text/javascript' src='http://s.gravatar.com/js/gprofiles.js?ver=2013Febaa'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://basho.com/wp-content/plugins/jetpack/modules/wpgroho.js?ver=3.5'></script>
+	<div style="display:none">
+	</div>
+		<script type="text/javascript" charset="utf-8">
+		jQuery(document).ready(function(){
+			jQuery( '.share-facebook' ).click(function(){
+				window.open( jQuery(this).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript" charset="utf-8">
+		jQuery(document).ready(function(){
+			jQuery( '.share-twitter' ).click(function(){
+				window.open( jQuery(this).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+		});
+		</script>
+		<script type='text/javascript' src='http://basho.com/wp-content/themes/basho-theme/js/jquery.reveal.js?ver=1.6'></script>
+<script type='text/javascript' src='http://basho.com/wp-content/themes/basho-theme/js/main.js?ver=3.5'></script>
+<script type='text/javascript' src='http://basho.com/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.25.0-2013.01.18'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"http:\/\/basho.com\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Sending ...","cached":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://basho.com/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=3.3.3'></script>
+<script type='text/javascript' src='http://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201307'></script>
+<script type='text/javascript' src='http://basho.com/wp-content/themes/twentytwelve/js/navigation.js?ver=1.0'></script>
+
+	<script src="http://stats.wordpress.com/e-201307.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	st_go({v:'ext',j:'1:1.7',blog:'46600467',post:'323'});
+	var load_cmc = function(){linktracker_init(46600467,323,2);};
+	if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+	else load_cmc();
+	</script><!--wp_footer-->
+</footer><!-- #colophon -->
+<div class="clear"></div>
+
+
+		
+
+</div><!--#inner-wrap-->
+</div><!--#outer-wrap-->
+
+
+</body>
+</html>
+<!-- Dynamic page generated in 0.970 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2013-02-15 16:54:42 -->
+
+<!-- super cache -->

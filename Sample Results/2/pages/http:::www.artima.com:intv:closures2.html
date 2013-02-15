@@ -1,0 +1,371 @@
+<html>
+<head>
+<title>Blocks and Closures in Ruby</title>
+<meta name="description" content="
+Yukihiro Matsumoto, the creator of the Ruby language, talks with Bill Venners
+about two kinds of nameless functions in Ruby, blocks and closures.
+" />
+<meta name="keywords" content="Ruby, closure, lisp, block" />
+<meta name="author" content="Bill Venners" />
+<link rel="stylesheet" type="text/css" href="/artima.css" />
+<link rel="shortcut icon" href="/favicon.ico" />
+</head>
+<body><table width="100%" bgcolor="#FFFFFF" style="margin-top: 5px">
+<tr>
+<td align="center">
+<div id="topbanner" style="height: 90px"><noscript><a href='http://www.artima.com/zcr/adclick.php?n=a86d37e9' target='_top'><img src='http://www.artima.com/zcr/adview.php?what=zone:1&amp;n=a86d37e9' border='0' alt='' /></a></noscript></div>
+</td>
+</tr>
+</table>
+<table width="100%" cellspacing="0">
+<tr>
+<td align="left" valign="bottom">
+<a href="/index.jsp"><img src="/images/a7.gif" alt="The Artima Developer Community" border="0" width="550" height="43" /></a>
+</td>
+</table>
+<table width="100%" bgcolor="#333333">
+<tr>
+<td align="center">
+<div class="ml">
+<a href="/articles" class="hl">Articles</a>&nbsp;|
+<a href="/news/index.jsp" class="hl">News</a>&nbsp;|
+<a href="/weblogs/index.jsp" class="hl">Weblogs</a>&nbsp;|
+<a href="/buzz/index.jsp" class="hl">Buzz</a>&nbsp;|
+<a href="/shop/catalog" class="hl">Books</a>&nbsp;|
+<a href="/forums/index.jsp" class="hl">Forums</a>
+</div>
+</td>
+</tr>
+</table>
+<table width="100%" bgcolor="#DDDDDD">
+<tr>
+<td align="center">
+<div class="sc">
+<a href="/articles">Interviews</a>&nbsp;| 
+<a href="/forums/flat.jsp?forum=226&thread=26329">Discuss</a>&nbsp;| 
+<a href="/intv/closuresP.html">Print</a>&nbsp;| 
+<a href="mailto:?subject=Blocks and Closures in Ruby&body= %0ABlocks and Closures in Ruby %0AA Conversation with Yukihiro Matsumoto, Part III %0Aby Bill Venners %0A%0Ahttp://www.artima.com/intv/closures2.html">Email</a>&nbsp;| 
+<a href="/intv/closures.html">First Page</a>&nbsp;| 
+<a href="/intv/closures.html">Previous</a>&nbsp;| 
+Next
+</div>
+</td>
+</tr>
+</table>
+<table width="100%" bgcolor="#EEEEEE">
+<tr>
+<td align="center">
+<div class="sc">
+<span style="color: #555555">Sponsored Link</span> <span style="color: #888888">&bull;</span> 
+<script language='JavaScript' type='text/javascript' src='http://www.artima.com/zcr/adx.js'></script>
+<script language='JavaScript' type='text/javascript'>
+<!--
+   if (!document.phpAds_used) document.phpAds_used = ',';
+   phpAds_random = new String (Math.random()); phpAds_random = phpAds_random.substring(2,11);
+   
+   document.write ("<" + "script language='JavaScript' type='text/javascript' src='");
+   document.write ("http://www.artima.com/zcr/adjs.php?n=" + phpAds_random);
+   document.write ("&amp;what=zone:9&amp;target=_top");   document.write ("&amp;exclude=" + document.phpAds_used);
+   if (document.referrer)
+      document.write ("&amp;referer=" + escape(document.referrer));
+   document.write ("'><" + "/script>");
+//-->
+</script><noscript><a href='http://www.artima.com/zcr/adclick.php?n=a799ecf6' target='_top'><img src='http://www.artima.com/zcr/adview.php?what=zone:9&amp;n=a0587811' border='0' alt=''></a></noscript>
+</div>
+</td>
+</tr>
+</table>
+<BR>
+<div class="vegies">
+<div class="tc">
+<span class="ts">Blocks and Closures in Ruby</span><br />
+<span class="sts">A Conversation with Yukihiro Matsumoto, Part III</span><br />
+<span class="as">by Bill Venners</span><br />
+<span class="pd">December 22, 2003</span><br />
+</div>
+<P>
+<center>
+<a href="closures.html">&lt;&lt;</a>&nbsp;&nbsp;<STRONG>Page 2 of 2</STRONG>
+</center>
+<p>
+
+<table align="right" border="0" cellpadding="5" cellspacing="0">
+
+<tr>
+
+<td align="center">
+
+<div style="margin-left: 15%;">
+
+<div class="adnotice">Advertisement</div>
+<script language='JavaScript' type='text/javascript' src='http://www.artima.com/zcr/adx.js'></script>
+<script language='JavaScript' type='text/javascript'>
+<!--
+   if (!document.phpAds_used) document.phpAds_used = ',';
+   phpAds_random = new String (Math.random()); phpAds_random = phpAds_random.substring(2,11);
+   
+   document.write ("<" + "script language='JavaScript' type='text/javascript' src='");
+   document.write ("http://www.artima.com/zcr/adjs.php?n=" + phpAds_random);
+   document.write ("&amp;what=zone:2&amp;target=_top&amp;block=1&amp;blockcampaign=1");
+   document.write ("&amp;exclude=" + document.phpAds_used);
+   if (document.referrer)
+      document.write ("&amp;referer=" + escape(document.referrer));
+   document.write ("'><" + "/script>");
+//-->
+</script><noscript><a href='http://www.artima.com/zcr/adclick.php?n=a799ecf6' target='_top'><img src='http://www.artima.com/zcr/adview.php?what=zone:2&amp;n=a799ecf6' border='0' alt=''></a></noscript>
+</div>
+
+</td>
+
+</tr>
+
+</table>
+
+</p>
+
+
+<h1>Using Closures</h1>
+
+<p>
+<strong>Bill Venners</strong>: What makes a block a closure?
+
+<p>
+<strong>Yukihiro Matsumoto</strong>: A closure object has code to run, the executable, 
+and state around the code, the scope. So you capture the environment, namely the local 
+variables, in the closure. As a result, you can refer to the local variables inside a closure. 
+Even after the function has returned, and its local scope has been destroyed, the local 
+variables remain in existence as part of the closure object. When no one refers to the 
+closure anymore, it's garbage collected, and the local variables go away.
+
+<p>
+<strong>Bill Venners</strong>: So the local variables are basically being shared between 
+the closure and the method? If the closure updates the variable, the method sees it. And if 
+the method updates the variable, the closure sees it.
+
+<p>
+<strong>Yukihiro Matsumoto</strong>: Yes, local variables are shared between the 
+closure and the method. It's a real closure. It's not just a copy.
+
+<p>
+<strong>Bill Venners</strong>: What is the benefit of a real closure? Once I make a block 
+into an object, what can I do with it?
+
+<p>
+<strong>Yukihiro Matsumoto</strong>: You can reconvert a closure back into a block, so 
+a closure can be used anywhere a block can be used. Often, closures are used to  
+store the status of a block into an instance variable, because once you convert a block into 
+a closure, it is an object that can by referenced by a variable. And of course closures can 
+be used like they are used in other languages, such as passing around the object to 
+customize behavior of methods. If you want to pass some code to customize a method, 
+you can of course just pass a block. But if you want to pass the same code to more than 
+two methods -- this is a very rare case, but if you really want to do that -- you can 
+convert the block into a closure, and pass that same closure object to multiple methods.
+
+<p>
+<strong>Bill Venners</strong>: OK, but what is the benefit of having the context? The
+distinction that
+makes Ruby's closure a real closure is that it captures the context, the local variables and 
+so on. What benefit do I get from having the context in addition to the code that I don't get 
+by just being able to pass a chunk of code around as an object? 
+
+<p>
+<strong>Yukihiro Matsumoto</strong>: Actually, to tell the truth, the first reason is to 
+respect the history of Lisp. Lisp provided real closures, and I wanted to follow that.
+
+<p>
+<strong>Bill Venners</strong>: One difference I can see is that data is actually shared 
+between the closure objects and the method. I imagine I could always pass any needed 
+context data into a regular, non-closure, block as parameters, but then the block would 
+just have a copy of the context, not the real thing. It's not sharing the context. Sharing is 
+what's going on in a closure that's different from a plain old function object.
+
+<p>
+<strong>Yukihiro Matsumoto</strong>: Yes, and that sharing allows you to do some 
+interesting code demos, but I think it's not that useful in the daily lives of programmers. It 
+doesn't matter that much. The plain copy, like it's done in Java's inner classes for 
+example, works in most cases. But in Ruby closures, I wanted to respect the Lisp culture.
+
+<IMG align="top" src="../images/ir.gif" width="15" height="15">
+<H1>Next Week</H1>
+<P>
+Come back Monday, December 29 for part IV of this conversation with Yukihiro Matsumoto. 
+If you'd like to receive a brief weekly email
+announcing new articles at Artima.com, please subscribe to
+the <a href="../account.jsp">Artima Newsletter</a>.
+
+<H1>Talk Back!</H1>
+<P>
+Have an opinion about the design principles presented in this article?
+Discuss this article in the Articles Forum topic,
+<a href="http://www.artima.com/forums/flat.jsp?forum=226&thread=26329">Blocks and Closures in Ruby</a>.
+
+<a name="resources">
+<H1>Resources</H1>
+</a>
+
+<P>
+<A href="http://www.amazon.com/exec/obidos/ASIN/0596002149/billvennersA/"><img src="images/rubynut.jpg" align="left"></a>
+Ruby in a Nutshell, by Yukihiro Matsumoto, 
+is available on Amazon.com at:<BR>
+<A href="http://www.amazon.com/exec/obidos/ASIN/0596002149/billvennersA/">http://www.amazon.com/exec/obidos/ASIN/020161622X/</a>
+
+<BR clear="all">
+<P>
+<A href="http://www.amazon.com/exec/obidos/ASIN/0201710897/billvennersA/"><img src="images/progruby.jpg" align="left"></a>
+Programming Ruby: A Pragmatic Programmer's Guide, by Dave Thomas and Andy Hunt, 
+is available on Amazon.com at:<BR>
+<A href="http://www.amazon.com/exec/obidos/ASIN/0201710897/billvennersA/">http://www.amazon.com/exec/obidos/ASIN/020161622X/</a>
+
+<BR clear="all">
+<P>
+The Ruby Programming Language, an introduction by Yukihiro Matsumoto:<BR>
+<A href="http://www.informit.com/content/index.asp?product_id=%7BA76D1D1E-AD7D-483E-AB8D-38FB188396C5%7D">http://www.informit.com/content/index.asp?product_id=%7BA76D1D1E-AD7D-483E-AB8D-38FB188396C5%7D</a>
+
+<P>
+An Interview with the Creator of Ruby, by Bruce Stewart:<BR>
+<A href="http://linux.oreillynet.com/pub/a/linux/2001/11/29/ruby.html">http://linux.oreillynet.com/pub/a/linux/2001/11/29/ruby.html</a>
+
+<P>
+Interview with Ruby Create Y. Matsumoto, by S. Ibaraki:<BR>
+<A href="http://www.cips.ca/news/national/news.asp?aID=1224">http://www.cips.ca/news/national/news.asp?aID=1224</a>
+
+
+
+<P>
+<center>
+<a href="closures.html">&lt;&lt;</a>&nbsp;&nbsp;<STRONG>Page 2 of 2</STRONG>
+</center>
+<br clear="all">
+<p>
+<center>
+<div class="sc">
+<a href="/articles">Interviews</a>&nbsp;| 
+<a href="/forums/flat.jsp?forum=226&thread=26329">Discuss</a>&nbsp;| 
+<a href="/intv/closuresP.html">Print</a>&nbsp;| 
+<a href="mailto:?subject=Blocks and Closures in Ruby&body= %0ABlocks and Closures in Ruby %0AA Conversation with Yukihiro Matsumoto, Part III %0Aby Bill Venners %0A%0Ahttp://www.artima.com/intv/closures2.html">Email</a>&nbsp;| 
+<a href="/intv/closures.html">First Page</a>&nbsp;| 
+<a href="/intv/closures.html">Previous</a>&nbsp;| 
+Next
+</div>
+</center>
+</div>
+<hr width="100%" />
+<table width="50%" align="center">
+<tr>
+<td>
+<div class="horizontaltextadbox">
+<div class="adheadline">Sponsored Links</div>
+<div id="sponsoredlinks">
+</div>
+</div>
+</td>
+</tr>
+</table>
+<hr width="100%" />
+<center>
+<script type="text/javascript"><!--
+google_ad_client = "pub-3911176865765226";
+google_alternate_color = "ffffff";
+google_ad_width = 728;
+google_ad_height = 15;
+google_ad_format = "728x15_0ads_al";
+google_ad_channel = "";
+google_color_border = "ffffff";
+google_color_bg = "FFFFFF";
+google_color_link = "003090";
+google_color_text = "000000";
+google_color_url = "666666";
+//--></script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br />
+<br />
+<!-- SiteSearch Google -->
+<form method="get" action="http://www.google.com/custom">
+<table border="0" bgcolor="#ffffff">
+<tr><td nowrap="nowrap" valign="top" align="left" height="32">
+<a href="http://www.google.com/">
+<img src="http://www.google.com/logos/Logo_25wht.gif"
+border="0" alt="Google"></img></a>
+</td>
+<td nowrap="nowrap">
+<input type="hidden" name="domains" value="Artima.com"></input>
+<input type="text" name="q" size="31" maxlength="255" value=""></input>
+<input type="submit" name="sa" value="Search"></input>
+</td></tr>
+<tr>
+<td>&nbsp;</td>
+<td nowrap="nowrap">
+<font size="-1" color="#000000">
+<input type="radio" name="sitesearch" value=""></input> Web
+<input type="radio" name="sitesearch" value="Artima.com" checked="checked"></input>Artima.com
+</font>&nbsp;&nbsp;
+<input type="hidden" name="client" value="pub-3911176865765226"></input>
+<input type="hidden" name="forid" value="1"></input>
+<input type="hidden" name="ie" value="ISO-8859-1"></input>
+<input type="hidden" name="oe" value="ISO-8859-1"></input>
+<input type="hidden" name="cof" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:FFFFFF;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;LH:50;LW:150;L:http://www.artima.com/images/artima150.gif;S:http://www.artima.com;FORID:1;"></input>
+<input type="hidden" name="hl" value="en"></input>
+</td></tr></table>
+</form>
+<!-- SiteSearch Google -->
+</center>
+<div class="sp">
+<div style="text-align: center">
+<a href="http://www.artima.com/copyright.html">Copyright</a> &copy; 1996-2013 Artima, Inc. All Rights Reserved.</a> - <a href="http://www.artima.com/privacy.html">Privacy Policy</a> - <a href="http://www.artima.com/termsofuse.html">Terms of Use</a> - <a href="http://www.artima.com/advertising.html">Advertise with Us</a>
+</div>
+</div>
+<br />
+<script language='JavaScript' type='text/javascript'>
+<!--
+function initBannerVarForZone(zone) {
+        initBannerVarForZoneWithScript(zone, 'adjs_modified');
+}
+
+function initBannerVarForZoneWithScript(zone, phpScript) {
+
+        if (!document.phpAds_used) document.phpAds_used = ',';
+        phpAds_random = new String (Math.random());
+        phpAds_random = phpAds_random.substring(2,11);
+
+        var nextScriptSrc = 'http://www.artima.com/zcr/' + phpScript + '.php?n=' +
+                phpAds_random  +
+                '&amp;what=zone:' + zone + '&amp;target=_top&amp;block=1&amp;blockcampaign=1' +
+                '&amp;exclude=' + document.phpAds_used;
+
+        document.write("<script language='JavaScript' type='text/javascript' src='");
+        document.write(nextScriptSrc);
+        document.write("'><\/script>");
+
+}
+
+function replaceDiv(divID) {
+        document.getElementById(divID).innerHTML = phpadsbanner;
+}
+-->
+</script>
+<script language='JavaScript' type='text/javascript'>
+<!--
+initBannerVarForZone(1);
+-->
+</script>
+
+<script language='JavaScript' type="text/javascript">
+<!--
+replaceDiv('topbanner');
+-->
+</script>
+<script language='JavaScript' type='text/javascript'>
+<!--
+initBannerVarForZoneWithScript(4, 'textman');
+-->
+</script>
+
+<script language='JavaScript' type="text/javascript">
+<!--
+replaceDiv('sponsoredlinks');
+-->
+</script>
+</body>
+</html>

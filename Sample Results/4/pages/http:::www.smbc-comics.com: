@@ -1,0 +1,492 @@
+<html>
+<head>
+<title> Saturday Morning Breakfast Cereal </title>
+<meta name="google-site-verification" content="_Fbaicug8dRR1CYZwwTY9ABbZWj9qM6DgLTXmg8R4iY" />
+<link rel=stylesheet href="/style.css" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="SMBC RSS Feed" href="http://www.smbc-comics.com/rss.php" />
+<link rel="shortcut icon" href="favicon.ico" >
+<!--<script type="text/javascript" src="http://www.haloscan.com/load/zachweiner"> </script>-->
+
+</head>
+
+<body style='margin-top:0px'>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=360467581347";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<center>
+<table cellpadding=0 cellspacing=0>
+ <tr><td>
+<center>
+<script type="text/javascript"><!--
+e9 = new Object();
+    e9.size = "728x90,468x60";
+//--></script>
+<script type="text/javascript" src="http://tags.expo9.exponential.com/tags/smbccomicscom/ROS/tags.js"></script>
+</center>
+</td></tr>
+ <tr><td style='height:5px'></td></tr>
+</table>
+<table cellpadding=0 cellspacing=0>
+  <tr><td>
+<script language="JavaScript" type="text/javascript">
+  var links = new Array(
+//   "http://www.invasionofthezakks.com/ctlite.php?from=38", "http://www.smbc-comics.com/images/smbc_zakkslite.png",
+//   "http://www.invasionofthezakks.com/", "http://www.smbc-comics.com/images/smbc_zakks.png",
+//   "http://www.snowflakescomic.com/", "http://www.smbc-comics.com/images/smbc_snowflakes.png",
+//   "http://www.topatoco.com/merchant.mvc?Screen=CTGY&Store_Code=TO&Category_Code=SMBC-SHIRTS", "http://www.smbc-comics.com/images/smbc_shirts.png"
+//   "http://www.yityat.com/magic", "http://www.smbc-comics.com/images/smbc_marty.png",
+//   "http://www.captainexcelsior.com/", "http://www.smbc-comics.com/images/smbc_ce.png"
+//   "http://www.smbc-theater.com/", "http://www.smbc-comics.com/images/smbctheaterellipse.png",
+    "http://www.kickstarter.com/projects/weiner/science-ruining-everything-since-1543-an-smbc-coll?ref=live", "http://www.smbc-comics.com/images/kslogo.png"
+//    "http://www.smbc-theater.com/", "http://www.smbc-comics.com/images/jameslink.png"
+  );
+  var num= Math.floor(Math.random()*links.length);
+  if (num%2 == 1) num--;
+  document.writeln("<div class=minipic2><a href='"+links[num]+"'><img src='"+links[num+1]+"'></a></div>");
+</script>
+<script language="JavaScript" type="text/javascript">
+  var agt=navigator.userAgent.toLowerCase();
+  var is_safari = (agt.indexOf("safari")!=-1);
+  var is_firefox = (agt.indexOf("firefox")!=-1);
+  var is_aol = (agt.indexOf("america online")!=-1);
+  var is_opera = (agt.indexOf("opera")!=-1);
+  var is_macie = (agt.indexOf("msie")!=-1 && agt.indexOf("mac")!=-1);
+  var is_camino = (agt.indexOf("camino")!=-1 && agt.indexOf("mac")!=-1);
+  var is_winie = (agt.indexOf("msie")!=-1 && agt.indexOf("windows")!=-1);
+  if (!is_macie && !is_aol && !is_opera && !is_camino) {
+  }
+  if (!is_firefox && !is_opera) {
+    document.write("<\/td><\/tr><tr><td>");
+  }
+  function getBlock(name) {
+    if (document.getElementById) {
+      return document.getElementById(name);
+    } else if (document.all) {
+      return document.all[name];
+    } else if (document.layers) {
+      return document.layers[name];
+    }
+  }
+
+  function jumpToRandom() {
+    var num = Math.floor(Math.random()*2888)
+    window.location = 'http://www.smbc-comics.com/?db=comics&id='+num+'#comic';
+  }
+
+  function getStyle(name) {
+    return getBlock(name).style;
+  }
+
+  function hideBlock(name) {
+    getStyle(name).display="none";
+  }
+
+  function showBlock(name) {
+    getStyle(name).display="";
+  }
+
+  if (document.layers) {
+    document.captureEvents(Event.MOUSEMOVE);
+  }
+  document.onmousemove = captureMousePosition;
+
+  xMousePos = 0;
+  yMousePos = 0;
+  function captureMousePosition(e) {
+    if (document.layers) {
+      xMousePos = e.pageX;
+      yMousePos = e.pageY;
+    } else if (document.all) {
+      xMousePos = window.event.x+document.body.scrollLeft;
+      yMousePos = window.event.y+document.body.scrollTop;
+    } else if (document.getElementById) {
+      xMousePos = e.pageX;
+      yMousePos = e.pageY;
+    }
+  }
+
+  var mouseOverMenu=false;
+  var mouseOverSubmenu=false;
+  var currentMenu=null;
+  function onMouseOverMenu(name) {
+    mouseOverMenu = true;
+    if (currentMenu == null) {
+      currentMenu=name;
+      setTimeout("showSubmenu('"+name+"')", 500);
+    } else {
+      currentMenu=name;
+      hideSubmenu(name);
+      showSubmenu(name);
+    }
+  }
+  function onMouseOverSubmenu() {
+    mouseOverSubmenu = true;
+    showBlock(currentMenu);
+  }
+  function showSubmenu(name) {
+    if (mouseOverSubmenu || mouseOverMenu) {
+      if(getStyle(currentMenu).display=='none') {
+        var tx = xMousePos-20;
+        var ty = yMousePos-180;
+        tx = tx<0?0:tx;
+        ty = ty<0?0:ty;
+        getStyle(currentMenu).left = tx+"px";
+        getStyle(currentMenu).top  = ty+"px";
+      }
+      showBlock(currentMenu);
+    }
+  }
+  function hideSubmenu(name) {
+    if (!mouseOverSubmenu && !mouseOverMenu) {
+      hideBlock("aftercomic");
+      currentMenu=null;
+    } else {
+      if (currentMenu != "aftercomic") { hideBlock("menu1"); }
+    }
+  }
+  function onMouseOutMenu(name) {
+    mouseOverMenu = false;
+    setTimeout("hideSubmenu('"+name+"')", 250);
+  }
+  function onMouseOutSubmenu(name) {
+    mouseOverSubmenu = false;
+    setTimeout("hideSubmenu('"+name+"')", 250);
+  }
+
+// a - 65
+// b - 66
+// up - 38
+// left - 37
+// right - 39
+// down - 40
+var konamiSeq = 0;
+var konamiArray = Array(38,38,40,40,37,39,37,39,66,65);
+// Poor mans code checker
+function checkCodes(keycode) {
+  if (konamiArray[konamiSeq]==keycode) {
+    konamiSeq++;
+  } else {
+    konamiSeq = 0;
+  }
+  if (konamiSeq == konamiArray.length) {
+    showBlock("konamicomic");
+  }
+}
+
+function onKeyUp(evt) {
+  if (evt = evt ? evt : window.event ? event : null) {
+    checkCodes(evt.keyCode);
+    switch (evt.keyCode) {
+      case 90: // z
+      case 188: // <
+      case 89: // y
+        document.location.href = "/index.php?db=comics&id=2887#comic"; break;
+      case 88: // x
+      case 191: // ?
+        jumpToRandom(); break;
+      case 190: // >
+      case 67: // c
+    }
+  }
+}
+if (document.addEventListener) {
+    document.addEventListener("keyup", onKeyUp, false);
+} else {
+    document.onkeyup = onKeyUp;
+}
+</script>
+  <div id=aftercomic style='position:absolute; z-index:10; display:none' onMouseOver='onMouseOverSubmenu()' onMouseOut='onMouseOutSubmenu("aftercomic")'>
+<img src='http://www.smbc-comics.com/comics/20130215after.gif'>
+  </div>
+  <div id=konamicomic style='position:absolute; left:95px; top:400px; z-index:15; display:none' onMouseDown='hideBlock("konamicomic")'>
+<img src='/images/videogamezach.gif' style='border:3px solid black' onMouseDown='hideBlock("konamicomic")'>
+  </div>
+
+  <div style="z-index:1000">
+  <img src="http://www.smbc-comics.com/images/smbclogo.gif"
+       usemap="#headerbuttons" alt="header">
+  </div>
+  </td>
+  <td width=20px></td>
+  </tr>
+</table>
+
+<a name="comic"></a>
+
+<table cellpadding=0 cellspacing=0>
+<tr><td>
+  <!-- LOWER LEFT PANE -->
+<table cellpadding=0 cellspacing=0><tr>
+  <td class="comicboxcenter" align=center>
+  <table cellpadding=0 cellspacing=0><tr><td>
+    <tr>
+    <td width=14 class=comicboxleft> &nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>
+    <table cellpadding=0 cellspacing=0><tr><td>
+    <center>
+    <img src="http://www.smbc-comics.com/images/buttons.gif" usemap="#buttons" alt="buttons"><br>
+    
+    <!--FANBASEONLINE-->
+    <img src='http://www.smbc-comics.com/comics/20130215.gif'><br>
+    <table><tr><td><img src='http://www.smbc-comics.com/images/secretvoteybutton.gif' onMouseOver='onMouseOverMenu("aftercomic")' onMouseOut='onMouseOutMenu("aftercomic")'>&nbsp;&nbsp;</td><td align=center><table><tr valign=middle><td valign=middle>
+<a href="http://www.smbc-comics.com/rss.php"><img width=64px border=0 src="/images/rssicon.png"></a> &nbsp;
+<a href="http://www.facebook.com/share.php?u=http%3A%2F%2Fwww.smbc-comics.com%2F%3Fid%3D2888"><img width=64px border=0 src="/images/facebook.png"></a> &nbsp;
+<a href="http://www.reddit.com/submit?url=http%3A%2F%2Fwww.smbc-comics.com%2F%3Fid%3D2888&title=Saturday+Morning+Breakfast+Cereal+-+February+15%2C+2013"><img width=64px border=0 src="/images/reddit.png"></a> &nbsp;
+<a href="http://twitter.com/home/?status=SMBC+-+February+15%2C+2013%20http%3A%2F%2Fwww.smbc-comics.com%2F%3Fid%3D2888"><img width=64px border=0 src="/images/twitter.png"></a> &nbsp;
+<script src="http://www.stumbleupon.com/hostedbadge.php?s=5&r=http://www.smbc-comics.com/?id=2888"></script> &nbsp; 
+<g:plusone size="tall"></g:plusone> &nbsp;
+<a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.smbc-comics.com%2F%3Fid%3D2888&media=http://www.smbc-comics.com/comics/20130215.gif" class="pin-it-button" count-layout="vertical">Pin It</a>
+</td></tr></table><script language='JavaScript' type='text/javascript'>
+var refboxcode='<table style="border: 3px; border-style: solid; border-color: #000000"><tr><td><font size=3 face=arial><b>Paste this comic into your MySpace, Xanga, LiveJournal, or website..</b></font></td></tr><tr><td><font size=2 face=arial>&lt;a href="http://www.smbc-comics.com/index.php?db=comics&id=2888"&gt;<br>&lt;img src="http://www.smbc-comics.com/comics/20130215.gif"&gt;&lt;/a&gt;</font></td></tr><tr><td><font size=3 face=arial><b>Paste this comic into a forum..</b></font></td></tr><tr><td><font size=2 face=arial>[URL="http://www.smbc-comics.com/index.php?db=comics&id=2888"]<br>[IMG]http://www.smbc-comics.com/comics/20130215.gif[/IMG][/URL]</font></td></tr><tr><td><font size=3 face=arial><b>Or, add the SMBC Update Facebook App!</b></font></td></tr><tr><td><font size=2 face=arial><a href="http://www.facebook.com/apps/application.php?id=14258116479">http://www.facebook.com/apps/application.php?id=14258116479</a></font></td></tr></table>';
+</script>
+<center id=refbox><a href='javascript:void(0)' onClick='getBlock("refbox").innerHTML=refboxcode'>Click here to put this comic in your blog/myspace/forum.</a></center></td></tr></table>
+<br>
+<div style='width:650px; vertical-align:top'>
+<!--
+<table>
+<tr><td>
+<a href='http://www.indiegogo.com/smbcdvd'><img width=380px src='/images/james_deep_cuts.png'></a>
+</td><td>
+<iframe src="http://www.indiegogo.com/project/widget/99900?a=299001" width="224px" height="429px" frameborder="0" scrolling="no"></iframe>
+</td></tr>
+</table>
+-->
+<iframe width="640" height="360" src="http://www.youtube.com/embed/videoseries?list=PLD2FF18CFF7716816&amp;hl=en_US&wmode=transparent" frameborder="0" allowfullscreen></iframe>
+<center>
+<a href='http://www.youtube.com/subscription_center?add_user=smbctheater'><img src='/images/smbc_theater_banner.jpg'></a>
+</center>
+<!--
+<br>
+  <div style='margin-left: 50px'>
+    <div><a href='http://www.youtube.com/subscription_center?add_user=smbctheater'><img src='/images/SMBC_Banner_SubsMarch15.png'></a></div>
+    <div class="fb-like" data-href="http://www.facebook.com/smbctheater" data-send="false" data-width="300" data-show-faces="true"></div>
+  </div>
+-->
+</div>
+<br><br>
+<!--
+<table>
+<tr>
+<td>
+    <a href='http://www.kickstarter.com/projects/smbctheater/smbc-theater-goes-to-space/'><img src='/images/kickstarterbox.gif'></a>
+</td><td>
+<iframe frameborder="0" height="380px" src="http://www.kickstarter.com/projects/smbctheater/smbc-theater-goes-to-space/widget/card.html" width="220px"></iframe>
+</td></tr>
+</table>
+-->
+<!--PRINTCODE-->
+<!--<a href='http://itunes.apple.com/us/app/smbc/id476512161?mt=8&ls=1'><img src='/images/appbanner.gif'></a>
+-->
+    </center>
+    <b>News:</b><br><a name="blog"> <b>February 15, 2013</b><br>
+WOOH! We are so close to <a href=http://www.kickstarter.com/projects/weiner/science-ruining-everything-since-1543-an-smbc-coll>releasing a limited run of hardcover editions!</a><br>
+<br><a href='http://www.smbc-comics.com/smbcforum/viewforum.php?f=40'>Discuss this comic in the forum</a><br><br>
+<b>February 14, 2013</b><br>
+Only 7 days left to get in on the new <a href=http://www.kickstarter.com/projects/weiner/science-ruining-everything-since-1543-an-smbc-coll/posts/405776>Science Book!</a><br>
+<br><a href='http://www.smbc-comics.com/smbcforum/viewforum.php?f=40'>Discuss this comic in the forum</a><br><br>
+<b>February 13, 2013</b><br>
+New <a href=http://www.weeklyweinersmith.com/>WEEKLY WEINERSMITH</a>!<br>
+<br><a href='http://www.smbc-comics.com/smbcforum/viewforum.php?f=40'>Discuss this comic in the forum</a><br><br>
+<b>February 12, 2013</b><br>
+Only 10 days to go on <a href=http://www.kickstarter.com/projects/weiner/science-ruining-everything-since-1543-an-smbc-coll>The Science Kickstarter!</a><br>
+<br>
+And speaking of science... did you catch me and Kelly's story on <a href=http://storycollider.org/podcast/2013-02-10>Story Collider</a>?<br>
+<br><a href='http://www.smbc-comics.com/smbcforum/viewforum.php?f=40'>Discuss this comic in the forum</a><br><br>
+<b>February 11, 2013</b><br>
+NEW VIDEO DAYYY!<br>
+<br>
+<iframe width="640" height="360" src="http://www.youtube.com/embed/4FocLDnWArY" frameborder="0" allowfullscreen></iframe><br>
+<br>
+And BONUS, our pals at 5 Second Films have a long form video channel now. <a href=http://www.youtube.com/user/uproxx>Check it out!</a><br>
+<br><a href='http://www.smbc-comics.com/smbcforum/viewforum.php?f=40'>Discuss this comic in the forum</a><br><br>
+
+
+<br>
+<center>
+<script language="JavaScript" type="text/javascript">
+  var shirtlinks = new Array(
+    "http://www.amazon.com/Save-Yourself-Mammal-Breakfast-Collection/dp/098285370X/ref=sr_1_1?ie=UTF8&qid=1310803737&sr=8-1", "http://www.smbc-comics.com/images/shirtwindow_book.gif"
+  );
+  var shirtnum= Math.floor(Math.random()*shirtlinks.length);
+  if (shirtnum%2 == 1) shirtnum--;
+  document.writeln("<a href='"+shirtlinks[shirtnum]+"'><img src='"+shirtlinks[shirtnum+1]+"'></a>");
+</script>
+    </table>
+    </td>
+    <td width=23 class=comicboxright> &nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+  </table>
+  <tr><td class=comicboxbottom>
+</td></tr>
+</center>
+
+  </table>
+
+  <!-- Right panes -->
+  <td width=235>
+  <table width=240 cellpadding=0 cellspacing=5>
+    <tr><td style="background-image: url(http://www.smbc-comics.com/images/adbar.gif); background-repeat: no-repeat; height:656px; padding: 20px; padding-left:20px;" align=center>
+
+<script type="text/javascript"><!--
+e9 = new Object();
+    e9.size = "160x600,120x600";
+//--></script>
+<script type="text/javascript" src="http://tags.expo9.exponential.com/tags/smbccomicscom/ROS/tags.js"></script>
+
+    </td></tr>
+  </table>
+  <table width=240 cellpadding=0 cellspacing=5>
+    <tr><td style="height:250px; padding: 0px; padding-left:0px;" align=center>
+<img border=0 style="" width="227" height="288" usemap="#zachboxmap" src="http://www.smbc-comics.com/images/rightsidebar.gif">
+<!-- Beginning of Project Wonderful ad code: -->
+<!-- Ad box ID: 6260 -->
+<script type="text/javascript">
+<!--
+var d=document;
+d.projectwonderful_adbox_id = "6260";
+d.projectwonderful_adbox_type = "3";
+d.projectwonderful_foreground_color = "";
+d.projectwonderful_background_color = "";
+//-->
+</script>
+    </td></tr>
+  </table>
+<!--
+  <table width=240 cellpadding=0 cellspacing=5>
+    <tr><td style="background-image: url(http://www.smbc-comics.com/images/weinerworks.png); background-repeat: no-repeat; height:222px; padding: 5px; padding-left:20px;" align=left>
+<br><br><br><br>
+<a href="http://www.captainexcelsior.com/">Captain Excelsior</a><br>
+<a href="http://www.smbc-theater.com/">SMBC Theater</a><br>
+    </td></tr>
+  </table>
+-->
+  <table width=240 cellpadding=0 cellspacing=5>
+    <tr><td style="padding: 20px; padding-left:20px;" align=center>
+
+<script type="text/javascript" src="http://www.projectwonderful.com/ad_display.js"></script>
+<noscript><map name="admap6260" id="admap6260"><area href="http://www.projectwonderful.com/out_nojs.php?r=0&amp;c=0&amp;id=6260&amp;type=3" shape="rect" coords="0,0,160,600" title="" alt="" target="_blank" /><area href="http://www.projectwonderful.com/out_nojs.php?r=1&amp;c=0&amp;id=6260&amp;type=3" shape="rect" coords="0,600,160,1200" title="" alt="" target="_blank" /></map>
+<table cellpadding="0" border="0" cellspacing="0" width="160" bgcolor="#ffffff"><tr><td><img src="http://www.projectwonderful.com/nojs.php?id=6260&amp;type=3" width="160" height="1200" usemap="#admap6260" border="0" alt="" /></td></tr><tr><td bgcolor="#ffffff" colspan="1"><center><a style="font-size:10px;color:#0000ff;text-decoration:none;line-height:1.2;font-weight:bold;font-family:Tahoma, verdana,arial,helvetica,sans-serif;text-transform: none;letter-spacing:normal;text-shadow:none;white-space:normal;word-spacing:normal;" href="http://www.projectwonderful.com/advertisehere.php?id=6260&amp;type=3" target="_blank">Project Wonderful - Your ad could be here, right now.</a></center></td></tr><tr><td colspan=1 valign="top" width=160 bgcolor="#000000" style="height:3px;font-size:1px;padding:0px;max-height:3px;"></td></tr></table>
+</noscript>
+<!-- End of Project Wonderful ad code. -->
+
+    </td></tr>
+  </table>
+  </td>
+</tr>
+
+</table>
+
+<font size=2>
+<a href="http://www.smbc-comics.com/privacy.php">Privacy Policy</a>
+</font>
+
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+<script type='text/javascript'><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://openx.blindferret.com/www/delivery/ajs.php':'http://openx.blindferret.com/www/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=390");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script><noscript><a href='http://openx.blindferret.com/www/delivery/ck.php?n=a5c8efab&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://openx.blindferret.com/www/delivery/avw.php?zoneid=390&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a5c8efab' border='0' alt='' /></a></noscript>
+</center>
+
+</body>
+
+</html>
+
+<!-- IMAGE MAPS -->
+<!-- Note: The funky spacing is necessary -->
+<map name="buttons">
+<area shape="rect" coords="0,3,117,83"
+  href="/index.php?db=comics&id=1#comic"
+>
+<area shape="rect" coords="131,13,216,84"
+  href="/index.php?db=comics&id=2887#comic"
+>
+<area shape="rect" coords="218,18,343,76"
+  href="javascript:void(0)" onClick='jumpToRandom()'
+>
+<area shape="rect" coords="351,21,425,87"
+>
+<area shape="rect" coords="429,21,536,94"
+>
+</map>
+
+<map name="headerbuttons">
+<area shape="rect" coords="6,150,140,189" href="/archive" />
+<area shape="rect" coords="144,148,305,189" href="mailto:zach@smbc-comics.com" />
+<area shape="rect" coords="306,148,432,188" href="/smbcforum" />
+<area shape="rect" coords="433,149,540,185" href="http://smbc.myshopify.com" />
+<!--<area shape="rect" coords="433,149,540,185" href="http://breadpig.myshopify.com/collections/everything-else/products/save-yourself-mammal-a-saturday-morning-breakfast-cereal-collection" />-->
+<area shape="rect" coords="4,6,539,148" href="/" />
+</map>
+
+<map name="zachboxmap">
+<!--
+<area shape="rect" coords="11,55,212,92" href="http://www.smbc-theater.com" />
+<area shape="rect" coords="11,93,212,123" href="http://theweinerworks.com" />
+<area shape="rect" coords="11,124,214,160" href="http://www.snowflakescomic.com" />
+<area shape="rect" coords="11,161,216,191" href="http://www.captainexcelsior.com" />
+<area shape="rect" coords="12,192,215,232" href="http://www.twitter.com/zachweiner" />
+-->
+<AREA SHAPE="poly" ALT="" COORDS="7,258, 104,256, 104,281, 7,278" HREF="mailto:zach@smbc-comics.com">
+<AREA SHAPE="poly" ALT="" COORDS="7,232, 124,228, 127,255, 8,255" HREF="http://www.facebook.com/pages/SMBC-Fan-Club/104538479599168">
+<AREA SHAPE="poly" ALT="" COORDS="7,205, 126,204, 124,229, 5,230" HREF="http://twitter.com/#!/zachweiner">
+<AREA SHAPE="poly" ALT="" COORDS="8,137, 219,135, 221,167, 5,168" HREF="http://www.weinersmith.com/">
+<AREA SHAPE="poly" ALT="" COORDS="8,112, 218,108, 220,134, 6,136" HREF="http://www.captainexcelsior.com/">
+<AREA SHAPE="poly" ALT="" COORDS="6,87, 219,82, 219,108, 6,111" HREF="http://www.snowflakescomic.com/">
+<AREA SHAPE="poly" ALT="" COORDS="4,60, 219,60, 219,82, 6,85" HREF="http://www.smbc-theater.com/">
+<AREA SHAPE="poly" ALT="" COORDS="5,36, 220,35, 220,59, 6,59" HREF="http://smbc.myshopify.com/collections/frontpage/products/save-yourself-mammal-an-smbc-collection">
+</map>
+
+<center>
+<!--WEBBOT bot="HTMLMarkup" startspan ALT="Site Meter" -->
+<div style="display:none">
+<script type="text/javascript" language="JavaScript">var site="sm3saturdaymorning"</script>
+<!--<script type="text/javascript" language="JavaScript1.2" src="http://sm3.sitemeter.com/js/counter.js?site=sm3saturdaymorning">
+</script>-->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-3727700-1";
+urchinTracker();
+</script>
+
+<script type="text/javascript">
+(function() {
+    window.PinIt = window.PinIt || { loaded:false };
+    if (window.PinIt.loaded) return;
+    window.PinIt.loaded = true;
+    function async_load(){
+        var s = document.createElement("script");
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "http://assets.pinterest.com/js/pinit.js";
+        var x = document.getElementsByTagName("script")[0];
+        x.parentNode.insertBefore(s, x);
+    }
+    if (window.attachEvent)
+        window.attachEvent("onload", async_load);
+    else
+        window.addEventListener("load", async_load, false);
+})();
+</script>
+
+</div>
+

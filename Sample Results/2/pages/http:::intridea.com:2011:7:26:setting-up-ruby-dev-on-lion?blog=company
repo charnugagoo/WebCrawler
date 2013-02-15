@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7 no-js" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="lt-ie9 lt-ie8 no-js" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="lt-ie9 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+  <head>
+  <meta charset="utf-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <meta content="Intridea" property="og:site_name" />	
+  
+  <link href="/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+  				<meta property="og:title" content="Intridea"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:site_name" content="Intridea.com"/>
+        	<meta property="og:image" content="http://intridea.com/assets/logo.png"/>
+        <meta property="og:description" content="Intridea | User Interface Design, Ruby on Rails, Innovations for Web and Mobile Applications"/>
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@intridea">
+        <meta name="twitter:creator" content="@mbleigh">
+        <meta name="twitter:url" content="http://www.intridea.com/blog/2011/7/26/setting-up-ruby-dev-on-lion">
+        <meta name="twitter:title" content="Setting Up a Ruby Development Machine From Scratch With OS X Lion">
+        <meta name="twitter:description" content="Every so often I like to completely wipe out my computer and start it over from scratch. This isn&#x27;t because I particularly enjoy the pain of setting up a system from scratch, but it does come with som">
+	        <meta name="twitter:image" content="http://s3.amazonaws.com/intridea-responsive/production/posts/images/488/original.png">
+  <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+  <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+
+  <title>Setting Up a Ruby Development Machine From Scratch With OS X Lion | Intridea Blog</title>
+  <meta name="description" content="">
+
+  <link rel="alternate" type="application/rss+xml" title="Intridea Company Blog" href="http://feeds.feedburner.com/intridea" />
+  	<link rel="stylesheet" href="http://f.fontdeck.com/s/css/xQRUgUWyXok9D7t4bZvudjwwiaQ/www.intridea.com/18305.css" type="text/css" />
+<link href="/assets/application-81d4c4e23429c933185a6b57fde1e266.css" rel="stylesheet" type="text/css" />
+<!--[if IE]><link href="/assets/ie-3767ddc91d63fcadb0ad373cacb2e399.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+<!--[if IE 8]><link href="/assets/ie8-636d4f3deea359f80b9ebe555ad954fe.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+<!--[if IE 7]><link href="/assets/ie7-fb9f204200d01b11c66818f80277c71e.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+<!--[if IE 6]><link href="/assets/ie6-147bdbb4d851900f59b45b40ecd16334.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+
+  
+
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="RHGZqI2HAEEEz0IjW5JBXhHwT+cDffnC6wYNdYfmJzU=" name="csrf-token" />
+  
+  <!-- get iscroll to work -->
+  <meta name="viewport" content="width=device-width">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <!-- start Mixpanel --><script type="text/javascript">(function(c,a){var b,d,h,e;b=c.createElement("script");b.type="text/javascript";b.async=!0;b.src=("https:"===c.location.protocol?"https:":"http:")+'//api.mixpanel.com/site_media/js/api/mixpanel.2.js';d=c.getElementsByTagName("script")[0];d.parentNode.insertBefore(b,d);a._i=[];a.init=function(b,c,f){function d(a,b){var c=b.split(".");2==c.length&&(a=a[c[0]],b=c[1]);a[b]=function(){a.push([b].concat(Array.prototype.slice.call(arguments,0)))}}var g=a;"undefined"!==typeof f?g=
+a[f]=[]:f="mixpanel";g.people=g.people||[];h="disable track track_pageview track_links track_forms register register_once unregister identify name_tag set_config people.set people.increment".split(" ");for(e=0;e<h.length;e++)d(g,h[e]);a._i.push([b,c,f])};a.__SV=1.1;window.mixpanel=a})(document,window.mixpanel||[]);
+mixpanel.init("f76e33f7104bb9e97b3a440b544a4220");</script><!-- end Mixpanel -->
+
+<script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script></head>
+
+  <body id="page">
+	
+    <!-- for FB share button -->
+    <div id="fb-root"></div>
+	<div id="main_container">
+    <!--[if lt IE 8]><p class=chromeframe>Your browser is a bit overdue for an tune-up. Please <a href="http://browsehappy.com/">upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+
+    <div data-pjax-container>
+      <div class="nav-wrapper alpha blogs_show">
+	<select id="hidden_select" style="display:none;"></select>
+	<div class="main-nav alpha hidden-phone">
+	  <hgroup>
+	    <h1 class="logo"><a href="/">Intridea</a></h1>
+	    <h2 class="slogan">Building Better Applications</h2>
+	  </hgroup>
+	  
+	  <nav>
+	    <ul>
+	      <li class=''><a href="/"><span>Home </span><span class='nav_descript'>Welcome to AwesomeTown</span></a></li>
+	      <li class=''><a href="/services"><span>Services </span><span class='nav_descript'>Building the new web</span></a></li>
+	      <li class=''><a href="/portfolio"><span>Portfolio </span><span class='nav_descript'>Good Ideas. Brought to life.</span></a></li>
+	      <li class='active'><a href="/blog"><span>Blog </span><span class='nav_descript'>Dialogue for Tech Zealots</span></a></li>
+	      <li class=''><a href="/community"><span>Community </span><span class='nav_descript'>Technological philanthropy</span></a></li>
+	      <li class=''><a href="/about"><span>About </span><span class='nav_descript'>Meet our team of solutionaries</span></a></li>
+
+	    </ul>
+	  </nav>
+	
+	  <section id="contact">
+	      <div class="contact">
+	      	<a href="/contact" class="contact btn blue">Contact Us</a>
+	      </div>
+	      
+	      <p>1-888-968-IDEA (4332)</p>   
+	      <ul class="social cf">
+	        <li>
+	          <a class="facebook" href="http://facebook.com/intridea" title="Intridea on Facebook" target="_blank">Facebook</a> </li>
+	        <li>
+	          <a class="twitter" href="http://twitter.com/intridea" title="Intridea on Twitter" target="_blank">Twitter</a>
+	        </li>
+	        <li>
+	          <a class="linkedin" href="http://www.linkedin.com/company/intridea-inc" title="Intridea on Linkedin" target="_blank">Linkedin</a>
+	        </li>
+	        <!-- <li>
+	          <a class="email" href="/about/newsletter" title="Join the Intridea Newsletter">Newsletter</a>
+	        </li> -->
+	      </ul>
+	  </section>
+	</div>
+	
+	<div class="main visible-phone">
+		<!-- <select id="hidden_nav">
+			  <option value="home"   >Home</option>
+			  <option value="services" >Services</option>
+			  <option value="portfolio" >Portfolio</option>
+			  <option value="blog" >Blog</option>
+			  <option value="community" >Community</option>
+			  <option value="about" >About</option>
+			</select> -->
+		<h1 class="logo"><a href="/">Intridea</a></h1>
+
+		<!-- <div id="hidden_links">
+			<a id="hidden_home" href="/"></a>
+			<a id="hidden_services" href="/services"></a>
+			<a id="hidden_portfolio" href="/portfolio"></a>
+			<a id="hidden_blog" href="/blog"></a>
+			<a id="hidden_community" href="/community"></a>
+			<a id="hidden_about" href="/about"></a>				
+		</div>		 -->
+												
+    <select class="chzn_select iphone_nav" id="main_nav_url" name="main_nav_url" style="width:150px; display:none;"><option value="/">Home</option>
+<option value="/contact">Contact Us</option>
+<option value="/services">Services</option>
+<option value="/portfolio">Portfolio</option>
+<option value="/blog" selected="selected">Blog</option>
+<option value="/community">Community</option>
+<option value="/about">About</option></select>
+	</div>		
+
+</div>
+
+<!-- for mobile -->
+<div id="sub_nav" class="visible-phone portfolio_nav blogs_show">
+  <ul class="nav clearfix">
+	    <li><a id="link_all" value="all" href="/portfolio/" >Show All</a></li>
+	    <li><a id="link_web" value="web" href="/portfolio/#web" >Web</a></li>
+	    <li><a id="link_mobile" value="mobile" href="/portfolio/#mobile" >Mobile</a></li>
+	    <li><a id="link_labs" value="labs" href="/portfolio/#labs" >Labs</a></li>
+  </ul>
+</div>
+
+      <div class="wrapper omega blogs_container">
+        <div id="main" role="main">
+          <div id="flash">
+</div>
+          
+
+
+
+
+<div class="blog detail clearfix">
+
+	<div class='main_column blog_wrapper' >
+	  	
+	  <hgroup>	
+			<div class="hidden-phone">
+				<h2><a href="/blog">Intridea Blog: Technology, Design, Business</a></h2>
+			</div>
+		</hgroup>
+		
+		<hgroup class="visible-phone">	
+				<h2><a href="/blog">Back to Blog</a></h2>
+				<a href="/contact" class="btn blue">Get in Touch</a>
+		</hgroup>
+		
+  		
+  		
+<div id="content" class="main cf">
+	<article class="post">
+	  <h2 class="blog_title"><a href="/blog/2011/7/26/setting-up-ruby-dev-on-lion">Setting Up a Ruby Development Machine From Scratch With OS X Lion</a></h2>
+	  <p class="meta">
+	  	<span class="author">By <a href="/about/team/michael-bleigh">Michael Bleigh</a></span> 
+	  	<span class="date">July 26, 2011</span> in 
+	  	<span class="tags"><a href="http://www.intridea.com/blog/tag/ruby">ruby</a>, <a href="http://www.intridea.com/blog/tag/apple">apple</a>, <a href="http://www.intridea.com/blog/tag/setup">setup</a>, <a href="http://www.intridea.com/blog/tag/homebrew">homebrew</a>, <a href="http://www.intridea.com/blog/tag/rvm">rvm</a></span>
+	  </p>
+
+	  <div class='body'>
+	    <img alt="Medium" class="post_image_large" src="http://s3.amazonaws.com/intridea-responsive/production/posts/images/488/medium.png" />
+	    <p>Every so often I like to completely wipe out my computer and start it over from scratch. This isn&#39;t because I particularly enjoy the pain of setting up a system from scratch, but it does come with some advantages:</p>
+
+<ul>
+<li>You get rid of the stuff you didn&#39;t need.</li>
+<li>You have a chance to try things that came out since you last reinstalled.</li>
+<li>You have a clean install that isn&#39;t choking from years of cruft.</li>
+</ul>
+
+<p>I took it upon myself to perform this task when I upgraded to OS X Lion and thought it would also be a great chance to write one of those &quot;how to get a Ruby development machine going from scratch&quot; posts since that&#39;s what I&#39;d be doing anyway. So here&#39;s the process of how I got my machine set back up to work the way I want it to on Apple&#39;s latest.</p>
+
+<h2>Application Avalanche</h2>
+
+<table>
+  <tr>
+    <td><img align="left" src="https://img.skitch.com/20110726-xd54ysfnhk19pngd3xmj2nxknd.png" style="padding-right:10px; padding-bottom:10px">
+    <td><a href="http://chrome.google.com">Google Chrome</a> has been my browser of choice for the past year or so. I never would have thought I could give up Firebug, but the speed difference was enough for me to learn to love the Web Inspector.
+ </tr>
+        
+    <tr>
+      <td><img align="left" src="https://img.skitch.com/20110726-bb3gyr9icid98w59ae1ffgb5re.png" style="padding-right:10px; padding-bottom:10px">
+      <td><a href="http://www.iterm2.com">iTerm2</a> is new to my roster. I don't know too much about it other than that it can do split-pane views which is something I love in all of my apps.
+    </tr>
+
+    <tr>
+      <td><img align="left" src="https://img.skitch.com/20110726-cxbe2q2tacnj4gysxcmxrg4ugi.png" style="padding-right:10px; padding-bottom:10px">
+      <td><a href="http://developer.apple.com/xcode/">XCode</a> is a big huge download, and while I don't use the IDE I need the build tools for just about everything else in my dev toolchain.
+    </tr>
+
+    <tr>
+      <td><img align="left" src="https://img.skitch.com/20110726-m643rk1dffmx8ibx296khwybgi.png" style="padding-right:10px; padding-bottom:10px">
+      <td><a href="http://adium.im/">Adium</a> is my universal IM client of choice. It's simple, customizable, and always there when I need it. I roll with the <a href="http://adiumxtras.com/index.php?a=xtras&xtra_id=7365">AdiumIcon</a> icon set, the <a href="http://www.adiumxtras.com/index.php?a=xtras&xtra_id=7780">Mnmlsm</a> message style, and the <a href="http://www.adiumxtras.com/index.php?a=xtras&xtra_id=7118">Leopard Sidebar</a> contact list style.
+    </tr>
+
+    <tr>
+      <td><img align="left" src="https://img.skitch.com/20110726-cita8uswhc4hr14kwh5dr2fqq3.png" style="padding-right:10px; padding-bottom:30px">
+      <td><a href="http://mailplaneapp.com/">Mailplane</a> gives me exactly what I want in an email client: the GMail web interface but in its own dedicated application. While the benefits over something like a Fluid window for GMail aren't necessarily enormous, email is core enough to my daily routine that it was worth a little cash for a little better experience.
+    </tr>
+    
+    <tr>
+      <td><img align="left" src="https://img.skitch.com/20110726-b1sbtxxp82fmrt27jdeexh2dur.png" style="padding-right:10px; padding-bottom:10px">
+      <td><a href="https://github.com/b4winckler/macvim">MacVim</a> is my editor of choice although I don't pretend to be a "real" Vim user. I switched to Vim *solely* because it allows me to edit with split pane windows, and I still treat it more like Textmate than I'd normally like to admit in public. <strong>Note:</strong> If you're planning to use ZSH you'll want to install a snapshot release of MacVim, otherwise it will occasionally hang.
+   </tr>
+
+   <tr>
+      <td><img align="left" src="https://img.skitch.com/20110726-1gmr63s1xsjhefsx1jsxj4gnqn.png" style="padding-right:10px; padding-bottom:5px">
+      <td><a href="http://growl.info/">Growl</a> is an obvious must-have for any Mac user, developer or not. 
+   </tr>
+
+   <tr>
+      <td><img align="left" src="https://img.skitch.com/20110726-faii45746yfyjr1huaqjy7rseh.png" style="padding-right:10px; padding-bottom:10px">
+      <td><a href="http://presently.com">Presently</a> and <a href="http://hipchat.com">HipChat</a> are my desktop coworker communication tools and I'd be lost without them.
+    </tr>
+
+    <tr> 
+      <td><img align="left" src="https://img.skitch.com/20110726-xxxncdfu5weuk5gu91qs6smdkm.png" style="padding-right:10px; padding-bottom:10px">
+      <td><a href="http://www.alfredapp.com/">Alfred</a> is another new addition to my roster, replacing the <a href="http://code.google.com/p/qsb-mac/">Google Quick Search Box</a>. I haven't used it much yet, but I had heard good things so I'm going to give it a go.
+   </tr>
+
+   <tr>
+      <td><img align="left" src="https://img.skitch.com/20110726-8b26pickj9iqi6e9mhs8rpyr69.png" style="padding-right:10px; padding-bottom:10px">
+      <td><a href="http://www.videolan.org/vlc/">VLC</a> has a well-deserved reputation for being able to play just about everything. If I could remove Quicktime entirely and replace it with VLC, I would.
+   </tr>
+
+   <tr> 
+      <td><img align="left" src="https://img.skitch.com/20110726-jhpag81qw13tn97cyq7mwddpm2.png" style="padding-right:10px; padding-bottom:10px">
+      <td><a href="https://www.spotify.com/us/download/mac/">Spotify</a> is what I've been using the last week or two. I've tried both it and Rdio and I'm honestly pretty torn as to which I like more. But let's be honest, my primary listening point for music recently has been <a href="http://turntable.fm">Turntable.fm</a>. 
+    </tr>
+
+    <tr>
+        <td><img align="left" src="https://img.skitch.com/20110726-x966idj6j466575gxakw1er3rt.png" style="padding-right:10px; padding-bottom:10px">
+        <td><a href="http://itunes.apple.com/us/app/twitter/id409789998?mt=12">The Official Twitter App</a> is the client I've used since its release. I'm not a power user (and all of the searches that I care about I handle via <a href="http://www.twilert.com/">Twilert</a> so it works well enough.
+    </tr>
+    
+    <tr>
+        <td><img align="left" src="https://img.skitch.com/20110726-du8c1cbkg6tq64qkmtbmpjhq9f.png" style="padding-right:10px; padding-bottom:10px">
+        <td><a href="http://itunes.apple.com/us/app/cloud/id417602904?mt=12">Cloud</a> is an extremely useful little app to have for quickly sharing screenshots and files. I use <a href="http://skitch.com">Skitch</a> as well when I need to be able to annotate the shots quickly. 
+    </tr>
+
+    <tr>
+        <td><img align="left" src="https://img.skitch.com/20110726-cjcx7rsj2n6i4rp9rwm8sdn29r.png" style="padding-right:10px; padding-bottom:10px">
+        <td><a href="http://www.adobe.com/products/creativesuite.html">Adobe CS5</a> gives me the tools that I need for putting together logos and design assets. I was going to say "and mocking up sites" but since CSS3 I don't really use Photoshop for mockups that often these days, I just go straight for the markup.
+    </tr>
+      
+</table>
+
+<p><br></p>
+
+<h2>Command Line Commando</h2>
+
+<p>Once I had gotten the easy stuff out of the way, it was time to actually set up all of the development tools that I would need to get my machine up and running the way I needed it.</p>
+
+<p>First up is installing <a href="https://github.com/mxcl/homebrew">Homebrew</a>. Homebrew is without a doubt the simplest and most &quot;it just works&quot; package manager that I&#39;ve used for OS X. Installing it is as easy as:</p>
+
+<pre style="overflow-x:auto">
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.github.com/gist/323731)"
+</pre>
+
+<p>Once Homebrew is installed, we can go on a mad tear of package installation. Here are some of the tools that I set up right away:</p>
+
+<pre style="overflow-x:auto">
+    brew install wget git redis node imagemagick
+    brew install postgresql
+    brew install mongodb
+</pre>
+
+<p>Another new entry for this round, I thought I&#39;d take my coworkers advice and <a href="http://intridea.com/2011/5/18/its-not-enough-to-bash-in-heads-youve-got-to-bash-in-minds-with-zsh?blog=company">switch to ZSH</a> with Oh My ZSH. Installed like so:</p>
+
+<pre style="overflow-x:auto">
+    wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+</pre>
+
+<p>Next up we&#39;ll install RVM so that we can manage multiple Rubies with ease. I&#39;ll also be installing the Rubies that I use on a regular basis and setting the default Ruby to be 1.9.2 since that&#39;s what I&#39;m using 90% of the time.</p>
+
+<pre style="overflow-x:auto">
+    bash < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer )
+    rvm install 1.9.2
+    rvm install jruby
+    rvm use 1.9.2 --default
+</pre>
+
+<p>After that I needed to follow the instructions printed out by RVM to make sure it was working in my shell. Magnificent! Now we&#39;re almost all done with our basic development stack. We need something to run our web apps, and <a href="http://pow.cx">Pow</a> is definitely my favorite nowadays. We&#39;ll also install the <a href="https://github.com/Rodreegez/powder">powder gem</a> to make it super simple to manage our Pow links.</p>
+
+<pre style="overflow-x:auto">
+    curl get.pow.cx | sh
+    gem install powder
+</pre>
+
+<p>Now I&#39;ve got my development tools up and running, but I still need a little bit more out of my editor. Like I said, I&#39;m a training wheels Vim user, so I like to install Yehuda/Carl&#39;s <a href="https://github.com/carlhuda/janus">janus</a> to get a good set of Vim plugins that make Rails development super easy in MacVim.</p>
+
+<pre style="overflow-x:auto">
+    curl https://raw.github.com/carlhuda/janus/master/bootstrap.sh -o - | sh
+</pre>
+
+<p>We&#39;re getting quite close now. The only thing to do before enjoying my
+new setup is to make it so that I can clone my repositories off of the
+various services I use. So I followed the <a href="http://help.github.com/mac-set-up-git/">GitHub</a>, <a href="http://unfuddle.com/docs/topics/git_access">Unfuddle</a>, and <a href="http://devcenter.heroku.com/articles/keys">Heroku</a> setup instructions and I was up and running.</p>
+
+<h2>Summary</h2>
+
+<p>So that&#39;s pretty much it! Everything went pretty much as expected once I
+actually got a fresh-drive install of Lion working. The biggest pain was
+waiting for multi-gigabyte downloads like XCode, but leaving them
+overnight worked well enough to solve that. So for those who are
+curious, Ruby development is alive and working on Mac OS X Lion. Is
+there anything in my setup that you&#39;d do differently? Let me know in the
+comments!</p>
+
+	  </div>
+	</article>
+</div>
+<div class="main disqus">
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'intridea'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+	<footer>
+			<div class="meta tags">
+				<h3 style="display: inline-block;">Tags:</h3>
+					<a href="http://www.intridea.com/blog/tag/ruby">ruby</a>
+					<a href="http://www.intridea.com/blog/tag/apple">apple</a>
+					<a href="http://www.intridea.com/blog/tag/setup">setup</a>
+					<a href="http://www.intridea.com/blog/tag/homebrew">homebrew</a>
+					<a href="http://www.intridea.com/blog/tag/rvm">rvm</a>
+			</div>
+
+
+		<div class="clearfix">
+			<div class="alignleft">
+				<div class="like clearfix">
+				<iframe src="http://www.facebook.com/plugins/like.php?href=http://intridea.com/blog/2011/7/26/setting-up-ruby-dev-on-lion&amp;send=false&amp;layout=button_count&amp;width=90&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90px; height:21px;" allowTransparency="true"></iframe>
+
+				<a href="http://intridea.com/blog/2011/7/26/setting-up-ruby-dev-on-lion" class="twitter-share-button" data-count="horizontal">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				</div>
+			</div>
+			<div class="alignright hidden-phone blog_nav">
+					<a href="/blog/2011/7/19/finding-rails-devs-tight-market" style="padding-right:10px;">&larr; Previous Post</a>
+				<a href="#">&uarr; Back to Top</a>
+					<a href="/blog/2011/8/2/rails-shop-first-mover-advantage" style="padding-left:10px;">&rarr; Next Post</a>
+			</div>
+		</div>
+
+		<div class="author clearfix hidden-phone">
+			<img alt="Medium" class="auth_photo" src="http://s3.amazonaws.com/intridea-responsive/production/users/photos/7/medium.png?1338838428" />
+			<div class="auth-bio alignleft">
+
+				<h4>Michael Bleigh</h4>
+				<p>Michael has been with Intridea since 2007 and works to build Intridea's portfolio of products. With many years of experience working as both a designer and a developer, Michael specializes in helping to bridge the gap between the back-end development and the front-end design of a project.
+
+Michael is a prolific member of the Ruby on Rails community, having released popular open source libraries such as <a href="https://github.com/intridea/omniauth">OmniAuth</a> and spoken at conferences including RailsConf and RubyConf.</p>
+			</div>
+		</div>
+	</footer>
+
+	<div id="more_slideout" class="clearfix">
+		<h1>More from our blog</h1>
+		<h2><a href="/blog/2011/7/19/finding-rails-devs-tight-market">Why Your Company Needs A Rails Development Shop</a></h2>
+		
+		<a href="/blog/2011/7/19/finding-rails-devs-tight-market">Read Now &rarr;</a>
+		<div class="close">X</div>
+	
+	</div>
+	
+	<div class="clearfix"></div>
+	
+	<section class="more cf hidden-phone">
+
+		<h2>More posts by Michael Bleigh</h2>
+
+		<div class="more-post-container cf">
+				<div class="more-post alpha">
+					<div class="item_img">	
+						<a href="/blog/2013/1/18/requiring-directories-in-ruby-node-style"><div class="image_thumb" style="background-image:url(/assets/missing.png)"></div></a>		
+						<span class="author-bubble">Michael Bleigh <span class="arrow"></span></span>
+					</div>
+					<a href="/blog/2013/1/18/requiring-directories-in-ruby-node-style"><h4>Node.js has a pattern that I personally enjoy: if you require a directory, it...</h4></a>		
+				</div>
+				<div class="more-post ">
+					<div class="item_img">	
+						<a href="/blog/2012/11/12/cross-origin-resource-sharing-at-rubyconf-2012"><div class="image_thumb" style="background-image:url(/assets/missing.png)"></div></a>		
+						<span class="author-bubble">Michael Bleigh <span class="arrow"></span></span>
+					</div>
+					<a href="/blog/2012/11/12/cross-origin-resource-sharing-at-rubyconf-2012"><h4>Last weekend I had the opportunity to speak at RubyConf 2012 about a topic th...</h4></a>		
+				</div>
+				<div class="more-post omega">
+					<div class="item_img">	
+						<a href="/blog/2012/6/25/the-problem-with-paas"><div class="image_thumb" style="background-image:url(/assets/missing.png)"></div></a>		
+						<span class="author-bubble">Michael Bleigh <span class="arrow"></span></span>
+					</div>
+					<a href="/blog/2012/6/25/the-problem-with-paas"><h4>I'm a huge fan of Heroku. I mean I'm a <b>huge</b> fan of Heroku. Their platf...</h4></a>		
+				</div>
+		</div>
+	</section>
+	
+  <div style="clear: both"></div>
+	
+</div>
+
+	</div>
+	
+	<div class="prev_next main visible-phone">
+			<a href="/blog/2011/7/19/finding-rails-devs-tight-market" class="prev"><span class='arrow'></span>Read Previous Article</a>
+			<a href="/blog/2011/8/2/rails-shop-first-mover-advantage" class="next">Read Next Article<span class='arrow'></span></a>
+	</div>
+
+	
+
+<aside class="post-sidebar visible-desktop clearfix">
+	<ul class="blog-connect clearfix">
+		<li><a href="/contact" class="btn blue" style="width:110px;">Get in Touch</a></li>
+		<li><a href="http://feeds.feedburner.com/intridea" class="btn orange icn"  style="width:40px;"><img alt="Rss" height="22px" src="/assets/rss-f5ec05c10ba21c65ac113b8adc2df1ce.png" width="22px" /></a></li>
+		<li><a href="/about/newsletter" class="btn gray icn last"  style="width:40px;"><img alt="News" height="22px" src="/assets/news-e351dde94e2f5e591a7164f43ad929b3.png" width="22px" /></a></li>
+	</ul>
+	
+	<div class="sidebar">
+		<h3>Share</h3>
+		<ul class='share clearfix'>
+    	<li class="fb_share"><a href="#"></a></li>
+    	<li class="twitter_share"><a href="http://twitter.com/share?url=http%3A%2F%2Fwww.intridea.com%2Fblog%2F2011%2F7%2F26%2Fsetting-up-ruby-dev-on-lion&amp;via=intridea&amp;text=Setting+Up+a+Ruby+Development+Machine+From+Scratch+With+OS+X+Lion+%7C+Intridea+Blog+%E2%80%93&amp;related=&amp;count=vertical&amp;lang=en" url="http://intridea.com/blog/2011/7/26/setting-up-ruby-dev-on-lion"></a></li>
+    	<li class="plus_share"><a href="https://plusone.google.com/_/+1/confirm?hl=en-US&url=http://www.intridea.com/blog/2011/7/26/setting-up-ruby-dev-on-lion"></a></li>    
+    </ul>
+		
+		<div class="sidebar_item">
+  <h3>Our Products</h3>
+    <div class="product">
+      <h4><a href="http://intridea.github.com/green_onion/"><img alt="Feature" src="http://s3.amazonaws.com/intridea-responsive/production/products/images/4/feature.png?1360170855" /></a></h4>
+      <p>UI testing/diffing tool</p>
+    </div>
+    <div class="product">
+      <h4><a href="http://www.omniauth.org/"><img alt="Feature" src="http://s3.amazonaws.com/intridea-responsive/production/products/images/3/feature.png?1360170866" /></a></h4>
+      <p>Flexible, unassuming authentication</p>
+    </div>
+    <div class="product">
+      <h4><a href="http://intridea.github.com/grape/"><img alt="Feature" src="http://s3.amazonaws.com/intridea-responsive/production/products/images/5/feature.png?1360169263" /></a></h4>
+      <p>REST-like APIs in Ruby</p>
+    </div>
+</div>
+
+	</div>
+</aside>	
+
+
+
+
+
+<aside class="blog-sidebar visible-desktop visible-phone">
+	<ul class="blog-connect clearfix hidden-phone">
+		<li><a href="/contact" class="btn blue" style="width:110px;">Get in Touch</a></li>
+		<li><a href="http://feeds.feedburner.com/intridea" class="btn orange icn"  style="width:40px;"><img alt="Rss" height="22px" src="/assets/rss-f5ec05c10ba21c65ac113b8adc2df1ce.png" width="22px" /></a></li>
+		<li><a href="/about/newsletter" class="btn gray icn last"  style="width:40px;"><img alt="News" height="22px" src="/assets/news-e351dde94e2f5e591a7164f43ad929b3.png" width="22px" /></a></li>
+	</ul>
+	
+	<div class="sidebar">
+		<span class="sidebar_item archives">
+		<h3>Blog Archive</h3>
+    	<select class="chzn_select" id="blog_archive_url" name="blog_archive_url" style="width:160px;"><option>Select a month</option><option value="/blog/archives/2013/2">February 2013 (5)</option><option value="/blog/archives/2013/1">January 2013 (2)</option><option value="/blog/archives/2012/12">December 2012 (5)</option><option value="/blog/archives/2012/11">November 2012 (3)</option><option value="/blog/archives/2012/10">October 2012 (2)</option><option value="/blog/archives/2012/9">September 2012 (5)</option><option value="/blog/archives/2012/8">August 2012 (8)</option><option value="/blog/archives/2012/7">July 2012 (3)</option><option value="/blog/archives/2012/6">June 2012 (9)</option><option value="/blog/archives/2012/5">May 2012 (6)</option><option value="/blog/archives/2012/4">April 2012 (6)</option><option value="/blog/archives/2012/3">March 2012 (14)</option><option value="/blog/archives/2012/2">February 2012 (6)</option><option value="/blog/archives/2012/1">January 2012 (6)</option><option value="/blog/archives/2011/12">December 2011 (5)</option><option value="/blog/archives/2011/11">November 2011 (7)</option><option value="/blog/archives/2011/10">October 2011 (6)</option><option value="/blog/archives/2011/9">September 2011 (9)</option><option value="/blog/archives/2011/8">August 2011 (12)</option><option selected="selected" value="/blog/archives/2011/7">July 2011 (7)</option><option value="/blog/archives/2011/6">June 2011 (10)</option><option value="/blog/archives/2011/5">May 2011 (9)</option><option value="/blog/archives/2011/4">April 2011 (13)</option><option value="/blog/archives/2011/3">March 2011 (8)</option><option value="/blog/archives/2011/2">February 2011 (7)</option><option value="/blog/archives/2011/1">January 2011 (6)</option><option value="/blog/archives/2010/12">December 2010 (7)</option><option value="/blog/archives/2010/11">November 2010 (7)</option><option value="/blog/archives/2010/10">October 2010 (13)</option><option value="/blog/archives/2010/9">September 2010 (9)</option><option value="/blog/archives/2010/8">August 2010 (7)</option><option value="/blog/archives/2010/7">July 2010 (7)</option><option value="/blog/archives/2010/6">June 2010 (10)</option><option value="/blog/archives/2010/5">May 2010 (7)</option><option value="/blog/archives/2010/4">April 2010 (16)</option><option value="/blog/archives/2010/3">March 2010 (11)</option><option value="/blog/archives/2010/2">February 2010 (1)</option><option value="/blog/archives/2010/1">January 2010 (5)</option><option value="/blog/archives/2009/12">December 2009 (1)</option><option value="/blog/archives/2009/11">November 2009 (4)</option><option value="/blog/archives/2009/10">October 2009 (4)</option><option value="/blog/archives/2009/9">September 2009 (2)</option><option value="/blog/archives/2009/8">August 2009 (4)</option><option value="/blog/archives/2009/7">July 2009 (3)</option><option value="/blog/archives/2009/6">June 2009 (7)</option><option value="/blog/archives/2009/5">May 2009 (4)</option><option value="/blog/archives/2009/4">April 2009 (5)</option><option value="/blog/archives/2009/3">March 2009 (14)</option><option value="/blog/archives/2009/2">February 2009 (18)</option><option value="/blog/archives/2009/1">January 2009 (3)</option><option value="/blog/archives/2008/12">December 2008 (2)</option><option value="/blog/archives/2008/11">November 2008 (3)</option><option value="/blog/archives/2008/10">October 2008 (7)</option><option value="/blog/archives/2008/9">September 2008 (9)</option><option value="/blog/archives/2008/8">August 2008 (2)</option><option value="/blog/archives/2008/7">July 2008 (7)</option><option value="/blog/archives/2008/6">June 2008 (14)</option><option value="/blog/archives/2008/5">May 2008 (5)</option><option value="/blog/archives/2008/4">April 2008 (14)</option><option value="/blog/archives/2008/3">March 2008 (6)</option><option value="/blog/archives/2008/2">February 2008 (5)</option><option value="/blog/archives/2008/1">January 2008 (6)</option><option value="/blog/archives/2007/12">December 2007 (5)</option><option value="/blog/archives/2007/11">November 2007 (5)</option><option value="/blog/archives/2007/10">October 2007 (7)</option><option value="/blog/archives/2007/9">September 2007 (2)</option><option value="/blog/archives/2007/8">August 2007 (7)</option><option value="/blog/archives/2007/7">July 2007 (4)</option><option value="/blog/archives/2007/6">June 2007 (3)</option><option value="/blog/archives/2007/4">April 2007 (1)</option></select>
+    	</span>
+		<h3 class="hidden-phone">Categories</h3>
+		<ul class="hidden-phone">
+		    <li ><a href="/blog/tag/rails">Rails <span>(89)</span></a></li>
+		    <li ><a href="/blog/tag/ruby">Ruby <span>(76)</span></a></li>
+		    <li ><a href="/blog/tag/announcements">Announcements <span>(46)</span></a></li>
+		    <li ><a href="/blog/tag/events">Events <span>(41)</span></a></li>
+		    <li ><a href="/blog/tag/open%20source">Open source <span>(35)</span></a></li>
+		    <li ><a href="/blog/tag/design">Design <span>(30)</span></a></li>
+		    <li ><a href="/blog/tag/mobile">Mobile <span>(26)</span></a></li>
+		    <li ><a href="/blog/tag/development">Development <span>(26)</span></a></li>
+		    <li ><a href="/blog/tag/presently">Presently <span>(23)</span></a></li>
+		    <li ><a href="/blog/tag/tips">Tips <span>(20)</span></a></li>
+	  </ul>		
+		<span class="visible-phone sidebar_item categories">
+	    <h3>Categories</h3>	
+		<select class="chzn_select" id="blog_category_url" name="blog_category_url"><option value="/blog/tag/rails">Rails (92)</option>
+<option value="/blog/tag/ruby">Ruby (77)</option>
+<option value="/blog/tag/announcements">Announcements (46)</option>
+<option value="/blog/tag/events">Events (42)</option>
+<option value="/blog/tag/open%20source">Open source (35)</option>
+<option value="/blog/tag/design">Design (31)</option>
+<option value="/blog/tag/development">Development (26)</option>
+<option value="/blog/tag/mobile">Mobile (26)</option>
+<option value="/blog/tag/presently">Presently (24)</option>
+<option value="/blog/tag/tips">Tips (20)</option></select>	
+		</span>
+	  <a href="" class="hiring">We're Hiring</a>
+	</div>
+	<div class="main benefits hidden-phone" >
+			<h3>Looking for a new gig?</h3>
+			<p>
+				Obsessed with good code and beautiful design? Do you value form as much as function? We do too. And we're looking for people like you.
+			</p>
+			<h4>Intridean Benefits</h4>
+			<ul>
+				<li>Flexible Work Schedule</li>
+				<li>Full Coverage Insurance</li>
+				<li>Sponsored Events</li>
+				<li>Company Retreats</li>
+				<li>Competitive Salary</li>
+			</ul>
+			<a href="/careers" class="btn green block large">View Open Positions</a>
+	</div>
+</aside>
+
+
+
+</div>
+        </div>
+        <footer id="footer">
+  <section class="micro-about hidden-phone">
+    <h2>About Us</h2>
+    <p>
+      Intridea is based in Washington, D.C. Most of us live in the DC-MD-VA metro area, though we also have team members in California, Colorado, Kansas, Maine, Minnesota, Missouri, New Hampshire, New York, Pennsylvania, Wisconsin and Wyoming.
+    </p>
+    <p>
+      Interested in working with us, or have a question? <br />
+      Feel free to <a href="/contact">contact us</a> anytime.
+    </p>
+    <p class="copy">&copy; 2013 Intridea, Inc. All Rights Reserved.</p>
+  </section>
+  <section class="micro-contact hidden-phone">
+    <h2>Contact Us</h2>
+    <dl class="cf">
+      <dt class="address">DC Office</dt>
+      <dd class="address">
+        1718 M St. NW <br />
+        Suite 183<br /> 
+        Washington, DC 20036
+      </dd> 
+      
+      <dt class="phone">Phone</dt>
+      <dd class="phone visible-phone"><a href="tel:18889684332"><strong>1-888-968-IDEA (4332)</strong></a></dd>
+      <dd class="phone hidden-phone"><strong>1-888-968-IDEA (4332)</strong></dd>
+      
+      <dt>Email</dt>
+      <dd><a href="mailto:info@intridea.com"><strong>info@intridea.com</strong></a></dd>
+      
+      <dt>Fax</dt>
+      <dd>1-202-280-1472</dd>
+      
+      <dt>Twitter</dt>
+      <dd><a href="http://www.twitter.com/intridea"><strong>@intridea</strong></a></dd>
+    </dl>
+  </section>
+
+
+  <section class="micro-contact visible-phone">
+    <h2>Contact Us</h2>
+    <dl class="cf">
+      <dt class="address">DC Office</dt>
+      <dd class="address">
+        1718 M St. NW <br />
+        Suite 183<br /> 
+        Washington, DC 20036
+      </dd> 
+      
+      <dt class="phone">Phone</dt>
+      <dd class="phone visible-phone"><a href="tel:18889684332"><strong>1-888-968-IDEA (4332)</strong></a></dd>
+      <dd class="phone hidden-phone"><strong>1-888-968-IDEA (4332)</strong></dd>
+      <a href="/contact" class="btn blue" >Get in Touch</a>
+    </dl>
+
+    <dl class="omega">
+      <dt>Email</dt>
+      <dd><a href="mailto:info@intridea.com"><strong>info@intridea.com</strong></a></dd>
+      
+      <dt>Fax</dt>
+      <dd>1-202-280-1472</dd>
+      
+      <dt>Twitter</dt>
+      <dd><a href="http://www.twitter.com/intridea"><strong>@intridea</strong></a></dd>
+    </dl>
+  </section>
+
+  <p class="copy visible-phone">&copy; 2013 Intridea, Inc. All Rights Reserved.</p>
+  <a href="/careers" class="hiring hidden-phone">We're Hiring!</a>
+  <a href="http://maps.google.com/maps?q=1020 16th Street NW 7th Floor Washington, D.C. 20006" class="directions visible-phone">Directions to office</a>
+</footer>
+      </div>
+    </div>
+	</div>
+    <script src="/assets/application-355b6b98d6272830a17ef301c6a7504d.js" type="text/javascript"></script>
+
+	<script type= 'text/javascript'>
+		$('.fb_share').click(function(event) {
+			var width  = 575,
+			    height = 400,
+			    left   = ($(window).width()  - width)  / 2,
+			    top    = ($(window).height() - height) / 2,
+			    url    = this.href,
+			    opts   = 'status=1' +
+			             ',width='  + width  +
+			             ',height=' + height +
+			             ',top='    + top    +
+			             ',left='   + left;
+
+			window.open("http://www.facebook.com/sharer.php?u=http://www.intridea.com/blog/2011/7/26/setting-up-ruby-dev-on-lion&t=Setting Up a Ruby Development Machine From Scratch With OS X Lion", 'Facebook', opts);
+
+			return false;
+		});
+	</script>
+  <script type="javascript">
+	  $(document).ready(function(){
+	  	$(window).scrollTop(0);
+		});
+	</script>
+
+
+  <script>
+    //<![CDATA[
+      var _gaq=[['_setAccount','UA-2083560-1'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+    //]]>
+  </script>
+
+<script type="text/javascript" language="javascript">llactid=16150</script> 
+<script type="text/javascript" language="javascript" src="http://t6.trackalyzer.com/trackalyze.js"></script> 
+
+<script type="text/javascript" src="https://lct.salesforce.com/sfga.js"></script>
+<script type="text/javascript">__sfga();</script>
+
+  <script type="text/javascript">if (!NREUMQ.f) { NREUMQ.f=function() {
+NREUMQ.push(["load",new Date().getTime()]);
+var e=document.createElement("script");
+e.type="text/javascript";
+e.src=(("http:"===document.location.protocol)?"http:":"https:") + "//" +
+  "d1ros97qkrwjf5.cloudfront.net/42/eum/rum.js";
+document.body.appendChild(e);
+if(NREUMQ.a)NREUMQ.a();
+};
+NREUMQ.a=window.onload;window.onload=NREUMQ.f;
+};
+NREUMQ.push(["nrfj","beacon-1.newrelic.com","51ff5bcf09","743619","dVZcFkQODVgDE0tbW1leQU1FCQ5D",0,1426,new Date().getTime(),"","","","",""]);</script></body>
+</html>

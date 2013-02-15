@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      Stackless Python
+    </title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><link rel="search" href="/search" /><link rel="help" href="/wiki/TracGuide" /><link rel="alternate" href="/wiki/WikiStart?format=txt" type="text/x-trac-wiki" title="Plain Text" /><link rel="start" href="/wiki" /><link rel="stylesheet" href="/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/chrome/common/css/wiki.css" type="text/css" /><link rel="shortcut icon" href="/chrome/site/img/favicon.ico" type="image/x-icon" /><link rel="icon" href="/chrome/site/img/favicon.ico" type="image/x-icon" /><link type="application/opensearchdescription+xml" rel="search" href="/search/opensearch" title="Search Stackless Python" /><script type="text/javascript" src="/chrome/common/js/jquery.js"></script><script type="text/javascript" src="/chrome/common/js/babel.js"></script><script type="text/javascript" src="/chrome/common/js/trac.js"></script><script type="text/javascript" src="/chrome/common/js/search.js"></script><script type="text/javascript" src="/chrome/common/js/folding.js"></script><script type="text/javascript" src="/chrome/common/js/ie_pre7_hacks.js"></script><script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $("#content").find(".wikianchor").each(function() {
+          $(this).addAnchor(babel.format(_("Link to #%(id)s"), {id: $(this).attr('id')}));
+        });
+        $(".foldable").enableFolding(true, true);
+      });
+    </script>
+    <link rel="stylesheet" type="text/css" href="/chrome/site/css/reset-min.css" />
+    <link rel="stylesheet" type="text/css" href="/chrome/site/css/trac_custom.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="/chrome/site/css/print.css" />
+</head>
+  <body>
+    <img id="print_logo" src="/chrome/site/img/logo_small.png" style="display: none" />
+    <a id="logo" href="/" title="Home"></a>
+    <div id="navBox">
+	<ul>
+      <li class="first"><a href="/prefs">Preferences</a></li><li><a href="/login">Login</a></li><li class="last"><a href="/register">Register</a></li>
+    </ul>
+    </div>
+    <form id="searchBox" action="/search" method="get">
+        <div>
+            <input id="submitSearch" type="submit" value=" " title="Search" />
+	    <input type="text" id="textSearch" name="q" size="18" />
+	</div>
+    </form>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first active"><a href="/wiki">Documentation</a></li><li><a href="/browser">Browse Source</a></li><li><a href="/report">View Tickets</a></li><li class="last"><a href="/timeline">Timeline</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="pagepath" class="noprint">
+  <a class="pathentry first" title="View WikiStart" href="/wiki">wiki:</a><a class="pathentry" href="/wiki/WikiStart" title="View WikiStart">WikiStart</a>
+</div>
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+              <li class="first"><a href="/wiki/WikiStart">Start Page</a></li><li><a href="/wiki/TitleIndex">Index</a></li><li class="last"><a href="/wiki/WikiStart?action=history">History</a></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="wiki">
+      <div class="wikipage searchable">
+        
+          
+          <div class="trac-modifiedby">
+            <span><a href="/wiki/WikiStart?action=diff&amp;version=3" title="Version 3 by admin">Last modified</a> <a class="timeline" href="/timeline?from=2012-06-07T15%3A58%3A16%2B02%3A00&amp;precision=second" title="2012-06-07T15:58:16+02:00 in Timeline">8 months</a> ago</span>
+            <span class="trac-print">Last modified on 06/07/2012 03:58:16 PM</span>
+          </div>
+          <div id="wikipage"><div class="document" id="about-stackless">
+<h1 class="title">About Stackless</h1>
+<div class="section" id="an-introduction-for-newcomers">
+<h1>An introduction for newcomers</h1>
+<p>Stackless Python is an enhanced version of the
+<a class="reference external" href="http://www.python.org/">Python</a> programming language. It allows programmers
+to reap the benefits of thread-based programming
+without the performance and complexity problems
+associated with conventional threads. The microthreads
+that Stackless adds to Python are a cheap and
+lightweight convenience which can if used properly,
+give the following benefits:</p>
+<blockquote>
+<ul class="simple">
+<li>Improved program structure.</li>
+<li>More readable code.</li>
+<li>Increased programmer productivity.</li>
+</ul>
+</blockquote>
+<div class="section" id="features">
+<h2>Features</h2>
+<p>For all the convenience gained through using Stackless,
+there is really only a minimal amount of functionality
+exposed through the stackless module. You can get
+more familiar with these aspects by reading the
+nformation provided in the following pages:</p>
+<blockquote>
+<ul class="simple">
+<li><a class="reference external" href="/wiki/Tasklets">Microthreads</a>: tasklets wrap functions allowing
+them to be launched as microthreads.</li>
+<li><a class="reference external" href="/wiki/Channels">Channels</a>: channels can be used for
+bidirectional communication between tasklets.</li>
+<li><a class="reference external" href="/wiki/Scheduling">Scheduling</a>: a round robin scheduler is built
+in. It can be used to schedule tasklets either
+cooperatively or preemptively.</li>
+<li><a class="reference external" href="/wiki/Pickling">Serialisation</a>: tasklets can be serialised to disk
+through pickling for later resumption of execution.</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="further-reading-material">
+<h2>Further reading material</h2>
+<blockquote>
+<ul class="simple">
+<li><a class="reference external" href="/wiki/FAQ">FAQ</a>: frequently asked questions.</li>
+<li><a class="reference external" href="http://code.google.com/p/stacklessexamples/wiki/StacklessExamples">Examples</a>: useful or descriptive pieces of code that
+shows Stackless functionality in use.</li>
+<li><a class="reference external" href="/wiki/Idioms">Idioms</a>: common patterns in using Stackless
+Python in code.</li>
+<li><a class="reference external" href="/wiki/Applications">Applications</a>: some of the businesses and
+projects that Stackless Python has been used by.</li>
+</ul>
+</blockquote>
+</div>
+</div>
+<div class="section" id="getting-started">
+<h1>Getting started</h1>
+<div class="section" id="installation">
+<h2>Installation</h2>
+<p>You either need to compile your own copy from the source
+code in the <a class="reference external" href="/wiki/Mercurial">Mercurial</a> repository or alternatively
+obtain a provided <a class="reference external" href="/wiki/Download">precompiled binaries</a>, especially if
+you use Microsoft Windows, to install over those in your
+existing Python installation.</p>
+</div>
+<div class="section" id="learning-to-use-stackless">
+<h2>Learning to use Stackless</h2>
+<p>There are currently five main places that you can look to
+for information on how to use Stackless:</p>
+<blockquote>
+<ul class="simple">
+<li>The <a class="reference external" href="http://www.disinterest.org/resource/stackless/2.6-docs-html/">documentation</a>.</li>
+<li>The tutorial &quot;<a class="reference external" href="http://www.grant-olson.net/python/intro-to-stackless-python">Introduction to Concurrent Programming with Stackless Python</a>&quot;,
+written by Grant Olson. [<a class="reference external" href="http://web.archive.org/web/20071001004937/http://members.verizon.net/olsongt/stackless/why_stackless.html">mirror</a>]</li>
+<li>The mailing list <a class="reference external" href="http://www.stackless.com/pipermail/stackless">archives</a>.</li>
+</ul>
+</blockquote>
+<p>Please feel free to email the <a class="reference external" href="http://www.stackless.com/mailman/listinfo/stackless">mailing list</a> with any
+questions you may have or to ask in the <a class="reference external" href="/wiki/IRC">IRC</a> room.</p>
+<p>Old documentation can also be found on the
+<a class="reference external" href="http://zope.stackless.com/index_old.htm">original Stackless site</a>.</p>
+</div>
+</div>
+<div class="section" id="support-stackless">
+<h1>Support Stackless!</h1>
+<p>Developing Stackless into a rock solid basis for applications
+is a lot of hard work and it needs more <a class="reference external" href="/wiki/Sprints">Sprints</a> and
+much of my personal time. You can help me by sending money.
+The more money I get for working on Stackless, the more I
+can reduce work on other projects, since I have to feed a
+big family.</p>
+<p>A number of people said that they would like to sponsor me
+with a little amount if it were easy to do. Therefore, I
+signed up with PayPal, where you can send your contribution
+quite easily:</p>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+  <input type="hidden" name="cmd" value="_xclick"/>
+  <input type="hidden" name="business" value="tismer@tismer.com"/>
+  <input type="hidden" name="item_name" value="Stackless Sprint"/>
+  <input type="hidden" name="no_shipping" value="1"/>
+  <input type="hidden" name="return" value="http://www.stackless.com/wiki/Thanks"/>
+  <input type="hidden" name="cancel_return" value="http://www.stackless.com/"/>
+  <input name="submit" type="image"
+    src="/chrome/site/img/logo_small.png"
+    alt="Make payments with PayPal - it's fast, free and secure!" align="middle" width="61" height="50" border="0"/>
+         <span class="style6">&lt;- please click here for PayPal!</span>
+</form><br/><p>Please enter a note whether you would like to be listed
+on the sponsorship page. Thanks in advance!</p>
+</div>
+<div class="section" id="acknowledgements">
+<h1>Acknowledgements</h1>
+<p>I wish to thank Michael Hudson, Sam Rushing and Will
+Ware for their help on the Linux build and for their
+valuable input. Just van Rossum and Mike Fletcher for
+working with Will on the Microthreads. Stephen R. Figgins
+and David Mertz for their articles, and Cameron Laird
+for preparing even an article series. Gordon McMillan
+for his nice introduction, and for not yet writing the
+PEPs (you know what I mean :), <a class="reference external" href="http://www.ccpgames.com/">CCPGames</a> for their
+ongoing sponsorship, <a class="reference external" href="http://www.ironport.com/">IronPort</a> for hiring me part-time,
+Bernd Rinn for building RPM files, all the many other
+which I forgot to add to this page...</p>
+<p>... and Guido van Rossum for still not sending the
+Spanish Inquisition.</p>
+</div>
+</div>
+</div>
+        
+        
+      </div>
+      
+
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="last first">
+          <a rel="nofollow" href="/wiki/WikiStart?format=txt">Plain Text</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+</body>
+</html>

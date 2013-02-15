@@ -1,0 +1,1049 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" class="Chrome">
+    
+    
+    
+    
+
+    
+    <head>
+        <meta id="CompatabilityMode" http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="http://i1.codeplex.com/css/v20104/i1972231/StyleSheet.ashx" id="MasterCss" rel="stylesheet" type="text/css" />
+        <link rel="SHORTCUT ICON" href="http://www.codeplex.com/favicon.ico" />
+        <title>IronPython - Issue Tracker</title>
+        
+        <!--
+        Third party scripts and code linked to or referenced from this website are licensed to you by the parties that own such code,
+        not by Microsoft.  See ASP.NET Ajax CDN Terms of Use – http://www.asp.net/ajaxlibrary/CDN.ashx.
+        -->
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.4.4.min.js" type="text/javascript"></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.6/jquery-ui.min.js" type="text/javascript"></script>
+        
+        
+    <style type="text/css">.SideBar, .SideBarPadding{display:none;}.MainContent{width:auto;}.SiteContentTable{width:100%;}</style>
+    <style id="ProjectStyles" type="text/css">
+        .SiteHeader, .SiteHeaderLeft {
+            height:45px !important;
+            overflow:hidden;
+        }
+        .SiteContent 
+        {
+            padding: 0 0 1em 0;
+            margin-top:0;
+            min-height:225px;
+            border-right: 1px solid lightgrey;
+            border-left: 1px solid lightgrey;
+            border-bottom: 1px solid lightgrey;
+        }
+        .IE table.MinWidthContent
+        {
+	        table-layout: auto !important;	
+        }
+    </style>
+    
+    
+    <style type="text/css">
+
+        #WorkItemBasicList {
+            width: 100%;
+        }
+
+        .SearchResultWarning {
+            margin: 1em 0 1em 0;
+            color: #FF0000;
+            font-size: 1.6em;
+            font-style: italic;
+        }
+
+        .ServiceUnavailableError {
+            margin: 2em 0 2em 0;
+            padding-left: 1em;
+        }
+        
+        .FilterBySubscriptionsOption input {
+            float: left;
+        }
+        
+        .FilterBySubscriptionsOption {
+            white-space: nowrap;
+        }
+        
+        .FilterBySubscriptionsOption label {
+            vertical-align: middle;
+        }
+        
+        .RightSideBarWidth {
+            width: 24.4em;
+        }
+
+    </style>
+
+    
+    
+    <meta id="WTProjectName" name="WT.pi" content="IronPython"/>
+    
+
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href='http://ironpython.codeplex.com/rsd' />
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" title="WLWManifest" href='/wlwmanifest.xml' />
+    
+    
+        <link rel="alternate" type="application/rss+xml" title="IronPython" url="http://ironpython.codeplex.com/project/feeds/rss"/>
+    
+        
+        <link rel="alternate" type="application/rss+xml" title="IronPython&#32;-&#32;Issue&#32;Tracker" url="http://ironpython.codeplex.com/project/feeds/rss?ProjectRSSFeed=codeplex%3a%2f%2fworkitem%2fironpython"/>
+        
+        <link rel="alternate" type="application/rss+xml" title="IronPython&#32;-&#32;Downloads" url="http://ironpython.codeplex.com/project/feeds/rss?ProjectRSSFeed=codeplex%3a%2f%2frelease%2fironpython"/>
+        <link rel="alternate" type="application/rss+xml" title="IronPython&#32;-&#32;Reviews" url="http://ironpython.codeplex.com/project/feeds/rss?ProjectRSSFeed=codeplex%3a%2f%2freview%2fironpython"/>
+        
+    
+        <link rel="alternate" type="application/rss+xml" title="IronPython&#32;-&#32;Source&#32;code" url="http://ironpython.codeplex.com/project/feeds/rss?ProjectRSSFeed=codeplex%3a%2f%2fsourcecontrol%2fironpython"/>
+        <link rel="alternate" type="application/rss+xml" title="IronPython&#32;-&#32;Wiki" url="http://ironpython.codeplex.com/project/feeds/rss?ProjectRSSFeed=codeplex%3a%2f%2fwiki%2fironpython"/>
+    
+    </head>
+    
+    <body>
+        <script src="http://i1.codeplex.com/scripts/v20104/i7/ScriptLoader.ashx" type="text/javascript"></script>
+        <form id="aspnetForm" autocomplete="off" method="POST" enctype="multipart/form-data">
+            <input name="__RequestVerificationToken" type="hidden" value="Qw-PLpqYioEb9K8yYf2Wm0EiqZeW5vyorNp1TGryu5eJ6StYffpp13H6g_rszIuGtuhJJju04hNf5PR1VikDPlAfhDnhx7Q3DYEGXgS1AxUv89YHp-_B_sHWJjhKmAnOyEU35g2" /><input name="__RequestVerificationToken2" type="hidden" value="__RequestVerificationToken2b60535b4-1053-4083-9458-efb90752e6e1" />
+            
+            <div id="UpdateProgressPanel" class="loading_animation" style="display:none;">
+                <div class="row">
+                    <h2 class="anim_h2">
+                        <span id="UpdateProgressText">Updating...</span>
+                        <span id="animatedLoadingIconContainer">
+                            <img id="animatedLoadingIcon" src="http://i3.codeplex.com/Images/v20104/loading_animation.gif" class="anim_img"/>
+                        </span>
+                    </h2>
+                </div>
+            </div>
+            
+            <div style="display:none;">
+                
+                    <script type="text/javascript">
+                        $loadScript("https://siterecruit.comscore.com/sr/codeplex/broker.js");
+                    </script>
+
+                
+                
+                <img id="BlankImage" style="width:0;height:0;" src="http://i3.codeplex.com/Images/v20104/blank.png" onload="self.logoImageLoaded=true;"/>
+
+                <script language="javascript" type="text/javascript">
+                    var date = new Date();
+                    var timezoneOffset = date.getTimezoneOffset() / 60 * -1;
+                    var timezoneOffsetCookie = getCookie("TimezoneOffset");
+                    var firstTimeSetTimezoneCookie = false;
+
+                    if (timezoneOffsetCookie == null || timezoneOffsetCookie != timezoneOffset) {
+                        firstTimeSetTimezoneCookie = true;
+                        document.cookie = "TimezoneOffset=" + timezoneOffset + '; domain=.codeplex.com;expires=Sat, 15 Feb 2014 08:20:40 UTC';
+                    }
+                </script>
+                
+                
+                    <noscript>
+                        <a href="http://www.omniture.com" title="Web Analytics"><img src="http://msstonojstemp.112.2O7.net/b/ss/msstonojstemp/1/H.20.2--NS/0" height="1" width="1" border="0" alt="" /></a>
+                    </noscript>
+                
+            </div>
+            
+            <div id="header">
+                <div id="header_wrap" class="row">
+                    <p id="logo"><a href="http://www.codeplex.com">Code<span class="semi">Plex</span></a><span id="tagline">Project Hosting for Open Source Software</span></p>
+                    
+
+<ul id="nav">
+
+    <li><a href="/site/register/new" id="registerLink" class="ZoomFix">Register</a></li>
+    <li ><a class="SignInLink" href="https://www.codeplex.com/site/login?RedirectUrl=http%3a%2f%2fironpython.codeplex.com%2fworkitem%2flist%2fbasic" id="signInLink">Sign In</a></li>
+  
+    <li class="last"><a class="rss_site_icon" href="http://www.codeplex.com/site/feeds/rss" type="application/rss+xml" rel="Alternate" title="CodePlex Site Activity"></a></li>
+</ul>
+                    <input id="searchsite" name="searchsite" maxlength="500" type="text" value="" /><span id="search_mag"><a id="submitSearch" name="submitSearch" class="magnify" title="Search" href="#"></a></span>
+                    <script>
+	$(document).ready(function() {
+    var searchButton = $('#submitSearch'),
+        searchBar = $('#searchsite');
+
+    // Register our own handler for the search event while we wait for the SearchBox script to load.
+    searchButton.bind('click.backupSearchBox', doProjectSearch);
+    searchBar.bind('keypress.backupSearchBox', function(e) { if ($keyCode(e) === 13) { doProjectSearch(); return false; } });
+
+    function cleanupSearchEvents() {
+        // If the SearchBox was loaded, unregister our handlers.
+        if (epx_loaded) {
+            searchButton.unbind('.backupSearchBox');
+            searchBar.unbind('.backupSearchBox');
+        }
+    }
+
+    $loadScript('http://i4.services.social.microsoft.com/search/Widgets/SearchBox.jss?appid=1000&scopeid=1&boxId=searchsite&btnId=submitSearch&watermark=Search%20all%20projects&overrideWatermark=true&searchLocation=%2fsite%2fsearch&allowEmptySearch=true&focusOnInit=False&minimumTermLength=3', cleanupSearchEvents);
+})
+function doProjectSearch() {
+    
+    var url = '/site/search';
+
+    //If search term is not same as watermark
+    if($('#searchsite').val() != 'Search all projects')    
+    {        
+        url = url + '?query=' + encodeURIComponent($('#searchsite').val());
+    }
+
+    
+    var callback = '';
+    if (callback.length > 0 && eval('typeof ' + callback) != 'undefined')
+        url += eval(callback + '()');
+
+    window.location.href = url;
+    return false;
+}
+</script>
+                </div>
+            </div>
+            
+            <div id="wrap">
+                
+    <div id="sub_heading" class="row">
+        
+        <div id="ProjectHeader">
+            <div id="project_title_row" class="row">
+                <div id="project_logo">
+                    
+    
+    <h1><a href="http://ironpython.codeplex.com/"><img src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=ironpython&DownloadId=89583&Build=20104" alt="IronPython" /></a></h1>
+
+                </div>
+                <div id="project_title_links">
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div id="ProjectDetailsDiv">
+            
+        </div>
+		<div class="clear"></div>
+        
+
+<ul id="page_box_links">
+	<li id="homeTabCell" style="width: 63px;"><a id="homeTab" href="http://ironpython.codeplex.com/" class="box_home">home</a><div></div></li>
+    
+	<li id="sourceTabCell" style="width:117px;"><a id="sourceTab" href="http://ironpython.codeplex.com/SourceControl/BrowseLatest" class="box_source">source code</a><div></div></li>
+    
+	<li id="releasesTabCell" style="width:112px;"><a id="releasesTab" href="http://ironpython.codeplex.com/releases/view/81726" class="box_downloads">downloads</a><div></div></li>
+    
+    <li id="documentationTabCell" style="width:143px;"><a id="documentationTab" href="http://ironpython.codeplex.com/documentation" class="box_documentation">documentation</a><div></div></li>
+    
+	<li id="workItemsTabCell" style="width:124px;"><a id="workItemsTab" href="http://ironpython.codeplex.com/workitem/list/basic" class="issue_active">issue tracker</a><div></div></li>
+    
+	<li id="peopleTabCell" style="width:71px;"><a id="peopleTab" href="http://ironpython.codeplex.com/team/view" class="box_people">people</a><div></div></li>
+	<li id="licenseTabCell" style="width:96px; margin-right:15px;"><a id="licenseTab" href="http://ironpython.codeplex.com/license" class="box_license">license</a><div></div></li>
+    <span class="stretch"></span>
+</ul>
+		    <div class="clear"></div>
+            
+    
+
+<div id="workitem_sub_menu">
+    <ul class="page_box_sublinks">
+        
+            <li>Basic View</li>
+        
+            <li class="last"><a id="AdvancedLink" href="http://ironpython.codeplex.com/workitem/list/advanced">Advanced View</a></li>
+        
+    </ul>
+    
+    <div id="actionBar_placeholder">
+        
+
+<div>
+    
+    <div id="actionBar" class="action_bar">
+        <ul id="actionBar_ul" class="actionBar_sublinks subtab_right" style="vertical-align: middle;">
+
+            
+
+                <li id="li_actionbar_newitem" data-action-id="actionbar_newitem" data-action-type="Navigate" class="actionBar_sublinks" data-options-id="583ad624-5b3d-4a39-b45d-aa53d1674cab">
+                
+                    <script class="options" defer="defer" id="583ad624-5b3d-4a39-b45d-aa53d1674cab" type="application/json">{"navigate-url":"http://ironpython.codeplex.com/WorkItem/Create"}</script> 
+                    
+                    <div class="actionBar_custom_content"></div>
+
+                    <a href="#" id="actionbar_newitem" title="Create a new issue." class="action_bar_item_link">
+                        <img id="img_actionbar_newitem" class="action_bar_item_image" src="http://i3.codeplex.com/Images/v20104/actionbar_newitem.png" style="vertical-align: middle" />
+                        New Issue
+                    </a>
+
+                </li>
+
+            
+
+                <li id="li_actionbar_issueNotification" data-action-id="actionbar_issueNotification" data-action-type="None" class="actionBar_sublinks" data-options-id="fa6e4b22-012f-4b05-a37f-61b95d167b09">
+                
+                    <script class="options" defer="defer" id="fa6e4b22-012f-4b05-a37f-61b95d167b09" type="application/json">{"returnUrl":"https://www.codeplex.com/site/login?RedirectUrl=http%3a%2f%2fironpython.codeplex.com%2fworkitem%2flist%2fbasic%3fProjectName%3dironpython","loggedInUser":""}</script> 
+                    
+                    <div class="actionBar_custom_content"></div>
+
+                    <a href="#" id="actionbar_issueNotification" title="Sign in to turn on/off issue notifications for this project. " class="action_bar_item_link">
+                        <img id="img_actionbar_issueNotification" class="action_bar_item_image" src="http://i3.codeplex.com/Images/v20104/actionbar_notifications.png" style="vertical-align: middle" />
+                        Notifications (sign in)
+                    </a>
+
+                </li>
+
+            
+
+                <li id="li_actionbar_subscribe" data-action-id="actionbar_subscribe" data-action-type="PopUp" class="actionBar_sublinks" data-options-id="cb2fcd37-5c66-401e-98af-3ccd38abada5">
+                
+                    <script class="options" defer="defer" id="cb2fcd37-5c66-401e-98af-3ccd38abada5" type="application/json">{}</script> 
+                    
+                    <div class="actionBar_custom_content">
+
+<div id="rssHoverDiv" class="HoverPanel LeftHoverWidth" style="display: none">
+        <ul id="3_FeedsPanel" class="RssFeedsPanel">
+            <li>
+                <a id="ProjectRssLink" href="http://ironpython.codeplex.com/project/feeds/rss" class="ArrowSmall NoUnderline">All Project Updates</a>
+            </li>
+            
+            <li>
+                <a id="IssueTrackerRssLink" href="http://ironpython.codeplex.com/project/feeds/rss?ProjectRSSFeed=codeplex%3a%2f%2fworkitem%2fironpython" class="ArrowSmall NoUnderline">Issue Tracker</a>
+            </li>
+            
+            <li>
+                <a id="ReleasesRssLink" href="http://ironpython.codeplex.com/project/feeds/rss?ProjectRSSFeed=codeplex%3a%2f%2frelease%2fironpython" class="ArrowSmall NoUnderline">Downloads</a>
+            </li>
+            <li>
+                <a id="ReviewsRssLink" href="http://ironpython.codeplex.com/project/feeds/rss?ProjectRSSFeed=codeplex%3a%2f%2freview%2fironpython" class="ArrowSmall NoUnderline">Reviews</a>
+            </li>
+            
+            <li>
+                <a id="SourceControlRssLink" href="http://ironpython.codeplex.com/project/feeds/rss?ProjectRSSFeed=codeplex%3a%2f%2fsourcecontrol%2fironpython" class="ArrowSmall NoUnderline">Source Code</a>
+            </li>
+            <li>
+                <a id="WikiRssLink" href="http://ironpython.codeplex.com/project/feeds/rss?ProjectRSSFeed=codeplex%3a%2f%2fwiki%2fironpython" class="ArrowSmall NoUnderline">Wiki &amp; Documentation</a>
+            </li>
+        </ul>
+</div></div>
+
+                    <a href="#" id="actionbar_subscribe" title="Subscribe to project updates in RSS feeds." class="action_bar_item_link">
+                        <img id="img_actionbar_subscribe" class="action_bar_item_image" src="http://i3.codeplex.com/Images/v20104/actionbar_subscribe.png" style="vertical-align: middle" />
+                        Subscribe
+                    </a>
+
+                </li>
+
+            
+        </ul>
+    </div>
+</div>
+    </div>
+    <div style="clear:both"></div>
+</div>
+
+<script type="text/javascript">
+    function goToCreateItem() {
+        $('#actionbar_newitem').click();
+    }
+</script>
+        
+
+    </div>
+    
+    
+    
+	    <div id="left_column" class="issuetracker_basic_view">
+
+            
+		    <div id="issue_post_0" class="issue_post">
+		        <div class="issue_post_info">
+                    
+
+<div class="votebox" d:workItemId="33739">
+    
+        <div id="VoteCountLabel_WorkItemId33739" class="vote_bg_open">1</div>
+        <p class="vote" id="VotedLabel_WorkItemId33739" style="display: none;">Voted</p>
+        
+                <a id="VoteLink33739" class="vote_loggedout" href="#">Vote</a>
+            
+</div>
+		        </div>
+
+			    <div class="issue_post_content">
+				    <h3 class="wordwrap"><a href="http://ironpython.codeplex.com/workitem/33739">Issues with IRONPYTHONPATH</a></h3>
+				    <p class="wordwrap">I'm using ironpython with visual studio 2010 with a purpose to build a GUI. In this interface I'm using a pre-programmed code that uses a library called ipkiss. I saw that i need to set a environme...</p>
+				    <p class="issue_id">Id #33739  |  Release:
+                        
+                            None
+                                        
+                
+                     |  Updated: <span class="smartDate" title="2/6/2013 4:38:37 PM" LocalTimeTicks="1360197517">Feb 6 at 4:38 PM</span> by <a href="http://www.codeplex.com/site/users/view/Zooba">Zooba</a>  |  Created: <span class="smartDate" title="2/5/2013 4:00:00 PM" LocalTimeTicks="1360108800">Feb 5 at 4:00 PM</span> by <a href="http://www.codeplex.com/site/users/view/jpbologna">jpbologna</a></p>
+			    </div>
+            </div>
+    
+		    <div id="issue_post_1" class="issue_post">
+		        <div class="issue_post_info">
+                    
+
+<div class="votebox" d:workItemId="33725">
+    
+        <div id="VoteCountLabel_WorkItemId33725" class="vote_bg_open">1</div>
+        <p class="vote" id="VotedLabel_WorkItemId33725" style="display: none;">Voted</p>
+        
+                <a id="VoteLink33725" class="vote_loggedout" href="#">Vote</a>
+            
+</div>
+		        </div>
+
+			    <div class="issue_post_content">
+				    <h3 class="wordwrap"><a href="http://ironpython.codeplex.com/workitem/33725">ast&#58; elif is missing lineno and col_offset attributes</a></h3>
+				    <p class="wordwrap">the following throws exception:
+
+import ast
+m=ast.parse(&quot;&quot;&quot;
+if False:
+pass
+
+elif False:
+pass
+
+&quot;&quot;&quot;)
+ast.dump(m,include_attributes=True)
+</p>
+				    <p class="issue_id">Id #33725  |  Release:
+                        
+                            None
+                                        
+                
+                     |  Updated: <span class="smartDate" title="2/1/2013 1:28:27 PM" LocalTimeTicks="1359754107">Feb 1 at 1:28 PM</span> by <a href="http://www.codeplex.com/site/users/view/paweljasinski">paweljasinski</a>  |  Created: <span class="smartDate" title="2/1/2013 1:28:27 PM" LocalTimeTicks="1359754107">Feb 1 at 1:28 PM</span> by <a href="http://www.codeplex.com/site/users/view/paweljasinski">paweljasinski</a></p>
+			    </div>
+            </div>
+    
+		    <div id="issue_post_2" class="issue_post">
+		        <div class="issue_post_info">
+                    
+
+<div class="votebox" d:workItemId="33720">
+    
+        <div id="VoteCountLabel_WorkItemId33720" class="vote_bg_open">1</div>
+        <p class="vote" id="VotedLabel_WorkItemId33720" style="display: none;">Voted</p>
+        
+                <a id="VoteLink33720" class="vote_loggedout" href="#">Vote</a>
+            
+</div>
+		        </div>
+
+			    <div class="issue_post_content">
+				    <h3 class="wordwrap"><a href="http://ironpython.codeplex.com/workitem/33720">struct.pack not threadsafe</a></h3>
+				    <p class="wordwrap">When using paramiko with more than one process spawning, I
+occasionally get the following:
+
+System.InvalidOperationException: The LinkedList node already belongs
+to a LinkedList.
+   at System.Colle...</p>
+				    <p class="issue_id">Id #33720  |  Release:
+                        
+                            None
+                                        
+                
+                     |  Updated: <span class="smartDate" title="2/1/2013 8:04:27 PM" LocalTimeTicks="1359777867">Feb 1 at 8:04 PM</span> by <a href="http://www.codeplex.com/site/users/view/jdhardy">jdhardy</a>  |  Created: <span class="smartDate" title="1/30/2013 9:35:35 AM" LocalTimeTicks="1359567335">Jan 30 at 9:35 AM</span> by <a href="http://www.codeplex.com/site/users/view/mvdk">mvdk</a></p>
+			    </div>
+            </div>
+    
+		    <div id="issue_post_3" class="issue_post">
+		        <div class="issue_post_info">
+                    
+
+<div class="votebox" d:workItemId="33663">
+    
+        <div id="VoteCountLabel_WorkItemId33663" class="vote_bg_open">1</div>
+        <p class="vote" id="VotedLabel_WorkItemId33663" style="display: none;">Voted</p>
+        
+                <a id="VoteLink33663" class="vote_loggedout" href="#">Vote</a>
+            
+</div>
+		        </div>
+
+			    <div class="issue_post_content">
+				    <h3 class="wordwrap"><a href="http://ironpython.codeplex.com/workitem/33663">super&#40;&#41; does not preserve class</a></h3>
+				    <p class="wordwrap">In CPython 2.7.3, the following script:
+class A(object):
+    &quot;&quot;&quot;A funny class A&quot;&quot;&quot;
+    @classmethod
+    def x(cls):
+        print cls.__doc__
+
+class B(A):
+    &quot;&q...</p>
+				    <p class="issue_id">Id #33663  |  Release:
+                        
+                            None
+                                        
+                
+                     |  Updated: <span class="smartDate" title="1/28/2013 7:53:44 AM" LocalTimeTicks="1359388424">Jan 28 at 7:53 AM</span> by <a href="http://www.codeplex.com/site/users/view/cvolzke">cvolzke</a>  |  Created: <span class="smartDate" title="1/15/2013 4:46:35 AM" LocalTimeTicks="1358253995">Jan 15 at 4:46 AM</span> by <a href="http://www.codeplex.com/site/users/view/mvdk">mvdk</a></p>
+			    </div>
+            </div>
+    
+		    <div id="issue_post_4" class="issue_post">
+		        <div class="issue_post_info">
+                    
+
+<div class="votebox" d:workItemId="33650">
+    
+        <div id="VoteCountLabel_WorkItemId33650" class="vote_bg_open">1</div>
+        <p class="vote" id="VotedLabel_WorkItemId33650" style="display: none;">Voted</p>
+        
+                <a id="VoteLink33650" class="vote_loggedout" href="#">Vote</a>
+            
+</div>
+		        </div>
+
+			    <div class="issue_post_content">
+				    <h3 class="wordwrap"><a href="http://ironpython.codeplex.com/workitem/33650">Importing &#38; reloading module leaks memory</a></h3>
+				    <p class="wordwrap">When I'm importing a module with import and then reloading it with reload, it seems to leave the whole module into memory.
+
+Here's a simple example code how to reproduce this. It's just importing a...</p>
+				    <p class="issue_id">Id #33650  |  Release:
+                        
+                            None
+                                        
+                
+                     |  Updated: <span class="smartDate" title="1/11/2013 12:50:03 PM" LocalTimeTicks="1357937403">Jan 11 at 12:50 PM</span> by <a href="http://www.codeplex.com/site/users/view/MarkusSchaber">MarkusSchaber</a>  |  Created: <span class="smartDate" title="1/10/2013 10:44:58 AM" LocalTimeTicks="1357843498">Jan 10 at 10:44 AM</span> by <a href="http://www.codeplex.com/site/users/view/ripedbone">ripedbone</a></p>
+			    </div>
+            </div>
+    
+		    <div id="issue_post_5" class="issue_post">
+		        <div class="issue_post_info">
+                    
+
+<div class="votebox" d:workItemId="33649">
+    
+        <div id="VoteCountLabel_WorkItemId33649" class="vote_bg_open">1</div>
+        <p class="vote" id="VotedLabel_WorkItemId33649" style="display: none;">Voted</p>
+        
+                <a id="VoteLink33649" class="vote_loggedout" href="#">Vote</a>
+            
+</div>
+		        </div>
+
+			    <div class="issue_post_content">
+				    <h3 class="wordwrap"><a href="http://ironpython.codeplex.com/workitem/33649">DAQmxCreateDOChan&#40;&#41; code which works in python does not works with ironpython</a></h3>
+				    <p class="wordwrap">My this line of code works well when i execute it in python:
+nidaq.DAQmxCreateDOChan(taskHandle0,CreateChan,&quot;&quot;, DAQmx_Val_ChanForAllLines)
+
+But when i execute the same come in ironpython ...</p>
+				    <p class="issue_id">Id #33649  |  Release:
+                        
+                            None
+                                        
+                
+                     |  Updated: <span class="smartDate" title="1/11/2013 3:57:45 PM" LocalTimeTicks="1357948665">Jan 11 at 3:57 PM</span> by <a href="http://www.codeplex.com/site/users/view/jdhardy">jdhardy</a>  |  Created: <span class="smartDate" title="1/10/2013 9:44:23 AM" LocalTimeTicks="1357839863">Jan 10 at 9:44 AM</span> by <a href="http://www.codeplex.com/site/users/view/jayprakash">jayprakash</a></p>
+			    </div>
+            </div>
+    
+		    <div id="issue_post_6" class="issue_post">
+		        <div class="issue_post_info">
+                    
+
+<div class="votebox" d:workItemId="33648">
+    
+        <div id="VoteCountLabel_WorkItemId33648" class="vote_bg_open">1</div>
+        <p class="vote" id="VotedLabel_WorkItemId33648" style="display: none;">Voted</p>
+        
+                <a id="VoteLink33648" class="vote_loggedout" href="#">Vote</a>
+            
+</div>
+		        </div>
+
+			    <div class="issue_post_content">
+				    <h3 class="wordwrap"><a href="http://ironpython.codeplex.com/workitem/33648">DAQMX Code which works fine with &#34;Python 2.7.3&#34; giving issue with IRONPYTHON</a></h3>
+				    <p class="wordwrap">Hello,
+
+We are using National Instruments (NI) Driver 6501 for switch Testing. Below is the code which is written in Python 2.7.3. The same code does not work with Iron Python. 
+
+
+import ctypes
+imp...</p>
+				    <p class="issue_id">Id #33648  |  Release:
+                        
+                            None
+                                        
+                
+                     |  Updated: <span class="smartDate" title="2/1/2013 10:29:29 PM" LocalTimeTicks="1359786569">Feb 1 at 10:29 PM</span> by <a href="http://www.codeplex.com/site/users/view/mvdk">mvdk</a>  |  Created: <span class="smartDate" title="1/10/2013 9:33:55 AM" LocalTimeTicks="1357839235">Jan 10 at 9:33 AM</span> by <a href="http://www.codeplex.com/site/users/view/suma_putani">suma_putani</a></p>
+			    </div>
+            </div>
+    
+		    <div id="issue_post_7" class="issue_post">
+		        <div class="issue_post_info">
+                    
+
+<div class="votebox" d:workItemId="33646">
+    
+        <div id="VoteCountLabel_WorkItemId33646" class="vote_bg_open">1</div>
+        <p class="vote" id="VotedLabel_WorkItemId33646" style="display: none;">Voted</p>
+        
+                <a id="VoteLink33646" class="vote_loggedout" href="#">Vote</a>
+            
+</div>
+		        </div>
+
+			    <div class="issue_post_content">
+				    <h3 class="wordwrap"><a href="http://ironpython.codeplex.com/workitem/33646">GetEncodings called in StringOps.cs fails using Mono</a></h3>
+				    <p class="wordwrap">I have submitted this verified bug to Mono because its technically their implementation of System.Text.Encoding.GetEncodings() that is extremely flawed (and absolutely does not work). Since I have ...</p>
+				    <p class="issue_id">Id #33646  |  Release:
+                        
+                            None
+                                        
+                
+                     |  Updated: <span class="smartDate" title="1/15/2013 2:57:25 AM" LocalTimeTicks="1358247445">Jan 15 at 2:57 AM</span> by <a href="http://www.codeplex.com/site/users/view/TRJG">TRJG</a>  |  Created: <span class="smartDate" title="1/9/2013 11:08:10 PM" LocalTimeTicks="1357801690">Jan 9 at 11:08 PM</span> by <a href="http://www.codeplex.com/site/users/view/TRJG">TRJG</a></p>
+			    </div>
+            </div>
+    
+		    <div id="issue_post_8" class="issue_post">
+		        <div class="issue_post_info">
+                    
+
+<div class="votebox" d:workItemId="33627">
+    
+        <div id="VoteCountLabel_WorkItemId33627" class="vote_bg_open">1</div>
+        <p class="vote" id="VotedLabel_WorkItemId33627" style="display: none;">Voted</p>
+        
+                <a id="VoteLink33627" class="vote_loggedout" href="#">Vote</a>
+            
+</div>
+		        </div>
+
+			    <div class="issue_post_content">
+				    <h3 class="wordwrap"><a href="http://ironpython.codeplex.com/workitem/33627">csv.writer ignores given lineterminator</a></h3>
+				    <p class="wordwrap">This code produces a file with '\r\n' line endings when run using IronPython:
+
+import csv
+
+with open('test.tsv', 'wb') as output:
+writer = csv.writer(output, dialect='excel-tab', lineterminator='\n...</p>
+				    <p class="issue_id">Id #33627  |  Release:
+                        
+                            None
+                                        
+                
+                     |  Updated: <span class="smartDate" title="1/1/2013 8:48:27 PM" LocalTimeTicks="1357102107">Jan 1 at 8:48 PM</span> by <a href="http://www.codeplex.com/site/users/view/pekkaklarck">pekkaklarck</a>  |  Created: <span class="smartDate" title="1/1/2013 8:48:27 PM" LocalTimeTicks="1357102107">Jan 1 at 8:48 PM</span> by <a href="http://www.codeplex.com/site/users/view/pekkaklarck">pekkaklarck</a></p>
+			    </div>
+            </div>
+    
+		    <div id="issue_post_9" class="issue_post">
+		        <div class="issue_post_info">
+                    
+
+<div class="votebox" d:workItemId="33622">
+    
+        <div id="VoteCountLabel_WorkItemId33622" class="vote_bg_open">1</div>
+        <p class="vote" id="VotedLabel_WorkItemId33622" style="display: none;">Voted</p>
+        
+                <a id="VoteLink33622" class="vote_loggedout" href="#">Vote</a>
+            
+</div>
+		        </div>
+
+			    <div class="issue_post_content">
+				    <h3 class="wordwrap"><a href="http://ironpython.codeplex.com/workitem/33622">TypeError&#58; instancemethod.__cmp__&#40;x,<wbr></wbr>y&#41; requires y to be a &#39;instancemethod&#39;, not a ...</a></h3>
+				    <p class="wordwrap">hi,
+
+I have spotted something, what I believe is a bug.
+If I try the following:
+
+object.__str__ in (None ,object.__str__)
+
+it throws:
+TypeError: instancemethod.__cmp__(x,y) requires y to be a 'inst...</p>
+				    <p class="issue_id">Id #33622  |  Release:
+                        
+                            None
+                                        
+                
+                     |  Updated: <span class="smartDate" title="12/28/2012 10:43:39 AM" LocalTimeTicks="1356720219">Dec 28, 2012 at 10:43 AM</span> by <a href="http://www.codeplex.com/site/users/view/paweljasinski">paweljasinski</a>  |  Created: <span class="smartDate" title="12/28/2012 10:43:39 AM" LocalTimeTicks="1356720219">Dec 28, 2012 at 10:43 AM</span> by <a href="http://www.codeplex.com/site/users/view/paweljasinski">paweljasinski</a></p>
+			    </div>
+            </div>
+    
+
+            <div class="clear"></div>
+
+            
+    <ul id="discussion_pagination">
+        <li><span class="Selected">1</span>-<span class="Selected">10</span> of <span class="Selected">933</span> Work Items</li><ul class="pagination_pages">
+	<li>Previous</li><li><span class="Selected">1</span></li><li><a onclick="CodePlexPaging.gotoPage(&#39;http://ironpython.codeplex.com/workitem/list/basic&#39;, 1);return false;" href="#">2</a></li><li><a onclick="CodePlexPaging.gotoPage(&#39;http://ironpython.codeplex.com/workitem/list/basic&#39;, 2);return false;" href="#">3</a></li><li><a onclick="CodePlexPaging.gotoPage(&#39;http://ironpython.codeplex.com/workitem/list/basic&#39;, 3);return false;" href="#">4</a></li><li><a onclick="CodePlexPaging.gotoPage(&#39;http://ironpython.codeplex.com/workitem/list/basic&#39;, 4);return false;" href="#">5</a></li><li><a class="" href="#" onclick="CodePlexPaging.gotoPage(&#39;http://ironpython.codeplex.com/workitem/list/basic&#39;, 5);return false;">...<span class="screenReaderAdditionalText">Further Results</span></a></li><li class="last"><a href="#" onclick="CodePlexPaging.gotoPage(&#39;http://ironpython.codeplex.com/workitem/list/basic&#39;, 1);return false;">Next</a></li>
+</ul>
+        <ul class="discussion_right">
+	<li>Showing</li><li><span class="Selected">10</span></li><li><a href="#" onclick="CodePlexPaging.gotoPageSize(&#39;http://ironpython.codeplex.com/workitem/list/basic&#39;, 25);return false;">25</a></li><li><a href="#" onclick="CodePlexPaging.gotoPageSize(&#39;http://ironpython.codeplex.com/workitem/list/basic&#39;, 50);return false;">50</a></li><li><a href="#" onclick="CodePlexPaging.gotoPageSize(&#39;http://ironpython.codeplex.com/workitem/list/basic&#39;, 100);return false;">100</a></li><li>Work Items</li>
+</ul><a href="http://ironpython.codeplex.com/workitem/list/basic?size=2147483647" class="Link" style="display: none;">View All</a>
+    </ul>
+
+        </div>
+    
+        
+    
+    	<div id="right_sidebar_noborder">
+		    <div id="configure_view">
+		
+		        <h2>configure view</h2>
+                
+                <label for="discussion_search" class="search_discussion">search issues</label>
+                <input id="discussion_search" name="discussion_search" onKeydown="Javascript: if (event.keyCode==13) searchWorkItems();" type="text" value="" /><a title="Search Issues" class="discussion_magnify" alt="Search" onclick="searchWorkItems()" href="#"></a>
+
+			    <ul class="configure_links">
+				    <li class="configure_sort">sort by: <img id="SortByImage" onclick="changeSortOrder();" style="cursor:pointer;float:none;"/></li>
+					<ul class="right">
+						<li><a id="SortByLink_Id" href="javascript:void(0);" c:defaultSortDirection="Ascending" onclick="sortByField('Id')">Id</a><span id="SortByText_Id" style="display: none;">Id</span></li>
+						<li><a id="SortByLink_CreationDate" href="javascript:void(0);" c:defaultSortDirection="Descending" onclick="sortByField('CreationDate')">Date Created</a><span id="SortByText_CreationDate" style="display: none;">Date Created</span></li>
+						<li><a id="SortByLink_PlannedForRelease" href="javascript:void(0);" c:defaultSortDirection="Ascending" onclick="sortByField('PlannedForRelease')">Planned Release</a><span id="SortByText_PlannedForRelease" style="display: none;">Planned Release</span></li>
+						<li><a id="SortByLink_Summary" href="javascript:void(0);" c:defaultSortDirection="Ascending" onclick="sortByField('Summary')">Summary</a><span id="SortByText_Summary" style="display: none;">Summary</span></li>
+						<li><a id="SortByLink_LastUpdatedDate" href="javascript:void(0);" c:defaultSortDirection="Descending" onclick="sortByField('LastUpdatedDate')">Last Updated</a><span id="SortByText_LastUpdatedDate" style="display: none;">Last Updated</span></li>
+						<li><a id="SortByLink_Votes" href="javascript:void(0);" c:defaultSortDirection="Descending" onclick="sortByField('Votes')">Votes</a><span id="SortByText_Votes" style="display: none;">Votes</span></li>
+					</ul>
+			    </ul>
+				<ul class="configure_links_subnav">
+                    <li>
+                        <input id="IssuesToShow" name="IssuesToShow" type="hidden" value="1" />
+                        
+                            <a id="AllIssuesLink" class="IssuesToShowSelection" onclick="searchWorkItems();" href="#" data-value="0">All Issues</a> |
+                            <span id="OpenIssuesSpan">Open Issues</span>
+                        
+                    </li>
+				</ul>
+
+                <div class="clear"></div>
+
+                
+
+				<div class="clear"></div>
+            </div>
+            <br/>
+            
+
+<p><a title="Keyboard Shortcuts" class="keyboard_icon" href="#" onclick="$(document).trigger('shortcuts');return false;"></a><a href="#" onclick="$(document).trigger('shortcuts');return false;">Keyboard shortcuts</a> are available for this page.</p>
+
+            <input type="hidden" id="CurrentSortField" />
+            <input type="hidden" id="CurrentSortDirection" />
+            <input type="hidden" id="ShowOpenIssuesOnly" />
+            <input type="hidden" id="PageSize" />
+            <div style="visibility:hidden">
+                
+<script type="text/javascript">
+    function saveSubscriptionDataDirectly(type) {
+        return saveSubscriptionDataCore(type, false);
+    }
+
+    function saveSubscriptionData() {
+        var callingComponent = $('#subscriptionSettings #callingComponent').val();
+        closeSubscriptionDialog();
+
+        var type = $('input[name=EmailSubscriptionTypeList]:checked').val();
+        if (type === '')
+            return false;
+        var removeIndividual = $('input[name=StopNotificationsCheckBox]:checked').val();
+        if (removeIndividual === undefined)
+            removeIndividual = false;
+        $('#subscriptionSettings').remove();
+        return saveSubscriptionDataCore(type, removeIndividual, callingComponent);
+    }
+
+    function saveSubscriptionDataCore(type, removeIndividual, callingComponent) {
+
+        var isSubscribed = $('#SubscribeCheckBox').is(':checked') && $('#SubscribeCheckBox').is(':enabled');
+        CodePlex.UpdateProgress.show();
+        $('#subscriptionContent').load('http://ironpython.codeplex.com/subscriptions/WorkItem/save',
+                                       { isIndividualSubscribed: isSubscribed, deliveryStatus: type, displayType: 'Mini', removeIndividualSubscriptions: removeIndividual },
+                                       function () {
+                                           CodePlex.UpdateProgress.hide();
+                                           if (callingComponent) {
+                                               $('#actionBar_placeholder').load('http://ironpython.codeplex.com/workitem/ActionBar',
+                                                   { activeView: 'AdvancedView' });
+                                           }
+                                       });
+        if (type === '1' || type === '2') {
+            $('#unsubscribeSection').show();
+        }
+        else {
+            $('#unsubscribeSection').hide();
+            $('#stopNotificationsDiv').hide();
+        }
+
+        return false;
+    }
+
+    function saveIndividualSubscription(type) {
+
+        CodePlex.UpdateProgress.show();
+        $('#subscriptionContent').load('',
+                                       { deliveryStatus: type },
+                                       function () { CodePlex.UpdateProgress.hide(); });
+        return false;
+    }
+
+    function showSubscriptionSelection() {
+        OpenDialog('#subscriptionSettings', true, '37em');
+        return false;
+    }
+
+    function closeSubscriptionDialog() {
+        OpenDialog('#subscriptionSettings', false);
+        return false;
+    }
+
+    function showStopNotifications() {
+        $('#stopNotificationsDiv').hide();
+        $('#StopNotificationsCheckBox').attr('checked', false);
+    }
+
+    var currentToolTipHeight = null;
+
+    function showUnsubscribeToolTip() {
+      if (currentToolTipHeight == null) { currentToolTipHeight = $('#unsubscribeToolTip').height()+30 };
+      var toolTip = $('#unsubscribeToolTipImage');
+      var msg = $('#unsubscribeToolTip')[0];
+
+      $('[id=unsubscribeToolTip]').dialog('destroy').remove();
+      $(msg).dialog({
+        height: currentToolTipHeight, 
+        width: 275, 
+        position: [toolTip.offset().left-$(window).scrollLeft()+10, toolTip.offset().top-$(window).scrollTop()+10],
+        dialogClass: 'tooltip',
+        open: function() { $('#unsubscribeToolTip').show(); } 
+      });
+
+    }
+
+    function hideUnsubscribeToolTip() {
+        $('[id=unsubscribeToolTip]').dialog('destroy');
+    }
+</script>
+
+<div id="subscriptionContent">
+    
+    <div class="NoWrap FixedLayoutRoundPanelHeaderTemplatePadding">
+        <img src="http://i3.codeplex.com/Images/v20104/small-envelope.gif" />
+        <span id="SubscriptionTitleLabel" class="NoWrap Selected AlignTop">Issue notifications</span>
+        <span class="AlignTop">(<a id="subscriptionSignIn" href="https://www.codeplex.com/site/login?RedirectUrl=http%3a%2f%2fironpython.codeplex.com%2fworkitem%2flist%2fbasic">sign in</a>)</span>
+    </div>
+
+<div id="subscriptionSettings" class="modal" style="display:none; width: 250px;">
+    <div class="row">
+        <h2>Issue notifications <a href="javascript:return false;" class="close">X</a></h2>
+    </div>
+    <div class="modal_info">
+        <p>Keep up with what's going on in this project's Issue Tracker</p>
+        <div class="ModalDialogContentBody">
+            <div style="margin-top: 2px; margin-bottom: 5px;">
+                Email me 
+                <span id="changeEmailAddressLink">
+                    <a target="_blank"  href="/site/users/update?FocusElement=EmailAddressForChange">
+                        (change e-mail address)
+                    </a>
+                </span>
+            </div>
+            <ul class="button_wrap">
+                <li>
+                    <input type="radio" id="EmailSubscription_EachNewIssue" name="EmailSubscriptionTypeList" value="1" onclick="$('#stopNotificationsDiv').hide()"  />
+                    <label for="EmailSubscription_EachNewIssue">Each new issue, comment, or status change as they come in</label>
+                </li>
+                <li>
+                    <input type="radio" id="EmailSubscription_DailyDigest" name="EmailSubscriptionTypeList" value="2" onclick="$('#stopNotificationsDiv').hide()"  />
+                    <label for="EmailSubscription_DailyDigest">A daily digest (summary) of new issues, comments, or statuses</label>
+                </li>
+                <li id="unsubscribeSection" style="display:none;"><input type="radio" id="EmailSubscription_Unsubscribe" name="EmailSubscriptionTypeList" value="0" onclick="$('#stopNotificationsDiv').show()" checked="checked" /><label for="EmailSubscription_Unsubscribe">Unsubscribe</label></li>
+            </ul>
+            
+            <div class="ClearBoth"></div>
+            <div id="stopNotificationsDiv" style="display:none;overflow:hidden;margin-top:4px;" class="EmailSubscriptionCheck">
+                <div style="float: left; width:24px;">
+                <input id="StopNotificationsCheckBox" name="StopNotificationsCheckBox" type="checkbox" value="true" /><input name="StopNotificationsCheckBox" type="hidden" value="false" />
+                </div>
+                <div style="float: left;">
+                <label for="StopNotificationsCheckBox">
+                    Also stop notifications for <i>individual</i> issue(s) I subscribed to.
+                    <img id="unsubscribeToolTipImage" src="http://i3.codeplex.com/Images/v20104/helpicon.png" onmouseover="showUnsubscribeToolTip()" onmouseout="hideUnsubscribeToolTip()" />
+                </label>
+                </div>
+                <div id="unsubscribeToolTip" style="display: none;">
+                Besides your subscription to the entire Issue Tracker, you have also chosen to be notified for <b>0</b> individual issues, including:<ul></ul> Check the box if you wish to stop receiving emails about these <b>0</b> issues as well.
+                </div>
+            </div>
+        </div>
+        <div class="modal_buttons">
+            <input id="CancelButton" type="button" value="Cancel" class="cancel" onclick="return closeSubscriptionDialog()"/>
+            <input id="SaveButton" type="button" value="Save" class="ok" onclick="saveSubscriptionData();" />
+        </div>
+        <div class="ClearBoth"></div>
+    </div>
+    <input type="hidden" id="callingComponent"/>
+</div>
+
+<input type="hidden" name="SelectedSubscriptionItem" value="0" />
+
+</div>
+            </div>
+                    
+            <script type="text/javascript" language="javascript">
+
+                $(document).ready(init);
+
+                function init() {
+
+                    var sortField = 'CreationDate';
+                    var sortDirection = 'Descending';
+                    var showOpenIssuesOnly = true;
+                    var pageSize = 10;
+
+                    $('#SortByLink_' + sortField).hide();
+                    $('#SortByText_' + sortField).show();
+                                        
+                    $('#CurrentSortField').val(sortField);
+                    $('#CurrentSortDirection').val(sortDirection);
+                    $('#ShowOpenIssuesOnly').val(showOpenIssuesOnly);
+                    $('#PageSize').val(pageSize);
+
+                    changeSortArrowImage(sortDirection);
+
+                    $('#discussion_search').keypress(checkForEnter);
+                    $('.votebox').voting({ 
+                        voteUrl: "http://ironpython.codeplex.com/workitem/vote",
+                        loginUrl: 'https://www.codeplex.com/site/login?RedirectUrl=http%3a%2f%2fironpython.codeplex.com%2fworkitem%2flist%2fbasic%3fPendingVoteId%3d-1'
+                    });
+
+                    $(document).keyboardShortcuts({
+                        createItem: goToCreateItem
+                    });
+
+                    $('.IssuesToShowSelection').click(function() {
+                        $('#IssuesToShow').val($(this).data('value'));
+                        searchWorkItems();
+                        return false;
+                    });
+                }
+
+                function getCurrentConfigurationState() {
+
+                    var configuration = {
+                        sortField: $('#CurrentSortField').val(),
+                        sortDirection: $('#CurrentSortDirection').val(),
+                        showOpenIssuesOnly: $('#IssuesToShow').val() == '1',
+                        keywords: $('#discussion_search').val(),
+                        myEmailSubscriptions: $("input[name=MyEmailSubscriptionsChecked]:checked").val() ? true : false,
+                        pageSize: $('#PageSize').val()
+                    };
+
+                    return configuration;
+
+                }
+
+                function updateConfigurationState(configuration) {
+                    $('#CurrentSortField').val(configuration.sortField);
+                    $('#CurrentSortDirection').val(configuration.sortDirection);
+                }
+
+                function searchWorkItems() {
+                    sortWorkItems();
+                }
+
+                function filterBySubscriptions() {
+                    sortWorkItems();
+                }
+
+                function changeSortOrder() {
+
+                    var configuration = getCurrentConfigurationState();
+                    var direction = (configuration.sortDirection === 'Ascending') ? 'Descending' : 'Ascending';
+
+                    changeSortArrowImage(direction);
+
+                    configuration.sortDirection = direction;
+                    updateConfigurationState(configuration);
+
+                    sortWorkItems();
+
+                }
+
+                function changeSortArrowImage(direction) {
+
+                    var imagePath = 'http://i3.codeplex.com/Images/v20104/';
+                    var sort = (direction === 'Ascending') ? 'asc' : 'dsc';
+                    var img = imagePath + 'arrow_' + sort + '.gif';
+                                        
+                    $('#SortByImage').attr('src', img);
+
+                }
+
+                function sortByField(field) {
+                                        
+                    var configuration = getCurrentConfigurationState();
+                    var obj = $('#SortByLink_' + field);
+                    var direction = $(obj).attr('c:defaultSortDirection');
+                    configuration.sortField = field;
+                    configuration.sortDirection = direction;
+                    updateConfigurationState(configuration);
+
+                    sortWorkItems();
+
+                }
+
+                function sortWorkItems() {
+
+                    showUpdating();
+
+                    var url = "http://ironpython.codeplex.com/workitem/list/basic" + getSearchParams();
+                                                    
+                    window.location.href = url;
+
+                }
+
+                function getSearchParams() {
+                    var configuration = getCurrentConfigurationState();
+                                    
+                    var whichIssues = (configuration.showOpenIssuesOnly) ? 'Open' : 'All';
+                    var params = "?field=" + configuration.sortField 
+                                    + "&direction=" + configuration.sortDirection
+                                    + "&issuesToDisplay=" + whichIssues
+                                    + "&keywords=" + configuration.keywords
+                                    + "&emailSubscribedItemsOnly=" + configuration.myEmailSubscriptions;
+                    return params;
+                }
+
+                function showUpdating() {
+                    CodePlex.UpdateProgress.show(); 
+                }
+                                    
+                function checkForEnter(event) {
+                    if ($keyCode(event) == '13') {
+                        searchWorkItems();
+                        return false;
+                    }
+                }
+
+                CodePlexPaging.initialize('getSearchParams');
+            </script>
+        </div>
+    
+        
+                
+                <div class="clear"></div>
+                
+                <div id="footer">
+                    <div class="row">
+                        <hr />
+                        <ul>
+                            <li>© 2006-2013 Microsoft</li>
+                            <li><a href="http://www.codeplex.com/site/help">Get Help</a></li>
+                            <li><a href="/site/legal/privacy">Privacy Statement</a></li>
+                            <li><a href="http://www.codeplex.com/site/legal/terms">Terms of Use</a></li>
+                            <li><a href="http://www.codeplex.com/site/legal/conduct">Code of Conduct</a></li>
+                            <li><a href="http://www.lakequincy.com" target="_blank">Advertise With Us</a></li>
+                            <li>Version 2.12.2013.20104</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </body>
+
+</html>

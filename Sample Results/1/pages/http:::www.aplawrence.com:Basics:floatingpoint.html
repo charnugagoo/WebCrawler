@@ -1,0 +1,651 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Understanding Floating Point Formats</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<style type="text/css"  title="Normal" media="screen">
+@import "/reset-fonts-grids.css";
+@import "/nslate.css";
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<meta name="description" content="Understanding basic floating point. Under ordinary circumstances, you don't have to know or care how numbers are represented within your programs. However, when you are transferring data files that contain numbers, you will have to convert if the storage formats are not identical. If the numbers are just integers, that's fairly easy because the only differences will be the length and the byte order: how many bytes the number takes up, and whether it is stored lsb or msb (least significant byte or most significant byte first). Once you know that, conversion is trivial." />
+<meta name="pinterest" content="nopin" />
+<link href="https://plus.google.com/113844487094333569134" rel="publisher" />
+<link rel="icon" href="http://aplawrence.com/favicon.ico" type="image/ico"/>
+<link rel="shortcut icon" href="http://aplawrence.com/favicon.ico"/>
+<link rel="alternate" type="application/rss+xml" href="http://feeds2.feedburner.com/aplawrence/ZPYH" title="Full RSS feed for aplawrence.com"/>
+<link rel="alternate" type="application/rss+xml" href="http://feeds2.feedburner.com/SiteNewsForAplawrenceUnixLinuxAndMacOsXResources" title="Summaries RSS feed for aplawrence.com"/>
+<link rel="alternate" type="application/rss+xml" href="http://feeds2.feedburner.com/Aplawrencecomments" title="Comments  RSS feed for aplawrence.com"/>
+<link rel="alternate" type="application/rss+xml" href="http://feeds2.feedburner.com/aplawrence/DOLL" title="Linux Only RSS feed for aplawrence.com"/>
+<link rel="alternate" type="application/rss+xml" href="http://feeds2.feedburner.com/aplawrence/DrTi" title="Mac OS X Only RSS feed for aplawrence.com"/>
+<link rel="alternate" type="application/rss+xml" href="http://feeds2.feedburner.com/Web-htmlRssSiteNewsForAplawrencecom" title="Blogging Only RSS feed for aplawrence.com"/>
+<link rel="alternate" type="application/rss+xml" href="http://feeds2.feedburner.com/EmploymentRssSiteNewsForAplawrencecom" title="Freelancing/Self-Employment  Only RSS feed for aplawrence.com"/>
+<link rel="microsummary" href="http://aplawrence.com/latest" />
+<link rel="microsummary" href="http://aplawrence.com/latestcomment" />
+<link rel="pavatar" href="http://aplawrence.com/images/pavatar.jpg" />
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://pcunix.myopenid.com/" /> 
+<link rel="canonical" href="http://aplawrence.com/Basics/floatingpoint.html" />
+<script type="text/javascript">
+if(document.location.protocol=='http:'){
+ var Tynt=Tynt||[];Tynt.push('bZ1CgUtPCr4yVlacwqm_6r');Tynt.i={"ap":"Read more:"};
+ (function(){var s=document.createElement('script');s.async="async";s.type="text/javascript";s.src='http://tcr.tynt.com/ti.js';var h=document.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);})();
+}
+</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-69824-1']);
+  _gaq.push(['_setDomainName', 'aplawrence.com']);
+  _gaq.push(['_setAllowHash', 'false']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+<body bgcolor="#FFFFFF">
+<div id="doc2">
+	<div id="hd">
+<div id="top" style="width:1023px">
+
+<img src="http://aplawrence.com/images/apheader100.jpg" style="position:absolute; left:0px; top:0px; z-index:-10" alt="APLawrence.com -  Resources for Unix and Linux Systems, Bloggers and the self-employed" height="99" width="649" />
+<!-- FLOATER -->
+<div style="padding-left:5em;float:right">
+<a href="https://plus.google.com/113844487094333569134?prsrc=3" style="text-decoration:none;"><img src="https://ssl.gstatic.com/images/icons/gplus-32.png" alt="" style="border:0;width:32px;height:32px;"/></a>
+<a href="http://aplawrence.com/rss/index.html" style="text-decoration:none" title="Learn how to get automatic notification of new posts"><img src="http://www.feedburner.com/fb/images/pub/feed-icon32x32.png"  height="32" width="32" border="0" alt="RSS Feeds"  />
+RSS Feeds</a><br /><br />
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+  google.load('search', '1');
+  google.setOnLoadCallback(function() {
+    google.search.CustomSearchControl.attachAutoCompletion(
+      '012770669227043667095:gfternbg6og',
+      document.getElementById('q'),
+      'cse-search-box');
+  });
+</script>
+<form action="http://aplawrence.com/searchresult.html" id="cse-search-box">
+  <div>
+    <input type="hidden" name="cx" value="012770669227043667095:gfternbg6og" />
+    <input type="hidden" name="cof" value="FORID:11" />
+    <input type="hidden" name="ie" value="UTF-8" />
+    <input type="text" name="q" id="q"  size="25"  />
+    <input type="submit" name="sa" value="Search"  />
+  </div>
+</form>
+<script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box"></script>
+</div>
+<br />
+<br /><br />
+<br /><br />
+<br />
+
+<div class="cleaner"></div>
+<div style="position:absolute; left:14px; top:130px;width:1023px"> 
+<div id="nav">
+  <ul>
+  <li><a class="active" href="http://aplawrence.com/index.html">Home</a></li>
+<li><a class="active" href="http://aplawrence.com/help.html" title="About, Email, Phone numbers, Advertising rates and all that">FAQ</a> 
+<ul>
+<li><a href="http://aplawrence.com/help.html">All FAQ's</a></li>
+<li><a href="http://aplawrence.com/about.html">About</a></li>
+<li><a href="http://aplawrence.com/info.html">Contact</a></li>
+<li><a href="http://aplawrence.com/Blog2005/TonyLawrence7.html">Copyrights</a></li>
+<li><a href="http://aplawrence.com/publish.html">Guest Posts</a></li>
+</ul>
+
+
+</li>
+      <li class="active"><a href="http://aplawrence.com/Kerio/index.html" title="Kerio Mailserver and Winroute Firewall">Kerio Products</a>
+<ul><li><a href="http://aplawrence.com/cgi-bin/indexget.pl?arg=Kerio">Articles</a></li>
+<li><a href="http://aplawrence.com/Kerio/resources.html">Resources</a></li>
+<li><a href="http://aplawrence.com/Kerio/renewals.html">Pricing</a></li>
+</ul>
+</li>
+  <li><b>Categories</b>
+<ul>
+ <li><a href="http://aplawrence.com/sections.html" title="Where to find stuff - major sections of APLawrence.com">All Categories</a> </li>
+<li><a href="http://aplawrence.com/Linux">Linux</a></li>
+<li><a href="http://aplawrence.com/MacOSX">Mac OS X </a></li>
+<li><a href="http://aplawrence.com/cgi-bin/indexget.pl?arg=Employment">Self Employment</a></li>
+<li><a href="http://aplawrence.com/cgi-bin/indexget.pl?arg=Popular">Popular</a></li>
+<li><a href="http://aplawrence.com/cgi-bin/indexget.pl?arg=Troubleshooting">Troubleshooting</a></li>
+
+</ul>
+
+
+</li>
+  <li><a class="rates" href="http://aplawrence.com/rates.html" title="Consulting rates, terms">My Services &amp; Rates</a> 
+<ul>
+<li><a href="http://aplawrence.com/rates.html">On-Site Rates, Contracts</a> </li>
+<li><a href="http://aplawrence.com/rightnow.html">Quick Help NOW</a> </li>
+<li><a href="http://aplawrence.com/consultants.html">Other Consultants</a> </li>
+</ul></li>
+</ul>
+<div class="cleaner"></div>
+</div>
+<div class="cleaner"></div>
+</div>
+</div>
+<br />
+<br />
+
+<!--  --> <div style="text-align:center; font-size:80%">
+<br />
+<br />
+ <a class="nodec" href="http://aplawrence.com/cgi-bin/snav.pl?PREV=/Basics/floatingpoint.html">(OLDER)</a>
+ <span>&lt;- More Stuff 
+ -&gt; </span>
+ <a class="nodec" href="http://aplawrence.com/cgi-bin/snav.pl?NEXT=/Basics/floatingpoint.html">(NEWER)</a>
+<a class="nodec" href="http://aplawrence.com/cgi-bin/newest.pl">(NEWEST)</a>
+<br /><a href="http://aplawrence.com/cgi-bin/printer.pl?arg=/Basics/floatingpoint.html">Printer Friendly Version</a>
+<br />
+<br />
+
+</div><hr />	</div>
+	<div id="bd" style="border-left: 1px solid white; border-right : 1px solid white;">
+		<div id="yui-main">
+			<div class="yui-b">
+      <div class="yui-ge"> 
+	    <div class="yui-u first">
+<!-- Left 0  -->
+<!-- /Basics/floatingpoint.html -->
+<div style="max-width:950;margin:left:25pxpx;padding-left:6px"><div style="max-width:750px">
+<!-- TEXT BEGINS -->
+<!-- google_ad_section_start -->
+<!-- "Understanding Floating Point Formats" Copyright September 2003 Tony Lawrence -->
+
+<h2>Understanding Floating Point Formats</h2>
+<p>See also <a href="http://aplawrence.com/Basics/packedbcd.html">Understanding Packed
+BCD numbers</a></p>
+<p>Under ordinary circumstances, you don't have to know or care how
+numbers are represented within your programs. However, when you are
+transferring data files that contain numbers, you will have to
+convert if the storage formats are not identical. If the numbers
+are just integers, that's fairly easy because the only differences
+will be the length and the byte order: how many bytes the number
+takes up, and whether it is stored lsb or msb (least significant
+byte or most significant byte first). Once you know that,
+conversion is trivial.</p>
+<p>Floating point numbers are a whole other game. For example, in
+December of 1983, I had to convert some Tandy Basic programs and
+data files to Xenix MBASIC. The Basic programs themselves were
+fairly challenging, but the data files were even more so. Tandy
+stored floating point numbers in what they called "XS128 notation"
+(Excess 128 is what they really meant) and MBASIC used packed BCD.
+At the time, I had never given a single thought to how floating
+point numbers are stored. As you surely realize, this was long
+before you could ask Google to find you something like <a target="_blank" href="http://www.scri.fsu.edu/~jac/MAD3401/Backgrnd/ieee.html">MAD 3401
+IEEE Floating-Point Notes</a>, and the availability of computer
+oriented books was not anything like it is today. I was on my own,
+with only "od -cx", my wits, and pure stubbornness to go on. There
+was an explanation in the manuals, but it was typical geek-babble
+and it made my head hurt. It took me several hours of painful work
+to understand what I needed to do, and a few hours more to write
+programs to do it, but the project got done. I haven't had to do
+anything like that since then, and you may never have had to at
+all, but that doesn't mean that neither of us ever will. So rather than
+you getting a headache from trying to puzzle it out (because
+there's still a lot of techno-babble out there) , I'll get you
+started.</p>
+<div style="text-align:center">
+<br />
+<hr />
+<hr />
+<br />
+<br />
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-9578552053766073";
+/* Main Unit Top */
+google_ad_slot = "0209375462";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br />
+<br />
+<hr />
+<hr />
+<br />
+<br />
+</div>
+<!-- PLACEAD -->
+<p>The first thing you need to know is that your machine may give
+different results than mine. It probably won't unless you are using
+something odd, but if it does, don't panic: the theory is still the
+same; you just have a slightly different implementation. Here's a
+Perl program that is going to show us what's going on (you do not
+need to understand this script):</p>
+<pre class="narrow">
+#!/usr/bin/perl
+
+showbits(0);
+for ($x=1; $x &lt; 16384; $x*=2) {
+showbits($x);
+}
+showbits("5.75");
+showbits("-.1");
+
+sub showbits {
+$x=shift;
+$string=pack("f",$x);
+print "$x\t";
+$y=uc(unpack("H*",$string));
+print "$y\t";
+for ($z=0;$z&lt;8;$z+=2) {
+$hx[$z]=sprintf("%.8b ",hex(substr($y,$z,2)));
+}
+print substr($hx[0],0,1), " ";
+print substr($hx[0],1,7);
+print substr($hx[2],0,1), " ";
+print substr($hx[2],1,7);
+print substr($hx[4],0,8);
+print substr($hx[6],0,8);
+
+print "\n";
+}
+ 
+</pre>
+<p>We're looking at single precision floating point numbers here.
+Double precision uses the same scheme, just more bits. Here's what
+the output looks like :</p>
+<pre class="narrow">
+0       00000000        0 00000000 00000000000000000000000
+1       3F800000        0 01111111 00000000000000000000000
+2       40000000        0 10000000 00000000000000000000000
+4       40800000        0 10000001 00000000000000000000000
+8       41000000        0 10000010 00000000000000000000000
+16      41800000        0 10000011 00000000000000000000000
+32      42000000        0 10000100 00000000000000000000000
+64      42800000        0 10000101 00000000000000000000000
+128     43000000        0 10000110 00000000000000000000000
+256     43800000        0 10000111 00000000000000000000000
+512     44000000        0 10001000 00000000000000000000000
+1024    44800000        0 10001001 00000000000000000000000
+2048    45000000        0 10001010 00000000000000000000000
+4096    45800000        0 10001011 00000000000000000000000
+8192    46000000        0 10001100 00000000000000000000000
+5.75    40B80000        0 10000001 01110000000000000000000
+-.1     BDCCCCCD        1 01111011 10011001100110011001101
+ 
+</pre>
+<p>The first column is what the stored format looks like in hex.
+After that come the actual bits; I've separated them in this odd
+way for a very good reason (which will become clear later). The
+value "5.75" is stored as "01000000101110000000000000000000" or
+"40B80000" (hex).</p>
+<p>You might easily guess that the first bit is the sign bit. I
+think that's what I first grokked back in 1983 too. The next 8 bits
+are used for the exponent, and the last 23 are the value. As you
+will no doubt notice, the value bits from 0 to 8192 are all empty,
+so I must be crazy and there's no point in reading this trash any
+farther.</p>
+<p>Well, actually there is. There's a hidden bit there that isn't
+stored but is always assumed. If you are really compulsive and
+counted the bits, you see that only 23 bits are there. The hidden
+bit makes it 24.bits (or 4 bytes) and is always 1. So, if we add
+the hidden bit, the bits would look like:</p>
+<pre class="narrow">
+0        0 00000000 100000000000000000000000
+1        0 01111111 100000000000000000000000
+2        0 10000000 100000000000000000000000
+4        0 10000001 100000000000000000000000
+8        0 10000010 100000000000000000000000
+16       0 10000011 100000000000000000000000
+32       0 10000100 100000000000000000000000
+64       0 10000101 100000000000000000000000
+128      0 10000110 100000000000000000000000
+256      0 10000111 100000000000000000000000
+512      0 10001000 100000000000000000000000
+1024     0 10001001 100000000000000000000000
+2048     0 10001010 100000000000000000000000
+4096     0 10001011 100000000000000000000000
+8192     0 10001100 100000000000000000000000
+5.75     0 10000001 101110000000000000000000
+-.1      1 01111011 110011001100110011001101
+ 
+</pre>
+<p>But remember, it's what I showed above that is really there.</p>
+<p>One more thing: there's an implied decimal point after that
+hidden number. To get the value of bits after the decimal point,
+start dividing by two: so the first bit after the (implied) decimal
+point is .5, the next is .25 and so on. We don't have to worry
+about any of that for the powers of two, because obviously those
+are whole numbers and the bits will be all 0. But down at the 5.75
+we see that at work:</p>
+<p>First, looking at the exponent for 5.75, we see that it is 129.
+Subtracting 127 gives us 2. So 1.0111 times 2^2 becomes 101.11
+(simply shift 2 places to the right to multiply by 4). So now we
+have 101 binary, which is 5, plus .5 plus .25 (.11) or 5.75 in
+total. Too quick?</p>
+<p>Taking it in detail:</p>
+<p>Exponent: 10000001, which is 129 (use the <a href="http://aplawrence.com//Jscript/javabits.html">Javascript Bit Twiddler</a>
+if you like). Subtract 127 leaves us with 2.</p>
+<p>Mantissa: 01110000000000000000000</p>
+<p>Add in the implied bit and we have 101110000000000000000000,
+with implied decimal point that's 1.01110000000000000000000</p>
+<p>Multiple that by 2^2 to get 101.110000000000000000000</p>
+<p>That is 4 + 1 + .5 + .25 or 5.75</p>
+<p>Look at 2048. The exponent is 128 + 8 + 2 or 138, subtract 127
+we get 11. Use the Bit Twiddle if you don't see that. The mantissa
+is all 0's, which with the implied bit makes this all
+1.00000000000000000000000 times 2^11. What's 2^11? It's 2048, of
+course.</p>
+<p>Now the -.1. This actually can't store precisely, but the
+method is still the same. The exponent is 64 + 32 + 16 + 8 + 2 + 1
+or 123. Subtract 127 and we get -4, which means the decimal point
+moves 4 places to the left, making our value
+.000110011001100110011001101. Now you understand why it's stored
+after adding 127 - it's so we can end up with negative exponents.
+If we calculate out the binary, that's .625 + .3125 + .0390625 and
+on to ever smaller numbers which get us very, very close to .1 (but
+off slightly). The sign bit was set, so it's a -.1</p>
+<p>The Tandy (and Dec Vax, by the way) "excess 128" exponent
+storage simply changes the ranges of positive versus negative
+numbers - other than that, it works just like this.</p>
+<p>Finally, there are two reserved values: all 0's for 0, and all
+1's for NaN (Not A Number) in other words, too large (or too small)
+for the format to hold. You'd also get that from dividing by
+zero.</p>
+<p>That's it. Take a look at the link at the beginning if you want
+to go a little deeper, but this is probably all you need to get
+started.</p>
+
+<br clear="right" />
+<!-- google_ad_section_end -->
+<br /><i>If this page was useful to you, please help others find it: &nbsp;</i>
+<br />
+<br />
+<!-- AddThis Button BEGIN -->
+<div style="box-shadow: 10px 5px 10px #999;border:2px solid #060;padding:7px;max-width:45%">
+<div class="addthis_toolbox addthis_default_style ">
+<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+<a class="addthis_button_preferred_1"></a>
+<a class="addthis_button_preferred_2"></a>
+<a class="addthis_button_preferred_3"></a>
+<a class="addthis_button_preferred_4"></a>
+<a class="addthis_button_compact"></a>
+<a class="addthis_counter addthis_bubble_style"></a>
+</div>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4eda26ea7258d428"></script>
+<!-- AddThis Button END -->
+<br />
+<div class="g-plusone"></div>
+<div class="g-plus" data-action="share"></div>
+</div>
+<br />
+<br />
+<script type="text/javascript">
+  window.___gcfg = {parsetags: 'onload'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<br />
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- TEXT ENDS -->
+<p><a href="#commentshere">16 comments</a></p>
+<div style="margin-left:15px">
+<div style="text-align: center; "><br />Inexpensive and informative  Apple related e-books:
+<br />
+
+<br /> <a rel="nofollow" href="http://www.takecontrolbooks.com/ipad-media?aff=AFL1361639390">Take Control of Media on Your iPad</a>
+<br /><a rel="nofollow" href="http://www.takecontrolbooks.com/snow-leopard-fonts?aff=AFL1361639390">Fonts in Snow Leopard </a>
+<br /><a rel="nofollow" href="http://www.takecontrolbooks.com/panther-users?aff=AFL1361639390">Users &amp; Accounts in Panther (Leopard version also available) </a>
+<br /><a rel="nofollow" href="http://www.takecontrolbooks.com/leopard-customizing?aff=AFL1361639390">Customizing Leopard </a>
+<br /> <a rel="nofollow" href="http://www.takecontrolbooks.com/icloud?aff=AFL1361639390">Take Control of iCloud</a>
+<br />
+<br />
+</div>
+
+</div>
+ <br clear="left" />
+<!-- two -->
+<br /><br />
+<p>More Articles by <a  href="http://aplawrence.com/cgi-bin/getauthart.pl?arg=Tony%20Lawrence">Tony Lawrence</a>
+ -  <a href="https://plus.google.com/113844487094333569134?rel=author" target="_blank" >Find me on Google+</a>
+</p>
+ <br clear="left" />
+<!-- thr -->
+<div class="tight"><u><b>
+<br /><a href="http://aplawrence.com/cgi-bin/strongrelated.pl?arg=/Basics/floatingpoint.html">Related Articles</a><br /><br />
+</b></u></div>
+<div id="commentshere"><div class="comments" ><!-- google_ad_section_start -->
+
+<span style="font-size:125%"><br /><a href="http://aplawrence.com/cgi-bin/newcomm.pl?commenting=/Basics/floatingpoint.html">Click here to add your comments</a> </span>
+<br />"Tandy stored floating point nubers in what they called "XS128 notation" (Excess 128 is what they really meant) and MBASIC used packed BCD."
+<br />
+<br />Tandy used excess 128 because Microsoft used it in their 8 bit BASIC interpreters.  Excess 128 worked well with 8 bit CPU's (like the Z80 in Tandy's TRS-80 boxes and the 6510 in the Commodore 64) because the conversion between ASCII and floating binary format could be carried out with simple binary adds, shifts and rotates -- operations that were relatively quick on these processors.  The alternative, IEEE floating point format, was best implemented on 16 bit processors, where integer multiply and divide operations were common.
+<br />
+<br />However, excess 128 format had a significant flaw, in that it didn't always accurately represent the fractional component of a number.  Despite having 7 significant display digits when returned to ASCII format, excess 128 often caused computation errors that could drive a programmer batty.  For example, it was not uncommon for an expression like 1.80-1.79 to result in .00999937 or something similar, a predictable result of trying to convert a base-10 fraction in a base-2 representation.  I recall many different schemes that were concocted to work around this nonsense.  It was what prompted me to turn to BCD routines in my assembly language programs.
+<br />
+<br />Speaking of packed (or compressed) BCD, the MOS Technology 65xx processor family used in many 1970's and 1980's home computers (e.g., the Commodore 64, Atari, Apple II) could be made to do arithmetic in BCD by setting the decimal bit in the processor's status register with the SED mnemonic.  If decimal mode was cleared (the CLD mnemonic), all arithmetic was performed on unsigned 8 bit numbers and a carry would occur during addition if the result exceeded an 8 bit value (the width of the .A or accumulator register).  No half-carry was considered.
+<br />
+<br />However, if decimal mode was set, a half-carry would automatically occur if, during addition, the value of the low order nybble went past $09 (this is MOS Technology notation for 0x09) -- $09 + $01 in BCD resulted in $10, not $0A as would be the case in binary mode.  A full carry occurred if the accumulator went past $99 (it would roll back to $00 and the processor carry flag would be set).  A similar action in reverse occurred if decimal mode subtraction was carried out.
+<br />
+<br />There was a booby-trap in the C-64 that could catch the unwary when the processor was in decimal mode: if either an IRQ or NMI occurred, the kernel ROM handlers would push the processor status register onto the stack, thus preserving the decimal mode setting.  However, the interrupt handler failed to return the processor to binary mode prior to continuing, which could result in a crash or at least bizarre behavior when some part of the interrupt handler used an ADC (add with carry) or SBC (subtract with borrow) operation -- the result would not be what was expected.  The solution was to either disable IRQ's while decimal mode was in use or modify the interrupt vectors to point to code that would clear decimal mode before executing the main interrupt handler (the restoration of the status register from the stack at the end of the interrupt handler automatically placed the processor back into decimal mode).  Of course, there was no way to disable an NMI, so if one occurred during a BCD routine, oh well!
+<br />
+<br />BCD has the advantage of exactly converting from the ASCII representation of decimal numbers to the machine format and back.  However, it takes more bytes to represent a given number, and BCD multiplication and division, as well as transcendental functions, tend to execute more slowly than their binary equivalents.  Compromise, compromise...
+<br />
+<br />--BigDumbDinosaur
+<br />
+<br />I think you are confused somewhere.  XS128 is the same concept as ieee floating point, and they both are unable to accurately represent numbers.  The more bits you can give to the mantissa, the closer you can get, but neither accurately represent something as simple a -.1 (as in the examples of the article).  
+<br />
+<br />--TonyLawrence
+<br />
+<br />No confusion.  Of course, both excess 128 and IEEE are closely related due to their reliance on binary exponentiation to represent large numbers in a small space.	In fact, 4 byte IEEE has exactly the same number of significant decimal digits as excess 128, which is also a 4 byte notation.  Excess 128 handles negativity in a different fashion, though.  My above wording, after rereading it, does seem to imply that IEEE was more accurate than excess 128 -- that wasn't my intention.
+<br />
+<br />Excess 128 notation was devised as a way to avoid the use of negative 8 bit numbers (i.e., values where bit 7 was set) in twos complement arithmetic.  Signed arithmetic operations on 8 bit processors are inefficient and produce only 7 bits of significance, obviously.  Plus most 8 bit CPU's do not have a specific means of handling overflow into the sign bit -- they simply set a flag in the status register and leave it up to the programmer to handle the overflow.
+<br />
+<br />Contrast that to a 16 bit processor, in which twos complement produces 15 bit significance, or the 31 bits of a 32 bit CPU.  Also, all modern 16 and 32 bit CPU's have the means to deal with sign overflow.  Hence excess 128 tends to be faster on older 8 bit CPU's, whereas IEEE format comes into its own on 16, 32 and 64 bit processors.
+<br />
+<br />--BigDumbDinosaur
+<br />
+<br />In the IEEE standards for floating-point numbers (IEEE 754 and 854), single precision (32-bit) uses 8-bit exponents in excess 127 notation (i.e., the bias is 127). Double precision (64-bit) uses 11-bit exponents in excess 1023.
+<br />
+<br />--FredFoobar
+<br />
+<br />---September 16, 2004
+<br /><br />
+<br /><br /><br /><br /><i>Sat Feb 19 17:55:27 2005:  </i>46 &nbsp; <a href="http://aplawrence.com/cgi-bin/newcomm.pl?author=anonymous&amp;postid=46">anonymous </a><br /><br /> <br />
+Gracias, this is very informative and I've book marked this page. What did catch me for a while is that .0001 binary was written 0.625 instead 0.0625 and I missed the small decimal point before the one in -.1. So for five minutes I went crazy wondering where the extra 10 factor came from. Now I understand its -0.1=-0.0625+-0.03125, etc.
+<br /><br /><br /><br /><i>Sat Dec  6 07:03:23 2008:  </i>4858 &nbsp; <a href="http://aplawrence.com/cgi-bin/newcomm.pl?author=qseep&amp;postid=4858">qseep </a><br /><br /> <br />
+Why are people so hung up on binary floating point not being able to represent 1/10? It also can't represent 1/3, an even simpler number - and neither can the decimal system. Most floating point calculations are for graphics or scientific calculations (financial calculations are fixed-point), and most floating point results are never converted to decimal. Yes, there are all sorts of accuracy gotchas with floating point - but I think representing 1/10 is the least of them. Now if we used a real base, like 12, we could represent 1/3 as .4, no problem. &#58;)
+<br /><br /><br /><br /><i>Sat Dec  6 16:08:34 2008:  </i>4863 &nbsp; <a href="http://aplawrence.com/cgi-bin/newcomm.pl?author=BigDumbDinosaur&amp;postid=4863">BigDumbDinosaur </a><br /> <a href="http://bcstechnology.net" target="_blank" rel="nofollow" >http://bcstechnology.net</a><br /> <br />
+<i>Why are people so hung up on binary floating point not being able to represent 1/10?</i><br /><br />It isn't a problem until some accountant's spreadsheet tells him that 1.80 - 1.79 = .0099999.
+<br /><br /><br /><br /><i>Sat Dec  6 17:34:27 2008:  </i>4865 &nbsp; <a href="http://aplawrence.com/cgi-bin/newcomm.pl?author=qseep&amp;postid=4865">qseep </a><br /><br /> <br />
+I understand that would be a problem. But instead of resorting to the less efficient BCD format, it's easier to do calculations on cents instead of dollars internally. Thus 180 cents - 179 cents = 1 cent. You just draw a dot before the last two digits when you show it on screen.
+<br /><br /><br /><br /><i>Sat Dec  6 17:55:52 2008:  </i>4866 &nbsp; <a href="http://aplawrence.com/cgi-bin/newcomm.pl?author=TonyLawrence&amp;postid=4866">TonyLawrence </a><br /><br /> <img src="http://www.gravatar.com/avatar.php?gravatar_id=2e6a807aad6127e18b07e96ad8caedef&amp;s=40" alt="gravatar "  /><br />
+:-)
+<br /><br />
+No...  
+<br /><br />
+I'm sorry for laughing, but you just don't understand at all.   This isn't a matter of where the decimal point is - as the article explains, that's always done with an exponent.  This is a matter of precision.
+<br /><br />
+I suggest re-reading more carefully, perhaps with pencil and paper.
+<br /><br /><br /><br /><i>Sat Dec  6 20:42:39 2008:  </i>4876 &nbsp; <a href="http://aplawrence.com/cgi-bin/newcomm.pl?author=qseep&amp;postid=4876">qseep </a><br /><br /> <br />
+Yes, it is a matter of precision. The accountant enters a value of 1.80. They enter it as a series of ASCII characters, right? That's a decimal representation. So before storing it internally you can move the decimal point two spaces to the right. You represent the value internally as 180 cents, in binary. It could be an integer 180, or the floating point value 180.0. Either one has no loss of precision from the original value. Likewise, 1.79 can be represented internally as the integer 179, or the floating-point value 179.0. When you subtract, you get 1 if using integers, or 1.0 if using floating-point. There's no chance for getting an answer of 0.99999. <br />
+ <br />
+Actually, floating-point is never useful in financial calculations, because of the loss of precision. It's better to use integers or fixed-point arithmetic. Choosing floating-point over fixed-point implies that sometimes you won't care about the ones place - e.g., 1E25+1 is the same as 1 in single- or double-precision IEEE. <br />
+ <br />
+Let's say apples are selling 5 for 79 cents, and you buy one apple. Then you can use fixed-point arithmetic to divide 79.0 by five. Yes, you will not get exactly 15.8,  due to the inability of binary representations to represent non-binary fractions. But it doesn't matter because you're going to round the answer up to 16 cents. The store is going to charge you exactly 16 cents, not 15.8. <br />
+
+<br /><br /><br /><br /><i>Wed Jan 21 10:15:41 2009:  </i>5208 &nbsp; <a href="http://aplawrence.com/cgi-bin/newcomm.pl?author=hp&amp;postid=5208">hp </a><br /><br /> <img src="http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&amp;s=40" alt="gravatar "  /><br />
+qseep - You *will* lose precision if you go the binary floating point way (try it!!!). It does not help that you move the decimal point two places to the right, since the numbers are always stored in exponential form. Thus, 1.79 is stored as .179E1 and 179.0 as .179E3. Same mantissa, no gain in precision. In either case, you'll end up with an answer like .999999 for the mentioned example.
+<br /><br /><br /><br /><i>Fri Feb 27 14:49:35 2009:  </i>5530 &nbsp; <a href="http://aplawrence.com/cgi-bin/newcomm.pl?author=ScottHanson&amp;postid=5530">ScottHanson </a><br /><br /> <img src="http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&amp;s=40" alt="gravatar "  /><br />
+I was wrestling with the floating-point format until I came across your web page.  You managed to explain the concept in simple enough terms that even I could understand.  Thank you.
+<br /><br /><br /><br /><i>Sat Mar 13 18:10:14 2010:  </i>8211 &nbsp; <a href="http://aplawrence.com/cgi-bin/newcomm.pl?author=anonymous&amp;postid=8211">anonymous </a><br /><br /> <img src="http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&amp;s=40" alt="gravatar "  /><br />
+
+Can you help with this? <br />
+A 15-bit floating point number representation has 1 bit for the sign of the number, 5 bits for the exponent and 9 bits for the mantissa (which is normalized). Numbers in the exponent are in signed magnitude representation. No bias is used and there are no implied bits. Show the representation for the smallest positive number this machine can represent. What is its value? <br />
+ <br />
+Sign			Exponent			Mantissa <br />
+
+<br /><br /><br /><br /><i>Sat Mar 13 18:17:24 2010:  </i>8212 &nbsp; <a href="http://aplawrence.com/cgi-bin/newcomm.pl?author=TonyLawrence&amp;postid=8212">TonyLawrence </a><br /><br /> <img src="http://www.gravatar.com/avatar.php?gravatar_id=2e6a807aad6127e18b07e96ad8caedef&amp;s=40" alt="gravatar "  /><br />
+
+No, I'm not going to help you with your homework, other than to say that you need to read the article above.
+<br /><br /><br /><br /><i>Sat Mar 13 19:27:14 2010:  </i>8213 &nbsp; <a href="http://aplawrence.com/cgi-bin/newcomm.pl?author=TonyLawrence&amp;postid=8213">TonyLawrence </a><br /><br /> <img src="http://www.gravatar.com/avatar.php?gravatar_id=2e6a807aad6127e18b07e96ad8caedef&amp;s=40" alt="gravatar "  /><br />
+
+You know what annoys me the most about people like that? <br />
+ <br />
+It's that they don't even bother to try rephrasing the question - it's just pasted from their homework.  That indicates either extreme laziness or total stupidity (you don't even understand well enough to rephrase).    <br />
+ <br />
+I wonder how far people like this can actually get before it all falls down?
+<br /><br /><br /><br /><i>Sun Jan  9 18:09:09 2011:  </i>9220 &nbsp; <a href="http://aplawrence.com/cgi-bin/newcomm.pl?author=JoeB&amp;postid=9220">JoeB </a><br /><br /> <img src="http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&amp;s=40" alt="gravatar "  /><br />
+
+ha...  Just had to comments since I had to convert some old DEC VAX files and had to write a routine that converted the different 32 bit floating point formats. <br />
+ <br />
+It took me quite a bit longer than you.  How I wish I had found your page earlier!
+<br /><br /><br /><br /><i>Sun Jan  9 19:40:37 2011:  </i>9221 &nbsp; <a href="http://aplawrence.com/cgi-bin/newcomm.pl?author=TonyLawrence&amp;postid=9221">TonyLawrence </a><br /><br /> <img src="http://www.gravatar.com/avatar.php?gravatar_id=2e6a807aad6127e18b07e96ad8caedef&amp;s=40" alt="gravatar "  /><br />
+
+But you still got 'er done, right? <br />
+ <br />
+&#58;) <br />
+
+<br /><br /><br /><br /><i>Fri Oct 28 04:37:50 2011:  </i>10082 &nbsp; <a href="http://aplawrence.com/cgi-bin/newcomm.pl?author=BillFraser&amp;postid=10082">BillFraser </a><br /><br /> <img src="http://www.gravatar.com/avatar.php?gravatar_id=1e21954656cf59a4c8e60709ea4ad8f2&amp;s=40" alt="gravatar "  /><br />
+
+I've been looking for something like this for some time in order to demonstrate how integers are stored into real formats and what happens when you exceed the largest integer that can be stored sequentially - thank you for posting this and your excellent explanation. <br />
+ <br />
+One comment, when I ran you script - using perl v5.12.2 for MSWin32-x86-multi-thread, the unpack( "H*", $string) returned the bytes in reverse order - 0000803F instead of 3F800000 for 1 so I un-reversed them&#58; $yy=""; for ($z=8;$z&gt;0;$z-=2) { $yy .= substr($y,$z-2,2); } <br />
+HTH
+<br /><br /><br /><br /><i>Fri Oct 28 10:09:53 2011:  </i>10084 &nbsp; <a href="http://aplawrence.com/cgi-bin/newcomm.pl?author=TonyLawrence&amp;postid=10084">TonyLawrence </a><br /><br /> <img src="http://www.gravatar.com/avatar.php?gravatar_id=2e6a807aad6127e18b07e96ad8caedef&amp;s=40" alt="gravatar "  /><br />
+
+Ahh - interesting!  I see that my machines no need the same fix.
+<br /><br /><br /><br /><i>Fri Oct 28 10:18:03 2011:  </i>10085 &nbsp; <a href="http://aplawrence.com/cgi-bin/newcomm.pl?author=TonyLawrence&amp;postid=10085">TonyLawrence </a><br /><br /> <img src="http://www.gravatar.com/avatar.php?gravatar_id=2e6a807aad6127e18b07e96ad8caedef&amp;s=40" alt="gravatar "  /><br />
+
+I don't know what my fingers were thinking &#58;-) <br />
+ <br />
+I mean they DO need the same fix.  When I wake up a little, I'll figure out why.
+<br /><br />Don't miss responses! Subscribe to Comments <a href="http://aplawrence.com/rss/index.html">by RSS</a> or <a href="http://feedburner.google.com/fb/a/mailverify?uri=Aplawrencecomment">by Email</a><br />
+<span style="font-size:125%"><br /><a href="http://aplawrence.com/cgi-bin/newcomm.pl?commenting=/Basics/floatingpoint.html">Click here to add your comments</a> </span>
+<br /><br />If you want a picture to show with your comment, go get a <a href="http://en.gravatar.com/" target="_blank">Gravatar</a><br />
+
+</div>
+</div><br clear="left" />
+<!-- fou -->
+<div style="text-align:center">
+<a href="http://aplawrence.com/Web/social_blogging.html">Why no "Digg this!" etc.?</a><br /><br />
+</div>
+
+<!-- google_ad_section_end -->
+</div>
+<br />
+<div style="text-align: center; "><br /><a target="Window1" rel="nofollow" href="http://www.lod.com"><img src="http://aplawrence.com/lod_consult.gif" width="468" height="60"  alt="LOD Communications, Inc."  /></a>
+</div> <hr/><div style="text-align: center;"><br /><a class="nodec"  href="http://aplawrence.com/cgi-bin/printer.pl?arg=/Basics/floatingpoint.html">Printer Friendly Version</a><br /><br /></div><div id="footer">
+<a href="http://aplawrence.com/sitemap.html">Site map</a> |
+<a href="http://aplawrence.com/disclaimer.html">Disclaimer</a>
+<br /><cite><font size="-1">
+ <a href="http://aplawrence.com/cgi-bin/freprint.pl?arg=/Basics/floatingpoint.html">"Understanding Floating Point Formats" Copyright September 2003 Tony Lawrence </a>
+</font></cite>
+<br />
+<br />
+</div>
+
+<div class="tight"><u><b>
+<br /><a href="http://aplawrence.com/cgi-bin/strongrelated.pl?arg=/Basics/floatingpoint.html">Related Articles</a><br /><br />
+</b></u></div>
+
+<p>Have you tried <a href="http://aplawrence.com/search.html">Searching this site?</a></p>
+<p>Unix/Linux/Mac OS X support by phone, email or on-site:<a href="http://aplawrence.com/rates.html">
+Support Rates</a></p>
+<p>This is a Unix/Linux resource website.  It contains technical articles about Unix, Linux and general computing related subjects, opinion, news, help files, how-to's, tutorials and more.  We appreciate comments and <a href="http://aplawrence.com/publish.html">article submissions</a>.</p>
+<p id="nearbottom"><a href="http://aplawrence.com/publish.html">Publishing your articles here</a></p>
+<div style="font-size:smaller;max-width:500px">
+<p><a href="#commentshere">Jump to Comments</a></p>
+<p><br clear="left"  /><br /><i><b>Many of the products and books I review are things I purchased for my own use.  Some were given to me specifically for the purpose of   reviewing them.  I resell or can earn commissions from the sale of some of these items.  Links within these pages may be affiliate links that pay me for referring you to them. That's mostly insignificant amounts of money; whenever it is not I have made my relationship plain.  I also may own stock in companies mentioned here. If you have any question, please do feel free to contact me.</b></i></p>
+<p><b>Specific links that take you to pages that allow you to purchase the item I reviewed are very likely to pay me a commission.  Many of the books I review were given to me by the publishers specifically for the purpose of writing a review.  These gifts and referral fees do not affect my opinions; I often give bad reviews anyway.</b></p>
+<p><b><i>We use Google third-party advertising companies to serve ads when you visit our website. These companies may use information (not including your name, address, email address, or telephone number) about your visits to this and other websites in order to provide advertisements about goods and services of interest to you. If you would like more information about this practice and to know your choices about not having this information used by these companies, <a href="http://www.google.com/privacy_ads.html">click here</a>.</i></b></p>
+</div>
+
+<div style="text-align: center;"><br /><a class="nodec"  href="http://aplawrence.com/cgi-bin/printer.pl?arg=/Basics/floatingpoint.html">Printer Friendly Version</a><br /><br /></div>		</div>
+			</div>
+<div class="yui-u">
+<div style="width:200px;margin-left:10px">
+<a  href="https://plus.google.com/113844487094333569134/posts" target="_blank"><img style="margin-left:10px;" src="http://aplawrence.com/images/pavatar.jpg" alt="pavatar.jpg" title= "Tony Lawrence " height="80" width="80"  />  </a> 
+<div class="tight"><a href="http://aplawrence.com/cgi-bin/indexget.pl?arg=Kerio">Kerio posts</a></div><div class="tight"><a href="http://aplawrence.com/cgi-bin/indexget.pl?arg=Linux">Linux posts</a></div><div class="tight"><a href="http://aplawrence.com/cgi-bin/indexget.pl?arg=MacOSX">Mac OS X  posts</a></div><div class="tight"><a href="http://aplawrence.com/cgi-bin/indexget.pl?arg=Scripting">Shell scripting posts</a></div><div class="tight"><a href="http://aplawrence.com/cgi-bin/indexget.pl?arg=Troubleshooting">Troubleshooting posts</a></div><div class="tight"><br /><b>This post tagged: </b><br /></div><br />
+<!-- Basics /Basics THISQ --><div class="tight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <u><b><a href="http://aplawrence.com/cgi-bin/indexget.pl?arg=Basics" title="More articles about Basics"  >Basics</a></b></u><br /></div>
+<!-- Code /Basics THISQ --><div class="tight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <u><b><a href="http://aplawrence.com/cgi-bin/indexget.pl?arg=Code" title="More articles with code samples"  >Code</a></b></u><br /></div>
+<!-- Perl /Basics THISQ --><div class="tight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <u><b><a href="http://aplawrence.com/cgi-bin/indexget.pl?arg=Perl" title="More articles about Perl"  >Perl</a></b></u><br /></div>
+<!-- Programming /Basics THISQ --><div class="tight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <u><b><a href="http://aplawrence.com/cgi-bin/indexget.pl?arg=Programming" title="More articles about Programming"  >Programming</a></b></u><br /></div><br /><br /><br /><br />
+<div style="text-align:center"><a href="http://aplawrence.com/consultants.html">Unix/Linux Consultants</a><br /><br /><a href="http://aplawrence.com/Tests">Skills Tests</a><br /><br /><a target="_blank" href="http://www.linode.com/?r=e045b324074009e0f6c5b8c3454ea2774930f3dc" >This site runs on Linode</a></div><div><br/>
+
+<!-- Section /Basics -->
+</div>
+<br />
+<br />
+<br />
+<div style="width:160px; height:600px;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-9578552053766073";
+/* LeftSky */
+google_ad_slot = "4131007735";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br />
+<br />
+</div>
+<br />
+<br />
+<hr />
+<br />
+<br />
+<br /><br /><br />
+<div>
+<div style="margin-left:auto;margin-right:auto;width:140px;border-style:solid;padding:10px;">My <a href="http://aplawrence.com/troubleshootingbook.html" title="Linux/Unix problem solving guide">Troubleshooting  E-Book</a> will show you how to solve tough problems on Linux and Unix systems!</div><br />
+<br />
+<a href="http://aplawrence.com/troubleshootingbook.html" title="Unix/Linux problem solving - $14.95 instant download!"><img src="http://aplawrence.com/images/TroubleCols.jpg" alt="book graphic unix and linux troubleshooting guide" width="150" height="248"/></a>
+</div>
+<br />
+<br />
+<br />Buy Kerio from a dealer<br/>who knows tech: 
+<br />I sell and support <br /><br /><a href="http://aplawrence.com/Kerio">Kerio Connect Mail server, Control, Workspace and Operator licenses and subscription renewals</a>
+</div>			</div>
+		</div>
+		</div>
+		</div>
+		<div class="yui-b">
+<!-- HERE left 0 -->
+		</div>
+	</div>
+	<div id="ft">
+<hr />
+<!-- Start Quantcast tag -->
+<script type="text/javascript">
+_qoptions={
+qacct:"p-24p8h77xTSLh-"
+};
+</script>
+<script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+<noscript>
+<a href="http://www.quantcast.com/p-24p8h77xTSLh-" target="_blank"><img src="http://pixel.quantserve.com/pixel/p-24p8h77xTSLh-.gif" style="display: none;" height="1" width="1" alt="Quantcast"/></a>
+</noscript>
+<!-- End Quantcast tag -->
+<script type='text/javascript' src='http://track3.mybloglog.com/js/jsserv.php?mblID=2007121116321394'></script>
+</div>
+</div>
+</body></html>

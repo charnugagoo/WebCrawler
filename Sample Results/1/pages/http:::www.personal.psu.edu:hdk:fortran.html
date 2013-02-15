@@ -1,0 +1,1011 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Author" content="Herman D. Knoble">
+   <meta name="GENERATOR" content="Mozilla/4.8 [en] (Windows NT 5.0; U) [Netscape]">
+   <title>Fortran</title>
+</head>
+<body text="#000000" bgcolor="#FFFFCC" link="#0000EE" vlink="#551A8B" alink="#FF0000">
+
+<center><b><font size=+2>Fortran Resources</font></b>
+<br><b><font size=+2>and</font></b>
+<br><b><font size=+2>Fortran 77/90/95 Compilers for Windows and Linux</font></b>
+<br><b><font size=-1>This Web Page: http://www.personal.psu.edu/hdk/fortran.html</font></b>
+<p><b><a href="http://aset.psu.edu/">Academic Services and Emerging Technologies</a></b>
+<br><a href="http://gears.aset.psu.edu/">Research Computing and Cyberinfrastructure</a>
+<br><script><!--
+function m(n) {document.write('<a href="&#x6D;&#x61;&#x69;&#x6C;'+'&#x74;&#x6F;&#x3A;'+n+'">H. D. Knoble</a>');}
+m("%53%6B%69%70%4B%6E%6F%62%6C%65%40%70%73%75%2E%65%64%75"); //-->
+</script>
+
+<p>16 October 2009</center>
+
+<p><b>Open Directory Project - Fortran Source Codes and more:</b><a href="http://www.dmoz.org/Computers/Programming/Languages/Fortran">http://www.dmoz.org/Computers/Programming/Languages/Fortran</a>
+<br><b>Fifty Years of Fortran:&nbsp; </b><a href="http://www.fortran.bcs.org/2007/jubileeprog.php">http://www.fortran.bcs.org/2007/jubileeprog.php</a>
+<br>&nbsp;
+<p><b><font size=+1>TABLE OF CONTENTS</font></b>
+<blockquote><b><font size=+1><a href="#ACKNOWLEDGMENTS">ACKNOWLEDGMENTS</a></font></b>
+<br><b><font size=+1><a href="#Testing">Compiler Testing and Evaluation</a></font></b>
+<br><b><font size=+1><a href="#Benchmarks">Some Fortran Benchmark Sites</a></font></b>
+<br><b><font size=+1><a href="#KeyWorks">Subprograms, Converters, Key Works</a></font></b>
+<br><b><font size=+1><a href="#Resources">Key Fortran Resources</a></font></b>
+<br><b><font size=+1><a href="#HPC">High Performance Computing</a></font></b>
+<br><b><font size=+1><a href="#Floating-Point">Floating-Point Notes</a></font></b>
+<br><b><font size=+1><a href="#Free">Free Fortran Compilers, Tools, Tutorials
+and Software</a></font></b>
+<br><b><font size=+1><a href="#MixedLanguageProgramming">Mixed Language
+Programming - Fortran Calling C and C++ Subprograms</a></font></b>
+<br><b><font size=+1><a href="#Linux">Linux Fortran Compilers</a></font></b>
+<br><b><font size=+1><a href="#Windows">Windows Fortran Compilers</a></font></b>
+<br><b><font size=+1><a href="#DevelopmentTools">Useful Development Tools</a></font></b>
+<p><b><font size=+1>Also Use Edit/Find-in-page by keyword to find what
+you're looking for.</font></b></blockquote>
+
+<center><a NAME="Testing"></a><b><font size=+1>Compiler Testing and Evaluation</font></b></center>
+<b>Extensive compiler testing and evaluation</b> for many compilers, Windows
+and Linux: <a href="http://www.polyhedron.com/">http://www.polyhedron.com/</a>
+<br>Comparison of Floating-Point Performance of Current Computers: <a href="http://www.aip.org/cip/langer.htm">http://www.aip.org/cip/langer.htm</a>
+<br>CPU versus DRAM Speed - STREAM Benchmarks at U of Virginia:&nbsp; <a href="http://www.cs.virginia.edu/stream/ref.html">http://www.cs.virginia.edu/stream/ref.html</a>
+<br><b>"The New Features of Fortran 2003", by John Reid:</b>&nbsp; <a href="http://www.fortranplus.co.uk/">http://www.fortranplus.co.uk/</a>
+<br>NIST Test Suite:&nbsp;<a href="http://www.itl.nist.gov/div897/ctg/fortran_form.htm">
+http://www.itl.nist.gov/div897/ctg/fortran_form.htm</a>
+<br><b>SHAPE95</b>, a comprehensive set of Fortran 95 compiler conformance
+tests by Spackman &amp; Hendrickson, Inc.(612) 378-9694
+<br>The Fortran Pointer Copy In/Out Problem :&nbsp;<a href="http://www.gfdl.noaa.gov/%7Eap/copy_inout.html">
+http://www.gfdl.noaa.gov/~ap/copy_inout.html</a>
+<br>Windows <b>compilers test sets</b> - Skip Knoble(Penn State) &amp;
+Arnaud Desitter,&nbsp; (formerly) Oxford University School of Geography
+and the Environment:
+<br>&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://ftp.aset.psu.edu/pub/ger/fortran/test/results.txt">http://ftp.aset.psu.edu/pub/ger/fortran/test/results.txt</a>&nbsp;&nbsp;&nbsp;
+and&nbsp;&nbsp; <a href="http://ftp.aset.psu.edu/pub/ger/fortran/test/FortranArgPassing/results.txt">http://ftp.aset.psu.edu/pub/ger/fortran/test/FortranArgPassing/results.txt</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; <b>Source code</b> cited in the reports are
+at:&nbsp; <a href="http://ftp.aset.psu.edu/pub/ger/fortran/test/">http://ftp.aset.psu.edu/pub/ger/fortran/test/</a>&nbsp;
+and&nbsp;&nbsp; <a href="http://ftp.aset.psu.edu/pub/ger/fortran/test/FortranArgPassing/">http://ftp.aset.psu.edu/pub/ger/fortran/test/FortranArgPassing/</a>
+<center>
+<p><a NAME="Benchmarks"></a><b><font size=+1>Some Fortran Benchmark Sites</font></b></center>
+<b>Arjen Markus</b>' work, Checking Properties of a Compiler and run-time
+environment: <a href="http://ftp.aset.psu.edu/pub/ger/fortran/chksys.htm">http://ftp.aset.psu.edu/pub/ger/fortran/chksys.htm</a>
+<br>Basement CPU Benchmarks:&nbsp; <a href="http://www.neurophys.wisc.edu/ftp/pub/BENCH/">http://www.neurophys.wisc.edu/ftp/pub/BENCH/</a>
+<br>Benchmark Bibliography:&nbsp; <a href="http://citeseer.nj.nec.com/63256.html">http://citeseer.nj.nec.com/63256.html</a>
+<br><b>Benchmarks FAQ:</b>&nbsp;&nbsp; <a href="http://www.faqs.org/faqs/benchmark-faq/">http://www.faqs.org/faqs/benchmark-faq/</a>
+<br><b>Benchmark Resources</b> (Compiler Connection):&nbsp; <a href="http://www.compilerconnection.com/benchmarks/benchmarks.htm">http://www.compilerconnection.com/benchmarks/benchmarks.htm</a>
+<br>Case Lab Fortran Benchmarks:&nbsp; <a href="http://www.caselab.okstate.edu/research/benchmark.html">http://www.caselab.okstate.edu/research/benchmark.html</a>
+<br>Compaq Benchmark pages:&nbsp; <a href="http://www5.compaq.com/fortran/visual/intro-performance.html">http://www5.compaq.com/fortran/visual/intro-performance.html&nbsp;&nbsp;</a>
+and&nbsp;&nbsp;<a href="http://www.compaq.com/fortran/ntspeed.html"> http://www.compaq.com/fortran/ntspeed.html</a>
+<br>&nbsp;&nbsp;&nbsp; and&nbsp;&nbsp; <a href="http://www.compaq.com/alphaserver/performance/spec2000.html">http://www.compaq.com/alphaserver/performance/spec2000.html</a>
+<br>Computers in Physics Fortran Benchmarks : <a href="http://www.aip.org/cip/langer.htm">http://www.aip.org/cip/langer.htm</a>
+<br><b>Dave Gemini</b>'s Test_FPU:&nbsp; <a href="http://home.cfl.rr.com/davegemini/">http://home.cfl.rr.com/davegemini/</a>
+<br><b>HPF</b> pages:&nbsp; <a href="http://www.npac.syr.edu/hpfa/">http://www.npac.syr.edu/hpfa/</a>,
+and&nbsp; <a href="http://www.vcpc.univie.ac.at/activities/tutorials/HPF/">http://www.vcpc.univie.ac.at/activities/tutorials/HPF/</a>
+<br><b>Jack Dongarra</b>'s <b>Linpack</b> Benchmark:&nbsp;<a href="http://www.netlib.org/benchmark/">
+http://www.netlib.org/benchmark/</a>&nbsp; and&nbsp; <a href="http://portal.acm.org/citation.cfm?id=742568">http://portal.acm.org/citation.cfm?id=742568</a>
+<br>IBM Compiler Optimization Examples:&nbsp;<a href="http://hpcf.nersc.gov/computers/SP/optex.html">
+http://hpcf.nersc.gov/computers/SP/optex.html</a>
+<br>Lahey benchmarking page:&nbsp;&nbsp; <a href="http://www.lahey.com/bench.htm">http://www.lahey.com/bench.htm</a>
+<br><b>Linpack Benchmark FAQ</b>:&nbsp; <a href="http://netlib.amss.ac.cn/utk/people/JackDongarra/faq-linpack.html">http://netlib.amss.ac.cn/utk/people/JackDongarra/faq-linpack.html</a>
+<br>Linux/Unix Benchmarks:&nbsp;<a href="http://www.tux.org/%7Emayer/linux/bmark.html">
+http://www.tux.org/~mayer/linux/bmark.html</a>
+<br>Mark Riordan's simple (mainframe) CPU test:&nbsp; <a href="http://www.msu.edu/%7Emrr/mycomp/bench.htm">http://www.msu.edu/~mrr/mycomp/bench.htm</a>
+<br><b>George Marsaglia</b> Random Number CDROM including the <b>Diehard
+Battery of Tests of Randomness:</b>&nbsp; <a href="http://stat.fsu.edu/pub/diehard/">http://stat.fsu.edu/pub/diehard/</a>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+tuftests: </b><a href="http://www.jstatsoft.org/v07/i03/tuftests.pdf">http://www.jstatsoft.org/v07/i03/tuftests.pdf</a>
+<br><b>Michel Olagnon's Benchmarks and Test Programs:&nbsp; </b><a href="http://www.ifremer.fr/ditigo/molagnon/fortran90/engfaq.html#2.4">http://www.ifremer.fr/ditigo/molagnon/fortran90/engfaq.html#2.4</a>
+<br><b>MIT Raw Benchmark Suite</b>:&nbsp; <a href="http://cag-www.lcs.mit.edu/raw/benchmark/README.html">http://cag-www.lcs.mit.edu/raw/benchmark/README.html</a>
+<br>N.Tajima's Fortran benchmarks:&nbsp;&nbsp;<a href="http://serv.apphy.fukui-u.ac.jp/%7Etajima/bench/source_e.html">
+http://serv.apphy.fukui-u.ac.jp/~tajima/bench/source_e.html</a>
+<br><b>Parallel Performance</b> Benchmarking Page:&nbsp; <a href="http://www.cs.man.ac.uk/cnc/projects/ecovism/benchmarks.html">http://www.cs.man.ac.uk/cnc/projects/ecovism/benchmarks.html</a>
+<br>Patrick.Queutey's CPU Benchmarks using various Fortran subsystems:
+<a href="http://www.ec-nantes.fr/DMN/WWW/Hardware/Bench/res_65.html">http://www.ec-nantes.fr/DMN/WWW/Hardware/Bench/res_65.html</a>
+<br><span style="font-weight: bold;">Performance Evaluation:&nbsp;</span><a href="http://www.spec.org/">http://www.spec.org/</a>
+<br><span style="font-weight: bold;">Polyhedron&nbsp;</span>run-time benchmarks
+using&nbsp; Linux Fortran 90 on Intel and AMD, both 64-bit and 32-bit results:
+<a href="http://www.polyhedron.com/">http://www.polyhedron.com/</a>
+<br>Once at the Polyhedron site, click : Linux Compiler Comparisons; then
+see the link:
+<br>Roy Longbottoms's PC Benchmark collection:&nbsp; <a href="http://freespace.virgin.net/roy.longbottom/">http://freespace.virgin.net/roy.longbottom/</a>
+<br>Standard Performance Evaluation Corporation (<b>SPEC)</b> Benchmark
+page:&nbsp; <a href="http://www.spec.org/">http://www.spec.org/</a>
+<br>STREAM benchmarks:&nbsp; <a href="http://www.cs.virginia.edu/stream/">http://www.cs.virginia.edu/stream/</a>
+<br>Various Language and software library benchmarks:&nbsp;<a href="http://www.tuco.de/links/program.htm">
+http://www.tuco.de/links/program.htm</a>
+<br><b>Vladimir Galouchko </b>CPU Benchmark&nbsp; history page:&nbsp; <a href="http://field.hypermart.net/CPU/cpu.htm">http://field.hypermart.net/CPU/cpu.htm</a>
+<br><b>VTUNE</b>, Intel's Fortran Analyzer:&nbsp; <a href="http://www.intel.com/software/products/vtune/">http://www.intel.com/software/products/vtune/</a>
+<center>
+<p><a NAME="KeyWorks"></a><font size=+1>Subprograms, Converters, Key Works</font></center>
+<b>ACM Portal (access to full text of ACM publications):&nbsp;</b><a href="http://portal.acm.org">
+http://portal.acm.org</a>
+<br><b>Alan J. Miller's extensive works</b> in Fortran:&nbsp; <a href="http://jblevins.org/mirror/amiller/">http://jblevins.org/mirror/amiller/</a>
+<br><b>Alan R. Miller's Fortran Programs for Scientists and Engineers:</b><a href="http://www.nmt.edu/%7Earmiller/fortran.htm">http://www.nmt.edu/~armiller/fortran.htm</a>
+<br><b>Arjen Markus' program to illustrate memory leaks originating from
+derived-types can be circumvented:</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </b><a href="http://ftp.aset.psu.edu/pub/ger/fortran/Markus/noleaks.f90">http://ftp.aset.psu.edu/pub/ger/fortran/Markus/noleaks.f90</a><b>His
+companion tutorial on how to avoid memory leaks:</b>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://ftp.aset.psu.edu/pub/ger/fortran/Markus/avoiding_memleak.ps">http://ftp.aset.psu.edu/pub/ger/fortran/Markus/avoiding_memleak.ps</a><b>&nbsp;
+and/or&nbsp; </b><a href="http://ftp.aset.psu.edu/pub/ger/fortran/Markus/avoiding_memleak.pdf">http://ftp.aset.psu.edu/pub/ger/fortran/Markus/avoiding_memleak.pdf</a>
+<br><b>Arnaud Desitter's Technical Recipes</b>:&nbsp; <a href="http://www.fortran-2000.com/ArnaudRecipes/">http://www.fortran-2000.com/ArnaudRecipes/</a>
+<br><b>Automated Analysis, Enhancement, Migration and Generation of Software:
+</b><a href="http://www.semdesigns.com/">http://www.semdesigns.com/</a>
+<br><b>David Bailey's Multiple Precision package(F90)</b> and extensive
+work: <a href="http://www.nersc.gov/%7Edhbailey/">http://www.nersc.gov/~dhbailey/</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+then visit and download files from:&nbsp; <a href="http://crd.lbl.gov/%7Edhbailey/mpdist/">http://crd.lbl.gov/~dhbailey/mpdist/</a>
+<br><b>Dan Nagle's Works:&nbsp; </b><a href="http://users.erols.com/dnagle/index.html">http://users.erols.com/dnagle/index.html</a>
+<br><b>J.L.Schonfelder's Multiple Precision package (F95):&nbsp; </b><a href="http://myweb.lmu.edu/dmsmith/FMLIB.html">http://myweb.lmu.edu/dmsmith/FMLIB.html</a>
+<br>Biomedical Library ( M.D. Anderson Cancer Center) Software Library
+(including routines for Random Number Generation):&nbsp; <a href="http://odin.mdacc.tmc.edu/anonftp/">http://odin.mdacc.tmc.edu/anonftp/</a>
+<p><b>Clive Page's work</b>:&nbsp; <a href="http://www.star.le.ac.uk/%7Ecgp/">http://www.star.le.ac.uk/~cgp/</a>
+<br>Cluster World:&nbsp;&nbsp;<a href="http://www.clusterworld.com/issues/may-04-preview.shtml">
+http://www.clusterworld.com/issues/may-04-preview.shtml</a>
+<br>Code Forge - Integrated Development Platform for Unix:&nbsp; <a href="http://www.codeforge.com/features.php">http://www.codeforge.com/features.php</a>
+<br>Collections of Self-Reproducing Source Code (quine) in Various Programming
+Languages&nbsp; (courtesy of William Clodius):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://lslwww.epfl.ch/%7Emoshes/selfrep/">http://lslwww.epfl.ch/~moshes/selfrep/</a>
+,&nbsp; <a href="http://www.nyx.net/%7Egthompso/quine.htm">http://www.nyx.net/~gthompso/quine.htm</a>
+<br><b>Computer Methods for Mathematical Computations by Forsythe, Malcolm
+and Moler:&nbsp;</b> <a href="http://www.pdas.com/fmm.htm">http://www.pdas.com/fmm.htm</a>
+<br><span style="font-weight: bold;"><a NAME="CONVERT"></a>CONVERT From
+Fortran 77 To Fortran 90 syntax</span>
+<br>&nbsp;&nbsp; Free versions:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Michael Metcalf's convert.f90
+tool to convert f77 source code to f90:
+<a href="ftp://ftp.numerical.rl.ac.uk/pub/MandR/convert.f90">ftp://ftp.numerical.rl.ac.uk/pub/MandR/convert.f90</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Alan Miller's conversion
+aid:<a href="http://users.bigpond.net.au/amiller/to_f90.f90">&nbsp;</a><a href="http://jblevins.org/mirror/amiller/to_f90.f90">
+http://jblevins.org/mirror/amiller/to_f90.f90</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Also see<span 
+ style="font-weight: bold;">
+PreConvert</span> by Purple Sage: <a href="http://users.erols.com/dnagle/preconv.html">http://users.erols.com/dnagle/preconv.html</a>.
+<br>&nbsp;&nbsp; Commercial converters:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PlusFort -&nbsp; Fortran Tools
+by Polyhedron: <a href="http://www.polyhedron.com/">http://www.polyhedron.com/</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vast.77to90:&nbsp;&nbsp; <a href="http://www.crescentbaysoftware.com/vast_77to90.html">http://www.crescentbaysoftware.com/vast_77to90.html</a>
+<p><b>General Decimal Arithmetic by Mike Cowishaw, IBM:&nbsp;&nbsp; </b><a href="http://www2.hursley.ibm.com/decimal/">http://www2.hursley.ibm.com/decimal/</a>
+<p><b>Expokit - Matrix Exponentiation:&nbsp;&nbsp; </b><a href="http://www.maths.uq.edu.au/expokit/">http://www.maths.uq.edu.au/expokit/</a>
+<br><b>F Compiler under Windows at Penn State:&nbsp; </b><a href="http://ftp.aset.psu.edu/pub/ger/documents/F-Compiler-PSU.html">http://ftp.aset.psu.edu/pub/ger/documents/F-Compiler-PSU.html</a>
+<br><span style="font-weight: bold;">Fortran Analysis Tools:
+<br>Fortran 90/95, Ada, C++,Java- Scientific Toolworks:</span>&nbsp; <a href="http://www.scitools.com/">http://www.scitools.com/</a>
+<br><span style="font-weight: bold;">WinFPT:&nbsp;</span>&nbsp; <a href="http://www.simcon.uk.com">http://www.simcon.uk.com</a>
+<br><span style="font-weight: bold;">PlusFort:</span>&nbsp;&nbsp; <a href="http://www.polyhedron.com">http://www.polyhedron.com</a>
+<br><span style="font-weight: bold;">Cobalt Blue:</span>&nbsp; <a href="http://cobalt-blue.com">http://cobalt-blue.com</a>
+<br>FCAT - Fortran Coverage Analysis Tool:&nbsp; <a href="http://www.dl.ac.uk/TCSC/UKHEC/FCAT/">http://www.dl.ac.uk/TCSC/UKHEC/FCAT/</a>
+<br><span style="font-weight: bold;">FLIBS - A Collection of Fortran Modules&nbsp;</span>by
+Arjen Markus:&nbsp;&nbsp; <a href="http://flibs.sf.net">http://flibs.sf.net</a>
+<br><span style="font-weight: bold;">Flow Chart and code analysis for Fortran
+77:</span>&nbsp; Flow charting program for Fortran 77:&nbsp; <a href="http://www.netlib.org/floppy/contents.html">http://www.netlib.org/floppy/contents.html</a>
+<br>&nbsp;&nbsp; Windows version:&nbsp;<a href="http://www.netlib.org/floppy/win32/">
+http://www.netlib.org/floppy/win32/</a><span 
+ style="font-weight: bold;"></span>
+<p><b>IDL and FORTRAN FFT Comparison by Paul van Delst: </b><a href="http://cimss.ssec.wisc.edu/~paulv/fft/fft_comparison.html">http://cimss.ssec.wisc.edu/~paulv/fft/fft_comparison.html</a>
+<br><b>ForCheck:</b>&nbsp; <a href="http://www.medfac.leidenuniv.nl/forcheck/">http://www.medfac.leidenuniv.nl/forcheck/</a>,
+<a href="http://www.forcheck.nl/">http://www.forcheck.nl/</a>
+<br><b>Fortran Code Analyses links:&nbsp; </b><a href="http://www.dmoz.org/Computers/Programming/Languages/Fortran/Tools/Code_Analysis/">http://www.dmoz.org/Computers/Programming/Languages/Fortran/Tools/Code_Analysis/</a>
+<br><b>Fortran Language Features by Mike Metcalf:&nbsp; </b><a href="http://en.wikipedia.org/wiki/Fortran_language_features">http://en.wikipedia.org/wiki/Fortran_language_features</a>
+<br><b>Fortran-related Computer Programming Tools:&nbsp; </b><a href="http://www.arkadia.com/usa/web-directory/Computers/Programming/Languages/Fortran/Tools/">http://www.arkadia.com/usa/web-directory/Computers/Programming/Languages/Fortran/Tools/</a>
+<br><b>Fortran 90 Examples:&nbsp;&nbsp;&nbsp; </b><a href="ftp://ftp.numerical.rl.ac.uk/pub/f90course/demo/">ftp://ftp.numerical.rl.ac.uk/pub/f90course/demo/</a>
+<br><b>Fortran 77/90 source program examples:
+</b><a href="http://ftp.aset.psu.edu/pub/ger/fortran/hdk">http://ftp.aset.psu.edu/pub/ger/fortran/hdk</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b><a href="http://www.csit.fsu.edu/%7Eburkardt/f_src/f_src.html">http://www.csit.fsu.edu/%7Eburkardt/f_src/f_src.html</a></b>
+<br><b>Fortran 77 to Fortran 90 <a href="#CONVERT">Converter</a></b>
+<br><b>&nbsp; </b>Fortran 77 to 90 Conversion Course by Manchester &amp;
+North Training/Education Center:&nbsp; <a href="http://www.hpctec.mcc.ac.uk/hpctec/courses/Fortran90/F90course.html">http://www.hpctec.mcc.ac.uk/hpctec/courses/Fortran90/F90course.html</a>
+<br><b>European Fortran 90 Coding, Style, and Portability Guidelines: </b><a href="http://www.meto.gov.uk/research/nwp/numerical/fortran90/f90_standards.html">http://www.meto.gov.uk/research/nwp/numerical/fortran90/f90_standards.html</a>
+<br><b>Fortran 90/95 Examples and Programs (including FFT)&nbsp; by James
+Van Buskirk</b>:&nbsp; <a href="http://home.comcast.net/%7Ekmbtib/index.html">http://home.comcast.net/~kmbtib/index.html</a>
+Fortran Market:&nbsp;<a href="http://www.fortran.com/fortran/"> http://www.fortran.com/fortran/</a>
+<br><span style="font-weight: bold;">Fortran Store (Books, Compilers, Tools):</span><a href="http://www.swcp.com/fortran-bin/fortran_store/commerce.cgi">http://www.swcp.com/fortran-bin/fortran_store/commerce.cgi</a>
+<br>Fortran Preprocessor, Fpx3 (with imbedded Perl):&nbsp; <a href="http://www.gwdg.de/%7Ejbehren/fpx3.html">http://www.gwdg.de/~jbehren/fpx3.html</a>
+<br>F90gl, A 2-D and 3-D OpenGL graphics interface for Unix and Windows
+9x/NT:&nbsp; <a href="http://math.nist.gov/f90gl/">http://math.nist.gov/f90gl/</a>&nbsp;
+and&nbsp; <a href="http://perso.wanadoo.fr/perois/f95gl.html">http://perso.wanadoo.fr/perois/f95gl.html</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+and precompiled for Compaq Fortran:&nbsp;<a href="http://www5.compaq.com/fortran/downloads.html#cvf">
+http://www5.compaq.com/fortran/downloads.html#cvf</a>
+<br><b>GBYTES/SBYTES Library by Dennis H. Joseph et al:&nbsp; </b><a href="http://dss.ucar.edu/libraries/gbytes/">http://dss.ucar.edu/libraries/gbytes/</a>
+<br><b>Alan Genz's Algorithms </b>(e,g, for Multiple Integration): <a href="http://www.math.wsu.edu/math/faculty/genz/homepage">http://www.math.wsu.edu/math/faculty/genz/homepage</a>
+<br><b>GMP</b> - Arithmetic Without Limitiations - <b>Multiple Precisiion
+Library</b>:&nbsp;&nbsp; <a href="http://www.swox.com/gmp/">http://www.swox.com/gmp</a>
+<br><b>Hash Function (written C) by Bob Jenkins:&nbsp; </b><a href="http://burtleburtle.net/bob/hash/doobs.html">http://burtleburtle.net/bob/hash/doobs.html</a>
+<br><b>Hash Tables:&nbsp; </b><a href="http://burtleburtle.net/bob/hash/evahash.html">http://burtleburtle.net/bob/hash/evahash.html</a>&nbsp;&nbsp;
+and&nbsp;&nbsp; <a href="http://www.cris.com/%7ETtwang/tech/inthash.htm">http://www.cris.com/~Ttwang/tech/inthash.htm</a>
+<br><b>History of Fortran :&nbsp;&nbsp;</b><a href="http://en.wikipedia.org/wiki/Fortran">
+http://en.wikipedia.org/wiki/Fortran</a>
+<br><b>Interval Arithmetic Package by R. Baker Kearfott:&nbsp; </b><a href="http://www.netlib.org/toms/737">http://www.netlib.org/toms/737</a>&nbsp;
+and&nbsp;<a href="http://www.netlib.org/toms/763"> http://www.netlib.org/toms/763</a>
+<br><b>Knuth - Donald Knuth's Home page:&nbsp; </b><a href="http://www-cs-faculty.stanford.edu/%7Eknuth/">http://www-cs-faculty.stanford.edu/~knuth/</a>
+<br><b>Lahey's Extensive Library</b> (Interval Arithmetic, *PAC Libraries,
+much more):&nbsp;&nbsp;<a href="http://www.lahey.com/other.htm"> http://www.lahey.com/other.htm</a>&nbsp;&nbsp;
+and&nbsp; <a href="http://www.lahey.com/miscfix.htm">http://www.lahey.com/miscfix.htm</a>
+<br><span style="font-weight: bold;">Mathcode F90</span>&nbsp; Generates
+Optimized Fortran 90 Code from Mathematica Programs:&nbsp;&nbsp; <a href="http://www.wolfram.com/products/applications/mathcodef90/" eudora="autourl">http://www.wolfram.com/products/applications/mathcodef90/</a>
+<br><b>Maxima:</b>&nbsp; <a href="http://www.ma.utexas.edu/users/wfs/maxima.html">http://www.ma.utexas.edu/users/wfs/maxima.html</a>
+<br><b>Michael Metcalf's Fortran 90/95/HPF Information File:&nbsp; </b><a href="http://www.fortran.com/metcalf.htm">http://www.fortran.com/metcalf.htm</a>
+<br><b>Michael Metcalf's Fortran 90 CNL Articles:&nbsp;&nbsp; </b><a href="http://wwwinfo.cern.ch/asdoc/f90.html">http://wwwinfo.cern.ch/asdoc/f90.html</a>
+<br><b>Michel Olagnon's Fortran 90 texts and Fortran 90 Utility Programs(like
+Fortran 90 Splitter)</b>:&nbsp; <a href="http://www.ifremer.fr/ditigo/molagnon/fortran90/">http://www.ifremer.fr/ditigo/molagnon/fortran90/</a>
+<br><b>Michel Olagnon's Fortran 90 List:</b>&nbsp; <a href="http://www.ifremer.fr/ditigo/molagnon/fortran90/engfaq.html">http://www.ifremer.fr/ditigo/molagnon/fortran90/engfaq.html</a>
+<br>National <b>High Performance</b> Software Exchange (Repository in a
+Box - RIB):&nbsp; <a href="http://www.nhse.org/RIB/">http://www.nhse.org/RIB/</a>
+<br>National Center for <b>Supercomputing</b> Applications - NCSA:&nbsp;<span 
+ style="text-decoration: underline;"><a href="http://www.ncsa.uiuc.edu/">http://www.ncsa.uiuc.edu/</a></span>
+<br><b>Nelson H. F. Beebe's Excellent Home Page</b>:&nbsp; <a href="http://www.math.utah.edu/%7Ebeebe/">http://www.math.utah.edu/~beebe/</a>
+<br>&nbsp;&nbsp;&nbsp; <b>NDiff - compare putatively similar files, ignoring
+small numeric differences: </b><a href="http://www.math.utah.edu/%7Ebeebe/software/ndiff/">http://www.math.utah.edu/~beebe/software/ndiff/</a>
+<br><b>NetMath:</b>&nbsp; <a href="http://www.ma.utexas.edu/users/wfs/netmath/netmath.html">http://www.ma.utexas.edu/users/wfs/netmath/netmath.html</a>
+<br><b>NIST Handbook of Statistical Methods:</b>&nbsp; <a href="http://www.itl.nist.gov/div898/handbook/">http://www.itl.nist.gov/div898/handbook/</a>
+<br>Numerical Analysis &amp; Associated Fields Resource Guide FAQ: <a href="http://www.mathcom.com/">http://www.mathcom.com/</a>
+<br><b>Numerical Methods for Scientists and Engineers, Second Editon, Programs:
+</b><a href="http://www.mines.edu/%7Evgriffit/NM/">http://www.mines.edu/~vgriffit/NM/</a>
+<br>Numerical Recipes:&nbsp; <a href="http://www.nr.com">http://www.nr.com</a>&nbsp;
+and&nbsp; <a href="http://www.library.cornell.edu/nr/cbookcpdf.html">http://www.library.cornell.edu/nr/cbookcpdf.html</a>
+<br>Numerical Recipes Forum:&nbsp; <a href="http://www.numerical-recipes.com/forum/">http://www.numerical-recipes.com/forum/</a>
+<br>OpenDx, IBM's Visualization Data Explorer:&nbsp;<a href="http://www.opendx.org/index2.php">
+http://www.opendx.org/index2.php</a>&nbsp;&nbsp; and&nbsp; <a href="http://www.opendx.org/addons.html">http://www.opendx.org/addons.html</a>
+<br><b>Open Directory Project - Fortran Source Codes and more:</b> <a href="http://www.dmoz.org/Computers/Programming/Languages/Fortran">http://www.dmoz.org/Computers/Programming/Languages/Fortran</a>
+<br><span style="font-weight: bold;">
+<br>Open Source Fortran Source Code Directory:</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.dmoz.org/Computers/Programming/Languages/Fortran/Source_Code/">
+http://www.dmoz.org/Computers/Programming/Languages/Fortran/Source_Code/</a>
+<p>The Open Watcom Project:&nbsp; <a href="http://www.openwatcom.org/index.html">http://www.openwatcom.org/index.html</a>
+<br><b>Operations Research</b>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp; IBM Optimization Library - Open Source
+Download:&nbsp;&nbsp; </b><a href="http://www.coin-or.org/">http://www.coin-or.org/</a>
+<br><b>&nbsp;&nbsp;&nbsp; Links by Open Directory Project:&nbsp; </b><a href="http://dmoz.org/Science/Math/Operations_Research/">http://dmoz.org/Science/Math/Operations_Research/</a>
+<br><b>&nbsp;&nbsp;&nbsp; Links by Arnold Neumaier:&nbsp; </b><a href="http://www.mat.univie.ac.at/%7Eneum/glopt.html">http://www.mat.univie.ac.at/~neum/glopt.html</a>
+<br>&nbsp;&nbsp;&nbsp; <b>Optimization source codes, Tutorials, Test data,&nbsp;
+Decision Trees - Arizona State University</b>:&nbsp;&nbsp; <a href="http://plato.la.asu.edu/guide.html">http://plato.la.asu.edu/guide.html</a>
+<br><b>Phillip Helbig's excellent Pages</b> (including Fortran bookmarks):
+<a href="http://www.palmod.uni-bremen.de/Palmod/palmod_docs/Staff/helbig/phillip.html">http://www.palmod.uni-bremen.de/Palmod/palmod_docs/Staff/helbig/phillip.html</a>
+<br>Physical Units code by Grant Petty:&nbsp;&nbsp; <a href="http://rain.aos.wisc.edu/~gpetty/physunits.html">http://rain.aos.wisc.edu/~gpetty/physunits.html</a>
+<br><b>QUIBUS Fortran Development Tools to reformat/restructure/analyze
+Fortran source code:&nbsp; </b><a href="http://www.fortran.com/quibus.html">http://www.fortran.com/quibus.html</a>
+<br><b>Random Bits - Sources of Random Bits by Sebastian Egner:</b> <a href="http://srfi.schemers.org/srfi-27/">http://srfi.schemers.org/srfi-27/</a>
+<br><b>Random Numbers - Physical sources of:&nbsp;&nbsp; </b><a href="http://www.randomnumbers.info/">http://www.randomnumbers.info/</a>&nbsp;&nbsp;
+and&nbsp;&nbsp; <a href="http://www.randomnumbers.info/content/Link.htm">http://www.randomnumbers.info/content/Link.htm</a>
+<br><b>Random Number Testing Program(</b>globals, random_pl, test90)<b>:
+</b><a href="http://george.ph.utexas.edu/%7Edsteck/code/random_pl.2.0.4/">http://george.ph.utexas.edu/~dsteck/code/random_pl.2.0.4/</a>
+<br><b>Rob van der Woude's Windows Scripting (all kinds of scripts) Pages:
+</b><a href="http://www.robvanderwoude.com/index.html">http://www.robvanderwoude.com/index.html</a>
+<br><b>Royal Statistical Society Statlib - Statistical Algorithms in Fortran
+77</b>:&nbsp; <a href="http://lib.stat.cmu.edu/apstat/">http://lib.stat.cmu.edu/apstat/</a>
+<br>Shamus Softrware, Ltd - Multiprecision Integer and Rational Arithmetic
+C/C++ Library - MIRACL:&nbsp; <a href="http://indigo.ie/%7Emscott/">http://indigo.ie/~mscott/</a>
+<br>Slatec Mathematical Library:&nbsp; <a href="http://www.csit.fsu.edu/~burkardt/f_src/slatec/slatec.html">http://www.csit.fsu.edu/~burkardt/f_src/slatec/slatec.html</a>
+<br><span style="font-weight: bold;">StatLib</span> - Department of Statistics,
+Carnegie Mellon University: <a href="http://lib.stat.cmu.edu/">http://lib.stat.cmu.edu/</a>
+<br>Statistical Software, Journal of:&nbsp; <a href="http://www.jstatsoft.org/">http://www.jstatsoft.org/</a>
+<br><span style="font-weight: bold;">String Handling Examples by David
+Frank:&nbsp;</span><a href="http://home.earthlink.net/%7Edave_gemini/strings.f90" eudora="autourl">http://home.earthlink.net/~dave_gemini/strings.f90</a>
+<center>
+<p><a NAME="Resources"></a><b><font size=+1>Key Fortran Resources</font></b></center>
+<b>ANSI</b> - American National Standards Institute:&nbsp; <a href="http://www.ansi.org/">http://www.ansi.org/</a>
+<br>Applied Analytics for Academics and Industry:&nbsp; <a href="http://www.secondmoment.org/">http://www.secondmoment.org/</a>
+<br>Bell Labs Scientific Computing Publications: <a href="http://netlib.bell-labs.com/cm/cs/doc/nam.html">http://netlib.bell-labs.com/cm/cs/doc/nam.htm</a>l
+<br><span style="font-weight: bold;">BLAS</span> - A Quick Guide to:&nbsp;<a href="http://www.netlib.org/lapack/lug/node145.html">
+http://www.netlib.org/lapack/lug/node145.html</a>
+<br>The C&AElig;SAR Code Package (for large scale program design: <a href="http://www.lanl.gov/Caesar/Caesar.html">http://www.lanl.gov/Caesar/Caesar.html</a>
+<br>Cobalt Blue, Inc. Fortran Maintenance and Conversion Software: <a href="http://www.cobalt-blue.com/">http://www.cobalt-blue.com/</a>
+<br><b>Compaq CVF:</b>&nbsp; <a href="http://www5.compaq.com/fortran/">http://www5.compaq.com/fortran/</a>
+<br><b>COMP.LANG.FORTRAN Usenet Archives:&nbsp;</b>&nbsp; <a href="http://www.deja.com/group/comp.lang.fortran">http://www.deja.com/group/comp.lang.fortran</a>&nbsp;
+and&nbsp; <a href="http://www.jiscmail.ac.uk/lists/comp-fortran-90.html">http://www.jiscmail.ac.uk/lists/comp-fortran-90.html</a>
+<br><b>COMP-FORTRAN-90 Discussion Group and Archives:</b>&nbsp; <a href="http://www.jiscmail.ac.uk/lists/comp-fortran-90.html">http://www.jiscmail.ac.uk/lists/comp-fortran-90.html</a>
+<br>Compression Library for Large Scale Real Valued Data by TITech: <a href="http://www.gsic.titech.ac.jp/%7Etitz/docs/en/index.html">http://www.gsic.titech.ac.jp/~titz/docs/en/index.html</a>
+<br>Computer Society (IEEE):&nbsp; <a href="http://computer.org/">http://computer.org/</a>
+<br>Cradle Fields 2-D Windows Plotting Software:&nbsp; <a href="http://www.cradlefields.com/">http://www.cradlefields.com/</a>
+<br>Debugging Solutions (for specific Fortran and C Compilers):&nbsp; <a href="http://www.etnus.com/">http://www.etnus.com/</a>
+<br>Differentiation - On-Line Automatic Differentiation Engine (Tapenade):
+<a href="http://tapenade.inria.fr:8080/tapenade/index.jsp">http://tapenade.inria.fr:8080/tapenade/index.jsp</a>
+<br>DMS Software Reengineering Toolkit (Fortran Program Analysis): <a href="http://www.semdesigns.com/Products/DMS/DMSToolkit.html">http://www.semdesigns.com/Products/DMS/DMSToolkit.html</a>
+<br><b>FLINT</b> - Cleanscape Fortran 77/90/95 Source Code Analyzer/Debugger:
+<a href="http://www.cleanscape.net/products/fortranlint/index.html">http://www.cleanscape.net/products/fortranlint/index.html</a>
+<br>Fortran 2000.com - Fortran sources and links:&nbsp; <a href="http://www.fortran2000.com/">http://www.fortran2000.com/</a>
+<br>Fortran Programmers Club by Vladimir V.Vasilchenko:&nbsp;&nbsp;<a href="http://www.donpac.ru/usr/golub/fortran/">
+http://www.donpac.ru/usr/golub/fortran/</a>
+<br><b>Fortran FAQs</b>:&nbsp; <a href="http://en.wikibooks.org/wiki/Fortran_FAQ">http://en.wikibooks.org/wiki/Fortran_FAQ</a>
+,&nbsp; <a href="http://www.fortranplus.co.uk/">http://www.fortranplus.co.uk/</a>
+,&nbsp; <a href="http://www.fortranlib.com/faqs.htm">http://www.fortranlib.com/faqs.htm</a>
+<p>The <b>Fortran Library</b> - Fortran Links: <a href="http://www.fortranlib.com">http://www.fortranlib.com</a>
+<br><b>The Fortran Market</b> (includes most Fortran compiler vendors):
+<a href="http://www.fortran.com/fortran/">http://www.fortran.com/fortran/</a>
+<br>Fortran Partner&amp;trade (FPT), Fortran source code tool by SimCon
+and Software Validation Limited:
+<a href="http://www.simcon.uk.com/">http://www.simcon.uk.com/</a>
+<br>Fortran SQL, ADO and VB Interface Libraries: <a href="http://www.canaimasoft.com/Products.htm">http://www.canaimasoft.com/Products.htm</a>
+<p><b>Fortran Resources by Chivers and Sleightholme:&nbsp; </b><a href="http://www.fortranplus.co.uk/">http://www.fortranplus.co.uk/</a>
+<p><b>Fortran 2003 (and 90/95)&nbsp; by Kings College:&nbsp;</b><a href="http://www.fortranplus.co.uk/">
+http://www.fortranplus.co.uk/</a>
+<br><b>Fortran 2003 New Features by John Reid:&nbsp; </b><a href="http://www.fortranplus.co.uk/">http://www.fortranplus.co.uk/</a>
+<br><b>Fortran 2003 Standard</b> Technical Committee:&nbsp; <a href="http://www.j3-fortran.org/">http://www.j3-fortran.org/</a>
+<br><b>Fortran Standards Sources</b>:&nbsp; <a href="http://members.aol.com/wclodius/fortran_standards.html">http://members.aol.com/wclodius/fortran_standards.html</a>&nbsp;
+and
+<br><b>Intel Fortran Support for Fortran Language Standards:</b>&nbsp;&nbsp;<a href="http://www.intel.com/support/performancetools/fortran/sb/cs-007846.htm">
+http://www.intel.com/support/performancetools/fortran/sb/cs-007846.htm</a>
+<br>Fortran 90/95 texts by Bo Einarsson:
+<br><a href="http://www.nsc.liu.se/%7Eboein/fortran.html">http://www.nsc.liu.se/~boein/fortran.html</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+also see:&nbsp;&nbsp;<a href="http://j3-fortran.org/doc/standing/1997/97-007r2/pdf/97-007r2.pdf">
+http://j3-fortran.org/doc/standing/1997/97-007r2/pdf/97-007r2.pdf</a>
+<br><span style="font-weight: bold;"><b>Fortran 95 Standard:</span></b><a href="http://j3-fortran.org/doc/year/97/97-007r2/pdf/97-007r2.pdf">http://j3-fortran.org/doc/year/97/97-007r2/pdf/97-007r2.pdf</a><span 
+ style="font-weight: bold;">
+<br><b>Fortran 2003:</b>&nbsp; <a href="http://www.j3-fortran.org/doc/year/04/04-007.pdf">http://www.j3-fortran.org/doc/year/04/04-007.pdf</a>
+<br>Fortran Tools&nbsp;</span>(including PLplot and Matran)<span style="font-weight: bold;">:&nbsp;</span><a href="http://www.swcp.com/fortran-bin/fortran_store/commerce.cgi?product=tool&cart_id=8226013_26301">http://www.swcp.com/fortran-bin/fortran_store/commerce.cgi?product=tool&amp;cart_id=8226013_26301</a><span 
+ style="font-weight: bold;">
+<br><b>Fortran Tools - Open Directory Project:&nbsp; </b><a href="http://dmoz.org/Computers/Programming/Languages/Fortran/Tools/Code_Analysis/">http://dmoz.org/Computers/Programming/Languages/Fortran/Tools/Code_Analysis/</a>
+<br>Fortran Wikipedia:&nbsp;</span><a href="http://en.wikipedia.org/wiki/Fortran">http://en.wikipedia.org/wiki/Fortran</a><span 
+ style="font-weight: bold;">
+<br>New Features of Fortran 2003 by John Reid:</span>&nbsp;<a href="ftp://ftp.nag.co.uk/sc22wg5/N1551-N1600/N1579.pdf">
+ftp://ftp.nag.co.uk/sc22wg5/N1551-N1600/N1579.pdf</a>
+<br><span style="font-weight: bold;">Fortran 2003 Details from Final Draft
+(4MB):</span>&nbsp;<a href="http://www.dkuug.dk/jtc1/sc22/open/n3661.pdf">
+http://www.dkuug.dk/jtc1/sc22/open/n3661.pdf</a>
+<br>FUN3D, Fully Unstructured Navier-Stokes (Physics):&nbsp; <a href="http://fun3d.larc.nasa.gov/">http://fun3d.larc.nasa.gov/</a>
+<br><span style="font-weight: bold;">ISO 1539-1 Publication&nbsp; (</span>
+$270):&nbsp;<a href="http://webstore.ansi.org/ansidocstore/product.asp?sku=ISO%2FIEC+1539%2D1%3A2004">
+http://webstore.ansi.org/ansidocstore/product.asp?sku=ISO%2FIEC+1539%2D1%3A2004</a>
+<br>&nbsp;&nbsp;&nbsp; Free download at:&nbsp;<a href="http://ftp2.ansi.org/download/free_download.asp?document=ISO%2FIEC+CD+1539%2D1">
+http://ftp2.ansi.org/download/free_download.asp?document=ISO%2FIEC+CD+1539%2D1</a>
+<br>&nbsp;Fundamental Physical Constants from NIST:&nbsp; <a href="http://physics.nist.gov/cuu/Constants/index.html">http://physics.nist.gov/cuu/Constants/index.html</a>
+<br><b>F2KCLI</b> - Fortran (2000) Command Line Interface Package: <a href="http://www.winteracter.com/f2kcli/">http://www.winteracter.com/f2kcli/</a>
+<br><b>Garnatz and Grovender, Inc.-&nbsp; Java Resources and Training,
+Fortran 90 Resources and Training,&nbsp;&nbsp; Free Fortran 90 interface
+to the X Window,</b>
+<br><b>&nbsp;&nbsp; Free Clone of NOS XEDIT Source Code:
+</b><a href="http://www.winternet.com/%7Egginc/">http://www.winternet.com/~gginc/</a>
+<br><b>GINO Fortran Library and Graphics/Menuing Packages: </b><a href="http://www.bradassoc.co.uk">http://www.bradassoc.co.uk</a>
+<br><b>Grid (computing grid) Forums:&nbsp;&nbsp; </b><a href="http://www.gridforum.org/">http://www.gridforum.org/</a><b>&nbsp;&nbsp;
+and&nbsp; </b><a href="http://www.globus.org/">http://www.globus.org/</a>
+<br><b>A Guide To Mathematical Software (including GAMS):</b>&nbsp; <a href="http://gams.nist.gov/">http://gams.nist.gov/</a>
+<br>Computational Geometry and Geometric Algorithms:&nbsp; <a href="http://www.swin.edu.au/astronomy/pbourke/geometry/">http://www.swin.edu.au/astronomy/pbourke/geometry/</a>
+<br><a href="http://www.geom.umn.edu/software/cglist/">http://www.geom.umn.edu/software/cglist/&nbsp;</a>&nbsp;
+and&nbsp; <a href="http://www.scs.carleton.ca/%7Ecsgs/resources/cg.html">http://www.scs.carleton.ca/~csgs/resources/cg.html</a>&nbsp;
+and
+<br><a href="http://www.cs.uu.nl/wais/html/na-dir/graphics/algorithms-faq.html">http://www.cs.uu.nl/wais/html/na-dir/graphics/algorithms-faq.html</a>&nbsp;
+and&nbsp; <a href="http://www.faqs.org/faqs/graphics/algorithms-faq/">http://www.faqs.org/faqs/graphics/algorithms-faq/</a>
+<br>Cray CF90:&nbsp;<a href="http://www.cray.com/products/software/cf90.html">
+http://www.cray.com/products/software/cf90.html</a>
+<br>Internet <b>Finite Element Resources:</b>&nbsp; <a href="http://www.engr.usask.ca/%7Emacphed/finite/fe_resources/fe_resources.html">http://www.engr.usask.ca/~macphed/finite/fe_resources/fe_resources.html</a>&nbsp;&nbsp;
+and
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.dmoz.org/Computers/Programming/Languages/Fortran/Source_Code/Partial_Differential_Equations/Finite_Elements/">
+http://www.dmoz.org/Computers/Programming/Languages/Fortran/Source_Code/Partial_Differential_Equations/Finite_Elements/</a>
+<br>FELIB - <b>Finite Element Library</b>:&nbsp; <a href="http://jericho.cis.rl.ac.uk/felib/">http://jericho.cis.rl.ac.uk/felib/</a>
+<br>Modular<b> Finite Element Library - ModuleF:&nbsp; </b><a href="http://www-rocq.inria.fr/modulef/english.html">http://www-rocq.inria.fr/modulef/english.html</a>
+<br>Global Optimization:&nbsp; <a href="http://solon.cma.univie.ac.at/%7Eneum/glopt.html">http://solon.cma.univie.ac.at/~neum/glopt.html</a>
+<br>GINO and Graphics Libraries: <a href="http://www.gino-graphics.com/">http://www.gino-graphics.com/
+</a>and
+<a href="http://www.bradassoc.co.uk/">http://www.bradassoc.co.uk/</a>
+<br>GRG2:&nbsp;&nbsp; <a href="http://www.optimalmethods.com/">http://www.optimalmethods.com/</a>.
+Also contact the co-author of GRG2 (Leon Lasdon) at lasdon@mail.utexas.edu.
+<br><b>Harwell Subroutines (source code for the library):&nbsp; </b><a href="http://www.fundp.ac.be/%7Ejpvigner/homepage/sources/harwell/">http://www.fundp.ac.be/~jpvigner/homepage/sources/harwell/</a>
+<br><b>Historical Development of Fortran:</b>&nbsp; <a href="http://www.nsc.liu.se/%7Eboein/f77to90/a7.html">http://www.nsc.liu.se/~boein/f77to90/a7.html</a>
+<br><b>Historic Documents in Computer Science:</b>&nbsp; <a href="http://www.fh-jena.de/%7Ekleine/history/">http://www.fh-jena.de/~kleine/history/</a>
+<br>How many Primes are there:&nbsp; <a href="http://www.utm.edu/research/primes/howmany.shtml">http://www.utm.edu/research/primes/howmany.shtml</a>
+<br>HSL (formerly&nbsp;<span style="font-weight: bold;">Harwell</span>)
+Numerical Library:&nbsp; <a href="http://www.cse.clrc.ac.uk/Activity/HSL">http://www.cse.clrc.ac.uk/Activity/HSL</a>
+<br>Ian Chivers and Jane Sleightholme Fortran 90 Page (including Fortran
+Standards information):&nbsp; <a href="http://www.fortranplus.co.uk/">http://www.fortranplus.co.uk/</a>
+<br>IBM Fortran:&nbsp;<a href="http://www-3.ibm.com/software/ad/fortran/">
+http://www-3.ibm.com/software/ad/fortran/</a>
+<br>IMSL Fortran Library Routine Descriptions:&nbsp;<a href="http://www.vni.com/products/imsl/alphabetized_functions.html">
+http://www.vni.com/products/imsl/alphabetized_functions.html</a>
+<br>IMSL (by Visual Numerics) Users' Guides:&nbsp; <a href="http://www.vni.com/products/imsl/documentation/index.html">http://www.vni.com/products/imsl/documentation/index.html</a>
+<br>IntegrityWare geometry products (NURBS surface fit, IGES, VDAFS, STEP,
+Solid Modeling solutions (SMLIB):&nbsp; <a href="http://www.integrityware.com/iwframe.htm">http://www.integrityware.com/iwframe.htm</a>
+<br>Intel Compilers:&nbsp;&nbsp;<a href="http://developer.intel.com/software/products/compilers/">
+http://developer.intel.com/software/products/compilers/</a>
+<br><b>ISO</b> (International Standards Organization):&nbsp; <a href="http://www.iso.ch">http://www.iso.ch</a>
+<br>Java Application Program Interface (JAPI):&nbsp; <a href="http://www.japi.de/">http://www.japi.de/</a>
+<br>Journal of Modern Applied Statistical Methods (JMASMP):&nbsp; <a href="http://tbf.coe.wayne.edu/jmasm/">http://tbf.coe.wayne.edu/jmasm/</a>
+<br>Journal of On-Line Mathematics:&nbsp; <a href="http://www.joma.org/">http://www.joma.org/</a>
+<br><b>Kings College Fortran</b> <b>(and other languages): </b><a href="http://www.fortranplus.co.uk/">http://www.fortranplus.co.uk/</a>
+<br><b>Lahey LF95:&nbsp; </b><a href="http://www.lahey.com/">http://www.lahey.com/</a>
+<br>Lindo/Lingo Optimization Package:&nbsp; <a href="http://www.lindo.com/">http://www.lindo.com/</a>
+<br>Linux Fortran Information Page:&nbsp; <a href="http://www.nikhef.nl/%7Etemplon/fortran.html">http://www.nikhef.nl/~templon/fortran.html</a>
+<br>Macintosh&nbsp; and Linux Fortran Compiler:&nbsp; <a href="http://www.absoft.com/">http://www.absoft.com/</a>
+<br>MarshallSoft Computing - Internet and Serial Communications Libraries:
+<a href="http://www.marshallsoft.com/">http://www.marshallsoft.com/</a>
+<br><b>MATFOR</b> - new generation graphics library for Fortran and C++:
+<a href="http://www.ancad.com/en/products/">http://www.ancad.com/en/products/</a>
+<br><b>Mathtools</b> - Technical computing portal for scientific and engineering:
+<a href="http://www.mathtools.net">http://www.mathtools.net</a>
+<br>American Mathematical Society (AMS) - Math topics ordered alphabetically:
+<a href="http://www.ams.org/index/mathweb/mi-mathbytopic.html">http://www.ams.org/index/mathweb/mi-mathbytopic.html</a>
+<br><span style="font-weight: bold;">Mathematical Atlas:</span>&nbsp; <a href="http://www.math.niu.edu/%7Erusin/papers/known-math/index/">http://www.math.niu.edu/~rusin/papers/known-math/index/</a>
+<br>Math on the Web: A Status Report January 2001:&nbsp; <a href="http://www.dessci.com/webmath/status/">http://www.dessci.com/webmath/status/</a>
+<br>Math Forum at Drexel :&nbsp; <a href="http://www.mathforum.com/">http://www.mathforum.com/</a>
+<br>Math Goodies and tutorials: <a href="http://www.mathgoodies.com/">http://www.mathgoodies.com/</a>
+<br>Math Famous Curves Index: <a href="http://www-groups.dcs.st-and.ac.uk/%7Ehistory/Curves/Curves.html">http://www-groups.dcs.st-and.ac.uk/~history/Curves/Curves.html</a>
+<br>&nbsp;&nbsp;&nbsp; GrafEq software that plots typed in functions:&nbsp;<a href="http://www.peda.com/grafeq/">
+http://www.peda.com/grafeq/</a>
+<br>&nbsp;&nbsp;&nbsp; Also see the following and links on their pages:
+<a href="http://xahlee.org/SpecialPlaneCurves_dir/specialPlaneCurves.html">http://xahlee.org/SpecialPlaneCurves_dir/specialPlaneCurves.html</a>&nbsp;
+and
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.geom.umn.edu/welcome.html">http://www.geom.umn.edu/welcome.html</a>
+<br>Math/Science Net and Literature Review site: <a href="http://www.ams.org/mathscinet/">http://www.ams.org/mathscinet/</a>
+<br>MATFOR - Advanced 3D/2D Visualization:&nbsp; <a href="http://www.ancad.com/">http://www.ancad.com/</a>
+<br><span style="font-weight: bold;">MatLab</span> Mathworks:&nbsp; <a href="http://www.mathworks.com/">http://www.mathworks.com/</a>
+<br>MKS Tool Kit (Unix MAKE, etc. with documentation):&nbsp;&nbsp; <a href="http://www.datafocus.com/products/tk/ds_tkdev.asp">http://www.datafocus.com/products/tk/ds_tkdev.asp</a>
+<br><b>Modular Finite Element Library - ModuleF:&nbsp; </b><a href="http://www-rocq.inria.fr/modulef/english.html">http://www-rocq.inria.fr/modulef/english.html</a>
+<br><b>NAG (NAGWARE) Fortran Products:</b> <a href="http://www.nag.co.uk/">http://www.nag.co.uk/</a>&nbsp;
+and NAG Research Reports: <a href="http://web.comlab.ox.ac.uk/oucl/publications/natr/index.html">http://web.comlab.ox.ac.uk/oucl/publications/natr/index.html</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nag Fortran 90 Software Repository:
+<a href="http://www.nag.co.uk/nagware/Examples.asp">http://www.nag.co.uk/nagware/Examples.asp</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NAG Numerical Library:&nbsp; <a href="http://www.nag.co.uk/numeric/numerical_libraries.asp">http://www.nag.co.uk/numeric/numerical_libraries.asp</a>
+<br>NAS Fortran Compilers and Tools:&nbsp; <a href="http://www.nasoftware.co.uk/">http://www.nasoftware.co.uk/</a>
+<br>NASA COSMIC (commercial) Collection:<b> </b><a href="http://server1.openchannelsoftware.org/cosmic/">http://server1.openchannelsoftware.org/cosmic/</a>
+<br><b>Netlib</b> - source of many Fortran programs/packages (e.g., <b>ACM
+T.O.M.S</b>.):&nbsp;&nbsp; <a href="http://netlib.bell-labs.com/netlib/master/readme.html">http://netlib.bell-labs.com/netlib/master/readme.html</a>
+and <a href="http://www.netlib.org">http://www.netlib.org</a>
+<br>Netnews (Usenet) Fortran Newsgroup: <a href="news://news.psu.edu/comp.lang.fortran">news://news.psu.edu/comp.lang.fortran</a>
+<br><b>NIST / SEMATECH Engineering Statistics Handbook:</b>&nbsp; <a href="http://www.itl.nist.gov/div898/handbook/">http://www.itl.nist.gov/div898/handbook/</a>
+<br>NIST (National Institute of Standards and Technology) Guide to Mathematical
+Software: <a href="http://math.nist.gov">http://math.nist.gov</a>
+<br>Object-Oriented Numerics Page (source of numerical libraries): <a href="http://oonumerics.org/oon/">http://oonumerics.org/oon/</a>
+<br><b>Ohio State Chemistry Department Michael Lufaso's Fortran Page:</b><a href="http://www.chemistry.ohio-state.edu/%7Emlufaso/chem/fortran.html">http://www.chemistry.ohio-state.edu/~mlufaso/chem/fortran.html</a>
+<br>Open Directory Project (Fortran resource portal):&nbsp; <a href="http://dmoz.org/Computers/Programming/Languages/Fortran/">http://dmoz.org/Computers/Programming/Languages/Fortran/</a>
+<br><b>OpenMP</b>, a portable, scalable model that gives shared-memory
+parallel (SMP) programmers an interface for developing parallel applications
+across platforms:&nbsp; <a href="http://www.openmp.org/">http://www.openmp.org/</a>
+<br><b>OpenMP Directives</b> - source code examples:&nbsp; <a href="http://www.openmp.org/index.cgi?samples">http://www.openmp.org/index.cgi?samples</a>
+<br><span style="font-weight: bold;">OpenMP Tutorial:</span>&nbsp; <a href="http://www.compunity.org/training/tutorials/index.php">http://www.compunity.org/training/tutorials/index.php&nbsp;</a>&nbsp;&nbsp;&nbsp;
+Also see:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.nersc.gov/nusers/help/tutorials/openmp/parallel.php">http://www.nersc.gov/nusers/help/tutorials/openmp/parallel.php&nbsp;</a>
+and&nbsp; <a href="http://www.osc.edu/hpc/training/openmp/openmp.pdf">http://www.osc.edu/hpc/training/openmp/openmp.pdf</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+and&nbsp;&nbsp; <a href="http://www.llnl.gov/computing/tutorials/openMP/">http://www.llnl.gov/computing/tutorials/openMP/</a>&nbsp;&nbsp;
+and&nbsp; with exercises:&nbsp;<a href="http://www.pdc.kth.se/training/Tutor/SMP/OpenMP-LAB">
+http://www.pdc.kth.se/training/Tutor/SMP/OpenMP-LAB</a>/
+<br><span 
+ style="font-weight: bold;">Boston University Tutorial:&nbsp;</span><a href="http://scv.bu.edu/SCV/Tutorials/OpenMP/">
+http://scv.bu.edu/SCV/Tutorials/OpenMP<span 
+ style="font-weight: bold;"></a>/</span><span 
+ style="font-weight: bold;">Ohio
+Supercomputer Center&nbsp; Tutorial</span>:&nbsp;<a href="http://www.osc.edu/hpc/training/openmp/">
+http://www.osc.edu/hpc/training/openmp/</a>
+<br>Optimization Technology Center:&nbsp; <a href="http://www.ece.northwestern.edu/OTC/">http://www.ece.northwestern.edu/OTC/</a>
+<br>Least Squares Mininization Collection:&nbsp;<a href="http://people.scs.fsu.edu/~burkardt/f_src/minpack/minpack.html">
+http://people.scs.fsu.edu/~burkardt/f_src/minpack/minpack.html</a>
+<br>Optimization FAQs:&nbsp;<a href="http://www-unix.mcs.anl.gov/otc/Guide/faq/">
+http://www-unix.mcs.anl.gov/otc/Guide/faq/</a>
+<br>Optimization section of the Open Directory:&nbsp; <a href="http://dmoz.org/Computers/Programming/Languages/Fortran/Source_Code/Optimization/">http://dmoz.org/Computers/Programming/Languages/Fortran/Source_Code/Optimization/</a>
+<br>NEOS Optimization Software:&nbsp; <a href="http://www-fp.mcs.anl.gov/otc/Guide/SoftwareGuide/index.html">http://www-fp.mcs.anl.gov/otc/Guide/SoftwareGuide/index.html</a>
+<br>Optimization Software Decision Tree:&nbsp; <a href="http://plato.la.asu.edu/guide.html">http://plato.la.asu.edu/guide.html</a>
+<br>Parallel Computing (<b>Center for Research on Parallel Computing</b>):
+<a href="http://www.crpc.rice.edu/CRPC/">http://www.crpc.rice.edu/CRPC/</a>
+<br><b>Penn State Numerically Intensive Computing Page</b>:&nbsp; <a href="http://gears.aset.psu.edu/hpc/">http://gears.aset.psu.edu/hpc/</a>
+<br>Pi Hex - A distributed effort to compute Pi:&nbsp; <a href="http://www.cecm.sfu.ca/projects/pihex/">http://www.cecm.sfu.ca/projects/pihex/</a>
+<br><b>PlusFort Fortran Converter and Analysis Tool </b>by Polyhedron:
+<a href="http://www.polyhedron.com/">http://www.polyhedron.com/</a>
+<br>Primes (largest known):&nbsp; <a href="http://www.utm.edu/research/primes/largest.html">http://www.utm.edu/research/primes/largest.html</a>
+<br>Probability Web:&nbsp;<a href="http://www.mathcs.carleton.edu/probweb/probweb.html">&nbsp;
+http://www.mathcs.carleton.edu/probweb/probweb.html</a>
+<br><span style="font-weight: bold;">Purple Sage Computing Fortran tools</span>
+(including FtThreads):&nbsp; <a href="http://users.erols.com/dnagle/index.html">http://users.erols.com/dnagle/index.html</a>
+<br><b>Rational Number Computations using Fortran:&nbsp; </b><a href="http://users.erols.com/dnagle/typerat.html">http://users.erols.com/dnagle/typerat.html</a>
+<br><b>Rich Townsend's Downloads (including ISO_Varying_String that is
+F-Compatible):&nbsp; </b><a href="http://www.star.ucl.ac.uk/%7Erhdt/download">http://www.star.ucl.ac.uk/~rhdt/download</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; Also see: <a href="http://www.nag.co.uk/sc22wg5/IS1539-2.html">http://www.nag.co.uk/sc22wg5/IS1539-2.html&nbsp;</a>&nbsp;
+(<a href="ftp://ftp.nag.co.uk/sc22wg5/ISO_VARYING_STRING/">ftp://ftp.nag.co.uk/sc22wg5/ISO_VARYING_STRING/)</a>
+<br><b>Rosetta Stone for Unix (LISA):&nbsp;&nbsp; </b><a href="http://bhami.com/rosetta.html">http://bhami.com/rosetta.html</a>
+<br><b>Salford FTN95:&nbsp;</b>&nbsp; <a href="http://www.salfordsoftware.co.uk/">http://www.salfordsoftware.co.uk/</a>
+<br><b>Scientific Toolworks</b> <b>"Understand" (</b>for various languages
+including Fortran):&nbsp; <a href="http://www.scitools.com/">http://www.scitools.com/</a>
+<br>Scientific Web:&nbsp; <a href="http://www.scientificweb.com/sciencee.html">http://www.scientificweb.com/sciencee.html</a>
+<br>Semantic Designs, Inc.(DMS) Software Reengineering Toolkit:&nbsp; <a href="http://www.semdesigns.com/Products/DMS/DMSToolkit.html">http://www.semdesigns.com/Products/DMS/DMSToolkit.html</a>
+<br>SGI MipsPro MP Fortran 95 Compiler:&nbsp; <a href="http://www.sgi.com/products/software/irix/tools/mipspro.html">http://www.sgi.com/products/software/irix/tools/mipspro.html</a>
+<br><span style="font-weight: bold;">SLATEC Common Mathematical Library&nbsp;</span>(free)<span 
+ style="font-weight: bold;">:</span><a href="http://netlib.org/slatec/">http://netlib.org/slatec/</a>
+<br>SIAM text books and handbook series:&nbsp; <a href="http://www.siam.org/books/index.htm">http://www.siam.org/books/index.htm</a>
+<br><b>Software Engineering Archives by Queens University:&nbsp; </b><a href="http://www.qucis.queensu.ca/Software-Engineering/">http://www.qucis.queensu.ca/Software-Engineering/</a>
+<br><b>Sorting, Ranking</b> and <b>Searching</b>: <b>OrderPack by Michel
+Olagon</b>:&nbsp; <a href="http://www.fortran-2000.com/">http://www.fortran-2000.com/</a>;
+<br>&nbsp; Sorting subprograms (and tests):&nbsp; <a href="http://www.fortran-2000.com/#3.0">http://www.fortran-2000.com/#3.0</a>;
+also see: Syncsort:
+<a href="http://www.syncsort.com/">http://www.syncsort.com/</a>
+<br>&nbsp; Qsort (correction and Fortran 77 implementation of ACM ALgorithm
+402 QuickSort):&nbsp; <a href="http://ftp.cac.psu.edu/pub/ger/fortran/hdk/testsort.f90">http://ftp.cac.psu.edu/pub/ger/fortran/hdk/testsort.f90</a><span 
+ style="font-weight: bold;"><span style="font-weight: bold;"></span>
+<br>Source Code Formatters by Semantic Designs:&nbsp;</span> <a href="http://www.semdesigns.com/Products/Formatters/index.html">http://www.semdesigns.com/Products/Formatters/index.html</a>
+<br><span style="font-weight: bold;">Source Program Management and Documentation
+- Easy SPMD:</span>&nbsp; <a href="http://www.omegacomputer.com/">http://www.omegacomputer.com/</a>
+<br><b>Sparse Matrix Tools</b> (free):
+<br>&nbsp;&nbsp;&nbsp; Freely Available Software for Linear Algebra on
+the Web by&nbsp;<span style="font-weight: bold;">Jack Dongarra</span>:
+<a href="http://www.netlib.org/utk/people/JackDongarra/la-sw.html">http://www.netlib.org/utk/people/JackDongarra/la-sw.html</a>
+<br>&nbsp;&nbsp;&nbsp; FsPak:&nbsp; <a href="http://nce.ads.uga.edu/%7Eignacy/numpub/fspak/">http://nce.ads.uga.edu/~ignacy/numpub/fspak/</a>
+<br>&nbsp;&nbsp; LaPack (banded matrices)&nbsp;&nbsp; <a href="http://www.netlib.org/lapack/">http://www.netlib.org/lapack/</a>
+<br>&nbsp;&nbsp; MUMPS - MUltifrontal Massively Parallel sparse direct
+Solver:&nbsp;&nbsp;<a href="http://graal.ens-lyon.fr/MUMPS/"> http://graal.ens-lyon.fr/MUMPS/</a>
+<br>&nbsp;&nbsp; SCSL - Scientific Computing Software Library:&nbsp; <a href="http://www.sgi.com/software/scsl.html">http://www.sgi.com/software/scsl.html</a>
+<br>&nbsp;&nbsp; SPARSITY - Sparse Matrix software:&nbsp; <a href="http://www.cs.berkeley.edu/%7Eyelick/sparsity/">http://www.cs.berkeley.edu/~yelick/sparsity/</a>
+<br>&nbsp;&nbsp;&nbsp; Sparse BLAS:&nbsp; <a href="http://www.netlib.org/toms/692">http://www.netlib.org/toms/692</a>
+<br>&nbsp;&nbsp;&nbsp; Parallel Sparse Matrix BLAS:&nbsp; <a href="http://www.ce.uniroma2.it/psblas/">http://www.ce.uniroma2.it/psblas/</a>
+<br>&nbsp;&nbsp; Optimized Sparse Kernel Interface (OSKI):&nbsp; <a href="http://bebop.cs.berkeley.edu/oski/">http://bebop.cs.berkeley.edu/oski/</a>
+<br>WATSON Sparse Matrix Package (not free): <a href="http://www-users.cs.umn.edu/%7Eagupta/wsmp.html">http://www-users.cs.umn.edu/~agupta/wsmp.html</a>
+<br>SparsPak:<a href="http://portal.acm.org/citation.cfm?id=1057611.1057612">
+http://portal.acm.org/citation.cfm?id=1057611.1057612</a>
+<p><b>SQL</b> a la F90SQL:&nbsp; <a href="http://www.canaimasoft.com/f90sql/index.htm">http://www.canaimasoft.com/f90sql/index.htm</a>
+<br><b>Start Fortran Site:&nbsp; </b><a href="http://fortran.domeintje.net/">http://fortran.domeintje.net/</a>
+<br>StatSoft - Statistica; Data Mining, Data Analysis, Quality Control:&nbsp;<a href="http://www.statsoft.com/">
+http://www.statsoft.com/</a>
+<br><b>NIST</b> Statistical, including Non-Linear Least Squares, Test Sets
+and Results:&nbsp; <a href="http://www.nist.gov/itl/div898/strd/general/bkground.html">http://www.nist.gov/itl/div898/strd/general/bkground.html</a>
+<br>SUN FORTE Fortran/HPC:&nbsp; <a href="http://www.sun.com/forte/fortran/buy.html">http://www.sun.com/forte/fortran/buy.html</a>
+<br><b>Tecplot</b> (stand-alone plotting tool):&nbsp; <a href="http://www.amtec.com/">http://www.amtec.com/</a>
+<br>Twin Text Source Documentation Solution:&nbsp; <a href="http://www.ptlogica.com/TwinText/overview.htm">http://www.ptlogica.com/TwinText/overview.htm</a>
+<br>Understand - a Fortran reverse engineering, analysis tool:&nbsp; <a href="http://www.scitools.com/uf.html">http://www.scitools.com/uf.html</a>
+<br><b>University of Cambridge</b> - High Performance Computing Facility
+(HPCF) <b>The Case Against C:</b>&nbsp;&nbsp; <a href="http://www.hpcf.cam.ac.uk/C_rant.html">http://www.hpcf.cam.ac.uk/C_rant.html</a>
+<br>User Notes on Fortran Programming (UNFP)- An open cooperative practical
+guide:&nbsp; <a href="http://metalab.unc.edu/pub/languages/fortran/unfp.html">http://metalab.unc.edu/pub/languages/fortran/unfp.html</a>
+<br>Valgrind - Linux Fortran Open Source debugging tool:<span 
+ style="font-weight: bold;"></span><a href="http://www.valgrind.org/">http://www.valgrind.org/</a><span 
+ style="font-weight: bold;">
+<br>VAST</span> compiler for Unix and Linux:&nbsp; <a href="http://www.crescentbaysoftware.com/end_user.html">http://www.crescentbaysoftware.com/end_user.html</a>
+<br>Visual Numerics Products:&nbsp; <a href="http://www.vni.com/index.html">http://www.vni.com/index.html</a>
+<br>VMS Migration tools/libraries - Transoft Migr8:<a href="http://www.transoft.com/solutions/application-migration/vms">http://www.transoft.com/solutions/application-migration/vms</a>
+<br><b>Winteracter</b> Winteracter, a GUI tool set for Fortran 90/95 by
+Interactive Software Services, Ltd.:&nbsp; <a href="http://www.winteracter.com">http://www.winteracter.com</a>
+<br><b>XLF90 - IBM AIX Fortran 90:</b>&nbsp;&nbsp; <a href="http://www.software.ibm.com/ad/fortran">http://www.software.ibm.com/ad/fortran</a>&nbsp;&nbsp;
+and&nbsp;&nbsp;<a href="http://hpcf.nersc.gov/software/ibm/xlf.html"> http://hpcf.nersc.gov/software/ibm/xlf.html</a>
+<br>XML Fortran Library (read/write access to XML files):&nbsp; <a href="http://sourceforge.net/projects/libxml2f90/">http://sourceforge.net/projects/libxml2f90/</a>
+<br>XP (Extreme Programming) Discipline Resources:&nbsp;&nbsp; <a href="http://www.xprogramming.com/xpmag/whatisxp.htm">http://www.xprogramming.com/xpmag/whatisxp.htm</a>
+<center>
+<p><a NAME="HPC"></a><b>High Performance Computing</b></center>
+<b>High Performance Computing and Communications Glossary:&nbsp; </b><a href="http://www.npac.syr.edu/nse/hpccgloss/hpccgloss.html">http://www.npac.syr.edu/nse/hpccgloss/hpccgloss.html</a>
+<br><b>comp.parallel News Group:&nbsp;</b><a href="http://groups.google.com/group/comp.parallel/topics?hl=en">
+http://groups.google.com/group/comp.parallel/topics?hl=en</a>
+<br><b>High Performance Design </b>by Equation Technology:&nbsp;<b> </b><a href="http://www.equation.com/">http://www.equation.com/</a>
+<br><b>High Performance</b> Numerical Software - Purple Sage, Workshops
+and Consulting (<b>Dan Nagle</b>):
+<a href="http://www.erols.com/dnagle">http://www.erols.com/dnagle</a>
+<br><b>HIgh Performance Object Oriented Fortran 90:&nbsp; </b><a href="http://www.cs.rpi.edu/%7Eszymansk/oof90.html">http://www.cs.rpi.edu/~szymansk/oof90.html</a>
+<br><b>High Performance </b>Fortran (HPF) products, benchmarks, pubs, etc:
+<a href="http://www.crpc.rice.edu/HPFF/home.html">http://www.crpc.rice.edu/HPFF/home.html</a>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Also see:
+</b><a href="http://www.equation.com">http://www.equation.com</a>
+<br><b>High Performance Computing Manufacturers:&nbsp; </b><a href="http://www.hpcsystems.com/">http://www.hpcsystems.com/</a>
+<br><b>HPF Compilers Summary List:&nbsp; <a href="http://research.ac.upc.es/HPFSurvey/Welcome.html">http://research.ac.upc.es/HPFSurvey/Welcome.html</a></b>
+<br><b>HPC Cluster World:&nbsp;&nbsp; </b><a href="http://www.clusterworld.com/">http://www.clusterworld.com/</a>
+<br><b>HPC&nbsp; Paralization Tutorials:&nbsp;&nbsp; </b><a href="http://www.mhpcc.edu/training/tutorials/">http://www.mhpcc.edu/training/tutorials/</a><b>&nbsp;&nbsp;&nbsp;
+and:&nbsp; </b><a href="http://www.epcc.ed.ac.uk/computing/training/document_archive/index.php">http://www.epcc.ed.ac.uk/computing/training/document_archive/index.php</a>
+<br>Line Counting Tools (SLOCCount) :&nbsp; <a href="http://www.dwheeler.com/sloccount/">http://www.dwheeler.com/sloccount/</a>
+<br><b>Matran, A Matrix Wrapper for Fortran 95, by G. W. Stewart: </b><a href="http://www.cs.umd.edu/~stewart/matran/Matran.html">http://www.cs.umd.edu/~stewart/matran/Matran.html</a>
+<br><b>MPI FAQ:&nbsp;&nbsp; </b><a href="http://www.faqs.org/faqs/mpi-faq/">http://www.faqs.org/faqs/mpi-faq/</a>
+<br><span style="font-weight: bold;">MPI Glossary and Bindings:&nbsp;</span><a href="http://www.lam-mpi.org/tutorials/bindings/">http://www.lam-mpi.org/tutorials/bindings/<span 
+ style="font-weight: bold;"></a>
+and&nbsp;</span><a href="http://www.csit.fsu.edu/%7Eburkardt/papers/mpi_glossary.html">http://www.csit.fsu.edu/~burkardt/papers/mpi_glossary.html</a>
+<br><b>MPI Preprocessor for C - BEC by Sandia National Lab:&nbsp; </b><a href="http://www.cs.sandia.gov/BEC/">http://www.cs.sandia.gov/BEC/</a>
+<br><b>MPI Newsgroup, comp.parallel.mpi:&nbsp; </b><a href="http://www-unix.mcs.anl.gov/mpi/">http://www-unix.mcs.anl.gov/mpi/</a>
+<br><b>MPI tools:&nbsp;&nbsp; Allinea DDT (MPI debugging tool):&nbsp; </b><a href="http://www.allinea.com">http://www.allinea.com</a>
+<br><b>MPI&nbsp; Tutorial with many (Fortran 90) examples:&nbsp; </b><a href="http://www.csit.fsu.edu/%7Eburkardt/f_src/mpi/mpi.html">http://www.csit.fsu.edu/~burkardt/f_src/mpi/mpi.html<span style="font-weight: bold;"></a>and</span><a href="http://www-unix.mcs.anl.gov/mpi/mpich/">http://www-unix.mcs.anl.gov/mpi/mpich/</a>
+<br><b>Parallel Programming Examples using MPI:&nbsp; </b><a href="http://cserd.nsdl.org/Resources/Tutorials/MPIExamples/index.php">http://cserd.nsdl.org/Resources/Tutorials/MPIExamples/index.php</a>
+<br><b>Parallel Compiler Tutorial:&nbsp; </b><a href="http://www.tutorial-reports.com/computer-science/parallel-compiler/index.php">http://www.tutorial-reports.com/computer-science/parallel-compiler/index.php</a>
+<center>
+<p><a NAME="Floating-Point"></a><b><font size=+1>Floating-Point Notes</font></b></center>
+Advice on using Floating Point Arithmetic:&nbsp; <a href="http://www.fortran-2000.com/ArnaudRecipes/Articles.html#Knoble1">http://www.fortran-2000.com/ArnaudRecipes/Articles.html#Knoble1</a>
+<br>Differences in IEEE 754 Implementations by Doug Priest:&nbsp; <a href="http://www.validlab.com/goldberg/addendum.html">http://www.validlab.com/goldberg/addendum.html</a>&nbsp;
+and&nbsp;<a href="http://en.wikipedia.org/wiki/IEEE_754"> http://en.wikipedia.org/wiki/IEEE_754</a>
+<br>IEEE Machine Parameters:&nbsp;&nbsp; <a href="http://ftp.cac.psu.edu/pub/ger/fortran/hdk/machparm.f90">http://ftp.cac.psu.edu/pub/ger/fortran/hdk/machparm.f90</a>
+<br>Fuzzy Comparisons:&nbsp;&nbsp; <a href="http://ftp.cac.psu.edu/pub/ger/fortran/hdk/eps.f90">http://ftp.cac.psu.edu/pub/ger/fortran/hdk/eps.f90</a>
+<br>How Java’s Floating-Point Hurts Everyone Everywhere by W. Kahan and
+Joseph D. Darcy:&nbsp; <a href="http://www.cs.berkeley.edu/%7Ewkahan/JAVAhurt.pdf">http://www.cs.berkeley.edu/~wkahan/JAVAhurt.pdf</a>
+<br>Kahan's Summation:&nbsp; <a href="http://ftp.cac.psu.edu/pub/ger/fortran/hdk/KahnSum.f90">http://ftp.cac.psu.edu/pub/ger/fortran/hdk/KahanSum.f90</a>
+<br>Interview with Old Man Floating-Point (William Kahan):&nbsp; <a href="http://www.cs.berkeley.edu/~wkahan/ieee754status/754story.html">http://www.cs.berkeley.edu/~wkahan/ieee754status/754story.html</a>
+<br>MAD 3401 IEEE Floating-Point Notes:&nbsp; <a href="http://www.weblearn.hs-bremen.de/risse/CNAPS/ieee_754/ieee.htm">http://www.weblearn.hs-bremen.de/risse/CNAPS/ieee_754/ieee.htm</a>
+<br>MAD 3401 Understanding Floating Point Formats:&nbsp;&nbsp; <a href="http://www.aplawrence.com/Basics/floatingpoint.html">http://www.aplawrence.com/Basics/floatingpoint.html</a>
+<br>NAN Handling Heuristics - A Sample Program:&nbsp; <a href="http://ftp.aset.psu.edu/pub/ger/fortran/hdk/nan.f90">http://ftp.aset.psu.edu/pub/ger/fortran/hdk/nan.f90</a>
+<br>Pittsburgh Super Computing Center IEEE Standard for Floating-Point
+Arithmetic: <a href="http://www.psc.edu/general/software/packages/ieee/ieee.html">http://www.psc.edu/general/software/packages/ieee/ieee.html</a>
+<br>Microsoft IEEE Standard 754:&nbsp; <a href="http://stevehollasch.com/cgindex/coding/ieeefloat.html">http://stevehollasch.com/cgindex/coding/ieeefloat.html</a>
+<br>Roundoff Degrades an Idealized Cantilever by W.Kahn and Melody Ivory:&nbsp;<a href="http://www.cs.berkeley.edu/%7Ewkahan/Cantilever.pdf">
+http://www.cs.berkeley.edu/~wkahan/Cantilever.pdf</a>
+<br><b>What Every Computer Scientist Should Know about Floating-Point Arithmetic
+by David Goldberg</b>:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+in HTML format:&nbsp; <a href="http://docs.sun.com/source/806-3568/ncg_goldberg.html">http://docs.sun.com/source/806-3568/ncg_goldberg.html</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+in PDF format:
+<a href="http://www.nondot.org/sabre/os/files/Processors/WECSSKAFloatingPoint.pdf">http://www.nondot.org/sabre/os/files/Processors/WECSSKAFloatingPoint.pdf</a>
+<br><b>Essays on Endian Order:</b>&nbsp; <a href="http://www.cs.umass.edu/%7Everts/cs32/endian.html">http://www.cs.umass.edu/~verts/cs32/endian.html</a>,
+<br><a href="http://whatis.techtarget.com/definition/0,,sid9_gci211659,00.html">http://whatis.techtarget.com/definition/0,,sid9_gci211659,00.html</a>,
+and <a href="http://webopedia.internet.com/TERM/b/big_endian.html">http://webopedia.internet.com/TERM/b/big_endian.html</a>
+<br>Thanks to Lahey, Inc. code for determining Endian order for any given
+platform may be found at:&nbsp; <a href="http://ftp.aset.psu.edu/pub/ger/fortran/hdk/endian.f90">http://ftp.aset.psu.edu/pub/ger/fortran/hdk/endian.f90</a>
+<br><span style="font-weight: bold;">Fortran Binary Files - How to View
+Numeric Fields in ASCII Format:&nbsp;</span><a href="http://ftp.aset.psu.edu/pub/ger/documents/FortranBinary.html">http://ftp.aset.psu.edu/pub/ger/documents/FortranBinary.html</a>
+<center>
+<p><a NAME="Free"></a><b><font size=+1>Free Fortran Compilers, Tools, Tutorials
+and Software</font></b></center>
+<span style="font-weight: bold;">Abaqus</span> - Finite Element Solutions:
+<a href="http://www.hks.com/products/products_overview.html">http://www.hks.com/products/products_overview.html</a>
+<br><span style="font-weight: bold;">Ansus</span> - Simulation Solutions:<span 
+ style="font-weight: bold;"><a href="http://www.ansys.com/">http://www.ansys.com/</a></span>
+<br>&nbsp;Tidy - a Cleanup Utility for Fortran 77 source programs: <a href="http://www.pdas.com/tidy.htm">http://www.pdas.com/tidy.htm</a>
+<br><b>University of Berkley Commercial Computational Products List: </b><a href="http://www-berkeley.ansys.com/cfd/CFD_codes_c.html">http://www-berkeley.ansys.com/cfd/CFD_codes_c.html</a>
+<br><b>John Burkard's Software Source Codes,&nbsp; (Fortran, Matlab, C++,
+Perl,...), Tutorials, etc.:</b>&nbsp; <a href="http://www.csit.fsu.edu/%7Eburkardt/">http://www.csit.fsu.edu/~burkardt/</a>
+<br>C to Fortran Converter:&nbsp; <a href="http://home.earthlink.net/%7Edave_gemini/c2f.zip">http://home.earthlink.net/~dave_gemini/c2f.zip</a>
+<br>C2J (C to Java) Converter:&nbsp; <a href="http://tech.novosoft-us.com/product_c2j.jsp">http://tech.novosoft-us.com/product_c2j.jsp</a>
+<br>CFortran - An interface tool between Fortran and C:&nbsp; <a href="http://www-zeus.desy.de/%7Eburow/cfortran/">http://www-zeus.desy.de/~burow/cfortran/</a>
+<br>CERN - Index of CERNLIB:&nbsp; <a href="http://consult.cern.ch/shortwrups/">http://consult.cern.ch/shortwrups/</a>
+<br>CERNLIB:&nbsp; <a href="http://cernlib.web.cern.ch/cernlib/version.html">http://cernlib.web.cern.ch/cernlib/version.html</a>&nbsp;
+or&nbsp;&nbsp; <a href="http://wwwinfo.cern.ch/asd/cernlib/">http://wwwinfo.cern.ch/asd/cernlib/</a>
+<br><b>CGYWIN - </b>A Unix environment for Windows:&nbsp; <a href="http://www.cygwin.com/">http://www.cygwin.com/</a>
+<br><b>Clodius, W.B.'s Fortran Tools:</b>&nbsp; <a href="http://members.aol.com/wclodius/fortran_tools.html">http://members.aol.com/wclodius/fortran_tools.html</a>
+<br><b>Fortran clustering code of Glenn Milligan</b>:&nbsp; <a href="http://www.pitt.edu/%7Ecsna/Milligan/readme.html">http://www.pitt.edu/~csna/Milligan/readme.html</a>
+<br><span style="font-weight: bold;">Command Line Parser:&nbsp;&nbsp; F2KCLI:</span><a href="http://www.winteracter.com/f2kcli/index.htm">http://www.winteracter.com/f2kcli/index.htm</a>
+<br><b>Computer Science On-line Courses by John David Stone, Grinnell College</b>:
+<a href="http://www.math.grin.edu/%7Estone/courses/">http://www.math.grin.edu/~stone/courses/</a>
+<br>Convert Fortran 77 to Free Form:&nbsp; <a href="ftp://ftp.numerical.rl.ac.uk/pub/MandR/">ftp://ftp.numerical.rl.ac.uk/pub/MandR/</a>
+<br><b>CVF Examples:</b>&nbsp; <a href="http://compaq.com/fortran/examples">http://compaq.com/fortran/examples</a>
+<br>C++ Tutorial for Scientists:&nbsp; <a href="http://math.nist.gov/%7ERPozo/c++class/">http://math.nist.gov/~RPozo/c++class/</a>
+<br><b>Dave Gemini's Fortran Source Codes</b>:&nbsp; <a href="http://home.cfl.rr.com/davegemini/">http://home.cfl.rr.com/davegemini/</a>
+<br>Designing and Building Parallel Programs, by Ian Foster:&nbsp;<a href="http://www-unix.mcs.anl.gov/dbpp/">
+http://www-unix.mcs.anl.gov/dbpp/</a>
+<br>Dictionary of Algorithms and Data Structures:&nbsp;&nbsp; <a href="http://www.nist.gov/dads/">http://www.nist.gov/dads/</a>
+<br><span style="font-weight: bold;">DISLIN Scientific Plotting Software:</span><a href="http://www.dislin.de">http://www.dislin.de</a>
+or&nbsp; <a href="http://www.linmpi.mpg.de/dislin/">http://www.linmpi.mpg.de/dislin/</a>
+<br>EEVL Guide to Engineering, Mathematics, Computing On-line books: <a href="http://www.eevl.ac.uk/">http://www.eevl.ac.uk/</a>
+<br><b>Electronic Library (of Fortran Source Code)</b>:&nbsp; <a href="http://elib.zib.de/">http://elib.zib.de/</a>
+<br><span style="font-weight: bold;">Electronic Textbook - Statistics:</span><a href="http://www.statsoft.com/textbook/stathome.html">http://www.statsoft.com/textbook/stathome.html</a>
+<br>Equation Technology High Performance Libraries (free download): <a href="http://www.equation.com/">http://www.equation.com/</a>;&nbsp;
+MTask manual:&nbsp;&nbsp; <a href="ftp://ftp.equation.com/mtask/document/mtask.pdf">ftp://ftp.equation.com/mtask/document/mtask.pdf</a>
+<br><b>FFT - </b>C library to compute Non-equispaced Discrete Fourier Transform
+in 1, 2, 3D, of arbitrary size complex data (free) by <b>Stefan Kunis and
+Daniel Potts</b>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.math.mu-luebeck.de/potts/nfft/">http://www.math.mu-luebeck.de/potts/nfft/</a>&nbsp;&nbsp;
+and&nbsp; <a href="http://www.fftw.org/">http://www.fftw.org/</a>
+<br>Flash Sort:&nbsp; <a href="http://www.neubert.net/FSOIntro.html">http://www.neubert.net/FSOIntro.html</a>
+<br>Fortran to C Converter (search on "f2c"):&nbsp;<a href="http://www.netlib.org/">
+http://www.netlib.org/</a>&nbsp;&nbsp; and&nbsp;&nbsp;&nbsp;<a href="http://www.cobalt-blue.com/fc/fcmain.htm">
+http://www.cobalt-blue.com/fc/fcmain.htm</a>
+<br>Fortran to Common Lisp:&nbsp; <a href="http://www.nhplace.com/kent/Papers/Fortran-to-Lisp.html">http://www.nhplace.com/kent/Papers/Fortran-to-Lisp.html</a>
+<br>Fortran to Java Converter: <a href="http://www.npac.syr.edu/projects/pcrc/f2j.html">http://www.npac.syr.edu/projects/pcrc/f2j.html</a>&nbsp;&nbsp;
+and&nbsp; <a href="http://www.ce.berkeley.edu/%7Edoolin/code/">http://www.ce.berkeley.edu/~doolin/code/</a>
+<br>Fortran to Matlab:&nbsp; <a href="http://www.mathworks.com/matlabcentral/fileexchange/loadFile.do?objectId=5260&objectType=FILE" eudora="autourl">http://www.mathworks.com/matlabcentral/fileexchange/loadFile.do?objectId=5260&amp;objectType=FILE</a>
+<br>Fortran to Pascal:&nbsp; <a href="http://www.netlib.org/utk/forums/netlib/messages/308.html">http://www.netlib.org/utk/forums/netlib/messages/308.html</a>
+<br>Fortran to Visual Basic Conversion Service:&nbsp; <a href="http://www.siamminiatures.com/f2vb/index.htm">http://www.siamminiatures.com/f2vb/index.htm</a>
+<br>Fortran to Visual Basic Converter - FORBAS: <a href="http://www.geocities.com/for_bas/">http://www.geocities.com/for_bas/</a>
+<br>&nbsp; F2VB: <a href="http://www.fortran2vb.com/">http://www.fortran2vb.com/</a>,&nbsp;&nbsp;
+Conv_for_BAS:&nbsp; <a href="http://www.2m2s.com/html/downloads_and_prices.html">http://www.2m2s.com/html/downloads_and_prices.html</a>
+<br>Fortran Library Training Materials:<a href="http://www.fortranlib.com/training.htm">
+http://www.fortranlib.com/training.htm</a>
+<br>Fortran Market Freeware: <a href="http://www.fortran.com/fortran/free.html">http://www.fortran.com/fortran/free.html</a>
+<p><b>Fortran 77 to 90 Conversion:</b>&nbsp;&nbsp;&nbsp; <a href="ftp://ftp.numerical.rl.ac.uk/pub/MandR/">ftp://ftp.numerical.rl.ac.uk/pub/MandR/</a>
+<br><b>Fortran 95 Portability Project</b> (<b>Dan Nagle)</b>:&nbsp; <a href="http://users.erols.com/dnagle/port.html">http://users.erols.com/dnagle/port.html</a>
+<br><b>Fortran 77&nbsp; - A Hands on Approach(233 pages) by Ian D Chivers
+and Jane Sleightholme:&nbsp;</b><a href="http://www.fortranplus.co.uk/">
+http://www.fortranplus.co.uk/</a>
+<br><b>Fortran 90 for the Fortran 77 Programmer - a Tutorial:&nbsp; </b><a href="http://www.star.le.ac.uk/~cgp/f90course/f90.html">http://www.star.le.ac.uk/~cgp/f90course/f90.html</a>
+<br><a href="http://www.nsc.liu.se/%7Eboein/f77to90/f77to90.html">http://www.nsc.liu.se/~boein/f77to90/f77to90.html</a>Also
+see:&nbsp;&nbsp; <b>Extra Stuff:</b><a href="http://www-teaching.physics.ox.ac.uk/Unix+Prog/hargrove/tutorial_90/13_extra.html">http://www-teaching.physics.ox.ac.uk/Unix+Prog/hargrove/tutorial_90/13_extra.html</a>
+<br><b>Fortran 95 for the Fortran 77 Programmer:&nbsp; </b><a href="http://www.soks.org/view/Fortran95ForFortran77Programmers">http://www.soks.org/view/Fortran95ForFortran77Programmers</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+and:&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.mcs.vuw.ac.nz/math/papers/JFH10_f95_2006">http://www.mcs.vuw.ac.nz/math/papers/JFH10_f95_2006</a>
+<p>Fortran 95 Guide to Fortran 77 Compatibility:&nbsp; <a href="http://wwws.sun.com/software/sundev/whitepapers/f77tof95.pdf">http://wwws.sun.com/software/sundev/whitepapers/f77tof95.pdf</a>
+<br><b>Fortran 90/95 Tutorials - Michael Metcalf's Fortran 90 CNL Articles:
+</b><a href="http://wwwasdoc.web.cern.ch/wwwasdoc/f90.html">http://wwwasdoc.web.cern.ch/wwwasdoc/f90.html</a>
+<br><b>Fortran 90 Tutorial:&nbsp;</b><a href="http://www.cs.mtu.edu/%7Eshene/COURSES/cs201/NOTES/fortran.html">
+http://www.cs.mtu.edu/~shene/COURSES/cs201/NOTES/fortran.html</a>
+<br><b>Fortran Tutorial Index:&nbsp;&nbsp; </b><a href="http://www.dmoz.org/Computers/Programming/Languages/Fortran/Tutorials/Fortran_90_and_95/">http://www.dmoz.org/Computers/Programming/Languages/Fortran/Tutorials/Fortran_90_and_95/</a>
+<br><b>Fortran 90 Interactive Tutorial</b> by <b>University of Liverpool</b>:
+<a href="http://www.liv.ac.uk/HPC/HTMLFrontPageF90.html">http://www.liv.ac.uk/HPC/HTMLFrontPageF90.html</a>
+<br><b>Fortran 90 Tutorial by Zane Dodson (Postscript file):&nbsp; </b><a href="http://www.mza.com/%7Ezdodson/f90.html">http://www.mza.com/~zdodson/f90.html</a>
+<br><b>Fortran Tutorials Portal:</b>&nbsp; <a href="http://www.glue.umd.edu/%7Ensw/ench250/fort-tut.htm">http://www.glue.umd.edu/~nsw/ench250/fort-tut.htm</a>
+<br><b>F90GL</b> Fortran Interface for OpenGL:&nbsp; <a href="http://math.nist.gov/f90gl/">http://math.nist.gov/f90gl/</a>&nbsp;
+and&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.lahey.com/support/SetupF90gl.exe">http://www.lahey.com/support/SetupF90gl.exe</a>
+<br><b>Fortran 90 Source Checker (by Lahey):&nbsp;</b>&nbsp; <a href="http://www.lahey.com/check.htm">http://www.lahey.com/check.htm</a>
+<br><b>Fortran 90/95 Course Notes by Clive Page</b>:&nbsp; <a href="http://www.star.le.ac.uk/%7Ecgp/">http://www.star.le.ac.uk/~cgp/</a>
+<br><b>Fortran 95 Tutorial:</b>&nbsp; <a href="http://exodus.physics.ucla.edu/Fortran95/PSTIResearchLecSeries1.html">http://exodus.physics.ucla.edu/Fortran95/PSTIResearchLecSeries1.html</a>
+<br>FUnit, a Fortran Unit Testing Framework:&nbsp;<a href="http://nasarb.rubyforge.org">
+http://nasarb.rubyforge.org</a>
+<br>F77 and F90 code for the book <b>Fundamentals of Numerical Computing:</b><a href="http://www.mines.edu/fs_home/spruess/saptext/saptext.html">http://www.mines.edu/fs_home/spruess/saptext/saptext.html</a>
+<br>Modular Programming with Fortran 90 by A.C. Marshall:&nbsp; <a href="http://www.liv.ac.uk/HPC/HTMLF90Course/HTMLF90CourseSlides.html">http://www.liv.ac.uk/HPC/HTMLF90Course/HTMLF90CourseSlides.html</a>
+<br>Free GNU Fortran 77 for Windows 95/NT:&nbsp;&nbsp;&nbsp; <a href="http://kkourakis.tripod.com/">http://kkourakis.tripod.com/</a>
+<br>Free Fortran Checker:&nbsp;&nbsp; <a href="http://dsm.dsm.fordham.edu/%7Eftnchek/">http://dsm.dsm.fordham.edu/~ftnchek/</a>
+<br>Free Old MS Fortran Compilers and Tools from&nbsp; EMS Professional
+Software's Retro Tools:&nbsp; <a href="http://www.emsps.com/oldtools/msfor.htm">http://www.emsps.com/oldtools/msfor.htm</a>
+<br>Free Software from Fortran Library:&nbsp;&nbsp;<a href="http://www.fortranlib.com/freesoft.htm">
+http://www.fortranlib.com/freesoft.htm</a>
+<br>Free Software Foundation:&nbsp; <a href="http://gnu.gnusoft.net/">http://gnu.gnusoft.net/</a>
+<br>Fortran 90 Function Parser by Roland Schmehl:&nbsp; <a href="http://sourceforge.net/projects/fparser">http://sourceforge.net/projects/fparser</a>
+<br>Fortran 90/95 Function Parser by Stuart Midgley:&nbsp; <a href="http://smidgley.customer.netspace.net.au/fortran/">http://smidgley.customer.netspace.net.au/fortran/</a>
+<br><span style="font-weight: bold;">Fundamental Physical Constants from
+NIST:</span>&nbsp; <a href="http://physics.nist.gov/cuu/Constants/index.html">http://physics.nist.gov/cuu/Constants/index.html</a>
+<br>GhostScript:&nbsp; <a href="http://www.cs.wisc.edu/%7Eghost/index.html">http://www.cs.wisc.edu/~ghost/index.html</a>
+<br>GNU Project: <a href="http://WWW.GNU.ORG/">http://WWW.GNU.ORG/</a>
+and&nbsp; <a href="http://gcc.gnu.org/">http://gcc.gnu.org/</a>
+<br>GNU Win32 Related Projects:&nbsp; <a href="http://www.xraylith.wisc.edu/%7Ekhan/software/gnu-win32/">http://www.xraylith.wisc.edu/~khan/software/gnu-win32/</a>
+<br><b>GnuPlot:</b>&nbsp;<a href="http://www.gnuplot.info/"> http://www.gnuplot.info/</a>,
+<a href="http://www.cs.uni.edu/Help/gnuplot/">http://www.cs.uni.edu/Help/gnuplot/</a>
+<br><span style="font-weight: bold;">GnuplotFortran : the Fortran95 interface
+to Gnuplot:</span>&nbsp;&nbsp;<a href="http://gnuplotfortran.sourceforge.net/">
+http://gnuplotfortran.sourceforge.net/</a>
+<br>Helsbreth Manor - Monte Carlo, Random pages (plus DVD info): <a href="http://www.helsbreth.org/">http://www.helsbreth.org/</a>
+<br>The <b>IEEE standard for floating point arithmetic</b>:&nbsp; <a href="http://www.psc.edu/general/software/packages/ieee/ieee.html">http://www.psc.edu/general/software/packages/ieee/ieee.html</a>
+<br>Imagine1's Free "F" compiler:&nbsp; <a href="http://www.fortran.com/imagine1/">http://www.fortran.com/imagine1/</a>
+<br>Intel VTune Performance Analyzer:&nbsp; <a href="http://www.intel.com/software/products/vtune/vpa/">http://www.intel.com/software/products/vtune/vpa/</a>
+<br>Java Application Programming Interface (JAPI):&nbsp;<a href="http://www.japi.de/">
+http://www.japi.de/</a>
+<br><b>Brian Kernighan's Programming pages</b>:&nbsp; <a href="http://cm.bell-labs.com/who/bwk/index.html">http://cm.bell-labs.com/who/bwk/index.html</a>
+<br><b>Keyed File Access Source code (Fortran 77 and 90):&nbsp; </b><u><a href="http://www.gginc.biz/fort.html#keyed">http://www.gginc.biz/fort.html#keyed</a></u>
+<br><b>Lahey's Extensive libraries, tutorials, and Fortran Resources</b>:
+<a href="http://www.lahey.com/other.htm">http://www.lahey.com/other.htm</a>
+<br>Lahey Essential Lahey Fortran 90 Source Codes:&nbsp; <a href="http://jblevins.org/mirror/amiller/">http://jblevins.org/mirror/amiller/</a>
+<br><b>Lectures</b> in Computer Science <b>by Prof.</b> <b>Jim Demmel</b>,
+<b>U.C.
+Berkley:</b> <a href="http://www.cs.berkeley.edu/%7Edemmel/">http://www.cs.berkeley.edu/~demmel/</a>
+.&nbsp; Applications of Parallel Computers - Computer
+<br>&nbsp; Science 267; There are 29 excellent on-line lectures and a wealth
+of other material at. <a href="http://www.cs.berkeley.edu/%7Edemmel/cs267/">http://www.cs.berkeley.edu/~demmel/cs267/</a>
+.&nbsp; In particular, see Lecture
+<br>&nbsp; 28,&nbsp; Basic Issues in Floating Point Arithmetic and Error
+Analysis at:&nbsp; <a href="http://www.cs.berkeley.edu/%7Edemmel/cs267/lecture21/lecture21.html">http://www.cs.berkeley.edu/~demmel/cs267/lecture21/lecture21.html</a>
+<br><span style="font-weight: bold;">Linux Survival Manual - Series of
+Tutorials:</span> <a href="http://linuxsurvival.com/index.php?module=ContentExpress&func=display&ceid=1&meid=-1">http://linuxsurvival.com/index.php?module=ContentExpress&amp;func=display&amp;ceid=1&amp;meid=-1</a>
+<br>Make Utilities:&nbsp; <a href="http://www.helsinki.fi/%7Eeedelman/makedepf90.html">http://www.rvs.uni-hannover.de/people/chmielewski/fortran/</a>&nbsp;
+and&nbsp; <a href="http://www.helsinki.fi/%7Eeedelman/makedepf90.html">http://www.helsinki.fi/~eedelman/makedepf90.html</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MKMF - Generate a Make File from Distributed
+Source:&nbsp; <a href="http://www.gfdl.noaa.gov/%7Evb/mkmf.html">http://www.gfdl.noaa.gov/%7Evb/mkmf.html</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Alternative site:&nbsp; <a href="http://www.gfdl.noaa.gov/~vb/mkmf.html">http://www.gfdl.noaa.gov/~vb/mkmf.html</a>
+<br>Mathematics on the Internet:&nbsp; <a href="http://www.mcs.csuhayward.edu/%7Emalek/Mathlinks/Mathlinks.html">http://www.mcs.csuhayward.edu/~malek/Mathlinks/Mathlinks.html</a>
+<br>MathTools Utilities:&nbsp; <a href="http://www.mathtools.net/Fortran/Utilities/">http://www.mathtools.net/Fortran/Utilities/</a>
+<br>Metamath Proof Explorer:&nbsp; <a href="http://us.metamath.org/mpegif/mmset.html">http://us.metamath.org/mpegif/mmset.html</a>
+<br><b>Metis - Serial Graph Partitioning:&nbsp; </b><a href="http://www-users.cs.umn.edu/%7Ekarypis/metis/metis/index.html">http://www-users.cs.umn.edu/~karypis/metis/metis/index.html</a>
+<br><b>Michael Metcalf's Fortran 90 CNL Articles</b> (tutorials for teaching
+Fortran):&nbsp;&nbsp; <a href="http://wwwinfo.cern.ch/asdoc/f90.html">http://wwwinfo.cern.ch/asdoc/f90.html</a>
+<br><b>Michel Olagnon's Fortran 90 texts and programs:</b>&nbsp; <a href="http://www.ifremer.fr/ditigo/molagnon/fortran90/">http://www.ifremer.fr/ditigo/molagnon/fortran90/</a>
+<br><b>mpiSim - An experimental MPI Simulation Tool:</b>&nbsp; <a href="http://ftp.aset.psu.edu/pub/ger/fortran/mpiSim/mpiSim.html">http://ftp.aset.psu.edu/pub/ger/fortran/mpiSim/mpiSim.html</a>
+<br>Mortran3 for Windows:&nbsp; <a href="http://inprosys.bizland.com/website/mortran.htm">http://inprosys.bizland.com/website/mortran.htm</a>
+<br>Multipurpose Interactive Image Processing System (MIIPS by Donald Gudehus):
+<a href="http://www.chara.gsu.edu/%7Egudehus/miips.html">http://www.chara.gsu.edu/~gudehus/miips.html</a>
+<br>NA-Net, Numerical Analysis Network and Digest:&nbsp; <a href="http://www.netlib.org/na-net/na_home.html">http://www.netlib.org/na-net/na_home.html</a>
+<br>NCAR Graphics:&nbsp; <a href="http://ngwww.ucar.edu/">http://ngwww.ucar.edu/</a>
+<br>NERSC Tutorials:&nbsp; <a href="http://hpcf.nersc.gov/training">http://hpcf.nersc.gov/training</a>
+<br>NFortran compiler and software by Einsys:&nbsp;<a href="http://www.nfortran.com/">
+http://www.nfortran.com/</a>
+<br>NIST Digital Math Library:&nbsp; <a href="http://dlmf.nist.gov/Contents/">http://dlmf.nist.gov/Contents/</a>
+<br><b>NN-Online - Fortran and C Source Codes: </b><a href="http://nn-online.org/code/">http://nn-online.org/code/</a>
+<br><b>Numerical Analysis Group</b> - United Kingdom:&nbsp; <a href="http://www.cse.clrc.ac.uk/Group/CSENAG">http://www.cse.clrc.ac.uk/Group/CSENAG</a>
+<br>Fortran code for <b>Numerical methods in physics</b>, by <b>Rogina</b>:
+<a href="http://cromath.math.hr/%7Erogina/nmf/nmf.html">http://cromath.math.hr/~rogina/nmf/nmf.html</a>
+<br>Fortran code from "<b>Numerical Methods of Statistics</b>" by <b>John
+Monahan</b>:&nbsp; <a href="http://www4.stat.ncsu.edu/%7Emonahan/aug00/toc.htm">http://www4.stat.ncsu.edu/~monahan/aug00/toc.htm</a>
+<br>Numerical Recipes (free on-line books):&nbsp; <a href="http://www.nr.com">http://www.nr.com</a>&nbsp;&nbsp;
+and&nbsp; <a href="http://www.library.cornell.edu/nr/cbookcpdf.html">http://www.library.cornell.edu/nr/cbookcpdf.html</a>
+<br>Numerical Computations for Science and Engineering (including software
+librarie) by C. Pozrikidis:&nbsp; <a href="http://dehesa.freeshell.org/NCSE/">http://dehesa.freeshell.org/NCSE/</a>
+<br><b>Numerit </b>Programming Environment:<b>&nbsp;&nbsp; </b><a href="http://www.numerit.com/">http://www.numerit.com/</a>
+<br><b>Open Directory Project - Fortran Source Codes and more:</b> <a href="http://www.dmoz.org/Computers/Programming/Languages/Fortran">http://www.dmoz.org/Computers/Programming/Languages/Fortran</a>
+<br><b>Fortran Tools - Open Directory Project:&nbsp; </b><a href="http://dmoz.org/Computers/Programming/Languages/Fortran/Tools/Code_Analysis/">http://dmoz.org/Computers/Programming/Languages/Fortran/Tools/Code_Analysis/</a>
+<br><b>Overton, Michael L.</b>'s excellent works:&nbsp; <a href="http://www.cs.nyu.edu/cs/faculty/overton/">http://www.cs.nyu.edu/cs/faculty/overton/</a>
+<br>Pacific Sierra Fortran 90 for Linux and Windows NT:&nbsp; <a href="http://www.psrv.com">http://www.psrv.com</a>
+<br>Parallel Computing Research (CRPC):&nbsp; <a href="http://www.crpc.rice.edu/">http://www.crpc.rice.edu/</a>
+<br>Physics Analysis Workstation (<b>PAW</b>) Fortran Interpreter: <a href="http://wwwinfo.cern.ch/asd/paw/">http://wwwinfo.cern.ch/asd/paw/</a>
+<br>PGPLOT Graphics Subroutine Library:&nbsp; <a href="http://astro.caltech.edu/%7Etjp/pgplot/">http://astro.caltech.edu/~tjp/pgplot/</a>
+<br>PL PLOT Graphics Library:&nbsp;&nbsp; <a href="http://plplot.sourceforge.net">http://plplot.sourceforge.net</a>
+<br>PSPLOT: PostScript for Technical Drawings:&nbsp; <a href="http://www.nova.edu/ocean/psplot.html">http://www.nova.edu/ocean/psplot.html</a>
+<br><b>Preprocessors:&nbsp;&nbsp; </b>Coco Preprocessor, Purple Sage (<b>Dan
+Nagle</b>):&nbsp; <a href="http://users.erols.com/dnagle/coco.html">http://users.erols.com/dnagle/coco.html</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; Fortran 90 Preprocessor by <b>Michel Olagnon</b>:
+<a href="http://www.ifremer.fr//ditigo/molagnon/fortran90/contenu.html">http://www.ifremer.fr//ditigo/molagnon/fortran90/contenu.html</a>
+<br>Professional Programmers Guide to Fortran77 by Clive Page (excellent
+for learning Fortran):&nbsp; <a href="ftp://ftp.star.le.ac.uk/pub/fortran/prof77.doc">ftp://ftp.star.le.ac.uk/pub/fortran/prof77.doc</a>
+<br>Purple Sage Fortran Sites (<b>Dan Nagle</b>):&nbsp; <a href="http://users.erols.com/dnagle/sites.html">http://users.erols.com/dnagle/sites.html</a>
+<br><b>Python - </b>F2PY: Fortran to Python interface generator: <a href="http://cens.ioc.ee/projects/f2py2e/">http://cens.ioc.ee/projects/f2py2e/</a>
+<br><b>Redhat Linux Free Software:&nbsp;&nbsp; </b><a href="http://sources.redhat.com/">http://sources.redhat.com/</a>
+<br><b>SLAC - Fortran at SLAC:&nbsp; </b><a href="http://www.slac.stanford.edu/comp/fortran/fortran.html">http://www.slac.stanford.edu/comp/fortran/fortran.html</a>
+<br>Fortran software of <b>Richard Brent</b>:&nbsp; <a href="http://web.comlab.ox.ac.uk/oucl/work/richard.brent/software.html">http://web.comlab.ox.ac.uk/oucl/work/richard.brent/software.html</a>
+<br>Sparse Matrix Package, by Dr. Ernst A. Meese, Norway:&nbsp; <a href="ftp://ftp.ntnu.no/pub/smlib/">ftp://ftp.ntnu.no/pub/smlib/</a>
+<br><b>Sparse Kit by Yousef Saad</b>:&nbsp; <a href="http://www.cs.umn.edu/Research/arpa/SPARSKIT/sparskit.html">http://www.cs.umn.edu/Research/arpa/SPARSKIT/sparskit.html</a>
+<br>Statsoft - Electronic Statistics Textbook:&nbsp;&nbsp;<a href="http://www.statsoftinc.com/">
+http://www.statsoftinc.com/</a>
+<br>SUN and Other Documentation and Tutorials:&nbsp; <a href="http://docs.sun.com/">http://docs.sun.com/</a>
+<p><b>Tcl/Tk Tutorials/Cookbooks</b>:&nbsp;&nbsp; <a href="http://www.dci.clrc.ac.uk/Publications/Cookbook/">http://www.dci.clrc.ac.uk/Publications/Cookbook/</a>
+, <a href="http://aspn.activestate.com/ASPN/Cookbook/Tcl/">http://aspn.activestate.com/ASPN/Cookbook/Tcl/</a>&nbsp;
+and
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.msen.com/%7Eclif/TclTutor.html">http://www.msen.com/~clif/TclTutor.html</a>
+<br><b>Tcl/Tk Developer XChange</b>:&nbsp; <a href="http://www.scriptics.com/">http://www.scriptics.com/</a>
+<br><b>Tcl/Tk Developer Exchange:&nbsp; </b><a href="http://www.tcl.tk/">http://www.tcl.tk/</a>
+<p><b>Tcl/Tk - Combining Fortran and Tcl in one program (by Arjen Markus):
+</b><a href="http://wiki.tcl.tk/4004">http://wiki.tcl.tk/4004</a>
+<br><b>Tcl/Tk - Fortran - Management of Interactive Fortran Pprograms via
+Tcl:&nbsp; </b><a href="http://mini.net/tcl/3359">http://mini.net/tcl/3359</a>
+<p>Tidy (Fortran cleanup):&nbsp; <a href="http://www.unb.ca/chem/ajit/f_tidy.htm">http://www.unb.ca/chem/ajit/f_tidy.htm</a>
+<br>Top 500 Supercomputing Sites:&nbsp; <a href="http://www.top500.org">http://www.top500.org</a>
+<br><b>TULSIM - </b>Tuley Simulation, a package of random variable generators
+by Dr. Marllyn Boswell:&nbsp; <a href="http://ftp.aset.psu.edu/pub/ger/fortran/tulsim.zip">http://ftp.aset.psu.edu/pub/ger/fortran/tulsim.zip</a>
+<br><b>USER NOTES ON FORTRAN PROGRAMMING</b> (UNFP) by Code Tuning c-guide,
+1998 Lahey Fortran Users' Conference:
+<br>&nbsp;&nbsp;&nbsp; <a href="http://www.ibiblio.org/pub/languages/fortran">http://www.ibiblio.org/pub/languages/fortran</a>
+<br><b>UWIN</b> (AT&amp;T Unix for Windows):&nbsp; <a href="http://www.research.att.com/sw/tools/uwin/">http://www.research.att.com/sw/tools/uwin/</a>
+<br><span style="font-weight: bold;">Vast/F90</span> for Linux:&nbsp; <a href="http://www.crescentbaysoftware.com/">http://www.crescentbaysoftware.com/</a>
+<br>VFort:&nbsp; <a href="http://www.imamod.ru/%7Evab/vfort/">http://www.imamod.ru/~vab/vfort/</a>
+<br><b>William Kahan </b>tutorials and written works:&nbsp; <a href="http://www.cs.berkeley.edu/%7Ewkahan/">http://www.cs.berkeley.edu/~wkahan/</a>
+<br><b>Xeffort, </b>A GUI (for Visual Fortran) free, open-source library
+for building GUI applications<b>:&nbsp;&nbsp; </b><a href="http://www.xeffort.com/">http://www.xeffort.com/</a>
+<br><b>XFT - Extended Fortran Types Library by Jugoslav Dujic:&nbsp;&nbsp;</b><a href="http://www.geocities.com/jdujic/fortran/xft/xfthome.htm">
+http://www.geocities.com/jdujic/fortran/xft/xfthome.htm</a>
+<p><b>\XML Parsers - Fortran based</b>
+<br><b>by Arjen Markus: </b><a href="http://sourceforge.net/projects/xml-fortran/">http://sourceforge.net/projects/xml-fortran/</a>
+<br><b>by Mart Rentmeester:&nbsp; </b><a href="http://nn-online.sci.kun.nl/fortran/xml/">http://nn-online.sci.kun.nl/fortran/xml/</a>
+<br><b>by Alberto Garcia:&nbsp; </b><a href="http://lcdx00.wm.lc.ehu.es/%7Ewdpgaara/xml/index.html">http://lcdx00.wm.lc.ehu.es/~wdpgaara/xml/index.html</a>
+<p>X Windows,&nbsp; Fortran 90 Interface to (free):&nbsp;&nbsp; <a href="http://www.gginc.biz/fort.html#xwin">http://www.gginc.biz/fort.html#xwin</a>
+<br><b>Yapakit - a Fortran&nbsp; Editor:</b><a href="http://pagesperso-orange.fr/yapakit.fortran/">&nbsp;
+http://pagesperso-orange.fr/yapakit.fortran/</a>
+<p><a NAME="MixedLanguageProgramming"></a><b><font size=+1>Mixed Language
+Programming - Fortran Calling C and C++ Subprograms</font></b>
+<p>Mixing C with Fortran subverts use of debugging compilers like Salford
+FTN95 FTN77 and Lahey LF95. Thus one is more wide open for subtle semantic
+errors like a subscript out of range, invalid subprogram argument/parameter
+matching, undefined (mistyped) variable, etc. In a certain sense mixing
+languages detracts from both portability and integrity of application.
+<p>If you still have or want to write a C subprogram callable by Fortran
+I suggest that you see&nbsp; an actual working example:&nbsp; <a href="http://hpcf.nersc.gov/software/ibm/c_and_f.html">http://hpcf.nersc.gov/software/ibm/c_and_f.html</a>
+<br>For C++ two key references are: <a href="http://www-zeus.desy.de/%7Eburow/cfortran/">http://www-zeus.desy.de/~burow/cfortran/</a>&nbsp;&nbsp;
+and <a href="http://scipp.ucsc.edu/groups/silicon/ATLAS/DaqLab/soft/usingFor/">http://scipp.ucsc.edu/groups/silicon/ATLAS/DaqLab/soft/usingFor/</a>
+<p>If you are working with C++ and Fortran see:&nbsp;<span 
+ style="font-weight: bold;">
+Chasm - C++ Fortran 99 Interoperability Tools:</span>&nbsp;&nbsp; <a href="http://chasm-interop.sourceforge.net/">http://chasm-interop.sourceforge.net/</a>
+<p>For information and tutorials on this subject also see:
+<br><a href="http://www.esrf.fr/computing/expg/subgroups/general/c2f77/C2f77.html">http://www.esrf.fr/computing/expg/subgroups/general/c2f77/C2f77.html</a>
+<br><a href="http://atlas.web.cern.ch/Atlas/GROUPS/SOFTWARE/OO/dist/HourlyHeadFromCVS/Tools/AgeToCxx/doc/helpfulHints.html">http://atlas.web.cern.ch/Atlas/GROUPS/SOFTWARE/OO/dist/HourlyHeadFromCVS/Tools/AgeToCxx/doc/helpfulHints.html</a>
+<br><a href="http://web.mit.edu/answers/fortran/fortran_call_c.html">http://web.mit.edu/answers/fortran/fortran_call_c.html</a>
+<br><a href="http://www.compaq.com/fortran/examples/vc-example2.html">http://www.compaq.com/fortran/examples/vc-example2.html</a>
+<br><a href="http://gcc.gnu.org/ml/gcc/1999-10n/msg00516.html">http://gcc.gnu.org/ml/gcc/1999-10n/msg00516.html</a>
+<br><a href="http://www.ibiblio.org/pub/languages/fortran/ch1-11.html">http://www.ibiblio.org/pub/languages/fortran/ch1-11.html</a>
+<br>&nbsp; C Calls to Fortran Subprograms:&nbsp; <a href="http://msdn.microsoft.com/library/devprods/vs6/visualc/vccore/_core_c_calls_to_fortran.htm">http://msdn.microsoft.com/library/devprods/vs6/visualc/vccore/_core_c_calls_to_fortran.htm</a>
+<br><b>Run Time Libraries </b>(various ones):&nbsp;<a href="http://www.david-taylor.pwp.blueyonder.co.uk/software/runtime.html">
+http://www.david-taylor.pwp.blueyonder.co.uk/software/runtime.html</a>
+<br>Free Fortran Compilers and Language Translaters:&nbsp; <a href="http://www.thefreecountry.com/compilers/fortran.shtml">http://www.thefreecountry.com/compilers/fortran.shtml</a>
+<p><a NAME="Linux"></a><b><font size=+1>Linux Fortran Compilers</font></b>
+<p><b>Fortran Resources by Chivers and Sleightholme:&nbsp; </b><a href="http://www.fortranplus.co.uk/">http://www.fortranplus.co.uk/</a>
+<br>For various <b>compilers, libraries, tools</b>, please see:&nbsp;&nbsp;<a href="http://www.fortran.com/metcalf.htm">
+http://www.fortran.com/metcalf.htm</a>
+<br><b>Linux Survival Manual - a series of tutorials:&nbsp;&nbsp; </b><a href="http://linuxsurvival.com/index.php?module=ContentExpress&func=display&ceid=1&meid=-1">http://linuxsurvival.com/index.php?module=ContentExpress&amp;func=display&amp;ceid=1&amp;meid=-1</a>
+<br><b>Intel Compiles (manuals):&nbsp; </b><a href="http://www.intel.com/cd/software/products/asmo-na/eng/compilers/index.htm">http://www.intel.com/cd/software/products/asmo-na/eng/compilers/index.htm</a>
+<br><b>Free compilers for Linux:</b>
+<blockquote><b>Imagine 1's F Compiler:</b>&nbsp; <a href="http://www.fortran.com/imagine1/compilers.html">http://www.fortran.com/imagine1/compilers.html</a>&nbsp;&nbsp;
+and <a href="ftp://ftp.swcp.com/pub/walt/F">ftp://ftp.swcp.com/pub/walt/F</a>
+<br>(F is a subset of&nbsp; Fortran 95; besides the excellent sample programs
+distributed with F:&nbsp; <a href="ftp://ftp.swcp.com/pub/walt/F/Examples/">ftp://ftp.swcp.com/pub/walt/F/Examples/</a>
+<br>there are some packages developed to compile with this compiler; e.g.
+<a href="http://jblevins.org/mirror/amiller/">http://jblevins.org/mirror/amiller/</a>&nbsp;
+).
+<br>The install&nbsp; also includes a C++, G++, and GCC compilers; see:
+<a href="http://ftp.aset.psu.edu/pub/ger/documents/F-Compiler-PSU.html">http://ftp.aset.psu.edu/pub/ger/documents/F-Compiler-PSU.html</a>
+<p><b>Fortran Plus:</b>&nbsp; <a href="http://www.nasoftware.co.uk/fortran-plus/evaluation_downloads.html">http://www.nasoftware.co.uk/fortran-plus/evaluation_downloads.html</a>
+<br><b>GFortran for Linux:&nbsp;<span 
+ style="text-decoration: underline;"></b><a href="http://gcc.gnu.org/fortran/index.html">http://gcc.gnu.org/fortran/index.html</a></span>
+<br><b>G95 Fortran Project:</b>&nbsp; <a href="http://g95.sourceforge.net/">http://g95.sourceforge.net/</a>&nbsp;&nbsp;
+also&nbsp; see<span style="text-decoration: underline;"> <a href="http://directory.fsf.org/g95.html">http://directory.fsf.org/g95.html</a></span>
+<br><span 
+ style="font-weight: bold;">Eclipse/Photran (visual fortran)
+using the g95 compiler:&nbsp;</span>&nbsp; <a href="http://www.photran.org/">http://www.photran.org/</a>
+<br><b>&nbsp; Intel Evaluation Fortran and C</b> Compilers:&nbsp; <a href="http://developer.intel.com/software/products/global/eval.htm">http://developer.intel.com/software/products/global/eval.htm</a>
+<br><b>Intel Fortran 95 for non-commercial use: </b><a href="http://developer.intel.com/software/products/compilers/flin/noncom.htm">http://developer.intel.com/software/products/compilers/flin/noncom.htm</a>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Intel Support: </b><a href="http://developer.intel.com/software/products/support/">http://developer.intel.com/software/products/support/</a>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Intel Fortran Internal
+Forum and Quick Login</b>:&nbsp; <a href="http://intel.com/software/drfortran">http://intel.com/software/drfortran</a>
+<br><b>NetBSD - Unix Like Portable OS with applications:&nbsp; </b><a href="http://www.netbsd.org/">http://www.netbsd.org/</a></blockquote>
+<b>Commercial Fortran Compilers for Linux:</b>
+<blockquote><b>Polyhedron:</b>&nbsp;<a href="http://www.polyhedron.com/">
+http://www.polyhedron.com/</a>&nbsp; and&nbsp; <a href="http://www.polyhedron.com/complnx.html">http://www.polyhedron.com/complnx.html</a>
+<br><b>Lahey:</b>&nbsp; <a href="http://www.lahey.com/linux.htm">http://www.lahey.com/linux.htm</a>
+<br>&nbsp;<b>Absoft Pro Fortran:&nbsp; </b><a href="http://www.absoft.com/">http://www.absoft.com/</a>
+<br><b>Information about other Absoft offerings (including 64-bit products
+and Macintosh OS X and AMD Opteron Compilers):</b>
+<br><b>&nbsp;&nbsp; </b>vFx2 Second-generation Source-level Fortran Debugger
+for 64-bit Linux:&nbsp; <a href="http://www.absoft.com/Products/Debuggers/fx2/fx2_debugger.htm">http://www.absoft.com/Products/Debuggers/fx2/fx2_debugger.htm</a>
+<br><b>&nbsp;&nbsp; </b>DDT Distributed Debugging Tool for debugging parallel/cluster
+Fortran:&nbsp; <a href="http://www.absoft.com/Products/Debuggers/ddt/ddt.html">http://www.absoft.com/Products/Debuggers/ddt/ddt.html</a>
+<br><b>&nbsp;&nbsp; </b>Fx source-level Fortran Debugger for Windows, Macintosh,
+32-bit Linux:<b>&nbsp; </b><a href="http://www.absoft.com/Products/Debuggers/fx/fx_debugger.html">http://www.absoft.com/Products/Debuggers/fx/fx_debugger.html</a>
+<br><b>&nbsp;&nbsp; </b>IBM XL Fortran Advanced Edition 8.1 High Performance
+Fortran Compiler for Macintosh OS X:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://www.absoft.com/Products/Compilers/Fortran/Macintosh/XLF/xlf.html">http://www.absoft.com/Products/Compilers/Fortran/Macintosh/XLF/xlf.html</a>
+<br>&nbsp;&nbsp; Fortran95 v9.0 High-Performance Fortran Compiler for 64-bit
+Linux (AMD Opteron):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="http://www.absoft.com/Products/Compilers/Fortran/Linux/AMD64/Linux64.html">http://www.absoft.com/Products/Compilers/Fortran/Linux/AMD64/Linux64.html</a>
+<p><b>Information about running Fortran Codes under Linux including links
+to Linux compilers:</b>
+<br><a href="http://www.fortranlib.com/compilers.htm">http://www.fortranlib.com/compilers.htm</a>
+<br><a href="http://www.nikhef.nl/%7Etemplon/fortran.html">http://www.nikhef.nl/~templon/fortran.html</a>
+<br><a href="http://www.scd.ucar.edu/zine/98/fall/text/3.compilers.html">http://www.scd.ucar.edu/zine/98/fall/text/3.compilers.html</a>
+<br><a href="http://w3.pppl.gov/info/pppl-unix/Linux_Fortran.html">http://w3.pppl.gov/info/pppl-unix/Linux_Fortran.html</a>
+<br><a href="http://www.mathtools.net/Fortran/Compilers/">http://www.mathtools.net/Fortran/Compilers/</a>
+<br><a href="http://linux.tucows.com/system/fortran.html">http://linux.tucows.com/system/fortran.html</a>
+<p><b>Intel Fortran 95 and C++ Compilers</b>:&nbsp; <a href="http://developer.intel.com/software/products/global/eval.htm">http://developer.intel.com/software/products/global/eval.htm</a>
+<br><b>&nbsp;&nbsp;&nbsp; Academic Pricing:&nbsp; </b><a href="http://www.intel.com/software/products/global/academic.htm">http://www.intel.com/software/products/global/academic.htm</a>
+<br><b>Intel Fortran Internal Forum and Quick Login</b>:&nbsp; <a href="http://intel.com/software/drfortran">http://intel.com/software/drfortran</a>
+<br><b>Intel Support: </b><a href="http://developer.intel.com/software/products/support/">http://developer.intel.com/software/products/support/</a>
+<br><b>Intel Fortran Support for Fortran Language Standards:</b>&nbsp;&nbsp;<a href="http://www.intel.com/support/performancetools/fortran/sb/cs-007846.htm">
+http://www.intel.com/support/performancetools/fortran/sb/cs-007846.htm</a>
+<br><b>NAG Fortran 95:&nbsp;</b> <a href="http://www.nag.com/nagware/NP.asp">http://www.nag.com/nagware/NP.asp</a>
+<br><b>Pathscale Fortran 90/95 for Unix&nbsp; (64-bit):&nbsp;&nbsp; </b><a href="http://www.pathscale.com/products1.html">http://www.pathscale.com/products1.html</a>
+<br><b>Portland Group PGHPF Fortran 90/77&nbsp; Compiler:&nbsp; </b><a href="http://www.pgroup.com/products/workpghpf.htm">http://www.pgroup.com/products/workpghpf.htm</a>
+<br><b>Veridian Vast Fortran 90:&nbsp; </b><a href="http://www.crescentbaysoftware.com/compilertech.html">http://www.crescentbaysoftware.com/</a></blockquote>
+
+<p><br><a NAME="Windows"></a><b><font size=+1>Windows Fortran Compilers</font></b>
+<p><b>Fortran Resources by Chivers and Sleightholme:&nbsp; </b><a href="http://www.fortranplus.co.uk/">http://www.fortranplus.co.uk/</a>
+<br>For various <b>compilers, libraries, tools</b>, please see:&nbsp;&nbsp;<a href="http://www.fortran.com/metcalf.htm">
+http://www.fortran.com/metcalf.htm</a>
+<p><b>Intel Compiles (manuals):&nbsp; </b><a href="http://www.intel.com/cd/software/products/asmo-na/eng/compilers/fwin/279827.htm">http://www.intel.com/cd/software/products/asmo-na/eng/compilers/fwin/279827.htm</a>
+<br><a href="http://www.intel.com/cd/software/products/asmo-na/eng/compilers/index.htm">http://www.intel.com/cd/software/products/asmo-na/eng/compilers/index.htm</a>
+<p><b>Free Fortran Compilers for Windows (and DOS)</b>
+<blockquote><b>HicEst&nbsp; - A Fortran based interpreter and incremental
+compiler</b>:&nbsp; <a href="http://www.HicEst.com">http://www.HicEst.com</a>
+<br><b>Salford Fortran 95 Personal Edition:&nbsp;<span 
+ style="text-decoration: underline;"></b><a href="http://www.silverfrost.com/32/ftn95/ftn95_personal_edition.asp">http://www.silverfrost.com/32/ftn95/ftn95_personal_edition.asp</a></span>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+and:&nbsp; </b><a href="http://www.polyhedron.co.uk/salford/products/other/ftn95_personal.html" eudora="autourl">http://www.polyhedron.co.uk/salford/products/other/ftn95_personal.html</a>
+<br><b>Salford Fortran 77 Personal Edition:<span 
+ style="text-decoration: underline;"></b><a href="http://www.polyhedron.co.uk/salford/products/ftn77_personal/index.html">http://www.polyhedron.co.uk/salford/products/ftn77_personal/index.html</a></span>
+<br><b>G95 Fortran Project:</b>&nbsp; <a href="http://g95.sourceforge.net/">http://g95.sourceforge.net/</a>&nbsp;&nbsp;
+also&nbsp; see&nbsp;<span style="text-decoration: underline;"> <a href="http://directory.fsf.org/g95.html">http://directory.fsf.org/g95.html</a></span>
+<br><span 
+ style="font-weight: bold;">Eclipse/Photran (visual fortran)
+using the g95 compiler:</span>&nbsp; <a href="http://www.photran.org/">http://www.photran.org/</a>
+<br><b>GFortran for Windows:&nbsp;<span 
+ style="text-decoration: underline;"></b><a href="http://gcc.gnu.org/fortran/index.html">http://gcc.gnu.org/fortran/index.html</a></span>
+<br>&nbsp; <b>Imagine 1's F Compiler:&nbsp;</b> <a href="http://www.fortran.com/imagine1/compilers.html">http://www.fortran.com/imagine1/compilers.html</a>&nbsp;
+and&nbsp; <a href="ftp://ftp.swcp.com/pub/walt/F">ftp://ftp.swcp.com/pub/walt/F</a>
+<br>(F is a subset of&nbsp; Fortran 95; besides the sample programs distributed
+with F, there are some packages developed to compile with this compiler;
+e.g. <a href="http://jblevins.org/mirror/amiller/">http://jblevins.org/mirror/amiller/&nbsp;</a>&nbsp;
+). The install&nbsp; also includes a C++, G++, and GCC compilers; see:
+<a href="http://ftp.aset.psu.edu/pub/ger/documents/F-Compiler-PSU.html">http://ftp.aset.psu.edu/pub/ger/documents/F-Compiler-PSU.html</a>
+<br><b>Intel 30 Day Evaluation Fortran for Windows:&nbsp; </b><a href="http://developer.intel.com/software/products/global/eval.htm">http://developer.intel.com/software/products/global/eval.htm</a>
+<br><b>Open Watcom Fortran 77 and C/C++:&nbsp; </b><a href="http://www.openwatcom.org">http://www.openwatcom.org</a>&nbsp;
+(click Downloads)
+<br><b>Watfor77 for DOS (Also works at the Windows Command Prompt (MS-DOS
+Prompt):&nbsp; </b><a href="http://digilander.iol.it/saracos/Download/utlilty.htm">http://digilander.iol.it/saracos/Download/utlilty.htm</a></blockquote>
+<b>Commercial Fortran Compilers for Windows</b>
+<blockquote><b>Absoft Pro Fortran:&nbsp;</b> <a href="http://www.absoft.com/">http://www.absoft.com/</a>
+<br><b>HicEst&nbsp; - A Fortran based interpreter and incremental compiler</b>:
+<a href="http://www.hicest.com/">http://www.HicEst.com</a>
+<br><b>Intel Fortran 95:</b>&nbsp; <a href="http://www.intel.com/software/products/compilers/">http://www.intel.com/software/products/compilers/</a>
+<br>&nbsp;&nbsp; Intel Math Kernel Library:&nbsp; <a href="http://developer.intel.com/software/products/mkl/mkl52/index.htm">http://developer.intel.com/software/products/mkl/mkl52/index.htm</a>
+<br><b>&nbsp;&nbsp;&nbsp; Intel Fortran Internal Forum and Quick Login</b>:
+<a href="http://intel.com/software/drfortran">http://intel.com/software/drfortran</a>
+<br><b>&nbsp;&nbsp; Intel Support: </b><a href="http://developer.intel.com/software/products/support/">http://developer.intel.com/software/products/support/</a>
+<br><b>&nbsp;&nbsp; Note: </b>Intel Visual Fortran for Windows will not
+install if you do not have Visual C++.NET installed, or a Microsoft product
+that includes it (such as
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Visual Studio.NET).
+<br><b>Academic Pricing:&nbsp; </b><a href="http://www.intel.com/software/products/global/academic.htm">http://www.intel.com/software/products/global/academic.htm</a>
+<br><b>Lahey/Fujitsu Fortran 95:</b>&nbsp; <a href="http://www.lahey.com/">http://www.lahey.com/</a>
+<br><b>Compaq Fortran 95:</b>&nbsp; <a href="http://h21007.www2.hp.com/dspp/tech/tech_TechSoftwareDetailPage_IDX/1,1703,7088,00.html">http://h21007.www2.hp.com/dspp/tech/tech_TechSoftwareDetailPage_IDX/1,1703,7088,00.html</a>
+<br><b>Upgrading from CVF to IVF:&nbsp; </b><a href="http://www.intel.com/software/products/compilers/upgrade_to_ivf.htm">http://www.intel.com/software/products/compilers/upgrade_to_ivf.htm</a>
+<br><b>Portland Group PGHPF Fortran 90/77&nbsp; Compiler:&nbsp; </b><a href="http://www.pgroup.com/products/workpghpf.htm">http://www.pgroup.com/products/workpghpf.htm</a>
+<br><b>Salford Fortran 95:</b>&nbsp;&nbsp; <a href="http://www.salfordsoftware.co.uk/">http://www.salfordsoftware.co.uk/</a>&nbsp;&nbsp;
+or see:&nbsp;&nbsp; <a href="http://www.silverfrost.com/11/ftn95/overview.asp" eudora="autourl">http://www.silverfrost.com/11/ftn95/overview.asp</a></blockquote>
+
+<p><br><a NAME="DevelopmentTools"></a><b><font size=+1>Useful Development
+Tools</font></b>
+<p><b>KEDIT - POWERFUL COMMERCIAL ASCII EDITOR FOR WINDOWS:
+</b><a href="http://www.kedit.com/">http://www.kedit.com/</a>
+<br>NOS source code for XEDIT is available free from:&nbsp; <a href="http://www.winternet.com/%7Egginc/">http://www.winternet.com/~gginc/</a>
+<br>Recommended combination of tools for program development is <b>Kedit
+for Windows</b> and <b>CSDIFF, </b>file compare program available at:
+<a href="http://www.ComponentSoftware.com/csdiff/">http://www.ComponentSoftware.com/csdiff/</a>.
+<b>XEmacs,
+</b>which
+has a Fortran mode, is available at:&nbsp; <a href="http://www.xemacs.org/">http://www.xemacs.org/</a><b>
+. VIM </b>platform independent ASCII editor that "recognizes" various language
+syntax: <a href="http://vim.sourceforge.net/download.php">http://vim.sourceforge.net/download.php</a>.
+<br><b>Data Integrity</b> short paper: <a href="http://ftp.aset.psu.edu/pub/ger/documents/DataIntegrity.htm">http://ftp.aset.psu.edu/pub/ger/documents/DataIntegrity.htm</a>
+<p><a NAME="ACKNOWLEDGMENTS"></a><b>ACKNOWLEDGMENTS</b>
+<p>I acknowledge so many people who have sent me so many references here.
+In particular, the regular, seasoned people who post at <a href="news:comp.lang.fortran">comp.lang.fortran</a>,
+the <a href="http://www.fortran.com/metcalf.htm">Fortran Information File
+by Michael Metcalf</a>, Arnaud Desitter, (formerly) Oxford University School
+of Geography and the Environment, the <a href="http://gears.aset.psu.edu/">Research
+Computing and Cyberinfrastructure</a> group at Penn State, many people
+who shared their questions and problems with me, Arjen Markus<b>, </b>Vivek
+Rao and Peter M.Weiss.
+</body>
+</html>

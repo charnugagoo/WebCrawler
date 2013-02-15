@@ -1,0 +1,184 @@
+<!-- -*-html-*- -->
+<!-- Prettyprinted by html-pretty flex version 1.00 [04-Dec-1997] -->
+<!-- on Mon Dec 11 08:50:25 2000 -->
+<!-- for Nelson H. F. Beebe (beebe@suncore.math.utah.edu) -->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+    <HEAD>
+        <TITLE>
+            ndiff --- compare putatively similar files, ignoring small
+            numeric differences
+        </TITLE>
+        <LINK REV="made" HREF="mailto:beebe@math.utah.edu">
+    </HEAD>
+    <BODY>
+        <!-- -*-html-*- -->
+<DIV ALIGN="right">                
+    <!-- SiteSearch Google -->
+    <FORM METHOD="GET" ACTION="http://www.google.com/search">
+        <INPUT TYPE="text" NAME="q" SIZE=21 MAXLENGTH=255 VALUE="">
+        <INPUT TYPE="submit" NAME="btnG" VALUE="Search">
+        <IMG SRC="http://www.math.utah.edu/images/new2.gif" ALIGN="middle" ALT="new2">
+        <IMG SRC="http://www.math.utah.edu/images/new2.gif" ALIGN="middle" ALT="new2">
+        <FONT SIZE=-2>
+            <INPUT TYPE="hidden" NAME="dummy" VALUE="">
+            <BR>
+            <INPUT TYPE="radio" NAME="sitesearch" VALUE="">
+            WWW
+            <INPUT TYPE="radio" NAME="hq" VALUE="inurl:www.math.utah.edu/~beebe" CHECKED>
+            http://www.math.utah.edu/~beebe<BR>
+        </FONT>
+    </FORM>
+    <!-- SiteSearch Google -->
+</DIV>
+
+        <H1>
+            ndiff --- compare putatively similar files, ignoring small
+            numeric differences
+        </H1>
+        <P>
+            Last update: <B>
+            <FONT COLOR="#ff0000">
+                Tue Apr 23 08:39:02 2002
+            </FONT>
+            </B>
+            <BR>
+            Last update: <B>
+            <FONT COLOR="#ff0000">
+                Fri Nov 12 15:50:09 2004
+            </FONT></B>
+        </P>
+        <P>
+            Suppose that you have just run the same numerical program in
+            two different environments, perhaps different compilers on
+            the same system, or on different CPU architectures or
+            operating systems.  You run <STRONG>diff</STRONG> on the two
+            program output text files, but there are thousands of
+            differences reported.  Is the program behaving acceptably,
+            or are there real errors that you must deal with, perhaps
+            due to architectural assumptions in your code, or to
+            numerical instabilities in your algorithms, or errors in
+            compiler-generated code, or errors or inaccuracies in
+            run-time libraries?
+        </P>
+        <P>
+            <STRONG>ndiff</STRONG> is a very useful tool for solving
+            problems like that.  Simply put, it assumes that you have
+            two text files containing numerical values, and the two
+            files are expected to be identical, or at least numerically
+            similar. <STRONG>ndiff</STRONG> allows you to specify
+            absolute and/or relative error tolerances for differences
+            between numerical values in the two files, and then
+            reports only the lines with values exceeding those
+            tolerances.  It also tells you by how much they differ.
+        </P>
+        <P>
+            To make this clearer, here is a simple example.  First, we
+            choose a coarse error relative tolerance, to reduce <STRONG>
+            ndiff</STRONG> 's output to show the worst-case error
+            detected:
+        </P>
+<PRE>
+% ndiff --relative-error 1.0e-3 test019.txt.1 test019.txt.2
+### Maximum relative error in matching lines = 8.64e-51 at line 129 field 4
+</PRE>
+        <P>
+            We now know that the files match very closely.  To see line
+            differences, we run <STRONG>ndiff</STRONG> again with a
+            tolerance somewhat below the worst-case error reported:
+        </P>
+<PRE>
+% ndiff --relative-error 6.0e-51 test019.txt.1 test019.txt.2
+101c101
+< 1     39.0    0           1.52783004033758092947808545583545158085218122489240e+40
+--- field 4     relative error 6.54e-51
+> 1     39.0    0           1.52783004033758092947808545583545158085218122489241e+40
+129c129
+< 1     53.0    0          -1.15716272274907744883182951512406131215103585713240e+62
+--- field 4     relative error 8.64e-51
+> 1     53.0    0          -1.15716272274907744883182951512406131215103585713241e+62
+164c164
+< 1     70.5    0          -1.34783696863714343135850192081091166833218144876440e+90
+--- field 4     relative error 7.41e-51
+> 1     70.5    0          -1.34783696863714343135850192081091166833218144876441e+90
+### Maximum relative error in matching lines = 5.72e-51 at line 57 field 4
+</PRE>
+        <P>
+            <STRONG>ndiff</STRONG> has found three cases of numerical
+            relative errors above the requested tolerance, and we can
+            see that the fields differ in the last decimal place.  It
+            also reports that, of the differences <EM>not</EM> shown,
+            the worst-case error is now 5.72e-51.
+        </P>
+        <P>
+            <STRONG>ndiff</STRONG> has many more features:  they are
+            described in its
+            <A HREF="ndiff.html">
+                manual pages.
+            </A>
+        </P>
+        <P>
+            The source distributions are available in several archive formats:
+        </P>
+        <UL>
+            <LI>
+                <A HREF="ftp://ftp.math.utah.edu/pub/misc/ndiff-2.00.jar">
+                    ftp://ftp.math.utah.edu/pub/misc/ndiff-2.00.jar
+                </A>
+            </LI>
+            <LI>
+                <A HREF="ftp://ftp.math.utah.edu/pub/misc/ndiff-2.00.tar.gz">
+                    ftp://ftp.math.utah.edu/pub/misc/ndiff-2.00.tar.gz
+                </A>
+            </LI>
+            <LI>
+                <A HREF="ftp://ftp.math.utah.edu/pub/misc/ndiff-2.00.zip">
+                    ftp://ftp.math.utah.edu/pub/misc/ndiff-2.00.zip
+                </A>
+            </LI>
+            <LI>
+                <A HREF="ftp://ftp.math.utah.edu/pub/misc/ndiff-2.00.zoo">
+                    ftp://ftp.math.utah.edu/pub/misc/ndiff-2.00.zoo
+                </A>
+            </LI>
+            <LI>
+                <A HREF="http://www.math.utah.edu/pub/misc/index.html#ndiff-2.00">
+                    http://www.math.utah.edu/pub/misc/index.html#ndiff-2.00
+                </A>
+            </LI>
+        </UL>
+        <P>
+            For historical purposes, earlier versions remain available
+            as well:
+        </P>
+        <UL>
+            <LI>
+                <A HREF="ftp://ftp.math.utah.edu/pub/misc/ndiff-1.00.jar">
+                    ftp://ftp.math.utah.edu/pub/misc/ndiff-1.00.jar
+                </A>
+            </LI>
+            <LI>
+                <A HREF="ftp://ftp.math.utah.edu/pub/misc/ndiff-1.00.tar.gz">
+                    ftp://ftp.math.utah.edu/pub/misc/ndiff-1.00.tar.gz
+                </A>
+            </LI>
+            <LI>
+                <A HREF="ftp://ftp.math.utah.edu/pub/misc/ndiff-1.00.zip">
+                    ftp://ftp.math.utah.edu/pub/misc/ndiff-1.00.zip
+                </A>
+            </LI>
+            <LI>
+                <A HREF="ftp://ftp.math.utah.edu/pub/misc/ndiff-1.00.zoo">
+                    ftp://ftp.math.utah.edu/pub/misc/ndiff-1.00.zoo
+                </A>
+            </LI>
+            <LI>
+                <A HREF="http://www.math.utah.edu/pub/misc/index.html#ndiff-1.00">
+                    http://www.math.utah.edu/pub/misc/index.html#ndiff-1.00
+                </A>
+            </LI>
+        </UL>
+    </BODY>
+</HTML>

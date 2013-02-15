@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=1024,maximum-scale=1.0">
+<link rel="dns-prefetch" href="//player.vimeo.com">
+<link rel="dns-prefetch" href="http://av.vimeo.com">
+    <link rel="dns-prefetch" href="//a.vimeocdn.com">
+    <link rel="dns-prefetch" href="//b.vimeocdn.com">
+<meta property="fb:app_id" content="19884028963">
+
+
+    <meta name="description" content="Vimeo is the home for high-quality videos and the people who love them.">
+
+
+
+    <link rel="canonical" href="/">
+
+<link rel="apple-touch-icon-precomposed" media="(resolution: 326dpi)" href="http://a.vimeocdn.com/images_v6/apple-touch-icon-114.png">
+<link rel="apple-touch-icon-precomposed" media="(resolution: 163dpi)" href="http://a.vimeocdn.com/images_v6/apple-touch-icon-57.png">
+<link rel="apple-touch-icon-precomposed" media="(resolution: 132dpi)" href="http://a.vimeocdn.com/images_v6/apple-touch-icon-72.png">
+<link rel="search" type="application/opensearchdescription+xml" href="/search/opensearch.xml" title="Vimeo search">        <title>Vimeo, Your Videos Belong Here</title>
+                            <link rel="stylesheet" href="http://a.vimeocdn.com/styles/css_opt/global_combined.min.css?068003a1">
+    <link rel="stylesheet" href="http://a.vimeocdn.com/styles/css_opt/logged_out_home_combined.min.css?387868ec">
+    <link rel="stylesheet" href="http://a.vimeocdn.com/p/1.4.28/css/player.core.opt.css">
+<noscript>
+    <link rel="stylesheet" href="http://a.vimeocdn.com/styles/css_opt/nojs.min.css?bccf3a0">
+</noscript>
+<script>
+    var js_css = document.createElement('link');
+    js_css.rel = 'stylesheet'
+    js_css.href = 'http://a.vimeocdn.com/styles/css_opt/js_enabled.min.css?bccf3a0';
+    document.getElementsByTagName('head')[0].appendChild(js_css);
+</script>
+        	<style>
+					#ribbon { background:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPgogICAgICAgIDxwYXR0ZXJuIGlkPSJyYWluYm93IiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjEwMCUiPgogICAgICAgICAgICAgICAgICAgIDxyZWN0IHg9IjAiIHdpZHRoPSIxNSIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0iZmlsbDojMTcyMzI3Ii8+CiAgICAgICAgICAgICAgICAgICAgPHJlY3QgeD0iMTUiIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0iZmlsbDojMTkzNzJjIi8+CiAgICAgICAgICAgICAgICAgICAgPHJlY3QgeD0iMjgiIHdpZHRoPSIyNCIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0iZmlsbDojMzI3MzQ0Ii8+CiAgICAgICAgICAgICAgICAgICAgPHJlY3QgeD0iNTIiIHdpZHRoPSIyMyIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0iZmlsbDojNDM3ZTRjIi8+CiAgICAgICAgICAgICAgICAgICAgPHJlY3QgeD0iNzUiIHdpZHRoPSI3MyIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0iZmlsbDojODY5OTU2Ii8+CiAgICAgICAgICAgICAgICAgICAgPHJlY3QgeD0iMTQ4IiB3aWR0aD0iMzEiIGhlaWdodD0iMTAwJSIgc3R5bGU9ImZpbGw6I2IwOGY0MiIvPgogICAgICAgICAgICAgICAgICAgIDxyZWN0IHg9IjE3OSIgd2lkdGg9IjMyIiBoZWlnaHQ9IjEwMCUiIHN0eWxlPSJmaWxsOiNiNDY4MzkiLz4KICAgICAgICAgICAgICAgICAgICA8cmVjdCB4PSIyMTEiIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0iZmlsbDojYTQzOTQxIi8+CiAgICAgICAgICAgICAgICAgICAgPHJlY3QgeD0iMjI0IiB3aWR0aD0iNDgiIGhlaWdodD0iMTAwJSIgc3R5bGU9ImZpbGw6IzljMmM1MiIvPgogICAgICAgICAgICAgICAgICAgIDxyZWN0IHg9IjI3MiIgd2lkdGg9IjYiIGhlaWdodD0iMTAwJSIgc3R5bGU9ImZpbGw6I2JiNDI2YiIvPgogICAgICAgICAgICAgICAgICAgIDxyZWN0IHg9IjI3OCIgd2lkdGg9IjE4IiBoZWlnaHQ9IjEwMCUiIHN0eWxlPSJmaWxsOiM4YTJmNWMiLz4KICAgICAgICAgICAgICAgICAgICA8cmVjdCB4PSIyOTYiIHdpZHRoPSI1IiBoZWlnaHQ9IjEwMCUiIHN0eWxlPSJmaWxsOiM2ZDQxNmQiLz4KICAgICAgICAgICAgICAgICAgICA8cmVjdCB4PSIzMDEiIHdpZHRoPSI1IiBoZWlnaHQ9IjEwMCUiIHN0eWxlPSJmaWxsOiM0MTMyNjQiLz4KICAgICAgICAgICAgICAgICAgICA8cmVjdCB4PSIzMDYiIHdpZHRoPSI1IiBoZWlnaHQ9IjEwMCUiIHN0eWxlPSJmaWxsOiMyOTQxNmUiLz4KICAgICAgICAgICAgICAgICAgICA8cmVjdCB4PSIzMTEiIHdpZHRoPSI0NiIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0iZmlsbDojNTY5MGE1Ii8+CiAgICAgICAgICAgICAgICAgICAgPHJlY3QgeD0iMzU3IiB3aWR0aD0iOCIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0iZmlsbDojMmU4NDlkIi8+CiAgICAgICAgICAgICAgICAgICAgPHJlY3QgeD0iMzY1IiB3aWR0aD0iNTgiIGhlaWdodD0iMTAwJSIgc3R5bGU9ImZpbGw6IzI3NjY4NiIvPgogICAgICAgICAgICAgICAgICAgIDxyZWN0IHg9IjQyMyIgd2lkdGg9IjUiIGhlaWdodD0iMTAwJSIgc3R5bGU9ImZpbGw6IzIzNDM2ZSIvPgogICAgICAgICAgICAgICAgICAgIDxyZWN0IHg9IjQyOCIgd2lkdGg9IjcyIiBoZWlnaHQ9IjEwMCUiIHN0eWxlPSJmaWxsOiMxNDJhMDYiLz4KICAgICAgICAgICAgICAgIDwvcGF0dGVybj4KICAgIDwvZGVmcz4KICAgIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcmFpbmJvdykiIC8+Cjwvc3ZnPgo=); }
+			</style>
+	<style>#logo_holder { background:url(http://a.vimeocdn.com/logo.svg?color=fff) no-repeat; background-size:160px 45px; width:160px; height:45px; }</style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div id="main">
+                <div id="brozar_toggle_wrapper" class="en"></div>
+<header id="site_header" class="nocontent">
+    <div class="container clearfix">
+        <a id="logo" href="/" title="Go home">
+            <div id="logo_holder"></div>
+        </a>
+        <nav class="en">
+            <ul id="menu" class="clearfix">
+                                    <li class="join">
+                        <a href="/join" class="join" data-ga-event-click="menu|join|top">Join</a>
+                    </li>
+                    <li>
+                        <a href="/log_in" class="login" data-ga-event-click="menu|login|top">Log In</a>
+                    </li>
+                    <li class="create subnav">
+                        <a href="javascript: void(0)" data-ga-event-click="menu|create|top">Create</a>
+                        <ul>
+                            <li>
+                                <a href="/musicstore/enhancer" data-ga-event-click="menu|enhancer|create">
+                                    <strong>Enhancer</strong>
+                                    Easily add a soundtrack to your video.                                </a>
+                            </li>
+                            <li>
+                                <a href="/videoschool" data-ga-event-click="menu|videoschool|create">
+                                    <strong>Video School</strong> Learn how to make better videos.                                </a>
+                            </li>
+                            <li class="music">
+                                <a href="/musicstore" data-ga-event-click="menu|musicstore|create">
+                                    <strong>Music Store</strong> Get free and affordable licensed tracks.                                </a>
+                            </li>
+                            <li>
+                                <a href="/creativecommons" data-ga-event-click="menu|createivecommons|create">
+                                    <strong>Creative Commons</strong> Find licensed videos on Vimeo.                                </a>
+                            </li>
+                            <li class="last creators">
+                                <a href="/creatorservices" data-ga-event-click="menu|creatorservices|create">
+                                    <strong>Creator Services</strong>
+                                    Make money by making video.                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="watch subnav">
+                        <a href="javascript: void(0)" data-ga-event-click="menu|watch|top">Watch</a>
+                        <ul>
+                            <li>
+                                <a href="/staffpicks" data-ga-event-click="menu|staffpicks|watch">
+                                    <strong>Staff Picks</strong> Hand-picked videos we like.                                </a>
+                            </li>
+                            <li>
+                                <a href="/movies" data-ga-event-click="menu|movies|watch">
+                                    <strong>Movies</strong>
+                                    Watch full-length movies right here.                                </a>
+                            </li>
+                            <li class="categories">
+                                <a href="/categories" data-ga-event-click="menu|categories|watch">
+                                    <strong>Categories</strong> A simple way to browse our catalog of videos.                                </a>
+                            </li>
+                            <li>
+                                <a href="/channels" data-ga-event-click="menu|channels|watch">
+                                    <strong>Channels</strong> Video showcases curated by members.                                </a>
+                            </li>
+                            <li>
+                                <a href="/groups" data-ga-event-click="menu|groups|watch">
+                                    <strong>Groups</strong> Join other members to watch and discuss.                                </a>
+                            </li>
+                            <li>
+                                <a href="/couchmode" data-ga-event-click="menu|couchmode|watch">
+                                    <strong>Couch Mode</strong>
+                                    Lean back and enjoy the Vimeo.                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                                            <li class="upload">
+                            <a href="/upload" data-ga-event-click="button|navbar_upload|upload_v6">Upload</a>
+                        </li>
+                                                </ul>
+        </nav>
+
+        <form action="/search" method="get" id="search_form" class="clearfix">
+            <div id="search_holder">
+                <input type="text" id="search_field" name="q" value="" placeholder="Search" data-validators="required" data-speech-enabled data-search-engine="oracle">
+                <input type="text" id="search_suggest" value="" placeholder="" disabled>
+                <input type="submit" value="s" data-submit-text="s" class="btn_search iconify" title="Search">
+            </div>
+        </form>
+    </div>
+</header>
+<div class="clear"></div>
+
+
+
+                <div id="content">
+                    
+<section id="opener">
+    <div class="width_wrap">
+        <h1><span class="bg  en">Your videos belong here.</span></h1>
+
+        <form action="/" class="sign_up clearfix" method="post" id="home_join_form" novalidate>
+            <input type="hidden" name="service" value="vimeo">
+
+            <span>
+                <input type="text" name="name" id="name" autocomplete="off" placeholder="First and Last Name" title="Please enter your name" value="" maxlength="32" data-validators="required minLength:3 maxLength:32" tabindex="1">
+
+                            </span>
+            <span>
+                <input type="email" name="email" id="email" autocomplete="off" placeholder="Email Address" title="Please enter a valid email address" value="" maxlength="128" data-validators="required maxLength:128 validate-email" tabindex="2">
+
+                            </span>
+            <span>
+                <input type="password" name="password" id="password" autocomplete="off" placeholder="Password" title="Please enter your password" value="" data-validators="required" tabindex="3">
+
+                            </span>
+            <span>
+                <input type="submit" id="join_btn" class="btn_snazzy light_green iconify_next_a" data-ga-event-click="button|join|hp_join" tabindex="5" value="Join">
+            </span>
+            <div>
+                <label><input type="checkbox" name="tos" id="tos" value="1" data-validators="validate-required-check" title="You must agree to the Terms of Service" tabindex="4"> I accept the <a href="/terms" data-lightbox data-lightbox-options="width=860px">Vimeo Terms of Service</a></label>
+                            </div>
+        </form>
+
+        <form action="/join" method="post" id="facebook_join">
+            <input type="hidden" name="service" value="facebook">
+            <a href="javascript:void(0);"><img src="http://a.vimeocdn.com/images_v6/icon_favicon_facebook.png" alt="" class="favicon">Log in with Facebook</a>
+        </form>
+
+        <span class="tree"></span>
+        <a href="http://ianlaser.com" rel="nofollow" target="_blank" class="illustrator">Illustration by Ian</a>
+        <canvas id="top_particles"></canvas>
+    </div>
+</section>
+
+<section id="videos">
+    <div class="width_wrap">
+        <h1 class="video_header en">Watch the videos we love.</h1>
+        <a href="/staffpicks" class="more_videos">See more<br /> Staff Picks &raquo;</a>
+
+        <div id="featured_player">
+            
+<div class="vimeo_holder" style="width:960px;height:540px; background-image:url('http://b.vimeocdn.com/ts/415/090/415090535_960.jpg'); " >
+    <!--[if lt IE 9]><style scoped="scoped">.a.b .ac {display: block;}.a.b .bq {background: #000;filter: alpha(opacity='70');}</style><![endif]--><style scoped="scoped">.f {overflow: hidden;padding: 0;margin: 0;width: 100%;height: 100%;background: transparent;}.f > div {width: 100%;height: 100%;}.f .u .at,.f .u .c {visibility: hidden !important;}.f .u .l,.f .u .j,.f .u .c {opacity: 0;filter:alpha(opacity=0);}.f .ac {position: absolute;left: 0;top: 0;z-index: 1;width: 100%;height: 100%;background-position: 50% 50%;background-repeat: no-repeat;background-color: #000;-webkit-background-size: 100% auto;-moz-background-size: 100% auto;background-size: 100% auto;}.ca.u .ac + div {position: absolute;z-index: 2;opacity: 1 !important;}.f .x,.f .w {background: #000;}.f .x .ac {-webkit-background-size: auto 100% !important;-moz-background-size: auto 100% !important;background-size: auto 100% !important;}.f .w .ac {-webkit-background-size: 100% auto !important;-moz-background-size: 100% auto !important;background-size: 100% auto !important;}.f object {z-index: 2;position: absolute;}body.ab {overflow: hidden;}body.ab .f .c, .a.s .c {max-width: 50%;margin-left: -25%;left: 50%;}.bs {display: none !important;}.ao {opacity: 0 !important;filter: alpha(opacity='0');}.bo {visibility: hidden !important;}</style><div id="player_59545564_490730889" class="f player"><style scoped="scoped">.a aside button.aa.ch:after {content: 'Remove';}.a aside button.aa:after {content: 'Later';}.a aside button.bn.ch:after {content: ' on';}.a aside button.bn:after {content: ' off';}.a button:focus {background-color: #4bf;}</style><div class="u"><div class="bi"><div class="ac bs" style="background-image: url(http://b.vimeocdn.com/ts/415/090/415090535_960.jpg);" data-thumb="http://b.vimeocdn.com/ts/415/090/415090535_960.jpg"></div></div><div class="at"><header class="l"><div class="y"><a href="http://vimeo.com/ant1mat3rie"><img width="60" height="60" src="http://b.vimeocdn.com/ps/463/968/4639687_75.jpg" alt=""></a></div><hgroup><h1><a href="http://vimeo.com/59545564" class="cj">I Love You</a></h1><h4>from&nbsp;<a href="http://vimeo.com/ant1mat3rie" class="cj">Matthijs_Vlot&nbsp;<span class="ax dp">Plus</span></a></h4></hgroup></header><aside class="j"><button class="cx av"><canvas width="30" height="20"></canvas>Like</button><button class="aa av"><canvas width="30" height="20"></canvas></button><button class="bd av"><canvas width="30" height="20"></canvas>Share</button><button class="bn av">Scaling is</button></aside></div><div class="c"><button class="as av"><canvas width="20" height="20"></canvas></button><div class="h av"><div class="i"><canvas class="bu" height="8"></canvas><div class="bt" data-min="0" data-max="1"></div><div class="br" data-min="0" data-max="1"></div><div class="m"><div class="o"><span>00:00</span><div class="ay"></div><div class="dn"></div></div></div><div class="ag"><div class="o"><span>68</span><div class="ay cq"></div><div class="ay"></div></div></div></div><div class="bh"><canvas width="34" height="15"></canvas></div><div class="ar off"><button>HD</button></div><div class="s"><canvas width="12" height="12"></canvas></div></div></div><div class="e bs"></div><div class="bq bs"></div></div></div></div>
+
+        </div>
+
+    </div>
+    <div class="width_wrap">
+        <div id="videos_gallery">
+        <a href="javascript:void(0);" class="arrow left disabled">
+    <button id="featured_videos_prev" class="iconify_prev_b"></button>
+</a>
+
+<a href="/page:2" class="arrow right">
+    <button id="featured_videos_next" class="iconify_next_b"></button>
+</a>
+
+<ol id="featured_videos">
+                <li>
+            <a href="/59398311" data-id="59398311">
+                <span class="iconify_play_b hide"></span>
+                <img src="http://b.vimeocdn.com/ts/412/776/412776230_150.jpg" alt="" class="thumbnail thumbnail_med_wide">
+                <div class="data">
+                    <p class="title">Woodland Wiggle</p>
+                    <p class="meta">from Nexus</p>
+                </div>
+             </a>
+        </li>
+                    <li>
+            <a href="/3001014" data-id="3001014">
+                <span class="iconify_play_b hide"></span>
+                <img src="http://b.vimeocdn.com/ts/413/271/413271303_150.jpg" alt="" class="thumbnail thumbnail_med_wide">
+                <div class="data">
+                    <p class="title">The Queen</p>
+                    <p class="meta">from Christina Choe</p>
+                </div>
+             </a>
+        </li>
+                    <li>
+            <a href="/12423997" data-id="12423997">
+                <span class="iconify_play_b hide"></span>
+                <img src="http://b.vimeocdn.com/ts/407/572/407572583_150.jpg" alt="" class="thumbnail thumbnail_med_wide">
+                <div class="data">
+                    <p class="title">Cooked</p>
+                    <p class="meta">from Jens &amp; Anna</p>
+                </div>
+             </a>
+        </li>
+                    <li>
+            <a href="/59624820" data-id="59624820">
+                <span class="iconify_play_b hide"></span>
+                <img src="http://b.vimeocdn.com/ts/414/463/414463487_150.jpg" alt="" class="thumbnail thumbnail_med_wide">
+                <div class="data">
+                    <p class="title">Love is in the Air</p>
+                    <p class="meta">from Wriggles &amp; Robins</p>
+                </div>
+             </a>
+        </li>
+                    <li class="selected">
+            <a href="/59545564" data-id="59545564">
+                <span class="iconify_play_b hide"></span>
+                <img src="http://b.vimeocdn.com/ts/415/090/415090535_150.jpg" alt="" class="thumbnail thumbnail_med_wide">
+                <div class="data">
+                    <p class="title">I Love You</p>
+                    <p class="meta">from Matthijs_Vlot</p>
+                </div>
+             </a>
+        </li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<section id="features" class="en">
+    <div class="width_wrap">
+        <div class="feature_top">
+            <h1 class="en">What can you do here?</h1>
+            <span class="character crane_red"></span>
+
+            <ul class="grid clearfix">
+                <li class="first">
+                    <a href="/help/basics">
+                        <img src="http://a.vimeocdn.com/images_v6/ins_home_feature_upload.jpg" alt="Upload videos with ease">
+                        <h2>Upload videos with ease</h2>
+                        <p>Putting your videos on Vimeo is ridiculously simple, even if you hate technology.</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/help/basics">
+                        <img src="http://a.vimeocdn.com/images_v6/ins_home_feature_share.jpg" alt="Share how you want">
+                        <h2>Share how you want</h2>
+                        <p>Let the world watch your videos, or share them privately. It’s totally your call.</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/staffpicks">
+                        <img src="http://a.vimeocdn.com/images_v6/ins_home_feature_discover.jpg" alt="Discover amazing videos">
+                        <h2>Discover amazing videos</h2>
+                        <p>Your senses will be dazzled, your heartstrings plucked at, and your life changed forever.</p>
+                    </a>
+                </li>
+                <li class="first">
+                    <a href="/everywhere">
+                        <img src="http://a.vimeocdn.com/images_v6/ins_home_feature_everywhere.jpg" alt="Connect everywhere">
+                        <h2>Connect everywhere</h2>
+                        <p>Vimeo works brilliantly on smartphones, TVs, and other futuristic devices.</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/videoschool">
+                        <img src="http://a.vimeocdn.com/images_v6/ins_home_feature_vvs.jpg" alt="Become a creative genius">
+                        <h2>Become a creative genius</h2>
+                        <p>Learn how to make better videos from fun lessons in Vimeo Video School.</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/explore">
+                        <img src="http://a.vimeocdn.com/images_v6/ins_home_feature_stuff.jpg" alt="Lots of other cool stuff">
+                        <h2>Lots of other cool stuff</h2>
+                        <p>Get music for your videos, create your own Channels and Groups, and more.</p>
+                    </a>
+                </li>
+             </ul>
+        </div>
+
+        <div id="home_slideshow" class="feature_bottom">
+           <h1>Why is Vimeo different?</h1> <h2>(And by &ldquo;different&rdquo; we mean &ldquo;better.&rdquo;)</h2>
+            <span class="character crane_yellow"></span>
+            <span class="character ghosts"></span>
+
+            <button class="iconify_prev_b"></button>
+            <button class="iconify_next_b"></button>
+
+            <ol id="slides">
+                <li>
+                    <img src="http://a.vimeocdn.com/images_v6/ins_home_screenshot_clip.jpg" alt="We put your videos first.">
+                    <p><strong>We put your videos first.</strong> That means we don’t put ads before, after, or over your videos.</p>
+                </li>
+                <li class="hide">
+                    <img src="http://a.vimeocdn.com/images_v6/ins_home_screenshot_tools.jpg" alt="We make everything easy.">
+                    <p><strong>We make everything easy.</strong> Our tools are built for everyone &mdash; no technical knowhow required.</p>
+                </li>
+                <li class="hide">
+                    <img src="http://a.vimeocdn.com/images_v6/ins_home_screenshot_feed.jpg" alt="Our people are incredible.">
+                    <p><strong>Our people are incredible.</strong> The Vimeo community is one of the Internet’s most positive, supportive, and passionate.</p>
+                </li>
+            </ol>
+
+            <nav>
+                <ol>
+                    <li><a href="javascript:void(0);" class="selected">1</a></li>
+                    <li><a href="javascript:void(0);">2</a></li>
+                    <li><a href="javascript:void(0);">3</a></li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section id="plus">
+    <div class="width_wrap clearfix">
+
+        <div class="left">
+            <h1>Vimeo <span class="plus">Plus</span></h1>
+            <h2>Just like regular Vimeo, only about a billion times better.</h2>
+            <a href="/plus" class="btn_snazzy light_blue iconify_next_a">Learn more</a>
+            <p>Are you a creative professional? Then you need <a href="/pro">Vimeo PRO</a>.</p>
+        </div>
+        <ul>
+            <li><span class="plus">+</span> 5GB/week storage space</li>
+            <li><span class="plus">+</span> Absolutely zero ads</li>
+            <li><span class="plus">+</span> Faster priority uploading</li>
+            <li><span class="plus">+</span> Unlimited HD everything</li>
+            <li><span class="plus">+</span> Full player customization</li>
+            <li><span class="plus">+</span> Advanced statistics</li>
+        </ul>
+
+    </div>
+</section>
+
+<section id="closer">
+    <div class="width_wrap">
+        <h1 class="en"><span class="bg">Ready to enter a world of awesome?</span></h1>
+        <button id="join_vimeo" class="btn_snazzy light_green">Join Vimeo</button>
+        <canvas id="bottom_particles"></canvas>
+    </div>
+</section>
+
+<footer>
+    <div class="width_wrap">
+        <div class="left">
+            <nav>
+                <ul>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/explore">Explore</a></li>
+                    <li><a href="/videoschool">Video School</a></li>
+                    <li><a href="/help/guidelines">Guidelines</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/help">Help Center</a></li>
+                    <li><a href="/jobs">Jobs</a></li>
+                    <li><a href="http://developer.vimeo.com">Developers</a></li>
+                </ul>
+            </nav>
+
+            <div id="footers_footer">
+    <div id="legal">
+        <p>TM + &copy; 2013 Vimeo, LLC. All rights reserved.</p>
+        <ul>
+            <li>
+                <a href="/terms" title="Terms &amp; Conditions">
+                    Terms                </a>
+            </li>
+            <li>
+                <a href="/privacy" title="Privacy Policy">
+                    Privacy                </a>
+            </li>
+            <li>
+                <a href="/dmca" title="Copyright Information">
+                    Copyright                </a>
+            </li>
+            <li>
+                <a href="/cookie_policy" title="Learn more about how Vimeo uses cookies">
+                    Cookies                </a>
+            </li>
+                        <li>
+                <a href="/site_map" title="Site Map">
+                    Site Map                </a>
+            </li>
+                                </ul>
+        <p class="with_love">
+            Made with <a href="/love" class="iconify loveo" title="Love">k</a> in <abbr title="New York City">NYC</abbr>.        </p>
+    </div>
+
+        <p class="language">Language: <a href="#language" data-lightbox data-lightbox-options="width=600px|height=275px" title="Choose a Different Language">English</a></p>
+
+<div class="hide">
+    <div id="language">
+        <header>
+            <h6>Choose a Different Language</h6>
+        </header>
+        <div class="language_selector">
+            <span class="iconify">G</span>
+            <h3>Vimeo is available in the following languages:</h3>
+            <ul class="styled">
+                                    <li class="selected">
+                        <a href="javascript:void(0)" data-language="en">English</a><span class="tip">&larr; Your current language</span>                    </li>
+                                    <li>
+                        <a href="javascript:void(0)" data-language="es">Español</a>                    </li>
+                                    <li>
+                        <a href="javascript:void(0)" data-language="de-DE">Deutsch</a>                    </li>
+                                    <li>
+                        <a href="javascript:void(0)" data-language="fr-FR">Français</a>                    </li>
+                            </ul>
+        </div>
+    </div>
+</div>
+</div>
+        </div>
+    </div>
+</footer>
+                </div>
+            </div>
+        </div>
+
+        
+            <script>
+        var Copy = {
+            translate: function(key, plural, replacements) {
+                var translation = typeof this.dict[key] != 'object' ? this.dict[key] : (plural ? this.dict[key].plural : this.dict[key].singular);
+                if (typeof replacements === 'object') {
+                    translation = this.substitute(translation, replacements);
+                }
+                return translation;
+            },
+            substitute: function(string, object){
+                if (typeof string.substitute !== 'undefined') {
+                    return string.substitute(object);
+                } else {
+                    return string.replace(/\\?\{([^{}]+)\}/g, function(match, name){
+                        if (match.charAt(0) == '\\') return match.slice(1);
+                        return (object[name] != null) ? object[name] : '';
+                    });
+                }
+            },
+            dict: {"advanced_search":"Advanced Search","no_suggestions":"No suggestions","recent_searches":"Recent Searches","search_all":"Search All of Vimeo"}        };
+    </script>
+
+
+    <script src="http://a.vimeocdn.com/js_opt/global_combined.min.js?163e692f"></script>
+    <script src="http://a.vimeocdn.com/js_opt/logged_out_home_combined.min.js?955f465e"></script>
+    <script src="http://a.vimeocdn.com/p/1.4.28/js/player.core.opt.js"></script>
+
+<script>
+        var _comscore = _comscore || [],
+        _gaq = _gaq || [],
+        CSS_DIR = 'http://a.vimeocdn.com/styles/css_opt/',
+        JS_DIR = 'http://a.vimeocdn.com/js_opt/',
+        IMAGE_DIR = 'http://a.vimeocdn.com/images_v6/',
+        BUILD_HASH = '31388',
+        vimeo = {
+            app_version: 'v6',
+            domain: '.vimeo.com',
+            url: 'vimeo.com',
+            xsrft: '8cef5f59733778d4291584afde4fb118',
+            cur_user: null        };
+
+    
+    _comscore.push({
+        c1: "2",
+        c2: "10348289"
+    });
+
+    _gaq.push(
+        ['_setAccount', "UA-76641-8"],
+        ['_setDomainName', 'vimeo.com'],
+                    ['_setLocalRemoteServerMode'],
+            ['_setLocalGifPath', '//utmtrk.vimeo.com/__utm.gif'],
+                        ['_setCustomVar', 1, 'user_status', 'logged_out', 2],
+        ['_setCustomVar', 4, 'language', 'en', 3],
+        ['_trackPageview']
+                    );
+
+    window.addEvent('domready', function() {
+                                    var player59545564_490730889,player59545564_490730889_element = document.getElementById('player_59545564_490730889'),clip59545564_490730889 = {config:{"request":{"cached_timestamp":1360945288,"source":"cache","timestamp":1360947287,"signature":"fc38213316df86e90cacdb07aad38254","referrer":"","varnish":1,"cookie":{"hd":null,"scaling":1,"volume":100,"html":null}
+,"expiration":21600,"vimeo_url":"vimeo.com","player_url":"player.vimeo.com","cdn_url":"a.vimeocdn.com","cookie_domain":".vimeo.com"},"video":{"id":59545564,"title":"I Love You","width":1280,"height":720,"duration":68,"url":"http:\/\/vimeo.com\/59545564","thumbnail":"http:\/\/b.vimeocdn.com\/ts\/415\/090\/415090535_960.jpg","embed_code":"<iframe src=\"http:\/\/player.vimeo.com\/video\/59545564?autoplay=1&amp;api=1\" width=\"400\" height=\"300\" frameborder=\"0\" webkitAllowFullScreen mozallowfullscreen allowFullScreen><\/iframe>","hd":1,"default_to_hd":1,"owner":{"name":"Matthijs_Vlot","portrait":"http:\/\/b.vimeocdn.com\/ps\/463\/968\/4639687_75.jpg","url":"http:\/\/vimeo.com\/ant1mat3rie","account_type":"plus"},"stats":{"comments":20,"likes":743,"plays":39611},"files":{"h264":["hd","sd","mobile"]},"profiles":{"h264":{"hd":113,"sd":112,"mobile":116}},"smil":{"url":"https:\/\/player.vimeo.com\/config\/59545564.smil","qualities":["hd","sd","mobile"]}},"security":{"embed_permission":"public","hd_embed":1,"privacy":"anybody"},"application":{"version":"v6","build_num":"bccf3a0"},"analytics":{"ga_account":"UA-76641-35","comscore_c1":"1","comscore_c2":"10348289"},"user":{"id":0,"liked":0,"watch_later":0,"status":{"mod":0,"logged_in":0,"owner":0,"account_type":"logged_out"}},"embed":{"alt_color":"c0c0c0","color":"00adef","autoplay":0,"loop":0,"time":0,"pause_info":1,"on_site":1,"context":"home","api":{"on":0,"player_id":null,"version":1},"toggle":{"badge":{"name":"staffpicks","link":"http:\/\/vimeo.com\/channels\/staffpicks\/59545564","src":"http:\/\/a.vimeocdn.com\/images_v6\/sp_badge_124.png"},"byline":1,"portrait":1,"title":1,"byline_badge":{"type":"plus","image":"http:\/\/a.vimeocdn.com\/images_v6\/plus_icon.gif","url":"http:\/\/vimeo.com\/ant1mat3rie"},"embed":0,"hd":1,"like":1,"scaling":1,"share":1,"watch_later":1,"playbar":1,"fullscreen":1,"logo":0,"custom_logo":0,"volume":1,"vote":0},"outro":{"type":"nothing"}}},assets: {"js_path":"http:\/\/a.vimeocdn.com\/p\/1.4.28\/js\/","css_path":"http:\/\/a.vimeocdn.com\/p\/1.4.28\/css\/","ming":{"touch":{"css":["player.touch.opt.css"],"js":["player.touch.js"]},"mobile":{"css":["player.mobile.opt.css"],"js":["player.mobile.js"]},"desktop":{"css":["player.desktop.opt.css"],"js":["player.desktop.js"]}},"moogaloop":["swfobject.v2.2.js"],"cache":1},uniqueId: '59545564_490730889',options: {ming: {html_path: "http://a.vimeocdn.com/p/1.4.28/html_opt",css_path: "http://a.vimeocdn.com/p/1.4.28/css/player.overlays.opt.css",version: '1.4.28'},moogaloop: {force_embed: 0,force_info: 1,ref_id: 'player59545564_490730889',swfs: {cover: {desktop: "http:\/\/a.vimeocdn.com\/p\/flash\/moogalover\/1.1.21\/moogalover.swf?v=1.0.0",mobile: "http:\/\/a.vimeocdn.com\/p\/flash\/mobilover\/1.1.21\/mobilover.swf?v=1.0.0"},player: {desktop: "http:\/\/a.vimeocdn.com\/p\/flash\/moogaloop\/5.2.52\/moogaloop.swf?v=1.0.0",mobile: "http:\/\/a.vimeocdn.com\/p\/flash\/mobiloop\/1.2.52\/mobiloop.swf?v=1.0.0"}},versions: {player: '5.2.52',cover: '1.1.21',js: '1.4.28'}},noplayer: {html_path: "http://a.vimeocdn.com/p/1.4.28/html_opt",css_path: "http://a.vimeocdn.com/p/1.4.28/css/player.overlays.opt.css"}},thumbs: {1280: 'http://b.vimeocdn.com/ts/415/090/415090535_1280.jpg',960: 'http://b.vimeocdn.com/ts/415/090/415090535_960.jpg',640: 'http://b.vimeocdn.com/ts/415/090/415090535_640.jpg'}};Player.checkRatio(player59545564_490730889_element.getElementsByTagName('div')[0],player59545564_490730889_element.getElementsByTagName('div')[0].getElementsByTagName('div')[0],clip59545564_490730889.config);function initPlayer59545564_490730889() {player59545564_490730889 = new Player(player59545564_490730889_element,clip59545564_490730889,Player.init.loader);window.player59545564_490730889 = player59545564_490730889;window.player59545564_490730889_element = player59545564_490730889_element;window.clip59545564_490730889 = clip59545564_490730889;}Player.init.queue.push(initPlayer59545564_490730889);if (!Player.init.loaderAdded) {window.addEvent('domready', function() {Player.init.loader();});Player.init.loaderAdded = true;}var _gaq = _gaq || [];_gaq.push(['pt._setAccount', "UA-76641-35"],['pt._setDomainName', 'player.vimeo.com']);                    
+        var scr,
+            s = document.getElementsByTagName('script')[0];
+
+                    scr = document.createElement('script');
+            scr.type = 'text/javascript';
+            scr.async = true;
+            scr.src = ('http://b.scorecardresearch.com/beacon.js');
+            s.parentNode.insertBefore(scr, s);
+                    scr = document.createElement('script');
+            scr.type = 'text/javascript';
+            scr.async = true;
+            scr.src = ('http://www.google-analytics.com/ga.js');
+            s.parentNode.insertBefore(scr, s);
+        
+        try {
+            var ext = window.external;
+
+            if (ext.msIsSiteMode()) {
+                ext.msSiteModeClearJumplist();
+                ext.msSiteModeCreateJumplist('Places');
+
+                                    ext.msSiteModeAddJumpListItem('Categories', '/categories', "http://a.vimeocdn.com/images_v6/jumplist/categories.ico");
+                    ext.msSiteModeAddJumpListItem('Video School', '/videoschool', "http://a.vimeocdn.com/images_v6/jumplist/vvs.ico");
+                    ext.msSiteModeAddJumpListItem('Staff Picks', '/staffpicks', "http://a.vimeocdn.com/images_v6/jumplist/staffpicks.ico");
+                
+                ext.msSiteModeShowJumplist();
+            }
+        }
+        catch (ex) {}
+
+            });
+
+    if ($('google_afc_ads')) {
+        document.write('<scr'+'ipt src="//pagead2.googlesyndication.com/pagead/show_ads.js"></scr'+'ipt>');
+    }
+</script>
+
+    </body>
+</html>

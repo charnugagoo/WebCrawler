@@ -1,0 +1,1218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head profile="http://gmpg.org/xfn/11">
+<title>
+Nicksda</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="http://nicksda.apotomo.de/wp-content/themes/tickled-pink/style.css" type="text/css" media="screen" />
+<link rel="alternate" type="application/rss+xml" title="Nicksda RSS Feed" href="http://nicksda.apotomo.de/feed/" />
+<link rel="pingback" href="http://nicksda.apotomo.de/xmlrpc.php" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://nicksda.apotomo.de/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://nicksda.apotomo.de/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Nicksda' href='http://nicksda.apotomo.de/' />
+<meta name="generator" content="WordPress 3.2.1" />
+<link rel='shortlink' href='http://wp.me/14IOu' />
+
+<link rel="stylesheet" href="http://nicksda.apotomo.de/wp-content/plugins/wp-syntax/wp-syntax.css" type="text/css" media="screen" />
+</head>
+<body>
+
+	<div id="header">
+		<div id="headerimg">
+			 
+     <!-- <h1><a href="http://nicksda.apotomo.de/">Nicksda</a></h1> -->
+ 
+			<div class="description">Nick Sutterer &#8211; respecting local traditions since 1981.</div>
+		</div>
+	</div>
+<div id="page">
+
+	<div id="content" class="narrowcolumn">
+
+	
+		
+			<div class="post" id="post-2096">
+				<div class="headertag"><div class="post-date">
+<div class="day">01</div>
+<div class="month">Feb</div>
+
+</div><h2><a href="http://nicksda.apotomo.de/2013/02/collectionjson-support-in-roar/" rel="bookmark" title="Permanent Link to Collection+JSON Support In Roar!">Collection+JSON Support In Roar!</a></h2>
+<p class="byline"> by nick </p><div class="clear"></div></div><div class="clear"></div>
+				<div class="entry">
+					<h3>What Is Collection+JSON?</h3>
+<p>The <a href="http://amundsen.com/media-types/collection/format/">Collection+JSON</a> (Cj) specifies a hypermedia type for collections of items. It not only defines how single items or lists are represented in a document, it also comes with application semantics how to expose a standard <span class="caps">CRUD</span> behavior for items. In addition to that, embedded <span class="caps">HATEOAS</span> hyperlinks are one of the building blocks for this format.</p>
+<p>And, hey, all that is done in lovely JSON!!!</p>
+<p>Why not assume our music <span class="caps">API</span> would suddenly support the Cj media format? Here&#8217;s what I&#8217;d <code>GET</code> for <code>http://songs/scarifice</code>.</p>
+
+<div class="wp_syntax"><table><tr><td class="line_numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre></td><td class="code"><pre class="json" style="font-family:monospace;">{
+ &quot;collection&quot; :
+ {
+  &quot;version&quot; : &quot;1.0&quot;,
+  &quot;href&quot; : &quot;http://songs/&quot;,
+  &quot;items&quot; :
+  [
+   {
+    &quot;href&quot; : &quot;http://songs/scarifice&quot;,
+    &quot;data&quot; : [
+     {&quot;name&quot;: &quot;title&quot;, &quot;value&quot;: &quot;Scarifice&quot;},
+     {&quot;name&quot;: &quot;band&quot;,  &quot;value&quot;: &quot;Racer X&quot;}
+    ],
+    &quot;links&quot; : [
+     {&quot;rel&quot;: &quot;band&quot;, &quot;href&quot;: &quot;http://bands/racer-x&quot;}
+    ]
+   }
+  ]
+ }
+}</pre></td></tr></table></div>
+
+<p>The Cj format surprisingly always &#8220;speaks in&#8221; collections &#8211; even the single song is represented in a 1-item collection. The format provides a <code>version</code>, the hyperlink <code>href</code> to the collection itself, and the actual <code>items</code> we&#8217;re interested in (line 6).</p>
+<p>Items in turn can have a <code>href</code> pointing to itself, properties of the represented object are found in the <code>data</code> attribute (line 10), and items may also contain additional links. Here, the song references the <span class="caps">API</span> endpoint of the band owning that very song (line 15).</p>
+<p>Note that &#8220;real&#8221; collections have the same format, e.g. when grabbing <code>http://songs</code> the <code>items</code> array is be filled with millions of damn good song items.</p>
+<h3>Application Semantics Of Cj.</h3>
+<p>Apart from the standardization of representing lists this is nothing special so far. The cool thing about Cj is that it comes with specifications about the <span class="caps">CRUD</span> behavior of collections. Here&#8217;s an example.</p>
+<p>If we were to create another song <strong>without knowing the <span class="caps">API</span> semantics</strong> we were helpless! Not with Cj! Here, a collection usually comes with a <code>template</code> telling us how to create or update particular items.</p>
+<p>The <code>template</code> is embedded in the collection itself, in the document we were just talking about.</p>
+
+<div class="wp_syntax"><table><tr><td class="line_numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="code"><pre class="json" style="font-family:monospace;">{
+ &quot;collection&quot; :
+ {
+  &quot;version&quot; : &quot;1.0&quot;,
+  &quot;href&quot; : &quot;http://songs/&quot;,
+  &quot;items&quot; : 
+ ...
+  &quot;template&quot; : {
+   &quot;data&quot; : [
+     {&quot;name&quot;: &quot;title&quot;, &quot;value&quot;: &quot;&quot;},
+     {&quot;name&quot;: &quot;band&quot;,  &quot;value&quot;: &quot;&quot;}
+   ]
+  }
+ }
+}</pre></td></tr></table></div>
+
+<p>Normally, you&#8217;d fill out a form and submit it to create something. That&#8217;s exactly what the <code>template</code> does &#8211; it acts like a form which is to be <code>POST</code>ed to the collection&#8217;s <code>href</code> <span class="caps">URL</span>. Remember, that was <code>http://songs/</code> (line 5)?</p>
+<p>The corresponding create request would be something like the following.</p>
+
+<div class="wp_syntax"><table><tr><td class="line_numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="code"><pre class="json" style="font-family:monospace;">POST http://songs/
+------------------
+{
+ &quot;template&quot; : {
+  &quot;data&quot; : [
+   {&quot;name&quot;: &quot;title&quot;, &quot;value&quot;: &quot;Parasite&quot;},
+   {&quot;name&quot;: &quot;band&quot;,  &quot;value&quot;: &quot;Frenzal Rhomb&quot;}
+  ]
+ }
+}</pre></td></tr></table></div>
+
+<p>Cj comes with more, it contains a query specification for retrieving other collections, an error structure for exposing internal errors and more. I suggest you <a href="http://amundsen.com/media-types/collection/examples/">check out the examples</a> the creator Mike Amundsen provides on his site.</p>
+<h3>Implementing Cj Services.</h3>
+<p>Too bad media formats only describe documents and how they might be used. It is still up to you to actually <em>implement</em> those. To make your life simpler <a href="https://github.com/apotonick/roar">the roar gem</a> now comes with a <a href="https://github.com/apotonick/roar/blob/b84aeab9bf8b003c0a5b15f42ed80077025a7547/lib/roar/representer/json/collection_json.rb">Collection+<span class="caps">JSON</span> representer</a></p>
+<p>By the time of writing this roar gives you a representer and a bit of added <span class="caps">DSL</span> sugar to render and parse collection representations. I won&#8217;t go into detail in this posting as the <span class="caps">API</span> is not 100% stable and we&#8217;re waiting for your comments. Here&#8217;s how a full-blown representer for the songs domain would look like.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;"><span style="color:#9966CC; font-weight:bold;">module</span> SongCollectionRepresenter
+  <span style="color:#9966CC; font-weight:bold;">include</span> <span style="color:#6666ff; font-weight:bold;">Roar::Representer::JSON::CollectionJSON</span>
+  version <span style="color:#996600;">&quot;1.0&quot;</span>
+  href <span style="color:#006600; font-weight:bold;">&#123;</span> <span style="color:#996600;">&quot;//songs/&quot;</span> <span style="color:#006600; font-weight:bold;">&#125;</span>
+&nbsp;
+  link<span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#ff3333; font-weight:bold;">:feed</span><span style="color:#006600; font-weight:bold;">&#41;</span> <span style="color:#006600; font-weight:bold;">&#123;</span> <span style="color:#996600;">&quot;//songs/feed&quot;</span> <span style="color:#006600; font-weight:bold;">&#125;</span>
+&nbsp;
+  items<span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#ff3333; font-weight:bold;">:class</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> Song<span style="color:#006600; font-weight:bold;">&#41;</span> <span style="color:#9966CC; font-weight:bold;">do</span>
+    href <span style="color:#006600; font-weight:bold;">&#123;</span> <span style="color:#996600;">&quot;//songs/scarifice&quot;</span> <span style="color:#006600; font-weight:bold;">&#125;</span>
+&nbsp;
+    property <span style="color:#ff3333; font-weight:bold;">:title</span>, <span style="color:#ff3333; font-weight:bold;">:prompt</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#996600;">&quot;Song title&quot;</span>
+    property <span style="color:#ff3333; font-weight:bold;">:length</span>, <span style="color:#ff3333; font-weight:bold;">:prompt</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#996600;">&quot;Song length&quot;</span>
+&nbsp;
+    link<span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#ff3333; font-weight:bold;">:download</span><span style="color:#006600; font-weight:bold;">&#41;</span> <span style="color:#006600; font-weight:bold;">&#123;</span> <span style="color:#996600;">&quot;//songs/scarifice.mp3&quot;</span> <span style="color:#006600; font-weight:bold;">&#125;</span>
+    link<span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#ff3333; font-weight:bold;">:stats</span><span style="color:#006600; font-weight:bold;">&#41;</span> <span style="color:#006600; font-weight:bold;">&#123;</span> <span style="color:#996600;">&quot;//songs/scarifice/stats&quot;</span> <span style="color:#006600; font-weight:bold;">&#125;</span>
+  <span style="color:#9966CC; font-weight:bold;">end</span>
+&nbsp;
+  template <span style="color:#9966CC; font-weight:bold;">do</span>
+    property <span style="color:#ff3333; font-weight:bold;">:title</span>, <span style="color:#ff3333; font-weight:bold;">:prompt</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#996600;">&quot;Song title&quot;</span>
+    property <span style="color:#ff3333; font-weight:bold;">:length</span>, <span style="color:#ff3333; font-weight:bold;">:prompt</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#996600;">&quot;Song length&quot;</span>
+  <span style="color:#9966CC; font-weight:bold;">end</span>
+&nbsp;
+  queries <span style="color:#9966CC; font-weight:bold;">do</span>
+    link <span style="color:#ff3333; font-weight:bold;">:search</span> <span style="color:#9966CC; font-weight:bold;">do</span>
+      <span style="color:#006600; font-weight:bold;">&#123;</span>:href <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#996600;">&quot;//search&quot;</span>, <span style="color:#ff3333; font-weight:bold;">:data</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#006600; font-weight:bold;">&#91;</span>
+        <span style="color:#006600; font-weight:bold;">&#123;</span>:name <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#996600;">&quot;q&quot;</span>, <span style="color:#ff3333; font-weight:bold;">:value</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#996600;">&quot;&quot;</span><span style="color:#006600; font-weight:bold;">&#125;</span><span style="color:#006600; font-weight:bold;">&#93;</span><span style="color:#006600; font-weight:bold;">&#125;</span>
+    <span style="color:#9966CC; font-weight:bold;">end</span>
+  <span style="color:#9966CC; font-weight:bold;">end</span>
+<span style="color:#9966CC; font-weight:bold;">end</span></pre></div></div>
+
+<p>The <span class="caps">DSL</span> should be pretty self-explaining. However, suggestions welcome! I tried to use as much roar/representable language as possible. Those guys already familiar with roar will recognize the <code>property</code> and <code>link</code> semantics for sure. Semantics. I love this word. Although I don&#8217;t understand its semantic.</p>
+<p>Having defined the Cj representer you may now render and parse documents.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;"><span style="color:#006600; font-weight:bold;">&#91;</span>Song.<span style="color:#9900CC;">find</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#006666;">1</span><span style="color:#006600; font-weight:bold;">&#41;</span><span style="color:#006600; font-weight:bold;">&#93;</span>.
+  <span style="color:#9900CC;">extend</span><span style="color:#006600; font-weight:bold;">&#40;</span>SongCollectionRepresenter<span style="color:#006600; font-weight:bold;">&#41;</span>.
+  <span style="color:#9900CC;">to_json</span></pre></div></div>
+
+<p>Note that the collection representer works with enumerable objects, like arrays, only.</p>
+<p>Parsing an incoming document, e.g. in a client is just as simple as the rendering.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;"><span style="color:#006600; font-weight:bold;">&#91;</span><span style="color:#006600; font-weight:bold;">&#93;</span>.
+  <span style="color:#9900CC;">extend</span><span style="color:#006600; font-weight:bold;">&#40;</span>SongCollectionRepresenter<span style="color:#006600; font-weight:bold;">&#41;</span>.
+  <span style="color:#9900CC;">from_json</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#996600;">&quot;{collection: ...&quot;</span><span style="color:#006600; font-weight:bold;">&#41;</span></pre></div></div>
+
+<p>Please, play around with it! Since Rubygems is only partially working you should go with the <a href="https://github.com/apotonick/roar">github master of roar</a>. Have fun!</p>
+				</div>
+
+				<p class="postmetadata"> Posted in <a href="http://nicksda.apotomo.de/category/uncategorized/" title="View all posts in Uncategorized" rel="category tag">Uncategorized</a></p><p class="postmetadata"> | <span class="tiny-comments"><a href="http://nicksda.apotomo.de/2013/02/collectionjson-support-in-roar/#respond" title="Comment on Collection+JSON Support In Roar!">No Comments</a></span></p>
+			</div>
+
+		
+			<div class="post" id="post-2088">
+				<div class="headertag"><div class="post-date">
+<div class="day">16</div>
+<div class="month">Jan</div>
+
+</div><h2><a href="http://nicksda.apotomo.de/2013/01/nokogiris-xpath-search-is-faster/" rel="bookmark" title="Permanent Link to Nokogiri&#8217;s Xpath Search Is Fast(er)!">Nokogiri&#8217;s Xpath Search Is Fast(er)!</a></h2>
+<p class="byline"> by nick </p><div class="clear"></div></div><div class="clear"></div>
+				<div class="entry">
+					<p>Recently I ran into an architectural problem when parsing <span class="caps">XML</span> with <a href="https://github.com/sparklemotion/nokogiri">Nokogiri</a>. I used an xpath to find child elements in a document. Coming to the conclusion that replacing that xpath <code>#search</code> with a self-baked <code>#find_all</code> would lead to a better design I set up a quick benchmark.</p>
+<p>The <span class="caps">XML</span> contains a root node with 1000 empty childs.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="xml xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;root<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;item</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;item</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+  ... 998 times
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/root<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre></div></div>
+
+<p>This is the code I am using now.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;"><span style="color:#6666ff; font-weight:bold;">Nokogiri::XML</span><span style="color:#006600; font-weight:bold;">&#40;</span>xml<span style="color:#006600; font-weight:bold;">&#41;</span>.<span style="color:#9900CC;">root</span>.<span style="color:#9900CC;">search</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#996600;">&quot;./item&quot;</span><span style="color:#006600; font-weight:bold;">&#41;</span></pre></div></div>
+
+<p>Note the usage of <code>#search</code> which evaluates the xpath expression and returns a list of matching nodes.</p>
+<p>The replacement code comes here.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;"><span style="color:#6666ff; font-weight:bold;">Nokogiri::XML</span><span style="color:#006600; font-weight:bold;">&#40;</span>xml<span style="color:#006600; font-weight:bold;">&#41;</span>.<span style="color:#9900CC;">root</span>.<span style="color:#9900CC;">children</span>.<span style="color:#9900CC;">find_all</span> <span style="color:#9966CC; font-weight:bold;">do</span> |c|
+  c.<span style="color:#9900CC;">name</span> == <span style="color:#996600;">&quot;item&quot;</span>
+<span style="color:#9966CC; font-weight:bold;">end</span></pre></div></div>
+
+<p>Instead of invoking the internal search I do it myself by querying each child.</p>
+<p>Benchmarking time.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="bash bash" style="font-family:monospace;">xpath:    <span style="color: #000000;">0.003901151</span>
+find_all: <span style="color: #000000;">0.014400985</span></pre></div></div>
+
+<p>Going the &#8220;official&#8221; way by <strong>using an xpath is about 3.5 times faster!</strong> Wow.</p>
+<p>It turns out that the manual comparison in <code>find_all</code> is the bottleneck. I guess Nokogiri has some internal optimization which saves the creation of the child nodes.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;"><span style="color:#6666ff; font-weight:bold;">Nokogiri::XML</span><span style="color:#006600; font-weight:bold;">&#40;</span>xml<span style="color:#006600; font-weight:bold;">&#41;</span>.<span style="color:#9900CC;">root</span>.<span style="color:#9900CC;">children</span>
+&nbsp;
+children: <span style="color:#006666;">0.003361085</span></pre></div></div>
+
+<p>Takes about the same amount of time than the xpath search (without having filtered matching elements). </p>
+<p>Here&#8217;s the <a href="https://gist.github.com/4545761">benchmark code</a>. I&#8217;ll keep going with the xpath search.</p>
+				</div>
+
+				<p class="postmetadata"> Posted in <a href="http://nicksda.apotomo.de/category/uncategorized/" title="View all posts in Uncategorized" rel="category tag">Uncategorized</a></p><p class="postmetadata"> | <span class="tiny-comments"><a href="http://nicksda.apotomo.de/2013/01/nokogiris-xpath-search-is-faster/#comments" title="Comment on Nokogiri&#8217;s Xpath Search Is Fast(er)!">2 Comments </a></span></p>
+			</div>
+
+		
+			<div class="post" id="post-2053">
+				<div class="headertag"><div class="post-date">
+<div class="day">06</div>
+<div class="month">Jan</div>
+
+</div><h2><a href="http://nicksda.apotomo.de/2013/01/released-roar-0-11-5-with-hal-link-arrays-and-representable-1-2-9-with-polymorphism-support/" rel="bookmark" title="Permanent Link to Released Roar 0.11.5 With HAL Link Arrays and Representable 1.2.9 With Polymorphism Support!">Released Roar 0.11.5 With HAL Link Arrays and Representable 1.2.9 With Polymorphism Support!</a></h2>
+<p class="byline"> by nick </p><div class="clear"></div></div><div class="clear"></div>
+				<div class="entry">
+					<p>Time to catch up with some improvements in the <a href="https://github.com/apotonick/representable">representable</a> gem and it&#8217;s bigger brother <a href="https://github.com/apotonick/roar">roar</a>. Most of the work was done on the sunny island Fuerteventura in a surf camp *grin.</p>
+<h3>Readable And Writeable Properties.</h3>
+<p>To make it a little bit easier to provide assignment security we added <code>:readable</code> and <code>:writeable</code> switches to <code>#property</code>. Both are <code>true</code> per default.</p>
+<p>I&#8217;ll use a song to demonstrate.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;">song = Song.<span style="color:#9900CC;">new</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#ff3333; font-weight:bold;">:title</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#996600;">&quot;You're Wrong&quot;</span>, <span style="color:#ff3333; font-weight:bold;">:track</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#006666;">4</span><span style="color:#006600; font-weight:bold;">&#41;</span></pre></div></div>
+
+<p>For simplicity I&#8217;ll use the <code>Hash</code> representer. However, the following code works just fine with <span class="caps">JSON</span>, <span class="caps">XML</span>, and <span class="caps">YAML</span>.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;"><span style="color:#9966CC; font-weight:bold;">module</span> SongRepresenter
+  <span style="color:#9966CC; font-weight:bold;">include</span> <span style="color:#6666ff; font-weight:bold;">Representable::Hash</span>
+&nbsp;
+  property <span style="color:#ff3333; font-weight:bold;">:title</span>, <span style="color:#ff3333; font-weight:bold;">:readable</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#0000FF; font-weight:bold;">false</span>
+  property <span style="color:#ff3333; font-weight:bold;">:track</span>
+<span style="color:#9966CC; font-weight:bold;">end</span></pre></div></div>
+
+<p>Since the <code>title</code> property is not readable &#8211; from an outer perspective &#8211; it is not serialized anymore.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;">song.<span style="color:#9900CC;">extend</span><span style="color:#006600; font-weight:bold;">&#40;</span>SongRepresenter<span style="color:#006600; font-weight:bold;">&#41;</span>.<span style="color:#9900CC;">to_hash</span>
+<span style="color:#008000; font-style:italic;">#=&gt; {&quot;track&quot;=&gt;4}</span></pre></div></div>
+
+<p>Vice-versa, properties can be read-only, too.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;"><span style="color:#9966CC; font-weight:bold;">module</span> SongRepresenter
+  <span style="color:#9966CC; font-weight:bold;">include</span> <span style="color:#6666ff; font-weight:bold;">Representable::Hash</span>
+&nbsp;
+  property <span style="color:#ff3333; font-weight:bold;">:title</span>, <span style="color:#ff3333; font-weight:bold;">:writeable</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#0000FF; font-weight:bold;">false</span>
+  property <span style="color:#ff3333; font-weight:bold;">:track</span>
+<span style="color:#9966CC; font-weight:bold;">end</span></pre></div></div>
+
+<p>The <code>title</code> property is now ignored when consuming (or parsing) a document as it is <em>not</em> writeable.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;">song = Song.<span style="color:#9900CC;">new</span>.<span style="color:#9900CC;">extend</span><span style="color:#006600; font-weight:bold;">&#40;</span>SongRepresenter<span style="color:#006600; font-weight:bold;">&#41;</span>
+song.<span style="color:#9900CC;">from_hash</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#006600; font-weight:bold;">&#123;</span>:title <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#996600;">&quot;Fallout&quot;</span>, <span style="color:#ff3333; font-weight:bold;">:track</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#006666;">1</span><span style="color:#006600; font-weight:bold;">&#125;</span><span style="color:#006600; font-weight:bold;">&#41;</span>
+<span style="color:#CC0066; font-weight:bold;">puts</span> song <span style="color:#008000; font-style:italic;">#=&gt; #&lt;Song @track=1&gt;</span></pre></div></div>
+
+<p>Those two switches allow a declarative access control for properties without having to override accessors. <span class="caps">BTW</span>, they also replace the mass-assignment problem and its poor successor strong_parameters in Rails.</p>
+<h3>Polymorphic Extend.</h3>
+<p>Finally, something fuckin&#8217; awesome. Until today, representable allowed you to specify the representer modules for parsing and rendering using the <code>:extend</code> option.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;">  property <span style="color:#ff3333; font-weight:bold;">:song</span>, <span style="color:#ff3333; font-weight:bold;">:extend</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> SongRepresenter</pre></div></div>
+
+<p>To make this dynamic, both <code>:class</code> and <code>:extend</code> now also accept a lambda to compute the class or module at runtime.</p>
+<p>Let&#8217;s assume we not only have original songs but also cover songs.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;"><span style="color:#9966CC; font-weight:bold;">class</span> CoverSong <span style="color:#006600; font-weight:bold;">&lt;</span> Song
+<span style="color:#9966CC; font-weight:bold;">end</span></pre></div></div>
+
+<p>Now we set up a composition where the <code>Album</code> instance contains one <code>Song</code> and one <code>CoverSong</code> instance.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;">songs = <span style="color:#006600; font-weight:bold;">&#91;</span>
+ Song.<span style="color:#9900CC;">new</span><span style="color:#006600; font-weight:bold;">&#40;</span>title: <span style="color:#996600;">&quot;Weirdo&quot;</span>, track: <span style="color:#006666;">5</span><span style="color:#006600; font-weight:bold;">&#41;</span>,
+ CoverSong.<span style="color:#9900CC;">new</span><span style="color:#006600; font-weight:bold;">&#40;</span>title: <span style="color:#996600;">&quot;Truth Hits Everybody&quot;</span>, track: <span style="color:#006666;">6</span>, 
+    copyright: <span style="color:#996600;">&quot;The Police&quot;</span><span style="color:#006600; font-weight:bold;">&#41;</span>
+<span style="color:#006600; font-weight:bold;">&#93;</span>
+album = Album.<span style="color:#9900CC;">new</span><span style="color:#006600; font-weight:bold;">&#40;</span>name: <span style="color:#996600;">&quot;Incognito&quot;</span>, songs: songs<span style="color:#006600; font-weight:bold;">&#41;</span></pre></div></div>
+
+<p>Note that the covered song also points to the amazing band that originally wrote this song.</p>
+<p>Two simple representers are needed to properly represent those songs.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;"><span style="color:#9966CC; font-weight:bold;">module</span> SongRepresenter
+  <span style="color:#9966CC; font-weight:bold;">include</span> <span style="color:#6666ff; font-weight:bold;">Representable::Hash</span>
+&nbsp;
+  property <span style="color:#ff3333; font-weight:bold;">:title</span>
+  property <span style="color:#ff3333; font-weight:bold;">:track</span>
+<span style="color:#9966CC; font-weight:bold;">end</span>
+&nbsp;
+<span style="color:#9966CC; font-weight:bold;">module</span> CoverSongRepresenter
+  <span style="color:#9966CC; font-weight:bold;">include</span> <span style="color:#6666ff; font-weight:bold;">Representable::Hash</span>
+  <span style="color:#9966CC; font-weight:bold;">include</span> SongRepresenter
+&nbsp;
+  property <span style="color:#ff3333; font-weight:bold;">:copyright</span>
+<span style="color:#9966CC; font-weight:bold;">end</span></pre></div></div>
+
+<p>I am using inheritance here &#8211; yay!</p>
+<p>The album representer needs to distinguish between the different song types. That is why I use a dynamic <code>:extend</code> here.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;"><span style="color:#9966CC; font-weight:bold;">module</span> AlbumRepresenter
+  <span style="color:#9966CC; font-weight:bold;">include</span> <span style="color:#6666ff; font-weight:bold;">Representable::Hash</span>
+&nbsp;
+  property <span style="color:#ff3333; font-weight:bold;">:name</span>
+  collection <span style="color:#ff3333; font-weight:bold;">:songs</span>, <span style="color:#ff3333; font-weight:bold;">:extend</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#CC0066; font-weight:bold;">lambda</span> <span style="color:#006600; font-weight:bold;">&#123;</span> |song| 
+    song.<span style="color:#9900CC;">is_a</span>?<span style="color:#006600; font-weight:bold;">&#40;</span>CoverSong<span style="color:#006600; font-weight:bold;">&#41;</span> ? 
+      CoverSongRepresenter : SongRepresenter <span style="color:#006600; font-weight:bold;">&#125;</span>
+<span style="color:#9966CC; font-weight:bold;">end</span></pre></div></div>
+
+<p>Check out what we get when calling the rendering.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;">album.<span style="color:#9900CC;">extend</span><span style="color:#006600; font-weight:bold;">&#40;</span>AlbumRepresenter<span style="color:#006600; font-weight:bold;">&#41;</span>.<span style="color:#9900CC;">to_hash</span>
+<span style="color:#008000; font-style:italic;">#=&gt; {&quot;name&quot;=&gt;&quot;INCOGNITO&quot;, &quot;songs&quot;=&gt;[</span>
+ <span style="color:#006600; font-weight:bold;">&#123;</span><span style="color:#996600;">&quot;title&quot;</span><span style="color:#006600; font-weight:bold;">=&gt;</span><span style="color:#996600;">&quot;Weirdo&quot;</span>, <span style="color:#996600;">&quot;track&quot;</span><span style="color:#006600; font-weight:bold;">=&gt;</span><span style="color:#006666;">5</span><span style="color:#006600; font-weight:bold;">&#125;</span>, 
+ <span style="color:#006600; font-weight:bold;">&#123;</span><span style="color:#996600;">&quot;title&quot;</span><span style="color:#006600; font-weight:bold;">=&gt;</span><span style="color:#996600;">&quot;Truth Hits Everybody&quot;</span>, <span style="color:#996600;">&quot;track&quot;</span><span style="color:#006600; font-weight:bold;">=&gt;</span><span style="color:#006666;">6</span>, 
+  <span style="color:#996600;">&quot;copyright&quot;</span><span style="color:#006600; font-weight:bold;">=&gt;</span><span style="color:#996600;">&quot;The Police&quot;</span><span style="color:#006600; font-weight:bold;">&#125;</span><span style="color:#006600; font-weight:bold;">&#93;</span><span style="color:#006600; font-weight:bold;">&#125;</span></pre></div></div>
+
+<p>Representable uses the respective representer module depending on the type of the object passed in. It is important to understand that <code>:extend</code> works both ways and always receives a valid object into the lambda block.</p>
+<ul></p>
+<li>When <strong>rendering</strong>, the object bound to the property (or collection) is extended using the provided module.</li>
+<li>However, when <strong>parsing</strong>, representable uses the class from <code>:class</code>, instantiates a brand-new object, passes this into the block and then extends it.</li>
+<p>
+</ul>
+</p>
+<p>Speaking about <code>:class</code> brings us to the next feature!</p>
+<h3>Dynamic Class Block For Parsing.</h3>
+<p>Now what if you need to compute the object&#8217;s class at runtime when parsing? Well, use a lambda!</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;"><span style="color:#9966CC; font-weight:bold;">module</span> AlbumRepresenter
+ <span style="color:#9966CC; font-weight:bold;">include</span> <span style="color:#6666ff; font-weight:bold;">Representable::Hash</span>
+&nbsp;
+ property <span style="color:#ff3333; font-weight:bold;">:name</span>
+ collection <span style="color:#ff3333; font-weight:bold;">:songs</span>, 
+  <span style="color:#ff3333; font-weight:bold;">:extend</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#CC0066; font-weight:bold;">lambda</span><span style="color:#006600; font-weight:bold;">&#123;</span> |song| ...,
+  <span style="color:#ff3333; font-weight:bold;">:class</span>  <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#CC0066; font-weight:bold;">lambda</span><span style="color:#006600; font-weight:bold;">&#123;</span> |hsh| hsh.<span style="color:#9900CC;">has_key</span>?<span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#996600;">&quot;copyright&quot;</span><span style="color:#006600; font-weight:bold;">&#41;</span> ?
+    CoverSong : Song <span style="color:#006600; font-weight:bold;">&#125;</span>
+<span style="color:#9966CC; font-weight:bold;">end</span></pre></div></div>
+
+<p>The dynamic <code>:class</code> lambda allows you to decide the class right when you&#8217;re parsing the document. If you wonder how the <code>hsh</code> argument looks like, this would be something like</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;">hsh <span style="color:#008000; font-style:italic;">#=&gt; {&quot;title&quot;=&gt;&quot;Weirdo&quot;, &quot;track&quot;=&gt;5}</span></pre></div></div>
+
+<p>Never ever complain about missing polymorphism in representable any more! Ha!</p>
+<h3>MORE! Dynamic Object Creation For Parsing!</h3>
+<p>No, I&#8217;m not finished, yet! When working on roar and its <span class="caps">HAL</span> feature we encountered the problem that we needed to override the object creation when parsing &#8211; in an easy way. And here comes <code>:instance</code>.</p>
+
+<div class="wp_syntax"><table><tr><td class="line_numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="code"><pre class="ruby ruby" style="font-family:monospace;"><span style="color:#9966CC; font-weight:bold;">module</span> AlbumRepresenter
+  <span style="color:#9966CC; font-weight:bold;">include</span> <span style="color:#6666ff; font-weight:bold;">Representable::Hash</span>
+&nbsp;
+  property <span style="color:#ff3333; font-weight:bold;">:name</span>
+  collection <span style="color:#ff3333; font-weight:bold;">:songs</span>, 
+    <span style="color:#ff3333; font-weight:bold;">:extend</span>   <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#CC0066; font-weight:bold;">lambda</span> <span style="color:#006600; font-weight:bold;">&#123;</span> |song| ... <span style="color:#006600; font-weight:bold;">&#125;</span>,
+    <span style="color:#ff3333; font-weight:bold;">:instance</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#CC0066; font-weight:bold;">lambda</span> <span style="color:#9966CC; font-weight:bold;">do</span> |hsh| 
+      hsh.<span style="color:#9900CC;">has_key</span>?<span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#996600;">&quot;copyright&quot;</span><span style="color:#006600; font-weight:bold;">&#41;</span> ? 
+        CoverSong.<span style="color:#9900CC;">new</span> : 
+        Song.<span style="color:#9900CC;">new</span><span style="color:#006600; font-weight:bold;">&#40;</span>original: <span style="color:#0000FF; font-weight:bold;">true</span><span style="color:#006600; font-weight:bold;">&#41;</span>
+    <span style="color:#9966CC; font-weight:bold;">end</span>
+<span style="color:#9966CC; font-weight:bold;">end</span></pre></td></tr></table></div>
+
+<p>Instead of providing a class with the <code>:class</code> option, I create the song instances myself using <code>:instance</code>. The returned value from the block will be extended and passed into the deserialize workflow where representable will call something like <code>from_hash</code> on it.</p>
+<p>Note how I assign additional data for the <code>Song</code> object which will survive the parsing (line 10).</p>
+<p>Isn&#8217;t that fantastic? The dynamic lambdas for <code>:extend</code>, <code>:class</code> and <code>:instance</code> allow you to have simple polymorphic representations without the pain of overriding representable&#8217;s internals.</p>
+<p>BTW: all lambda blocks are executed in the represented instance context &#8211; which is the <code>Song</code> object here.</p>
+<h3>Last But Not Least: <span class="caps">HAL</span> Link Arrays In Roar.</h3>
+<p>This might sound funny, but we wrote all that in order to provide a 100% complete implementation of the <a href="http://tools.ietf.org/html/draft-kelly-json-hal-00">HAL/<span class="caps">JSON</span> standard</a>, a cool universal media format for RESTful APIs.</p>
+<p>What was missing was <a href="https://github.com/apotonick/roar/issues/33">support for arrays of links</a> in <span class="caps">HAL</span>. Here&#8217;s an example of what people wanted.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="json" style="font-family:monospace;">{&quot;_links&quot;:{
+ &quot;next&quot;:{&quot;href&quot;:&quot;http://next&quot;}, 
+ &quot;self&quot;:[{&quot;lang&quot;:&quot;en&quot;,&quot;href&quot;:&quot;http://en.hit&quot;},
+         {&quot;lang&quot;:&quot;de&quot;,&quot;href&quot;:&quot;http://de.hit&quot;}]
+}}</pre></div></div>
+
+<p>For some strange reasons I still don&#8217;t understand why the <span class="caps">HAL</span> standard allows having &#8220;single links&#8221; (no girlfriend) and arrays of links. I am sure Mike Kelly himself will soon explain why we need this &#8211; however, here is how roar handles this <a href="https://github.com/apotonick/roar/commit/367a4eb64e34315ab6d81bf70f8bf9ac9027ece0">since 0.11.5</a>.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="json" style="font-family:monospace;">module SongRepresenter
+  include Roar::Representer::JSON::HAL
+&nbsp;
+  link :next do
+    &quot;http://next&quot;
+  end
+&nbsp;
+  links :self do
+    [{:lang =&gt; &quot;en&quot;, :href =&gt; &quot;http://en.hit&quot;}, 
+     {:lang =&gt; &quot;de&quot;, :href =&gt; &quot;http://de.hit&quot;}]
+  end
+end</pre></div></div>
+
+<p>You can see, we still handle &#8220;single links&#8221; with the <code>::link</code> class method. Arrays of links can be specified using the new <code>::links</code> method which receives the rel attribute and a block. The block should return an array of link attribute hashes.</p>
+<p>As always, that works for rendering <em>and</em> parsing. Be careful when you work with a link array.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;">song.<span style="color:#9900CC;">from_json</span><span style="color:#006600; font-weight:bold;">&#40;</span>..<span style="color:#006600; font-weight:bold;">&#41;</span>
+song.<span style="color:#9900CC;">links</span><span style="color:#006600; font-weight:bold;">&#91;</span><span style="color:#ff3333; font-weight:bold;">:next</span><span style="color:#006600; font-weight:bold;">&#93;</span> <span style="color:#008000; font-style:italic;">#=&gt; #&lt;Hyperlink&gt;</span>
+song.<span style="color:#9900CC;">links</span><span style="color:#006600; font-weight:bold;">&#91;</span><span style="color:#ff3333; font-weight:bold;">:self</span><span style="color:#006600; font-weight:bold;">&#93;</span> <span style="color:#008000; font-style:italic;">#=&gt; [#&lt;Hyperlink&gt;, #&lt;Hyperlink&gt;]</span></pre></div></div>
+
+<p>Links defined with <code>::links</code> will naturally contain an array of <code>Hyperlink</code> instances after parsing. Does that help you, guys?</p>
+<h3>More To Come.</h3>
+<p>That was quite some work. And there&#8217;s more coming. Let me know if anything could be improved or added. But now it&#8217;s time for a surf. Keep it real!</p>
+				</div>
+
+				<p class="postmetadata"> Posted in <a href="http://nicksda.apotomo.de/category/uncategorized/" title="View all posts in Uncategorized" rel="category tag">Uncategorized</a></p><p class="postmetadata"> | <span class="tiny-comments"><a href="http://nicksda.apotomo.de/2013/01/released-roar-0-11-5-with-hal-link-arrays-and-representable-1-2-9-with-polymorphism-support/#respond" title="Comment on Released Roar 0.11.5 With HAL Link Arrays and Representable 1.2.9 With Polymorphism Support!">No Comments</a></span></p>
+			</div>
+
+		
+			<div class="post" id="post-2028">
+				<div class="headertag"><div class="post-date">
+<div class="day">22</div>
+<div class="month">Oct</div>
+
+</div><h2><a href="http://nicksda.apotomo.de/2012/10/yaml-support-and-hash-representer-in-representable-1-2-7/" rel="bookmark" title="Permanent Link to YAML Support and Hash Representer In representable-1.2.7!">YAML Support and Hash Representer In representable-1.2.7!</a></h2>
+<p class="byline"> by nick </p><div class="clear"></div></div><div class="clear"></div>
+				<div class="entry">
+					<p>The tiny <a href="https://github.com/apotonick/representable/">representable gem</a> got some improvements recently. Not only did we refactor the internals to make it easier adding new representation engines, we also used that to give you a new format: YAML!</p>
+<h3><span class="caps">YAML</span>, Who Needs YAML?</h3>
+<p>I use <span class="caps">YAML</span> very rarely. But sometimes clients happen to require it, or an <span class="caps">API</span> might be based on this format. Let&#8217;s make the world a better place and support it in representable!</p>
+<p>Consider the following domain class.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;"><span style="color:#CC0066; font-weight:bold;">require</span> <span style="color:#996600;">'ostruct'</span>
+<span style="color:#9966CC; font-weight:bold;">class</span> Song <span style="color:#006600; font-weight:bold;">&lt;</span> OpenStruct
+<span style="color:#9966CC; font-weight:bold;">end</span>
+&nbsp;
+song = Song.<span style="color:#9900CC;">new</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#ff3333; font-weight:bold;">:title</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#996600;">&quot;Scarified&quot;</span>, <span style="color:#ff3333; font-weight:bold;">:track</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#006666;">4</span><span style="color:#006600; font-weight:bold;">&#41;</span></pre></div></div>
+
+<p>To render this into <span class="caps">YAML</span> a simple representer is needed.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;"><span style="color:#9966CC; font-weight:bold;">module</span> SongRepresenter
+  <span style="color:#9966CC; font-weight:bold;">include</span> <span style="color:#6666ff; font-weight:bold;">Representable::YAML</span>
+&nbsp;
+  property <span style="color:#ff3333; font-weight:bold;">:title</span>
+  property <span style="color:#ff3333; font-weight:bold;">:track</span>
+<span style="color:#9966CC; font-weight:bold;">end</span></pre></div></div>
+
+<p>Note the usage of the <code>Representable::YAML</code> module. After injecting, the domain object is fully equipped with <code>#to_yaml</code> and <code>#from_yaml</code>.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;"><span style="color:#CC0066; font-weight:bold;">puts</span> song.<span style="color:#9900CC;">extend</span><span style="color:#006600; font-weight:bold;">&#40;</span>SongRepresenter<span style="color:#006600; font-weight:bold;">&#41;</span>.<span style="color:#9900CC;">to_yaml</span>
+&nbsp;
+<span style="color:#008000; font-style:italic;"># =&gt; &quot;</span>
+<span style="color:#006600; font-weight:bold;">---</span>
+title: Scarified
+track: <span style="color:#006666;">4</span><span style="color:#996600;">&quot;</span></pre></div></div>
+
+<p>As always, this works also with parsing.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;">song = Song.<span style="color:#9900CC;">new</span>.<span style="color:#9900CC;">extend</span><span style="color:#006600; font-weight:bold;">&#40;</span>SongRepresenter<span style="color:#006600; font-weight:bold;">&#41;</span>
+song.<span style="color:#9900CC;">from_yaml</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#996600;">&quot;---
+title: Jackhammer
+track: 5
+&quot;</span><span style="color:#006600; font-weight:bold;">&#41;</span>
+&nbsp;
+<span style="color:#CC0066; font-weight:bold;">puts</span> song.<span style="color:#9900CC;">inspect</span>
+&nbsp;
+<span style="color:#008000; font-style:italic;">#=&gt; #&lt;Song title=&quot;Jackhammer&quot;, track=5&gt;</span></pre></div></div>
+
+<h3>Nested Models? Not A Big Deal.</h3>
+<p>Often you may want to represent nested setups &#8211; where models contain models. This has always been a key feature in representable.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;"><span style="color:#9966CC; font-weight:bold;">class</span> Album <span style="color:#006600; font-weight:bold;">&lt;</span> OpenStruct
+<span style="color:#9966CC; font-weight:bold;">end</span>
+&nbsp;
+<span style="color:#9966CC; font-weight:bold;">module</span> AlbumRepresenter
+  <span style="color:#9966CC; font-weight:bold;">include</span> <span style="color:#6666ff; font-weight:bold;">Representable::YAML</span>
+&nbsp;
+  property <span style="color:#ff3333; font-weight:bold;">:name</span>
+  collection <span style="color:#ff3333; font-weight:bold;">:songs</span>, <span style="color:#ff3333; font-weight:bold;">:extend</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> SongRepresenter, 
+                      <span style="color:#ff3333; font-weight:bold;">:class</span>  <span style="color:#006600; font-weight:bold;">=&gt;</span> Song
+<span style="color:#9966CC; font-weight:bold;">end</span></pre></div></div>
+
+<p>Since an <code>Album</code> contains a list of <code>Song</code>s we wanna represent those embedded objects with the <code>SongRepresenter</code> we already wrote.</p>
+<p>Seting up a demo album, first.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;">album = Album.<span style="color:#9900CC;">new</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#ff3333; font-weight:bold;">:songs</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#006600; font-weight:bold;">&#91;</span>
+  Song.<span style="color:#9900CC;">new</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#ff3333; font-weight:bold;">:title</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#996600;">&quot;Scarified&quot;</span>,  <span style="color:#ff3333; font-weight:bold;">:track</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#006666;">4</span><span style="color:#006600; font-weight:bold;">&#41;</span>,
+  Song.<span style="color:#9900CC;">new</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#ff3333; font-weight:bold;">:title</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#996600;">&quot;Jackhammer&quot;</span>, <span style="color:#ff3333; font-weight:bold;">:track</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#006666;">5</span><span style="color:#006600; font-weight:bold;">&#41;</span>
+<span style="color:#006600; font-weight:bold;">&#93;</span><span style="color:#006600; font-weight:bold;">&#41;</span></pre></div></div>
+
+<p>The <span class="caps">YAML</span> representer will now create a proper <span class="caps">YAML</span> document for the nested objects.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;">album.<span style="color:#9900CC;">extend</span><span style="color:#006600; font-weight:bold;">&#40;</span>AlbumRepresenter<span style="color:#006600; font-weight:bold;">&#41;</span>.<span style="color:#9900CC;">to_yaml</span>
+<span style="color:#008000; font-style:italic;">#=&gt;</span>
+<span style="color:#996600;">&quot;---
+songs:
+- title: Scarified
+  track: 4
+- title: Jackhammer
+  track: 5&quot;</span></pre></div></div>
+
+<p>See how easy that is?</p>
+<h3>And Finally: Flow-Style Lists.</h3>
+<p>Another cool feature is the ability to declare collections as <a href="http://www.yaml.org/spec/1.2/spec.html#id2790088">flow-style</a> which is an official part of the <span class="caps">YAML</span> specification but only very poorly implemented in available <span class="caps">YAML</span> gems.</p>
+<p>Usually, lists are rendered in the block style.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;"><span style="color:#9966CC; font-weight:bold;">class</span> HotBands <span style="color:#006600; font-weight:bold;">&lt;</span> OpenStruct
+<span style="color:#9966CC; font-weight:bold;">end</span>
+&nbsp;
+<span style="color:#9966CC; font-weight:bold;">module</span> HotBandsRepresenter
+  <span style="color:#9966CC; font-weight:bold;">include</span> <span style="color:#6666ff; font-weight:bold;">Representable::YAML</span>
+&nbsp;
+  property <span style="color:#ff3333; font-weight:bold;">:for</span>
+  collection <span style="color:#ff3333; font-weight:bold;">:names</span>
+<span style="color:#9966CC; font-weight:bold;">end</span></pre></div></div>
+
+<p>After creating and rendering one of those <code>HotBand</code>s, the <code>names</code> list is rendered in block style &#8211; the default in all <span class="caps">YAML</span> gems.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;">HotBands.<span style="color:#9900CC;">new</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#ff3333; font-weight:bold;">:for</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#996600;">&quot;Nick&quot;</span>, <span style="color:#ff3333; font-weight:bold;">:names</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#006600; font-weight:bold;">&#91;</span>
+  <span style="color:#996600;">&quot;Bad Religion&quot;</span>, 
+  <span style="color:#996600;">&quot;Van Halen&quot;</span>, 
+  <span style="color:#996600;">&quot;Mozart&quot;</span>
+<span style="color:#006600; font-weight:bold;">&#93;</span><span style="color:#006600; font-weight:bold;">&#41;</span>.<span style="color:#9900CC;">extend</span><span style="color:#006600; font-weight:bold;">&#40;</span>HotBandsRepresenter<span style="color:#006600; font-weight:bold;">&#41;</span>.<span style="color:#9900CC;">to_yaml</span>
+&nbsp;
+<span style="color:#008000; font-style:italic;">#=&gt; </span>
+<span style="color:#996600;">&quot;---
+for: Nick
+names:
+- Bad Religion
+- Van Halen
+- Mozart&quot;</span></pre></div></div>
+
+<p>Now, if you don&#8217;t like that style where one list item is displayed per line, you might want to switch to the oh-so-flowing flow style.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;"><span style="color:#9966CC; font-weight:bold;">module</span> HotBandsRepresenter
+  <span style="color:#9966CC; font-weight:bold;">include</span> <span style="color:#6666ff; font-weight:bold;">Representable::YAML</span>
+&nbsp;
+  property <span style="color:#ff3333; font-weight:bold;">:for</span>
+  collection <span style="color:#ff3333; font-weight:bold;">:names</span>, <span style="color:#ff3333; font-weight:bold;">:style</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#ff3333; font-weight:bold;">:flow</span>
+<span style="color:#9966CC; font-weight:bold;">end</span></pre></div></div>
+
+<p>By using the <code>:style =&#62; :flow</code> option in the collection you can achieve just that!</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;">hotties.<span style="color:#9900CC;">to_yaml</span>
+<span style="color:#008000; font-style:italic;">#=&gt; </span>
+<span style="color:#996600;">&quot;---
+for: Nick
+names: [Bad Religion, Van Halen, Mozart]&quot;</span></pre></div></div>
+
+<p>Check how it flows. That is just awesome.</p>
+<h3>Introducing The Hash Representer.</h3>
+<p>We did a little bit of internal refactorings cleaning up representable. What came out is the new hash representer which gives basic functionality to most of the other representer engines. It can also be helpful if you want to parse incoming form data or use the <code>params</code> hash from Rails or Sinatra to fill your objects.</p>
+<p>Consider this representer.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;"><span style="color:#CC0066; font-weight:bold;">require</span> <span style="color:#996600;">'representable/hash'</span>
+<span style="color:#9966CC; font-weight:bold;">module</span> BandRepresenter
+  <span style="color:#9966CC; font-weight:bold;">include</span> <span style="color:#6666ff; font-weight:bold;">Representable::Hash</span>
+&nbsp;
+  property <span style="color:#ff3333; font-weight:bold;">:name</span>
+  property <span style="color:#ff3333; font-weight:bold;">:label</span>
+<span style="color:#9966CC; font-weight:bold;">end</span></pre></div></div>
+
+<p>This representer can read and write plain Ruby hashes. Sounds stupid? It is! However, what if you wanna use Rails&#8217; <code>params</code> hash to update a model?</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;">params = <span style="color:#006600; font-weight:bold;">&#123;</span><span style="color:#996600;">&quot;band&quot;</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> 
+  <span style="color:#006600; font-weight:bold;">&#123;</span><span style="color:#996600;">&quot;name&quot;</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#996600;">&quot;Paul Gilbert&quot;</span>, <span style="color:#996600;">&quot;label&quot;</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#996600;">&quot;n/a&quot;</span><span style="color:#006600; font-weight:bold;">&#125;</span><span style="color:#006600; font-weight:bold;">&#125;</span></pre></div></div>
+
+<p>This could be a form Rails (or Sinatra) automatically parsed for you. Now let&#8217;s use that on a new <code>Band</code> instance.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;">band = Band.<span style="color:#9900CC;">new</span>.<span style="color:#9900CC;">extend</span><span style="color:#006600; font-weight:bold;">&#40;</span>BandRepresenter<span style="color:#006600; font-weight:bold;">&#41;</span>.
+  <span style="color:#9900CC;">from_hash</span><span style="color:#006600; font-weight:bold;">&#40;</span>params<span style="color:#006600; font-weight:bold;">&#91;</span><span style="color:#996600;">&quot;band&quot;</span><span style="color:#006600; font-weight:bold;">&#93;</span><span style="color:#006600; font-weight:bold;">&#41;</span></pre></div></div>
+
+<p>Note that this could be an existing <code>Band</code> instance, too, as from <code>Band.find(params[:id])</code>.</p>
+<p>Inspecting the result of our &#8220;parsing&#8221; we see that it actually works.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;">band.<span style="color:#9900CC;">inspect</span>
+<span style="color:#008000; font-style:italic;">#=&gt; #&lt;Band name=&quot;Paul Gilbert&quot;, label=&quot;n/a&quot;&gt;</span></pre></div></div>
+
+<p>This new hash representer is especially helpful for using representers with forms.</p>
+<h3>One Module, Multiple Representers</h3>
+<p>Another nice little cleanup lets you include different representer engines into a single module, so you can transform to and from different media types.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;"><span style="color:#9966CC; font-weight:bold;">module</span> BandRepresenter
+  <span style="color:#9966CC; font-weight:bold;">include</span> <span style="color:#6666ff; font-weight:bold;">Representable::JSON</span>
+  <span style="color:#9966CC; font-weight:bold;">include</span> <span style="color:#6666ff; font-weight:bold;">Representable::XML</span></pre></div></div>
+
+<p>This would give your objects the power of both <span class="caps">XML</span> and <span class="caps">JSON</span>.</p>
+<h3>More To Come.</h3>
+<p>In the next release we&#8217;re planning readable/writeable policy support, polymorphic collections, letting you pass arguments to the represented accessors if you need that and more stuff I already forgot. Let us know if you need anything more, and <strong>¡Salud!</strong></p>
+				</div>
+
+				<p class="postmetadata"> Posted in <a href="http://nicksda.apotomo.de/category/uncategorized/" title="View all posts in Uncategorized" rel="category tag">Uncategorized</a></p><p class="postmetadata"> | <span class="tiny-comments"><a href="http://nicksda.apotomo.de/2012/10/yaml-support-and-hash-representer-in-representable-1-2-7/#respond" title="Comment on YAML Support and Hash Representer In representable-1.2.7!">No Comments</a></span></p>
+			</div>
+
+		
+			<div class="post" id="post-2000">
+				<div class="headertag"><div class="post-date">
+<div class="day">14</div>
+<div class="month">Aug</div>
+
+</div><h2><a href="http://nicksda.apotomo.de/2012/08/fear-of-the-class-fat-model-kills-your-software-design/" rel="bookmark" title="Permanent Link to Fear Of The Class: Fat Model Kills Your Software Design.">Fear Of The Class: Fat Model Kills Your Software Design.</a></h2>
+<p class="byline"> by nick </p><div class="clear"></div></div><div class="clear"></div>
+				<div class="entry">
+					<p>You are following the &#8220;Fat Models, Skinny Controller&#8221; pattern in Rails. Your controllers being the <span class="caps">HTTP</span> endpoints are nice and clean. Short action methods and brief assignments. However, your models keep growing and growing, you are losing track of its responsibilities and you are trying to figure out why.</p>
+<p>That is a problem. Rails makes you push all your domain code into the persistance layer. Avoiding the oh so dreaded &#8220;over-abstraction&#8221;, bloating a handful of ActiveRecord classes seems to be a better strategy. Also, the idea of three &#8211; and only three &#8211; possible places for your business logic makes it easy to justify the growing model: Controllers must be &#8220;skinny&#8221; and views shouldn&#8217;t contain logic, so&#8230; if not pushing into the &#8220;model&#8221;, where else should I put it?</p>
+<p><strong>To make it short:</strong> Stop thinking in database tables and relations and start modeling your domain with dedicated classes and instances &#8211; that is what object-orientation was made for!</p>
+<h3>What Is My Domain?</h3>
+<p>If your concern is <em>&#8220;I want to export a series of chat messages to a <span class="caps">JSON</span> document&#8221;</em> then write a new class <code>MessagesDocument</code>. That is your domain. That is the problem you as the programmer are supposed to solve. So do it.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;"><span style="color:#9966CC; font-weight:bold;">class</span> MessagesDocument
+  <span style="color:#9966CC; font-weight:bold;">def</span> to_json<span style="color:#006600; font-weight:bold;">&#40;</span>messages<span style="color:#006600; font-weight:bold;">&#41;</span>
+    messages.<span style="color:#9900CC;">collect</span> <span style="color:#9966CC; font-weight:bold;">do</span> |msg|
+      msg.<span style="color:#9900CC;">to_json</span>
+    <span style="color:#9966CC; font-weight:bold;">end</span>.<span style="color:#9900CC;">to_json</span>
+  <span style="color:#9966CC; font-weight:bold;">end</span>
+<span style="color:#9966CC; font-weight:bold;">end</span></pre></div></div>
+
+<p>We all know that this simple example will soon get bloated with code lines since we want a little message filter here and a special formatting method for dates there. So, why would you put all this logic into the <code>Message</code> class? It has <em>nothing</em> to do with your message domain at all. And, no, this <strong>ain&#8217;t no over-engineering</strong>, this reflects your concern of compiling a document.</p>
+<p><strong>&#8212; UPDATE:</strong> There was some discussion whether &#8220;compiling JSON&#8221; is part of &#8220;the&#8221; domain or not. Well, let&#8217;s presume we&#8217;re designing a document management tool for librarians (very interesting people, BTW!). In order to send archived files to other systems, one feature is an exporter to serialize documents to <span class="caps">JSON</span> &#8211; then this component is surely part of your domain.</p>
+<h3>And, The Persistance Layer?</h3>
+<p>Strictly speaking, your <code>Message</code> class should be responsible only for <strong>synchronizing the model instance with the corresponding row in the database</strong>. It is a persistance layer. And this layer should be free of business code. I know, it is handy to simply push in a formatter method for the <code>created_at</code> field &#8211; at the cost of an ever-growing class, thou. Think about it. How many methods could you move to dedicated new classes since those behaviours don&#8217;t <em>need</em> persistance?</p>
+<h3>But Isn&#8217;t That Over-Engineered?</h3>
+<p>If Rails and its legendary &#8220;model&#8221; layer would be good practice, I wouldn&#8217;t see dozens of projects all over the world with model files having 600 <span class="caps">LOC</span> each, including programmers <em>complaining</em> about too many responsibilites in their classes, starring at me, eyes wide open, blearily, asking where to put all that code. Rails does allow you additional assets, but the framework itself doesn&#8217;t answer those questions.</p>
+<p><strong>Your fat models are killing your software design.</strong> Do you know how hard it is to figure out the concern of a set of methods in a <em>fat</em> class? Of course you do! So why don&#8217;t you just generously push a set of logically associated methods into its own class? If that hurts too much you can still move it back into your all-mighty &#8220;model&#8221;.</p>
+<h3>What Do We Get From That?</h3>
+<p>Please don&#8217;t get me wrong &#8211; I don&#8217;t tell you to perfectly abstract your code &#8220;Java-like&#8221; (hate that comparison) into twohundredseventyfive classes. Relax, and refactor your code step by step. Parts that do not necessarily need the persistance should be separated. You will keep track of <em>what happens where</em> more easily with your refactorings and have faster tests that might encourage you to assert more edge cases.</p>
+<p>In addition, that process makes you think about interfaces &#8211; the interaction of your new classes with your existing models. Interfaces are a good thing. <strong>Don&#8217;t fear the class.</strong> Hopefully, the next posts in this series can help. I want to talk about mass-assignment problems, lifecycle callbacks in ActiveRecord, form objects, and a lot more including ways to do that practically.</p>
+<p>Several speakers were <a href="https://twitter.com/marcusmateus/status/234347190221406208">talking about</a> the same problem: Unbloat your models in Rails and focus on your domain instead. &#8220;There&#8217;s something in the water.&#8221; &#8211; that was the conclusion of the <a href="https://twitter.com/lsrc">LoneStar RubyConf 2012</a> last weekend, a fantastic conference in beautiful Austin, TX with even more fantastic people.</p>
+				</div>
+
+				<p class="postmetadata">Tags: <a href="http://nicksda.apotomo.de/tag/rails/" rel="tag">rails</a><br /> Posted in <a href="http://nicksda.apotomo.de/category/uncategorized/" title="View all posts in Uncategorized" rel="category tag">Uncategorized</a></p><p class="postmetadata"> | <span class="tiny-comments"><a href="http://nicksda.apotomo.de/2012/08/fear-of-the-class-fat-model-kills-your-software-design/#comments" title="Comment on Fear Of The Class: Fat Model Kills Your Software Design.">12 Comments </a></span></p>
+			</div>
+
+		
+			<div class="post" id="post-2004">
+				<div class="headertag"><div class="post-date">
+<div class="day">14</div>
+<div class="month">Aug</div>
+
+</div><h2><a href="http://nicksda.apotomo.de/2012/08/different-gemfiles-for-ruby-1-8-and-1-9-on-travis-ci/" rel="bookmark" title="Permanent Link to Different Gemfiles For Ruby 1.8 and 1.9 on Travis CI">Different Gemfiles For Ruby 1.8 and 1.9 on Travis CI</a></h2>
+<p class="byline"> by nick </p><div class="clear"></div></div><div class="clear"></div>
+				<div class="entry">
+					<p>I ran into a problem recently, one of my gems is using Mongoid in tests and all at sudden, Mongoid 3.0 wouldn&#8217;t support Ruby 1.8.7 anymore. My builds on Travis broke since I test my gem against 1.8.7 and 1.9.3. So, what I needed was to tell the 1.8 test to use a different Gemfile. Here&#8217;s what I did.</p>
+<p>I configured <a href="http://about.travis-ci.org/docs/user/build-configuration/">the matrix</a> in my <code>.travis.yml</code> file according to the manual.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="yaml" style="font-family:monospace;">matrix:
+  include:
+    - rvm: 1.8.7
+      gemfile: gemfiles/Gemfile.mongoid-2.4
+    - rvm: 1.9.3
+      gemfile: Gemfile</pre></div></div>
+
+<p>The <code>Gemfile</code> for 1.9.3 is straight-forward.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;">source <span style="color:#ff3333; font-weight:bold;">:rubygems</span>
+&nbsp;
+gemspec</pre></div></div>
+
+<p>The modified <code>gemfiles/Gemfile.mongoid-2.4</code> requires the older mongoid version.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;">source <span style="color:#ff3333; font-weight:bold;">:rubygems</span>
+&nbsp;
+gemspec <span style="color:#ff3333; font-weight:bold;">:path</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#996600;">'../'</span>
+&nbsp;
+gem <span style="color:#996600;">'mongoid'</span>, <span style="color:#996600;">'~&gt; 2.4.0'</span></pre></div></div>
+
+<p>Now, my tests run with both Ruby versions both using their own <code>Gemfile</code>. Awesome, Travis!</p>
+				</div>
+
+				<p class="postmetadata">Tags: <a href="http://nicksda.apotomo.de/tag/travis/" rel="tag">travis</a><br /> Posted in <a href="http://nicksda.apotomo.de/category/uncategorized/" title="View all posts in Uncategorized" rel="category tag">Uncategorized</a></p><p class="postmetadata"> | <span class="tiny-comments"><a href="http://nicksda.apotomo.de/2012/08/different-gemfiles-for-ruby-1-8-and-1-9-on-travis-ci/#respond" title="Comment on Different Gemfiles For Ruby 1.8 and 1.9 on Travis CI">No Comments</a></span></p>
+			</div>
+
+		
+			<div class="post" id="post-1994">
+				<div class="headertag"><div class="post-date">
+<div class="day">25</div>
+<div class="month">Jun</div>
+
+</div><h2><a href="http://nicksda.apotomo.de/2012/06/using-rails-gems-like-simple_form-in-sinatra-or-anywhere/" rel="bookmark" title="Permanent Link to Using Rails Gems Like simple_form in Sinatra Or Anywhere">Using Rails Gems Like simple_form in Sinatra Or Anywhere</a></h2>
+<p class="byline"> by nick </p><div class="clear"></div></div><div class="clear"></div>
+				<div class="entry">
+					<p>Rails comes with a massive amount of helpful gems. Those gems are part of Rails&#8217; success and they make Rails the most versatile framework in the Ruby world.</p>
+<p>No longer shall using those gems be limited to a Rails environment! The new <a href="https://github.com/apotonick/cells">Cells 3.8.5</a> allows using many gems in any project, from simple scripts to Sinatra applications, without the Rails dependency. Beside <code>actionpack</code>, no other Rails gem is required.</p>
+<p>Let&#8217;s see how the great gem <a href="https://github.com/plataformatec/simple_form">simple_form</a> can be used in a Ruby script.</p>
+<h3>The Gemfile.</h3>
+<p>For demonstration purpose I want to pass a real ActiveRecord model to simple_form. That is why the <code>Gemfile</code> might look bloated at first sight.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;">source <span style="color:#ff3333; font-weight:bold;">:gemcutter</span>
+&nbsp;
+gem <span style="color:#996600;">&quot;cells&quot;</span> , <span style="color:#996600;">&quot;~&gt; 3.8.5&quot;</span>
+gem <span style="color:#996600;">&quot;sqlite3&quot;</span>
+gem <span style="color:#996600;">&quot;activerecord&quot;</span>
+gem <span style="color:#996600;">&quot;simple_form&quot;</span></pre></div></div>
+
+<h3>The New Module.</h3>
+<p>If you&#8217;re not familiar with <a href="https://github.com/apotonick/cells">Cells</a> yet, <a href="http://nicksda.apotomo.de/2010/11/lets-write-a-reusable-sidebar-component-in-rails-3/">check this post</a>. The cell we&#8217;re writing is pretty straight-forward with two new lines.</p>
+
+<div class="wp_syntax"><table><tr><td class="line_numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="code"><pre class="ruby ruby" style="font-family:monospace;"><span style="color:#CC0066; font-weight:bold;">require</span> <span style="color:#996600;">'cell/base'</span>
+<span style="color:#CC0066; font-weight:bold;">require</span> <span style="color:#996600;">&quot;cell/rails/helper_api&quot;</span>
+<span style="color:#CC0066; font-weight:bold;">require</span> <span style="color:#996600;">&quot;simple_form&quot;</span>
+&nbsp;
+<span style="color:#9966CC; font-weight:bold;">class</span> MusicianCell <span style="color:#006600; font-weight:bold;">&lt;</span> <span style="color:#6666ff; font-weight:bold;">Cell::Base</span>
+  <span style="color:#9966CC; font-weight:bold;">include</span> <span style="color:#6666ff; font-weight:bold;">Cell::Rails::HelperAPI</span>
+&nbsp;
+  <span style="color:#0000FF; font-weight:bold;">self</span>._helpers = RoutingHelpers
+&nbsp;
+  <span style="color:#9966CC; font-weight:bold;">def</span> show
+    <span style="color:#0066ff; font-weight:bold;">@musician</span> = Musician.<span style="color:#9900CC;">find</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#ff3333; font-weight:bold;">:first</span><span style="color:#006600; font-weight:bold;">&#41;</span>
+  <span style="color:#9966CC; font-weight:bold;">end</span>
+<span style="color:#9966CC; font-weight:bold;">end</span></pre></td></tr></table></div>
+
+<p>First, note that we use <code>Cell::Base</code> to derive from since we don&#8217;t want the Rails dependency (line 5). We then include the module necessary to provide the helpers outside of Rails (line 6).</p>
+<h3>How Does URLs Work?</h3>
+<p>Most gems rely on routing helpers. For instance, simple_form is using polymorphic routes helpers like <code>musician_path</code> to compute URLs. Naturally, outside of Rails we don&#8217;t have those routes and need to provide them ourselves. This is what happens in line 8.</p>
+
+<div class="wp_syntax"><table><tr><td class="line_numbers"><pre>8
+</pre></td><td class="code"><pre class="ruby ruby" style="font-family:monospace;">  <span style="color:#0000FF; font-weight:bold;">self</span>._helpers = RoutingHelpers</pre></td></tr></table></div>
+
+<p>The corresponding <code>RoutingHelpers</code> module now is up to you.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;"><span style="color:#9966CC; font-weight:bold;">module</span> RoutingHelpers
+  <span style="color:#9966CC; font-weight:bold;">def</span> musician_path<span style="color:#006600; font-weight:bold;">&#40;</span>model, <span style="color:#006600; font-weight:bold;">*</span>args<span style="color:#006600; font-weight:bold;">&#41;</span>
+    <span style="color:#996600;">&quot;/musicians/#{model.id}&quot;</span>
+  <span style="color:#9966CC; font-weight:bold;">end</span>
+<span style="color:#9966CC; font-weight:bold;">end</span></pre></div></div>
+
+<h3>Using simple_form In The View.</h3>
+<p>The state view sitting at <code>musician/play.html.erb</code> might use <code>simple_form</code> now. And, hey, you are not limited to <span class="caps">ERB</span>. Cells comes with all the template engines that Rails supports. Use <span class="caps">HAML</span> if you fancy. Use Slim to loose weight. Or Whatever.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="erb" style="font-family:monospace;">&lt;%= simple_form_for @musician do |f| %&gt;
+  &lt;%= f.input :name %&gt;
+  &lt;%= f.button :submit %&gt;
+&lt;% end %&gt;</pre></div></div>
+
+<p>See how easy that is?</p>
+<h3>The Ruby Script.</h3>
+<p>Now using all that is as simple as any other steps. This example is just a Ruby script &#8211; note that the following code could also be in a Sinatra action, a Webmachine resource, a mailer or whatever you prefer.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;"><span style="color:#CC0066; font-weight:bold;">require</span> <span style="color:#996600;">'musician_cell'</span>
+&nbsp;
+MusicianCell.<span style="color:#9900CC;">append_view_path</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#996600;">&quot;.&quot;</span><span style="color:#006600; font-weight:bold;">&#41;</span>
+<span style="color:#CC0066; font-weight:bold;">puts</span> <span style="color:#6666ff; font-weight:bold;">Cell::Base</span>.<span style="color:#9900CC;">render_cell_for</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#ff3333; font-weight:bold;">:musician</span>, <span style="color:#ff3333; font-weight:bold;">:play</span><span style="color:#006600; font-weight:bold;">&#41;</span></pre></div></div>
+
+<p>This is enough to render the form with simple_form.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="html" style="font-family:monospace;">&lt;form accept-charset=&quot;UTF-8&quot; action=&quot;/musicians/1&quot; class=&quot;simple_form edit_musician&quot; id=&quot;edit_musician_1&quot; method=&quot;post&quot;&gt;
+  &lt;div style=&quot;margin:0;padding:0;display:inline&quot;&gt;&lt;input name=&quot;utf8&quot; type=&quot;hidden&quot; value=&quot;&amp;#x2713;&quot; /&gt;&lt;input name=&quot;_method&quot; type=&quot;hidden&quot; value=&quot;put&quot; /&gt;&lt;/div&gt;
+	&lt;div class=&quot;input string optional&quot;&gt;&lt;label class=&quot;string optional&quot; for=&quot;musician_name&quot;&gt;Name&lt;/label&gt;&lt;input class=&quot;string optional&quot; id=&quot;musician_title&quot; maxlength=&quot;255&quot; name=&quot;musician[title]&quot; size=&quot;50&quot; type=&quot;text&quot; value=&quot;Steve&quot; /&gt;&lt;/div&gt;
+	&lt;input class=&quot;button&quot; name=&quot;commit&quot; type=&quot;submit&quot; value=&quot;Update Musician&quot; /&gt;
+&lt;/form&gt;</pre></div></div>
+
+<p>Cool, isn&#8217;t it?</p>
+<h3>Using Cells Caching.</h3>
+<p>If you want to use Cells caching you just have to provide a cache store. You may use any ActiveSupport compatible cache store here, no limits!</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;">cache = <span style="color:#6666ff; font-weight:bold;">ActiveSupport::Cache::MemoryStore</span>.<span style="color:#9900CC;">new</span>
+&nbsp;
+<span style="color:#6666ff; font-weight:bold;">Cell::Base</span>.<span style="color:#9900CC;">render_cell_for</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#ff3333; font-weight:bold;">:musician</span>, <span style="color:#ff3333; font-weight:bold;">:play</span><span style="color:#006600; font-weight:bold;">&#41;</span> <span style="color:#9966CC; font-weight:bold;">do</span> |c|
+  c.<span style="color:#9900CC;">cache_configured</span> = <span style="color:#0000FF; font-weight:bold;">true</span>
+  c.<span style="color:#9900CC;">cache_store</span> = cache
+<span style="color:#9966CC; font-weight:bold;">end</span></pre></div></div>
+
+<p>See how we use dependency injection now to configure the cell? This makes the whole workflow completely encapsulated and clean. We might provide some utility methods in the near future to make this setup a little bit more convenient. Let me know what you need. Shap!</p>
+				</div>
+
+				<p class="postmetadata">Tags: <a href="http://nicksda.apotomo.de/tag/cells/" rel="tag">Cells</a><br /> Posted in <a href="http://nicksda.apotomo.de/category/uncategorized/" title="View all posts in Uncategorized" rel="category tag">Uncategorized</a></p><p class="postmetadata"> | <span class="tiny-comments"><a href="http://nicksda.apotomo.de/2012/06/using-rails-gems-like-simple_form-in-sinatra-or-anywhere/#comments" title="Comment on Using Rails Gems Like simple_form in Sinatra Or Anywhere">7 Comments </a></span></p>
+			</div>
+
+		
+			<div class="post" id="post-1984">
+				<div class="headertag"><div class="post-date">
+<div class="day">19</div>
+<div class="month">Jun</div>
+
+</div><h2><a href="http://nicksda.apotomo.de/2012/06/some-updates-on-representable-1-2-3-released/" rel="bookmark" title="Permanent Link to Some Updates on Representable: 1.2.3 Released">Some Updates on Representable: 1.2.3 Released</a></h2>
+<p class="byline"> by nick </p><div class="clear"></div></div><div class="clear"></div>
+				<div class="entry">
+					<p>Hi everyone, just wanted to give you a quick update. As always, we were hard-working &#8211; several versions of <a href="https://github.com/apotonick/representable">representable</a> were released in the last weeks, we even <a href="http://ruby5.envylabs.com/episodes/281-episode-277-june-1st-2012/stories/2466-representable">got featured on Ruby5</a>, yo! Here&#8217;s what changed.</p>
+<h3>Nil Properties Are Ignored</h3>
+<p>In 1.2, uninitialized properties or properties explicitely set to <code>nil</code> are <strong>no longer considered</strong> when rendering a representation or parsing an incoming document.</p>
+<p>Let&#8217;s use the same old song example. Sing along, everybody!</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;"><span style="color:#9966CC; font-weight:bold;">class</span> Song
+  attr_accessor <span style="color:#ff3333; font-weight:bold;">:name</span>
+<span style="color:#9966CC; font-weight:bold;">end</span>
+&nbsp;
+<span style="color:#9966CC; font-weight:bold;">module</span> SongRepresenter
+  <span style="color:#9966CC; font-weight:bold;">include</span> <span style="color:#6666ff; font-weight:bold;">Representable::JSON</span>
+  property <span style="color:#ff3333; font-weight:bold;">:name</span>
+<span style="color:#9966CC; font-weight:bold;">end</span></pre></div></div>
+
+<p>First, I create a <code>Song</code> instance and extend it with the representer module.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;">song = Song.<span style="color:#9900CC;">new</span>.<span style="color:#9900CC;">extend</span><span style="color:#006600; font-weight:bold;">&#40;</span>SongRepresenter<span style="color:#006600; font-weight:bold;">&#41;</span></pre></div></div>
+
+<p>An uninitialized <code>name</code> will now result in an empty property since the <strong>nil property is skipped when rendering</strong>.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;">song.<span style="color:#9900CC;">to_json</span>
+<span style="color:#008000; font-style:italic;">#=&gt; {}</span></pre></div></div>
+
+<h3>But I Want The Nil!</h3>
+<p>You may explicitely tell representable to include nil properties in representations using the new option <code>:render_nil</code> as <a href="https://github.com/apotonick/representable/pull/2">discussed in this thread</a>.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;"><span style="color:#9966CC; font-weight:bold;">module</span> SongRepresenter
+  <span style="color:#9966CC; font-weight:bold;">include</span> <span style="color:#6666ff; font-weight:bold;">Representable::JSON</span>
+  property <span style="color:#ff3333; font-weight:bold;">:name</span>, <span style="color:#ff3333; font-weight:bold;">:render_nil</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#0000FF; font-weight:bold;">true</span>
+<span style="color:#9966CC; font-weight:bold;">end</span></pre></div></div>
+
+<p>Check how the uninitialized (or, <em>nil</em>) is included now.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;">song.<span style="color:#9900CC;">to_json</span>
+<span style="color:#008000; font-style:italic;">#=&gt; {&quot;name&quot;:null}</span></pre></div></div>
+
+<h3>Parsing Became Ignorant.</h3>
+<p>Another change was introduced in parsing. Properties that are not found in the incoming document are ignored, it is up to the represented object to handle with that.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;">song.<span style="color:#9900CC;">from_json</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#996600;">&quot;{}&quot;</span><span style="color:#006600; font-weight:bold;">&#41;</span>
+<span style="color:#008000; font-style:italic;">#=&gt; #&lt;Song:0x8a5145c&gt;</span></pre></div></div>
+
+<p>Note how the <code>@name</code> instance variable is not even created. Beware that this might break your <span class="caps">API</span>. In former versions, non-existent properties were initialized with <code>nil</code> in the parsing process. That no longer happens!</p>
+<h3>False Values Are Included, Now!</h3>
+<p>One consequence is that <code>false</code> values now get a meaning and are included in rendering and parsing.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;">song.<span style="color:#9900CC;">name</span> = <span style="color:#0000FF; font-weight:bold;">false</span>
+song.<span style="color:#9900CC;">to_json</span> <span style="color:#008000; font-style:italic;">#=&gt; {&quot;name&quot;:false}</span></pre></div></div>
+
+<p>To summarize, <strong>representable got a little bit dumber.</strong> <code>nil</code> or non-existant values are simply skipped. You may include them using <code>:render_nil</code>. False values are treated just like any other &#8220;valid&#8221; property.</p>
+<h3>Representing Hashes in <span class="caps">XML</span>.</h3>
+<p>A cool newly added feature is the <code>AttributeHash</code> for <span class="caps">XML</span> when you want to map a hash to a single <span class="caps">XML</span> tag with attributes. Check this example.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;"><span style="color:#CC0066; font-weight:bold;">require</span> <span style="color:#996600;">&quot;representable/xml/hash&quot;</span>
+&nbsp;
+<span style="color:#9966CC; font-weight:bold;">module</span> SongHashRepresenter
+  <span style="color:#9966CC; font-weight:bold;">include</span> <span style="color:#6666ff; font-weight:bold;">Representable::XML::AttributeHash</span>
+  <span style="color:#0000FF; font-weight:bold;">self</span>.<span style="color:#9900CC;">representation_wrap</span>= <span style="color:#ff3333; font-weight:bold;">:song</span>
+<span style="color:#9966CC; font-weight:bold;">end</span></pre></div></div>
+
+<p>Rendering is just as simple as calling <code>to_xml</code>.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;"><span style="color:#006600; font-weight:bold;">&#123;</span>:name <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#996600;">&quot;Roxanne&quot;</span>, <span style="color:#ff3333; font-weight:bold;">:artist</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#996600;">&quot;The Police&quot;</span><span style="color:#006600; font-weight:bold;">&#125;</span>.
+  <span style="color:#9900CC;">extend</span><span style="color:#006600; font-weight:bold;">&#40;</span>SongHashRepresenter<span style="color:#006600; font-weight:bold;">&#41;</span>.<span style="color:#9900CC;">to_xml</span>
+&nbsp;
+<span style="color:#008000; font-style:italic;">#=&gt; &lt;song name=&quot;Roxanne&quot; artist=&quot;The Police&quot;/&gt;</span></pre></div></div>
+
+<p>Now that is cool. And it works the other way, too!</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;"><span style="color:#006600; font-weight:bold;">&#123;</span><span style="color:#006600; font-weight:bold;">&#125;</span>.<span style="color:#9900CC;">extend</span><span style="color:#006600; font-weight:bold;">&#40;</span>SongHashRepresenter<span style="color:#006600; font-weight:bold;">&#41;</span>.
+  <span style="color:#9900CC;">from_xml</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#996600;">'&lt;song name=&quot;Roxanne&quot; artist=&quot;The Police&quot;/&gt;'</span><span style="color:#006600; font-weight:bold;">&#41;</span>
+&nbsp;
+<span style="color:#008000; font-style:italic;">#=&gt; {&quot;name&quot;=&gt;&quot;Roxanne&quot;, &quot;artist&quot;=&gt;&quot;The Police&quot;}</span></pre></div></div>
+
+<p>That is heavily utilized in the roar gem, I will blog about it separately.</p>
+<h3>More Changes?</h3>
+<p>Yeah, we replaced the <code>:except</code> option with <code>:exclude</code> as it is more consistent. Who came up with that <code>:except</code> bs at all???</p>
+<p>Hope you&#8217;re enjoying our little changes &#8211; have a nice day!</p>
+				</div>
+
+				<p class="postmetadata">Tags: <a href="http://nicksda.apotomo.de/tag/representable/" rel="tag">representable</a><br /> Posted in <a href="http://nicksda.apotomo.de/category/uncategorized/" title="View all posts in Uncategorized" rel="category tag">Uncategorized</a></p><p class="postmetadata"> | <span class="tiny-comments"><a href="http://nicksda.apotomo.de/2012/06/some-updates-on-representable-1-2-3-released/#respond" title="Comment on Some Updates on Representable: 1.2.3 Released">No Comments</a></span></p>
+			</div>
+
+		
+			<div class="post" id="post-1953">
+				<div class="headertag"><div class="post-date">
+<div class="day">18</div>
+<div class="month">May</div>
+
+</div><h2><a href="http://nicksda.apotomo.de/2012/05/ruby-on-rest-6-pagination-with-roar/" rel="bookmark" title="Permanent Link to Ruby On REST 6: Pagination With Roar">Ruby On REST 6: Pagination With Roar</a></h2>
+<p class="byline"> by nick </p><div class="clear"></div></div><div class="clear"></div>
+				<div class="entry">
+					<p>Yo! How&#8217;s it folks? Let&#8217;s do some more <span class="caps">REST</span> today. I&#8217;d like to show how easy it is to have paginated <span class="caps">REST</span> documents with <a href="https://github.com/apotonick/roar">Roar</a> while using a nifty feature introduced <a href="https://github.com/apotonick/roar/commit/46fb88d1a79338188a9d05d353fc721d6a058e4e">in version 0.10.2</a>.</p>
+<h3>What&#8217;s In That Fruit Salad, Sir?</h3>
+<p>Since we keep having fruit salads <a href="http://nicksda.apotomo.de/2012/03/ruby-on-rest-5-learn-hypermedia-by-making-fruit-salad/">in the last posts</a> I wanna write a service to display the ingredients of a particular fruit bowl in a list. Not just a list of fruits, a <em>paginated</em> list of fruits.</p>
+<p>Let&#8217;s <span class="caps">GET</span> it.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;">POST http:<span style="color:#006600; font-weight:bold;">//</span>bowls<span style="color:#006600; font-weight:bold;">/</span><span style="color:#006666;">1</span><span style="color:#006600; font-weight:bold;">/</span>fruits?page=<span style="color:#006666;">1</span></pre></div></div>
+
+<p>Considering two fruit items per page this document will be returned.</p>
+
+<div class="wp_syntax"><table><tr><td class="line_numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="code"><pre class="ruby ruby" style="font-family:monospace;"><span style="color:#006600; font-weight:bold;">&#123;</span><span style="color:#996600;">&quot;total_entries&quot;</span>:<span style="color:#006666;">5</span>,
+ <span style="color:#996600;">&quot;links&quot;</span>:<span style="color:#006600; font-weight:bold;">&#91;</span>
+  <span style="color:#006600; font-weight:bold;">&#123;</span><span style="color:#996600;">&quot;rel&quot;</span>: <span style="color:#996600;">&quot;self&quot;</span>,
+   <span style="color:#996600;">&quot;href&quot;</span>:<span style="color:#996600;">&quot;http://bowls/1/fruits?page=1&quot;</span><span style="color:#006600; font-weight:bold;">&#125;</span>,
+  <span style="color:#006600; font-weight:bold;">&#123;</span><span style="color:#996600;">&quot;rel&quot;</span>: <span style="color:#996600;">&quot;next&quot;</span>,
+   <span style="color:#996600;">&quot;href&quot;</span>:<span style="color:#996600;">&quot;http://bowls/1/fruits?page=2&quot;</span><span style="color:#006600; font-weight:bold;">&#125;</span><span style="color:#006600; font-weight:bold;">&#93;</span>,
+ <span style="color:#996600;">&quot;items&quot;</span>:<span style="color:#006600; font-weight:bold;">&#91;</span>
+  <span style="color:#006600; font-weight:bold;">&#123;</span><span style="color:#996600;">&quot;title&quot;</span>:<span style="color:#996600;">&quot;Apple&quot;</span>,
+   <span style="color:#996600;">&quot;links&quot;</span>:<span style="color:#006600; font-weight:bold;">&#91;</span><span style="color:#006600; font-weight:bold;">&#123;</span><span style="color:#996600;">&quot;rel&quot;</span>:<span style="color:#996600;">&quot;self&quot;</span>,
+              <span style="color:#996600;">&quot;href&quot;</span>:<span style="color:#996600;">&quot;http://fruits/Apple&quot;</span><span style="color:#006600; font-weight:bold;">&#125;</span><span style="color:#006600; font-weight:bold;">&#93;</span><span style="color:#006600; font-weight:bold;">&#125;</span>,
+  <span style="color:#006600; font-weight:bold;">&#123;</span><span style="color:#996600;">&quot;title&quot;</span>:<span style="color:#996600;">&quot;Orange&quot;</span>,
+   <span style="color:#996600;">&quot;links&quot;</span>:<span style="color:#006600; font-weight:bold;">&#91;</span><span style="color:#006600; font-weight:bold;">&#123;</span><span style="color:#996600;">&quot;rel&quot;</span>:<span style="color:#996600;">&quot;self&quot;</span>,
+             <span style="color:#996600;">&quot;href&quot;</span>:<span style="color:#996600;">&quot;http://fruits/Orange&quot;</span><span style="color:#006600; font-weight:bold;">&#125;</span><span style="color:#006600; font-weight:bold;">&#93;</span><span style="color:#006600; font-weight:bold;">&#125;</span>
+  <span style="color:#006600; font-weight:bold;">&#93;</span>
+<span style="color:#006600; font-weight:bold;">&#125;</span></pre></td></tr></table></div>
+
+<p>Ignore the <code>items</code> for now, the interesting part here are the pagination elements in the first lines. What we have here is:</p>
+<ul>
+<li>The number of total ingredients in the bowl (line 1).</li>
+<li>The obligatory <code>self</code> link (line 3-4).</li>
+<li>A link guiding us to the next page (line 5-6).</li>
+</ul>
+<h3>Wow! Code?</h3>
+<p>The backing code in this service endpoint could look like the following snippet. As always, the code used to create this example <a href="https://github.com/apotonick/ruby-on-rest/commit/ed55c56c73f97a2c8f58257659b4dc223bd17f3e">can be found on github</a>.</p>
+
+<div class="wp_syntax"><table><tr><td class="line_numbers"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre class="ruby ruby" style="font-family:monospace;">bowl = Bowl.<span style="color:#9900CC;">find</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#006666;">1</span><span style="color:#006600; font-weight:bold;">&#41;</span>
+page = bowl.<span style="color:#9900CC;">fruits</span>.<span style="color:#9900CC;">paginate</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#ff3333; font-weight:bold;">:page</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#006666;">1</span>, 
+  <span style="color:#ff3333; font-weight:bold;">:per_page</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#006666;">2</span><span style="color:#006600; font-weight:bold;">&#41;</span>
+&nbsp;
+page.<span style="color:#9900CC;">extend</span><span style="color:#006600; font-weight:bold;">&#40;</span>BowlPageRepresenter<span style="color:#006600; font-weight:bold;">&#41;</span>
+page.<span style="color:#9900CC;">to_json</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#ff3333; font-weight:bold;">:bowl</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#0066ff; font-weight:bold;">@bowl</span><span style="color:#006600; font-weight:bold;">&#41;</span></pre></td></tr></table></div>
+
+<p>First task is to retrieve the viewed bowl (line 1). I use a static id in this example, feel free to replace it with something like <code>params[:id]</code> in your code. Next, I use <code>paginate</code> from the famous <a href="https://github.com/mislav/will_paginate">will_paginate</a> gem to get a paged subset of the included fruits. Again, the <code>:page</code> parameter should be refering to a variable, whatever (line 2-3).</p>
+<p>Then I simply extend the collection (line 5) since it is a valid Ruby object and call <code>to_json</code> to render the list (line 6). Keep in mind that we pass the <code>:bowl</code> instance <em>into</em> the render method as an argument.</p>
+<h3>The Bowl Representer Can Do Pagination </h3>
+<p>To fully understand that example we need to look at the representer now.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;"><span style="color:#9966CC; font-weight:bold;">module</span> BowlPageRepresenter
+  <span style="color:#9966CC; font-weight:bold;">include</span> <span style="color:#6666ff; font-weight:bold;">Roar::Representer::JSON</span>
+  <span style="color:#9966CC; font-weight:bold;">include</span> <span style="color:#6666ff; font-weight:bold;">Roar::Representer::Feature::Hypermedia</span>
+&nbsp;
+  property <span style="color:#ff3333; font-weight:bold;">:total_entries</span>
+  collection <span style="color:#ff3333; font-weight:bold;">:items</span>, <span style="color:#ff3333; font-weight:bold;">:extend</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> FruitRepresenter
+&nbsp;
+  link <span style="color:#ff3333; font-weight:bold;">:self</span> <span style="color:#9966CC; font-weight:bold;">do</span> |opts|
+    bowl_url<span style="color:#006600; font-weight:bold;">&#40;</span>opts<span style="color:#006600; font-weight:bold;">&#91;</span><span style="color:#ff3333; font-weight:bold;">:bowl</span><span style="color:#006600; font-weight:bold;">&#93;</span>, <span style="color:#ff3333; font-weight:bold;">:page</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> current_page<span style="color:#006600; font-weight:bold;">&#41;</span>
+  <span style="color:#9966CC; font-weight:bold;">end</span>
+&nbsp;
+  link <span style="color:#ff3333; font-weight:bold;">:next</span> <span style="color:#9966CC; font-weight:bold;">do</span> |opts|
+    bowl_url<span style="color:#006600; font-weight:bold;">&#40;</span>opts<span style="color:#006600; font-weight:bold;">&#91;</span><span style="color:#ff3333; font-weight:bold;">:bowl</span><span style="color:#006600; font-weight:bold;">&#93;</span>, <span style="color:#ff3333; font-weight:bold;">:page</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> next_page<span style="color:#006600; font-weight:bold;">&#41;</span> \
+      <span style="color:#9966CC; font-weight:bold;">if</span> next_page
+  <span style="color:#9966CC; font-weight:bold;">end</span>
+&nbsp;
+  link <span style="color:#ff3333; font-weight:bold;">:previous</span> <span style="color:#9966CC; font-weight:bold;">do</span> |opts|
+    bowl_url<span style="color:#006600; font-weight:bold;">&#40;</span>opts<span style="color:#006600; font-weight:bold;">&#91;</span><span style="color:#ff3333; font-weight:bold;">:bowl</span><span style="color:#006600; font-weight:bold;">&#93;</span>, <span style="color:#ff3333; font-weight:bold;">:page</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> previous_page<span style="color:#006600; font-weight:bold;">&#41;</span> \
+      <span style="color:#9966CC; font-weight:bold;">if</span> previous_page
+  <span style="color:#9966CC; font-weight:bold;">end</span>
+&nbsp;
+  <span style="color:#9966CC; font-weight:bold;">def</span> items
+    <span style="color:#0000FF; font-weight:bold;">self</span>
+  <span style="color:#9966CC; font-weight:bold;">end</span>
+<span style="color:#9966CC; font-weight:bold;">end</span></pre></div></div>
+
+<p>Instead of refering to line number I&#8217;ll use code excerpts now. Do you like that better?</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;">  property <span style="color:#ff3333; font-weight:bold;">:total_entries</span></pre></div></div>
+
+<p>In a paginated collection we got the <code>total_entries</code> method <a href="http://rubydoc.info/github/mislav/will_paginate/93e7b446900853d22e89/WillPaginate/Collection#total_entries-instance_method">as described in the will_paginate <span class="caps">API</span> docs</a>. To give our <span class="caps">REST</span> consumer a hint about the total amount of ingredients we can simply define a property after that.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;">  collection <span style="color:#ff3333; font-weight:bold;">:items</span>, <span style="color:#ff3333; font-weight:bold;">:extend</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> FruitRepresenter</pre></div></div>
+
+<p>To render the actual items in the doc we extend each fruit with the <code>FruitRepresenter</code> as we learned in <a href="http://nicksda.apotomo.de/2012/01/ruby-on-rest-3-one-model-multiple-representations/">an older post</a>. Note that Roar will use the <code>items</code> method to retrieve the collection of fruits.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;">  <span style="color:#9966CC; font-weight:bold;">def</span> items
+    <span style="color:#0000FF; font-weight:bold;">self</span>
+  <span style="color:#9966CC; font-weight:bold;">end</span></pre></div></div>
+
+<p>Since we are already a collection all we have to do is return self &#8211; roar will iterate the paginated collection, extend each element with the <code>FruitRepresenter</code> and render the items.</p>
+<h3>A Cool New Feature!</h3>
+<p>The links to the next pages are defined using Roar&#8217;s hypermedia feature.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;">  link <span style="color:#ff3333; font-weight:bold;">:next</span> <span style="color:#9966CC; font-weight:bold;">do</span> |opts|
+    bowl_url<span style="color:#006600; font-weight:bold;">&#40;</span>opts<span style="color:#006600; font-weight:bold;">&#91;</span><span style="color:#ff3333; font-weight:bold;">:bowl</span><span style="color:#006600; font-weight:bold;">&#93;</span>, <span style="color:#ff3333; font-weight:bold;">:page</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> next_page<span style="color:#006600; font-weight:bold;">&#41;</span> \
+      <span style="color:#9966CC; font-weight:bold;">if</span> next_page
+  <span style="color:#9966CC; font-weight:bold;">end</span></pre></div></div>
+
+<p>Two things happen here. First, note that this link is conditional. If <code>next_page</code>, another <span class="caps">API</span> method for a will_paginate collection, is evaluated to false, this link won&#8217;t be rendered.</p>
+<p>Second, we use a new feature of Roar here to access variables passed into <code>to_json</code>. Remember how we called the render method?</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;">page.<span style="color:#9900CC;">to_json</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#ff3333; font-weight:bold;">:bowl</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#0066ff; font-weight:bold;">@bowl</span><span style="color:#006600; font-weight:bold;">&#41;</span></pre></div></div>
+
+<p>Right, we pass in some values from the outside since we don&#8217;t have access to the actual bowl instance within the represented collection. These parameters are accessible in the <code>link</code> block parameters. Isn&#8217;t that nice? I like it.</p>
+<p>These few lines of code make it easy to render a paginated collection into a valid <span class="caps">REST</span> document.</p>
+<h3>Writing A Generic Pagination Representer</h3>
+<p>Now that all paginated documents share attributes (total entries, next and previous link, the self link, etc) why not abstract that into a generic representer? Most of the code can be reused.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;"><span style="color:#9966CC; font-weight:bold;">module</span> PaginationRepresenter
+  <span style="color:#9966CC; font-weight:bold;">include</span> <span style="color:#6666ff; font-weight:bold;">Roar::Representer::JSON</span>
+  <span style="color:#9966CC; font-weight:bold;">include</span> <span style="color:#6666ff; font-weight:bold;">Roar::Representer::Feature::Hypermedia</span>
+&nbsp;
+  property <span style="color:#ff3333; font-weight:bold;">:total_entries</span>
+&nbsp;
+  link <span style="color:#ff3333; font-weight:bold;">:self</span> <span style="color:#9966CC; font-weight:bold;">do</span> |opts|
+    page_url<span style="color:#006600; font-weight:bold;">&#40;</span>opts<span style="color:#006600; font-weight:bold;">&#91;</span><span style="color:#ff3333; font-weight:bold;">:model</span><span style="color:#006600; font-weight:bold;">&#93;</span>, <span style="color:#ff3333; font-weight:bold;">:page</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> current_page<span style="color:#006600; font-weight:bold;">&#41;</span>
+  <span style="color:#9966CC; font-weight:bold;">end</span>
+&nbsp;
+  link <span style="color:#ff3333; font-weight:bold;">:next</span> <span style="color:#9966CC; font-weight:bold;">do</span> |opts|
+    page_url<span style="color:#006600; font-weight:bold;">&#40;</span>opts<span style="color:#006600; font-weight:bold;">&#91;</span><span style="color:#ff3333; font-weight:bold;">:model</span><span style="color:#006600; font-weight:bold;">&#93;</span>, <span style="color:#ff3333; font-weight:bold;">:page</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> next_page<span style="color:#006600; font-weight:bold;">&#41;</span> \
+      <span style="color:#9966CC; font-weight:bold;">if</span> next_page
+  <span style="color:#9966CC; font-weight:bold;">end</span>
+&nbsp;
+  link <span style="color:#ff3333; font-weight:bold;">:previous</span> <span style="color:#9966CC; font-weight:bold;">do</span> |opts|
+    page_url<span style="color:#006600; font-weight:bold;">&#40;</span>opts<span style="color:#006600; font-weight:bold;">&#91;</span><span style="color:#ff3333; font-weight:bold;">:model</span><span style="color:#006600; font-weight:bold;">&#93;</span>, <span style="color:#ff3333; font-weight:bold;">:page</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> previous_page<span style="color:#006600; font-weight:bold;">&#41;</span> \
+      <span style="color:#9966CC; font-weight:bold;">if</span> previous_page
+  <span style="color:#9966CC; font-weight:bold;">end</span>
+&nbsp;
+  <span style="color:#9966CC; font-weight:bold;">def</span> items
+    <span style="color:#0000FF; font-weight:bold;">self</span>
+  <span style="color:#9966CC; font-weight:bold;">end</span>
+&nbsp;
+  <span style="color:#9966CC; font-weight:bold;">def</span> page_url<span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#006600; font-weight:bold;">*</span><span style="color:#006600; font-weight:bold;">&#41;</span>
+    <span style="color:#CC0066; font-weight:bold;">raise</span> <span style="color:#996600;">&quot;Implement me.&quot;</span>
+  <span style="color:#9966CC; font-weight:bold;">end</span>
+<span style="color:#9966CC; font-weight:bold;">end</span></pre></div></div>
+
+<p>All I did was calling a generic <code>page_url</code> method that must be implemented by the using representer. Also, I no longer use the <code>:bowl</code> keyword but a more generic <code>:model</code>, ok?</p>
+<p>Nothing in this abstract representer module is related to stinky fruit salads anymore. Man, this thing could even represent a sixpack of beers (a domain I do prefer over fruits).</p>
+<p>To inherit we just include the abstract into the concrete representer.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;"><span style="color:#9966CC; font-weight:bold;">module</span> BowlPageRepresenter
+  <span style="color:#9966CC; font-weight:bold;">include</span> <span style="color:#6666ff; font-weight:bold;">Roar::Representer::JSON</span>
+  <span style="color:#9966CC; font-weight:bold;">include</span> PaginationRepresenter
+&nbsp;
+  collection <span style="color:#ff3333; font-weight:bold;">:items</span>, <span style="color:#ff3333; font-weight:bold;">:extend</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> FruitRepresenter
+&nbsp;
+  <span style="color:#9966CC; font-weight:bold;">def</span> page_url<span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#006600; font-weight:bold;">*</span>args<span style="color:#006600; font-weight:bold;">&#41;</span>
+    bowl_url<span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#006600; font-weight:bold;">*</span>args<span style="color:#006600; font-weight:bold;">&#41;</span>
+  <span style="color:#9966CC; font-weight:bold;">end</span>
+<span style="color:#9966CC; font-weight:bold;">end</span></pre></div></div>
+
+<p>That is cool. All we have to do is defining the concrete items collection and how to compute the pagination URLs. Come on guys, that is easy!</p>
+<p>Remember, we changed the incoming parameter, so the rendering call must change, too.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;">page.<span style="color:#9900CC;">to_json</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#ff3333; font-weight:bold;">:model</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#0066ff; font-weight:bold;">@bowl</span><span style="color:#006600; font-weight:bold;">&#41;</span></pre></div></div>
+
+<h3>Cheers!</h3>
+<p>It is Friday eve, have a wonderful weekend and let me know how it was!</p>
+				</div>
+
+				<p class="postmetadata">Tags: <a href="http://nicksda.apotomo.de/tag/pagination/" rel="tag">pagination</a>, <a href="http://nicksda.apotomo.de/tag/rest/" rel="tag">REST</a>, <a href="http://nicksda.apotomo.de/tag/roar/" rel="tag">roar</a><br /> Posted in <a href="http://nicksda.apotomo.de/category/uncategorized/" title="View all posts in Uncategorized" rel="category tag">Uncategorized</a></p><p class="postmetadata"> | <span class="tiny-comments"><a href="http://nicksda.apotomo.de/2012/05/ruby-on-rest-6-pagination-with-roar/#comments" title="Comment on Ruby On REST 6: Pagination With Roar">2 Comments </a></span></p>
+			</div>
+
+		
+			<div class="post" id="post-1939">
+				<div class="headertag"><div class="post-date">
+<div class="day">13</div>
+<div class="month">May</div>
+
+</div><h2><a href="http://nicksda.apotomo.de/2012/05/coercion-support-in-roar-with-virtus/" rel="bookmark" title="Permanent Link to Coercion Support in Roar with Virtus">Coercion Support in Roar with Virtus</a></h2>
+<p class="byline"> by nick </p><div class="clear"></div></div><div class="clear"></div>
+				<div class="entry">
+					<p>Have you ever heard of coercion? Me neither. Anyway, people kept asking for coercion support in <a href="https://github.com/apotonick/roar">roar</a> so I found out that coercion means <strong>converting strings into ruby types</strong>. Tireless I added a new feature with a whopping 3 lines of code &#8211; the cool thing is that this module marries roar with a nifty coercion gem called <a href="https://github.com/solnic/virtus">virtus</a> by my good friend <a href="http://solnic.eu/">Piotr Solnica</a>.</p>
+<p>All you have to do is using the latest roar release (0.10.1), use the appropriate feature and the <code>:type</code> option.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;"><span style="color:#9966CC; font-weight:bold;">class</span> ImmigrantSong
+  <span style="color:#9966CC; font-weight:bold;">include</span> <span style="color:#6666ff; font-weight:bold;">Roar::Representer::JSON</span>
+  <span style="color:#9966CC; font-weight:bold;">include</span> <span style="color:#6666ff; font-weight:bold;">Roar::Representer::Feature::Coercion</span>
+&nbsp;
+  property <span style="color:#ff3333; font-weight:bold;">:composed_at</span>, <span style="color:#ff3333; font-weight:bold;">:type</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#CC00FF; font-weight:bold;">DateTime</span>, 
+    <span style="color:#ff3333; font-weight:bold;">:default</span> <span style="color:#006600; font-weight:bold;">=&gt;</span> <span style="color:#996600;">&quot;May 12th, 2012&quot;</span>
+<span style="color:#9966CC; font-weight:bold;">end</span></pre></div></div>
+
+<p>This will automatically convert the <code>composed_at</code> property to a decent <code>DateTime</code> object when parsing a document. Note the working <code>:default</code> option, too!</p>
+
+<div class="wp_syntax"><div class="code"><pre class="ruby ruby" style="font-family:monospace;">document = <span style="color:#996600;">&quot;{<span style="color:#000099;">\&quot;</span>composed_at<span style="color:#000099;">\&quot;</span>:<span style="color:#000099;">\&quot;</span>November 18th, 1983<span style="color:#000099;">\&quot;</span>}&quot;</span>
+song = ImmigrantSong.<span style="color:#9900CC;">new</span>.<span style="color:#9900CC;">from_json</span><span style="color:#006600; font-weight:bold;">&#40;</span>document<span style="color:#006600; font-weight:bold;">&#41;</span>
+song.<span style="color:#9900CC;">composed_at</span> <span style="color:#008000; font-style:italic;">#=&gt; 1983-11-18T00:00:00+00:00</span></pre></div></div>
+
+<p>The underlying virtus gem takes care of all the conversion work. Note that virtus also automatically adds accessors to the class.</p>
+<h3>First World Problems</h3>
+<p>A caveat is that this currently works with inline representers in classes, only. This is cause virtus doesn&#8217;t work within modules, <em>yet</em>. I guess we can expect a refactored virtus within days, right, solnic? As soon as this is working in virtus, you can savely use the conversion feature in modules, too. I keep you in the loop!</p>
+<p>Oh, I forgot to thank <a href="https://twitter.com/myabc">Alex Coles</a> who made me aware of the simplicity of combining those two gems!</p>
+				</div>
+
+				<p class="postmetadata">Tags: <a href="http://nicksda.apotomo.de/tag/roar/" rel="tag">roar</a>, <a href="http://nicksda.apotomo.de/tag/virtus/" rel="tag">virtus</a><br /> Posted in <a href="http://nicksda.apotomo.de/category/uncategorized/" title="View all posts in Uncategorized" rel="category tag">Uncategorized</a></p><p class="postmetadata"> | <span class="tiny-comments"><a href="http://nicksda.apotomo.de/2012/05/coercion-support-in-roar-with-virtus/#comments" title="Comment on Coercion Support in Roar with Virtus">7 Comments </a></span></p>
+			</div>
+
+		
+		<div class="navigation">
+			<div class="alignleft"><a href="http://nicksda.apotomo.de/page/2/" >&laquo; Older Entries</a></div>
+			<div class="alignright"></div>
+		</div>
+
+	
+	</div>
+
+	<div id="sidebar">
+<ul>
+<!-- 
+<li><a href="http://wrocloverb.com/">
+<img src="http://wrocloverb.com/im_speaking_badge.png" />
+</a>
+</li>
+-->
+
+<!-- 
+<li><a href="http://rockymtnruby.com/">
+<img src="http://nicksda.apotomo.de/wp-content/uploads/2011/07/rmr_speaker_210x82.png" />
+</a>
+</li>
+-->
+
+						<li>
+				<form method="get" id="searchform" action="http://nicksda.apotomo.de/">
+<div><input type="text" value="" name="s" id="s" />
+<input type="submit" id="searchsubmit" value="GO" />
+</div>
+</form>
+			</li>
+			<!-- Author information is disabled per default. Uncomment and fill in your details if you want to use it.
+			<li><strong>Author</strong><br/>
+			<p>A little something about you, the author. Nothing lengthy, just an overview.</p>
+			</li>
+			-->
+
+			
+
+			
+			
+
+<li>
+<a href="http://feeds.feedburner.com/Nicksda" title="Subscribe to my feed" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon32x32.png" alt="" style="border:0"/></a>
+<a href="http://twitter.com/apotonick" title="Following Is Fun!"><img src="/wp-content/themes/tickled-pink/images/twitter.png" style="border:0"/></a>
+</li>
+<li>
+Speaking at
+<script src="http://cdn.lanyrd.net/badges/person-v1.min.js"></script>
+<div class="lanyrd-target-splat"><a href="http://lanyrd.com/people/apotonick/" class="lanyrd-splat lanyrd-number-6 lanyrd-context-future lanyrd-template-standard" rel="me">My conferences on Lanyrd</a></div>
+</li>
+
+		</ul>
+	</div>
+<div class="clearboth"> </div>
+
+<div class="clear"></div></div><div id="prefooter"></div><!-- If you'd like to support WordPress, having the "powered by" link somewhere on your blog is the best way; it's our only promotion or advertising. -->
+	<div id="footer">
+		
+			<div class="goleft"><p>Powered by <a href="http://wordpress.org/">WordPress</a> | <a href="http://nicksda.apotomo.de/feed/">Entries (RSS)</a> | <a href="http://nicksda.apotomo.de/comments/feed/">Comments (RSS)</a>.
+			<!-- 7 queries. 2.458 seconds. -->
+			</p></div><div class="goright">
+	
+<!-- Rose City Gardens link - optional but much appreciated! -->
+			<p><a href="http://rosecitygardens.com" title="Rose City Gardens - WordPress themes and hosting">Free WordPress&trade; theme by RoseCityGardens.com</a></p></div>
+	
+	</div>
+
+
+
+
+<!--stats_footer_test--><script src="http://stats.wordpress.com/e-201307.js" type="text/javascript"></script>
+<script type="text/javascript">
+st_go({blog:'15901914',v:'ext',post:'0'});
+var load_cmc = function(){linktracker_init(15901914,0,2);};
+if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+else load_cmc();
+</script>
+</body>
+</html>

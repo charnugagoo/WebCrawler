@@ -1,0 +1,190 @@
+<!-- comment -->
+<HEAD>
+<TITLE>
+Crescent Bay Software -- OEM Compiler Technology
+</TITLE>
+</HEAD>
+
+<BODY LINK="#0000FF" VLINK=#"0000FF">
+<center>
+<img src="clear.gif" height=5><br>
+
+<!--img src="cbs4.gif"  border=0-->
+<img src="small_logo.png" border=0>
+
+<img src="large_title.jpg" border=0>
+
+<br><br>
+
+<img src="clear.gif" height=25><br>
+<font face="Trebuchet MS, Verdana">
+
+
+<TABLE border=0 width=65% cellspacing=0>
+<TR><TD height=1 COLSPAN=3 BGCOLOR="#0000FF"></TD></TR>
+<TD valign="top" align="right" bgcolor="#ffffcc" width=25%></TD>
+<TD width=25><img src="clear.gif" width=25></TD>
+<TD valign = "top">
+<img src="clear.gif" height=10><br>
+<!--img src="header2.gif"-->
+
+<font size=5>
+	<b>Compiler optimization<!--br--> technology</b></font>
+
+</TD></TR>
+<TR><TD height=1 COLSPAN=3 BGCOLOR="#0000FF"></TD></TR>
+<TR>
+<TD valign="top" align="right" bgcolor="#ffffcc">
+</TD>
+<TD width=25></TD>
+<TD valign = "top" align="left">
+<img src="clear.gif" height=25><br>
+<font size=2>
+Our primary business is providing versions of our VAST high-level optimization 
+product (parallelizing, vectorizing, and/or optimizing compiler components)
+to developers of compiler systems targeting high-speed architectures, 
+whether embedded processors, reconfigurable systems, 
+desktop boxes or supercomputers. 
+<h3>How does VAST interface with the Compiler?</h3>
+VAST operates on compiler intermediate representations of the program 
+(such as Edison Design Group IR) or directly on source code 
+(through a compiler driver) to perform high-level optimizations, 
+including loop nest optimizations and automatic vectorization and 
+parallelization.  For example in a compiler system that used the EDG 
+front end, VAST runs as a high-level optimization pass after the 
+front end has parsed the program and before the back end generates 
+code for the particular target system; VAST operates on the input 
+EDG IR and generates restructured EDG IR where necessary to speed 
+up the program.  
+<h3>What if I don't use EDG?</h3>
+For compilers using other intermediate representations, 
+VAST is customized to take in that IR and regenerate its transformations 
+in that IR.  VAST is generally customized to fit in with the specific 
+programming methodology, programming tools, and architectural details 
+of the target system.
+<h3>What can VAST do?</h3>
+VAST can restructure loops, add calls to performance intrinsics, 
+bring external functions inline, and signal to the compiler backend 
+by adding pragmas or marking other data structures.  
+VAST features a large variety of loop optimizations, and has very 
+extensive data dependency analysis, which it uses in its vectorization 
+and parallelization of the code.  It can also pass this information on 
+to the rest of the compiler in a variety of ways, ranging from 
+indicating loops that have no array or pointer dependencies to 
+explicitly adding data dependence arcs for all dependencies in a loop nest.  
+(See <a href="tech_menu2.html">the menu</a> for a list of VAST's features.)
+<br><img src="clear.gif" height=18>
+</TD>
+</TR>
+
+<TR>
+<TD valign="top" align="right" bgcolor="#ffffcc">
+
+<font size=4>
+
+<A href="targets.html">Target Systems</A><br><img src="clear.gif" height=30><br>
+
+</TD>
+<TD width=25></TD>
+<TD valign = "top" align="left">
+
+<h3>What types of systems can VAST target?</h3>
+<font size=2>
+The VAST technology <A href="targets.html">supports many types of systems</A>, including paralel, vector, VLIW, SIMD, superscalar, and others.   VAST itself is highly portable, and runs on all popular Unix, Linux and Windows versions.
+
+<br><img src="clear.gif" height=18>
+</TD>
+</TR>
+
+<TR>
+<TD valign="top" align="right" bgcolor="#ffffcc">
+
+<font size=4>
+
+<A href="tech_menu2.html">Technology menu</A><br><img src="clear.gif" height=30><br>
+
+</TD>
+<TD width=25></TD>
+<TD valign = "top" align="left">
+<h3>VAST Optimization List</h3>
+<font size=2>
+We provide a very wide array of possible optimizations, transformations and information,
+both in off-the-shelf modules and in customized forms,
+and can operate on either intermediate representation or source language.  
+<a href="tech_menu2.html">See the menu</a> for a list of VAST's features.
+
+<br><img src="clear.gif" height=18>
+</TD>
+</TR>
+
+<TR>
+<TD valign="top" align="right" bgcolor="#ffffcc">
+
+<font size=4>
+
+
+<A href="examples.html">Examples</A><br><img src="clear.gif" height=10><br>
+</TD>
+<TD width=25></TD>
+<TD valign = "top" align="left">
+<h3>Example Transformations</h3>
+<font size=2>
+Here are some <A href="examples.html">code examples</A> 
+that show a few of the transformations VAST can add to a compilation system.
+<br><img src="clear.gif" height=18>
+</TD>
+</TR>
+
+<TR>
+<TD valign="top" align="right" bgcolor="#ffffcc">
+
+<font size=4>
+
+<A href="do_business.html">Doing business</A>
+</TD>
+<TD width=25></TD>
+<TD valign = "top" align="left">
+<h3>How can we license VAST?</h3>
+<font size=2>
+We have a "standard" 
+<A href="do_business.html">business model</A>, but we've had to deal with
+so many different kinds of customers and products that in practice
+we're pretty flexible.   
+We always work closely with our customers to customize and support the products 
+to make sure we get peak performance from the target compiler and architecture.  
+Testing and support are very high priorities for us.
+<br><img src="clear.gif" height=18>
+</TD>
+</TR>
+
+<TR>
+<TD valign="top" align="right" bgcolor="#ffffcc">
+
+<font size=4 color="#0000ff">
+
+Contact us
+</TD>
+<TD width=25></TD>
+<TD valign = "top" align="left">
+<h3>How do we proceed?</h3>
+<font size=2>
+Don't hesitate to <A href="contact.html">email or call us</A> to discuss possibilities, 
+even if you're unclear about what we have to offer and/or what you need.  
+We're easy to talk to. 
+</TD>
+</TR>
+
+
+</TABLE>
+
+
+<FONT SIZE=1>
+<A href="index.html"> Home </A>
+<img src="clear.gif" width=50>
+<A href="contact.html"> Contact </A>
+
+<img src="clear.gif" width=50>
+<A href="legal.html"> Legal </A><br><br>
+
+Copyright 2003, 2012 Crescent Bay Software Corp. 
+</BODY>

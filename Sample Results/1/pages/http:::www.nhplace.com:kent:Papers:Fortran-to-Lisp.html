@@ -1,0 +1,1007 @@
+<html>
+<head>
+<TITLE>``A FORTRAN-&gt;LISP Translator'' by Kent Pitman (June, 1979)</title>
+<META NAME="ROBOTS" CONTENT="INDEX, NOFOLLOW">
+</head>
+<body BGCOLOR="#eeeeff" TEXT="#440077"
+      LINK="#7700bb" VLINK="#7700bb" ALINK="#ff0000">
+
+<FONT color="green">
+
+<H1 ALIGN=CENTER>A FORTRAN-&gt;LISP Translator</h1>
+
+<P ALIGN=CENTER>
+<b>This paper appears in the<br />
+<i>Proceedings of the 1979 Macsyma Users' Conference</i>,<br />
+Washington, D.C., June 20-22, 1979.</B>
+</p>
+
+<p>
+ The substance of the original text appears in normal fonting,
+ though a small number of out-and-out typos were corrected.
+ Oddities of spelling that were the custom of the time
+ (either generally, or just for me) were left alone.
+ Some formatting of headings and tables was adjusted slightly for HTML.
+ Any new text that has been added appears
+ bracketed and in color green; such text is intended to
+ help clarify the historical context, since considerable time 
+ passed between the time this paper was published and the time I 
+ converted it to HTML.<br />
+--<a href="http://www.nhplace.com/kent/contact-kent.html"><i>Kent Pitman</i></a>, 17-Oct-1998.
+</p>
+
+<P ALIGN=CENTER>
+<a href="#ORIGINAL-START">Annotated original document follows.</a><br />
+<a href="index.html"><i>Click here for an index 
+of other titles by Kent Pitman.</i></a>
+</p>
+
+</FONT>
+
+<hr />
+
+<A NAME="ORIGINAL-START"><H1 ALIGN=CENTER>A FORTRAN-&gt;LISP Translator</h1></a>
+
+<P ALIGN=CENTER><b>Kent M. Pitman</B></p>
+
+<P ALIGN=CENTER>
+<FONT SIZE=2 color="green">[address at time of publication]</FONT><br />
+MIT Laboratory for Computer Science<br />
+545 Technology Square<br />
+Cambridge, MA 02139</p>
+
+<h2>I. Introduction</h2>
+
+<p>
+The development of the Fortran-&gt;Lisp translator was intended to serve two
+primary needs within the Macsyma <a href="#REF-1">[1]</a> system.
+Its immediate goal was to provide the user with the ability to call
+subroutines from commercially available software libraries 
+(such as IMSL <a href="#REF-2">[2]</a>)
+directly from the Macsyma system.  In addition, 
+since many of our users have their own numerical libraries 
+written in Fortran, it was designed to offer a more direct interface
+between such libraries and Macsyma.
+</p>
+
+<p>
+The translator is intended to serve as much more than just a black-box
+interface between the worlds of Fortran and MacLISP 
+<a href="#REF-3">[3]</a>, however.  
+The lisp code output by the translator is expected to be readable and 
+maintainable by a lisp programmer,
+while still preserving the basic structure of the source Fortran.
+</p>
+
+<p>
+This paper deals in general terms with the issues which have influenced
+the design of the translator.  It introduces the concept of supporting 
+a Fortran virtual machine from within MacLISP, illustrates how many basic
+Fortran concepts are represented in the translated code and the
+runtime environment, and concludes with a description of how the end product
+is likely to interface with Macsyma.
+</p>
+
+<A NAME="OVERVIEW">
+<h2>II. Overview</h2>
+</a>
+
+<p>
+In broad terms, the process of translation may be viewed as a sequence of
+transformations between the following stages.  This section will be devoted
+to a brief summary of the major states through which the code passes.
+</p>
+
+<DL>
+<DT><b>Fortran Source.</B></DT>
+<DD>
+<p>
+The Fortran source file contains the routines to be translated.
+Wherever possible, we have sought to cater to both the ANSI Fortran
+standard and to any commonly observed extensions on input, in an effort
+to gain maximum compatibility with varying dialects of Fortran.
+`Free format' label fields are permitted when they do not
+conflict with legal configurations specified by the standard.
+<a href="#FIGURE-1A">(See Figure 1(a).)</a>
+</p>
+</DD>
+<DT><b>Translator Internal Representation.</B></DT>
+<DD>
+<p>
+The Fortran source is read by the first pass of the translator, and
+parsed into an internal form composed of lists of tokens
+arranged in a hierarchical structure representing the Fortran
+semantic tree <a href="#REF-4">[4]</a>.
+</p>
+</DD>
+<DT><b>Translator Output.</B></DT>
+<DD>
+<p>
+The output of the translator is a macro form in a syntax very close to
+that of Lisp.  The functions called are for the most part not lisp
+primitives, but rather macro forms which will be expanded into Lisp 
+in the MacLISP compiler <a href="#REF-5">[5]</a>.
+Code in this state will be referred to throughout this paper as
+<b>Fortran macro code</B>. 
+<a href="#FIGURE-1B">(See Figure 1(b).)</a>
+</p>
+<p>
+By this point in the translation, all implicit declarations have been 
+made explicit and must remain so from this point on.  Arbitrary pieces
+of straight Lisp code may be inserted by the user into the macro form
+at this point without breaking the translation.
+Additionally, macro code may be deleted or added to the extent of creating
+or modifying the declarations of variables provided certain conventions
+are adhered to.
+</p>
+<p>
+The translator output 
+has the feature of visually resembling both Fortran and Lisp
+in a way that we hope will be readable by programmers of either language 
+with a minimal amount of difficulty.  As much as possible, variable names 
+have not been changed, and the original control structure should be 
+visible despite the transformations that have been made during the translation
+up until this point.  Some experiments were done with outputting straight 
+Lisp code; however, this code was very long, dense, and generally unreadable.
+The use of macros makes the uncompiled output file considerably smaller
+(about half the size required for fully macro expanded code) and much easier 
+to read and edit.
+</p>
+<DD>
+<DT><b>Macro Expansion.</B></DT>
+<DD>
+<p>
+Macro expansion happens either in the compiler or, if the code is being 
+interpreted, at <tt>EVAL</tt> time  It is at this time that the macro
+forms output by the translator are expanded into their actual lisp 
+equivalents.
+<a href="#FIGURE-1C">(See Figure 1(c).)</a>
+</p>
+</DD>
+</DL>
+
+<HR WIDTH="40%">
+
+<blockquote>
+<pre>
+      SUBROUTINE <A NAME="FIGURE-1A">MATMUL (X, Y, IDIM)</a>
+      REAL X(IDIM,1),Y(IDIM,1),Z(100)
+      DO 100 I=1,IDIM
+         Z(I)=0.
+      DO 200 J=1,IDIM
+  200    Z(I)=X(I,J)*Y(J,I)+Z(I)
+      DO 100 J=1,IDIM
+  100    X(I)=Z(I)
+      RETURN
+      END
+</pre>
+<P ALIGN=CENTER><b>Figure 1(a).</B> <i>Fortran Source</i></p>
+</blockquote>
+
+<HR WIDTH="40%">
+
+<blockquote>
+<pre>
+(FORTRAN <A NAME="FIGURE-1B">(MATMUL X Y IDIM)</a>
+         (SUBROUTINE (REAL (X 1) (Y 1) (Z 100)) (INTEGER IDIM I J))
+         (: I 1)
+DO-I-100 (: (Z I) 0.0)
+         (: J 1)
+DO-J-200
+/200     (: (Z I) (+$ (Z I) (*$ (X I J) (Y J I))))
+         (COND ((&lt;= (: J (1+ J)) IDIM) (GO DO-J-200)))
+DO-J-100 (: (X I) (Z I))
+         (COND ((&lt;= (: J (1+ J)) IDIM) (GO DO-J-100)))
+         (COND ((&lt;= (: I (1+ I)) IDIM) (GO DO-I-100)))
+         (RETURN T))
+</pre>
+<P ALIGN=CENTER><b>Figure 1(b).</B> <i>Translator Output (Macro Code)</i></p>
+</blockquote>
+
+<HR WIDTH="40%">
+
+<blockquote>
+<pre>
+  <A NAME="FIGURE-1A">(PROGN 'COMPILE</a>
+   (DECLARE (NOTYPE (MATMUL FIXNUM FIXNUM FIXNUM)))
+   (FORTRAN$ALLOCATE 102.) ;Allocate Z(0:99), I, J
+   (DEFUN MATMUL (X Y IDIM)
+	  (PROG NIL
+		(STORE (ARRAYCALL FIXNUM FORTRAN$ARRAY 100.) 1.)
+  DO-I-100      (STORE (ARRAYCALL FLONUM FORTRAN$ARRAY
+				  (ARRAYCALL FIXNUM FORTRAN$ARRAY 100.))
+		       0.0)
+		(STORE (ARRAYCALL FIXNUM FORTRAN$ARRAY 101.) 1.)
+  DO-J-200 /200 (STORE (ARRAYCALL FLONUM FORTRAN$ARRAY
+                                  (ARRAYCALL FIXNUM FORTRAN$ARRAY 100.))
+                       (+$ (ARRAYCALL FLONUM FORTRAN$ARRAY
+                                      (ARRAYCALL FIXNUM FORTRAN$ARRAY 100.))
+                           (*$ (ARRAYCALL FLONUM FORTRAN$ARRAY
+                                          (+ X (ARRAYCALL FIXNUM FORTRAN$ARRAY 100.)))
+                               (ARRAYCALL FLONUM FORTRAN$ARRAY
+                                          (+ Y (ARRAYCALL FIXNUM FORTRAN$ARRAY 100.))))))
+                (COND ((NOT (GREATERP (STORE (ARRAYCALL FIXNUM FORTRAN$ARRAY 101.)
+                                             (1+ (ARRAYCALL FIXNUM FORTRAN$ARRAY 101.)))
+                                      (ARRAYCALL FIXNUM FORTRAN$ARRAY IDIM)))
+                       (GO DO-J-200)))
+                (STORE (ARRAYCALL FIXNUM FORTRAN$ARRAY 101.) 1.)
+  DO-J-100 /100 (STORE (ARRAYCALL FLONUM FORTRAN$ARRAY
+                                  (+ X (ARRAYCALL FIXNUM FORTRAN$ARRAY 100.)))
+                       (ARRAYCALL FLONUM FORTRAN$ARRAY
+                                  (ARRAYCALL FIXNUM FORTRAN$ARRAY 100.)))
+                (COND ((NOT (GREATERP (STORE (ARRAYCALL FIXNUM FORTRAN$ARRAY 101.)
+                                             (1+ (ARRAYCALL FIXNUM FORTRAN$ARRAY 101.)))
+                                      (ARRAYCALL FIXNUM FORTRAN$ARRAY IDIM)))
+                       (GO DO-J-100)))
+                (COND ((NOT (GREATERP (STORE (ARRAYCALL FIXNUM FORTRAN$ARRAY 100.)
+                                             (1+ (ARRAYCALL FIXNUM FORTRAN$ARRAY 100.)))
+                                      (ARRAYCALL FIXNUM FORTRAN$ARRAY IDIM)))
+                       (GO DO-I-100)))
+                (RETURN T))))
+</pre>
+
+<P ALIGN=CENTER><b>Figure 1(c).</B> <i>Macro Expansion</i></p>
+</blockquote>
+
+<HR WIDTH="40%">
+
+<h2>III. Design Considerations</h2>
+
+<h3>The Fortran Virtual Machine</h3>
+
+<p>
+MacLISP and Fortran are almost completely incompatible when it comes
+to such issues as argument passing and side-effects.  Each has a completely
+different philosophy on the subject.  It is, however, possible to emulate
+the workings of a Fortran Virtual Machine in MacLISP by an appropriate
+choice of representation.
+</p>
+
+<p>
+MacLISP's function calling sequence is <b>call by value</B>;
+most Fortran implementations use <b>call by reference</B>.
+Because a Lisp-called function has no pointer to the 
+storage slot represented by the actual parameter, it is difficult for it to
+side-effect on the actual parameter in a straightforward manner.
+To solve this problem, all translated programs store their data in
+a single Lisp <tt>FIXNUM</tt> array 
+<a href="#REF-6">[6]</a>
+<a href="#REF-7">[7]</a> which is globally accessible at runtime.
+The objects which are passed between programs are not variable values,
+but rather integer offsets into the data array (analogous to the machine
+pointers to data locations that would be passed in an actual Fortran
+subroutine call).  Expressions which are used as actual parameters to a Fortran
+routine are evaluated at runtime and stored in temporary slots in the
+array; offset pointers locating the temporary slots are passed to the
+called routine.
+</p>
+
+<h3>Relocatable data</h3>
+
+<p>
+A problem exists in generating compiler output which will run efficiently
+when loaded into a Lisp:  Since all translated Fortran programs share 
+the same array space, there is no way to know at compile time where in 
+the array each program will go.  Any number of other Fortran packages might
+have been loaded by the time a given one is being loaded.  The only way
+at compile time, then, to reference a given variable is as an offset from
+the head of the data space belonging to that program unit, as in:
+</p>
+
+<blockquote>
+<pre>
+Location(&lt;var&gt;) = Location(&lt;program&gt;) + Offset(&lt;var&gt;).
+</pre>
+</blockquote>
+
+<p>
+Having to compute this value at runtime would be reasonably time consuming.
+</p>
+
+<p>
+Problems of handling relocatable code occur in many versions of Fortran,
+and are generally handled by a loader which takes a program with relative
+addressing of the sort described above and turns them into an absolute
+machine addresses at load time.
+</p>
+
+<p>
+MacLISP provides a general facility for handling this type of problem in the
+loader.  The feature involves a special object called <tt>SQUID</tt>
+(<b>S</B>elf <b>QU</B>oting <b>I</B>nternal <b>D</B>atum)
+which is known to the compiler and the MacLISP Fasload package
+<a href="#REF-8">[8]</a>.
+Specifically, this facility allows a user to specify forms which are 
+to be evaluated at load time and replaced inline with their evaluated forms.
+</p>
+
+<p>
+Using the <tt>SQUID</tt> facility, code can be output which references
+offsets from the beginning of a program's data space, a constant which
+can be computed at load time.  At load time, all such references
+which are done as <tt>SQUID</tt> forms are evaluated and return 
+<tt>FIXNUM</tt>s, which replace the expressions in the binary code.
+</p>
+
+<p>
+Because of this optimization, it is necessary to add two additional stages
+in the transormation of the data, in addition to 
+<a href="#OVERVIEW">those mentioned earlier</a>.
+</p>
+
+<DL>
+<DT><b>Compiler Output.</B></DT>
+<DD>
+<p>
+The compiler will output a binary file (FASL file) which can be loaded
+by the Lisp.  This binary file is not yet the final form of the translation,
+however, since it contains references will be expanded at the time the file
+is loaded into a Lisp.
+</p>
+</DD>
+
+<DT><b>Runtime Environment and Loaded Routines.</B></DT>
+<DD>
+<p>
+This is the final state of the world.
+The data will be effectively have gone through a relocation process
+similar to that done by a Fortran loader.  The only changes which will occur 
+to the dataspace and program beyond this point are those side-effects
+caused by storing and retrieving values during the
+normal run of a user program, and any allocation of extra space in the 
+Fortran data-array for routines which were not translated Fortran routines,
+but which must communicate with translated Fortran routines.
+</p>
+</DD>
+</DL>
+
+<p>
+It should be pointed out that there is an inherent inefficiency in
+translated code that will cause it to run several times slower than
+the Fortran would have.  The mechanism for recalling a value from a location in the virtual machine involves several real-machine memory references.
+The reason is that MacLISP arrays may be relocated by the garbage collector,
+and so cannot be referenced as offsets from a fixed machine location.
+Instead they must be referenced as offsets from a pointer to the head 
+of the array.
+<a href="#FIGURE-2">(A sample piece of code and how it compiles is illustrated
+in Figure 2.)</a>
+</p>
+
+<p>
+The translator, however, does not propose to solve this
+inefficiency.  Greater efficiency could be obtained by allocating a
+fixed area in the Lisp, immune to garbage collection, in which to
+store data associated with translated Fortran routines.  By doing so,
+however, several things would be lost.  For instance, such a data area
+could not be later reclaimed by the garbage collector for re-use by
+normal Lisp routines.  Additionally, the mechanisms for storing and
+retrieving data from such an area would probably be very dependent on
+how the Lisp was implemented.  Since the intent of the design is that
+the virtual machine be fully describable in Lisp, such means 
+of achieving optimization were deemed inappropriate.
+</p>
+
+<p>
+By remaining within the Lisp formalism, several things are gained, 
+including the ability to do runtime debugging, and a certain immunity 
+from the implementational details of the Lisp.  Additionally, it is assumed
+that optimization is the function of a compiler, and that since a
+Lisp compiler should be available, it is redundant for the translator to
+do complex optimizations.  (<a href="#FIGURE-2">As can be seen in 
+Figure 2,
+however, this assumption may also have its price.</a>  The code generated
+by the current compiler in this case is not optimal.)
+</p>
+
+<HR WIDTH="40%">
+
+<blockquote>
+<p>
+<A NAME="FIGURE-2">Given</a> local array A and formal parameter N, 
+in the expression
+</p>
+<blockquote>
+<pre>
+M(N)=N+5
+</pre>
+</blockquote>
+<p>
+the current Lisp compiler will generate code looking like this:
+</p>
+<blockquote>
+<pre>
+MOVE  AR2A,FARRAY     ; Move a pointer to FARRAY into AR2A
+MOVE  TT,(A)          ; Move N into TT
+MOVE  TT,&#64;TTSAR(AR2A) ; Move FARRAY[N] into TT
+ADDI  TT,5            ; Put FARRAY[N]+5 into TT
+MOVE  D,TT            ; Copy FARRAY[N]+5 into D
+MOVE  TT,(A)          ; Move N into TT
+MOVE  TT,&#64;TTSAR(AR2A) ; Move FARRAY[N] into TT 
+ADDI  TT,MIDX         ; Add location of M into TT (TT now has FARRAY[M[N]])
+MOVEM D,&#64;TTSAR(AR2A)  ; Store value in FARRAY[M[N]]
+</pre>
+</blockquote>
+<p>
+For the same operation, a DEC Fortran compiler generated the following code:
+</p>
+<blockquote>
+<pre>
+MOVE  AC1,N           ; Move N into AC1
+MOVEI AC2,5           ; Move the consant 5 into AC2
+ADD   AC2,N           ; Add N into AC2 (AC2 now contains N+5)
+MOVEM AC2,M-1(AC1)    ; Store value in M(N)
+
+</pre>
+</blockquote>
+
+<P ALIGN=CENTER><b>Figure 2.</B> <i>How translated Fortran compiles.</i></p>
+</blockquote>
+
+<HR WIDTH="40%">
+
+<h3>Runtime Environment</h3>
+
+<p>
+The runtime environment for a translated Fortran program consists of
+another library of routines that are too large to be macro-expanded at 
+compile time, such as Input/Ouptut (<b>I/O</B>) handlers, as well as some
+Lisp programs which simulate the effect of a Fortran loader, allocating
+space for program-data and creating an interface between the translated
+Fortran programs and normal Lisp routines which may attempt to call them.
+</p>
+
+<p>
+Data storage is allocated in the Lisp runtime environment as a single
+contiguous number array which all programs may access.  All memory 
+references are compiled as offsets in the single Fortran storage array,
+and expanded to absolute references at load time. 
+<a href="#FIGURE-3">(See figure 3.)</a>
+</p>
+
+<HR WIDTH="40%">
+
+<blockquote>
+<p>
+<i><A NAME="FIGURE-3">At some point</a>
+in the loading of any translated Fortran program into a Lisp,
+the following events will occur:</i>
+</p>
+
+<ol>
+<li>If the Fortran run-time support subroutine library is not already loaded,
+it is automatically loaded.</li>
+<li>If it does not exist, the array <tt>FORTRAN$ARRAY</tt> will be created.
+If it does exist, it will be extended by a function call requesting enough
+space in the array for main program data.</li>
+<li>If the program requires <tt>COMMON</tt> space, one of two things will
+happen.  If space for a <tt>COMMON</tt> block by the same name has already
+been allocated, a pointer to that space will be returned.  If such space has
+not been allocated, space will be allocated in <tt>FORTRAN$ARRAY</tt>
+for the block.</li>
+<li>The program will be loaded into the normal binary program space.  At this
+time, addresses of data in the Fortran virtual memory area will be converted
+from relative to absolute offsets from the head of <tt>FORTRAN$ARRAY</tt>.</li>
+</ol>
+
+<P ALIGN=CENTER><b>Figure 3.</B> <i>Loading translated programs into Lisp</i>
+</p>
+</blockquote>
+
+<HR WIDTH="40%">
+
+<h3>Common</h3>
+
+<p>
+<tt>COMMON</tt> blocks are processed in the translator in much the
+same way as ordinary program data.  Rather than being transformed 
+into offsets from a particular program data area, however, <tt>COMMON</tt>
+variables are referred to in the compiler output as offsets from the
+appropriate <tt>COMMON</tt> block area.
+</p>
+
+<p>
+When a program referencing a <tt>COMMON</tt> block is loaded, it
+checks to see whether space for that block has already been allocated.
+If it has, pointers are established to the already existing block.  If
+no such allocation has been made, a new block of the desired size is
+created and pointers are made to this newly created data area.
+</p>
+
+<p>
+One problem introduced by this implementation of <tt>COMMON</tt> is that
+no <tt>COMMON</tt> block (including blank <tt>COMMON</tt>) may be 
+extended in size after its initial allocation.  Most Fortran
+implementations allow blank <tt>COMMON</tt> to be extendable.
+On the other hand, such a feat is generally accomplished via obscure devices
+such as re-using the space taken up by the Fortran loader for 
+blank <tt>COMMON</tt>, thereby making it impossible for <tt>DATA</tt>
+statements to be used on variables in blank <tt>COMMON</tt>.
+No really satisfactory solution to this problem has been suggested
+which does not entail a great loss in runtime efficiency.
+</p>
+
+<h3>Equivalences</h3>
+
+<p>
+It is a `feature' of LISP that two symbolic names cannot share the 
+same storage; furthermore, it is not possible to have two arrays that
+share with each other in the way that Fortran will allow.  Thus, it is not
+immediately obvious what code to output as the
+MacLISP equivalent to the Fortran <tt>EQUIVALENCE</tt> statement.
+</p>
+
+<p><FONT color="green">[Note: 
+Common Lisp
+later added displaced arrays, so that
+two arrays could share with each other.  Displaced arrays did not exist
+in MacLISP.  Displaced arrays wouldn't have solved the problem of
+`type overlap' though; that is, of equivalencing a <tt>FLONUM</tt> to
+a <tt>FIXNUM</tt>.]</FONT></p>
+
+<p>
+There is a genreal solution to the <tt>EQUIVALENCE</tt> problem 
+which can be used in any language, regardless of whether they 
+allow multiple names for a storage location or not.  This
+solution is merely to select one of the names as the name that will be used,
+and change all the other <tt>EQUIVALENCE</tt>'d names to that single name,
+making adjustments to subscripts as necessary.
+<a href="#FIGURE-4">(Figure 4 shows an example of this process.)</a>
+</p>
+
+<A NAME="FIGURE-4">
+<HR WIDTH="40%">
+</a>
+
+<blockquote>
+
+<pre>
+      <A NAME="FIGURE-4A">PROGRAM MAIN</a>
+      EQUIVALENCE (A(10),B(0))
+      REAL A(20),B(10)
+      DO 100 I = 1,10
+      B(I)=0
+ 100  A(I)=B(I)
+</pre>
+
+<P ALIGN=CENTER><b>Figure 4(a).</B>
+<i>Source program using</i> <tt>EQUIVALENCE</tt> <i>statement.</i>
+</p>
+
+<pre>
+      <A NAME="FIGURE-4B">PROGRAM MAIN</a>
+      REAL EQVAB(20)
+C                      A &lt;- EQVAB( 1:20), B &lt;- EQVAB(11:20)
+      DO 100 I=1,10
+      EQVAB(I+10)=0
+ 100  EQVAB(I)=EQVAB(I+10)
+</pre>
+
+<P ALIGN=CENTER><b>Figure 4(b).</B>
+<i>General solution to the</i> <tt>EQUIVALENCE</tt> <i>problem.</i>
+</p>
+
+</blockquote>
+
+<HR WIDTH="40%">
+
+<p>
+Because of our self-imposed constraint of maintaining a translation
+that bears as much visual resemblance to the original Fortran as possible,
+the translator does not do <tt>EQUIVALENCE</tt> processing at all.
+Instead, <tt>EQUIVALENCE</tt>'s are processed at macro-expansion time.
+At that time, since all memory references are converted to numerical 
+offsets into the Fortran virtual memory, it presents no problem to assign 
+symbolic names the same numeric offset.  
+<a href="#FIGURE-5">(The algorithm used to set up these <tt>EQUIVALENCE</tt>'s
+is described in Figure 5.)</a>
+</p>
+
+<A NAME="FIGURE-5">
+<HR WIDTH="40%">
+</a>
+
+<blockquote>
+
+<blockquote>
+<pre>
+EQUIVALENCE <i>&lt;Equivalence-Set<SUB>1</SUB>&gt;</i>, <i>&lt;Equivalence-Set<SUB>2</SUB>&gt;</i>, ...
+<i>&lt;Equivalence-Set&gt;</i> :: ( <i>Element<SUB>1</SUB></i>[<i>Offset<SUB>1</SUB></i>], <i>Element<SUB>2</SUB></i>[<i>Offset<SUB>2</SUB></i>], ...)
+</pre>
+</blockquote>
+
+<DL>
+<DT><b>1. Convert all scalars to single element array references.</B></DT>
+<DD><p></p></DD>
+<DT><b>2. Merge interrelated <tt>EQUIVALENCE</tt> sets.</B></DT>
+<DD><p>
+For any element, <tt>E[M]</tt>, in any <tt>EQUIVALENCE</tt> set, <tt>S</tt>,
+if an element with the same variable name occurs as <tt>E'[n]</tt> in some
+other <tt>EQUIVALENCE</tt> set, <tt>S'</tt>, then merge the two sets by
+subtracting the quantity <tt>(m-n)</tt> from all subscripts in set <tt>S</tt>
+and taking the union of the resulting list with the set <tt>S'</tt>.
+</p></DD>
+<DT><b>3. Sort <tt>EQUIVALENCE</tt> sets.</B></DT>
+<DD><p>
+Sort <tt>EQUIVALENCE</tt> sets in order of ascending offset.
+</p></DD>
+
+<DT><b>4. Normalize <tt>EQUIVALENCE</tt> sets 
+which do not intersect with <tt>COMMON</tt>.</B></DT>
+<DD><p>
+For each <tt>EQUIVALENCE</tt> set with first element <tt>E[m]</tt> and which
+is free of variables declared members of a <tt>COMMON</tt> block, subtract
+the quantity <tt>(m-1)</tt> from all elements of the set 
+(thus normalizing relative to the first element).
+</p></DD>
+
+<DT><b>5. Normalize <tt>EQUIVALENCE</tt> sets which intersect with <tt>COMMON</tt>.</B></DT>
+<DD><p>
+Fore each <tt>EQUIVALENCE</tt> set which contains at least one element, 
+<tt>E[m]</tt>, which is declared <tt>COMMON</tt>, subtract the quantity 
+<tt>(m-1)</tt> from all elements of the set (thus normalizing relative to
+the <tt>COMMON</tt> element).  Since <tt>COMMON</tt> blocks will have space
+allocated for them in the course of normal storage allocation, all that
+remains for <tt>EQUIVALENCE</tt> sets with elements in a <tt>COMMON</tt>
+block is to assign an alias to each of the elements of the set as
+offsets from the element that is in <tt>COMMON</tt>.
+</p></DD>
+
+<DT><b>6. Determine memory required for <tt>EQUIVALENCE</tt> sets which don't
+involve <tt>COMMON</tt>.</B></DT>
+<DD><p>
+For an <tt>EQUIVALENCE</tt> set, <tt>S</tt>, with elements 
+<tt>E<SUB>1</SUB>,...,E<SUB>n</SUB></tt>, which has no members
+which are declared <tt>COMMON</tt>, the actual amount of memory
+needed can be gotten via the computation,
+</p>
+<blockquote>
+<pre>
+length(S) = max[size(E<SUB>1</SUB>) + offset(E<SUB>1</SUB>),
+                size(E<SUB>2</SUB>) + offset(E<SUB>2</SUB>), ... ],
+</pre>
+</blockquote>
+<p>
+where <tt>size(E<SUB>k</SUB>)</tt> is a function of the <tt>DIMENSION</tt>'d
+length and the number of machine words required for each virtual cell 
+in the datatype of <tt>E<SUB>k</SUB></tt> (<i>e.g.</i>, the <tt>COMPLEX</tt>
+datatype requires 2 words per virtual cell).  Having calculated and allocated
+the right amount of space for identifiers belonging to <tt>EQUIVALENCE</tt>
+sets, all that remains is to assign aliases to each of the elements 
+of each set as offsets from the beginning of the set.
+</p></DD>
+</DL>
+
+<P ALIGN=CENTER><b>Figure 5.</B> <i>How</i> <tt>EQUIVALENCE</tt> <i>is processed by
+the Translator.</i></p>
+</blockquote>
+
+<HR WIDTH="40%">
+
+<h2>IV. Storage Allocation for Variables</h2>
+
+<h3>Arrays vs. Lists</h3>
+
+<p>
+The essential choice of data representations was between lists and
+arrays.  Both formalisms are sufficiently powerful to adequately
+represent the effects of a Fortran virtual machine.  If lists were
+chosen, assignment could be done via the <tt>RPLACA</tt> operation and
+the contents of a cell retrieved via <tt>CAR</tt> or <tt>NTH</tt>.  
+If arrays were used, standard operations for storing and recalling
+array elements already built into MacLISP could be used.
+</p>
+
+<p>
+Several factors were taken into consderation in the decision.
+Arrays have the feature of being <b>randomly accessible</B> in a 
+reasonably efficient way.  Most Fortran programs have been written on
+this assumption, and so transformations to a list could cause
+a considerable slowdown in operation.  MacLISP's <tt>FIXNUM</tt>
+arrays are approximately twice as <b>space efficient</B> as lists --
+another good reason for using arrays.  Passing around pointers to lists
+when doing <b>subroutine calling</B> would be considerably easier than 
+passing numeric offsets into the Fortran array, but not sufficiently
+so to justify the loss in space/time efficiency brought on by other
+factors.
+</p>
+
+<h3>How Many Arrays?</h3>
+
+<p>
+Given that an array strategy is the best for the Fortran data, there
+is still a question to answer about the implementation: Should every program
+have its own personal array, or should all programs share a large common 
+workspace with all other programs?  If each program had its own private data
+space, then subroutines would have to receive more than just array indexes
+as arguments.  It would be necessary to pass twice as many arguments 
+to each routine (to handle array pointers and offsets into the 
+arrays separately), or to pass a cons of the
+form <tt>(<i>&lt;array-object&gt;</i> . <i>&lt;offset&gt;</i>)</tt>.
+Decoding such an object on every subroutine call is a lot of
+overhead if there is a way to avoid it.  The same problem would occur even
+if just two arrays were used -- one for <tt>COMMON</tt> and one for normal
+program space.  Having one big array means that when a new package is
+loaded, a large array copy must be done to incraese the array size
+appropriately; however, such operations are also not very frequent, 
+so the benefits outweigh the costs.
+</p>
+
+<h3>Aliasing</h3>
+
+<p>
+In a translated Fortran program, just as in an actual Fortran implementation,
+variable names are merely conventions for speaking about a certain point in a
+large memory array.  The names of variables are removed by the compilation
+phase and replaced by numerical pointers to storage addresses.
+</p>
+
+<p>
+The processing of names is done by the macro package through a process
+called <b>aliasing</B>.  Since the translator output code has already
+had any Fortran implicit declarations made explicit, the driver for
+the macro package is able to map over the declarations, creating
+for each Fortran identifier an `alias' to be used in the compiler output.
+</p>
+
+<p>
+For example, a Fortran function statement such as:
+</p>
+
+<blockquote>
+<pre>
+F(X)=X**2+3
+</pre>
+</blockquote>
+
+<p>
+would generate an alias for <tt>F</tt> which looks like:
+</p>
+
+<blockquote>
+<pre>
+(LAMBDA (X) (+$ (^$ X 2) 3.0))
+</pre>
+</blockquote>
+
+<p>
+Normal variable references generate aliases which are offsets into
+<tt>FORTRAN$ARRAY</tt>.  For example, the statement
+</p>
+
+<blockquote>
+<pre>
+EQUIVALENCE (A(2),B(1))
+</pre>
+</blockquote>
+
+<p>
+generates aliases for <tt>A</tt> and <tt>B</tt> of <tt>A[1]</tt>
+and <tt>A[0]</tt>, respectively.  At a later point in the
+macro-expansion references such as <tt>A[1]</tt> are further expanded
+into <tt>ARRAYCALL</tt>'s to a numeric offset 
+into the Fortran dataspace, thus eliminating all references to the
+symbolic name in the output code.  (A separate symbol table may be generated
+for use in debugging the Fortran program.)
+</p>
+
+<p>
+Variables encountered in the program which do not have an alias
+assigned to them will be left alone.  This allows a user to insert
+arbitrary pieces of normal MacLISP code into the Fortran macro code
+without upsetting the translation.
+</p>
+
+<h3>Runtime I/O Library</h3>
+
+<p>
+Since MacLISP and Fortran I/O routines are very different from one another,
+open coding of FORTRAN formatted READ/WRITE operations is unfeasible.
+The output code would be enormous and <i>very</i> complex.  For these reasons,
+it was decided not to fully translate Fortran I/O statements, but rather to 
+provide a library of routines available at runtime to make I/O possible.
+</p>
+
+<h3>Interface to Macsyma</h3>
+
+<p>
+Much of the code for the translator has been written and is currently being
+tested and debugged.  When this is completed, the next phase of the 
+project will involve interfacing the IMSL library routines with Macsyma.
+</p>
+
+<p>
+The primary means of passing information to and retrieving information
+from a Fortran subroutine is by side-effecting upon its arguments.  Because of
+this, functions will be needed to convert Macsyma objects into an appropriate
+data format for the translated Fortran subroutines to handle, and to pick up
+appropriate values from the Fortran workarea and restore them to the Macsyma
+caller.  How much of the coding for this interface
+can be done by some automatic process is an unresolved question; not 
+enough work has been done yet in this area to provide an adequate answer.
+Hand-written interfaces to code output by the translator have produced
+some examples of the syntax that a Macsyma user might expect to be
+confronted with when translated library routines become available.
+<a href="#FIGURE-6">(See Figure 6.)</a> 
+</p>
+
+<A NAME="FIGURE-6">
+<HR WIDTH="40%">
+</a>
+
+<blockquote>
+<pre>
+(C1) /* LEQT1F Solves a set of linear equations AX=B for X given an N by N
+        matrix A. Its args are: 
+        N    - Order of A and number of rows in B.
+        M    - Number of right-hand sides.
+        IA   - Number of rows in the dimension statement for A and B in the
+               calling program.
+        IDGT - Input option. IF positive, number of digits of accuracy
+                 in input.  If 0, ignore accuracy tests in routine.
+        A - A matrix of coefficients (N x N).
+        B - An N x M matrix containing the right hand sides of
+            the AX=B problem.
+
+        Works via Gaussian elimination (Crout algorithm) with equilibration
+        and partial pivoting. */
+
+     LEQT1F(3, 4, 4, 3,                              /* Args N, M, IA, IDGT */
+            MATRIX([  33.0,  16.0,  72.0,   0.0],    /* Matrix A */
+                   [ -24.0, -10.0, -57.0,   0.0],
+                   [  -8.0,  -4.0, -17.0,   0.0],
+                   [   0.0,   0.0,   0.0,   0.0]),
+            MATRIX([   1.0,   0.0,   0.0, -359.0],   /* Matrix B */
+                   [   0.0,   1.0,   0.0,  281.0],
+                   [   0.0,   0.0,   1.0,   85.0],
+                   [   0.0,   0.0,   0.0,    0.0]));
+
+Time= 82 msec.
+      [  - 8.0    - 4.0   - 17.0  0.0 ]  [ - 9.6666666  - 2.66666666  - 32.0  1.0  ]
+      [                               ]  [                                         ]
+      [   3.0      2.0    - 6.0   0.0 ]  [     8.0          2.5        25.5  - 2.0 ]
+(D1) [[                               ], [                                         ], 0]
+      [ - 4.125  - 0.25  0.375    0.0 ]  [ 2.66666666   0.666666664    9.0   - 5.0 ]
+      [                               ]  [                                         ]
+      [   0.0      0.0     0.0    0.0 ]  [     0.0          0.0        0.0    0.0  ]
+
+/* Note that the return values are (respectively)
+   (1) A lower triangular matrix L where A=L*LTRANSPOSE.
+       L is stored in symmetric storage mode with the
+       diagonal elements of L in reciprocal form.
+   (2) The N x M solution matrix X
+   (3) Error parameter
+                          */
+</pre>
+</blockquote>
+
+<P ALIGN=CENTER><b>Figure 6.</B> <i>How Macsyma will interface to IMSL</i></p>
+
+<HR WIDTH="40%">
+
+<H2 ALIGN=CENTER>References</h2>
+
+<blockquote>
+
+<ol>
+<li><A NAME="REF-1"><b>The Mathlab Group</B>,
+<i>Macsyma Reference Manual, Version 9,</i></a>
+Laboratory for Computer Science, MIT, December 1977.
+</li>
+
+<li><A NAME="REF-2"><b>International Mathematical &amp; Statistical Libraries, Inc. (IMSL)</B></a>
+Library 2, Volumes 1 and 2, Edition 6, 1977.
+</li>
+
+<li><A NAME="REF-3"><b>Moon, David A.</B>:
+<i>MACLISP Reference Manual</i>,</a>
+Laboratory for Computer Science, MIT, March 1974.
+</li>
+
+<li><A NAME="REF-4">
+The parser is a precedence parser,</a> borrowed from Macsyma and adapted
+to Fortran originally by <b>Michael R. Genesereth</B> and 
+<b>Richard L. Bryan</B> of the MIT Laboratory for Computer Science.
+</li>
+
+<li><A NAME="REF-5">The MacLISP compiler,</a>
+<b>Jon L. White</B> (1969) and 
+<b>Jeffrey P. Golden</B> (1970).  (For historical information, see White's
+"LISP: Program is Data", <i>Proceedings of the Macsyma Users' Conference</i>,
+NASA-CP2012, 1977.)
+</li>
+
+<li>
+<A NAME="REF-6"><b>Steele, Guy L., Jr.</B>:
+``Fast Arithmetic in MacLISP,''</a>
+<i>Proceedings of the Macsyma Users' Conference</i>,
+NASA-CP2012, 1977.
+</li>
+
+<li>
+<A NAME="REF-7">
+<b>Steele, Guy L., Jr.</B>: ``Data Representations in PDP-10 MacLISP,''</a>
+<i>Proceedings of the Macsyma Users' Conference</i>,
+NASA-CP2012, 1977.
+</li>
+
+<li><A NAME="REF-8">
+The MacLISP Fasload package.</a>  <b>Jon L. White</B> and <b>Guy L. Steele</B>
+(1972-3).
+(For historical information, see White's
+"LISP: Program is Data", <i>Proceedings of the Macsyma Users' Conference</i>,
+NASA-CP2012, 1977.)
+</li>
+
+</ol>
+
+</blockquote>
+
+<H2 ALIGN=CENTER>Acknowledgements</h2>
+
+<blockquote>
+
+<p>
+I wish to acknowledge my sincere thanks to the many people who 
+have helped in this effort.  Especially to <b>Michael R. Genesereth</B>
+and <b>Richard L. Bryan</B> for writing an early version of the
+Fortran parser and for a great deal of good advice about design
+decisions;
+<b>Joel Moses</B> for advice, concern and prodding;
+and <b>John M. Favaro</B>, for helping to debug the parser by using it.
+</p>
+
+</blockquote>
+
+
+<hr />
+
+<FONT color="green">
+
+<p>
+Original printed text document<br />
+<b>Copyright 1979, Kent M. Pitman. All Rights Reserved.</B>
+</p>
+
+<p>
+HTML hypertext version of document<br />
+<b>Copyright 1998, Kent M. Pitman.  All rights reserved.</B><br />
+The following limited, non-exclusive, 
+revokable licenses are granted:
+</p>
+
+<blockquote>
+<p>
+Browsing of this document (that is, transmission and display of a temporary
+copy of this document for the ordinary purpose of direct viewing by a 
+human being in the usual manner that hypertext browsers permit such
+viewing) is expressly permitted, provided that no recopying, 
+redistribution, redisplay, or retransmission is made of any such copy.
+</p>
+
+<p>
+Bookmarking of this document (that is, recording only the document's title and 
+Uniform Resource Locator, or URL, but not its content,
+for the purpose of remembering an association between the document's title
+and the URL, and/or for the purpose of making a subsequent request 
+for a fresh copy of the content named by that URL)
+is also expressly permitted.
+</p>
+</blockquote>
+
+<p>
+All other uses require negotiated permission.
+</p>
+
+
+</FONT>
+
+<hr />
+
+
+<P ALIGN=CENTER>
+<a href="index.html"><i>Click here for an index 
+of other titles by Kent Pitman.</i></a>
+</p>
+
+</body>
+</html>

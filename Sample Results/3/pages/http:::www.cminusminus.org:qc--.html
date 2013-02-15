@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+
+<html>
+  <head> <!-- qc-- -->
+            <title>Quick C--</title>
+            <!-- navtree[qc--] == Array -->
+            <!-- navtree[qc--][leaf] == Array[leaf] -->
+            <meta http-equiv = 'Content-Type' 
+                  content    = 'text/html; charset=iso-8859-1'>
+            <style type='text/css'>
+/*
+ * Cascading Style Sheet for http://cminusminus.eecs.harvard.edu/
+ */
+
+body {
+    background:         white;
+    color:              black;
+//    font-family:        Times, serif;
+}
+
+p {
+//    font-family:        Times, serif;
+}
+
+i, em {
+//    font-family:        Times, serif;
+}
+
+tt, code, pre {
+    font-family:        monospace;
+}
+
+pre {
+    margin-left:        2em;
+}
+
+/* don't mess with people's header fonts -- results look bad on IE 
+ * 
+ * h1, h2, h3, h4 {
+ *     font-family:        Verdana, Helvetica, Arial, sans-serif;
+ *     text-align:         left;
+ * }
+ * 
+ * h1 {
+ *     font:               140% sans-serif
+ * }
+ * 
+ * h2 {
+ *     font:               100% sans-serif;
+ * }
+ * 
+ */
+
+.small {
+    font-family:        Verdana, Helvetica, Arial, sans-serif;
+    color:              black;
+    background:         white;
+    font-size:          small;
+}
+
+.blue {
+    font-family:        Verdana, Helvetica, Arial, sans-serif;
+    background:         blue;
+    color:              white;
+}
+
+.red {
+    font-family:        Verdana, Helvetica, Arial, sans-serif;
+    background:         white;
+    color:              red;
+}
+.grey {
+    font-family:        Verdana, Helvetica, Arial, sans-serif;
+    background:         #cccccc;
+    color:              black;
+}
+        
+.smallblue {
+    font-family:        Verdana, Helvetica, Arial, sans-serif;
+    background:         blue;
+    color:              white;
+    font-size:          small;
+}
+
+.smallgrey {
+    font-family:        Verdana, Helvetica, Arial, sans-serif;
+    background:         #cccccc;
+    color:              black;
+    font-size:          small;
+}
+
+
+
+/* page map */
+DIV.pagemap {background: #CCF; } 
+DIV.pagemap {float: left; margin-right: 0.1cm; margin-left: 0.1cm;
+             font-family: sans-serif; width : 15%}
+DIV.pagemap P {margin-top : 1.5ex; margin-bottom : 0ex }
+DIV.pagemap P.sub {text-indent : 2em}
+/*LI.outdent {text-indent : -2em}*/
+DIV.pagemap { padding-left: 1em; padding-right: 1em;
+              padding-top: 1em; padding-bottom : 1em; line-height: 1.1}
+DIV.pagemap MENU, DIV.pagemap MENU LI, DIV.pagemap MENU LI P {
+  margin-top : 0cm; margin-bottom : 0cm; padding-top : 0cm; padding-bottom : 0cm;
+}
+DIV.footer {font-style : italic; font-size : smaller }
+DIV.pagemap { border-style : solid;
+              border-right-width : normal; border-left-width: none;
+              border-top-width : none; border-bottom-width: none }
+DIV.pagemap UL, DIV.pagemap DL, DIV.pagemap MENU {list-style: none}
+DIV.pagemap UL UL, DIV.pagemap DL DL {list-style: none}
+DIV.pagemap-header {text-align: center}
+DIV.pagemap DL, DIV.pagemap UL {text-align: left}
+  
+            </style>
+          </head>
+  <body>
+    <!-- qc-- -->
+        <table width='100%' cellpadding='3' cellspacing='0' border='0'>
+          <tr>
+            <td class='smallblue' width='10%'><strong>C--</strong></td>
+            <td class='smallgrey' width='90%'><a href='http://www.eecs.harvard.edu/'>Harvard EECS</a>
+<img width='13' height='9' alt='->' 
+     src='./images/arrow_yellow.gif'>
+<a href='./index.html'>C-- Home</a>
+<img width='13' height='9' alt='->' 
+     src='./images/arrow_yellow.gif'>
+<a href='./code.html'>C-- Downloads</a>
+<img width='13' height='9' alt='->' 
+     src='./images/arrow_yellow.gif'>
+<a href='./qc--.html'>The Quick C-- Compiler</a>
+   
+            </td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td class='small'>
+            <a href='./index.html'>C-- Home</a>            |
+            <a href='./code.html'>Specification &amp; Downloads</a>          |
+            <a href='./news/2001.10.html'>Old News</a>          |
+            <a href='./papers.html'>Papers</a>             | 
+    <!--       <a href='./progress.html'>Work in Progress</a> |  -->
+            <a href='./mail.html'>Mailing List</a>         | 
+            <a href='./people.html'>People</a>             |
+            <a href='./faq.html'>FAQ</a>                   
+     <!-- |       <a href='./links.html'>Related Work</a> -->
+
+            </td>
+          </tr>
+        </table> 
+    <h1>The Quick C-- Compiler</h1>
+    C-- is intended as a ``portable assembly language'' that can
+    replace C as a target language used by compiler writers. 
+  <!-- After
+    long hard labor, <a href= 
+    "http://research.microsoft.com/Users/simonpj/">Simon Peyton
+    Jones</a> and <a href="http://www.eecs.harvard.edu/~nr/">Norman
+    Ramsey</a> have produced a design that supports a simple C-like
+    core, plus support for <a href="abstracts/ppdp.html">garbage
+    collection</a> and <a href="abstracts/c--pldi-00.html">
+    exception handling</a>. 
+  -->
+The goal of the Quick&nbsp;C-- project
+    is to <strong>test those ideas in an implementation</strong>.
+
+    Quick&nbsp;C-- is a relatively small compiler with a few simple optimizations. 
+    Our primary goal is to <strong>to validate our
+    design experimentally</strong>. A secondary, but still
+    significant goal is to <strong>provide a vehicle for
+    experimenting with new techniques for building retargetable
+    compilers</strong>. 
+    The compiler is
+        <ol>
+          <li><strong>Easy to specialize</strong>, say for a new
+          calling convention</li>
+
+          <li>Relatively <strong>easy to retarget</strong> to the platform of
+          choice, although this aspect still needs work.
+        </ol>
+<!--
+   Our goals for fast compilation are not being met; it appears that the 
+   compiler is spending a lot of time in register allocation.
+   Until we get better at
+   profiling, <strong>Slow&nbsp;C-- is better name for this compiler.</strong>
+-->
+
+  <h4>Compiler status</h4>
+
+  The Quick&nbsp;C-- compiler 
+<ul>
+ <li>Generates native code for the Intel 32-bit x86 architecture
+     (several other back ends, including OS&nbsp;X PowerPC, are in
+     varying stages of incompletion)
+<li>Is written in <a href="http://caml.inria.fr/">Objective
+      Caml</a>
+ <li>Uses the RTL-based code-generation techniques developed by Jack
+Davidson and Chris Fraser 
+ <li>Uses a graph-coloring, coalescing, Appel-George register
+allocator (implemented by <a href='./people.html'>John Dias</a>)
+ <li>Supports a few simple optimizations such as peephole optimization and dead-code elimination
+ <li>Is structured so we can add more optimizations later
+ <li>Compiles useful programs, including the   the Quick&nbsp;C-- interpreter
+ <li>Comes with <a href='./people.html'>Paul Govereau</a>'s  demonstration front end
+     (available from our <a href='./rsync.html'>rsync server</a>)
+     for the Tiger language
+ <li>Supports position-independent code after a fashion, which will improve over time
+ <li>Does not implement the full C-- specification, so you would do well to 
+     consult the  <a href="/rsync/qc--/doc/release.ps">release notes</a> 
+ <li>Is not quick enough :-(
+</ul>
+ 
+ <p>
+Features that we don't currently support but hope to add later include
+    <ul>
+      <li>Package QC-- as a <strong>dynamic compiler</strong> or
+      library, not just a batch compiler.</li>
+
+      <li>Support <strong>code generation straight into
+      memory</strong>, and possibly into ELF object files, as well
+      as emitting assembly language.</li>
+    </ul>
+
+    <h2>Compiler Source Code</h2>
+
+    The source code of QC-- is available as a snapshot from our CVS
+    repository. 
+ You can get it from our rsync server, which has
+     <a href='./rsync.html'>many capabilities</a>, including
+     <a href=/rsync/dist>get a recent tarball</a>, <a href="/rsync">browse
+    the source code</a>, or <a
+    href="/rsync/qc--linux-x86/ChangeLog">read the CVS change log</a>.</p>
+
+    <p> <b>Quick C-- has been supported gifts from <a href= 
+    "http://www.research.microsoft.com">Microsoft Research</a> and from 
+    Intel Research as well as grants from the National Science Foundation.
+    The results of our research on Quick C-- may be used freely by anyone 
+    for any purpose.
+
+
+
+<br><hr size='1'><span class='small'>Contact: <a href='mailto:webmaster@cminusminus.org'>C-- Webmaster</a>. 
+URL: <tt><a href='http://www.cminusminus.org/'>http://www.cminusminus.org/</a></tt>.
+Last edited: Sat 11 Oct 2008 16:57 EDT.</span>
+<!-- last edited by  -->
+</b>
+
+  </body>
+</html>
+

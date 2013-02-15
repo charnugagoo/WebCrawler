@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+  <head>
+    <title>Paths and URLs</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
+    
+    <style type="text/css">
+    <!--
+
+    -->
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <div id="logo">
+        <a href="/"><img src="/images/logo.gif" alt="Radiant - Content Management Simplified"/></a>
+      </div>
+      <div id="site-links">
+<a href="/">Home</a>
+<span class="separator"> | </span>
+<a href="/demo/">Demo</a> <span class="separator"> | </span> <a href="/download/">Download</a>
+<span class="separator"> | </span>
+<a href="http://github.com/radiant/radiant/wiki/">Documentation</a>
+<span class="separator"> | </span>
+<a href="http://ext.radiantcms.org/">Extensions</a>
+<span class="separator"> | </span>
+<a href="http://github.com/radiant/radiant/">Development</a>
+<span class="separator"> | </span>
+<a href="/mailing-list/">Mailing List</a> <span class="separator"> | </span> <strong><a href="/blog/">Weblog</a></strong> <span class="separator"> | </span> <a href="/podcast/">Podcast</a>
+      </div>
+    </div>
+    <div id="content">
+<h1>Paths and URLs</h1>
+
+<script type="text/javascript" src="http://www.haloscan.com/load/radiantcms"></script>
+<div class="info">Posted by Jim Gay on Wednesday, November 03, 2010 | <a href="javascript:HaloScan('blog-paths-and-urls');" target="_self"><script type="text/javascript">postCount('blog-paths-and-urls');</script></a> | <a href="javascript:HaloScanTB('blog-paths-and-urls');" target="_self"><script type="text/javascript">postCountTB('blog-paths-and-urls');</script></a></div>
+
+<p>At the heart of Radiant&#8217;s Page model has been the <code>find_by_url</code> method.</p>
+<p>It takes a path, and finds the proper bit of content to display. I wrote a <a href="http://www.saturnflyer.com/blog/jim/2010/06/22/radiant-pagefind_by_url/">detailed explanation of how find_by_url works</a> on my blog.</p>
+<p>In the future things like this will be changing. Our <code>url</code> and <code>find_by_url</code> methods and their ilk haven&#8217;t truly had anything to do with URLs, but with paths. So we&#8217;re fixing that. The next release will refer to &#8220;path&#8221; where &#8220;url&#8221; used to be but don&#8217;t worry, everything will work just as you expected if use the current <code>url</code> methods.</p>
+<p>To get the same behavior, you&#8217;ll need to use methods like <code>path</code> or <code>find_by_path</code> since that&#8217;s what you&#8217;re really after. <a href="https://github.com/radiant/radiant/commit/cf3d0330a05b0fa6d1e0f4e5efcb29477da15a19">This commit</a> shows some of the changes that are upcoming. For now, everything will work the same. We&#8217;ve aliased the methods for the next release of Radiant so that your page&#8217;s <code>url</code> and <code>path</code> are the same. But they won&#8217;t be the same in subsequent releases.</p>
+<p>A <code>url</code> method will return an actual <span class="caps">URL</span> such as http://radiantcms.org/blog instead of just /blog. We have an open issue related to this at github which <a href="https://github.com/radiant/radiant/issues#issue/46">describes the same thinking</a> laid out here.</p>
+<p>If you&#8217;re running on edge, start your switch now.</p>
+<div id="extended">
+
+</div>
+    </div>
+    <div id="footer">
+<p>Radiant <span class="caps">CMS</span> was created by <a href="http://wiseheartdesign.com/">John W. Long</a>, extended by <a href="http://seancribbs.com">Sean Cribbs</a>, and has been continuously improved by a <a href="https://github.com/radiant">team of core committers</a> with dozens of additional contributions from the Radiant community.</p>
+<p>This site is made with <a href="http://ruby-lang.org">Ruby</a> and powered by Radiant. Hosting is graciously provided by the kind folks at <a href="http://avlux.net"><span class="caps">AVLUX</span></a>.</p>
+<p>Web Site Design, Logo, Etc. Copyright &copy; 2006&#8211;2013, John W. Long. All Rights Reserved.</p>
+    </div>
+    <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-301205-1";
+urchinTracker();
+</script>
+    <script type="text/javascript">
+  (function() {
+    var t   = document.createElement('script');
+    t.type  = 'text/javascript';
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', '4e09fee9f5a1f50f03000001');
+    t.src = '//secure.gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+  </body>
+</html>

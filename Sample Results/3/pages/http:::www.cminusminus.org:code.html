@@ -1,0 +1,370 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+
+<html>
+  <head> <!-- code -->
+            <title>C-- Downloads</title>
+            <!-- navtree[code] == Array -->
+            <!-- navtree[code][leaf] == Array[leaf] -->
+            <meta http-equiv = 'Content-Type' 
+                  content    = 'text/html; charset=iso-8859-1'>
+            <style type='text/css'>
+/*
+ * Cascading Style Sheet for http://cminusminus.eecs.harvard.edu/
+ */
+
+body {
+    background:         white;
+    color:              black;
+//    font-family:        Times, serif;
+}
+
+p {
+//    font-family:        Times, serif;
+}
+
+i, em {
+//    font-family:        Times, serif;
+}
+
+tt, code, pre {
+    font-family:        monospace;
+}
+
+pre {
+    margin-left:        2em;
+}
+
+/* don't mess with people's header fonts -- results look bad on IE 
+ * 
+ * h1, h2, h3, h4 {
+ *     font-family:        Verdana, Helvetica, Arial, sans-serif;
+ *     text-align:         left;
+ * }
+ * 
+ * h1 {
+ *     font:               140% sans-serif
+ * }
+ * 
+ * h2 {
+ *     font:               100% sans-serif;
+ * }
+ * 
+ */
+
+.small {
+    font-family:        Verdana, Helvetica, Arial, sans-serif;
+    color:              black;
+    background:         white;
+    font-size:          small;
+}
+
+.blue {
+    font-family:        Verdana, Helvetica, Arial, sans-serif;
+    background:         blue;
+    color:              white;
+}
+
+.red {
+    font-family:        Verdana, Helvetica, Arial, sans-serif;
+    background:         white;
+    color:              red;
+}
+.grey {
+    font-family:        Verdana, Helvetica, Arial, sans-serif;
+    background:         #cccccc;
+    color:              black;
+}
+        
+.smallblue {
+    font-family:        Verdana, Helvetica, Arial, sans-serif;
+    background:         blue;
+    color:              white;
+    font-size:          small;
+}
+
+.smallgrey {
+    font-family:        Verdana, Helvetica, Arial, sans-serif;
+    background:         #cccccc;
+    color:              black;
+    font-size:          small;
+}
+
+
+
+/* page map */
+DIV.pagemap {background: #CCF; } 
+DIV.pagemap {float: left; margin-right: 0.1cm; margin-left: 0.1cm;
+             font-family: sans-serif; width : 15%}
+DIV.pagemap P {margin-top : 1.5ex; margin-bottom : 0ex }
+DIV.pagemap P.sub {text-indent : 2em}
+/*LI.outdent {text-indent : -2em}*/
+DIV.pagemap { padding-left: 1em; padding-right: 1em;
+              padding-top: 1em; padding-bottom : 1em; line-height: 1.1}
+DIV.pagemap MENU, DIV.pagemap MENU LI, DIV.pagemap MENU LI P {
+  margin-top : 0cm; margin-bottom : 0cm; padding-top : 0cm; padding-bottom : 0cm;
+}
+DIV.footer {font-style : italic; font-size : smaller }
+DIV.pagemap { border-style : solid;
+              border-right-width : normal; border-left-width: none;
+              border-top-width : none; border-bottom-width: none }
+DIV.pagemap UL, DIV.pagemap DL, DIV.pagemap MENU {list-style: none}
+DIV.pagemap UL UL, DIV.pagemap DL DL {list-style: none}
+DIV.pagemap-header {text-align: center}
+DIV.pagemap DL, DIV.pagemap UL {text-align: left}
+  
+            </style>
+          </head>
+
+  <body>
+    <!-- code -->
+        <table width='100%' cellpadding='3' cellspacing='0' border='0'>
+          <tr>
+            <td class='smallblue' width='10%'><strong>C--</strong></td>
+            <td class='smallgrey' width='90%'><a href='http://www.eecs.harvard.edu/'>Harvard EECS</a>
+<img width='13' height='9' alt='->' 
+     src='./images/arrow_yellow.gif'>
+<a href='./index.html'>C-- Home</a>
+<img width='13' height='9' alt='->' 
+     src='./images/arrow_yellow.gif'>
+<a href='./code.html'>C-- Downloads</a>
+   
+            </td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td class='small'>
+            <a href='./index.html'>C-- Home</a>            |
+            <a href='./code.html'>Specification &amp; Downloads</a>          |
+            <a href='./news/2001.10.html'>Old News</a>          |
+            <a href='./papers.html'>Papers</a>             | 
+    <!--       <a href='./progress.html'>Work in Progress</a> |  -->
+            <a href='./mail.html'>Mailing List</a>         | 
+            <a href='./people.html'>People</a>             |
+            <a href='./faq.html'>FAQ</a>                   
+     <!-- |       <a href='./links.html'>Related Work</a> -->
+
+            </td>
+          </tr>
+        </table> 
+    <h2>C-- Downloads</h2>
+
+<div class="pagemap">
+      <a href="#spec">The C-- Specification</a>
+   <p><a href="#qcmm">Quick C--</a>
+   <p><a href="#frontends">Front ends</a>
+   <p><a href="#others">Other compilers</a>
+   <p><a href="#luaml">Lua-ML</a>
+   <p><a href=#mk>Mk</a>
+   <p><A href=#ocamlerror>OCamlerror</a>
+   <p><A href=#ocamlburg>OCamlburg</a>
+</div>
+
+    <h3><a name=spec>C-- specification (Version 2)</a></h3>
+    The specification is available as <a href=extern/man2.dvi>DVI</a>,
+    <a href=extern/man2.ps>PostScript</a>, or <a href=extern/man2.pdf>PDF</a>.
+
+    <h3><a name=qcmm>The Quick C-- compiler and interpreter</a></h3>
+
+    The C-- compiler under most active development is Quick C--.
+    It includes an <strong>interpreter with run-time system</strong> and 
+    a <strong>native-code compiler</strong> that is more or less <strong>ready for
+    prime time</strong>.  
+    The native-code compiler supports only the <strong>Intel x86</strong> 
+    architectures; support for several other architectures, including 
+    PowerPC for Mac OS&nbsp;X, remains to be completed.
+     <p>
+    You can <a href=http://www.cminusminus.org/rsync/dist/qc--.tar.gz>download 
+    the most recent tarball</a>, 
+    <a href=http://www.cminusminus.org/rsync/dist/>browse for other tarballs</a>, 
+    or
+     <a href='./rsync.html'>read about the full capabilities of our rsync server</a>,
+    which includes <a href="/rsync">browsing
+    the source code</a>.
+    If you don't like building things from source, you can also download a
+    <a href=http://www.cminusminus.org/rsync/qc--linux-x86/bin/qc-->x86 Linux 
+     glibc6 binary</a>. 
+       <p>
+    Because Quick&nbsp;C-- does not support the full C-- specification
+    (for example, it lacks support for 36-bit arithmetic), you must
+    <strong>consult the <a href="/rsync/qc--/doc/release.ps">release notes</a></strong>
+    to find out what features are and are not supported.
+    Which features we support when depends on users' requests.
+       <p>
+    Do read <a href='./qc--.html'>more about the Quick&nbsp;C-- compiler</a>. 
+
+
+
+    <h3><A name="frontends">Front ends that emit C--</a></h3>
+
+    <a href='./people.html'>Paul Govereau</a> has written a demonstration front end for Tiger.
+    You can download <!-- it by
+
+<blockquote><tt>
+rsync -za rsync://rsync.cminusminus.org/tiger tiger
+</tt>
+</blockquote>
+or you can download -->
+ the
+<a href=http://www.cminusminus.org/rsync/dist/tigerc.tar.gz>
+most recent tarball</a>.
+For details see the <a href='./rsync.html'>instructions for our Rsync server</a>.
+
+  <p>
+We have adapted Fraser and Hanson's 
+<a href=http://www.cs.princeton.edu/software/lcc/>lcc</a> compiler
+to emit C--, except that this compiler cannot compile varargs functions.
+(Calls to varargs functions are OK.)
+This work is not on our web site, but we are happy to share 
+it with interested researchers. 
+  <p>
+Matthew Fluet has adapted the <a href=http://www.mlton.org>MLton</a>
+optimizing compiler to emit C--, but as of April 2005,
+the MLton front end triggers a number of C-- compiler bugs, so this
+front end is not yet usable.
+
+
+    <h3><a name=luaml>Lua-ML</a></h3>
+
+    Lua-ML is an interpreter for version 2.5 of the <a href=http://www.lua.org/>Lua</a>
+    programming language.  We use Lua-ML to configure and script the 
+    Quick&nbsp;C-- compiler.  
+    You can <a href=http://www.cminusminus.org/rsync/dist/lua-ml.tar.gz>download 
+    the most recent tarball</a> or 
+    <a href=http://www.cminusminus.org/rsync/dist/>browse for other tarballs</a>.
+    <!--(<b>Warning: software at this link is known to be out of date</b>.)-->
+    You may want to <strong>read papers</strong> about support for
+    <a href=http://www.eecs.harvard.edu/~nr/pubs/embed-abstract.html>embedding</a> 
+    and
+    <a href=http://www.eecs.harvard.edu/~nr/pubs/mania-abstract.html>separate
+    compilation</a>.
+
+    <h3><a name=mk>Mk</a></h3>
+
+    <p>Mk is Andrew Hume's reimplementation of make.
+    Mk is
+    recommended by Stu Feldman, who created make.
+    Mk has evolved through many systems from Bell Labs.
+    Mk does not try to do
+    everything but instead provides small but coherent set of
+    features, including 
+    especially good integration with the shell.
+    We use it to build Quick C--, and we're very happy.
+
+    <p>The C code for Mk is extracted from the Plan 9 source
+    distribution and comes with an Open Source License.  Requirements
+    for compilation are a C compiler and Make. The documentation
+    includes a PDF file about Mk, and a Unix man page.</p>
+
+    <ul>
+      <!--
+      <li><a href=
+      "/download/mk-1.0.tar.gz"><tt>mk-1.0.tar.gz</tt></a></li>
+      <li><a href=
+      "/download/mk-1.1.tar.gz"><tt>mk-1.1.tar.gz</tt></a>. Compiles now
+      with lcc(1) on Linux, cc(1) on SunOS 5.5.1.</li>
+          -->
+      <li>Download <a href=
+      "http://www.cminusminus.org/rsync/dist/mk.tar.gz"><tt>mk.tar.gz</tt></a>. 
+        <!-- Compiles now
+      on FreeBSD. Patch supplied by William Josephson. -->
+    </ul>
+
+
+    <h3><a name=ocamlerror>OCamlError</a></h3>
+
+    <p>When an <a href="http://www.ocaml.org/">Objective Caml</a>
+    bytecode program (prior version 3.07) dies with an uncaught
+    exception, it can leave a stack trace for debugging. The stack trace
+    mentions source code positions in modules, where each position is a
+    character-offset from the beginning of the file. The OCamlError
+    tools reads such a stack trace and annotates it with more readable
+    <i>(file, line, column)</i> source code positions. It also honors
+    CPP line directives that are useful when source code is created by
+    tools like OCamlYacc or other preprocessors.</p>
+
+    <p>Starting with OCaml 3.07, stack traces refer to source code
+    positions by file, line, and column directly. OCamlError is obsolete
+    for such programs.</p>
+
+    <p>Requirements for compilation: Objective Caml 3.*, GNU Make,
+    Perl. The source code is a literate program and comes with
+    documentation in HTML format and a Unix-style manual page.</p>
+    <ul>
+      <li><a href=
+      "http://www.cminusminus.org/rsync/dist/ocamlerror.tar.gz">
+      <tt>ocamlerror.tar.gz</tt></a></li>
+    </ul>
+
+    <h3><a name=ocamlburg>OCamlBurg</a></h3>
+
+    <p>Burg is somewhat analagous to Yacc for tree grammars as opposed
+    to string grammars.  Like `Yacc', Burg can stand for an idea or a
+    family of tools as well as a particular tool.  A typical use is to
+    use Burg to map an intermediate-code tree to a sequence of machine
+    instructions.
+    OCamlBurg is member of the Burg family and
+    emits <a href="http://www.ocaml.org/">Objective Caml</a> 
+    code.  <!--
+ A Burg specification is similar to a set of ML patterns.
+    Unlike an ML pattern, a Burg pattern can match a subject tree only
+    partially. The goal is to find a set of patterns that match a tree
+    completely at minimal cost. The code generated from a Burg
+    specification finds this set of pattern with a dynamic programming
+    algorithm at runtime. After the covering set of pattern is found,
+    associated semantic actions can be excecuted, which typically
+    generates code that is equivalent to the the matched tree. -->
+    OCamlBurg is inspired by <a href=
+    "http://www.cs.princeton.edu/software/iburg/">IBurg</a> from
+    Fraser, Hanson, and Proebsting.
+    Their paper about <i>IBurg</i> includes an introduction to code
+    generation with IBurg.</p>
+
+    <p>Requirements for compilation: Objective Caml 3.*, GNU Make,
+    Perl. The source code is a literate program and comes with
+    documentation in HTML format, a Unix-style manual page, and
+    examples.</p>
+    <ul>
+      <!--
+      <li><a href=
+      "/download/ocamlburg-1.0.tar.gz"><tt>ocamlburg-1.0.tar.gz</tt></a></li> -->
+      <li><a href=
+      "http://www.cminusminus.org/rsync/dist/ocamlburg.tar.gz">
+      <tt>ocamlburg.tar.gz</tt></a>.
+     <!-- Bug fix: <tt>max_cost</tt> in the run-time code was too high to avoid
+      overflows.</li> -->
+        <!--<b>Warning: software at this link is known to be out of date</b>-->
+    </ul>
+
+    <h3><A name="others">Other C-- compilers</a></h3>
+    <ul>
+    <li><a href='./people.html'>Fermin Reig</a>'s <tt><a href= 
+    "http://nil.ics.uci.edu/~reig/c--/">cmmc</a></tt> is
+    implemented in Standard ML on top of the <a href='http://cs1.cs.nyu.edu/leunga/www/MLRISC/Doc/html/index.html'>MLRISC</a>     code generator. It emits assembly code for the
+    <strong>Alpha, Sparc, and X86</strong>.  It implements an 
+    obsolete version of C-- and is no longer maintained.
+
+    <li>The <!-- a href="http://www.malgil.com/trc/" -->Trampoline C--
+    Compiler<!-- /a --> by Sergei Egorov, which seems to have disappeared from the Web.
+    The Trampoline C-- compiler
+    implements the obsolete May, 1999 specification and
+    compiles to C.  The author says:  <i>it is slow, requires too much
+    memory, and generates slow C code.  But, from the other hand, it
+    implements almost all of original C-- specification (including
+    runtime interface), the generated code is readable, portable, and
+    hopefully correct.</i>
+
+    <li>The <a href="http://www.cse.ogi.edu/PacSoft/projects/C--">
+    Oregon <tt> C--</tt> compiler</a> was the first prototype
+    implementation of <tt>C--</tt>, also on top of <a href='http://cs1.cs.nyu.edu/leunga/www/MLRISC/Doc/html/index.html'>MLRISC</a>.  
+    It has been <strong>honorably retired</strong>. 
+    </ul>
+
+
+    <br><hr size='1'><span class='small'>Contact: <a href='mailto:webmaster@cminusminus.org'>C-- Webmaster</a>. 
+URL: <tt><a href='http://www.cminusminus.org/'>http://www.cminusminus.org/</a></tt>.
+Last edited: Sat 11 Oct 2008 16:57 EDT.</span>
+<!-- last edited by  -->
+  </body>
+</html>
+

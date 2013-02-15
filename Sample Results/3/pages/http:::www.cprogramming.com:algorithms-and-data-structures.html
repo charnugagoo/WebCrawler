@@ -1,0 +1,575 @@
+<html>
+<head>
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds2.feedburner.com/Cprogrammingcom/">
+<link rel="stylesheet" href="http://static.cprogramming.com/main_images/style.css?np9" type="text/css">
+<!--[if IE]>
+    <link rel="stylesheet" href="http://static.cprogramming.com/main_images/style-ie.css?np4" type="text/css">
+<![endif]-->
+
+
+<META NAME="keywords" CONTENT="algorithms, C++ algorithms, big-o notation, huffman encoding">
+<META NAME="Description" CONTENT="Learn about algorithms and data structures, with examples in C and C++">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Algorithms and data structures in C/C++ - Cprogramming.com</title>
+
+<!-- ADDED DFP -->
+<script type='text/javascript' src='http://partner.googleadservices.com/gampad/google_service.js'>
+</script>
+<script type='text/javascript'>
+GS_googleAddAdSenseService("ca-pub-2560316224908115");
+GS_googleEnableAllServices();
+</script>
+<script type='text/javascript'>
+GA_googleAddSlot("ca-pub-2560316224908115", "RunOfSite_LargeRectangle_ATF_336x280");
+GA_googleAddSlot("ca-pub-2560316224908115", "RunOfSite_ATF_leaderboard_728x90");
+
+</script>
+<script type='text/javascript'>
+GA_googleFetchAds();
+</script>
+<!-- END ADDED DFP -->
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-7820175-1']);
+  _gaq.push(['_setDomainName', '.cprogramming.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+</head>
+
+<body>
+<div>
+
+<a href="http://www.cprogramming.com/"><img class="logo noprint" src="http://static.cprogramming.com/main_images/title.png" width="324" height="83" border="0"></a> 
+
+<table class="line noprint"><tr><td></td></tr></table>
+<div class="noprint" align="right" style="padding-top:25px;padding-right:25px;">
+<!-- SiteSearch Google -->
+<form action="http://www.google.com/cse" id="cse-search-box">
+  <div>
+    <input type="hidden" name="cx" value="partner-pub-2560316224908115:wqvdce-aw4a" />
+    <input type="hidden" name="ie" value="ISO-8859-1" />
+    <input type="text" name="q" size="31" />
+    <input type="submit" name="sa" value="Search" />
+  </div>
+</form>
+<script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&amp;lang=en"></script>
+<!-- SiteSearch Google -->
+</div>
+<div>
+  <table class="main">
+    <tr>
+
+  	<td class="noprint" colspan="5" bgcolor="#EBEBEB">
+  		<img src="http://static.cprogramming.com/main_images/spacer-vert.png" height="6" width="0">
+  	   <center>
+    	<div class="leaderboard">
+
+<!-- ADDED DFP -->
+<!-- ca-pub-2560316224908115/Homepage_ATF_leaderboard_728x90 -->
+<script type='text/javascript'>
+GA_googleFillSlot("RunOfSite_ATF_leaderboard_728x90");
+</script>
+<!-- END ADDED DFP -->
+
+</div>
+		</center>
+		<img src="http://static.cprogramming.com/main_images/spacer-vert.png" height="4" width="1">
+  	</td>
+        
+  </tr>
+
+  <tr>
+
+     <td class="noprint" width="130" valign="top" bgcolor="#EBEBEB"> 
+     <div class="menu" valign="top" style="font-size:14px;width:200px">
+     <p class="navcategory" align="left">
+          <img class="bullet" src="http://static.cprogramming.com/main_images/bullet.gif" width="11" height="14">    Starting out
+     </p>
+
+     <p class="navlist" align="left" style="font-size:14px;">
+             <a href="http://www.cprogramming.com/c++book/?inl=sb">Get the Ebook</a><br>
+             <a href="http://www.cprogramming.com/begin.html">Get Started with C or C++</a><br>
+             <a href="http://www.cprogramming.com/compilers.html">Getting a Compiler</a><br>
+             <a href="http://www.cprogramming.com/books.html">Book Recommendations</a><br>
+     </p>
+
+     <p class="navcategory" align="left">
+          <br>
+          <img class="bullet" src="http://static.cprogramming.com/main_images/bullet.gif" width="11" height="14"> Tutorials
+     </p>
+
+     <p class="navlist" align="left" style="font-size:14px;">
+            <a href=http://www.cprogramming.com/tutorial/c-tutorial.html>C Tutorial</a><br>
+            <a href=http://www.cprogramming.com/tutorial/c++-tutorial.html>C++ Tutorial</a><br>
+            <a href=http://www.cprogramming.com/java-programming.html>Java Tutorial</a><br>
+            <a href=http://www.cprogramming.com/game-programming.html>Game Programming</a><br>
+            <a href=http://www.cprogramming.com/graphics-programming.html>Graphics Programming</a><br>
+            <a href=http://www.cprogramming.com/algorithms-and-data-structures.html>Algorithms &amp; Data Structures</a><br>
+            <a href=http://www.cprogramming.com/debuggers.html>Debugging</a><br>
+            <a href="http://www.cprogramming.com/tutorial.html">All Tutorials</a><br>
+     </p>
+
+     <p class="navcategory" align="left">
+          <br>
+          <img class="bullet" src="http://static.cprogramming.com/main_images/bullet.gif" width="11" height="14"> Practice
+     </p>
+
+     <p class="navlist" align="left" style="font-size:14px;">
+            <a href="http://www.cprogramming.com/challenge.html">Practice Problems</a><br>
+            <a href="http://www.cprogramming.com/quiz/">Quizzes</a><br>
+     </p>
+     <p class="navcategory" align="left">
+          <br>
+          <img class="bullet" src="http://static.cprogramming.com/main_images/bullet.gif" width="11" height="14"> Resources
+     </p>
+
+     <p class="navlist" align="left" style="font-size:14px;">
+            <a href="http://www.cprogramming.com/cgi-bin/source/source.cgi">Source Code</a><br>
+            <a href=http://www.cprogramming.com/snippets/>Source Code Snippets</a><br>
+            <a href="http://www.cprogramming.com/tips/">C and C++ Tips</a><br>
+            <a href=http://www.cprogramming.com/jobs/>Finding a Job</a>
+     </p>
+
+     <p class="navcategory" align="left">
+          <br>
+          <img class="bullet" src="http://static.cprogramming.com/main_images/bullet.gif" width="11" height="14"> References
+     </p>
+
+     <p class="navlist" align="left" style="font-size:14px;">
+            <a href="http://www.cprogramming.com/function.html">Function Reference</a><br>
+            <a href="http://www.cprogramming.com/reference/">Syntax Reference</a><br>
+            <a href="http://www.cprogramming.com/cgi-bin/cdir/Cdirectory.cgi">Programming Links</a><br>
+            <a href="http://faq.cprogramming.com/cgi-bin/smartfaq.cgi">Programming FAQ</a><br>
+     </p>
+
+     <p class="navcategory" align="left">
+          <br>
+          <img class="bullet" src="http://static.cprogramming.com/main_images/bullet.gif" width="11" height="14"> Getting Help
+     </p>
+
+     <p class="navlist" align="left" style="font-size:14px;">
+             <a href="http://www.cprogramming.com/board.html">Message Board</a><br>
+             <a href="http://www.cprogramming.com/expert.html">Ask an Expert</a><br>
+             <a href="http://www.cprogramming.com/email.html">Email</a><br>
+             <a href="http://www.cprogramming.com/about.html">About Us</a>
+     </p>
+     </div>
+
+<center>
+      <br><br>
+     <script type="text/javascript"><!--
+     google_ad_client = "pub-2560316224908115";
+     google_ad_width = 120;
+     google_ad_height = 90;
+     google_ad_format = "120x90_0ads_al";
+     google_ad_channel ="0800879710";
+     google_color_border = "EBEBEB";
+     google_color_bg = "EBEBEB";
+     google_color_link = "C30000";
+     google_color_url = "C30000";
+     google_color_text = "000000";
+     //--></script>
+     <script type="text/javascript"
+       src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+       </script>
+</center>
+
+
+
+    </td>
+	<td class="content" valign="top">
+
+    			<div class="content2">
+
+<h1>Algorithms and data structures in C/C++</h1>
+
+
+
+<style type="text/css"> a.tut {font-size: 14px; padding:2px} </style>
+ <h2>Data Structures</h2> 
+ All programmers should know something about basic data structures like stacks, queues and heaps. Graphs are a tremendously useful concept, and two-three trees solve a lot of problems inherent in more basic binary trees.
+ <ul>
+<li>
+<a class="tut" href="http://www.cprogramming.com/tutorial/computersciencetheory/stack.html">Stack Data Structure</a> 
+            </li>
+<li>
+<a class="tut" href="http://www.cprogramming.com/tutorial/computersciencetheory/queue.html">The Queue Data Structure</a>
+            </li>
+<li>
+<a class="tut" href="http://www.cprogramming.com/tutorial/computersciencetheory/heap.html">Heaps</a>
+            </li>
+<li>
+<a class="tut" href="http://www.cprogramming.com/tutorial/computersciencetheory/hash-table.html">Hash Tables</a>
+  </li>
+<li>
+<a class="tut" href="http://www.cprogramming.com/tutorial/computersciencetheory/graphtheory.html">Graphs in computer science</a>  
+            </li>
+<li>
+<a class="tut" href="http://www.cprogramming.com/tutorial/computersciencetheory/twothree.html">Two-three trees</a>             </li>
+</ul>
+
+
+        <h2>Algorithmic Efficiency and Sorting and Searching Algorithms</h2>
+Learn how to determine the efficiency of your program and all about the various algorithms for sorting and searching--both common problems when programming.
+        <ul>
+<li>
+<a class="tut" href="http://www.cprogramming.com/tutorial/computersciencetheory/algorithmicefficiency1.html">Algorithmic Efficiency and Big-O notation</a> </li>
+<li>
+<a class="tut" href="http://www.cprogramming.com/tutorial/computersciencetheory/space-time-tradeoff.html">Efficiency and the space-time tradeoff</a> 
+</li>
+<li>
+<a class="tut" href="http://www.cprogramming.com/discussionarticles/sorting_and_searching.html">Search
+Algorithms - linear search and binary search</a> 
+
+           </li>
+<li>
+<a class="tut" href="http://www.cprogramming.com/tutorial/computersciencetheory/sortcomp.html">Comparison
+            of Sorting Algorithms</a> 
+            </li>
+<li>
+<a class="tut" href="http://www.cprogramming.com/tutorial/computersciencetheory/sorting1.html">Intro
+            to sorting algorithms: bubble sort</a> 
+                       </li>
+<li>
+<a class="tut" href="http://www.cprogramming.com/tutorial/computersciencetheory/sorting2.html">Selection sort and Insertion sort</a> 
+        </li>
+<li>
+<a class="tut" href="http://www.cprogramming.com/tutorial/computersciencetheory/heapsort.html"> Heap Sort</a> 
+        </li>
+<li>
+<a class="tut" href="http://www.cprogramming.com/tutorial/computersciencetheory/mergesort.html">Merge Sort</a> 
+        </li>
+<li>
+<a class="tut" href="http://www.cprogramming.com/tutorial/computersciencetheory/quicksort.html">
+        Quicksort</a> 
+        </li>
+<li>
+<a class="tut" href="http://www.cprogramming.com/tutorial/computersciencetheory/radix.html">Radix
+        Sort a special case sorting algorithm</a>
+        </li>
+</ul>
+
+<h2>AI Tutorials</h2>
+Learn about AI, including how to make game AI using the minimax algorithm.
+<ul>
+<li>
+<a class="tut" href="http://www.cprogramming.com/tutorial/AI/perceptron.html">Perceptrons, a simple neuron simulator</a> 
+</li>
+<li>
+<a class="tut" href="http://www.cprogramming.com/tutorial/AI/minimaxtree1.html">MiniMax Game Trees</a> 
+</li>
+<li>
+<a class="tut" href="http://www.cprogramming.com/tutorial/AI/chessboardrep.html">Chess Board Representation</a> 
+</li>
+<li>
+<a class="tut" href="http://www.cprogramming.com/tutorial/genetic_algorithm.html">Solving problems with genetic algorithms</a> 
+</li>
+<li><a class="tut" href=http://cboard.cprogramming.com/general-ai-programming/>AI Programming Message Board</a>
+</ul>
+
+<h2>Advanced Algorithms</h2>
+If you've mastered the basics, perhaps you'd like to move to more advanced, specialized algorithms
+<ul>
+<li>
+<a class="tut" href="http://www.cprogramming.com/tutorial/xor.html">Exclusive-OR (XOR) Encryption</a> 
+            </li>
+
+           <li>
+<a class="tut" href="http://www.cprogramming.com/tutorial/computersciencetheory/dijkstra.html">Dijkstra's
+            Algorithm for finding shortest paths in graphs</a> 
+            </li>
+<li>
+<a class="tut" href="http://www.cprogramming.com/tutorial/computersciencetheory/dp.html">Dynamic
+            Programming with an example of all-pairs shortest paths</a> 
+            </li>
+<li>
+<a class="tut" href="http://www.cprogramming.com/tutorial/computersciencetheory/mst.html">Minimum
+            Spanning Trees and Prim's Algorithm</a> 
+           </li>
+<li>
+<a class="tut" href="http://www.cprogramming.com/tutorial/computersciencetheory/huffman.html">Huffman
+            Encoding Compressiong Algorithm</a> 
+</li>
+</ul>
+
+
+<h2>Computer Science Theory</h2>
+If you've moved on from the advanced algorithms, perhaps you'd like to learn more about the fundamental nature of computation--a deep and rewarding topic.
+<ul>
+<li>
+<a class="tut" href="http://www.cprogramming.com/tutorial/computersciencetheory/intro.html">An
+        introduction to the topic of computer science</a> 
+        </li>
+<li>
+<a class="tut" href="http://www.cprogramming.com/tutorial/base_systems.html">Base
+        Systems - Binary, Hex and Octal</a> 
+ </li>
+<li>
+<a class="tut" href="http://www.cprogramming.com/tutorial/computersciencetheory/halting.html">The
+Halting Problem</a> <br>Not for the faint of heart (or beginners), this tutorial
+covers an advanced topic in computer science: the nature of what can and
+cannot be computed -- what types of problems computers simply cannot solve
+</li>
+<li>
+<a class="tut" href="http://www.cprogramming.com/tutorial/computersciencetheory/computability.html">What
+We Cannot Know: Consequences of the Halting Problem</a> 
+ </li>
+</ul>
+
+<div id="footer" class="noprint">
+
+<div id="social" style="margin-top:5px;height:23px;">
+<table>
+<tr>
+<td> 
+<div id="fb-root"></div>
+<div id="fb-recommend" class="fb-like" data-send="false" data-width="120" data-height="21" data-layout="button_count" data-action="recommend"></div>
+</td>
+<td>
+<a class="twitter-share-button" data-count="horizontal" data-via="alexallain"></a>
+</td>
+<td>
+<div class="g-plusone" data-size="medium"></div>
+</td>
+</tr>
+</table>
+</div>
+
+<div style="font-size:14px;padding:10px;margin-top:5px;margin-bottom:5px;">
+<div style="width:400px;margin-top:5px">
+<div style="float:left"><a href=http://www.cprogramming.com/c++book/?inl=ft-nhp><img src=http://www.cprogramming.com/c++book/small_3d.jpg border=0></a></div>Want to become a C++ programmer? The Cprogramming.com ebook, Jumping into C++, will walk you through it, step-by-step. <a href=http://www.cprogramming.com/c++book/?inl=ft-nhp>Get Jumping into C++ today!</a>
+</div>
+<div style="clear: both"></div>
+
+<b>Popular pages</b>
+<ul>
+ <li><a href=http://www.cprogramming.com/begin.html>Exactly how to get started with C++ (or C) today</a> 
+<li><a href=http://www.cprogramming.com/tutorial/c-tutorial.html>C Tutorial</a>
+<li><a href=http://www.cprogramming.com/tutorial/c++-tutorial.html>C++ Tutorial</a>
+<li><a href=http://www.cprogramming.com/how_to_learn_to_program.html>5 ways you can learn to program faster</a> 
+<li><a href=http://www.cprogramming.com/beginner_programming_mistakes.html>The 5 Most Common Problems New Programmers Face</a>
+<li><a href=http://www.cprogramming.com/code_blocks/>How to set up a compiler</a>
+<li><a href=http://www.cprogramming.com/tutorial/common.html>8 Common programming Mistakes</a> 
+<li><a href=http://www.cprogramming.com/c++11/what-is-c++0x.html>What is C++11?</a>
+<li><a href=http://www.cprogramming.com/tutorial/game_programming/same_game_part1.html>How to make a game in 48 hours</a>
+</ul>
+
+<b>Recent additions</b> <a href="http://feeds2.feedburner.com/Cprogrammingcom" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="subscribe to a feed" style="border:0" width="16" height="16"></img></a>
+<ul>
+<li><a href=http://www.cprogramming.com/tutorial/shared-libraries-linux-gcc.html>How to create a shared library on Linux with GCC</a> - December 30, 2011</li>
+<li> <a href="http://www.cprogramming.com/c++11/c++11-nullptr-strongly-typed-enum-class.html">Enum classes and nullptr in C++11</a> - November 27, 2011</li>
+<li><a href="http://www.cprogramming.com/tutorial/computersciencetheory/hash-table.html">Learn about The Hash Table</a> - November 20, 2011</li>
+<li><a href="http://www.cprogramming.com/c++11/rvalue-references-and-move-semantics-in-c++11.html">Rvalue References and Move Semantics in C++11</a> - November 13, 2011</li>
+<li><a href="http://www.cprogramming.com/java/c-and-c++-for-java-programmers.html">C and C++ for Java Programmers</a> - November 5, 2011</li>
+<li><a href="http://www.cprogramming.com/tutorial/c++-iostreams.html">A Gentle Introduction to C++ IO Streams</a> - October 10, 2011</li>
+</ul>
+
+</div>
+<style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-bottom" style="background-color:#FFFFFF;color:#000000;width:50%; margin:auto">
+  <div class="cse-branding-form">
+    <form action="http://www.google.com/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-2560316224908115:0581759109" />
+        <input type="hidden" name="ie" value="UTF-8" />
+        <input type="text" name="q" size="55" />
+        <input type="submit" name="sa" value="Search" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Custom Search
+  </div>
+</div>
+
+<center>
+<div style="margin-top:20px; margin-bottom: 20px">
+<script type="text/javascript">
+<!--
+google_ad_client = "pub-2560316224908115";
+/* link_ads_bottom */
+google_ad_slot = "2258412831";
+google_ad_width = 728;
+google_ad_height = 15;
+//-->
+</script> 
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"> </script> 
+</div>
+ 
+<script type="text/javascript" src="http://forms.aweber.com/form/12/618210012.js"></script>
+
+<div class="footer-links" style="padding:10px">
+<a href="http://www.cprogramming.com/advertising.html">Advertising</a> | <a href="http://www.cprogramming.com/privacy.html">Privacy policy</a> |
+<a href="http://www.cprogramming.com/use.html">Copyright © 1997-2011 Cprogramming.com. All rights reserved.</a> | <a href=mailto:webmaster@cprogramming.com>webmaster@cprogramming.com</a>
+</div>
+</div>
+</div>
+</td>
+    	
+
+
+<td class="content noprint" valign="top" rowspan="1" bgcolor="#EBEBEB">
+<div class="content2"><br><div class="verticalad">
+
+
+
+
+
+
+
+<script type="text/javascript"><!--
+        e9 = new Object();
+    e9.size = "160x600,120x600";
+//--></script>
+<script type="text/javascript" src="http://tags.expo9.exponential.com/tags/Cprogrammingcom/ROS/tags.js"></script>
+
+
+
+</div><br>
+
+<style type="text/css">
+.sidebar-box { width: 150px; margin-bottom:5px; }
+</style>
+    <div id="side-images">
+        <div style="padding:5px;margin-top:5px">
+            <div style="margin-bottom: 5px">
+                <b>Popular pages</b>
+            </div>
+            <div>
+                
+                <!--http://www.flickr.com/photos/baslow/5620208/sizes/o/in/photostream/ -->
+                <div class = "sidebar-box">
+                    <a href=http://www.cprogramming.com/tutorial/c-tutorial.html>
+                    <img src=http://static.cprogramming.com/main_images/footer/5620208_bff9c514e6_s.jpg border=0 height=75 width=75 alt="C tutorial">
+                    <br>
+                    C Tutorial
+                    </a>
+                </div>
+                
+
+                
+                <!--http://www.flickr.com/photos/29233640@N07/2855530649/sizes/sq/in/photostream/-->
+                <div class = "sidebar-box">
+                    <a href=http://www.cprogramming.com/begin.html>
+                    <img src=http://static.cprogramming.com/main_images/footer/2855530649_905f7862fd_s.jpg border=0 height=75 width=75 alt="Get started">
+                    <br>
+                    Exactly how to get started with C++ (or C) today</a>
+                </div>
+                
+
+                
+                <!--http://www.flickr.com/photos/mikecogh/6505012533/sizes/sq/in/photostream/-->
+                <div class = "sidebar-box">
+                    <a href=http://www.cprogramming.com/how_to_learn_to_program.html>
+                    <img src=http://static.cprogramming.com/main_images/footer/6505012533_55c83fdfa0_s.jpg border=0 height=75 width=75 alt="Learn to program">
+                    <br>
+                    5 ways you can learn to program faster</a>
+                </div>
+                
+
+                
+                <div class = "sidebar-box">
+                    <a href=http://www.cprogramming.com/tutorial/c++-tutorial.html>
+                    <img src=http://static.cprogramming.com/main_images/footer/c++-img.png border=0 height=75 width=75 alt="C++ tutorial">
+                    <br>
+                    C++ Tutorial</a>
+                </div>
+                
+
+                
+                <!--http://www.flickr.com/photos/giopuo/3441263816/sizes/sq/in/photostream/-->
+                <div class = "sidebar-box">
+                    <a href=http://www.cprogramming.com/beginner_programming_mistakes.html>
+                    <img src=http://static.cprogramming.com/main_images/footer/3441263816_95f132a884_s.jpg border=0 height=75 width=75 alt="Problems new programmers face">
+                    <br>
+                    The 5 Most Common Problems New Programmers Face</a>
+                </div>
+                
+
+                
+                <div class = "sidebar-box">
+                   <a href=http://www.cprogramming.com/tutorial/game_programming/same_game_part1.html>
+                    <img src=http://www.cprogramming.com/tutorial/game_programming/same_game_small.png border=0 height=42 width=42 alt="Learn to make a game">
+                    <br>
+                   How to make a game in 48 hours</a>
+                </div>
+                
+
+                
+                <div class = "sidebar-box">
+                   <a href=http://www.cprogramming.com/tutorial/common.html>
+                    <img src=http://static.cprogramming.com/main_images/footer/2291127824_087a497bea_s.jpg border=0 height=75 width=75 alt="Common problems">
+                    <br>
+                   8 Common Programming Mistakes</a>
+                </div>
+                
+
+                
+                <div class = "sidebar-box">
+                   <a href=http://www.cprogramming.com/c++11/what-is-c++0x.html>
+                    <img src=http://static.cprogramming.com/main_images/footer/c++11.png border=0 height=75 width=75 alt="C++11">
+                    <br>
+                   What is C++11?</a>
+                </div>
+                
+            </div>
+        </div>
+        <div style="display:block">
+            <a href=/image_credits.html>Image credits</a>
+        </div>
+    </div>
+</div>
+</td>  	
+
+</tr>
+</table>
+</div>
+
+
+<script>
+(function(w, d, s) {
+  var cur_url = window.location;
+  var loc = cur_url;
+  if ( /htm(l?)/.test( cur_url.pathname ) ) {
+    loc = cur_url.protocol + "//" + cur_url.host + cur_url.pathname.replace( /\+/g, "%2b" );
+  }
+  d.getElementById( "fb-recommend" ).setAttribute( "data-href", loc );
+  function go(){
+    var js, fjs = d.getElementsByTagName(s)[0], load = function(url, id) {
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.src = url; js.id = id;
+          fjs.parentNode.insertBefore(js, fjs);
+        };
+    load('//connect.facebook.net/en_US/all.js#xfbml=1&channelUrl=http%3A%2F%2Fwww.cprogramming.com%2Ffb%2Fchannel.html', 'fbjssdk');
+    load('https://apis.google.com/js/plusone.js', 'gplus1js');
+    load('//platform.twitter.com/widgets.js', 'tweetjs');
+  }
+  if (w.addEventListener) { w.addEventListener("load", go, false); }
+  else if (w.attachEvent) { w.attachEvent("onload",go); }
+}(window, document, 'script'));
+</script>
+
+
+</body>
+</html>
+
+
+

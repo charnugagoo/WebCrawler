@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset="utf-8">
+  <title>
+  tarek / hitchhiker-guide-packaging / wiki / Home &mdash; Bitbucket
+</title>
+  <link rel="icon" type="image/png" href="https://d3oaxc4q5k2d6q.cloudfront.net/m/65a65704bb36/img/favicon.png">
+  <meta id="bb-canon-url" name="bb-canon-url" content="https://bitbucket.org">
+  
+  
+<link rel="stylesheet" href="https://d3oaxc4q5k2d6q.cloudfront.net/m/65a65704bb36/compressed/css/a1e5419645b5.css" type="text/css" />
+<link rel="stylesheet" href="https://d3oaxc4q5k2d6q.cloudfront.net/m/65a65704bb36/compressed/css/bacf069dfc79.css" type="text/css" />
+
+  <!--[if lt IE 9]><link rel="stylesheet" href="https://d3oaxc4q5k2d6q.cloudfront.net/m/65a65704bb36/css/aui/aui-ie.css" media="all"><![endif]-->
+  <!--[if IE 9]><link rel="stylesheet" href="https://d3oaxc4q5k2d6q.cloudfront.net/m/65a65704bb36/css/aui/aui-ie9.css" media="all"><![endif]-->
+  <!--[if IE]><link rel="stylesheet" href="https://d3oaxc4q5k2d6q.cloudfront.net/m/65a65704bb36/css/aui-overrides-ie.css" media="all"><![endif]-->
+  <meta name="description" content=""/>
+  <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Bitbucket" />
+  
+  <link href="/tarek/hitchhiker-guide-packaging/rss" rel="alternate nofollow" type="application/rss+xml" title="RSS feed for hitchhiker-guide-packaging" />
+
+</head>
+<body class="aui-layout production "
+      >
+<script type="text/javascript" src="https://d3oaxc4q5k2d6q.cloudfront.net/m/65a65704bb36/compressed/js/e98deabf8a2e.js"></script>
+<div id="page">
+  <div id="wrapper">
+    
+    <header id="header" role="banner">
+      <nav class="aui-header aui-dropdown2-trigger-group" role="navigation">
+        <div class="aui-header-inner">
+          <div class="aui-header-primary">
+            <h1 class="aui-header-logo aui-header-logo-bitbucket">
+              <a href="/" class="aui-nav-imagelink">
+                <span class="aui-header-logo-device">Bitbucket</span>
+              </a>
+            </h1>
+            <script id="repo-dropdown-template" type="text/html">
+  
+
+[[#hasViewed]]
+  <div class="aui-dropdown2-section">
+    <strong class="viewed">Recently viewed</strong>
+    <ul class="aui-list-truncate">
+      [[#viewed]]
+        <li class="[[#is_private]]private[[/is_private]][[^is_private]]public[[/is_private]] repository">
+          <a href="[[url]]" title="[[owner]]/[[name]]" class=" aui-icon-container">
+            <img class="repo-avatar size16" src="[[{avatar}]]" alt="[[owner]]/[[name]] avatar"/>
+            [[owner]] / [[name]]
+          </a>
+        </li>
+      [[/viewed]]
+    </ul>
+  </div>
+[[/hasViewed]]
+[[#hasUpdated]]
+<div class="aui-dropdown2-section">
+  <strong class="updated">Recently updated</strong>
+  <ul class="aui-list-truncate">
+    [[#updated]]
+    <li class="[[#is_private]]private[[/is_private]][[^is_private]]public[[/is_private]] repository">
+      <a href="[[url]]" title="[[owner]]/[[name]]" class=" aui-icon-container">
+        <img class="repo-avatar size16" src="[[{avatar}]]" alt="[[owner]]/[[name]] avatar"/>
+        [[owner]] / [[name]]
+      </a>
+    </li>
+    [[/updated]]
+  </ul>
+</div>
+[[/hasUpdated]]
+
+</script>
+            <ul role="menu" class="aui-nav">
+              
+                <li>
+                  <a href="/plans">
+                    Pricing &amp; signup
+                  </a>
+                </li>
+                <li>
+                  <a href="/whats-new">
+                    What's new
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+          <div class="aui-header-secondary">
+            <ul role="menu" class="aui-nav">
+              <li>
+                <form action="/repo/all" method="get" class="aui-quicksearch">
+                  <label for="search-query" class="assistive">owner/repository</label>
+                  <input  id="search-query" class="search" type="text" placeholder="owner/repository" name="name">
+                </form>
+              </li>
+              <li>
+                <a class="aui-dropdown2-trigger"aria-controls="header-help-dropdown" aria-owns="header-help-dropdown"
+                   aria-haspopup="true" data-container="#header .aui-header-inner" href="#header-help-dropdown">
+                  <span class="aui-icon aui-icon-small aui-iconfont-help">Help</span><span class="aui-icon-dropdown"></span>
+                </a>
+                <nav id="header-help-dropdown" class="aui-dropdown2 aui-style-default aui-dropdown2-in-header" aria-hidden="true">
+                  <div class="aui-dropdown2-section">
+                    <ul>
+                      <li>
+                        <a href="/whats-new" id="features-link">
+                          What's new
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="aui-dropdown2-section">
+                    <ul>
+                      <li><a href="https://confluence.atlassian.com/display/BITBUCKET/bitbucket+Documentation+Home" target="_blank">Documentation</a></li>
+                      <li><a href="https://confluence.atlassian.com/display/BITBUCKET/bitbucket+101" target="_blank">Bitbucket 101</a></li>
+                      <li><a href="https://confluence.atlassian.com/display/BBKB/Bitbucket+Knowledge+Base+Home" target="_blank">Knowledge base</a></li>
+                    </ul>
+                  </div>
+                  <div class="aui-dropdown2-section">
+                    <ul>
+                      <li><a href="https://answers.atlassian.com/tags/bitbucket/" target="_blank">Bitbucket on Atlassian Answers</a></li>
+                      <li><a href="/support">Support</a></li>
+                    </ul>
+                  </div>
+                </nav>
+              </li>
+              
+              
+                <li>
+                  <a class="aui-button aui-button-primary aui-style" href="/account/signup/">
+                    Sign up
+                  </a>
+                </li>
+                <li id="user-options">
+                  <a href="/account/signin/?next=/tarek/hitchhiker-guide-packaging/wiki/Home" class="aui-nav-link login-link">Log in</a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+      <header id="account-warning" role="banner"
+              class="aui-message-banner warning ">
+        <div class="center-content">
+          <span class="aui-icon aui-icon-warning"></span>
+          <span class="message">
+            
+          </span>
+        </div>
+      </header>
+    
+      <header id="aui-message-bar">
+        
+      </header>
+    
+    
+  <header id="repo-warning" role="banner" class="aui-message-banner warning">
+    <div class="center-content">
+      <span class="aui-icon aui-icon-warning"></span>
+      <span class="message">
+      </span>
+    </div>
+  </header>
+  <script id="repo-warning-template" type="text/html">
+  
+
+
+
+
+  This repository's ownership is pending transfer to <a href="/[[username]]">[[username]]</a>.
+  Visit the <a href="/tarek/hitchhiker-guide-packaging/admin/transfer">transfer repository page</a> to view more details.
+
+
+</script>
+  <header id="repo-header" class="subhead row">
+    <div class="center-content">
+      <div class="repo-summary">
+        <a class="repo-avatar-link" href="/tarek/hitchhiker-guide-packaging">
+          <span class="repo-avatar-container size64" title="tarek/hitchhiker-guide-packaging">
+  <img alt="tarek/hitchhiker-guide-packaging" src="https://d3oaxc4q5k2d6q.cloudfront.net/m/65a65704bb36/img/language-avatars/default_64.png"/>
+</span>
+
+          
+        </a>
+        <h1><a class="repo-link" href="/tarek/hitchhiker-guide-packaging">hitchhiker-guide-packaging</a></h1>
+        <ul class="repo-metadata clearfix">
+          <li>
+            <a class="user" href="/tarek">
+              <span class="icon user">User icon</span>
+              <span>tarek</span>
+            </a>
+          </li>
+          
+          
+          <li class="social">
+            <a class="follow" id="repo-follow"
+               rel="nofollow"
+               href="/tarek/hitchhiker-guide-packaging/follow">
+              <span class="icon follow">Follow icon</span>
+              <span class="text">Follow</span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      <div id="repo-toolbar" class="bb-toolbar">
+        
+        <div class="aui-buttons">
+          <a id="repo-clone-button" class="aui-button aui-style" href="https://bitbucket.org/tarek/hitchhiker-guide-packaging">
+            <span class="icon clone">Clone icon</span>
+            <span>Clone</span>
+            <span class="aui-icon-dropdown"></span>
+          </a>
+          <a id="fork-button" class="aui-button aui-style"
+             href="/tarek/hitchhiker-guide-packaging/fork">
+            <span class="icon fork">Fork icon</span>
+            <span>Fork</span>
+          </a>
+        </div>
+        <div class="aui-buttons">
+          <a id="compare-button" class="aui-button aui-style"
+             href="/tarek/hitchhiker-guide-packaging/compare">
+            <span class="icon compare">Compare icon</span>
+            <span>Compare</span>
+          </a>
+          <a id="pull-request-button" class="aui-button aui-style"
+             href="/tarek/hitchhiker-guide-packaging/pull-request/new">
+            <span class="icon pull-request">Pull request icon</span>
+            <span>Pull request</span>
+          </a>
+        </div>
+        
+        
+
+<div id="repo-clone-dialog" class="clone-dialog hidden">
+  
+<div class="clone-url">
+  <div class="aui-buttons">
+    <a href="https://bitbucket.org/tarek/hitchhiker-guide-packaging"
+       class="aui-button aui-style aui-dropdown2-trigger" aria-haspopup="true"
+       aria-owns="clone-url-dropdown-header">
+      <span class="dropdown-text">HTTPS</span>
+    </a>
+    <div id="clone-url-dropdown-header" class="aui-dropdown2 aui-style-default">
+      <ul class="aui-list-truncate">
+        <li>
+          <a href="https://bitbucket.org/tarek/hitchhiker-guide-packaging"
+            
+              data-command="hg clone https://bitbucket.org/tarek/hitchhiker-guide-packaging"
+            
+            class="item-link https">HTTPS
+          </a>
+        </li>
+        <li>
+          <a href="ssh://hg@bitbucket.org/tarek/hitchhiker-guide-packaging"
+            
+              data-command="hg clone ssh://hg@bitbucket.org/tarek/hitchhiker-guide-packaging"
+            
+            class="item-link ssh">SSH
+          </a>
+        </li>
+      </ul>
+    </div>
+    <input type="text" readonly="readonly" value="hg clone https://bitbucket.org/tarek/hitchhiker-guide-packaging">
+  </div>
+  
+  <p>Need help cloning? Visit
+     <a href="https://confluence.atlassian.com/x/cgozDQ" target="_blank">Bitbucket 101</a>.</p>
+  
+</div>
+
+
+  
+  
+  
+
+<div class="clone-in-sourcetree"
+  data-https-url="https://bitbucket.org/tarek/hitchhiker-guide-packaging"
+  data-ssh-url="ssh://hg@bitbucket.org/tarek/hitchhiker-guide-packaging">
+  <p><button class="aui-button aui-style aui-button-primary">Clone in SourceTree</button></p>
+
+  <p>
+    
+      
+        <a href="http://www.sourcetreeapp.com" target="_blank">SourceTree</a>
+        is a free Mac client by Atlassian for Git, Mercurial, and Subversion.
+      
+    
+  </p>
+</div>
+
+  
+</div>
+
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </header>
+  <nav id="repo-tabs" class="aui-navgroup aui-navgroup-horizontal aui-navgroup-horizontal-roomy">
+    <div class="aui-navgroup-inner">
+      <div class="aui-navgroup-primary">
+        <ul class="aui-nav">
+          
+            <li>
+              <a href="/tarek/hitchhiker-guide-packaging/overview" id="repo-overview-link">Overview</a>
+            </li>
+          
+          
+            <li>
+              <a href="/tarek/hitchhiker-guide-packaging/src" id="repo-source-link">Source</a>
+            </li>
+          
+          
+            <li>
+              <a href="/tarek/hitchhiker-guide-packaging/commits" id="repo-commits-link">
+                Commits
+              </a>
+            </li>
+          
+          
+            <li>
+              <a href="/tarek/hitchhiker-guide-packaging/pull-requests" id="repo-pullrequests-link">
+                Pull requests
+                
+                  
+                    <span class="aui-badge" title="1 open pull request" id="pullrequest-count">1</span>
+                  
+                
+              </a>
+            </li>
+          
+          
+            
+          
+            <li id="issues-tab" class="
+              
+                
+              
+            ">
+              <a href="/tarek/hitchhiker-guide-packaging/issues?status=new&amp;status=open" id="repo-issues-link">
+                Issues
+                
+                  
+                    <span class="aui-badge">25</span>
+                  
+                
+              </a>
+            </li>
+            <li id="wiki-tab" class="aui-nav-selected
+                
+                  
+                
+              ">
+              <a href="/tarek/hitchhiker-guide-packaging/wiki" id="repo-wiki-link">Wiki</a>
+            </li>
+          
+            <li>
+            <a href="/tarek/hitchhiker-guide-packaging/downloads" id="repo-downloads-link">
+              Downloads
+              
+                
+              
+            </a>
+            </li>
+          
+        </ul>
+      </div>
+      <div class="aui-navgroup-secondary">
+        <ul class="aui-nav">
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <div id="content" role="main">
+      
+  <div id="repo-content">
+    
+  <section id="wiki">
+    
+
+
+  
+    
+      
+    
+    <div class="aui-toolbar bb-toolbar wiki-toolbar">
+      <div class="aui-buttons">
+        <a href="https://bitbucket.org/tarek/hitchhiker-guide-packaging/wiki" id="clone-wiki" class="aui-button aui-style clone">
+          Clone wiki
+          <span class="aui-icon-dropdown"></span>
+        </a>
+      </div>
+      <div class="aui-buttons">
+        
+        <a href="/tarek/hitchhiker-guide-packaging/wiki/history/Home" class="aui-button aui-style history">History</a>
+      </div>
+      
+      
+      
+    </div>
+  
+  
+
+<div id="wiki-clone-dialog" class="clone-dialog hidden">
+  <div class="clone-url">
+    <div class="aui-buttons">
+      <a href="https://bitbucket.org/tarek/hitchhiker-guide-packaging/wiki"
+         class="aui-button aui-style aui-dropdown2-trigger" aria-haspopup="true"
+         aria-owns="clone-url-dropdown-wiki">
+        <span class="dropdown-text">HTTPS</span>
+      </a>
+      <div id="clone-url-dropdown-wiki" class="aui-dropdown2 aui-style-default">
+        <ul class="aui-list-truncate">
+          <li>
+            <a href="https://bitbucket.org/tarek/hitchhiker-guide-packaging/wiki"
+               data-command="hg clone https://bitbucket.org/tarek/hitchhiker-guide-packaging/wiki"
+               class="item-link https">HTTPS</a>
+          </li>
+          <li>
+            <a href="ssh://hg@bitbucket.org/tarek/hitchhiker-guide-packaging/wiki"
+               data-command="hg clone ssh://hg@bitbucket.org/tarek/hitchhiker-guide-packaging/wiki"
+               class="item-link ssh">SSH</a>
+          </li>
+        </ul>
+      </div>
+      <input type="text" readonly="readonly" value="hg clone https://bitbucket.org/tarek/hitchhiker-guide-packaging/wiki">
+    </div>
+    <p>
+      
+        Need help cloning? Visit
+       <a href="https://confluence.atlassian.com/x/cgozDQ">Bitbucket 101</a>.
+      
+    </p>
+  </div>
+
+  
+  
+
+<div class="clone-in-sourcetree"
+  data-https-url="https://bitbucket.org/tarek/hitchhiker-guide-packaging/wiki"
+  data-ssh-url="ssh://hg@bitbucket.org/tarek/hitchhiker-guide-packaging/wiki">
+  <p><button class="aui-button aui-style aui-button-primary">Clone in SourceTree</button></p>
+
+  <p>
+    
+      
+        <a href="http://www.sourcetreeapp.com" target="_blank">SourceTree</a>
+        is a free Mac client by Atlassian for Git, Mercurial, and Subversion.
+      
+    
+  </p>
+</div>
+
+  
+</div>
+
+
+
+
+
+    
+      <h1>Home</h1>
+      <div class="clearfix"></div>
+    
+    <section id="wiki-content">
+      <h2 id="!welcome">Welcome</h2>
+<ul><li>Contribute by writing or reviewing documentation (ask for a commit access in #distutils)
+</li><li>Help us by <a href="http://bitbucket.org/tarek/hitchhiker-guide-packaging/issues/">opening issues</a>, on the content you would like to have in the guide
+</li><li>Join the mailing-list : <a href="http://groups.google.com/group/packaging-guide">http://groups.google.com/group/packaging-guide</a>
+</li><li><strong>See the guide online as it grows</strong> : <a href="http://guide.python-distribute.org">http://guide.python-distribute.org</a>
+</li></ul>
+
+    </section>
+
+    
+      <p class="revision-date">
+        
+          Updated <time datetime="2009-12-17T15:12:01+00:00">2009-12-17</time>
+        
+      </p>
+    
+  </section>
+
+  </div>
+  
+    
+
+<form id="file-search-form" action="#"
+  
+  
+  >
+  <input type="text" id="file-search-query" class="loading">
+  <div id="filtered-files"></div>
+  <div class="tip"><em>Tip:</em> Filter by directory path e.g. <strong>/media app.js</strong> to search for public<strong>/media/app.js</strong>.</div>
+  <div class="tip"><em>Tip:</em> Use camelCasing e.g. <strong>ProjME</strong> to search for <strong>ProjectModifiedE</strong>vent.java.</div>
+  <div class="tip"><em>Tip:</em> Filter by extension type e.g. <strong>/repo .js</strong> to search for all <strong>.js</strong> files in the <strong>/repo</strong> directory.</div>
+  <div class="tip"><em>Tip:</em> Separate your search with spaces e.g. <strong>/ssh pom.xml</strong> to search for src<strong>/ssh/pom.xml</strong>.</div>
+  <div class="tip"><em>Tip:</em> Use ↑ and ↓ arrow keys to navigate and <strong>return</strong> to view the file.</div>
+  <div class="tip mod-osx"><em>Tip:</em> You can also navigate files with <strong>Ctrl+j</strong> <em>(next)</em> and <strong>Ctrl+k</strong> <em>(previous)</em> and view the file with <strong>Ctrl+o</strong>.</div>
+  <div class="tip mod-win"><em>Tip:</em> You can also navigate files with <strong>Alt+j</strong> <em>(next)</em> and <strong>Alt+k</strong> <em>(previous)</em> and view the file with <strong>Alt+o</strong>.</div>
+  <script id="filtered-files-template" type="text/html">
+  
+
+<table class="aui bb-list">
+  <thead>
+    <tr class="assistive">
+      <th class="name">Filename</th>
+    </tr>
+  </thead>
+  <tbody>
+    [[#files]]
+    <tr class="iterable-item">
+      <td class="name [[#isDirectory]]directory[[/isDirectory]]">
+        <a href="/tarek/hitchhiker-guide-packaging/src/[[node]]/[[name]][[#branch]]?at=[[branch]][[/branch]]"
+           title="[[name]]" class="execute" tabindex="-1">
+          [[&highlightedName]]
+        </a>
+      </td>
+    </tr>
+    [[/files]]
+  </tbody>
+</table>
+
+</script>
+</form>
+
+  
+
+    </div>
+  </div>
+  <footer id="footer" role="contentinfo">
+    <section class="footer-body">
+      <ul>
+        <li><a href="http://blog.bitbucket.org">Blog</a></li>
+        <li><a href="//bitbucket.org/site/master/issues/new">Report a bug</a></li>
+        <li><a href="/support">Support</a></li>
+        <li><a href="http://confluence.atlassian.com/display/BITBUCKET">Documentation</a></li>
+        <li><a href="http://confluence.atlassian.com/x/IYBGDQ">API</a></li>
+        <li><a href="http://groups.google.com/group/bitbucket-users">Forum</a></li>
+        <li><a href="http://status.bitbucket.org/">Server status</a></li>
+        <li><a href="http://www.atlassian.com/hosted/terms.jsp">Terms of service</a></li>
+        <li><a href="http://www.atlassian.com/about/privacy.jsp">Privacy policy</a></li>
+      </ul>
+      <ul>
+        
+        <li><a href="http://git-scm.com/">Git 1.7.10.3</a></li>
+        <li><a href="http://mercurial.selenic.com/">Mercurial 2.2.2</a></li>
+        <li><a href="https://www.djangoproject.com/">Django 1.3.1</a></li>
+        <li><a href="http://www.python.org/">Python 2.7.3</a></li>
+        <li><a href="#">fd914e69e542 / 65a65704bb36 @ bitbucket23</a></li>
+      </ul>
+    </section>
+  </footer>
+</div>
+
+<script type="text/javascript" src="https://d3oaxc4q5k2d6q.cloudfront.net/m/65a65704bb36/compressed/js/466dad9f8812.js"></script>
+
+<!-- This script exists purely for the benefit of our selenium tests -->
+<script>
+  setTimeout(function () {
+    BB.JsLoaded = true;
+  }, 3000);
+</script>
+
+
+
+<script>
+  (function (window) {
+    // Base URL to use for non-CNAME URLs.
+    BB.baseUrl = 'https://bitbucket.org';
+
+    BB.images = {
+      invitation: 'https://d3oaxc4q5k2d6q.cloudfront.net/m/65a65704bb36/img/icons/fugue/card_address.png',
+      noAvatar: 'https://d3oaxc4q5k2d6q.cloudfront.net/m/65a65704bb36/img/default_avatar/16/user_blue.png'
+    };
+    BB.user = {"isKbdShortcutsEnabled": true, "isSshEnabled": false, "isAuthenticated": false};
+    BB.repo || (BB.repo = {});
+    
+      BB.repo.id = 34803;
+      BB.repo.scm = 'hg';
+      
+      
+        BB.repo.language = null;
+        BB.repo.pygmentsLanguage = null;
+      
+      
+        BB.repo.slug = 'hitchhiker\u002Dguide\u002Dpackaging';
+      
+      
+        BB.repo.owner = {};
+        BB.repo.owner.username = 'tarek';
+        BB.repo.owner.is_team = false;
+      
+      
+      // Coerce `BB.repo` to a string to get
+      // "davidchambers/mango" or whatever.
+      BB.repo.toString = function () {
+        return BB.cname ? this.slug : '{owner.username}/{slug}'.format(this);
+      }
+      
+      
+    
+    window.setInterval(BB.localize, 60 * 1000);
+    BB.localize();
+
+  })(window);
+</script>
+
+
+<script>
+    // Bitbucket Google Analytics
+    // NOTE: these will not fire in development. In debug mode it just logs them to console.
+    (function (window) {
+        // Track the main pageview to the Bitbucket GA account.
+        BB.gaqPush(['_trackPageview']);
+        // Track the main pageview to the Atlassian GA account.
+        BB.gaqPush(['atl._trackPageview']);
+
+        
+
+
+        
+
+        // Include GA commands from sub-templates
+        
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            ga.setAttribute('async', 'true');
+            document.documentElement.firstChild.appendChild(ga);
+        }());
+    })(window);
+</script>
+
+
+
+</body>
+</html>

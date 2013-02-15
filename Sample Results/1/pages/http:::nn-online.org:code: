@@ -1,0 +1,222 @@
+<br />
+<b>Notice</b>:  Undefined index:  REMOTE_HOST in <b>/www/hosts/nn-online/docs/global/privileges</b> on line <b>2</b><br />
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head>
+    <meta name="keywords" content="nn, nn-online, nucleon-nucleon,
+                                   hyperon-nucleon, yn, 
+                                   phase shift, scattering, amplitude,
+                                   observable, deuteron,
+                                   pion-nucleon, coupling constant,
+                                   nuclear physics, nijmegen, 
+                                   potential model, phase shift analysis,
+                                   partial wave analysis" />
+    <meta name="description" content="A site dedicated to the work on the
+                                      baryon-baryon interaction of the
+                                      current and former members of the
+                                      Nijmegen group, concentrating on the
+                                      nucleon-nucleon (NN) and 
+                                      hyperon-nucleon (YN) interaction" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Mart Rentmeester"/>
+    <meta name="verify-v1" content="VaoV8XEXyJnh/Lt9wJHAJnkPGVCJKVzvqt7G43DEThI=" />
+
+    <link rev="made" href="mailto:info@nn-online.org"/>
+    <link rel="home" href="http://nn-online.org"/>
+
+
+
+<link rel="stylesheet" type="text/css" href="/stylesheets/screen.css"/>
+<link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/screen.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/print.css"/>
+
+    <link rel="icon" href="/favicon.ico" type="image/ico" /> 
+    <link rel="SHORTCUT ICON" href="/favicon.ico" />
+
+    <title>NN-OnLine</title>
+</head>
+<body>
+
+
+<div class="top">
+
+
+<!--
+<a class="logo" href="http://nn-online.org"><img class="logo" src="/images/x5a.png" alt="NN-OnLine"/></a>
+-->
+<a class="logo" href="http://nn-online.org"><img class="logo" src="/images/x2009.png" alt="NN-OnLine"/></a>
+
+<p class="date">
+<a href="http://nn-online.org">http://nn-online.org</a>
+</p>
+<p class="date">
+15 February 2013</p>
+<p class="date">
+<a href="mailto:info@nn-online.org">info@nn-online.org</a>
+</p>
+
+</div>
+
+
+<div id="menu">
+  <ul>
+        <li><a href="/code/"       ><b>Code</b></a></li>
+        <li><a href="/code/nn"     >NN and YN</a>  </li>
+        <li><a href="/code/gd"     >GD</a>         </li>
+        <li><a href="/code/strings">STRINGS</a>    </li>
+        <li><a href="/code/xml"    >XML</a>        </li>
+        <li><a href="/code/erfc"   >ERFC</a>       </li>
+  </ul>
+
+<!--
+<p class="h">
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+<img style="border:0;width:88px;height:31px"
+     src="/images/css.png" 
+     alt="Valid CSS!"/></a>
+</p>
+-->
+
+<p class="h">
+<a href="http://validator.w3.org/check/referer">
+<img style="border:0;width:88px;height:31px"
+     src="/images/xhtml11.png"
+     alt="Valid XHTML 1.1!"/></a>
+</p>
+
+</div>
+<div class="content">
+<h1>Source code</h1>
+
+<em>Last updated 12 November 2003</em>
+
+<p>
+This page contains some packages written in fortran and some c.
+Some routines are only useful to the nuclear physics community
+while others might be useful for a general audience. 
+</p>
+
+<h2>Physics</h2>
+
+<table border="1" cellspacing="0" cellpadding="5">
+<tbody>
+
+<tr>
+<th align="left" valign="top">
+Subject
+</th>
+<th align="left" valign="top">
+Description
+</th>
+</tr>
+
+<tr>
+<th align="left" valign="top">
+<a href="nn">NN and YN</a>
+</th>
+<td>
+Routines for several Nijmegen nucleon-nucleon  and hyperon-nucleon potential models
+</td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>General</h2>
+<p>
+Some of it is still
+quite experimental, but can nevertheless be useful in its current
+shape. At the moment documentation is lacking but I expect to
+have written most of it before the end of 2003.
+</p>
+<p>
+The code is provided as is, you can use it as you wish. But I would
+appreciate it if you'd let me know if
+you find a particularly useful purpose for it - 
+I might make some kind of gallery.
+Feedback, suggestions and contributions to improve this software are 
+more than welcome; if you have any questions, remarks, bug fixes, 
+donations, postcards, or job offers, please 
+contact me: 
+<a href="mailto:info@nn-online.org">info@nn-online.org</a>
+</p>
+
+<table border="1" cellspacing="0" cellpadding="5">
+<tbody>
+
+<tr class="h">
+<th align="left" valign="top">
+Package
+</th>
+<th align="left" valign="top">
+Description
+</th>
+</tr>
+
+
+<tr>
+<th align="left" valign="top">
+<a href="strings">STRINGS</a>
+</th>
+<td>
+A module implementing variable length strings. It is inspired by the ISO_VARYING_STRING extension to the fortran 95 standard, but (in my opinion) somewhat more useful.
+</td>
+</tr>
+
+<tr>
+<th align="left" valign="top">
+<a href="gd">GD</a>
+</th>
+<td>
+A module interfacing the well known
+<a href="http://www.boutell.com/gd/">GD Graphics Library</a>
+library (in c) of Thomas Boutell.
+</td>
+</tr>
+
+<tr>
+<th align="left" valign="top">
+<a href="xml">XML</a>
+</th>
+<td>
+An XML parser in fortran. Still very much in an embryonic
+state but it may neverteless be useful for some people.
+</td>
+</tr>
+
+<tr>
+<th align="left" valign="top">
+<a href="erfc">ERFC</a>
+</th>
+<td>
+Several routines computing the complementary error function.
+</td>
+</tr>
+
+</tbody>
+</table>
+
+</div>
+<div id="bottom">
+
+<hr/>
+
+<table>
+<tr>
+<td align="left">
+http://nn-online.org
+</td>
+<td align="center">
+15 February 2013</td>
+<td align="right">
+info@nn-online.org
+</td>
+</tr>
+</table>
+
+<hr/>
+
+</div>
+</body></html>

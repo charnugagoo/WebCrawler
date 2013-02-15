@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+
+<html>
+  <head> <!-- papers -->
+            <title>Papers</title>
+            <!-- navtree[papers] == Array -->
+            <!-- navtree[papers][leaf] == Array[leaf] -->
+            <meta http-equiv = 'Content-Type' 
+                  content    = 'text/html; charset=iso-8859-1'>
+            <style type='text/css'>
+/*
+ * Cascading Style Sheet for http://cminusminus.eecs.harvard.edu/
+ */
+
+body {
+    background:         white;
+    color:              black;
+//    font-family:        Times, serif;
+}
+
+p {
+//    font-family:        Times, serif;
+}
+
+i, em {
+//    font-family:        Times, serif;
+}
+
+tt, code, pre {
+    font-family:        monospace;
+}
+
+pre {
+    margin-left:        2em;
+}
+
+/* don't mess with people's header fonts -- results look bad on IE 
+ * 
+ * h1, h2, h3, h4 {
+ *     font-family:        Verdana, Helvetica, Arial, sans-serif;
+ *     text-align:         left;
+ * }
+ * 
+ * h1 {
+ *     font:               140% sans-serif
+ * }
+ * 
+ * h2 {
+ *     font:               100% sans-serif;
+ * }
+ * 
+ */
+
+.small {
+    font-family:        Verdana, Helvetica, Arial, sans-serif;
+    color:              black;
+    background:         white;
+    font-size:          small;
+}
+
+.blue {
+    font-family:        Verdana, Helvetica, Arial, sans-serif;
+    background:         blue;
+    color:              white;
+}
+
+.red {
+    font-family:        Verdana, Helvetica, Arial, sans-serif;
+    background:         white;
+    color:              red;
+}
+.grey {
+    font-family:        Verdana, Helvetica, Arial, sans-serif;
+    background:         #cccccc;
+    color:              black;
+}
+        
+.smallblue {
+    font-family:        Verdana, Helvetica, Arial, sans-serif;
+    background:         blue;
+    color:              white;
+    font-size:          small;
+}
+
+.smallgrey {
+    font-family:        Verdana, Helvetica, Arial, sans-serif;
+    background:         #cccccc;
+    color:              black;
+    font-size:          small;
+}
+
+
+
+/* page map */
+DIV.pagemap {background: #CCF; } 
+DIV.pagemap {float: left; margin-right: 0.1cm; margin-left: 0.1cm;
+             font-family: sans-serif; width : 15%}
+DIV.pagemap P {margin-top : 1.5ex; margin-bottom : 0ex }
+DIV.pagemap P.sub {text-indent : 2em}
+/*LI.outdent {text-indent : -2em}*/
+DIV.pagemap { padding-left: 1em; padding-right: 1em;
+              padding-top: 1em; padding-bottom : 1em; line-height: 1.1}
+DIV.pagemap MENU, DIV.pagemap MENU LI, DIV.pagemap MENU LI P {
+  margin-top : 0cm; margin-bottom : 0cm; padding-top : 0cm; padding-bottom : 0cm;
+}
+DIV.footer {font-style : italic; font-size : smaller }
+DIV.pagemap { border-style : solid;
+              border-right-width : normal; border-left-width: none;
+              border-top-width : none; border-bottom-width: none }
+DIV.pagemap UL, DIV.pagemap DL, DIV.pagemap MENU {list-style: none}
+DIV.pagemap UL UL, DIV.pagemap DL DL {list-style: none}
+DIV.pagemap-header {text-align: center}
+DIV.pagemap DL, DIV.pagemap UL {text-align: left}
+  
+            </style>
+          </head>
+
+<!--  N.B. PAPERS SHOULD APPEAR IN CHRONOLOGICAL ORDER (MOST RECENT LAST) -->
+
+  <body>
+    <!-- papers -->
+        <table width='100%' cellpadding='3' cellspacing='0' border='0'>
+          <tr>
+            <td class='smallblue' width='10%'><strong>C--</strong></td>
+            <td class='smallgrey' width='90%'><a href='http://www.eecs.harvard.edu/'>Harvard EECS</a>
+<img width='13' height='9' alt='->' 
+     src='./images/arrow_yellow.gif'>
+<a href='./index.html'>C-- Home</a>
+<img width='13' height='9' alt='->' 
+     src='./images/arrow_yellow.gif'>
+<a href='./papers.html'>C-- Talks and Papers</a>
+   
+            </td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td class='small'>
+            <a href='./index.html'>C-- Home</a>            |
+            <a href='./code.html'>Specification &amp; Downloads</a>          |
+            <a href='./news/2001.10.html'>Old News</a>          |
+            <a href='./papers.html'>Papers</a>             | 
+    <!--       <a href='./progress.html'>Work in Progress</a> |  -->
+            <a href='./mail.html'>Mailing List</a>         | 
+            <a href='./people.html'>People</a>             |
+            <a href='./faq.html'>FAQ</a>                   
+     <!-- |       <a href='./links.html'>Related Work</a> -->
+
+            </td>
+          </tr>
+        </table> 
+    <h1>Talks and Papers</h1>
+    The C-- papers reflect the evolution of our thoughts about the
+    language and its run-time system. No single paper gives an
+    accurate and comprehensive view, but <strong>if you want to
+    read just one paper</strong>, the <a href=
+    "abstracts/ppdp.html">GC&nbsp;paper</a> is your best bet. You
+    can get a full picture of the system from a combination of
+    three papers: the <a href="abstracts/pal-ifl.html">
+    IFL&nbsp;overview</a>, the <a href="abstracts/ppdp.html">
+    GC&nbsp;paper</a>, and the <a href="abstracts/c--pldi-00.html">
+    exceptions paper</a>. 
+
+    <p>All links are to abstracts, so you can see if you really
+    want a paper before downloading it.</p>
+
+    <h2>Papers on the original language alone</h2>
+
+    <ul>
+      <li><a href='./people.html'>Simon Peyton Jones</a>, Thomas Nordin, and Dino Oliva, <a
+      href="abstracts/pal-ifl.html"><em><tt>C--</tt>: a portable
+      assembly language</em></a>. <em>Implementing Functional
+      Languages</em>, 1997.<br>
+       <em> A brief overview of the original design. Does not
+      include a run-time system or any features intended to support
+      garbage collection or exceptions.</em></li>
+
+      <li>Pablo Nogueira, <a href="abstracts/pal-acq.html"><em>
+      Getting acquainted with the <tt>C--</tt> language</em></a>,
+      October 2000.<br>
+       <em>A discursive description of the language; a previous version was
+       written as an undergraduate project.</em></li>
+    </ul>
+
+    <h2>Papers involving the language and its run-time system</h2>
+
+    <ul>
+      <li><a href='./people.html'>Simon Peyton Jones</a> and <a href='./people.html'>Norman Ramsey</a>, <a href= 
+      "abstracts/c--rt.html"><em>Machine-Independent Support for
+      Garbage Collection, Debugging, Exception Handling, and
+      Concurrency</em></a>, University of Virginia technical
+      report, September 1998.<br>
+       <em>Many if not most of the details in this paper have been
+      made obsolete by the papers below, but this paper is still
+      <strong>the most comprehensive view</strong> of what we hope
+      C-- will become. Much of the best material appears in the
+      next paper in more readable form. Still, this paper has a few
+      important ideas that don't appear anywhere else.</em></li>
+
+      <li><a href='./people.html'>Simon Peyton Jones</a>, <a href='./people.html'>Norman Ramsey</a>, and <a href='./people.html'>Fermin Reig</a>, <a
+      href="abstracts/ppdp.html"><em>C--: a portable assembly
+      language that supports garbage collection</em></a>. Invited
+      talk at PPDP, October 1999.<br>
+       <em><strong>The paper to read if you're going to read only
+      one</strong>. Reasonably thorough overview of the language
+      and its run-time system, emphasizing garbage collection.
+      Still, we have already changed a handful of
+      details.</em></li>
+
+      <li><a href='./people.html'>Norman Ramsey</a> and <a href='./people.html'>Simon Peyton Jones</a>, <a href= 
+      "abstracts/c--pldi-00.html"><em>A Single Intermediate
+      Language That Supports Multiple Implementations of
+      Exceptions</em></a>, ACM SIGPLAN 2000 Conference on
+      Programming Language Design and Implementation (PLDI'00),
+      June 2000.<br>
+       <em>Discusses current techniques used to implement
+      exceptions and the mechanisms used to support them in C--.
+      Also presents Abstract C--, the essence of C--, including a
+      <strong>formal operational semantics</strong></em>.
+      <br>
+      The <a href=abstracts/c--pldi-00.html>talk</a> is also online.
+</li>
+
+      <li><a href='./people.html'>Norman Ramsey</a> and <a href='./people.html'>Simon Peyton Jones</a>, <a href=
+      "abstracts/c--con.html"><em>Featherweight concurrency in a
+      portable assembly language</em></a>, unpublished.
+      <br><em>A proposal for supporting both single-threaded and
+      multi-threaded languages within the C-- framework.
+      Focuses on three techniques: using weak continuations for
+      context switching, managing shared state in registers, 
+      and coping with stack overflow.
+      </em>
+    
+
+
+    </ul>
+    <h3>The C-- Specification</h3>
+
+    The specification is available as  <a href=extern/man2.dvi>DVI</a>,
+    <a href=extern/man2.ps>PostScript</a>, or <a href=extern/man2.pdf>PDF</a>.
+    The <a href="abstracts/manual-1.html">old specification from May,&nbsp;1999</a> 
+    is obsolete and deprecated. 
+   
+ <br><hr size='1'><span class='small'>Contact: <a href='mailto:webmaster@cminusminus.org'>C-- Webmaster</a>. 
+URL: <tt><a href='http://www.cminusminus.org/'>http://www.cminusminus.org/</a></tt>.
+Last edited: Mon 05 Feb 2007 14:02 EST.</span>
+<!-- last edited by  -->
+  </body>
+</html>
+

@@ -1,0 +1,452 @@
+<!-- Quirk on -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="X-UA-Compatible" content="IE=8" >
+
+
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.51 [en] (WinNT; I) [Netscape]">
+   <title>Semantic Designs: Source Code Formatters</title>
+<meta name="author" content="Semantic Designs, Inc.">
+<!--
+<link rel="stylesheet" href="/SDprint.css" type="text/css" media="print">
+<link rel="stylesheet" href="./BBstyle.css" type="text/css" media="screen">
+-->
+
+<link rel="stylesheet" href="/SDstyle.css" type="text/css" media="screen">
+<link rel="stylesheet" href="/SDmenustyle.css" type="text/css" media="screen">
+
+</head>
+
+<script type="text/javascript" src="/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/jquery.masonry.min.js"></script>
+<script type="text/javascript" src="/LanguagesAndProducts.js"></script>
+<script type="text/javascript" src="/jquery.getUrlParam.js"></script>
+
+<script type="text/javascript">
+
+$(window).load(function () {
+
+	var speed = 1000;
+
+  	$('.posts').masonry({
+  	columnWidth: 185,
+  	// only apply masonry layout to visible elements
+ 		itemSelector: '.post-block:not(.invis)',
+ 		animate: true,
+ 		animationOptions: {
+ 	  		duration: speed,
+ 	  		queue: false }
+  		  })
+
+  		   var catClass = '.' + $(document).getUrlParam("class");
+
+  		  	if(catClass=='.cat-all' || catClass=='.null') {
+  		  	 // show all hidden boxes
+  		  	 $('.posts').children('.invis')
+  		  		 .toggleClass('invis').animate({opacity: 1},{ duration: speed });
+  		  		 $('.posts').masonry();
+  		  	} else {
+  		  	 // hide visible boxes
+  		  	 $('.posts').children().not(catClass).not('.invis')
+  		  		 .toggleClass('invis').animate({opacity: 0},{ duration: speed });
+  		  	 // show hidden boxes
+  		  	 $('.posts').children(catClass+'.invis')
+  		  		 .toggleClass('invis').animate({opacity: 1},{ duration: speed });
+  		  		$('.posts').masonry();
+  		  	}
+
+
+ });
+
+  $(document).ready(function(){
+
+
+ 	$("#cats li a").click(function(){
+  	 var catClass = '.' + $(this).attr('class');
+ 	 var speed = 1000;
+ 	 if(window.location.pathname!= "/index.html") window.location.assign("/index.html" + '?class=' + $(this).attr('class'));
+  	 if(catClass=='.cat-all') {
+  		 // show all hidden boxes
+  		 $('.posts').children('.invis')
+  			 .toggleClass('invis').animate({opacity: 1},{ duration: speed });
+  	 } else {
+  		 // hide visible boxes
+  		 $('.posts').children().not(catClass).not('.invis')
+  			 .toggleClass('invis').animate({opacity: 0},{ duration: speed });
+  		 // show hidden boxes
+  		 $('.posts').children(catClass+'.invis')
+  			 .toggleClass('invis').animate({opacity: 1},{ duration: speed });
+  	 }
+
+  	   $('.posts').masonry();
+
+  	   return false;
+   	});
+
+  });
+
+</script>
+
+<!-- google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-189709-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<!-- Google Code for All Revisitors Remarketing List -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1072422730;
+var google_conversion_language = "en";
+var google_conversion_format = "3";
+var google_conversion_color = "666666";
+var google_conversion_label = "wbv7CKPMmAIQyr6v_wM"; var google_conversion_value = 0;
+/* ]]> */
+</script>
+
+<script type="text/javascript" src="http://www.googleadservices.com/pagead/conversion.js">
+</script>
+
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="http://www.googleadservices.com/pagead/conversion/1072422730/?label=wbv7CKPMmAIQyr6v_wM&amp;guid=ON&amp;script=0">
+</div>
+</noscript>
+
+<body onload="changeListRand(document.forms['drops'].language)">
+	<!--<div class="mainpage">-->
+
+ <div id="container">
+    <div id="home">
+        <div id="header">
+<!-- THIS IS WHAT I WANT
+-->
+          <h3>The Truth is in the Details&#0153;</h3>
+          <h1><a href="/index.html">Semantic Designs</a></h1>
+          <p>
+              Automated Large-Scale Software System Analysis, Modification, Translation and Generation&#0153;
+          </p>
+<!--
+          System Analysis, Modification, Translation and Generation</a></h2>
+<!--
+          <h3>Automated Large-Scale Software System Analysis, Modification, Translation and Generation</h3>
+		            <h1><a href="/index.html">Semantic Designs</a></h1>
+          <h2><a href="/index.html">The Truth is in the Details</a></h2>
+
+
+         <h3>Audomated Large-Scale Software System Analysis, Modification, Translation and Generation&#0153;</h3>
+          <h1><a href="/index.html">Semantic Designs</a></h1>
+          <h2><a href="/index.html">The Truf is in the ARF Details&#0153;</a></h2>
+-->
+        </div>
+
+<ul id="css3menu">
+	<li class="topfirst"><a href="/index.html" title="Semantic Designs Home Page"><span>Home</span></a></li>
+
+	<li class="topitem"><a href="/Products/Services" title="Services"><span>Services</span></a>
+	<ul>
+		<li class="subfirst"><a href="/Products/Services/LegacyMigration.html" title="Automated Migration">Automated Migration</a></li>
+		<li><a href="/Products/DMS/DMSToolkit.html" title="Custom Analysis and Transformation">Custom Analysis and Transformation</a></li>
+		<li><a href="/Products/FrontEnds/" title="Custom Development Toolkit">Custom Development Toolkit</a></li>
+		<li> <a href="/Products/Services/SoftwareModernization.html" title="Application Modernization">Application Modernization</a></li>
+		<li><a href="/Products/Tools.html" title="Software Quality Analysis">Software Quality Analysis</a></li>
+		<li><a href="/Products/Understanding/index.html" title="Understanding Software Structure">Understanding Software Structure</a></li>
+	</ul>
+	</li>
+
+	<li class="topitem"><a href="/Products" title="Products"><span>Products</span></a>
+	<ul>
+
+        	<li class="subfirst"><a href="/Products/DMS/DMSToolkit.html" title="DMS"><span>DMS<sup>&reg;</sup></span></a></li>
+
+                <li><a href="/Products/LanguageTools" title="By Language"><span>By Language</span></a>
+		<ul>
+			<li class="subfirst"><a href="/Products/LanguageTools/CTools.html" title="C">C</a></li>
+			<li><a href="/Products/LanguageTools/CppTools.html" title="C++">C++</a></li>
+			<li><a href="/Products/LanguageTools/JavaTools.html" title="Java">Java</a></li>
+			<li><a href="/Products/LanguageTools/COBOLTools.html" title="COBOL">COBOL</a></li>
+			<li><a href="/Products/LanguageTools/CSharpTools.html" title="C#/.Net">C#/.Net</a></li>
+			<li><a href="/Products/LanguageTools/PHPTools.html" title="PHP">PHP</a></li>
+			<li><a href="/Products/LanguageTools/VHDLTools.html" title="VHDL">VHDL</a></li>
+			<li><a href="/Products/LanguageTools/VerilogTools.html" title="Verilog">Verilog</a></li>
+			<li><a href="/Products/LanguageTools" title="More...">More...</a></li>
+		</ul>
+                </li>
+
+                <li><a href="/Products/Tools.html" title="By Tool"><span>By Tool</span></a>
+		<ul>
+			<li class="subfirst"><a href="/Products/SearchEngine/" title="Search Engine">Search Engine</a></li>
+			<li><a href="/Products/Clone/" title="Clone Detection">Clone Detection</a></li>
+			<li><a href="/Products/TestCoverage/" title="Test Coverage">Test Coverage</a></li>
+			<li><a href="/Products/Formatters/" title="Formatters">Formatters</a></li>
+			<li><a href="/Products/Obfuscators/" title="Obfuscators">Obfuscators</a></li>
+			<li><a href="/Products/Metrics/index.html" title="Metrics">Metrics</a></li>
+			<li><a href="/Products/Profilers/index.html" title="Profilers">Profilers</a></li>
+			<li><a href="/Products/SmartDifferencer/" title="Smart Differencer">Smart Differencer</a></li>
+			<li><a href="/Products/Tools.html" title="More...">More...</a></li>
+		</ul>
+		</li>
+
+                <li><a href="/Products/Applications/" title="By Application"><span>By Application</span></a>
+		<ul>
+			<li class="subfirst"><a href="/Products/Architecture/HoganSystems.html" title="Hogan Analysis">Hogan (Banking) Analysis</a></li>
+			<li><a href="/Products/Applications/MoreEffectiveTesting.html" title="Effective Testing">More Effective Testing</a></li>
+			<li><a href="/Products/Applications/PatentInfringement/" title="Patent Infringement">Detecting Infringement</a></li>
+			<li><a href="/Products/Applications/Agile/AgileTesting.html" title="Agile Testing">Agile Testing</a></li>
+		</ul>
+		</li>
+
+		<li><a href="/Purchase/Justifications.html" title="Why Buy">Why Buy</a></li>
+		<li><a href="/Purchase" title="Purchase">Prices</a></li>
+		<li><a href="/Registration" title="Register">Register</a></li>
+		<li><a href="/Products/Downloads.html" title="Downloads">Downloads</a></li>
+	</ul>
+	</li>
+
+	<li class="topitem"><a href="/Company" title="Company"><span>Company</span></a>
+	<ul>
+		<li class="subfirst"><a href="/Company" title="About SD">About SD</a></li>
+		<li><a href="/Announce" title="News and Events">News and Events</a></li>
+		<li><a href="/Partners" title="Partners">Partners</a></li>
+		<li><a href="/Company/CustomerList.html" title="Customers">Customers</a></li>
+		<li><a href="/Careers" title="Careers">Careers</a></li>
+		<li><a href="/Company/Publications" title="Papers">Papers</a></li>
+	</ul>
+	</li>
+
+	<li class="topitem"><a href="/Contact/Support.html" title="Support"><span>Support</span></a>
+	<ul>
+		<li class="subfirst"><a href="/Contact/Support.html" title="Support Policies">Support Policies</a></li>
+		<li><a href="/Registration" title="Register">Register</a></li>
+		<li><a href="/Products/Downloads.html" title="Downloads">Downloads</a></li>
+	</ul>
+	</li>
+
+	<li class="toplast"><a href="/Contact" title="Contact"><span>Contact</span></a></li>
+</ul>
+
+        <div id="main">
+<!--          <h3>Semantic Designs provides <a href="./Products/DMS/DMSToolkit.html?Home=Main">generalized compiler technology</a> and <a href="./Products/?Home=Main">services</a> across a wide variety of computer languages, application types, and architectures.</h3>
+          -->
+
+
+<h1>
+Source Code Formatters</h1></center>
+
+<h2>Concept</h2>
+
+<P>A source code formatter accepts a program source file, and generates another
+equivalent source file which is nicely formatted according to the source language
+syntax, including indentation, normalized case for identifiers, etc.
+<a href="./ObfuscatedCWinner.html">Example Formatted C text</a></P>
+
+<P>The advantage of using a source formatter is severalfold:
+<UL>
+<LI>Properly nested indentation makes it much easier to identify matching program blocks</LI>
+<LI>No more manual re-formatting of programs for readability</LI>
+<LI>No more religious wars about the "right format"; automatic formatting kills the argument</LI>
+<LI>A standard style used across an organization enables faster work
+    because programmers know what to expect</LI>
+<LI>Code from other organizations can be easily standardized</LI>
+<LI>Smaller DIFFs when doing code merges</LI>
+<LI>Eventually your customer will see some of your company's code,
+    and presentation matters.</LI>
+</UL>
+</P>
+
+<P><em>Programmers spend 50% of their time just</em> <b>looking</b> <em>at source code.
+Formatting source code can make them more productive in this task,
+saving a significant amount of an IT department's time and budget.</em></P>
+
+<P>A related topic is <a href="/Products/Obfuscators/index.html">obfuscators</a>,
+which are "formatters" designed to make code very difficult to read and comprehend,
+to discourage reverse engineering.</P>
+
+<h2>Technology</h2>
+
+<P>Many conventional formatting tools use ad hoc string processing methods
+to implement the formatting process.
+This can work pretty well for many sample files.
+But it often fails when multiple statements per line, nested comments,
+comments around incomplete blocks of code or keywords,
+obscure language features such as escapes in quoted strings, etc.
+are encountered, as they always are in large systems of software.
+The result of such failure is badly formatted source text,
+or worse, program source that is no longer is acceptable to the source language compiler.</P>
+
+<P>The most reliable way to build a formatter is to parse and unparse
+the source language according to the source language lexical and syntax rules.
+This ensures that the syntax structures found match those of the language.
+All of SD's formatters work this way,
+because they are based on <a href="../DMS/DMSToolkit.html">DMS's ability to parse and prettyprint source files</a>,
+and are based on the <a href="../DMS/DMSToolkit.html" target="AvailableLanguages">language definition modules</a> used to drive DMS for large
+scale software reengineering tasks.
+</P>
+
+<P>Another useful feature of SD's formatters is the availability for many
+languages (and the practical possibility of obtaining them for custom languages
+or dialects).  All SD's formatters are designed to operate as command-line style programs,
+to enable inclusion in scripts.  Consistent handling of formatting switches
+and I/O conventions across formatters aid software engineering staff
+when handling the multiple languages typically used by an organization.
+</P>
+
+<P>Files can be formatted one at a time,
+or, using a project file to specify a list of files, in entire batches.
+Project files can be built using a text editor, or using a GUI file-selector provided.</P>
+
+<P>Source files can be formatted to US-ASCII (ISO646), Western European ASCII (ISO8859-1), or Unicode representations.  This is convenient for applications using non-English text strings or comments.</P>
+
+<P>
+SD's formatters are presently available on Windows 2003, XP, and later operating systems.
+</P>
+
+<h2>Available Formatters</h2>
+
+<P>SD offers a family of formatters based on DMS.  Presently available are:
+<UL>
+<LI><a href="./CFormatter.html">C  (GCC2, formatter only; GCC3, ISO/IEC 9899 "ANSI", and Microsoft Visual C6 versions</a> with optional <a href="/Products/Obfuscators/index.html">obfuscation capability)</a></LI>
+<LI><a href="./CppFormatter.html">C++ (GCC3, ISO/IEC 14882 "ANSI", Microsoft Visual C++6 and VisualStudio2005 versions</a> with optional <a href="/Products/Obfuscators/index.html">obfuscation capability)</a></LI>
+<LI><a href="./COBOLFormatter.html">COBOL</a> (IBMEnterprise and COBOL85/IBM VS COBOL II)</LI>
+<LI><a href="./CSharpFormatter.html">C# </a>(1.2, 2.0, and 4.0 with optional <a href="/Products/Obfuscators/index.html">obfuscation capability</a>)</LI>
+<LI><a href="./ECMAScriptFormatter.html">ECMAScript (JavaScript)</a> (with optional <a href="/Products/Obfuscators/index.html">obfuscation capability</a>)</LI>
+<LI><a href="./JavaFormatter.html">Java</a> (1.4, 1.5, and 1.6 with optional <a href="/Products/Obfuscators/index.html">obfuscation capability</a>)</LI>
+<LI>JCL</LI>
+<LI>Pascal (ISO 7185)</LI>
+<LI><a href="./PHPFormatter.html">PHP</a> (4 and 5 with optional <a href="/Products/Obfuscators/index.html">obfuscation capability</a>)</LI>
+<LI><a href="./PLSQLFormatter.html">PL/SQL</a> (with optional <a href="/Products/Obfuscators/index.html">obfuscation capability</a>)</LI>
+<LI><a href="./SystemCFormatter.html">SystemC</a> (with optional <a href="/Products/Obfuscators/index.html">obfuscation capability</a>)</LI>
+<LI><a href="./VerilogFormatter.html">Verilog</a> (SystemVerilog, formatter only; IEEE1364-2001 with optional <a href="/Products/Obfuscators/index.html">obfuscation capability</a>)</LI>
+<LI><a href="./VHDLFormatter.html">VHDL</a> (with optional <a href="/Products/Obfuscators/index.html">obfuscation capability</a>)</LI>
+<LI><a href="./VBScriptFormatter.html">VisualBasic</a> (VBScript with optional <a href="/Products/Obfuscators/index.html">obfuscation facility</a>)</LI>
+<LI>XML</LI>
+</UL>
+
+<p><a href="/Products/RegisterEval.html">Download an evaluation copy</a>
+</p>
+
+</P>
+<P>The following formatters are in Beta.  Early adopters, please inquire:
+<UL>
+<LI><a href="./ECMAScriptFormatter.html">ActionScript</a></LI>
+<LI><a href="./AdaFormatter.html">Ada83/95</a></LI>
+<LI><!--<a href="./MatlabFormatter.html">-->Matlab M language</a></LI>
+<LI><a href="./ObjectPascalFormatter.html">ObjectPascal/Delphi</a> (optional <a href="/Products/Obfuscators/index.html">obfuscation capability</a>)</LI>
+</UL>
+</P>
+
+<h2>Custom Formatting Options</h2>
+<P>
+Semantic Designs can build custom formatters with special features:
+<UL>
+<LI>Unusual languages or dialects</LI>
+<LI>HTMLized output with colorized keywords</LI>
+<LI><i>Source Browsers:</i> HTMLized output with clickable cross-references (examples):</LI>
+<UL>
+<LI><a href="./COBOLFileBrowser.html"><i>COBOL Source File Browser</i></a>: Full cross-reference according to COBOL scoping rules</LI>
+<LI><a href="./JavaBrowser.html"><i>Java Source Browser</i></a>: Full software system sources with clickable cross-references embedded in JavaDoc.
+</UL>
+<LI>Automatic insertion of structured comments for data declarations, functions, etc.</LI>
+<LI>Anti-formatters or code
+    <a href="/Products/Obfuscators/index.html">obfuscators</a>
+    (rename variables, drop comments, remove indentation and line breaks)</LI>
+</UL>
+  </div>
+ </div>
+
+       <div id="sidebar">
+          <div class="block block-series block-list">
+          <a href="/index.html"><img border="0" src="/images/SDLogo-nowords.png" width="160" height="58" alt="Semantic Designs, Inc. logo"></a>
+
+            <form name="SDSearch" action="http://www.google.com/search" method="get" onsubmit="SDSiteSearch(this)" id="SDSearch">
+              <input id="hiddenquery" type="hidden" name="q"> <input name="qfront" type="text" style="width: 150px" value=""> <input type="submit" value="Search SD"><br>
+              <script type="text/javascript">
+
+				//Enter domain of site to search.
+				var domainroot="www.semanticdesigns.com"
+				function SDSiteSearch(curobj){
+				document.getElementById("hiddenquery").value="site:www.semanticdesigns.com "+curobj.qfront.value
+				}
+				</script>
+            </form>
+
+
+
+            <div class="block block-categories">
+              <h3>Topics</h3>
+              <ul id="cats">
+				<li class="cat-reengineering"><a class="cat-reengineering" href="/index.html">Re-engineering</a></li>
+				<li class="cat-documentation"><a class="cat-documentation" href="/index.html">Documentation</a></li>
+				<li class="cat-assessment"><a class="cat-assessment" href= "/index.html">Assessment</a></li>
+				<li class="cat-improvement"><a class="cat-improvement" href="/index.html">Improvement</a></li>
+				<li class="cat-codegen"><a class="cat-codegen" href="/index.html">Code Generation</a></li>
+				<li class="cat-hdl"><a class="cat-hdl" href="/index.html">Hardware Description Languages</a></li>
+				<li class="cat-all"><a class="cat-all" href="/index.html">All Topics</a></li>
+              </ul>
+            </div>
+
+            <form name="drops" method="post" action="http://semanticdesigns.com" id="drops">
+              Language:<br>
+              <select name="language" size="1" onchange="changeList(this)">
+                <option value="AdaProducts">
+                  language
+                </option>
+              </select><br>
+              Product:<br>
+              <select name="product" size="1">
+                <option>
+                  products
+                </option>
+              </select> <input type="button" onclick="location = ''+document.drops.product.options[document.drops.product.selectedIndex].value;" value="Go!">
+            </form>
+
+
+
+           </div>
+
+          <h3>Semantic Designs- Our Goal</h3>
+          <div id="home-mission">
+            To enable our customers to produce and maintain timely, robust and economical software by providing world-class Software Engineering tools using deep language and problem knowledge with high degrees of automation.
+          </div>
+
+      </div>
+
+	<div class="push"></div>
+	</div> <!--Container-->
+
+
+      <div class="block-masthead">For more information: <a href="mailto:info@semanticdesigns.com">Info@semanticdesigns.com</a>&nbsp;&nbsp;&nbsp;&nbsp;Follow us at Twitter: @SemanticDesigns<br>
+      <br>
+      <div class="copyright" >Copyright 1995-2013 Semantic Designs, Incorporated<br>
+      DMS and "Design Maintenance System" are registered trademarks of Semantic Designs, Inc.<br>
+      The SD logo and "Semantic Designs" are registered service marks of Semantic Designs, Inc.<br>
+      CloneDR, PARLANSE, JOVIAL2C, Thicket, Smart Differencer are trademarks of Semantic Designs, Inc.<br>
+      The OMG logo is a registered trademark of the Object Management Group, Inc. in the United States and other countries.<br>
+      To view our Privacy Policy, click <a href="/PrivacyPolicy.html">here</a><br>
+      <br>
+      Comments or problems: <a
+      href="mailto:webmaster@semanticdesigns.com">Webmaster@semanticdesigns.com</a>
+      <font size="-1"><br></font>
+      </div>
+
+    </div>
+
+
+
+
+
+<div class="slogan">
+Source Code <BR>Formatters
+</div>
+</body>
+</html>

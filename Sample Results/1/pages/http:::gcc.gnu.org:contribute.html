@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <!DOCTYPE html
+            PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+            "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  
+     <head>
+ 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rev="made" href="mailto:gcc@gcc.gnu.org" />
+    <link rel="shortcut icon" href="http://gcc.gnu.org/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="http://gcc.gnu.org/gcc.css" />
+  
+ <meta name="description" content="Contributing to the GCC project." />
+<meta name="keywords"
+      content="GCC, standards, copyright, patches, contributing" />
+<title>
+Contributing to GCC
+- GNU Project - Free Software Foundation (FSF)</title>
+   </head>
+ 
+
+<body>
+
+
+
+<h1>Contributing to GCC</h1>
+
+<p>We strongly encourage individuals as well as organizations to
+contribute to the development of GCC, in the form of new features, new
+or improved optimizations, bug fixes, documentation updates, web page
+improvements, etc....</p>
+
+<p>There are certain legal requirements and style issues which all
+contributions must meet:</p>
+
+<ul>
+<li><a href="#legal">Legal Prerequisites</a></li>
+<li><a href="#standards">Coding Standards</a></li>
+<li><a href="#testing">Testing Patches</a></li>
+<li><a href="#docchanges">Documentation Changes</a></li>
+<li><a href="#webchanges">Web Site Changes</a></li>
+<li><a href="#patches">Submitting Patches</a></li>
+<li><a href="#announce">Announcing Changes (to our Users)</a></li>
+</ul>
+
+<hr />
+
+<h2><a name="legal">Legal Prerequisites</a></h2>
+
+<p>Before we can incorporate significant contributions, certain
+legal requirements must be met.</p>
+
+<p>The FSF prefers that a contributor files a copyright assignment for
+large contributions.
+<a href="https://www.gnu.org/prep/maintain/maintain.html#Legal-Matters">See
+some documentation by the FSF</a> for details and contact us (either via
+the <a href="mailto:gcc@gcc.gnu.org">gcc@gcc.gnu.org</a> list or the
+GCC maintainer that is taking care of your contributions) to obtain
+the relevant forms.  The most common forms are an assignment for a
+specific change, an assignment for all future changes, and an employer
+disclaimer, if an employer or school owns work created by the developer.
+It's a good idea to send
+<a href="mailto:assignments@gnu.org">assignments@gnu.org</a> a copy of
+your request.</p>
+
+<p>If a contributor is reluctant to sign a copyright assignment for a
+change, a copyright disclaimer to put the change in the public domain is
+acceptable as well.  The copyright disclaimer form is different than an
+employer disclaimer form.  A copyright assignment is more convenient if a
+contributor plans to make several separate contributions.</p>
+
+<p>Small changes can be accepted without a copyright disclaimer or a
+copyright assignment on file.</p>
+
+
+<h2><a name="standards">Coding Standards</a></h2>
+
+<p>All contributions must conform to the <a
+href="http://www.gnu.org/prep/standards_toc.html">GNU Coding
+Standards</a>.  There are also some <a
+href="codingconventions.html">additional coding conventions for
+GCC</a>; these include documentation and testsuite requirements as
+well as requirements on code formatting.</p>
+
+<p>Submissions which do not conform to the standards will be returned
+with a request to address any such problems.  To help with the
+preparation of patches respecting these rules, one can use the script
+<a href="http://gcc.gnu.org/viewcvs/trunk/contrib/check_GNU_style.sh">
+contrib/check_GNU_style.sh</a> to detect some of the common
+mistakes. </p>
+
+<!-- also referenced from svnwrite.html -->
+<h2><a name="testing">Testing Patches</a></h2>
+
+<p>All patches must be thoroughly tested.  We encourage you to test
+changes with as many host and target combinations as is practical.  In
+addition to using real hardware, you can
+<a href="simtest-howto.html">use simulators</a> to increase your test
+coverage.</p>
+
+<p>Much of GCC's code is used only by some targets, or used in quite
+different ways by different targets.  When choosing targets to test a
+patch with, make sure that your selections exercise all aspects of the
+code you are changing.  For instance, a change to conditional branch
+handling should be tested both with targets that use <code>cc0</code>,
+and targets that don't.</p>
+
+<p>You will of course have tested that your change does what you
+expected it to do: fix a bug, improve an optimization, add a new
+feature.  If the test framework permits, you should automate these
+tests and add them to GCC's testsuite.  You must also perform
+regression tests to ensure that your patch does not break anything
+else.  Typically, this means comparing post-patch test results to
+pre-patch results by testing twice or comparing with recent posts to
+the <a href="http://gcc.gnu.org/ml/gcc-testresults/">gcc-testresults
+list</a>.</p>
+
+<h3>Which tests to perform</h3>
+
+<p>If your change is to code that is not in a front end, or is to the
+C front end, you must perform a complete build of GCC and the runtime
+libraries included with it, on at least one target.  You must
+bootstrap all default languages, not just C.  You must also run all of the
+testsuites included with GCC and its runtime libraries.  For a normal
+native configuration, running</p>
+<blockquote><pre>
+make bootstrap
+make -k check
+</pre></blockquote>
+<p>from the top level of the GCC tree (<strong>not</strong> the
+<code>gcc</code> subdirectory) will accomplish this.</p>
+
+<p>If your change is to the C++ front end, you should rebuild the compiler,
+<code>libstdc++</code>, <code>libjava</code> and run the C++ testsuite.
+If you already did a complete C,C++,Java bootstrap from your build
+directory before, you can use the following:</p>
+<blockquote><pre>
+make clean-target-libstdc++-v3                    # clean libstdc++ and ...
+test -d */libjava &amp;&amp; make -C */libjava clean-nat  # ... parts of libjava
+make all-target-libstdc++-v3 all-target-libjava   # rebuild compiler and libraries
+make -k check-c++                                 # run C++/libstdc++ testsuite
+</pre></blockquote>
+
+<p>If your change is to a front end other than the C or C++ front end,
+or a runtime library other than <code>libgcc</code>, you need to verify
+only that the runtime library for that language still builds and the
+tests for that language have not regressed.  (Most languages have
+tests stored both in the <code>gcc</code> subdirectory, and in the
+directory for the runtime library.)  You need not bootstrap, or test
+other languages, since there is no way you could have affected
+them.</p>
+
+<p>Since the Ada front end is written in Ada, if you change it you
+must perform a complete bootstrap; however, running other language
+testsuites is not necessary.</p>
+
+<p>In all cases you must test exactly the change that you intend to
+submit; it's not good enough to test an earlier variant.  The tree
+where you perform this test should not have any other changes applied
+to it, because otherwise you cannot be sure that your patch will work
+correctly on its own.  Include all your new testcases in your
+testsuite run.</p>
+
+
+<h2><a name="docchanges">Documentation Changes</a></h2>
+
+<p>Documentation changes do not require a new bootstrap (a working
+bootstrap is necessary to get the build environment correct), but you
+must perform <code>make info</code> and <code>make dvi</code> and correct
+any errors.  You should investigate complaints about overfull or
+underfull hboxes from <code>make dvi</code>, as these can be the only
+indication of serious markup problems, but do not feel obliged to
+eliminate them all.</p>
+
+
+<h2><a name="webchanges">Web Site Changes</a></h2>
+
+<p>Changes to the web site must
+<a href="http://validator.w3.org/">validate</a> as XHTML 1.0
+Transitional.  The web pages as checked into CVS do not include
+DOCTYPE declarations; they are automatically added when the web server
+checks out its copy.  To validate your changes, temporarily insert
+this header in place of the &lt;html&gt; tag, then use the "upload
+file" mode of the validator.</p>
+
+<blockquote><pre>
+&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;!DOCTYPE html 
+          PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"&gt;
+</pre></blockquote>
+
+<p>Please mark patches with the tag [wwwdocs] in the subject line.</p>
+
+<p>Web site sources are <a href="cvs.html">in CVS</a>.</p>
+
+
+<h2><a name="patches">Submitting Patches</a></h2>
+
+<p>Every patch must have several pieces of information, <em>before</em> we
+can properly evaluate it:</p>
+
+<dl>
+
+<dt>A description of the problem/bug and how your patch addresses it.</dt>
+<dd>
+For new features a description of the feature and your implementation.
+For bugs a description of what was wrong with the existing code, and a
+reference to any previous bug report (in the
+<a href="http://gcc.gnu.org/bugzilla/">GCC bug tracking system</a> or the
+<a href="http://gcc.gnu.org/ml/gcc-bugs/">gcc-bugs archives</a>) and any
+existing testcases for the problem in the GCC testsuite.
+</dd>
+
+<dt>Testcases</dt>
+<dd>
+If you cannot follow the recommendations of the <a
+href="codingconventions.html">GCC coding conventions</a> about
+testcases, you should include a justification for why adequate
+testcases cannot be added.
+</dd>
+
+<dt>ChangeLog</dt>
+<dd>
+A ChangeLog entry as plaintext; see the various ChangeLog files for
+format and content, and the <a href="codingconventions.html">GCC
+coding conventions</a> and <a
+href="http://www.gnu.org/prep/standards_toc.html">GNU Coding
+Standards</a> for further information.  The ChangeLog entries should
+be plaintext rather than part of the patch since the top of the
+ChangeLog changes rapidly and a patch to the ChangeLog would probably
+no longer apply by the time your patch is reviewed.
+If your change fixes a PR, put text in the ChangeLog entry mentioning
+the PR.  The <code>svn commit</code> machinery understands how to
+extract this information and automatically append the commit log to
+the PR.  In order to be recognized, the text must fit a particular
+form.  It must start with "PR", and then must include the category
+and PR number.  For instance, <code>PR java/2369</code> is
+valid.  Multiple PRs can be mentioned in a single message.
+</dd>
+
+<dt>Bootstrapping and testing</dt>
+<dd>
+State the host and target combinations you used to do <a
+href="#testing">proper testing</a> as described above, and the results
+of your testing.
+</dd>
+
+<dt>The patch itself</dt>
+<dd>
+If you are accessing the <a href="svn.html">SVN repository</a> at
+gcc.gnu.org, please configure your svn to use GNU diff
+and generate patches using the &quot;<code>-up</code>&quot; or 
+&quot;<code>-cp</code>&quot; options.
+See <a href="http://gcc.gnu.org/wiki/SvnSetup">SVN setup instructions</a>
+for more details.<br />
+Do not include generated files as part of the patch, just mention
+them in the ChangeLog (e.g., "* configure: Regenerate."). 
+</dd>
+
+</dl>
+
+<p>Don't mix together changes made for different reasons.  Send them
+<em>individually</em>.  Ideally, each change you send should be
+impossible to subdivide into parts that we might want to consider
+separately, because each of its parts gets its motivation from the
+other parts.  In particular, changes to code formatting to conform to
+coding standards are best not mixed with substantive changes, because
+that makes it difficult to see what the real changes are.  (In the
+case of a very large reorganization of code, it may make sense to
+separate changes even further to make it clearer what has changed; for
+example, by first sending structural changes that make subsequent
+changes easier but do not change GCC's behavior, then new code, then
+the changes that actually make use of the new code and change GCC's
+behavior.)</p>
+
+<p>We prefer patches posted as plain text or as MIME parts of type
+<code>text/x-patch</code> or <code>text/plain</code>, disposition
+<code>inline</code>, encoded as <code>7bit</code> or
+<code>8bit</code>.
+It is strongly discouraged to post patches as MIME parts of type
+<code>application/</code><i>whatever</i>, disposition
+<code>attachment</code> or encoded as <code>base64</code> or
+<code>quoted-printable</code>.  Avoid MIME large-message splitting
+(<code>message/partial</code>) at all costs.</p>
+
+<p> If the patch is too big or too mechanical, posting it gzipped or
+bzip2ed and uuencoded or encoded as a <code>base64</code> MIME part is
+acceptable, as long as the ChangeLog is still posted as plain text.
+</p>
+
+<p>When you have all these pieces, bundle them up in a mail message and
+send it to <a href="lists.html">the appropriate mailing list(s)</a>.
+(Patches will go to one or more lists depending on what you are
+changing.)  For further information on the GCC SVN repository, see
+the <a href="svn.html">Anonymous read-only SVN access</a> and <a
+href="svnwrite.html">Read-write SVN access</a> pages.</p>
+
+<p>(Everything listed here still applies if you can check in the patch
+without further approval under the <a
+href="svnwrite.html#policies">GCC write access policies</a>, except
+that ChangeLog entries may be included as part of the patch and diffs
+representing new files may be omitted, especially if large, since they
+can be accessed directly from the repository.)</p> 
+
+<h3>Pinging patches, Getting patches applied</h3>
+
+<p>If you do not receive a response to a patch that you have submitted
+within two weeks or so, it may be a good idea to chase it by sending a
+follow-up email to the same list(s).  Patches can occasionally fall through
+the cracks.  Please be sure to include a brief summary of the patch and the
+URL of the entry in the mailing list archive of the original submission.</p>
+
+<p>If you do not have write access and a patch of yours has been approved,
+but not committed, please advise the approver of that fact.  You may want
+to point out lack of write access in your initial submission, too.</p>
+ 
+
+<h2><a name="announce">Announcing Changes (to our Users)</a></h2>
+
+<p>Everything that requires a user to edit his Makefiles or his source code
+is a good candidate for being mentioned in the release notes.</p>
+
+<p>Larger accomplishments, either as part of a specific project, or long
+term commitment, merit mention on the front page.  Examples include projects
+like tree-ssa, new backends, major advances in optimization or standards
+compliance.</p>
+
+<p>The gcc-announce mailing list serves to announce new releases and changes
+like frontends or backends being dropped.</p>
+
+
+
+
+<!-- ==================================================================== -->
+
+<div class="copyright">
+
+<address style="margin-top:0;">For questions related to the use of GCC,
+please consult these web pages and the
+<a href="http://gcc.gnu.org/onlinedocs/">GCC manuals</a>. If that fails,
+the <a href="mailto:gcc-help@gcc.gnu.org">gcc-help@gcc.gnu.org</a>
+mailing list might help.
+Comments on these web pages and the development of GCC are welcome on our
+developer list at <a href="mailto:gcc@gcc.gnu.org">gcc@gcc.gnu.org</a>.
+All of <a href="http://gcc.gnu.org/lists.html">our lists</a>
+have public archives.
+</address>
+
+<p>Copyright (C)
+<a href="http://www.fsf.org">Free Software Foundation, Inc.</a>
+Verbatim copying and distribution of this entire article is
+permitted in any medium, provided this notice is preserved.</p>
+
+<p style="margin-bottom:0;">These pages are
+<a href="http://gcc.gnu.org/about.html">maintained by the GCC team</a>.
+Last modified 2012-11-02<!-- IGNORE DIFF
+--><a href="http://validator.w3.org/check/referer">.</a></p>
+
+</div>
+
+<!-- ==================================================================== -->
+
+</body>
+     </html>
+  
+ 

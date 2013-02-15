@@ -1,0 +1,1265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Issues - Backport93 - Ruby Issue Tracking System</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="0dd5AwvwqgTY+EvUDg+qAtH0o58Bp1IkuCtyrFPMhMs="/>
+<link rel='shortcut icon' href='/favicon.ico?1342147382' />
+<link href="/themes/ruby-lang/stylesheets/application.css?1342147382" media="all" rel="stylesheet" type="text/css" />
+
+<script src="/javascripts/prototype.js?1342147382" type="text/javascript"></script>
+<script src="/javascripts/effects.js?1342147382" type="text/javascript"></script>
+<script src="/javascripts/dragdrop.js?1342147382" type="text/javascript"></script>
+<script src="/javascripts/controls.js?1342147382" type="text/javascript"></script>
+<script src="/javascripts/application.js?1342147382" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+<!--[if IE 6]>
+    <style type="text/css">
+      * html body{ width: expression( document.documentElement.clientWidth < 900 ? '900px' : '100%' ); }
+      body {behavior: url(/stylesheets/csshover.htc?1342147382);}
+    </style>
+<![endif]-->
+<link href="/plugin_assets/redmine_mailing_list_integration/stylesheets/mailing_list_integration.css?1349261129" media="screen" rel="stylesheet" type="text/css" />
+<!-- page specific tags -->
+<script src="/javascripts/calendar/calendar.js?1342147382" type="text/javascript"></script><script src="/javascripts/calendar/lang/calendar-en.js?1342147382" type="text/javascript"></script><script type="text/javascript">
+//<![CDATA[
+
+//]]>
+</script><script src="/javascripts/calendar/calendar-setup.js?1342147382" type="text/javascript"></script><link href="/stylesheets/calendar.css?1342147382" media="screen" rel="stylesheet" type="text/css" />
+<script src="/javascripts/select_list_move.js?1342147382" type="text/javascript"></script>
+
+    <link href="https://bugs.ruby-lang.org/projects/ruby-193/issues.atom?query_id=" rel="alternate" title="Issues" type="application/atom+xml" />
+    <link href="https://bugs.ruby-lang.org/issues/changes?format=atom&amp;query_id=" rel="alternate" title="Details of all changes" type="application/atom+xml" />
+<script src="/javascripts/context_menu.js?1342147382" type="text/javascript"></script><link href="/stylesheets/context_menu.css?1342147382" media="screen" rel="stylesheet" type="text/css" /></head>
+<body class="theme-Ruby-lang controller-issues action-index">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/login" class="login">Sign in</a></li>
+<li><a href="/account/register" class="register">Register</a></li></ul>    </div>
+    
+    <ul><li><a href="/" class="home">Home</a></li>
+<li><a href="/projects" class="projects">Projects</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">Help</a></li></ul></div>
+
+<div id="header">
+    
+    <div id="quick-search">
+        <form action="/search/index/ruby-193" method="get">
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/search/index/ruby-193" accesskey="4">Search</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+        </form>
+        
+    </div>
+    
+
+    <h1><a href="/projects/ruby?jump=issues" class="root">Ruby</a> » Backport93</h1>
+
+    
+    <div id="main-menu">
+        <ul><li><a href="/projects/ruby-193" class="overview">Overview</a></li>
+<li><a href="/projects/ruby-193/activity" class="activity">Activity</a></li>
+<li><a href="/projects/ruby-193/issues" class="issues selected">Issues</a></li>
+<li><a href="/projects/ruby-193/repository" class="repository">Repository</a></li></ul>
+    </div>
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+    <h3>Issues</h3>
+<a href="/projects/ruby-193/issues?set_filter=1">View all issues</a><br />
+
+<a href="/projects/ruby-193/issues/report">Summary</a><br />
+
+
+
+
+
+
+
+
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+
+</div>
+
+<h2>Issues</h2>
+
+
+<form action="/projects/ruby-193/issues" id="query_form" method="get">
+    <input id="set_filter" name="set_filter" type="hidden" value="1" />
+    <div id="query_form_content" class="hide-when-print">
+    <fieldset id="filters" class="collapsible ">
+      <legend onclick="toggleFieldset(this);">Filters</legend>
+      <div style="">
+        <script type="text/javascript">
+//<![CDATA[
+function add_filter() {
+  select = $('add_filter_select');
+  field = select.value
+  Element.show('tr_' +  field);
+  check_box = $('cb_' + field);
+  check_box.checked = true;
+  toggle_filter(field);
+  select.selectedIndex = 0;
+
+  for (i=0; i<select.options.length; i++) {
+    if (select.options[i].value == field) {
+      select.options[i].disabled = true;
+    }
+  }
+}
+
+function toggle_filter(field) {
+  check_box = $('cb_' + field);
+  if (check_box.checked) {
+    Element.show("operators_" + field);
+    Form.Element.enable("operators_" + field);
+    toggle_operator(field);
+  } else {
+    Element.hide("operators_" + field);
+    Form.Element.disable("operators_" + field);
+    enableValues(field, []);
+  }
+}
+
+function enableValues(field, indexes) {
+  var f = $$(".values_" + field);
+  for(var i=0;i<f.length;i++) {
+    if (indexes.include(i)) {
+      Form.Element.enable(f[i]);
+      f[i].up('span').show();
+    } else {
+      f[i].value = '';
+      Form.Element.disable(f[i]);
+      f[i].up('span').hide();
+    }
+  }
+  if (indexes.length > 0) {
+    Element.show("div_values_" + field);
+  } else {
+    Element.hide("div_values_" + field);
+  }
+}
+
+function toggle_operator(field) {
+  operator = $("operators_" + field);
+  switch (operator.value) {
+    case "!*":
+    case "*":
+    case "t":
+    case "w":
+    case "o":
+    case "c":
+      enableValues(field, []);
+      break;
+    case "><":
+      enableValues(field, [0,1]);
+      break;
+    case "<t+":
+    case ">t+":
+    case "t+":
+    case ">t-":
+    case "<t-":
+    case "t-":
+      enableValues(field, [2]);
+      break;
+    default:
+      enableValues(field, [0]);
+      break;
+  }
+}
+
+function toggle_multi_select(el) {
+  var select = $(el);
+  if (select.multiple == true) {
+    select.multiple = false;
+  } else {
+    select.multiple = true;
+  }
+}
+
+function submit_query_form(id) {
+  selectAllOptions("selected_columns");
+  $(id).submit();
+}
+
+function apply_filters_observer() {
+  $$("#query_form input[type=text]").invoke("observe", "keypress", function(e){
+    if(e.keyCode == Event.KEY_RETURN) {
+      submit_query_form("query_form");
+    }
+  });
+}
+Event.observe(document,"dom:loaded", apply_filters_observer);
+//]]>
+</script>
+
+<table width="100%">
+<tr>
+<td>
+<table>
+
+    
+    <tr  id="tr_status_id" class="filter">
+    <td class="field">
+        <input checked="checked" id="cb_status_id" name="f[]" onclick="toggle_filter('status_id');" type="checkbox" value="status_id" />
+        <label for="cb_status_id">Status</label>
+    </td>
+    <td class="operator">
+        <label class="hidden-for-sighted" for="op_status_id">Filter</label>
+        <select id="operators_status_id" name="op[status_id]" onchange="toggle_operator('status_id');"><option value="o">open</option>
+<option value="=" selected="selected">is</option>
+<option value="!">is not</option>
+<option value="c">closed</option>
+<option value="*">all</option></select>
+    </td>
+    <td class="values">
+    <div id="div_values_status_id" style="display:none;">
+    
+        <span class="span_values_status_id">
+          <select class="values_status_id" id="values_status_id_1" name="v[status_id][]"><option value="1">Open</option>
+<option value="2">Assigned</option>
+<option value="5" selected="selected">Closed</option>
+<option value="6">Rejected</option>
+<option value="7">Feedback</option>
+<option value="8">Third Party&#x27;s Issue</option></select>
+          <a href="#" onclick="toggle_multi_select('values_status_id_1');; return false;"><img alt="Bullet_toggle_plus" src="/images/bullet_toggle_plus.png?1342147382" /></a>
+        </span>
+    
+    </div>
+    <script type="text/javascript">toggle_filter('status_id');</script>
+    </td>
+    </tr>
+
+    
+    <tr style="display:none;" id="tr_tracker_id" class="filter">
+    <td class="field">
+        <input id="cb_tracker_id" name="f[]" onclick="toggle_filter('tracker_id');" type="checkbox" value="tracker_id" />
+        <label for="cb_tracker_id">Tracker</label>
+    </td>
+    <td class="operator">
+        <label class="hidden-for-sighted" for="op_tracker_id">Filter</label>
+        <select id="operators_tracker_id" name="op[tracker_id]" onchange="toggle_operator('tracker_id');"><option value="=">is</option>
+<option value="!">is not</option></select>
+    </td>
+    <td class="values">
+    <div id="div_values_tracker_id" style="display:none;">
+    
+        <span class="span_values_tracker_id">
+          <select class="values_tracker_id" id="values_tracker_id_1" name="v[tracker_id][]"><option value="4">Backport</option></select>
+          <a href="#" onclick="toggle_multi_select('values_tracker_id_1');; return false;"><img alt="Bullet_toggle_plus" src="/images/bullet_toggle_plus.png?1342147382" /></a>
+        </span>
+    
+    </div>
+    <script type="text/javascript">toggle_filter('tracker_id');</script>
+    </td>
+    </tr>
+
+    
+    <tr style="display:none;" id="tr_priority_id" class="filter">
+    <td class="field">
+        <input id="cb_priority_id" name="f[]" onclick="toggle_filter('priority_id');" type="checkbox" value="priority_id" />
+        <label for="cb_priority_id">Priority</label>
+    </td>
+    <td class="operator">
+        <label class="hidden-for-sighted" for="op_priority_id">Filter</label>
+        <select id="operators_priority_id" name="op[priority_id]" onchange="toggle_operator('priority_id');"><option value="=">is</option>
+<option value="!">is not</option></select>
+    </td>
+    <td class="values">
+    <div id="div_values_priority_id" style="display:none;">
+    
+        <span class="span_values_priority_id">
+          <select class="values_priority_id" id="values_priority_id_1" name="v[priority_id][]"><option value="3">Low</option>
+<option value="4">Normal</option>
+<option value="5">High</option>
+<option value="6">Urgent</option>
+<option value="7">Immediate</option></select>
+          <a href="#" onclick="toggle_multi_select('values_priority_id_1');; return false;"><img alt="Bullet_toggle_plus" src="/images/bullet_toggle_plus.png?1342147382" /></a>
+        </span>
+    
+    </div>
+    <script type="text/javascript">toggle_filter('priority_id');</script>
+    </td>
+    </tr>
+
+    
+    <tr style="display:none;" id="tr_assigned_to_id" class="filter">
+    <td class="field">
+        <input id="cb_assigned_to_id" name="f[]" onclick="toggle_filter('assigned_to_id');" type="checkbox" value="assigned_to_id" />
+        <label for="cb_assigned_to_id">Assignee</label>
+    </td>
+    <td class="operator">
+        <label class="hidden-for-sighted" for="op_assigned_to_id">Filter</label>
+        <select id="operators_assigned_to_id" name="op[assigned_to_id]" onchange="toggle_operator('assigned_to_id');"><option value="=">is</option>
+<option value="!">is not</option>
+<option value="!*">none</option>
+<option value="*">all</option></select>
+    </td>
+    <td class="values">
+    <div id="div_values_assigned_to_id" style="display:none;">
+    
+        <span class="span_values_assigned_to_id">
+          <select class="values_assigned_to_id" id="values_assigned_to_id_1" name="v[assigned_to_id][]"><option value="271">akr (Akira Tanaka)</option>
+<option value="162">arton (Akio Tajima)</option>
+<option value="83">authorNari (Narihiro Nakamura)</option>
+<option value="1075">ayumin (Ayumu AIZAWA)</option>
+<option value="4443">charliesome (Charlie Somerville)</option>
+<option value="47">drbrain (Eric Hodel)</option>
+<option value="50">duerst (Martin Dürst)</option>
+<option value="889">eban (Hirofumi WATANABE)</option>
+<option value="772">Eregon (Benoit Daloze)</option>
+<option value="1913">Glass_saga (Masaki Matsushita)</option>
+<option value="2931">h.shirosaki (Hiroshi Shirosaki)</option>
+<option value="286">headius (Charles Nutter)</option>
+<option value="1841">iwamatsu (Nobuhiro Iwamatsu)</option>
+<option value="71">JEG2 (James Gray)</option>
+<option value="669">kanemoto (Yutaka Kanemoto)</option>
+<option value="76">keiju (Keiju Ishitsuka)</option>
+<option value="8">knu (Akinori MUSHA)</option>
+<option value="17">ko1 (Koichi Sasada)</option>
+<option value="1041">kosaki (Motohiro KOSAKI)</option>
+<option value="32">kou (Kouhei Sutou)</option>
+<option value="26">kouji (Kouji Takao)</option>
+<option value="3007">ktsj (Kazuki Tsujimoto)</option>
+<option value="62">luislavena (Luis Lavena)</option>
+<option value="18">mame (Yusuke Endoh)</option>
+<option value="182">marcandre (Marc-Andre Lafortune)</option>
+<option value="2124">MartinBosslet (Martin Bosslet)</option>
+<option value="13">matz (Yukihiro Matsumoto)</option>
+<option value="482">mrkn (Kenta Murata)</option>
+<option value="404">nagachika (Tomoyuki Chikanaga)</option>
+<option value="122">nagai (Hidetoshi Nagai)</option>
+<option value="911">nahi (Hiroshi Nakamura)</option>
+<option value="5">naruse (Yui NARUSE)</option>
+<option value="263">ngoto (Naohisa Goto)</option>
+<option value="4">nobu (Nobuyoshi Nakada)</option>
+<option value="254">seki (Masatoshi Seki)</option>
+<option value="12">shugo (Shugo Maeda)</option>
+<option value="10">shyouhei (Shyouhei Urabe)</option>
+<option value="1146">sorah (Shota Fukumori)</option>
+<option value="735">suke (Masaki Suketa)</option>
+<option value="183">tadf (tadayoshi funaba)</option>
+<option value="188">takano32 (Mitsuhiro TAKANO)</option>
+<option value="1278">tarui (Masaya Tarui)</option>
+<option value="73">tenderlovemaking (Aaron Patterson)</option>
+<option value="9">usa (Usaku NAKAMURA)</option>
+<option value="703">vo.x (Vit Ondruch)</option>
+<option value="92">wanabe (_ wanabe)</option>
+<option value="610">wyhaines (Kirk Haines)</option>
+<option value="116">xibbar (Takeyuki Fujioka)</option>
+<option value="3">yugui (Yuki Sonoda)</option>
+<option value="75">zenspider (Ryan Davis)</option>
+<option value="14">znz (Kazuhiro NISHIYAMA)</option>
+<option value="1677">zzak (Zachary Scott)</option></select>
+          <a href="#" onclick="toggle_multi_select('values_assigned_to_id_1');; return false;"><img alt="Bullet_toggle_plus" src="/images/bullet_toggle_plus.png?1342147382" /></a>
+        </span>
+    
+    </div>
+    <script type="text/javascript">toggle_filter('assigned_to_id');</script>
+    </td>
+    </tr>
+
+    
+    <tr style="display:none;" id="tr_author_id" class="filter">
+    <td class="field">
+        <input id="cb_author_id" name="f[]" onclick="toggle_filter('author_id');" type="checkbox" value="author_id" />
+        <label for="cb_author_id">Author</label>
+    </td>
+    <td class="operator">
+        <label class="hidden-for-sighted" for="op_author_id">Filter</label>
+        <select id="operators_author_id" name="op[author_id]" onchange="toggle_operator('author_id');"><option value="=">is</option>
+<option value="!">is not</option></select>
+    </td>
+    <td class="values">
+    <div id="div_values_author_id" style="display:none;">
+    
+        <span class="span_values_author_id">
+          <select class="values_author_id" id="values_author_id_1" name="v[author_id][]"><option value="271">akr (Akira Tanaka)</option>
+<option value="162">arton (Akio Tajima)</option>
+<option value="83">authorNari (Narihiro Nakamura)</option>
+<option value="1075">ayumin (Ayumu AIZAWA)</option>
+<option value="4443">charliesome (Charlie Somerville)</option>
+<option value="47">drbrain (Eric Hodel)</option>
+<option value="50">duerst (Martin Dürst)</option>
+<option value="889">eban (Hirofumi WATANABE)</option>
+<option value="772">Eregon (Benoit Daloze)</option>
+<option value="1913">Glass_saga (Masaki Matsushita)</option>
+<option value="2931">h.shirosaki (Hiroshi Shirosaki)</option>
+<option value="286">headius (Charles Nutter)</option>
+<option value="1841">iwamatsu (Nobuhiro Iwamatsu)</option>
+<option value="71">JEG2 (James Gray)</option>
+<option value="669">kanemoto (Yutaka Kanemoto)</option>
+<option value="76">keiju (Keiju Ishitsuka)</option>
+<option value="8">knu (Akinori MUSHA)</option>
+<option value="17">ko1 (Koichi Sasada)</option>
+<option value="1041">kosaki (Motohiro KOSAKI)</option>
+<option value="32">kou (Kouhei Sutou)</option>
+<option value="26">kouji (Kouji Takao)</option>
+<option value="3007">ktsj (Kazuki Tsujimoto)</option>
+<option value="62">luislavena (Luis Lavena)</option>
+<option value="18">mame (Yusuke Endoh)</option>
+<option value="182">marcandre (Marc-Andre Lafortune)</option>
+<option value="2124">MartinBosslet (Martin Bosslet)</option>
+<option value="13">matz (Yukihiro Matsumoto)</option>
+<option value="482">mrkn (Kenta Murata)</option>
+<option value="404">nagachika (Tomoyuki Chikanaga)</option>
+<option value="122">nagai (Hidetoshi Nagai)</option>
+<option value="911">nahi (Hiroshi Nakamura)</option>
+<option value="5">naruse (Yui NARUSE)</option>
+<option value="263">ngoto (Naohisa Goto)</option>
+<option value="4">nobu (Nobuyoshi Nakada)</option>
+<option value="254">seki (Masatoshi Seki)</option>
+<option value="12">shugo (Shugo Maeda)</option>
+<option value="10">shyouhei (Shyouhei Urabe)</option>
+<option value="1146">sorah (Shota Fukumori)</option>
+<option value="735">suke (Masaki Suketa)</option>
+<option value="183">tadf (tadayoshi funaba)</option>
+<option value="188">takano32 (Mitsuhiro TAKANO)</option>
+<option value="1278">tarui (Masaya Tarui)</option>
+<option value="73">tenderlovemaking (Aaron Patterson)</option>
+<option value="9">usa (Usaku NAKAMURA)</option>
+<option value="703">vo.x (Vit Ondruch)</option>
+<option value="92">wanabe (_ wanabe)</option>
+<option value="610">wyhaines (Kirk Haines)</option>
+<option value="116">xibbar (Takeyuki Fujioka)</option>
+<option value="3">yugui (Yuki Sonoda)</option>
+<option value="75">zenspider (Ryan Davis)</option>
+<option value="14">znz (Kazuhiro NISHIYAMA)</option>
+<option value="1677">zzak (Zachary Scott)</option></select>
+          <a href="#" onclick="toggle_multi_select('values_author_id_1');; return false;"><img alt="Bullet_toggle_plus" src="/images/bullet_toggle_plus.png?1342147382" /></a>
+        </span>
+    
+    </div>
+    <script type="text/javascript">toggle_filter('author_id');</script>
+    </td>
+    </tr>
+
+    
+    <tr style="display:none;" id="tr_member_of_group" class="filter">
+    <td class="field">
+        <input id="cb_member_of_group" name="f[]" onclick="toggle_filter('member_of_group');" type="checkbox" value="member_of_group" />
+        <label for="cb_member_of_group">Assignee's group</label>
+    </td>
+    <td class="operator">
+        <label class="hidden-for-sighted" for="op_member_of_group">Filter</label>
+        <select id="operators_member_of_group" name="op[member_of_group]" onchange="toggle_operator('member_of_group');"><option value="=">is</option>
+<option value="!">is not</option>
+<option value="!*">none</option>
+<option value="*">all</option></select>
+    </td>
+    <td class="values">
+    <div id="div_values_member_of_group" style="display:none;">
+    
+        <span class="span_values_member_of_group">
+          <select class="values_member_of_group" id="values_member_of_group_1" name="v[member_of_group][]"><option value="3824">ruby-core</option>
+<option value="6593">rubinius</option>
+<option value="6594">jruby</option></select>
+          <a href="#" onclick="toggle_multi_select('values_member_of_group_1');; return false;"><img alt="Bullet_toggle_plus" src="/images/bullet_toggle_plus.png?1342147382" /></a>
+        </span>
+    
+    </div>
+    <script type="text/javascript">toggle_filter('member_of_group');</script>
+    </td>
+    </tr>
+
+    
+    <tr style="display:none;" id="tr_assigned_to_role" class="filter">
+    <td class="field">
+        <input id="cb_assigned_to_role" name="f[]" onclick="toggle_filter('assigned_to_role');" type="checkbox" value="assigned_to_role" />
+        <label for="cb_assigned_to_role">Assignee's role</label>
+    </td>
+    <td class="operator">
+        <label class="hidden-for-sighted" for="op_assigned_to_role">Filter</label>
+        <select id="operators_assigned_to_role" name="op[assigned_to_role]" onchange="toggle_operator('assigned_to_role');"><option value="=">is</option>
+<option value="!">is not</option>
+<option value="!*">none</option>
+<option value="*">all</option></select>
+    </td>
+    <td class="values">
+    <div id="div_values_assigned_to_role" style="display:none;">
+    
+        <span class="span_values_assigned_to_role">
+          <select class="values_assigned_to_role" id="values_assigned_to_role_1" name="v[assigned_to_role][]"><option value="3">Manager</option>
+<option value="4">Developer</option>
+<option value="7">Contributor</option>
+<option value="5">Reporter</option>
+<option value="6">Release Manager</option></select>
+          <a href="#" onclick="toggle_multi_select('values_assigned_to_role_1');; return false;"><img alt="Bullet_toggle_plus" src="/images/bullet_toggle_plus.png?1342147382" /></a>
+        </span>
+    
+    </div>
+    <script type="text/javascript">toggle_filter('assigned_to_role');</script>
+    </td>
+    </tr>
+
+    
+    <tr style="display:none;" id="tr_subject" class="filter">
+    <td class="field">
+        <input id="cb_subject" name="f[]" onclick="toggle_filter('subject');" type="checkbox" value="subject" />
+        <label for="cb_subject">Subject</label>
+    </td>
+    <td class="operator">
+        <label class="hidden-for-sighted" for="op_subject">Filter</label>
+        <select id="operators_subject" name="op[subject]" onchange="toggle_operator('subject');"><option value="~">contains</option>
+<option value="!~">doesn&#x27;t contain</option></select>
+    </td>
+    <td class="values">
+    <div id="div_values_subject" style="display:none;">
+    
+        <span class="span_values_subject"><input class="values_subject" id="values_subject" name="v[subject][]" size="30" type="text" /></span>
+    
+    </div>
+    <script type="text/javascript">toggle_filter('subject');</script>
+    </td>
+    </tr>
+
+    
+    <tr style="display:none;" id="tr_created_on" class="filter">
+    <td class="field">
+        <input id="cb_created_on" name="f[]" onclick="toggle_filter('created_on');" type="checkbox" value="created_on" />
+        <label for="cb_created_on">Created</label>
+    </td>
+    <td class="operator">
+        <label class="hidden-for-sighted" for="op_created_on">Filter</label>
+        <select id="operators_created_on" name="op[created_on]" onchange="toggle_operator('created_on');"><option value="=">is</option>
+<option value="&gt;=">&gt;=</option>
+<option value="&lt;=">&lt;=</option>
+<option value="&gt;&lt;">between</option>
+<option value="&gt;t-">less than days ago</option>
+<option value="&lt;t-">more than days ago</option>
+<option value="t-">days ago</option>
+<option value="t">today</option>
+<option value="w">this week</option>
+<option value="!*">none</option>
+<option value="*">all</option></select>
+    </td>
+    <td class="values">
+    <div id="div_values_created_on" style="display:none;">
+    
+        <span class="span_values_created_on"><input class="values_created_on" id="values_created_on_1" name="v[created_on][]" size="10" type="text" /> <img alt="Calendar" class="calendar-trigger" id="values_created_on_1_trigger" src="/images/calendar.png?1342147382" /><script type="text/javascript">
+//<![CDATA[
+Calendar.setup({inputField : 'values_created_on_1', ifFormat : '%Y-%m-%d', button : 'values_created_on_1_trigger' });
+//]]>
+</script></span>
+        <span class="span_values_created_on"><input class="values_created_on" id="values_created_on_2" name="v[created_on][]" size="10" type="text" /> <img alt="Calendar" class="calendar-trigger" id="values_created_on_2_trigger" src="/images/calendar.png?1342147382" /><script type="text/javascript">
+//<![CDATA[
+Calendar.setup({inputField : 'values_created_on_2', ifFormat : '%Y-%m-%d', button : 'values_created_on_2_trigger' });
+//]]>
+</script></span>
+        <span class="span_values_created_on"><input class="values_created_on" id="v_created_on_" name="v[created_on][]" size="3" type="text" /> days</span>
+    
+    </div>
+    <script type="text/javascript">toggle_filter('created_on');</script>
+    </td>
+    </tr>
+
+    
+    <tr style="display:none;" id="tr_updated_on" class="filter">
+    <td class="field">
+        <input id="cb_updated_on" name="f[]" onclick="toggle_filter('updated_on');" type="checkbox" value="updated_on" />
+        <label for="cb_updated_on">Updated</label>
+    </td>
+    <td class="operator">
+        <label class="hidden-for-sighted" for="op_updated_on">Filter</label>
+        <select id="operators_updated_on" name="op[updated_on]" onchange="toggle_operator('updated_on');"><option value="=">is</option>
+<option value="&gt;=">&gt;=</option>
+<option value="&lt;=">&lt;=</option>
+<option value="&gt;&lt;">between</option>
+<option value="&gt;t-">less than days ago</option>
+<option value="&lt;t-">more than days ago</option>
+<option value="t-">days ago</option>
+<option value="t">today</option>
+<option value="w">this week</option>
+<option value="!*">none</option>
+<option value="*">all</option></select>
+    </td>
+    <td class="values">
+    <div id="div_values_updated_on" style="display:none;">
+    
+        <span class="span_values_updated_on"><input class="values_updated_on" id="values_updated_on_1" name="v[updated_on][]" size="10" type="text" /> <img alt="Calendar" class="calendar-trigger" id="values_updated_on_1_trigger" src="/images/calendar.png?1342147382" /><script type="text/javascript">
+//<![CDATA[
+Calendar.setup({inputField : 'values_updated_on_1', ifFormat : '%Y-%m-%d', button : 'values_updated_on_1_trigger' });
+//]]>
+</script></span>
+        <span class="span_values_updated_on"><input class="values_updated_on" id="values_updated_on_2" name="v[updated_on][]" size="10" type="text" /> <img alt="Calendar" class="calendar-trigger" id="values_updated_on_2_trigger" src="/images/calendar.png?1342147382" /><script type="text/javascript">
+//<![CDATA[
+Calendar.setup({inputField : 'values_updated_on_2', ifFormat : '%Y-%m-%d', button : 'values_updated_on_2_trigger' });
+//]]>
+</script></span>
+        <span class="span_values_updated_on"><input class="values_updated_on" id="v_updated_on_" name="v[updated_on][]" size="3" type="text" /> days</span>
+    
+    </div>
+    <script type="text/javascript">toggle_filter('updated_on');</script>
+    </td>
+    </tr>
+
+    
+    <tr style="display:none;" id="tr_start_date" class="filter">
+    <td class="field">
+        <input id="cb_start_date" name="f[]" onclick="toggle_filter('start_date');" type="checkbox" value="start_date" />
+        <label for="cb_start_date">Start date</label>
+    </td>
+    <td class="operator">
+        <label class="hidden-for-sighted" for="op_start_date">Filter</label>
+        <select id="operators_start_date" name="op[start_date]" onchange="toggle_operator('start_date');"><option value="=">is</option>
+<option value="&gt;=">&gt;=</option>
+<option value="&lt;=">&lt;=</option>
+<option value="&gt;&lt;">between</option>
+<option value="&lt;t+">in less than</option>
+<option value="&gt;t+">in more than</option>
+<option value="t+">in</option>
+<option value="t">today</option>
+<option value="w">this week</option>
+<option value="&gt;t-">less than days ago</option>
+<option value="&lt;t-">more than days ago</option>
+<option value="t-">days ago</option>
+<option value="!*">none</option>
+<option value="*">all</option></select>
+    </td>
+    <td class="values">
+    <div id="div_values_start_date" style="display:none;">
+    
+        <span class="span_values_start_date"><input class="values_start_date" id="values_start_date_1" name="v[start_date][]" size="10" type="text" /> <img alt="Calendar" class="calendar-trigger" id="values_start_date_1_trigger" src="/images/calendar.png?1342147382" /><script type="text/javascript">
+//<![CDATA[
+Calendar.setup({inputField : 'values_start_date_1', ifFormat : '%Y-%m-%d', button : 'values_start_date_1_trigger' });
+//]]>
+</script></span>
+        <span class="span_values_start_date"><input class="values_start_date" id="values_start_date_2" name="v[start_date][]" size="10" type="text" /> <img alt="Calendar" class="calendar-trigger" id="values_start_date_2_trigger" src="/images/calendar.png?1342147382" /><script type="text/javascript">
+//<![CDATA[
+Calendar.setup({inputField : 'values_start_date_2', ifFormat : '%Y-%m-%d', button : 'values_start_date_2_trigger' });
+//]]>
+</script></span>
+        <span class="span_values_start_date"><input class="values_start_date" id="v_start_date_" name="v[start_date][]" size="3" type="text" /> days</span>
+    
+    </div>
+    <script type="text/javascript">toggle_filter('start_date');</script>
+    </td>
+    </tr>
+
+    
+    <tr style="display:none;" id="tr_due_date" class="filter">
+    <td class="field">
+        <input id="cb_due_date" name="f[]" onclick="toggle_filter('due_date');" type="checkbox" value="due_date" />
+        <label for="cb_due_date">Due date</label>
+    </td>
+    <td class="operator">
+        <label class="hidden-for-sighted" for="op_due_date">Filter</label>
+        <select id="operators_due_date" name="op[due_date]" onchange="toggle_operator('due_date');"><option value="=">is</option>
+<option value="&gt;=">&gt;=</option>
+<option value="&lt;=">&lt;=</option>
+<option value="&gt;&lt;">between</option>
+<option value="&lt;t+">in less than</option>
+<option value="&gt;t+">in more than</option>
+<option value="t+">in</option>
+<option value="t">today</option>
+<option value="w">this week</option>
+<option value="&gt;t-">less than days ago</option>
+<option value="&lt;t-">more than days ago</option>
+<option value="t-">days ago</option>
+<option value="!*">none</option>
+<option value="*">all</option></select>
+    </td>
+    <td class="values">
+    <div id="div_values_due_date" style="display:none;">
+    
+        <span class="span_values_due_date"><input class="values_due_date" id="values_due_date_1" name="v[due_date][]" size="10" type="text" /> <img alt="Calendar" class="calendar-trigger" id="values_due_date_1_trigger" src="/images/calendar.png?1342147382" /><script type="text/javascript">
+//<![CDATA[
+Calendar.setup({inputField : 'values_due_date_1', ifFormat : '%Y-%m-%d', button : 'values_due_date_1_trigger' });
+//]]>
+</script></span>
+        <span class="span_values_due_date"><input class="values_due_date" id="values_due_date_2" name="v[due_date][]" size="10" type="text" /> <img alt="Calendar" class="calendar-trigger" id="values_due_date_2_trigger" src="/images/calendar.png?1342147382" /><script type="text/javascript">
+//<![CDATA[
+Calendar.setup({inputField : 'values_due_date_2', ifFormat : '%Y-%m-%d', button : 'values_due_date_2_trigger' });
+//]]>
+</script></span>
+        <span class="span_values_due_date"><input class="values_due_date" id="v_due_date_" name="v[due_date][]" size="3" type="text" /> days</span>
+    
+    </div>
+    <script type="text/javascript">toggle_filter('due_date');</script>
+    </td>
+    </tr>
+
+    
+    <tr style="display:none;" id="tr_estimated_hours" class="filter">
+    <td class="field">
+        <input id="cb_estimated_hours" name="f[]" onclick="toggle_filter('estimated_hours');" type="checkbox" value="estimated_hours" />
+        <label for="cb_estimated_hours">Estimated time</label>
+    </td>
+    <td class="operator">
+        <label class="hidden-for-sighted" for="op_estimated_hours">Filter</label>
+        <select id="operators_estimated_hours" name="op[estimated_hours]" onchange="toggle_operator('estimated_hours');"><option value="=">is</option>
+<option value="&gt;=">&gt;=</option>
+<option value="&lt;=">&lt;=</option>
+<option value="&gt;&lt;">between</option>
+<option value="!*">none</option>
+<option value="*">all</option></select>
+    </td>
+    <td class="values">
+    <div id="div_values_estimated_hours" style="display:none;">
+    
+        <span class="span_values_estimated_hours"><input class="values_estimated_hours" id="values_estimated_hours_1" name="v[estimated_hours][]" size="6" type="text" /></span>
+        <span class="span_values_estimated_hours"><input class="values_estimated_hours" id="values_estimated_hours_2" name="v[estimated_hours][]" size="6" type="text" /></span>
+    
+    </div>
+    <script type="text/javascript">toggle_filter('estimated_hours');</script>
+    </td>
+    </tr>
+
+    
+    <tr style="display:none;" id="tr_done_ratio" class="filter">
+    <td class="field">
+        <input id="cb_done_ratio" name="f[]" onclick="toggle_filter('done_ratio');" type="checkbox" value="done_ratio" />
+        <label for="cb_done_ratio">% Done</label>
+    </td>
+    <td class="operator">
+        <label class="hidden-for-sighted" for="op_done_ratio">Filter</label>
+        <select id="operators_done_ratio" name="op[done_ratio]" onchange="toggle_operator('done_ratio');"><option value="=">is</option>
+<option value="&gt;=">&gt;=</option>
+<option value="&lt;=">&lt;=</option>
+<option value="&gt;&lt;">between</option>
+<option value="!*">none</option>
+<option value="*">all</option></select>
+    </td>
+    <td class="values">
+    <div id="div_values_done_ratio" style="display:none;">
+    
+        <span class="span_values_done_ratio"><input class="values_done_ratio" id="values_done_ratio_1" name="v[done_ratio][]" size="6" type="text" /></span>
+        <span class="span_values_done_ratio"><input class="values_done_ratio" id="values_done_ratio_2" name="v[done_ratio][]" size="6" type="text" /></span>
+    
+    </div>
+    <script type="text/javascript">toggle_filter('done_ratio');</script>
+    </td>
+    </tr>
+
+    
+    <tr style="display:none;" id="tr_cf_4" class="filter">
+    <td class="field">
+        <input id="cb_cf_4" name="f[]" onclick="toggle_filter('cf_4');" type="checkbox" value="cf_4" />
+        <label for="cb_cf_4">ruby -v</label>
+    </td>
+    <td class="operator">
+        <label class="hidden-for-sighted" for="op_cf_4">Filter</label>
+        <select id="operators_cf_4" name="op[cf_4]" onchange="toggle_operator('cf_4');"><option value="=">is</option>
+<option value="~">contains</option>
+<option value="!">is not</option>
+<option value="!~">doesn&#x27;t contain</option></select>
+    </td>
+    <td class="values">
+    <div id="div_values_cf_4" style="display:none;">
+    
+        <span class="span_values_cf_4"><input class="values_cf_4" id="values_cf_4" name="v[cf_4][]" size="30" type="text" /></span>
+    
+    </div>
+    <script type="text/javascript">toggle_filter('cf_4');</script>
+    </td>
+    </tr>
+
+</table>
+</td>
+<td class="add-filter">
+<label for="add_filter_select">Add filter</label>
+<select id="add_filter_select" onchange="add_filter();"><option value=""></option>
+<option value="tracker_id">Tracker</option>
+<option value="priority_id">Priority</option>
+<option value="assigned_to_id">Assignee</option>
+<option value="author_id">Author</option>
+<option value="member_of_group">Assignee&#x27;s group</option>
+<option value="assigned_to_role">Assignee&#x27;s role</option>
+<option value="subject">Subject</option>
+<option value="created_on">Created</option>
+<option value="updated_on">Updated</option>
+<option value="start_date">Start date</option>
+<option value="due_date">Due date</option>
+<option value="estimated_hours">Estimated time</option>
+<option value="done_ratio">% Done</option>
+<option value="cf_4">ruby -v</option></select>
+</td>
+</tr>
+</table>
+<input id="f_" name="f[]" type="hidden" value="" />
+
+      </div>
+    </fieldset>
+    <fieldset class="collapsible collapsed">
+      <legend onclick="toggleFieldset(this);">Options</legend>
+      <div style="display: none;">
+        <table>
+          <tr>
+            <td>Columns</td>
+            <td><table style="border-collapse: collapse; border:0;">
+  <tr>
+    <td style="padding-left:0">
+      <label for="available_columns">Available Columns</label>
+      <br />
+      <select id="available_columns" multiple="multiple" name="available_columns[]" ondblclick="moveOptions(this.form.available_columns, this.form.selected_columns);" size="10" style="width:150px"><option value="project">Project</option>
+<option value="parent">Parent task</option>
+<option value="author">Author</option>
+<option value="category">Category</option>
+<option value="fixed_version">Target version</option>
+<option value="start_date">Start date</option>
+<option value="due_date">Due date</option>
+<option value="estimated_hours">Estimated time</option>
+<option value="done_ratio">% Done</option>
+<option value="created_on">Created</option>
+<option value="cf_4">ruby -v</option></select>
+    </td>
+    <td align="center" valign="middle">
+      <input type="button" value="&#8594;"
+       onclick="moveOptions(this.form.available_columns, this.form.selected_columns);" /><br />
+      <input type="button" value="&#8592;"
+       onclick="moveOptions(this.form.selected_columns, this.form.available_columns);" />
+    </td>
+    <td>
+      <label for="selected_columns">Selected Columns</label>
+      <br />
+      <select id="selected_columns" multiple="multiple" name="c[]" ondblclick="moveOptions(this.form.selected_columns, this.form.available_columns);" size="10" style="width:150px"><option value="tracker">Tracker</option>
+<option value="status">Status</option>
+<option value="priority">Priority</option>
+<option value="subject">Subject</option>
+<option value="assigned_to">Assignee</option>
+<option value="updated_on">Updated</option></select>
+    </td>
+    <td align="center" valign="middle">
+      <input type="button" value="&#8593;" onclick="moveOptionUp(this.form.selected_columns);" /><br />
+      <input type="button" value="&#8595;" onclick="moveOptionDown(this.form.selected_columns);" />
+    </td>
+  </tr>
+</table>
+
+
+</td>
+          </tr>
+          <tr>
+            <td><label for='group_by'>Group results by</label></td>
+            <td><select id="group_by" name="group_by"><option value="" selected="selected"></option>
+<option value="project">Project</option>
+<option value="tracker">Tracker</option>
+<option value="status">Status</option>
+<option value="priority">Priority</option>
+<option value="author">Author</option>
+<option value="assigned_to">Assignee</option>
+<option value="category">Category</option>
+<option value="fixed_version">Target version</option>
+<option value="done_ratio">% Done</option></select></td>
+          </tr>
+        </table>
+      </div>
+    </fieldset>
+    </div>
+    <p class="buttons hide-when-print">
+
+    <a class="icon icon-checked" href="#" onclick="submit_query_form(&quot;query_form&quot;); return false;">Apply</a>
+    <a href="/projects/ruby-193/issues?set_filter=1" class="icon icon-reload">Clear</a>
+    
+    </p>
+</form>
+
+
+
+
+<form action="/issues" method="post"><div style="margin:0;padding:0;display:inline"><input name="authenticity_token" type="hidden" value="0dd5AwvwqgTY+EvUDg+qAtH0o58Bp1IkuCtyrFPMhMs=" /></div><input id="back_url" name="back_url" type="hidden" value="/projects/ruby-193/issues?set_filter=1&amp;sort=assigned_to%2Cid%3Adesc&amp;status_id=5" />
+<div class="autoscroll">
+<table class="list issues">
+    <thead><tr>
+        <th class="checkbox hide-when-print"><a href="/issues" onclick="toggleIssuesSelection(Element.up(this, &quot;form&quot;)); return false;" title="Check all/Uncheck all"><img alt="Toggle_check" src="/images/toggle_check.png?1342147382" /></a>
+        </th>
+    <th title="Sort by &quot;#&quot;"><a href="/projects/ruby-193/issues?set_filter=1&amp;sort=id%3Adesc%2Cassigned_to&amp;status_id=5">#</a></th>
+        
+          <th title="Sort by &quot;Tracker&quot;"><a href="/projects/ruby-193/issues?set_filter=1&amp;sort=tracker%2Cassigned_to%2Cid%3Adesc&amp;status_id=5">Tracker</a></th>
+        
+          <th title="Sort by &quot;Status&quot;"><a href="/projects/ruby-193/issues?set_filter=1&amp;sort=status%2Cassigned_to%2Cid%3Adesc&amp;status_id=5">Status</a></th>
+        
+          <th title="Sort by &quot;Priority&quot;"><a href="/projects/ruby-193/issues?set_filter=1&amp;sort=priority%3Adesc%2Cassigned_to%2Cid%3Adesc&amp;status_id=5">Priority</a></th>
+        
+          <th title="Sort by &quot;Subject&quot;"><a href="/projects/ruby-193/issues?set_filter=1&amp;sort=subject%2Cassigned_to%2Cid%3Adesc&amp;status_id=5">Subject</a></th>
+        
+          <th title="Sort by &quot;Assignee&quot;"><a href="/projects/ruby-193/issues?set_filter=1&amp;sort=assigned_to%3Adesc%2Cid%3Adesc&amp;status_id=5" class="sort asc">Assignee</a></th>
+        
+          <th title="Sort by &quot;Updated&quot;"><a href="/projects/ruby-193/issues?set_filter=1&amp;sort=updated_on%3Adesc%2Cassigned_to%2Cid%3Adesc&amp;status_id=5">Updated</a></th>
+        
+  </tr></thead>
+  
+  <tbody>
+    
+  <tr id="issue-7669" class="hascontextmenu odd issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="7669" /></td>
+    <td class="id"><a href="/issues/7669">7669</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/7669">Ruby 1.9.3p362 Segfaults on gem kaminari Model.page method</a></td><td class="assigned_to"></td><td class="updated_on">01/07/2013 06:56 pm</td>
+  </tr>
+    
+  <tr id="issue-7658" class="hascontextmenu even issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="7658" /></td>
+    <td class="id"><a href="/issues/7658">7658</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/7658"> Rabbit が Ruby 1.9.3p362 で落ちる</a></td><td class="assigned_to"></td><td class="updated_on">01/07/2013 03:52 pm</td>
+  </tr>
+    
+  <tr id="issue-7641" class="hascontextmenu odd issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="7641" /></td>
+    <td class="id"><a href="/issues/7641">7641</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/7641">Segmentation Fault MRI 1.9.3-p362</a></td><td class="assigned_to"></td><td class="updated_on">01/15/2013 04:08 pm</td>
+  </tr>
+    
+  <tr id="issue-7633" class="hascontextmenu even issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="7633" /></td>
+    <td class="id"><a href="/issues/7633">7633</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/7633">Build failure ruby 1.9.3p362 with x64 VC2012</a></td><td class="assigned_to"></td><td class="updated_on">01/11/2013 05:04 pm</td>
+  </tr>
+    
+  <tr id="issue-7629" class="hascontextmenu odd issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="7629" /></td>
+    <td class="id"><a href="/issues/7629">7629</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/7629">Segmentation fault</a></td><td class="assigned_to"></td><td class="updated_on">01/09/2013 02:26 am</td>
+  </tr>
+    
+  <tr id="issue-7587" class="hascontextmenu even issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="7587" /></td>
+    <td class="id"><a href="/issues/7587">7587</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/7587">r35924</a></td><td class="assigned_to"></td><td class="updated_on">12/20/2012 07:10 pm</td>
+  </tr>
+    
+  <tr id="issue-7552" class="hascontextmenu odd issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="7552" /></td>
+    <td class="id"><a href="/issues/7552">7552</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/7552">please backport Fiddle and DL bug fixes</a></td><td class="assigned_to"></td><td class="updated_on">12/20/2012 06:45 pm</td>
+  </tr>
+    
+  <tr id="issue-7527" class="hascontextmenu even issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="7527" /></td>
+    <td class="id"><a href="/issues/7527">7527</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/7527">Backport fix for test_str_crypt(TestM17NComb) failru (#7312)</a></td><td class="assigned_to"></td><td class="updated_on">12/20/2012 06:38 pm</td>
+  </tr>
+    
+  <tr id="issue-7353" class="hascontextmenu odd issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="7353" /></td>
+    <td class="id"><a href="/issues/7353">7353</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/7353">Backport #6171</a></td><td class="assigned_to"></td><td class="updated_on">11/15/2012 03:20 pm</td>
+  </tr>
+    
+  <tr id="issue-7169" class="hascontextmenu even issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="7169" /></td>
+    <td class="id"><a href="/issues/7169">7169</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/7169">r37169</a></td><td class="assigned_to"></td><td class="updated_on">10/16/2012 09:49 am</td>
+  </tr>
+    
+  <tr id="issue-7162" class="hascontextmenu odd issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="7162" /></td>
+    <td class="id"><a href="/issues/7162">7162</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/7162">Need PRI_LL_PREFIX in Ruby 1.9.3 P286</a></td><td class="assigned_to"></td><td class="updated_on">10/19/2012 01:12 pm</td>
+  </tr>
+    
+  <tr id="issue-6918" class="hascontextmenu even issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6918" /></td>
+    <td class="id"><a href="/issues/6918">6918</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6918">Fix for webrick test failures on mswin32</a></td><td class="assigned_to"></td><td class="updated_on">08/28/2012 12:41 am</td>
+  </tr>
+    
+  <tr id="issue-6898" class="hascontextmenu odd issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6898" /></td>
+    <td class="id"><a href="/issues/6898">6898</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6898">lambda周辺でSegmentation fault</a></td><td class="assigned_to"></td><td class="updated_on">08/23/2012 11:21 am</td>
+  </tr>
+    
+  <tr id="issue-6846" class="hascontextmenu even issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6846" /></td>
+    <td class="id"><a href="/issues/6846">6846</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6846">Please backport Feature #6845</a></td><td class="assigned_to"></td><td class="updated_on">08/23/2012 12:10 pm</td>
+  </tr>
+    
+  <tr id="issue-6815" class="hascontextmenu odd issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6815" /></td>
+    <td class="id"><a href="/issues/6815">6815</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6815">Backport Psych 1.3.3 and 1.3.4 to stable branch</a></td><td class="assigned_to"></td><td class="updated_on">08/08/2012 05:50 am</td>
+  </tr>
+    
+  <tr id="issue-6681" class="hascontextmenu even issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6681" /></td>
+    <td class="id"><a href="/issues/6681">6681</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6681">migw32 で utf-8 のスクリプトで「版」で終わるディレクトリの File.basename </a></td><td class="assigned_to"></td><td class="updated_on">10/26/2012 12:01 pm</td>
+  </tr>
+    
+  <tr id="issue-6618" class="hascontextmenu odd issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6618" /></td>
+    <td class="id"><a href="/issues/6618">6618</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6618">Seg Fault when printing thread.keys</a></td><td class="assigned_to"></td><td class="updated_on">10/23/2012 02:21 pm</td>
+  </tr>
+    
+  <tr id="issue-6593" class="hascontextmenu even issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6593" /></td>
+    <td class="id"><a href="/issues/6593">6593</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6593">Fix for OpenSSL 1.0.1 is breaking the drb test suite</a></td><td class="assigned_to"></td><td class="updated_on">06/26/2012 08:38 pm</td>
+  </tr>
+    
+  <tr id="issue-6574" class="hascontextmenu odd issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6574" /></td>
+    <td class="id"><a href="/issues/6574">6574</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6574">Fix for TestWEBrickHTTPRequest and WEBrick::TestFileHandler failures</a></td><td class="assigned_to"></td><td class="updated_on">06/11/2012 07:57 pm</td>
+  </tr>
+    
+  <tr id="issue-6516" class="hascontextmenu even issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6516" /></td>
+    <td class="id"><a href="/issues/6516">6516</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6516">Backport Zlib::Inflate#set_dictionary API fix</a></td><td class="assigned_to"></td><td class="updated_on">06/26/2012 08:36 pm</td>
+  </tr>
+    
+  <tr id="issue-6487" class="hascontextmenu odd issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6487" /></td>
+    <td class="id"><a href="/issues/6487">6487</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6487">io_strip_bom does not take in to account short files</a></td><td class="assigned_to"></td><td class="updated_on">05/25/2012 10:39 am</td>
+  </tr>
+    
+  <tr id="issue-6422" class="hascontextmenu even issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6422" /></td>
+    <td class="id"><a href="/issues/6422">6422</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6422">Please backport r35594 (Windows bug with File.pos)</a></td><td class="assigned_to"></td><td class="updated_on">05/11/2012 01:05 am</td>
+  </tr>
+    
+  <tr id="issue-6403" class="hascontextmenu odd issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6403" /></td>
+    <td class="id"><a href="/issues/6403">6403</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6403">self という名前のメソッド定義で SyntaxError</a></td><td class="assigned_to"></td><td class="updated_on">05/25/2012 10:36 am</td>
+  </tr>
+    
+  <tr id="issue-6314" class="hascontextmenu even issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6314" /></td>
+    <td class="id"><a href="/issues/6314">6314</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6314">Backport r35374 and r35375</a></td><td class="assigned_to"></td><td class="updated_on">05/14/2012 01:20 pm</td>
+  </tr>
+    
+  <tr id="issue-6296" class="hascontextmenu odd issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6296" /></td>
+    <td class="id"><a href="/issues/6296">6296</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6296">Please backport r35249, r35250 (Ctrl-C handler do not work from exec process (Windows))</a></td><td class="assigned_to"></td><td class="updated_on">04/15/2012 06:47 am</td>
+  </tr>
+    
+  <tr id="issue-6295" class="hascontextmenu even issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6295" /></td>
+    <td class="id"><a href="/issues/6295">6295</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6295">Please backport r35296 (textmode File#read on CRLF)</a></td><td class="assigned_to"></td><td class="updated_on">04/15/2012 04:36 am</td>
+  </tr>
+    
+  <tr id="issue-6294" class="hascontextmenu odd issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6294" /></td>
+    <td class="id"><a href="/issues/6294">6294</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6294">Please backport r35111 etc. (File::pos broken in Windows 1.9.3p125)</a></td><td class="assigned_to"></td><td class="updated_on">04/15/2012 03:02 am</td>
+  </tr>
+    
+  <tr id="issue-6268" class="hascontextmenu even issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6268" /></td>
+    <td class="id"><a href="/issues/6268">6268</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6268">backport r35245 and r35248</a></td><td class="assigned_to"></td><td class="updated_on">04/09/2012 01:39 am</td>
+  </tr>
+    
+  <tr id="issue-6257" class="hascontextmenu odd issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6257" /></td>
+    <td class="id"><a href="/issues/6257">6257</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6257">[mingw] -Wshorten-64-to-32 error in io.c using clang</a></td><td class="assigned_to"></td><td class="updated_on">04/09/2012 09:35 am</td>
+  </tr>
+    
+  <tr id="issue-6212" class="hascontextmenu even issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6212" /></td>
+    <td class="id"><a href="/issues/6212">6212</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6212">Backport bug fixes for psych</a></td><td class="assigned_to"></td><td class="updated_on">10/03/2012 06:40 pm</td>
+  </tr>
+    
+  <tr id="issue-6204" class="hascontextmenu odd issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6204" /></td>
+    <td class="id"><a href="/issues/6204">6204</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6204">autoconf failure on HP-UX/PA</a></td><td class="assigned_to"></td><td class="updated_on">03/27/2012 10:23 pm</td>
+  </tr>
+    
+  <tr id="issue-6200" class="hascontextmenu even issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6200" /></td>
+    <td class="id"><a href="/issues/6200">6200</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6200">Ripper uses wrong encoding for heredoc strings</a></td><td class="assigned_to"></td><td class="updated_on">03/26/2012 09:57 am</td>
+  </tr>
+    
+  <tr id="issue-6171" class="hascontextmenu odd issue status-3 priority-3 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6171" /></td>
+    <td class="id"><a href="/issues/6171">6171</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">High</td><td class="subject"><a href="/issues/6171">Segfault in rb_free_method_entry</a></td><td class="assigned_to"></td><td class="updated_on">03/18/2012 10:54 pm</td>
+  </tr>
+    
+  <tr id="issue-6093" class="hascontextmenu even issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6093" /></td>
+    <td class="id"><a href="/issues/6093">6093</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6093">Requiring mathn causes Float.to_d to SEG FAULT when used with BigDecimal</a></td><td class="assigned_to"></td><td class="updated_on">02/27/2012 05:15 pm</td>
+  </tr>
+    
+  <tr id="issue-6076" class="hascontextmenu odd issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6076" /></td>
+    <td class="id"><a href="/issues/6076">6076</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6076">lack of bounds checking in nu{rat,comp}_marshal_load</a></td><td class="assigned_to"></td><td class="updated_on">02/25/2012 04:39 pm</td>
+  </tr>
+    
+  <tr id="issue-6072" class="hascontextmenu even issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6072" /></td>
+    <td class="id"><a href="/issues/6072">6072</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6072">[Windows] Dir.inspect returns the path in file system encoding</a></td><td class="assigned_to"></td><td class="updated_on">03/08/2012 05:09 am</td>
+  </tr>
+    
+  <tr id="issue-6071" class="hascontextmenu odd issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6071" /></td>
+    <td class="id"><a href="/issues/6071">6071</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6071">[Windows] exception in Dir.open doesn&#x27;t respect the encoding of its argument</a></td><td class="assigned_to"></td><td class="updated_on">03/08/2012 05:10 am</td>
+  </tr>
+    
+  <tr id="issue-6064" class="hascontextmenu even issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6064" /></td>
+    <td class="id"><a href="/issues/6064">6064</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6064">unsupported -ggdb flag is used with clang 3.1</a></td><td class="assigned_to"></td><td class="updated_on">02/28/2012 03:24 pm</td>
+  </tr>
+    
+  <tr id="issue-6063" class="hascontextmenu odd issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6063" /></td>
+    <td class="id"><a href="/issues/6063">6063</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6063">OpenStruct#delete_field missing return value</a></td><td class="assigned_to"></td><td class="updated_on">02/24/2012 11:49 pm</td>
+  </tr>
+    
+  <tr id="issue-6059" class="hascontextmenu even issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6059" /></td>
+    <td class="id"><a href="/issues/6059">6059</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6059">Please backport r34719, 34720</a></td><td class="assigned_to"></td><td class="updated_on">02/22/2012 05:57 pm</td>
+  </tr>
+    
+  <tr id="issue-6054" class="hascontextmenu odd issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6054" /></td>
+    <td class="id"><a href="/issues/6054">6054</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6054">IO.foreach を Enumerator 化したときキーワード引数が無視される</a></td><td class="assigned_to"></td><td class="updated_on">02/22/2012 10:01 pm</td>
+  </tr>
+    
+  <tr id="issue-6052" class="hascontextmenu even issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6052" /></td>
+    <td class="id"><a href="/issues/6052">6052</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6052">please add vendorarchdir and vendorlibdir to ruby.pc</a></td><td class="assigned_to"></td><td class="updated_on">07/29/2012 04:32 am</td>
+  </tr>
+    
+  <tr id="issue-6051" class="hascontextmenu odd issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6051" /></td>
+    <td class="id"><a href="/issues/6051">6051</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6051">Rename ruby-1.9.pc to ruby.pc</a></td><td class="assigned_to"></td><td class="updated_on">07/29/2012 04:32 am</td>
+  </tr>
+    
+  <tr id="issue-6045" class="hascontextmenu even issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6045" /></td>
+    <td class="id"><a href="/issues/6045">6045</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6045">Ruby 1.9.3 branch fails to build</a></td><td class="assigned_to"></td><td class="updated_on">02/19/2012 12:32 pm</td>
+  </tr>
+    
+  <tr id="issue-6032" class="hascontextmenu odd issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6032" /></td>
+    <td class="id"><a href="/issues/6032">6032</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6032">Please backport r32731, r32734, r32738 (Use setrlimit(NOFILE,1) on OpenBSD.)</a></td><td class="assigned_to"></td><td class="updated_on">02/16/2012 11:15 am</td>
+  </tr>
+    
+  <tr id="issue-6031" class="hascontextmenu even issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6031" /></td>
+    <td class="id"><a href="/issues/6031">6031</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6031">Please backport r32730</a></td><td class="assigned_to"></td><td class="updated_on">02/16/2012 11:15 am</td>
+  </tr>
+    
+  <tr id="issue-6022" class="hascontextmenu odd issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6022" /></td>
+    <td class="id"><a href="/issues/6022">6022</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6022">DL on MinGW: bignum too big to convert into `long&#x27; (memory_status test)</a></td><td class="assigned_to"></td><td class="updated_on">02/16/2012 06:28 am</td>
+  </tr>
+    
+  <tr id="issue-6021" class="hascontextmenu even issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6021" /></td>
+    <td class="id"><a href="/issues/6021">6021</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6021">TestDBM#test_aref test fails</a></td><td class="assigned_to"></td><td class="updated_on">02/16/2012 05:56 pm</td>
+  </tr>
+    
+  <tr id="issue-6017" class="hascontextmenu odd issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6017" /></td>
+    <td class="id"><a href="/issues/6017">6017</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6017">Please backport r32640 (test for WIN32OLE)</a></td><td class="assigned_to"></td><td class="updated_on">02/15/2012 05:03 am</td>
+  </tr>
+    
+  <tr id="issue-6016" class="hascontextmenu even issue status-3 priority-2 closed ">
+    <td class="checkbox hide-when-print"><input name="ids[]" type="checkbox" value="6016" /></td>
+    <td class="id"><a href="/issues/6016">6016</a></td>
+        <td class="tracker">Backport</td><td class="status">Closed</td><td class="priority">Normal</td><td class="subject"><a href="/issues/6016">Please backport r32705, r32717 (test_rinda.rb)</a></td><td class="assigned_to"></td><td class="updated_on">02/15/2012 05:04 am</td>
+  </tr>
+    </tbody>
+</table>
+</div>
+</form>
+<p class="pagination">1 <a href="/projects/ruby-193/issues?page=2&amp;set_filter=1&amp;sort=assigned_to%2Cid%3Adesc&amp;status_id=5">2</a> <a href="/projects/ruby-193/issues?page=3&amp;set_filter=1&amp;sort=assigned_to%2Cid%3Adesc&amp;status_id=5">3</a>  ... <a href="/projects/ruby-193/issues?page=6&amp;set_filter=1&amp;sort=assigned_to%2Cid%3Adesc&amp;status_id=5">6</a> <a href="/projects/ruby-193/issues?page=2&amp;set_filter=1&amp;sort=assigned_to%2Cid%3Adesc&amp;status_id=5">Next »</a> (1-50/251) | Per page: 50, <a href="/projects/ruby-193/issues?per_page=100&amp;set_filter=1&amp;sort=assigned_to%2Cid%3Adesc&amp;status_id=5">100</a></p>
+
+
+<p class="other-formats">Also available in:
+  <span><a href="/projects/ruby-193/issues.atom?set_filter=1&amp;sort=assigned_to%2Cid%3Adesc&amp;status_id=5" class="atom" rel="nofollow">Atom</a></span>
+  <span><a href="/projects/ruby-193/issues.csv?set_filter=1&amp;sort=assigned_to%2Cid%3Adesc&amp;status_id=5" class="csv" onclick="showModal('csv-export-options', '330px'); return false;" rel="nofollow">CSV</a></span>
+  <span><a href="/projects/ruby-193/issues.pdf?set_filter=1&amp;sort=assigned_to%2Cid%3Adesc&amp;status_id=5" class="pdf" rel="nofollow">PDF</a></span>
+</p>
+
+<div id="csv-export-options" style="display:none;">
+  <h3 class="title">CSV export options</h3>
+  <form action="/projects/ruby-193/issues.csv?set_filter=1&amp;sort=assigned_to%2Cid%3Adesc&amp;status_id=5" id="csv-export-form" method="get">
+  <p>
+    <label><input checked="checked" id="columns_" name="columns" type="radio" value="" /> Selected Columns</label><br />
+    <label><input id="columns_all" name="columns" type="radio" value="all" /> All Columns</label>
+  </p>
+  <p>
+    <label><input id="description" name="description" type="checkbox" value="1" /> Description</label>
+  </p>
+  <p class="buttons">
+    <input onclick="hideModal(this);" type="submit" value="Export" />
+    <input onclick="hideModal(this);" type="button" value="Cancel" />
+  </p>
+  </form>
+</div>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+new ContextMenu('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="http://www.redmine.org/">Redmine</a> &copy; 2006-2012 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

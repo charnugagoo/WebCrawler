@@ -1,0 +1,233 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7;FF=3;OtherUA=4">
+<meta name="robots" content="index,follow">
+<meta name="generator" content="phpDesigner and File Commander/W">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script src="./scripts/noframes.js" type="text/javascript"></script>
+<link href="./scripts/default.css" type="text/css" rel="stylesheet">
+<link href="./scripts/menu.css" type="text/css" rel="stylesheet">
+<script src="./scripts/menu.js" type="text/javascript"></script>
+<script src="./scripts/menu_items.js" type="text/javascript"></script>
+<script src="./scripts/menu_tpl.js" type="text/javascript"></script>
+<script src="./scripts/myscriptfunctions.js" type="text/javascript"></script>
+<link rel="Home" href="/"> 
+<link rel="Contents" href="/"> 
+<link rel="Search" href="search.php"> 
+<link rel="Index" href="/"> 
+<link rel="Help" href="faq.php"> 
+<link rel="Author" href="contact.php">
+
+<title>Rob van der Woude's Scripting Pages</title>
+<meta name="description" content="Rob van der Woude's Scripting Pages: Batch Files for DOS, Windows (all flavours) and OS/2; PowerShell; Rexx; KiXtart; VBScript; Perl; HTA">
+<meta name="keywords" content="batch, batch files, PowerShell, Monad, DOS, Windows, NT, Terminal Server, OS/2, script, scripting, scripts, COMMAND.COM, CMD.EXE, DEBUG, errorlevel, FDISK, redirection, registry, RUNDLL, RUNDLL32, shutdown, logoff, reboot, user input, Rexx, administrator">
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-20832463-1']);
+_gaq.push(['_gat._anonymizeIp']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+</head>
+<body>
+
+<div class="DontPrint">
+
+<script type="text/javascript">
+new menu (MENU_ITEMS, MENU_TPL);
+</script>
+
+</div>
+
+
+<!-- ChangeDetection.com id="77m2rsxs9c" -->
+
+<div style="color: white; background-color: #2e5492; width: 100%; margin: 0; padding: 0; height: 62px; font-size: 150%">
+<img src="./pictures/logo650x62.jpg" width="650" height="62" alt="Rob van der Woude's Scripting Pages">
+</div>
+
+<h1 id="DummyTitle" style="display: none;">Rob van der Woude's Scripting Pages</h1>
+
+<p>&nbsp;</p>
+
+<p>On this site you will find all kinds of (administrative)
+scripting related information:</p>
+
+<ul>
+    <li>several scripting languages:
+        <a href="batchstart.php">batch files</a>,
+        <a href="wshstart.php">JScript</a>,
+        <a href="kixtartstart.php">KiXtart</a>,
+        <a href="perlstart.php">Perl</a>,
+        <a href="powershellstart.php">PowerShell</a>,
+        <a href="rexxstart.php">Rexx</a>,
+        <a href="wshstart.php">VBScript</a>&nbsp;...
+        even some <a href="csharpexamples.php">C#</a> code ...</li>
+    <li>some language reference material</li>
+    <li><a href="regexpstart.php">regular expressions</a></li>
+    <li>lots of sample scripts</li>
+    <li>scripting techniques and best practices</li>
+    <li>undocumented features, tricks and work-arounds</li>
+    <li>links to more scripting info</li>
+    <li>commands for <a href="unattended.php">unattended (silent) installations</a></li>
+    <li><a href="scriptingtools.php">downloadable tools and utilities</a></li>
+    <li><a href="books.php">titles of relevant books on scripting</a></li>
+    <li><a href="misc.php">and more</a>...</li>
+</ul>
+
+<p>Use the navigation menu on the left to browse to the information you need, or use the <a href="search.php">Search</a> function.<br>
+Don't forget to look at the <a href="faq.php">FAQ</a> for answers to common questions.</p>
+
+<p>On the <a href="news.php">News</a> page you'll find announcements of new or updated material on this site.<br>
+The <a href="whatsnew.php">What's New</a> page lists the web pages and source files ordered by last modification date.</p>
+
+<form action="http://www.ChangeDetection.com/detect.html" method="get" style="display: inline" onsubmit="window.open('http://www.ChangeDetection.com/detect.html'); return false;">
+<p>Use <a href="http://www.changedetection.com/">ChangeDetection</a> if you want to be notified of changes in particular pages: navigate to that page and then click the <input name="enter" value=" Monitor Changes " type="submit"> button at the bottom of the page.<br>
+You'll get an e-mail message <em>from changedetection.com</em> whenever the page is updated.</p>
+
+<p>Right now this site consists of over 400 web pages, plus over 1500 source files, so it is hardly feasible to "subscribe" to each and every page.<br>
+It might be a better idea to use ChangeDetection on my <a href="news.php">News</a> page, so you'll be notified of the major changes, including <em>new</em> pages.</p>
+</form>
+
+<!-- ChangeDetection.com detection="off" -->
+
+<h2>Disclaimer</h2>
+
+<p>It's a shame it's necessary, but here comes the small print...</p>
+
+<div id="SmallPrint" onclick="javascript:var sp=document.getElementById('SmallPrint');sp.style.fontSize='67%'">
+
+<p>Unless stated otherwise, these pages, the scripts presented and their sources are copyrighted freeware.<br>
+You may modify them, as long as a reference to the original code is included in the modified code.</p>
+
+<p>Use these scripts entirely at your own risk.<br>
+Many of the techniques used in these scripts, including but not limited to modifying the registry or system fiiles and settings, impose a risk of rendering the OS inoperable and losing data.<br>
+Unless you don't mind reinstalling the OS and losing data, make sure you have a <em>tested</em> full backup and the associated restore software available before running any of these scripts.<br>
+The author cannot be held responsible for any damage, direct nor consequential, caused by the use of, or inability to use the techniques or programs presented here, nor the programs' sources or part of the sources.</p>
+
+<p>Use of any of the techniques, programs or sources presented here implies agreement with these terms.</p>
+
+<p>All trademarks including but not limited to Microsoft, Windows, NT and Vista are used for identification purposes only and are the property of their respective owners.</p>
+
+</div>
+
+<div id="Magnify" class="DontPrint" style="display: none">
+
+<p>&nbsp;</p>
+
+<img src="./pictures/magnifying_glass.jpg" width="150" height="95" alt="Redisplay the small print in a larger font" title="Redisplay the small print in a larger font" onclick="javascript:var sp=document.getElementById('SmallPrint');sp.style.fontSize='200%'">
+
+</div>
+
+<script type="text/javascript">
+var sp = document.getElementById( "SmallPrint" );
+var mg = document.getElementById( "Magnify" );
+sp.style.fontSize = "67%";
+mg.style.display  = "block";
+</script>
+
+<p>&nbsp;</p>
+
+
+<div class="Aphorism DontPrint">
+
+<!-- ChangeDetection.com detection="off" -->
+
+<p>Two wrongs don't make a right, but three lefts do!</p>
+
+<!-- ChangeDetection.com detection="on" -->
+
+</div>
+<!-- ChangeDetection.com detection="off" -->
+
+<div class="DontPrint">
+
+<div style="height: 30px"></div>
+
+<hr style="width: 94%; height: 1px; padding: 0; margin-left: 3%">
+
+<table style="width: 100%; padding: 0 20px 0 10px">
+<tr style="vertical-align: baseline">
+    <td style="width: 50%; text-align: center"><form action="http://www.ChangeDetection.com/detect.html" method="get" style="display: inline" onsubmit="window.open('http://www.ChangeDetection.com/detect.html'); return false;">
+        <p style="display: inline"><!--<input name="enter" value=" Monitor Changes " onclick="window.open('','ChangeDetectionWiz','resizable=yes,scrollbars=yes,width=624,height=460');return true;" type="submit">-->
+        <input name="enter" value=" Monitor Changes " type="submit"></p>
+        </form></td>
+    <td style="width: 50%; text-align: right; font-size: 85%">page last uploaded:
+        1 April 2011, 09:54</td>
+</tr>
+</table>
+            
+<!-- Menu replacement if JavaScript is disabled -->
+<noscript>
+
+<div class="DontPrint">
+<table class="NoscriptMenu">
+<tr>
+    <td><a href="index.php">Home</a></td>
+</tr>
+<tr>
+    <td><a href="batchfiles.php">Batch Files</a></td>
+</tr>
+<tr>
+    <td><a href="csharpexamples.php">C#</a></td>
+</tr>
+<tr>
+    <td><a href="kixtart.php">KiXtart</a></td>
+</tr>
+<tr>
+    <td><a href="perl.php">Perl</a></td>
+</tr>
+<tr>
+    <td><a href="powershell.php">PowerShell</a></td>
+</tr>
+<tr>
+    <td><a href="regexp.php">Regular Expressions</a></td>
+</tr>
+<tr>
+    <td><a href="rexx.php">Rexx</a></td>
+</tr>
+<tr>
+    <td><a href="wsh.php">VBScript &amp; WSH</a></td>
+</tr>
+<tr>
+    <td><a href="wmistart.php">WMI</a></td>
+</tr>
+<tr>
+    <td><a href="adsistart.php">ADSI</a></td>
+</tr>
+<tr>
+    <td><a href="unattended.php">Silent Installs</a></td>
+</tr>
+<tr>
+    <td><a href="books.php">Books</a></td>
+</tr>
+<tr>
+    <td><a href="scriptingtools.php">Scripting Tools</a></td>
+</tr>
+<tr>
+    <td><a href="misc.php">Miscellaneous</a></td>
+</tr>
+<tr>
+    <td><a href="menu.php">Full Menu</a></td>
+</tr>
+</table>
+</div>
+
+</noscript>
+
+
+</div>
+
+<!-- ChangeDetection.com detection="off" -->
+
+
+</body>
+</html>

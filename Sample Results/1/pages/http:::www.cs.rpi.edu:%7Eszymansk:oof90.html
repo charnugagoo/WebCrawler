@@ -1,0 +1,171 @@
+<HTML>
+<HEAD>
+<TITLE>Object Oriented Fortran 90 Programming</TITLE>
+      <LINK REV = made                 HREF="mailto:Charles.D.Norton@jpl.nasa.gov">
+      <META HTTP-EQUIV="Reply-to"      CONTENT="Charles.D.Norton@jpl.nasa.gov">
+      <META NAME="Resource-type"       CONTENT="Document">
+      <META NAME="Keywords"            CONTENT="
+                  Fortran 90, Object-Oriented, Programming Languages,
+		  Scientific Programming, Fortran, Fortran 77, C++,
+		  Viktor Decyk, Charles Norton, Boleslaw Szymanski">
+      <META NAME="Description"         CONTENT="
+		  This page summarizes much of our current work in
+		  object-oriented programming using Fortran 90 on
+		  scalar workstations and distributed-memory supercomputers.">
+      <META NAME="Rating"              CONTENT="General">
+      <META NAME="Distribution"        CONTENT="Global">
+      <META NAME="Copyright"           CONTENT="1996 Charles D. Norton">
+</HEAD>
+
+<!-- Layout for the OO Fortran 90 page -->
+<FRAMESET ROWS=*,75>
+      <FRAME NAME=mainarea SRC=OOF90/main.html SCROLLING=auto>
+      <FRAME NAME=menubar SRC=OOF90/menu.html SCROLLING=auto>
+</FRAMESET>
+
+<!-- Support Browsers without Frames -->
+
+<NOFRAME>
+<HEAD>
+<TITLE>Object Oriented Fortran 90 Programming</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#ffffff"
+text="#000000" link="#0000aa" vlink="#0000aa" alink="#0077ff" >
+
+<H1><CENTER>High Performance Object-Oriented Fortran 90 Programming</H1></CENTER>
+
+<H2>Viktor K. Decyk, Charles D. Norton and Boleslaw K. Szymanski</H2>
+
+<B>Note that the best way to view these pages is with a browser that
+supports tables and frames. Much of the information is current inaccessible
+without this support. Hopefully, this will change in the future.</B><P>
+
+Welcome to our WWW page introducing our research in object-oriented
+programming using the Fortran 90 programming language. Fortran 90 is
+a modern language that introduces many important new features
+beneficial for scientific programming. While the array-syntax
+notation has received the most attention, we have found that many
+modern software development techniques can be supported by this
+language, including object-oriented concepts.<P>
+
+While Fortran 90 is not a full object-oriented language it can
+directly support many of the important concepts of such languages
+including abstract data types, encapsulation, function overloading,
+and classes. Other concepts, such as inheritance and dynamic
+dispatching, are not supported directly, but can be emulated.  (Direct
+support is a
+<A HREF="http://www.cs.rpi.edu/~szymansk/OOF90/f2000.html" TARGET=_parent">
+Fortran 2000</A> requirement.)  Since Fortran 90 is
+backward compatible with Fortran 77, new concepts can be introduced
+into existing programs in a controlled manner. This allows
+experienced Fortran 77 programmers to modernize their software,
+making it easier to understand, modify, share, explain, and extend
+based on the benefits modern programming principles provide.<P>
+
+For a short summary of the major points see<B>
+<A HREF="http://www.cs.rpi.edu/~nortonc/OOF90/Forum.html"
+TARGET=_parent>"Expressing
+Object-Oriented Concepts in Fortran 90"</A></B>, which  appeared
+in the ACM Fortran Forum, vol. 16, num. 1, April 1997.<P>
+
+See <B>
+<A HREF="http://www.cs.rpi.edu/~szymansk/OOF90/F90_Objects.html"
+TARGET=_parent>"Introduction to
+Object-Oriented Concepts Using Fortran 90".</A></B> for a more
+detailed, but still simplified discussion (subtyping and
+dynamic dispatching are not discussed here).<P>
+
+We have written a variety of object-oriented plasma particle-in-cell
+programs on sequential workstations and high performance distributed
+memory computers in Fortran 90 and C++.  <FONT COLOR=aa0000> All of
+our Fortran 90 programs execute more quickly than the equivalent C++
+versions, yet the abstraction modeling capabilities that we needed
+were comparably powerful.  </FONT> We encourage you to
+explore these pages and to contact us directly with your questions and
+commentary.<P>
+
+<H2>
+<FONT COLOR=#aa0000>
+Gotcha!
+</FONT>
+<FONT COLOR=#884488>
+<A HREF="http://www.cs.rpi.edu/~szymansk/OOF90/bugs.html">
+Click here</A> for Fortran 90 bug bites.
+</FONT>
+</H2>
+
+For beginners to Fortran 90 we recommend F, a subset language
+which includes all of the new modern features of Fortran 90
+and excludes the less desirable features. F is simple, inexpensive,
+and encourages good programming style compatible with Fortran 90.
+
+<HR SIZE=6><BR>
+
+<H2>Main Menu</H2>
+<UL>
+<LI>
+<A HREF="http://www.cs.rpi.edu/~nortonc/OOF90/f90ex.html"
+   TARGET=mainarea>Why Fortran 90?</A>
+<LI>
+<A HREF="http://www.cs.rpi.edu/~nortonc/OOF90/pubs.html"
+   TARGET=mainarea>Publications and Presentations</A>
+<LI>
+<A HREF="http://www.cs.rpi.edu/~nortonc/OOF90/basic-examples.html"
+       TARGET=mainarea>Basic Examples</A>
+<LI>
+<A HREF="http://www.cs.rpi.edu/~nortonc/OOF90/adv-examples.html"
+       TARGET=mainarea>Advanced Examples</A>
+<LI>
+<A HREF="http://www.cs.rpi.edu/~nortonc/OOF90/bugs.html"
+       TARGET=mainarea>Fortran 90 Bug Bites</A>
+<LI>
+<A HREF="http://www.cs.rpi.edu/~nortonc/OOF90/performance.html"
+   TARGET=mainarea>Performance Comparisons</A>
+<LI>
+<A HREF="http://www.cs.rpi.edu/~nortonc/OOF90/eval.html"
+   TARGET=mainarea>Vendor Compiler Awards!</A>
+<!--
+<LI>
+<A HREF="http://www.cs.rpi.edu/~nortonc/OOF90/benchmarks.html"
+   TARGET=mainarea>Speed Benchmarks</A>
+-->
+<LI>
+<A HREF="http://www.cs.rpi.edu/~nortonc/OOF90/contact.html"
+   TARGET=mainarea>Authors</A>
+<LI>
+<A HREF="http://www.cs.rpi.edu/~nortonc/OOF90/info.html"
+   TARGET=mainarea>More Information</A>
+<LI>
+<A HREF="http://www.cs.rpi.edu/~nortonc/OOF90/new.html"
+   TARGET=mainarea>What's New</A>
+</UL>
+
+<H5><FONT COLOR=#aa0000>
+Acknowledgments
+</FONT></H5>
+
+<FONT SIZE=-1 COLOR=#000000> The research of Viktor K. Decyk was
+carried out in part at UCLA and was sponsored by US-DOE and NSF.  It
+was also carried out in part at the Jet Propulsion Laboratory,
+California Institute of Technology, under a contract with the National
+Aeronautics and Space Administration.  The research of Charles
+D. Norton was supported by the National Aeronautics and Space
+Administration Graduate Student Researchers Program and by NSF. The research of
+Boleslaw K.  Szymanski was partially supported by NSF.  We appreciate
+the support of Robert D. Ferraro, Associate Project Manager NASA HPCC,
+Jet Propulsion Laboratory, California Institute of Technology.
+Portions of this research are based on sections of Charles Norton's
+Ph.D thesis.</FONT>
+
+<P>
+
+<IMG ALIGN=left SRC="mail.gif" alt="">
+Please contact us with your<A HREF="mailto:decyk@physics.ucla.edu,
+Charles.D.Norton@jpl.nasa.gov,szymansk@cs.rpi.edu">
+questions and comments</A>.
+
+</BODY>
+</NOFRAME>
+
+</HTML>

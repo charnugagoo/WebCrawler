@@ -1,0 +1,1220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html>
+
+<head>
+<base href="http://www.egenix.com/products/python/mxODBC/" />
+
+ <title>eGenix.com: Products: Python: mxODBC - Python ODBC Database Interface</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <meta charset="UTF-8" />
+ <meta name="language" content="en-us" />
+ <meta name="robots" content="index" />
+ <meta name="description"
+       content="mxODBC&amp;trade; is the eGenix flagship product for connecting Python to all major databases, on all major platforms, using a Python DB-API 2.0 standard compatible ODBC interface." />
+ 
+ <link rel="shortcut icon" type="image/ico"
+       href="http://www.egenix.com/favicon.ico" />
+ <link rel="apple-touch-icon"
+       href="http://www.egenix.com/apple-touch-icon.png" />
+ <link rel="alternate" type="application/rss+xml" title="eGenix.com RSS2 Feed" href="/company/news/rss2" />
+ <link rel="stylesheet" type="text/css"
+       href="http://www.egenix.com/egenix_css" />
+ <link rel="stylesheet" type="text/css" media="print"
+       href="http://www.egenix.com/print.css" /> 
+ 
+ 
+ <script type="text/javascript"
+         src="http://www.egenix.com/egenix_js"></script>
+<!--[if IE 6]>
+ <link rel="stylesheet" type="text/css"
+       href="http://www.egenix.com/ie6.css" /> 
+ <script type="text/javascript"
+         src="http://www.egenix.com/ie6.js"></script>
+<![endif]-->
+<!--[if IE 7]>
+ <link rel="stylesheet" type="text/css"
+       href="http://www.egenix.com/ie7.css" /> 
+ <script type="text/javascript"
+         src="http://www.egenix.com/ie7.js"></script>
+<![endif]-->
+<script type="text/javascript">
+  egenix.verifyTopLevel();
+</script>
+</head>
+
+<body id="egenix-body">
+                     
+<div id="egenix-page">
+
+  <div id="egenix-logo">
+   <a href="http://www.egenix.com"><img alt="eGenix.com"
+    src="http://www.egenix.com/images/egenix-logo.png"></a>
+  </div>
+
+  <div id="egenix-page-box">
+
+    <div id="egenix-page-box-head">
+      <div id="egenix-page-box-menu">
+        <div id="egenix-menu">      
+           
+<!-- eGenix Main Menu -->
+
+<ul id="egenix-nav">
+
+           <!-- Static Menu Entries -->
+           <li>
+             <a href="http://www.egenix.com/">Home </a>
+               
+           </li>
+           <li>
+             <a href="http://www.egenix.com/products">Products </a>
+               <ul>
+                 <li><a href="http://www.egenix.com/products/python/"><span class="egenix-menu-heading">Python</span></a></li>
+                 <li><a href="http://www.egenix.com/products/python/mxODBC/">&middot; mxODBC</a></li>
+                 <li><a href="http://www.egenix.com/products/python/mxODBCConnect/">&middot; mxODBC Connect</a></li>
+                 <li><a href="http://www.egenix.com/products/python/mxBase/">&middot; mx Base</a></li>
+                 <li><a href="http://www.egenix.com/products/python/mxBase/mxDateTime/">&nbsp;&nbsp;&middot; mxDateTime</a></li>
+                 <li><a href="http://www.egenix.com/products/python/mxBase/mxTextTools/">&nbsp;&nbsp;&middot; mxTextTools</a></li>
+                 <li><a href="http://www.egenix.com/products/python/mxBase/mxBeeBase/">&nbsp;&nbsp;&middot; mxBeeBase</a></li>
+                 <li><a href="http://www.egenix.com/products/python/mxBase/mxTools/">&nbsp;&nbsp;&middot; mxTools</a></li>
+                 <li><a href="http://www.egenix.com/products/python/mxBase/mxProxy/">&nbsp;&nbsp;&middot; mxProxy</a></li>
+                 <li><a href="http://www.egenix.com/products/python/mxBase/mxURL/">&nbsp;&nbsp;&middot; mxURL</a></li>
+                 <li><a href="http://www.egenix.com/products/python/mxBase/mxUID/">&nbsp;&nbsp;&middot; mxUID</a></li>
+                 <li><a href="http://www.egenix.com/products/python/mxBase/mxStack/">&nbsp;&nbsp;&middot; mxStack</a></li>
+                 <li><a href="http://www.egenix.com/products/python/mxBase/mxQueue/">&nbsp;&nbsp;&middot; mxQueue</a></li>
+                 <li><a href="http://www.egenix.com/products/python/mxExperimental/">&middot; mx Experimental</a></li>
+                 <li><a href="http://www.egenix.com/products/python/mxExperimental/mxNumber/">&nbsp;&nbsp;&middot; mxNumber</a></li>
+                 <li><a href="http://www.egenix.com/products/python/mxExperimental/mxTidy/">&nbsp;&nbsp;&middot; mxTidy</a></li>
+                 <li><a href="http://www.egenix.com/products/python/pyOpenSSL/">&middot; pyOpenSSL</a></li>
+                 <li><a href="http://www.egenix.com/products/python/PyRun/">&middot; eGenix PyRun</a></li>
+                 <li><a href="http://www.egenix.com/products/"><span class="egenix-menu-spacer">&nbsp;&nbsp;</span></a></li>
+                 <li><a href="http://www.egenix.com/products/zope/"><span class="egenix-menu-heading">Zope</span></a></li>
+                 <li><a href="http://www.egenix.com/products/zope/mxODBCZopeDA/">&middot; mxODBC Zope DA</a></li>
+                 <li><a href="http://www.egenix.com/products/"><span class="egenix-menu-spacer">&nbsp;&nbsp;</span></a></li>
+                 <li><a href="http://www.egenix.com/products/plone/"><span class="egenix-menu-heading">Plone</span></a></li>
+                 <li><a href="http://www.egenix.com/products/plone/mxODBCZopeDA/">&middot; mxODBC Zope DA for Plone</a></li>
+               </ul>
+           </li>
+           <li>
+             <a href="http://www.egenix.com/solutions">Solutions </a>
+               <ul>
+                 <li><a href="http://www.egenix.com/solutions/newsletters/">EMail Newsletters</a></li>
+                 <li><a href="http://www.egenix.com/solutions/sms-alerts/">SMS Text Alerts</a></li>
+               </ul>
+           </li>
+           <li>
+             <a href="http://www.egenix.com/services">Services </a>
+               <ul>
+                 <li><a href="http://www.egenix.com/services/projects/">Custom Python Projects</a></li>
+                 <li><a href="http://www.egenix.com/services/consulting/">Consulting</a></li>
+                 <li><a href="http://www.egenix.com/services/support/">Support</a></li>
+               </ul>
+           </li>
+           <li>
+             <a href="http://www.egenix.com/library">Library </a>
+               <ul>
+                 <li><a href="http://www.egenix.com/library/presentations/">Presentations &amp; Talks</a></li>
+                 <li><a href="http://www.egenix.com/library/moinmoin/">MoinMoin Library</a></li>
+               </ul>
+           </li>
+           <li>
+             <a href="http://www.egenix.com/support">Support </a>
+               <ul>
+                 <li><a href="http://www.egenix.com/services/support/">Product Support</a></li>
+                 <li><a href="http://www.egenix.com/support/updates/">Product Updates</a></li>
+                 <li><a href="http://www.egenix.com/support/mailing-lists/">Mailing Lists</a></li>
+               </ul>
+           </li>
+           <li>
+             <a href="http://www.egenix.com/company">Company </a>
+               <ul>
+                 <li><a href="http://www.egenix.com/company/about/">About</a></li>
+                 <li><a href="http://www.egenix.com/company/contact/">Contact</a></li>
+                 <li><a href="http://www.egenix.com/company/news/">News</a></li>
+                 <li><a href="http://www.egenix.com/company/press/">Press</a></li>
+                 <li><a href="http://www.egenix.com/company/partners/">Partners</a></li>
+                 <li><a href="http://www.egenix.com/company/legal/">Legal</a></li>
+               </ul>
+           </li>
+           <li>
+             <a href="http://www.egenix.com/shop/">Shop</a>
+               
+           </li>    
+
+           
+</ul>
+
+        </div>
+      </div>
+    </div>
+
+    <div id="egenix-page-box-body">
+      <div id="egenix-title-bar">
+        <span>mxODBC</span>
+      </div>
+      
+      <div id="egenix-location-bar">
+        <div id="egenix-location-bar-breadcrumbs"><a href="http://www.egenix.com">eGenix.com</a> &middot; <a href="http://www.egenix.com/products">Products</a> &middot; <a href="http://www.egenix.com/products/python">Python</a> &middot; <a href="http://www.egenix.com/products/python/mxODBC">mxODBC - Python ODBC Database Interface</a></div>
+      </div>
+      <div id="egenix-content-area">
+        <div id="egenix-content-leadin">
+        </div>
+        <div id="egenix-content">
+          
+
+
+
+<h1 class="egenix-title">mxODBC - Python ODBC Database Interface</h1>
+
+<div class="egenix-teaser">mxODBC<a class="egenix-tm" href="/company/legal/trademarks.html">&trade;</a> is the eGenix flagship product for connecting <a href="http://www.python.org/">Python</a> to all major databases, on all major platforms, using a Python <a href="http://www.python.org/dev/peps/pep-0249/">DB-API 2.0</a> standard compatible ODBC interface.</div>
+
+<div class="egenix-version">
+  Version: 3.2.1
+</div>
+
+
+
+<h2><a name="Introduction" href="#Introduction">Introduction</a></h2>
+<p> <strong>mxODBC</strong><a class="egenix-tm" href="/company/legal/trademarks.html">™</a> provides an easy to use, high-performance, reliable and robust <a href="http://www.python.org/">Python</a> interface to  ODBC compatible databases such as <a href="http://www.microsoft.com/sql/">MS SQL Server</a> and <a href="http://office.microsoft.com/access/">MS Access</a>, <a href="http://www.oracle.com/database/index.html">Oracle Database</a>, <a href="http://www-01.ibm.com/software/data/db2/">IBM DB2</a> and <a href="http://www-01.ibm.com/software/data/informix/">Informix </a>, <a href="http://www.sybase.com/products/databasemanagement/adaptiveserverenterprise">Sybase ASE</a> and <a href="http://www.sybase.com/products/databasemanagement/sqlanywhere">Sybase Anywhere</a>, <a href="http://www.mysql.com/products/">MySQL</a>, <a href="http://www.postgresql.org/">PostgreSQL</a>, <a href="https://www.sdn.sap.com/irj/sdn/maxdb">SAP MaxDB</a> and many more. It is an extension to our <a href="/products/python/mxBase">eGenix.com mx Base Distribution</a>.
+</p><p><strong>ODBC</strong> refers to <a href="http://en.wikipedia.org/wiki/Open_Database_Connectivity">Open Database Connectivity</a>
+and is the industry standard API for connecting applications to
+databases. In order to facilitate setting up ODBC connectivity,
+operating systems typically provide ODBC Managers which help set up the
+ODBC drivers and manage the binding of the applications against these
+drivers. On Windows and Mac OS X the ODBC Manager is built into the
+system. On Unix platforms, you can choose one of the ODBC managers <a href="http://www.unixodbc.org/">unixODBC</a>, <a href="http://www.iodbc.org/">iODBC</a> or <a href="http://web.datadirect.com/products/odbc/index.html">DataDirect</a>, which provide the same ODBC functionality on most Unix systems.</p><p>Databases usually ship with ODBC drivers for Windows, so it's
+easy to get Python connected to a database on Windows. On Linux and Mac
+OS X, the situation is not as bright, but getting a lot better with the
+growing popularity of these platforms. If you have trouble finding a
+database driver for your platform, try the <a href="http://www.sqlsummit.com/ODBCVend.htm">ODBC vendor list on SQLSummit.com</a>, or have a look at our mxODBC Connect product:<br>
+</p>
+<p class="egenix-important-notice">If you are looking for a <span style="font-weight: bold;">remote database
+connectivity solution</span> for Python, you may be interested in our 
+<a href="/products/python/mxODBCConnect/"><strong>mxODBC Connect</strong></a>
+product, which eliminates the need to have an ODBC driver for the client side of the application.
+It specializes on remote database connections such as the
+ones you typically find in web-applications, e.g. where multiple Linux
+servers need to communicate with a company database running on a
+Windows
+server. </p>
+<h2><a name="Features" href="#Features">Features</a></h2>
+<ul>
+  <li><strong>Python Database API 2.0 Compliance</strong>: the mxODBC API is fully <a href="http://www.python.org/dev/peps/pep-0249/">Python DB-API 2.0</a> compatible and implements a large number of powerful extensions.</li>
+  <li><strong>Support for all recent ODBC Versions</strong>: mxODBC works with ODBC drivers implementing the ODBC version specifications 2.0 - 3.8.</li>
+  <li><strong>Uses ODBC 3 APIs</strong>: provided the ODBC driver is capable of using ODBC 3 APIs, mxODBC will use them for added efficiency. </li>
+  <li><strong>Support for all popular ODBC Drivers</strong>: mxODBC
+includes adjustments and work-arounds to support MS SQL Server Native
+Client (both on Windows and Linux), MS SQL Server ODBC Driver, FreeTDS ODBC Driver, Oracle Instant
+Client ODBC Driver, IBM DB2 ODBC Driver, Sybase ASE ODBC Driver,
+Netezza ODBC Driver, Teradata ODBC Driver, PostgreSQL ODBC Driver,
+MySQL ODBC Driver, .MaxDB ODBC Driver as well as the ODBC driver sets
+of EasySoft, DataDirect, OpenLink, Actual Technologies.<br>
+  </li>
+
+  
+  <li><span style="font-weight: bold;">Support for all popular ODBC Driver Managers:</span> mxODBC comes with subpackages for the native Windows and Mac OS X ODBC managers, as well as the ODBC managers <a href="http://www.unixodbc.org/">unixODBC</a>, <a href="http://www.iodbc.org/">iODBC</a> and <a href="http://web.datadirect.com/products/odbc/index.html">DataDirect</a>, which are commonly used on Unix systems.<br>
+  </li>
+<li><strong>32-bit and 64-bit ODBC</strong>: mxODBC supports both 32-bit and 64-bit versions of the ODBC standard on all supported platforms.</li><li><strong>Stable, robust and reliable</strong>: the mxODBC API has been in active production use for more than 10 years.</li>
+  <li><strong>ODBC Catalog &amp; Introspection Functions</strong>: mxODBC Client API provides methods e.g. to list tables, find column specifications, query index relationships, etc. </li>
+  <li><strong>Dynamic ODBC Configuration</strong>: adjust ODBC connection parameters dynamically, e.g. set timeouts, read-only access, auto-commit, etc. </li>
+  <li><strong>Full Unicode Support</strong>:
+use Unicode for managing text data in your client applications - even
+if the database does not natively support Unicode, mxODBC will
+automatically provide the necessary conversions on-the-fly. </li>
+<li><strong>Support</strong><strong> </strong><strong>for</strong><strong>
+	</strong><strong>Multiple</strong><strong> </strong><strong>Result</strong><strong>
+	</strong><strong>Sets</strong>: call stored procedures and access
+	all returned result sets using an easy to API. Easily free up
+	resources in case  result sets are no longer needed.
+</li>
+<li><strong>Useful</strong><strong> DB-API</strong><strong> Extensions:</strong><strong></strong></li>
+<li style="margin-left: 40px;"><strong>connection.autocommit</strong><strong><span style="font-weight: normal;">
+		</span></strong><strong><span style="font-weight: normal;">to</span></strong><strong><span style="font-weight: normal;">
+		</span></strong><strong><span style="font-weight: normal;">easily</span></strong><strong><span style="font-weight: normal;">
+		</span></strong><strong><span style="font-weight: normal;">turn</span></strong><strong><span style="font-weight: normal;">
+		</span></strong><strong><span style="font-weight: normal;">on/off</span></strong><strong><span style="font-weight: normal;">
+		</span></strong><strong><span style="font-weight: normal;">the</span></strong><strong><span style="font-weight: normal;">
+		</span></strong><strong><span style="font-weight: normal;">ODBC</span></strong><strong><span style="font-weight: normal;">
+		</span></strong><strong><span style="font-weight: normal;">autocommit</span></strong><strong><span style="font-weight: normal;">
+		</span></strong><strong><span style="font-weight: normal;">feature</span></strong><strong></strong></li>
+<li style="margin-left: 40px;"><strong>cursor</strong><strong><span style="font-weight: normal;">
+		</span></strong><strong><span style="font-weight: normal;">and</span></strong><strong><span style="font-weight: normal;">
+		</span></strong><strong>connection</strong><strong> </strong><strong>objects</strong>
+		usable as
+		<strong>context</strong><strong> </strong><strong>managers</strong></li>
+<li style="margin-left: 40px;"><b>Adjustable</b><b> </b><b>.paramstyle:</b><b> </b>mxODBC
+		supports both the ODBC question mark positional parameter binding
+		style as well as the named parameter styles used by e.g. Oracle.</li>
+<li style="margin-left: 40px;"><b>cursor.scroll()</b> to scroll the cursor in result sets
+		without actually fetching data.&nbsp;</li>
+<ul>
+<li><b>ODBC</b><b> </b><b>cursor/connection</b><b> </b><b>option</b><b>
+		</b><b>methods</b> to adjust ODBC cursors/connections to your
+		application's needs and optimize performance by e.g. declaring a
+		connection read-only.
+	<br>
+
+  </li>
+</ul>
+
+  <li><strong>Configurable Data Type Mappings</strong>:
+      <ul>
+        <li>Supports Python type binding and Database type binding for efficient data exchange. </li>
+        <li>Supports mxDateTime and <strong>Python's time and datetime modules</strong> for date/time value exchange. </li>
+        <li>Supports standard Python floats, integers, longs and <strong>Python's decimal module</strong> for loss-less numeric value exchange.</li>
+      <li>Supports <span style="font-weight: bold;">Python 2.7 memoryview objects</span>.<br>
+      </li>
+
+        <li>Automatically handles and supports unknown data types and user data types via string conversion. </li>
+      </ul>
+  </li>
+  <li><strong>Multi-Version Python Support</strong>: mxODBC works with&nbsp;<strong> Python 2.4, 2.5, 2.6 and 2.7.</strong></li>
+  <li><strong>Full 64-bit Support:</strong> mxODBC runs on the following 64-bit platforms natively: Windows, Linux, FreeBSD and Mac OS X.<br>
+</li>
+
+  <li><strong>Highly Portable Codebase</strong>: in addition to the already supported platforms for mxODBC, we provide <a href="/services/support/">custom porting services</a> for more exotic platforms.</li>
+  <li><strong>Easy installation</strong>:
+using Windows installers, our Python distutils compatible prebuilt
+Python packages or setuptools/zc.buildout/pip compatible egg package
+archives.</li>
+  <li><strong>Easy configuration</strong>: use ODBC manager GUI tools for easy configuration of ODBC data sources, then access these data sources by name from Python. </li>
+ </ul>
+<h2><a name="SystemRequirements" href="#SystemRequirements">System Requirements</a></h2>
+<p>The eGenix mxODBC distribution includes the mxODBC package needed to
+connect Python to an ODBC manager. However, it does not include an ODBC
+manager or any ODBC drivers. You have to have these installed in order
+to be able to use mxODBC with Python.</p>
+<h3>Windows:</h3>
+<p>On Windows, the situation is very simple: most databases come with
+ODBC drivers and register them with the Windows ODBC manager that's
+part of every Windows system.</p>
+<p>Please consult the ODBC driver documentation for details on how to setup ODBC data sources. The <a href="mxODBC.pdf">mxODBC User Manual</a> also includes a section on this topic and some helpful hints in case you run into problems. </p>
+<h3> Linux, FreeBSD, Solaris, AIX:</h3>
+<p>On Unix, you will have to install one of the popular ODBC managers <a href="http://www.iodbc.org/">iODBC</a> or <a href="http://www.unixodbc.org/">unixODBC</a> and then register the ODBC drivers for your database with these ODBC managers.</p>
+<p>Linux systems usually come with at least one of these ODBC managers preinstalled. Please see the <a href="mxODBC.pdf">mxODBC  User Manual</a> for setup instructions. </p>
+<h3>Mac OS X:</h3>
+<p>On Mac OS X, you can use the system system ODBC manager (which is a version of the popular <a href="http://www.iodbc.org/">iODBC</a> manager). </p>
+<p>Please see the <a href="mxODBC.pdf">mxODBC User Manual</a> for setup instructions. </p>
+<h2><a name="Licensing" href="#Licensing">Licensing</a></h2>
+<p> The eGenix.com mxODBC Distribution is a commercial product and made available under the terms and conditions of the <a href="eGenix.com-Commercial-License-1.3.0.pdf">eGenix.com Commercial License Agreement, Version 1.3.0</a> (PDF file). </p>
+<p> When purchasing a license for the mxODBC product, you will receive a digitally signed <i>Proof of Authorization</i> together with a license file authorizing you to install and use the product.</p>
+mxODBC is available in different editions to meet your specific needs. Please see the <a href="#mxODBCEditions">mxODBC Editions</a> section for details.
+<h2><a name="Evaluation" href="#Evaluation">Evaluation</a></h2>
+<p> If you would like to evaluate the eGenix.com mxODBC Distribution, please request an <a href="evalrequest/?product=mxODBC32"><strong>evaluation license</strong></a> or send an email to the <a href="mailto:sales@egenix.com?subject=mxODBC%20Evaluation%20Request">eGenix.com Sales Team</a> and include the following information: name of the licensee, number of evaluation licenses. </p>
+<p>We will then send you the requested number of evaluation licenses for the mxODBC Professional Edition.
+The evaluation licenses have a built-in timeout of 30 days, but are
+otherwise fully functional. </p>
+<p> If you are satisfied with the product, you can then proceed to the next section. </p>
+<h2><a name="BuyLicenses" href="#BuyLicenses">Buy Licenses</a></h2>
+<p> Production licenses for the mxODBC product can be bought via our <a href="/shop/">eGenix.com Online Shop</a>. Licenses are sold per Python installation. If you are installing the product on a shared server which is
+accessible over a network, then you have to purchase a separate license
+for each machine that can access the installation via this server.</p>
+
+<p>For prices and volume discounts please check the <a href="https://secure.shareit.com/shareit/product.html?productid=169926&amp;cart=1">mxODBC License Shop Page</a>. We also offer site and corporate licenses. Please write to <a href="mailto:sales@egenix.com">sales@egenix.com</a> for quotes on these.</p>
+<p> After purchase, you will receive the necessary license files from
+eGenix.com within two business by email to the shipping address you
+specified in the ordering process. </p>
+
+<p> If you need to buy licenses for third parties (e.g. as contractor or reseller), please consult <a href="mailto:sales@egenix.com">sales@egenix.com</a> for instructions. </p>
+
+<p>If you have questions about the ordering process, or the needed number of licenses, please write to the <a href="mailto:sales@egenix.com">eGenix.com Sales Team</a>. </p>
+<h3><a name="mxODBCEditions" href="#mxODBCEditions">mxODBC Editions</a></h3>
+<p>mxODBC licenses are available in different editions to meet your specific needs:<br>
+</p>
+
+<table style="text-align: left; width: 100%;" class="egenix-table">
+
+   <thead>   
+    <tr class="egenix-table-header">
+      <td style="vertical-align: top;">Feature<br>
+      </td>
+      <td colspan="4" rowspan="1" style="vertical-align: top;"><a href="https://secure.shareit.com/shareit/product.html?productid=169926&amp;cart=1">Standard Edition</a> for ...<br>
+      </td>
+      <td style="vertical-align: top;"><a href="https://secure.shareit.com/shareit/product.html?productid=300449811&amp;cart=1">Professional Edition</a><br>
+      </td>
+    </tr>
+    <tr class="egenix-table-subheader">
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><a href="https://secure.shareit.com/shareit/product.html?productid=300537677&amp;cart=1">MS SQL Server</a><br>
+      </td>
+      <td style="vertical-align: top;"><a href="https://secure.shareit.com/shareit/product.html?productid=300537676&amp;cart=1">Oracle</a><br>
+      </td>
+      <td style="vertical-align: top;"><a href="https://secure.shareit.com/shareit/product.html?productid=300537675&amp;cart=1">IBM DB2</a><br>
+      </td>
+      <td style="vertical-align: top;"><a href="https://secure.shareit.com/shareit/product.html?productid=300537678&amp;cart=1">Sybase ASE</a><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">SQL Server Support<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><img alt="X" title="Included" src="check-mark-10px.png"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><img alt="X" title="Included" src="check-mark-10px.png">
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Oracle Support<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><img alt="X" title="Included" src="check-mark-10px.png">
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><img alt="X" title="Included" src="check-mark-10px.png">
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">DB2 Support<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><img alt="X" title="Included" src="check-mark-10px.png">
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><img alt="X" title="Included" src="check-mark-10px.png">
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Sybase ASE Support<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><img alt="X" title="Included" src="check-mark-10px.png">
+      </td>
+      <td style="vertical-align: top; text-align: center;"><img alt="X" title="Included" src="check-mark-10px.png">
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Teradata Support<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><img alt="X" title="Included" src="check-mark-10px.png">
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Netezza Support<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><img alt="X" title="Included" src="check-mark-10px.png">
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">MySQL Support<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><img alt="X" title="Included" src="check-mark-10px.png">
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">PostgreSQL Support<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><img alt="X" title="Included" src="check-mark-10px.png">
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">MaxDB Support<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><img alt="X" title="Included" src="check-mark-10px.png">
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">MS Access Support<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><img alt="X" title="Included" src="check-mark-10px.png">
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Support for Other Databases<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><img alt="X" title="Included" src="check-mark-10px.png">
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Max. Number of Connections<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">10<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">10<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">10<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">10<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">unlimited<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Number of CPUs<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">1<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">1<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">1<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">1<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">1<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+The edition features are enabled via the license files that you
+receive after purchase. The download packages are the same for all
+editions.
+<h3><a name="StandardEdition" href="#StandardEdition">Standard Edition</a></h3>
+<p>The low-cost <a href="https://secure.shareit.com/shareit/product.html?productid=169926&amp;cart=1">Standard Edition License</a> allows installation of mxODBC for use
+in one Python installation. Depending on the edition variant, it allows
+working with MS SQL Server, Oracle, IBM DB2 or Sybase ASE database
+backends only. The maximum number of connections per process is limited
+to 10 connections.</p>
+<p>If you need to connect to multiple database backends, ones which are
+not listed here, or have a need to more than 10 connections per
+process, please have a look at the <a href="#ProfessionalEdition">Professional Edition</a>.</p>
+<p>This edition is ideal for users who normally only work with one specific database backend.</p>
+<h3><a name="ProfessionalEdition" href="#ProfessionalEdition">Professional Edition</a></h3>
+<p>The <a href="https://secure.shareit.com/shareit/product.html?productid=300449811&amp;cart=1">Professional Edition License</a>
+allows installation of mxODBC for use
+in one Python installation. There is no limitation on the database
+backend or the number of open connections per process - you can benefit
+from the full mxODBC functionality on all platforms.<br>
+</p>
+<p>This edition is ideal for users in more diverse environments and in
+situations where the number of connections should not be limited, e.g.
+in a web server environment.</p>
+<h3><a name="ProfessionalEditionUpgrade" href="#ProfessionalEditionUpgrade">Professional Edition Upgrade</a></h3>
+<p>If you are intending to upgrade from an existing mxODBC license to the new mxODBC 3.2, please contact the <a href="mailto:sales@egenix.com">eGenix.com Sales Team</a>  with your existing license serials for details for an upgrade discount coupon.</p>
+<p>We will give out 20% discount coupons for upgrade purchases going 
+from mxODBC 2.x to 3.2 and 50% coupons for upgrades from mxODBC 3.x to 
+3.2. After upgrade, use of the original license
+from which you upgraded is no longer permitted.</p>
+<p>Please note that upgrade coupons are not available for the low-cost standard editions.<br>
+</p>
+
+<h3><a name="ProductDevelopmentEdition" href="#ProductDevelopmentEdition">Product Development Edition</a></h3>
+<p> For developers who want to integrate mxODBC into an application or product, we offer a <a href="https://secure.shareit.com/shareit/product.html?productid=300537674&amp;cart=1">Product Development Edition License</a> which allows royalty-free redistribution of mxODBC as part of a product built by a developer.</p>
+<p>Developer licenses for the mxODBC product can be bought via our <a href="/shop/">eGenix.com Online Shop</a>.
+Licenses are sold per developer and product, e.g. if you have one developer
+working on two products integrating mxODBC, you will need to purchase
+two licenses. If you have three developers working on one product, you
+will need to purchase three licenses in order to benefit from the
+royalty-free distribution right.<br>
+</p>
+<p>For prices  please check the <a href="https://secure.shareit.com/shareit/product.html?productid=300537674&amp;cart=1">mxODBC Product Development Edition License Shop Page</a>. Volume discounts are available on request. Please contact the <a href="mailto:sales@egenix.com">eGenix.com Sales Team</a> for quotes. <br>
+</p>
+<h3><a name="ProductDevelopmentEditionUpgrade" href="#ProductDevelopmentEditionUpgrade">Product Development Edition Upgrade</a></h3>
+<p>If you are looking for upgrades to your existing mxODBC Developer CPU
+ Licenses or mxODBC Product Development Edition Licenses, we will 
+provide you with upgrade coupons. Please contact <a href="mailto:sales@egenix.com">eGenix.com Sales Team</a> with your existing license serials for details for an upgrade discount coupon.</p>
+<p>We will give out 20% discount coupons for upgrade purchases going from 
+mxODBC 2.x to 3.2 and 50% coupons for upgrades from mxODBC 3.x to 3.2. After upgrade, use of the original license
+from which you upgraded is no longer permitted.</p>
+
+<p>Please note that we have changed the licensing scheme for mxODBC
+development licenses to a per-developer and product based one in 3.1 and later, to
+better meet our customer's requirements. If you have questions, please contact the <a href="mailto:sales@egenix.com">eGenix.com Sales Team</a>. </p>
+
+<h3>Alternative Redistribution Forms  </h3>
+<p>If you want to redistribute mxODBC as part of a product on a per-installation
+basis (rather than on a per developer and product basis), you can do so by
+purchasing standard or professional edition licenses in bulk and then redistribute these to your customers. For larger
+volumes we also have a special reseller agreement to simplify the
+process. Please write to the <a href="mailto:sales@egenix.com">eGenix.com Sales Team</a> for instructions and more information.</p>
+<h2><a name="Documentation" href="#Documentation">Documentation</a></h2>
+<p> The following documentation is available for mxODBC:</p>
+<p><strong><a href="mxODBC.pdf">mxODBC User Manual and Reference Guide</a></strong> - <a href="doc/">HTML</a> and <a href="mxODBC.pdf">PDF</a><br></p>
+<blockquote>The manual includes an installation guide, a discussion of
+the design principles behind mxODBC, as well as a reference of the
+available programming interfaces.</blockquote>
+<p>The PDF file is also available as part of the installation and can be found in the <code>mx/ODBC/Doc/ </code>folder.</p>
+<h3>Books</h3>
+<p>"Python Programming On Win32" by Mark Hammond, Andy Robinson has a section on mxODBC and mxDateTime.</p>
+<h2><a name="Download" href="#Download">Download</a></h2>
+<p>A successful installation of mxODBC requires these three steps:</p>
+<ol>
+  <li>Before continuing with the download of mxODBC, first make sure that you have installed the <a href="/products/python/mxBase/">eGenix.com mx Base Distribution</a> (version 3.2 or later),
+since the eGenix.com mxODBC Distribution is an add-on to our base set
+of Python extensions.</li>
+
+  
+
+  <li>The downloads below <strong>do not contain any license keys</strong>. You will either have to obtain <a href="#Evaluation">evaluation licenses</a> or <a href="#BuyLicenses">buy production licenses</a> in order to successfully install and use the package.</li>
+  <li>Select the right download for your platform and Python version and then head on to the <a href="#Installation">installation instructions</a> below. </li>
+</ol>
+
+<div class="egenix-important-notice"><b>IMPORTANT:</b> <br>
+  By downloading, installing or using the eGenix mxODBC Distribution, you agree to the terms and conditions set forth in the <a href="eGenix.com-Commercial-License-1.3.0.pdf">eGenix.com Commercial License Agreement 1.3.0</a>.</div>
+
+<p><em>Redistribution of these files is not allowed. </em>Please contact the <a href="mailto:sales@egenix.com">eGenix Sales Team</a> for details about redistribution possibilities and terms.</p>
+
+   <script>
+        function build_download_url(product, version, system, python, ucs, type) {
+
+            // Base URLs for packages and PyPI-style indexes
+            package_url = 'http://downloads.egenix.com/python/';
+            index_url = 'http://downloads.egenix.com/python/index/';
+
+            // Determine the platform string
+            switch (system) {
+                case 'win32':
+                    ucs = '';
+                    platform = 'win32';
+                    break;
+                case 'win64':
+                    ucs = '';
+                    if (python >= '2.6') {
+                        platform = 'win-amd64';
+                    }
+                    else
+                        alert('64-bit Windows is only supported for Python 2.6 and later');
+                    break;
+                case 'mac32':
+                    if (python < '2.4')
+                        platform = 'darwin-8.11.0-Power_Macintosh';
+                    else if (python == '2.4')
+                        platform = 'macosx-10.4-ppc';
+                    else
+                        platform = 'macosx-10.4-fat';
+                    break;
+                case 'mac64':
+                    if (python >= '2.6')
+                        platform = 'macosx-10.5-x86_64';
+                    else
+                        alert('64-bit Mac OS X is only supported for Python 2.6 and later');
+                    break;
+                case 'linux32':
+                    platform = 'linux-i686';
+                    break;
+                case 'linux64':
+                    platform = 'linux-x86_64';
+                    break;
+                case 'freebsd32':
+                    platform = 'freebsd-8.3-RELEASE-p3-i386';
+                    break;
+                case 'freebsd64':
+                    platform = 'freebsd-8.3-RELEASE-p3-amd64';
+                    break;
+                default:
+                    alert('Unknown platform value: ' + platform);
+                    return '';
+            }
+
+            // Determine the Python UCS version string
+            if (ucs != '')
+                python_ucs = 'py' + python + '_' + ucs;
+            else
+                python_ucs = 'py' + python;
+                
+            // Build the package download URL
+            if (type == 'egg') {
+                product_egg_name = product.replace(/-/g, '_');
+                if (ucs == '')
+                    ucs = 'ucs2';
+                return (index_url
+                        + ucs
+                        + '/' + product
+                        + '/' + version
+                        + '/' + product_egg_name
+                        + '-' + version
+                        + '-py' + python 
+                        + '-' + platform
+                        + '.egg');
+            }
+            else if (type == 'prebuilt') {
+                return (package_url
+                        + product
+                        + '-' + version
+                        + '.' + platform
+                        + '-' + python_ucs
+                        + '.prebuilt.zip');
+            }
+            else if (type == 'installer') {
+                if (system == 'win32' || system == 'win64') {
+                    if (python < '2.5')
+                        return (package_url
+                                + product
+                                + '-' + version
+                                + '.' + platform
+                                + '-py' + python
+                                + '.exe');
+                    else
+                        return (package_url
+                                + product
+                                + '-' + version
+                                + '.' + platform
+                                + '-py' + python
+                                + '.msi');
+                }
+                else
+                    alert('Installers are only supported for Windows');
+            }
+            else if (type == 'exe') {
+            }
+            else if (type == 'zip') {
+                return (package_url
+                        + product
+                        + '-' + version
+                        + '.zip');
+            }
+            else if (type == 'tgz') {
+                return (package_url
+                        + product
+                        + '-' + version
+                        + '.tar.gz');
+            }
+            else {
+                alert('Unknown package type: ' + type);
+                return '';
+            }
+        }
+    </script>
+    <noscript>
+      <p class="egenix-important-notice"> Please enable JavaScript to be able to download the software packages ! </p>
+    </noscript>
+
+<h4>Windows (x86 - 32-bit): </h4>
+<div class="egenix-download-selection">
+  <form name="windows" action="">
+    <select name="python">
+      <option value="2.4 installer">Python 2.4 (Installer EXE)</option>
+      <option value="2.4 prebuilt">Python 2.4 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.4 egg">Python 2.4 (Egg Archive)</option>
+      <option value="2.5 installer">Python 2.5 (MSI Installer)</option>
+      <option value="2.5 prebuilt">Python 2.5 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.5 egg">Python 2.5 (Egg Archive)</option>
+      <option value="2.6 installer">Python 2.6 (MSI Installer)</option>
+      <option value="2.6 prebuilt">Python 2.6 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.6 egg">Python 2.6 (Egg Archive)</option>
+      <option value="2.7 installer" selected="selected">Python 2.7 (MSI Installer)</option>
+      <option value="2.7 prebuilt">Python 2.7 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.7 egg">Python 2.7 (Egg Archive)</option>
+    </select>
+    <input value="download" onclick="      form.action = build_download_url(
+        'egenix-mxodbc', '3.2.1',
+        'win32',
+        form.python.value.split(' ')[0],
+        '',
+        form.python.value.split(' ')[1]);
+      return true;" type="submit">
+    <p>Please always download the correct installer for your Python version, otherwise you won't be able to install the packages.</p>
+    <p>For instructions on how to install the prebuilt distributions, please see the <a href="#Installation">installation section below</a>.</p>
+    <p>The Windows ODBC manager which comes with the Windows Operating System will be used by this distribution.</p>
+  </form>
+</div>
+<h4>Windows (x64 - 64-bit): </h4>
+<div class="egenix-download-selection">
+  <form name="windows" action="">
+    <select name="python">
+      <option value="2.6 installer">Python 2.6 (MSI Installer)</option>
+      <option value="2.6 prebuilt">Python 2.6 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.6 egg">Python 2.6 (Egg Archive)</option>
+      <option value="2.7 installer" selected="selected">Python 2.7 (MSI Installer)</option>
+      <option value="2.7 prebuilt">Python 2.7 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.7 egg">Python 2.7 (Egg Archive)</option>
+    </select>
+    <input value="download" onclick="      form.action = build_download_url(
+        'egenix-mxodbc', '3.2.1',
+        'win64',
+        form.python.value.split(' ')[0],
+        '',
+        form.python.value.split(' ')[1]);
+      return true;" type="submit">
+    <p>Please always download the correct installer for your Python version, otherwise you won't be able to install the packages.</p>For instructions on how to install the prebuilt distributions, please see the <a href="#Installation">installation section below</a>.
+    <p>The Windows ODBC manager which comes with the Windows Operating System will be used by this distribution.</p>
+  </form>
+</div>
+<h4>Linux (i686 - 32-bit): </h4>
+<div class="egenix-download-selection">
+  <form name="linux32" action="">
+    <select name="python">
+      <option value="2.4 ucs2 prebuilt">Python 2.4 UCS2 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.4 ucs4 prebuilt">Python 2.4 UCS4 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.4 ucs2 egg">Python 2.4 UCS2 (Egg Archive)</option>
+      <option value="2.4 ucs4 egg">Python 2.4 UCS4 (Egg Archive)</option>
+      <option value="2.5 ucs2 prebuilt">Python 2.5 UCS2 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.5 ucs4 prebuilt">Python 2.5 UCS4 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.5 ucs2 egg">Python 2.5 UCS2 (Egg Archive)</option>
+      <option value="2.5 ucs4 egg">Python 2.5 UCS4 (Egg Archive)</option>
+      <option value="2.6 ucs2 prebuilt">Python 2.6 UCS2 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.6 ucs4 prebuilt">Python 2.6 UCS4 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.6 ucs2 egg">Python 2.6 UCS2 (Egg Archive)</option>
+      <option value="2.6 ucs4 egg">Python 2.6 UCS4 (Egg Archive)</option>
+      <option value="2.7 ucs2 prebuilt">Python 2.7 UCS2 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.7 ucs4 prebuilt" selected="selected">Python 2.7 UCS4 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.7 ucs2 egg">Python 2.7 UCS2 (Egg Archive)</option>
+      <option value="2.7 ucs4 egg">Python 2.7 UCS4 (Egg Archive)</option>
+    </select>
+    <input value="download" onclick="      form.action = build_download_url(
+        'egenix-mxodbc', '3.2.1',
+        'linux32',
+        form.python.value.split(' ')[0],
+        form.python.value.split(' ')[1],
+        form.python.value.split(' ')[2]);
+      return true;" type="submit">
+    <p>For instructions on how to install these prebuilt distributions, please see the <a href="#Installation">installation section below</a>.</p>
+    <p>You will need to have one of popular ODBC managers for Unix installed on the target system: <a href="http://www.iodbc.org/">iODBC 3.52.x</a> or <a href="http://www.unixodbc.org/">unixODBC 2.3.x</a>.</p>
+<p>We have successfully tested mxODBC with iODBC 3.52.7 and unixODBC 
+2.3.1.</p>
+
+  </form>
+</div>
+<h4>Linux (x86_64 - 64-bit):</h4>
+<div class="egenix-download-selection">
+  <form name="linux64" action="">
+    <select name="python">
+      <option value="2.4 ucs2 prebuilt">Python 2.4 UCS2 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.4 ucs4 prebuilt">Python 2.4 UCS4 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.4 ucs2 egg">Python 2.4 UCS2 (Egg Archive)</option>
+      <option value="2.4 ucs4 egg">Python 2.4 UCS4 (Egg Archive)</option>
+      <option value="2.5 ucs2 prebuilt">Python 2.5 UCS2 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.5 ucs4 prebuilt">Python 2.5 UCS4 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.5 ucs2 egg">Python 2.5 UCS2 (Egg Archive)</option>
+      <option value="2.5 ucs4 egg">Python 2.5 UCS4 (Egg Archive)</option>
+      <option value="2.6 ucs2 prebuilt">Python 2.6 UCS2 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.6 ucs4 prebuilt">Python 2.6 UCS4 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.6 ucs2 egg">Python 2.6 UCS2 (Egg Archive)</option>
+      <option value="2.6 ucs4 egg">Python 2.6 UCS4 (Egg Archive)</option>
+      <option value="2.7 ucs2 prebuilt">Python 2.7 UCS2 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.7 ucs4 prebuilt" selected="selected">Python 2.7 UCS4 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.7 ucs2 egg">Python 2.7 UCS2 (Egg Archive)</option>
+      <option value="2.7 ucs4 egg">Python 2.7 UCS4 (Egg Archive)</option>
+    </select>
+    <input value="download" onclick="      form.action = build_download_url(
+        'egenix-mxodbc', '3.2.1',
+        'linux64',
+        form.python.value.split(' ')[0],
+        form.python.value.split(' ')[1],
+        form.python.value.split(' ')[2]);
+      return true;" type="submit">
+    <p>For instructions on how to install these prebuilt distributions, please see the <a href="#Installation">installation section below</a>.</p>
+    <p>You will need to have one of popular ODBC managers for Unix installed on the target system: <a href="http://www.iodbc.org/">iODBC 3.52.x</a> or <a href="http://www.unixodbc.org/">unixODBC 2.3.x</a>. <br>
+</p>
+<p>We have successfully tested mxODBC with iODBC 3.52.7 and unixODBC 
+2.3.1.</p>
+
+  </form>
+</div>
+<h4>Mac OS X (PPC + Intel - 32-bit):</h4>
+<div class="egenix-download-selection">
+  <form name="mac32" action="">
+    <select name="python">
+      <option value="2.4 ucs2 prebuilt">Python 2.4 UCS2 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.4 ucs4 prebuilt">Python 2.4 UCS4 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.4 ucs2 egg">Python 2.4 UCS2 (Egg Archive)</option>
+      <option value="2.4 ucs4 egg">Python 2.4 UCS4 (Egg Archive)</option>
+      <option value="2.5 ucs2 prebuilt">Python 2.5 UCS2 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.5 ucs4 prebuilt">Python 2.5 UCS4 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.5 ucs2 egg">Python 2.5 UCS2 (Egg Archive)</option>
+      <option value="2.5 ucs4 egg">Python 2.5 UCS4 (Egg Archive)</option>
+      <option value="2.6 ucs2 prebuilt">Python 2.6 UCS2 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.6 ucs4 prebuilt">Python 2.6 UCS4 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.6 ucs2 egg">Python 2.6 UCS2 (Egg Archive)</option>
+      <option value="2.6 ucs4 egg">Python 2.6 UCS4 (Egg Archive)</option>
+      <option value="2.7 ucs2 prebuilt" selected="selected">Python 2.7 UCS2 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.7 ucs4 prebuilt">Python 2.7 UCS4 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.7 ucs2 egg">Python 2.7 UCS2 (Egg Archive)</option>
+      <option value="2.7 ucs4 egg">Python 2.7 UCS4 (Egg Archive)</option>
+    </select>
+    <input value="download" onclick="      form.action = build_download_url(
+        'egenix-mxodbc', '3.2.1',
+        'mac32',
+        form.python.value.split(' ')[0],
+        form.python.value.split(' ')[1],
+        form.python.value.split(' ')[2]);
+      return true;" type="submit">
+    <p>You will need the UCS2 version of the distribution if you plan to use it with the Python version shipped with Mac OS X.</p>
+    <p><strong>Note:</strong>
+Even though the files for Python 2.4 are named
+"...ppc...", they still contain universal
+binaries. The name is due to a bug in distutils for Python 2.4.
+</p>
+    <p>For instructions on how to install these prebuilt distributions, please see the <a href="#Installation">installation section below</a>.</p>
+    <p>
+Mac OS X ships with the iODBC ODBC manager as system default ODBC
+manager. Please configure your data sources using the system ODBC
+manager. If you instead want to use the unixODBC manager from <a href="http://www.macports.org/">MacPorts</a>, you additionally have to add the ports lib dir to DYLD_LIBRARY_PATH, e.g. using <code>export DYLD_LIBRARY_PATH=/opt/local/lib</code></p>
+  </form>
+</div>
+<h4>Mac OS X (Intel - 64-bit):</h4>
+<div class="egenix-download-selection">
+  <form name="mac64" action="">
+    <select name="python">
+      <option value="2.6 ucs2 prebuilt">Python 2.6 UCS2 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.6 ucs4 prebuilt">Python 2.6 UCS4 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.6 ucs2 egg">Python 2.6 UCS2 (Egg Archive)</option>
+      <option value="2.6 ucs4 egg">Python 2.6 UCS4 (Egg Archive)</option>
+      <option value="2.7 ucs2 prebuilt" selected="selected">Python 2.7 UCS2 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.7 ucs4 prebuilt">Python 2.7 UCS4 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.7 ucs2 egg">Python 2.7 UCS2 (Egg Archive)</option>
+      <option value="2.7 ucs4 egg">Python 2.7 UCS4 (Egg Archive)</option>
+    </select>
+    <input value="download" onclick="      form.action = build_download_url(
+        'egenix-mxodbc', '3.2.1',
+        'mac64',
+        form.python.value.split(' ')[0],
+        form.python.value.split(' ')[1],
+        form.python.value.split(' ')[2]);
+      return true;" type="submit">
+    <p>You will need the UCS2 version of the distribution if you plan to use it with the Python version shipped with Mac OS X.</p>
+    <p>For instructions on how to install these prebuilt distributions, please see the <a href="#Installation">installation section below</a>.</p>
+    <p>
+Mac OS X ships with the iODBC ODBC manager as system default ODBC
+manager. Please configure your data sources using the system ODBC
+manager. If you instead want to use the unixODBC manager from <a href="http://www.macports.org/">MacPorts</a>, you additionally have to add the ports lib dir to DYLD_LIBRARY_PATH, e.g. using <code>export DYLD_LIBRARY_PATH=/opt/local/lib</code></p>
+  </form>
+</div>
+<h4>FreeBSD (i386 - 32-bit):</h4>
+<div class="egenix-download-selection">
+  <form name="freebsd32" action="">
+    <select name="python">
+      <option value="2.4 ucs2 prebuilt">Python 2.4 UCS2 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.4 ucs4 prebuilt">Python 2.4 UCS4 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.4 ucs2 egg">Python 2.4 UCS2 (Egg Archive)</option>
+      <option value="2.4 ucs4 egg">Python 2.4 UCS4 (Egg Archive)</option>
+      <option value="2.5 ucs2 prebuilt">Python 2.5 UCS2 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.5 ucs4 prebuilt">Python 2.5 UCS4 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.5 ucs2 egg">Python 2.5 UCS2 (Egg Archive)</option>
+      <option value="2.5 ucs4 egg">Python 2.5 UCS4 (Egg Archive)</option>
+      <option value="2.6 ucs2 prebuilt">Python 2.6 UCS2 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.6 ucs4 prebuilt">Python 2.6 UCS4 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.6 ucs2 egg">Python 2.6 UCS2 (Egg Archive)</option>
+      <option value="2.6 ucs4 egg">Python 2.6 UCS4 (Egg Archive)</option>
+      <option value="2.7 ucs2 prebuilt" selected="selected">Python 2.7 UCS2 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.7 ucs4 prebuilt">Python 2.7 UCS4 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.7 ucs2 egg">Python 2.7 UCS2 (Egg Archive)</option>
+      <option value="2.7 ucs4 egg">Python 2.7 UCS4 (Egg Archive)</option>
+    </select>
+    <input value="download" onclick="      form.action = build_download_url(
+        'egenix-mxodbc', '3.2.1',
+        'freebsd32',
+        form.python.value.split(' ')[0],
+        form.python.value.split(' ')[1],
+        form.python.value.split(' ')[2]);
+      return true;" type="submit">
+    <p>For instructions on how to install these prebuilt distributions, please see the <a href="#Installation">installation section below</a>.</p>
+    <p>You will need to have one of popular ODBC managers for Unix installed on the target system: <a href="http://www.iodbc.org/">iODBC 3.52.x</a> or <a href="http://www.unixodbc.org/">unixODBC 2.3.x</a>. </p>
+  </form>
+</div>
+<h4>FreeBSD (amd64 - 64-bit):</h4>
+<div class="egenix-download-selection">
+  <form name="freebsd64" action="">
+    <select name="python">
+      <option value="2.4 ucs2 prebuilt">Python 2.4 UCS2 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.4 ucs4 prebuilt">Python 2.4 UCS4 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.4 ucs2 egg">Python 2.4 UCS2 (Egg Archive)</option>
+      <option value="2.4 ucs4 egg">Python 2.4 UCS4 (Egg Archive)</option>
+      <option value="2.5 ucs2 prebuilt">Python 2.5 UCS2 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.5 ucs4 prebuilt">Python 2.5 UCS4 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.5 ucs2 egg">Python 2.5 UCS2 (Egg Archive)</option>
+      <option value="2.5 ucs4 egg">Python 2.5 UCS4 (Egg Archive)</option>
+      <option value="2.6 ucs2 prebuilt">Python 2.6 UCS2 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.6 ucs4 prebuilt">Python 2.6 UCS4 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.6 ucs2 egg">Python 2.6 UCS2 (Egg Archive)</option>
+      <option value="2.6 ucs4 egg">Python 2.6 UCS4 (Egg Archive)</option>
+      <option value="2.7 ucs2 prebuilt" selected="selected">Python 2.7 UCS2 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.7 ucs4 prebuilt">Python 2.7 UCS4 (Prebuilt Distribution as ZIP File)</option>
+      <option value="2.7 ucs2 egg">Python 2.7 UCS2 (Egg Archive)</option>
+      <option value="2.7 ucs4 egg">Python 2.7 UCS4 (Egg Archive)</option>
+    </select>
+    <input value="download" onclick="      form.action = build_download_url(
+        'egenix-mxodbc', '3.2.1',
+        'freebsd64',
+        form.python.value.split(' ')[0],
+        form.python.value.split(' ')[1],
+        form.python.value.split(' ')[2]);
+      return true;" type="submit">
+    <p>For instructions on how to install these prebuilt distributions, please see the <a href="#Installation">installation section below</a>.</p>
+    <p>You will need to have one of popular ODBC managers for Unix installed on the target system: <a href="http://www.iodbc.org/">iODBC 3.52.x</a> or <a href="http://www.unixodbc.org/">unixODBC 2.3.x</a>. </p>
+  </form>
+</div>
+<h4>Solaris (Intel):</h4>
+<div class="egenix-download-selection">
+  <p>Solaris binaries will be made available on demand.</p>
+</div>
+<h4>AIX (PowerPC):</h4>
+<div class="egenix-download-selection">
+  <p>AIX binaries will be made available on demand.</p>
+</div>
+<h4>Source Code:</h4>
+<div class="egenix-download-selection">
+mxODBC is a commercial product for which we do not make the source code available.
+</div>
+
+<h4>Other Platforms:</h4>
+<p>If you need distribution archives for platforms not mentioned here, please contact <a href="mailto:support@egenix.com">support@egenix.com</a> for details. It is very likely that we can find a way to help you. </p>
+
+<h4>Python Unicode Version (UCS2 vs. UCS4) </h4>
+<p>On Unix it is important to know whether you need to download a
+distribution for a narrow Unicode build of Python (UCS2) or a wide
+version (UCS4). </p>
+<p>Most Unixes ship with wide Python builds these days (including
+RedHat and SuSE). In order to make sure, please run the following
+command which will tell you what kind of Python installation you have:</p>
+<pre>python -c "import sys;print(sys.maxunicode&lt;66000)and'UCS2'or'UCS4'"</pre>
+<p>If you get errors such as "<tt>unresolved symbol PyUnicodeUCS2_AsEncodedString</tt>" when trying to load an extension from the distribution, you have likely installed an archive for a wrong Unicode version.</p>
+
+<h2><a name="Installation" href="#Installation">Installation</a></h2>
+<p>For full details on how to install, setup and configure mxODBC, please see the <span style="font-style: italic;">mxODBC User Manual</span>. It is available as PDF for offline reading and HTML for online reading:</p>
+<p style="margin-left: 40px;"><strong><a href="mxODBC.pdf">mxODBC User Manual and Reference Guide</a></strong> - <a href="doc/">HTML</a> and <a href="mxODBC.pdf">PDF</a><br></p>
+
+<p>What follows is a short summary:<br>
+</p>
+<h3><span style="font-weight: bold;"></span>Windows Installer</h3>
+
+<p>Installation using the Windows installers is straight forward: just
+double-click on the installer EXE or MSI file and follow the
+instructions.</p>
+<p>Both installers register the distribution with the Windows software
+registry, so you can easily uninstall the distribution should you
+require to do so.</p>
+<p>With the new MSI installer you also have the option to run the
+installer without the GUI or to integrate it into an automatic
+installation process. Please see the <a href="http://www.python.org/download/releases/2.4/msi/">MSI installer documentation</a> on the Python web-site for details.</p>
+<p>To uninstall the distribution, please use the standard Windows software registry. </p>
+
+<h3>Prebuilt Distribution Installation</h3>
+<p>To reduce the number of binaries that we have to create for each
+release, we have adapted a new generic distribution format that works
+on all Python platforms: the <em>Prebuilt Distribution Format</em>.</p>
+<p>Technically, this format is a standard Python distutils distribution, but with only the <code>build/</code> directory and without the source tree.</p>
+
+<h4>System-wide Installation</h4>
+<p>In order to install such a distribution, please follow these instructions:</p>
+<ol>
+  <li>Download and unzip the archive into a temporary directory</li>
+  <li>Change into the distribution directory</li>
+  <li>Run
+the following command using the Python interpreter with which you
+intend to work (this could be the default one, or an application
+specific one depending on your needs): <pre>sudo python setup.py install</pre>
+  On Windows and some other platforms that don't have <code>sudo</code>, please run the above without <code>sudo</code> as administrator or root.</li>
+</ol>
+<p>The distribution will then be installed into the standard directory
+for Python extensions of your Python installation (usually the <code>site-packages/ </code> subdirectory of the Python standard library directory).</p>
+<p>To uninstall, follow the same steps as above, but use the command <code>uninstall</code> instead:</p>
+<pre>sudo python setup.py uninstall</pre>
+
+<h4>User Installation</h4>
+<p>You will need to be able to sudo on the target machine or know the
+root password for the above to work. If you don't have permission to
+install packages as root, you can still install the distribution into a
+local directory, e.g. <code>~/lib/python</code> by using the following installation command:
+</p><pre>python setup.py install --home=/home/user/</pre>
+<p>This will install the distribution into the directory <code>/home/user/lib/python/</code>.
+In order to have Python see this directory and make it useable for
+import, you have to adjust the PYTHONPATH environment variable to
+include this directory, e.g.</p>
+<pre>export PYTHONPATH /home/user/lib/python </pre>
+<p>To see all the possible installation options, run the install script using the help options:</p>
+<pre>python setup.py install --help<br></pre>
+<p>To uninstall, follow the same steps as above, but use the command <code>uninstall</code> instead:</p>
+<pre>sudo python setup.py uninstall --home=/home/user/<br></pre>
+<h3>Egg Archive Installation</h3>
+<p>The egg archives we provide are made available through two
+PyPI-style indexes which the egg tools
+setuptools/easy_install/pip/zc.buildout can access to automatically download and install the right egg archive.</p>
+<p>There are two indexes, one for Python UCS2 builds:</p>
+<pre><a href="http://downloads.egenix.com/python/index/ucs2/">http://downloads.egenix.com/python/index/ucs2/</a><br></pre>
+<p> and one for Python UCS4 builds:</p>
+<pre><a href="http://downloads.egenix.com/python/index/ucs4/">http://downloads.egenix.com/python/index/ucs4/</a></pre>
+<h4>Automatic Download and Installation<br>
+</h4>
+<p>If you are using a Python UCS2 build, then you can install the egg archives using this command:</p>
+<pre>easy_install -i http://downloads.egenix.com/python/index/ucs2/ \ <br>    egenix-mxodbc</pre>
+<p>For UCS4 builds, please use this command:</p>
+<pre>easy_install -i http://downloads.egenix.com/python/index/ucs4/ \ <br>    egenix-mxodbc<br></pre>
+<p>The command line parameters for other tools such as pip are similar. Please consult their documentation for details.<br>
+</p>
+
+<h4>Manual Download and Installation<br>
+</h4>
+<p>In some cases, easy_install and other download tools cannot map the platform name to the name used in the egg archive.
+If you get errors during the installation, please manually download the
+right egg archive and then run the command directly on the downloaded
+egg archive:</p>
+<pre>easy_install \ <br>&nbsp;&nbsp;&nbsp; egenix_mxodbc-3.2.1-py2.7-macosx-10.5-x86_64.egg</pre>
+<h3>License File Installation</h3>
+<p>The licenses you receive from eGenix after purchase or request of an
+evaluation license are packaged as ZIP file having one directory per
+license file set.</p>
+<p>In order to install the license file set to a specific Python
+installation, please unzip the license ZIP file and copy the two files <code>mxodbc_license.py</code> and <code>mxodbc_license.txt</code> from the license directory to a directory on your Python installation's <code>sys.path / PYTHONPATH</code>, e.g. to the Python installation's <code>site-packages/</code> directory.</p>
+<p>mxODBC will then pick up the license files from there during startup.<br>
+</p>
+
+
+<h2><a name="Support" href="#Support">Support</a></h2>
+<p>eGenix offers these support options: </p>
+
+<h3>Commercial Support</h3>
+<p><a href="/services/support/">Professional level support</a> for this
+product as well as all other eGenix products and Python itself is
+available directly from the developers at eGenix.com.</p>
+<h3>Consulting</h3>
+<p> eGenix.com offers <a href="/services/consulting/">professional consulting services</a>
+for all questions and tasks around this product, including customized
+modifications, help with integration and on-site problem solving.
+Please contact <a href="mailto:sales@egenix.com">sales@egenix.com</a> for details. </p>
+
+<h3>Free User Support</h3>
+<p> In order for our users to keep in touch and be able to help themselves, we have created the <em><a href="/support/mailing-lists/">egenix-users</a></em><a href="/support/mailing-lists/"> user mailing list</a>.</p>
+
+<h2><a name="References" href="#References">References</a></h2>
+<p> mxODBC is in production use by several Fortune-500 companies,
+including Intel, IBM, Google and Royal Bank of Scotland. </p>
+<p>Several of these have integrated mxODBC into their products. The most well-known of these is probably the <a href="http://www.ultraseek.com/">UltraSeek search engine</a>. </p>
+<p>Please see the <a href="references.html">mxODBC References &amp; Quotes</a> page for more details or write to <a href="mailto:sales@egenix.com">sales@egenix.com</a> for more information.</p>
+<h2>History &amp; Changes </h2>
+<p>Please see the <a href="changelog.html">change log</a> for details regarding changes to the package between releases. <br>
+</p>
+<p>Older versions of mxODBC, which are still available:</p>
+
+<ul>
+<li><a href="/products/python/mxODBC/3.2.0/">Version 3.2.0</a></li>
+<li><a href="/products/python/mxODBC/3.1.2/">Version 3.1.2</a></li>
+<li><a href="/products/python/mxODBC/3.1.1/">Version 3.1.1</a></li>
+<li><a href="/products/python/mxODBC/3.1.0/">Version 3.1.0</a></li>
+<li><a href="/products/python/mxODBC/3.0.4/">Version 3.0.4</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+	  
+        </div>
+        <div id="egenix-content-leadout">
+          <noscript>
+            <div style="border-top: 1px solid; text-align:center">Please enable JavaScript to make full use of our web-site. Thank you.</div>
+          </noscript>
+        </div>
+      </div>
+      
+      <div id="egenix-bottom-line">
+        <span id="egenix-legal">
+          <a href="/company/contact/">Contact</a> : 
+          <a href="/company/legal/">Impressum</a> : 
+          <a href="/company/legal/terms-and-conditions.html">Terms & Conditions</a> : 
+          <a href="/company/legal/privacy.html">Privacy Policy</a> : 
+          <a href="/company/legal/trademarks.html">Trademarks</a>
+        </span>
+        <span id="egenix-date">
+          <a href="/products/python/mxBase/mxDateTime/">2013-02-15</a>
+        </span>
+      </div>
+      <div id="egenix-copyright-line">
+       (c) Copyright 2000-<span>2013</span>
+       eGenix.com Software, Skills and Services GmbH, Langenfeld, Germany. All Rights Reserved.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+function egenix_adjust_content_height() {
+    EXTRA_OFFSET = 0;
+    egenix_quick_nav = document.getElementById('egenix-quick-links');
+    if (egenix_quick_nav) {
+        if (egenix.getInnerHeight() < 660) {
+	    /* Disable the quick nav boxes */
+	    egenix_quick_nav.style.display = 'none';
+	}
+	else {
+	    /* Display the quick nav boxes and adjust content offset for
+	       them (120px + the clear div) */
+	    EXTRA_OFFSET = 131;
+	    egenix_quick_nav.style.display = 'block';
+	}
+    }
+    egenix_content = document.getElementById('egenix-content');
+    if (egenix_content)
+        egenix_content.style.height = (egenix.getInnerHeight() - EGENIX_CONTENT_OFFSET - EXTRA_OFFSET) + 'px';
+    return true;
+};
+egenix_adjust_content_height();
+window.onresize = egenix_adjust_content_height;
+</script>
+
+</body>
+</html>
+

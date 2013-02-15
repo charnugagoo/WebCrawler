@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html class='' lang='en' xmlns:fb='https://www.facebook.com/2008/fbml' xmlns:og='http://ogp.me/ns#' xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<script>
+  // Google Analytics
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-25136408-1']);
+  _gaq.push(['_trackPageview']);
+
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+  // chartbeat
+  var _sf_startpt=(new Date()).getTime();
+
+  // Generic
+  var root_url = "http://www.codecademy.com/";
+
+  // CCDATA
+  window.CCDATA = {};
+  CCDATA.env = 'production'
+  CCDATA.asset_host = ''
+
+
+
+</script>
+
+
+<title>Learn to code | Codecademy</title>
+<meta charset='utf-8'>
+<meta content='IE=edge,chrome=1' http='{:equiv=&gt;"X-UA-Compatible"}'>
+<meta content="Codecademy is the easiest way to learn how to code. It's interactive, fun, and you can do it with your friends." name='description'>
+<link href='/favicon.ico' rel='shortcut icon'>
+<link href='/blog.rss' rel='alternate' title='Codecademy Blog' type='application/rss+xml'>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+
+
+<meta property="fb:app_id" content="212500508799908"/>
+<meta property="og:url" content="http://www.codecademy.com/"/>
+<meta property="og:site_name" content="Codecademy"/>
+
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="Getting Started"/>
+  <meta property="og:description" content="Let&#x27;s learn to program!"/>
+
+
+
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="aGLrIoSnCUw0vYVIOo5D4GaU/wWUej/+L5pTTOrLS0w=" name="csrf-token" />
+<link href="/assets/bootstrap-e8791d4fc3ea3d421ea3a8001d8caa62.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/application-ltr-d88d4c0fa88a85c2df1b2ae12c2a9b81.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/application-ltr2-d89605e27034eec5f9785cd457e19c0b.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://fonts.googleapis.com/css?family=Lobster" media="screen" rel="stylesheet" type="text/css" />
+<!--[if lt IE 9]>
+<style>
+  /*<![CDATA[*/
+    #overlay {
+      background-color: #323232;
+      display: block;
+    }
+  /*]]>*/
+</style>
+<![endif]-->
+<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {filter: none;}
+  </style>
+<![endif]-->
+<script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script></head>
+<!-- Temporary logic to ensure that non-admins don't see any pages with the dashboard class -->
+<body class='dashboard index homepage'>
+<div id='wrapper'>
+<div id='overlay'>
+</div>
+
+
+<noscript>
+  <h4 style="background: #fffacd; margin: 0; padding: 15px; text-align: center;">
+    For a better experience on Codecademy, <a target="_blank" href="http://enable-javascript.com/">enable JavaScript in your browser</a>.
+  </h4>
+</noscript>
+
+<header id="header">
+  <div class="container">
+    <h1 class="logo">
+      <a href="/">
+        Codecademy
+</a>    </h1>
+
+
+
+      <nav class="left">
+        <ul class="cf">
+          <li>
+            <a href="/learn" class="">Learn</a>
+          </li>
+
+            <li>
+              <a href="/create" class="">Teach</a>
+            </li>
+
+        </ul>
+      </nav>
+
+      <nav class="right">
+        <ul class="cf">
+            <li>
+              <a href="/sign_in" class="sign_in">Sign In</a>
+            </li>
+
+            <li>
+              <a href="/register/sign_up" class="sign_up">Create Account</a>
+            </li>
+
+        </ul>
+      </nav>
+
+
+  </div>
+
+  <div id="notices"></div>
+</header>
+
+<div class='full-width-container'>
+
+<div class="container">
+  <div class="side-left intro">
+
+    <h1>Learn to code interactively, for free.</h1>
+    <p>People all over the world are learning with Codecademy. Join in now!</p>
+
+    <a href="javascript:void(0);" class="bttn green xlarge focus-console">Get Started!</a>
+  </div>
+
+  <div class="main-right">
+
+      <div class="editor" id="editor">
+        <div class="scratch"></div>
+        <div class="submissions"></div>
+        <div class="actions">
+          <button class="minimal run"></button>
+        </div>
+      </div>
+
+      <div class="console-wrap">
+        <div class="blanket"></div>
+        <span class="icon-console-controls"></span>
+        <div class="console-chrome">
+          <!--[if lt IE 10 ]>
+  <div id="throbber" class="ieprogress"></div>
+  <style>#progress {display: none}</style>
+<![endif]-->
+<div id="progress">
+  <span></span>
+</div>
+
+          <div class="console" id="console"></div>
+          <div class="register-wrap cf">
+            <p class="congratulate-msg">Congratulations, you finished your first lesson!</p>
+            <a href="/register/sign_up" class="bttn large baby-blue register">Keep going! &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+  </div>
+</div>
+
+<div id="homepage-super-footer">
+  <div class="container">
+    <ul class="homepage-bullets">
+        <li class="bullet">
+          <div class="img-wrap"><img alt="Projects" src="/assets/homepage/projects-fd4c10965d976fcc37b26d6e0519cfb5.png" /></div>
+          <h4>Build Projects</h4>
+          <p>Learn to create interactive websites, fun games, and killer apps</p>
+        </li>
+        <li class="bullet">
+          <div class="img-wrap"><img alt="Community" src="/assets/homepage/community-15aaa124541705cdc7490405a1a4a273.png" /></div>
+          <h4>Join the Community</h4>
+          <p>Stay motivated by joining groups to code with your friends</p>
+        </li>
+        <li class="bullet">
+          <div class="img-wrap"><img alt="Profile" src="/assets/homepage/profile-c3c73135901213369b1b518605ad502f.png" /></div>
+          <h4>Be Recognized</h4>
+          <p>Build your profile and show off your progress with points and badges</p>
+        </li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  var exerciseData = [{"_id":"50d0d440c0f57bda2800040a","section_id":"50d0d43fa17e0c8d79000410","name":"What's%20Your%20Name%3F","entry":"%3Cp%3EHi%20there!%20Let%26%2339%3Bs%20start%20by%20getting%20to%20know%20each%20other.%20What%20do%20you%20want%20to%20call%20yourself%3F%3C%2Fp%3E%0A","instruction":"%3Cp%3EType%20your%20user%20name%20with%20quotes%20around%20it%2C%20like%20this%3A%20%26quot%3BRyan%26quot%3B%20and%20then%20press%20enter.%3C%2Fp%3E%0A","hint":"","index":0,"expect_error":false,"default_code":"","test_functions":"if%20(typeof%20result%20!%3D%20%22string%22%20)%20%7B%0A%20%20return%20%22Make%20sure%20to%20write%20your%20name%20between%20quotes!%22%3B%0A%7D%0A%0Areturn%20true%3B","submissions":[],"completed":false,"path":"%2Fsections%2F50d0d43fa17e0c8d79000410%2Fexercises%2F50d0d440c0f57bda2800040a.json","prog_lang":"javascript","view":"console","tabs":[],"library":["https%3A%2F%2Fajax.googleapis.com%2Fajax%2Flibs%2Fjquery%2F1.7.1%2Fjquery.min.js"],"load_submission_from_previous_exercise":false,"from_console":false,"solution_code":"","solution_entry":""},{"_id":"50d0d4887e11f253c300045b","section_id":"50d0d43fa17e0c8d79000410","name":"Making%20Things%20Happen","entry":"%3Cp%3EGood!%20People%20write%20programs%20to%20make%20computers%20do%20things.%20You%20can%20make%20your%20computer%20open%20a%20small%20window%20just%20by%20typing%20%3Ccode%3Ealert(%26quot%3Bmessage%26quot%3B)%3C%2Fcode%3E!%3C%2Fp%3E%0A","instruction":"%3Cp%3EType%20%3Ccode%3Ealert(%26quot%3Bmessage%26quot%3B)%3C%2Fcode%3E%2C%20where%20%26quot%3Bmessage%26quot%3B%20can%20be%20any%20text%20you%20want.%20Hit%20enter%20to%20make%20your%20window%20appear.%20(Click%20%26quot%3BOK%26quot%3B%20to%20close%20it.)%3C%2Fp%3E%0A","hint":"","index":1,"expect_error":false,"default_code":"","test_functions":"var%20hint%20%3D%20%22Did%20you%20type%20alert()%20with%20some%20text%20inside%20it%3F%20Make%20sure%20the%20text%20is%20in%20quotes!%22%3B%0Aif%20(error)%20return%20hint%3B%0A%0Aif%20(!CC.calls(%22alert%22).length)%20return%20hint%3B%0A%0Areturn%20true%3B","submissions":[],"completed":false,"path":"%2Fsections%2F50d0d43fa17e0c8d79000410%2Fexercises%2F50d0d4887e11f253c300045b.json","prog_lang":"javascript","view":"console","tabs":[],"library":["https%3A%2F%2Fajax.googleapis.com%2Fajax%2Flibs%2Fjquery%2F1.7.1%2Fjquery.min.js"],"load_submission_from_previous_exercise":false,"from_console":false,"solution_code":"","solution_entry":""},{"_id":"50d0d4b4854a14e87b00049d","section_id":"50d0d43fa17e0c8d79000410","name":"Arithmetic","entry":"%3Cp%3EGreat%20job!%20Now%20we%26%2339%3Bll%20have%20the%20computer%20do%20some%20math%20for%20us%20(so%20we%20don%26%2339%3Bt%20have%20to%20do%20it%20ourselves)!%3C%2Fp%3E%0A","instruction":"%3Cp%3EAdd%20any%20numbers%20you%20like.%20Why%20not%20try%20%3Ccode%3E3%20%2B%204%3C%2Fcode%3E%3F%20Hit%20enter%20after%20you%20type%20them%20in%20(make%20sure%20to%20do%20this%20from%20now%20on%20after%20you%20complete%20the%20instructions).%3C%2Fp%3E%0A","hint":"","index":2,"expect_error":false,"default_code":"","test_functions":"if%20(typeof%20result%20!%3D%20%22number%22)%20%7B%0A%20%20return%20%22It%20looks%20like%20you%20didn't%20add%20any%20numbers!%20Make%20sure%20you%20added%20two%20numbers%20as%20shown%20in%20the%20directions.%22%3B%0A%7D%0A%0Aif%20(code.indexOf(%22%2B%22)%20%3D%3D%3D%20-1)%20%7B%0A%20%20return%20%22It%20looks%20like%20you%20didn't%20add%20any%20numbers!%20Check%20the%20example%20to%20make%20sure%20you%20are%20typing%20something%20like%203%20%2B%204%20.%22%3B%20%20%20%0A%7D%0A%0Areturn%20true%3B","submissions":[],"completed":false,"path":"%2Fsections%2F50d0d43fa17e0c8d79000410%2Fexercises%2F50d0d4b4854a14e87b00049d.json","prog_lang":"javascript","view":"console","tabs":[],"library":["https%3A%2F%2Fajax.googleapis.com%2Fajax%2Flibs%2Fjquery%2F1.7.1%2Fjquery.min.js"],"load_submission_from_previous_exercise":false,"from_console":false,"solution_code":"","solution_entry":""},{"_id":"50d0d4e26dfac6428d000455","section_id":"50d0d43fa17e0c8d79000410","name":"Finding%20the%20Length","entry":"%3Cp%3EExcellent!%20We%20can%20also%20get%20information%20from%20the%20computer.%20For%20example%2C%20you%20can%20find%20how%20long%20a%20sentence%20is%20by%20typing%20.length%20after%20it.%3C%2Fp%3E%0A","instruction":"%3Cp%3EHow%20long%20is%20your%20e-mail%20address%3F%20For%20me%2C%20it%26%2339%3Bd%20be%20%3Ccode%3E%26quot%3Bexample%40codecademy.com%26quot%3B.length%3C%2Fcode%3E%3C%2Fp%3E%0A","hint":"","index":3,"expect_error":false,"default_code":"","test_functions":"if%20(typeof%20result%20!%3D%20%22number%22)%20%7B%0A%20%20return%20%22Did%20you%20type%20your%20e-mail%20address%20between%20quotes%20and%20follow%20it%20with%20.length%3F%22%3B%0A%7D%0A%0Aif%20(code.indexOf(%22.length%22)%20%3D%3D%3D%20-1)%20%7B%0A%20%20return%20%22It%20looks%20like%20you%20didn't%20use%20.length%20in%20your%20code!%20Check%20the%20example%20to%20make%20sure%20you%20are%20typing%20some%20text%20in%20quotes%20followed%20by%20.length%20.%22%3B%20%20%20%0A%7D%0A%0Areturn%20true%3B","submissions":[],"completed":false,"path":"%2Fsections%2F50d0d43fa17e0c8d79000410%2Fexercises%2F50d0d4e26dfac6428d000455.json","prog_lang":"javascript","view":"console","tabs":[],"library":["https%3A%2F%2Fajax.googleapis.com%2Fajax%2Flibs%2Fjquery%2F1.7.1%2Fjquery.min.js"],"load_submission_from_previous_exercise":false,"from_console":false,"solution_code":"","solution_entry":""},{"_id":"50d0d520b662a2e3120004a5","section_id":"50d0d43fa17e0c8d79000410","name":"It's%20a%20Date","entry":"%3Cp%3EPerfect!%20You%20can%20get%20all%20kinds%20of%20information%20from%20the%20computer.%20It%20knows%20a%20lot!%3C%2Fp%3E%0A","instruction":"%3Cp%3EType%20%3Ccode%3EDate()%3C%2Fcode%3E%20(make%20sure%20to%20use%20a%20capital%20%26quot%3BD%26quot%3B%20and%20include%20the%20parentheses!)%20to%20get%20the%20current%20date%20from%20the%20computer.%3C%2Fp%3E%0A","hint":"","index":4,"expect_error":false,"default_code":"","test_functions":"if%20(result%20!%3D%3D%20Date())%20%7B%0A%20%20return%20%22Did%20you%20type%20Date()%20%3F%20You%20don't%20need%20quote%20for%20this%20one!%22%3B%0A%7D%0A%0Areturn%20true%3B","submissions":[],"completed":false,"path":"%2Fsections%2F50d0d43fa17e0c8d79000410%2Fexercises%2F50d0d520b662a2e3120004a5.json","prog_lang":"javascript","view":"console","tabs":[],"library":["https%3A%2F%2Fajax.googleapis.com%2Fajax%2Flibs%2Fjquery%2F1.7.1%2Fjquery.min.js"],"load_submission_from_previous_exercise":false,"from_console":false,"solution_code":"","solution_entry":""}];
+  var curriculumId = null;
+</script>
+
+</div>
+<div id='footer-clear'></div>
+</div>
+<footer id='footer'>
+<div class="wrapper">
+  <div class="container">
+    <div class="about">
+      <h1>
+        <span class="logo">Codecademy</span>
+        <span class="comma">,</span>
+        teaching the world to code
+      </h1>
+      <ul>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/jobs">We&#x27;re hiring</a></li>
+        <li><a href="/blog">Our Blog</a></li>
+      </ul>
+    </div>
+    <ul class="links">
+      <li>
+        <h4>Learn to Code</h4>
+        <ul>
+          <li><a href="/tracks/javascript"><span class='arraow'>&rarr;</span> JavaScript</a></li>
+          <li><a href="/tracks/web"><span class='arraow'>&rarr;</span> HTML/CSS</a></li>
+          <li><a href="/tracks/python"><span class='arraow'>&rarr;</span> Python</a></li>
+          <li><a href="/tracks/ruby"><span class='arraow'>&rarr;</span> Ruby</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <h4>Other Programs</h4>
+        <ul>
+          <li><a href="/afterschool"><span class='arraow'>&rarr;</span>Afterschool Programming</a></li>
+          <li><a href="/stories"><span class='arraow'>&rarr;</span>Success Stories</a></li>
+          <li><a href="http://labs.codecademy.com"><span class='arraow'>&rarr;</span>Codecademy Labs</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <h4>Codecademy Online</h4>
+        <ul class="external">
+          <li class="twitter"><span class="icon-twitter"></span><a href="http://www.twitter.com/codecademy">Follow us on Twitter</a></li>
+          <li class="facebook"><span class="icon-facebook"></span><a href="http://www.facebook.com/codecademy">Find us on Facebook</a></li>
+          <li class="blog"><span class="icon-blog"></span><a href="/blog">Read our Blog</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="container secondary">
+    <ul>
+      <li><a href="/help">Help</a></li>
+      <li><a href="/policy">Privacy Policy</a></li>
+      <li><a href="/terms">Terms</a></li>
+      <li>Made in NYC</li>
+      <li>&copy; 2013 Codecademy</li>
+    </ul>
+
+
+  </div>
+</div>
+
+
+</footer>
+<div class='ajax-loader offscreen'></div>
+<div class='ajax-loader-large offscreen'></div>
+<div id='user-registration-modal'>
+<div class="cf module" id="user-registration-form">
+
+  <header>
+    <h2 class="sign-up-to">Sign up to Codecademy</h2>
+    <h2 class="sign-up-encourage">
+      You&#x27;re doing great! <span>Sign up to keep track of what you’ve learned!</span>
+</h2>  </header>
+
+
+  <div class="cell social-signin">
+    <h4>Sign up with...</h4>
+
+      <a href="/auth/facebook" class="bttn social-signup facebook sign-up"><span class="icon-social-facebook"></span>Sign up with Facebook</a>
+      <a href="#" class="bttn social-signup twitter sign-up"><span class="icon-social-twitter"></span>Sign up with Twitter</a>
+      <a href="/auth/google_oauth2" class="bttn social-signup google sign-up"><span class="icon-social-google"></span>Sign up with Google</a>
+
+  </div>
+
+  <div class="cell email-signin">
+    <h4>Or sign up with email</h4>
+    <span class="or module">or</span>
+    <form accept-charset="UTF-8" action="/register" class="new_user" id="new-user" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="aGLrIoSnCUw0vYVIOo5D4GaU/wWUej/+L5pTTOrLS0w=" /></div>
+  
+  <input id="user_email" name="user[email]" placeholder="Email" size="30" tabindex="1" type="email" />
+  <input id="user_username" name="user[username]" placeholder="Username" size="30" tabindex="2" type="text" />
+  <input id="user_password" name="user[password]" placeholder="Password" size="30" tabindex="3" type="password" />
+  <input id="user_password_confirmation" name="user[password_confirmation]" placeholder="Confirm password" size="30" tabindex="4" type="password" />
+
+  <input name="user[remember_me]" type="hidden" value="0" /><input checked="checked" class="hidden" id="user_remember_me" name="user[remember_me]" type="checkbox" value="1" />
+
+  <p class="note">By signing up, you agree to our <a href="/terms">Terms of Service</a></p>
+
+  <input class="bttn blue" name="commit" type="submit" value="Get started!" />
+</form>
+  </div>
+</div>
+
+<script type="text/x-underscore-template" id="tmpl-twitter-email-modal">
+  <form name="twitter-email" class="form-horizontal" id="twitter-email"
+   action="/auth/twitter" >
+    <h3>You&#x27;re almost done!</h3>
+    <p>We need your email to finish creating your account.</p>
+    <table class="control-group" id="email-group">
+      <tr>
+        <td class="controls">
+          <input type="text" id="twitter-email-field" name="email" placeholder="Enter your email address"/>
+          <span class="help-inline">Please enter a valid email address</span>
+        </td>
+      </tr>
+    </table>
+    <div class="actions">
+      <button type="submit" class="bttn green" id="submit-twitter" disabled="disabled">
+        Continue
+      </button>
+    </div>
+  </form>
+</script>
+
+</div>
+<div id='user-session-modal'>
+<div class="cf module" id="user-session-form">
+  <header>
+    <h2>Sign in to Codecademy</h2>
+  </header>
+
+  <div class="cell social-signin">
+    <h4>Sign in with...</h4>
+
+      <a href="/auth/facebook" class="bttn social-signup facebook sign-up"><span class="icon-social-facebook"></span>Sign in with Facebook</a>
+      <a href="/auth/twitter" class="bttn social-signup twitter sign-up"><span class="icon-social-twitter"></span>Sign in with Twitter</a>
+      <a href="/auth/google_oauth2" class="bttn social-signup google sign-up"><span class="icon-social-google"></span>Sign in with Google</a>
+
+  </div>
+
+  <div class="cell neutral email-signin">
+    <h4>Sign in with email</h4>
+    <span class="or module">or</span>
+    <form accept-charset="UTF-8" action="/sign_in" class="new_user" id="new-session" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="aGLrIoSnCUw0vYVIOo5D4GaU/wWUej/+L5pTTOrLS0w=" /></div>
+
+
+  <input id="user_login" name="user[login]" placeholder="Email or username" size="30" tabindex="1" type="text" />
+  <input id="user_password" name="user[password]" placeholder="Password" size="30" tabindex="2" type="password" />
+    <div class="remember-me">
+      <input name="user[remember_me]" type="hidden" value="0" /><input checked="checked" id="user_remember_me" name="user[remember_me]" type="checkbox" value="1" />
+      <label for="user_remember_me">Remember me</label>
+
+      <a href="/secret/new" class="secondary">Forgot your password?</a>
+    </div>
+
+  <div>
+  <input class="sign-in-button bttn blue" name="commit" type="submit" value="Login" />
+  <a href="/register/sign_up" class="create-account secondary">Create Account</a>
+  </div>
+</form>
+
+  </div>
+</div>
+
+</div>
+<script type="text/javascript">
+  CCDATA.showCrashButterBar = false;
+  CCDATA.showCrashModal = false;
+</script>
+</script>
+
+<script src="/assets/templates/common-en-cb7aa23eb6549e840bb7db4d0d14dc87.js" type="text/javascript"></script>
+
+  <script src="/assets/dist/common-50c15a54afbd8273ec7890193cba510b.js" type="text/javascript"></script>
+  <script src="/assets/dist/controllers/learner_controller-78d64eb8defc299dafc0babd77f0b685.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+  require(['common', 'controllers/learner_controller'], function (common, controller) {
+    if (common) common.init();
+    if (controller) controller['init']();
+  });
+</script>
+
+  <div id="fb-root"></div>
+  <script>
+    // Facebook
+    var FB_APP_ID = '212500508799908';
+    window.fbAsyncInit = function() {
+      var FB = (window.FB || undefined);
+      if (FB) {
+        FB.init({
+          appId      : FB_APP_ID
+        , channelUrl : window.root_url+'/channel.html'
+        , status     : true
+        , cookie     : true
+        , xfbml      : true
+        });
+      }
+    };
+
+    (function(d){
+      var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      ref.parentNode.insertBefore(js, ref);
+    }(document));
+  </script>
+
+  <script>
+    // Overlay loader
+    var overlay = document.getElementById('overlay');
+    if (overlay && overlay.children.length > 0) {
+      overlay.style.cssText = "display: block;";
+    }
+  </script>
+
+  <script>
+    // Mixpanel
+    (function(d,c){var a,b,g,e;a=d.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===d.location.protocol?"https:":"http:")+'//api.mixpanel.com/site_media/js/api/mixpanel.2.js';b=d.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b);c._i=[];c.init=function(a,d,f){var b=c;"undefined"!==typeof f?b=c[f]=[]:f="mixpanel";g="disable track track_links track_forms register register_once unregister identify name_tag set_config".split(" ");for(e=0;e<
+    g.length;e++)(function(a){b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,0)))}})(g[e]);c._i.push([a,d,f])};window.mixpanel=c})(document,[]);
+    mixpanel.init("85aa7a8376729f417441179fbccf9d22");
+
+    // Chartbeat
+    var _sf_async_config={uid:27714,domain:"codecademy.com"};
+    (function(){
+      function loadChartbeat() {
+        window._sf_endpt=(new Date()).getTime();
+        var e = document.createElement('script');
+        e.setAttribute('language', 'javascript');
+        e.setAttribute('type', 'text/javascript');
+        e.setAttribute('src',
+        (("https:" == document.location.protocol) ? "https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" : "http://static.chartbeat.com/") +
+        "js/chartbeat.js");
+        document.body.appendChild(e);
+      }
+      var oldonload = window.onload;
+      window.onload = (typeof window.onload != 'function') ?
+      loadChartbeat : function() { oldonload(); loadChartbeat(); };
+    })();
+
+  </script>
+
+<!-- Typekit scripts -->
+<script type="text/javascript" src="//use.typekit.net/rwa3ozy.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+
+<script id='tmpl-versions-label' type='text/x-underscore-template'>
+<label>Versions</label>
+</script>
+<script id='tmpl-versions-item' type='text/x-underscore-template'>
+<option value="<%= index %>"><%= label %></option>
+</script>
+<script id='tmpl-wrong-answer' type='text/x-underscore-template'>
+<span style="color: crimson">Oops, try again. <%
+  if (qa) {
+    %>If you're stuck learn more from fellow users at our <a href="<%= qa %>" target="_blank">Q&A section!</a><%
+  } %><%
+  if (hint) {
+    %><br><span style="color: #F80"><%= hint %></span><%
+  }
+%></span>
+
+</script>
+<script id='tmpl-correct-answer' type='text/x-underscore-template'>
+<span style="color: green">That's correct!<%
+  if (showNextExerciseLink) {
+    %><a href="javascript:void(0)" data-index=<%= index %> class="nextExerciseLink"> Next Exercise: <%= nextExerciseName %></a><%
+   }
+%></span>
+
+</script>
+<script id='tmpl-finish' type='text/x-underscore-template'>
+<%
+  if (nextSectionPath) {
+  %>Good work completing this section! <a class='next_lesson_in_console' href='<%= nextSectionPath %>'>Start the next section</a>.<%
+} else if (languageCoursesPath && currentCurriculumPath !== "") {
+%>Nice! You've completed this course! Continue on <a href='<%= currentCurriculumPath %>'>this track</a>, browse <a class='next_lesson_in_console' href='<%= curriculaPath %>'>other tracks</a>, or experiment with <a class='next_lesson_in_console' href='http://labs.codecademy.com'>Codecademy Labs</a>.<%
+} else if (languageCoursesPath) {
+  %>You've completed this course! Start <a href='<%= curriculaPath %>'>a track</a>, tackle a <a href='<%= coursesPath %>'>non-track course</a>, or experiment with <a class='next_lesson_in_console' href='http://labs.codecademy.com'>Codecademy Labs</a>.<%
+}%>
+
+</script>
+<script id='tmpl-keyboard-shortcuts' type='text/x-underscore-template'>
+<div id='keyboard-shortcuts'>
+  <!-- Frequently Used Shortcuts -->
+  <div class="frequently-used">
+    <div class="shortcut-item span3">
+      <b>Run Exercise</b>
+      <div class='shortcut'>
+        <kbd>&#8984; + <kbd>Enter</kbd>
+      </div>
+    </div>
+
+    <div class="shortcut-item span3">
+      <b>Save Progress</b>
+      <div class='shortcut'>
+        <kbd>&#8984; + <kbd>S</kbd>
+      </div>
+    </div>
+    <div class="shortcut-item span3">
+      <b>Reset Exercise</b>
+      <div class='shortcut'>
+        <kbd>&#8997 + <kbd>R</kbd>
+      </div>
+    </div>
+  </div>
+
+  <!-- Extra Shortcuts -->
+  <div class="extra-shortcuts">
+    <div class="shortcut-item span3">
+      <b>Next Exercise</b>
+      <div class='shortcut'>
+        <kbd>&#8997 + <kbd>T</kbd>
+      </div>
+    </div>
+    <div class="shortcut-item span3">
+      <b>Previous Exercise</b>
+      <div class='shortcut'>
+        <kbd>&#8997 + <kbd>P</kbd>
+      </div>
+    </div>
+  </div>
+  <div class="keyboard">
+    <div class="keyboard-toggle">
+      <a href="javascript:void(0);">
+        <b class="show-more">Show More</b>
+        <b class="show-less">Show Fewer</b>
+        <span class="caret"></span>
+      </a>
+    </div>
+  </div>
+</div><!-- keyboard-shortcuts-learner -->
+
+</script>
+<script id='tmpl-keyboard-shortcuts-creator' type='text/x-underscore-template'>
+<div id='keyboard-shortcuts'>
+  <!-- Frequently Used Shortcuts -->
+  <div class="frequently-used">
+    <div class="shortcut-item span5">
+      <b>Preview Exercise</b>
+      <div class='shortcut'>
+        <kbd>&#8984; + <kbd>P</kbd>
+      </div>
+    </div>
+    <div class="shortcut-item span5">
+      <b>Save Progress</b>
+      <div class='shortcut'>
+        <kbd>&#8984; + <kbd>S</kbd>
+      </div>
+    </div>
+    <div class="shortcut-item span5">
+      <b>Show Feedback</b>
+      <div class='shortcut'>
+        <kbd>&#8997 + <kbd>F</kbd>
+      </div>
+    </div>
+  </div>
+  <!-- Extra Shortcuts -->
+  <div class="extra-shortcuts">
+    <div class="items">
+      <div class="shortcut-item span4">
+        <b>Add Exercise</b>
+        <div class='shortcut'>
+          <kbd>&#8997 + <kbd>A</kbd>
+        </div>
+      </div>
+      <div class="shortcut-item span4">
+        <b>Delete Exercise</b>
+        <div class='shortcut'>
+          <kbd>&#8997 + <kbd>D</kbd>
+        </div>
+      </div>
+      <div class="shortcut-item span4">
+        <b>Edit Next</b>
+        <div class='shortcut'>
+          <kbd>&#8997 + <kbd>T</kbd>
+        </div>
+      </div>
+      <div class="shortcut-item span4">
+        <b>Edit Previous</b>
+        <div class='shortcut'>
+          <kbd>&#8997 + <kbd>P</kbd>
+        </div>
+      </div>
+      <div class="shortcut-item span4">
+        <b>Edit Default Code</b>
+        <div class='shortcut'>
+          <kbd>&#8997 + <kbd>1</kbd>
+        </div>
+      </div>
+      <div class="shortcut-item span4">
+        <b>Edit SCT</b>
+        <div class='shortcut'>
+          <kbd>&#8997 + <kbd>2</kbd>
+        </div>
+      </div>
+    </div>
+  </div><!-- end extra-shortcuts -->
+  <div class="keyboard">
+    <div class="keyboard-toggle">
+      <a href="javascript:void(0);">
+        <b class="show-more">Show More</b>
+        <b class="show-less">Show Fewer</b>
+        <span class="caret"></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+</script>
+<script id='tmpl-share-course-project' type='text/x-underscore-template'>
+<div class='aside share-course-project'>
+  <p>
+    Share this link with friends and others to show off your project:
+    <br>
+    <input type='text' id='url' readonly='readonly' name='url' value='<%= project_url %>'/> or
+    <a target='_blank' class='button light-green' href='<%= project_url %>'>View Project</a>
+  </p>
+</div>
+</script>
+
+<script type="text/javascript">if (!NREUMQ.f) { NREUMQ.f=function() {
+NREUMQ.push(["load",new Date().getTime()]);
+var e=document.createElement("script");
+e.type="text/javascript";
+e.src=(("http:"===document.location.protocol)?"http:":"https:") + "//" +
+  "d1ros97qkrwjf5.cloudfront.net/42/eum/rum.js";
+document.body.appendChild(e);
+if(NREUMQ.a)NREUMQ.a();
+};
+NREUMQ.a=window.onload;window.onload=NREUMQ.f;
+};
+NREUMQ.push(["nrfj","beacon-4.newrelic.com","df7a84d5e5",927180,"dApaQRAKCFhcQBtcAEQNVloDFwAbUFxQXRk=",0,65,new Date().getTime(),"","","","",""]);</script></body>
+</html>

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <!DOCTYPE html
+            PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+            "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  
+  
+   <head>
+ 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rev="made" href="mailto:gcc@gcc.gnu.org" />
+    <link rel="shortcut icon" href="http://gcc.gnu.org/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="http://gcc.gnu.org/gcc.css" />
+  
+ <title>
+GNU Fortran
+- GNU Project - Free Software Foundation (FSF)</title>
+   </head>
+ 
+
+<body>
+
+
+
+
+<h1>Welcome to the home of GNU Fortran</h1>
+
+<p>The purpose of the GNU Fortran (GFortran) project is to
+develop the Fortran compiler front end and run-time libraries
+for GCC, the GNU Compiler Collection. GFortran development is part
+of the <a href="http://www.gnu.org/">GNU Project</a>. We seek to bring
+free number crunching to a broad spectrum of platforms and users.</p>
+
+<p>In particular, the project wishes to reach users of the
+Fortran language, be it in the scientific community, education, 
+or commercial environments.  The GFortran compiler is fully compliant
+with the Fortran 95 Standard and includes legacy F77 support.
+In addition, a significant number of Fortran 2003 and Fortran 2008
+features are implemented.  Please give it a try. If you encounter problems,
+contact us at the mailing list or file a problem report in bugzilla.</p>
+
+<p>GFortran development follows the open development process.  We do
+this to attract a diverse team of developers and to ensure that GFortran
+works on multiple architectures and diverse environments.  We always need
+more help.  If you are interested in participating, please contact us at
+<a href="mailto:fortran@gcc.gnu.org">fortran@gcc.gnu.org</a>.
+(Also check out our <a href="../lists.html">mailing lists page)</a></p>
+
+<h2>The Wiki and Getting the Compiler</h2>
+
+<p>For additional info on GFortran developments, you may find the
+<a href="http://gcc.gnu.org/wiki/GFortran">GFortran wiki</a> useful. 
+Anyone may contribute information to the wiki.  (Neither copyright
+paperwork nor a patch review process is required.)</p>
+<p>The GNU Project is about providing source code for its programs. 
+For convenience, a number of people regularly build binaries for different 
+platforms. Links to these can be found at the 
+<a href="http://gcc.gnu.org/wiki/GFortran">wiki</a>.  Most of the binary 
+executables are the latest development snapshots of GFortran and are
+provided to encourage testing.  We also want new users, from students
+to masters of the art of Fortran, to try GFortran.
+It really is a great compiler!</p>
+
+<h2>Project Objectives</h2>
+
+<p>We strive to provide a high quality Fortran compiler that works
+well on a variety of native targets.  This means:</p>
+<ul>
+<li><p>Conformance to Fortran standards, primarily Fortran 95, 2003,
+and 2008</p></li>
+<li><p>Performance of executables and computational accuracy</p></li>
+<li><p>Reasonable compile speed and cross compilation capability</p></li>
+<li><p>Good diagnostics and debugging features</p></li>
+<li><p>Legacy code support where practical.</p></li>
+</ul>
+
+<h3>Extensions in GNU Fortran</h3>
+
+<p>The initial goal of the GNU Fortran Project was construction of a
+Fortran 95 compiler that complies with the ISO Fortran 95 Programming
+Language standard [ISO/IEC 1539-1:1997(E)].  We are now well into
+F2003 and F2008 features.
+The <a href="http://gcc.gnu.org/wiki/GFortran">GFortran
+wiki</a> and <a href="http://gcc.gnu.org/bugzilla/">Bugzilla</a>
+list features under development or yet to be implemented. Compiler
+capability is quite extensive and includes nearly all g77 features.
+We highly encourage users to move from g77, which is no longer
+maintained, and start taking advantage of GFortran's modern features.
+Legacy g77 code will compile fine in almost all cases.</p>
+
+<h2>Status of Compiler and Run-time Library</h2>
+
+<p>We regularly update the
+<a href="http://gcc.gnu.org/wiki/GFortran#news">status</a>
+of the front end and run-time library development.
+For a TODO list, check <a href="http://gcc.gnu.org/bugzilla/">Bugzilla</a>
+and the <a href="http://gcc.gnu.org/wiki/GFortran">GFortran wiki</a>.</p>
+
+<h2>Contributing</h2>
+
+<p>We encourage everyone to <a href="../contribute.html">contribute</a> 
+changes and help test GNU Fortran.  GNU Fortran is developed on
+the mainline of GCC and has been part of the compiler collection
+since the 4.0.0 release.  We provide read access to our development
+sources for everybody by <a href="../svn.html">anonymous SVN</a>.  If
+you do not have SVN access (for instance if you are behind a
+firewall prohibiting the SVN protocol), you might want to download
+<a href="../snapshots.html">snapshots</a>.</p>
+<p>Contributions will be reviewed by at least one of the following
+people:</p>
+
+<ul>
+<li><p style="margin-bottom: 0in">Paul Brook</p></li>
+<li><p style="margin-bottom: 0in">Steven Bosscher</p></li>
+<li><p style="margin-bottom: 0in">Bud Davis</p></li>
+<li><p style="margin-bottom: 0in">Jerry DeLisle</p></li>
+<li><p style="margin-bottom: 0in">Toon Moene</p></li>
+<li><p style="margin-bottom: 0in">Tobias Schlueter</p></li>
+<li><p style="margin-bottom: 0in">Janne Blomqvist</p></li>
+<li><p style="margin-bottom: 0in">Steve Kargl</p></li>
+<li><p style="margin-bottom: 0in">Thomas Koenig</p></li>
+<li><p style="margin-bottom: 0in">Paul Thomas</p></li>
+<li><p style="margin-bottom: 0in">Janus Weil</p></li>
+<li><p style="margin-bottom: 0in">Daniel Kraft</p></li>
+<li><p>Daniel Franke</p></li>
+</ul>
+
+<p>Under the rules specified below: 
+</p>
+<ul>
+<li><p style="margin-bottom: 0in">All <a href="../contribute.html">normal
+requirements</a> for patch submission (assignment of copyright to
+the FSF, testing, ChangeLog entries, etc) still apply, and
+reviewers should ensure that these have been met before approving
+changes.</p></li>
+<li><p style="margin-bottom: 0in">Approval should be necessary for
+patches which don't fall under the obvious rule. So, with the approver list
+put in place, everybody (except maintainers) should still seek approval for 
+his/her patches.  We have found the mutual peer review process really 
+works well.</p></li>
+<li><p style="margin-bottom: 0in">Patches should only be reviewed by
+people who know the affected parts of the compiler. (i.e. the
+reviewer has to be sure he/she knows stuff well enough to make a
+good judgment.)</p></li>
+<li><p style="margin-bottom: 0in">Large/complicated patches should
+still go by one of our maintainers, or team consensus.</p></li>
+<li><p>We are all reasonable people, and nobody is working under
+employer pressure or needs an ego-boost badly, so in general we
+assume that no-one deliberately does anything stupid :-) </p></li>
+</ul>
+
+<p>The directories involved are:</p>
+<ol>
+<li><p style="margin-bottom: 0in">gcc/gcc/fortran/ </p></li>
+<li><p style="margin-bottom: 0in">gcc/gcc/testsuite/gfortran.dg/ </p></li>
+<li><p style="margin-bottom: 0in">gcc/gcc/testsuite/gfortran.fortran-torture/
+</p></li>
+<li><p>gcc/libgfortran/</p></li>
+</ol>
+
+<h2>Documentation</h2>
+
+<p>The manuals for release and current development versions of GNU
+Fortran can be downloaded from the
+<a href="http://gcc.gnu.org/wiki/GFortran#download">wiki documentation</a>
+page or the
+<a href="http://gcc.gnu.org/onlinedocs/">GCC online documents</a> page.</p>
+
+<h2>Usage</h2>
+
+<p>Here is a short
+<a href="http://gcc.gnu.org/wiki/GFortranUsage">explanation</a>
+on how to invoke and use the compiler once you have built it (or
+downloaded the binary).</p>
+
+<h2>Suggested Reading</h2>
+
+<p>We provide links to <a href="../readings.html#fortran">other information</a>
+relevant to Fortran programmers; the
+<a href="http://gcc.gnu.org/wiki/GFortran#manuals">GFortran
+wiki</a> contains further links.</p>
+
+
+
+
+<!-- ==================================================================== -->
+
+<div class="copyright">
+
+<address style="margin-top:0;">For questions related to the use of GCC,
+please consult these web pages and the
+<a href="http://gcc.gnu.org/onlinedocs/">GCC manuals</a>. If that fails,
+the <a href="mailto:gcc-help@gcc.gnu.org">gcc-help@gcc.gnu.org</a>
+mailing list might help.
+Comments on these web pages and the development of GCC are welcome on our
+developer list at <a href="mailto:gcc@gcc.gnu.org">gcc@gcc.gnu.org</a>.
+All of <a href="http://gcc.gnu.org/lists.html">our lists</a>
+have public archives.
+</address>
+
+<p>Copyright (C)
+<a href="http://www.fsf.org">Free Software Foundation, Inc.</a>
+Verbatim copying and distribution of this entire article is
+permitted in any medium, provided this notice is preserved.</p>
+
+<p style="margin-bottom:0;">These pages are
+<a href="http://gcc.gnu.org/about.html">maintained by the GCC team</a>.
+Last modified 2012-11-02<!-- IGNORE DIFF
+--><a href="http://validator.w3.org/check/referer">.</a></p>
+
+</div>
+
+<!-- ==================================================================== -->
+
+</body>
+     </html>
+  
+ 

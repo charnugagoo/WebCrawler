@@ -1,0 +1,145 @@
+<!-- MHonArc v2.4.4 -->
+<!--X-Subject: FORTRAN Calling C! -->
+<!--X-From-R13: "Xbfrcu @begu" <XabeguNbp&#45;vap.pbz> -->
+<!--X-Date: 22 Oct 1999 16:28:39 &#45;0000 -->
+<!--X-Message-Id: 000901bf1caa$8c0948e0$831cb5d8@cherokee_comm -->
+<!--X-Content-Type: multipart/alternative -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>FORTRAN Calling C!</TITLE>
+</HEAD>
+<BODY>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--htdig_noindex-->
+<p>This is the mail archive of the 
+<tt>gcc@gcc.gnu.org</tt>
+mailing list for the <a href="/">GCC project</a>.
+
+
+<!--/htdig_noindex-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<!--htdig_noindex-->
+<HR>
+<table border="0">
+  <tr><th align="left">Index Nav:</th>
+      <td colspan="2">
+        [<A HREF="index.html#00516">Date&nbsp;Index</A>] [<a href="subjects.html#00516">Subject&nbsp;Index</a>] [<a href="authors.html#00516">Author&nbsp;Index</a>] [<A HREF="threads.html#00516">Thread&nbsp;Index</A>]
+      </td>
+  </tr>
+  <tr><th align="left">Message Nav:</th>
+      <td>[<A HREF="msg00515.html">Date&nbsp;Prev</A>]&nbsp;[<A HREF="msg00517.html">Date&nbsp;Next</A>]</td>
+      <td>[<A HREF="msg00515.html">Thread&nbsp;Prev</A>]&nbsp;[<A HREF="msg00608.html">Thread&nbsp;Next</A>]</td>
+  </tr>
+</table>
+<!--/htdig_noindex-->
+
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>FORTRAN Calling C!</h1>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<UL>
+<LI><em>To</em>: &lt;gcc at gcc dot gnu dot org&gt;</LI>
+<LI><em>Subject</em>: FORTRAN Calling C!</LI>
+<LI><em>From</em>: "Joseph North" &lt;Jnorth at oc-inc dot com&gt;</LI>
+<LI><em>Date</em>: Fri, 22 Oct 1999 12:28:59 -0400</LI>
+<LI><em>Cc</em>: &lt;fbernstein at oc-inc dot com&gt;,&lt;jpeng at oc-inc dot com&gt;,&lt;jnorth at oc-inc dot com&gt;</LI>
+</UL>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<HR>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<TABLE><TR><TD BGCOLOR="#ffffff" STYLE="background-color: #ffffff; ">
+
+
+
+<DIV><FONT color=#000000 size=2>Hi GCC Folks:</FONT></DIV>
+<DIV><FONT color=#000000 size=2></FONT>&nbsp;</DIV>
+<DIV><FONT color=#000000 size=2></FONT>&nbsp;</DIV>
+<DIV><FONT color=#000000 size=2>&nbsp;&nbsp; Allow me to introduce myself: I'm 
+Joseph Roy North, and I'm using g77 on a</FONT></DIV>
+<DIV><FONT color=#000000 size=2>Sun </FONT><FONT color=#000000 size=2>Ultra 5 
+running Solaris 7.&nbsp; I need some development assistance, 
+please.</FONT></DIV>
+<DIV><FONT color=#000000 size=2>&nbsp;&nbsp; We have legacy FORTRAN software 
+which we are trying to keep in operation.</FONT></DIV>
+<DIV><FONT color=#000000 size=2>However, we can use C for new modules.&nbsp; I 
+have tried to demonstrate a</FONT></DIV>
+<DIV><FONT color=#000000 size=2>FORTRAN driver invoking a C function, somewhat 
+similar to that described</FONT></DIV>
+<DIV><FONT color=#000000 size=2>in URL = <A 
+href="http://www.tc.cornell.edu/Edu/Tutor/Interlanguage/index.shared.html">http://www.tc.cornell.edu/Edu/Tutor/Interlanguage/index.shared.html</A>&quot;.</FONT></DIV>
+<DIV><FONT color=#000000 size=2>When I run something like &quot;g77 fd.f cfunc.o 
+-lm&quot;, I keep getting a message like</FONT></DIV>
+<DIV><FONT color=#000000 size=2>symbol &quot;mainl&quot; not resolved.&nbsp; 
+Module &quot;cfunc.c&quot; has &quot;mainl()&quot; instead of the</FONT></DIV>
+<DIV><FONT color=#000000 size=2>usual &quot;main()&quot;.&nbsp; Any ideas on how 
+to solve my problem would be gratefully</FONT></DIV>
+<DIV><FONT color=#000000 size=2>appreciated.</FONT></DIV>
+<DIV><FONT color=#000000 size=2></FONT>&nbsp;</DIV>
+<DIV>&nbsp;</DIV>
+<DIV><FONT color=#000000 size=2></FONT>&nbsp;</DIV>
+<DIV><FONT color=#000000 
+size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Sincerely,</FONT></DIV>
+<DIV><FONT color=#000000 size=2></FONT>&nbsp;</DIV>
+<DIV><FONT color=#000000 size=2></FONT>&nbsp;</DIV>
+<DIV><FONT color=#000000 
+size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Joseph Roy North</FONT></DIV>
+<DIV><FONT color=#000000 size=2></FONT><FONT 
+size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Senior Systems Engineer</FONT></DIV>
+<DIV><FONT color=#000000 
+size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+OC, Inc.</FONT></DIV>
+<DIV><FONT color=#000000 size=2></FONT><FONT 
+size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Alexandria, VA</FONT></DIV>
+<DIV><FONT 
+size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+E: <A href="mailto:jnorth@oc-inc.com">jnorth@oc-inc.com</A></FONT></DIV>
+<DIV><FONT size=2></FONT><FONT color=#000000 
+size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+V: (703) 813-4911</FONT></DIV>
+<DIV><FONT color=#000000 
+size=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT></DIV>
+</TD></TR></TABLE>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<HR>
+<UL><LI><STRONG>Follow-Ups</STRONG>:
+<UL>
+<LI><STRONG><A NAME="00608" HREF="msg00608.html">Re: FORTRAN Calling C!</A></STRONG>
+<UL><LI><EM>From:</EM> Toon Moene</LI></UL></LI>
+</UL></LI></UL>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<!--htdig_noindex-->
+<table border="0">
+  <tr><th align="left">Index Nav:</th>
+      <td colspan="2">
+        [<A HREF="index.html#00516">Date&nbsp;Index</A>] [<a href="subjects.html#00516">Subject&nbsp;Index</a>] [<a href="authors.html#00516">Author&nbsp;Index</a>] [<A HREF="threads.html#00516">Thread&nbsp;Index</A>]
+      </td>
+  </tr>
+  <tr><th align="left">Message Nav:</th>
+      <td>[<A HREF="msg00515.html">Date&nbsp;Prev</A>]&nbsp;[<A HREF="msg00517.html">Date&nbsp;Next</A>]</td>
+      <td>[<A HREF="msg00515.html">Thread&nbsp;Prev</A>]&nbsp;[<A HREF="msg00608.html">Thread&nbsp;Next</A>]</td>
+  </tr>
+</table>
+<!--/htdig_noindex-->
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</BODY>
+</HTML>

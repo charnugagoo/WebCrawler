@@ -1,0 +1,377 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+   "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>Download Ruby</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/low.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/screen.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print" />
+    <link title="Low vision" rel="alternate stylesheet" type="text/css" href="/stylesheets/low_vision_screen.css" media="screen" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    
+    
+  </head>
+  <body>
+    <div id="page">
+      <div id="header">
+        <div id="logo"><a href="/en/"><img src="/images/logo.gif" width="331" height="119" alt="Ruby - A Programmer's Best Friend" title="" /></a></div>
+        <div class="site-links">
+<strong>Downloads</strong><span class="separator"> | </span><a href="/en/documentation/">Documentation</a><span class="separator"> | </span><a href="/en/libraries/">Libraries</a><span class="separator"> | </span><a href="/en/community/">Community</a><span class="separator"> | </span><a href="/en/news/">News</a><span class="separator"> | </span><a href="/en/security/">Security</a><span class="separator"> | </span><a href="/en/about/">About Ruby</a>
+        </div>
+      </div>
+      <hr class="hidden-modern" />
+      <div id="main-wrapper">
+        <div id="main">
+          <div id="content-wrapper">
+            <div id="head-wrapper-1">
+              <div id="head-wrapper-2">
+                <div id="head">
+
+                  <h1>Download Ruby</h1>
+                </div>
+              </div>
+            </div>
+            <div id="content">
+<p>Here you can get the latest Ruby distributions in your favorite
+flavor. The current stable version is 1.9.3.</p>
+
+
+	<h3>Three Ways of Installing Ruby</h3>
+
+
+	<p>You can get a copy of Ruby in a variety of ways, and different people
+prefer each of the three methods for different reasons. Each will have
+a section below, but here&#8217;s an overview:</p>
+
+
+	<ul>
+	<li><strong>Compiling from Source</strong> is the standard way that software has been
+delivered for many, many years. This will be most familiar to the largest
+number of software developers.</li>
+		<li>There are a few <strong>third party tools</strong> to install Ruby. These are often
+simpler for total newbies or the most advanced of users.</li>
+		<li>Finally, A few <strong>package management system</strong>s support Ruby. This will be
+most familiar to people who use one operating system for everything, and
+like to stick to those individual standards.</li>
+	</ul>
+
+
+	<p>Finally, if you want to run multiple versions of Ruby on the same machine,
+check the <strong>third party tools</strong> section and use rvm. It&#8217;s by far the best way
+to accomplish that, unless you know exactly what you&#8217;re doing.</p>
+
+
+	<h3>Compiling Ruby — Source code</h3>
+
+
+	<p>Installing from the source code is a great solution for when you are
+comfortable enough with your platform and perhaps need specific
+settings for your environment. It&#8217;s also a good solution in the event
+that there are no other premade packages for your platform.</p>
+
+
+	<p>If you have an issue compiling Ruby, consider using one of the third party
+tools in the next section. They may help you.</p>
+
+
+	<ul>
+	<li><a href="http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p385.tar.gz">Ruby 1.9.3-p385</a>
+(md5:&nbsp;3e0d7f8512400c1a6732327728a56f1d) Stable
+(<em>recommended</em>)</li>
+		<li><a href="http://ftp.ruby-lang.org/pub/ruby/ruby-1.9-stable.tar.gz">Stable Snapshot</a>
+This is a tarball of the latest snapshot of the Stable branch.</li>
+		<li><a href="http://ftp.ruby-lang.org/pub/ruby/snapshot.tar.gz">Nightly Snapshot</a>
+This is a tarball of whatever is in svn, made nightly. This may
+contain bugs or other issues, use at your own risk!</li>
+	</ul>
+
+
+	<p>For information about the Ruby Subversion and Git repositories, see
+our <a href="/en/community/ruby-core/">Ruby Core</a> page.</p>
+
+
+	<h3>Third Party Tools</h3>
+
+
+	<p>Many Rubyists use third-party tools to help them install Ruby. They confer
+various advantages, but are not officially supported. Their respective
+communities are very helpful, however.</p>
+
+
+	<h4><span class="caps">RVM</span></h4>
+
+
+	<p>The most popular tool to install Ruby is <strong><span class="caps">RVM</span></strong>, for &#8220;Ruby Version Manager.&#8221; 
+Not only does it make installing Ruby incredibly easy, it also allows you to
+install and manage multiple copies of Ruby on your system, as well as multiple
+alternate implementations of Ruby.</p>
+
+
+	<p><span class="caps">RVM</span> is only available for Mac <span class="caps">OS X</span>, Linux, or any <span class="caps">UNIX</span>-like operating
+system. Windows users should check out
+<a href="https://github.com/vertiginous/pik">pik</a> for a similar project, or
+consider using RubyInstaller, described in the next section.</p>
+
+
+	<p>As of this writing, as long as you have <a href="http://git-scm.com/">git</a> installed,
+you can install <span class="caps">RVM</span> with:</p>
+
+
+<pre class="code sh-code"><code>$ \curl -L https://get.rvm.io | bash -s stable --ruby</code></pre>
+
+	<p>For the latest instructions on installing rvm, check out <a href="https://rvm.io/rvm/install/">the <span class="caps">RVM</span>
+installation page</a>.
+The above command will install both <span class="caps">RVM</span> and the latest version of Ruby. <span class="caps">RVM</span> can also install most of the Ruby
+implementations listed below. To see all supported versions, type
+<code>rvm list known</code>.</p>
+
+
+	<h4>RubyInstaller</h4>
+
+
+	<p>If you&#8217;re on Windows, there&#8217;s a great project to help you install Ruby:
+<a href="http://rubyinstaller.org/">RubyInstaller</a>. It gives you everything you need
+to set up a full Ruby development environment on Windows.</p>
+
+
+	<p>To use RubyInstaller, download it from the <a href="http://rubyinstaller.org/downloads/">RubyInstaller download
+page</a>. Then just use the
+installer, and you&#8217;re done!</p>
+
+
+	<p>If you are installing Ruby in order to use Rails, you should use
+<a href="http://railsinstaller.org/">RailsInstaller</a> which uses RubyInstaller
+but gives you extra tools that help with Rails development.</p>
+
+
+	<h3>Package Management Systems</h3>
+
+
+	<p>If you can&#8217;t compile your own Ruby, and you don&#8217;t want to use a third party
+tool, you can use your system&#8217;s package manager to install Ruby.</p>
+
+
+	<p>Certain members of the Ruby community feel very strongly that you should never
+use a package manager to install Ruby, and that you should use <span class="caps">RVM</span> instead.
+While the full list of pros and cons are outside of the scope of this page, the
+most basic reason is that most package managers have older versions of Ruby in
+their repositories. If you&#8217;d like to use the newest Ruby, make sure you use the
+correct package name, or use <span class="caps">RVM</span> instead.</p>
+
+
+	<h4>Linux</h4>
+
+
+	<p>Debian <span class="caps">GNU</span>/Linux uses the apt package manager system. (So does Ubuntu.)
+You can use it like this:</p>
+
+
+<pre class="code sh-code"><code>$ sudo apt-get install ruby1.9.1</code></pre>
+
+	<p>Yes, this will install Ruby 1.9.2. It has a &#8216;library compatibility version&#8217; of
+1.9.1, hence the name.</p>
+
+
+	<p>If you install the &#8216;ruby&#8217; package, you&#8217;ll get the older Ruby 1.8.</p>
+
+
+	<p>Arch Linux uses a package manager named pacman. To get Ruby, just do this:</p>
+
+
+<pre class="code sh-code"><code>$ sudo pacman -S ruby</code></pre>
+
+	<p>On other systems, <span class="caps">RVM</span> might be the right choice for you, or you can
+search the package repository for your Linux distro&#8217;s manager.</p>
+
+
+	<h4>Mac <span class="caps">OS X</span></h4>
+
+
+	<p>Ruby 1.8.7 is fully supported in Mac <span class="caps">OS X</span> Lion as well as many popular
+Ruby gems (packages). For details, see the <a href="http://trac.macosforge.org/projects/ruby/wiki">Ruby wiki at MacOS
+Forge</a>.</p>
+
+
+	<p>Mac <span class="caps">OS X</span> Tiger is packaged with version 1.8.2 of Ruby, and Leopard
+ships with 1.8.6, but, for those who haven&#8217;t upgraded to Leopard, there
+are a number  of options for installing the latest version of Ruby.</p>
+
+
+	<p>Many people on Mac <span class="caps">OS X</span> use <a href="http://mxcl.github.com/homebrew/">Homebrew</a> as
+a package manager. It&#8217;s really easy to get Ruby:</p>
+
+
+<pre class="code sh-code"><code>$ brew install ruby</code></pre>
+
+	<p>Also, since <span class="caps">OS X</span> is based on Unix, downloading and installing from the
+source is just as easy and effective as the other solutions. To help
+you with installation of new Ruby versions on <span class="caps">OS X</span>, it&#8217;s probably a
+good idea to use <span class="caps">RVM</span>. Type <code>rvm notes</code> for system-specific information.</p>
+
+
+	<p>For a detailed look at installing Ruby (and Rails), Dan Benjamin&#8217;s
+excellent articles <a href="http://hivelogic.com/articles/ruby-rails-mongrel-mysql-osx">for
+Tiger</a>,
+<a href="http://hivelogic.com/articles/ruby-rails-leopard">for Leopard</a>, and
+<a href="http://hivelogic.com/articles/compiling-ruby-rubygems-and-rails-on-snow-leopard/">for Snow Leopard</a>
+will get you up and running very quickly. On Lion, <a href="http://intridea.com/2011/7/26/setting-up-ruby-dev-on-lion?blog=company">this
+article</a>
+can help you.</p>
+
+
+	<h4>Ruby On Solaris and OpenIndiana</h4>
+
+
+	<p>Ruby 1.8.7 are available for Solaris 8 through Solaris 10 on
+<a href="http://www.sunfreeware.com">Sunfreeware</a> and Ruby 1.8.7 is available
+at <a href="http://www.blastwave.org">Blastwave</a>. Ruby 1.9.2p0 is also
+available at <a href="http://www.sunfreeware.com">Sunfreeware</a>, but this is
+outdated. Using <span class="caps">RVM</span> can get you the latest version of Ruby 1.9.2.</p>
+
+
+	<p>To install Ruby on <a href="http://openindiana.org/">OpenIndiana</a>, please
+use the <a href="http://opensolaris.org/os/project/pkg/">Image Packaging System, or
+<span class="caps">IPS</span></a> client. This will install
+the latest Ruby binaries and Rubygems directly from the OpenSolaris
+network repository for Ruby 1.9. It&#8217;s easy:</p>
+
+
+<pre class="code sh-code"><code>% pkg install runtime/ruby-18</code></pre>
+
+	<p>Like before, <span class="caps">RVM</span> is a good way to obtain Ruby 1.9.2, the latest
+version.</p>
+
+
+	<h3>Other Implementations of Ruby</h3>
+
+
+	<p>Ruby, as a language, has a few different implementations. This guide has
+been discussing the reference implementation, <strong><span class="caps">MRI</span></strong>, but there are also
+others. They are often useful in certain situations, provide extra integration
+to other languages or environments, or have special features that <span class="caps">MRI</span> doesn&#8217;t.</p>
+
+
+	<p>Here&#8217;s a list:</p>
+
+
+	<ul>
+	<li><a href="http://jruby.org">JRuby</a> is Ruby atop the <span class="caps">JVM</span> (Java Virtual Machine),
+utilizing the <span class="caps">JVM</span>&#8217;s optimizing <span class="caps">JIT</span> compilers, garbage collectors, concurrent
+threads, tool ecosystem, and vast collection of libraries.</li>
+		<li><a href="http://rubini.us">Rubinius</a> is &#8216;Ruby written in Ruby.&#8217; Built on top of <span class="caps">LLVM</span>,
+Rubinius sports a nifty virtual machine that other languages are being
+built on top of, too.</li>
+		<li><a href="http://www.macruby.org">MacRuby</a> is a Ruby that&#8217;s tightly integrated with
+Apple&#8217;s Cocoa libraries for Mac <span class="caps">OS X</span>, allowing you to write desktop
+applications with ease.</li>
+		<li><a href="https://github.com/parrot/cardinal">Cardinal</a> is a &#8220;Ruby compiler
+for <a href="http://parrot.org">Parrot</a> Virtual Machine&#8221; (Perl 6).</li>
+		<li><a href="http://www.ironruby.net">IronRuby</a> is an implementation &#8220;tightly
+integrated with the .NET Framework&#8221;.</li>
+		<li><a href="http://ruby.gemstone.com">MagLev</a> is &#8220;a fast, stable, Ruby
+implementation with integrated object persistence and distributed
+shared cache&#8221;.</li>
+	</ul>
+
+
+	<p>Some of those implementations, including <span class="caps">MRI</span>, follow the guidelines of
+<a href="http://rubyspec.org">RubySpec</a>, a &#8220;complete executable specification
+for the Ruby programming language&#8221;.</p>
+<div id="extended">
+
+</div>
+            </div>
+          </div>
+          <hr class="hidden-modern" />
+          <div id="sidebar-wrapper">
+            <div id="sidebar">
+
+
+<div class="navigation">
+  <h3><strong>Get Started,</strong> it&#8217;s easy!</h3>
+  <ul class="menu">
+    <li><a href="http://TryRuby.org">Try Ruby! (in your browser)</a></li>
+
+    <li><a href="/en/downloads/">Download Ruby</a></li>
+
+    <li><a href="/en/documentation/quickstart/">Ruby in Twenty Minutes</a></li>
+    <li><a href="/en/documentation/ruby-from-other-languages/">Ruby from Other Languages</a></li>
+  </ul>
+</div>
+
+<div class="navigation">
+  <h3><strong>Explore</strong> a new world&hellip;</h3>
+  <ul class="menu">
+    <li><a href="/en/documentation/">Documentation</a></li>
+    <li><a href="http://www.amazon.com/s/ref=sr_nr_n_5?ie=UTF8&amp;rs=1000&amp;keywords=Ruby&amp;rh=i%3Aaps%2Ck%3ARuby%2Ci%3Astripbooks%2Cn%3A1000%2Cn%3A5">Books</a></li>
+    <li><a href="/en/libraries/">Libraries</a></li>
+    <li><a href="/en/documentation/success-stories/">Success Stories</a></li>
+  </ul>
+</div>
+
+<div class="navigation">
+  <h3><strong>Participate</strong> in a friendly and growing community.</h3>
+  <ul>
+    <li><a href="/en/community/mailing-lists/">Mailing Lists</a>: Talk about Ruby with programmers from all around the world.</li>
+    <li><a href="/en/community/user-groups/">User Groups</a>: Get in contact with Rubyists in your area.</li>
+    <li><a href="/en/community/weblogs/">Weblogs</a>: Read about what&#8217;s happening right now in the Ruby community.</li>
+    <li><a href="/en/community/ruby-core/">Ruby Core</a>: Help polish the rough edges of the latest Ruby.</li>
+    <li><a href="http://redmine.ruby-lang.org/">Issue Tracking</a>: Report or help solve issues in Ruby.</li>
+  </ul>
+</div>
+
+
+<h3>Some Top Ruby Projects</h3>
+
+<p class="more"><a href="/en/libraries/top-projects/">More&#8230;</a></p>
+
+
+<h3>Syndicate</h3>
+<p><a href="/en/feeds/news.rss">Recent News (RSS)</a></p>
+            </div>
+          </div>
+          <hr class="hidden-modern" />
+          <div class="foot">
+            <div class="site-links">
+<strong>Downloads</strong><span class="separator"> | </span><a href="/en/documentation/">Documentation</a><span class="separator"> | </span><a href="/en/libraries/">Libraries</a><span class="separator"> | </span><a href="/en/community/">Community</a><span class="separator"> | </span><a href="/en/news/">News</a><span class="separator"> | </span><a href="/en/security/">Security</a><span class="separator"> | </span><a href="/en/about/">About Ruby</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="search-box">
+<form id="search-form" action="http://www.google.com/cse">
+  <table class="fieldset">
+    <tr>
+      <td>
+        <input class="field" type="text" name="q" size="31" style="background: white url(http://www.google.com/coop/intl/en/images/google_custom_search_watermark.gif) left no-repeat" onfocus="this.style.background='white'" onblur="if (/^\s*$/.test(this.value)) this.style.background='white url(http://www.google.com/coop/intl/en/images/google_custom_search_watermark.gif) left no-repeat'"/>
+      </td>
+      <td>
+        <input type="hidden" name="cx" value="013598269713424429640:g5orptiw95w" />
+        <input type="hidden" name="ie" value="UTF-8" />
+        <input class="button" type="submit" name="sa" value="Search" />
+      </td>
+    </tr>
+  </table>
+</form>
+      </div>
+      <div id="footer">
+        <div class="fine-print">
+          <p>Content available in <a href="/en/">English</a>, <a href="/fr/">French</a>, <a href="/ja/">Japanese</a>, <a href="/ko/">Korean</a>, <a href="/pl/">Polish</a>, <a href="/es/">Spanish</a>, <a href="/pt/">Portuguese</a>, <a href="/zh_cn/">Simplified Chinese</a>, <a href="/zh_TW/">Traditional Chinese</a>, <a href="/id/">Bahasa Indonesia</a>, <a href="/de/">German</a>, <a href="/it/">Italian</a>, <a href="/cs/">Czech</a>, <a href="/bg/">Bulgarian</a> and <a href="/tr/">Turkish</a>.</p> 
+          <p>This website is made with Ruby and powered by <a href="http://radiantcms.org">Radiant CMS</a>.
+            It is proudly maintained by <a href="http://rubyidentity.org">members of the Ruby community</a>. Please contact
+            our <a href="mailto:webmaster@ruby-lang.org">webmaster</a> for questions or comments
+            concerning this website.</p>
+        </div>
+      </div>
+    </div>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript" defer="defer">
+// <![CDATA[
+_uacct = "UA-620926-1";
+urchinTracker();
+// ]]>
+</script>
+  </body>
+</html>

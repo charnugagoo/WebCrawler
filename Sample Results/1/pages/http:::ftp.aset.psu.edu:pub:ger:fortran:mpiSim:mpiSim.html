@@ -1,0 +1,816 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 10">
+<meta name=Originator content="Microsoft Word 10">
+<link rel=File-List href="mpiSim_files/filelist.xml">
+<title> DESCRIPTION OF mpiSim</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="date"/>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="place"/>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="PlaceType"/>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="PlaceName"/>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:LastAuthor>Skip Knoble</o:LastAuthor>
+  <o:Revision>77</o:Revision>
+  <o:TotalTime>508</o:TotalTime>
+  <o:Created>2007-11-16T15:35:00Z</o:Created>
+  <o:LastSaved>2008-05-30T14:26:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>2202</o:Words>
+  <o:Characters>12556</o:Characters>
+  <o:Company>Penn State University</o:Company>
+  <o:Lines>104</o:Lines>
+  <o:Paragraphs>29</o:Paragraphs>
+  <o:CharactersWithSpaces>14729</o:CharactersWithSpaces>
+  <o:Version>10.6839</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 65.95pt 1.0in 65.95pt;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="49154"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=MsoPlainText><span style='mso-spacerun:yes'>          </span><b
+style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt'>EXPERMENTAL
+FORTRAN 90 MPI DEBUGGING PACKAGE, mpiSim<o:p></o:p></span></b></p>
+
+<p class=MsoPlainText>This file’s URL <span class=GramE>is<span
+style='mso-spacerun:yes'>  </span>http</span>://ftp.aset.psu.edu/pub/ger/fortran/mpiSim/mpiSim.html<b
+style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt'><o:p></o:p></span></b></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><a href="http://www.personal.psu.edu/faculty/h/d/hdk/">H.
+Skip <span class=SpellE>Knoble</span></a><span
+style='mso-spacerun:yes'>                                      </span><span
+style='mso-spacerun:yes'>              </span><st1:date Year="2008" Day="30"
+Month="5">30 May 2008</st1:date></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span class=SpellE><span class=GramE>mpiSim.zip</span></span><span
+style='mso-spacerun:yes'>            </span>File Table of Contents</p>
+
+<p class=MsoPlainText>-----------------------------------------------------------------------------------------</p>
+
+<p class=MsoPlainText><span style='mso-spacerun:yes'>   </span>mpiSim.f90<span
+style='mso-spacerun:yes'>      </span>-&gt; mpiSim Fortran 90/95 source code
+(over 5000 lines of code).</p>
+
+<p class=MsoPlainText><span style='mso-spacerun:yes'>   </span><span
+class=GramE>useSim.f90<span style='mso-spacerun:yes'>      </span>-&gt; USE
+statements that need to be <span class=SpellE>INCLUDEd</span> in an
+application.</span></p>
+
+<p class=MsoPlainText><span style='mso-spacerun:yes'>   </span>mpiSim.html<span
+style='mso-spacerun:yes'>     </span>-&gt; <span class=GramE>The</span> web
+page that you are now reading.</p>
+
+<p class=MsoPlainText><span style='mso-spacerun:yes'>   </span>*_ex.f90<span
+style='mso-spacerun:yes'>        </span>-&gt; <span class=GramE>Other</span>
+authors' MPI examples (20 of them); these have been</p>
+
+<p class=MsoPlainText><span style='mso-spacerun:yes'>                     
+</span><span class=GramE>set</span> up to compile and run with mpiSim; see <b
+style='mso-bidi-font-weight:normal'>How To</b> below.</p>
+
+<p class=MsoPlainText><span style='mso-spacerun:yes'>   </span><span
+class=SpellE><span class=GramE>lfdebug.sh</span></span><span class=GramE><span
+style='mso-spacerun:yes'>      </span>-&gt; Linux BASH script to invoke <span
+class=SpellE>Lahey</span> compile/link with debug options.</span></p>
+
+<p class=MsoPlainText><span style='mso-spacerun:yes'>   </span><span
+class=SpellE>lfdebug.bat</span><span style='mso-spacerun:yes'>     </span>-&gt;
+Windows BAT <span class=GramE>file</span> to invoke <span class=SpellE>Lahey</span>
+compile/link with debug options.</p>
+
+<p class=MsoPlainText><span style='mso-spacerun:yes'>   </span>done.txt<span
+style='mso-spacerun:yes'>        </span>-&gt; A list of <span class=GramE>MPI(</span>1.1)
+subprograms currently supported by mpiSim.</p>
+
+<p class=MsoPlainText>-----------------------------------------------------------------------------------------</p>
+
+<p class=MsoPlainText><span class=GramE>mpiSim</span> includes over 75 unique
+subprograms (over 200 overloaded routines).</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>View/download above source code files: <a
+href="http://ftp.cac.psu.edu/pub/ger/fortran/mpiSim/">http://ftp.aset.psu.edu/pub/ger/fortran/mpiSim/</a></p>
+
+<p class=MsoPlainText>Download the mpiSim package: <a
+href="http://ftp.aset.psu.edu/pub/ger/fortran/mpiSim/mpiSim.zip">http://ftp.aset.psu.edu/pub/ger/fortran/mpiSim/mpiSim.zip</a></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>OVERVIEW:</b> The
+purpose of mpiSim is to debug MPI applications at compile-time; </p>
+
+<p class=MsoPlainText><span class=GramE>run-time</span> debugging is also
+possible using compilers that support run-time compiler </p>
+
+<p class=MsoPlainText><span class=GramE>debug</span> options (for example, for
+the <a href="http://www.lahey.com/linux64.htm">Linux <span class=SpellE>Lahey</span>
+compiler</a>, please see the Bash script </p>
+
+<p class=MsoPlainText><a
+href="http://ftp.aset.psu.edu/pub/ger/fortran/mpiSim/lfdebug.sh"><span
+class=SpellE><span class=GramE>lfdebug.sh</span></span></a> or <a
+href="http://ftp.aset.psu.edu/pub/ger/fortran/mpiSim/lfdebug.bat"><span
+class=SpellE>ifdebug.bat</span></a>). At compile-time mpiSim essentially uses a
+F90/95 compiler to scan </p>
+
+<p class=MsoPlainText>an application’s MPI calls for validity.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>All of the mpiSim code is Standard <span class=GramE>Fortran</span>
+90/95, low overhead, easy to use; just insert </p>
+
+<p class=MsoPlainText>Include statement(s) in each program/subprogram that
+calls MPI routines (see <b style='mso-bidi-font-weight:normal'>How To</b> </p>
+
+<p class=MsoPlainText><span class=GramE>section</span> below). <span
+class=GramE>mpiSim</span> runs under Linux or Windows using <a
+href="http://www.polyhedron.com/Compsindex">any available F90/95 compiler</a>; </p>
+
+<p class=MsoPlainText><span class=GramE>and</span> does not require an OS batch
+job nor an “MPI compiler” nor a parallel library like MPICH.</p>
+
+<p class=MsoPlainText>For more specifics see the sections: <b style='mso-bidi-font-weight:
+normal'>CAPABILITIES</b> and <b style='mso-bidi-font-weight:normal'>LIMITATIONS</b>
+below.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><span
+style='font-size:11.0pt'>ACKNOWLEDGMENTS/REFERENCES</span>:</b> Nothing is done
+in a vacuum. Special thanks to:</p>
+
+<p class=MsoPlainText>Barbara Garrison for sharing her &quot;fake MPI&quot;
+routines which inspired this work;</p>
+
+<p class=MsoPlainText>James Van <span class=SpellE>Buskirk</span> for overloading
+code examples posted at <span class=SpellE>comp.lang.fortran</span>.</p>
+
+<p class=MsoPlainText>Mike Metcalf for his postings at <span class=SpellE>comp.lang.fortran</span>
+and book &quot;Fortran 95/2003</p>
+
+<p class=MsoPlainText><span class=GramE>Explained&quot;.</span> John <span
+class=SpellE>Burkardt</span>, et al, and Hans Joachim <span class=SpellE>Pflug</span>,
+for their excellent</p>
+
+<p class=MsoPlainText><span class=GramE>work</span> and many of the *_ex*.f90
+example codes. Some of these original codes are </p>
+
+<p class=MsoPlainText><span class=GramE>available</span> at web pages: <a
+href="http://people.scs.fsu.edu/~burkardt/f_src/mpi/mpi.html">http://people.scs.fsu.edu/~burkardt/f_src/mpi/mpi.html</a></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>An MPI Course is available on John <span class=SpellE>Burkardt's</span>
+web page:</p>
+
+<p class=MsoPlainText><a
+href="http://people.scs.fsu.edu/~burkardt/pdf/mpi_course.pdf">http://people.scs.fsu.edu/~burkardt/pdf/mpi_course.pdf</a>
+</p>
+
+<p class=MsoPlainText>Descriptions of MPI subprograms and special variables may
+be found at:</p>
+
+<p class=MsoPlainText><a
+href="http://people.scs.fsu.edu/~burkardt/html/mpi_glossary.html">http://people.scs.fsu.edu/~burkardt/html/mpi_glossary.html</a>
+and</p>
+
+<p class=MsoPlainText><a
+href="http://www.mpi-forum.org/docs/mpi-11-html/node141.html#Node141">http://www.mpi-forum.org/docs/mpi-11-html/node141.html#Node141</a>
+</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>Finally, there are other MPI debugging tools, such as:</p>
+
+<p class=MsoPlainText>MPI-CHECK for MPI <span class=GramE>Fortran</span> 90 and
+Fortran 77. This tool reportedly can diagnose</p>
+
+<p class=MsoPlainText><span class=GramE>some</span> cases where actual or
+potential deadlocks occur. See:</p>
+
+<p class=MsoPlainText><a
+href="http://andrew.ait.iastate.edu/HPC/Papers/mpicheck/mpicheck1.htm">http://andrew.ait.iastate.edu/HPC/Papers/mpicheck/mpicheck1.htm</a>
+</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>MPI Newsgroups: <span class=SpellE>comp.parallel</span><span
+class=GramE>,<span style='mso-spacerun:yes'>  </span><span class=SpellE>comp.sys.super</span></span></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><span
+style='font-size:11.0pt'>CAPABILITIES</span>:</b> mpiSim can be used in a <u>non-batch
+job environment</u> to quickly</p>
+
+<p class=MsoPlainText><span class=GramE>find</span> compile-time errors,
+including MPI subprogram calling argument errors, <u>using <o:p></o:p></u></p>
+
+<p class=MsoPlainText><span class=GramE><u>any</u></span><u> Fortran 90/95
+compiler</u> (like free <a href="http://www.g95.org/">g95</a>). In addition,
+true run-time debugging </p>
+
+<p class=MsoPlainText><span class=GramE>is</span> possible using run-time
+debugging options of compilers like <a href="http://www.lahey.com/"><span
+class=SpellE>Lahey</span> LF95</a>, <a
+href="http://www.nag.co.uk/nagware/NP/NP_trial.asp#download">NAG f95</a>, </p>
+
+<p class=MsoPlainText><span class=GramE>or</span> <a
+href="http://www.silverfrost.com/32/ftn95/ftn95_personal_edition.asp"><span
+class=SpellE>Silverfrost</span> ftn95</a>(free) for Windows. Yes, <u>mpiSim
+will work under Linux or Windows.<o:p></o:p></u></p>
+
+<p class=MsoPlainText>Please see the mpiSim examples,*_ex.f90; (four of these
+example source programs do have </p>
+
+<p class=MsoPlainText><span class=SpellE>uninitialized</span> variables or
+subscripts out of range: day1ex3_ex, <span class=SpellE>ring_ex</span>, <span
+class=SpellE>simple_ex</span>,</p>
+
+<p class=MsoPlainText>and <span class=SpellE>split_ex</span>; these are
+commented as such.)</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>Time to Run and compile for mpiSim debugging are not
+usually a concern since</p>
+
+<p class=MsoPlainText><span class=GramE>the</span> MPI subprograms are
+simulated on one processor (but with correct argument </p>
+
+<p class=MsoPlainText><span class=GramE>interfaces</span>). Every mpiSim MPI
+simulated subprogram <i style='mso-bidi-font-style:normal'>uses </i><u><a
+href="http://www.tc.cornell.edu/Services/Education/Topics/General/Fortran90/7.+INTENT+Attributes.htm">INTENT</a>
+for every argument</u>; </p>
+
+<p class=MsoPlainText><span class=GramE>thus</span> application calling
+argument errors can be quickly located at compile-time.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>The <span class=GramE>Fortran</span> code, for <a
+href="http://ftp.aset.psu.edu/pub/ger/fortran/mpiSim/mpiSim.f90">mpiSim.f90</a><u>
+</u>is <u><a href="http://j3-fortran.org/doc/year/97/97-007r2/pdf/97-007r2.pdf">Standard
+Fortran 90/95</a></u>. Many mpiSim modules use</p>
+
+<p class=MsoPlainText><span class=GramE>overloading</span> for subprogram
+arguments that could be Integer, Real, Double Precision or </p>
+
+<p class=MsoPlainText><span class=GramE>Character<span
+style='mso-spacerun:yes'>  </span>arguments</span>; these have subprogram names
+ending in _I, _R, _D, and _C. arguments that </p>
+
+<p class=MsoPlainText><span class=GramE>could</span> be Scalar, but normally
+are matrix/vector, have names ending in _IS, _RS, _DS. <span class=GramE>and</span>
+_CS. </p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><span
+style='font-size:11.0pt'>LIMITATIONS</span>:</b> MPI applications must be <u>self-contained</u>
+Fortran 90/95 source code; </p>
+
+<p class=MsoPlainText><span class=GramE>mixed-language</span> applications (C++
+subprograms that call MPI subprograms, for example) </p>
+
+<p class=MsoPlainText><span class=GramE>are</span> not supported by mpiSim.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>When MPI Fortran applications (like *_ex.f90 examples)
+are run using mpiSim, <u>correct &quot;answers</u>&quot; </p>
+
+<p class=MsoPlainText><span class=GramE><u>will</u></span><u> NOT obtained</u>.
+Rather mpiSim provides a single-processor command line debugging </p>
+
+<p class=MsoPlainText><span class=GramE>environment</span> by <u>simulating</u>
+several routines named after their real MPI Library counterparts.</p>
+
+<p class=MsoPlainText>Again, the purpose of mpiSim is to find compile-time and
+run-time code errors, NOT </p>
+
+<p class=MsoPlainText><span class=GramE>verification</span> of computed
+results. Finally, mpiSim does not catch all bugs; in particular</p>
+
+<p class=MsoPlainText><span class=GramE>mpiSim</span> does not detect MPI
+deadlock; see the examples <a
+href="http://ftp.aset.psu.edu/pub/ger/fortran/mpiSim/deadlock_ex.f90">deadlock_ex.f90</a>
+and <a href="http://ftp.aset.psu.edu/pub/ger/fortran/mpiSim/nodeadlock_ex.f90">nodeadlock_ex.f90</a>.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>For true <u>run-time debugging</u> (detecting for
+example, undefined variables, subscripts out of </p>
+
+<p class=MsoPlainText><span class=GramE>range</span>), MpiSim is dependent on
+having a Fortran 90/95 compiler with run-time diagnostics. </p>
+
+<p class=MsoPlainText>For example compilers shown above under <b
+style='mso-bidi-font-weight:normal'>CAPABILITIES</b> have compiler options that
+cause run-time </p>
+
+<p class=MsoPlainText><span class=GramE>debugging</span> to be activated.
+Please see the section below <b style='mso-bidi-font-weight:normal'>HOW TO USE</b>.
+</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>MPI applications written in Fortran 77 syntax should be
+converted using a <a href="ftp://ftp.numerical.rl.ac.uk/pub/MandR/convert.f90">conversion
+utility</a>; </p>
+
+<p class=MsoPlainText><span class=GramE>please</span> see Step <b
+style='mso-bidi-font-weight:normal'>(1)</b> below. However, <u>carefully note</u>
+mpiSim accepts vector and scalar data arguments only.</p>
+
+<p class=MsoPlainText>That is, multi-dimensional data arrays or array sections,
+like X(:,:) or X, or scalar X(1,k), passed to MPI </p>
+
+<p class=MsoPlainText><span class=GramE>subprogram</span>, by F90 conventions,
+will be passed as a matrix or scalar; thus a workaround would be needed:</p>
+
+<p class=MsoPlainText><span class=GramE>if</span> appropriate, use vector section
+array notation like X(1:n,k); or save and restore array sections to a vector </p>
+
+<p class=MsoPlainText>work array for Intent(out) arguments; or for Intent(in)
+use the Transfer intrinsic to convert to a vector; </p>
+
+<p class=MsoPlainText>e.g., Transfer(<span class=GramE>X(</span>1,k),X(1,k),n).
+<span class=GramE>please</span> see example <a
+href="http://ftp.aset.psu.edu/pub/ger/fortran/mpiSim/poisson_band2_ex.f90">poisson_band2_ex.f90</a>
+for examples of using array </p>
+
+<p class=MsoPlainText><span class=GramE>section</span> workaround for calls to <span
+class=SpellE>MPI_Irecv</span> and <span class=SpellE>MPI_Send</span>.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>MpiSim is an experiment presently limited for
+illustrative purposes to the MPI</p>
+
+<p class=MsoPlainText><span class=GramE>library</span> simulated subprograms
+given in file: mpiSim.f90 and listed by name in file <a
+href="http://ftp.aset.psu.edu/pub/ger/fortran/mpiSim/done.txt">done.txt</a>. </p>
+
+<p class=MsoPlainText>There are likely bugs in mpiSim; please report them.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'>HOW TO USE THE <span class=SpellE>Lahey</span>
+FORTRAN COMPILER TO DEBUG Using mpiSim):<o:p></o:p></i></b></p>
+
+<p class=MsoPlainText><i style='mso-bidi-font-style:normal'><o:p>&nbsp;</o:p></i></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>0) <span
+class=GramE>Get</span> the mpiSim Source Code</b> </p>
+
+<p class=MsoPlainText>Download the file: <a
+href="http://ftp.cac.psu.edu/pub/ger/fortran/mpiSim/mpiSim.zip">http://ftp.aset.psu.edu/pub/ger/fortran/mpiSim/mpiSim.zip</a>
+</p>
+
+<p class=MsoPlainText>Unzip this file to a separate directory. Copy your
+Fortran 90 MPI application</p>
+
+<p class=MsoPlainText><span class=GramE>to</span> this same directory - all of
+the Fortran source, main program and all subprograms</p>
+
+<p class=MsoPlainText><span class=GramE>and</span> any necessary data files.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>1) If Necessary <span
+class=GramE>Convert</span> your Fortran 77 code to Fortran 90/95 code.</b></p>
+
+<p class=MsoPlainText>Since mpiSim is Fortran 90, any MPI code that uses it
+must be Fortran 90.</p>
+
+<p class=MsoPlainText>One may convert Fortran 77 to Fortran 90 with Michael
+Metcalf's convert.f90 tool; </p>
+
+<p class=MsoPlainText>This tool <span class=GramE>converts</span> fixed form f77
+source code to free-form loop structured f90:</p>
+
+<p class=MsoPlainText><a
+href="ftp://ftp.numerical.rl.ac.uk/pub/MandR/convert.f90">ftp://ftp.numerical.rl.ac.uk/pub/MandR/convert.f90</a>
+</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>2a) Comment any
+existing Include statements pointing to any other MPI library. <o:p></o:p></b></p>
+
+<p class=MsoPlainText>For example, comment out (insert a <span class=GramE>leading
+!</span> for lines like:<span style='mso-spacerun:yes'>  </span>include '<span
+class=SpellE>mpif.h</span>’</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>2b) Put INCLUDE
+statements in your MPI application.<o:p></o:p></b></p>
+
+<p class=MsoPlainText>To facilitate true debugging, mpiSim must be compiled
+with your</p>
+
+<p class=MsoPlainText>MPI application code (see Include statements below).</p>
+
+<p class=MsoPlainText>In each main program insert two INCLUDE statements as
+shown below, one before </p>
+
+<p class=MsoPlainText><span class=GramE>the</span> Program statement, one
+after; after each independent subroutine or function</p>
+
+<p class=MsoPlainText><span class=GramE>statement</span>, that calls an MPI
+subprogram, insert the line: include &quot;<a
+href="http://ftp.aset.psu.edu/pub/ger/fortran/mpiSim/useSim.f90">useSim.f90</a>&quot;</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span class=GramE>include</span> &quot;mpiSim.f90&quot;</p>
+
+<p class=MsoPlainText><span style='mso-spacerun:yes'>      </span><span
+class=GramE>program</span> main<span style='mso-spacerun:yes'>  </span>(or
+other program and subprogram statement(s))</p>
+
+<p class=MsoPlainText><span class=GramE>include</span> &quot;useSim.f90&quot;</p>
+
+<p class=MsoPlainText>...</p>
+
+<p class=MsoPlainText><span style='mso-spacerun:yes'>      </span><span
+class=GramE>end</span> program main<span style='mso-spacerun:yes'>  </span>(or
+other end program and end subprogram statement(s))</p>
+
+<p class=MsoPlainText><span style='mso-spacerun:yes'>      </span><span
+class=GramE>subroutine</span> <span class=SpellE>foo</span><span
+style='mso-spacerun:yes'>  </span>(that calls MPI subprogram(s))</p>
+
+<p class=MsoPlainText><span class=GramE>include</span> &quot;useSim.f90&quot;</p>
+
+<p class=MsoPlainText>...</p>
+
+<p class=MsoPlainText><span style='mso-spacerun:yes'>      </span><span
+class=GramE>end</span> subroutine <span class=SpellE>foo</span></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>....subroutine <span class=GramE>bar<span
+style='mso-spacerun:yes'>  </span>(</span>that does not call MPI subprograms)</p>
+
+<p class=MsoPlainText><span style='mso-spacerun:yes'>    </span><span
+class=GramE>end</span> subroutine bar</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>Please see the <a
+href="http://ftp.aset.psu.edu/pub/ger/fortran/mpiSim/poisson_band2_ex.f90">poisson_band2_ex.f90</a>
+code for a working example of use of these mpiSim</p>
+
+<p class=MsoPlainText>INCLUDE statements.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>3) Compile and
+Link mpiSim and your MPI application.<o:p></o:p></b></p>
+
+<p class=MsoPlainText>This can be done in either of two modes: Compile only or
+Compile, link, and run.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>Example:<span style='mso-spacerun:yes'>  </span>compile
+only with any compiler, like g95 for example: g95 matvec_ex.f90</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>Example:<span style='mso-spacerun:yes'>  </span>compile, <span
+class=SpellE>link<span class=GramE>,and</span></span> run using a compiler with
+compiler options that causes </p>
+
+<p class=MsoPlainText><span class=GramE>run-time</span> debugging to occur. In
+this example we use the PSU interactive processor, </p>
+
+<p class=MsoPlainText>Hammer console (for example), compile/link mpiSim and
+your MPI Fortran application </p>
+
+<p class=MsoPlainText>(matvec_ex.f90) using, for example, <span class=SpellE>Lahey</span>
+(run-time) debugging options (specified as </p>
+
+<p class=MsoPlainText><span class=GramE>the</span> script <span class=SpellE>lfdebug.sh</span>):</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span class=SpellE><span class=GramE>sh</span></span> <a
+href="http://ftp.aset.psu.edu/pub/ger/fortran/mpiSim/lfdebug.sh"><span
+class=SpellE>lfdebug.sh</span></a> matvec_ex.f90</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span class=GramE>or</span> Intel Fortran debugging
+options:</p>
+
+<p class=MsoPlainText><span class=SpellE><span class=GramE>ifort</span></span>
+-check all -d3 -g -<span class=SpellE>fp</span> -O0 -<span class=SpellE>traceback</span>
+-WB -<span class=SpellE>ftrapuv</span></p>
+
+<p class=MsoPlainText>-<span class=SpellE><span class=GramE>fltconsistency</span></span>
+-fpe0 -no-<span class=SpellE>ftz</span> matvec_ex.f90</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span class=GramE>where</span> <a
+href="http://ftp.aset.psu.edu/pub/ger/fortran/mpiSim/matvec_ex.f90">matvec_ex.f90</a>
+is a <span class=SpellE>fileid</span> of an example program.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>By &quot;debugging options&quot; we mean running from a
+command prompt to compile, link, </p>
+
+<p class=MsoPlainText><span class=GramE>and</span> run <span class=SpellE>interactivly</span>
+(not batch jobs); using compiler debug options will cause</p>
+
+<p class=MsoPlainText><span class=GramE>run-time</span> checks for undefined
+variables, subscripts/strings out of range, </p>
+
+<p class=MsoPlainText><span class=GramE>invalid</span> subprogram calls
+(argument/dummy argument mismatches), etc. Error messages </p>
+
+<p class=MsoPlainText><span class=GramE>would</span> then be displayed with <span
+class=SpellE>traceback</span> and line numbers where such errors occur </p>
+
+<p class=MsoPlainText><span class=GramE>in</span> the source code.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>4) Optionally <span
+class=GramE>Run</span> your application with mpiSim.<o:p></o:p></b></p>
+
+<p class=MsoPlainText>Run the compiled/linked program from the Hammer console<span
+class=GramE>: .</span>/<span class=SpellE>a.out</span></p>
+
+<p class=MsoPlainText>Or Run it from a Windows command prompt: matvec_ex.exe</p>
+
+<p class=MsoPlainText>Keep running using mpiSim until the debugging process
+shows no more coding bugs.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>WINDOWS NOTE</b>:<span
+style='mso-spacerun:yes'>  </span>The above example will also run using the
+Windows platform if a</p>
+
+<p class=MsoPlainText>Compiler with run-time debug options is available under
+Windows. For example </p>
+
+<p class=MsoPlainText><a
+href="http://ftp.aset.psu.edu/pub/ger/fortran/mpiSim/lfdebug.bat"><span
+class=SpellE>lfdebug.bat</span></a> matvec_ex.f90</p>
+
+<p class=MsoPlainText>matvec_ex.exe</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>Or the <a href="http://www.g95.org/">g95 compiler</a> for
+Windows could also be used either to debug compile-time</p>
+
+<p class=MsoPlainText><span class=GramE>problems</span> or to partially debug
+run-time problems thus:</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>SET G95_FPU_ZERODIV=1</p>
+
+<p class=MsoPlainText>SET G95_FPU_OVERFLOW=1</p>
+
+<p class=MsoPlainText>SET G95_FPU_UNDERFLOW=1</p>
+
+<p class=MsoPlainText>SET G95_FPU_EXCEPTIONS=1</p>
+
+<p class=MsoPlainText>SET G95_FPU_DENORMAL=1</p>
+
+<p class=MsoPlainText>SET G95_FPU_INVALID=1</p>
+
+<p class=MsoPlainText>g95 matvec_ex.f90</p>
+
+<p class=MsoPlainText>-Wall -pedantic -<span class=SpellE>fbounds</span>-check
+-<span class=SpellE>ftrace</span>=full -<span class=SpellE>Wuninitialized</span>
+-<span class=SpellE>Wunset-vars</span> -<span class=SpellE>Wline</span>-truncation</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>For g95 compile-time checking only simply <span
+class=GramE>issue</span> a command like:<span style='mso-spacerun:yes'> 
+</span>g95 matvec_ex.f90 </p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>Note: The <span class=SpellE>Lahey</span>, NAG, or <span
+class=SpellE>Silverfrost</span> compilers presently diagnose far more run-time </p>
+
+<p class=MsoPlainText><span class=GramE>errors</span> than either G95 or Intel <span
+class=SpellE>ifort</span>; see the Polyhedron diagnostic benchmarks:</p>
+
+<p class=MsoPlainText><a href="http://www.polyhedron.com/compare0html">http://www.polyhedron.com/compare0html</a>
+or the <st1:place><st1:PlaceName>Penn</st1:PlaceName> <st1:PlaceType>State</st1:PlaceType></st1:place>
+diagnostic benchmarks at:</p>
+
+<p class=MsoPlainText><a
+href="http://ftp.aset.psu.edu/pub/ger/fortran/test/results.txt">http://ftp.aset.psu.edu/pub/ger/fortran/test/results.txt</a></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>Again, when using mpiSim, any F90/95 compiler can be used
+without special compiler options </p>
+
+<p class=MsoPlainText><span class=GramE>to</span> debug compile-time problems
+which includes argument/dummy argument inconsistencies.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>5) When done
+debugging </b>comment out mpiSim Include statements and uncomment the original
+MPI Include</p>
+
+<p class=MsoPlainText><span class=GramE>statements</span>. Then run your application
+as usual using MPI.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>5) PORTABLE NAMING
+CONVENSIONS<o:p></o:p></b></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>For Windows the case of fields <span class=GramE>are</span>
+case insensitive and case preserving. </p>
+
+<p class=MsoPlainText>For Linux (<span class=GramE>Unix</span>) fields like
+Include files, subprogram and module names are </p>
+
+<p class=MsoPlainText><span class=GramE>case</span> sensitive. For Mac OS/X
+fields are case sensitive case preserving. Thus naming </p>
+
+<p class=MsoPlainText><span class=GramE>conventions</span> are important when
+using mpiSim under Linux or OS/X.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span class=GramE>mpiSim</span> subprogram naming
+conventions have the form: <span class=SpellE>MPI_Capitalized_lowercase</span>
+.</p>
+
+<p class=MsoPlainText>That is, the first part of a subprogram name (token)
+after the leading &quot;MPI_&quot; is</p>
+
+<p class=MsoPlainText><span class=GramE>capitalized</span>; if there are any
+more tokens, these are lower case.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>An example:<span style='mso-spacerun:yes'>  </span>mpiSim
+subroutine <span class=SpellE>MPI_Get_processor_<span class=GramE>name</span></span><span
+class=GramE> .</span> The naming conventions for</p>
+
+<p class=MsoPlainText><span class=SpellE>INCLUDEd</span> filenames are
+capitalized as shown in Step <b style='mso-bidi-font-weight:normal'>(2)</b>
+above and in module names of</p>
+
+<p class=MsoPlainText><span class=GramE>The USE statements in the file <a
+href="http://ftp.aset.psu.edu/pub/ger/fortran/mpiSim/useSim.f90">useSim.f90</a>.</span>
+Please see mpiSim source code in file</p>
+
+<p class=MsoPlainText><a
+href="http://ftp.aset.psu.edu/pub/ger/fortran/mpiSim/mpiSim.f90"><span
+class=GramE>mpiSim.f90</span></a><span class=GramE>.</span></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>--------------------------------------------------------------------------------</p>
+
+</div>
+
+</body>
+
+</html>
+oPlainText>--------------------------------------------------------------------------------</p>
+
+</div>
+
+</body>
+
+</html>

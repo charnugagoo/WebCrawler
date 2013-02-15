@@ -1,0 +1,1049 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/1">
+ <title>   REST APIs must be hypertext-driven &raquo; Untangled</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <meta name="generator" content="WordPress 3.5.1" /> <!-- leave this for stats please -->
+ <link rel="stylesheet" type="text/css" media="screen" href="http://roy.gbiv.com/untangled/wp-content/themes/gbiv/style.css" />
+ <link rel="stylesheet" type="text/css" media="print" href="http://roy.gbiv.com/untangled/wp-content/themes/gbiv/print.css" />
+ <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://roy.gbiv.com/untangled/feed" />
+ <link rel="alternate" type="text/xml" title="RSS .92" href="http://roy.gbiv.com/untangled/feed/rss" />
+ <link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="http://roy.gbiv.com/untangled/feed/atom" />
+ <link rel="alternate" type="application/x-opera-widgets" title="Untangled Feed" href="http://widgets.opera.com/widgetize/Feed%20Reader/Advanced/?serve&amp;skin=skin7&amp;widgetname=Untangled&amp;url=http://roy.gbiv.com/untangled/feed&amp;rel=myopera&amp;ref=" />
+ <link rel="pingback" href="http://roy.gbiv.com/untangled/xmlrpc.php" />
+	<link rel='archives' title='May 2010' href='http://roy.gbiv.com/untangled/2010/05' />
+	<link rel='archives' title='May 2009' href='http://roy.gbiv.com/untangled/2009/05' />
+	<link rel='archives' title='March 2009' href='http://roy.gbiv.com/untangled/2009/03' />
+	<link rel='archives' title='October 2008' href='http://roy.gbiv.com/untangled/2008/10' />
+	<link rel='archives' title='September 2008' href='http://roy.gbiv.com/untangled/2008/09' />
+	<link rel='archives' title='March 2008' href='http://roy.gbiv.com/untangled/2008/03' />
+	<link rel='archives' title='February 2008' href='http://roy.gbiv.com/untangled/2008/02' />
+<link rel="alternate" type="application/rss+xml" title="Untangled &raquo; REST APIs must be hypertext-driven Comments Feed" href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven/feed" />
+<script type='text/javascript' src='http://roy.gbiv.com/untangled/wp-includes/js/comment-reply.min.js?ver=3.5.1'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://roy.gbiv.com/untangled/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://roy.gbiv.com/untangled/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='No REST in CMIS' href='http://roy.gbiv.com/untangled/2008/no-rest-in-cmis' />
+<link rel='next' title='Specialization' href='http://roy.gbiv.com/untangled/2008/specialization' />
+<meta name="generator" content="WordPress 3.5.1" />
+<link rel='canonical' href='http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven' />
+<link rel='shortlink' href='http://roy.gbiv.com/untangled/?p=56' />
+</head>
+<body>
+<div id="rap">
+<div id="header">
+ <ul id="topnav">
+  <li ><a href="http://roy.gbiv.com/untangled/" id="navHome" title="Posted Recently" accesskey="h">Home</a> | </li>
+  <li><a href="http://roy.gbiv.com/untangled/about" id="navAbout" title="About the Author" accesskey="a">About</a> | </li>
+  <li><a href="http://roy.gbiv.com/untangled/archives" id="navArchives" title="Posted Previously" accesskey="r">Archives</a> | </li>
+  <li><a href="http://roy.gbiv.com/untangled/links" id="navLinks" title="Recommended Links" accesskey="l">Links</a> | </li>
+ </ul>
+ <h1><a href="http://roy.gbiv.com/untangled/" title="Untangled">Untangled</a></h1>		
+ <div id="desc">musings of Roy T. Fielding</div>
+</div>
+	
+<div id="main">
+	<div id="content">
+	<!--- middle (posts) column  content begin -->
+					<div class="post">
+				<p class="post-date">Mon 20 Oct 2008</p>
+<div class="post-info">
+ <h2 class="post-title"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven" rel="bookmark" title="Permanent Link: REST APIs must be hypertext-driven">REST APIs must be hypertext-driven</a></h2>
+ <p>Posted by Roy T. Fielding under <a href="http://roy.gbiv.com/untangled/category/architecture" title="View all posts in software architecture" rel="category tag">software architecture</a>, <a href="http://roy.gbiv.com/untangled/category/web-architecture" title="View all posts in web architecture" rel="category tag">web architecture</a> <br/>
+ <a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comments" title="Comment on REST APIs must be hypertext-driven">[51] Comments</a></p>
+</div>
+<div class="post-content">
+<p>I am getting frustrated by the number of people calling any HTTP-based interface a REST API. Today&#8217;s example is the <a href="http://wikis.glassfish.org/socialsite/Wiki.jsp?page=FinalizeRESTAPI">SocialSite REST API</a>. That is RPC. It screams RPC. There is so much coupling on display that it should be given an X rating.</p>
+<p>What needs to be done to make the REST architectural style clear on the notion that hypertext is a constraint? In other words, if the engine of application state (and hence the API) is not being driven by hypertext, then it cannot be RESTful and cannot be a REST API.  Period.  Is there some broken manual somewhere that needs to be fixed?</p>
+<p>API designers, please note the following rules before calling your creation a REST API:</p>
+<ul>
+<li>A REST API should not be dependent on any single communication protocol, though its successful mapping to a given protocol may be dependent on the availability of metadata, choice of methods, etc. In general, any protocol element that uses a URI for identification must allow any URI scheme to be used for the sake of that identification. <em>[Failure here implies that identification is not separated from interaction.]</em></li>
+<li>A REST API should not contain any changes to the communication protocols aside from filling-out or fixing the details of underspecified bits of standard protocols, such as HTTP&#8217;s PATCH method or Link header field. Workarounds for broken implementations (such as those browsers stupid enough to believe that HTML defines HTTP&#8217;s method set) should be defined separately, or at least in appendices, with an expectation that the workaround will eventually be obsolete. <em>[Failure here implies that the resource interfaces are object-specific, not generic.]</em></li>
+<li>A REST API should spend almost all of its descriptive effort in defining the media type(s) used for representing resources and driving application state, or in defining extended relation names and/or hypertext-enabled mark-up for existing standard media types. Any effort spent describing what methods to use on what URIs of interest should be entirely defined within the scope of the processing rules for a media type (and, in most cases, already defined by existing media types). <em>[Failure here implies that out-of-band information is driving interaction instead of hypertext.]</em></li>
+<li>A REST API must not define fixed resource names or hierarchies (an obvious coupling of client and server). Servers must have the freedom to control their own namespace. Instead, allow servers to instruct clients on how to construct appropriate URIs, such as is done in HTML forms and URI templates, by defining those instructions within media types and link relations. <em>[Failure here implies that clients are assuming a resource structure due to out-of band information, such as a domain-specific standard, which is the data-oriented equivalent to RPC's functional coupling].</em></li>
+<li>A REST API should never have &#8220;typed&#8221; resources that are significant to the client. Specification authors may use resource types for describing server implementation behind the interface, but those types must be irrelevant and invisible to the client. The only types that are significant to a client are the current representation&#8217;s media type and standardized relation names. <em>[ditto]</em></li>
+<li>A REST API should be entered with no prior knowledge beyond the initial URI (bookmark) and set of standardized media types that are appropriate for the intended audience (i.e., expected to be understood by any client that might use the API). From that point on, all application state transitions must be driven by client selection of server-provided choices that are present in the received representations or implied by the user&#8217;s manipulation of those representations. The transitions may be determined (or limited by) the client&#8217;s knowledge of media types and resource communication mechanisms, both of which may be improved on-the-fly (e.g., code-on-demand).  <em>[Failure here implies that out-of-band information is driving interaction instead of hypertext.]</em></li>
+</ul>
+<p>There are probably other rules that I am forgetting, but the above are the rules related to the hypertext constraint that are most often violated within so-called REST APIs. Please try to adhere to them or choose some other buzzword for your API.</p>
+ <div class="post-info">
+           
+ </div>
+
+ <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+			xmlns:dc="http://purl.org/dc/elements/1.1/"
+			xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+		<rdf:Description rdf:about="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven"
+    dc:identifier="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven"
+    dc:title="REST APIs must be hypertext-driven"
+    trackback:ping="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven/trackback" />
+</rdf:RDF> -->
+ <div class="post-footer">&nbsp;</div>
+</div>
+				<div class="navigation">
+					<div class="aligncenter">&laquo; <a href="http://roy.gbiv.com/untangled/2008/no-rest-in-cmis" rel="prev">No REST in CMIS</a> | <a href="http://roy.gbiv.com/untangled/2008/specialization" rel="next">Specialization</a> &raquo;</div>
+				</div>
+				<div class="post-footer">&nbsp;</div>
+				<div class="boxcomments">
+ <h2 id="comments">51 Responses to &#8220;REST APIs must be hypertext-driven&#8221;</h2>
+
+ <ol class="commentlist">
+  		<li class="comment byuser comment-author-llimllib even thread-even depth-1" id="comment-716">
+				<div id="div-comment-716" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/ddd9ecde75c43e0b5c19d144af95563b?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn">llimllib</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-716">
+			October 20, 2008 at 6:34 am</a>		</div>
+
+		<p>In what sense do you use &#8220;hypertext&#8221; here? Should I read your thesis to get the meaning you talk about, or is there somewhere online with the sense in which you mean the word?</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-bjorg odd alt thread-odd thread-alt depth-1" id="comment-717">
+				<div id="div-comment-717" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/603c7643d5cf867d349366a4a1db8eeb?s=40&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn"><a href='http://mindtouch.com' rel='external nofollow' class='url'>Bjorg</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-717">
+			October 20, 2008 at 7:20 am</a>		</div>
+
+		<p>Clarification concerning Hypertext vs. Hypermedia: when you state that the API must be hypertext-drive, you&#8217;re not implying restrictions on the representation, but properties it must exhibit, namely the ability for connecting a representation to other resources and operations thereon, correct?  Then, why no say hypermedia-driven to avoid any confusion with implying that REST would be restricted to HTML?</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1" id="comment-718">
+				<div id="div-comment-718" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/13db1e9e1f03e62a763b4c6cc7ed22ee?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn"><a href='http://roy.gbiv.com/' rel='external nofollow' class='url'>Roy T. Fielding</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-718">
+			October 20, 2008 at 7:44 am</a>		</div>
+
+		<p>I have a slide in my REST talk that explains what hypertext (and hypermedia) means.</p>
+<p>Hypertext has many definitions:</p>
+<p>Ted Nelson&#8217;s original definition was focused on non-linear documents.</p>
+<blockquote><p>By &#8216;hypertext,&#8217; I mean non-sequential writing — text that branches and allows choices to the reader, best read at an interactive screen. As popularly conceived, this is a series of text chunks connected by links which offer the reader different pathways. [Theodor H. Nelson]</p></blockquote>
+<p>Later, hypertext became associated with a particular user interface mechanism.</p>
+<blockquote><p>Hypertext is a computer-supported medium for information in which many interlinked<br />
+documents are displayed with their links on a high-resolution computer screen. [Jeffrey Conklin]</p></blockquote>
+<p>When I say <em>hypertext</em>, I mean the simultaneous presentation of information and controls such that the information becomes the affordance through which the user (or automaton) obtains choices and selects actions. Hypermedia is just an expansion on what text means to include temporal anchors within a media stream; most researchers have dropped the distinction.</p>
+<p>Hypertext does not need to be HTML on a browser. Machines can follow links when they understand the data format and relationship types.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-snoopdave odd alt thread-odd thread-alt depth-1" id="comment-719">
+				<div id="div-comment-719" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/9e3fbda6bebebb1e66a4eaf1d84c9c25?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn">snoopdave</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-719">
+			October 20, 2008 at 8:03 am</a>		</div>
+
+		<p>I think my poorly written proposal has caused some confusion. I never meant to claim that the OpenSocial or SocialSite RPC APIs were RESTful. <a href="http://rollerweblogger.org/roller/entry/the_x_rated_socialsite_api" rel="nofollow">There&#8217;s more on my blog</a>.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1" id="comment-720">
+				<div id="div-comment-720" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/13db1e9e1f03e62a763b4c6cc7ed22ee?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn"><a href='http://roy.gbiv.com/' rel='external nofollow' class='url'>Roy T. Fielding</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-720">
+			October 20, 2008 at 9:22 am</a>		</div>
+
+		<p>The <a href="http://www.opensocial.org/Technical-Resources/opensocial-spec-v081/restful-protocol" rel="nofollow">OpenSocial RESTful protocol</a> is not RESTful.  It could be made so with some relatively small changes, but right now it is just wrapping RPC results in common Web media types.</p>
+<p>A truly RESTful API looks like hypertext. Every addressable unit of information carries an address, either explicitly (e.g., link and id attributes) or implicitly (e.g., derived from the media type definition and representation structure). Query results are represented by a list of links with summary information, not by arrays of object representations (query is not a substitute for identification of resources). Resource representations are self-descriptive: the client does not need to know if a resource is OpenSocialist because it is just acting on the representations received.</p>
+<p>Think of it in terms of the Web.  How many Web browsers are aware of the distinction between an online-banking resource and a Wiki resource?  None of them. They don&#8217;t need to be aware of the resource types. What they need to be aware of is the potential state transitions &#8212; the links and forms &#8212; and what semantics/actions are implied by traversing those links.  A browser represents them as distinct UI controls so that a user can see potential transitions and anticipate the effect of chosen actions. A spider can follow them to the extent that the relationships are known to be safe. Typed relations, specific media types, and action-specific elements provide the guidance needed for automated agents.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-billhiggins odd alt thread-odd thread-alt depth-1" id="comment-721">
+				<div id="div-comment-721" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/6b3cb7c991d09404f21013368051a18d?s=40&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn">BillHiggins</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-721">
+			October 20, 2008 at 10:05 am</a>		</div>
+
+		<p>Roy, what do you think is the reason that so many people who think they are doing REST get it wrong?</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-jonflanders even thread-even depth-1" id="comment-723">
+				<div id="div-comment-723" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/b1f1b57cffb3289d42421a36beec8579?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn">jonflanders</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-723">
+			October 20, 2008 at 10:51 am</a>		</div>
+
+		<p>So two questions I&#8217;ve always had about this constraint (if you&#8217;d be so kind to answer).  I apologize if they are dumb, but they are questions I have.</p>
+<p>1) What if the set of resources you want to expose is &#8220;flat&#8221;?   Can you not have a RESTful service if there aren&#8217;t hyperlinks because the resources don&#8217;t naturally have them?</p>
+<p>2) When you do have resources that are &#8220;like the web&#8221; &#8211; except for Atom/AtomPub &#8211; most resources aren&#8217;t as standard as HTML.  So when you talk about automated agents aren&#8217;t those agents coupled to the particular service they know how to use and traverse?</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-admin bypostauthor odd alt thread-odd thread-alt depth-1" id="comment-724">
+				<div id="div-comment-724" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/13db1e9e1f03e62a763b4c6cc7ed22ee?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn"><a href='http://roy.gbiv.com/' rel='external nofollow' class='url'>Roy T. Fielding</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-724">
+			October 20, 2008 at 11:03 am</a>		</div>
+
+		<p>Hi BillHiggins:</p>
+<p>To some extent, people get REST wrong because I failed to include enough detail on media type design within my dissertation.  That&#8217;s because I ran out of time, not because I thought it was any less important than the other aspects of REST. Likewise, I suspect a lot of people get it wrong because they read only the Wikipedia entry on the subject, which is not based on authoritative sources.</p>
+<p>However, I think most people just make the mistake that it should be simple to design simple things. In reality, the effort required to design something is inversely proportional to the simplicity of the result.  As architectural styles go, REST is very simple.</p>
+<p>REST is software design on the scale of decades: every detail is intended to promote software longevity and independent evolution. Many of the constraints are directly opposed to short-term efficiency. Unfortunately, people are fairly good at short-term design, and usually awful at long-term design. Most don&#8217;t think they need to design past the current release.  There are more than a few software methodologies that portray any long-term thinking as wrong-headed, ivory tower design (which it can be if it isn&#8217;t motivated by real requirements).</p>
+<p>And, of course, lately there has been a lot of &#8220;me too&#8221; activity around REST, as is the nature of any software buzzword.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-nkallen even thread-even depth-1" id="comment-727">
+				<div id="div-comment-727" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/77f7f0af9b5b68abae47c7dfaa13f200?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn">nkallen</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-727">
+			October 20, 2008 at 10:13 pm</a>		</div>
+
+		<p>I had a hard time with the writing in this article; I don&#8217;t normally perform exegesis on blog posts. Am I interpreting this correctly?</p>
+<p>1. Behavior should be determined by media types. For example, the operations you can perform on an image are predetermined by the fact that it&#8217;s an image. I *assume* this bears some relation to GET/POST/PUT/DELETE and how these should be interpreted for various media types&#8230; The definition of GET/POST/PUT/DELETE is formal (e.g. &#8220;safe&#8221;, &#8220;idempotent&#8221;) as opposed to semantic (they don&#8217;t mean CRUD). So, presumably GET/POST/PUT/DELETE are given meaning by the media type.</p>
+<p>2. The interface to operations should be discovered. The example of html forms suggests that by e.g. GETting an image we know what parameters can be passed back (e.g., ?width=x&amp;height=y to perform a resize, etc.). This reminds me of the service discovery in XMPP.</p>
+<p>3. The location (URI) of objects in the system should have indirection in that by getting a root resource it has links to child resources. We shouldn&#8217;t know the location of child resources in advance (e.g., as it might be specified in an API doc).</p>
+<p>So let me ask about the motivation for these design suggestions. Suppose I were designing a social networking site, where I have a person with many photos, favorite books, etc. You would advise to not explicitly layout a URL scheme beforehand (e.g., /people/1, /people/1/photos, /people/1/books), but to discover this with hyperlinks by traversing starting at / (slash). If I were looking at /person/1 I would know what the various hyperlinks point to given that I know in advance the media type representing a person (some xml format, say).</p>
+<p>So with this example, I don&#8217;t really see what I&#8217;ve accomplished. I still have the out-of-band specification / coupling in that the media type needs to be specified in advance. The hyperlinks don&#8217;t seem to profit much by the price of indirection since I need to know what kind of media type I would get at each URL and I only know this if I know the media type of the parent resource in advance. The price of this indirection is, of course, an unnecessarily chatty protocol. The interface discovery of form elements doesn&#8217;t offer much, because although you&#8217;ve decoupled the query string format from the out-of-band protocol, in order to interpret the form (e.g., to know what &#8220;width&#8221; means), I need to know the media type in advance. The only advantage of this approach, it seems to me, is that by the interface and uri decoupling you&#8217;ve made the api resilient to protocol changes (e.g., you can move away from HTTP)&#8211;but this, to me, seems of little value.</p>
+<p>Dr. Fielding, can you please clarify. And be gentle with jargon please.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-admin bypostauthor odd alt thread-odd thread-alt depth-1" id="comment-729">
+				<div id="div-comment-729" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/13db1e9e1f03e62a763b4c6cc7ed22ee?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn"><a href='http://roy.gbiv.com/' rel='external nofollow' class='url'>Roy T. Fielding</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-729">
+			October 21, 2008 at 3:54 am</a>		</div>
+
+		<p>Hi jonflanders: </p>
+<p>1) Any important resource in a RESTful system must have an identifier, so I don&#8217;t see how you could have a set of resources (greater than one) which is &#8220;flat&#8221;. There are a lot of systems that have flat storage, like database records, but that&#8217;s exactly the kind of back-end implementation decision that REST is trying to hide.  Sometimes an interface has to do work in order to avoid client coupling to the implementation.</p>
+<p>2) Automated agents are dependent on their understanding of the media types, link types, or microformat extensions provided in representations. It is the same basic issue as with human communication: we will always need a common vocabulary to make sense of it. Exposing that vocabulary in the representations makes it easy to learn and be adopted by others. Some of it will be standardized, some of it will be domain-specific, but ultimately the agents will have to be adaptable to new vocabulary.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1" id="comment-730">
+				<div id="div-comment-730" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/13db1e9e1f03e62a763b4c6cc7ed22ee?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn"><a href='http://roy.gbiv.com/' rel='external nofollow' class='url'>Roy T. Fielding</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-730">
+			October 21, 2008 at 4:45 am</a>		</div>
+
+		<p>Hi nkallen:</p>
+<p>I&#8217;m not sure that I can clarify much in a blog comment, but I will try to answer the main points of confusion.</p>
+<p>1) Every media type defines a default processing model. For example, HTML defines a rendering process for hypertext and the browser behavior around each element. It has no relation to the resource methods GET/PUT/POST/DELETE/&#8230; other than the fact that some media type elements will define a process model that goes like &#8220;anchor elements with an href attribute create a hypertext link that, when selected, invokes a retrieval request (GET) on the URI corresponding to the CDATA-encoded href attribute.&#8221; Identifiers, methods, and media types are orthogonal concerns &#8212; methods are not given meaning by the media type. Instead, the media type tells the client either what method to use (e.g., anchor implies GET) or how to determine the method to use (e.g., form element says to look in method attribute).  The client should already know what the methods mean (they are universal) and how to dereference a URI.</p>
+<p>2) The interface doesn&#8217;t need to be discovered. It is defined right there in the hypertext. The representation tells the client how to compose all transitions to the next application state. This could be as simple as an anchor or as complex as a java applet. For example, Day&#8217;s CQ5 content management system allows the user to perform direct image masking and manipulation on the client side and save the filtered image view as a new resource, all within the environment of a standard Web browser window.</p>
+<p>3) The purpose of resource modeling is to figure out what resources you have that are worth identifying, representing, and manipulating. You should not be building clients that are dependent on the resource naming structure.  There is simply no need to do so &#8212; the hypertext sends the client directly to the desired application state.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-theothermarcus odd alt thread-odd thread-alt depth-1" id="comment-731">
+				<div id="div-comment-731" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/823304ee80f27b3a69925ee495f944a1?s=40&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn">TheOtherMarcus</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-731">
+			October 21, 2008 at 5:46 am</a>		</div>
+
+		<p>&#8220;Servers must have the freedom to control their own namespace.&#8221;</p>
+<p>Why is this important?</p>
+<p>Can you give an example of a popular hypertext media type that can identify resources, their type and valid operations on them?</p>
+<p>HTML lacks type specifications. I have to GET to find out the type, and in the case of POST, I must do the operation to find out which media type will be returned. POST and GET are also the only HTTP methods HTML supports, as far as I know.</p>
+<p>If I decide that POSTing to the URI /item will create one new item, how would this be expressed using a suitable media type?</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1" id="comment-732">
+				<div id="div-comment-732" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/13db1e9e1f03e62a763b4c6cc7ed22ee?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn"><a href='http://roy.gbiv.com/' rel='external nofollow' class='url'>Roy T. Fielding</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-732">
+			October 21, 2008 at 6:18 am</a>		</div>
+
+		<p>TheOtherMarcus: Because implementations change, but cool URIs don&#8217;t.</p>
+<p>HTTP operations are generic: they are allowed or not, per resource, but they are always valid. Hypertext doesn&#8217;t usually tell you all the operations allowed on any given resource; it tells you which operation to use for each potential transition. The client (user or agent) has to decide what transition to take, not what interface to use.</p>
+<p>HTML doesn&#8217;t need type specifications.  No RESTful architecture needs type specifications. Don&#8217;t expect REST to act like some other architectural style. You don&#8217;t get to decide what POST means &#8212; that is decided by the resource. Its purpose is supposed to be described in the same context in which you found the URI that you are posting to.  Presumably, that context (a hypertext representation in some media type understood by your client) tells you or your agent what to expect from the POST using some combination of standard elements/relations and human-readable text. The HTTP response will tell you what happened as a result.  In HTTP, a single resource-creating POST action will result in a 201 response with another hypertext representation (telling you what happened and what can be done next) or 204 response with the Location header field indicating the URI of the new resource.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-jdubray odd alt thread-odd thread-alt depth-1" id="comment-733">
+				<div id="div-comment-733" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/82bc4ac0568d72b4fa5d731f6b1e0639?s=40&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn">jdubray</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-733">
+			October 21, 2008 at 9:46 am</a>		</div>
+
+		<p>Roy:</p>
+<p>When you say &#8220;Hypertext doesn’t usually tell you all the operations allowed on any given resource; it tells you which operation to use for each potential transition. The client (user or agent) has to decide what transition to take, not what interface to use.&#8221;, could you please explain how an agent without prior knowledge of the possible transitions could decide on the fly what to do? Don&#8217;t you think that an agent&#8217;s implementation (unlike a human) has to have an understanding of the expected transitions as part of a resource lifecycle? </p>
+<p>Now assuming the agent has an a priori knowledge of these transitions (semantically or via the definition of what would appear to be a list of actions, i.e. an interface) how could the agent &#8220;adapt&#8221; on fly to any changes in the possible transitions when the &#8220;resource implementation&#8221; changes.</p>
+<p>If your answer is yes, i.e, there is an a priori knowledge of these transitions, then, what is the point of hypertext in agent-to-agent communication? I can appreciate that it provides a de facto limitation on the possible actions that can be invoked, but it also introduces some constraints when you consider that an agent has to store the hypertext or fetch it just prior to invoking the action (as this hypertext could possibly change between the time the resource representation is received and the time the action is invoked).</p>
+<p>In other words I see absolutely no gains when compared to a traditional interface based interaction. Both mechanisms are pretty much equivalent (again, in an agent-to-agent scenario, not human to agent). In both cases you need a priori knowledge of both the actions and the order in which these actions can be invoked (choreography of the interaction).</p>
+<p>Ironically, REST exposes transitions but does not make the &#8220;states&#8221; of the resources explicit. As you get a resource state, you actually have no idea what is the precise lifecyle of this resource. I can easily understand how a human can deal with this situation, but as a developer I can only see how hard it is to write code without a precise knowledge of the interaction, not to mention, how does the code I just wrote survives when the resource lifecycle (states and transitions) changes.</p>
+<p>JJ-</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-tlainhart even thread-even depth-1" id="comment-735">
+				<div id="div-comment-735" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/4e5cff67907d5918201508952db7a89c?s=40&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn">tlainhart</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-735">
+			October 21, 2008 at 1:39 pm</a>		</div>
+
+		<p>Hi Roy -</p>
+<p>You say this:</p>
+<blockquote><p>What needs to be done to make the REST architectural style clear on the notion that hypertext is a constraint?</p></blockquote>
+<p>One negative reaction I&#8217;ve come across often with this architectural style is how to implement it efficiently.  E.G. often folks will want to implement PROPFIND-y variants to get a bunch of resources in one roundtrip.  Is it safe to assume that you might advocate using caching services as one way of efficiently implementing this architectural style? </p>
+<p>I&#8217;m intuiting that PROPFIND is outside your architectural principles, but I can&#8217;t articulate it based on your principles as described here.  If true, can you shed light on this?</p>
+<p>Something else occurs to me as well &#8211; as an architectural style, I wonder if giving examples of systems where the style is not appropriate is a way of raising consciousness.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-theothermarcus odd alt thread-odd thread-alt depth-1" id="comment-736">
+				<div id="div-comment-736" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/823304ee80f27b3a69925ee495f944a1?s=40&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn">TheOtherMarcus</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-736">
+			October 21, 2008 at 1:44 pm</a>		</div>
+
+		<p>I will describe my current mental model of REST and ask about the contradictions it still contains.</p>
+<p>A client takes the application to the next state by selecting one of the possible actions presented in the hypertext representing the current application state. It can look something like this:</p>
+<p>CreateItem POST /random/uri</p>
+<p>The client must know what CreateItem means, because this is part of the media type. When posting to /random/uri, a new application state will be returned (201).</p>
+<p>CreateItem POST /random/uri<br />
+Item GET|PUT|DELETE /item/17</p>
+<p>Wouldn&#8217;t a 204 response mean that the application has terminated? There are no more state transitions to make? Or can any valid operation on the created resource be expected to initiate a transition to the next application state?</p>
+<p>Am I overspecifying by saying that GET, PUT and DELETE are allowed on /item/17? Can this instead be an implicit property of the media type for Item?</p>
+<p>I would expect the URI /item/17 to be valid until the item is deleted. How is it otherwise possible to bookmark and go back to interesting resources? But what about URI:s representing application state? Is it up to the server to decide how long they are valid? A simple server implementation may choose to invalidate old application state immediately after transition to a new state, but this would make the back button useless. Advanced server implementations would allow the user to go back to an old state and from there select a different transition, possibly splitting the application in two.</p>
+<p>Now I return to the case with the 204 response, assuming the application has not terminated. The resource can be used, for example by putting a new representation of the resource. But now the advanced server becomes nondeterministic, because it can choose to proceed with any of the application states that has existed after the resource was created, not only the last one, as none of the application states are represented in the resource URI. Which of my assumptions is wrong here?<br />
+* The application has not terminated.<br />
+* The resource URI is constant and not dependent on application state.<br />
+* The advanced server should be deterministic.</p>
+<p>When the number of state transitions grows, perhaps becomes infinite, the media type used to represent the application state must evolve to be able to present an infinite number of transitions in a finite space. This can be accomplished with URI generation rules. A million items can be hidden behind a query URI.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="trackback even thread-even depth-1" id="comment-738">
+				<div id="div-comment-738" class="comment-body">
+				<div class="comment-author vcard">
+				<cite class="fn"><a href='http://www.intertwingly.net/blog/2008/10/21/Progressive-Disclosure' rel='external nofollow' class='url'>Sam Ruby</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-738">
+			October 21, 2008 at 3:49 pm</a>		</div>
+
+		<p><strong>Progressive Disclosure&#8230;</strong></p>
+<p>        Roy Fielding:  I am amused by the people who are valiantly trying to decipher Roy. While I don&#8217;t really have much to add, here is what I have&#8230;  Without intending to take anything away from Roy&#8217;s (valid) criticism on labeling, REST&#8230;</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-nkallen odd alt thread-odd thread-alt depth-1" id="comment-739">
+				<div id="div-comment-739" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/77f7f0af9b5b68abae47c7dfaa13f200?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn">nkallen</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-739">
+			October 21, 2008 at 10:28 pm</a>		</div>
+
+		<p>Thanks for clarifying my confusion. More or less, I think you&#8217;ve confirmed the essence of my interpretation. I want to ask again: what are the merits of an architectural style like this?</p>
+<p>The argument you use is that out-of-band specification overly couples the client to the server. Hypertext mitigates this. But since the media type specifies, a priori, the kind of state transitions that can be performed, the coupling and out-of-band communication have happened in a RESTful world too. (Note that I&#8217;m thinking of an agent as opposed to a person). Given that this is the case, I don&#8217;t see the value in providing a hypertext document locating the various transition URIs, since it provides indirection to no end.</p>
+<p>The only value the hypertext indirection provies where there are collections of resources of a certain kind and you want to discover what they are (e.g., you want to know the current list of  favorite books so you go to /favorites/books and that points you to /favorites/books/the-pleasure-of-hating.html). Still, you must know the kinds of resources (the media types in advance). I would guess, though, that this is such a trivial use of hypertext that you can find few APIs that&#8211;falsely, in your view&#8211;claim to be RESTful but don&#8217;t have this feature.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-beppu even thread-even depth-1" id="comment-740">
+				<div id="div-comment-740" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/32093c41c663ea62b17d66dab11b789f?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn">beppu</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-740">
+			October 21, 2008 at 10:59 pm</a>		</div>
+
+		<p>Can you point us toward some systems that you consider properly RESTful?  I think some examples would clarify this discussion.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-theothermarcus odd alt thread-odd thread-alt depth-1" id="comment-741">
+				<div id="div-comment-741" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/823304ee80f27b3a69925ee495f944a1?s=40&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn">TheOtherMarcus</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-741">
+			October 21, 2008 at 11:18 pm</a>		</div>
+
+		<p>After a nights sleep, I think I can answer my own questions.</p>
+<p>Local resources are assigned URI:s that are unique to a specific application state. Whenever a transition is made, all local resources must be assigned a new URI. This makes it possible for the server to track the application state.</p>
+<p>Global resources, like /item/17, are common to all clients. When they are updated, the local application state must not be affected. The most recent local applications state (or any local application state for that matter) is still valid after the global resource is updated.</p>
+<p>The union of local and global resources are the total application state.</p>
+<p>I am not yet prepared to completely give up global resources, even though they complicate the application design.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1" id="comment-742">
+				<div id="div-comment-742" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/13db1e9e1f03e62a763b4c6cc7ed22ee?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn"><a href='http://roy.gbiv.com/' rel='external nofollow' class='url'>Roy T. Fielding</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-742">
+			October 22, 2008 at 1:48 am</a>		</div>
+
+		<p>Hi jdubray,</p>
+<p>Of course the client has prior knowledge.  Every protocol, every media type definition, every URI scheme, and every link relationship type constitutes prior knowledge that the client must know (or learn) in order to make use of that knowledge. REST doesn&#8217;t eliminate the need for a clue.  What REST does is concentrate that need for prior knowledge into readily standardizable forms. That is the essential distinction between data-oriented and control-oriented integration.</p>
+<p>It has value because it is far easier to standardize representation and relation types than it is to standardize objects and object-specific interfaces. In other words, there are fewer things to learn and they can be recombined in unanticipated ways while remaining understandable to the client.</p>
+<p>That doesn&#8217;t mean that I think everyone should design their own systems according to the REST architectural style.  REST is intended for long-lived network-based applications that span multiple organizations.  If you don&#8217;t see a need for the constraints, then don&#8217;t use them.  That&#8217;s fine with me as long as you don&#8217;t call the result a REST API. I have no problem with systems that are true to their own architectural style.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-admin bypostauthor odd alt thread-odd thread-alt depth-1" id="comment-743">
+				<div id="div-comment-743" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/13db1e9e1f03e62a763b4c6cc7ed22ee?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn"><a href='http://roy.gbiv.com/' rel='external nofollow' class='url'>Roy T. Fielding</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-743">
+			October 22, 2008 at 1:59 am</a>		</div>
+
+		<p>Hi tlainhart,</p>
+<p>Caching is important (and desirable), but that isn&#8217;t generally the answer to your question about batch operations. People perceive a need for batch operations because they don&#8217;t understand the scope of resources.</p>
+<p>Resources are not storage items (or, at least, they aren&#8217;t always equivalent to some storage item on the back-end).  The same resource state can be overlayed by multiple resources, just as an XML document can be represented as a sequence of bytes or a tree of individually addressable nodes. Likewise, a single resource can be the equivalent of a database stored procedure, with the power to abstract state changes over any number of storage items.</p>
+<p>If you find yourself in need of a batch operation, then most likely you just haven&#8217;t defined enough resources.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1" id="comment-744">
+				<div id="div-comment-744" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/13db1e9e1f03e62a763b4c6cc7ed22ee?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn"><a href='http://roy.gbiv.com/' rel='external nofollow' class='url'>Roy T. Fielding</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-744">
+			October 22, 2008 at 2:11 am</a>		</div>
+
+		<p>Hi TheOtherMarcus,</p>
+<p>Don&#8217;t confuse application state (the state of the user&#8217;s application of computing to a given task) with resource state (the state of the world as exposed by a given service).  They are not the same thing.</p>
+<p>Aside from that, I don&#8217;t think that I can give you further guidance on design within blog commentary.  My guess is that you are thinking of OOD or ER modeling and trying to project that onto a resource space, but I really can&#8217;t say what would be an appropriate design without extensive knowledge of the application requirements and context.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-admin bypostauthor odd alt thread-odd thread-alt depth-1" id="comment-745">
+				<div id="div-comment-745" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/13db1e9e1f03e62a763b4c6cc7ed22ee?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn"><a href='http://roy.gbiv.com/' rel='external nofollow' class='url'>Roy T. Fielding</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-745">
+			October 22, 2008 at 2:14 am</a>		</div>
+
+		<p>Hi nkallen,</p>
+<p>I don&#8217;t see how disagreeing with everything you wrote could be interpreted as &#8220;confirmed the essence of my interpretation.&#8221;  Perhaps my comment 20 (above) will help clarify the role of standards in RESTful systems.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-distobj even thread-even depth-1" id="comment-746">
+				<div id="div-comment-746" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/05a5272a087ce9a44bd5f050932d7a28?s=40&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn">distobj</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-746">
+			October 22, 2008 at 8:13 am</a>		</div>
+
+		<p>I&#8217;ve reviewed lots of &#8220;REST APIs&#8221;, many of them privately for clients, and a common theme I&#8217;ve noticed is that most folks coming from a CORBA/DCE/DCOM/WS-* background, despite all the REST knowledge I&#8217;ve implanted into their heads, still cannot get away from the need to &#8220;specify the interface&#8221;.  Sometimes this manifests itself through predefined relationships between resources, specifying URI structure, or listing the possible response codes received from different resources in response to the standard 4 methods (usually a combination of all those).  I expect it&#8217;s just habit.  But a second round of harping on the uniform interface &#8211; that every service has the same interface and so any service-specific interface specification only serves to increase coupling &#8211; sets them straight.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="pingback odd alt thread-odd thread-alt depth-1" id="comment-747">
+				<div id="div-comment-747" class="comment-body">
+				<div class="comment-author vcard">
+				<cite class="fn"><a href='http://www.markbaker.ca/blog/2008/10/interface-included/' rel='external nofollow' class='url'>Web Things, by Mark Baker &raquo; Interface included</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-747">
+			October 22, 2008 at 8:42 am</a>		</div>
+
+		<p>[...] good to see Roy take on the pseudo/not-at-all &#8220;REST APIs&#8221; out [...]</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-theothermarcus even thread-even depth-1" id="comment-748">
+				<div id="div-comment-748" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/823304ee80f27b3a69925ee495f944a1?s=40&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn">TheOtherMarcus</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-748">
+			October 22, 2008 at 10:18 am</a>		</div>
+
+		<p>I agree that we won&#8217;t get any further with this discussion. I just want to know if there are any known media types besides HTML that is suitable for REST interfaces. As I see it, HTML is not ideal for an API intended to be used by a machine. I would have to use an AI if I want it to be able to figure out that a submit button that yesterday was called &#8220;Send order&#8221; is the same as the button now called &#8220;Submit order&#8221;. More formalization is needed.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-timoertel odd alt thread-odd thread-alt depth-1" id="comment-749">
+				<div id="div-comment-749" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/4d8f68288090a051c5cd56e0bfbaa13e?s=40&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn">TimOertel</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-749">
+			October 22, 2008 at 10:22 am</a>		</div>
+
+		<p>It seems a link to a good example &#8220;out there&#8221; would be helpful.</p>
+<p>Even after reading the post and comments and the OpenSocial &#8220;REST&#8221; API, AND your paper, and doing several different implementations on my own, I&#8217;m still not entirely clear what a good REST implementation would look like.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-robert-cerny even thread-even depth-1" id="comment-750">
+				<div id="div-comment-750" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/c54ca4b2c8dc58f11b0755fad4adf601?s=40&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn"><a href='http://www.cerny-online.com' rel='external nofollow' class='url'>Robert Cerny</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-750">
+			October 22, 2008 at 11:28 am</a>		</div>
+
+		<p>Hi Roy,</p>
+<p>I am very thankful that you throw out some more prose, so one can decide whether a given API is RESTful or not. After all i still have a bad feeling of making such a <a href="http://www.cerny-online.com/documents/Topincs%20-%20A%20RESTful%20Web%20Service%20Interface%20for%20Topic%20Maps%20(Paper).pdf" rel="nofollow">claim</a> myself. You, as a knowledgeable human being, are obviously able to decide on RESTfulness by inspecting an abstract description of the interface. Since i doubt that you are looking into a crystal ball, the following question crosses my mind: Is it possible for a machine to make such a decision? Would it be enough to pass it a sample transcript of a client server dialog? If that does not suffice, which other information would be necessary to decide on RESTfulness? Additionally, to the simple fact, whether or not an API is RESTful based on a sample, this would create the benefit that an API creator could read and understand the program and learn how to create an API that deserves this predicate. After all programmers prefer to read code over prose. If you think it is not possible or very difficult, i would be interested why.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-nkallen odd alt thread-odd thread-alt depth-1" id="comment-751">
+				<div id="div-comment-751" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/77f7f0af9b5b68abae47c7dfaa13f200?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn">nkallen</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-751">
+			October 22, 2008 at 11:52 am</a>		</div>
+
+		<p>Roy, maybe I&#8217;m misinterpreting your corrections then. You said </p>
+<p>1. &#8220;the media type tells the client either what method to use&#8221;; I interpret this to mean that the media type defines the state transitions and the media type specifies which methods map on to which state transitions. This is essentially are more precise statement of my original interpretation, is it not?</p>
+<p>2. &#8220;The interface doesn’t need to be discovered. It is defined right there in the hypertext.&#8221; This is, again, a matter of semantic precision. The state transitions are known a priori; the resouces on which you can perform the transitions are linked to.</p>
+<p>3. Again, you&#8217;re restating my interpretation: the resource naming (uris) should not be specified in advance, but linked to.</p>
+<p>I still feel your answers to jdubray in #20 are unsatisfactory. The out of band communication is happening when defining the media type. The only argument you marshall for media types in stead of fixed resources is that the media types can be shared across sites. That has value, but it&#8217;s a pretty weak value.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1" id="comment-753">
+				<div id="div-comment-753" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/13db1e9e1f03e62a763b4c6cc7ed22ee?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn"><a href='http://roy.gbiv.com/' rel='external nofollow' class='url'>Roy T. Fielding</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-753">
+			October 23, 2008 at 5:12 am</a>		</div>
+
+		<p>Hi Robert,</p>
+<p>The short answer: &#8220;follow your nose&#8221;. That is the phrase we usually use to distinguish the process of following information-provided transitions/semantics versus following a set procedure or interface declaration outside of that flow of information.  Basically, how far ahead is the client looking?</p>
+<p>The difficulty in providing any trace criterion for REST is that what matters is how the client decides to take transitions. A client that has been pre-programmed to make a sequence of requests (regardless of the response) is going to produce the same network trace as one that examines each response and makes deliberate decisions based on the content.</p>
+<p>In terms of testing a specification, the hardest part is identifying when a RESTful protocol is actually dependent on out-of-band information or if the authors are just overspecifying things for the purpose of documentation. What I look for are requirements on processing behavior that are defined outside of the media type specification. One of the easiest ways to see that is when a protocol calls for the use of a generic media type (like application/xml or application/json) and then requires that it be processed in a way that is special to the protocol/API. If they are keying off of something unique within the content (like an XML namespace declaration that extends the semantics of a generic type), then it&#8217;s okay. Usually, however, what they do is assume that <a href="http://www.opensocial.org/Technical-Resources/opensocial-spec-v081/restful-protocol" rel="nofollow">the response has a specific structure</a> beyond that defined by the media type. When the structure changes, the client will break.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-admin bypostauthor odd alt thread-odd thread-alt depth-1" id="comment-754">
+				<div id="div-comment-754" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/13db1e9e1f03e62a763b4c6cc7ed22ee?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn"><a href='http://roy.gbiv.com/' rel='external nofollow' class='url'>Roy T. Fielding</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-754">
+			October 23, 2008 at 5:34 am</a>		</div>
+
+		<p>nkallen,</p>
+<p>The media type identifies a specification that defines how a representation is to be processed.  That is out-of-band information (all communication is dependent on some prior knowledge).  What you are missing is that each representation contains the specific instructions for interfacing with a given service, provided in-band.  The media type is a generic processing model that every agent can learn if there aren&#8217;t too many of them (hence the need for standards). The representation is specific to the application being performed by the agent.  Each representation therefore provides the transitions that are available at that point in the application.</p>
+<p>When representations are provided in hypertext form with typed relations (using microformats of HTML, RDF in N3 or XML, or even SVG), then automated agents can traverse these applications almost as well as any human. There are plenty of examples in the linked data communities. More important to me is that the same design reflects good human-Web design, and thus we can design the protocols to support both machine and human-driven applications by following the same architectural style.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-nileflowers even thread-even depth-1" id="comment-755">
+				<div id="div-comment-755" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/68e5cc16789ee5dae78bd538dcef58f2?s=40&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn">Nileflowers</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-755">
+			October 23, 2008 at 8:17 am</a>		</div>
+
+		<p>The way I think people look at REST is this: if it is not your everyday xml-based web services (SOAP and WS-*), then it must be REST. This distinction is taken regardless of whether the API in question is RESTfull (as defined by Dr. Fielding) or not.</p>
+<p>So there is no need to be frustrated, people have taken the coined term and ran with it. This is how marketing will use it and so will everybody else.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="trackback odd alt thread-odd thread-alt depth-1" id="comment-756">
+				<div id="div-comment-756" class="comment-body">
+				<div class="comment-author vcard">
+				<cite class="fn"><a href='http://www.ldodds.com/blog/archives/000337.html' rel='external nofollow' class='url'>Lost Boy</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-756">
+			October 23, 2008 at 1:19 pm</a>		</div>
+
+		<p><strong>Explaing REST and Hypertext: Spam-E the Spam Cleaning Robot&#8230;</strong></p>
+<p>I&#8217;m going to add to Sam Ruby&#8217;s amusement and throw in my attempt to explicate some of Roy Fielding&#8217;s recent discussion of what makes an API RESTful. If you&#8217;ve not read the post and all the comments then I encourage you to do so: there&#8217;s some great&#8230;</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-robert-cerny even thread-even depth-1" id="comment-759">
+				<div id="div-comment-759" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/c54ca4b2c8dc58f11b0755fad4adf601?s=40&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn"><a href='http://www.cerny-online.com' rel='external nofollow' class='url'>Robert Cerny</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-759">
+			October 24, 2008 at 12:47 am</a>		</div>
+
+		<p>Roy, you are saying:</p>
+<p>When representations are provided in hypertext form with typed relations (using microformats of HTML, RDF in N3 or XML, or even SVG), then automated agents can traverse these applications almost as well as any human.</p>
+<p>I wonder how the agent knows what the relationship types mean or whether this just applies if client and server have shared knowledge on the vocabulary, actually more the respective programmers. In other words, if the server introduces a new relationship type, the agent probably needs adaption, depending on its task. Do you agree?</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="trackback odd alt thread-odd thread-alt depth-1" id="comment-760">
+				<div id="div-comment-760" class="comment-body">
+				<div class="comment-author vcard">
+				<cite class="fn"><a href='http://www.25hoursaday.com/weblog/2008/10/24/RESTAPIDesignInventMediaTypesNotProtocolsAndUnderstandTheImportanceOfHyperlinks.aspx' rel='external nofollow' class='url'>Dare Obasanjo aka Carnage4Life</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-760">
+			October 24, 2008 at 12:58 am</a>		</div>
+
+		<p><strong>REST API Design: Invent Media Types, Not Protocols and Understand the Importance&#8230;</strong></p>
+<p>&#8230;</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="pingback even thread-even depth-1" id="comment-762">
+				<div id="div-comment-762" class="comment-body">
+				<div class="comment-author vcard">
+				<cite class="fn"><a href='http://roy.gbiv.com/untangled/2008/specialization' rel='external nofollow' class='url'>Specialization &raquo; Untangled</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-762">
+			October 24, 2008 at 8:16 am</a>		</div>
+
+		<p>[...] with most applications of computing somewhere in between. However, when I send out a message to API designers, I expect the audience to be reasonably competent in the field. I have to talk to them as a [...]</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="pingback odd alt thread-odd thread-alt depth-1" id="comment-767">
+				<div id="div-comment-767" class="comment-body">
+				<div class="comment-author vcard">
+				<cite class="fn"><a href='http://blog.triplescape.com/index.php/2008/10/25/twild-for-october-25-2008/' rel='external nofollow' class='url'>triple|scape &raquo; Blog Archive &raquo; TWILD for October 25, 2008</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-767">
+			October 25, 2008 at 12:05 am</a>		</div>
+
+		<p>[...] from a client-centric point of view. I have to admit that after reading this post, and the Roy Fielding post that inspired it, my interpretation of REST has totally been turned on its head. Both are [...]</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="pingback even thread-even depth-1" id="comment-770">
+				<div id="div-comment-770" class="comment-body">
+				<div class="comment-author vcard">
+				<cite class="fn"><a href='http://mndoci.com/blog/2008/10/25/getting-restive/' rel='external nofollow' class='url'>Getting RESTive : business|bytes|genes|molecules</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-770">
+			October 25, 2008 at 11:27 pm</a>		</div>
+
+		<p>[...] words come from the man who put REST on the map, one Roy Fielding in a bit of a rant against what people call REST today. The post is worth reading for anyone who is into the REST architecture (or [...]</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="pingback odd alt thread-odd thread-alt depth-1" id="comment-771">
+				<div id="div-comment-771" class="comment-body">
+				<div class="comment-author vcard">
+				<cite class="fn"><a href='http://www.gabrielelana.it/archives/77' rel='external nofollow' class='url'>Gabriele Lana &raquo; Esempi, esempi e ancora esempi</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-771">
+			October 26, 2008 at 1:57 am</a>		</div>
+
+		<p>[...] giorni fa l&#8217;ennesimo caso di API dichiaratasi RESTful, ma che invece, a detta di Roy Fielding RESTful non è. La cosa che mi spiazza è la carenza cronica di esempi significativi e [...]</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="pingback even thread-even depth-1" id="comment-772">
+				<div id="div-comment-772" class="comment-body">
+				<div class="comment-author vcard">
+				<cite class="fn"><a href='http://www.thesmith.co.uk/blog/?p=4' rel='external nofollow' class='url'>thesmith &raquo; Blog Archive &raquo; OpenSocial&#8217;s REST Protocol, Taking It On The Chin</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-772">
+			October 26, 2008 at 3:46 pm</a>		</div>
+
+		<p>[...] State Transfer was, as everyone knows, defined by Roy T. Fielding who recently gave SocialSite&#8217;s REST API a bit of a panning and then go on to give it to the OpenSocial specification. Now this must be quite hard to take and [...]</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="pingback odd alt thread-odd thread-alt depth-1" id="comment-787">
+				<div id="div-comment-787" class="comment-body">
+				<div class="comment-author vcard">
+				<cite class="fn"><a href='http://francois.goldgewicht.com/?p=143' rel='external nofollow' class='url'>Espace de François &raquo; Blog Archive &raquo; Faire du REST, ce n&#8217;est pas&#8230;</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-787">
+			October 29, 2008 at 1:31 am</a>		</div>
+
+		<p>[...] imaginez ma hâte lorsque j&#8217;ai découvert un post de Roy Fielding qui commence par la phrase suivante : &#8220;I am getting frustrated by the number [...]</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-dima even thread-even depth-1" id="comment-805">
+				<div id="div-comment-805" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/489fdd58f2daafbe7fca14322762958e?s=40&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn">Dima</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-805">
+			November 1, 2008 at 5:50 am</a>		</div>
+
+		<p>Roy,</p>
+<p>do you think any of the public API&#8217;s out there are truly RESTful?</p>
+<p>One problem I have is how to do security and keep it pure RESTFul</p>
+<p>In order to have secure call I have to do something like:</p>
+<p>GET /resource/11231231/token=KJGHY7687JKGH</p>
+<p>Unless I do POST &#8211; is there a better way you see for this?</p>
+<p>Dima.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-admin bypostauthor odd alt thread-odd thread-alt depth-1" id="comment-806">
+				<div id="div-comment-806" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/13db1e9e1f03e62a763b4c6cc7ed22ee?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn"><a href='http://roy.gbiv.com/' rel='external nofollow' class='url'>Roy T. Fielding</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-806">
+			November 1, 2008 at 8:09 am</a>		</div>
+
+		<p>Dima,</p>
+<p>I am not sure why you think that having an obscure URI format will somehow give you a secure call (whatever that means). Identifiers are public information.</p>
+<p>RESTful systems perform secure operations in the same way as any messaging protocol: either by encapsulating the message stream (SSL, TLS, SSH, IPsec, &#8230;) or by encrypting the messages (PGP, S/MIME, etc.). There are numerous examples of that in practice, and more in the future once browsers learn how to implement other authentication mechanisms.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="trackback even thread-even depth-1" id="comment-832">
+				<div id="div-comment-832" class="comment-body">
+				<div class="comment-author vcard">
+				<cite class="fn"><a href='http://blogs.tedneward.com/2008/11/07/REST+HTTP.aspx' rel='external nofollow' class='url'>Interoperability Happens</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-832">
+			November 6, 2008 at 10:34 pm</a>		</div>
+
+		<p><strong>REST != HTTP&#8230;</strong></p>
+<p>&#8230;</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-billburke odd alt thread-odd thread-alt depth-1" id="comment-836">
+				<div id="div-comment-836" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/2e5a8d5b69a0c1fdfa12237bce877253?s=40&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn">billburke</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-836">
+			November 7, 2008 at 4:19 pm</a>		</div>
+
+		<p>Roy,</p>
+<p>What about the usecase of a distributed queue?  The queue should not care about the media types it is exchanging between senders and receivers, yet it can quite easily satisfy the addressability, uniform interface, and statelessness constraints of a RESTful architecture.  Can&#8217;t a service that is media-type agnostic be a RESTful API?  Such a service would require assigning semantic meaning to a specific HTTP method and URI pattern and would not receive state transition information from its exchanged media types (as the service doesn&#8217;t care or need to know about the media types).  I hope I am explaining myself well.</p>
+<p>For example:<br />
+POST /{queue-name} sends a message to the queue<br />
+GET /{queue-name}/top is the current message waiting to be processed.  It returns<br />
+Location: /messages/111<br />
+DELETE /messages/111 tells server you are done processing that message.</p>
+<p>There are specific state transitions for the receiver, but why does the media type have to contain information on how to process a received message?</p>
+<p>Assigning a little bit of semantics to the URI and HTTP methods adds a lot of simplicity to the overall architecture without requiring an &#8220;envelope&#8221; format to exchange data.  I also think it is far easier to maintain and re-use over the long term.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1" id="comment-842">
+				<div id="div-comment-842" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/13db1e9e1f03e62a763b4c6cc7ed22ee?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn"><a href='http://roy.gbiv.com/' rel='external nofollow' class='url'>Roy T. Fielding</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-842">
+			November 8, 2008 at 6:36 pm</a>		</div>
+
+		<p>Bill,</p>
+<p>A distributed queue is an implementation choice. You can certainly implement some applications by having them interact with a queue-like resource in a RESTful manner.  However, if your client relies on the resource being a queue, then it certainly isn&#8217;t a RESTful API.  Do you see the difference? Encoding knowledge within clients and servers of the other side&#8217;s implementation mechanism is what we are trying to avoid.</p>
+<p>If a client is receiving instructions on how to interact with a resource just before acting only on those instructions, then the client doesn&#8217;t care if the resource is a distributed queue. It simply doesn&#8217;t need to know how the resource is implemented.  All it needs to know is the meaning of those instructions and some idea of what it wants to do next, whether that purpose be user-driven, configuration-driven, or some sort of AI-driven.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="pingback odd alt thread-odd thread-alt depth-1" id="comment-874">
+				<div id="div-comment-874" class="comment-body">
+				<div class="comment-author vcard">
+				<cite class="fn"><a href='http://blog.dhananjaynene.com/2008/11/rest-fomenting-unrest-is-restfulness-a-semantics-game-why-does-rest-require-statelessness/' rel='external nofollow' class='url'>Fomenting unREST : Is RESTfulness a semantics game ? Why does REST require statelessness ?</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-874">
+			November 12, 2008 at 6:27 pm</a>		</div>
+
+		<p>[...] Fielding recently wrote : REST APIs must be hypertext-driven. It is an excellent writeup which actually focuses on What REST is NOT and is written in the [...]</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-jgkim even thread-even depth-1" id="comment-888">
+				<div id="div-comment-888" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/4bfb8a7fb56a5c1b137a17a48b4b724e?s=40&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn"><a href='http://jayg.org/' rel='external nofollow' class='url'>Jay G.</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-888">
+			November 14, 2008 at 7:56 am</a>		</div>
+
+		<p>Hi Roy,</p>
+<p>The first bullet says &#8220;REST API should not be dependent on any single communication protocol.&#8221; and &#8220;In general, any protocol element that uses a URI for identification must allow any URI scheme to be used for the sake of that identification.&#8221;</p>
+<p>If I understand it correctly, when I design a media type, I should not restrict URIs to a limited set of URI schemes. However, HTML doesn&#8217;t define  how user agents can handle a form tag which uses a URI other than an HTTP URI as the value of its action attribute. Then who can decide which method needs to be used with an FTP URI? It seems HTML restricts the possible values of form&#8217;s action attribute to only HTTP URIs. How could I explain this?</p>
+<p>The HTML specification doesn&#8217;t say that user agent developers need to use HTTP&#8217;s GET method for an anchor. Then how could they know how to handle the element with HTTP?</p>
+<p>I know my English is really bad, but I just want to know how I can define in the media type that an anchor needs to be handled with HTTP&#8217;s GET.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-colinjack odd alt thread-odd thread-alt depth-1" id="comment-957">
+				<div id="div-comment-957" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/55ddccf193d86ef28a1aab323118abb3?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn">colinjack</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-957">
+			November 23, 2008 at 3:36 pm</a>		</div>
+
+		<p>Hi Roy,</p>
+<p>Earlier on you speculated about why people find the HATEOS idea so difficult to follow. My view is it&#8217;s caused by the lack of good examples and/or a good book.</p>
+<p>It might be worth contrasting it with DDD, in my view similiarly complex and also looking at designing simple software with a long term viewpoint.<br />
+As with anything DDD suffers from misunderstandings and people sometimes focus too much on the unimportant aspects.However overall things are in a much better state than they are with REST and I think that&#8217;s largely because Evans&#8217; book really focusses the mind and describes real world examples that illustrate why his ideas are important. Similiarly the published code/design examples give people something to focus on.</p>
+<p>However when it comes to REST a lot of content available on the Web, even from true REST experts, is quite unhelpful to newcomers. In fact *good* REST examples and discussions were thin on the ground until recently, probably fuelling the incessant squabbling and more recently the hijacking of REST (including WOA).</p>
+<p>As I say recently we&#8217;ve had some realistic examples (I&#8217;m thinking in particular of <a href="http://www.infoq.com/articles/webber-rest-workflow" rel="nofollow">http://www.infoq.com/articles/webber-rest-workflow</a>, even though you might not consider it RESTful) but I certainly think that a lot more could be done and that perhaps a good book is in order? <img src='http://roy.gbiv.com/untangled/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+<p>Just my 2c as someone whose gradually coming to appreciate REST after many months of trying to get to grips with the great ideas behind it.</p>
+<p>Thanks,</p>
+<p>Colin</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-mikek even thread-even depth-1" id="comment-958">
+				<div id="div-comment-958" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/fa7a4e4870e83a951f5452f9c0fe9eb2?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />		<cite class="fn">mikek</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven#comment-958">
+			November 24, 2008 at 2:48 am</a>		</div>
+
+		<p>Roy,</p>
+<p>How is HATEOAS possible if markup doesn&#8217;t adequately support protocol transactions?</p>
+<p>Regards,<br />
+Mike</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+ </ol>
+
+ <div class="navigation">
+  <div class="alignleft"></div>
+  <div class="alignright"></div>
+ </div>
+
+</div>
+			</div>
+			<!--- middle (main content) column content end -->
+	</div>
+	<div id="sidebar">
+		<ul>
+ <li id="archivedentry">
+  <h2>Archived Entry</h2>
+  <ul>
+   <li><strong>Post Date :</strong></li>
+   <li>Monday, Oct 20th, 2008 at 5:20 am</li>
+   <li><strong>Category :</strong></li>
+   <li><a href="http://roy.gbiv.com/untangled/category/architecture" title="View all posts in software architecture" rel="category tag">software architecture</a> and <a href="http://roy.gbiv.com/untangled/category/web-architecture" title="View all posts in web architecture" rel="category tag">web architecture</a></li>
+   <li><strong>Tags :</strong></li>
+   <li><a href="http://roy.gbiv.com/untangled/tag/hypertext" rel="tag">hypertext</a>, <a href="http://roy.gbiv.com/untangled/tag/rest" rel="tag">REST</a></li>
+   <li><strong>Do More :</strong></li>
+   <li>Both comments and pings are currently closed.</li>
+  </ul>
+ </li>
+
+ <li id="search">
+    <form id="searchform" method="get" action="/untangled/index.php">
+      <input type="text" name="s" id="s" size="24" />
+      <input type="submit" name="submit" value="Search" />
+    </form>
+ </li>
+
+ <li id="categories">
+  <h2>Categories</h2>
+  <ul>
+	<li class="cat-item cat-item-3"><a href="http://roy.gbiv.com/untangled/category/blogging" title="View all posts filed under blogging">blogging</a> (4)
+</li>
+	<li class="cat-item cat-item-8"><a href="http://roy.gbiv.com/untangled/category/family" title="View all posts filed under Family">Family</a> (1)
+</li>
+	<li class="cat-item cat-item-9"><a href="http://roy.gbiv.com/untangled/category/opensource" title="View all posts filed under open source">open source</a> (3)
+</li>
+	<li class="cat-item cat-item-4"><a href="http://roy.gbiv.com/untangled/category/architecture" title="View all posts filed under software architecture">software architecture</a> (7)
+</li>
+	<li class="cat-item cat-item-41"><a href="http://roy.gbiv.com/untangled/category/standards" title="View all posts filed under standards">standards</a> (2)
+</li>
+	<li class="cat-item cat-item-34"><a href="http://roy.gbiv.com/untangled/category/systems-engineering" title="View all posts filed under systems engineering">systems engineering</a> (2)
+<ul class='children'>
+	<li class="cat-item cat-item-35"><a href="http://roy.gbiv.com/untangled/category/systems-engineering/system-dynamics" title="View all posts filed under system dynamics">system dynamics</a> (1)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-13"><a href="http://roy.gbiv.com/untangled/category/web-architecture" title="View all posts filed under web architecture">web architecture</a> (11)
+</li>
+  </ul>
+ </li>
+
+ <li id="tags">
+  <h2>Popular Tags:</h2>
+<p><a href='http://roy.gbiv.com/untangled/tag/antispam' class='tag-link-29' title='1 topic' style='font-size: 8pt;'>antispam</a>
+<a href='http://roy.gbiv.com/untangled/tag/apache' class='tag-link-53' title='1 topic' style='font-size: 8pt;'>Apache</a>
+<a href='http://roy.gbiv.com/untangled/tag/architectural-style' class='tag-link-22' title='1 topic' style='font-size: 8pt;'>architectural style</a>
+<a href='http://roy.gbiv.com/untangled/tag/atompub' class='tag-link-39' title='1 topic' style='font-size: 8pt;'>AtomPub</a>
+<a href='http://roy.gbiv.com/untangled/tag/babylon5' class='tag-link-5' title='1 topic' style='font-size: 8pt;'>babylon5</a>
+<a href='http://roy.gbiv.com/untangled/tag/blackboard' class='tag-link-23' title='1 topic' style='font-size: 8pt;'>blackboard</a>
+<a href='http://roy.gbiv.com/untangled/tag/blogging' class='tag-link-3' title='3 topics' style='font-size: 14pt;'>blogging</a>
+<a href='http://roy.gbiv.com/untangled/tag/cmis' class='tag-link-38' title='1 topic' style='font-size: 8pt;'>CMIS</a>
+<a href='http://roy.gbiv.com/untangled/tag/connections' class='tag-link-46' title='1 topic' style='font-size: 8pt;'>Connections</a>
+<a href='http://roy.gbiv.com/untangled/tag/courses' class='tag-link-27' title='1 topic' style='font-size: 8pt;'>courses</a>
+<a href='http://roy.gbiv.com/untangled/tag/economies-of-scale' class='tag-link-33' title='1 topic' style='font-size: 8pt;'>economies of scale</a>
+<a href='http://roy.gbiv.com/untangled/tag/fatherhood' class='tag-link-50' title='1 topic' style='font-size: 8pt;'>fatherhood</a>
+<a href='http://roy.gbiv.com/untangled/tag/hypertext' class='tag-link-42' title='1 topic' style='font-size: 8pt;'>hypertext</a>
+<a href='http://roy.gbiv.com/untangled/tag/icse' class='tag-link-51' title='1 topic' style='font-size: 8pt;'>ICSE</a>
+<a href='http://roy.gbiv.com/untangled/tag/information-networks' class='tag-link-26' title='1 topic' style='font-size: 8pt;'>information networks</a>
+<a href='http://roy.gbiv.com/untangled/tag/jabber' class='tag-link-36' title='1 topic' style='font-size: 8pt;'>jabber</a>
+<a href='http://roy.gbiv.com/untangled/tag/james-burke' class='tag-link-45' title='1 topic' style='font-size: 8pt;'>James Burke</a>
+<a href='http://roy.gbiv.com/untangled/tag/linda' class='tag-link-24' title='1 topic' style='font-size: 8pt;'>Linda</a>
+<a href='http://roy.gbiv.com/untangled/tag/media-types' class='tag-link-49' title='1 topic' style='font-size: 8pt;'>media types</a>
+<a href='http://roy.gbiv.com/untangled/tag/mimetypes' class='tag-link-48' title='1 topic' style='font-size: 8pt;'>mime.types</a>
+<a href='http://roy.gbiv.com/untangled/tag/mip' class='tag-link-52' title='1 topic' style='font-size: 8pt;'>MIP</a>
+<a href='http://roy.gbiv.com/untangled/tag/notifications' class='tag-link-31' title='1 topic' style='font-size: 8pt;'>notifications</a>
+<a href='http://roy.gbiv.com/untangled/tag/open-development' class='tag-link-12' title='1 topic' style='font-size: 8pt;'>open development</a>
+<a href='http://roy.gbiv.com/untangled/tag/opensolaris' class='tag-link-11' title='1 topic' style='font-size: 8pt;'>OpenSolaris</a>
+<a href='http://roy.gbiv.com/untangled/tag/open-source' class='tag-link-10' title='1 topic' style='font-size: 8pt;'>open source</a>
+<a href='http://roy.gbiv.com/untangled/tag/precision' class='tag-link-44' title='1 topic' style='font-size: 8pt;'>precision</a>
+<a href='http://roy.gbiv.com/untangled/tag/rest' class='tag-link-6' title='9 topics' style='font-size: 22pt;'>REST</a>
+<a href='http://roy.gbiv.com/untangled/tag/roa' class='tag-link-19' title='1 topic' style='font-size: 8pt;'>ROA</a>
+<a href='http://roy.gbiv.com/untangled/tag/scalability' class='tag-link-32' title='2 topics' style='font-size: 11.6pt;'>scalability</a>
+<a href='http://roy.gbiv.com/untangled/tag/semantic-web' class='tag-link-14' title='1 topic' style='font-size: 8pt;'>semantic web</a>
+<a href='http://roy.gbiv.com/untangled/tag/sling' class='tag-link-28' title='1 topic' style='font-size: 8pt;'>sling</a>
+<a href='http://roy.gbiv.com/untangled/tag/software-architecture' class='tag-link-21' title='2 topics' style='font-size: 11.6pt;'>software architecture</a>
+<a href='http://roy.gbiv.com/untangled/tag/specialization' class='tag-link-43' title='1 topic' style='font-size: 8pt;'>specialization</a>
+<a href='http://roy.gbiv.com/untangled/tag/system-dynamics' class='tag-link-35' title='1 topic' style='font-size: 8pt;'>system dynamics</a>
+<a href='http://roy.gbiv.com/untangled/tag/systems-engineering' class='tag-link-34' title='1 topic' style='font-size: 8pt;'>systems engineering</a>
+<a href='http://roy.gbiv.com/untangled/tag/tuplespace' class='tag-link-25' title='1 topic' style='font-size: 8pt;'>tuplespace</a>
+<a href='http://roy.gbiv.com/untangled/tag/twitter' class='tag-link-37' title='1 topic' style='font-size: 8pt;'>twitter</a>
+<a href='http://roy.gbiv.com/untangled/tag/webarch' class='tag-link-15' title='2 topics' style='font-size: 11.6pt;'>webarch</a>
+<a href='http://roy.gbiv.com/untangled/tag/webdav' class='tag-link-40' title='1 topic' style='font-size: 8pt;'>WebDAV</a>
+<a href='http://roy.gbiv.com/untangled/tag/xmpp' class='tag-link-30' title='1 topic' style='font-size: 8pt;'>XMPP</a></p>
+ </li>
+
+
+ <li id="meta">
+  <h2>Meta</h2>
+  <ul>
+      <li><a href="http://roy.gbiv.com/untangled/wp-login.php">Log in</a></li>
+     </ul>
+ </li>
+
+</ul>
+	</div>
+<div id="footer">
+<p><small>&copy; 2008-2011 Roy T. Fielding</small></p>
+</div> <!-- End id="footer" -->
+</div> <!-- End id="main" -->
+</div> <!-- End id="rap" -->
+</body>
+</html>
+
+<!-- Dynamic Page Served (once) in 1.282 seconds -->
+<!-- Cached page served by WP-Cache -->

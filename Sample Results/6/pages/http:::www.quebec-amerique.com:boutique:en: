@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Boutique Québec Amérique</title>
+<base href="http://www.quebec-amerique.com/boutique/" />
+<meta name="description" content="Boutique Québec Amérique" />
+<link href="http://www.quebec-amerique.com/boutique/image/data/cart.png" rel="icon" />
+<link rel="stylesheet" type="text/css" href="catalog/view/theme/boutiqueQA/stylesheet/stylesheet.css" />
+<link rel="stylesheet" type="text/css" href="catalog/view/theme/boutiqueQA/stylesheet/slideshow.css" media="screen" />
+<script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="catalog/view/javascript/jquery/ui/jquery-ui-1.8.16.custom.min.js"></script>
+<link rel="stylesheet" type="text/css" href="catalog/view/javascript/jquery/ui/themes/ui-lightness/jquery-ui-1.8.16.custom.css" />
+<script type="text/javascript" src="catalog/view/javascript/jquery/ui/external/jquery.cookie.js"></script>
+<script type="text/javascript" src="catalog/view/javascript/jquery/colorbox/jquery.colorbox.js"></script>
+<link rel="stylesheet" type="text/css" href="catalog/view/javascript/jquery/colorbox/colorbox.css" media="screen" />
+<script type="text/javascript" src="catalog/view/javascript/jquery/tabs.js"></script>
+<script type="text/javascript" src="catalog/view/javascript/common.js"></script>
+<script type="text/javascript" src="catalog/view/javascript/jquery/nivo-slider/jquery.nivo.slider.pack.js"></script>
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/ie7.css" />
+<![endif]-->
+<!--[if lt IE 7]>
+<link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/ie6.css" />
+<script type="text/javascript" src="catalog/view/javascript/DD_belatedPNG_0.0.8a-min.js"></script>
+<script type="text/javascript">
+DD_belatedPNG.fix('#logo img');
+</script>
+<![endif]-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-3846080-5']);
+_gaq.push(['_setDomainName', 'quebec-amerique.com']);
+_gaq.push(['_setAllowLinker', true]);
+_gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script></head>
+<body>
+<div id="container">
+<div id="header">
+    <div id="logo"><a href="https://www.quebec-amerique.com/boutique/en/"><img src="http://www.quebec-amerique.com/boutique/image/data/top.png" title="Boutique Québec Amérique" alt="Boutique Québec Amérique" style="height:50px;"/></a></div>
+    <form action="https://www.quebec-amerique.com/boutique/en/?route=module/language" method="post" enctype="multipart/form-data">
+  <div id="language">     <!--  <img src="image/flags/fr.png" alt="Français" title="Français" onclick="$('input[name=\'language_code\']').attr('value', 'fr'); $(this).parent().parent().submit();" /> -->
+    
+   <a onclick="$('input[name=\'language_code\']').attr('value', 'fr'); $(this).parent().parent().submit();" >Français </a>
+    
+     <!--  <img src="image/flags/gb.png" alt="English" title="English" onclick="$('input[name=\'language_code\']').attr('value', 'en'); $(this).parent().parent().submit();" /> -->
+    
+   <a onclick="$('input[name=\'language_code\']').attr('value', 'en'); $(this).parent().parent().submit();" >English </a>
+    
+        <input type="hidden" name="language_code" value="" />
+    <input type="hidden" name="redirect" value="https://www.quebec-amerique.com/boutique/en/" />
+  </div>
+</form>
+  <form action="https://www.quebec-amerique.com/boutique/en/?route=module/currency" method="post" enctype="multipart/form-data">
+  <div id="currency">Currency<br />
+                <a title="Canadian Dollar"><b> CAD</b></a>
+                        <a title="Euro" onclick="$('input[name=\'currency_code\']').attr('value', 'EUR'); $(this).parent().parent().submit();"> EUR</a>
+                        <a title="US Dollar" onclick="$('input[name=\'currency_code\']').attr('value', 'USD'); $(this).parent().parent().submit();"> USD</a>
+                <input type="hidden" name="currency_code" value="" />
+    <input type="hidden" name="redirect" value="https://www.quebec-amerique.com/boutique/en/" />
+  </div>
+</form>
+  <div id="cart">
+  <div class="heading">
+    <h4><div id="cart_icon">&nbsp;</div><div style="margin-left:22px;"> Shopping Cart</div></h4>
+        <a id="items"><span id="cart-total">0 item(s) - 0.00 CAD</span></a>
+      
+  </div>
+  <div class="content">
+        <div class="empty">Your shopping cart is empty!</div>
+      </div>
+</div>  <div id="search">
+    <div class="button-search"></div>
+        <input type="text" name="filter_name" value="Search" onclick="this.value = '';" onkeydown="this.style.color = '#000000';" />
+      </div>
+  <div id="welcome">
+        Welcome visitor you can <a href="https://www.quebec-amerique.com/boutique/en/?route=account/login">login</a> or <a href="https://www.quebec-amerique.com/boutique/en/?route=account/register">create an account</a>.      </div>
+ <div class="links"><a href="https://www.quebec-amerique.com/boutique/en/">Home</a><a href="https://www.quebec-amerique.com/boutique/en/?route=account/account">My Account</a><a href="https://www.quebec-amerique.com/boutique/en/?route=checkout/cart">Shopping Cart</a></div> <!-- <a href="https://www.quebec-amerique.com/boutique/en/?route=account/wishlist" id="wishlist-total">Wish List (0)</a>-->
+</div>
+<div id="menu">
+  <ul>
+        <li><a href="https://www.quebec-amerique.com/boutique/en/multidictionnaire">Le Multidictionnaire de la langue française</a>
+          </li>
+        <li><a href="https://www.quebec-amerique.com/boutique/en/visuel-corps-humain">Le Visuel du corps humain</a>
+          </li>
+        <li><a href="https://www.quebec-amerique.com/boutique/en/visuel-multimedia">The Visual Multimedia</a>
+            <div>
+                <ul>
+                                        <li><a href="https://www.quebec-amerique.com/boutique/en/visuel-multimedia/multilingue">Multilingual</a></li>
+                                        <li><a href="https://www.quebec-amerique.com/boutique/en/visuel-multimedia/trilingue">Trilingual</a></li>
+                            </ul>
+              </div>
+          </li>
+      </ul>
+</div>
+<div id="notification"></div>
+ 
+<div id="content"><div class="slideshow">
+  <div id="slideshow0" class="nivoSlider" style="width: 980px; height: 280px;">
+            <a href="http://www.quebec-amerique.com/boutique/multidictionnaire"><img src="http://www.quebec-amerique.com/boutique/image/cache/data/ban-boutique4b-980x280.png" alt="Multidictionnaire" /></a>
+                <a href="http://www.quebec-amerique.com/boutique/multidictionnaire"><img src="http://www.quebec-amerique.com/boutique/image/cache/data/ban-boutique3b-980x280.png" alt="Multidictionnaire" /></a>
+                <a href="http://www.quebec-amerique.com/boutique/multidictionnaire"><img src="http://www.quebec-amerique.com/boutique/image/cache/data/ban-boutique1b-980x280.png" alt="Multidictionnaire" /></a>
+                <a href="http://www.quebec-amerique.com/boutique/multidictionnaire"><img src="http://www.quebec-amerique.com/boutique/image/cache/data/ban-boutique2b-980x280.png" alt="Multidictionnaire" /></a>
+          </div>
+</div>
+<script type="text/javascript"><!--
+$(document).ready(function() {
+	$('#slideshow0').nivoSlider();
+});
+--></script><div class="box">
+  <div class="box-heading">Featured</div>
+  <div class="box-content">
+    <div class="box-product">
+            <div>
+                <div class="image"><a href="https://www.quebec-amerique.com/boutique/en/Multidictionnaire-pc"><img src="http://www.quebec-amerique.com/boutique/image/cache/data/multi-win-80x80.jpg" alt="Multidictionnaire de la langue française, cinquième édition - PC" /></a></div>
+                <div class="name"><a href="https://www.quebec-amerique.com/boutique/en/Multidictionnaire-pc">Multidictionnaire de la langue française, cinquième édition - PC</a></div>
+                <div class="price">
+                    39.95 CAD                  </div>
+                        <div class="cart"><input type="button" value="Add to Cart" onclick="addToCart('54');" class="button" /></div>
+      </div>
+            <div>
+                <div class="image"><a href="https://www.quebec-amerique.com/boutique/en/Multidictionnaire-macintosh"><img src="http://www.quebec-amerique.com/boutique/image/cache/data/multi-apple-80x80.jpg" alt="Multidictionnaire de la langue française, cinquième édition - Macintosh" /></a></div>
+                <div class="name"><a href="https://www.quebec-amerique.com/boutique/en/Multidictionnaire-macintosh">Multidictionnaire de la langue française, cinquième édition - Macintosh</a></div>
+                <div class="price">
+                    39.95 CAD                  </div>
+                        <div class="cart"><input type="button" value="Add to Cart" onclick="addToCart('50');" class="button" /></div>
+      </div>
+            <div>
+                <div class="image"><a href="https://www.quebec-amerique.com/boutique/en/Visuel-corps-humain-PC"><img src="http://www.quebec-amerique.com/boutique/image/cache/data/icoVCHwin-80x80.jpg" alt="Le Visuel du corps humain - Encyclopédie multimédia - PC" /></a></div>
+                <div class="name"><a href="https://www.quebec-amerique.com/boutique/en/Visuel-corps-humain-PC">Le Visuel du corps humain - Encyclopédie multimédia - PC</a></div>
+                <div class="price">
+                    49.95 CAD                  </div>
+                        <div class="cart"><input type="button" value="Add to Cart" onclick="addToCart('55');" class="button" /></div>
+      </div>
+            <div>
+                <div class="image"><a href="https://www.quebec-amerique.com/boutique/en/Visuel-Multimedia-4-Multilingue-PC"><img src="http://www.quebec-amerique.com/boutique/image/cache/data/icoMultiWin-80x80.jpg" alt="Le Visuel multimédia édition 4 Multilingue - PC" /></a></div>
+                <div class="name"><a href="https://www.quebec-amerique.com/boutique/en/Visuel-Multimedia-4-Multilingue-PC">Le Visuel multimédia édition 4 Multilingue - PC</a></div>
+                <div class="price">
+                    69.95 CAD                  </div>
+                        <div class="cart"><input type="button" value="Add to Cart" onclick="addToCart('58');" class="button" /></div>
+      </div>
+            <div>
+                <div class="image"><a href="https://www.quebec-amerique.com/boutique/en/Visuel-Multimedia-4-Trilingue-Macintosh"><img src="http://www.quebec-amerique.com/boutique/image/cache/data/icoTriMac-80x80.jpg" alt="Le Visuel multimédia édition 4 Trilingue - Macintosh" /></a></div>
+                <div class="name"><a href="https://www.quebec-amerique.com/boutique/en/Visuel-Multimedia-4-Trilingue-Macintosh">Le Visuel multimédia édition 4 Trilingue - Macintosh</a></div>
+                <div class="price">
+                    49.95 CAD                  </div>
+                        <div class="cart"><input type="button" value="Add to Cart" onclick="addToCart('51');" class="button" /></div>
+      </div>
+            <div>
+                <div class="image"><a href="https://www.quebec-amerique.com/boutique/en/Visual-Multimedia-4-Multilingual-PC"><img src="http://www.quebec-amerique.com/boutique/image/cache/data/icoMultiWin-80x80.jpg" alt="The Visual Multimedia 4th Edition Multilingual - PC" /></a></div>
+                <div class="name"><a href="https://www.quebec-amerique.com/boutique/en/Visual-Multimedia-4-Multilingual-PC">The Visual Multimedia 4th Edition Multilingual - PC</a></div>
+                <div class="price">
+                    69.95 CAD                  </div>
+                        <div class="cart"><input type="button" value="Add to Cart" onclick="addToCart('60');" class="button" /></div>
+      </div>
+          </div>
+  </div>
+</div>
+<h1 style="display: none;">Boutique Québec Amérique</h1>
+</div>
+<div id="footer">
+
+				<div style = "display:none;">
+				<a href = "http://dimouore.com">With multilanguage support</a>
+				<a href = "http://yperaspisi.gr">Νομική υποστήριξη, δικηγόρος.</a>
+				</div>
+			
+  <div class="column">
+    <h3>Products</h3>
+    <ul>
+      <li><a href="http://www.quebec-amerique.com/boutique/multidictionnaire">Le Multidictionnaire de la langue française</a></li>
+      <li><a href="http://www.quebec-amerique.com/boutique/visuel-corps-humain">Le Visuel du corps humain</a></li>
+      <li><a href="http://www.quebec-amerique.com/boutique/visuel-multimedia">The Visual multimedia</a></li>
+      <li><a href="https://www.quebec-amerique.com/boutique/en/?route=information/information&amp;information_id=3">Privacy Policy</a></li>
+      <li><a href="https://www.quebec-amerique.com/boutique/en/?route=information/contact">Customer Service</a></li>
+    </ul>
+  </div>
+    <div class="column">
+    <h3>About Québec Amérique</h3>
+    <ul>
+            <li><a href="https://www.quebec-amerique.com/boutique/en/?route=information/information&amp;information_id=7">Terms and conditions for the online shop</a></li>
+            <li><a href="https://www.quebec-amerique.com/boutique/en/about_us">History and Mission</a></li>
+                </ul>
+  </div>
+    <div class="column">
+    <h3>Our Web sites</h3>
+    <ul>
+      <li><a href="http://www.ikonet.com/fr/ledictionnairevisuel/">Le Dictionnaire Visuel (Fr)</a></li>
+      <li><a href="http://www.ikonet.com/en/visualdictionary/">The Visual Dictionary</a></li>
+      <li><a href="http://www.ikonet.com/es/diccionariovisual/">Diccionario Visual (Es)</a></li>
+      <li><a href="http://www.ikonet.com/fr/sante/corpshumainvirtuel/">Espace santé - Corps humain virtuel (Fr)</a></li>
+      <li><a href="http://www.ikonet.com/en/health/virtual-human-body/">The Virtual Human Body</a></li>
+      <li><a href="http://www.ikonet.com/fr/jeux/">Espace jeux (Fr)</a></li>
+      <li><a href="http://www.ikonet.com/fr/blogue/">Blogue ikonet (Fr)</a></li>
+    </ul>
+  </div>
+  <div class="column">
+    <h3>Follow us on</h3>
+    <div>
+      <a href="https://www.facebook.com/pages/Ikonet/143566209035982?v=wall"><img src="catalog/view/theme/boutiqueQA/image/footer_fb.png" alt="facebook" style="height: 25px; width: 25px;"/></a>
+      <a href="https://twitter.com/Ikonet"><img src="catalog/view/theme/boutiqueQA/image/footer_twitter.png" alt="twitter" style="height: 25px; width: 25px;"/></a>
+    </div>
+  </div>
+</div>
+<!--
+OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
+Please donate via PayPal to donate@opencart.com
+//-->
+<div id="powered">Powered By <a href="http://www.opencart.com">OpenCart</a><br /> Boutique Québec Amérique &copy; 2013</div>
+<!--
+OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
+Please donate via PayPal to donate@opencart.com
+//-->
+</body>
+</html>

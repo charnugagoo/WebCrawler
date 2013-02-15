@@ -1,0 +1,162 @@
+<HTML>
+<HEAD><TITLE>Chasm: Language Interoperability Tools</TITLE></HEAD>
+
+<BODY BGCOLOR="#ffffff">
+<A NAME="top"></A>
+
+<CENTER>
+<TABLE WIDTH=75% BORDER=2>
+<TR><TD BGCOLOR="#d0d0ff">
+
+<CENTER>
+<FONT SIZE=+3>Chasm</FONT><BR>
+<FONT SIZE=+2>Language Interoperability Tools</FONT><P>
+
+<A HREF="http://www.acl.lanl.gov/"></A><I>Advanced Computing Laboratory</I>,
+<BR>
+<A HREF="http://www.lanl.gov/"><I>Los Alamos National Laboratory</I></A>
+<P>
+<I>Latest version: 1.3.0 (July 13, 2005)</I><P>
+[<A HREF="http://sourceforge.net/projects/chasm-interop/">
+Return to Project Page</A>]
+<P>
+</CENTER>
+</TD></TR></TABLE><P>
+
+
+</CENTER><P>
+
+<BR>
+
+<H2>Table of Contents</H2>
+<UL>
+<LI><A HREF="#intro">Introduction to Chasm</A>
+<LI><A HREF="#docs">API Documentation</A>
+<LI><A HREF="#links">Relevant links</A>
+<LI><A HREF="#credits">Credits</A>
+</UL>
+
+<CENTER>&nbsp<P><HR WIDTH=60%></CENTER><P>
+<A NAME="intro"><H2>Introduction to Chasm</H2></A>
+
+Chasm is a language transformation system created to improve Fortran
+and C/C++ language interoperability.  Chasm (with the aid of
+associated tools) parses Fortran and C/C++ source code and automatically
+generates bridging code that can be used to make calls to routines in the
+foreign language.  Chasm also supplies an array-descriptor library that
+provides an interface between C and F90 assumed-shape arrays.  This
+allows arrays to be created in one language and then passed to and
+used by the other (foreign) language.
+<P>
+
+Chasm tools work by parsing Fortran and C/C++ source files and generating an
+XML file.  The XML file describes C++ classes, Fortran modules,
+user-defined types, functions, and function parameters.  XSLT
+stylesheets are used to transform the XML file into bridging code
+that is used to call C++ and Fortran routines.
+<P>
+
+<B>The latest release of Chasm (version 1.3.0) features XSLT stylesheets
+for the assisted development of <A HREF="http://cca-forum.org/"> CCA/Babel
+components</A> from legacy code</B>.  This XSLT code (see the chasm/xform
+directory and search for files beginning with "cca") is contributed
+to show the generality of the Chasm language transformation system.
+An example of the generated code can be seen by running make in the
+chasm/example/cca-tutorial directory.
+<P>
+
+The array-descriptor library is a low-level C library used to manipulate
+Fortran array descriptors (dope vectors).  It is the only way one can pass F90
+assumed-shape arrays and array sections between C and Fortran.  This
+library is primarily aimed at interoperability tool developers, rather
+than end users.  An example of how this library can
+be used may be found in the project's contrib/NumPy/ directory.  This example
+demonstrates how to use F90 arrays with the Python Numeric library.
+<P>
+
+Of particular interest to some may be the tool to generate xml files,
+describing interface-level information, from Fortran and C++ sources.  This
+tool may be found in the project's src/xmlgen/ directory.  This tool
+is required (and is included with <A
+HREF="http://www.cs.uoregon.edu/research/paracomp/pdtoolkit/">The
+Program Database Toolkit,</A> &nbsp needed by Chasm for C/C++
+processing.  For Fortran processing, try the
+<A HREF="http://sourceforge.net/projects/gfortran2xml">gfortran2xml
+project</A>.
+
+
+<P>[<A HREF="#top">Return to top</A>]
+
+
+
+<CENTER>&nbsp<P><HR WIDTH=60%></CENTER><P>
+<A NAME="docs"><H2>API Documentation</H2></A>
+
+<BLOCKQUOTE>
+The API documentation is produced by DOxygen in two formats:<BR>
+
+<UL>
+<LI><A HREF="F90ArrayDesc_API.pdf">PDF</A>
+<LI><A HREF="refman/index.html">HTML</A> (online only - not downloadable)
+</UL>
+
+</BLOCKQUOTE>
+
+<P>[<A HREF="#top">Return to top</A>]
+
+
+
+<CENTER>&nbsp<P><HR WIDTH=60%></CENTER><P>
+<A NAME="links"><H2>Relevant links</H2></A>
+
+<BLOCKQUOTE>
+Links to related projects:<BR>
+
+<UL>
+<LI><A HREF="http://www.cs.uoregon.edu/research/paracomp/pdtoolkit/">The
+Program Database Toolkit</A> &nbsp [required by Chasm for C/C++ language
+parsing]
+<LI><A HREF="http://sourceforge.net/projects/gfortran2xml/">The gfortran2xml
+project</A> [required for Fortran parsing]
+<LI><A HREF="http://www.cca-forum.org/">Common Component Architecture</A>
+<LI><A HREF="http://www.llnl.gov/CASC/components/babel.html">Babel</A> &nbsp
+[a language interoperability project based on an Interface Definition
+Language (IDL)]
+</UL>
+
+</BLOCKQUOTE>
+
+
+<P>[<A HREF="#top">Return to top</A>]
+
+
+
+
+<CENTER>&nbsp<P><HR WIDTH=60%></CENTER><P>
+<A NAME="credits"><H2>Credits</H2></A>
+
+<UL>
+
+<LI><B>Primary Investigator</B>: <A HREF="mailto:crasmussen@lanl.gov">Craig Rasmussen</A> (LANL)
+<LI><B>Co-Investigator</B> : <A HREF="mailto:matt@lanl.gov">Matthew
+Sottile</A> (LANL)
+<LI><B>Contributer</B> : <A HREF="mailto:crickett@lanl.gov">Christopher
+Rickett</A> (LANL)
+<LI><B>Funding Source</B> : US Department of Energy Office of Science
+</UL>
+
+<P>[<A HREF="#top">Return to top</A>]
+
+
+<CENTER>&nbsp<P><HR WIDTH=60%></CENTER><P>
+
+<CENTER>
+<A href="http://sourceforge.net">
+    <img src="http://sourceforge.net/sflogo.php?group_id=3&amp;type=4"
+         width="125" height="37" border="0" alt="SourceForge.net Logo"/>
+</A>
+</CENTER>
+
+</BODY>
+
+</HMTL>

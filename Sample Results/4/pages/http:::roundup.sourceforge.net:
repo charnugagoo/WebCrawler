@@ -1,0 +1,111 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Roundup Issue Tracker - Roundup 1.4 documentation</title>
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+          URL_ROOT:    '#',
+          VERSION:     '1.4',
+          COLLAPSE_MODINDEX: false,
+          FILE_SUFFIX: '.html'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Roundup 1.4 documentation" href="#" />
+    <link rel="next" title="Docs" href="docs.html" />
+    <link rel="prev" title="Sitemap" href="contents.html" /> 
+  </head>
+  <body>
+    <div class="header"><h1>Roundup</h1>
+        <div id="searchbox" style="display: none">
+          <form class="search" action="search.html" method="get">
+            <input type="text" name="q" size="18" />
+            <input type="submit" value="Search" />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+          </form>
+        </div>
+        <script type="text/javascript">$('#searchbox').show(0);</script>
+    </div>
+    <div class="navigation">
+      <div class="menu">
+       <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Home</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://pypi.python.org/pypi/roundup">Download</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs.html">Docs</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://issues.roundup-tracker.org">Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.roundup-tracker.org">Wiki</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code.html">Code</a></li>
+</ul>
+
+      </div>
+      <script type="text/javascript" src="http://www.ohloh.net/p/488/widgets/project_users_logo.js"></script>
+    </div>
+    <div class="content">
+       
+  <div class="section" id="roundup-issue-tracker">
+<h1>Roundup Issue Tracker</h1>
+<script type="text/javascript">
+  $(function() {
+    $('.release_info').each(function() {
+      var self = this, anchor = $('a', this);
+      $.getJSON(anchor.attr('href') + '/json?callback=?', function(data) {
+        anchor.remove();
+        var ul = $('<ul>').appendTo(self);
+        $u.each(data.urls, function(url) {
+          $('<li>').append($('<a>').attr('href', url.url).text(url.filename))
+                   .appendTo(ul);
+        });
+      });
+    });
+  });
+</script>
+<div class="release_info note">Download:
+  <a href="http://pypi.python.org/pypi/roundup">latest</a></div>
+<p>Roundup is a simple-to-use and -install issue-tracking system with command-line, web and e-mail interfaces.
+It is based on the winning design from Ka-Ping Yee in the Software Carpentry &#8220;Track&#8221; design competition.</p>
+<p>The current stable version of Roundup is 1.4.x which has quite a comprehensive
+<a class="reference internal" href="docs/features.html"><em>feature set</em></a>. For more information see the <a class="reference internal" href="docs/design.html"><em>design overview</em></a>,
+and all the other <a class="reference internal" href="docs.html"><em>documentation</em></a>. Roundup has been deployed for:</p>
+<blockquote>
+<div><ul class="simple">
+<li>bug tracking and TODO list management (the classic installation)</li>
+<li>customer help desk support (with a wizard for the phone answerers, linking to networking,
+system and development issue trackers)</li>
+<li>issue management for IETF working groups</li>
+<li>sales lead tracking</li>
+<li>conference paper submission and double-blind referee management</li>
+<li>weblogging (well, almost :)</li>
+</ul>
+</div></blockquote>
+<p>...and so on. It&#8217;s been designed with <a class="reference internal" href="docs/customizing.html"><em>flexibility</em></a> in mind - it&#8217;s not just
+another bug tracker. Roundup ships with a <em>demo tracker</em> to play with - after you&#8217;ve unpacked the source,
+just run &#8220;python demo.py&#8221; and load up the URL it prints out!</p>
+<p>Roundup was originally released as version 0.1.1 in late August, 2001. The first <a class="reference external" href="http://roundup.hg.sourceforge.net/hgweb/roundup/roundup/raw-file/default/CHANGES.txt">change note</a> I wrote says:</p>
+<blockquote>
+<div>Needed a bug tracking system. Looked around. Tried to install many Perl-based systems, to no avail.
+Got tired of waiting for Roundup to be released. Had just finished major product project, so needed
+something different for a while. Roundup here I come...</div></blockquote>
+</div>
+
+
+    </div>
+    <div class="footer">
+      <p>hosted by <a href="http://sourceforge.net"><img src="http://sflogo.sourceforge.net/sflogo.php?group_id=31577&amp;type=1" width="88" height="31" border="0" alt="SourceForge.net Logo" /></a></p>
+        &copy; Copyright 2012, Richard Jones, Roundup-Team.
+        Last updated on Nov 22, 2012.
+        <p class="source"><a href="_sources/index.txt" rel="nofollow">source</a></p>
+    </div>
+  </body>
+</html>

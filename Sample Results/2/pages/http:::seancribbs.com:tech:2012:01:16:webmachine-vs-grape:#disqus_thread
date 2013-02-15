@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang='en-US' xml:lang='en-US' xmlns='http://www.w3.org/1999/xhtml'>
+  <head>
+    <title>Webmachine vs. Grape -
+    sean cribbs :: digital renaissance man</title>
+    <link href='/stylesheets/baseline.css' rel='stylesheet' type='text/css' />
+    <link href='/stylesheets/layout.css' rel='stylesheet' type='text/css' />
+    <link href='/stylesheets/code.css' rel='stylesheet' type='text/css' />
+    
+  </head>
+  <body>
+    <div id='header'>
+      <h1>Sean<span>Cribbs</span></h1>
+      <h2>Digital Renaissance Man</h2>
+    </div>
+    <ul id="navigation">
+<li><a href="/">home</a></li> 
+<li><a href="/portfolio/">portfolio</a></li> 
+<li><a href="/about/">about</a></li> 
+<li><a href="/contact/">contact</a></li> 
+</ul>
+
+    <div id='content'>
+      <div id='sidebar'>
+        
+        <h1>Tech Archives</h1>
+<div class="left-box">
+<ul>
+  
+  <li><a href="/tech/2012/10/">October 2012</a></li>
+  
+  <li><a href="/tech/2012/02/">February 2012</a></li>
+  
+  <li><a href="/tech/2012/01/">January 2012</a></li>
+  
+  <li><a href="/tech/2011/11/">November 2011</a></li>
+  
+  <li><a href="/tech/2011/07/">July 2011</a></li>
+  
+  <li><a href="/tech/2011/03/">March 2011</a></li>
+  
+  <li><a href="/tech/2011/01/">January 2011</a></li>
+  
+  <li><a href="/tech/2010/09/">September 2010</a></li>
+  
+  <li><a href="/tech/2010/04/">April 2010</a></li>
+  
+  <li><a href="/tech/2010/02/">February 2010</a></li>
+  
+  <li><a href="/tech/2010/01/">January 2010</a></li>
+  
+  <li><a href="/tech/2009/12/">December 2009</a></li>
+  
+  <li><a href="/tech/2009/11/">November 2009</a></li>
+  
+  <li><a href="/tech/2009/09/">September 2009</a></li>
+  
+  <li><a href="/tech/2009/08/">August 2009</a></li>
+  
+  <li><a href="/tech/2009/07/">July 2009</a></li>
+  
+  <li><a href="/tech/2009/06/">June 2009</a></li>
+  
+  <li><a href="/tech/2009/05/">May 2009</a></li>
+  
+  <li><a href="/tech/2009/03/">March 2009</a></li>
+  
+  <li><a href="/tech/2009/02/">February 2009</a></li>
+  
+  <li><a href="/tech/2009/01/">January 2009</a></li>
+  
+  <li><a href="/tech/2008/09/">September 2008</a></li>
+  
+  <li><a href="/tech/2008/07/">July 2008</a></li>
+  
+  <li><a href="/tech/2008/05/">May 2008</a></li>
+  
+  <li><a href="/tech/2008/04/">April 2008</a></li>
+  
+  <li><a href="/tech/2008/02/">February 2008</a></li>
+  
+  <li><a href="/tech/2007/12/">December 2007</a></li>
+  
+  <li><a href="/tech/2007/11/">November 2007</a></li>
+  
+  <li><a href="/tech/2007/10/">October 2007</a></li>
+  
+  <li><a href="/tech/2007/09/">September 2007</a></li>
+  
+  <li><a href="/tech/2007/08/">August 2007</a></li>
+  
+  <li><a href="/tech/2007/07/">July 2007</a></li>
+  
+  <li><a href="/tech/2007/06/">June 2007</a></li>
+  
+  <li><a href="/tech/2007/05/">May 2007</a></li>
+  
+  <li><a href="/tech/2007/04/">April 2007</a></li>
+  
+  <li><a href="/tech/2007/03/">March 2007</a></li>
+  
+  <li><a href="/tech/2007/02/">February 2007</a></li>
+  
+  <li><a href="/tech/2007/01/">January 2007</a></li>
+  
+  <li><a href="/tech/2006/12/">December 2006</a></li>
+  
+  <li><a href="/tech/2006/11/">November 2006</a></li>
+  
+  <li><a href="/tech/2006/10/">October 2006</a></li>
+  
+  <li><a href="/tech/2006/09/">September 2006</a></li>
+  
+  <li><a href="/tech/2006/08/">August 2006</a></li>
+  
+</ul>
+</div>
+
+        
+      </div>
+      <div id='main'>
+        
+<h2>Webmachine vs. Grape</h2>
+
+<p>Back in December, I gave my <a href='http://rubyconf-webmachine.heroku.com/'><em>Resources, For Real This Time</em></a> talk for the third time, this time at NYC.rb. After the talk, I got into a very emphatic discussion with <a href='http://code.dblock.org'>Daniel Doubrovkine</a> and <a href='http://twitter.com/johnjoseph'>John &#8220;JJB&#8221; Bachir</a> about the differences between <a href='https://github.com/seancribbs/webmachine-ruby'>Webmachine</a>&#8217;s approach and <a href='https://github.com/intridea/grape'>Grape</a>&#8217;s approach and their relative strengths. Daniel followed it up with an interesting blog post titled <a href='http://code.dblock.org/grape-vs-webmachine'>Grape vs. Webmachine</a>. I&#8217;ve had some time to think it all over and so I figured it was about time I wrote a response.</p>
+
+<p>Daniel poses the question &#8220;Should you build your next RESTful API with Grape or Webmachine?&#8221; Before I address his question (and the inherent assumptions therein), I want to tell you a bit more about Webmachine and why it is fundamentally different from the prevailing approaches.</p>
+
+<h3 id='protocols_are_contracts'>Protocols are contracts</h3>
+
+<p>If you Google &#8221;<a href='http://www.google.com/search?q=define%3A+protocol'>define: protocol</a>&#8221;, two definitions appear:</p>
+
+<ol>
+<li>The official procedure governing affairs of state or diplomatic occasions.</li>
+
+<li>The established code of procedure or behavior in any group, organization, or situation.</li>
+</ol>
+
+<p><a href='http://www.merriam-webster.com/dictionary/protocol'>Merriam-Webster</a> gives some additionally detailed definitions:</p>
+
+<ol>
+<li>a code prescribing strict adherence to correct etiquette and precedence (as in diplomatic exchange and in the military services) &#60;a breach of <em>protocol</em>&#62;</li>
+
+<li>a set of conventions governing the treatment and especially the formatting of data in an electronic communications system &#60;network <em>protocols</em>&#62;</li>
+</ol>
+
+<p>Another way of saying this is that <em>protocols are contracts</em> or <em>conventional manners of speech and behavior</em>. To violate that contract is to be misunderstood, worse, to offend or to cause unintended actions. Granted, computer protocols may have lesser social consequences than social protocols, but if we don&#8217;t speak them properly, our programs won&#8217;t work.</p>
+
+<h3 id='protocols_are_fsms'>Protocols are FSMs</h3>
+
+<p>The classical way to implement a protocol participant (that is, a client, server or peer) is a <a href='http://en.wikipedia.org/wiki/Finite-state_machine'>finite state machine</a> (FSM). Why? Protocols are usually defined in terms of &#8220;in this situation, do that&#8221; or &#8220;react to this condition by doing that&#8221;. Many of those assertions are dependent on one another, meaning that they are not even relevant if other assertions have not been made previously. To illustrate this better, imagine the protocol of two heads of state meeting. Their meeting might go through these steps:</p>
+
+<ol>
+<li>Arrive at the same location.</li>
+
+<li>Shake hands and introduce other participants.</li>
+
+<li>Enter the meeting space.</li>
+
+<li>Negotiate an issue.</li>
+
+<li>Leave the meeting space.</li>
+
+<li>Arrive and speak at the press conference.</li>
+
+<li>Shake hands again.</li>
+
+<li>Depart the press conference.</li>
+</ol>
+
+<p>First, this is a discrete set of steps that must be followed in the order given. It wouldn&#8217;t make much sense to negotiate the issue (which might have its own internal protocol) before you shake hands and enter the meeting space, or to discuss the negotiations at the press conference before you&#8217;ve done any negotiation. Second, if one part of the protocol fails, other steps in the protocol may never occur! Imagine that upon arrival, the other head of state refuses to shake your hand or even look at you; you might abort the meeting altogether.</p>
+
+<p>Like protocols, in finite state machines, there are also discrete steps (states), and conditions that allow transition from one state to another. A transition may lead to another internal state, or an end state in which processing is terminated. Finite state machines are the essential way to implement protocols.</p>
+
+<p>And interesting side-effect of this coherence between protocol and FSM is that they are duals of each other. The FSM is an implementation of the protocol, and the protocol&#8217;s states and assertions can be derived from the FSM. It&#8217;s the kind of thing that researchers interested in provability and mathematical formulations of software get really excited about.</p>
+
+<h3 id='so_what_does_this_have_to_do_with_webmachine_and_grape'>So what does this have to do with Webmachine and Grape?</h3>
+
+<p>HTTP happens to be a protocol with a simple syntax but very rich semantic possibilities. If your application &#8220;misspeaks&#8221; HTTP, it might still be partially understood (the syntax may still be grasped), but the other party might miss out on some crucial subtlety your application wants to convey or might take an unexpected or undesirable action as a result.</p>
+
+<p>Despite HTTP&#8217;s flexibility (laxness?), it&#8217;s still important to speak the protocol as fluently as possible. Building a better Web is just as much about the brick and mortar (the HTTP protocol) as the paint and trim (&#8220;Web Standards&#8221; in the browser).</p>
+
+<p>Webmachine tries to do just that. Its core is an FSM of the server side of HTTP. The end states are response status codes (e.g. 200 OK or 404 Not Found). The transition conditions come from the &#8220;MAY&#8221;, &#8220;MUST&#8221;, &#8220;SHOULD&#8221; language in the <a href='tools.ietf.org/html/rfc2616'>HTTP/1.1 RFC 2616</a> as well as the less formal aspects of the specification. The FSM determines which transitions to take based on facts about the request and facts about the resource being requested. Because the FSM is a dual of the HTTP protocol, we at Basho have taken to calling Webmachine &#8220;an executable model of HTTP.&#8221;</p>
+
+<p><strong>This is where Webmachine fundamentally differs from Grape and other existing frameworks:</strong></p>
+
+<ul>
+<li>It implements an FSM that is a dual of the protocol, not an ever-varying stack of middleware.</li>
+
+<li>It focuses on determining facts about the resource, not performing actions.</li>
+</ul>
+
+<p>This is what I mean when I say that Webmachine is declarative (functional?) rather than imperative. By being declarative and focusing on the facts about your resource rather than &#8220;what do I do when I get a request&#8221;, a whole lot of complex and error-prone aspects of the protocol are hidden from the developer, and more importantly, done in a deterministic way every time.</p>
+
+<p>In contrast, Grape and most other Rack-based frameworks encourage you to (perhaps unwittingly) redefine HTTP semantics for every application. In my opinion, this is not just error-prone, it is wasteful. Why should you have to define what GET means everytime? You want to focus on the resources your application exposes, not implementing the protocol all over again. This is why Webmachine encapsulates those decisions (FSM!) and includes sensible defaults so that you only have to focus on the decisions and behaviors (transitions!) that your resources need to modify. You focus on what your resources <em>are</em>, rather than what they <em>do</em>.</p>
+
+<h3 id='rest_for_real_this_time'>REST, For Real This Time</h3>
+
+<p>Daniel is by no means the only or greatest offender, but I take strong objection to his use of &#8220;REST&#8221;. He says,</p>
+
+<blockquote>
+<p>Grape is a DSL for RESTful APIs.</p>
+</blockquote>
+
+<p>Simply exposing your service over HTTP and not treating it like RPC is not sufficient to be called &#8220;RESTful&#8221;, you must satisfy the &#8220;Hypermedia Constraint&#8221;. Daniel admits</p>
+
+<blockquote>
+<p>&#8230;you have to be disciplined about those API methods - they should represent resources, not RPC service endpoints.</p>
+</blockquote>
+
+<p>&#8230;but does not address Hypermedia. I could go into great detail about why the typical HTTP-based API is not REST, but that has been done by some really great people who have said it much better, <a href='http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven'>Roy Fielding</a>, <a href='http://oredev.org/2010/sessions/hypermedia-apis'>Jon Moore</a> and <a href='http://nicksda.apotomo.de/'>Nick Sutterer</a>. Do check out their presentations and blogs.</p>
+
+<h3 id='a_note_on_dsls'>A note on &#8220;DSLs&#8221;</h3>
+
+<p><strong>Rubyists, we have a fetish for so-called &#8220;DSLs&#8221;.</strong> It&#8217;s time for an intervention.</p>
+
+<p>In reality, what we call DSLs in Ruby tend to be thin wrappers around the fluent-builder pattern with a dash of <code>instance_eval</code> and <code>class_eval</code> to remove block arguments and necessary uses of <code>self</code>. (One lightning talk at RubyConf humorously called gratuitous use of the pattern &#8220;Playskool MyFirstDSL&#8221;.) Grape, and its elder cousin Sinatra, follow this pattern. On the surface, it seems to promote clean, concise, readable code. But at what cost? What complexity is hidden? Does it actually help you write better code, faster and more reliably, or are you in the end working around the DSL to do what you want?</p>
+
+<p>So this is where I take big issue with Daniel&#8217;s argument:</p>
+
+<blockquote>
+<p>I would grant Grape an advantage over favoring the API consumer, since it focuses on the expressiveness of the API.</p>
+</blockquote>
+
+<p>That warm fuzzy the developer gets when writing an application with Grape is not correlated to the experience of the consumer of the API. It is indeed a strength that Grape can generate API consumer documentation from the code, but as Moore and Sutterer demonstrate, a truly RESTful service is mostly self-documenting.</p>
+
+<p>Maybe it&#8217;s the fact that Webmachine(-Ruby) is a fairly faithful port of the original Erlang version, but when authoring it I felt disillusioned with metaprogramming magic. Instead of including a module and executing some class methods to decorate your Resource class, you use simple inheritance and override methods. Internally, modules only exist as namespaces and to separate functional concerns of the same class (see <code>Webmachine::Decision::Conneg</code> or <code>Webmachine::Resource::Callbacks</code>), they are never used to decorate or modify the behavior of the class they are included in. <code>Webmachine::Decision::FSM</code> uses a loop to walk the decision graph, where individual state methods either return a <code>Symbol</code> for the next state or a <code>Fixnum</code> that is the response status code.</p>
+
+<p>That said, others have been working on higher level abstractions on top of Webmachine, ones that include &#8220;DSLs&#8221;. Whether they will provide more value or simplicity over the existing abstractions Webmachine provides has yet to shake out.</p>
+
+<h3 id='so_which_should_you_use'>So which should you use?</h3>
+
+<p>I think if I were still doing web APIs via Rails or Sinatra, Grape would be an extremely attractive alternative to those, having a lower barrier to entry than Webmachine. It&#8217;s a great library and very well written. For an application that exposes very simple semantics, the amount of code you need to write in Grape is small, and you don&#8217;t need to have any awareness or understanding of Webmachine&#8217;s decision flow, and you can get consumer documentation nearly for free.</p>
+
+<p>On the other hand, I have been just as productive in Webmachine (both Ruby and Erlang) and now that I think more in terms of resources instead of actions, it feels more natural. I want to be able to add those extra semantics just by declaring a few methods, without worrying as much about whether I did it right. I want to avoid the cross-cutting, double-blind mentality of the middleware pattern promoted by Rack.</p>
+
+<h3 id='what_next'>What next?</h3>
+
+<p>Like Webmachine has done for the server side, I think we can also do for the client side and for intermediaries (which act as both clients and servers). We can encapsulate the client side of HTTP into an FSM and expose its decisions in a clean way to applications. We can build client and server-side libraries that make working with Hypermedia APIs simpler (Nick&#8217;s <a href='https://github.com/apotonick/roar'>Roar</a> project is a good start).</p>
+<script type="text/javascript">var
+  disqus_url="http://seancribbs.com/tech/2012/01/16/webmachine-vs-grape/";</script><div id="disqus_thread"></div><script type="text/javascript"
+  src="http://disqus.com/forums/seancribbs/embed.js"></script><noscript><a href="http://seancribbs.disqus.com/?url=http://seancribbs.com/tech/2012/01/16/webmachine-vs-grape/">View
+  the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </div>
+    </div>
+    <div id='footer'>
+      &copy; 2006-present Sean Cribbs &mdash; Powered by
+      <a href='http://nanoc.stoneship.org'>nanoc3</a> &amp;
+      <a href='http://pages.github.com'>github:pages</a>
+      &mdash; Some icons by <a href="http://www.famfamfam.com/lab/icons/silk/">FamFamFam</a>
+    </div>
+    <script src="/javascripts/code_highlighter.js" type="text/javascript"></script>
+    <script src="/javascripts/ruby.js" type="text/javascript"></script>
+    <script src="/javascripts/erlang.js" type="text/javascript"></script>
+    <script src="/javascripts/radius.js" type="text/javascript"></script>
+    <script src="/javascripts/css.js" type="text/javascript"></script>
+    <script src="/javascripts/haml.js" type="text/javascript"></script>
+    <script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-4413101-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+    <script type="text/javascript">
+//<![CDATA[
+(function() {
+		var links = document.getElementsByTagName('a');
+		var query = '?';
+		for(var i = 0; i < links.length; i++) {
+			if(links[i].href.indexOf('#disqus_thread') >= 0) {
+				query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+			}
+		}
+		document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/seancribbs/get_num_replies.js' + query + '"></' + 'script>');
+	})();
+//]]>
+</script>
+
+  </body>
+</html>

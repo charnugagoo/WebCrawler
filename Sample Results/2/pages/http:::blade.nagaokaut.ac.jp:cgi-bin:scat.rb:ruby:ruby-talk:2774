@@ -1,0 +1,94 @@
+<HTML><HEAD><TITLE>[ruby-talk:02774] Re: </TITLE>
+<script language="javascript">
+<!--
+  function chk() {
+    var name = navigator.appName;
+    var ver = navigator.appVersion;
+    if (name.charAt(0) == "M") {
+      if (ver.charAt(0) >= 5 ||
+        ver.indexOf(" 5.5") >= 0 ||
+        ver.indexOf(" 6") >= 0
+         )
+        return(true);
+      return(false);
+    } else if (name.charAt(0) == "N") {
+      if (ver.charAt(0) >= 5)
+        return(true);
+      return(false);
+    } else {
+      return(false);
+    }
+  }
+
+  function hilight(x) {
+    if (!chk()) return;
+    if (parent) {
+      try {
+        parent.frames[0].hilight(x);
+      } catch(e) {
+       //alert(e);
+      }
+    }
+  }
+
+  //Navigation Bar
+  var IE = document.all;
+  var PosTimer;
+  function stickNavi() {
+    var y = document.body.scrollTop;
+    var s = document.getElementById('navi').style
+    s.top = y + 7;
+    s.left = 8;
+  }
+  function stickNaviLoop() {
+    if (PosTimer){clearTimeout(PosTimer);}
+    stickNavi();
+    PosTimer = setTimeout("stickNaviLoop()", 10);
+  }
+
+  function setNavi() {
+    if (IE) {document.body.onscroll = stickNavi;}
+    else {stickNaviLoop();}
+  }
+
+//-->
+</script>
+<link rel="stylesheet" href="http://blade.nagaokaut.ac.jp/css/blade-old.css" type="text/css" title="blade"></HEAD><BODY onLoad="setNavi()">
+<A NAME=head></A><div id="navi" style="position:absolute;top:7px;left:8px;"><A HREF="2773" class="a-button" onclick="hilight(2773)"><span id="normal" title="&lt;">&nbsp;&lt;&nbsp;</span></A><A HREF="/ruby/ruby-talk/2601-2800.shtml#2774" class="a-button" target="_top"><span id="normal" title="^">^</span></A><A HREF="2775" class="a-button" onclick="hilight(2775)"><span id="normal" title="&gt;">&nbsp;&gt;&nbsp;</span></A> <a href="2770" onclick="hilight(2770)" class="a-button"><span id="green" title="[previous]">&nbsp;P&nbsp;</span></a><a href="2780" onclick="hilight(2780)" class="a-button"><span id="green" title="[next]">&nbsp;N&nbsp;</span></a> <a href="2770" onclick="hilight(2770)" class="a-button"><span id="green" title="[root]">|&lt;</span></a><a href="2782" onclick="hilight(2782)" class="a-button"><span id="red" title="[next thread]">&gt;|</span></a><a href="2770" onclick="hilight(2770)" class="a-button"><span id="normal" title="[parent]">^</span></a><a href="2780" onclick="hilight(2780)" class="a-button"><span id="normal" title="[child]">_</span></a><span id="normal" title="[elder]">&gt;</span><span id="normal" title="[younger]">&lt;</span> <a href="/cgi-bin/vframe.rb/ruby/ruby-talk/2774?2625-2873" target="_top" class="a-button"><span id="normal" title="[thread frame]">---</span></a><a href="/cgi-bin/vframe.rb/ruby/ruby-talk/2774?2625-2873+split-mode-vertical" target="_top" class="a-button"><span id="normal" title="[thread frame vertical]">&nbsp;|&nbsp;</span></a><a href="2774" target="_top" onclick="hilight(2774)" class="a-button"><span id="normal" title="[frame close]">&nbsp;~&nbsp;</span></a><a href="/ruby/ruby-talk/index.shtml" target="_top" class="a-button"><span id="normal" title="[index]">.</span></a><a href="/ruby/ruby-talk/../index.shtml" target="_top" class="a-button"><span id="normal" title="[iindex]">..</span></a><a href="/cgi-bin/scat.rb/ruby/ruby-talk/2774?help-en" class="a-button"><span id="normal" title="[Help]">Help</span></a></div>
+<div id="header"><br>
+Subject: [ruby-talk:<strong>02774</strong>] <strong>Re: </strong><br>
+From: matz netlab.co.jp (<strong>Yukihiro Matsumoto</strong>)<br>
+Date: Fri, 12 May 2000 14:56:48 +0900<br>
+References: <a href="/cgi-bin/scat.rb/ruby/ruby-talk/2770" onclick="hilight(2770)">2770</a><br>
+In-reply-to: <a href="/cgi-bin/scat.rb/ruby/ruby-talk/2770" onclick="hilight(2770)">2770</a></div>
+<pre>Hi,
+
+In message &quot;<A HREF="/cgi-bin/scat.rb/ruby/ruby-talk/2770">[ruby-talk:02770]</A>&quot;
+    on 00/05/11, Andrew Hunt &lt;Andy / Toolshed.Com&gt; writes:
+
+|<span style="color: #007700;">I'm trying to install mod_ruby 0.17 with the latest Ruby from CVS,</span>
+|<span style="color: #007700;">and I'm running into a spot of trouble.</span>
+|
+|<span style="color: #007700;">Using the Makefile produced by Makefile.rb, the module fails to load --</span>
+|<span style="color: #007700;">it complains that:</span>
+|
+|<span style="color: #007700;">Cannot load /toolshed/local/libexec/mod_ruby.so into server: </span>
+|<span style="color: #007700;">/toolshed/local/libexec/mod_ruby.so: undefined symbol: rb_io_close</span>
+|<span style="color: #007700;">/toolshed/local/bin/apachectl start: httpd could not be started</span>
+|
+|<span style="color: #007700;">And indeed, there's nothing in the Makefile that indicates Ruby should </span>
+|<span style="color: #007700;">be linked in.  So I thought I'd be daring and add libruby.a into the </span>
+|<span style="color: #007700;">shared obejct link.</span>
+
+Hmm, Makefile.RB should find the place for libruby.a or libruby.so
+from compilation information, which is placed in rbconfig.rb.
+
+My Makefile contains the line:
+
+  LIBRUBYARG = -L/usr/lib -lruby
+
+to link the interpreter.
+
+							matz.
+<a name=tail></a></pre>
+</BODY></HTML>

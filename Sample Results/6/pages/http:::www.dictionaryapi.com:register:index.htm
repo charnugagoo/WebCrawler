@@ -1,0 +1,569 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:fb="https://www.facebook.com/2008/fbml">
+	<head>
+		<meta name="Description" content="Enhance your apps with Merriam-Webster content using one of our many available APIs
+" />
+		<meta name="Keywords" content="dictionary, api, merriam-webster" />
+		<meta name="robots" content="Index, follow" />
+	        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<style type="text/css">
+body
+{	margin:10px 0;padding:0;
+}
+#container
+{	margin:0 auto;padding:0;
+	width:900px;
+	clear:both;overflow:hidden;
+}
+#header
+{	margin:0;padding:0;
+	background-color:#FFFFFF;
+	width:900px;
+	clear:both;overflow:hidden;
+}
+#header .mwlogo
+{	margin:0 0 0 25px;padding:0;
+	width:500px;height:100px;
+	position:relative;
+	float:left;
+}
+#header .register
+{	margin:30px 40px 0 0;padding:0;
+	color:#0943A4;
+	position:relative;
+	float:right;
+}
+#header .register p
+{	margin:0;padding:0 0 3px 0;
+	font-family:Verdana, Arial, Helvetica, sans-serif;font-size:16px;font-style:normal;font-weight:bold;
+	color:#000000;
+}
+#header .register ul 
+{	margin:0;padding:0;
+}
+#header .register ul li
+{	margin:0;padding:0;
+	font-family:Verdana, Arial, Helvetica, sans-serif;font-size:14px;font-style:normal;font-weight:normal;
+	color:#000000;
+	display:inline;
+}
+#header .register ul li a
+{	margin:0;padding:0;
+	font-family:Verdana, Arial, Helvetica, sans-serif;font-size:14px;font-style:normal;font-weight:bold;
+}
+#header .register ul li a:link,
+#header .register ul li a:active,
+#header .register ul li a:visited
+{	text-decoration:none;
+	color:#0943A4;
+}
+#header .register ul li a:hover
+{	text-decoration:underline;
+	color:#0943A4;
+}
+#nav
+{	margin:0;padding:0;
+	background-color:#E5ECF6;
+	width:900px;
+	color:#1122CC;
+	text-align:center;
+}
+#nav .nav-rounded-corners-top
+{	margin:0;padding:0;
+	background-image:url(../images/nav-rounded-corners-top.png);background-repeat:no-repeat;
+	width:900px;height:10px;
+}
+#nav .nav-rounded-corners-btm
+{	margin:0;padding:0;
+	background-image:url(../images/nav-rounded-corners-btm.png);background-repeat:no-repeat;
+	width:900px;height:10px;
+}
+#nav ul
+{	margin:0;padding:0;
+}
+#nav ul li
+{	margin:0;padding:0;
+	display:inline;
+}
+#nav ul li a
+{	margin:0;padding:0 3px;
+	font-family:Arial, Verdana, sans-serif;font-size:14px;font-style:normal;font-weight:bold;
+}
+#nav ul li a:link,
+#nav ul li a:active,
+#nav ul li a:visited
+{	text-decoration:none;
+	color:#0943A4;
+}
+#nav ul li a:hover
+{	text-decoration:underline;
+	color:#0943A4;
+}
+#column-container
+{	margin:0;padding:0;
+	width:900px;
+	clear:both;overflow:hidden;
+}
+#left-column
+{	margin:0;padding:0;
+	width:200px;
+	float:left;
+}
+#sidebar
+{	margin:15px 0;padding:0;
+	width:200px;
+}
+#sidebar .sidebar-header
+{	margin:0;padding:0;
+	width:200px;height:44px;
+	background-image:url(../images/sidebar-header.png);background-repeat:no-repeat;
+	text-align:center;
+}
+#sidebar .sidebar-header h1
+{	margin:0;padding:5px 0 0 0;
+	font-family:Georgia, Arial, Verdana, sans-serif;font-size:20px;font-style:normal;font-weight:normal;
+	color:#FFFFFF;
+}
+#sidebar .sidebar-content-box
+{	margin:0;padding:0 10px;
+	width:180px; /** Actual Width : 200px **/
+	background-image:url(../images/sidebar-middle.png);background-repeat:repeat-y;
+}
+#sidebar .sidebar-content-box p
+{	margin:0;padding:0;
+	font-family:Arial, Verdana, sans-serif;font-size:14px;font-style:normal;
+	color:#000000;
+	line-height:1.5em;
+}
+#sidebar .sidebar-content-box ul
+{	margin:0;padding:5px 0 0 5px;
+}
+#sidebar .sidebar-content-box ul li
+{	margin:0 0 0 12px;padding:0 0 10px 0;
+	font-family:Arial, Verdana, sans-serif;font-size:14px;font-style:normal;
+	color:#000000;
+	list-style-image:url(../images/account/blue-right-arrow.gif);
+}
+#sidebar .sidebar-content-box a
+{	margin:0;padding:0;
+	font-family:Arial, Verdana, sans-serif;font-size:14px;font-style:normal;
+}
+#sidebar .sidebar-content-box a:link,
+#sidebar .sidebar-content-box a:active,
+#sidebar .sidebar-content-box a:visited
+{	text-decoration:none;
+	color:#1122CC;
+}
+#sidebar .sidebar-content-box a:hover
+{	text-decoration:underline;
+	color:#1122CC;
+}
+#sidebar .sidebar-content-box .login-email
+{	margin:0;padding:10px 0 5px 0;
+}
+#sidebar .sidebar-content-box .login-email input
+{	margin:0;padding:0;
+	width:174px;height:20px;
+}
+#sidebar .sidebar-footer
+{	margin:0;padding:0;
+	width:200px;height:14px;
+	background-image:url(../images/sidebar-footer.png);background-repeat:no-repeat;
+}
+#page-content
+{	margin:0;padding:10px 15px;
+	width:670px; /** 700px **/
+	background-color:#FFFFFF;
+	float:left;
+}
+#page-content h1
+{	margin:0 0 25px 0;padding:0 0 2px 0;
+	font-family:Georgia, Arial, Verdana, sans-serif;font-size:27px;font-style:normal;font-weight:normal;
+	color:#000000;
+	border-bottom:1px dotted #757575;
+}
+#page-content h2
+{	margin:0 0 15px 0;padding:0;
+	font-family:Georgia, Arial, Verdana, sans-serif;font-size:18px;font-style:normal;font-weight:bold;
+	color:#ca0403;
+}
+#page-content h3
+{	margin:0 0 15px 0;padding:0;
+	font-family:Georgia, Arial, Verdana, sans-serif;font-size:16px;font-style:normal;font-weight:bold;
+	color:#000000;
+}
+#page-content p
+{	margin:0 0 15px 0;padding:0;
+	font-family:Arial, Verdana, sans-serif;font-size:14px;font-style:normal;
+	color:#000000;
+	line-height:25px;
+}
+#page-content a
+{	margin:0;padding:0;
+	font-family:Arial, Verdana, sans-serif;font-size:14px;font-style:normal;
+}
+#page-content a:link,
+#page-content a:active,
+#page-content a:visited
+{	text-decoration:none;
+	color:#1122CC;
+}
+#page-content a:hover
+{	text-decoration:underline;
+	color:#1122CC;
+}
+#page-content ul
+{	margin:0;padding:0;
+}
+#page-content ul li
+{	margin:0 25px 15px 55px;padding:0;
+	font-family:Arial, Verdana, sans-serif;font-size:14px;font-style:normal;
+	color:#000000;
+	line-height:25px;
+}
+#page-content table
+{	margin:0 auto 20px auto;padding:0;
+	width:80%;
+	border:1px solid #000000;
+}
+#page-content table tr
+{	margin:0;padding:0;
+	width:80%;
+	border:1px solid #000000;
+} 
+#page-content table tr td
+{	margin:0;padding:0;
+	width:20%;height:50px;
+	border:1px solid #000000;
+	text-align:center;
+} 
+#page-content textarea
+{	margin:0 0 20px 0;padding:0;
+	width:670px;height:150px;
+}
+#account
+{	margin:0;padding:0;
+	width:670px;
+	clear:both;overflow:hidden;
+}
+#account .columnA
+{	margin:0;padding:0;
+	width:270px;
+	float:left;
+}
+#account .columnB
+{	margin:0;padding:0;
+	width:400px;
+	float:left;
+}
+#account .columnA p,
+#account .columnB p
+{	margin:0;padding:0 0 10px 0;
+	font-family:Georgia, Arial, Verdana, sans-serif;font-size:14px;font-style:normal;
+	color:#000000;
+}
+#form
+{	margin:0 auto 15px auto;padding:0;
+	width:600px;
+}
+#form .form-header
+{	margin:0;padding:0;
+	width:600px;height:14px;
+	background-image:url(../images/blue-form-header.png);background-repeat:no-repeat;
+}
+#form .form-content
+{	margin:0;padding:0 10px;
+	width:580px;
+	background-image:url(../images/blue-form-middle.png);background-repeat:repeat-y;
+	clear:both;overflow:hidden;
+}
+#form .form-content p
+{	margin:0;padding:0;
+	font-family:Georgia, Arial, Verdana, sans-serif;font-size:14px;font-style:normal;
+	color:#000000;
+	line-height:1.5em;
+}
+#form .form-content input
+{	margin:0 0 10px 0;padding:0;
+}
+#form .form-content .input
+{	margin:0;padding:0 10px;
+	width:270px; /** Actual:290px **/
+	float:left;
+}
+#form .form-content .input input,
+#form .form-content .input select
+{	margin:0 0 10px 0;padding:0;
+}
+#form .form-content .input p
+{	margin:0;padding:0;
+	font-family:Georgia, Arial, Verdana, sans-serif;font-size:14px;font-style:normal;
+	color:#000000;
+	line-height:1.5em;
+}
+#form .form-content .input p.error
+{	margin:0;padding:0;
+	font-family:Georgia, Arial, Verdana, sans-serif;font-size:14px;font-style:normal;
+	color:#CA0403;
+	line-height:1.5em;
+}
+#form .form-content .desc
+{	margin:0;padding:0;
+	width:287px;
+	float:left;
+}
+#form .form-content .desc p
+{	margin:0;padding:0 0 0 12px;
+	font-family:Georgia, Arial, Verdana, sans-serif;font-size:14px;font-style:normal;
+	color:#000000;
+	background-image:url(../images/blue-left-arrow.gif);background-repeat:no-repeat;
+}
+#form .form-content a
+{	margin:0;padding:0;
+	font-family:Arial, Verdana, sans-serif;font-size:14px;font-style:normal;
+}
+#form .form-content a:link,
+#form .form-content a:active,
+#form .form-content a:visited
+{	text-decoration:none;
+	color:#1122CC;
+}
+#form .form-content a:hover
+{	text-decoration:underline;
+	color:#1122CC;
+}
+#form .form-footer
+{	margin:0;padding:0;
+	width:600px;height:14px;
+	background-image:url(../images/blue-form-footer.png);background-repeat:no-repeat;
+}
+#footer
+{	margin:0;padding:0;
+	width:900px;
+	background-color:#E5ECF6;
+	text-align:center;
+	color:#1122CC;
+}
+#footer .footer-rounded-corners-top
+{	margin:0;padding:0;
+	background-image:url(../images/footer-rounded-corners-top.png);background-repeat:no-repeat;
+	width:900px;height:10px;
+}
+#footer .footer-rounded-corners-btm
+{	margin:0;padding:0;
+	background-image:url(../images/footer-rounded-corners-btm.png);background-repeat:no-repeat;
+	width:900px;height:10px;
+}
+#footer ul
+{	margin:0;padding:0;
+}
+#footer ul li
+{	margin:0;padding:0;
+	display:inline;
+}
+#footer ul li a
+{	margin:0;padding:0 3px;
+	font-family:Arial, Verdana, sans-serif;font-size:12px;font-style:normal;font-weight:bold;
+}
+#footer ul li a:link,
+#footer ul li a:active,
+#footer ul li a:visited
+{	text-decoration:none;
+	color:#1122CC;
+}
+#footer ul li a:hover
+{	text-decoration:underline;
+	color:#1122CC;
+}
+#footer ul.mw-sites
+{	margin:0;padding:8px 0 0 0;
+	font-size:10px;
+}
+#footer ul.mw-sites li
+{	margin:0;padding:10px 0 0 0;
+	display:inline;
+}
+#footer ul.mw-sites li a
+{	margin:0;padding:0 3px;
+	font-family:Arial, Verdana, sans-serif;font-size:10px;font-style:normal;
+}
+#footer ul.mw-sites li a:link,
+#footer ul.mw-sites li a:active,
+#footer ul.mw-sites li a:visited
+{	text-decoration:none;
+	color:#1122CC;
+}
+#footer ul.mw-sites li a:hover
+{	text-decoration:underline;
+	color:#1122CC;
+}
+</style>
+	</head>
+	<body>
+		<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Merriam-Webster Developer Center</title>
+<link rel="icon" href="http://www.merriam-webster.com/favicon.ico" type="image/x-icon" />
+</head>
+<body>    
+    <div id="container">
+        <div id="header">
+            <div class="mwlogo">
+                <img src="../images/dev-center-logo-500x100.png" width="500" height="100" alt="merriam-webster, developer, center" />
+            </div><!--mwlogo-->
+            <div class="register">
+            	<p>
+									</p>
+            	<ul>
+												
+					                </ul>
+            </div><!--register-->
+        </div><!--header-->
+    	<div id="nav">
+        	<div class="nav-rounded-corners-top"></div><!--nav-rounded-corners-top-->
+        	<ul>
+            	<li><a href="../">Home</a> &bull;</li>
+                <li><a href="../products/index.htm">Products</a> &bull;</li>
+                <li><a href="../info/branding-guidelines.htm">Branding Guidelines</a> &bull;</li>
+                <li><a href="../info/frequently-asked-questions.htm">Frequently Asked Questions</a></li>
+            </ul>
+        	<div class="nav-rounded-corners-btm"></div><!--nav-rounded-corners-btm-->
+        </div><!--nav-->
+    	<div id="column-container">
+            <div id="left-column">
+            
+            
+			
+            	<div id="sidebar">
+                    <div class="sidebar-header">
+                        <h1>Sign In</h1>
+                    </div>           
+                    <div class="sidebar-content-box">
+						<form action="/account/index.htm" method="post" enctype="multipart/form-data">
+							<p>Welcome! Please <a href="/register/index.htm">Register</a> or Sign In below.</p>
+														<div class="login-email">
+								<p>Email:</p>
+								<input type="text" name="email" value="" />
+								<p>Password:</p>
+								<input type="password" name="password" value="" />
+							</div>
+							<input name="login_submit" type="submit" value="Sign In" />
+						</form>
+                    </div>
+                    <div class="sidebar-footer"></div>           
+                </div><!--sidebar-->
+			
+							
+            </div><!--left-column-->
+
+		<div id="content">
+			<div id="page-content">
+    <h1>Register</h1>
+    <h2>Developer API Account Registration</h2>
+
+    <p>Welcome to <strong>Merriam-Webster's Developer Center</strong>! If this is your first time here, please register using the form below. All fields are required. After you submit your registration, a verification e-mail will be sent to you. Please follow the instructions in that e-mail to complete your registration and receive your API Keys.</p>
+
+	<div id="form">
+        <div class="form-header"></div>
+        <div class="form-content">
+			<form action="/register/index.htm" method="post" enctype="multpart/form-data">
+
+				
+				<div class="input">
+					<p>First Name:</p>
+					<input type="text" style="width:250px;" name="firstName" value="" />
+					<p>Last Name:</p>
+					<input type="text" style="width:250px;" name="lastName" value="" />
+					<p>E-mail:</p>
+					<input type="text" style="width:250px;" name="emailAddress" value="" />
+					<p>Confirm E-mail:</p>
+					<input type="text" style="width:250px;" name="emailConfirm" value="" />
+					<p>Password:</p>
+					<input type="password" style="width:250px;" name="passwd" value="" />
+					<p>Confirm Password:</p>
+					<input type="password" style="width:250px;" name="passwdConfirm" value="" />
+
+					<p>Est'd Monthly Unique Users:</p>
+					<input type="text" style="width:250px;" name="uniqueVis" value="" />
+					<!--
+					<p>Desired API(s):</p>
+					<input type="text" style="width:250px;" name="desiredAPI" value="" />
+					-->
+					<p>Request API Key #1:</p>
+					<select type="text" style="width:250px;" name="desiredAPI1" value="">
+						<option value="collegiate" >Collegiate Dictionary</option>
+						<option value="thesaurus" >Collegiate Thesaurus</option>
+						<option value="spanish" >Spanish-English Dictionary</option>
+						<option value="medical" >Medical Dictionary</option>
+						<option value="sd2" >Elementary Dictionary</option>
+						<option value="sd3" >Intermediate Dictionary</option>
+						<option value="sd4" >School Dictionary</option>
+						<option value="learners" >Learners Dictionary</option>
+					</select>
+					<p>Request API Key #2:</p>
+					<select type="text" style="width:250px;" name="desiredAPI2" value="">
+						<option value="none" >None</option>
+						<option value="collegiate" >Collegiate Dictionary</option>
+						<option value="thesaurus" >Collegiate Thesaurus</option>
+						<option value="spanish" >Spanish-English Dictionary</option>
+						<option value="medical" >Medical Dictionary</option>
+						<option value="sd2" >Elementary Dictionary</option>
+						<option value="sd3" >Intermediate Dictionary</option>
+						<option value="sd4" >School Dictionary</option>
+						<option value="learners" >Learners Dictionary</option>
+					</select>
+                    <p>Company Name:</p>
+					<input type="text" style="width:250px;" name="coName" value="" />
+					<p>Application Name:</p>
+					<input type="text" style="width:250px;" name="appName" value="" />
+					<p>Application Description:</p>
+					<textarea style="width:250px;height:200px;" name="appDesc"></textarea>
+					<p>Application URL:</p>
+					<input type="text" style="width:250px;" name="appURL" value="" />
+					<p>App Launch Date (MM/DD/YYYY):</p>
+					<input type="text" style="width:250px;" name="appLaunchDate" value="" />
+					<p>Role/Occupation:</p>
+					<input type="text" style="width:250px;" name="role" value="" />
+
+					<p><input type="checkbox" name="agree" value="yes" /> By checking this box, I am agreeing to the Merriam-Webster API <a href="../info/terms-of-service.htm" target="_blank">Terms of Service</a> and <a href="../info/privacy-policy.htm" target="_blank">Privacy Policy</a>.</p>
+					<br />
+					<input name="submit" type="submit" value="Register" />
+				</div><!--input-->
+				<div class="desc">
+					<p style="position:relative;top:123px;">This will be your login, and verification e-mail will be sent to this address.</p>
+					<p style="position:relative;top:383px;">You will receive API keys for the references selected here. If you would like to request more than two keys, please <a href="../info/contact.htm">contact us</a>.</p>
+					<p style="position:relative;top:420px;">Please include the name of the application that will call the API service.</p>
+					<p style="position:relative;top:490px;">Please include a brief description of your application.</p>
+					<p style="position:relative;top:630px;">Please include the URL of your application (if available).</p>
+					<p style="position:relative;top:638px;">Please include the planned or estimated launch date of your application.</p>
+				</div><!--desc-->
+			</form>
+        </div>
+        <div class="form-footer"></div>
+    </div><!--form-->
+
+</div><!--page-content-->
+		</div>
+		        </div><!--column-container-->
+        <div id="footer">
+        	<div class="footer-rounded-corners-top"></div>
+        	<ul>
+            	<li><a href="../info/copyright.htm">&copy; <script type="text/javascript">document.write(new Date().getFullYear());</script> Merriam-Webster, Incorporated</a> &bull;</li>
+                <li><a href="../info/privacy-policy.htm">Privacy Policy</a> &bull;</li>
+                <li><a href="../info/terms-of-service.htm">Terms of Service</a> &bull;</li>
+                <li><a href="../info/contact.htm">Contact Us</a></li>
+            </ul>
+        	<ul class="mw-sites">
+            	<li><a href="http://www.merriam-webster.com">Merriam-Webster Online</a> &bull;</li>
+                <li><a href="http://www.learnersdictionary.com">Learner's Dictionary</a> &bull;</li>
+                <li><a href="http://www.wordcentral.com">Word Central</a></li>
+            </ul>
+        	<div class="footer-rounded-corners-btm"></div>
+        </div><!--footer-->
+    </div><!--container-->
+</body>
+</html>
+	</body>
+</html>

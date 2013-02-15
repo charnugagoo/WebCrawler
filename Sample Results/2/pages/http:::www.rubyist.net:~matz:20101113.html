@@ -1,0 +1,781 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ja-JP">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=EUC-JP">
+	<meta name="generator" content="tDiary 2.2.0">
+	<meta http-equiv="Last-Modified" content="Mon, 15 Nov 2010 15:10:01 GMT">
+	<meta http-equiv="Content-Script-Type" content="text/javascript; charset=EUC-JP">
+	<meta name="author" content="Yukihiro -matz- Matsumoto">
+	
+	<link rel="prev" title="前の日記(2010-11-12)" href="http://www.rubyist.net/~matz/20101112.html">
+	<link rel="next" title="次の日記(2010-11-14)" href="http://www.rubyist.net/~matz/20101114.html">
+	<link rel="start" title="最新" href="http://www.rubyist.net/~matz/">
+	<link rel="alternate" media="handheld" type="text/html" href="http://www.rubyist.net/~matz/20101113.html">
+	
+	
+	<meta http-equiv="content-style-type" content="text/css">
+	<link rel="stylesheet" href="theme/base.css" type="text/css" media="all">
+	<link rel="stylesheet" href="theme/sagegreen/sagegreen.css" title="sagegreen" type="text/css" media="all">
+	<title>Matzにっき(2010-11-13)</title>
+	
+  <script type="text/javascript">
+  <!--
+  // http://www.din.or.jp/~hagi3/JavaScript/JSTips/Mozilla/
+  // _dom : kind of DOM.
+  //        IE4 = 1, IE5+ = 2, NN4 = 3, NN6+ = 4, others = 0
+  _dom = document.all?(document.getElementById?2:1)
+                     :(document.getElementById?4
+                     :(document.layers?3:0));
+  var _calendar3_popElement = null;
+  var _calendar3_popCount = 0;
+
+  if (document.compatMode){
+    if (_dom==2 && document.compatMode=="CSS1Compat") _dom = 2.5;
+  } // Win IE6
+
+  function getLeft(div){
+    result = 0;
+    while (1){
+      div = div.offsetParent;
+      result += div.offsetLeft;
+      if (div.tagName=="BODY") return result;
+    }
+  }
+
+  function getTop(div){
+    result = 0;
+    while (1){
+      div = div.offsetParent;
+      result += div.offsetTop;
+      if (div.tagName=="BODY") return result;
+    }
+  }
+
+  function moveDivTo(div,left,top){
+    if(_dom==4){
+      div.style.left=left+'px';
+      div.style.top =top +'px';
+      return;
+    }
+    if(_dom==2.5 || _dom==2 || _dom==1){
+      div.style.pixelLeft=left;
+      div.style.pixelTop =top;
+      return;
+    }
+    if(_dom==3){
+      div.moveTo(left,top);
+      return;
+    }
+  }
+
+  function moveDivBy(div,left,top){
+    if(_dom==4){
+      div.style.left=div.offsetLeft+left;
+      div.style.top =div.offsetTop +top;
+      return;
+    }
+    if(_dom==2.5 || _dom==2){
+      div.style.pixelLeft=div.offsetLeft+left;
+      div.style.pixelTop =div.offsetTop +top;
+      return;
+    }
+    if(_dom==1){
+      div.style.pixelLeft+=left;
+      div.style.pixelTop +=top;
+      return;
+    }
+    if(_dom==3){
+      div.moveBy(left,top);
+      return;
+    }
+  }
+
+  function getDivLeft(div){
+    if(_dom==2.5) return div.offsetLeft+getLeft(div);
+    if(_dom==4 || _dom==2) return div.offsetLeft;
+    if(_dom==1)            return div.style.pixelLeft;
+    if(_dom==3)            return div.left;
+    return 0;
+  }
+
+  function getDivTop(div){
+    if(_dom==2.5) return div.offsetTop+getTop(div);
+    if(_dom==4 || _dom==2) return div.offsetTop;
+    if(_dom==1)            return div.style.pixelTop;
+    if(_dom==3)            return div.top;
+    return 0;
+  }
+
+  function getDivWidth (div){
+    if(_dom==4 || _dom==2.5 || _dom==2) return div.offsetWidth;
+    if(_dom==1)            return div.style.pixelWidth;
+    if(_dom==3)            return div.clip.width;
+    return 0;
+  }
+
+  function getDivHeight(div){
+    if(_dom==4 || _dom==2.5 || _dom==2) return div.offsetHeight;
+    if(_dom==1)            return div.style.pixelHeight;
+    if(_dom==3)            return div.clip.height;
+    return 0;
+  }
+
+  function popup(target,element,notitle) {
+    _calendar3_popCount++;
+    popdownNow();
+    if (navigator.appName=='Microsoft Internet Explorer') {
+      moveDivTo(element,getDivLeft(target)+getDivWidth(target),getDivTop(target)+getDivHeight(target)*13/8);
+    } else {
+      moveDivTo(element,getDivLeft(target)+getDivWidth(target)/2,getDivTop(target)+(getDivHeight(target)*2)/3);
+    }
+    element.style.display="block";
+    notitle.title="";
+  }
+
+  function popdown(element) {
+    _calendar3_popElement=element;
+    setTimeout('popdownDelay()', 2000);
+  }
+
+  function popdownDelay() {
+    _calendar3_popCount--;
+    if (_calendar3_popCount==0) {
+      popdownNow();
+    }
+  }
+
+  function popdownNow() {
+    if (_calendar3_popElement!=null) {
+      _calendar3_popElement.style.display="none";
+      _calendar3_popElement=null;
+    }
+  }
+  // -->
+</script>
+	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+	</script>
+	<script type="text/javascript">
+	_uacct = "UA-58636-2";
+	urchinTracker();
+	</script>
+	<link rel="alternate" type="application/rss+xml" title="RSS(with comments and spams)" href="http://www.rubyist.net/~matz/comments.rdf">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.rubyist.net/~matz/index.rdf">
+	<meta name="robots" content="index,follow">
+</head>
+<body>
+
+
+<div class="adminmenu">
+<span class="adminmenu"><a href="http://www.rubyist.net/~matz/20101112.html">&laquo;前の日記(2010-11-12)</a></span>
+<span class="adminmenu"><a href="http://www.rubyist.net/~matz/">最新</a></span>
+<span class="adminmenu"><a href="http://www.rubyist.net/~matz/20101114.html">次の日記(2010-11-14)&raquo;</a></span>
+<span class="adminmenu"><a href="https://www.rubyist.net/~matz/update.rb?edit=true;year=2010;month=11;day=13" rel="nofollow">編集</a></span>
+</div>
+
+<h1>Matzにっき</h1>
+<div class="right">
+<form method="get" action="rast-search.rb" class="grepform">
+<input type="text" name="query" size="20" value="" class="search">
+<input type="submit" value="検索"></p>
+</form>
+</div>
+<span class="calendar-prev-month"><a href="http://www.rubyist.net/~matz/201010.html">&lt;&lt;</a></span>
+<span class="calendar-current-month"><a href="http://www.rubyist.net/~matz/201011.html">2010/11</a>/</span>
+<span class="calendar-normal"><a class="calendar-weekday">1</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">2</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">3</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">4</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">5</a></span>
+<span class="calendar-normal"><a class="calendar-saturday">6</a></span>
+<span class="calendar-normal"><a class="calendar-sunday">7</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">8</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">9</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">10</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">11</a></span>
+<span class="calendar-day" id="target-12" onmouseover="popup(document.getElementById('target-12'),document.getElementById('popup-12'), document.getElementById('title-12'));" onmouseout="popdown(document.getElementById('popup-12'));">
+  <a class="calendar-weekday" id="title-12" title="1. RubyConf 2010 キーノート(1)
+" href="http://www.rubyist.net/~matz/20101112.html">12</a>
+  <span class="calendar-popup" id="popup-12">
+    <a href="http://www.rubyist.net/~matz/20101112.html#p01" title="New Orleansで開催されているRubyConf 2010に来ています(執筆時点では既に終了)。 で、今回のRubyConfはキーノートが3つもあると..">1</a>. RubyConf 2010 キーノート(1)
+<br>
+  </span>
+</span>
+<span class="calendar-day" id="target-13" onmouseover="popup(document.getElementById('target-13'),document.getElementById('popup-13'), document.getElementById('title-13'));" onmouseout="popdown(document.getElementById('popup-13'));">
+  <a class="calendar-saturday" id="title-13" title="1. RubyConf 2010 キーノート(2)
+" href="http://www.rubyist.net/~matz/20101113.html">13</a>
+  <span class="calendar-popup" id="popup-13">
+    <a href="http://www.rubyist.net/~matz/20101113.html#p01" title="Invalid Text前回に続いて 未来(≒Ruby 2.0)の話を。 今回、紹介した「未来」の機能は以下の通り。 Traits Method Combination Keyword..">1</a>. RubyConf 2010 キーノート(2)
+<br>
+  </span>
+</span>
+<span class="calendar-day" id="target-14" onmouseover="popup(document.getElementById('target-14'),document.getElementById('popup-14'), document.getElementById('title-14'));" onmouseout="popdown(document.getElementById('popup-14'));">
+  <a class="calendar-sunday" id="title-14" title="1. RubyConf 2010 キーノート(3)
+" href="http://www.rubyist.net/~matz/20101114.html">14</a>
+  <span class="calendar-popup" id="popup-14">
+    <a href="http://www.rubyist.net/~matz/20101114.html#p01" title="で、最後に「Diversity(多様性)」である。 初日のDave Thomasのキーノートでも3つの重要なこととして、 Diversifyをあげていた。..">1</a>. RubyConf 2010 キーノート(3)
+<br>
+  </span>
+</span>
+<span class="calendar-normal"><a class="calendar-weekday">15</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">16</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">17</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">18</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">19</a></span>
+<span class="calendar-normal"><a class="calendar-saturday">20</a></span>
+<span class="calendar-normal"><a class="calendar-sunday">21</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">22</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">23</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">24</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">25</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">26</a></span>
+<span class="calendar-normal"><a class="calendar-saturday">27</a></span>
+<span class="calendar-normal"><a class="calendar-sunday">28</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">29</a></span>
+<span class="calendar-normal"><a class="calendar-weekday">30</a></span>
+<span class="calendar-next-month"><a href="http://www.rubyist.net/~matz/201012.html">&gt;&gt;</a></span>
+
+
+
+
+<hr class="sep">
+
+
+	
+<div class="day">
+<h2><span class="date">
+<a href="http://www.rubyist.net/~matz/20101113.html">2010-11-13</a>
+</span> 
+<span class="title"></span> <span class="nyear">[<a href="http://www.rubyist.net/~matz/1113.html" title="長年日記">長年日記</a>]</span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a name="p01" href="http://www.rubyist.net/~matz/20101113.html#p01"><span class="sanchor">_</span></a> [<a href="http://www.rubyist.net/~matz/?year=2010;month=4Q;category=Ruby">Ruby</a>] RubyConf 2010 キーノート(2)</h3>
+<p><a href="http://www.rubyist.net/~matz/20101112.html#p01">前回</a>に続いて
+未来(≒Ruby 2.0)の話を。</p>
+<p>今回、紹介した「未来」の機能は以下の通り。</p>
+<ul>
+<li>Traits</li>
+<li>Method Combination</li>
+<li>Keyword arguments</li>
+<li>Namespaces</li>
+</ul>
+<p>今まで話してきたことじゃん、と思うでしょうが、その通り。
+違いは</p>
+<ul>
+<li>これらの機能が単なるアイディアではなく、どのように実装すべきかほぼ見えている</li>
+<li>実装した機能を突っ込む場所(trunk)が明確になっている</li>
+</ul>
+<p>点です。特に後者は大きい。</p>
+<h4>Traits</h4>
+<p>Traitsの定義は</p>
+<blockquote>
+<p>a trait is a collection of methods, used as a "simple conceptual model for structuring object oriented programs".</p>
+<p>from Wikipedia (en)</p>
+</blockquote>
+
+<p>ということで、モジュールとほぼ同じようなものです。
+実際、今回導入するTraitsは言語要素の実体としてはモジュールを利用します。</p>
+<p>ただ、モジュールの機能を取り込むのにincludeではない
+別のやり方(mix)を導入することによって、includeが持ついくつかの問題を解消しよう
+というものです。includeの方が便利なこともあるので、includeもなくなりません。</p>
+<p>includeの問題は</p>
+<ul>
+<li>名前の重複を検出できないこと</li>
+<li>モジュールのinclude関係が後から変化した場合の一貫性のない挙動</li>
+<li>メソッドを後から修飾する(wrapする)方法が提供されない</li>
+</ul>
+<p>ことです。</p>
+<p>擬似的な多重継承であるincludeは、
+includeされたモジュールが継承ライン(ancestors)に含まれるようになります。
+この時、状況によっては予測困難なことが発生します。</p>
+<p>ひとつはincludeされた複数のモジュールで同名のメソッドが定義されていた場合、
+その重複が意図されたもの(override)か、偶然か(conflict)か、
+区別する手段がないところです(名称重複問題)。</p>
+<p>もうひとつは、いくつかの状況で継承ラインに並ぶモジュールの順序が予測しがたい
+(ので、メソッド名の重複時にどれが優先になるのか直感的でない)ことです。</p>
+<pre>module American
+  attr_accessor :address
+end
+module Japanese
+  attr_accessor :address
+end
+class JapaneseAmerican
+  include American
+  include Japanese
+end
+JapaneseAmerican.new.address
+# which address?
+p JapaneseAmerican.ancestors
+# =&gt; [JapaneseAmerican, Japanese, American, Object, Kernel]</pre>
+<p>この例ではaddressという属性(メソッド)がAmericanとJapaneseの間で
+重複していますが、これが意図的な重複なのか偶然かは言語にはわかりません。
+継承ラインの順にしたがってメソッドを呼び出すだけです。</p>
+<p>実際にはJapaneseモジュールが優先されてそのaddressメソッドが呼ばれるのですが、
+ひとめでそれが分かるのは、だいぶ「訓練されたRubyist」です。</p>
+<p>現在のRubyでは、includeされた時、
+「スーパークラスですでにそのモジュールがincludeされていた時には
+二重にincludeしない」という挙動になっています<span class="footnote"><a name="fm20101113-01-01" href="#f20101113-01-01" title="  MacRubyでは違うらしい。Ruby 1.9でそのような変更をしたかったが、YARVが継承ラインに同じモジュールが2度登場しないことを前提にしていたため断念 
+">*1</a></span>。ですから、
+スーパークラスでincludeされていることに気がつかなかった場合、
+includeしても継承ラインのその場所にモジュールが登場しなかった
+ということが起こりえます。</p>
+<p>それから、モジュールが既にincludeされてから、
+そのモジュールに対してincludeを行った場合、
+既に存在するクラスの継承ラインには新たにincludeされるようになったモジュールは含まれません。
+つまり、includeのタイミングによって継承ラインへの反映のされ方が異なるわけです。
+ちょっと気持ち悪いです。</p>
+<p>これらを(ある程度)解決する手段がmixメソッドです。</p>
+<p>mixメソッドをincludeの代わりに使うと、</p>
+<ul>
+<li>現在モジュールに定義されているメソッドを
+    クラス/モジュールに注入する</li>
+<li>mixされたモジュールは継承ラインに登場しない</li>
+<li>メソッド名の重複は例外になる</li>
+<li>例外がイヤならモジュールを書き換える、
+    または重複したメソッドの名称を変更する</li>
+<li>定数を取り込むかどうかを指定できる。
+    デフォルトは取り込まない</li>
+</ul>
+<p>という振舞いになります。これにより</p>
+<ul>
+<li>名称の重複はエラーになるので、見逃しがない</li>
+<li>名称変更ができるので、明示的に解消できる</li>
+<li>あくまでも「現時点での状態の注入」なので、
+    継承ラインが変化した時の「おかしさ」がない。
+    問題は解決していないが、気分は良い(苦笑)</li>
+</ul>
+<p>ということが実現できます。</p>
+<p>たとえば以下のようなコードでは</p>
+<pre>module American
+  attr_accessor :address
+end
+module Japanese
+  attr_accessor :address
+end
+class JapaneseAmerican
+  mix American
+  mix Japanese  # =&gt; address conflict!
+end</pre>
+<p>addressメソッドが重なっているからmixできません。
+無事mixさせるためには名称衝突を明示的に回避します。</p>
+<pre>class JapaneseAmerican
+  mix American, :address =&gt; :us_address
+  mix Japanese, :address =&gt; :jp_address
+end</pre>
+<p>これで、addressという名前による重複はなくなりました。</p>
+<p>なぜ、includeにオプションをつけるのではなく、
+新しいメソッドを導入して言語をより複雑にするかというと、
+個人的にmixの挙動の方が望ましいと思っていて、
+ユーザーをそちらに誘導するためには、より短い名前の方が望ましいと思ったからです。</p>
+<p>Traitsを実現するmixメソッドの実装ですが、
+RubyKaigiでこれを紹介したその日には中田さんが着手していて、
+パッチは完成しているそうです。</p>
+<p>ただ、各種プレゼンテーションでは説明しなかった以下の課題があり、
+これらについては結論を出す必要があります。</p>
+<ul>
+<li>mixされるモジュールが別のモジュールをincludeしていた場合にはどうなるか。
+    おそらくは例外になる。mixとincludeは混ぜるべきではない。</li>
+<li>mixで別名を付けて問題解決、と読めるような言い方をしているが、
+    実際にはモジュール内部で名前を書き換える前のメソッドを読んでいる可能性がある。
+    それをどうするか。なにもしない(重複する方が悪い)とする考えもあるが、
+    それだとせっかく苦労してTraitsを導入しようとしているのが
+    まったく無駄になるので、名前を書き換えたメソッド呼び出しを
+    モジュールのメソッド定義実体から探し出してメソッドをコピーする
+    という(Bertrand MayerのOOSCに記述されていたアイディア)を導入することを考える</li>
+<li>インスタンス変数の名称重複を解決する手段がない。
+    これはサブクラスからは見えないインスタンス変数を導入し、
+    mix対象のクラスではそちらを使うこと推奨とするべきではないかと
+    考えています。1.9向けのパッチは既に書いてありますが、
+    プライベートなインスタンス変数の記法を @_fooをにするか、@__fooにするか、
+    はたまたまったく違うナニかを考えるのかが難しくて現状では放置されています。
+    mixが導入されたらより必要になるでしょうね。</li>
+</ul>
+<h4>Method Combination</h4>
+<p>RubyKaigiではmixの一部として導入する話をしていたMethod Combinationだが、
+mixでいちいち「どのメソッドをラップするか」とか指定するのが以上にめんどくさいことに
+後で気がつきました。ので、分離。</p>
+<p>今回の案はprependというメソッドを導入すること。「include、mixに続いて
+またもうひとつ？」という声が聞こえてきそうだが、私もそう思います。でも必要なのよ。</p>
+<p>prependはそのモジュールが提供する機能を、現在のクラス/モジュールの「前」に
+追加する機能。</p>
+<pre>module Foo
+  def foo
+    p :before
+    super
+    p :after
+  end
+end
+class Bar
+  def foo
+    p :foo
+  end
+  prepend Foo
+end
+Bar.new.foo # :before, :foo, :after</pre>
+<p>とように使う。prependしたモジュールFooで定義されたfooメソッドが、
+prepend先のメソッドfooをラップしているのが分かるでしょうか。</p>
+<p>prependメソッドは、RailsコミッタでもあるYehuda Katzの提案で、
+これがあればRailsのalias_method_chainを撲滅できる、と息巻いていた。
+私もそう思う。</p>
+<p>具体的な実装はまだないんだけど、たぶんT_ICLASSのようなものを
+継承チェーンに置いて、そっちを先に検索するようにするんじゃないかなあ。</p>
+<h4>Keyword Arguments</h4>
+<p>引数、特にオプショナル引数がどんな働きをするのか忘れる人は私だけじゃないと思います。
+たとえば、 public_instance_methods メソッドはオプショナル引数を受け付けるのだけど、
+それが「オプショナル引数を付けると、それが真であった時にスーパークラスのメソッドを含む」のか、
+それとも逆かというのは私でもいつも忘れてしまいます。正解はfalseを付けた時に含まない。</p>
+<p>これをたとえば</p>
+<pre>aClass.public_instance_methods(include_super: false)</pre>
+<p>と書けたら、ずっと覚えやすくなるというものです。</p>
+<p>Rubyのキーワード引数は、1.9で追加されたシンボル記法のハッシュが
+引数リストの末尾に付いているだけです。</p>
+<p>2.0で新たに追加されたのは、メソッド定義側でこれを簡単に受け取れる記法です。</p>
+<p>例としてはこんな感じ。</p>
+<p>呼び出し側</p>
+<pre>1.step(by: 2, to: 20) do |i|
+  p i
+end</pre>
+<p>呼び出され側</p>
+<pre>def step(by: step, to: limit)
+  ...
+end</pre>
+<p>後、「**」で辞書形式で受けとるとか、ちょっとした機能追加もありますが、
+基本的にはこれだけ。</p>
+<h4>Namespace</h4>
+<p>技術的な詳細などについては同じRubyConfで前田(修吾)くんが<a href="http://www.slideshare.net/ShugoMaeda/rc2010-refinements">発表したスライド</a>を見てもらった方が良いと思います。</p>
+<p>Rubyではopen classといって既存のクラスの定義を書き換えちゃうことができる。
+メソッドの追加も自由自在だ。このように既存のクラスに「パッチ」を当てちゃう技法のことを
+「Monkey Patching」と呼ぶことも多い。</p>
+<p>これは「ゲリラ・パッチング」→「ゴリラ・パッチング」→「モンキー・パッチング」と
+変化して生まれた用語なんだって。
+まあ、Rubyはクラスなんてものは変化するもんじゃないって「硬い」言語よりも
+大きな自由を提供してることは確かだよね。
+DHHは今回のRubyConfのキーノートで「今後はMonkey PatchingじゃなくてFreedom Patchingと呼ぼう」と
+叫んでた。メル・ギブソンの『ブレーヴハート』を引用しつつ。「ふりーだーーむ」。</p>
+<p>まあ、フリーダムなのは素晴らしいことなんだけど、影響力が大きすぎるというのもまた事実。
+やろうと思えば整数のプラスメソッドを書き換えて、1+2 = 42 のような変更だってできちゃうから。
+でも、大抵のプログラムは副作用でまともに動作しなくなるよね。</p>
+<p>で、問題はこのような変更の影響の範囲がグローバル(プログラム全体)であることで、
+仮にこのような修正をなんらかの「スコープ」に閉じ込めることができたなら、
+もっと安全に、もっと安心して「フリーダム・パッチング」を活用できる、はず。</p>
+<p>そのような「スコープ」のために、昔からClassboxとかSelector Namespaceとかが提案されてきた
+のですが、今回、前田くんが実装したのはSelector Namespaceの一種であるRefinment。</p>
+<p>たとえば、以下のようなプログラムがあったとします。っていうか、あります。</p>
+<pre>class Integer
+  def /(other)
+    return quo(other)
+  end
+end
+p 1/2 # =&gt; (1/2)</pre>
+<p>これは割り算演算子(/)を再定義して、整除ではなく結果を有理数にしようもので、
+標準添付ライブラリの mathn の本質部分です。
+しかし、整数の割り算の結果が整数であることを期待しているコードは当然存在するわけで、
+そのようなコードは上のような変更で破綻する可能性があります。</p>
+<p>そこで今回導入しようというのがrefinmentです(呼び名は変わるかもしれません)。
+文法としては以下のようになります。</p>
+<pre>module MathN
+  refine Integer do
+    def /(other)
+      return quo(other)
+    end
+  end
+  p 1/2 # =&gt; (1/2)
+end
+p 1/2   # =&gt; 0</pre>
+<p>Refinementの単位としてはモジュールを使います。またモジュールです。大活躍ですね。</p>
+<p>モジュールの中では既存のクラスをrefineできます。
+refineの中で定義された修正はそのrefinment(ネームスペース)の中でだけ有効です。
+ですから、MathNモジュールの中では 1/2 は有理数の (1/2) であり、
+その外側では今まで通り整除になっています。有効範囲はレキシカルであり、
+Refinmentはブロックの外側には影響を与えません。</p>
+<p>Classboxとの違いは、そこを通じて呼び出された先(レキシカルスコープの外)に
+「置き換え」が影響を与えるかで、いろいろ検討した結果、
+多くのプログラミング言語がダイナミックスコープをあきらめたのと同様の理由で
+「置き換え」はレキシカルになるべきだとの結論を出しました。</p>
+<p>モジュールとして実現されたネームスペースを使うには usingメソッドを使います。
+こんな感じ。</p>
+<pre>module Rationalize
+  using MathN
+  p 1/2 # =&gt; (1/2)
+end
+p 1/2 # =&gt; 0</pre>
+<p>これでRationalizeモジュールの中ではMathNが提供するRefinementが利用できます。</p>
+<p>さらに、今までメソッドの中でメソッドをネストして定義した場合、
+そのメソッドはクラスに直接定義されてあんまり意味ないじゃん、みたいな状態になっていたのですが、
+今後はそのメソッドの範囲内でだけ有効なRefinementにネストの内側のメソッドが定義されるので、
+完全にプライベートなメソッドとして使うことができます。</p>
+<pre>class Foo
+   def foo
+      def bar
+        ...
+      end
+      bar # 呼べる
+   end
+
+   def quux
+     bar  # 呼べない
+   end
+end</pre>
+<p>この変更はかなり大規模かつ複雑なものですが、前田くんのところでは実際に動作しています。
+早く trunk に突っ込みたいものです。しかし、NaCl取締役の激務をこなしつつ、
+こんなスーパーなパッチを作っちゃう前田くんに拍手。</p>
+<h4>まとめ</h4>
+<p>歴史編で見てきた通り、ずっと昔からキーワード引数などについて話してきましたが、
+とうとう現実になりそうです。長かった。</p>
+<div class="footnote">
+	<p class="footnote"><a name="f20101113-01-01" href="#fm20101113-01-01">*1</a>&nbsp;  MacRubyでは違うらしい。Ruby 1.9でそのような変更をしたかったが、YARVが継承ラインに同じモジュールが2度登場しないことを前提にしていたため断念 
+</p>
+</div>
+
+</div>
+
+<div style="text-align: center;"><script type="text/javascript"><!--
+google_ad_client = "pub-1068577065829336";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_channel ="1130103482";
+google_color_border = "CCCCCC";
+google_color_bg = "FFFFFF";
+google_color_link = "000000";
+google_color_url = "666666";
+google_color_text = "333333";
+//--></script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div><!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+	rdf:about="http://www.rubyist.net/~matz/20101113.html"
+	dc:identifier="http://www.rubyist.net/~matz/20101113.html"
+	dc:title=""
+	trackback:ping="http://www.rubyist.net/~matz/tb.rb/20101113" />
+</rdf:RDF>
+-->
+
+</div>
+
+<div class="comment">
+
+	<div class="caption">[<a href="http://www.rubyist.net/~matz/20101113.html#c">ツッコミを入れる</a>]</div>
+</div>
+
+			<div class="form">
+					<div class="caption"><a name="c">ツッコミ・コメントがあればどうぞ! E-mailアドレスは公開されません。</a></div>
+					<form class="comment" name="comment-form" method="post" action="http://www.rubyist.net/~matz/"><div>
+					<input type="hidden" name="date" value="20101113">
+					<div class="field name">
+						お名前:<input class="field" name="name" value="">
+					</div>
+					<div class="field mail">
+						E-mail:<input class="field" name="mail" value="">
+					</div>
+					<div class="textarea">
+						コメント:<textarea name="body" cols="60" rows="5"></textarea>
+					</div>
+					<div class="button">
+						<input type="submit" name="comment" value="投稿">
+					</div>
+					</div></form>
+			</div>
+
+
+	<div class="comment trackbacks">
+		<div class="caption">
+			[TrackBack URL: <a href="http://www.rubyist.net/~matz/tb.rb/20101113" name="t">http://www.rubyist.net/~matz/tb.rb/20101113</a>]
+		</div>
+		<div class="commentbody trackbackbody">
+		</div>
+	</div>
+
+
+
+
+
+		<div class="refererlist">
+		<div class="caption">本日のリンク元</div>
+<ul><li><a rel="nofollow" href="http://twitter.com/">http://twitter.com/</a> &times;57</li>
+<li><a rel="nofollow" href="http://gihyo.jp/news/report/2010/12/2701">http://gihyo.jp/news/report/2010/12/2701</a> &times;37</li>
+<li><a rel="nofollow" href="https://www.google.co.jp/">https://www.google.co.jp/</a> &times;34</li>
+<li><a rel="nofollow" href="http://jp.rubyist.net/magazine/?0033-SapporoRubyKaigi03Report">http://jp.rubyist.net/magazine/?0033-SapporoRubyKa...</a> &times;34</li>
+<li><a rel="nofollow" href="http://d.hatena.ne.jp/akiradeveloper/20101226/1293376521">http://d.hatena.ne.jp/akiradeveloper/20101226/1293...</a> &times;31</li>
+<li><a rel="nofollow" href="http://habrahabr.ru/blogs/ruby/113635/">http://habrahabr.ru/blogs/ruby/113635/</a> &times;26</li>
+<li><a rel="nofollow" href="http://jp.rubyist.net/magazine/?0037-GuestTalk">http://jp.rubyist.net/magazine/?0037-GuestTalk</a> &times;26</li>
+<li><a rel="nofollow" href="http://t.co/BlF67fAc">http://t.co/BlF67fAc</a> &times;25</li>
+<li><a rel="nofollow" href="http://d.hatena.ne.jp/gfx/20101204/1291463243">http://d.hatena.ne.jp/gfx/20101204/1291463243</a> &times;20</li>
+<li><a rel="nofollow" href="http://www.rubyist.net/">http://www.rubyist.net/</a> &times;16</li>
+<li><a rel="nofollow" href="http://fastladder.com/reader/">http://fastladder.com/reader/</a> &times;11</li>
+<li><a rel="nofollow" href="http://d.hatena.ne.jp/akiradeveloper/">http://d.hatena.ne.jp/akiradeveloper/</a> &times;9</li>
+<li><a rel="nofollow" href="http://www.antimon2.atnifty.com/works/slide_20101210/">http://www.antimon2.atnifty.com/works/slide_201012...</a> &times;8</li>
+<li><a rel="nofollow" href="http://blog.mwsoft.jp/article/43626618.html">http://blog.mwsoft.jp/article/43626618.html</a> &times;8</li>
+<li><a rel="nofollow" href="http://d.hatena.ne.jp/sumim/20101115/p1">http://d.hatena.ne.jp/sumim/20101115/p1</a> &times;7</li>
+<li><a rel="nofollow" href="http://t.co/tsCGyd29">http://t.co/tsCGyd29</a> &times;6</li>
+<li><a rel="nofollow" href="http://hootsuite.com/dashboard">http://hootsuite.com/dashboard</a> &times;6</li>
+<li><a rel="nofollow" href="http://www.instapaper.com/u">http://www.instapaper.com/u</a> &times;6</li>
+<li><a rel="nofollow" href="http://codezine.jp/bookmark/?dt=20101115">http://codezine.jp/bookmark/?dt=20101115</a> &times;6</li>
+<li><a rel="nofollow" href="http://www.ruby-forum.com/topic/1081338">http://www.ruby-forum.com/topic/1081338</a> &times;5</li>
+<li><a rel="nofollow" href="http://www.bedroomfurniturelot.com/">http://www.bedroomfurniturelot.com/</a> &times;4</li>
+<li><a rel="nofollow" href="http://twitter.com/search?q=matz">http://twitter.com/search?q=matz</a> &times;4</li>
+<li><a rel="nofollow" href="http://ruby.designiddatabase.net/data/507188.aspx?from=rss">http://ruby.designiddatabase.net/data/507188.aspx?...</a> &times;4</li>
+<li><a rel="nofollow" href="http://d.hatena.ne.jp/gfx/">http://d.hatena.ne.jp/gfx/</a> &times;3</li>
+<li><a rel="nofollow" href="http://www.ig.gmodules.com/gadgets/ifr?exp_rpc_js=1&amp;exp_track_js=1&amp;url=http%3A%2F%2Fchoichoi.sakura.ne.jp%2Fhatena_bookmark.xml&amp;container=ig&amp;view=default&amp;lang=ja&amp;country=JP&amp;v=9a025c8ae9217fb9&amp;parent=http://www.google.co.jp&amp;libs=core:core.io:core.iglegacy:auth-refresh&amp;is_signedin=1&amp;synd=ig&amp;view=default">http://www.ig.gmodules.com/gadgets/ifr?exp_rpc_js=...</a> &times;3</li>
+<li><a rel="nofollow" href="http://untiny.me/">http://untiny.me/</a> &times;3</li>
+<li><a rel="nofollow" href="http://www.tumblr.com/dashboard">http://www.tumblr.com/dashboard</a> &times;2</li>
+<li><a rel="nofollow" href="http://d.hatena.ne.jp/akiradeveloper/touch/20101226/1293376521">http://d.hatena.ne.jp/akiradeveloper/touch/2010122...</a> &times;2</li>
+<li><a rel="nofollow" href="http://friendfeed.com/scala-jp/4dcc06b7/rubymethod">http://friendfeed.com/scala-jp/4dcc06b7/rubymethod...</a> &times;2</li>
+<li><a rel="nofollow" href="http://childs.squares.net/murahatebu/progress.html">http://childs.squares.net/murahatebu/progress.html...</a> &times;2</li>
+<li><a rel="nofollow" href="http://d.hatena.ne.jp/naoe/20101115">http://d.hatena.ne.jp/naoe/20101115</a> &times;2</li>
+<li><a rel="nofollow" href="http://eventr.com/stream/4c3f3fe50d3a17b736160000">http://eventr.com/stream/4c3f3fe50d3a17b736160000</a> &times;2</li>
+<li><a rel="nofollow" href="http://stackoverflow.com/questions/12525682/why-is-hello-printed-twice-in-this-ruby-script">http://stackoverflow.com/questions/12525682/why-is...</a> &times;2</li>
+<li><a rel="nofollow" href="http://mixi.jp/show_friend.pl?id=1653">http://mixi.jp/show_friend.pl?id=1653</a> &times;2</li>
+<li><a rel="nofollow" href="http://sooey.tumblr.com/">http://sooey.tumblr.com/</a> &times;2</li>
+<li><a rel="nofollow" href="http://d.hatena.ne.jp/flada_auxv/20121123/1353694720">http://d.hatena.ne.jp/flada_auxv/20121123/13536947...</a> &times;2</li>
+<li><a rel="nofollow" href="http://twitter.com/kmizu">http://twitter.com/kmizu</a> &times;2</li>
+<li><a rel="nofollow" href="http://stackoverflow.com/questions/12525682/why-is-hello-printed-twice-in-this-ruby-script/12525754">http://stackoverflow.com/questions/12525682/why-is...</a> &times;2</li>
+<li><a rel="nofollow" href="http://www.convertiblesofaoutlet.com/microfiber-sofa-beds.html">http://www.convertiblesofaoutlet.com/microfiber-so...</a> &times;2</li>
+<li><a rel="nofollow" href="http://www.mybloglog.com/buzz/community/matz/">http://www.mybloglog.com/buzz/community/matz/</a> &times;2</li>
+<li><a rel="nofollow" href="http://labs.ceek.jp/hbnews/list.cgi">http://labs.ceek.jp/hbnews/list.cgi</a> &times;2</li>
+<li><a rel="nofollow" href="http://labs.ceek.jp/hbnews/">http://labs.ceek.jp/hbnews/</a> &times;2</li>
+<li><a rel="nofollow" href="https://twitter.com/gnue/status/108815527010500608">https://twitter.com/gnue/status/108815527010500608...</a> &times;2</li>
+<li><a rel="nofollow" href="http://www.corporatekeys.co.nz/best-cheap-hotel-wellington-hotels.php">http://www.corporatekeys.co.nz/best-cheap-hotel-we...</a> &times;2</li>
+<li><a rel="nofollow" href="http://d.hatena.ne.jp/sumim/">http://d.hatena.ne.jp/sumim/</a> &times;2</li>
+<li><a rel="nofollow" href="http://bit.ly/gh5BxY">http://bit.ly/gh5BxY</a> &times;2</li>
+<li><a rel="nofollow" href="http://www.extensalighting.com/lighting-manufacturers/4-street-light-poles/38-lighting-pole-manufacturers">http://www.extensalighting.com/lighting-manufactur...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.mybloglog.com/buzz/community/matz">http://www.mybloglog.com/buzz/community/matz</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.rubyist.net/notify-Notify_user_ifilter?aHR0cDovL3d3dy5ydWJ5aXN0Lm5ldC9+bWF0ei8yMDEwMTExMy5odG1s">http://www.rubyist.net/notify-Notify_user_ifilter?...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.ruby-lang.org/zh_cn/about/">http://www.ruby-lang.org/zh_cn/about/</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.layar.net/kandung/index.php/index.php?page=article&amp;article_id=125273">http://www.layar.net/kandung/index.php/index.php?p...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.moderncollections.com/modern-table-lamps.html">http://www.moderncollections.com/modern-table-lamp...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.imcashsaver.com/">http://www.imcashsaver.com/</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.sportsbetting1stop.com/">http://www.sportsbetting1stop.com/</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.wholefoodsupplementsonline.com/gnld-energy-feed-your-cells.php">http://www.wholefoodsupplementsonline.com/gnld-ene...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.wkc.cz/member.php?u=17305">http://www.wkc.cz/member.php?u=17305</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.thesexboards.com/escort_hooker/">http://www.thesexboards.com/escort_hooker/</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.youtube.com/watch?v=wtUpTuI_LTc">http://www.youtube.com/watch?v=wtUpTuI_LTc</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.upi.com/Science_News/2011/02/11/Ancient-face-carvings-found-in-cave/UPI-47311297473793/">http://www.upi.com/Science_News/2011/02/11/Ancient...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.soukyu-mugen.com/artList22">http://www.soukyu-mugen.com/artList22</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.wear-mens-suits-with-swagger.com/silk_ties.html">http://www.wear-mens-suits-with-swagger.com/silk_t...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.extensalighting.com/lighting-manufacturers/4-street-light-poles/42-flood-light-pole">http://www.extensalighting.com/lighting-manufactur...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.phys.au.dk/%7Efysshow/Flanner/phpBB2/profile.php?mode=viewprofile&amp;u=9810">http://www.phys.au.dk/~fysshow/Flanner/phpBB2/prof...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.raycone.net/?p=194">http://www.raycone.net/?p=194</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.manholecovers.org/catalog">http://www.manholecovers.org/catalog</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.tumblr.com/dashboard/15/1581556320">http://www.tumblr.com/dashboard/15/1581556320</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.sleipnirstart.com/">http://www.sleipnirstart.com/</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.rubyist.net/notify-NotifyUser_POST_NG_CATEGORY?aHR0cDovL3d3dy5ydWJ5aXN0Lm5ldC9+bWF0ei8yMDEwMTExMy5odG1s">http://www.rubyist.net/notify-NotifyUser_POST_NG_C...</a> &times;1</li>
+<li><a rel="nofollow" href="https://twitter.com/seotonsdotcom">https://twitter.com/seotonsdotcom</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.naturally-beautiful-enhancements.com/MALE-transgender-transexual-full-potential-natural-breast-enhancements-bust-enlargement-enhancer-enlarger.php">http://www.naturally-beautiful-enhancements.com/MA...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.setccities.org/">http://www.setccities.org/</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.imcashsaver.com/super-green-hosting">http://www.imcashsaver.com/super-green-hosting</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.onlinecasinoabc.com/">http://www.onlinecasinoabc.com/</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.r-school.net/about/access.html">http://www.r-school.net/about/access.html</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.instapaper.com/u/1">http://www.instapaper.com/u/1</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.icsu-asia-pacific.org/forum/index.php?action=profile;u=95997">http://www.icsu-asia-pacific.org/forum/index.php?a...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.squidoo.com/seotonsdotcom">http://www.squidoo.com/seotonsdotcom</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.soulcast.com/post/show/856156/Discover-Search-engine-ranking-optimization-with-the-help-of-Search-engine-marke">http://www.soulcast.com/post/show/856156/Discover-...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.wholefoodsupplementsonline.com/gnld-protective-power.php">http://www.wholefoodsupplementsonline.com/gnld-pro...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.ig.gmodules.com/gadgets/ifr?exp_rpc_js=1&amp;exp_track_js=1&amp;url=http%3A%2F%2Fchoichoi.sakura.ne.jp%2Fhatena_bookmark.xml&amp;container=ig&amp;view=default&amp;lang=ja&amp;country=US&amp;v=9a025c8ae9217fb9&amp;parent=http://www.google.com&amp;libs=core:core.io:core.iglegacy:auth-refresh&amp;is_signedin=1&amp;synd=ig&amp;view=default">http://www.ig.gmodules.com/gadgets/ifr?exp_rpc_js=...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.gather.com/viewArticle.action?articleId=281474979002407">http://www.gather.com/viewArticle.action?articleId...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.facebook.com/apps/application.php?id=123265557723086">http://www.facebook.com/apps/application.php?id=12...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.wholefoodsupplementsonline.com/gnld-nutrition-vitamin-herbal-natural-masculine-herbal-complex.php">http://www.wholefoodsupplementsonline.com/gnld-nut...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.thehungrywife.com/salad/broccoli-salad/">http://www.thehungrywife.com/salad/broccoli-salad/...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.onlinecasino.bg/casino-games/baccarat/">http://www.onlinecasino.bg/casino-games/baccarat/</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.instapaper.com/archive">http://www.instapaper.com/archive</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.toparticleszone.com/educate-yourself-on-the-details-of-beagle-puppies/">http://www.toparticleszone.com/educate-yourself-on...</a> &times;1</li>
+<li><a rel="nofollow" href="http://xtc.bz/bbs/bbs/index.html">http://xtc.bz/bbs/bbs/index.html</a> &times;1</li>
+<li><a rel="nofollow" href="http://zapanet.info/new/hatebu3/">http://zapanet.info/new/hatebu3/</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.onkologija.org/forum/member.php?u=44526">http://www.onkologija.org/forum/member.php?u=44526...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.lordsofvalhalla.com/forum/viewtopic.php?f=4&amp;t=7634">http://www.lordsofvalhalla.com/forum/viewtopic.php...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.mesothelioma-lawsuit-advice.com/asbestos-removal.html">http://www.mesothelioma-lawsuit-advice.com/asbesto...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.futoncreations.com/chair-futon-mattress.html">http://www.futoncreations.com/chair-futon-mattress...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.extensalighting.com/lighting-manufacturers/6-utility-pole/94-utility-pole-specifications">http://www.extensalighting.com/lighting-manufactur...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.manholecovers.org/about">http://www.manholecovers.org/about</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.secretenhancers.com/penis-enlargement-extenders-size.php">http://www.secretenhancers.com/penis-enlargement-e...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.squidoo.com/bedroomfurniture467">http://www.squidoo.com/bedroomfurniture467</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.extensalights.com/high-mast-tender">http://www.extensalights.com/high-mast-tender</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.futoncreations.com/college-futon-covers.html">http://www.futoncreations.com/college-futon-covers...</a> &times;1</li>
+<li><a rel="nofollow" href="http://www.wholefoodsupplementsonline.com/purifying-facial-scrub.php">http://www.wholefoodsupplementsonline.com/purifyin...</a> &times;1</li>
+</ul>
+<div class="caption">アンテナ</div>
+<ul><li><a rel="nofollow" href="http://search.minakoe.jp/rsss/rsss.asp?qry=ruby&amp;notwit=1&amp;twit=0&amp;multi=1">http://search.minakoe.jp/rsss/rsss.asp?qry=ruby&amp;no...</a> &times;1</li>
+<li><a rel="nofollow" href="http://reader.freerss.net/usr/hskksk/show.cgi?cmd=show_gid&amp;gid=1118289603">http://reader.freerss.net/usr/hskksk/show.cgi?cmd=...</a> &times;1</li>
+</ul>
+<div class="caption">検索</div>
+<ul><li><a rel="nofollow" href="http://search.yahoo.co.jp/search?p=ruby+module+iclude+%E5%90%8D%E5%89%8D+%E8%A1%9D%E7%AA%81&amp;aq=-1&amp;oq=&amp;ei=UTF-8&amp;fr=top_ga1_sa&amp;x=wrt">ruby module iclude 名前 衝突</a> &times;2  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=ruby%20refinement&amp;ei=UTF-8&amp;fr=slm-ipn">ruby refinement</a> &times;1  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=Rails+%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%8A%E3%83%AB%E5%BC%95%E6%95%B0&amp;aq=-1&amp;oq=&amp;ei=UTF-8&amp;fr=top_ga1_sa&amp;x=wrt">Rails オプショナル引数</a> &times;1  / <a rel="nofollow" href="http://search.yahoo.co.jp/search;_ylt=A3aX6ObHXaJQNWsA1KE5oPB7?ei=UTF-8&amp;p=20101113&amp;fr=top_smf&amp;aq=-1&amp;oq=">20101113</a> &times;1  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=ruby+override%E3%80%80super+%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%97&amp;ei=UTF-8&amp;fr=mozff">ruby override super スコープ</a> &times;1  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=2010+11%2F13&amp;aq=0&amp;oq=2010+11&amp;ei=UTF-8&amp;fr=top_ga1_sa&amp;x=wrt">2010 11/13</a> &times;1  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=2010%E3%83%BB11%E3%83%BB13&amp;search.x=1&amp;fr=top_ga1_sa&amp;tid=top_ga1_sa&amp;ei=UTF-8&amp;aq=&amp;oq=">2010・11・13</a> &times;1  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=ruby+%E3%82%AF%E3%83%A9%E3%82%B9%E3%80%80%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%80%80%E9%A0%86%E7%95%AA&amp;ei=UTF-8&amp;fr=top_ga1_sa&amp;x=wrt">ruby クラス モジュール 順番</a> &times;1  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=ruby+openclass&amp;ei=UTF-8&amp;fr=mozff">ruby openclass</a> &times;1  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?fr=slv1-slvlt&amp;p=2010%E3%80%82%EF%BC%91%EF%BC%91%EF%BC%8E%EF%BC%91%EF%BC%93&amp;ei=UTF-8">2010。１１．１３</a> &times;1  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?p=Ruby+%E3%82%AF%E3%83%A9%E3%82%B9+%E9%87%8D%E8%A4%87%E3%80%80%E5%9B%9E%E9%81%BF&amp;aq=-1&amp;oq=&amp;ei=UTF-8&amp;fr=top_ga1_sa&amp;x=wrt">Ruby クラス 重複 回避</a> &times;1  / <a rel="nofollow" href="http://search.yahoo.co.jp/search?fr=slv1-tospcb2&amp;p=Ruby%E3%80%80%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%82%92include%E3%81%97%E3%81%9F%E3%82%AF%E3%83%A9%E3%82%B9%E3%80%80%E7%B6%99%E6%89%BF&amp;ei=UTF-8">Ruby モジュールをincludeしたクラス 継承</a> &times;1  / <a rel="nofollow" href="http://ocnsearch.goo.ne.jp/ocn.jsp?IE=UTF-8&amp;OE=UTF-8&amp;from=ocn_Default&amp;PT=ocn_Default&amp;MT=2010%2F11%2F13">2010/11/13</a> &times;1 </li></ul>
+
+		</div>
+</div>
+
+
+<hr class="sep">
+
+<div class="adminmenu">
+<span class="adminmenu"><a href="http://www.rubyist.net/~matz/20101112.html">&laquo;前の日記(2010-11-12)</a></span>
+<span class="adminmenu"><a href="http://www.rubyist.net/~matz/">最新</a></span>
+<span class="adminmenu"><a href="http://www.rubyist.net/~matz/20101114.html">次の日記(2010-11-14)&raquo;</a></span>
+<span class="adminmenu"><a href="https://www.rubyist.net/~matz/update.rb?edit=true;year=2010;month=11;day=13" rel="nofollow">編集</a></span>
+</div>
+<center>
+<!-- Rakuten Dynamicad FROM HERE -->
+<script type="text/javascript">
+<!-- 
+rakuten_template = "728_90_txt";
+rakuten_affiliateId = "059c6b10.b3eb768e.059c6b11.e98254f4";
+rakuten_target = "_blank";
+rakuten_color_bg = "FFFFFF";
+rakuten_color_border = "BF0000";
+rakuten_color_text = "000000";
+rakuten_color_link = "0000FF";
+rakuten_color_price = "CC0000";
+//--></script>
+<script type="text/javascript"
+  src="http://dynamic.rakuten.co.jp/js/rakuten_dynamic.js">
+</script>
+<!-- Rakuten Dynamicad TO HERE -->
+</center><br>
+
+<a href="http://trackfeed.com/"><img name="trackfeed_banner" src="http://img.trackfeed.com/img/tfg.gif" alt="track feed" border="0" align="absmiddle" /></a>
+<nobr><a href="http://trackfeed.com/u/8812bdcfc0b3f5e81039fbe7e75967d58b534a24/Matz%E3%81%AB%E3%81%A3%E3%81%8D/http%3A%2F%2Fwww.rubyist.net%2F%7Ematz%2F/ca1b4d15">Matzにっき</a></nobr>
+<script type="text/javascript">
+document.write(unescape("%3Cscript src='http://script.trackfeed.com/usr/f/5/0257873c.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<!-- Creative Commons License -->
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/2.1/jp/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.gif" /></a>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/2.0/jp/">Creative Commons License</a>.
+<!-- /Creative Commons License -->
+
+<!--
+
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <dc:type rdf:resource="http://purl.org/dc/dcmitype/Text" />
+   <license rdf:resource="http://creativecommons.org/licenses/by-nc/2.0/jp/" />
+</Work>
+
+<License rdf:about="http://creativecommons.org/licenses/by-nc/2.0/jp/">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+
+</rdf:RDF>
+
+-->
+
+
+
+<div class="footer">
+Generated by <a href="http://www.tdiary.org/">tDiary</a> version 2.2.0<br>
+Powered by <a href="http://www.ruby-lang.org/">Ruby</a> version 1.8.7
+</div>
+</body>
+</html>

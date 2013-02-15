@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!--
+______  _______               ______                _____        
+___  / / /___(_)___   _______ ___  /______ _______ ____(_)_______
+__  /_/ / __  / __ | / /_  _ \__  / _  __ \__  __ `/__  / _  ___/
+_  __  /  _  /  __ |/ / /  __/_  /  / /_/ /_  /_/ / _  /  / /__  
+/_/ /_/   /_/   _____/  \___/ /_/   \____/ _\__, /  /_/   \___/  
+                                           /____/                
+-->
+
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<title>Installing Ruby, Rubygems, Rails, and Mongrel on Mac OS X 10.5 (Leopard)</title>                                        
+	<meta name="description" content="Hivelogic is tech, code, design, and geekery, written by your Internet Pal, Dan Benjamin." />
+	<meta name="keywords" content="hivelogic, dan, benjamin, hivelogic, danbenjamin" />
+	<meta name="author" content="Dan Benjamin" />
+	<meta name="copyright" content="Copyright (c) 2000-2011 Dan Benjamin" />
+	<link rel="alternate" type="application/rss+xml" title="Hivelogic RSS Feed" href="http://feeds.feedburner.com/hivelogic" />
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+	<link href="/stylesheets/styles.css" media="screen" rel="stylesheet" type="text/css" media="screen, projection" />
+	<script type="text/javascript" src="http://use.typekit.com/zrq6xaf.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+
+<body>
+	
+<div id="header" class="box">
+	<a href="/" title="Hivelogic"><img src="/images/hivelogic.png" height="60" width="395" alt="Hivelogic"/></a>
+</div>
+
+<div id="main" class="box">
+
+	<div id="content">
+
+<div class="article" id="/articles/ruby-rails-leopard">
+  <h2>Installing Ruby, Rubygems, Rails, and Mongrel on Mac OS X 10.5 (Leopard)</h2>
+  <p class="byline">Thursday, 28 February 2008 &bull; <a href="/articles/ruby-rails-leopard" title="Permanent link for this article">Permalink</a></p>
+  <p><strong>Update:</strong> There is an <a href="/articles/compiling-ruby-rubygems-and-rails-on-snow-leopard/">updated version of this article for Snow Leopard here &raquo;</a></p>
+<p>These are instructions for compiling and installing Ruby, Rubygems, Ruby on Rails, and Mongrel on Mac OS X 10.5 (Leopard).</p>
+<p>If you already know why I write these tutorials, if you already have <code>/usr/local</code> in your path, if you&#8217;ve installed XCode installed already &#8230; in other words, if you&#8217;re an old-school Hivelogic reader, <a href="#ruby">just click here to jump right to the instructions</a>.</p>
+<h3>The <span class="caps"><span class="caps">FAQ</span></span> (Sort Of)</h3>
+<p>Below I&#8217;ll walk you through getting your system ready for building and compiling open source software.  But before I do, please allow me to answer of few of the questions I invariably get asked every time I release this type of do-it-yourself tutorials:</p>
+<p><strong>Why would I want to compile this stuff when it ships as part of Leopard?</strong></p>
+<p>Good question! Leopard ships with Ruby 1.8.6 and Rails 1.2.3 &#8211; both respectably recent and stable versions. And it&#8217;s easy enough to update to the latest version of Rails with a single command (<code>sudo gem install rails</code> if you&#8217;re curious).</p>
+<p>Then why roll your own? I expand on the benefits of building your own open source utilities (like Ruby and Rails) and why where they live is important in my article entitled <a href="http://hivelogic.com/articles/using_usr_local/" title="Using /usr/local - Why you should roll your own open source utilities and where to put them">Using /usr/local</a>, but here are a few of the reasons:</p>
+<ol>
+ <li>You want to run the latest/greatest versions of available software and don&#8217;t want to wait (or hope) for Apple to release an update.</li>
+ <li>Your want to update, tweak, and customize your own tools while keeping your system &#8220;stock&#8221; from Apple&#8217;s standpoint.</li>
+ <li>Apple may decide to modify these utilities during a system update, and doing so may break your stuff.</li>
+ <li>You can move or remove the <code>/usr/local</code> filesystem, or even transfer it to another machine in one step.</li>
+ <li>You&#8217;re used to, interested in, or curious about in the compile and build process.</li>
+</ol>
+<p>For some people, these reasons are enough to take a few minutes to build your own software.</p>
+<p><strong>Why wouldn&#8217;t I just use MacPorts or Fink?</strong></p>
+<p>Both <a href="http://www.macports.org/" title="MacPorts">MacPorts</a> and <a href="http://www.finkproject.org/" title="Fink">Fink</a> are great projects, and I wholeheartedly support their efforts. I&#8217;m also a longtime <a href="http://freebsd.org" title="FreeBSD">FreeBSD</a> geek, and the <a href="http://www.freebsd.org/ports/">FreeBSD ports tree</a> is something I&#8217;ve relied upon for ages. So I really get what MacPorts and Fink are about.</p>
+<p>On the other hand, I&#8217;m a geek at heart, I don&#8217;t mind compiling my own software, and I like the ability to build just what I need, right when I need it, without installing or waiting for any additional or externally-maintained software. If this method sounds like a headache to you, I know where you&#8217;re coming from. MacPorts and Fink provide most excellent alternatives. Tell them I sent you.</p>
+<p><strong>I used your instructions and I got the following error &#8230;</strong></p>
+<p>Please don&#8217;t email me about it but instead, post your question in the comments. I try and read and respond as often as I can. When I can&#8217;t, other Hivelogic readers often step in and try to help (they&#8217;re a great bunch), and usually we can figure it out together.</p>
+<h3>Prerequisites</h3>
+<p>You will need:</p>
+<ol>
+<li>Mac OS X 10.5 (Leopard)</li>
+<li>Xcode 3.0 or newer</li>
+<li>Familiarity with (or willingness to use) the Mac OS X Terminal application</li>
+</ol>
+<p><strong>Note:</strong> You will probably need to install Xcode from the Mac OS X install <span class="caps"><span class="caps">DVD</span></span>/CD (in the Optional Installs &#8594; Xcode folder). You can also download it from <a href="http://developer.apple.com">Apple&#8217;s Developer Connection</a> free of charge.</p>
+<p><strong>Another Note:</strong> These instructions are written for people using the default Mac OS X shell, <a href="http://www.gnu.org/software/bash/">bash</a>. If you haven&#8217;t manually changed your shell from bash, and you didn&#8217;t upgrade to Leopard from something older than Tiger, then you don&#8217;t have anything to worry about. If you&#8217;ve taken specific steps to change the default shell to something other than bash (like <a href="http://www.tcsh.org/Welcome">tcsh</a>), then you&#8217;ll need to figure out equivalent syntax to use when setting paths and environment variables, or just switch back to bash, because we just roll with bash here. Sorry.</p>
+<h3>Just In Case</h3>
+<p>While it&#8217;s unlikely that any of these steps might damage your system somehow, it&#8217;s probably a good idea to have a current backup of everything, just in case (I recommend <a href="http://www.shirt-pocket.com/SuperDuper/SuperDuperDescription.html">SuperDuper!</a> for this by the way, awesome product). So you&#8217;re following these instructions at your own risk, and I&#8217;m not liable for anything that happens.</p>
+<h3>A Note about <code>sudo</code></h3>
+<p>With great power comes great responsibility, so Mac OS X may prompt you for your password prior to executing some of the commands you&#8217;ll be typing. It may do this only once, or several times throughout this process. Just re-enter your password as needed.</p>
+<h3>Using Terminal</h3>
+<p>You&#8217;ll need to launch the Terminal application. It can be found in the <code>/Applications/Utilities</code> folder.</p>
+<p>Each of the lines below appearing in monospaced type should be entered into Terminal, and be followed by the Return key.</p>
+<h3>Paths</h3>
+<p><strong><em>Don&#8217;t skip this step!</em></strong></p>
+<p>Mac OS X, like other <span class="caps"><span class="caps">UNIX</span></span> systems, uses something called a <em>path</em> to determine where it should look for applications on the command line (that is, when you&#8217;re using the Terminal app). The path is actually an environment variable, set by a special file that&#8217;s automatically executed when you open a new Terminal window.</p>
+<p>We need to make sure that our path is set to look for files in <code>/usr/local</code> (the place where we&#8217;ll be installing the tools) before looking anywhere else. This is important.</p>
+<p>To see if the path has been set properly, we can check the contents of the <code>.profile</code> file (the special file hidden in our home folder) for a <code>PATH</code> line using a text editor.  <a href="http://macromates.com/">TextMate</a>, <a href="http://www.barebones.com/products/textwrangler/index.shtml">TextWrangler</a>, <a href="http://www.barebones.com/products/bbedit/index.shtml">BBEdit</a>, and <a href="http://en.wikipedia.org/wiki/Vi">vi</a> are all perfectly good options. To open the file with TextMate, for example, we can type:</p>
+<pre>
+mate ~/.profile
+</pre>
+<p>This will open the file if it already exists, or open a blank file if it doesn&#8217;t.  Add the following line <strong>at the very end of the file</strong>:</p>
+<pre>
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH" 
+</pre>
+<p>Now save and close the file.</p>
+<p>It doesn&#8217;t matter how many other lines there are in the file, or what they say or do. Just make sure that this line comes <em>last</em> and you should be fine.</p>
+<p>To make sure the changes are picked up correctly, we now need to execute the file with the following command:</p>
+<pre>
+. ~/.profile
+</pre>
+<p>It&#8217;s likely there will be no response from the shell here, just the prompt, but that&#8217;s OK, the changes have been picked up and we&#8217;re ready to move on.</p>
+<p>You can also close your Terminal and open a new one instead if you&#8217;d like.</p>
+<p><strong>Note:</strong> You may have noticed that I&#8217;ve added MySQL to the path in the line above. That&#8217;s because most users will be installing MySQL later in this tutorial. If you&#8217;re the type to want to use something like SQLite or PostGreSQL as your database instead of MySQL, you can feel free to omit the <code>/usr/local/mysql/bin:</code> bit from the line above, and replace it with the path to the database of your choice. If this note doesn&#8217;t make sense to you, even if you <em>don&#8217;t</em> plan to install MySQL later, just keep on going &#8230; the extra bit in the path statement won&#8217;t affect you at all.</p>
+<h3>Setting Up</h3>
+<p>I like to create a folder to contain all of the downloaded files and their respective build folders. I tend to keep this folder around indefinitely. Source code doesn&#8217;t take up much space, and it&#8217;s useful to refer back to later to remind yourself of previous installation details or techniques, installed versions, for a fast install at a later time, or in case you want to <em>uninstall</em> something.</p>
+<p>For these examples, we&#8217;ll create a folder called <code>src</code> in the <code>/usr/local</code> section of the filesystem, and change directories into that folder. It will be our workspace for everything we do here:</p>
+<pre>
+sudo mkdir -p /usr/local/src
+sudo chgrp admin /usr/local/src
+sudo chmod -R 775 /usr/local/src
+cd /usr/local/src
+</pre>
+<p>You&#8217;ll download and compile everything in this new folder.</p>
+<h3><a name="ruby"></a>Ruby</h3>
+<p>Ok, let&#8217;s get started. Unlike previous versions of Mac OS X, Leopard has everything you&#8217;ll need to compile Ruby. You don&#8217;t need to install any prerequisites. Take these commands and type or paste them into Terminal:</p>
+<pre>
+curl -O ftp://ftp.ruby-lang.org/pub/ruby/1.8/ruby-1.8.7-p72.tar.gz
+tar xzvf ruby-1.8.7-p72.tar.gz
+cd ruby-1.8.7-p72
+./configure --enable-shared --enable-pthread CFLAGS=-D_XOPEN_SOURCE=1
+make
+sudo make install
+cd ..
+</pre>
+<p>To verify that Ruby is installed and in your path, just type:</p>
+<pre>
+which ruby
+</pre>
+<p>You should see:</p>
+<pre>
+/usr/local/bin/ruby
+</pre>
+<p>If you don&#8217;t, you haven&#8217;t set your path correctly.</p>
+<h3>RubyGems</h3>
+<p>With Ruby installed, we can move on to RubyGems. Same routine:</p>
+<pre>
+curl -O http://rubyforge.iasi.roedu.net/files/rubygems/rubygems-1.3.1.tgz
+tar xzvf rubygems-1.3.1.tgz
+cd rubygems-1.3.1
+sudo /usr/local/bin/ruby setup.rb
+cd ..
+</pre>
+<h3>Ruby on Rails</h3>
+<p>At last, we&#8217;re ready to install Rails.  RubyGems will handle this for us:</p>
+<pre>
+sudo gem install rails
+</pre>
+<p>Mongrel and Capistrano get installed the same way:</p>
+<pre>
+sudo gem install mongrel
+sudo gem install capistrano
+</pre>
+<p>There are a handful of other gems you&#8217;ll undoubtedly want, and you can install them one at a time, or all on one line (if you have a list) like this:</p>
+<pre>
+sudo gem install RedCloth termios rspec sake
+</pre>
+<h3>The MySQL Gem</h3>
+<p>As of Rails 2.0, the default database system is is now <a href="http://www.sqlite.org/" title="SQLite">SQLite</a>, which also ships with Leopard.</p>
+<p>Many of us still run MySQL locally though, and want to install the MySQL gem for better Rails integration. If you followed my <a href="http://hivelogic.com/articles/installing-mysql-on-mac-os-x/" title="Installing MySQL on Mac OS X">MySQL for Mac OS X installation instructions</a> or used one of the official MySQL distributions, your MySQL lives in <code>/usr/local/mysql</code>. You can install the gem using the following command:</p>
+<pre>
+sudo gem install mysql -- --with-mysql-dir=/usr/local/mysql
+</pre>
+<h3>We&#8217;re Done</h3>
+<p>Congratulations, you now have a custom-built, properly installed Ruby on Rails system! You might also like to build your own <a href="http://hivelogic.com/articles/svn_on_os_x/">Subversion client</a> or run your own <a href="http://hivelogic.com/articles/installing-mysql-on-mac-os-x/">MySQL server</a> too.</p>
+</div>
+
+<h4 class="more">
+  <a href="/archive" title="Archive of articles written since 2000">More articles in the Archive &rarr;</a>
+</h4>
+
+</div>
+
+<div id="sidebar">
+
+
+	<div id="nav">
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/archive">Archive</a></li>
+			<li><a href="/contact">Contact</a></li>
+			<li><a href="/about">About</a></li>
+		  	<li><a href="/enkoder">Enkoder</a></li>
+			<li><a href="http://feeds.feedburner.com/hivelogic">RSS</a></li>
+			<li><a href="http://twitter.com/danbenjamin">Twitter</a></li>
+			<li><a href="https://plus.google.com/115054901319079500672/posts" title="Dan Benjamin on Google+">Google+</a></li>
+		</ul>
+	</div>
+
+	<p class="mini-text">
+		<a href="http://decknetwork.net/">Ads via The Deck</a>
+	</p>
+	<div id="the-deck">
+		<script type="text/javascript">
+		//<![CDATA[
+		(function(id) {
+		 document.write('<script type="text/javascript" src="' +
+		   'http://connect.decknetwork.net/deck' + id + '_js.php?' +
+		   (new Date().getTime()) + '"></' + 'script>');
+		})("HL");
+		//]]>
+		</script>
+	</div>
+
+  <script type="text/javascript" src="http://www.authenticjobs.com/js/jobs-json-r.js"></script>
+  <script type="text/javascript">
+    window.onload = function() {
+			str = ''
+      for (var i=0; i<1; i++) {
+        str += "<p>" + jobs.jobs[i].Company + " needs a <a href=\"" + jobs.jobs[i].URL + "\"> " + jobs.jobs[i].Title + "</a> in " + jobs.jobs[i].Location + "</p>";
+      }        
+	    document.getElementById("jobs").innerHTML = str;        
+    }
+  </script>
+
+	<p class="mini-text"><a href="http://www.authenticjobs.com">Find a Job</a></p>
+	<div id="authentic-jobs">
+		<a href="http://www.authenticjobs.com"><img src="/images/aj-hiring.png" id="authentic-sign" height="48" width="70" /></a>
+		<div id="jobs"></div>
+	</div>
+
+</div>
+
+
+<div id="footer">
+	<p>Tech, code, design, and geekery. Copyright &copy; 2000-2012 by <a href="http://danbenjamin.com" title="Dan Benjamin">Dan Benjamin</a>. All Rights Reserved. Hosted by <a href="http://joyent.com" title="Joyent">Joyent</a>.</p>
+</div>
+
+<!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6586200-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<!-- end google analytics -->
+
+
+</body>
+</html>
+

@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+
+<html>
+  <head> <!-- index -->
+            <title>C-- Home</title>
+            <!-- navtree[index] == Array -->
+            <!-- navtree[index][leaf] == Array[leaf] -->
+            <meta http-equiv = 'Content-Type' 
+                  content    = 'text/html; charset=iso-8859-1'>
+            <style type='text/css'>
+/*
+ * Cascading Style Sheet for http://cminusminus.eecs.harvard.edu/
+ */
+
+body {
+    background:         white;
+    color:              black;
+//    font-family:        Times, serif;
+}
+
+p {
+//    font-family:        Times, serif;
+}
+
+i, em {
+//    font-family:        Times, serif;
+}
+
+tt, code, pre {
+    font-family:        monospace;
+}
+
+pre {
+    margin-left:        2em;
+}
+
+/* don't mess with people's header fonts -- results look bad on IE 
+ * 
+ * h1, h2, h3, h4 {
+ *     font-family:        Verdana, Helvetica, Arial, sans-serif;
+ *     text-align:         left;
+ * }
+ * 
+ * h1 {
+ *     font:               140% sans-serif
+ * }
+ * 
+ * h2 {
+ *     font:               100% sans-serif;
+ * }
+ * 
+ */
+
+.small {
+    font-family:        Verdana, Helvetica, Arial, sans-serif;
+    color:              black;
+    background:         white;
+    font-size:          small;
+}
+
+.blue {
+    font-family:        Verdana, Helvetica, Arial, sans-serif;
+    background:         blue;
+    color:              white;
+}
+
+.red {
+    font-family:        Verdana, Helvetica, Arial, sans-serif;
+    background:         white;
+    color:              red;
+}
+.grey {
+    font-family:        Verdana, Helvetica, Arial, sans-serif;
+    background:         #cccccc;
+    color:              black;
+}
+        
+.smallblue {
+    font-family:        Verdana, Helvetica, Arial, sans-serif;
+    background:         blue;
+    color:              white;
+    font-size:          small;
+}
+
+.smallgrey {
+    font-family:        Verdana, Helvetica, Arial, sans-serif;
+    background:         #cccccc;
+    color:              black;
+    font-size:          small;
+}
+
+
+
+/* page map */
+DIV.pagemap {background: #CCF; } 
+DIV.pagemap {float: left; margin-right: 0.1cm; margin-left: 0.1cm;
+             font-family: sans-serif; width : 15%}
+DIV.pagemap P {margin-top : 1.5ex; margin-bottom : 0ex }
+DIV.pagemap P.sub {text-indent : 2em}
+/*LI.outdent {text-indent : -2em}*/
+DIV.pagemap { padding-left: 1em; padding-right: 1em;
+              padding-top: 1em; padding-bottom : 1em; line-height: 1.1}
+DIV.pagemap MENU, DIV.pagemap MENU LI, DIV.pagemap MENU LI P {
+  margin-top : 0cm; margin-bottom : 0cm; padding-top : 0cm; padding-bottom : 0cm;
+}
+DIV.footer {font-style : italic; font-size : smaller }
+DIV.pagemap { border-style : solid;
+              border-right-width : normal; border-left-width: none;
+              border-top-width : none; border-bottom-width: none }
+DIV.pagemap UL, DIV.pagemap DL, DIV.pagemap MENU {list-style: none}
+DIV.pagemap UL UL, DIV.pagemap DL DL {list-style: none}
+DIV.pagemap-header {text-align: center}
+DIV.pagemap DL, DIV.pagemap UL {text-align: left}
+  
+            </style>
+          </head>
+
+  <body>
+    <!-- index -->
+        <table width='100%' cellpadding='3' cellspacing='0' border='0'>
+          <tr>
+            <td class='smallblue' width='10%'><strong>C--</strong></td>
+            <td class='smallgrey' width='90%'><a href='http://www.eecs.harvard.edu/'>Harvard EECS</a>
+<img width='13' height='9' alt='->' 
+     src='./images/arrow_yellow.gif'>
+<a href='./index.html'>C-- Home</a>
+   
+            </td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td class='small'>
+            <a href='./index.html'>C-- Home</a>            |
+            <a href='./code.html'>Specification &amp; Downloads</a>          |
+            <a href='./news/2001.10.html'>Old News</a>          |
+            <a href='./papers.html'>Papers</a>             | 
+    <!--       <a href='./progress.html'>Work in Progress</a> |  -->
+            <a href='./mail.html'>Mailing List</a>         | 
+            <a href='./people.html'>People</a>             |
+            <a href='./faq.html'>FAQ</a>                   
+     <!-- |       <a href='./links.html'>Related Work</a> -->
+
+            </td>
+          </tr>
+        </table>     <br>
+
+    <center>
+      <em>``A new perspective on programming-language infrastructure''</em>
+    </center>
+
+    <h2>Welcome to C--</h2>
+    Suppose you are writing a compiler; how will you get quality
+    machine code? You might <strong>write your own code
+    generator</strong>---but that's a <em>lot</em> 
+    of work.  You might <strong>use somebody else's</strong>: perhaps
+    <a href=
+    "http://www.cs.virginia.edu/zephyr/vpo/">VPO</a>, <a href='http://cs1.cs.nyu.edu/leunga/www/MLRISC/Doc/html/index.html'>MLRISC</a>,
+    or the <a href=
+    "http://gcc.gnu.org/"><tt>gcc</tt></a>
+    back end.  But each of these impressive systems has a rich, complex,
+    and ill-documented interface, and furthermore, to
+    use MLRISC you must write your front end in&nbsp;ML, to use
+    <tt>gcc</tt> you must write it in&nbsp;C, and&nbsp;so&nbsp;on. 
+    You might <strong>generate&nbsp;C</strong>, if you can live without multiple
+    results in registers, proper tail calls, 
+    computed gotos, accurate garbage collection, and efficient
+    exceptions.</p>
+
+    <p>You would be much happier
+    with <strong>one portable assembly language</strong> that
+    could be generated by a front end and implemented by any of several
+    code generators. Such a language should serve as the
+    <strong>interface between high-level compilers and
+    retargetable, optimizing code generators</strong>. 
+    Authors of front ends and authors of code generators could cooperate easily.
+    <strong>C-- is that
+    language</strong>.</p>
+
+    <h3>What distinguishes C--</h3>
+
+The following aspects of C-- distinguish it from other compiler infrastructures:
+<ul>
+<li>Other infrastructures focus on adding new optimizations;
+C-- focuses on supporting
+<strong>multiple front ends for multiple languages</strong>.
+<li>C-- has a <a href=faq.html#notypes>machine-level type system</a>,
+so you don't have to shoehorn your favorite high-level language into a
+high-level data model that doesn't fit.
+<li>C-- provides a <strong>run-time interface</strong>, so you can implement
+garbage collection and exception handling using the techniques that
+are best suited to <em>your</em> language.
+</ul>
+The <strong>run-time interface</strong> is the most novel and most
+distinguishing feature of&nbsp;C--.
+
+
+    <h3>Where to go from here</h3>
+
+
+    To experiment with the language, <a
+    href="qc--.html"><strong>download Quick C--</strong></a>, which
+    includes an interpreter and a native-code compiler.
+    <!-- (or just <a href="/rsync">browse the source code</a>). -->
+
+    You'll also want the specification (in <a href=extern/man2.dvi>DVI</a>,
+    <a href=extern/man2.ps>PostScript</a>, or <a href=extern/man2.pdf>PDF</a> forms).
+   <!--
+    and the  <a href="/rsync/qc--/doc/release.ps">compiler's release notes</a>.
+    -->
+     The compiler's release notes are part of the source distribution in <tt>doc/release.ps</tt>.
+    <p>
+
+    For <strong>an overview of the design</strong>, consult our <a href=
+    "papers.html">papers</a>, which present an <em>evolving</em> view of&nbsp;C--.
+
+    <p>Please <strong>write front ends that emit C--</strong> or 
+     <strong>comment on our design</strong>.
+     If you're interested, please join the <a href= "mail.html">mailing list</a>.</p>
+
+ <!--
+    <h2>News</h2>
+
+    <ul>
+  -->
+<!--
+      <li>On 16 August 2002, <a href="qc--.html">Quick C--</a>
+      <strong>compiled and ran
+      hello world for the first time</strong>.  As of June 2003, we have
+      native and foreign calls, control flow, comparison, and <tt>cut
+      to</tt> working on Pentium, Alpha, and Mips platforms.
+-->
+<!--
+      <li>As of September 2003, 
+      the <a href="qc--.html">Quick C--</a> compiles and runs 
+      the lcc test suite for the Pentium.
+      We are working on back ends for other platforms including 
+      <strong>PowerPC</strong> (Mac OS&nbsp;X),
+      <strong>ARM</strong>, and <strong>IA-64</strong>.
+      The compiler is ready to be used, and we're working on the run-time system.
+-->
+
+<!--
+      <li>As of September 2002, <a href='./people.html'>Reuben Olinsky</a> and <a href='./people.html'>Christian Lindig</a> have a
+      bytecode interpreter that implements a large fraction of the C--
+      language <em>and run-time system</em>.  Our distribution
+      includes an interpreter and two sample clients: one that
+      demonstrates exception dispatch and one that demonstrates
+      garbage collection.
+-->
+    </ul>
+
+    <p>Research on C-- and Quick C-- is supported by a generous
+    gift from <a href="http://www.research.microsoft.com">Microsoft
+    Research</a> and by the <a http://www.nsf.gov/>National Science Foundation</a>
+    under grant number 0325460.
+    (Opinions, findings, and conclusions or recommendations expressed
+    in this material are those of the author(s) and do not necessarily
+    reflect the views of the National Science Foundation.)
+    <strong>The results of our research may be used freely by
+    anyone for any purpose</strong>. <br><hr size='1'><span class='small'>Contact: <a href='mailto:webmaster@cminusminus.org'>C-- Webmaster</a>. 
+URL: <tt><a href='http://www.cminusminus.org/'>http://www.cminusminus.org/</a></tt>.
+Last edited: Sat 11 Oct 2008 16:57 EDT.</span>
+<!-- last edited by  -->
+
+  </body>
+</html>
+

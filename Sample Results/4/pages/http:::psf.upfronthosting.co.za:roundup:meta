@@ -1,0 +1,1287 @@
+<!--
+ This is the default body that is displayed when people visit the
+ tracker. The tag below lists the currently open issues. You may
+ replace it with a greeting message, or a different list of issues or
+ whatever. It's a good idea to have the issues on the front page though
+-->
+<!-- $Id$ -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>
+  List of issues
+   - PSF Meta Tracker
+</title>
+<link rel="stylesheet" type="text/css" href="@@file/style.css">
+<meta http-equiv="Content-Type"
+      content="text/html; charset=utf-8" />
+
+<script type="text/javascript">
+submitted = false;
+function submit_once() {
+    if (submitted) {
+        alert("Your request is being processed.\nPlease be patient.");
+        event.returnValue = 0;    // work-around for IE
+        return 0;
+    }
+    submitted = true;
+    return 1;
+}
+
+function help_window(helpurl, width, height) {
+    HelpWin = window.open('http://psf.upfronthosting.co.za/roundup/meta/' + helpurl, 'RoundupHelpWindow', 'scrollbars=yes,resizable=yes,toolbar=no,height='+height+',width='+width);
+}
+</script>
+
+
+
+</head>
+<body class="body">
+
+<table class="body">
+
+<tr>
+ <td class="page-header-left">&nbsp;</td>
+ <td class="page-header-top">
+   <div id="searchbox">
+     <form method="GET" action="issue">
+       <input type="hidden" name="@columns"
+              value="id,activity,title,creator,assignedto,status" />
+       <input type="hidden" name="@sort" value="activity" />
+       <input type="hidden" name="@group" value="priority" />
+       <input id="search-text" name="@search_text" size="10" />
+       <input type="submit" id="submit" name="submit"
+              value="Search" />
+     </form>
+   </div>
+   <div id="body-title">
+     <h2>
+  List of issues
+  
+</h2>
+   </div>
+ </td>
+</tr>
+
+<tr>
+ <td rowspan="2" valign="top" class="sidebar">
+  
+
+  <form method="POST"
+        action="http://psf.upfronthosting.co.za/roundup/meta/">
+   <p class="classblock">
+    <b>Issues</b><br>
+    
+    <a href="issue?status=-1,1,2,3,4,5,6,7&amp;@sort=-activity&amp;@search_text=&amp;@columns=id,activity,title,creator,status&amp;@dispname=Show Unassigned&amp;@group=priority&amp;@filter=status,assignedto&amp;assignedto=-1&amp;@pagesize=50&amp;@startwith=0">Show Unassigned</a><br>
+    <a href="issue?status=-1,1,2,3,4,5,6,7&amp;@sort=-activity&amp;@search_text=&amp;@dispname=Show All&amp;@filter=status&amp;@group=priority&amp;@columns=id,activity,title,creator,assignedto,status&amp;@pagesize=50&amp;@startwith=0">Show All</a><br>
+    <a href="issue?@template=search">Search</a><br>
+    <input type="submit" class="form-small"
+           value="Show issue:"><input class="form-small" size="4" type="text" name="@number">
+    <input type="hidden" name="@type" value="issue">
+    <input type="hidden" name="@action" value="show">
+   </p>
+  </form>
+
+  
+
+  
+
+  <form method="POST"
+        action="http://psf.upfronthosting.co.za/roundup/meta/">
+   <p class="userblock">
+    <b>Login</b><br>
+    <input size="10" name="__login_name"><br>
+    <input size="10" type="password" name="__login_password"><br>
+    <input type="hidden" name="@action" value="Login">
+    <input type="checkbox" name="remember" id="remember">
+    <label for="remember">Remember me?</label><br>
+    <input type="submit" value="Login"><br>
+    <input type="hidden" name="__came_from"
+           value="http://psf.upfronthosting.co.za/roundup/meta/">
+    <input type="hidden" name="@columns" value="id,activity,title,creator,assignedto,status">
+<input type="hidden" name="@sort" value="-activity">
+<input type="hidden" name="@group" value="priority">
+<input type="hidden" name="@filter" value="status">
+<input type="hidden" name="status" value="-1,1,2,3,4,5,6,7">
+<input type="hidden" name="@pagesize" value="50">
+<input type="hidden" name="@startwith" value="0">
+    <a href="user?@template=register">Register</a><br>
+    <a href="user?@template=forgotten">Lost&nbsp;your&nbsp;login?</a><br>
+   </p>
+  </form>
+
+  
+  <p class="userblock">
+   <b>Help</b><br>
+   <a href="http://www.roundup-tracker.org">Roundup docs</a>
+  </p>
+ </td>
+ <td>
+  
+ </td>
+</tr>
+<tr>
+ <td class="content">
+
+
+
+
+
+
+ <table class="list">
+  <tr>
+   
+   <th>ID</th>
+   
+   <th>Activity</th>
+   
+   
+   <th>Title</th>
+   <th>Status</th>
+   <th>Creator</th>
+   <th>Assigned&nbsp;To</th>
+  </tr>
+ 
+  <tr>
+   <th class="group" colspan="6">
+    
+     (no priority set)
+    
+   </th>
+  </tr>
+
+  <tr>
+   
+   <td>505</td>
+   
+   <td class="date">3 weeks ago</td>
+   
+   
+   <td>
+    <a href="issue505">Abuse Message</a>
+   </td>
+   <td>chatting</td>
+   <td>izak</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  <tr>
+   <th class="group" colspan="6">
+    
+     urgent
+    
+   </th>
+  </tr>
+
+  <tr>
+   
+   <td>488</td>
+   
+   <td class="date">3 months ago</td>
+   
+   
+   <td>
+    <a href="issue488">Broken RSS links on Rietveld</a>
+   </td>
+   <td>chatting</td>
+   <td>serhiy.storchaka</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  <tr>
+   <th class="group" colspan="6">
+    
+     bug
+    
+   </th>
+  </tr>
+
+  <tr>
+   
+   <td>507</td>
+   
+   <td class="date">yesterday</td>
+   
+   
+   <td>
+    <a href="issue507">Tracker allows a user to change username to existing username.</a>
+   </td>
+   <td>chatting</td>
+   <td>ramchandra.apte</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>503</td>
+   
+   <td class="date">4 weeks ago</td>
+   
+   
+   <td>
+    <a href="issue503">OpenID provider discovery failed</a>
+   </td>
+   <td>unread</td>
+   <td>pitrou</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>500</td>
+   
+   <td class="date">1 month ago</td>
+   
+   
+   <td>
+    <a href="issue500">Posting changes from "old" tracker pages causes spurious updates</a>
+   </td>
+   <td>chatting</td>
+   <td>stephen</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>492</td>
+   
+   <td class="date">2 months ago</td>
+   
+   
+   <td>
+    <a href="issue492">make "Failed issue tracker submission" e-mails to python-dev less cryptic</a>
+   </td>
+   <td>chatting</td>
+   <td>chris.jerdonek</td>
+   <td>ezio.melotti</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>490</td>
+   
+   <td class="date">3 months ago</td>
+   
+   
+   <td>
+    <a href="issue490">Review links crash after changing username</a>
+   </td>
+   <td>unread</td>
+   <td>heikki.partanen</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>458</td>
+   
+   <td class="date">3 months ago</td>
+   
+   
+   <td>
+    <a href="issue458">editing "homepage" field is not possible</a>
+   </td>
+   <td>unread</td>
+   <td>kristjan.jonsson</td>
+   <td>loewis</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>484</td>
+   
+   <td class="date">4 months ago</td>
+   
+   
+   <td>
+    <a href="issue484">AttributeError 'NoneType' object has no attribute 'issue' when replying to issue</a>
+   </td>
+   <td>chatting</td>
+   <td>chris.jerdonek</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>414</td>
+   
+   <td class="date">5 months ago</td>
+   
+   
+   <td>
+    <a href="issue414">Mercurial integration: verify repo when adding</a>
+   </td>
+   <td>chatting</td>
+   <td>eric.araujo</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>474</td>
+   
+   <td class="date">6 months ago</td>
+   
+   
+   <td>
+    <a href="issue474">User cannot register with bugs.python.org - no registration email</a>
+   </td>
+   <td>chatting</td>
+   <td>mfoord</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>448</td>
+   
+   <td class="date">7 months ago</td>
+   
+   
+   <td>
+    <a href="issue448">Cannot log into search results page</a>
+   </td>
+   <td>chatting</td>
+   <td>terry.reedy</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>472</td>
+   
+   <td class="date">7 months ago</td>
+   
+   
+   <td>
+    <a href="issue472">b.p.o logo link back to python.org</a>
+   </td>
+   <td>chatting</td>
+   <td>techtonik</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>264</td>
+   
+   <td class="date">8 months ago</td>
+   
+   
+   <td>
+    <a href="issue264">Mail gateway borks quotes and console sessions</a>
+   </td>
+   <td>chatting</td>
+   <td>ajaksu2</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>298</td>
+   
+   <td class="date">8 months ago</td>
+   
+   
+   <td>
+    <a href="issue298">realname search should be case insensitive</a>
+   </td>
+   <td>chatting</td>
+   <td>r.david.murray</td>
+   <td>ezio.melotti</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>467</td>
+   
+   <td class="date">8 months ago</td>
+   
+   
+   <td>
+    <a href="issue467">People searches return all issues</a>
+   </td>
+   <td>chatting</td>
+   <td>terry.reedy</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>352</td>
+   
+   <td class="date">8 months ago</td>
+   
+   
+   <td>
+    <a href="issue352">delete button for queries does not work</a>
+   </td>
+   <td>chatting</td>
+   <td>r.david.murray</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>393</td>
+   
+   <td class="date">8 months ago</td>
+   
+   
+   <td>
+    <a href="issue393">Security policy should be visible on top page of tracker, maybe every page</a>
+   </td>
+   <td>chatting</td>
+   <td>stephen</td>
+   <td>ezio.melotti</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>365</td>
+   
+   <td class="date">8 months ago</td>
+   
+   
+   <td>
+    <a href="issue365">No issue exists with that id</a>
+   </td>
+   <td>chatting</td>
+   <td>ipatrol</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>295</td>
+   
+   <td class="date">8 months ago</td>
+   
+   
+   <td>
+    <a href="issue295">title is changed by email updates when only whitespace had changed</a>
+   </td>
+   <td>chatting</td>
+   <td>r.david.murray</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>372</td>
+   
+   <td class="date">9 months ago</td>
+   
+   
+   <td>
+    <a href="issue372">Default search missed matching issue title for "capi"</a>
+   </td>
+   <td>chatting</td>
+   <td>ncoghlan</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>449</td>
+   
+   <td class="date">10 months ago</td>
+   
+   
+   <td>
+    <a href="issue449">Sending email to bugs.python.org could create bug report with wrong name.</a>
+   </td>
+   <td>unread</td>
+   <td>ramchandra.apte</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>439</td>
+   
+   <td class="date">10 months ago</td>
+   
+   
+   <td>
+    <a href="issue439">Email notifictations not received for rietveld review</a>
+   </td>
+   <td>chatting</td>
+   <td>dmalcolm</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>434</td>
+   
+   <td class="date">11 months ago</td>
+   
+   
+   <td>
+    <a href="issue434">ProgrammingError while deleting patch set</a>
+   </td>
+   <td>chatting</td>
+   <td>Retro</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>435</td>
+   
+   <td class="date">12 months ago</td>
+   
+   
+   <td>
+    <a href="issue435">Rietveld Code Review Tool bugs</a>
+   </td>
+   <td>chatting</td>
+   <td>Retro</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>432</td>
+   
+   <td class="date">14 months ago</td>
+   
+   
+   <td>
+    <a href="issue432">Rietveld traceback</a>
+   </td>
+   <td>chatting</td>
+   <td>pitrou</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>408</td>
+   
+   <td class="date">14 months ago</td>
+   
+   
+   <td>
+    <a href="issue408">Tracker development setup fails</a>
+   </td>
+   <td>chatting</td>
+   <td>vinay.sajip</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>424</td>
+   
+   <td class="date">14 months ago</td>
+   
+   
+   <td>
+    <a href="issue424">Rietveld: AssertionError when trying to reply to comments</a>
+   </td>
+   <td>chatting</td>
+   <td>nadeem.vawda</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>382</td>
+   
+   <td class="date">19 months ago</td>
+   
+   
+   <td>
+    <a href="issue382">Bad CC on review</a>
+   </td>
+   <td>chatting</td>
+   <td>pitrou</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>389</td>
+   
+   <td class="date">22 months ago</td>
+   
+   
+   <td>
+    <a href="issue389">Weird behaviour when logging in using the registered email address and not the login name</a>
+   </td>
+   <td>unread</td>
+   <td>carsten.klein</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>367</td>
+   
+   <td class="date">25 months ago</td>
+   
+   
+   <td>
+    <a href="issue367">"patch" keyword buggy</a>
+   </td>
+   <td>chatting</td>
+   <td>pitrou</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>369</td>
+   
+   <td class="date">25 months ago</td>
+   
+   
+   <td>
+    <a href="issue369">email gateway refused comment posting</a>
+   </td>
+   <td>chatting</td>
+   <td>pitrou</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>286</td>
+   
+   <td class="date">44 months ago</td>
+   
+   
+   <td>
+    <a href="issue286">Spam issues created using forged email</a>
+   </td>
+   <td>chatting</td>
+   <td>pefu512</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>235</td>
+   
+   <td class="date">48 months ago</td>
+   
+   
+   <td>
+    <a href="issue235">incorrent To: headers in mail sent from tracker upon error processing email</a>
+   </td>
+   <td>chatting</td>
+   <td>gregory.p.smith</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>195</td>
+   
+   <td class="date">58 months ago</td>
+   
+   
+   <td>
+    <a href="issue195">Support report+username@bugs.python.org</a>
+   </td>
+   <td>chatting</td>
+   <td>loewis</td>
+   <td>izak</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>190</td>
+   
+   <td class="date">60 months ago</td>
+   
+   
+   <td>
+    <a href="issue190">security problem</a>
+   </td>
+   <td>chatting</td>
+   <td>phr</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  <tr>
+   <th class="group" colspan="6">
+    
+     feature
+    
+   </th>
+  </tr>
+
+  <tr>
+   
+   <td>506</td>
+   
+   <td class="date">1 week ago</td>
+   
+   
+   <td>
+    <a href="issue506">Remove Extension Modules from Components:</a>
+   </td>
+   <td>unread</td>
+   <td>terry.reedy</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>496</td>
+   
+   <td class="date">1 month ago</td>
+   
+   
+   <td>
+    <a href="issue496">Update Roundup to 1.4.21</a>
+   </td>
+   <td>unread</td>
+   <td>ezio.melotti</td>
+   <td>ezio.melotti</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>420</td>
+   
+   <td class="date">4 months ago</td>
+   
+   
+   <td>
+    <a href="issue420">Display 'dependency of' and 'superseder of'</a>
+   </td>
+   <td>chatting</td>
+   <td>ncoghlan</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>412</td>
+   
+   <td class="date">4 months ago</td>
+   
+   
+   <td>
+    <a href="issue412">Allow for more than one attach file</a>
+   </td>
+   <td>chatting</td>
+   <td>sandro.tosi</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>418</td>
+   
+   <td class="date">4 months ago</td>
+   
+   
+   <td>
+    <a href="issue418">Change background color if an issue is closed</a>
+   </td>
+   <td>chatting</td>
+   <td>haypo</td>
+   <td>ezio.melotti</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>481</td>
+   
+   <td class="date">5 months ago</td>
+   
+   
+   <td>
+    <a href="issue481">Display committer icon in user search result lists</a>
+   </td>
+   <td>chatting</td>
+   <td>chris.jerdonek</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>480</td>
+   
+   <td class="date">5 months ago</td>
+   
+   
+   <td>
+    <a href="issue480">Add "IRC Handle" to user details</a>
+   </td>
+   <td>unread</td>
+   <td>chris.jerdonek</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>469</td>
+   
+   <td class="date">8 months ago</td>
+   
+   
+   <td>
+    <a href="issue469">E-mails with S/MIME (SMIME) signatures should not create	attachments</a>
+   </td>
+   <td>chatting</td>
+   <td>jaraco</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>461</td>
+   
+   <td class="date">8 months ago</td>
+   
+   
+   <td>
+    <a href="issue461">Add note about the contributor agreement on the tracker</a>
+   </td>
+   <td>chatting</td>
+   <td>ezio.melotti</td>
+   <td>ezio.melotti</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>400</td>
+   
+   <td class="date">8 months ago</td>
+   
+   
+   <td>
+    <a href="issue400">when replying by email, don't send another one</a>
+   </td>
+   <td>chatting</td>
+   <td>benjamin.peterson</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>373</td>
+   
+   <td class="date">10 months ago</td>
+   
+   
+   <td>
+    <a href="issue373">Add 'module' field to tracker</a>
+   </td>
+   <td>chatting</td>
+   <td>techtonik</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>446</td>
+   
+   <td class="date">10 months ago</td>
+   
+   
+   <td>
+    <a href="issue446">Break down 'open' into 'enhancements' vs 'bugs' in roundup-summary</a>
+   </td>
+   <td>unread</td>
+   <td>r.david.murray</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>441</td>
+   
+   <td class="date">11 months ago</td>
+   
+   
+   <td>
+    <a href="issue441">Allow users to specify keywords</a>
+   </td>
+   <td>unread</td>
+   <td>techtonik</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+ 
+  
+
+  <tr>
+   
+   <td>438</td>
+   
+   <td class="date">11 months ago</td>
+   
+   
+   <td>
+    <a href="issue438">don't send me changes I made</a>
+   </td>
+   <td>unread</td>
+   <td>tshepang</td>
+   <td>&nbsp;</td>
+  </tr>
+
+ 
+
+ 
+ <tr>
+  <th colspan="6">
+   <table width="100%">
+    <tr class="navigation">
+     <th>
+      
+      &nbsp;
+     </th>
+     <th>1..50 out of 91</th>
+     <th>
+      <a href="issue?@startwith=50&amp;@pagesize=50&amp;@columns=id,activity,title,creator,assignedto,status&amp;@sort=-activity&amp;@group=priority&amp;@filter=status&amp;status=-1,1,2,3,4,5,6,7">next &gt;&gt;</a>
+      &nbsp;
+     </th>
+    </tr>
+   </table>
+  </th>
+ </tr>
+ 
+</table>
+
+<a href="issue?@action=export_csv&amp;@columns=id,activity,title,creator,assignedto,status&amp;@sort=-activity&amp;@group=priority&amp;@filter=status&amp;@pagesize=50&amp;@startwith=0&amp;status=-1,1,2,3,4,5,6,7">Download as CSV</a>
+
+<form method="GET" class="index-controls" action="issue">
+
+ <table class="form">
+  
+  <tr>
+   <th>
+    Sort on:
+   </th>
+   <td>
+    <select name="@sort0">
+     <option value="">- nothing -</option>
+     <option selected="selected" value="activity">activity</option>
+     <option value="actor">actor</option>
+     <option value="assignedto">assignedto</option>
+     <option value="creation">creation</option>
+     <option value="creator">creator</option>
+     <option value="files">files</option>
+     <option value="id">id</option>
+     <option value="messages">messages</option>
+     <option value="nosy">nosy</option>
+     <option value="priority">priority</option>
+     <option value="status">status</option>
+     <option value="superseder">superseder</option>
+     <option value="title">title</option>
+     <option value="topic">topic</option>
+    </select>
+   </td>
+   <th>Descending:</th>
+   <td><input type="checkbox" checked="checked"
+              name="@sortdir0">
+   </td>
+  </tr>
+  
+  
+  <tr>
+   <th>
+    
+   </th>
+   <td>
+    <select name="@sort1">
+     <option value="">- nothing -</option>
+     <option value="activity">activity</option>
+     <option value="actor">actor</option>
+     <option value="assignedto">assignedto</option>
+     <option value="creation">creation</option>
+     <option value="creator">creator</option>
+     <option value="files">files</option>
+     <option value="id">id</option>
+     <option value="messages">messages</option>
+     <option value="nosy">nosy</option>
+     <option value="priority">priority</option>
+     <option value="status">status</option>
+     <option value="superseder">superseder</option>
+     <option value="title">title</option>
+     <option value="topic">topic</option>
+    </select>
+   </td>
+   <th>Descending:</th>
+   <td><input type="checkbox" name="@sortdir1">
+   </td>
+  </tr>
+  
+  
+  <tr>
+   <th>
+    Group on:
+   </th>
+   <td>
+    <select name="@group0">
+     <option value="">- nothing -</option>
+     <option value="activity">activity</option>
+     <option value="actor">actor</option>
+     <option value="assignedto">assignedto</option>
+     <option value="creation">creation</option>
+     <option value="creator">creator</option>
+     <option value="files">files</option>
+     <option value="id">id</option>
+     <option value="messages">messages</option>
+     <option value="nosy">nosy</option>
+     <option selected="selected" value="priority">priority</option>
+     <option value="status">status</option>
+     <option value="superseder">superseder</option>
+     <option value="title">title</option>
+     <option value="topic">topic</option>
+    </select>
+   </td>
+   <th>Descending:</th>
+   <td><input type="checkbox" name="@groupdir0">
+   </td>
+  </tr>
+  
+  
+  <tr>
+   <th>
+    
+   </th>
+   <td>
+    <select name="@group1">
+     <option value="">- nothing -</option>
+     <option value="activity">activity</option>
+     <option value="actor">actor</option>
+     <option value="assignedto">assignedto</option>
+     <option value="creation">creation</option>
+     <option value="creator">creator</option>
+     <option value="files">files</option>
+     <option value="id">id</option>
+     <option value="messages">messages</option>
+     <option value="nosy">nosy</option>
+     <option value="priority">priority</option>
+     <option value="status">status</option>
+     <option value="superseder">superseder</option>
+     <option value="title">title</option>
+     <option value="topic">topic</option>
+    </select>
+   </td>
+   <th>Descending:</th>
+   <td><input type="checkbox" name="@groupdir1">
+   </td>
+  </tr>
+  
+  <tr><td colspan="4">
+              <input type="submit" value="Redisplay">
+              <input type="hidden" name="@columns" value="id,activity,title,creator,assignedto,status">
+<input type="hidden" name="@filter" value="status">
+<input type="hidden" name="status" value="-1,1,2,3,4,5,6,7">
+<input type="hidden" name="@pagesize" value="50">
+<input type="hidden" name="@startwith" value="0">
+  </td></tr>
+ </table>
+</form>
+
+
+
+</td>
+</tr>
+
+</table>
+
+
+
+</body>
+</html>
+
+<!-- SHA: 365c00d84cea66ca020ffac4ba7ce67ebc299ed4 -->
+
+<!-- SHA: c87a4e18d59a527331f1d367c0c6cc67ee123e63 -->

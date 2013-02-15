@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:cal="xalan://java.util.GregorianCalendar">
+<head>
+<script type="text/javascript" src="/misc/javascript/mobDesk.js" xmlns="http://www.w3.org/1999/xhtml"> </script>
+<script type="text/javascript" xmlns="http://www.w3.org/1999/xhtml">
+							mothershipDesktopURL='';
+							
+							
+							
+							
+							
+							mothershipMobileURL = 'http://m.kidshealth.org/parent/firstaid_safe/sheets/tooth_sheet.html';
+						</script>
+	
+	<script>
+			// Set common mobile vars
+		arrivingURL=window.location.href;
+		lowercaseURL=arrivingURL.toLowerCase();
+		insert2URL="";
+		hashLocation=lowercaseURL.indexOf("#");
+		
+		function createCookie22(name,value,days) {
+	
+			if (days) {
+				var date = new Date();
+				date.setTime(date.getTime()+(days*24*60*60*1000));
+				var expires = "; expires="+date.toGMTString();
+			}
+			else var expires = "";
+			document.cookie = name+"="+value+expires+";path=/;domain=kidshealth.org";
+		}
+			
+		function readCookie22(name) {
+			var nameEQ = name + "=";
+			var ca = document.cookie.split(';');
+			for(var i=0;i < ca.length;i++) {
+				var c = ca[i];
+				while (c.charAt(0)==' ') c = c.substring(1,c.length);
+				if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+			}
+			return null;
+		}
+			
+		function dynamicWellnessCenter2Category() {
+			// check if wellness center and switch pageset
+			/*if(lowercaseURL.indexOf("ps=180")!=-1 || lowercaseURL.indexOf("ps=280")!=-1 || lowercaseURL.indexOf("ps=380")!=-1) {
+				arrivingURL=arrivingURL.replace("ps=180","ps=103");
+				arrivingURL=arrivingURL.replace("ps=280","ps=203");
+				arrivingURL=arrivingURL.replace("ps=380","ps=303");
+			}*/
+			/* Newest version pre WC lookup removal... removing this to nullify wc js redirect/rewrite
+			if(mobileWcURL!='') { mobileURL = mobileWcURL; }
+			*/
+		}
+
+		function urlify() {
+		//mobileURL=arrivingURL.substr(0,7)+insert2URL+arrivingURL.substr(7);
+		//alert("the lcurl is"+lowercaseURL+"and the hash location is"+hashLocation);
+			
+		
+			if(lowercaseURL.indexOf("pagemanager")!=-1 && lowercaseURL.indexOf("#")!=-1) {
+					mobileURL=arrivingURL.substr(0,hashLocation)+"\&m=y"+arrivingURL.substr(hashLocation);
+					dynamicWellnessCenter2Category();
+			}
+			
+			else if(lowercaseURL.indexOf("pagemanager")!=-1) {
+					mobileURL=arrivingURL+"\&m=y";
+					dynamicWellnessCenter2Category();
+			}
+			
+			else {
+				//mobileURL=arrivingURL.substr(0,7)+insert2URL+arrivingURL.substr(7);
+				mobileURL=mothershipMobileURL;
+			}
+			
+			if(mobileURL.indexOf("lic=1&")!=-1) {
+				mobileURL=mobileURL.replace('lic=1','lic=152');	
+			//document.write(mobileURL);
+			}
+			
+		}
+	
+		function mobileDesktop() {
+			//alert("mobile Desktop function run");
+			thisScreen=screen.width;
+			thisUA=navigator.userAgent;
+			thisUA=thisUA.toLowerCase();
+		if(thisUA.indexOf("iphone")!=-1||thisUA.indexOf("android")!=-1||thisUA.indexOf("iemobile")!=-1||thisUA.indexOf("blackberry")!=-1||thisUA.indexOf("opera m")!=-1||thisUA.indexOf("symbian")!=-1||thisUA.indexOf("dsi")!=-1) {
+				window.device="mobile";	
+			}
+			else if(thisScreen<=599) {
+				window.device="mobile";
+			}
+			else{ window.device="desktop"};
+			
+			if(device=="mobile") {
+				urlify();
+				document.location=mobileURL;
+			}
+			else {desktop152To1();}
+		}
+	
+		function desktopPrefCookieCheck() {
+			var desktopPreferred = readCookie22('desktopPref');
+			if(desktopPreferred==1) {
+				// do nothing unless licensee is 152
+				// desktop152To1();
+			}
+			else {
+				//alert("mobile"+desktopPreferred);
+				mobileDesktop();
+			}
+		}
+	
+		function linkToMobile() {
+			urlify();
+			document.location=mobileURL;
+			alert("hey, this is used!");
+		}
+		
+		function desktop152To1() {
+			if(device=="desktop" && lowercaseURL.indexOf("lic=152") !=-1) {
+				mothershipDesktopFrom152=arrivingURL.replace('lic=152','lic=1');
+				document.location=mothershipDesktopFrom152;
+			}
+		}
+		
+		desktopPrefCookieCheck();
+	
+		</script>
+		
+	
+<meta name="robots" content="NOODP" xmlns="http://www.w3.org/1999/xhtml"/>
+<meta name="keywords" content="first-aid, firstaid, first aid, knocked out tooth, knocked-out tooth, teeth, tooth injuries, dental injury, dental emergency, what to do, emergency, emergency room, my child's tooth fell out, CD1Dental Care" xmlns="http://www.w3.org/1999/xhtml"/>
+<meta name="description" content="A knocked-out permanent tooth is a dental emergency. Find out what to do in this printer-friendly sheet." xmlns="http://www.w3.org/1999/xhtml"/>
+<meta name="notify" content="N" xmlns="http://www.w3.org/1999/xhtml"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" xmlns="http://www.w3.org/1999/xhtml"/>
+<link href="/css/khcontent_style.css" type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml"/>
+<link href="/licensees/standard_licensee/css/moreResourcesStyles.css" type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml"/>
+<!--[if IE 6]>
+					<link rel="stylesheet" type="text/css" href="/css/IE6Styles.css" />
+				<![endif]-->
+<!--[if IE 7]>
+					<link rel="stylesheet" type="text/css" href="/css/IE7Styles.css" />
+				<![endif]-->
+<link type="text/css" rel="stylesheet" href="/css/wellnessCenterMain.css" xmlns="http://www.w3.org/1999/xhtml"/>
+<!--[if IE 6]>
+					<link rel="stylesheet" type="text/css" href="/licensees/standard_licensee/css/moreResourcesStylesIE6.css" />
+					<![endif]-->
+<!--[if IE 7]>
+					<link rel="stylesheet" type="text/css" href="/licensees/standard_licensee/css/moreResourcesStylesIE7.css" />
+					<![endif]-->
+<link href="/css/khcontent_printstyle.css" media="print" type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml"/>
+<title xmlns="http://www.w3.org/1999/xhtml">Dental Injuries Instruction Sheet </title>
+<script src="/licensees/standard_licensee/js/functions.js" language="JavaScript" type="text/javascript" xmlns="http://www.w3.org/1999/xhtml"> </script>
+<script src="/misc/javascript/khCommon.js" language="JavaScript" type="text/javascript" xmlns="http://www.w3.org/1999/xhtml"> </script>
+<script type="text/javascript" src="/misc/movie/flashobject.js" xmlns="http://www.w3.org/1999/xhtml"> </script>
+<script type="text/javascript" src="/licensees/standard_licensee/js/moreResourcesJS.js" xmlns="http://www.w3.org/1999/xhtml"> </script>
+<script src="/licensees/standard_licensee/js/pageNavigate.js" type="text/javascript" xmlns="http://www.w3.org/1999/xhtml"> </script>
+<meta name="site" content="MOTHERSHIP" xmlns="http://www.w3.org/1999/xhtml"/>
+<meta name="MSL" content="%26ps=190%26article_set=31484%26cat_id=20221" xmlns="http://www.w3.org/1999/xhtml"/>
+<script src="/licensees/standard_licensee/js/common_functions_mothership.js" language="JavaScript" type="text/javascript" xmlns="http://www.w3.org/1999/xhtml"> </script>
+<script src="/licensees/licensee1/js/whatOthersAreReading.js" language="JavaScript" type="text/javascript" xmlns="http://www.w3.org/1999/xhtml"> </script>
+<script type="text/javascript" xmlns="http://www.w3.org/1999/xhtml">
+						function clearText(field){
+							if (field.defaultValue == field.value) field.value = '';
+							else if (field.value == '') field.value = field.defaultValue;
+							}
+							
+						function articleFontSize(changedFontSize) {
+							fontSize = document.getElementById('khcontent');
+							fontSize.style.fontSize = changedFontSize;
+							}
+					</script>
+<script type="text/javascript" xmlns="http://www.w3.org/1999/xhtml">
+			var KHAdSection = "parent";
+			var KHAdCat = "parent_firstaid_safe";
+			var KHAdSubCat = "parent_firstaid_safe_sheets";
+			
+			
+			var KHAdTitle = "31484";
+			 
+			</script>
+<!--
+			gamtags:-
+			Section: parent
+			Category: parent_firstaid_safe
+			SubCategory: parent_firstaid_safe_sheets
+			Article: parent_firstaid_safe_sheets_31484
+			??
+		-->
+<script src="/misc/javascript/readSpeaker.js" language="JavaScript" type="text/javascript" xmlns="http://www.w3.org/1999/xhtml"> </script>
+<script type="text/javascript" src="/licensees/standard_licensee/js/tsClear.js" xmlns="http://www.w3.org/1999/xhtml"> </script>
+</head>
+<body id="white" onload="KH_loadFunctions(); reInitializeCookie();" onunload="KH_unloadFunctions();">
+<div id="branded_wide_width">
+<div id="khcontent" xmlns="http://www.w3.org/1999/xhtml">
+<div id="xp1"> </div>
+<br clear="all" style="width: 0; height: 0; line-height: 0; font-size: 0;"/>
+<div id="khcontent_article" lang="en-US">
+<div id="NavigatePage1">
+<div id="whichRead_1">
+<span class="ISI_MESSAGE">
+<!--
+														
+														The following article is from KidsHealth.
+													Dental Injuries Instruction Sheet-->
+</span>
+<!--Lexicomp or Print Page--><p class="instructionSheetScreen"><img alt="Dental Injuries" name="1197-DENTAL INJURIES" src="/image/ial/images/1197/1197_image.gif" title="Dental Injuries" /></p>
+
+<p class="instructionSheetPrint"><img alt="DentalInjuries.png" name="1076-DENTALINJURIES.PNG" src="/image/ial/images/1076/1076_image.png" title="DentalInjuries.png" /></p>
+<span class="ISI_MESSAGE">
+<!--Thank you for listening to this KidsHealth audio cast. The information you heard, is for educational purposes only. If you need medical advice, diagnoses, or treatment, consult your doctor. This audio cast is Copyrighted by KidsHealth and The Nemours Foundation. All rights are reserved. Visit w w w dot KidsHealth dot org for more.-->
+</span>
+</div>
+</div>
+</div>
+</div>
+<div id="nemours_branded_footer">
+<p>&#169; 1995-2012 The Nemours Foundation. All rights reserved.</p>
+</div>
+<div id="licensee_branded_footer">
+<p>
+<img align="right" width="140" height="63" border="0" src="/licensees/licensee1/images/brand_logo.gif"/>
+</p>
+<h3>KidsHealth.org</h3>
+<p>The most-visited site<br/>devoted to children's health and development</p>
+</div>
+</div>
+	
+		<!-- Quantcast Tag -->
+<script type="text/javascript">
+var _qevents = _qevents || [];
+
+(function() {
+var elem = document.createElement('script');
+elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+elem.async = true;
+elem.type = "text/javascript";
+var scpt = document.getElementsByTagName('script')[0];
+scpt.parentNode.insertBefore(elem, scpt);
+})();
+
+_qevents.push({
+qacct:"p-T4Ks3kAYmHaDA"
+});
+</script>
+
+<noscript>
+<div style="display:none;">
+<img src="http://pixel.quantserve.com/pixel/p-T4Ks3kAYmHaDA.gif" border="0" height="1" width="1" alt="Quantcast"/>
+</div>
+</noscript>
+<!-- End Quantcast tag -->
+			
+	</body>
+</html>

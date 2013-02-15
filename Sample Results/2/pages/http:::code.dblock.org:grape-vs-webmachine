@@ -1,0 +1,321 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta charset="utf-8" />
+ <!--[if lt IE 9]>
+    <script src="javascripts/html5.js"></script>
+ <![endif]-->
+ <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /><link rel="stylesheet" href="stylesheets/base.css" /><link rel="stylesheet" href="stylesheets/skeleton.css" /><link rel="stylesheet" href="stylesheets/layout.css" /><link rel="stylesheet" href="stylesheets/blog.css" /><link rel="shortcut icon" href="images/favicon.ico" /><link rel="apple-touch-icon" href="images/apple-touch-icon.png" /><link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png" /><link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png" /><link id="ctl00_linkRss" rel="alternate" type="application/rss+xml" title="Dblock.org | Code (RSS)" href="http://code.dblock.org/RssBlog.aspx" /><link id="ctl00_linkAtom" rel="alternate" type="application/atom+xml" title="Dblock.org | Code (Atom)" href="http://code.dblock.org/AtomBlog.aspx" /><link id="ctl00_linkAtomPost" rel="service" type="application/atomsvc+xml" href="http://code.dblock.org/AtomSvc.aspx" title="Dblock.org | Code (Atom)" /><title>
+	Grape vs. Webmachine
+</title></head>
+<body>
+
+ <form name="aspnetForm" method="post" action="ShowPost.aspx?slug=grape-vs-webmachine" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTc5NTMzMzY5OQ8WAh4QX19QYWdlOlByZWZlcnJlZGgWAmYPZBYEAgEPZBYGAgsPFgQeBXRpdGxlBRdEYmxvY2sub3JnIHwgQ29kZSAoUlNTKR4EaHJlZgUjaHR0cDovL2NvZGUuZGJsb2NrLm9yZy9Sc3NCbG9nLmFzcHhkAgwPFgQfAQUYRGJsb2NrLm9yZyB8IENvZGUgKEF0b20pHwIFJGh0dHA6Ly9jb2RlLmRibG9jay5vcmcvQXRvbUJsb2cuYXNweGQCDQ8WBB8CBSNodHRwOi8vY29kZS5kYmxvY2sub3JnL0F0b21TdmMuYXNweB8BBRhEYmxvY2sub3JnIHwgQ29kZSAoQXRvbSlkAgMPZBYKAgcPDxYIHghJbWFnZVVybAUraHR0cDovL2NvZGUuZGJsb2NrLm9yZy9pbWFnZXMvYmxvZy9ibG9nLmdpZh4FV2lkdGgbAAAAAAAAUkABAAAAHgZIZWlnaHQbAAAAAACASEABAAAAHgRfIVNCAoADZGQCEQ9kFgICAQ88KwAJAQAPFggeEEN1cnJlbnRQYWdlSW5kZXhmHhBWaXJ0dWFsSXRlbUNvdW50AgQeCERhdGFLZXlzFgAeC18hSXRlbUNvdW50AgRkFggCAQ9kFgJmDxUDI2h0dHA6Ly93d3cuZGJsb2NrLm9yZy9TaG93QmxvZy5hc3B4CkRibG9jay5vcmcBMWQCAg9kFgJmDxUDImh0dHA6Ly90d2l0dGVyLmNvbS8jIS9kYmxvY2tkb3RvcmcNQGRibG9ja2RvdG9yZwMxMzdkAgMPZBYCZg8VAxhodHRwOi8vZ2l0aHViLmNvbS9kYmxvY2sJTXkgR2l0aHViAzMxN2QCBA9kFgJmDxUDIGh0dHA6Ly9jb2RlLmRibG9jay5vcmcvQHNwZWFraW5nD1B1YmxpYyBTcGVha2luZwM0NTlkAhkPDxYCHgdWaXNpYmxlaGRkAh0PZBYCZg88KwALAQAPFgofB2YfCRYAHwpmHglQYWdlQ291bnQCAR4VXyFEYXRhU291cmNlSXRlbUNvdW50ZmRkAh8PZBYMAgMPDxYCHgRUZXh0BRRHcmFwZSB2cy4gV2VibWFjaGluZWRkAgUPZBYCZg9kFgwCAQ8PFgIfDgUed2VibWFjaGluZSwgZ3JhcGUsIHJhaWxzLCBydWJ5ZGQCAw8PFgIfDgUKMTIvMTQvMjAxMWRkAgUPDxYCHwtoZGQCCQ8WAh8LaBYCAgEPDxYCHgtOYXZpZ2F0ZVVybAUURWRpdFBvc3QuYXNweD9pZD0zMDNkZAILDw8WAh8OBQlGYXZvcml0ZXNkZAIND2QWAmYPZBYCAgEPFgYeCGRhdGEtdXJsBSpodHRwOi8vY29kZS5kYmxvY2sub3JnL2dyYXBlLXZzLXdlYm1hY2hpbmUeCWRhdGEtdGV4dAUUR3JhcGUgdnMuIFdlYm1hY2hpbmUeCmRhdGEtY291bnQFCmhvcml6b250YWxkAgcPDxYCHw4FhB08c3RyaXBwZWQ+PHA+T25lIG9mIG15IGZhdm9yaXRlIHRhbGtzIGF0IFFDb24gMjAxMSB3YXMgPGEgaHJlZj0iaHR0cDovL2NvZGUuZGJsb2NrLm9yZy9TaG93VXJsLmFzcHg/T2JqZWN0SWQ9MzAzJmFtcDtPYmplY3RUeXBlPVBvc3QmYW1wO1VybD1odHRwJTNhJTJmJTJmcWNvbmxvbmRvbi5jb20lMmZsb25kb24tMjAxMSUyZnByZXNlbnRhdGlvbiUyZldlYm1hY2hpbmUlMjUzQSUyYmElMmJwcmFjdGljYWwlMmJleGVjdXRhYmxlJTJibW9kZWwlMmJvZiUyYkhUVFAiPmFib3V0IFdlYm1hY2hpbmU8L2E+LiBJIHdhcyB2ZXJ5IGN1cmlvdXMgdG8gc2VlIHdoYXQgdGhvc2Ugd2VsbC1kaXNjaXBsaW5lZCBFcmxhbmcgcGVvcGxlIGhhZCBjb21lIHVwIHdpdGguIEF0IHRoZSBlbmQgb2YgdGhlIHRhbGsgSSBoYWQgbGVhcm5lZCB0aGF0IFdlYm1hY2hpbmUgdXNlZCBhIHJlc291cmNlLWJhc2VkIG1vZGVsIHRoYXQgZW5hYmxlZCB3ZWxsLWJlaGF2ZWQgSFRUUCBhcHBsaWNhdGlvbnMsIHdoaWNoIGlzIFJFU1RmdWwgYnkgZGVmaW5pdGlvbi4gU28gSSB3ZW50IHRvIDxhIGhyZWY9Imh0dHA6Ly9jb2RlLmRibG9jay5vcmcvU2hvd1VybC5hc3B4P09iamVjdElkPTMwMyZhbXA7T2JqZWN0VHlwZT1Qb3N0JmFtcDtVcmw9aHR0cCUzYSUyZiUyZnd3dy5tZWV0dXAuY29tJTJmTllDLXJiJTJmZXZlbnRzJTJmMjg5NjgxMDElMmYlM2Z2YWx1ZSUzZFJlc291cmNlcyUyNTJDJTJiRm9yJTJiUmVhbCUyYlRoaXMlMmJUaW1lJTJiKHdpdGglMmJXZWJtYWNoaW5lKSI+TllDLnJiPC9hPiB0b2RheSB0byBoZWFyIGFib3V0IHRoZSBSdWJ5IHZlcnNpb24gb2YgV2VibWFjaGluZSBhbmQgdG8gd3JpdGUgYSBwb3N0IGFib3V0IGhvdyB0aGVzZSB0d28gZnJhbWV3b3JrcyBjb21wYXJlLiA8L3A+ICA8cD5TaG91bGQgeW91IGJ1aWxkIHlvdXIgbmV4dCBSRVNUZnVsIEFQSSB3aXRoIDxhIGhyZWY9Imh0dHA6Ly9jb2RlLmRibG9jay5vcmcvU2hvd1VybC5hc3B4P09iamVjdElkPTMwMyZhbXA7T2JqZWN0VHlwZT1Qb3N0JmFtcDtVcmw9aHR0cHMlM2ElMmYlMmZnaXRodWIuY29tJTJmaW50cmlkZWElMmZncmFwZSI+R3JhcGU8L2E+IG9yIDxhIGhyZWY9Imh0dHA6Ly9jb2RlLmRibG9jay5vcmcvU2hvd1VybC5hc3B4P09iamVjdElkPTMwMyZhbXA7T2JqZWN0VHlwZT1Qb3N0JmFtcDtVcmw9aHR0cHMlM2ElMmYlMmZnaXRodWIuY29tJTJmc2VhbmNyaWJicyUyZndlYm1hY2hpbmUtcnVieSI+V2VibWFjaGluZTwvYT4/PC9wPiAgPHA+Qm90aCBmcmFtZXdvcmtzIGFzIHNheWluZyB0aGF0IHlvdSBzaG91bGQgbm90IGZvcmNlIEhUVFAgb250byBhbiBNVkMtc2hhcGVkIGFwcGxpY2F0aW9uLiBCb3RoIGV4Y2VsIGF0IHNlcnZpbmcgSFRUUCByZXNvdXJjZXMuPC9wPiAgPHA+V2VibWFjaGluZSBpcyBhbiBleGVjdXRhYmxlIG1vZGVsIGZvciBIVFRQLCB3aGlsZSBHcmFwZSBpcyBhIERTTCBmb3IgUkVTVGZ1bCBBUElzLiBUaGlzIG1lYW5zIHRoYXQgaW4gV2VibWFjaGluZSB5b3UgZG9u4oCZdCBwZXJmb3JtIGFjdGlvbnMg4oCTIHlvdSBkZWNsYXJlIHJlc291cmNlcy4gSW4gR3JhcGUgeW91IGRlY2xhcmUgQVBJIG1ldGhvZHMgYW5kIGZpbGwgb3V0IHRoZSByZXNwb25zZXMuIEluIEdyYXBlIHlvdSBoYXZlIHRvIGJlIGRpc2NpcGxpbmVkIGFib3V0IHRob3NlIEFQSSBtZXRob2RzIC0gdGhleSBzaG91bGQgcmVwcmVzZW50IHJlc291cmNlcywgbm90IFJQQyBzZXJ2aWNlIGVuZHBvaW50cy4gTW9yZSBkaWZmZXJlbmNlcyBhcHBlYXIgaW4gYnJhbmNoaW5nOiBoYWx0aW5nIGV4ZWN1dGlvbiBpbiBXZWJtYWNoaW5lIGlzIGRvbmUgYnkgcmV0dXJuaW5nIGFwcHJvcHJpYXRlIGFuc3dlcnMgaW4gcmVzb3VyY2Utc3BlY2lmaWMgZnVuY3Rpb25zLCB3aGlsZSBoYWx0aW5nIGV4ZWN1dGlvbiBpbiBHcmFwZSBpcyBkb25lIGJ5IHRocm93aW5nIGEgc3BlY2lmaWMgZXhjZXB0aW9uIHRoYXQgY2FycmllcyBhbiBIVFRQIGVycm9yIGNvZGUuIFJvdXRpbmctd2lzZSwgSW4gV2VibWFjaGluZSB5b3UgbWFwIFVSSXMgdG8gcmVzb3VyY2VzLCB3aGlsZSBpbiBHcmFwZSB5b3UgZGVmaW5lIG5hbWVzcGFjZXMgYW5kIG1ldGhvZCBwYXRocyB0aGF0IHRyYW5zbGF0ZSBpbnRvIGludmlzaWJsZSByb3V0ZXMuIEluIFdlYm1hY2hpbmUgeW91IGltcGxlbWVudCByZXNvdXJjZSBjYWxsYmFja3MsIHdoaWxlIGluIEdyYXBlIHlvdSB1c2UgcHJvY2VkdXJhbCBsb2dpYyB3aXRoaW4gdGhlIEFQSSBtZXRob2QgaW1wbGVtZW50YXRpb24uIFdlYm1hY2hpbmUgaXMgdHJ5aW5nIHRvIGJlIGEgY29tcGxldGUgZXhlY3V0YWJsZSBtb2RlbCBhbmQgaXMgdGhlcmVmb3JlIG1vcmUgc3RydWN0dXJlZCwgd2hpbGUgR3JhcGUgd2FudHMgeW91IHRvIHVzZSBtaWRkbGV3YXJlIGZvciBhc3BlY3RzIHN1Y2ggYXMgRVRhZy1iYXNlZCBjYWNoaW5nIGFuZCBkb2VzbuKAmXQgdHJ5IHRvIHByZXZlbnQgeW91IGZyb20ganVtcGluZyBpbiB0aGUgd2F0ZXIgd2hlbiB5b3UgZG9u4oCZdCBrbm93IGhvdyB0byBzd2ltLjwvcD4gIDxwPldlIGhhZCBhIGxvbmcgZGlzY3Vzc2lvbiBhYm91dCB0aGlzIG91dHNpZGUgb2YgUGl2b3RhbCBMYWJzIHdpdGggPGEgaHJlZj0iaHR0cDovL2NvZGUuZGJsb2NrLm9yZy9TaG93VXJsLmFzcHg/T2JqZWN0SWQ9MzAzJmFtcDtPYmplY3RUeXBlPVBvc3QmYW1wO1VybD1odHRwJTNhJTJmJTJmdHdpdHRlci5jb20lMmYlMjMhJTJmc2VhbmNyaWJicyI+QHNlYW5jcmliYnM8L2E+IGFuZCA8YSBocmVmPSJodHRwOi8vY29kZS5kYmxvY2sub3JnL1Nob3dVcmwuYXNweD9PYmplY3RJZD0zMDMmYW1wO09iamVjdFR5cGU9UG9zdCZhbXA7VXJsPWh0dHAlM2ElMmYlMmZ0d2l0dGVyLmNvbSUyZiUyMyElMmZqb2huam9zZXBoIj5Aam9obmpvc2VwaDwvYT4gKHdobyBldmVuIG1lbnRpb25lZCBQcm9sb2cgYXQgc29tZSBwb2ludCkuIEl0IGhlbHBlZCBtZSBmcmFtZSBteSBvcGluaW9uIGFyb3VuZCBtb3N0bHkgcGhpbG9zb3BoaWNhbCBkaWZmZXJlbmNlcyBiZXR3ZWVuIHRoZSB0d28gZnJhbWV3b3Jrcy4gSSBjb3VsZCB2ZXJ5IHdlbGwgdXNlIFdlYm1hY2hpbmUgdG8gYnVpbGQgYW4gQVBJIGFuZCBiZSB2ZXJ5IGhhcHB5IHdpdGggaXQgKEkgd291bGQgbm90IGJlIGhhcHB5IGJ1aWxkaW5nIGFuIEFQSSBpbiBSYWlscykuIEkgd291bGQgZ3JhbnQgV2VibWFjaGluZSBhbiBhZHZhbnRhZ2Ugb3ZlciBwdXJpdHkgZnJvbSB0aGUgZGV2ZWxvcGVy4oCZcyBwZXJzcGVjdGl2ZSDigJMgaXTigJlzIGhhcmRlciB0byBzdGVwIG91dHNpZGUgb2YgdGhlIHByb2dyYW1taW5nIG1vZGVsLiBJIHdvdWxkIGdyYW50IEdyYXBlIGFuIGFkdmFudGFnZSBvdmVyIGZhdm9yaW5nIHRoZSBBUEkgY29uc3VtZXIsIHNpbmNlIGl0IGZvY3VzZXMgb24gdGhlIGV4cHJlc3NpdmVuZXNzIG9mIHRoZSBBUEkuIEZvciBleGFtcGxlLCBHcmFwZSBub3cgaGFzIHNlbGYtaW50cm9zcGVjdGlvbiBmb3IgYXV0b21hdGljYWxseSBnZW5lcmF0aW5nIGRvY3VtZW50YXRpb24sIGEgZmVhdHVyZSB0aGF0IHNlZW1zIGhhcmRlciBhbmQgbWF5YmUgZXZlbiB1bm5hdHVyYWwgdG8gYnVpbGQgZm9yIFdlYm1hY2hpbmUuPC9wPiAgPHA+RnVuZGFtZW50YWxseSwgV2VibWFjaGluZSBkZWNsYXJlcyByZXNvdXJjZXMgc2VydmVkIHZpYSBIVFRQLCB3aGlsZSBHcmFwZSBkZWNsYXJlcyBhbiBBUEkuIFlvdXIgY2hvaWNlPzwvcD48L3N0cmlwcGVkPmRkAgkPDxYCHwtoZBYCAgEPFgIfAgUdLi9TaG93SW1hZ2UuYXNweD9pZD0wJnBpZD0zMDMWAgIBDw8WAh8DBRcuL1Nob3dQaWN0dXJlLmFzcHg/aWQ9MGRkAgsPZBYCZg9kFgICAQ88KwAJAQAPFgofCmYfCRYAHwtoHwhmHwdmZGQCDw9kFgJmD2QWAgIBDzwrAAsBAA8WDh8KZh8JFgAfC2gfDAIBHw1mHwhmHwdmZGRk" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=y3Fa2OwhfdS_nBs4s8gHxDgVNJm4Mwsp21T-odsbHnlqOzssgFDQgXpu3HNYIho6Ji9ifJZDXpeeJwI3vKTlvGrcEi_Tlvl7a6VFea57S6s1&amp;t=634951702897108645" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=H3XJemLd2SuqCVKKDxyDHiF8DlAj6AnDQNggDLhbAAz5TOijMGJYMiM4TwO5eI7X-oWgLkZ-b58-XocLxssuxY8tYD0B8xo0jR6eHooAHFR6flYCo_c_Wzq-ArB-yfI10MrYnL6TlgD90TPf5VwYL3b5HIwqObckgFUabhzdA7Vp07eNRr8NkYDRsBKDEUow0&amp;t=ffffffff940d030f" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="/ScriptResource.axd?d=gu-sQy0ZXNu0FZQ94cBPonWaGnxgsjQVm4kF2aSlUaTwI1JaEphygDf_KxXcQ_r9fpVtxnO8_9rc7-GuLGVlG72MwCWosQEM8i3_xyCy1-QyDpqbi3dtiLoUZcTSethlHxHNOoZs10LQ7KeodFhpG7YNes7YHT1iZ4EF0WHlNlcIAP4LOngaTTHiunZCQs3m0&amp;t=ffffffff940d030f" type="text/javascript"></script>
+<script src="javascripts/jquery-1.5.1.min.js" type="text/javascript"></script>
+
+   <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'aspnetForm', ['tctl00$panelNoticeMenu','','tctl00$panelSearch','','tctl00$panelDates','','tctl00$ContentPlaceHolder1$panelButtons','','tctl00$ContentPlaceHolder1$panelImages','','tctl00$ContentPlaceHolder1$panelComments',''], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+
+   <div id="ctl00_menuProgress" style="display:none;">
+	
+        <div id="working">
+         <img id="ctl00_busyimage" src="images/site/spinner.gif" alt="Busy" style="border-width:0px;" />
+         Working ...
+        </div>
+      
+</div>
+     
+   <span id="ctl00_panelNoticeMenu">
+       <div id="ctl00_noticeMenu_panelNotice" style="display: none;">
+	
+ <script language="javascript">
+  function CollapseExpandDetail(id)
+  {
+   var panel = document.getElementById(id);
+   panel.style.cssText = (panel.style.cssText == "") ? "display: none;" : "";
+  }
+ </script>
+ <table id="ctl00_noticeMenu_tableNotice" cellpadding="4" class="notice_info">
+		<tr>
+			<td>
+    <a href="#" id="ctl00_noticeMenu_linkCollapseExpand" onclick="CollapseExpandDetail(&#39;ctl00_noticeMenu_divDetail&#39;)">
+     <img id="ctl00_noticeMenu_imageMessage" src="images/site/info.gif" style="border-width:0px;height:24px;width:24px;" />
+    </a>
+   </td>
+			<td class="table_notice_tr_td">
+    <span id="ctl00_noticeMenu_labelMessage"></span>
+    <div id="ctl00_noticeMenu_divDetail" class="sncore_description" style="display: none;">
+     <span id="ctl00_noticeMenu_labelDetail"></span>
+    </div>
+   </td>
+		</tr>
+	</table>
+	
+
+</div>
+
+      </span>
+ 
+   <div class="container">
+      <div class="three columns sidebar">
+       <nav>
+        <h3 id="logo">
+         <a href=".">
+          <img id="ctl00_imageMain" src="http://code.dblock.org/images/blog/blog.gif" style="height:49px;width:72px;border-width:0px;" />
+         </a>
+        </h3>
+        <ul>
+         <li><a href="About.aspx">About</a></li>
+         <li><a id="ctl00_linkContact" href="javascript:__doPostBack(&#39;ctl00$linkContact&#39;,&#39;&#39;)">Contact</a></li>
+         <li>
+
+<a href='http://www.twitter.com/dblockdotorg'><img 
+ src="http://twitter-badges.s3.amazonaws.com/t_small-b.png" border="0" alt="Follow me on Twitter"/></a></li>
+         <li>
+          <a href="RssBlog.aspx"><img src="images/site/rss.gif" border="0" alt="rss xml"></a>
+          <a href="AtomBlog.aspx"><img src="images/site/atom.gif" border="0" alt="atom xml"></a>
+         </li>
+         <li id="search">
+          <span id="ctl00_panelSearch">
+              <div>
+               
+
+<div>
+ search
+</div>
+<input name="ctl00$searchBox$inputSearch" type="text" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$searchBox$inputSearch\&#39;,\&#39;\&#39;)&#39;, 0)" onkeypress="if (WebForm_TextBoxKeyHandler(event) == false) return false;" id="ctl00_searchBox_inputSearch" class="search_textbox" />
+
+              </div>
+             </span>
+         </li>
+        </ul>
+        
+        
+<ul>
+ <span id="ctl00_highlights_grid"><span><li><a href='http://www.dblock.org/ShowBlog.aspx'>Dblock.org</a>
+    <img src='ShowPicture.aspx?id=1&ShowThumbnail=false&IncrementCounter=false' width="16" height="16">
+   </li></span><span><li><a href='http://twitter.com/#!/dblockdotorg'>@dblockdotorg</a>
+    <img src='ShowPicture.aspx?id=137&ShowThumbnail=false&IncrementCounter=false' width="16" height="16">
+   </li></span><span><li><a href='http://github.com/dblock'>My Github</a>
+    <img src='ShowPicture.aspx?id=317&ShowThumbnail=false&IncrementCounter=false' width="16" height="16">
+   </li></span><span><li><a href='http://code.dblock.org/@speaking'>Public Speaking</a>
+    <img src='ShowPicture.aspx?id=459&ShowThumbnail=false&IncrementCounter=false' width="16" height="16">
+   </li></span></span><td></td>
+</ul>
+
+        <div id="ctl00_panelCommands">
+	
+         <ul class="admin">
+           <li>
+            <a href="Login.aspx"><font face="Symbol">p</font></a>
+            | <a href="StatsSummary.aspx">s</a>
+            <!--
+            | <a href="?SortDirection=Descending&SortExpression=Counter.Count">pop</a>
+            -->
+            | <a href="ShowImages.aspx">pics</a>
+            <!--| <a href="ShowComments.aspx">c</a>-->
+            | <a href="About.aspx">me</a>
+            | <a href="ListBlog.aspx">list</a>
+           </li>
+          <li><span id="ctl00_labelCounter"></span></li>
+         </ul>
+        
+</div>
+        <ul class="admin">
+         <li><span id="ctl00_labelUsername"></span></li>
+         <li><span id="ctl00_labelPostUsername" class="description"></span></li>
+         <li></li>
+        </ul>
+        <!--
+        <ul>
+         <li id="dates">
+            <span id="ctl00_panelDates">
+              <div>
+               <table id="ctl00_dates_inputCalendar" class="calendar" cellspacing="0" cellpadding="4" title="Calendar" border="0" style="width:200px;height:180px;font-size:8pt;font-family:Verdana;color:Black;border-width:1px;border-style:solid;border-color:#999999;background-color:White;border-collapse:collapse;">
+	<tr><td colspan="8" style="background-color:Black;border-color:Black;"><table class="calendar" cellspacing="0" border="0" style="color:White;font-family:Verdana;font-size:8pt;font-weight:bold;width:100%;border-collapse:collapse;">
+		<tr><td valign="bottom" style="color:White;width:15%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','V4749')" style="color:White" title="Go to the previous month">&lt;</a></td><td align="center" style="width:70%;">February 2013</td><td align="right" valign="bottom" style="color:White;width:15%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','V4808')" style="color:White" title="Go to the next month">&gt;</a></td></tr>
+	</table></td></tr><tr><td align="center" style="color:Black;background-color:#CCCCCC;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','R478028')" style="color:Black" title="Select the whole month">&gt;&gt;</a></td><th align="center" abbr="Sunday" scope="col" style="background-color:#CCCCCC;font-size:7pt;font-weight:bold;">S</th><th align="center" abbr="Monday" scope="col" style="background-color:#CCCCCC;font-size:7pt;font-weight:bold;">M</th><th align="center" abbr="Tuesday" scope="col" style="background-color:#CCCCCC;font-size:7pt;font-weight:bold;">T</th><th align="center" abbr="Wednesday" scope="col" style="background-color:#CCCCCC;font-size:7pt;font-weight:bold;">W</th><th align="center" abbr="Thursday" scope="col" style="background-color:#CCCCCC;font-size:7pt;font-weight:bold;">T</th><th align="center" abbr="Friday" scope="col" style="background-color:#CCCCCC;font-size:7pt;font-weight:bold;">F</th><th align="center" abbr="Saturday" scope="col" style="background-color:#CCCCCC;font-size:7pt;font-weight:bold;">S</th></tr><tr><td align="center" style="color:Black;background-color:#CCCCCC;width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','R477507')" style="color:Black" title="Select week 1">&gt;</a></td><td align="center" style="color:Gray;background-color:#FFFFDD;width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4775')" style="color:Gray" title="January 27">27</a></td><td align="center" style="color:Gray;width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4776')" style="color:Gray" title="January 28">28</a></td><td align="center" style="color:Gray;width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4777')" style="color:Gray" title="January 29">29</a></td><td align="center" style="color:Gray;width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4778')" style="color:Gray" title="January 30">30</a></td><td align="center" style="color:Gray;width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4779')" style="color:Gray" title="January 31">31</a></td><td align="center" style="width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4780')" style="color:Black" title="February 01">1</a></td><td align="center" style="background-color:#FFFFDD;width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4781')" style="color:Black" title="February 02">2</a></td></tr><tr><td align="center" style="color:Black;background-color:#CCCCCC;width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','R478207')" style="color:Black" title="Select week 2">&gt;</a></td><td align="center" style="background-color:#FFFFDD;width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4782')" style="color:Black" title="February 03">3</a></td><td align="center" style="width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4783')" style="color:Black" title="February 04">4</a></td><td align="center" style="width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4784')" style="color:Black" title="February 05">5</a></td><td align="center" style="width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4785')" style="color:Black" title="February 06">6</a></td><td align="center" style="width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4786')" style="color:Black" title="February 07">7</a></td><td align="center" style="width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4787')" style="color:Black" title="February 08">8</a></td><td align="center" style="background-color:#FFFFDD;width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4788')" style="color:Black" title="February 09">9</a></td></tr><tr><td align="center" style="color:Black;background-color:#CCCCCC;width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','R478907')" style="color:Black" title="Select week 3">&gt;</a></td><td align="center" style="background-color:#FFFFDD;width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4789')" style="color:Black" title="February 10">10</a></td><td align="center" style="width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4790')" style="color:Black" title="February 11">11</a></td><td align="center" style="width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4791')" style="color:Black" title="February 12">12</a></td><td align="center" style="width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4792')" style="color:Black" title="February 13">13</a></td><td align="center" style="width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4793')" style="color:Black" title="February 14">14</a></td><td align="center" style="color:Black;background-color:#CCCCCC;width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4794')" style="color:Black" title="February 15">15</a></td><td align="center" style="background-color:#FFFFDD;width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4795')" style="color:Black" title="February 16">16</a></td></tr><tr><td align="center" style="color:Black;background-color:#CCCCCC;width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','R479607')" style="color:Black" title="Select week 4">&gt;</a></td><td align="center" style="background-color:#FFFFDD;width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4796')" style="color:Black" title="February 17">17</a></td><td align="center" style="width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4797')" style="color:Black" title="February 18">18</a></td><td align="center" style="width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4798')" style="color:Black" title="February 19">19</a></td><td align="center" style="width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4799')" style="color:Black" title="February 20">20</a></td><td align="center" style="width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4800')" style="color:Black" title="February 21">21</a></td><td align="center" style="width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4801')" style="color:Black" title="February 22">22</a></td><td align="center" style="background-color:#FFFFDD;width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4802')" style="color:Black" title="February 23">23</a></td></tr><tr><td align="center" style="color:Black;background-color:#CCCCCC;width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','R480307')" style="color:Black" title="Select week 5">&gt;</a></td><td align="center" style="background-color:#FFFFDD;width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4803')" style="color:Black" title="February 24">24</a></td><td align="center" style="width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4804')" style="color:Black" title="February 25">25</a></td><td align="center" style="width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4805')" style="color:Black" title="February 26">26</a></td><td align="center" style="width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4806')" style="color:Black" title="February 27">27</a></td><td align="center" style="width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4807')" style="color:Black" title="February 28">28</a></td><td align="center" style="color:Gray;width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4808')" style="color:Gray" title="March 01">1</a></td><td align="center" style="color:Gray;background-color:#FFFFDD;width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4809')" style="color:Gray" title="March 02">2</a></td></tr><tr><td align="center" style="color:Black;background-color:#CCCCCC;width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','R481007')" style="color:Black" title="Select week 6">&gt;</a></td><td align="center" style="color:Gray;background-color:#FFFFDD;width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4810')" style="color:Gray" title="March 03">3</a></td><td align="center" style="color:Gray;width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4811')" style="color:Gray" title="March 04">4</a></td><td align="center" style="color:Gray;width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4812')" style="color:Gray" title="March 05">5</a></td><td align="center" style="color:Gray;width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4813')" style="color:Gray" title="March 06">6</a></td><td align="center" style="color:Gray;width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4814')" style="color:Gray" title="March 07">7</a></td><td align="center" style="color:Gray;width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4815')" style="color:Gray" title="March 08">8</a></td><td align="center" style="color:Gray;background-color:#FFFFDD;width:12%;"><a href="javascript:__doPostBack('ctl00$dates$inputCalendar','4816')" style="color:Gray" title="March 09">9</a></td></tr>
+</table>
+<div style="text-align: center; width: 200px;">
+ <a id="ctl00_dates_reset" href="javascript:__doPostBack(&#39;ctl00$dates$reset&#39;,&#39;&#39;)">all</a>
+ | <a id="ctl00_dates_today" href="javascript:__doPostBack(&#39;ctl00$dates$today&#39;,&#39;&#39;)">today</a>
+</div>
+
+              </div>
+             </span>     
+            <table class="table_feeds" cellspacing="0" rules="all" border="0" id="ctl00_feeds_grid" style="border-color:White;border-width:0px;border-collapse:collapse;">
+
+</table>
+
+         </li>
+        </ul>
+        -->
+       </nav>
+       &nbsp;
+      </div>
+      <div class="twelve columns content offset-by-one">
+        <div class="blog-section">
+         
+ 
+
+<script type="text/javascript">
+    function getTwitterScript() {
+        $.getScript("http://platform.twitter.com/widgets.js");
+    }
+</script>
+
+
+  <h3><span id="ctl00_ContentPlaceHolder1_posttitle">Grape vs. Webmachine</span></h3>
+  <div class="subtitle">
+   <span id="ctl00_ContentPlaceHolder1_panelButtons">
+     <a href=".">Back</a> |
+     <span id="ctl00_ContentPlaceHolder1_posttopics" class="topics">webmachine, grape, rails, ruby</span> |
+     <span id="ctl00_ContentPlaceHolder1_postcreated">12/14/2011</span>
+     <!---->
+     <!--<a id="ctl00_ContentPlaceHolder1_linkComment">Post Comment</a> |-->
+     
+     <!--<a id="ctl00_ContentPlaceHolder1_linkPreferred" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$linkPreferred&#39;,&#39;&#39;)">Favorites</a>-->
+     <span id="ctl00_ContentPlaceHolder1_twitterShare_panelTwitterShare">
+ |
+ <span class="twitter_share">
+  <a href="http://www.twitter.com/share" id="ctl00_ContentPlaceHolder1_twitterShare_twitterLink" class="twitter-share-button" data-url="http://code.dblock.org/grape-vs-webmachine" data-text="Grape vs. Webmachine" data-count="horizontal">Tweet</a>
+ </span>
+</span>
+    </span>
+  </div>
+  <div class="post">
+   <span id="ctl00_ContentPlaceHolder1_postbody"><stripped><p>One of my favorite talks at QCon 2011 was <a href="http://code.dblock.org/ShowUrl.aspx?ObjectId=303&amp;ObjectType=Post&amp;Url=http%3a%2f%2fqconlondon.com%2flondon-2011%2fpresentation%2fWebmachine%253A%2ba%2bpractical%2bexecutable%2bmodel%2bof%2bHTTP">about Webmachine</a>. I was very curious to see what those well-disciplined Erlang people had come up with. At the end of the talk I had learned that Webmachine used a resource-based model that enabled well-behaved HTTP applications, which is RESTful by definition. So I went to <a href="http://code.dblock.org/ShowUrl.aspx?ObjectId=303&amp;ObjectType=Post&amp;Url=http%3a%2f%2fwww.meetup.com%2fNYC-rb%2fevents%2f28968101%2f%3fvalue%3dResources%252C%2bFor%2bReal%2bThis%2bTime%2b(with%2bWebmachine)">NYC.rb</a> today to hear about the Ruby version of Webmachine and to write a post about how these two frameworks compare. </p>  <p>Should you build your next RESTful API with <a href="http://code.dblock.org/ShowUrl.aspx?ObjectId=303&amp;ObjectType=Post&amp;Url=https%3a%2f%2fgithub.com%2fintridea%2fgrape">Grape</a> or <a href="http://code.dblock.org/ShowUrl.aspx?ObjectId=303&amp;ObjectType=Post&amp;Url=https%3a%2f%2fgithub.com%2fseancribbs%2fwebmachine-ruby">Webmachine</a>?</p>  <p>Both frameworks as saying that you should not force HTTP onto an MVC-shaped application. Both excel at serving HTTP resources.</p>  <p>Webmachine is an executable model for HTTP, while Grape is a DSL for RESTful APIs. This means that in Webmachine you don’t perform actions – you declare resources. In Grape you declare API methods and fill out the responses. In Grape you have to be disciplined about those API methods - they should represent resources, not RPC service endpoints. More differences appear in branching: halting execution in Webmachine is done by returning appropriate answers in resource-specific functions, while halting execution in Grape is done by throwing a specific exception that carries an HTTP error code. Routing-wise, In Webmachine you map URIs to resources, while in Grape you define namespaces and method paths that translate into invisible routes. In Webmachine you implement resource callbacks, while in Grape you use procedural logic within the API method implementation. Webmachine is trying to be a complete executable model and is therefore more structured, while Grape wants you to use middleware for aspects such as ETag-based caching and doesn’t try to prevent you from jumping in the water when you don’t know how to swim.</p>  <p>We had a long discussion about this outside of Pivotal Labs with <a href="http://code.dblock.org/ShowUrl.aspx?ObjectId=303&amp;ObjectType=Post&amp;Url=http%3a%2f%2ftwitter.com%2f%23!%2fseancribbs">@seancribbs</a> and <a href="http://code.dblock.org/ShowUrl.aspx?ObjectId=303&amp;ObjectType=Post&amp;Url=http%3a%2f%2ftwitter.com%2f%23!%2fjohnjoseph">@johnjoseph</a> (who even mentioned Prolog at some point). It helped me frame my opinion around mostly philosophical differences between the two frameworks. I could very well use Webmachine to build an API and be very happy with it (I would not be happy building an API in Rails). I would grant Webmachine an advantage over purity from the developer’s perspective – it’s harder to step outside of the programming model. I would grant Grape an advantage over favoring the API consumer, since it focuses on the expressiveness of the API. For example, Grape now has self-introspection for automatically generating documentation, a feature that seems harder and maybe even unnatural to build for Webmachine.</p>  <p>Fundamentally, Webmachine declares resources served via HTTP, while Grape declares an API. Your choice?</p></stripped></span>
+    
+  </div>
+  <span id="ctl00_ContentPlaceHolder1_panelImages">
+    <div class="images">
+     
+    </div>
+   </span>
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'dblockdotorg-code';
+
+    var disqus_identifier='Post_303';
+var disqus_url='http://code.dblock.org/grape-vs-webmachine';
+
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <span id="ctl00_ContentPlaceHolder1_panelComments">
+    
+   </span> 
+
+        </div>
+      </div>
+   </div>
+
+ 
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Sys.UI._UpdateProgress, {"associatedUpdatePanelId":null,"displayAfter":500,"dynamicLayout":true}, null, null, $get("ctl00_menuProgress"));
+});
+//]]>
+</script>
+</form>
+
+ 
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-4756101-3']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+ 
+<script type="text/javascript">
+    function disqusCountScript() {
+        var disqus_shortname = 'dblockdotorg-code';
+        
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    }
+
+    var disqus_shortname = 'dblockdotorg-code';
+    
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+
+ <script type="text/javascript">
+    function pageLoad() {
+        getTwitterScript();
+        disqusCountScript();
+    }
+ </script>
+
+</body>
+</html>

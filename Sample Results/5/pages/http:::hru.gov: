@@ -1,0 +1,491 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>HR University</title>
+<meta name="description" content="HR University" />
+<meta name="keywords" content="" />
+<link href="styles.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="functions.js"></script>
+<!-- SWFObject embed by Geoff Stearns geoff@deconcept.com http://blog.deconcept.com/swfobject/ -->
+<script language="JavaScript" src="swfobject.js" type="text/javascript"></script>
+<style type="text/css">
+	#flashcontent {
+		width: 980px;
+		height: 120px;
+		float: left;
+		margin: 0px 0px;
+	}
+
+	.pics { height: 229px; width: 514px; padding:0; margin:0; overflow: hidden }
+	.pics img { height: 229px; width: 514px; padding: 0px; border: 0px; top:0; left:0 }
+	.pics img {
+		-moz-border-radius: 10px; -webkit-border-radius: 10px;
+	}
+	
+	#divNews {
+		margin: -9px 0px 3px 14px; 
+		width: 470px; 
+		height: 20px; 
+		border: 0px;
+	}
+	#news_crawl {
+		color: #0D265F;
+		/* font-size: 0.8em; */
+		font-size: 13px;
+		font-weight: bold;
+		margin: 0px;
+		/* margin: 2px 0px 0px 0px; */
+		width: auto;
+		white-space: nowrap;
+		position: absolute;
+		left: 470px;
+	}
+
+	#slideshow { margin: 0px 0px; width: 502px; height: 223px; z-index: 0;}
+	
+	#nav { z-index: 50; position: absolute; bottom: -18px; left: 10px }
+	#nav a { margin: 0 0px; padding: 12px 18px; border: 0px; color: transparent; background: url(images/site/slide-thumb.jpg) no-repeat; width: 18px; height: 12px}
+	#nav a.activeSlide { background: url(images/site/slide-thumb-selected.jpg) no-repeat; }
+	#nav li { width: 10px; float: left; margin: 6px; list-style: none }
+
+	#nav a:focus { outline: none; }
+	#nav img { border: none; display: block; width: 18px; height: 12px }
+	
+	#cost_div {
+		margin-top: 156px;
+	}
+	#cost_div img {
+		padding: 0px; 
+		border: 0px;
+		margin: 0px 0px 0px 0px;
+	}
+
+</style>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery.cycle.all.min.js"></script>
+<script type="text/javascript">
+$('#slideshow').cycle({ 
+    speed:  1000, 
+    timeout: 8000, 
+    pager:  '#nav',
+    	//slideExpr: 'img',
+    	slideExpr: 'a',
+    	
+    // callback fn that creates a thumbnail to use as pager anchor 
+    pagerAnchorBuilder: function(idx, slide) { 
+        //return '<li><a href="#"><img src="images/site/slide-thumb.jpg" width="18" height="12" /></a></li>'; 
+        //return '<li><a href="#"></a></li>'; 
+        return '<li><a href="#" tabindex="-1"></a></li>'; 
+    } 
+
+});
+</script>
+
+<script type="text/javascript">
+var msgCrawl="HRU’s online Individual Development Plan (IDP) is here!&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#8212; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;New Job Aid for Retirement Specialists located on the Resource Page&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#8212; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;HRU registered users reach the 18,000 mark!&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#8212; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Does your Agency have a course to share on HRU.Gov? Let us know at hru@opm.gov&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#8212; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;";
+var crawl_width=0;
+var divNews_Width=0;
+
+function pageLoaded() {
+	divNews_Width=document.getElementById("divNews").clientWidth;
+	crawl_width = document.getElementById("news_crawl").offsetWidth;
+	while (document.getElementById("news_crawl").offsetWidth < divNews_Width + crawl_width) {
+		document.getElementById("news_crawl").innerHTML += msgCrawl;
+	};
+}
+
+function kd(e){
+	var kn;
+	kn = e.keyCode;
+	
+	if (document.getElementById("Email")) {
+		if (document.getElementById("Email").value == "") {
+		} else if (document.getElementById("password").value == "") {
+		} else if (kn == 13) {
+			login();
+		};
+	};
+}
+function login() {
+	if (document.getElementById("Email").value == "") {
+		alert("Please enter your email address and password.");
+		document.getElementById("Email").focus();
+	} else if (document.getElementById("password").value == "") {
+		alert("Please enter your password.");
+		document.getElementById("password").focus();
+	} else {
+		document.pageForm.submit();
+	};
+};
+</script>
+
+</head>
+
+<body onKeyDown="kd(event);" onLoad="setImageTitles();pageLoaded();">
+
+<div id="container_outside" align="center">
+<div id="flashcontent">
+	<img class="noBorder" src="images/site/header_no-border.png" width="980" height="120" alt="HR University, Teaching the Business of HR" border="0">
+</div>
+<script type="text/javascript">
+	// <![CDATA[
+	var so = new SWFObject("images/site/HR_University_Header.swf", "sotester", "980", "120", "8", "#7CA0D2");
+	so.addVariable("page", "<CFOUTPUT>#PAGE#</CFOUTPUT>");
+	so.addVariable("headerText", "<CFOUTPUT>#FLASHTEXT#</CFOUTPUT>");
+	so.write("flashcontent");
+	// ]]>
+</script>
+
+<div id="menuBar">
+	<a href="index.aspx" onMouseOver="MM_swapImage('home','','images/site/btn_Home_ov.png',1)" onMouseOut="MM_swapImgRestore()" accesskey="1"><img name="home" src="images/site/btn_Home_up.png" width="58" height="23" alt="Home" border="0"></a>
+	<span style="padding-left:40px;"></span><a href="about_us.aspx" onMouseOver="MM_swapImage('about','','images/site/btn_About_ov.png',1)" onMouseOut="MM_swapImgRestore()"><img name="about" src="images/site/btn_About_up.png" width="86" height="23" alt="About Us" border="0"></a>
+	<span style="padding-left:40px;"></span><a href="my_career/my_career.aspx" onMouseOver="MM_swapImage('career','','images/site/btn_MyCareer_ov.png',1)" onMouseOut="MM_swapImgRestore()"><img name="career" src="images/site/btn_MyCareer_up.png" width="104" height="23" alt="My Career" border="0"></a>
+	<span style="padding-left:40px;"></span><a href="course_catalog.aspx?mgr=false" onMouseOver="MM_swapImage('course-cat','','images/site/btn_Catalog_ov.png',1)" onMouseOut="MM_swapImgRestore()"><img name="course-cat" src="images/site/btn_Catalog_up.png" width="126" height="23" alt="Course Catalog" border="0"></a>
+	<span style="padding-left:40px;"></span><a href="resource_center.aspx" onMouseOver="MM_swapImage('res-ctr','','images/site/btn_Resource_ov.png',1)" onMouseOut="MM_swapImgRestore()"><img name="res-ctr" src="images/site/btn_Resource_up.png" width="136" height="23" alt="Resource Center" border="0"></a>
+	<span style="padding-left:40px;"></span><a href="faqs.aspx" onMouseOver="MM_swapImage('faqs','','images/site/btn_FAQs_ov.png',1)" onMouseOut="MM_swapImgRestore()"><img name="faqs" src="images/site/btn_FAQs_up.png" width="56" height="23" alt="FAQs" border="0"></a>
+	<span style="padding-left:40px;"></span><a href="my_account.aspx" onMouseOver="MM_swapImage('acct','','images/site/btn_MyAccount_ov.png',1)" onMouseOut="MM_swapImgRestore()"><img name="acct" src="images/site/btn_MyAccount_up.png" width="106" height="23" alt="My Account" border="0"></a>
+</div>
+<div id="indexStatus">
+	
+		Not logged in. <a href="login.aspx"><strong>[Log In]</strong></a>
+	
+</div>
+
+<!--- ========= BEGIN CONTENT ========= --->
+<a name="content"></a>
+
+<div id="indexContent">
+	<div id="indexContentLeft">
+		<a href="mgr_corner/mgr_corner.aspx" onMouseOver="MM_swapImage('managers_corner','','images/site/btn_managers_corner_ov.gif',1)" onMouseOut="MM_swapImgRestore()" style="background-color: transparent; color: transparent; margin-left:5px; margin-top:5px;"><img name="managers_corner" src="images/site/btn_managers_corner_up.gif" width="228" height="58" alt="Manager's Corner" border="0"style="margin-top:5px;"></a>
+		
+		<div id="CDResources">
+			<div align="center" style="margin-bottom: 10px;"><span style="font-weight: bold; color: #0D265F;">Career Development<BR>Resources</span></div>
+			<ul>
+				<li style="background:none;"><a href="career_maps/career_maps.aspx" onFocus="mCloseTime();">HR Career Maps</a>
+					<!-- FreeFind Begin No Index -->
+					<nofollow>
+					<ul>
+						<li><a href="javascript:mOpen('bsMenuDrop');" onMouseOver="mOpen('bsMenuDrop');" onMouseOut="mCloseTime();" onFocus="mOpen('bsMenuDrop');"><img src="images/site/arrow_right.gif" style="float:right;vertical-align:text-top;">Browse by Specialty Areas</a></li>
+						<div id="bsMenu" onMouseOver="mCancelCloseTime('bsMenuDrop')" onMouseOut="mCloseTime()">
+							<div id="bsMenuDrop" style="z-index:60;">
+								<a href="career_maps/Classification.aspx">Classification</a>
+								<a href="career_maps/Recruitment.aspx">Recruitment & Placement</a>
+								<a href="career_maps/Benefits.aspx">Employee Benefits</a>
+								<a href="career_maps/Employee_Relations.aspx">Performance Management / Employee Relations / Labor Relations</a>
+								<a href="career_maps/Development.aspx">Human Resource Development</a>
+								<a href="career_maps/Military.aspx">Military</a>
+								<a href="career_maps/Compensation.aspx">Compensation</a>
+								<a href="career_maps/Information.aspx">Information Systems</a>
+							</div>
+						</div>
+						<li><a href="javascript:mOpen('acpMenuDrop');" onMouseOver="mOpen('acpMenuDrop');" onMouseOut="mCloseTime();" onFocus="mOpen('acpMenuDrop');"><img src="images/site/arrow_right.gif" style="float:right;vertical-align:text-top;">Additional HR Career Paths</a></li>
+							<div id="acpMenu" onMouseOver="mCancelCloseTime('acpMenuDrop')" onMouseOut="mCloseTime()">
+								<div id="acpMenuDrop">
+									<a href="career_maps/Exec_Services.aspx">Executive Services</a>
+									<a href="career_maps/Policy.aspx">Policy</a>
+								</div>
+							</div>
+					</ul>
+					</nofollow>
+					<!-- FreeFind End No Index -->
+				</li>
+				<li style="background:none;"><a href="HR_Competencies.aspx" onFocus="mCloseTime();">HR Competencies</a></li>
+				<li style="background:none;"><a href="self-assessment/self-assessment.aspx">Customized Self-Assessment</a></li>
+				<li style="background:none;"><a href="idp/idp.aspx?ret=/index.aspx"">Individual Development Plan</a></li>
+				<li style="background:none;"><a href="HR_Success_Factors.aspx">HR Success Factors</a></li>
+				<li style="background:none;"><a href="Critical_Developmental_Activities.aspx">Critical Developmental Activities</a></li>
+			</ul>
+		</div>
+
+		<div id="RegisterNow">
+			
+				<a href="register.aspx" onMouseOver="MM_swapImage('register','','images/site/btn_Register_Now_ov.gif',1)" onMouseOut="MM_swapImgRestore()" style="background-color: transparent; color: transparent;"><img name="register" src="images/site/btn_Register_Now_up.gif" width="190" height="23" alt="Register Now" border="0"></a>
+			
+		</div>
+
+		<div id="LogInOut">
+			<form name="pageForm" method="post" action="index.aspx" id="pageForm">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTEzMTQ2NTE1MjJkZOzDXnA8PNHm5RMV77P8Ee/0DlDn" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWAwKj8/+/BgKS18aDDQLyveCRD5nan3hGELFlb/IuGWQxo03neUZK" />
+</div>
+				<div id="ctl00" style="color:Red;display:none;">
+
+</div>
+
+				<strong>Log in:</strong>
+				<div style="margin-top:4px;">
+				Email:
+				</div>
+				<input name="Email" type="text" id="Email" maxlength="50" size="27" style="margin-left:2px; width:203px;" />
+				
+				<div style="margin-top:4px;">
+				Password:
+				</div>
+				<input name="password" type="password" id="password" maxlength="25" size="27" style="margin-left:2px; width:203px;" />
+				
+				<BR />
+				
+				<a href="javascript:login();" onMouseOver="MM_swapImage('login','','images/site/btn_Log_In_ov.gif',1)" onMouseOut="MM_swapImgRestore()" style="background-color: transparent; color: transparent; position:absolute; left:2px; top:124px;"><img name="login" src="images/site/btn_Log_In_up.gif" width="90" height="23" alt="Log In" border="0"></a> &nbsp; <a href='javascript:sendPwd();' style="position:absolute; left:102px; top:128px; font-size:0.9em;">Forgot Password?</a>
+
+				<input type="Hidden" id="a" name="a" value="LOGIN" size="1">
+				<input type="Hidden" id="i" name="i" value="" size="1">
+				
+<script type="text/javascript">
+//<![CDATA[
+var Page_ValidationSummaries =  new Array(document.getElementById("ctl00"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var ctl00 = document.all ? document.all["ctl00"] : document.getElementById("ctl00");
+ctl00.headertext = "There were errors on the form:";
+//]]>
+</script>
+</form>
+				<BR />
+				<span class="textRed" style="position:absolute; left:2px; top:105px; font-size:0.8em;"></span>
+			
+		</div>
+
+		<div id="StayConnected">
+			<strong>Stay Connected:</strong>
+			<BR />
+
+			<a href="http://www.facebook.com/HRUniversity" target="_blank" style="background-color: transparent; color: transparent; position:relative; left:15px; top:3px;"><img name="facebook" src="images/site/btn_facebook.gif" width="29" height="30" alt="Facebook" border="0"></a> &nbsp;
+			<a href="http://www.twitter.com/GovHRU" target="_blank" style="background-color: transparent; color: transparent; position:relative; left:16px; top:3px;"><img name="twitter" src="images/site/btn_twitter.gif" width="29" height="30" alt="Twitter" border="0"></a> &nbsp;
+			<!--
+			<div style="position:absolute;left:98px;top:23px;"><div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="www.hru.gov" send="false" layout="button_count" width="128" show_faces="false" font=""></fb:like></div>
+			-->
+			<div style="position:absolute;left:98px;top:23px;"><div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="www.facebook.com/HRUniversity" send="false" layout="button_count" width="128" show_faces="false" font=""></fb:like></div>
+			
+			
+			<!-- AddThis Button BEGIN -->
+			<!-- 
+			<div class="addthis_toolbox addthis_default_style " style="position:absolute;left:98px;top:23px;">
+			<a class="addthis_button_facebook_like"></a>
+			</div>
+			<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=hru"></script>
+			 -->
+			<!-- AddThis Button END -->
+			
+			
+		</div>
+	</div>
+
+	<div id="indexContentMain" style="max-height=400px; margin-bottom:-50px;">
+		<div id="indexContentMainLeft">
+			<div id="divNews"><div style="border:0px;position:relative;margin-top:1px;overflow:hidden;width:470px;height:20px;">
+				<div id="news_crawl">HRU’s online Individual Development Plan (IDP) is here!&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#8212; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;New Job Aid for Retirement Specialists located on the Resource Page&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#8212; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;HRU registered users reach the 18,000 mark!&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#8212; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Does your Agency have a course to share on HRU.Gov? Let us know at hru@opm.gov&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#8212; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div>
+			</div></div>
+
+			<script type="text/javascript">
+				var crawl_time	= 50;
+				var crawl_dist	= 2;
+				var crawlTimer;
+				var crawl=document.getElementById("news_crawl");
+				
+				function crawlMove() {
+					if (crawl.offsetLeft < -1*crawl_width) {
+						crawl.style.left = "0px";
+					};
+					//alert("left=" + crawl.left + "\nstyle.left=" + crawl.style.left);
+					//alert("width=" + crawl.offsetWidth);
+					//alert("left=" + crawl.offsetLeft);
+					crawl.style.left = (crawl.offsetLeft - crawl_dist) + "px";
+					crawlTimer = window.setTimeout(crawlMove, crawl_time);
+				}
+
+				crawlTimer = window.setTimeout(crawlMove, crawl_time);
+				//alert("left=" + crawl.offsetLeft);
+			</script>
+			
+			<!-- FreeFind Begin No Index -->
+			<nofollow>
+			<div id="slideshow">
+				<div id="nav"></div>
+				
+				<a href="idp/idp.aspx"><img src="images/site/MessageBoard_My_IDP_2.png" width="502" height="223" alt="Check out the online Human Resources Individual Development Plan"></a>
+
+				<a href="ESPS_home.aspx"><img src="images/site/news_ESPS_Home.png" width="502" height="223" alt="Take a look!  New options available at the Employee Services Policy Series Studio."></a>
+
+				
+				<a><img src="images/site/news_HRU_Award.png" width="502" height="223" alt="Congratulations!  HRU is the recipient of The Deloitte Public Sector Innovation Award for the 21st Century"></a>
+				
+				<a title="HRU, providing value, quality, and savings across Government.  $41,806,435 Training Dollars Saved" style="background: url(images/site/news_Savings_Counter.png) no-repeat; width: 502px; height: 223px"><div id="cost_div" align="center"><img src='images/site/cost_dollar.png'><img src='images/site/cost_4.png'><img src='images/site/cost_1.png'><img src='images/site/cost_comma.png'><img src='images/site/cost_8.png'><img src='images/site/cost_0.png'><img src='images/site/cost_6.png'><img src='images/site/cost_comma.png'><img src='images/site/cost_4.png'><img src='images/site/cost_3.png'><img src='images/site/cost_5.png'></div></a>
+
+			</div>
+			</nofollow>
+			<!-- FreeFind End No Index -->
+
+			<div id="iWantTo">
+				<div align="center"><b>I Want To...</b></div>
+			
+				<div style="position: absolute; left: 29px; top: 35px;">
+					<a href="idp/idp.aspx" onMouseOver="MM_swapImage('idp','','images/site/btn_CreateIDP_ov.gif',1)" onMouseOut="MM_swapImgRestore()" onFocus="mCloseTime();" style="background-color: transparent; color: transparent;"><img name="idp" src="images/site/btn_CreateIDP_up.gif" width="192" height="62" alt="Create/Update My IDP" border="0"></a><br>
+				</div>
+				<div style="position: absolute; left: 29px; top: 105px;">
+					<a href="leave_site.aspx?url=http://www.usajobs.gov/JobSearch/Search/GetResults?keyword=gs-0201" onMouseOver="MM_swapImage('job','','images/site/btn_FindJob_ov.gif',1)" onMouseOut="MM_swapImgRestore()" onFocus="mCloseTime();" style="background-color: transparent; color: transparent;"><img name="job" src="images/site/btn_FindJob_up.gif" width="192" height="62" alt="Search for HR Jobs" border="0"></a><br>
+				</div>
+				<div style="position: absolute; left: 29px; top: 175px;">
+					<a href="ESPS_Home.aspx" onMouseOver="MM_swapImage('esps','','images/site/btn_AttendPolicySeries_ov.gif',1)" onMouseOut="MM_swapImgRestore()" onFocus="mCloseTime();" style="background-color: transparent; color: transparent;"><img name="esps" src="images/site/btn_AttendPolicySeries_up.gif" width="192" height="62" alt="ESPS Attend a Policy Series" border="0"></a><br>
+				</div>
+				<div style="position: absolute; left: 253px; top: 35px;">
+					<a href="self-assessment/self-assessment.aspx" onMouseOver="MM_swapImage('assess','','images/site/btn_SelfAssess_ov.gif',1)" onMouseOut="MM_swapImgRestore()" onFocus="mCloseTime();" style="background-color: transparent; color: transparent;"><img name="assess" src="images/site/btn_SelfAssess_up.gif" width="192" height="62" alt="Conduct Self-Assessment" border="0"></a><br>
+				</div>
+				<div style="position: absolute; left: 253px; top: 105px;">
+					<a href="course_catalog.aspx?mgr=false" onMouseOver="MM_swapImage('course','','images/site/btn_AttendCourse_ov.gif',1)" onMouseOut="MM_swapImgRestore()" onFocus="mCloseTime();" style="background-color: transparent; color: transparent;"><img name="course" src="images/site/btn_AttendCourse_up.gif" width="192" height="62" alt="Attend a Course" border="0"></a><br>
+				</div>
+				<div style="position: absolute; left: 253px; top: 175px;">
+					<a href="Critical_Developmental_Activities.aspx" onMouseOver="MM_swapImage('activities','','images/site/btn_DevActivities_ov.gif',1)" onMouseOut="MM_swapImgRestore()" onFocus="mCloseTime();" style="background-color: transparent; color: transparent;"><img name="activities" src="images/site/btn_DevActivities_up.gif" width="192" height="62" alt="Explore Developmental Activities" border="0"></a><br>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+		// javascript-array.com
+		var timeout	= 600;
+		var closeTimer	= 0;
+		var ddMenuItem	= 0;
+		
+		// open hidden layer
+		function mOpen(id) {
+			// cancel close timer
+			mCancelCloseTime(id);
+
+			// close old layer
+			if(ddMenuItem) ddMenuItem.style.visibility = 'hidden';
+
+			// get new layer and show it
+			ddMenuItem = document.getElementById(id);
+			ddMenuItem.style.visibility = 'visible';
+			ddMenuItem.style.zindex = 60;
+		}
+		// close showed layer
+		function mClose() {
+			if(ddMenuItem) ddMenuItem.style.visibility = 'hidden';
+		}
+
+		// go close timer
+		function mCloseTime() {
+			MM_swapImgRestore();
+			closeTimer = window.setTimeout(mClose, timeout);
+		}
+
+		// cancel close timer
+		function mCancelCloseTime(id) {
+			if(closeTimer) {
+				window.clearTimeout(closeTimer);
+				closeTimer = null;
+			}
+		}
+
+		// close layer when click-out
+		document.onClick = mClose();
+		
+		</script>
+
+		<div id="indexContentMainRight" style="overflow:visible;">
+
+			<!-- start of freefind search box html -->
+			
+			
+			<div style="margin-top:-11px;margin-left:20px;">
+			<table cellpadding=0 cellspacing=0 border=0 >
+			<tr>
+				<td  colspan=2 style="font-family: Arial, Helvetica, sans-serif; font-size: 7.5pt;">
+					<form style="margin:0px; margin-top:4px;" action="http://search.freefind.com/find.html" method="get" accept-charset="utf-8" target="_self">
+					
+						<input type="hidden" name="si" value="78184331">
+					
+					<input type="hidden" name="pid" value="r">
+					<input type="hidden" name="n" value="0">
+					<input type="hidden" name="_charset_" value="">
+					<input type="hidden" name="bcd" value="&#247;">
+					<input type="text" name="query" size="26" style="width:140px;">
+					<input type="submit" value="search" style="width:50px;">
+					</form>
+				</td>
+			</tr>
+			</table>
+			</div>
+			<br>
+			<!-- end of freefind search box html -->
+			
+			<div style="position:absolute; left:1px; top:39px; width:238px;" align="center">
+				<a href="video/video_Montage.aspx"><img style="border:0px;" src="images/site/vid_pic_Montage.png" width="228" height="156" alt="Introduction Video"></a>
+			</div>
+
+		
+			<div style="position:absolute; left:0px; top:244px; width:238px; text-align:center; font-size:12px;">
+				<div style="font-family:Times New Roman, Times, serif; font-style:italic; font-weight:bold; color:#102961; font-size:14px;">A message from...</div>
+				<br>
+				<a href="video/video_Berry.aspx"><img src="images/site/vid_pic_Berry.png" width="131" height="84" alt="John Berry" border="0"></a><br>
+				<a href="video/video_Berry.aspx">John Berry, Director -<br>U.S. Office of Personnel Management</a>
+				<div style="height:23px;"></div>
+				<a href="video/video_Medina.aspx"><img src="images/site/vid_pic_Medina.png" width="131" height="84" alt="Kathryn Medina" border="0"></a><br>
+				<a href="video/video_Medina.aspx">Kathryn M. Medina, HR University Provost and Executive Director, Chief Human Capital Officers Council</a>
+			</div>
+		</div>
+	</div>
+
+<script type="text/javascript">
+if (document.getElementById("Email")) document.getElementById("Email").focus();
+function sendPwd() {
+	if (document.getElementById("Email").value != "") {
+		document.getElementById("password").value = "xxxxxx";
+		document.getElementById("a").value = "SEND";
+		document.pageForm.submit();
+	} else {
+		alert("Please enter your email address first.");
+	}
+}
+</script>
+
+</div>
+
+
+	<div id="indexFooter">
+
+
+<script type="text/javascript">
+	
+
+	function goViewA() {
+		var aText = "We are committed to providing access to our web pages for individuals with disabilities, both members of the public and Federal employees.<br><br>";
+		aText += "To meet this commitment, we will comply with the requirements of Section 508 of the Rehabilitation Act Amendments of 1998 (29 U.S.C. 794) and the <a href='http://www.access-board.gov/sec508/standards.htm' target='_blank'>accessibility standards issued by the Architectural and Transportation Barriers Compliance Board</a>.<br><br>";
+		aText += "Section 508 requires that individuals with disabilities, who are members of the public seeking information or services from us, have access to and use of information and data that is comparable to that provided to the public who are not individuals with disabilities, unless an undue burden would be imposed on us. Section 508 also requires us to ensure that Federal employees with disabilities have access to and use of information and data that is comparable to the access to and use of information and data by Federal employees who are not individuals with disabilities, unless an undue burden would be imposed on us.<br><br>";
+		aText += "Comments on the accessibility of our website should be sent to <a href='mailto:HRUniversity@opm.gov'>HRUniversity@opm.gov</a>.<br><br>";
+		showPopup(aText,700,450);
+	}
+</script>
+
+
+
+<a href="privacy_policy.aspx">Privacy Policy</a><img src='images/site/footer_divider.gif' width='15' height='20' alt='' border='0' align='middle'><a href="contact_us.aspx">Contact Us / Technical Support</a><img src='images/site/footer_divider.gif' width='15' height='20' alt='' border='0' align='middle'><a href="help.aspx">Help</a><img src='images/site/footer_divider.gif' width='15' height='20' alt='' border='0' align='middle'><a href="javascript:goViewA();">Accessibility</a><img src='images/site/footer_divider.gif' width='15' height='20' alt='' border='0' align='middle'><a href="http://search.freefind.com/find.html?id=78184331">Search</a>
+
+</div>
+</div>
+
+	<script type="text/javascript">
+		//Google Analytics Stuff
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-21278406-1']);
+		_gaq.push(['_trackPageview']);
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+</body>
+</html>

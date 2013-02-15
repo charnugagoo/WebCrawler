@@ -1,0 +1,294 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML><HEAD>
+<META name="description"
+      content="A fast, free C FFT library; includes real-complex, multidimensional, and parallel transforms. Benchmarked against many other FFTs.">
+
+<META name="keywords"
+      content="FFT,DFT,benchmark,parallel FFT,source code,math library,Fast Fourier Transform,DSP,Signal Processing">
+<META name="alias" content="http://www.fftw.org/">
+<LINK REL="icon" HREF="fftw-16.png" TYPE="image/png">
+<LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+<TITLE>FFTW Home Page</TITLE>
+<LINK rel="Bookmark" title="FFTW Home Page" href="index.html">
+<LINK rel="Contents" href="index.html">
+<LINK REL="STYLESHEET" HREF="fftw.css" TYPE="text/css">
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#FFFFFF">
+<!-- <CENTER><IMG SRC="fftw_logo.gif" WIDTH="329" HEIGHT="111" ALT="FFTW"></CENTER> -->
+<p align=center><img src="fftw-logo-med.gif" width="330" height="107">
+
+<div class="navbar" align=center>
+<TABLE CELLSPACING=20 CELLPADDING=1>
+<TR>
+	<TD><A HREF="download.html">Download</A></TD>
+	<TD><A HREF="http://groups.google.com/group/fftw-announce">Mailing List</A>&nbsp;<a href="http://freecode.com/projects/fftw/releases.atom" title="Release feed for FFTW"><img alt="RSS" width="21" height="20" align="top" src="rss.png" /></a></TD>
+	<TD><A HREF="http://www.fftw.org/benchfft/">Benchmark</A></TD>
+	<TD><A HREF="#features">Features</A></TD>
+	<TD><A HREF="#documentation">Documentation</A></TD>
+	<TD><A HREF="faq/">FAQ</A></TD>
+	<TD><A HREF="links.html">Links</A></TD>
+	<TD><A HREF="#feedback">Feedback</A></TD>
+
+</TR>
+</TABLE>
+</div>
+
+<H2>Introduction</H2>
+
+<abbr title="Fastest Fourier Transform in the West">FFTW</abbr> is a C
+subroutine library for computing the discrete Fourier transform (DFT)
+in one or more dimensions, of arbitrary input size, and of both real
+and complex data (as well as of even/odd data, i.e. the discrete
+cosine/sine transforms or DCT/DST).  We believe that FFTW,
+which is <a href="faq/section1.html#isfftwfree" title="explanation of FFTW's free-ness">free software</a>, should become the <a href="http://en.wikipedia.org/wiki/Fast_Fourier_transform">FFT</a> library of choice for most
+applications.
+
+<p>The latest official release of FFTW is version <b>3.3.3</b>,
+available from <a href="download.html">our download page</a>.  Version
+3.3 introduced support for the AVX x86 extensions, a
+distributed-memory implementation on top of MPI, and a Fortran 2003
+API.  Version 3.3.1 introduced support for the ARM Neon
+extensions. See the <a href="release-notes.html">release notes</a> for
+more information.
+
+<P>The FFTW package was developed at <A HREF="http://web.mit.edu"
+title="MIT web page"><abbr title="Massachusetts Institute of Technology">MIT</abbr></A> by <A
+HREF="http://www.fftw.org/~athena/" title="Matteo Frigo's home page">Matteo Frigo</A> and <A
+HREF="http://math.mit.edu/~stevenj/" title="Steven G. Johnson's home page">Steven G.  Johnson</A>. 
+
+<p>Our <A HREF="http://www.fftw.org/benchfft/">benchmarks</A>,
+performed on on a variety of platforms, show that FFTW's performance
+is typically superior to that of other publicly available FFT
+software, and is even competitive with vendor-tuned codes.  In
+contrast to vendor-tuned codes, however, FFTW's performance is
+<i>portable</i>: the same program will perform well on most
+architectures without modification. Hence the name, "FFTW," which
+stands for the somewhat whimsical title of "<b>Fastest Fourier
+Transform in the West</b>."
+
+
+<P>
+Subscribe to
+the <a href="http://groups.google.com/group/fftw-announce/">fftw-announce
+mailing list</a> to receive release announcements (or use the web feed&nbsp;<a href="http://freecode.com/projects/fftw/releases.atom" title="Release feed for FFTW"><img alt="RSS" width="21" height="20" align="top" src="rss.png" /></a>).
+
+
+<H2><A NAME="features">Features</A></H2>
+
+FFTW 3.3.3 is the latest official version of FFTW (refer to the <a
+href="release-notes.html">release notes</a> to find out what is new).
+<!-- Subscribe to
+the <a href="cgi-bin/mailman/listinfo/fftw-announce">fftw-announce
+mailing list</a> to receive announcements of future updates.  --> 
+Here is a list of some of FFTW's more interesting features:
+
+<ul>
+
+<li><a href="http://www.fftw.org/benchfft/" title="benchmark
+results">Speed.</a> (Supports SSE/SSE2/Altivec, since version
+3.0.  Version 3.3.1 supports AVX and ARM Neon.)
+
+<li>Both one-dimensional and <b>multi-dimensional</b> transforms.
+
+<li><b>Arbitrary-size</b> transforms.  (Sizes with small prime factors are
+best, but FFTW uses O(N log N) algorithms even for prime sizes.)
+
+<li>Fast transforms of <b>purely real</b> input or output data.
+
+<li>Transforms of real even/odd data: the <a href="http://en.wikipedia.org/wiki/Discrete_cosine_transform">discrete cosine transform</a>
+(DCT) and the <a href="http://en.wikipedia.org/wiki/Discrete_sine_transform">discrete sine transform</a> (DST), types I-IV.  (Version 3.0 or later.)
+
+<li>Efficient handling of <b>multiple, strided</b> transforms. (This lets you
+do things like transform multiple arrays at once, transform one
+dimension of a multi-dimensional array, or transform one field of a
+multi-component array.)
+
+<li><a href="http://www.fftw.org/parallel/parallel-fftw.html"
+title="parallel FFTW manual">Parallel transforms</a>: parallelized
+code for platforms with <abbr title="Symmetric
+Multi-Processing">SMP</abbr> machines with some flavor
+of <a href="http://en.wikipedia.org/wiki/Thread_%28computer_science%29">threads</a>
+(e.g. POSIX) or <a href="http://en.wikipedia.org/wiki/Openmp">OpenMP</a>. An <a href="http://www.mcs.anl.gov/research/projects/mpi/"
+title="Argonne MPI home page"><abbr title="Message Passing
+Interface">MPI</abbr></a> version for distributed-memory transforms is
+also available in FFTW 3.3.  
+
+<li><b>Portable</b> to any platform with a C compiler.
+
+<li><A HREF="fftw3_doc/" title="FFTW manual">Documentation</a> in HTML and other formats.
+
+<li>Both <b>C</b> and <b>Fortran</b> interfaces.
+
+<li><a title="definitions of free and non-free software"
+href="http://www.gnu.org/philosophy/categories.html">Free</a>
+software, released under the GNU General Public License (GPL, see <a href="doc/License-and-Copyright.html">FFTW license</a>).
+(Non-free licenses may also be purchased from <a
+href="http://web.mit.edu/tlo/www/" title="MIT Technology Licensing
+Office">MIT</a>, for users who do not want their programs protected by
+the GPL.  <a href="mailto:fftw@fftw.org" title="email the
+FFTW authors">Contact us</a> for details.)  (See also the <a
+href="faq/section1.html#isfftwfree" title="explanation of FFTW's
+free-ness">FAQ</a>.)
+
+</ul>
+
+<p>
+If you are still using
+<b>FFTW 2.x</b>, please note that FFTW 2.x was last updated in 1999
+and it is obsolete.  Please upgrade to FFTW 3.x.  The API of FFTW 3.x
+is <b>incompatible</b> with that of FFTW 2.x, for reasons of
+performance and generality (see
+the <a href="http://www.fftw.org/faq/section3.html#fftw2to3">FAQ</a>
+or
+the <a href="fftw3_doc/Upgrading-from-FFTW-version-2.html">manual</a>).
+
+
+<H2><A NAME="documentation">Documentation</A></H2>
+
+First, read the <a href="faq/">FFTW Frequently Asked Questions</a>
+document.
+
+<p>
+Manual:  <a href="fftw3_doc/">HTML</a> or <a href="fftw3.pdf">PDF</a>.
+
+<p>
+<code>man</code> pages:
+the <a
+href="fftw-wisdom.1.html">fftw-wisdom</a> and <a
+href="fftw-wisdom-to-conf.1.html">fftw-wisdom-to-conf</a> utilities.
+
+<p>For general questions about Fourier transforms, see our <a
+href="links.html">links to FFT-related resources.</a> People often ask
+us how to compute a subset of the FFT outputs, so we have posted a
+short <a href="pruned.html">discussion of pruned FFTs</a>.
+
+<P>We benchmarked FFTW against many other FFT programs, in one to
+three dimensions, on a variety of platforms. You can view the results
+from this benchmark, or download it to run on your own machine and
+compiler, at the <a href="http://www.fftw.org/benchfft/">benchFFT web
+page</a>.
+
+<p>An audio <a href="http://www.rce-cast.com/Podcast/rce-73-fftw-fastest-fourier-transform-in-the-west.html">interview of the FFTW authors</a> is available from the RCE podcast program.
+
+<H2><a href="download.html" title="FFTW download page">Downloading</a></H2>
+
+Versions 3.3.3 and 2.1.5 of FFTW may be <a
+href="download.html" title="FFTW download page">downloaded from this site</a>. Feel free to post
+FFTW on your own site, but be sure to tell us so that we can link to
+your page and notify you of updates to the software.
+
+
+<h2>Literature.</h2>
+
+<ul>
+
+<li> <a href="fftw.bib">BibTeX file</a> of FFTW references.
+
+<li>The most current general paper about FFTW, and the preferred FFTW
+reference: Matteo Frigo and Steven G. Johnson,
+"<a href="fftw-paper-ieee.pdf">The Design and Implementation of
+FFTW3</a>," <i>Proceedings of the IEEE</i> <b>93</b> (2),
+216&ndash;231 (2005).  Invited paper, Special Issue on Program
+Generation, Optimization, and Platform Adaptation.  <small>[Link is to
+our preprint of published article; also
+in <a href="fftw-paper.ps.gz">Postscript</a>.  Official issue
+is <a href="http://ieeexplore.ieee.org/xpl/tocresult.jsp?isNumber=30187&puNumber=5"
+title="Proc. IEEE: Special Issue on Program Generation,
+etc.">here</a>.]</small>
+
+<li> <a href="http://cnx.org/content/m16336/latest/">Implementing
+FFTs in Practice</a>, our chapter in the online book <i>Fast Fourier
+Transforms</i> edited by C. S. Burrus.
+
+<li> <A HREF="pldi99.pdf">"A Fast Fourier Transform Compiler,"</A> by
+Matteo Frigo, in the Proceedings of the 1999 ACM SIGPLAN Conference on
+Programming Language Design and Implementation
+(<a href="http://www.cs.rutgers.edu/pldi99/">PLDI '99</a>), Atlanta,
+Georgia, May 1999.  This paper describes the guts of the FFTW codelet
+generator.  (Also in <a href="pldi99.ps.gz">Postscript</a>.
+The <a href="pldi99-slides.ps.gz">slides</a> from the talk are also
+available.)
+
+<li> An earlier (and somewhat out of date) paper on FFTW was published
+in the 1998 ICASSP conference proceedings (vol. 3, pp. 1381-1384) with
+the title <A HREF="fftw-paper-icassp.pdf">"FFTW: An Adaptive Software
+Architecture for the FFT"</A> (also in <a
+href="fftw-paper-icassp.ps.gz">Postscript</a>), by M. Frigo and
+S. G. Johnson.
+
+<li> An even older technical report is <A
+HREF="fftw-paper.pdf">"The Fastest Fourier Transform in the West,"</A>
+MIT-LCS-TR-728 (September 1997) (also in <a
+href="fftw-paper.ps.gz">Postscript</a>.).
+
+<li> You might also be interested in <a
+href="http://supertech.lcs.mit.edu/cilk/papers/abstracts/abstract4.html#afterheading">"Cache-Oblivious
+Algorithms,"</a> by M. Frigo, C. E. Leiserson, H. Prokop, and
+S. Ramachandran (FOCS '99).
+
+<li> The <A HREF="fftw-slides.ps.gz">slides</A> from the 7/28/98 talk
+"The Fastest Fourier Transform in the West," by M. Frigo, are also
+available, along with the <a href="fftw-slides2.ps.gz">slides</a> from
+a shorter 1/14/98 talk on the same subject by S. G. Johnson.
+
+<li>A paper on a new FFT algorithm that, following <a
+href="http://home.comcast.net/~kmbtib/">James Van Buskirk</a>,
+improves upon previous records for the arithmetic complexity of the
+DFT and related transforms, is: Steven G. Johnson and Matteo Frigo,
+"<a href="newsplit.pdf">A modified split-radix FFT with fewer
+arithmetic operations</a>", <i>IEEE Trans. Signal Processing</i>
+<b>55</b> (1), 111&ndash;119 (2007).  Two preprints describing the
+application of the new algorithm to discrete cosine transforms are
+"<a
+href="http://www-math.mit.edu/~stevenj/preprints/ShaoJo07-preprint.pdf">Type-II/III
+DCT/DST algorithms with reduced number of arithmetic operations</a>"
+(March 2007) and "<a
+href="http://www-math.mit.edu/~stevenj/preprints/ShaoJo07-dct4-preprint.pdf">Type-IV
+DCT, DST, and MDCT algorithms with reduced numbers of arithmetic
+operations</a>" (August 2007), by X. Shao and S. G. Johnson.
+
+</ul>
+
+<h2>Awards</h2>
+
+<p>FFTW received
+the <a href="http://www.mcs.anl.gov/research/opportunities/wilkinsonprize/3rd-1999.php">1999
+J. H. Wilkinson Prize for Numerical Software</a>, which is awarded
+every four years to the software that "best addresses all phases of
+the preparation of high quality numerical software."  Wilkinson was a
+seminal figure in modern numerical analysis as well as a key proponent
+of the notion of reusable, common libraries for scientific computing,
+and we are especially honored to receive this award in his memory.
+
+<p>
+Our paper "A Fast Fourier Transform Compiler" (in PLDI 1999) received
+the Most Influential PLDI Paper award in 2009.
+
+<H2><a href="fftw3_doc/Acknowledgments.html">Acknowledgements</a></H2>
+
+We are grateful for the support of many people and companies,
+including Sun, Intel, the GNU project, and the Linux community.
+Please see the <a
+href="fftw3_doc/Acknowledgments.html">acknowledgements
+section</a> of our manual for a more complete list of those who helped
+us.  We are especially thankful to all of our users for their
+continuing support, feedback, and interest in the development of FFTW.
+
+<H2><a href="links.html">Related Links</a></H2>
+
+We have put together a <a href="links.html">list of links</a> to other
+interesting sites with FFT-related code or information.  This should
+be helpful if you want to know more about Fourier transforms or if for
+some reason FFTW doesn't satisfy your needs.
+
+<H2><A NAME="feedback">Feedback</A></H2>
+
+If you have comments, questions, or suggestions regarding FFTW, don't
+hesitate to email us at <A
+HREF="mailto:fftw@fftw.org">fftw@fftw.org</A>.
+
+We support encrypted/signed email. Use <a
+href="encryption.html">our public keys</a>.
+
+</BODY>
+</HTML>

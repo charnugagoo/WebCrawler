@@ -1,0 +1,98 @@
+<html>
+
+<head>
+<title>Sparsity Overview</title>
+</head>
+
+<BODY TEXT="#000000" BGCOLOR="#CCFFFF" LINK="#0000ED" VLINK="#551A8A" ALINK="#FFFF00">
+
+<center>
+
+<table border="0" cellpadding="0" width="629" height="77">
+  <tr width="20%">
+    <td width="74" height="54"> <font face="Impact" size="6" color="#FF0000">Sparsity</font></td>
+    <td width = "525" height="54" colspan="3"> <font face="Impact" size="4"><a href="http://www.cs.berkeley.edu/~ejim/">Eun-Jin
+      Im</a> and <a href="http://www.cs.berkeley.edu/~yelick">Katherine Yelick</a></font></td>
+</tr>
+  <tr width="20%">
+    <td width="300" height="21" colspan="2"> 
+      <p align="center"><a href="papers.html"><font face="Impact">Sparsity Papers</font></a></td>
+</center>
+
+    <td width="150" height="21"> 
+      <p align="left"> <font face="Impact">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.cs.berkeley.edu/~ejim/sparsity">Sparsity Software</a></font></p>
+  </td>
+
+<center>
+
+    <td width="149" height="21"> <font face="Impact"><a href="http://www.cs.berkeley.edu/~ejim/matrices">Sparsity
+      Test Matrices</a></font></td>
+</tr>
+  </table>
+</center>
+
+<hr noshade>
+
+<p>Sparse matrix-vector multiplication is an important computational kernel that
+arises in scientific simulations, data mining, image and signal processing, and
+other applications.&nbsp; It tends to perform poorly on modern processors, because of its
+high ratio of memory operations to arithmetic operations and the irregular
+memory access patterns.&nbsp;&nbsp; Optimizing this algorithm is difficult, because the
+performance depends on the nonzero structure of the matrix as well as the
+characteristics of a given memory system.&nbsp; The Sparsity system is designed to address these problem
+by allowing users to automatically build sparse matrix kernels that are tuned to their matrices and machines.&nbsp;&nbsp;<p>Sparsity
+uses techniques such as register and cache blocking, which are analogous to the
+idea of blocking (also called tiling) used for dense matrices.&nbsp; However,
+the problem is much harder, because the matrix is represented by an indexed
+structure, so the data structure must be reorganized.&nbsp; In particular,
+register blocking is done by filling in zeros of the matrix to create a matrix
+of equal-sized blocks.&nbsp; This incurs both storage and computation overhead,
+but can actually be faster due to reduced indexing overhead and improved
+locality across two dimensions.&nbsp;&nbsp;<p>Sparsity automatically generates
+code for a matrix format the multiplication operation by analyzing the machine
+and matrix separately, and then combining the results.&nbsp;&nbsp; The most difficult
+aspect of optimizing these algorithms is selecting among a large set of possible transformations and choosing parameters, such as
+block size.&nbsp; Sparsity generates code for two operations: a sparse matrix times a dense vector and a sparse matrix times a set
+of dense vectors.&nbsp; The strategy for choosing register blocks, for example
+is to use a performance model based on:&nbsp;&nbsp;<p:colorscheme
+ colors="#000000,#F8F8F8,#808080,#FFFFFF,#6699FF,#9933FF,#00FFFF,#0099CC"/>
+<ol>
+  <li><span style="mso-special-format: bullet; color: #6699FF; mso-color-index: 4; position: absolute; left: -4.03%; font-family: Tahoma; font-size: 117%">•</span><span style="mso-special-format: bullet; color: #6699FF; mso-color-index: 4; position: absolute; left: -4.03%; font-family: Tahoma; font-size: 117%">•</span><font face="Times New Roman">A
+    matrix-independent, machine-dependent performance profile, plus</font></li>
+  <li><font face="Times New Roman"><span style="mso-special-format: bullet; color: aqua; mso-color-index: 6; position: absolute; left: -3.28%">–</span>Matrix-dependent,
+    machine-independent <i>sparsity</i> profile (which may be representative
+    matrix)</font></li>
+</ol>
+<p>The first component is obtained through a search-like process of measuring
+the performance of a dense matrix in sparse format, blocked for a variety of
+sizes.&nbsp; This gives a rough upper bound on the performance that any sparse
+matrix is likely to exhibit for that block size.&nbsp; The second measure is
+used to estimate the number of non-zeros that must be filled into achieve any
+given level of blocking.&nbsp; The diagram below gives a rough idea of how
+information flows in Sparsity.<p>&nbsp;<p align="center"><img border="0" src="sparsi1.gif" width="552" height="247"><p>We
+have also done an extensive performance study of over 40 matrices on a variety of machines.  The matrices are taken
+from various scientific and engineering problems, as well as linear programming and data mining.  The machines include the
+Alpha 21164, UltraSPARC I, MIPS R10000 and PowerPC 604e.&nbsp; Sparsity is highly effective,
+producing routines that are up to 3.1 times faster for the<br>
+single vector case and 6.2 times faster for multiple vectors, and in a follow-on
+project, the <a href="http://www.cs.berkeley.edu/~richie/bebop">BeBOP</a> group
+has found the benefits to be even high on more recent machines like the Pentium
+IV.<br>
+<p>&nbsp;
+
+<hr noshade>
+
+<center>
+</center>
+
+<p> 
+
+
+<A HREF="http://www.cs.berkeley.edu">Computer Science Division</A>, 
+<A HREF="http://www.berkeley.edu">University of California at Berkeley</A><br>
+<i> Last updated Sep 2001</i>
+<i>Comments to <a href="mailto:yelick@cs.berkeley.edu">Sparsity Web 
+Maintainer</a></i>
+
+</body>
+</html>

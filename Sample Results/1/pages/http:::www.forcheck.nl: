@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Fortran source code analyser</title>
+<!-- stylesheet -->
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <meta name="keywords" content="Forcheck, 
+Fortran source code analysis tool, 
+Fortran source code analysis, 
+Fortran static analysis,
+Fortran static analyzer, 
+Fortran program development tool,
+Fortran program documentation tool,
+Fortran software development tool,
+Fortran software engineering,
+Fortran testing tool,
+Fortran debugging tool,
+Fortran development tool,
+Fortran documentation tool,
+Fortran code checker,
+Fortran code inspection,
+Fortran code verification,
+Fortran programming,
+Fortran program maintenance,
+Fortran program maintainability,
+Fortran program documentation,
+Fortran programming aid,
+Fortran analysis,
+Fortran conformance,
+Fortran development,
+Fortran documentation,
+Fortran metrics,
+Fortran verifier,
+Fortran standard conformance,
+
+portability,
+portable code, 
+legacy code,
+cross-reference,
+
+software quality assurance, QA,
+software testing tool,
+
+FORTRAN,
+Fortran,
+F77,
+F90,
+F95,
+F2003,
+F2008,
+Fortran 77,
+Fortran 90,
+Fortran 95,
+Fortran 2003,
+Fortran 2008" />
+
+  <meta name="msvalidate.01" content="CA400ED9038323F4314C0E7B04990726" />
+  <meta name="description" content="Fortran source code analysis" />
+  <meta name="author" content="Forcheck b.v." />
+  <meta name="owner" content="http://www.forcheck.nl" />
+  <meta name="revisit" content="7 days" />
+  <meta name="revisit-after" content="7 days" />
+  <meta name="audience" content="all" />
+  <meta name="robots" content="index,all" />
+  <link rel="shortcut icon" href="huisstijl/ulw/images/Forcheck.ico" type="image/vnd.microsoft.icon" />
+  <link rel="stylesheet" type="text/css" href="huisstijl/ulw/css/style.css" />
+  <script language="JavaScript" type="text/javascript" src="huisstijl/ulw/js/index.js"></script>
+</head>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5838520-1");
+pageTracker._trackPageview();
+</script>
+
+
+<body onload="preloadImages('huisstijl/ulw/images/bullitlicht1.gif',
+                            'huisstijl/ulw/images/bullitlicht2.gif',
+                            'huisstijl/ulw/images/bullitdonker.gif');">
+
+<!-- HEADER -->
+<a name="top"></a> 
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <!-- logo forcheck -->
+    
+    <div ID="logo">
+      <td><a href="http://www.forcheck.nl" target="_top">
+           <img src="huisstijl/ulw/images/forcheck.gif" alt="Terug naar de homepage van Forcheck" height="105" border="0" hspace="0" vspace="0" /></a></td>
+    </div>
+    <td>
+    <div ID="header">
+     <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+      <tr> 
+        <td valign="top"><img src="huisstijl/ulw/images/shim.gif" alt="" height="5" border="0" /></td>
+        <td />
+      </tr>
+      <tr> 
+        <td><img src="images/index.1.gif" width="480" height="80" alt="" border="0" /></td>    
+        <!-- HORIZONTALE MENU -->
+      </tr>
+      <tr> 
+        <td align="right"><a href="index.html" target="_top" class="hornav">home</a>&nbsp;&nbsp;&nbsp;<a href="contact.htm" target="_top" class="hornav">contact</a></td>
+      </tr>
+      <!-- horizontal rule -->
+      <tr> 
+        <td colspan="1" bgcolor="#002E65"><img src="huisstijl/ulw/images/shim.gif" alt="" height="1" border="0" /></td>
+      </tr>
+
+     </table>
+    </div>
+    </td>
+
+    <td></td>
+  </tr>
+  <tr>
+     <td>
+      
+<!-- VERTICALE MENU -->
+
+<div id="menu">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<!-- space -->
+  <tr> 
+    <td valign="top"><img src="huisstijl/ulw/images/shim.gif" alt="" height="19" border="0" /></td>
+  </tr>
+
+<!-- menu hoofdstuk -->
+  <tr> 
+    <td valign="top"><img src="huisstijl/ulw/images/bullitdonker.gif" alt="" name="bullita" width="20" height="22" /></td>
+    <td valign="top" colspan="3"><a href="features_overview.htm" target="_top" onmouseover="swapImage('huisstijl/ulw/images/bullitlicht1.gif', 'bullita');" onmouseout="swapImage('huisstijl/ulw/images/bullitdonker.gif', 'bullita')" class="vertnavSub">
+	Features overview</a></td>
+  </tr>
+  <tr> 
+    <td valign="top"><img src="huisstijl/ulw/images/bullitdonker.gif" alt="" name="bullitb" width="20" height="22" /></td>
+    <td valign="top" colspan="3"><a href="features.htm" target="_top" onmouseover="swapImage('huisstijl/ulw/images/bullitlicht1.gif', 'bullitb');" onmouseout="swapImage('huisstijl/ulw/images/bullitdonker.gif', 'bullitb')" class="vertnavSub">
+	Features</a></td>
+  </tr>
+
+  <tr> 
+    <td valign="top"><img src="huisstijl/ulw/images/bullitdonker.gif" alt="" name="bullitc" width="20" height="22" /></td>
+    <td valign="top" colspan="3"><a href="features_v14.htm" target="_top" onmouseover="swapImage('huisstijl/ulw/images/bullitlicht1.gif', 'bullitc');" onmouseout="swapImage('huisstijl/ulw/images/bullitdonker.gif', 'bullitc')" class="vertnavSub">
+	Forcheck V14</a></td>
+  </tr>
+
+  <tr> 
+    <td valign="top"><img src="huisstijl/ulw/images/bullitdonker.gif" alt="" name="bullitd" width="20" height="22" /></td>
+    <td valign="top" colspan="3"><a href="faq.htm" target="_top" onmouseover="swapImage('huisstijl/ulw/images/bullitlicht1.gif', 'bullitd');" onmouseout="swapImage('huisstijl/ulw/images/bullitdonker.gif', 'bullitd')" class="vertnavSub">
+	Frequently asked questions</a></td>
+  </tr>
+  
+  <tr> 
+    <td valign="top"><img src="huisstijl/ulw/images/bullitdonker.gif" alt="" name="bullite" width="20" height="22" /></td>
+    <td valign="top" colspan="3"><a href="order.htm" target="_top" onmouseover="swapImage('huisstijl/ulw/images/bullitlicht1.gif', 'bullite');" onmouseout="swapImage('huisstijl/ulw/images/bullitdonker.gif', 'bullite')" class="vertnavSub">
+	Ordering, price info and registering</a></td>
+  </tr>
+
+  <tr> 
+    <td valign="top"><img src="huisstijl/ulw/images/bullitdonker.gif" alt="" name="bullitf" width="20" height="22" /></td>
+    <td valign="top" colspan="3"><a href="downloads.htm" target="_top" onmouseover="swapImage('huisstijl/ulw/images/bullitlicht1.gif', 'bullitf');" onmouseout="swapImage('huisstijl/ulw/images/bullitdonker.gif', 'bullitf')" class="vertnavSub">
+	Documentation and downloads</a></td>
+  </tr>
+
+</table>
+</div>  
+
+    </td>
+      <td>
+        <!-- INHOUD -->
+        <div id="content">
+        <!-- 4 VERSCHILLENDE KOPJES -->
+        	<div class="hoofdstuk">Forcheck</div>
+        	<br />
+        	<div class="paragraaf">A Fortran source code analyzer and programming aid</div>
+  			<p>Forcheck is the oldest and most comprehensive Fortran verifier 
+			on the market. It performs a <a href="analysis.htm">static analysis</a> of a Fortran program or 
+			separate Fortran program units. Forcheck detects more anomalies in 
+			your program than most compilers do. Because it locates bugs as 
+			early in the development phase as possible, it saves you time and annoyance 
+			and helps you to produce more reliable code.</p>
+			<p>Forcheck is ideally suited to get a fast insight in programs 
+			under development, in existing and legacy programs. It composes 
+			optimal <a href="docum.htm">documentation</a> of your project with
+			<a href="crossref.htm">cross-reference tables</a> of 
+			each program unit, a survey of the complete program and a 
+			<a href="calltree.htm">call-tree</a>. 
+			Forcheck can be used as a <a href="sestages.htm">software engineering tool</a> in the various 
+			<a href="sestages.htm">stages</a> of the development process and can verify 
+			the conformance to each level of the Fortran standard. Beside the full Fortran syntax 
+			Forcheck supports many <a href="langsup.htm">language extensions</a> 
+			of all popular compilers.</p>
+			<p>Forcheck is fully <a href="tuning.htm">configurable</a> so you can tune 
+			the analysis and output to your needs. 
+			You can store the global information of the 
+			analyzed program units in <a href="librfac.htm">libraries</a> and 
+			reference these libraries in 
+			subsequent Forcheck runs to verify the consistency of all 
+			references, usage of modules and common-blocks.</p>
+			<p>Forcheck is very suitable as a <a href="crosspl.htm">cross-platform</a> 
+			development tool. 
+			It is available on various <a href="platform.htm">platforms</a> and 
+			supports Fortran 66, Fortran 77, Fortran 90, Fortran 95, High Performance
+			Fortran, Fortran 2003. Most Fortran 2008 language features 
+			and most <a href="langsup.htm">language extensions</a> 
+			of all popular <a href="compiler.htm">compilers</a> are supported.</p>
+			<p>A Fortran program develop environment (<a href="ide.htm">IDE</a>) is supplied in which you can develop, verify and analyse
+			new and existing Fortran programs.</p>
+			<p>You can <a href="request_eval.htm">request</a> an evaluation copy to 
+            evaluate Forcheck. </p>
+
+        	
+        <!-- footer	-->
+                	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+        	<tr>
+        		<td colspan="2"><img src="huisstijl/ulw/images/shim.gif" alt="" height="20" width="1" border="0" /></td>
+        	</tr>
+        	<tr>
+        		<td bgcolor="#002E65" colspan="2"><img src="huisstijl/ulw/images/shim.gif" alt="" height="1" border="0" /></td>
+        	</tr>
+        	<tr>
+        		<td align="left" width="50%"><a href="javascript:history.back(-1);" class="hornav">
+				previous page</a></td>
+        		<td align="right" width="50%"><a href="#top" class="hornav"> top page</a></td>
+        	</tr>
+        	<tr>
+        		<td colspan="2" class="address">Forcheck
+                    
+        		<br /><a href="contact.htm">Contact</a>
+        		<br />
+        		<script
+        			type="text/JavaScript" 
+					language="JavaScript">
+                    document.write( 
+                      "Last update: " + 
+                      date_lastmodified() );
+				</script>
+       			</td>
+        	</tr>
+          </table>
+
+
+      </div>
+    </td>
+  </tr>
+
+</table>
+
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"
+"http://www.w3.org/TR/REC-html40/strict.dtd">
+<HTML><HEAD>
+  <LINK rev="made" href="mailto:slagell@ruby-lang.org">
+  <LINK rel="stylesheet" href="ug.css" type="text/css">
+  <TITLE>What is ruby?</TITLE>
+</HEAD>
+<BODY bgcolor="#e0e0e0" text="black" vlink="#4444ff"alink="yellow" alink="4444a0">
+<div id=top>
+<table class=noborder width=100%><tr>
+       <td>
+        <table class=noborder width=100%>
+        <tr>
+	<td><div class=rubyred><h2>Ruby User's Guide</h2></div></td></tr>
+        <tr>
+        <td><div class=rubygray>What is ruby?</div></td>
+        </tr></table>
+       </td>
+        <td width=82>
+        <table class=noborder width=100%>
+         <tr>
+          <td>
+            <a title="previous: About the guide" href=about.html>
+            <img border=0 src="la-plexi.png" /></a></td>
+          <td>
+            <a title="next: Getting started" href=getstarted.html>
+            <img border=0 src="ra-plexi.png" /></a></td>
+         </tr>
+        </table>
+       </td>
+     </tr></table>
+</div>
+<div id=navcol>
+<table>
+<tr><td>&gt;</td><td><strong>What is ruby?</strong></td></tr>
+<tr><td>&nbsp;</td><td>
+              <a href="getstarted.html">Getting started</a></td></tr>
+<tr><td>&nbsp;</td><td>
+              <a href="examples.html">Simple examples</a></td></tr>
+<tr><td>&nbsp;</td><td>
+              <a href="strings.html">Strings</a></td></tr>
+<tr><td>&nbsp;</td><td>
+              <a href="regexp.html">Regular expressions</a></td></tr>
+<tr><td>&nbsp;</td><td>
+              <a href="arrays.html">Arrays</a></td></tr>
+<tr><td>&nbsp;</td><td>
+              <a href="backtoexamples.html">Back to the simple examples</a></td></tr>
+<tr><td>&nbsp;</td><td>
+              <a href="control.html">Control structures</a></td></tr>
+<tr><td>&nbsp;</td><td>
+              <a href="iterators.html">Iterators</a></td></tr>
+<tr><td>&nbsp;</td><td>
+              <a href="oothinking.html">Object-oriented thinking</a></td></tr>
+<tr><td>&nbsp;</td><td>
+              <a href="methods.html">Methods</a></td></tr>
+<tr><td>&nbsp;</td><td>
+              <a href="classes.html">Classes</a></td></tr>
+<tr><td>&nbsp;</td><td>
+              <a href="inheritance.html">Inheritance</a></td></tr>
+<tr><td>&nbsp;</td><td>
+              <a href="redefinemethods.html">Redefinition of methods</a></td></tr>
+<tr><td>&nbsp;</td><td>
+              <a href="accesscontrol.html">Access control</a></td></tr>
+<tr><td>&nbsp;</td><td>
+              <a href="singletonmethods.html">Singleton methods</a></td></tr>
+<tr><td>&nbsp;</td><td>
+              <a href="modules.html">Modules</a></td></tr>
+<tr><td>&nbsp;</td><td>
+              <a href="procobjects.html">Procedure objects</a></td></tr>
+<tr><td>&nbsp;</td><td>
+              <a href="variables.html">Variables</a></td></tr>
+<tr><td>&nbsp;</td><td>
+              <a href="globalvars.html">Global variables</a></td></tr>
+<tr><td>&nbsp;</td><td>
+              <a href="instancevars.html">Instance variables</a></td></tr>
+<tr><td>&nbsp;</td><td>
+              <a href="localvars.html">Local variables</a></td></tr>
+<tr><td>&nbsp;</td><td>
+              <a href="constants.html">Class constants</a></td></tr>
+<tr><td>&nbsp;</td><td>
+              <a href="rescue.html">Exception processing: rescue</a></td></tr>
+<tr><td>&nbsp;</td><td>
+              <a href="ensure.html">Exception processing: ensure</a></td></tr>
+<tr><td>&nbsp;</td><td>
+              <a href="accessors.html">Accessors</a></td></tr>
+<tr><td>&nbsp;</td><td>
+              <a href="objinitialization.html">Object initialization</a></td></tr>
+<tr><td>&nbsp;</td><td>
+              <a href="misc.html">Nuts and bolts</a></td></tr>
+<tr><td>&nbsp;</td><td>
+              <a href="about.html">About the guide</a></td></tr>
+<tr><td colspan=2><hr></td></tr>
+
+<tr><td colspan=2>
+  <a href="http://www.ruby-lang.org">Ruby homepage</a>
+</td></tr>
+
+<!--  <tr><td colspan=2>
+  <a href="http://dev.rubycentral.com/ref/">Library reference</a>
+</td></tr>
+
+<tr><td colspan=2>
+  <a href="http://www.ruby-doc.org/docs/ruby-doc-bundle/Manual/man-1.4/">Technical reference (old)</a>
+</td></tr>
+
+<tr><td colspan=2>
+  <a href="http://dev.rubycentral.com/faq/rubyfaq.html">FAQ</a>
+</td></tr> --></table>
+</div>
+<div id=content>
+
+<p>Ruby is "an interpreted scripting language for quick and easy
+object-oriented programming" -- what does this mean?</p>
+<p><em>interpreted scripting language:</em></p>
+<ul>
+<li>ability to make operating system calls directly</li>
+<li>powerful string operations and regular expressions</li>
+<li>immediate feedback during development</li>
+</ul>
+<p><em>quick and easy:</em></p>
+<ul>
+<li>variable declarations are unnecessary</li>
+<li>variables are not typed</li>
+<li>syntax is simple and consistent</li>
+<li>memory management is automatic</li>
+</ul>
+<p><em>object oriented programming:</em></p>
+<ul>
+<li>everything is an object</li>
+<li>classes, methods, inheritance, etc.</li>
+<li>singleton methods</li>
+<li>"mixin" functionality by module</li>
+<li>iterators and closures</li>
+</ul>
+<p><em>also:</em></p>
+<ul>
+<li>multiple precision integers</li>
+<li>convenient exception processing</li>
+<li>dynamic loading</li>
+<li>threading support</li>
+</ul>
+<p>If you are unfamiliar with some of the concepts above, read on, and
+don't worry.  The mantra of the ruby language is <em>quick and
+easy</em>.</p>
+
+</div>
+<div id=bottom>
+<table class=noborder width=100%><tr>
+       <td>
+  <div class=rubygray>
+    <p>Copyright (c) 2005-2008 Mark Slagell</p>
+
+    <p>Permission is granted to copy, distribute and/or modify
+    this document under the terms of the GNU Free Documentation
+    License, Version 1.2 or any later version published by the Free
+    Software Foundation; with no Invariant Sections, no Front-Cover
+    Texts, and no Back-Cover Texts.</p>
+
+    <p>A copy of the license is included in the section entitled
+    "<a
+    href="http://www.ruby-lang.org/~slagell/ruby/documentation_license.html">GNU
+    Free Documentation License</a>."</p>
+
+ </div>
+       </td>
+        <td width=82>
+        <table class=noborder width=100%>
+         <tr>
+          <td>
+            <a title="previous: About the guide" href=about.html>
+            <img border=0 src="la-plexi.png" /></a></td>
+          <td>
+            <a title="next: Getting started" href=getstarted.html>
+            <img border=0 src="ra-plexi.png" /></a></td>
+         </tr>
+        </table>
+       </td>
+     </tr></table>
+</div>
+</BODY></HTML>

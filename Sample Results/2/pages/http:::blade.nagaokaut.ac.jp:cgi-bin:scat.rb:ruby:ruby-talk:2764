@@ -1,0 +1,70 @@
+<HTML><HEAD><TITLE>[ruby-talk:02764] More code browsing questions</TITLE>
+<script language="javascript">
+<!--
+  function chk() {
+    var name = navigator.appName;
+    var ver = navigator.appVersion;
+    if (name.charAt(0) == "M") {
+      if (ver.charAt(0) >= 5 ||
+        ver.indexOf(" 5.5") >= 0 ||
+        ver.indexOf(" 6") >= 0
+         )
+        return(true);
+      return(false);
+    } else if (name.charAt(0) == "N") {
+      if (ver.charAt(0) >= 5)
+        return(true);
+      return(false);
+    } else {
+      return(false);
+    }
+  }
+
+  function hilight(x) {
+    if (!chk()) return;
+    if (parent) {
+      try {
+        parent.frames[0].hilight(x);
+      } catch(e) {
+       //alert(e);
+      }
+    }
+  }
+
+  //Navigation Bar
+  var IE = document.all;
+  var PosTimer;
+  function stickNavi() {
+    var y = document.body.scrollTop;
+    var s = document.getElementById('navi').style
+    s.top = y + 7;
+    s.left = 8;
+  }
+  function stickNaviLoop() {
+    if (PosTimer){clearTimeout(PosTimer);}
+    stickNavi();
+    PosTimer = setTimeout("stickNaviLoop()", 10);
+  }
+
+  function setNavi() {
+    if (IE) {document.body.onscroll = stickNavi;}
+    else {stickNaviLoop();}
+  }
+
+//-->
+</script>
+<link rel="stylesheet" href="http://blade.nagaokaut.ac.jp/css/blade-old.css" type="text/css" title="blade"></HEAD><BODY onLoad="setNavi()">
+<A NAME=head></A><div id="navi" style="position:absolute;top:7px;left:8px;"><A HREF="2763" class="a-button" onclick="hilight(2763)"><span id="normal" title="&lt;">&nbsp;&lt;&nbsp;</span></A><A HREF="/ruby/ruby-talk/2601-2800.shtml#2764" class="a-button" target="_top"><span id="normal" title="^">^</span></A><A HREF="2765" class="a-button" onclick="hilight(2765)"><span id="normal" title="&gt;">&nbsp;&gt;&nbsp;</span></A> <a href="2805" onclick="hilight(2805)" class="a-button"><span id="red" title="[previous]">&nbsp;P&nbsp;</span></a><a href="2765" onclick="hilight(2765)" class="a-button"><span id="green" title="[next]">&nbsp;N&nbsp;</span></a> <a href="2752" onclick="hilight(2752)" class="a-button"><span id="red" title="[previous thread]">|&lt;</span></a><a href="2770" onclick="hilight(2770)" class="a-button"><span id="red" title="[next thread]">&gt;|</span></a><span id="normal" title="[parent]">^</span><a href="2765" onclick="hilight(2765)" class="a-button"><span id="normal" title="[child]">_</span></a><span id="normal" title="[elder]">&gt;</span><span id="normal" title="[younger]">&lt;</span> <a href="/cgi-bin/vframe.rb/ruby/ruby-talk/2764?2625-2873" target="_top" class="a-button"><span id="normal" title="[thread frame]">---</span></a><a href="/cgi-bin/vframe.rb/ruby/ruby-talk/2764?2625-2873+split-mode-vertical" target="_top" class="a-button"><span id="normal" title="[thread frame vertical]">&nbsp;|&nbsp;</span></a><a href="2764" target="_top" onclick="hilight(2764)" class="a-button"><span id="normal" title="[frame close]">&nbsp;~&nbsp;</span></a><a href="/ruby/ruby-talk/index.shtml" target="_top" class="a-button"><span id="normal" title="[index]">.</span></a><a href="/ruby/ruby-talk/../index.shtml" target="_top" class="a-button"><span id="normal" title="[iindex]">..</span></a><a href="/cgi-bin/scat.rb/ruby/ruby-talk/2764?help-en" class="a-button"><span id="normal" title="[Help]">Help</span></a></div>
+<div id="header"><br>
+Subject: [ruby-talk:<strong>02764</strong>] <strong>More code browsing questions</strong><br>
+From: <strong>Albert Wagner </strong>&lt;alwagner tcac.net&gt;<br>
+Date: Thu, 11 May 2000 21:10:17 -0500</div>
+<pre>I see some class definitions contain &quot;include&quot; and &quot;extend&quot; statements. 
+I can find no doc refs to these.  Also, &quot;autoload&quot;.  If these are in the
+manual or user guide, please point me in the right direction.  Is there
+an english translation to ruby-1.4.4/ext/tcltklib/MANUAL.euc?  Thanks
+ahead for any help.
+-- 
+Small is Beautiful
+<a name=tail></a></pre>
+</BODY></HTML>
