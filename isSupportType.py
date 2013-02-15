@@ -3,6 +3,7 @@
 #if not supported, return -1
 def isSupportType(href):
     return href
+<<<<<<< HEAD
     # not_support_list = {"7z": 0, "flv": 1, "cgi": 2, "xml": 3, "avi": 4, "ram": 5, "mpg": 6, "mov": 7, "qt": 8,
     #                     "mp3": 9, "mp4": 10, "aiff": 11, "au": 12, "wav": 13, "ra": 14, "zip": 15, "sit": 16, "tar": 17,
     #                     "pdf": 18}
@@ -26,3 +27,5 @@ def isSupportType(href):
     #print isSupportType("http://www.baidu.com")
     #print isSupportType("http://www.google.com/+1/button")
     #isSupportType("http://googleblog.blogspot.com/2011/03/1s-right-recommendations-right-when-you.html")
+=======
+>>>>>>> sync
