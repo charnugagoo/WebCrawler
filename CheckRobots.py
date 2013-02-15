@@ -2,11 +2,16 @@ import robotparser, DeleteLastSlash
 
 """Check the url by Robots protocol
     If this url is not aloowed to crawl
-    
+    This is a naive method: check robots.txt for every url
+    if robots.txt do not allowed crewl, return error code -1
+    or not return orient url
 """
 
 
 def toSiteUrl (href):
+    """
+        compute the root given a url
+    """
     #must check url before. this means, tail is not '/'
     href = DeleteLastSlash.DeleteLastSlash(href)
     strlist = href.split('/')
@@ -24,5 +29,5 @@ def checkRobotsFile(href):
     try:
         rp.read()
     except IOError as e:
-        print "RobotPaserIOError" + href
+        return True
     return rp.can_fetch("*", href)
