@@ -19,3 +19,13 @@ A list of special features beyond the basic requirements:
    Only html and xhtml are acceptable for the response, in our case.
    If the server cannot send a response which is acceptable according to the combined Accept field value, then the
    server SHOULD send a 406 (not acceptable) response.
+3. In practice, there are two problems of performance. First, some pages have tons of out-link. For this case, we do not 
+   allow redundantly pushing url into queue. Second, some servers have long time delay. For this case, we are planning 
+   set up a timmer which help jump out slow pages.
+4. We write CheckUrl and CheckSite functions independently. This is good for extend for future work. Two hash tables 
+   are maintained in these two functions store visited url information and visited site information, including 
+   arrival time, how many times, robot protocol, e.g.
+5. We are using GitHub for version control. We also build up a web page and a wiki page for this project. See
+   http://charnugagoo.github.com/WebCrawler/
+
+
