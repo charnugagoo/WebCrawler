@@ -204,6 +204,10 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
             continue
         except urllib2.URLError as e:
             continue
+        except:
+            # Unexpected error.
+            print "Unexpected error:", sys.exc_info()[0]
+            continue
 
         number_collected_url += 1
         print "Number: " + str(number_collected_url) + "  " + link
@@ -222,6 +226,8 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
             pageVisited.write(pageContent)
             pageVisited.close()
         except:
+            # Unexpected error.
+            print "Unexpected error:", sys.exc_info()[0]
             continue
 
         # page size
