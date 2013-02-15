@@ -49,7 +49,7 @@ def checkSite_Processible (href):
 #must been checked after checkSite_Visitable
 #so must be in hash table and checekd robots.txt
     index = hash_table_site[href]
-#    print href + " " + str(index) + " " + str(visitTimes[index])
+    print href + " " + str(index) + " " + str(visitTimes[index])
     if visitTimes[index] > max_visit_times :
         return -1
     elif time.time() - lastVisittime[index] < min_visit_delay :

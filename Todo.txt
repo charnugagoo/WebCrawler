@@ -105,3 +105,38 @@ try this query "ElementaryStatisticsdouban", there are some results on google pa
 1.I/O
 2.highlights
 3.robots.txt modify by zhuoran
+
+
+==========
+18.bug
+
+Traceback (most recent call last):
+  File "WebCrawler.py", line 144, in <module>
+    "depth": 0
+  File "WebCrawler.py", line 39, in Queue_Check_Push_Front
+    if CheckSite.checkSite_Visitable(href) == 1:
+  File "/Users/charnugagoo/Dropbox/Study/WebSearchEngine/WebCrawler2/CheckSite.py", line 30, in checkSite_Visitable
+    if CheckRobots.checkRobotsFile(href):
+  File "/Users/charnugagoo/Dropbox/Study/WebSearchEngine/WebCrawler2/CheckRobots.py", line 18, in checkRobotsFile
+    rp.read()
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/robotparser.py", line 57, in read
+    f = opener.open(self.url)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib.py", line 205, in open
+    return getattr(self, name)(url)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib.py", line 356, in open_http
+    return self.http_error(url, fp, errcode, errmsg, headers)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib.py", line 369, in http_error
+    result = method(url, fp, errcode, errmsg, headers)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib.py", line 632, in http_error_302
+    data)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib.py", line 643, in redirect_internal
+    void = fp.read()
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/socket.py", line 351, in read
+    data = self._sock.recv(rbufsize)
+IOError: [Errno socket error] [Errno 54] Connection reset by peer
+
+19.bug
+Traceback (most recent call last):
+  File "WebCrawler.py", line 219, in <module>
+    pageVisited = open(linkFileName, "w")
+IOError: [Errno 63] File name too long: 'pages/https:::us.lrd.yahoo.com:_ylt=A0geDCTozB1R0jUA.ar5Brt_:SIG=16nvcoqah:EXP=1362117096:**https%3A::edit.yahoo.com:config:eval_register%3F.src=yhelp%26.intl=us%26.lang=en-US%26.done=http%3A::extprodweb03.cc.sp2.yahoo.com%253a8236:kb:index%253flocale=en_US%2526page=product%2526y=PROD_FIN'

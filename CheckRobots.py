@@ -15,8 +15,8 @@ def checkRobotsFile(href):
     robot_url = site_url + "/robots.txt"
     rp = robotparser.RobotFileParser()
     rp.set_url(robot_url)
-    rp.read()
-    #    return rp.can_fetch("*", robot_url)
-#    print href
-#    print robot_url
+    try:
+        rp.read()
+    except IOError as e:
+        print "RobotPaserIOError" + link
     return rp.can_fetch("*", href)
