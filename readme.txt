@@ -26,5 +26,22 @@ Given a query (a set of keywords) and a number n provided by the user, the crawl
 results for this query from Google, and then crawl starting from these top-10 results in a Breadth-First manner until
 we have collected a total of n pages.
 
-2.
+2. CheckUrl.py
 
+checkUrl function checks if a url could be crawled. 
+
+3.CheckSite.py
+
+Given a url, check its root site's information, whether this url could be crawled. 
+
+4. IndexFunc.py
+
+Treat url with "index/main/default" as the same without it.
+
+5. DeleteLastSlash.py
+
+Define all urls without the last slash
+
+6. CheckRobots.py
+
+Given a url, check its robots protocol.
