@@ -44,7 +44,6 @@ def Queue_Check_Push_Front(page):
                 hash_table[href] = number_visited_url
                 number_visited_url += 1
 
-
 class Parser(htmllib.HTMLParser):
     def __init__(self, depth, base_url):
         """Subclass (inherit) from HTMLParser.
