@@ -1,7 +1,9 @@
 # coding=utf-8
+from Queue import Queue
 import formatter
 import htmllib
 import sys
+import threading
 import urllib2
 import urllib
 import json
@@ -98,7 +100,7 @@ class Parser(htmllib.HTMLParser):
 
         :param attrs: A list of (name, value) pairs containing the attributes found inside the tag’s <> brackets.
         """
-        if self.has_parsed_base_element != True:
+        if not self.has_parsed_base_element:
             self.has_parsed_base_element = True
             # process the attributes
             for attr in attrs:
@@ -174,7 +176,10 @@ beginTime = datetime.datetime.now()
 # number of 404 errors
 numberOf404 = 0
 
-while len(queue) > 0 and number_collected_url < pagesNumber:
+
+def parsePage():
+    """Parse pages."""
+    global number_collected_url, numberOf404, totalSize
     # In a Breadth-First manner.
     page = queue.popleft()
     link = page["url"]
@@ -182,7 +187,7 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
 
     flag = CheckSite.checkSite_Processible(link)
     if flag == -1:
-        continue
+        return
     elif flag == -2:
         queue.append(page)
     else:
@@ -201,13 +206,13 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
             if e.code == 404:
                 # number of 404 errors
                 numberOf404 += 1
-            continue
-        except urllib2.URLError as e:
-            continue
+            return
+        except urllib2.URLError:
+            return
         except:
             # Unexpected error.
             print "Unexpected error:", sys.exc_info()[0]
-            continue
+            return
 
         number_collected_url += 1
         print "Number: " + str(number_collected_url) + "  " + link
@@ -216,7 +221,7 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
         mime = pageToVisit.info().gettype()
         # Only html and xhtml are acceptable for the response.
         if mime != "text/html" and mime != "application/xhtml+xml":
-            continue
+            return
 
         # Each page should be stored in a file in your directory.
         linkFileName = pagesDirectory + "/" + link.replace("/", ":")
@@ -228,25 +233,29 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
         except:
             # Unexpected error.
             print "Unexpected error:", sys.exc_info()[0]
-            continue
+            return
 
         # page size
         size = os.stat(linkFileName).st_size
         totalSize += size
 
-        # output a list of all visited URLs, in the order they are visited, into a file.
-        # In each line, in addition to the URL of the crawled page, you should also print the time when it was crawled,
-        # its size, and the return code (e.g., 200, 404).
-        visited.write(", ".join([
-            "URL: " + link, "time: " + datetime.datetime.now().isoformat(),
-            "size: " + str(size) + " bytes",
-            "return code: " + str(pageToVisit.getcode()),
-            "depth: " + str(depth)
-        ]) + "\n")
-        # flush() does not necessarily write the file’s data to disk. Use flush() followed by os.fsync() to ensure this
-        # behavior.
-        visited.flush()
-        os.fsync(visited.fileno())
+        try:
+            # try a list of all visited URLs, in the order they are visited, into a file.
+            # In each line, in addition to the URL of the crawled page, you should also print the time when it was crawled,
+            # its size, and the return code (e.g., 200, 404).
+            visited.write(", ".join([
+                "URL: " + link, "time: " + datetime.datetime.now().isoformat(),
+                "size: " + str(size) + " bytes",
+                "return code: " + str(pageToVisit.getcode()),
+                "depth: " + str(depth)
+            ]) + "\n")
+            # flush() does not necessarily write the file’s data to disk. Use flush() followed by os.fsync() to ensure this
+            # behavior.
+            visited.flush()
+            os.fsync(visited.fileno())
+        except:
+            print link
+            return
 
         pageToVisit.close()
 
@@ -263,12 +272,53 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
             print "InvalidURL" + link
         except KeyError as e:
             print "KeyError" + link
-        except urllib2.URLError as e:
-            print "URLError" + link
         except:
             # Unexpected error.
             print "Unexpected error:", sys.exc_info()[0]
             pass
+
+
+def parse_thread():
+    """Threads to parse pages."""
+    while len(queue) > 0 and number_collected_url < pagesNumber:
+        try:
+            # A new thread to parse a new page.
+            thread = threading.Thread(target=parsePage)
+            thread.start()
+            # Put thread into the queue. Block if necessary until a free slot is available.
+            q.put(thread, True)
+        except:
+            print "parse_thread error: ", sys.exc_info()[0]
+            continue
+
+# Number of pages parsed by threads.
+number_consumed_url = 0
+
+
+def join_parse_thread():
+    """Remove thread from the queue. Block if necessary until an item is available."""
+    global number_consumed_url
+    while number_consumed_url < number_collected_url or number_collected_url < pagesNumber:
+        thread = q.get(True)
+        # Wait until the thread terminates. This blocks the calling thread until the thread whose join() method is
+        # called terminates – either normally or through an unhandled exception – or until the optional timeout occurs.
+        thread.join(3)
+        # Number of pages parsed by threads.
+        number_consumed_url += 1
+    print "join_parse_thread"
+
+# Queue of parsing threads.
+q = Queue(4)
+# The main thread to parse pages.
+parsing_thread = threading.Thread(target=parse_thread)
+# The main thread to join parsing threads.
+joining_thread = threading.Thread(target=join_parse_thread)
+parsing_thread.start()
+joining_thread.start()
+# Join these two threads with our main thread.
+parsing_thread.join(3)
+joining_thread.join()
+
 # It would also be good to have some statistics at the end of the file, like number of files, total size (in MB), total
 # time, number of 404 errors etc.
 totalSizeInMB = divmod(totalSize, 1000000)
