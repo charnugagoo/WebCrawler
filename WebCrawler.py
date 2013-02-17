@@ -196,7 +196,7 @@ while len(queue) > 0 and number_collected_url < pagesNumber:
                 # If the server cannot send a response which is acceptable according to the combined Accept field value,
                 # then the server SHOULD send a 406 (not acceptable) response.
                 "Accept": "text/html,application/xhtml+xml"
-            }))
+            }), timeout=3)
         except urllib2.HTTPError as e:
             if e.code == 404:
                 # number of 404 errors
