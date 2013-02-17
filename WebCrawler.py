@@ -176,7 +176,8 @@ totalSize = 0
 beginTime = datetime.datetime.now()
 # number of 404 errors
 numberOf404 = 0
-
+# number of duplicate content page
+numberOfSimilar = 0
 
 def parsePage():
     """Parse pages."""
@@ -231,7 +232,8 @@ def parsePage():
             pageContent = pageToVisit.read()
             if not CheckContent.checkContent(pageContent):
                 number_collected_url -= 1
-                continue;
+                numberOfSimilar += 1
+                return
             pageVisited.write(pageContent)
             pageVisited.close()
         except:
@@ -332,5 +334,7 @@ visited.write(", ".join(
     ["number of files: " + str(number_collected_url),
      "total size: " + "{0}.{1}".format(totalSizeInMB[0], totalSizeInMB[1]) + " MB",
      "total time: " + str((datetime.datetime.now() - beginTime).total_seconds()) + " seconds",
-     "number of 404 errors: " + str(numberOf404)]) + "\n")
+     "number of 404 errors: " + str(numberOf404),
+     "number of duplicate contents" + str(numberOfSimilar)
+     ]) + "\n")
 visited.close()
