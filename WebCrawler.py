@@ -272,6 +272,8 @@ def parsePage():
             print "InvalidURL" + link
         except KeyError as e:
             print "KeyError" + link
+        except urllib2.URLError as e:
+            print "URLError" + link
         except:
             # Unexpected error.
             print "Unexpected error:", sys.exc_info()[0]
