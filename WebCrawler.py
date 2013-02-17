@@ -15,6 +15,7 @@ import httplib
 
 import CheckUrl
 import CheckSite
+import CheckContent
 
 pagesNumber = 500
 
@@ -31,7 +32,7 @@ def Queue_Check_Push_Front(page):
     """
     global number_collected_url
     global pagesNumber
-    if len(queue) + number_collected_url > pagesNumber * 1.1:
+    if len(queue) + number_collected_url > pagesNumber * 1.5:
         return
     href = page["url"]
 
@@ -228,6 +229,9 @@ def parsePage():
         try:
             pageVisited = open(linkFileName, "w")
             pageContent = pageToVisit.read()
+            if not CheckContent.checkContent(pageContent):
+                number_collected_url -= 1
+                continue;
             pageVisited.write(pageContent)
             pageVisited.close()
         except:

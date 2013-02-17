@@ -74,7 +74,7 @@ def checkSite_Processible (href):
     lastVisittime the latest time we visited this site 
     visitTimes how many times we have already visited this site
     """
-max_visit_times = 20
+max_visit_times = 30
 min_visit_delay = 0.1 #s
 number_visited_site = 0
 hash_table_site = {}
