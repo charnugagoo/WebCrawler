@@ -1,0 +1,1171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>UBM Tech - Game Network</title>
+<link href="/design_packages/gamasutra_redesign/stylesheet.css" rel='stylesheet' type='text/css' />
+
+<script language="javascript" type="text/javascript" src="/javascript.php"></script></head>
+
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>
+<!--HEADER-->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr bgcolor="303030">
+<td  class="header-1"><img src="/design_packages/gamasutra_redesign/images/gamasutra_logo.gif"></td>
+
+<td class="header-3"><form action="http://store.cmpgame.com/search_results.php" method="post" name="search_form" id="search_form"><table width="100%" border="0" cellspacing="5" cellpadding="0">
+          <tr>
+            <td width="97%" align="right" valign="middle"></td>
+            <td width="1%" align="right" valign="middle"><font color="#ffffff"><b>Search</b></font></td>
+            <td width="1%" valign="middle"><input name="search_submit" type="hidden" id="search_submit" value="search_submit" /><input name="search_string" class="FIELD-SEARCH" type="text" size="25" id="search_string" value="" /></td>
+            <td width="1%" valign="middle"><input name="search_submit" type="submit" class="search-button" id="search_submit" value="GO" /></td>
+          </tr>
+        </table></form></td>
+      </tr>
+    </table>
+<!--END HEADER-->
+    </td>
+  </tr>
+
+  <tr>
+    <td class="menu-bg"><table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="19" height="10" /></td>
+        <td><table class="main-menu-table" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="main-menu-left-td"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="10" height="1" /></td>
+            <td class="main-menu-right-td"><span class="main-menu"><a href="http://store.cmpgame.com/">HOME</a></span></td>
+          </tr>
+        </table></td>
+        <td><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="10" height="10" /></td>
+        <td><table class="main-menu-table" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="main-menu-left-td"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="10" height="1" /></td>
+            <td class="main-menu-right-td"><span class="main-menu"><a href="http://store.cmpgame.com/customers/">MY ACCOUNT</a></span></td>
+          </tr>
+        </table></td>
+        <td><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="10" height="10" /></td>
+        <td><table class="main-menu-table" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="main-menu-left-td"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="10" height="1" /></td>
+            <td class="main-menu-right-td"><span class="main-menu"><a href="http://store.cmpgame.com/basket/">VIEW CART</a></span></td>
+          </tr>
+        </table></td>
+        <td><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="10" height="10" /></td>
+        <td><table class="main-menu-table" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="main-menu-left-td"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="10" height="1" /></td>
+            <td class="main-menu-right-td"><span class="main-menu"><a href="http://store.cmpgame.com/checkout/">CHECKOUT</a></span></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td class="body-bg"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="10" height="20" />
+      
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="body-shell-1"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="19" height="1" /></td>
+          <td class="body-shell-2">
+
+<!--LEFT NAV CODE -->
+          <table width="195" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="body-top-left"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="1" /></td>
+              <td class="body-top-mid"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="1" /></td>
+              <td class="body-top-right"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="1" /></td>
+            </tr>
+            <tr>
+              <td class="body-mid" colspan="3">
+
+             <table border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td class="content-1">
+
+<!--MY CART CHECKOUT-->
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                             <td >
+
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td width="1%"><br/><br/><img src="/design_packages/gamasutra_redesign/images/icon_cart.gif" alt="" width="20" height="14" /></td>
+                                        <td width="1%"><br/><br/><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                        <td width="98%" align="left"><span class="list-title"><br/><br/>My Shopping Cart</span></td>
+                                     </tr>
+                                </table>
+          
+                               <img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="100" height="8" alt="" /><br />
+                               <span >[ <b>0</b> ] items in cart</span><br />
+                               <img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="100" height="8" alt="" /><br />
+                               <a href="http://store.cmpgame.com/basket/">View Cart </a> | <a href="http://store.cmpgame.com/checkout/">Checkout</a><br /><br /></td>
+                           </tr>
+                        </table>
+
+                        <hr>
+
+<!--CATEGORIES-->
+                       <span class="list-title">Game Developer Research</span><br />
+                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                               <tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=64&skin=gdmag">Research Reports</a></td>
+                               </tr>
+                        </table><br />
+ 
+                       <span class="list-title">Game Developer Magazine</span><br />
+                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                              <tr>                        
+                                 <td width="19" align="right" valign="middle"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                 <td align="left" valign="middle"><a href="http://store.cmpgame.com/category.php?cat=20&skin=gdmag_2011">Digital Subscription</a></td>
+                         </tr>
+                         <tr>
+                                <td width="19" align="right" valign="middle"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                <td align="left" valign="middle"><a href="http://store.cmpgame.com/category.php?cat=18&skin=gdmag_2011">Digital Edition Copies</a></td>
+                         </tr>
+                         <tr>
+                               <td width="19" align="right" valign="middle"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                         <td align="left" valign="middle"><a href="http://store.cmpgame.com/category.php?cat=19&skin=gdmag_2011">Print Subscription</a></td>
+                          </tr>
+                        </table><br />
+
+<span class="list-title">GDC Vault</span><br />
+                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                               <tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=85&skin=gdcvault">Individual Subscription</a></td>
+                               </tr>
+                        </table><br />
+
+<span class="list-title">GDC Audio Recordings</span><br />
+                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                               <tr>
+                                  <td width="19" align="right" valign="middle"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=82&skin=gdcvault">GDC Online 2012</a></td>
+                               </tr>
+                               <tr>
+                                  <td width="19" align="right" valign="middle"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=82&skin=gdcvault">GDC Europe 2012</a></td>
+                               </tr>
+                               <tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=81&skin=gdcvault">GDC 2012</a></td>
+                               </tr>
+                               <tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=80&skin=gdcvault">GDC 2011</a></td>
+                               </tr>
+                               <tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=79&skin=gdcvault">GDC 10</a></td>
+                               </tr>
+                               <tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=75&skin=gdcvault">GDC 09</a></td>
+                               </tr>
+                               <tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=74&skin=gdcvault">GDC Austin 08</a></td>
+                               </tr>
+ <tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=73&skin=gdcvault">GDC Mobile 08</a></td>
+                               </tr>
+ <tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=72&skin=gdcvault">GDC 08</a></td>
+                               </tr>
+<tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=65&skin=gdcvault">GDC Austin 07</a></td>
+                               </tr>
+<tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=57&skin=gdcvault">GDC Mobile 07</a></td>
+                               </tr>
+<tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=56&skin=gdcvault">GDC 07</a></td>
+                               </tr>
+<tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=54&skin=gdcvault">GDC 06</a></td>
+                               </tr>
+<tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=36&skin=gdcvault">GDC 05</a></td>
+                               </tr>
+<tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=37&skin=gdcvault">GDC 04</a></td>
+                               </tr>
+<tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=38&skin=gdcvault">GDC 03</a></td>
+                               </tr>
+<tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=40&skin=gdcvault">GDC 01</a></td>
+                               </tr>
+<tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=41&skin=gdcvault">GDC 2000 & Before</a></td>
+                               </tr>
+                        </table><br />
+
+                                                         
+                          <hr>
+
+<!--NEWEST ITEMS-->
+                         <span class="list-title">Newest Item(s)</span><br />
+               
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                               <tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><p><a href="http://store.cmpgame.com/product/6852/Contractor-Listing---Premiere-Enhancement">Contractor Listing - Premiere Enhancement</a></p><p><a href="http://store.cmpgame.com/product/6851/Contractor-Listing---Featured-Enhancement">Contractor Listing - Featured Enhancement</a></p><p><a href="http://store.cmpgame.com/product/6850/Contractor-Listing---Basic-Enhancement">Contractor Listing - Basic Enhancement</a></p><p><a href="http://store.cmpgame.com/product/6849/Game-Developer-February-2013-Issue---Digital-Edition">Game Developer February 2013 Issue - Digital Edition</a></p><p><a href="http://store.cmpgame.com/product/6846/Game-Developer-January-2013-Issue---Digital-Edition">Game Developer January 2013 Issue - Digital Edition</a></p><p><a href="http://store.cmpgame.com/product/6845/Guild-Wars-2%3A-Programming-the-Next-Generation-Online-World">Guild Wars 2: Programming the Next Generation Online World</a></p><p><a href="http://store.cmpgame.com/product/6844/Writing-The-Unsung-Experiences%3A-Gender-In-Game-Storytelling">Writing The Unsung Experiences: Gender In Game Storytelling</a></p><p><a href="http://store.cmpgame.com/product/6843/Greetings%2C-Troubleshooter%3A-Living-in-a-Gameful-World">Greetings, Troubleshooter: Living in a Gameful World</a></p><p><a href="http://store.cmpgame.com/product/6842/Classic-Game-Postmortem%3A-Meridian-59">Classic Game Postmortem: Meridian 59</a></p><p><a href="http://store.cmpgame.com/product/6841/Beyond-the-Leaderboard%2C-an-Enterprise-View">Beyond the Leaderboard, an Enterprise View</a></p></td>
+                               </tr>
+                        </table>
+                        
+                        <br />
+                   </tr>
+               </table>
+
+          </td>
+      </tr>
+      <tr>
+        <td class="body-bot-left"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="1" /></td>
+        <td class="body-bot-mid"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="1" /></td>
+        <td class="body-bot-right"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="1" /></td>
+       </tr>
+</table>
+<!--END LEFT NAV CODE -->
+               
+         </td>
+          <td class="body-shell-3"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="5" height="1" /></td>
+          <td class="body-shell-4"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="body-top-left"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="1" /></td>
+              <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td class="body-top-mid-expand"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="1" /></td>
+                  </tr>
+              </table>
+
+</td>
+              <td class="body-top-right"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="1" /></td>
+            </tr>
+            <tr>
+              <td class="body-mid-left"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="1" /></td>
+              <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td class="body-mid-expand"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="1%" valign="middle"><img src="/design_packages/gamasutra_redesign/images/icon_folder.gif" alt="" width="18" height="12" /></td>
+                        <td width="98%" align="left" valign="middle"><span class="page-title">Featured Products </span></td>
+                      </tr>
+                    </table>
+                      <img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="100" height="12" alt="" />
+                      <form action="/storefront.php" method="get" enctype="application/x-www-form-urlencoded" name="storefront_form" id="storefront_form">
+                        
+                        <table width="100%" border="0" align="center" cellpadding="7" cellspacing="0" class="results-bottom-border">
+      <tr>
+        <td width="1%" rowspan="3" align="center" valign="top"><a href="http://store.cmpgame.com/product/5610/GDC-Vault-Member-Subscription---12-Months" title="GDC Vault Member Subscription - 12 Months"><img src='/img/graphics/default/GDCVault_Logo_forNL.gif' alt="" border="0" /></a></td>
+        <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/5610/GDC-Vault-Member-Subscription---12-Months" title="View this product's details page.">GDC Vault Member Subscription - 12 Months</a></span></td>
+      </tr>
+      <tr>
+        <td width="98%" align="left" valign="top"><p><span class="results-price-title">Price:</span><span class="results-price"><b>$495.00</b></span> GDC Vault Subscription<br />
+          <br />
+              <span class="results-sku-title">SKU#:</span> <span class="results-sku">VAULT-SUB-12</span></p>
+          </td>
+        <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="1%"><a href="/quick_return.php?id=5610&amp;qty=1"><img src="/design_packages/gamasutra_redesign/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+            <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+            <td width="98%" align="left"><a href="/quick_return.php?id=5610&amp;qty=1">Add to Cart</a> </td>
+          </tr>
+        </table>   
+<img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="100" height="8" alt="" />
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="1%"><a href="http://store.cmpgame.com/product/5610/GDC-Vault-Member-Subscription---12-Months"><img src="/design_packages/gamasutra_redesign/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+              <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+              <td width="98%" align="left"><a href="http://store.cmpgame.com/product/5610/GDC-Vault-Member-Subscription---12-Months">More Info</a></td>
+            </tr>
+          </table>          </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left" valign="top"><span class="results-description-title">Description:</span> <span class="results-description">GDC Vault is a trove of in-depth design, technical and inspirational talks and slides from the influencers of the game development industry, taken from over 20 years of the worldwide Game Developers Conferences.  GDC Vault covers a range of developmental topics including game design, programming, audio, visual arts, business management, production, online games, and much more.</span><br />
+            <img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="10" /></td>
+      </tr><tr>
+        <td width="1%" rowspan="3" align="center" valign="top"><a href="http://store.cmpgame.com/product/6849/Game-Developer-February-2013-Issue---Digital-Edition" title="Game Developer February 2013 Issue - Digital Edition"><img src='/img/graphics/default/1302_60x81.jpg' alt="" border="0" /></a></td>
+        <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6849/Game-Developer-February-2013-Issue---Digital-Edition" title="View this product's details page.">Game Developer February 2013 Issue - Digital Edition</a></span></td>
+      </tr>
+      <tr>
+        <td width="98%" align="left" valign="top"><p><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+          <br />
+              <span class="results-sku-title">SKU#:</span> <span class="results-sku">GD-BACK-633</span></p>
+          </td>
+        <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="1%"><a href="/quick_return.php?id=6849&amp;qty=1"><img src="/design_packages/gamasutra_redesign/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+            <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+            <td width="98%" align="left"><a href="/quick_return.php?id=6849&amp;qty=1">Add to Cart</a> </td>
+          </tr>
+        </table>   
+<img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="100" height="8" alt="" />
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="1%"><a href="http://store.cmpgame.com/product/6849/Game-Developer-February-2013-Issue---Digital-Edition"><img src="/design_packages/gamasutra_redesign/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+              <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+              <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6849/Game-Developer-February-2013-Issue---Digital-Edition">More Info</a></td>
+            </tr>
+          </table>          </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left" valign="top"><span class="results-description-title">Description:</span> <span class="results-description"><!-- rlb -->FEATURES<br />
+<br />
+* Postmortem - Mark of the Ninja<br />
+* GDC 2013 Preview<br />
+* Roundtable: Triple-A, Free-to-Play<br />
+* Let's Talk About Touching<br />
+<br /></span><br />
+            <img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="10" /></td>
+      </tr><tr>
+        <td width="1%" rowspan="3" align="center" valign="top"><a href="http://store.cmpgame.com/product/6846/Game-Developer-January-2013-Issue---Digital-Edition" title="Game Developer January 2013 Issue - Digital Edition"><img src='/img/graphics/default/1301_60x81.jpg' alt="" border="0" /></a></td>
+        <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6846/Game-Developer-January-2013-Issue---Digital-Edition" title="View this product's details page.">Game Developer January 2013 Issue - Digital Edition</a></span></td>
+      </tr>
+      <tr>
+        <td width="98%" align="left" valign="top"><p><span class="results-price-title">Price:</span><span class="results-price"><b>$0.00</b></span> <br />
+          <br />
+              <span class="results-sku-title">SKU#:</span> <span class="results-sku">GD-BACK-632</span></p>
+          </td>
+        <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="1%"><a href="/quick_return.php?id=6846&amp;qty=1"><img src="/design_packages/gamasutra_redesign/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+            <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+            <td width="98%" align="left"><a href="/quick_return.php?id=6846&amp;qty=1">Add to Cart</a> </td>
+          </tr>
+        </table>   
+<img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="100" height="8" alt="" />
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="1%"><a href="http://store.cmpgame.com/product/6846/Game-Developer-January-2013-Issue---Digital-Edition"><img src="/design_packages/gamasutra_redesign/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+              <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+              <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6846/Game-Developer-January-2013-Issue---Digital-Edition">More Info</a></td>
+            </tr>
+          </table>          </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left" valign="top"><span class="results-description-title">Description:</span> <span class="results-description"><!-- rlb -->FEATURES<br />
+<br />
+* Postmortem - Papo & Yo<br />
+* Front Line Awards<br />
+* Bring Your Tools to Browsers<br />
+* Remixing Classics: interview with Masaya Matsuura<br />
+<br /></span><br />
+            <img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="10" /></td>
+      </tr><tr>
+        <td width="1%" rowspan="3" align="center" valign="top"><a href="http://store.cmpgame.com/product/6651/Game-Developer-December-2012-Issue---Digital-Edition" title="Game Developer December 2012 Issue - Digital Edition"><img src='/img/graphics/default/Dec_60x81.jpg' alt="" border="0" /></a></td>
+        <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6651/Game-Developer-December-2012-Issue---Digital-Edition" title="View this product's details page.">Game Developer December 2012 Issue - Digital Edition</a></span></td>
+      </tr>
+      <tr>
+        <td width="98%" align="left" valign="top"><p><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+          <br />
+              <span class="results-sku-title">SKU#:</span> <span class="results-sku">GD-BACK-631</span></p>
+          </td>
+        <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="1%"><a href="/quick_return.php?id=6651&amp;qty=1"><img src="/design_packages/gamasutra_redesign/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+            <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+            <td width="98%" align="left"><a href="/quick_return.php?id=6651&amp;qty=1">Add to Cart</a> </td>
+          </tr>
+        </table>   
+<img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="100" height="8" alt="" />
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="1%"><a href="http://store.cmpgame.com/product/6651/Game-Developer-December-2012-Issue---Digital-Edition"><img src="/design_packages/gamasutra_redesign/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+              <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+              <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6651/Game-Developer-December-2012-Issue---Digital-Edition">More Info</a></td>
+            </tr>
+          </table>          </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left" valign="top"><span class="results-description-title">Description:</span> <span class="results-description"><!-- rlb -->FEATURES<br />
+<br />
+* Postmortem - Sound Shapes<br />
+* Year In Review<br />
+* The Art Of War<br />
+* Beyond Shadows Of Doubt<br />
+<br /></span><br />
+            <img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="10" /></td>
+      </tr><tr>
+        <td width="1%" rowspan="3" align="center" valign="top"><a href="http://store.cmpgame.com/product/6650/Game-Developer-November-2012-Issue---Digital-Edition" title="Game Developer November 2012 Issue - Digital Edition"><img src='/img/graphics/default/111260x81.jpg' alt="" border="0" /></a></td>
+        <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6650/Game-Developer-November-2012-Issue---Digital-Edition" title="View this product's details page.">Game Developer November 2012 Issue - Digital Edition</a></span></td>
+      </tr>
+      <tr>
+        <td width="98%" align="left" valign="top"><p><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+          <br />
+              <span class="results-sku-title">SKU#:</span> <span class="results-sku">GD-BACK-630</span></p>
+          </td>
+        <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="1%"><a href="/quick_return.php?id=6650&amp;qty=1"><img src="/design_packages/gamasutra_redesign/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+            <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+            <td width="98%" align="left"><a href="/quick_return.php?id=6650&amp;qty=1">Add to Cart</a> </td>
+          </tr>
+        </table>   
+<img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="100" height="8" alt="" />
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="1%"><a href="http://store.cmpgame.com/product/6650/Game-Developer-November-2012-Issue---Digital-Edition"><img src="/design_packages/gamasutra_redesign/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+              <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+              <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6650/Game-Developer-November-2012-Issue---Digital-Edition">More Info</a></td>
+            </tr>
+          </table>          </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left" valign="top"><span class="results-description-title">Description:</span> <span class="results-description"><!-- rlb -->FEATURES<br />
+<br />
+* Postmortem - The Binding Of Isaac<br />
+* Power 50<br />
+* Shoot Many Robots Arena Kings Midmortem<br />
+* How Loud Should It Be<br />
+<br /></span><br />
+            <img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="10" /></td>
+      </tr><tr>
+        <td width="1%" rowspan="3" align="center" valign="top"><a href="http://store.cmpgame.com/product/6649/Game-Developer-October-2012-Issue---Digital-Edition" title="Game Developer October 2012 Issue - Digital Edition"><img src='/img/graphics/default/1012_60x81.jpg' alt="" border="0" /></a></td>
+        <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6649/Game-Developer-October-2012-Issue---Digital-Edition" title="View this product's details page.">Game Developer October 2012 Issue - Digital Edition</a></span></td>
+      </tr>
+      <tr>
+        <td width="98%" align="left" valign="top"><p><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+          <br />
+              <span class="results-sku-title">SKU#:</span> <span class="results-sku">GD-BACK-629</span></p>
+          </td>
+        <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="1%"><a href="/quick_return.php?id=6649&amp;qty=1"><img src="/design_packages/gamasutra_redesign/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+            <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+            <td width="98%" align="left"><a href="/quick_return.php?id=6649&amp;qty=1">Add to Cart</a> </td>
+          </tr>
+        </table>   
+<img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="100" height="8" alt="" />
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="1%"><a href="http://store.cmpgame.com/product/6649/Game-Developer-October-2012-Issue---Digital-Edition"><img src="/design_packages/gamasutra_redesign/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+              <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+              <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6649/Game-Developer-October-2012-Issue---Digital-Edition">More Info</a></td>
+            </tr>
+          </table>          </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left" valign="top"><span class="results-description-title">Description:</span> <span class="results-description"><!-- rlb -->FEATURES<br />
+<br />
+* Postmortem - Rayman Origins<br />
+* Seeing double<br />
+* Siggraph 2012 Highlights<br />
+* Game over<br />
+<br /></span><br />
+            <img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="10" /></td>
+      </tr><tr>
+        <td width="1%" rowspan="3" align="center" valign="top"><a href="http://store.cmpgame.com/product/6648/Game-Developer-September-2012-Issue---Digital-Edition" title="Game Developer September 2012 Issue - Digital Edition"><img src='/img/graphics/default/Sept_60x81.jpg' alt="" border="0" /></a></td>
+        <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6648/Game-Developer-September-2012-Issue---Digital-Edition" title="View this product's details page.">Game Developer September 2012 Issue - Digital Edition</a></span></td>
+      </tr>
+      <tr>
+        <td width="98%" align="left" valign="top"><p><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+          <br />
+              <span class="results-sku-title">SKU#:</span> <span class="results-sku">GD-BACK-628</span></p>
+          </td>
+        <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="1%"><a href="/quick_return.php?id=6648&amp;qty=1"><img src="/design_packages/gamasutra_redesign/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+            <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+            <td width="98%" align="left"><a href="/quick_return.php?id=6648&amp;qty=1">Add to Cart</a> </td>
+          </tr>
+        </table>   
+<img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="100" height="8" alt="" />
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="1%"><a href="http://store.cmpgame.com/product/6648/Game-Developer-September-2012-Issue---Digital-Edition"><img src="/design_packages/gamasutra_redesign/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+              <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+              <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6648/Game-Developer-September-2012-Issue---Digital-Edition">More Info</a></td>
+            </tr>
+          </table>          </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left" valign="top"><span class="results-description-title">Description:</span> <span class="results-description"><!-- rlb -->FEATURES<br />
+<br />
+* Postmortem - PixelJunk4am<br />
+* Fight the lag!<br />
+* Scale your online game<br />
+* Level up your studio<br />
+<br /></span><br />
+            <img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="10" /></td>
+      </tr><tr>
+        <td width="1%" rowspan="3" align="center" valign="top"><a href="http://store.cmpgame.com/product/6647/Game-Developer-August-2012-Issue---Digital-Edition" title="Game Developer August 2012 Issue - Digital Edition"><img src='/img/graphics/default/Aug_60x81.jpg' alt="" border="0" /></a></td>
+        <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6647/Game-Developer-August-2012-Issue---Digital-Edition" title="View this product's details page.">Game Developer August 2012 Issue - Digital Edition</a></span></td>
+      </tr>
+      <tr>
+        <td width="98%" align="left" valign="top"><p><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+          <br />
+              <span class="results-sku-title">SKU#:</span> <span class="results-sku">GD-BACK-627</span></p>
+          </td>
+        <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="1%"><a href="/quick_return.php?id=6647&amp;qty=1"><img src="/design_packages/gamasutra_redesign/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+            <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+            <td width="98%" align="left"><a href="/quick_return.php?id=6647&amp;qty=1">Add to Cart</a> </td>
+          </tr>
+        </table>   
+<img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="100" height="8" alt="" />
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="1%"><a href="http://store.cmpgame.com/product/6647/Game-Developer-August-2012-Issue---Digital-Edition"><img src="/design_packages/gamasutra_redesign/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+              <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+              <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6647/Game-Developer-August-2012-Issue---Digital-Edition">More Info</a></td>
+            </tr>
+          </table>          </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left" valign="top"><span class="results-description-title">Description:</span> <span class="results-description"><!-- rlb -->FEATURES<br />
+<br />
+* AI Architectures: What's on the menu??<br />
+* Beyond The Map.<br />
+<br /></span><br />
+            <img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="10" /></td>
+      </tr><tr>
+        <td width="1%" rowspan="3" align="center" valign="top"><a href="http://store.cmpgame.com/product/6646/Game-Developer-June%7B47%7DJuly-2012-Issue---Digital-Edition" title="Game Developer June/July 2012 Issue - Digital Edition"><img src='/img/graphics/default/JJ60x81.jpg' alt="" border="0" /></a></td>
+        <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6646/Game-Developer-June%7B47%7DJuly-2012-Issue---Digital-Edition" title="View this product's details page.">Game Developer June/July 2012 Issue - Digital Edition</a></span></td>
+      </tr>
+      <tr>
+        <td width="98%" align="left" valign="top"><p><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+          <br />
+              <span class="results-sku-title">SKU#:</span> <span class="results-sku">GD-BACK-626</span></p>
+          </td>
+        <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="1%"><a href="/quick_return.php?id=6646&amp;qty=1"><img src="/design_packages/gamasutra_redesign/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+            <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+            <td width="98%" align="left"><a href="/quick_return.php?id=6646&amp;qty=1">Add to Cart</a> </td>
+          </tr>
+        </table>   
+<img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="100" height="8" alt="" />
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="1%"><a href="http://store.cmpgame.com/product/6646/Game-Developer-June%7B47%7DJuly-2012-Issue---Digital-Edition"><img src="/design_packages/gamasutra_redesign/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+              <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+              <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6646/Game-Developer-June%7B47%7DJuly-2012-Issue---Digital-Edition">More Info</a></td>
+            </tr>
+          </table>          </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left" valign="top"><span class="results-description-title">Description:</span> <span class="results-description"><!-- rlb -->FEATURES<br />
+<br />
+* The Top 30 Developers<br />
+* Locomotion<br />
+<br /></span><br />
+            <img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="10" /></td>
+      </tr><tr>
+        <td width="1%" rowspan="3" align="center" valign="top"><a href="http://store.cmpgame.com/product/6275/Game-Developer-May-2012-Issue---Digital-Edition" title="Game Developer May 2012 Issue - Digital Edition"><img src='/img/graphics/default/GD_May_60x81.jpg' alt="" border="0" /></a></td>
+        <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6275/Game-Developer-May-2012-Issue---Digital-Edition" title="View this product's details page.">Game Developer May 2012 Issue - Digital Edition</a></span></td>
+      </tr>
+      <tr>
+        <td width="98%" align="left" valign="top"><p><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+          <br />
+              <span class="results-sku-title">SKU#:</span> <span class="results-sku">GD-BACK-625</span></p>
+          </td>
+        <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="1%"><a href="/quick_return.php?id=6275&amp;qty=1"><img src="/design_packages/gamasutra_redesign/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+            <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+            <td width="98%" align="left"><a href="/quick_return.php?id=6275&amp;qty=1">Add to Cart</a> </td>
+          </tr>
+        </table>   
+<img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="100" height="8" alt="" />
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="1%"><a href="http://store.cmpgame.com/product/6275/Game-Developer-May-2012-Issue---Digital-Edition"><img src="/design_packages/gamasutra_redesign/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+              <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+              <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6275/Game-Developer-May-2012-Issue---Digital-Edition">More Info</a></td>
+            </tr>
+          </table>          </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left" valign="top"><span class="results-description-title">Description:</span> <span class="results-description"><!-- rlb -->FEATURES<br />
+<br />
+* 2012 Social/Mobile Technology Survey<br />
+* TERA: Evolving MMORPG Combat<br />
+* What Would Molydeux? Game Jam Postmortem<br />
+<br /></span><br />
+            <img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="10" /></td>
+      </tr><tr>
+        <td width="1%" rowspan="3" align="center" valign="top"><a href="http://store.cmpgame.com/product/6274/Game-Developer-April-2012-Issue---Digital-Edition" title="Game Developer April 2012 Issue - Digital Edition"><img src='/img/graphics/default/60x81.jpg' alt="" border="0" /></a></td>
+        <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6274/Game-Developer-April-2012-Issue---Digital-Edition" title="View this product's details page.">Game Developer April 2012 Issue - Digital Edition</a></span></td>
+      </tr>
+      <tr>
+        <td width="98%" align="left" valign="top"><p><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+          <br />
+              <span class="results-sku-title">SKU#:</span> <span class="results-sku">GD-BACK-624</span></p>
+          </td>
+        <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="1%"><a href="/quick_return.php?id=6274&amp;qty=1"><img src="/design_packages/gamasutra_redesign/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+            <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+            <td width="98%" align="left"><a href="/quick_return.php?id=6274&amp;qty=1">Add to Cart</a> </td>
+          </tr>
+        </table>   
+<img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="100" height="8" alt="" />
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="1%"><a href="http://store.cmpgame.com/product/6274/Game-Developer-April-2012-Issue---Digital-Edition"><img src="/design_packages/gamasutra_redesign/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+              <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+              <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6274/Game-Developer-April-2012-Issue---Digital-Edition">More Info</a></td>
+            </tr>
+          </table>          </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left" valign="top"><span class="results-description-title">Description:</span> <span class="results-description"><!-- rlb -->FEATURES<br />
+<br />
+* 11th Annual Salary Survey<br />
+* Fire, Blood, Explosions<br />
+* Needs More Blur<br />
+<br /></span><br />
+            <img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="10" /></td>
+      </tr><tr>
+        <td width="1%" rowspan="3" align="center" valign="top"><a href="http://store.cmpgame.com/product/6273/Game-Developer-March-2012-Issue---Digital-Edition" title="Game Developer March 2012 Issue - Digital Edition"><img src='/img/graphics/default/1203gd_cover_60x81.jpg' alt="" border="0" /></a></td>
+        <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6273/Game-Developer-March-2012-Issue---Digital-Edition" title="View this product's details page.">Game Developer March 2012 Issue - Digital Edition</a></span></td>
+      </tr>
+      <tr>
+        <td width="98%" align="left" valign="top"><p><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+          <br />
+              <span class="results-sku-title">SKU#:</span> <span class="results-sku">GD-BACK-623</span></p>
+          </td>
+        <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="1%"><a href="/quick_return.php?id=6273&amp;qty=1"><img src="/design_packages/gamasutra_redesign/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+            <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+            <td width="98%" align="left"><a href="/quick_return.php?id=6273&amp;qty=1">Add to Cart</a> </td>
+          </tr>
+        </table>   
+<img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="100" height="8" alt="" />
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="1%"><a href="http://store.cmpgame.com/product/6273/Game-Developer-March-2012-Issue---Digital-Edition"><img src="/design_packages/gamasutra_redesign/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+              <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+              <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6273/Game-Developer-March-2012-Issue---Digital-Edition">More Info</a></td>
+            </tr>
+          </table>          </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left" valign="top"><span class="results-description-title">Description:</span> <span class="results-description"><!-- rlb -->FEATURES<br />
+<br />
+* Halo: Combat Evolved Anniversary<br />
+* Cheating Behind the Cloud<br />
+* Get Smashed!<br />
+<br /></span><br />
+            <img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="10" /></td>
+      </tr><tr>
+        <td width="1%" rowspan="3" align="center" valign="top"><a href="http://store.cmpgame.com/product/6272/Game-Developer-February-2012-Issue---Digital-Edition" title="Game Developer February 2012 Issue - Digital Edition"><img src='/img/graphics/default/1202gd_cover_60x81.jpg' alt="" border="0" /></a></td>
+        <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6272/Game-Developer-February-2012-Issue---Digital-Edition" title="View this product's details page.">Game Developer February 2012 Issue - Digital Edition</a></span></td>
+      </tr>
+      <tr>
+        <td width="98%" align="left" valign="top"><p><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+          <br />
+              <span class="results-sku-title">SKU#:</span> <span class="results-sku">GD-BACK-622</span></p>
+          </td>
+        <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="1%"><a href="/quick_return.php?id=6272&amp;qty=1"><img src="/design_packages/gamasutra_redesign/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+            <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+            <td width="98%" align="left"><a href="/quick_return.php?id=6272&amp;qty=1">Add to Cart</a> </td>
+          </tr>
+        </table>   
+<img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="100" height="8" alt="" />
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="1%"><a href="http://store.cmpgame.com/product/6272/Game-Developer-February-2012-Issue---Digital-Edition"><img src="/design_packages/gamasutra_redesign/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+              <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+              <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6272/Game-Developer-February-2012-Issue---Digital-Edition">More Info</a></td>
+            </tr>
+          </table>          </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left" valign="top"><span class="results-description-title">Description:</span> <span class="results-description"><!-- rlb -->FEATURES<br />
+<br />
+* Stacking<br />
+* 10 Years of Salary Surveys<br />
+* Always Online<br />
+* Balancing a Big Huge RPG<br />
+<br /></span><br />
+            <img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="10" /></td>
+      </tr><tr>
+        <td width="1%" rowspan="3" align="center" valign="top"><a href="http://store.cmpgame.com/product/6271/Game-Developer-January-2012-Issue---Digital-Edition" title="Game Developer January 2012 Issue - Digital Edition"><img src='/img/graphics/default/1201gd_cover_60x81.jpg' alt="" border="0" /></a></td>
+        <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6271/Game-Developer-January-2012-Issue---Digital-Edition" title="View this product's details page.">Game Developer January 2012 Issue - Digital Edition</a></span></td>
+      </tr>
+      <tr>
+        <td width="98%" align="left" valign="top"><p><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+          <br />
+              <span class="results-sku-title">SKU#:</span> <span class="results-sku">GD-BACK-621</span></p>
+          </td>
+        <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="1%"><a href="/quick_return.php?id=6271&amp;qty=1"><img src="/design_packages/gamasutra_redesign/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+            <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+            <td width="98%" align="left"><a href="/quick_return.php?id=6271&amp;qty=1">Add to Cart</a> </td>
+          </tr>
+        </table>   
+<img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="100" height="8" alt="" />
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="1%"><a href="http://store.cmpgame.com/product/6271/Game-Developer-January-2012-Issue---Digital-Edition"><img src="/design_packages/gamasutra_redesign/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+              <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+              <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6271/Game-Developer-January-2012-Issue---Digital-Edition">More Info</a></td>
+            </tr>
+          </table>          </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left" valign="top"><span class="results-description-title">Description:</span> <span class="results-description"><!-- rlb -->FEATURES<br />
+<br />
+* Deus Ex: Human Revolution<br />
+* 14th Annual Front Line Awards<br />
+* Building a Free-To-Play Backend<br />
+* GDC Preview Guide<br />
+* Never Enough: An Interview with DeNA's Kenji Kobayashi<br />
+<br /></span><br />
+            <img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="10" /></td>
+      </tr><tr>
+        <td width="1%" rowspan="3" align="center" valign="top"><a href="http://store.cmpgame.com/product/6270/Game-Developer-December-2011-Issue---Digital-Edition" title="Game Developer December 2011 Issue - Digital Edition"><img src='/img/graphics/default/1112gd_cover_60x81.jpg' alt="" border="0" /></a></td>
+        <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6270/Game-Developer-December-2011-Issue---Digital-Edition" title="View this product's details page.">Game Developer December 2011 Issue - Digital Edition</a></span></td>
+      </tr>
+      <tr>
+        <td width="98%" align="left" valign="top"><p><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+          <br />
+              <span class="results-sku-title">SKU#:</span> <span class="results-sku">GD-BACK-620</span></p>
+          </td>
+        <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="1%"><a href="/quick_return.php?id=6270&amp;qty=1"><img src="/design_packages/gamasutra_redesign/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+            <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+            <td width="98%" align="left"><a href="/quick_return.php?id=6270&amp;qty=1">Add to Cart</a> </td>
+          </tr>
+        </table>   
+<img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="100" height="8" alt="" />
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="1%"><a href="http://store.cmpgame.com/product/6270/Game-Developer-December-2011-Issue---Digital-Edition"><img src="/design_packages/gamasutra_redesign/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+              <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+              <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6270/Game-Developer-December-2011-Issue---Digital-Edition">More Info</a></td>
+            </tr>
+          </table>          </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left" valign="top"><span class="results-description-title">Description:</span> <span class="results-description"><!-- rlb -->FEATURES<br />
+<br />
+* Gunstringer<br />
+* Intuition, Expectations. And Culture<br />
+* All That Glitters: An Interview with Bungie's Senior Graphics Architect<br />
+<br /></span><br />
+            <img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="10" /></td>
+      </tr><tr>
+        <td width="1%" rowspan="3" align="center" valign="top"><a href="http://store.cmpgame.com/product/6269/Game-Developer-November-2011-Issue---Digital-Edition" title="Game Developer November 2011 Issue - Digital Edition"><img src='/img/graphics/default/1111gd_cover_60x81.jpg' alt="" border="0" /></a></td>
+        <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6269/Game-Developer-November-2011-Issue---Digital-Edition" title="View this product's details page.">Game Developer November 2011 Issue - Digital Edition</a></span></td>
+      </tr>
+      <tr>
+        <td width="98%" align="left" valign="top"><p><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+          <br />
+              <span class="results-sku-title">SKU#:</span> <span class="results-sku">GD-BACK-619</span></p>
+          </td>
+        <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="1%"><a href="/quick_return.php?id=6269&amp;qty=1"><img src="/design_packages/gamasutra_redesign/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+            <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+            <td width="98%" align="left"><a href="/quick_return.php?id=6269&amp;qty=1">Add to Cart</a> </td>
+          </tr>
+        </table>   
+<img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="100" height="8" alt="" />
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="1%"><a href="http://store.cmpgame.com/product/6269/Game-Developer-November-2011-Issue---Digital-Edition"><img src="/design_packages/gamasutra_redesign/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+              <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+              <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6269/Game-Developer-November-2011-Issue---Digital-Edition">More Info</a></td>
+            </tr>
+          </table>          </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left" valign="top"><span class="results-description-title">Description:</span> <span class="results-description"><!-- rlb -->FEATURES<br />
+<br />
+* Postmortem: Crimson Alliance<br />
+* The Game Developer 50<br />
+* The Game Entity<br />
+<br /></span><br />
+            <img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="10" /></td>
+      </tr><tr>
+        <td width="1%" rowspan="3" align="center" valign="top"><a href="http://store.cmpgame.com/product/6268/Game-Developer-October-2011-Issue---Digital-Edition" title="Game Developer October 2011 Issue - Digital Edition"><img src='/img/graphics/default/1110gd_cover_60x81.jpg' alt="" border="0" /></a></td>
+        <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6268/Game-Developer-October-2011-Issue---Digital-Edition" title="View this product's details page.">Game Developer October 2011 Issue - Digital Edition</a></span></td>
+      </tr>
+      <tr>
+        <td width="98%" align="left" valign="top"><p><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+          <br />
+              <span class="results-sku-title">SKU#:</span> <span class="results-sku">GD-BACK-618</span></p>
+          </td>
+        <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="1%"><a href="/quick_return.php?id=6268&amp;qty=1"><img src="/design_packages/gamasutra_redesign/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+            <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+            <td width="98%" align="left"><a href="/quick_return.php?id=6268&amp;qty=1">Add to Cart</a> </td>
+          </tr>
+        </table>   
+<img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="100" height="8" alt="" />
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="1%"><a href="http://store.cmpgame.com/product/6268/Game-Developer-October-2011-Issue---Digital-Edition"><img src="/design_packages/gamasutra_redesign/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+              <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+              <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6268/Game-Developer-October-2011-Issue---Digital-Edition">More Info</a></td>
+            </tr>
+          </table>          </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left" valign="top"><span class="results-description-title">Description:</span> <span class="results-description"><!-- rlb -->FEATURES<br />
+<br />
+* Postmortem: Bulletstorm<br />
+* Game Changers<br />
+* Reactive Game Architectures<br />
+* The Iron Fist<br />
+<br /></span><br />
+            <img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="10" /></td>
+      </tr><tr>
+        <td width="1%" rowspan="3" align="center" valign="top"><a href="http://store.cmpgame.com/product/6267/Game-Developer-September-2011-Issue---Digital-Edition" title="Game Developer September 2011 Issue - Digital Edition"><img src='/img/graphics/default/1109gd_cover_60x81.jpg' alt="" border="0" /></a></td>
+        <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6267/Game-Developer-September-2011-Issue---Digital-Edition" title="View this product's details page.">Game Developer September 2011 Issue - Digital Edition</a></span></td>
+      </tr>
+      <tr>
+        <td width="98%" align="left" valign="top"><p><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+          <br />
+              <span class="results-sku-title">SKU#:</span> <span class="results-sku">GD-BACK-617</span></p>
+          </td>
+        <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="1%"><a href="/quick_return.php?id=6267&amp;qty=1"><img src="/design_packages/gamasutra_redesign/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+            <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+            <td width="98%" align="left"><a href="/quick_return.php?id=6267&amp;qty=1">Add to Cart</a> </td>
+          </tr>
+        </table>   
+<img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="100" height="8" alt="" />
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="1%"><a href="http://store.cmpgame.com/product/6267/Game-Developer-September-2011-Issue---Digital-Edition"><img src="/design_packages/gamasutra_redesign/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+              <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+              <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6267/Game-Developer-September-2011-Issue---Digital-Edition">More Info</a></td>
+            </tr>
+          </table>          </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left" valign="top"><span class="results-description-title">Description:</span> <span class="results-description"><!-- rlb -->FEATURES<br />
+<br />
+* Postmortem: Section 8: Prejudice<br />
+* Postmortem: Sword & Sworcery<br />
+* The Sticky Collision Beam<br />
+* Beautiful Code: An Interview With Bill Budge<br />
+<br /></span><br />
+            <img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="10" /></td>
+      </tr><tr>
+        <td width="1%" rowspan="3" align="center" valign="top"><a href="http://store.cmpgame.com/product/6266/Game-Developer-August-2011-Issue---Digital-Edition" title="Game Developer August 2011 Issue - Digital Edition"><img src='/img/graphics/default/1108gd_cover_60x81.jpg' alt="" border="0" /></a></td>
+        <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6266/Game-Developer-August-2011-Issue---Digital-Edition" title="View this product's details page.">Game Developer August 2011 Issue - Digital Edition</a></span></td>
+      </tr>
+      <tr>
+        <td width="98%" align="left" valign="top"><p><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+          <br />
+              <span class="results-sku-title">SKU#:</span> <span class="results-sku">GD-BACK-616</span></p>
+          </td>
+        <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="1%"><a href="/quick_return.php?id=6266&amp;qty=1"><img src="/design_packages/gamasutra_redesign/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+            <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+            <td width="98%" align="left"><a href="/quick_return.php?id=6266&amp;qty=1">Add to Cart</a> </td>
+          </tr>
+        </table>   
+<img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="100" height="8" alt="" />
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="1%"><a href="http://store.cmpgame.com/product/6266/Game-Developer-August-2011-Issue---Digital-Edition"><img src="/design_packages/gamasutra_redesign/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+              <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+              <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6266/Game-Developer-August-2011-Issue---Digital-Edition">More Info</a></td>
+            </tr>
+          </table>          </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left" valign="top"><span class="results-description-title">Description:</span> <span class="results-description"><!-- rlb -->FEATURES<br />
+<br />
+* Postmortem: Total War: Shogun 2<br />
+* Postmortem: Terminator Salvation: The Arcade Game<br />
+* Random Structure<br />
+<br /></span><br />
+            <img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="10" /></td>
+      </tr><tr>
+        <td width="1%" rowspan="3" align="center" valign="top"><a href="http://store.cmpgame.com/product/6202/Game-Developer-June%7B47%7DJuly-2011-Issue---Digital-Edition" title="Game Developer June/July 2011 Issue - Digital Edition"><img src='/img/graphics/default/1106gd_cover_60x81.jpg' alt="" border="0" /></a></td>
+        <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6202/Game-Developer-June%7B47%7DJuly-2011-Issue---Digital-Edition" title="View this product's details page.">Game Developer June/July 2011 Issue - Digital Edition</a></span></td>
+      </tr>
+      <tr>
+        <td width="98%" align="left" valign="top"><p><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+          <br />
+              <span class="results-sku-title">SKU#:</span> <span class="results-sku">GD-BACK-615</span></p>
+          </td>
+        <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="1%"><a href="/quick_return.php?id=6202&amp;qty=1"><img src="/design_packages/gamasutra_redesign/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+            <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+            <td width="98%" align="left"><a href="/quick_return.php?id=6202&amp;qty=1">Add to Cart</a> </td>
+          </tr>
+        </table>   
+<img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="100" height="8" alt="" />
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="1%"><a href="http://store.cmpgame.com/product/6202/Game-Developer-June%7B47%7DJuly-2011-Issue---Digital-Edition"><img src="/design_packages/gamasutra_redesign/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+              <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+              <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6202/Game-Developer-June%7B47%7DJuly-2011-Issue---Digital-Edition">More Info</a></td>
+            </tr>
+          </table>          </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left" valign="top"><span class="results-description-title">Description:</span> <span class="results-description"><!-- rlb -->FEATURES<br />
+<br />
+* Postmortem: Trion Worlds' Rift<br />
+* Top 30 Developers<br />
+* Destroy All Jaggies<br />
+<br /></span><br />
+            <img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="10" /></td>
+      </tr><tr>
+        <td width="1%" rowspan="3" align="center" valign="top"><a href="http://store.cmpgame.com/product/5932/Game-Developer-May-2011-Issue---Digital-Edition" title="Game Developer May 2011 Issue - Digital Edition"><img src='/img/graphics/default/1105gd_cover_60x81.jpg' alt="" border="0" /></a></td>
+        <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/5932/Game-Developer-May-2011-Issue---Digital-Edition" title="View this product's details page.">Game Developer May 2011 Issue - Digital Edition</a></span></td>
+      </tr>
+      <tr>
+        <td width="98%" align="left" valign="top"><p><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+          <br />
+              <span class="results-sku-title">SKU#:</span> <span class="results-sku">GD-BACK-614</span></p>
+          </td>
+        <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="1%"><a href="/quick_return.php?id=5932&amp;qty=1"><img src="/design_packages/gamasutra_redesign/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+            <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+            <td width="98%" align="left"><a href="/quick_return.php?id=5932&amp;qty=1">Add to Cart</a> </td>
+          </tr>
+        </table>   
+<img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="100" height="8" alt="" />
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="1%"><a href="http://store.cmpgame.com/product/5932/Game-Developer-May-2011-Issue---Digital-Edition"><img src="/design_packages/gamasutra_redesign/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+              <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+              <td width="98%" align="left"><a href="http://store.cmpgame.com/product/5932/Game-Developer-May-2011-Issue---Digital-Edition">More Info</a></td>
+            </tr>
+          </table>          </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left" valign="top"><span class="results-description-title">Description:</span> <span class="results-description"><!-- rlb -->FEATURES<br />
+<br />
+* Postmortem: Xbox Live Indie Games<br />
+* Game Engine Survey 2011<br />
+* Game Dev Heroes<br />
+<br /></span><br />
+            <img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="10" /></td>
+      </tr><tr>
+        <td width="1%" rowspan="3" align="center" valign="top"><a href="http://store.cmpgame.com/product/5931/Game-Developer-April-2011-Issue---Digital-Edition" title="Game Developer April 2011 Issue - Digital Edition"><img src='/img/graphics/default/1104gd_cover_60x81.jpg' alt="" border="0" /></a></td>
+        <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/5931/Game-Developer-April-2011-Issue---Digital-Edition" title="View this product's details page.">Game Developer April 2011 Issue - Digital Edition</a></span></td>
+      </tr>
+      <tr>
+        <td width="98%" align="left" valign="top"><p><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+          <br />
+              <span class="results-sku-title">SKU#:</span> <span class="results-sku">GD-BACK-613</span></p>
+          </td>
+        <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="1%"><a href="/quick_return.php?id=5931&amp;qty=1"><img src="/design_packages/gamasutra_redesign/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+            <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+            <td width="98%" align="left"><a href="/quick_return.php?id=5931&amp;qty=1">Add to Cart</a> </td>
+          </tr>
+        </table>   
+<img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="100" height="8" alt="" />
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="1%"><a href="http://store.cmpgame.com/product/5931/Game-Developer-April-2011-Issue---Digital-Edition"><img src="/design_packages/gamasutra_redesign/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+              <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+              <td width="98%" align="left"><a href="http://store.cmpgame.com/product/5931/Game-Developer-April-2011-Issue---Digital-Edition">More Info</a></td>
+            </tr>
+          </table>          </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left" valign="top"><span class="results-description-title">Description:</span> <span class="results-description"><!-- rlb -->FEATURES<br />
+<br />
+* Postmortem: Super Meat Boy<br />
+* 10th Annual Salary Survey<br />
+* Creator Of Worlds<br />
+<br /></span><br />
+            <img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="10" /></td>
+      </tr><tr>
+        <td width="1%" rowspan="3" align="center" valign="top"><a href="http://store.cmpgame.com/product/5930/Game-Developer-March-2011-Issue---Digital-Edition" title="Game Developer March 2011 Issue - Digital Edition"><img src='/img/graphics/default/1103gd_cover60x81.jpg' alt="" border="0" /></a></td>
+        <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/5930/Game-Developer-March-2011-Issue---Digital-Edition" title="View this product's details page.">Game Developer March 2011 Issue - Digital Edition</a></span></td>
+      </tr>
+      <tr>
+        <td width="98%" align="left" valign="top"><p><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+          <br />
+              <span class="results-sku-title">SKU#:</span> <span class="results-sku">GD-BACK-612</span></p>
+          </td>
+        <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="1%"><a href="/quick_return.php?id=5930&amp;qty=1"><img src="/design_packages/gamasutra_redesign/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+            <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+            <td width="98%" align="left"><a href="/quick_return.php?id=5930&amp;qty=1">Add to Cart</a> </td>
+          </tr>
+        </table>   
+<img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="100" height="8" alt="" />
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="1%"><a href="http://store.cmpgame.com/product/5930/Game-Developer-March-2011-Issue---Digital-Edition"><img src="/design_packages/gamasutra_redesign/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+              <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+              <td width="98%" align="left"><a href="http://store.cmpgame.com/product/5930/Game-Developer-March-2011-Issue---Digital-Edition">More Info</a></td>
+            </tr>
+          </table>          </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left" valign="top"><span class="results-description-title">Description:</span> <span class="results-description"><!-- rlb -->FEATURES<br />
+<br />
+* Postmortem: Housemarque's Dead Nation<br />
+* Postmortem: Firaxis Games' Sid Meier's Civilization V<br />
+* Tension Maps<br />
+* Red Means Boom!<br />
+<br /></span><br />
+            <img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="10" /></td>
+      </tr><tr>
+        <td width="1%" rowspan="3" align="center" valign="top"><a href="http://store.cmpgame.com/product/5929/Game-Developer-February-2011-Issue---Digital-Edition" title="Game Developer February 2011 Issue - Digital Edition"><img src='/img/graphics/default/1102gd_cover_60x81.jpg' alt="" border="0" /></a></td>
+        <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/5929/Game-Developer-February-2011-Issue---Digital-Edition" title="View this product's details page.">Game Developer February 2011 Issue - Digital Edition</a></span></td>
+      </tr>
+      <tr>
+        <td width="98%" align="left" valign="top"><p><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+          <br />
+              <span class="results-sku-title">SKU#:</span> <span class="results-sku">GD-BACK-611</span></p>
+          </td>
+        <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="1%"><a href="/quick_return.php?id=5929&amp;qty=1"><img src="/design_packages/gamasutra_redesign/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+            <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+            <td width="98%" align="left"><a href="/quick_return.php?id=5929&amp;qty=1">Add to Cart</a> </td>
+          </tr>
+        </table>   
+<img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="100" height="8" alt="" />
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="1%"><a href="http://store.cmpgame.com/product/5929/Game-Developer-February-2011-Issue---Digital-Edition"><img src="/design_packages/gamasutra_redesign/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+              <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+              <td width="98%" align="left"><a href="http://store.cmpgame.com/product/5929/Game-Developer-February-2011-Issue---Digital-Edition">More Info</a></td>
+            </tr>
+          </table>          </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left" valign="top"><span class="results-description-title">Description:</span> <span class="results-description"><!-- rlb -->FEATURES<br />
+<br />
+* Postmortem: Klei Entertainment's Shank<br />
+* Postmortem: Mojang's Minecraft<br />
+* Dissecting The Postmortem<br />
+* Pressed By The Dark<br />
+<br /></span><br />
+            <img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="10" /></td>
+      </tr><tr>
+        <td width="1%" rowspan="3" align="center" valign="top"><a href="http://store.cmpgame.com/product/5928/Game-Developer-January-2011-Issue---Digital-Edition" title="Game Developer January 2011 Issue - Digital Edition"><img src='/img/graphics/default/1101gd_cover_60x81.jpg' alt="" border="0" /></a></td>
+        <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/5928/Game-Developer-January-2011-Issue---Digital-Edition" title="View this product's details page.">Game Developer January 2011 Issue - Digital Edition</a></span></td>
+      </tr>
+      <tr>
+        <td width="98%" align="left" valign="top"><p><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+          <br />
+              <span class="results-sku-title">SKU#:</span> <span class="results-sku">GD-BACK-610</span></p>
+          </td>
+        <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="1%"><a href="/quick_return.php?id=5928&amp;qty=1"><img src="/design_packages/gamasutra_redesign/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+            <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+            <td width="98%" align="left"><a href="/quick_return.php?id=5928&amp;qty=1">Add to Cart</a> </td>
+          </tr>
+        </table>   
+<img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="100" height="8" alt="" />
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="1%"><a href="http://store.cmpgame.com/product/5928/Game-Developer-January-2011-Issue---Digital-Edition"><img src="/design_packages/gamasutra_redesign/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+              <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="5" height="5" alt="" /></td>
+              <td width="98%" align="left"><a href="http://store.cmpgame.com/product/5928/Game-Developer-January-2011-Issue---Digital-Edition">More Info</a></td>
+            </tr>
+          </table>          </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left" valign="top"><span class="results-description-title">Description:</span> <span class="results-description"><!-- rlb -->FEATURES<br />
+<br />
+* Postmortem: Harmonix' Dance Central<br />
+* Front Line Awards<br />
+* Prope's Ivy the Kiwi?<br />
+* Your Move<br />
+<br /></span><br />
+            <img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="10" /></td>
+      </tr>    </table>
+		<img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="20" height="20" alt="" /><br />
+	<br />
+  <img src="/design_packages/gamasutra_redesign/images/spacer.gif" width="20" height="10" alt="" /><br />
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="right"><table border="0" align="center" cellpadding="5" cellspacing="0">
+        <tr>
+          <td align="center"><p><span class="sort-by">Sort By: </span> <span class="sort-text"><select class="FIELD-SEARCH-ORDER" name="ob" id="ob"> <option value="create_date" >Date</option> <option value="display_order" selected="selected">Featured</option> <option value="name" >Name</option> <option value="price" >Price</option>  <option value="sku" >SKU</option> <option value="status" >Status</option> </select>
+            <select class="FIELD-SEARCH-ASC-DESC" name="ascdesc" id="ascdesc"><option value="SORT_ASC" selected="selected">in ascending order</option><option value="SORT_DESC" >in descending order</option></select>
+            with <select class="FIELD-RESULTS-PER-PAGE" name="rpp" id="rpp"><option value="10" >10</option><option value="25" selected="selected">25</option><option value="50" >50</option><option value="75" >75</option><option value="100" >100</option></select>  per page </span></p></td>
+          <td align="center"><input name="submit" class="standard-button" type="submit" alt="GO" id="submit" value="GO" /></td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center"><p class="sort-text">36 Results | 25 results per
+            page </p></td>
+        </tr>
+      </table>
+          <br />
+        Page <b>1</b>, <a href="/storefront.php?page=2">2</a></td>
+    </tr>
+  </table>
+                      </form>
+                      </td>
+                  </tr>
+              </table></td>
+              <td class="body-mid-right"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="1" /></td>
+            </tr>
+            <tr>
+              <td class="body-bot-left"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="1" /></td>
+              <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td class="body-bot-mid-expand"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="1" /></td>
+                  </tr>
+              </table></td>
+              <td class="body-bot-right"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="1" height="1" /></td>
+            </tr>
+          </table></td>
+          <td class="body-shell-5"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="19" height="1" /></td>
+        </tr>
+      </table>
+    <img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="10" height="20" /></td>
+  </tr>
+  <tr>
+    <td class="footer-bg"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+        <tr>
+          <td width="1%" class="footer-align"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="5" height="10" /></td>
+          <td width="1%" class="footer-align"><span class="footer"><a href="http://store.cmpgame.com/">HOME</a></span></td>
+          <td width="1%" class="footer-align"><img src="/design_packages/gamasutra_redesign/images/footer_line.gif" alt="" width="2" height="38" /></td>
+          <td width="1%" class="footer-align"><span class="footer"><a href="http://store.cmpgame.com/customers/">MY ACCOUNT</a></span></td>
+          <td width="1%" class="footer-align"><img src="/design_packages/gamasutra_redesign/images/footer_line.gif" alt="" width="2" height="38" /></td>
+          <td width="1%" class="footer-align"><span class="footer"><a href="http://store.cmpgame.com/basket/">VIEW CART</a></span></td>
+          <td width="1%" class="footer-align"><img src="/design_packages/gamasutra_redesign/images/footer_line.gif" alt="" width="2" height="38" /></td>
+
+          <td width="1%" class="footer-align"><span class="footer"><a href="http://store.cmpgame.com/checkout/">CHECKOUT</a></span></td>
+          <td width="88%">&nbsp;</td>
+          <td width="3%" class="footer-align"><span class="footer-text">Powered by <a href="http://www.modularmerchant.com">Modular Merchant shopping cart software.</a></span></td>
+          <td width="1%"><img src="/design_packages/gamasutra_redesign/images/spacer.gif" alt="" width="12" height="10" /></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+</body>
+</html>

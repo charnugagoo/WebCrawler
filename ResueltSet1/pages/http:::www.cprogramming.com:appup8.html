@@ -1,0 +1,471 @@
+<html>
+<head>
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds2.feedburner.com/Cprogrammingcom/">
+<link rel="stylesheet" href="http://static.cprogramming.com/main_images/style.css?np9" type="text/css">
+<!--[if IE]>
+    <link rel="stylesheet" href="http://static.cprogramming.com/main_images/style-ie.css?np4" type="text/css">
+<![endif]-->
+
+
+<META NAME="keywords" CONTENT="Intel, AppUp, IntelAppUp, Development, Ultrabook, Ultrabook sensors">
+<META NAME="Description" CONTENT="Learn how to access sensors on Intel Ultrabooks">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Detecting Ultrabook Sensors on Windows 8 - Cprogramming.com</title>
+
+<!-- ADDED DFP -->
+<script type='text/javascript' src='http://partner.googleadservices.com/gampad/google_service.js'>
+</script>
+<script type='text/javascript'>
+GS_googleAddAdSenseService("ca-pub-2560316224908115");
+GS_googleEnableAllServices();
+</script>
+<script type='text/javascript'>
+GA_googleAddSlot("ca-pub-2560316224908115", "RunOfSite_LargeRectangle_ATF_336x280");
+GA_googleAddSlot("ca-pub-2560316224908115", "RunOfSite_ATF_leaderboard_728x90");
+
+</script>
+<script type='text/javascript'>
+GA_googleFetchAds();
+</script>
+<!-- END ADDED DFP -->
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-7820175-1']);
+  _gaq.push(['_setDomainName', '.cprogramming.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+</head>
+
+<body>
+<div>
+
+<a href="http://www.cprogramming.com/"><img class="logo noprint" src="http://static.cprogramming.com/main_images/title.png" width="324" height="83" border="0"></a> 
+
+<table class="line noprint"><tr><td></td></tr></table>
+<div class="noprint" align="right" style="padding-top:25px;padding-right:25px;">
+<!-- SiteSearch Google -->
+<form action="http://www.google.com/cse" id="cse-search-box">
+  <div>
+    <input type="hidden" name="cx" value="partner-pub-2560316224908115:wqvdce-aw4a" />
+    <input type="hidden" name="ie" value="ISO-8859-1" />
+    <input type="text" name="q" size="31" />
+    <input type="submit" name="sa" value="Search" />
+  </div>
+</form>
+<script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&amp;lang=en"></script>
+<!-- SiteSearch Google -->
+</div>
+<div>
+  <table class="main">
+    <tr>
+
+  	<td class="noprint" colspan="5" bgcolor="#EBEBEB">
+  		<img src="http://static.cprogramming.com/main_images/spacer-vert.png" height="6" width="0">
+  	   <center>
+    	<div class="leaderboard">
+
+<!-- ADDED DFP -->
+<!-- ca-pub-2560316224908115/Homepage_ATF_leaderboard_728x90 -->
+<script type='text/javascript'>
+GA_googleFillSlot("RunOfSite_ATF_leaderboard_728x90");
+</script>
+<!-- END ADDED DFP -->
+
+</div>
+		</center>
+		<img src="http://static.cprogramming.com/main_images/spacer-vert.png" height="4" width="1">
+  	</td>
+        
+  </tr>
+
+  <tr>
+
+     <td class="noprint" width="130" valign="top" bgcolor="#EBEBEB"> 
+     <div class="menu" valign="top" style="font-size:14px;width:200px">
+     <p class="navcategory" align="left">
+          <img class="bullet" src="http://static.cprogramming.com/main_images/bullet.gif" width="11" height="14">    Starting out
+     </p>
+
+     <p class="navlist" align="left" style="font-size:14px;">
+             <a href="http://www.cprogramming.com/c++book/?inl=sb">Get the Ebook</a><br>
+             <a href="http://www.cprogramming.com/begin.html">Get Started with C or C++</a><br>
+             <a href="http://www.cprogramming.com/compilers.html">Getting a Compiler</a><br>
+             <a href="http://www.cprogramming.com/books.html">Book Recommendations</a><br>
+     </p>
+
+     <p class="navcategory" align="left">
+          <br>
+          <img class="bullet" src="http://static.cprogramming.com/main_images/bullet.gif" width="11" height="14"> Tutorials
+     </p>
+
+     <p class="navlist" align="left" style="font-size:14px;">
+            <a href=http://www.cprogramming.com/tutorial/c-tutorial.html>C Tutorial</a><br>
+            <a href=http://www.cprogramming.com/tutorial/c++-tutorial.html>C++ Tutorial</a><br>
+            <a href=http://www.cprogramming.com/java-programming.html>Java Tutorial</a><br>
+            <a href=http://www.cprogramming.com/game-programming.html>Game Programming</a><br>
+            <a href=http://www.cprogramming.com/graphics-programming.html>Graphics Programming</a><br>
+            <a href=http://www.cprogramming.com/algorithms-and-data-structures.html>Algorithms &amp; Data Structures</a><br>
+            <a href=http://www.cprogramming.com/debuggers.html>Debugging</a><br>
+            <a href="http://www.cprogramming.com/tutorial.html">All Tutorials</a><br>
+     </p>
+
+     <p class="navcategory" align="left">
+          <br>
+          <img class="bullet" src="http://static.cprogramming.com/main_images/bullet.gif" width="11" height="14"> Practice
+     </p>
+
+     <p class="navlist" align="left" style="font-size:14px;">
+            <a href="http://www.cprogramming.com/challenge.html">Practice Problems</a><br>
+            <a href="http://www.cprogramming.com/quiz/">Quizzes</a><br>
+     </p>
+     <p class="navcategory" align="left">
+          <br>
+          <img class="bullet" src="http://static.cprogramming.com/main_images/bullet.gif" width="11" height="14"> Resources
+     </p>
+
+     <p class="navlist" align="left" style="font-size:14px;">
+            <a href="http://www.cprogramming.com/cgi-bin/source/source.cgi">Source Code</a><br>
+            <a href=http://www.cprogramming.com/snippets/>Source Code Snippets</a><br>
+            <a href="http://www.cprogramming.com/tips/">C and C++ Tips</a><br>
+            <a href=http://www.cprogramming.com/jobs/>Finding a Job</a>
+     </p>
+
+     <p class="navcategory" align="left">
+          <br>
+          <img class="bullet" src="http://static.cprogramming.com/main_images/bullet.gif" width="11" height="14"> References
+     </p>
+
+     <p class="navlist" align="left" style="font-size:14px;">
+            <a href="http://www.cprogramming.com/function.html">Function Reference</a><br>
+            <a href="http://www.cprogramming.com/reference/">Syntax Reference</a><br>
+            <a href="http://www.cprogramming.com/cgi-bin/cdir/Cdirectory.cgi">Programming Links</a><br>
+            <a href="http://faq.cprogramming.com/cgi-bin/smartfaq.cgi">Programming FAQ</a><br>
+     </p>
+
+     <p class="navcategory" align="left">
+          <br>
+          <img class="bullet" src="http://static.cprogramming.com/main_images/bullet.gif" width="11" height="14"> Getting Help
+     </p>
+
+     <p class="navlist" align="left" style="font-size:14px;">
+             <a href="http://www.cprogramming.com/board.html">Message Board</a><br>
+             <a href="http://www.cprogramming.com/expert.html">Ask an Expert</a><br>
+             <a href="http://www.cprogramming.com/email.html">Email</a><br>
+             <a href="http://www.cprogramming.com/about.html">About Us</a>
+     </p>
+     </div>
+
+<center>
+      <br><br>
+     <script type="text/javascript"><!--
+     google_ad_client = "pub-2560316224908115";
+     google_ad_width = 120;
+     google_ad_height = 90;
+     google_ad_format = "120x90_0ads_al";
+     google_ad_channel ="0800879710";
+     google_color_border = "EBEBEB";
+     google_color_bg = "EBEBEB";
+     google_color_link = "C30000";
+     google_color_url = "C30000";
+     google_color_text = "000000";
+     //--></script>
+     <script type="text/javascript"
+       src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+       </script>
+</center>
+
+
+
+    </td>
+	<td class="content" valign="top">
+
+    			<div class="content2">
+
+<h1>Detecting Ultrabook Sensors on Windows 8</h1>
+
+
+
+<script type="text/javascript">
+  function recordOutboundLink(link, category, action) {
+    _gat._getTrackerByName()._trackEvent(category, action);
+    setTimeout('document.location = "' + link.href + '"', 100);
+  }
+</script>
+<i>This article is sponsored by the new <a href="http://software.intel.com" rel="nofollow" onClick="recordOutboundLink(this, 'appup8-appdeveloper', 'appup8')">Intel Developer Zone</a></i>
+<br><br>
+<div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"> With the recent launch of the 3<sup>rd</sup> Generation Intel Core Processors, Intel has introduced a new breed of Ultrabook and it's a game-changer.  Ultrabooks and Convertibles based on the 3<sup>rd</sup> Generation Intel Core Processors come with new touch and sensor features.  In this post, we will focus on the sensors and how to detect their presence on an Ultrabook running Windows 8:<br /><ol><br /><li>What sensors are available for the Ultrabook/Convertible</li><br /><li>What sensors are <em>recommended</em>/<em>required </em>for the Ultrabook/Convertible</li><br /><li>How to determine  which sensors are on an Ultrabook</li></ol>
+<strong>New Sensors Available for the Ultrabook/Convertible</strong><br /><br />
+There are 5 Sensors relevant to the Ultrabook/Convertibles:<br /><ol><br /><li>Compass</li><br /><li>Accelerometer</li><br /><li>Gyroscope</li><br /><li>GPS</li><br /><li>Ambient Light Sensor</li><br /></ol><br /><img title="sensors" src="sensors.jpg" alt="" width="391" height="83" /><br /><br /><strong>Sensors Recommended for the Ultrabook</strong><br /><br />
+The following table provides information about the new sensors that are recommended for the Ultrabook (and required for convertibles.)   It will be up to the OEMs which sensors are included for their specific models/usages.<br /><br /><img title="sensortable" src="sensortable1.jpg" alt="" width="642" height="140" /><br /><br /><strong>Sensor Detection</strong><br /><br />
+Figuring out which sensors are on Convertibles is easy.  All of the above sensors are required.  For the basic Ultrabook, it isn't so easy.  There will be different classes of Ultrabooks:  the Business Ultrabook and the Consumer Ultrabook.  While OEMs have been given a minimum specification that dictates what features an Ultrabook has, there will be some differentiating amongst the OEMS for the different classes of computers.  The OEMs will determine which sensors are best suited for their various models.<br /><br /><strong>Detecting Sensors on an Ultrabook</strong><br /><br />
+There are a few ways in which to determine if a system supports the sensors, and if so, which sensors:<br /><ul><br /><li>The first, most basic way, is to find the Computer Management App on the Metro Start Menu (if it isn't there you can view "All Apps" by right-clicking in the window and then click on the "All Apps" icon in the lower right-hand side of the window.</li><br /><li>If you want to get finer detail regarding each sensor and possibly even have  some control over some of the sensor parameters (for testing purposes) you can run the Sensor Diagnostic Tool--it is part of the <a href="http://msdn.microsoft.com/en-US/windows/hardware/hh852362" rel="nofollow" onClick="recordOutboundLink(this, 'appup8-msdn-wdk', 'appup8')">Windows Driver Kit (WDK)</a>.</li><br /><li>Thirdly, if you are writing Apps for Windows 8 you will need to have your App query for all the sensors so that the right execution path can be taken (i.e. if the sensor you wanted to use is not present, you will need to find an alternate way of providing the user experience.)</li><br /></ul><br /><strong>Computer Management/Device Manager</strong><br /><br />
+Once the Device Manager is up, look for "Sensors" in the device tree.   The "HID Sensor Collection" contains the new sensors associated with Ultrabook.  Unfortunately it does not provide a breakout of which of the sensors are on the system; just that at least one of them is present.   HID is "Human Interface Device" and the five Ultrabook sensors use the HID protocol.<br /><br /><img title="sensordevicemgr" src="sensordevicemgr.jpg" alt="" width="341" height="103" /><br /><br /><strong>Sensor Diagnostic Tool</strong><br /><br />
+The Sensor Diagnostic tool uses the Sensor and Location API for data retrieval, event handling, report intervals, changing sensitivity, and property retrieval.  The tool can also be used to write the sensor data to a CSV file.  I should note, however that the Sensor Diagnostic Tool really exists to aid with the development of Windows Drivers; its true use is to help with the testing and optimization of Windows Drivers.  This tool can be found in the following folder once you have installed the Windows Driver Kit:  <strong><em>C:\Program Files (x86)\Windows Kits\8.0\Tools\x86.</em></strong><br /><p style="text-align:center"><em>Sensor Diagnostic Tool run on an Ivy Bridge Software Development Platform + USB Sensor Hub</em></p><br /><p style="text-align:center"><img title="SDT" src="SDT.jpg" alt="" width="625" height="362" /></p><br /><strong>Programatically detecting sensors using the Sensor APIs</strong><br /><br />
+The Sensor Diagnostic Tool is useful to monitor and test your sensors; however, in software that is written to take advantage of the Ultrabook Sensors, it would be better to call the Sensor APIs from within the code in order to ensure that the platform supports the sensors.  If the system does not support a particular sensor then the software should still be able to offer a different but compelling experience for the end user.<br /><br />
+Before we talk about the specific APIs, let's take a look at what the development environment looks like for Windows 8.  Take note of the languages supported in Metro Style Apps and Desktop Apps.  Also note that for Metro Style Apps, the Device APIs are included inside the Windows Run Time environment.<br /><br /><img title="win8devenv" src="win8devenv.jpg" alt="" width="570" height="315" /><br /><br />
+There is also a Windows 8 Sensor Platform that provides support for both Metro style app and desktop development.  The examples below pertain to the Windows 8 Desktop environment.  For Desktop Apps, accessing the sensors is done via the object SensorManager.  Sensors can be queried in the following manners:<br /><ul><br /><li>Ask by Type</li><br /><li>Ask by Category</li><br /><li>Ask by Category "All"</li><br /></ul><br /><strong>Asking by Type</strong><br /><br />
+If you are interested in a specific type of sensor, for example, "Gyrometer3D", SensorManager will consult the list of sensor hardware present on the computer and return a collection of matching objects bound to that hardware.   The Sensor Collection may have zero or more objects in it but usually will have only one.<br /><ul><br /><li>Method:  GetSensorByType</li><br /><li>Include Files:  InitGuid.h, SensorsApi.h, Sensors.h</li><br /></ul><br /><strong>Steps:</strong><br /><ol><br /><li>Create a COM interface to the SensorManager object</li><br /><li>Get a collection of all 3-axis Gyros on the computer</li><br /></ol><br /><p style="padding-left:60px">result = pSensorManager-&gt; GetSensorsByType(SENSOR_TYPE_GYROMETER_3D, &amp;pSensorCollection)</p><br /><strong>Asking by Category</strong><br /><br />
+Rather than looking for a specific type of sensor, you may be interested in looking for all sensors in a specific category, for example, "Motion" sensors.  SensorManager will consult the list of sensor hardware on the computer, and return a collection of Motion objects bound to that hardware. The SensorCollection may have zero or more objects in it.  On most computers, the collection will have two Motion objects:  Accelerometer3D and Gyrometer3D.<br /><ul><br /><li>Method:  GetSensorByCategory</li><br /><li>Include Files:  InitGuid.h, SensorsApi.h, Sensors.h</li><br /></ul><br /><strong>Steps:</strong><br /><ol><br /><li>Create a COM interface to the SensorManager object</li><br /><li>Get a collection of all Motion Sensors on the computer</li><br /></ol><br /><p style="padding-left:60px">result = pSensorManager-&gt; GetSensorsByCategory(SENSOR_CATEGORY_MOTION, &amp;pSensorCollection)</p><br /><strong>Asking by Category "ALL"</strong><br /><br />
+Finally, you might be interested on getting all the sensors on the computer by using the "ALL" method.  This would most likely be the preferred way to query the sensors on the system; however, it will return all sensors, not just the five listed above. Once again, SensorManager will consult the list of sensor hardware on the computer and return a collection of all the objects bound to that hardware. The SensorCollection may have zero or more objects in it.  On most computers, the collection will have seven or more objects.  Note that C++ does not have a GetAllSensors call, so you must use GetSensorsByCategory(SENSOR_CATEGORY_ALL, ...) instead.<br /><ul><br /><li>Method:  GetSensorsByCategory</li><br /><li>Include Files:  InitGuid.h, SensorsApi.h, Sensors.h</li><br /></ul><br /><strong>Steps:</strong><br /><ol><br /><li>Create a COM interface to the SensorManager object</li><br /><li>Get a collection of all Sensors on the computer</li><br /></ol><br /><p style="padding-left:60px">result = pSensorManager-&gt; GetSensorsByCategory(SENSOR_CATEGORY_ALL,&amp;pSensorCollection)</p><br /><strong>Querying the Sensors in Metro/WinRT</strong><br /><br />
+For Metro/WinRT, you will simply use the methods to get the sensor object and test for NULL.  The Geolocation method is a little different. Here are some examples:<br /><br /><strong><img title="SensorWinRT" src="SensorWinRT.jpg" alt="" width="648" height="252" /></strong><br /><br /><strong>Resources</strong><br /><br />
+Here are some good resources from the Microsoft website for developing sensor-enabled apps:<br /><ul><br /><li><a href="http://msdn.microsoft.com/en-us/library/windows/hardware/br259127.aspx" rel="nofollow" onClick="recordOutboundLink(this, 'appup8-msdn-2', 'appup8')">Introducing the Windows Sensor and Location Platform</a></li><br /><li><a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dd318964(v=vs.85).aspx" rel="nofollow" onClick="recordOutboundLink(this, 'appup8-msdn-3', 'appup8')">Sensor API Programming Guide</a></li><br /><li><a href="http://msdn.microsoft.com/en-us/library/windows/hardware/br259127.aspx" rel="nofollow" onClick="recordOutboundLink(this, 'appup8-msdn-4', 'appup8')">Integrating Motion and Orientation Sensors</a></li><br /><li><a href="http://blogs.msdn.com/b/sensorslocation/" rel="nofollow" onClick="recordOutboundLink(this, 'appup8-msdn-5', 'appup8')">Sensor &amp; Location Platform Team Blog</a><strong> </strong></li><br /></ul><br />
+Also, here are some more blogs/articles that may be useful regarding on Ultrabooks and Windows 8:<br /><ul><br /><li><a href="http://software.intel.com/en-us/blogs/2012/05/29/developing-for-ultrabook-part-1/" rel="nofollow" onClick="recordOutboundLink(this, 'appup8-intel-1', 'appup8')">Developing for Ultrabook--Part 1</a></li><br /><li><a title="Permanent Link to Getting Started with Windows 8 Development" href="http://software.intel.com/en-us/blogs/2012/07/13/getting-started-with-windows-8-development/" rel="nofollow" onClick="recordOutboundLink(this, 'appup8-intel-2', 'appup8')">Getting Started with Windows 8 Development</a></li><br /><li><a title=" Develop location-aware, Metro style apps when your development system doesn't have GPS" href="http://software.intel.com/en-us/blogs/2012/07/23/develop-location-aware-metro-style-apps-when-your-development-system-doesnt-have-gps/" rel="nofollow" onClick="recordOutboundLink(this, 'appup8-intel-3', 'appup8')">Develop location-aware, Metro style apps when your development system doesn't have GPS</a></li><br /><li><a href="http://software.intel.com/en-us/articles/ultrabook-and-tablet-windows-8-sensors-development-guide/" rel="nofollow" onClick="recordOutboundLink(this, 'appup8-intel-4', 'appup8')">Ultrabook and Tablet Windows 8 Sensors Development Guide</a></li><br /></ul><br /><strong>Conclusion</strong><br /><br />
+The primary goal for this blog was to educate the reader on how to detect the  required sensors supported for Windows 8 Ultrabooks.  The focus was primarily on the "clam-shell" form factor since Convertibles, Tablets and Mobile devices will be required to have all the sensors.  It is important to note that sensor support for Ultrabooks is dependent on the OEM and Model.  While it is possible to run local tools to determine the existence of sensors, software developers will need to be able to programmatically check for the sensors so that their software will not attempt to use a device that may or may not be there.
+
+<div id="footer" class="noprint">
+
+<div id="social" style="margin-top:5px;height:23px;">
+<table>
+<tr>
+<td> 
+<div id="fb-root"></div>
+<div id="fb-recommend" class="fb-like" data-send="false" data-width="120" data-height="21" data-layout="button_count" data-action="recommend"></div>
+</td>
+<td>
+<a class="twitter-share-button" data-count="horizontal" data-via="alexallain"></a>
+</td>
+<td>
+<div class="g-plusone" data-size="medium"></div>
+</td>
+</tr>
+</table>
+</div>
+
+<div style="font-size:14px;padding:10px;margin-top:5px;margin-bottom:5px;">
+<div style="width:400px;margin-top:5px">
+<div style="float:left"><a href=http://www.cprogramming.com/c++book/?inl=ft-nhp><img src=http://www.cprogramming.com/c++book/small_3d.jpg border=0></a></div>Want to become a C++ programmer? The Cprogramming.com ebook, Jumping into C++, will walk you through it, step-by-step. <a href=http://www.cprogramming.com/c++book/?inl=ft-nhp>Get Jumping into C++ today!</a>
+</div>
+<div style="clear: both"></div>
+
+<b>Popular pages</b>
+<ul>
+ <li><a href=http://www.cprogramming.com/begin.html>Exactly how to get started with C++ (or C) today</a> 
+<li><a href=http://www.cprogramming.com/tutorial/c-tutorial.html>C Tutorial</a>
+<li><a href=http://www.cprogramming.com/tutorial/c++-tutorial.html>C++ Tutorial</a>
+<li><a href=http://www.cprogramming.com/how_to_learn_to_program.html>5 ways you can learn to program faster</a> 
+<li><a href=http://www.cprogramming.com/beginner_programming_mistakes.html>The 5 Most Common Problems New Programmers Face</a>
+<li><a href=http://www.cprogramming.com/code_blocks/>How to set up a compiler</a>
+<li><a href=http://www.cprogramming.com/tutorial/common.html>8 Common programming Mistakes</a> 
+<li><a href=http://www.cprogramming.com/c++11/what-is-c++0x.html>What is C++11?</a>
+<li><a href=http://www.cprogramming.com/tutorial/game_programming/same_game_part1.html>How to make a game in 48 hours</a>
+</ul>
+
+<b>Recent additions</b> <a href="http://feeds2.feedburner.com/Cprogrammingcom" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="subscribe to a feed" style="border:0" width="16" height="16"></img></a>
+<ul>
+<li><a href=http://www.cprogramming.com/tutorial/shared-libraries-linux-gcc.html>How to create a shared library on Linux with GCC</a> - December 30, 2011</li>
+<li> <a href="http://www.cprogramming.com/c++11/c++11-nullptr-strongly-typed-enum-class.html">Enum classes and nullptr in C++11</a> - November 27, 2011</li>
+<li><a href="http://www.cprogramming.com/tutorial/computersciencetheory/hash-table.html">Learn about The Hash Table</a> - November 20, 2011</li>
+<li><a href="http://www.cprogramming.com/c++11/rvalue-references-and-move-semantics-in-c++11.html">Rvalue References and Move Semantics in C++11</a> - November 13, 2011</li>
+<li><a href="http://www.cprogramming.com/java/c-and-c++-for-java-programmers.html">C and C++ for Java Programmers</a> - November 5, 2011</li>
+<li><a href="http://www.cprogramming.com/tutorial/c++-iostreams.html">A Gentle Introduction to C++ IO Streams</a> - October 10, 2011</li>
+</ul>
+
+</div>
+<style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-bottom" style="background-color:#FFFFFF;color:#000000;width:50%; margin:auto">
+  <div class="cse-branding-form">
+    <form action="http://www.google.com/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-2560316224908115:0581759109" />
+        <input type="hidden" name="ie" value="UTF-8" />
+        <input type="text" name="q" size="55" />
+        <input type="submit" name="sa" value="Search" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Custom Search
+  </div>
+</div>
+
+<center>
+<div style="margin-top:20px; margin-bottom: 20px">
+<script type="text/javascript">
+<!--
+google_ad_client = "pub-2560316224908115";
+/* link_ads_bottom */
+google_ad_slot = "2258412831";
+google_ad_width = 728;
+google_ad_height = 15;
+//-->
+</script> 
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"> </script> 
+</div>
+ 
+<script type="text/javascript" src="http://forms.aweber.com/form/12/618210012.js"></script>
+
+<div class="footer-links" style="padding:10px">
+<a href="http://www.cprogramming.com/advertising.html">Advertising</a> | <a href="http://www.cprogramming.com/privacy.html">Privacy policy</a> |
+<a href="http://www.cprogramming.com/use.html">Copyright © 1997-2011 Cprogramming.com. All rights reserved.</a> | <a href=mailto:webmaster@cprogramming.com>webmaster@cprogramming.com</a>
+</div>
+</div>
+</div>
+</td>
+    	
+
+
+<td class="content noprint" valign="top" rowspan="1" bgcolor="#EBEBEB">
+<div class="content2"><br><div class="verticalad">
+
+
+
+
+
+
+
+<script type="text/javascript"><!--
+        e9 = new Object();
+    e9.size = "160x600,120x600";
+//--></script>
+<script type="text/javascript" src="http://tags.expo9.exponential.com/tags/Cprogrammingcom/ROS/tags.js"></script>
+
+
+
+</div><br>
+
+<style type="text/css">
+.sidebar-box { width: 150px; margin-bottom:5px; }
+</style>
+    <div id="side-images">
+        <div style="padding:5px;margin-top:5px">
+            <div style="margin-bottom: 5px">
+                <b>Popular pages</b>
+            </div>
+            <div>
+                
+                <!--http://www.flickr.com/photos/baslow/5620208/sizes/o/in/photostream/ -->
+                <div class = "sidebar-box">
+                    <a href=http://www.cprogramming.com/tutorial/c-tutorial.html>
+                    <img src=http://static.cprogramming.com/main_images/footer/5620208_bff9c514e6_s.jpg border=0 height=75 width=75 alt="C tutorial">
+                    <br>
+                    C Tutorial
+                    </a>
+                </div>
+                
+
+                
+                <!--http://www.flickr.com/photos/29233640@N07/2855530649/sizes/sq/in/photostream/-->
+                <div class = "sidebar-box">
+                    <a href=http://www.cprogramming.com/begin.html>
+                    <img src=http://static.cprogramming.com/main_images/footer/2855530649_905f7862fd_s.jpg border=0 height=75 width=75 alt="Get started">
+                    <br>
+                    Exactly how to get started with C++ (or C) today</a>
+                </div>
+                
+
+                
+                <!--http://www.flickr.com/photos/mikecogh/6505012533/sizes/sq/in/photostream/-->
+                <div class = "sidebar-box">
+                    <a href=http://www.cprogramming.com/how_to_learn_to_program.html>
+                    <img src=http://static.cprogramming.com/main_images/footer/6505012533_55c83fdfa0_s.jpg border=0 height=75 width=75 alt="Learn to program">
+                    <br>
+                    5 ways you can learn to program faster</a>
+                </div>
+                
+
+                
+                <div class = "sidebar-box">
+                    <a href=http://www.cprogramming.com/tutorial/c++-tutorial.html>
+                    <img src=http://static.cprogramming.com/main_images/footer/c++-img.png border=0 height=75 width=75 alt="C++ tutorial">
+                    <br>
+                    C++ Tutorial</a>
+                </div>
+                
+
+                
+                <!--http://www.flickr.com/photos/giopuo/3441263816/sizes/sq/in/photostream/-->
+                <div class = "sidebar-box">
+                    <a href=http://www.cprogramming.com/beginner_programming_mistakes.html>
+                    <img src=http://static.cprogramming.com/main_images/footer/3441263816_95f132a884_s.jpg border=0 height=75 width=75 alt="Problems new programmers face">
+                    <br>
+                    The 5 Most Common Problems New Programmers Face</a>
+                </div>
+                
+
+                
+                <div class = "sidebar-box">
+                   <a href=http://www.cprogramming.com/tutorial/game_programming/same_game_part1.html>
+                    <img src=http://www.cprogramming.com/tutorial/game_programming/same_game_small.png border=0 height=42 width=42 alt="Learn to make a game">
+                    <br>
+                   How to make a game in 48 hours</a>
+                </div>
+                
+
+                
+                <div class = "sidebar-box">
+                   <a href=http://www.cprogramming.com/tutorial/common.html>
+                    <img src=http://static.cprogramming.com/main_images/footer/2291127824_087a497bea_s.jpg border=0 height=75 width=75 alt="Common problems">
+                    <br>
+                   8 Common Programming Mistakes</a>
+                </div>
+                
+
+                
+                <div class = "sidebar-box">
+                   <a href=http://www.cprogramming.com/c++11/what-is-c++0x.html>
+                    <img src=http://static.cprogramming.com/main_images/footer/c++11.png border=0 height=75 width=75 alt="C++11">
+                    <br>
+                   What is C++11?</a>
+                </div>
+                
+            </div>
+        </div>
+        <div style="display:block">
+            <a href=/image_credits.html>Image credits</a>
+        </div>
+    </div>
+</div>
+</td>  	
+
+</tr>
+</table>
+</div>
+
+
+<script>
+(function(w, d, s) {
+  var cur_url = window.location;
+  var loc = cur_url;
+  if ( /htm(l?)/.test( cur_url.pathname ) ) {
+    loc = cur_url.protocol + "//" + cur_url.host + cur_url.pathname.replace( /\+/g, "%2b" );
+  }
+  d.getElementById( "fb-recommend" ).setAttribute( "data-href", loc );
+  function go(){
+    var js, fjs = d.getElementsByTagName(s)[0], load = function(url, id) {
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.src = url; js.id = id;
+          fjs.parentNode.insertBefore(js, fjs);
+        };
+    load('//connect.facebook.net/en_US/all.js#xfbml=1&channelUrl=http%3A%2F%2Fwww.cprogramming.com%2Ffb%2Fchannel.html', 'fbjssdk');
+    load('https://apis.google.com/js/plusone.js', 'gplus1js');
+    load('//platform.twitter.com/widgets.js', 'tweetjs');
+  }
+  if (w.addEventListener) { w.addEventListener("load", go, false); }
+  else if (w.attachEvent) { w.attachEvent("onload",go); }
+}(window, document, 'script'));
+</script>
+
+
+</body>
+</html>
+
+
+

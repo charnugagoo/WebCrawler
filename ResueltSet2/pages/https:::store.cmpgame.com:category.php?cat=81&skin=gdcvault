@@ -1,0 +1,1264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>UBM Tech - Game Network</title>
+<link href="/design_packages/gdcvault/stylesheet.css" rel='stylesheet' type='text/css' />
+
+<script language="javascript" type="text/javascript" src="/javascript.php"></script></head>
+
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>
+<!--HEADER-->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr bgcolor="01bdd8">
+<td width="1%" class="header-1"><img src="http://store.cmpgame.com/design_packages/gdcvault/images/gdcvault_logo.gif"></td>
+
+<td width="98%" class="header-3"><form action="http://store.cmpgame.com/search_results.php" method="post" name="search_form" id="search_form"><table width="100%" border="0" cellspacing="5" cellpadding="0">
+          <tr>
+            <td width="97%" align="right" valign="middle"></td>
+            <td width="1%" align="right" valign="middle"><b>Search</b></td>
+            <td width="1%" valign="middle"><input name="search_submit" type="hidden" id="search_submit" value="search_submit" /><input name="search_string" class="FIELD-SEARCH" type="text" size="25" id="search_string" value="" /></td>
+            <td width="1%" valign="middle"><input name="search_submit" type="submit" class="search-button" id="search_submit" value="GO" /></td>
+          </tr>
+        </table></form></td>
+      </tr>
+    </table>
+<!--END HEADER-->
+</td>
+  </tr>
+
+  <tr>
+    <td class="menu-bg"><table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="19" height="10" /></td>
+        <td><table class="main-menu-table" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="main-menu-left-td"><img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="10" height="1" /></td>
+              <td class="main-menu-right-td"><span class="main-menu"><a href="http://store.cmpgame.com/">HOME</a></span></td>
+            </tr>
+        </table></td>
+        <td><img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="10" height="10" /></td>
+        <td><table class="main-menu-table" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="main-menu-left-td"><img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="10" height="1" /></td>
+              <td class="main-menu-right-td"><span class="main-menu"><a href="http://store.cmpgame.com/customers/">MY ACCOUNT</a></span></td>
+            </tr>
+        </table></td>
+        <td><img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="10" height="10" /></td>
+        <td><table class="main-menu-table" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="main-menu-left-td"><img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="10" height="1" /></td>
+              <td class="main-menu-right-td"><span class="main-menu"><a href="http://store.cmpgame.com/basket/">VIEW CART</a></span></td>
+            </tr>
+        </table></td>
+        <td><img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="10" height="10" /></td>
+        <td><table class="main-menu-table" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="main-menu-left-td"><img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="10" height="1" /></td>
+              <td class="main-menu-right-td"><span class="main-menu"><a href="http://store.cmpgame.com/checkout/">CHECKOUT</a></span></td>
+            </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td class="body-bg"><img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="10" height="20" />
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="body-shell-1"><img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="19" height="1" /></td>
+          <td class="body-shell-2">
+
+<!--LEFT NAV CODE -->
+          <table width="195" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="body-top-left"><img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="1" /></td>
+              <td class="body-top-mid"><img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="1" /></td>
+              <td class="body-top-right"><img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="1" /></td>
+            </tr>
+            <tr>
+              <td class="body-mid" colspan="3">
+
+             <table border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td class="content-1">
+
+<!--MY CART CHECKOUT-->
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                             <td >
+
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td width="1%"><br/><br/><img src="/design_packages/gdcvault/images/icon_cart.gif" alt="" width="20" height="14" /></td>
+                                        <td width="1%"><br/><br/><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                        <td width="98%" align="left"><span class="list-title"><br/><br/>My Shopping Cart</span></td>
+                                     </tr>
+                                </table>
+          
+                               <img src="/design_packages/gdcvault/images/spacer.gif" width="100" height="8" alt="" /><br />
+                               <span >[ <b>0</b> ] items in cart</span><br />
+                               <img src="/design_packages/gdcvault/images/spacer.gif" width="100" height="8" alt="" /><br />
+                               <a href="http://store.cmpgame.com/basket/">View Cart </a> | <a href="http://store.cmpgame.com/checkout/">Checkout</a><br /><br /></td>
+                           </tr>
+                        </table>
+
+                        <hr>
+
+<!--CATEGORIES-->
+                       <span class="list-title">Game Developer Research</span><br />
+                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                               <tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gdcvault/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=64&skin=gdmag">Research Reports</a></td>
+                               </tr>
+                        </table><br />
+ 
+                       <span class="list-title">Game Developer Magazine</span><br />
+                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                              <tr>                        
+                                 <td width="19" align="right" valign="middle"><img src="/design_packages/gdcvault/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                 <td align="left" valign="middle"><a href="http://store.cmpgame.com/category.php?cat=20&skin=gdmag_2011">Digital Subscription</a></td>
+                         </tr>
+                         <tr>
+                                <td width="19" align="right" valign="middle"><img src="/design_packages/gdcvault/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                <td align="left" valign="middle"><a href="http://store.cmpgame.com/category.php?cat=18&skin=gdmag_2011">Digital Edition Copies</a></td>
+                         </tr>
+                         <tr>
+                               <td width="19" align="right" valign="middle"><img src="/design_packages/gdcvault/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                         <td align="left" valign="middle"><a href="http://store.cmpgame.com/category.php?cat=19&skin=gdmag_2011">Print Subscription</a></td>
+                          </tr>
+                        </table><br />
+
+<span class="list-title">GDC Vault</span><br />
+                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                               <tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gdcvault/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=85&skin=gdcvault">Individual Subscription</a></td>
+                               </tr>
+                        </table><br />
+
+<span class="list-title">GDC Audio Recordings</span><br />
+                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                               <tr>
+                                  <td width="19" align="right" valign="middle"><img src="/design_packages/gdcvault/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=82&skin=gdcvault">GDC Online 2012</a></td>
+                               </tr>
+                               <tr>
+                                  <td width="19" align="right" valign="middle"><img src="/design_packages/gdcvault/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=82&skin=gdcvault">GDC Europe 2012</a></td>
+                               </tr>
+                               <tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gdcvault/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=81&skin=gdcvault">GDC 2012</a></td>
+                               </tr>
+                               <tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gdcvault/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=80&skin=gdcvault">GDC 2011</a></td>
+                               </tr>
+                               <tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gdcvault/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=79&skin=gdcvault">GDC 10</a></td>
+                               </tr>
+                               <tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gdcvault/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=75&skin=gdcvault">GDC 09</a></td>
+                               </tr>
+                               <tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gdcvault/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=74&skin=gdcvault">GDC Austin 08</a></td>
+                               </tr>
+ <tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gdcvault/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=73&skin=gdcvault">GDC Mobile 08</a></td>
+                               </tr>
+ <tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gdcvault/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=72&skin=gdcvault">GDC 08</a></td>
+                               </tr>
+<tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gdcvault/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=65&skin=gdcvault">GDC Austin 07</a></td>
+                               </tr>
+<tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gdcvault/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=57&skin=gdcvault">GDC Mobile 07</a></td>
+                               </tr>
+<tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gdcvault/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=56&skin=gdcvault">GDC 07</a></td>
+                               </tr>
+<tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gdcvault/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=54&skin=gdcvault">GDC 06</a></td>
+                               </tr>
+<tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gdcvault/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=36&skin=gdcvault">GDC 05</a></td>
+                               </tr>
+<tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gdcvault/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=37&skin=gdcvault">GDC 04</a></td>
+                               </tr>
+<tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gdcvault/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=38&skin=gdcvault">GDC 03</a></td>
+                               </tr>
+<tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gdcvault/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=40&skin=gdcvault">GDC 01</a></td>
+                               </tr>
+<tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gdcvault/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><a href="https://store.cmpgame.com/category.php?cat=41&skin=gdcvault">GDC 2000 & Before</a></td>
+                               </tr>
+                        </table><br />
+
+                                                         
+                          <hr>
+
+<!--NEWEST ITEMS-->
+                         <span class="list-title">Newest Item(s)</span><br />
+               
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                               <tr>
+                                   <td width="19" align="right" valign="middle"><img src="/design_packages/gdcvault/images/spacer.gif" alt="bullet" width="1" height="1" /></td>
+                                   <td align="left" valign="middle"><p><a href="http://store.cmpgame.com/product/6852/Contractor-Listing---Premiere-Enhancement">Contractor Listing - Premiere Enhancement</a></p><p><a href="http://store.cmpgame.com/product/6851/Contractor-Listing---Featured-Enhancement">Contractor Listing - Featured Enhancement</a></p><p><a href="http://store.cmpgame.com/product/6850/Contractor-Listing---Basic-Enhancement">Contractor Listing - Basic Enhancement</a></p><p><a href="http://store.cmpgame.com/product/6849/Game-Developer-February-2013-Issue---Digital-Edition">Game Developer February 2013 Issue - Digital Edition</a></p><p><a href="http://store.cmpgame.com/product/6846/Game-Developer-January-2013-Issue---Digital-Edition">Game Developer January 2013 Issue - Digital Edition</a></p><p><a href="http://store.cmpgame.com/product/6845/Guild-Wars-2%3A-Programming-the-Next-Generation-Online-World">Guild Wars 2: Programming the Next Generation Online World</a></p><p><a href="http://store.cmpgame.com/product/6844/Writing-The-Unsung-Experiences%3A-Gender-In-Game-Storytelling">Writing The Unsung Experiences: Gender In Game Storytelling</a></p><p><a href="http://store.cmpgame.com/product/6843/Greetings%2C-Troubleshooter%3A-Living-in-a-Gameful-World">Greetings, Troubleshooter: Living in a Gameful World</a></p><p><a href="http://store.cmpgame.com/product/6842/Classic-Game-Postmortem%3A-Meridian-59">Classic Game Postmortem: Meridian 59</a></p><p><a href="http://store.cmpgame.com/product/6841/Beyond-the-Leaderboard%2C-an-Enterprise-View">Beyond the Leaderboard, an Enterprise View</a></p></td>
+                               </tr>
+                        </table>
+                        
+                        <br />
+                   </tr>
+               </table>
+
+          </td>
+      </tr>
+      <tr>
+        <td class="body-bot-left"><img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="1" /></td>
+        <td class="body-bot-mid"><img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="1" /></td>
+        <td class="body-bot-right"><img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="1" /></td>
+       </tr>
+</table>
+<!--END LEFT NAV CODE -->
+               
+         </td>          <td class="body-shell-3"><img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="5" height="1" /></td>
+          <td class="body-shell-4"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="body-top-left"><img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="1" /></td>
+              <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td class="body-top-mid-expand"><img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="1" /></td>
+                  </tr>
+              </table></td>
+              <td class="body-top-right"><img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="1" /></td>
+            </tr>
+            <tr>
+              <td class="body-mid-left"><img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="1" /></td>
+              <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td class="body-mid-expand"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="1%" valign="middle"><img src="/design_packages/gdcvault/images/icon_folder.gif" alt="" width="18" height="12" /></td>
+                        <td width="98%" align="left" valign="middle"><span class="page-title">GDC 2012 Category</span></td>
+                      </tr>
+                    </table>
+                      <img src="/design_packages/gdcvault/images/spacer.gif" width="100" height="12" alt="" />
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td><p>This category contains  358 products and 0 subcategories.</p>
+                              <p></p></td>
+                        </tr>
+                      </table>
+                      <img src="/design_packages/gdcvault/images/spacer.gif" width="100" height="12" alt="" />
+                      <form action="/category.php" method="get" enctype="application/x-www-form-urlencoded" name="category_form" id="category_form">
+                        <table border="0" align="center" cellpadding="5" cellspacing="0">
+                          <tr>
+                            <td align="center"><p><b>Sort By: </b> <select class="FIELD-SEARCH-ORDER" name="ob" id="ob"> <option value="create_date" >Date</option> <option value="display_order" selected="selected">Featured</option> <option value="name" >Name</option> <option value="price" >Price</option>  <option value="sku" >SKU</option> <option value="status" >Status</option> </select>
+                              <select class="FIELD-SEARCH-ASC-DESC" name="ascdesc" id="ascdesc"><option value="SORT_ASC" selected="selected">in ascending order</option><option value="SORT_DESC" >in descending order</option></select>
+                              with <select class="FIELD-RESULTS-PER-PAGE" name="rpp" id="rpp"><option value="10" >10</option><option value="25" selected="selected">25</option><option value="50" >50</option><option value="75" >75</option><option value="100" >100</option></select>  per page </p></td>
+                            <td align="center"><input name="submit2" type="submit" class="standard-button" alt="GO" id="submit2" value="Go" /></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" align="center"><p>358 Results | 25 results per
+                              page </p></td>
+                          </tr>
+                        </table>
+                        <img src="/design_packages/gdcvault/images/spacer.gif" width="20" height="20" alt="" />                        <table width="100%" border="0" align="center" cellpadding="7" cellspacing="0" class="results-bottom-border">
+                          <tr>
+                            <td width="1%" rowspan="3" align="left" valign="top"><a href="http://store.cmpgame.com/product/6645/%28English-Version%29-Revealing-%22Resident-Evil-Revelations%22"><img src='/img/graphics/MP3/mp3_icon.gif' alt="" border="0" /></a></td>
+                            <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6645/%28English-Version%29-Revealing-%22Resident-Evil-Revelations%22" title="View this product's details page.">(English Version) Revealing "Resident Evil Revelations"</a></span></td>
+                          </tr>
+                          <tr>
+                            <td width="98%" align="left" valign="top"><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+                                <br />
+                              <span class="results-sku-title">SKU#:</span> <b class="results-sku">GDC12-3553E</b></td>
+                            <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td width="1%" scope="col"><a href="/quick_return.php?return_type=category&return_id=81&id=6645&amp;qty=1"><img src="/design_packages/gdcvault/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                  <td width="1%" scope="col"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                  <td width="98%" align="left" scope="col"><a href="http://store.cmpgame.com/quick_return.php?return_type=category&return_id=81&id=6645&amp;qty=1">Add to Cart</a> </td>
+                                </tr>
+                              </table>
+                                <img src="/design_packages/gdcvault/images/spacer.gif" width="100" height="8" alt="" />
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td width="1%"><a href="http://store.cmpgame.com/product/6645/%28English-Version%29-Revealing-%22Resident-Evil-Revelations%22"><img src="/design_packages/gdcvault/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                    <td width="1%"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                    <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6645/%28English-Version%29-Revealing-%22Resident-Evil-Revelations%22">More Info</a></td>
+                                  </tr>
+                              </table></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" align="left" valign="top"><b class="results-description-title">Description:</b> <span class="results-description">Revealing "Resident Evil Revelations"<br />
+ <br />
+Speaker/s: Masachika Kawata (Capcom) <br />
+Day / Time / Location:  Thursday 10:00-11:00 Room 132, North Hall<br />
+Track / Duration / Format / Audience Level:  Game Design / 60-Minute / Lecture / All<br />
+GDC Vault Recording: Video Recorded<br />
+Description:  Why did we decide to bring Resident Evil to the Nintendo 3DS? With Resident Evil Revelations, we aimed to return to the roots of survival horror while completely rethinking and improving the game's controls and playability. In this talk, Kawata-san will discuss the meaning and significance behind this title's creation.</span><br />
+                                <img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="10" /></td>
+                          </tr>
+                        </table>
+                        <img src="/design_packages/gdcvault/images/spacer.gif" width="20" height="20" alt="" /><br />
+                                                <table width="100%" border="0" align="center" cellpadding="7" cellspacing="0" class="results-bottom-border">
+                          <tr>
+                            <td width="1%" rowspan="3" align="left" valign="top"><a href="http://store.cmpgame.com/product/6644/%28Japanese-Version%29-Revealing-%22Resident-Evil-Revelations%22"><img src='/img/graphics/MP3/mp3_icon.gif' alt="" border="0" /></a></td>
+                            <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6644/%28Japanese-Version%29-Revealing-%22Resident-Evil-Revelations%22" title="View this product's details page.">(Japanese Version) Revealing "Resident Evil Revelations"</a></span></td>
+                          </tr>
+                          <tr>
+                            <td width="98%" align="left" valign="top"><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+                                <br />
+                              <span class="results-sku-title">SKU#:</span> <b class="results-sku">GDC12-3553J</b></td>
+                            <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td width="1%" scope="col"><a href="/quick_return.php?return_type=category&return_id=81&id=6644&amp;qty=1"><img src="/design_packages/gdcvault/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                  <td width="1%" scope="col"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                  <td width="98%" align="left" scope="col"><a href="http://store.cmpgame.com/quick_return.php?return_type=category&return_id=81&id=6644&amp;qty=1">Add to Cart</a> </td>
+                                </tr>
+                              </table>
+                                <img src="/design_packages/gdcvault/images/spacer.gif" width="100" height="8" alt="" />
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td width="1%"><a href="http://store.cmpgame.com/product/6644/%28Japanese-Version%29-Revealing-%22Resident-Evil-Revelations%22"><img src="/design_packages/gdcvault/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                    <td width="1%"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                    <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6644/%28Japanese-Version%29-Revealing-%22Resident-Evil-Revelations%22">More Info</a></td>
+                                  </tr>
+                              </table></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" align="left" valign="top"><b class="results-description-title">Description:</b> <span class="results-description"><!-- rlb -->Revealing "Resident Evil Revelations"<br />
+ <br />
+Speaker/s: Masachika Kawata (Capcom) <br />
+Day / Time / Location:  Thursday 10:00-11:00 Room 132, North Hall<br />
+Track / Duration / Format / Audience Level:  Game Design / 60-Minute / Lecture / All<br />
+GDC Vault Recording: Video Recorded<br />
+Description:  Why did we decide to bring Resident Evil to the Nintendo 3DS? With Resident Evil Revelations, we aimed to return to the roots of survival horror while completely rethinking and improving the game's controls and playability. In this talk, Kawata-san will discuss the meaning and significance behind this title's creation.</span><br />
+                                <img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="10" /></td>
+                          </tr>
+                        </table>
+                        <img src="/design_packages/gdcvault/images/spacer.gif" width="20" height="20" alt="" /><br />
+                                                <table width="100%" border="0" align="center" cellpadding="7" cellspacing="0" class="results-bottom-border">
+                          <tr>
+                            <td width="1%" rowspan="3" align="left" valign="top"><a href="http://store.cmpgame.com/product/6643/%28English-Version%29-Classic-Game-Postmortem%3A-Harvest-Moon"><img src='/img/graphics/MP3/mp3_icon.gif' alt="" border="0" /></a></td>
+                            <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6643/%28English-Version%29-Classic-Game-Postmortem%3A-Harvest-Moon" title="View this product's details page.">(English Version) Classic Game Postmortem: Harvest Moon</a></span></td>
+                          </tr>
+                          <tr>
+                            <td width="98%" align="left" valign="top"><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+                                <br />
+                              <span class="results-sku-title">SKU#:</span> <b class="results-sku">GDC12-3551E</b></td>
+                            <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td width="1%" scope="col"><a href="/quick_return.php?return_type=category&return_id=81&id=6643&amp;qty=1"><img src="/design_packages/gdcvault/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                  <td width="1%" scope="col"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                  <td width="98%" align="left" scope="col"><a href="http://store.cmpgame.com/quick_return.php?return_type=category&return_id=81&id=6643&amp;qty=1">Add to Cart</a> </td>
+                                </tr>
+                              </table>
+                                <img src="/design_packages/gdcvault/images/spacer.gif" width="100" height="8" alt="" />
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td width="1%"><a href="http://store.cmpgame.com/product/6643/%28English-Version%29-Classic-Game-Postmortem%3A-Harvest-Moon"><img src="/design_packages/gdcvault/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                    <td width="1%"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                    <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6643/%28English-Version%29-Classic-Game-Postmortem%3A-Harvest-Moon">More Info</a></td>
+                                  </tr>
+                              </table></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" align="left" valign="top"><b class="results-description-title">Description:</b> <span class="results-description"><!-- rlb -->Classic Game Postmortem: Harvest Moon<br />
+ <br />
+Speaker/s: Yasuhiro Wada (Toy Box, Inc.) <br />
+Day / Time / Location:  Thursday 11:30-12:30 Room 132, North Hall<br />
+Track / Duration / Format / Audience Level:  Game Design / 60-Minute / Lecture / All<br />
+GDC Vault Recording: Video Recorded<br />
+Description:  Since the creation of the first installment over fifteen years ago, Harvest Moon has enchanted people all over the world with its rewarding gameplay and charming art style. The Harvest Moon series has made waves for portraying peaceful rural life in a video game world and in recent years, has inspired numerous social networking games centered around farming. Yasuhiro Wada, who produced and helped design and direct Harvest Moon, will touch on the ideas that gave birth to the series, the many successes and failures that can occur in developing and producing a video game franchise, and offer insight into the business aspects behind the series' growth.</span><br />
+                                <img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="10" /></td>
+                          </tr>
+                        </table>
+                        <img src="/design_packages/gdcvault/images/spacer.gif" width="20" height="20" alt="" /><br />
+                                                <table width="100%" border="0" align="center" cellpadding="7" cellspacing="0" class="results-bottom-border">
+                          <tr>
+                            <td width="1%" rowspan="3" align="left" valign="top"><a href="http://store.cmpgame.com/product/6642/%28Japanese-Version%29-Classic-Game-Postmortem%3A-Harvest-Moon"><img src='/img/graphics/MP3/mp3_icon.gif' alt="" border="0" /></a></td>
+                            <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6642/%28Japanese-Version%29-Classic-Game-Postmortem%3A-Harvest-Moon" title="View this product's details page.">(Japanese Version) Classic Game Postmortem: Harvest Moon</a></span></td>
+                          </tr>
+                          <tr>
+                            <td width="98%" align="left" valign="top"><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+                                <br />
+                              <span class="results-sku-title">SKU#:</span> <b class="results-sku">GDC12-3551J</b></td>
+                            <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td width="1%" scope="col"><a href="/quick_return.php?return_type=category&return_id=81&id=6642&amp;qty=1"><img src="/design_packages/gdcvault/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                  <td width="1%" scope="col"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                  <td width="98%" align="left" scope="col"><a href="http://store.cmpgame.com/quick_return.php?return_type=category&return_id=81&id=6642&amp;qty=1">Add to Cart</a> </td>
+                                </tr>
+                              </table>
+                                <img src="/design_packages/gdcvault/images/spacer.gif" width="100" height="8" alt="" />
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td width="1%"><a href="http://store.cmpgame.com/product/6642/%28Japanese-Version%29-Classic-Game-Postmortem%3A-Harvest-Moon"><img src="/design_packages/gdcvault/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                    <td width="1%"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                    <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6642/%28Japanese-Version%29-Classic-Game-Postmortem%3A-Harvest-Moon">More Info</a></td>
+                                  </tr>
+                              </table></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" align="left" valign="top"><b class="results-description-title">Description:</b> <span class="results-description"><!-- rlb -->Classic Game Postmortem: Harvest Moon<br />
+ <br />
+Speaker/s: Yasuhiro Wada (Toy Box, Inc.) <br />
+Day / Time / Location:  Thursday 11:30-12:30 Room 132, North Hall<br />
+Track / Duration / Format / Audience Level:  Game Design / 60-Minute / Lecture / All<br />
+GDC Vault Recording: Video Recorded<br />
+Description:  Since the creation of the first installment over fifteen years ago, Harvest Moon has enchanted people all over the world with its rewarding gameplay and charming art style. The Harvest Moon series has made waves for portraying peaceful rural life in a video game world and in recent years, has inspired numerous social networking games centered around farming. Yasuhiro Wada, who produced and helped design and direct Harvest Moon, will touch on the ideas that gave birth to the series, the many successes and failures that can occur in developing and producing a video game franchise, and offer insight into the business aspects behind the series' growth.</span><br />
+                                <img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="10" /></td>
+                          </tr>
+                        </table>
+                        <img src="/design_packages/gdcvault/images/spacer.gif" width="20" height="20" alt="" /><br />
+                                                <table width="100%" border="0" align="center" cellpadding="7" cellspacing="0" class="results-bottom-border">
+                          <tr>
+                            <td width="1%" rowspan="3" align="left" valign="top"><a href="http://store.cmpgame.com/product/6641/%28English-Version%29-The-Art-of-Uncharted-3"><img src='/img/graphics/MP3/mp3_icon.gif' alt="" border="0" /></a></td>
+                            <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6641/%28English-Version%29-The-Art-of-Uncharted-3" title="View this product's details page.">(English Version) The Art of Uncharted 3</a></span></td>
+                          </tr>
+                          <tr>
+                            <td width="98%" align="left" valign="top"><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+                                <br />
+                              <span class="results-sku-title">SKU#:</span> <b class="results-sku">GDC12-3542E</b></td>
+                            <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td width="1%" scope="col"><a href="/quick_return.php?return_type=category&return_id=81&id=6641&amp;qty=1"><img src="/design_packages/gdcvault/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                  <td width="1%" scope="col"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                  <td width="98%" align="left" scope="col"><a href="http://store.cmpgame.com/quick_return.php?return_type=category&return_id=81&id=6641&amp;qty=1">Add to Cart</a> </td>
+                                </tr>
+                              </table>
+                                <img src="/design_packages/gdcvault/images/spacer.gif" width="100" height="8" alt="" />
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td width="1%"><a href="http://store.cmpgame.com/product/6641/%28English-Version%29-The-Art-of-Uncharted-3"><img src="/design_packages/gdcvault/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                    <td width="1%"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                    <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6641/%28English-Version%29-The-Art-of-Uncharted-3">More Info</a></td>
+                                  </tr>
+                              </table></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" align="left" valign="top"><b class="results-description-title">Description:</b> <span class="results-description"><!-- rlb -->The Art of Uncharted 3<br />
+ <br />
+Speaker/s: Robh Ruppel (Naughty Dog) <br />
+Day / Time / Location:  Friday 12:05-12:30 Room 132, North Hall<br />
+Track / Duration / Format / Audience Level:  Visual Arts / 25-Minute / Lecture / All<br />
+GDC Vault Recording: Video Recorded<br />
+Description:  What goes into concepting a game at Naughty Dog? Join art director Robh Ruppel as he walks you through the conceptualizing of the latest installment of the Uncharted series. Color scripts, character sketches and environmental designs are all covered with never seen before art and sketches. This is an in depth look into the art behind Uncharted you won't be able to see anywhere else but at GDC</span><br />
+                                <img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="10" /></td>
+                          </tr>
+                        </table>
+                        <img src="/design_packages/gdcvault/images/spacer.gif" width="20" height="20" alt="" /><br />
+                                                <table width="100%" border="0" align="center" cellpadding="7" cellspacing="0" class="results-bottom-border">
+                          <tr>
+                            <td width="1%" rowspan="3" align="left" valign="top"><a href="http://store.cmpgame.com/product/6640/%28Japanese-Version%29-The-Art-of-Uncharted-3"><img src='/img/graphics/MP3/mp3_icon.gif' alt="" border="0" /></a></td>
+                            <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6640/%28Japanese-Version%29-The-Art-of-Uncharted-3" title="View this product's details page.">(Japanese Version) The Art of Uncharted 3</a></span></td>
+                          </tr>
+                          <tr>
+                            <td width="98%" align="left" valign="top"><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+                                <br />
+                              <span class="results-sku-title">SKU#:</span> <b class="results-sku">GDC12-3542J</b></td>
+                            <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td width="1%" scope="col"><a href="/quick_return.php?return_type=category&return_id=81&id=6640&amp;qty=1"><img src="/design_packages/gdcvault/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                  <td width="1%" scope="col"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                  <td width="98%" align="left" scope="col"><a href="http://store.cmpgame.com/quick_return.php?return_type=category&return_id=81&id=6640&amp;qty=1">Add to Cart</a> </td>
+                                </tr>
+                              </table>
+                                <img src="/design_packages/gdcvault/images/spacer.gif" width="100" height="8" alt="" />
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td width="1%"><a href="http://store.cmpgame.com/product/6640/%28Japanese-Version%29-The-Art-of-Uncharted-3"><img src="/design_packages/gdcvault/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                    <td width="1%"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                    <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6640/%28Japanese-Version%29-The-Art-of-Uncharted-3">More Info</a></td>
+                                  </tr>
+                              </table></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" align="left" valign="top"><b class="results-description-title">Description:</b> <span class="results-description"><!-- rlb -->The Art of Uncharted 3<br />
+ <br />
+Speaker/s: Robh Ruppel (Naughty Dog) <br />
+Day / Time / Location:  Friday 12:05-12:30 Room 132, North Hall<br />
+Track / Duration / Format / Audience Level:  Visual Arts / 25-Minute / Lecture / All<br />
+GDC Vault Recording: Video Recorded<br />
+Description:  What goes into concepting a game at Naughty Dog? Join art director Robh Ruppel as he walks you through the conceptualizing of the latest installment of the Uncharted series. Color scripts, character sketches and environmental designs are all covered with never seen before art and sketches. This is an in depth look into the art behind Uncharted you won't be able to see anywhere else but at GDC</span><br />
+                                <img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="10" /></td>
+                          </tr>
+                        </table>
+                        <img src="/design_packages/gdcvault/images/spacer.gif" width="20" height="20" alt="" /><br />
+                                                <table width="100%" border="0" align="center" cellpadding="7" cellspacing="0" class="results-bottom-border">
+                          <tr>
+                            <td width="1%" rowspan="3" align="left" valign="top"><a href="http://store.cmpgame.com/product/6639/%28English-Version%29-Thinking-In-3D%3A-The-Development-of-Super-Mario-3D-Land"><img src='/img/graphics/MP3/mp3_icon.gif' alt="" border="0" /></a></td>
+                            <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6639/%28English-Version%29-Thinking-In-3D%3A-The-Development-of-Super-Mario-3D-Land" title="View this product's details page.">(English Version) Thinking In 3D: The Development of Super Mario 3D Land</a></span></td>
+                          </tr>
+                          <tr>
+                            <td width="98%" align="left" valign="top"><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+                                <br />
+                              <span class="results-sku-title">SKU#:</span> <b class="results-sku">GDC12-3534E</b></td>
+                            <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td width="1%" scope="col"><a href="/quick_return.php?return_type=category&return_id=81&id=6639&amp;qty=1"><img src="/design_packages/gdcvault/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                  <td width="1%" scope="col"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                  <td width="98%" align="left" scope="col"><a href="http://store.cmpgame.com/quick_return.php?return_type=category&return_id=81&id=6639&amp;qty=1">Add to Cart</a> </td>
+                                </tr>
+                              </table>
+                                <img src="/design_packages/gdcvault/images/spacer.gif" width="100" height="8" alt="" />
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td width="1%"><a href="http://store.cmpgame.com/product/6639/%28English-Version%29-Thinking-In-3D%3A-The-Development-of-Super-Mario-3D-Land"><img src="/design_packages/gdcvault/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                    <td width="1%"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                    <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6639/%28English-Version%29-Thinking-In-3D%3A-The-Development-of-Super-Mario-3D-Land">More Info</a></td>
+                                  </tr>
+                              </table></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" align="left" valign="top"><b class="results-description-title">Description:</b> <span class="results-description"><!-- rlb -->Thinking In 3D: The Development of Super Mario 3D Land<br />
+ <br />
+Speaker/s: Koichi Hayashida (Nintendo) <br />
+Day / Time / Location:  Wednesday 3:30- 4:30 Room 132, North Hall<br />
+Track / Duration / Format / Audience Level:  Game Design / 60-Minute / Lecture / All<br />
+GDC Vault Recording: Video Recorded<br />
+Description:     Ever since Super Mario 64, the desire to make use of stereoscopic vision has been a part of the history of Nintendo’s development of 3D Mario games. This desire impacted Nintendo 3DS development, and the Nintendo 3DS system brought new challenges to the development of a 3D Mario game.  These include:  How should developers use stereoscopic visuals in action games for Nintendo 3DS? What are the fundamental differences between playing a game in 2D and 3D? What game elements could best take advantage of these differences? Which elements could be incorporated while remaining true to an iconic game franchise?  Koichi Hayashida, game director, will lead a presentation that shares several “Miyamoto-sayings” (key development philosophies from Mario creator Shigeru Miyamoto) on how the development team for Super Mario 3D Land for Nintendo 3DS answered these questions, and how those answers helped make the game the fastest-selling hand-held Super Mario game in history.</span><br />
+                                <img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="10" /></td>
+                          </tr>
+                        </table>
+                        <img src="/design_packages/gdcvault/images/spacer.gif" width="20" height="20" alt="" /><br />
+                                                <table width="100%" border="0" align="center" cellpadding="7" cellspacing="0" class="results-bottom-border">
+                          <tr>
+                            <td width="1%" rowspan="3" align="left" valign="top"><a href="http://store.cmpgame.com/product/6638/%28Japanese-Version%29-Thinking-In-3D%3A-The-Development-of-Super-Mario-3D-Land"><img src='/img/graphics/MP3/mp3_icon.gif' alt="" border="0" /></a></td>
+                            <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6638/%28Japanese-Version%29-Thinking-In-3D%3A-The-Development-of-Super-Mario-3D-Land" title="View this product's details page.">(Japanese Version) Thinking In 3D: The Development of Super Mario 3D Land</a></span></td>
+                          </tr>
+                          <tr>
+                            <td width="98%" align="left" valign="top"><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+                                <br />
+                              <span class="results-sku-title">SKU#:</span> <b class="results-sku">GDC12-3534J</b></td>
+                            <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td width="1%" scope="col"><a href="/quick_return.php?return_type=category&return_id=81&id=6638&amp;qty=1"><img src="/design_packages/gdcvault/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                  <td width="1%" scope="col"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                  <td width="98%" align="left" scope="col"><a href="http://store.cmpgame.com/quick_return.php?return_type=category&return_id=81&id=6638&amp;qty=1">Add to Cart</a> </td>
+                                </tr>
+                              </table>
+                                <img src="/design_packages/gdcvault/images/spacer.gif" width="100" height="8" alt="" />
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td width="1%"><a href="http://store.cmpgame.com/product/6638/%28Japanese-Version%29-Thinking-In-3D%3A-The-Development-of-Super-Mario-3D-Land"><img src="/design_packages/gdcvault/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                    <td width="1%"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                    <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6638/%28Japanese-Version%29-Thinking-In-3D%3A-The-Development-of-Super-Mario-3D-Land">More Info</a></td>
+                                  </tr>
+                              </table></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" align="left" valign="top"><b class="results-description-title">Description:</b> <span class="results-description"><!-- rlb -->Thinking In 3D: The Development of Super Mario 3D Land<br />
+ <br />
+Speaker/s: Koichi Hayashida (Nintendo) <br />
+Day / Time / Location:  Wednesday 3:30- 4:30 Room 132, North Hall<br />
+Track / Duration / Format / Audience Level:  Game Design / 60-Minute / Lecture / All<br />
+GDC Vault Recording: Video Recorded<br />
+Description:     Ever since Super Mario 64, the desire to make use of stereoscopic vision has been a part of the history of Nintendo’s development of 3D Mario games. This desire impacted Nintendo 3DS development, and the Nintendo 3DS system brought new challenges to the development of a 3D Mario game.  These include:  How should developers use stereoscopic visuals in action games for Nintendo 3DS? What are the fundamental differences between playing a game in 2D and 3D? What game elements could best take advantage of these differences? Which elements could be incorporated while remaining true to an iconic game franchise?  Koichi Hayashida, game director, will lead a presentation that shares several “Miyamoto-sayings” (key development philosophies from Mario creator Shigeru Miyamoto) on how the development team for Super Mario 3D Land for Nintendo 3DS answered these questions, and how those answers helped make the game the fastest-selling hand-held Super Mario game in history.</span><br />
+                                <img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="10" /></td>
+                          </tr>
+                        </table>
+                        <img src="/design_packages/gdcvault/images/spacer.gif" width="20" height="20" alt="" /><br />
+                                                <table width="100%" border="0" align="center" cellpadding="7" cellspacing="0" class="results-bottom-border">
+                          <tr>
+                            <td width="1%" rowspan="3" align="left" valign="top"><a href="http://store.cmpgame.com/product/6637/%28English-Version%29-Retro-and-Japanese-Social-Games-on-Smartphones"><img src='/img/graphics/MP3/mp3_icon.gif' alt="" border="0" /></a></td>
+                            <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6637/%28English-Version%29-Retro-and-Japanese-Social-Games-on-Smartphones" title="View this product's details page.">(English Version) Retro and Japanese Social Games on Smartphones</a></span></td>
+                          </tr>
+                          <tr>
+                            <td width="98%" align="left" valign="top"><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+                                <br />
+                              <span class="results-sku-title">SKU#:</span> <b class="results-sku">GDC12-3443E</b></td>
+                            <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td width="1%" scope="col"><a href="/quick_return.php?return_type=category&return_id=81&id=6637&amp;qty=1"><img src="/design_packages/gdcvault/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                  <td width="1%" scope="col"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                  <td width="98%" align="left" scope="col"><a href="http://store.cmpgame.com/quick_return.php?return_type=category&return_id=81&id=6637&amp;qty=1">Add to Cart</a> </td>
+                                </tr>
+                              </table>
+                                <img src="/design_packages/gdcvault/images/spacer.gif" width="100" height="8" alt="" />
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td width="1%"><a href="http://store.cmpgame.com/product/6637/%28English-Version%29-Retro-and-Japanese-Social-Games-on-Smartphones"><img src="/design_packages/gdcvault/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                    <td width="1%"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                    <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6637/%28English-Version%29-Retro-and-Japanese-Social-Games-on-Smartphones">More Info</a></td>
+                                  </tr>
+                              </table></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" align="left" valign="top"><b class="results-description-title">Description:</b> <span class="results-description"><!-- rlb -->Retro and Japanese Social Games on Smartphones<br />
+ <br />
+Speaker/s: Mikio Watanabe (CAVE Interactive CO., LTD.) <br />
+Day / Time / Location:  Thursday 4:00- 5:00 Room 132, North Hall<br />
+Track / Duration / Format / Audience Level:  Game Design / 60-Minute / Lecture / All<br />
+GDC Vault Recording: Video Recorded<br />
+Description:  Mr. Watanabe will describe the thoughts and difficulties Cave had in adapting their retro-style games for the new wave of smartphones. He will also discuss the current Japanese mobile social games business, and talk about what overseas companies should be careful of when entering the Japanese market.</span><br />
+                                <img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="10" /></td>
+                          </tr>
+                        </table>
+                        <img src="/design_packages/gdcvault/images/spacer.gif" width="20" height="20" alt="" /><br />
+                                                <table width="100%" border="0" align="center" cellpadding="7" cellspacing="0" class="results-bottom-border">
+                          <tr>
+                            <td width="1%" rowspan="3" align="left" valign="top"><a href="http://store.cmpgame.com/product/6636/%28Japanese-Version%29-Retro-and-Japanese-Social-Games-on-Smartphones"><img src='/img/graphics/MP3/mp3_icon.gif' alt="" border="0" /></a></td>
+                            <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6636/%28Japanese-Version%29-Retro-and-Japanese-Social-Games-on-Smartphones" title="View this product's details page.">(Japanese Version) Retro and Japanese Social Games on Smartphones</a></span></td>
+                          </tr>
+                          <tr>
+                            <td width="98%" align="left" valign="top"><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+                                <br />
+                              <span class="results-sku-title">SKU#:</span> <b class="results-sku">GDC12-3443J</b></td>
+                            <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td width="1%" scope="col"><a href="/quick_return.php?return_type=category&return_id=81&id=6636&amp;qty=1"><img src="/design_packages/gdcvault/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                  <td width="1%" scope="col"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                  <td width="98%" align="left" scope="col"><a href="http://store.cmpgame.com/quick_return.php?return_type=category&return_id=81&id=6636&amp;qty=1">Add to Cart</a> </td>
+                                </tr>
+                              </table>
+                                <img src="/design_packages/gdcvault/images/spacer.gif" width="100" height="8" alt="" />
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td width="1%"><a href="http://store.cmpgame.com/product/6636/%28Japanese-Version%29-Retro-and-Japanese-Social-Games-on-Smartphones"><img src="/design_packages/gdcvault/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                    <td width="1%"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                    <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6636/%28Japanese-Version%29-Retro-and-Japanese-Social-Games-on-Smartphones">More Info</a></td>
+                                  </tr>
+                              </table></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" align="left" valign="top"><b class="results-description-title">Description:</b> <span class="results-description"><!-- rlb -->Retro and Japanese Social Games on Smartphones<br />
+ <br />
+Speaker/s: Mikio Watanabe (CAVE Interactive CO., LTD.) <br />
+Day / Time / Location:  Thursday 4:00- 5:00 Room 132, North Hall<br />
+Track / Duration / Format / Audience Level:  Game Design / 60-Minute / Lecture / All<br />
+GDC Vault Recording: Video Recorded<br />
+Description:  Mr. Watanabe will describe the thoughts and difficulties Cave had in adapting their retro-style games for the new wave of smartphones. He will also discuss the current Japanese mobile social games business, and talk about what overseas companies should be careful of when entering the Japanese market.</span><br />
+                                <img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="10" /></td>
+                          </tr>
+                        </table>
+                        <img src="/design_packages/gdcvault/images/spacer.gif" width="20" height="20" alt="" /><br />
+                                                <table width="100%" border="0" align="center" cellpadding="7" cellspacing="0" class="results-bottom-border">
+                          <tr>
+                            <td width="1%" rowspan="3" align="left" valign="top"><a href="http://store.cmpgame.com/product/6635/%28English-Version%29-The-Future-of-Japanese-Games"><img src='/img/graphics/MP3/mp3_icon.gif' alt="" border="0" /></a></td>
+                            <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6635/%28English-Version%29-The-Future-of-Japanese-Games" title="View this product's details page.">(English Version) The Future of Japanese Games</a></span></td>
+                          </tr>
+                          <tr>
+                            <td width="98%" align="left" valign="top"><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+                                <br />
+                              <span class="results-sku-title">SKU#:</span> <b class="results-sku">GDC12-3371E</b></td>
+                            <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td width="1%" scope="col"><a href="/quick_return.php?return_type=category&return_id=81&id=6635&amp;qty=1"><img src="/design_packages/gdcvault/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                  <td width="1%" scope="col"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                  <td width="98%" align="left" scope="col"><a href="http://store.cmpgame.com/quick_return.php?return_type=category&return_id=81&id=6635&amp;qty=1">Add to Cart</a> </td>
+                                </tr>
+                              </table>
+                                <img src="/design_packages/gdcvault/images/spacer.gif" width="100" height="8" alt="" />
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td width="1%"><a href="http://store.cmpgame.com/product/6635/%28English-Version%29-The-Future-of-Japanese-Games"><img src="/design_packages/gdcvault/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                    <td width="1%"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                    <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6635/%28English-Version%29-The-Future-of-Japanese-Games">More Info</a></td>
+                                  </tr>
+                              </table></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" align="left" valign="top"><b class="results-description-title">Description:</b> <span class="results-description"><!-- rlb -->The Future of Japanese Games<br />
+ <br />
+Speaker/s: Keiji Inafune (Comcept Inc.) <br />
+Day / Time / Location:  Wednesday 5:00- 6:00 Room 132, North Hall<br />
+Track / Duration / Format / Audience Level:  Game Design / 60-Minute / Lecture / All<br />
+GDC Vault Recording: Video Recorded<br />
+Description:  With Western developers dominating the market and the Japanese game industry facing an unprecedented crisis, Mr. Inafune will cut right to the important questions surrounding the future of this unpredictable industry. Together with seminar participants, he will consider current trends and prevailing ideas in game development, while also looking back to what we might learn from the past. This seminar is a must for anyone involved in game development or those with an interest in the broader entertainment industry.</span><br />
+                                <img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="10" /></td>
+                          </tr>
+                        </table>
+                        <img src="/design_packages/gdcvault/images/spacer.gif" width="20" height="20" alt="" /><br />
+                                                <table width="100%" border="0" align="center" cellpadding="7" cellspacing="0" class="results-bottom-border">
+                          <tr>
+                            <td width="1%" rowspan="3" align="left" valign="top"><a href="http://store.cmpgame.com/product/6634/%28Japanese-Version%29-The-Future-of-Japanese-Games"><img src='/img/graphics/MP3/mp3_icon.gif' alt="" border="0" /></a></td>
+                            <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6634/%28Japanese-Version%29-The-Future-of-Japanese-Games" title="View this product's details page.">(Japanese Version) The Future of Japanese Games</a></span></td>
+                          </tr>
+                          <tr>
+                            <td width="98%" align="left" valign="top"><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+                                <br />
+                              <span class="results-sku-title">SKU#:</span> <b class="results-sku">GDC12-3371J</b></td>
+                            <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td width="1%" scope="col"><a href="/quick_return.php?return_type=category&return_id=81&id=6634&amp;qty=1"><img src="/design_packages/gdcvault/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                  <td width="1%" scope="col"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                  <td width="98%" align="left" scope="col"><a href="http://store.cmpgame.com/quick_return.php?return_type=category&return_id=81&id=6634&amp;qty=1">Add to Cart</a> </td>
+                                </tr>
+                              </table>
+                                <img src="/design_packages/gdcvault/images/spacer.gif" width="100" height="8" alt="" />
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td width="1%"><a href="http://store.cmpgame.com/product/6634/%28Japanese-Version%29-The-Future-of-Japanese-Games"><img src="/design_packages/gdcvault/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                    <td width="1%"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                    <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6634/%28Japanese-Version%29-The-Future-of-Japanese-Games">More Info</a></td>
+                                  </tr>
+                              </table></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" align="left" valign="top"><b class="results-description-title">Description:</b> <span class="results-description"><!-- rlb -->The Future of Japanese Games<br />
+ <br />
+Speaker/s: Keiji Inafune (Comcept Inc.) <br />
+Day / Time / Location:  Wednesday 5:00- 6:00 Room 132, North Hall<br />
+Track / Duration / Format / Audience Level:  Game Design / 60-Minute / Lecture / All<br />
+GDC Vault Recording: Video Recorded<br />
+Description:  With Western developers dominating the market and the Japanese game industry facing an unprecedented crisis, Mr. Inafune will cut right to the important questions surrounding the future of this unpredictable industry. Together with seminar participants, he will consider current trends and prevailing ideas in game development, while also looking back to what we might learn from the past. This seminar is a must for anyone involved in game development or those with an interest in the broader entertainment industry.</span><br />
+                                <img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="10" /></td>
+                          </tr>
+                        </table>
+                        <img src="/design_packages/gdcvault/images/spacer.gif" width="20" height="20" alt="" /><br />
+                                                <table width="100%" border="0" align="center" cellpadding="7" cellspacing="0" class="results-bottom-border">
+                          <tr>
+                            <td width="1%" rowspan="3" align="left" valign="top"><a href="http://store.cmpgame.com/product/6633/%28English-Version%29-Re-orienting-Development-and-Accelerating-Production-to-Create-Infinity-Blade-and-Infinity-Blade-II"><img src='/img/graphics/MP3/mp3_icon.gif' alt="" border="0" /></a></td>
+                            <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6633/%28English-Version%29-Re-orienting-Development-and-Accelerating-Production-to-Create-Infinity-Blade-and-Infinity-Blade-II" title="View this product's details page.">(English Version) Re-orienting Development and Accelerating Production to Create Infinity Blade and Infinity Blade II</a></span></td>
+                          </tr>
+                          <tr>
+                            <td width="98%" align="left" valign="top"><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+                                <br />
+                              <span class="results-sku-title">SKU#:</span> <b class="results-sku">GDC12-3323E</b></td>
+                            <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td width="1%" scope="col"><a href="/quick_return.php?return_type=category&return_id=81&id=6633&amp;qty=1"><img src="/design_packages/gdcvault/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                  <td width="1%" scope="col"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                  <td width="98%" align="left" scope="col"><a href="http://store.cmpgame.com/quick_return.php?return_type=category&return_id=81&id=6633&amp;qty=1">Add to Cart</a> </td>
+                                </tr>
+                              </table>
+                                <img src="/design_packages/gdcvault/images/spacer.gif" width="100" height="8" alt="" />
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td width="1%"><a href="http://store.cmpgame.com/product/6633/%28English-Version%29-Re-orienting-Development-and-Accelerating-Production-to-Create-Infinity-Blade-and-Infinity-Blade-II"><img src="/design_packages/gdcvault/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                    <td width="1%"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                    <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6633/%28English-Version%29-Re-orienting-Development-and-Accelerating-Production-to-Create-Infinity-Blade-and-Infinity-Blade-II">More Info</a></td>
+                                  </tr>
+                              </table></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" align="left" valign="top"><b class="results-description-title">Description:</b> <span class="results-description"><!-- rlb -->Re-orienting Development and Accelerating Production to Create Infinity Blade and Infinity Blade II<br />
+ <br />
+Speaker/s: Simon Hurley (Epic Games, Inc.) <br />
+Day / Time / Location:  Thursday 5:30- 6:30 Room 132, North Hall<br />
+Track / Duration / Format / Audience Level:  Production / 60-Minute / Lecture / Intermediate<br />
+GDC Vault Recording: Video Recorded<br />
+Description:  In 2010, Chair Entertainment created Infinity Blade, the first Unreal Engine 3 game for iOS - and they did in only 5 months. A year later, they raised the bar even higher with Infinity Blade II. Sr. producer Simon Hurley discusses how the team adapted to the change from AAA console development to AAA mobile games, including how they maintained their internal processes in a much shorter dev cycle, how they designed and built the game in a modular fashion, how they focused and accelerated production by embracing limitations and what they learned from the first game to build an even more successful sequel.</span><br />
+                                <img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="10" /></td>
+                          </tr>
+                        </table>
+                        <img src="/design_packages/gdcvault/images/spacer.gif" width="20" height="20" alt="" /><br />
+                                                <table width="100%" border="0" align="center" cellpadding="7" cellspacing="0" class="results-bottom-border">
+                          <tr>
+                            <td width="1%" rowspan="3" align="left" valign="top"><a href="http://store.cmpgame.com/product/6632/%28Japanese-Version%29-Re-orienting-Development-and-Accelerating-Production-to-Create-Infinity-Blade-and-Infinity-Blade-II"><img src='/img/graphics/MP3/mp3_icon.gif' alt="" border="0" /></a></td>
+                            <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6632/%28Japanese-Version%29-Re-orienting-Development-and-Accelerating-Production-to-Create-Infinity-Blade-and-Infinity-Blade-II" title="View this product's details page.">(Japanese Version) Re-orienting Development and Accelerating Production to Create Infinity Blade and Infinity Blade II</a></span></td>
+                          </tr>
+                          <tr>
+                            <td width="98%" align="left" valign="top"><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+                                <br />
+                              <span class="results-sku-title">SKU#:</span> <b class="results-sku">GDC12-3323J</b></td>
+                            <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td width="1%" scope="col"><a href="/quick_return.php?return_type=category&return_id=81&id=6632&amp;qty=1"><img src="/design_packages/gdcvault/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                  <td width="1%" scope="col"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                  <td width="98%" align="left" scope="col"><a href="http://store.cmpgame.com/quick_return.php?return_type=category&return_id=81&id=6632&amp;qty=1">Add to Cart</a> </td>
+                                </tr>
+                              </table>
+                                <img src="/design_packages/gdcvault/images/spacer.gif" width="100" height="8" alt="" />
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td width="1%"><a href="http://store.cmpgame.com/product/6632/%28Japanese-Version%29-Re-orienting-Development-and-Accelerating-Production-to-Create-Infinity-Blade-and-Infinity-Blade-II"><img src="/design_packages/gdcvault/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                    <td width="1%"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                    <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6632/%28Japanese-Version%29-Re-orienting-Development-and-Accelerating-Production-to-Create-Infinity-Blade-and-Infinity-Blade-II">More Info</a></td>
+                                  </tr>
+                              </table></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" align="left" valign="top"><b class="results-description-title">Description:</b> <span class="results-description"><!-- rlb -->Re-orienting Development and Accelerating Production to Create Infinity Blade and Infinity Blade II<br />
+ <br />
+Speaker/s: Simon Hurley (Epic Games, Inc.) <br />
+Day / Time / Location:  Thursday 5:30- 6:30 Room 132, North Hall<br />
+Track / Duration / Format / Audience Level:  Production / 60-Minute / Lecture / Intermediate<br />
+GDC Vault Recording: Video Recorded<br />
+Description:  In 2010, Chair Entertainment created Infinity Blade, the first Unreal Engine 3 game for iOS - and they did in only 5 months. A year later, they raised the bar even higher with Infinity Blade II. Sr. producer Simon Hurley discusses how the team adapted to the change from AAA console development to AAA mobile games, including how they maintained their internal processes in a much shorter dev cycle, how they designed and built the game in a modular fashion, how they focused and accelerated production by embracing limitations and what they learned from the first game to build an even more successful sequel.</span><br />
+                                <img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="10" /></td>
+                          </tr>
+                        </table>
+                        <img src="/design_packages/gdcvault/images/spacer.gif" width="20" height="20" alt="" /><br />
+                                                <table width="100%" border="0" align="center" cellpadding="7" cellspacing="0" class="results-bottom-border">
+                          <tr>
+                            <td width="1%" rowspan="3" align="left" valign="top"><a href="http://store.cmpgame.com/product/6631/%28English-Version%29-Bringing-the-Visuals-of-Gravity-Rush-to-PlayStation-Vita"><img src='/img/graphics/MP3/mp3_icon.gif' alt="" border="0" /></a></td>
+                            <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6631/%28English-Version%29-Bringing-the-Visuals-of-Gravity-Rush-to-PlayStation-Vita" title="View this product's details page.">(English Version) Bringing the Visuals of Gravity Rush to PlayStation Vita</a></span></td>
+                          </tr>
+                          <tr>
+                            <td width="98%" align="left" valign="top"><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+                                <br />
+                              <span class="results-sku-title">SKU#:</span> <b class="results-sku">GDC12-3314E</b></td>
+                            <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td width="1%" scope="col"><a href="/quick_return.php?return_type=category&return_id=81&id=6631&amp;qty=1"><img src="/design_packages/gdcvault/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                  <td width="1%" scope="col"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                  <td width="98%" align="left" scope="col"><a href="http://store.cmpgame.com/quick_return.php?return_type=category&return_id=81&id=6631&amp;qty=1">Add to Cart</a> </td>
+                                </tr>
+                              </table>
+                                <img src="/design_packages/gdcvault/images/spacer.gif" width="100" height="8" alt="" />
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td width="1%"><a href="http://store.cmpgame.com/product/6631/%28English-Version%29-Bringing-the-Visuals-of-Gravity-Rush-to-PlayStation-Vita"><img src="/design_packages/gdcvault/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                    <td width="1%"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                    <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6631/%28English-Version%29-Bringing-the-Visuals-of-Gravity-Rush-to-PlayStation-Vita">More Info</a></td>
+                                  </tr>
+                              </table></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" align="left" valign="top"><b class="results-description-title">Description:</b> <span class="results-description"><!-- rlb -->Bringing the Visuals of Gravity Rush to PlayStation Vita<br />
+ <br />
+Speaker/s: Yoshiaki Yamaguchi (Sony Computer Entertainment Japan) <br />
+Day / Time / Location:  Friday 11:30-11:55 Room 132, North Hall<br />
+Track / Duration / Format / Audience Level:  Visual Arts / 25-Minute / Lecture / All<br />
+GDC Vault Recording: Video Recorded<br />
+Description:  Gravity Rush is an action adventure game developed for PlayStation(R) Vita. The game is an open world game with visuals inspired from Japanese anime and French "bande dessinee. In this session, we will talk about how we formed Gravity Rush's visuals.</span><br />
+                                <img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="10" /></td>
+                          </tr>
+                        </table>
+                        <img src="/design_packages/gdcvault/images/spacer.gif" width="20" height="20" alt="" /><br />
+                                                <table width="100%" border="0" align="center" cellpadding="7" cellspacing="0" class="results-bottom-border">
+                          <tr>
+                            <td width="1%" rowspan="3" align="left" valign="top"><a href="http://store.cmpgame.com/product/6630/%28Japanese-Version%29-Bringing-the-Visuals-of-Gravity-Rush-to-PlayStation-Vita"><img src='/img/graphics/MP3/mp3_icon.gif' alt="" border="0" /></a></td>
+                            <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6630/%28Japanese-Version%29-Bringing-the-Visuals-of-Gravity-Rush-to-PlayStation-Vita" title="View this product's details page.">(Japanese Version) Bringing the Visuals of Gravity Rush to PlayStation Vita</a></span></td>
+                          </tr>
+                          <tr>
+                            <td width="98%" align="left" valign="top"><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+                                <br />
+                              <span class="results-sku-title">SKU#:</span> <b class="results-sku">GDC12-3314J</b></td>
+                            <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td width="1%" scope="col"><a href="/quick_return.php?return_type=category&return_id=81&id=6630&amp;qty=1"><img src="/design_packages/gdcvault/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                  <td width="1%" scope="col"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                  <td width="98%" align="left" scope="col"><a href="http://store.cmpgame.com/quick_return.php?return_type=category&return_id=81&id=6630&amp;qty=1">Add to Cart</a> </td>
+                                </tr>
+                              </table>
+                                <img src="/design_packages/gdcvault/images/spacer.gif" width="100" height="8" alt="" />
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td width="1%"><a href="http://store.cmpgame.com/product/6630/%28Japanese-Version%29-Bringing-the-Visuals-of-Gravity-Rush-to-PlayStation-Vita"><img src="/design_packages/gdcvault/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                    <td width="1%"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                    <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6630/%28Japanese-Version%29-Bringing-the-Visuals-of-Gravity-Rush-to-PlayStation-Vita">More Info</a></td>
+                                  </tr>
+                              </table></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" align="left" valign="top"><b class="results-description-title">Description:</b> <span class="results-description"><!-- rlb -->Bringing the Visuals of Gravity Rush to PlayStation Vita<br />
+ <br />
+Speaker/s: Yoshiaki Yamaguchi (Sony Computer Entertainment Japan) <br />
+Day / Time / Location:  Friday 11:30-11:55 Room 132, North Hall<br />
+Track / Duration / Format / Audience Level:  Visual Arts / 25-Minute / Lecture / All<br />
+GDC Vault Recording: Video Recorded<br />
+Description:  Gravity Rush is an action adventure game developed for PlayStation(R) Vita. The game is an open world game with visuals inspired from Japanese anime and French "bande dessinee. In this session, we will talk about how we formed Gravity Rush's visuals.</span><br />
+                                <img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="10" /></td>
+                          </tr>
+                        </table>
+                        <img src="/design_packages/gdcvault/images/spacer.gif" width="20" height="20" alt="" /><br />
+                                                <table width="100%" border="0" align="center" cellpadding="7" cellspacing="0" class="results-bottom-border">
+                          <tr>
+                            <td width="1%" rowspan="3" align="left" valign="top"><a href="http://store.cmpgame.com/product/6627/%28English-Version%29-Designing-a-Technology-Strategy-for-a-Large-Publisher"><img src='/img/graphics/MP3/mp3_icon.gif' alt="" border="0" /></a></td>
+                            <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6627/%28English-Version%29-Designing-a-Technology-Strategy-for-a-Large-Publisher" title="View this product's details page.">(English Version) Designing a Technology Strategy for a Large Publisher</a></span></td>
+                          </tr>
+                          <tr>
+                            <td width="98%" align="left" valign="top"><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+                                <br />
+                              <span class="results-sku-title">SKU#:</span> <b class="results-sku">GDC12-3204E</b></td>
+                            <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td width="1%" scope="col"><a href="/quick_return.php?return_type=category&return_id=81&id=6627&amp;qty=1"><img src="/design_packages/gdcvault/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                  <td width="1%" scope="col"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                  <td width="98%" align="left" scope="col"><a href="http://store.cmpgame.com/quick_return.php?return_type=category&return_id=81&id=6627&amp;qty=1">Add to Cart</a> </td>
+                                </tr>
+                              </table>
+                                <img src="/design_packages/gdcvault/images/spacer.gif" width="100" height="8" alt="" />
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td width="1%"><a href="http://store.cmpgame.com/product/6627/%28English-Version%29-Designing-a-Technology-Strategy-for-a-Large-Publisher"><img src="/design_packages/gdcvault/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                    <td width="1%"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                    <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6627/%28English-Version%29-Designing-a-Technology-Strategy-for-a-Large-Publisher">More Info</a></td>
+                                  </tr>
+                              </table></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" align="left" valign="top"><b class="results-description-title">Description:</b> <span class="results-description"><!-- rlb -->Designing a Technology Strategy for a Large Publisher<br />
+ <br />
+Speaker/s: Julien Merceron (Square Enix) <br />
+Day / Time / Location:  Thursday 2:30- 3:30 Room 132, North Hall<br />
+Track / Duration / Format / Audience Level:  Programming / 60-Minute / Track Keynote / All<br />
+GDC Vault Recording: Video Recorded<br />
+Description:  There are many platforms, many genres and many diverging team structures or project life cycles. Because of this, almost all publishers have different needs, intensions, strengths and weaknesses. On the technology side, they need to be approached differently in order to create a technology strategy that is relevant and actionable. There is no one-size-fits-all in our Industry, and as a CTO your work and strategy might very well defer, depending on the publisher. Being at Square Enix now and having worked at Ubisoft and Eidos before, Julien will compare the technology development strategies of different companies and discuss how such kind of strategy influences the product development of the company. Then Julien will open up the discussion toward the developing trends facing future mobile and web games and anything to pay attention to form the technology and product development.</span><br />
+                                <img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="10" /></td>
+                          </tr>
+                        </table>
+                        <img src="/design_packages/gdcvault/images/spacer.gif" width="20" height="20" alt="" /><br />
+                                                <table width="100%" border="0" align="center" cellpadding="7" cellspacing="0" class="results-bottom-border">
+                          <tr>
+                            <td width="1%" rowspan="3" align="left" valign="top"><a href="http://store.cmpgame.com/product/6626/%28Japanese-Version%29-Designing-a-Technology-Strategy-for-a-Large-Publisher"><img src='/img/graphics/MP3/mp3_icon.gif' alt="" border="0" /></a></td>
+                            <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6626/%28Japanese-Version%29-Designing-a-Technology-Strategy-for-a-Large-Publisher" title="View this product's details page.">(Japanese Version) Designing a Technology Strategy for a Large Publisher</a></span></td>
+                          </tr>
+                          <tr>
+                            <td width="98%" align="left" valign="top"><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+                                <br />
+                              <span class="results-sku-title">SKU#:</span> <b class="results-sku">GDC12-3204J</b></td>
+                            <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td width="1%" scope="col"><a href="/quick_return.php?return_type=category&return_id=81&id=6626&amp;qty=1"><img src="/design_packages/gdcvault/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                  <td width="1%" scope="col"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                  <td width="98%" align="left" scope="col"><a href="http://store.cmpgame.com/quick_return.php?return_type=category&return_id=81&id=6626&amp;qty=1">Add to Cart</a> </td>
+                                </tr>
+                              </table>
+                                <img src="/design_packages/gdcvault/images/spacer.gif" width="100" height="8" alt="" />
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td width="1%"><a href="http://store.cmpgame.com/product/6626/%28Japanese-Version%29-Designing-a-Technology-Strategy-for-a-Large-Publisher"><img src="/design_packages/gdcvault/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                    <td width="1%"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                    <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6626/%28Japanese-Version%29-Designing-a-Technology-Strategy-for-a-Large-Publisher">More Info</a></td>
+                                  </tr>
+                              </table></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" align="left" valign="top"><b class="results-description-title">Description:</b> <span class="results-description"><!-- rlb -->Designing a Technology Strategy for a Large Publisher<br />
+ <br />
+Speaker/s: Julien Merceron (Square Enix) <br />
+Day / Time / Location:  Thursday 2:30- 3:30 Room 132, North Hall<br />
+Track / Duration / Format / Audience Level:  Programming / 60-Minute / Track Keynote / All<br />
+GDC Vault Recording: Video Recorded<br />
+Description:  There are many platforms, many genres and many diverging team structures or project life cycles. Because of this, almost all publishers have different needs, intensions, strengths and weaknesses. On the technology side, they need to be approached differently in order to create a technology strategy that is relevant and actionable. There is no one-size-fits-all in our Industry, and as a CTO your work and strategy might very well defer, depending on the publisher. Being at Square Enix now and having worked at Ubisoft and Eidos before, Julien will compare the technology development strategies of different companies and discuss how such kind of strategy influences the product development of the company. Then Julien will open up the discussion toward the developing trends facing future mobile and web games and anything to pay attention to form the technology and product development.</span><br />
+                                <img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="10" /></td>
+                          </tr>
+                        </table>
+                        <img src="/design_packages/gdcvault/images/spacer.gif" width="20" height="20" alt="" /><br />
+                                                <table width="100%" border="0" align="center" cellpadding="7" cellspacing="0" class="results-bottom-border">
+                          <tr>
+                            <td width="1%" rowspan="3" align="left" valign="top"><a href="http://store.cmpgame.com/product/6625/%28English-Version%29-Breaking-the-Rules-of-Game-Design%3A-When-to-Go-Against-Competence%2C-Autonomy-and-Relatedness"><img src='/img/graphics/MP3/mp3_icon.gif' alt="" border="0" /></a></td>
+                            <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6625/%28English-Version%29-Breaking-the-Rules-of-Game-Design%3A-When-to-Go-Against-Competence%2C-Autonomy-and-Relatedness" title="View this product's details page.">(English Version) Breaking the Rules of Game Design: When to Go Against Competence, Autonomy and Relatedness</a></span></td>
+                          </tr>
+                          <tr>
+                            <td width="98%" align="left" valign="top"><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+                                <br />
+                              <span class="results-sku-title">SKU#:</span> <b class="results-sku">GDC12-3199E</b></td>
+                            <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td width="1%" scope="col"><a href="/quick_return.php?return_type=category&return_id=81&id=6625&amp;qty=1"><img src="/design_packages/gdcvault/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                  <td width="1%" scope="col"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                  <td width="98%" align="left" scope="col"><a href="http://store.cmpgame.com/quick_return.php?return_type=category&return_id=81&id=6625&amp;qty=1">Add to Cart</a> </td>
+                                </tr>
+                              </table>
+                                <img src="/design_packages/gdcvault/images/spacer.gif" width="100" height="8" alt="" />
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td width="1%"><a href="http://store.cmpgame.com/product/6625/%28English-Version%29-Breaking-the-Rules-of-Game-Design%3A-When-to-Go-Against-Competence%2C-Autonomy-and-Relatedness"><img src="/design_packages/gdcvault/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                    <td width="1%"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                    <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6625/%28English-Version%29-Breaking-the-Rules-of-Game-Design%3A-When-to-Go-Against-Competence%2C-Autonomy-and-Relatedness">More Info</a></td>
+                                  </tr>
+                              </table></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" align="left" valign="top"><b class="results-description-title">Description:</b> <span class="results-description"><!-- rlb -->Breaking the Rules of Game Design: When to Go Against Competence, Autonomy and Relatedness<br />
+ <br />
+Speaker/s: Kaitlyn Burnell (Naughty Dog) <br />
+Day / Time / Location:  Friday 2:30- 3:30 Room 132, North Hall<br />
+Track / Duration / Format / Audience Level:  Game Design / 60-Minute / Lecture / Intermediate<br />
+GDC Vault Recording: Video Recorded<br />
+Description:  A psychological result that is being heavily used in game design these days is that the strongest known correlation between player retention and game design is whether the game provides Autonomy (player choice) Competence (players feel capable) and Relatedness (players receive recognition). As designers we've learned how to follow these rules, but when is it right to break them?<br />
+<br />
+ This talk will explore games that break autonomy, competence and relatedness in powerful ways, from Valve's Portal to Brenda Brathwaite's Mechanic is the Message board games and analyze the value these games gain by breaking rules. These examples will be distilled to a design technique that lives at the intersection of ludology (game mechanics) and narrative, along with analysis of when to use and when not to use such techniques.</span><br />
+                                <img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="10" /></td>
+                          </tr>
+                        </table>
+                        <img src="/design_packages/gdcvault/images/spacer.gif" width="20" height="20" alt="" /><br />
+                                                <table width="100%" border="0" align="center" cellpadding="7" cellspacing="0" class="results-bottom-border">
+                          <tr>
+                            <td width="1%" rowspan="3" align="left" valign="top"><a href="http://store.cmpgame.com/product/6624/%28Japanese-Version%29-Breaking-the-Rules-of-Game-Design%3A-When-to-Go-Against-Competence%2C-Autonomy-and-Relatedness"><img src='/img/graphics/MP3/mp3_icon.gif' alt="" border="0" /></a></td>
+                            <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6624/%28Japanese-Version%29-Breaking-the-Rules-of-Game-Design%3A-When-to-Go-Against-Competence%2C-Autonomy-and-Relatedness" title="View this product's details page.">(Japanese Version) Breaking the Rules of Game Design: When to Go Against Competence, Autonomy and Relatedness</a></span></td>
+                          </tr>
+                          <tr>
+                            <td width="98%" align="left" valign="top"><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+                                <br />
+                              <span class="results-sku-title">SKU#:</span> <b class="results-sku">GDC12-3199J</b></td>
+                            <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td width="1%" scope="col"><a href="/quick_return.php?return_type=category&return_id=81&id=6624&amp;qty=1"><img src="/design_packages/gdcvault/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                  <td width="1%" scope="col"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                  <td width="98%" align="left" scope="col"><a href="http://store.cmpgame.com/quick_return.php?return_type=category&return_id=81&id=6624&amp;qty=1">Add to Cart</a> </td>
+                                </tr>
+                              </table>
+                                <img src="/design_packages/gdcvault/images/spacer.gif" width="100" height="8" alt="" />
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td width="1%"><a href="http://store.cmpgame.com/product/6624/%28Japanese-Version%29-Breaking-the-Rules-of-Game-Design%3A-When-to-Go-Against-Competence%2C-Autonomy-and-Relatedness"><img src="/design_packages/gdcvault/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                    <td width="1%"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                    <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6624/%28Japanese-Version%29-Breaking-the-Rules-of-Game-Design%3A-When-to-Go-Against-Competence%2C-Autonomy-and-Relatedness">More Info</a></td>
+                                  </tr>
+                              </table></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" align="left" valign="top"><b class="results-description-title">Description:</b> <span class="results-description"><!-- rlb -->Breaking the Rules of Game Design: When to Go Against Competence, Autonomy and Relatedness<br />
+ <br />
+Speaker/s: Kaitlyn Burnell (Naughty Dog) <br />
+Day / Time / Location:  Friday 2:30- 3:30 Room 132, North Hall<br />
+Track / Duration / Format / Audience Level:  Game Design / 60-Minute / Lecture / Intermediate<br />
+GDC Vault Recording: Video Recorded<br />
+Description:  A psychological result that is being heavily used in game design these days is that the strongest known correlation between player retention and game design is whether the game provides Autonomy (player choice) Competence (players feel capable) and Relatedness (players receive recognition). As designers we've learned how to follow these rules, but when is it right to break them?<br />
+<br />
+ This talk will explore games that break autonomy, competence and relatedness in powerful ways, from Valve's Portal to Brenda Brathwaite's Mechanic is the Message board games and analyze the value these games gain by breaking rules. These examples will be distilled to a design technique that lives at the intersection of ludology (game mechanics) and narrative, along with analysis of when to use and when not to use such techniques.</span><br />
+                                <img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="10" /></td>
+                          </tr>
+                        </table>
+                        <img src="/design_packages/gdcvault/images/spacer.gif" width="20" height="20" alt="" /><br />
+                                                <table width="100%" border="0" align="center" cellpadding="7" cellspacing="0" class="results-bottom-border">
+                          <tr>
+                            <td width="1%" rowspan="3" align="left" valign="top"><a href="http://store.cmpgame.com/product/6623/%28English-Version%29-The-Last-10%3A-Going-From-Good-To-Awesome"><img src='/img/graphics/MP3/mp3_icon.gif' alt="" border="0" /></a></td>
+                            <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6623/%28English-Version%29-The-Last-10%3A-Going-From-Good-To-Awesome" title="View this product's details page.">(English Version) The Last 10: Going From Good To Awesome</a></span></td>
+                          </tr>
+                          <tr>
+                            <td width="98%" align="left" valign="top"><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+                                <br />
+                              <span class="results-sku-title">SKU#:</span> <b class="results-sku">GDC12-3150E</b></td>
+                            <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td width="1%" scope="col"><a href="/quick_return.php?return_type=category&return_id=81&id=6623&amp;qty=1"><img src="/design_packages/gdcvault/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                  <td width="1%" scope="col"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                  <td width="98%" align="left" scope="col"><a href="http://store.cmpgame.com/quick_return.php?return_type=category&return_id=81&id=6623&amp;qty=1">Add to Cart</a> </td>
+                                </tr>
+                              </table>
+                                <img src="/design_packages/gdcvault/images/spacer.gif" width="100" height="8" alt="" />
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td width="1%"><a href="http://store.cmpgame.com/product/6623/%28English-Version%29-The-Last-10%3A-Going-From-Good-To-Awesome"><img src="/design_packages/gdcvault/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                    <td width="1%"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                    <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6623/%28English-Version%29-The-Last-10%3A-Going-From-Good-To-Awesome">More Info</a></td>
+                                  </tr>
+                              </table></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" align="left" valign="top"><b class="results-description-title">Description:</b> <span class="results-description"><!-- rlb -->The Last 10: Going From Good To Awesome<br />
+ <br />
+Speaker/s: Benson Russell (Naughty Dog) <br />
+Day / Time / Location:  Friday 10:35-11:00 Room 132, North Hall<br />
+Track / Duration / Format / Audience Level:  Production , Game Design / 25-Minute / Lecture / All<br />
+GDC Vault Recording: Video Recorded<br />
+Description:  Naughty Dog is known for the level of polish that we apply to our shipping titles. We believe it is one of the most important aspects of the game development cycle, yet it also seems to be one of the most marginalized in our industry. This talk will go over the approach and principles that we use to make our games as polished as possible. We'll go over the methods we use internally, the approach to scheduling that we take, the level of detail that we look for and how we strike the balance of making the game awesome while still shipping on time.</span><br />
+                                <img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="10" /></td>
+                          </tr>
+                        </table>
+                        <img src="/design_packages/gdcvault/images/spacer.gif" width="20" height="20" alt="" /><br />
+                                                <table width="100%" border="0" align="center" cellpadding="7" cellspacing="0" class="results-bottom-border">
+                          <tr>
+                            <td width="1%" rowspan="3" align="left" valign="top"><a href="http://store.cmpgame.com/product/6622/%28Japanese-Version%29-The-Last-10%3A-Going-From-Good-To-Awesome"><img src='/img/graphics/MP3/mp3_icon.gif' alt="" border="0" /></a></td>
+                            <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6622/%28Japanese-Version%29-The-Last-10%3A-Going-From-Good-To-Awesome" title="View this product's details page.">(Japanese Version) The Last 10: Going From Good To Awesome</a></span></td>
+                          </tr>
+                          <tr>
+                            <td width="98%" align="left" valign="top"><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+                                <br />
+                              <span class="results-sku-title">SKU#:</span> <b class="results-sku">GDC12-3150J</b></td>
+                            <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td width="1%" scope="col"><a href="/quick_return.php?return_type=category&return_id=81&id=6622&amp;qty=1"><img src="/design_packages/gdcvault/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                  <td width="1%" scope="col"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                  <td width="98%" align="left" scope="col"><a href="http://store.cmpgame.com/quick_return.php?return_type=category&return_id=81&id=6622&amp;qty=1">Add to Cart</a> </td>
+                                </tr>
+                              </table>
+                                <img src="/design_packages/gdcvault/images/spacer.gif" width="100" height="8" alt="" />
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td width="1%"><a href="http://store.cmpgame.com/product/6622/%28Japanese-Version%29-The-Last-10%3A-Going-From-Good-To-Awesome"><img src="/design_packages/gdcvault/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                    <td width="1%"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                    <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6622/%28Japanese-Version%29-The-Last-10%3A-Going-From-Good-To-Awesome">More Info</a></td>
+                                  </tr>
+                              </table></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" align="left" valign="top"><b class="results-description-title">Description:</b> <span class="results-description"><!-- rlb -->The Last 10: Going From Good To Awesome<br />
+ <br />
+Speaker/s: Benson Russell (Naughty Dog) <br />
+Day / Time / Location:  Friday 10:35-11:00 Room 132, North Hall<br />
+Track / Duration / Format / Audience Level:  Production , Game Design / 25-Minute / Lecture / All<br />
+GDC Vault Recording: Video Recorded<br />
+Description:  Naughty Dog is known for the level of polish that we apply to our shipping titles. We believe it is one of the most important aspects of the game development cycle, yet it also seems to be one of the most marginalized in our industry. This talk will go over the approach and principles that we use to make our games as polished as possible. We'll go over the methods we use internally, the approach to scheduling that we take, the level of detail that we look for and how we strike the balance of making the game awesome while still shipping on time.</span><br />
+                                <img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="10" /></td>
+                          </tr>
+                        </table>
+                        <img src="/design_packages/gdcvault/images/spacer.gif" width="20" height="20" alt="" /><br />
+                                                <table width="100%" border="0" align="center" cellpadding="7" cellspacing="0" class="results-bottom-border">
+                          <tr>
+                            <td width="1%" rowspan="3" align="left" valign="top"><a href="http://store.cmpgame.com/product/6621/%28English-Version%29-Stranger-in-a-Strange-Land%3A-10-Things-Console-Games-Developers-Need-to-Know-About-Developing-for-Mobile"><img src='/img/graphics/MP3/mp3_icon.gif' alt="" border="0" /></a></td>
+                            <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6621/%28English-Version%29-Stranger-in-a-Strange-Land%3A-10-Things-Console-Games-Developers-Need-to-Know-About-Developing-for-Mobile" title="View this product's details page.">(English Version) Stranger in a Strange Land: 10 Things Console Games Developers Need to Know About Developing for Mobile</a></span></td>
+                          </tr>
+                          <tr>
+                            <td width="98%" align="left" valign="top"><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+                                <br />
+                              <span class="results-sku-title">SKU#:</span> <b class="results-sku">GDC12-3141E</b></td>
+                            <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td width="1%" scope="col"><a href="/quick_return.php?return_type=category&return_id=81&id=6621&amp;qty=1"><img src="/design_packages/gdcvault/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                  <td width="1%" scope="col"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                  <td width="98%" align="left" scope="col"><a href="http://store.cmpgame.com/quick_return.php?return_type=category&return_id=81&id=6621&amp;qty=1">Add to Cart</a> </td>
+                                </tr>
+                              </table>
+                                <img src="/design_packages/gdcvault/images/spacer.gif" width="100" height="8" alt="" />
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td width="1%"><a href="http://store.cmpgame.com/product/6621/%28English-Version%29-Stranger-in-a-Strange-Land%3A-10-Things-Console-Games-Developers-Need-to-Know-About-Developing-for-Mobile"><img src="/design_packages/gdcvault/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                    <td width="1%"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                    <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6621/%28English-Version%29-Stranger-in-a-Strange-Land%3A-10-Things-Console-Games-Developers-Need-to-Know-About-Developing-for-Mobile">More Info</a></td>
+                                  </tr>
+                              </table></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" align="left" valign="top"><b class="results-description-title">Description:</b> <span class="results-description"><!-- rlb -->Stranger in a Strange Land: 10 Things Console Games Developers Need to Know About Developing for Mobile<br />
+ <br />
+Speaker/s: Matt Small (Vector Unit Inc) <br />
+Day / Time / Location:  Friday 10:00-10:25 Room 132, North Hall<br />
+Track / Duration / Format / Audience Level:  Production , Business and Marketing and Management / 25-Minute / Lecture / Intermediate<br />
+GDC Vault Recording: Video Recorded<br />
+Description:  Switching from console to mobile game development isn’t just a matter of making your games smaller and adding touch controls. The challenge for seasoned console and PC developers is knowing when to trust your instincts – and when to toss them out the window.     The talk covers 10 lessons learned from Vector Unit’s 2 year transition from console to mobile development, a brief list of critical Do’s and Don’t’s illustrated with specific examples from our own experience. We'll cover ways in which traditional “best practices” can implode when applied to tiny teams and blistering schedules, as well as some areas where your experience outside of mobile can give you a leg up on the competition.</span><br />
+                                <img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="10" /></td>
+                          </tr>
+                        </table>
+                        <img src="/design_packages/gdcvault/images/spacer.gif" width="20" height="20" alt="" /><br />
+                                                <table width="100%" border="0" align="center" cellpadding="7" cellspacing="0" class="results-bottom-border">
+                          <tr>
+                            <td width="1%" rowspan="3" align="left" valign="top"><a href="http://store.cmpgame.com/product/6620/%28Japanese-Version%29-Stranger-in-a-Strange-Land%3A-10-Things-Console-Games-Developers-Need-to-Know-About-Developing-for-Mobile"><img src='/img/graphics/MP3/mp3_icon.gif' alt="" border="0" /></a></td>
+                            <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6620/%28Japanese-Version%29-Stranger-in-a-Strange-Land%3A-10-Things-Console-Games-Developers-Need-to-Know-About-Developing-for-Mobile" title="View this product's details page.">(Japanese Version) Stranger in a Strange Land: 10 Things Console Games Developers Need to Know About Developing for Mobile</a></span></td>
+                          </tr>
+                          <tr>
+                            <td width="98%" align="left" valign="top"><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+                                <br />
+                              <span class="results-sku-title">SKU#:</span> <b class="results-sku">GDC12-3141J</b></td>
+                            <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td width="1%" scope="col"><a href="/quick_return.php?return_type=category&return_id=81&id=6620&amp;qty=1"><img src="/design_packages/gdcvault/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                  <td width="1%" scope="col"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                  <td width="98%" align="left" scope="col"><a href="http://store.cmpgame.com/quick_return.php?return_type=category&return_id=81&id=6620&amp;qty=1">Add to Cart</a> </td>
+                                </tr>
+                              </table>
+                                <img src="/design_packages/gdcvault/images/spacer.gif" width="100" height="8" alt="" />
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td width="1%"><a href="http://store.cmpgame.com/product/6620/%28Japanese-Version%29-Stranger-in-a-Strange-Land%3A-10-Things-Console-Games-Developers-Need-to-Know-About-Developing-for-Mobile"><img src="/design_packages/gdcvault/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                    <td width="1%"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                    <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6620/%28Japanese-Version%29-Stranger-in-a-Strange-Land%3A-10-Things-Console-Games-Developers-Need-to-Know-About-Developing-for-Mobile">More Info</a></td>
+                                  </tr>
+                              </table></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" align="left" valign="top"><b class="results-description-title">Description:</b> <span class="results-description"><!-- rlb -->Stranger in a Strange Land: 10 Things Console Games Developers Need to Know About Developing for Mobile<br />
+ <br />
+Speaker/s: Matt Small (Vector Unit Inc) <br />
+Day / Time / Location:  Friday 10:00-10:25 Room 132, North Hall<br />
+Track / Duration / Format / Audience Level:  Production , Business and Marketing and Management / 25-Minute / Lecture / Intermediate<br />
+GDC Vault Recording: Video Recorded<br />
+Description:  Switching from console to mobile game development isn’t just a matter of making your games smaller and adding touch controls. The challenge for seasoned console and PC developers is knowing when to trust your instincts – and when to toss them out the window.     The talk covers 10 lessons learned from Vector Unit’s 2 year transition from console to mobile development, a brief list of critical Do’s and Don’t’s illustrated with specific examples from our own experience. We'll cover ways in which traditional “best practices” can implode when applied to tiny teams and blistering schedules, as well as some areas where your experience outside of mobile can give you a leg up on the competition.</span><br />
+                                <img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="10" /></td>
+                          </tr>
+                        </table>
+                        <img src="/design_packages/gdcvault/images/spacer.gif" width="20" height="20" alt="" /><br />
+                                                <table width="100%" border="0" align="center" cellpadding="7" cellspacing="0" class="results-bottom-border">
+                          <tr>
+                            <td width="1%" rowspan="3" align="left" valign="top"><a href="http://store.cmpgame.com/product/6619/%28English-Version%29-Level-Design-Case-Studies%3A-Trainyard-and-Cut-the-Rope"><img src='/img/graphics/MP3/mp3_icon.gif' alt="" border="0" /></a></td>
+                            <td width="99%" colspan="2" align="left" valign="top" class="results-name-td"><span class="results-product-name"><a href="http://store.cmpgame.com/product/6619/%28English-Version%29-Level-Design-Case-Studies%3A-Trainyard-and-Cut-the-Rope" title="View this product's details page.">(English Version) Level Design Case Studies: Trainyard and Cut the Rope</a></span></td>
+                          </tr>
+                          <tr>
+                            <td width="98%" align="left" valign="top"><span class="results-price-title">Price:</span><span class="results-price"><b>$3.95</b></span> <br />
+                                <br />
+                              <span class="results-sku-title">SKU#:</span> <b class="results-sku">GDC12-3116E</b></td>
+                            <td width="1%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td width="1%" scope="col"><a href="/quick_return.php?return_type=category&return_id=81&id=6619&amp;qty=1"><img src="/design_packages/gdcvault/images/icon_add.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                  <td width="1%" scope="col"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                  <td width="98%" align="left" scope="col"><a href="http://store.cmpgame.com/quick_return.php?return_type=category&return_id=81&id=6619&amp;qty=1">Add to Cart</a> </td>
+                                </tr>
+                              </table>
+                                <img src="/design_packages/gdcvault/images/spacer.gif" width="100" height="8" alt="" />
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td width="1%"><a href="http://store.cmpgame.com/product/6619/%28English-Version%29-Level-Design-Case-Studies%3A-Trainyard-and-Cut-the-Rope"><img src="/design_packages/gdcvault/images/icon_info.gif" alt="" width="20" height="14" border="0" /></a></td>
+                                    <td width="1%"><img src="/design_packages/gdcvault/images/spacer.gif" width="5" height="5" alt="" /></td>
+                                    <td width="98%" align="left"><a href="http://store.cmpgame.com/product/6619/%28English-Version%29-Level-Design-Case-Studies%3A-Trainyard-and-Cut-the-Rope">More Info</a></td>
+                                  </tr>
+                              </table></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" align="left" valign="top"><b class="results-description-title">Description:</b> <span class="results-description"><!-- rlb -->Level Design Case Studies: Trainyard and Cut the Rope<br />
+ <br />
+Speaker/s: Semyon Voinov (ZeptoLab) and Matt Rix (Magicule) <br />
+Day / Time / Location:  Friday 4:00- 5:00 Room 132, North Hall<br />
+Track / Duration / Format / Audience Level:  Game Design / 60-Minute / Lecture / Intermediate<br />
+GDC Vault Recording: Video Recorded<br />
+Description:  Cut the Rope and Trainyard are two of the most critically acclaimed and commercially successful puzzle games available on the App Store today. Join Semyon Voinov (Cut the Rope) and Matt Rix (Trainyard) as they share game design insights they learned while creating these massively successful games.  Divided into two compelling talks (one on each game), this to-the-point session will feature tried and true principles for level design, data driven decisions, and gameplay choices. Learn how these addictive games have amassed scores of enthusiastic fans and achieved wide popularity.</span><br />
+                                <img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="10" /></td>
+                          </tr>
+                        </table>
+                        <img src="/design_packages/gdcvault/images/spacer.gif" width="20" height="20" alt="" /><br />
+                         <img src="/design_packages/gdcvault/images/spacer.gif" width="20" height="10" alt="" /><br />
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="right"> Page <b>1</b>, <a href="/category.php?page=2&cat=81">2</a>, <a href="/category.php?page=3&cat=81">3</a>, <a href="/category.php?page=4&cat=81">4</a>, <a href="/category.php?page=5&cat=81">5</a>, <a href="/category.php?page=6&cat=81">6</a>, <a href="/category.php?page=7&cat=81">7</a>, <a href="/category.php?page=8&cat=81">8</a>, <a href="/category.php?page=9&cat=81">9</a>, <a href="/category.php?page=10&cat=81">10</a>, <a href="/category.php?page=11&cat=81">11</a>, <a href="/category.php?page=12&cat=81">12</a>, <a href="/category.php?page=13&cat=81">13</a>, <a href="/category.php?page=14&cat=81">14</a>, <a href="/category.php?page=15&cat=81">15</a></td>
+    </tr>
+  </table>
+                      </form></td>
+                  </tr>
+              </table></td>
+              <td class="body-mid-right"><img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="1" /></td>
+            </tr>
+            <tr>
+              <td class="body-bot-left"><img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="1" /></td>
+              <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td class="body-bot-mid-expand"><img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="1" /></td>
+                  </tr>
+              </table></td>
+              <td class="body-bot-right"><img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="1" height="1" /></td>
+            </tr>
+          </table></td>
+          <td class="body-shell-5"><img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="19" height="1" /></td>
+        </tr>
+      </table>
+    <img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="10" height="20" /></td>
+  </tr>
+  <tr>
+    <td class="footer-bg"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+        <tr>
+          <td width="1%" class="footer-align"><img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="5" height="10" /></td>
+          <td width="1%" class="footer-align"><span class="footer"><a href="http://store.cmpgame.com/">HOME</a></span></td>
+          <td width="1%" class="footer-align"><img src="/design_packages/gdcvault/images/footer_line.gif" alt="" width="2" height="38" /></td>
+          <td width="1%" class="footer-align"><span class="footer"><a href="http://store.cmpgame.com/customers/">MY ACCOUNT</a></span></td>
+          <td width="1%" class="footer-align"><img src="/design_packages/gdcvault/images/footer_line.gif" alt="" width="2" height="38" /></td>
+          <td width="1%" class="footer-align"><span class="footer"><a href="http://store.cmpgame.com/basket/">VIEW CART</a></span></td>
+          <td width="1%" class="footer-align"><img src="/design_packages/gdcvault/images/footer_line.gif" alt="" width="2" height="38" /></td>
+
+          <td width="1%" class="footer-align"><span class="footer"><a href="http://store.cmpgame.com/checkout/">CHECKOUT</a></span></td>
+          <td width="88%">&nbsp;</td>
+          <td width="3%" class="footer-align"><span class="footer-text">Powered by <a href="http://www.modularmerchant.com">Modular Merchant shopping cart software.</a></span></td>
+          <td width="1%"><img src="/design_packages/gdcvault/images/spacer.gif" alt="" width="12" height="10" /></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+</body>
+</html>

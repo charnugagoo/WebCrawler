@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    
+<head>
+    <meta name="search.content.shortId" content="hh852362" />
+    <meta name="search.content.locale" content="en-us" />
+    <meta name="MN" content="628CF4CF-1:11:03 AM" />
+    <meta http-equiv="content-language" content="en" />
+    
+      <link rel="canonical" href="http://msdn.microsoft.com/en-us/windows/hardware/hh852362.aspx" />
+      <meta name="NormalizedUrl" content="http://msdn.microsoft.com/en-us/windows/hardware/hh852362(d=default,l=en-us,v=MSDN.10).aspx" />
+    
+        <meta name="Title" content="Windows Driver Kit (WDK) 8" />
+    
+        <meta name="description" content="Tools, code samples, documentation, compilers, headers and libraries with which software developers create drivers for Windows 7, Windows Vista, Windows XP, Windows Server 2008 R2, Windows Server 2008, and Windows Server 2003." />
+    
+        <meta name="PTSearchTitle" content="Windows Driver Kit (WDK) 8" />
+    
+        <meta name="keywords" content="Windows Driver Kit Version 8 Beta, Windows Driver Kit Beta, WDK, WDK Beta, Windows 8 WDK, WDK 8, WDK 8 Beta, DDK" />
+    
+        <meta name="Search.MSCategory" content="ff959242" />
+    
+        <meta name="Search.MSCategory" content="gg543105" />
+    
+        <meta name="Search.MSCategory" content="hh852763" />
+    
+        <meta name="Search.MSCategory" content="hh854783" />
+    
+        <meta name="Search.TocNodeId" content="hh854783" />
+    
+        <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js" data-do-not-move="true" data-provides="jQuery">
+        </script>
+    
+
+    <script type="text/javascript" src="http://i2.msdn.microsoft.com/Areas/Sto/Content/Scripts/jquery.partial.js" data-do-not-move="true" data-requires="jQuery" data-provides="jQuery.partial">
+    </script>
+    
+    
+            <script type="text/javascript" src="http://i2.msdn.microsoft.com/Areas/Sto/Content/Scripts/modernizr2.js" data-do-not-move="true" data-provides="modernizr, modernizr2, yepnope">
+    </script>
+    
+    
+    <title>Windows Driver Kit (WDK) 8</title>
+<link rel="stylesheet" type="text/css" href="http://i3.msdn.microsoft.com/Combined.css?resources=0:Teaser,0:Search,1:Search,0:LocaleSelector,2:TabStrip,1:TabStrip,0:Footer,1:Footer,0:RatingsOnly,0:NetReflector,2:NetReflector,0:CorporatePromoSpot,0:Default,2:Default,1:Default,3:Default,4:header,4:SearchBox,4:ImageSprite,4:footer;/Areas/Sto/Content/Theming:0,/Areas/Sto/Content/Theming/msdn/win:1,/Areas/Sto/Content/Theming/msdn:2,/Areas/Sto/Content/Theming/msdn/win/win_hardware:3,/Areas/Epx/Themes/Metro/Content:4&amp;amp;hashKey=06F86DDE140BFBF8870FC3689939B572" /></head>
+
+    <body id="MTPS_Body" class="MsdnPageBody">
+        <div id="BodyBackground">
+            <div id="JelloSizer">
+                <div id="JelloExpander">
+                    <div id="JelloWrapper"> 
+                        <div class="Clear"> </div>
+                        <span class="skipnav"><a href="#MainContent">Skip to main content</a></span>
+                        
+<div id="ux-header">
+    <div class="GlobalBar">
+        <div class="PassportScarab">
+        
+        <a id="idPPScarab" class="scarabLink" href="https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=11&amp;ct=1361149863&amp;rver=6.0.5276.0&amp;wp=MCLBI&amp;wlcxt=msdn%24msdn%24msdn&amp;wreply=http%3a%2f%2fmsdn.microsoft.com%2fen-US%2fwindows%2fhardware%2fhh852362&amp;lc=1033&amp;id=254354&amp;mkt=en-US"><span id="idPPScarabSIT">Sign in</span></a>
+        </div>
+    </div>
+    <div class="Clear"></div>
+    <div class="Search">
+        <div class="SearchBox">
+        <form id="HeaderSearchForm" method="get" action="http://social.msdn.microsoft.com/search/en-US/windows/hardware" onsubmit="return SearchBoxOnSubmit('Search Dev Center with Bing');">
+            <input name="query" id="HeaderSearchTextBox" class="TextBoxSearchLoaded" type="text" value="Search Dev Center with Bing" maxlength="100" title="Search Dev Center with Bing" onfocus="WatermarkFocus(this, 'Search Dev Center with Bing', 'TextBoxSearchLoaded TextBoxSearch')" onblur="WatermarkBlur(this, 'Search Dev Center with Bing', 'TextBoxSearchLoaded')" />
+            <input name="Refinement" type="hidden" value="182" />
+            <input id="HeaderSearchButton" value="" class="SearchButton" type="submit" title="Search Dev Center with Bing" />
+            <input id="HeaderSearchButtonHidden" value="" style="display:none;" type="submit" />       
+        </form>
+        </div>
+    </div>
+    <div class="siteLogo">
+        <a href="http://msdn.microsoft.com/en-us/windows/hardware" title="Dev Center - Hardware">
+          
+            <div class="sitelogoImage" alt="Dev Center - Hardware" title="Dev Center - Hardware"></div>
+            
+            <span>Dev Center - Hardware</span>
+        </a>
+    </div>
+    <div class="tabs">
+     
+         
+         <a class="" href="http://msdn.microsoft.com/windows/hardware/gg236587" title="Home">Home</a>
+
+         
+         
+         <a class="" href="https://sysdev.microsoft.com/en-US/hardware/" title="Dashboard">Dashboard</a>
+
+         
+         
+         <a class="" href="http://msdn.microsoft.com/library/windows/hardware/" title="Docs">Docs</a>
+
+         
+         
+         <a class="" href="http://code.msdn.microsoft.com/windowshardware" title="Samples">Samples</a>
+
+         
+         
+         <a class="highlightedTab" href="http://msdn.microsoft.com/windows/hardware/gg454513" title="Downloads">Downloads</a>
+
+         
+         
+         <a class="" href="http://msdn.microsoft.com/windows/hardware/gg454528" title="Support">Support</a>
+
+         
+         
+         <a class="" href="http://msdn.microsoft.com/windows/hardware/gg454517" title="Community">Community</a>
+
+             
+    </div>
+    <div class="masthead_hr"></div>
+</div>
+
+                        <div class="Clear"> </div>
+                        <div class="alley">
+                            <div class="wrapper">
+                                <div class="inner">
+                                    
+                                    <div class="Clear"> </div>
+                                    <div class="BreadCrumb"><div class="BreadCrumbInner EyebrowContainer">
+<a href="http://msdn.microsoft.com/en-us/windows/hardware/default" class="EyebrowLink" title="Dev Center - Hardware">
+Dev Center - Hardware</a> &gt; 
+<a href="http://msdn.microsoft.com/en-us/windows/hardware/gg454513" class="EyebrowLink" title="Downloads">
+Downloads</a> &gt; 
+<a href="http://msdn.microsoft.com/en-us/windows/hardware/hh852763" class="EyebrowLink" title="Pre-Release Windows 8 Hardware Kits and Tools ">
+Pre-Release Windows 8 Hardware Kits and Tools </a> &gt; <span class="EyebrowElement">Windows Driver Kit (WDK) 8</span>
+    
+    </div></div>
+                                    <a name="MainContent"></a>
+                                    <div class="BostonPostCard"><h1 id="Top">Windows Driver Kit 8</h1><p>The Windows Driver Kit (WDK) includes the tools and documentation you need to develop drivers. WDK 8 is integrated into Visual Studio 2012 Professional, Premium, and Ultimate and provides most of the tools you need for developing, building, packaging, testing, and debugging drivers.</p><p>To learn more about the kit, visit 
+<a href="http://msdn.microsoft.com/library/windows/hardware/gg487428">
+Windows Driver Kit (WDK)</a>.</p><h2>Quick Details</h2><p><strong>Version:</strong> Windows Driver Kit (WDK) 8</p><p><strong>Date published:</strong> August 15, 2012</p><p><strong>File name</strong>: wdksetup.exe</p><p>1 GB</p><p style="margin: 20px 0 20px;"><span onclick="window.location.href='http://go.microsoft.com/fwlink/p/?LinkID=226655'" onmouseout="this.style.backgroundColor='#1CA0DA';" onmouseover="this.style.backgroundColor='#5AB7E3';" style="background-color:#1CA0DA; color:#fff !important; cursor:pointer; font-size:13px; font-family:'Segoe UI Semibold','Segoe UI','Lucida Grande',Verdana,Arial,Helvetica,sans-serif; padding:4px 12px 6px;" title="Download Windows Driver Kit 8">Download now</span><br /></p><p> </p><hr /><p> </p><h2>On This Page</h2><p><a href="#_System_Requirements"><img alt="Windows Update Introduction" border="0" src="http://i.msdn.microsoft.com/gg487521.arrow_px_down(en-us,MSDN.10).gif" />System Requirements</a></p><p><a href="#_Installation_Instructions"><img alt="Windows Update Introduction" border="0" src="http://i.msdn.microsoft.com/gg487521.arrow_px_down(en-us,MSDN.10).gif" /> Installation Instructions</a></p><p><a href="#_Release_Notes"><img alt="Windows Update Introduction" border="0" src="http://i.msdn.microsoft.com/gg487521.arrow_px_down(en-us,MSDN.10).gif" /> Release Notes</a></p><p><a href="#_Other_Hardware_Development_1"><img alt="Windows Update Introduction" border="0" src="http://i.msdn.microsoft.com/gg487521.arrow_px_down(en-us,MSDN.10).gif" /> Other Hardware Development Kits and Tools</a></p><p> </p><hr /><h2 id="_System_Requirements">System Requirements</h2><ul><li>Before you begin, you must first install Visual Studio Professional 2012 or above. <ul><li>
+<a href="http://msdn.microsoft.com/subscriptions/downloads/">
+Visual Studio Professional 2012 for MSDN subscribers</a></li><li>
+<a href="http://go.microsoft.com/fwlink/?LinkId=255934">
+Visual Studio Professional 2012 for non-MSDN subscribers</a></li></ul></li><li>If you are building device drivers that rely on the Windows Driver Framework (WDF), you will need to 
+<a href="http://msdn.microsoft.com/en-us/windows/hardware/br259104">
+install the WDFCOINSTALLER.MSI</a>. These bits provide the co-installers for WDF and are used by many of the WDK samples.<br /></li></ul><table border="0" cellpadding="0" width="900"><colgroup><col width="420" /><col width="480" /></colgroup><tr><td valign="top"><strong>WDK 8 supports development of drivers that run on these versions of Windows.</strong></td><td valign="top"><strong>You can run the integrated Visual Studio driver development environment on these versions of Windows.</strong></td></tr><tr><td>Windows 8</td><td>Windows 8</td></tr><tr><td>Windows Server 2012</td><td>Windows Server 2012</td></tr><tr><td>Windows 7</td><td>Windows 7</td></tr><tr><td>Windows Vista SP1</td><td>Windows Server 2008 R2</td></tr><tr><td>Windows Server 2008 R2</td><td> </td></tr><tr><td>Windows Server 2008 SP1</td><td> </td></tr></table><p><a href="#Top"><img alt="Top of page" border="0" src="http://i.msdn.microsoft.com/gg487521.arrow_px_up(en-us,MSDN.10).gif" /> Top of page</a></p><p> </p><hr /><h2 id="_Installation_Instructions">Installation Instructions</h2><p>You can install the WDK 8 on Windows Server 2008, Windows 7, Windows 8, and Windows Server 2012. Before you install the WDK, you must first install Visual Studio 2012 Professional, Visual Studio 2012 Premium, or Visual Studio 2012 Ultimate. The WDK uses Visual Studio extensions that are installed only if Visual Studio is installed before the WDK.</p><p>To install the WDK 8:</p><ol><li>Run wdksetup.exe.</li><li>In the <strong>Specify Location</strong> screen, provide an installation path or accept the default by clicking <strong>Next</strong>.</li><li>In the <strong>Join the Customer Experience Improvement Program (CEIP)</strong> screen, select <strong>Yes</strong> or <strong>No</strong> and then click <strong>Next</strong>.</li><li>On the <strong>License Agreement</strong> screen, select <strong>Accept</strong> to install the WDK.</li></ol><p>If you are building KMDF or UMDF drivers, you must install the wdfcoinstaller.msi package from the same location where you downloaded the WDK. This package contains the WDF co-installers. You can load this package from the WDK 8 redistributables download page at:</p><ul><li>
+<a href="http://msdn.microsoft.com/windows/hardware/br259104">
+WDK 8 Redistributable Components</a></li></ul><p>To finish installing the WDK 8, you are required to restart your computer. When you install the WDK on Windows 8 or Windows 7, the <strong>Restart</strong> dialog box takes focus from the WDF installation web page. Don't let this change of focus distract you from installing the WDK redistributables from this web page before you restart your computer.</p><p>The installation of the WDK redistributables is silent. You will not see a confirmation when the installation is complete. You can check that the redistributables have been installed by checking for the redist\wdf directory under the WDK directory, %ProgramFiles(x86)%\Windows Kits\8.0\.</p><p><a href="#Top"><img alt="Top of page" border="0" src="http://i.msdn.microsoft.com/gg487521.arrow_px_up(en-us,MSDN.10).gif" /> Top of page</a></p><p> </p><hr /><h2 id="_Release_Notes">Release Notes</h2><p>These release notes contain information about the Windows Driver Kit (WDK) 8 release.</p><p><strong>Redistributable Issues</strong></p><ul><li><strong>Device Simulation Framework (DSF):</strong> Device Simulation Framework has been deprecated from the WDK.</li></ul><p><strong>Core WDK Issues</strong></p><ul><li><strong>Midl.exe does not work for file names that contain spaces:</strong> Microsoft IDL Compiler (midl.exe) fails to compile when file names contain spaces.<br /><strong>Workaround</strong>: Move drivers located under paths that contain spaces to another location. In addition, rename file names that contain spaces.</li><br /><li><strong>The /KERNEL flag is added to kernel-mode components:</strong> This flag enforces rules for C++ usage that were previously unchecked. The /KERNEL flag is enabled only for the compiler in this release to enable you to address any errors the compiler reports without blocking the linking stage after the code compiles cleanly.<br /><br />The /KERNEL flag does the following:<br /><br /><ul><li>Explicitly disables the use of run-time type identification (RTTI).</li><li>Explicitly disables the use of native exception handling. Structured exception handling is still supported.</li><li>Predefines a new pre-processor macro named _KERNEL_MODE, which has the value 1.</li></ul><p><br />The /KERNEL flag is incompatible with the following flags: /EH, /GR, /clr.<br /><br />Specifying an incompatible flag causes a build error.<br /><br />The addition of this flag enables better control over paged and nonpaged code for classes and templates through new __declspec keywords.<br /><br />A future WDK release might require that each object file that is linked into the final kernel-mode binary must be compiled with the /KERNEL flag. Failure to do so will cause a new linker warning, 4257, to be emitted.</p><p> </p></li><li><strong>Using Signtool to time-stamp a binary:</strong> Signtool gives the user an option to add a timestamp to a signed file. The /td switch can be used to specify the hash algorithm that is used for the timestamp, and the /tr switch can be used to specify the URL of the timestamp server. Because of an error in the way Signtool parses the command-line parameters, specifying the /td switch before the /tr switch overrides the specified hash algorithm and sets it to the default algorithm, SHA1.<br /><br /><strong>Workaround:</strong> Always specify the /td switch after the /tr switch.<br /><br /><div style="text-indent:20px">Incorrect usage:</div><br /><div style="text-indent:25px"><code style="text-indent:20px">signtool timestamp /td SHA256 /tr http://timeserver</code></div><br /><div style="text-indent:20px">Correct usage:</div><br /><div style="text-indent:25px"><code>signtool timestamp /tr http://timeserver /td SHA256</code></div><br /></li><li><strong>Provisioning failure:</strong> When attempting to provision a target machine from a host machine with a username that contains spaces, provisioning will fail.<br /><strong>Workaround</strong>: Host machines with usernames that contain spaces are not supported. Change the username on the host machine to not contain spaces.<br /></li><li><strong>SDV NDIS driver support:</strong> Static Driver Verifier (SDV) supports only NDIS drivers that use NDIS versions 6.0, 6.1, 6.2, and 6.3. If you receive an error message indicating that the SDV version you are using is not supported, please upgrade to NDIS version 6.3.<br /><br /><strong>Workaround:</strong> Use either of the following techniques to upgrade to NDIS 6.3:<br /><br /><ul><li>Edit your vcxproj file to set the NDIS macros as follows:<br /><br /><code>&lt;ClCompile&gt;<br /> &lt;AdditionalOptions&gt;%(AdditionalOptions) /GS&lt;/AdditionalOptions&gt;<br /> &lt;PreprocessorDefinitions&gt;%(PreprocessorDefinitions);NDIS_MINIPORT_DRIVER=1&lt;/PreprocessorDefinitions&gt;<br /> &lt;PreprocessorDefinitions&gt;%(PreprocessorDefinitions);NDIS_WDM=1&lt;/PreprocessorDefinitions&gt;   <br /> &lt;PreprocessorDefinitions&gt;%(PreprocessorDefinitions);NDIS63_MINIPORT=1&lt;/PreprocessorDefinitions&gt;   <br /> &lt;PreprocessorDefinitions&gt;%(PreprocessorDefinitions);NDIS63=1&lt;/PreprocessorDefinitions&gt;<br /> &lt;TreatWarningAsError&gt;true&lt;/TreatWarningAsError&gt;  <br /> &lt;WarningLevel&gt;Level4&lt;/WarningLevel&gt;<br />&lt;/ClCompile&gt;</code><br /><br /></li><li>Use C_DEFINES tags in your driver sources file or post-conversion props file as follows:<br /><br /><code>&lt;C_DEFINES Condition="'$(OVERRIDE_C_DEFINES)'!='true'"&gt;$(C_DEFINES) -DNDIS_WDM=1 -DNDIS630=1&lt;/C_DEFINES&gt;</code><br /></li></ul></li><li><strong>SDV KmdfIrql Rule:</strong> The KmdfIrql rule fails if a KMDF driver marks as pageable the <strong>EvtDeviceWdmIrpPreprocess</strong> callback function for the IRP_MN_QUERY_DEVICE_RELATIONS PnP IRP. Although an <strong>EvtDeviceWdmIrpPreprocess</strong> callback function might be called at IRQL = DISPATCH_LEVEL for some IRPs, it is called only at PASSIVE_LEVEL for this particular IRP. The driver can safely make the callback function for this IRP pageable, but doing so causes the KmdfIrql rule to fail. This failure is caused by a false defect and can be ignored.<br /></li><li><strong>Updates to ATA.h:</strong> ATA.h has been updated to reflect the changes in ATA8 ACS3 revision 1b and SATA 3.1.</li></ul><p><strong>Samples Issues</strong></p><ul><li><strong>TDI Filters and LSPs cannot be included in a certification submission:</strong> Network transport driver interface (TDI) filters and layered service providers (LSPs) cannot be used by either kernel-mode or user-mode software or drivers. You cannot include TDI filters or LSPs in your Windows 8 certification submission. Your certification can be blocked if other software on the test computer (for example, anti-virus software) contains a TDI filter or LSP.<br /><strong>Workaround</strong>: Replace any TDI filters or LSPs in your software with calls to the Windows Filtering Platform (WFP) or other approved APIs. Remove other software that uses TDI filters or LSPs from the test computer.<br /></li><li><strong>WpdBasicHardwareDriver sample</strong>: The current firmware and driver sources contain a potential bug that may result in truncated packets within the driver when the Parallax board is connected to the PC using Parallax RS232-to-USB converter.<br /><br /><strong>Workaround</strong>: <ol><li>Modify the sample firmware for each sensor so that the outgoing packet contains an additional newline character ('\n') as the last character.</li><li>Modify the sample firmware for each sensor so that the outgoing packet is transmitted at 9600 baud. See the Parallax documentation for the SEROUT command.</li><li>In the file RS232Connection.h, increase the INTERVAL_DATA_LENGTH value from 5 to 6. This accounts for the new newline character at the end of each packet.</li><li>In the file RS232Connection.h, increase the packet length for each sensor to account for the new newline character. For example, the value of PIR_DATA_LENGTH would increase from 4 to 5.</li><li>In the file RS232Connection.cpp, increase the baud rate from 2400 to 9600. This is done by setting the m_dwBaudRate member-variable to CBR_9600 in the RS232Connection constructor.</li><li>In the file RS232Connection.cpp, set the ReadIntervalTimeout member of the COMMTIMEOUTS structure to 25; set the four other members to 0.</li><li>In the file RS232Connection.cpp, and in the code for the SetPortState method, add a line of code that sets the dcb.EofChar to the newline character ('\n'). This corresponds to the terminating character that you've added to the outgoing packets in the device firmware.<br /><br />For example:<br /><code>dcb.EofChar = '\n';</code><br /></li><li>Install the updated firmware on your test device.</li><li>Build and install the updated sample driver.</li></ol></li></ul><p><a href="#Top"><img alt="Top of page" border="0" src="http://i.msdn.microsoft.com/gg487521.arrow_px_up(en-us,MSDN.10).gif" /> Top of page</a></p><p> </p><hr /><h2 id="_Other_Hardware_Development_1">Other Hardware Development Kits and Tools</h2><ul><li>
+<a href="http://msdn.microsoft.com/en-us/windows/hardware/gg454513">
+All Windows 8 Hardware Kits and Tools</a></li><li>
+<a href="http://msdn.microsoft.com/en-us/windows/hardware/br259104">
+WDK Redistributable Components</a></li></ul><p><a href="#Top"><img alt="Top of page" border="0" src="http://i.msdn.microsoft.com/gg487521.arrow_px_up(en-us,MSDN.10).gif" /> Top of page</a></p><p> </p></div>
+                                    <div class="Clear"> </div>
+                                    
+<div id="ux-footer">
+
+    <div class="blocks">
+        <div class="footerPrimaryBlock">
+            <div class="footerLinksTitles">Network sites</div>
+            <div style="padding-top: 5px; padding-bottom: 14px;">
+              <a href="http://msdn.microsoft.com" title="Microsoft Developer Network">
+                <div class="clip49x17">
+                  <img alt="Network sites" title="Microsoft Developer Network" class="footerLogoImage" src="http://i.msdn.microsoft.com/Areas/Epx/Themes/Metro/Content/ImageSprite.png" />
+                </div>
+              </a>
+            </div>
+            <div style="padding-bottom: 71px;"><span class="footerLinks"></span></div>
+        </div>
+        <div class="footerSubBlock"> </div><div class="footerSubBlock">
+          <div class="footerLinksTitles">Windows Dev Center</div>
+          
+                    <div style="padding-top: 5px;" class="footerLinks">
+                      <a href="http://msdn.microsoft.com/windows" title="Windows Dev Center home">Windows Dev Center home</a>
+                    </div>
+                    
+                    <div style="padding-top: 5px;" class="footerLinks">
+                      <a href="http://msdn.microsoft.com/windows/apps" title="Windows Store apps">Windows Store apps</a>
+                    </div>
+                    
+                    <div style="padding-top: 5px;" class="footerLinks">
+                      <a href="http://msdn.microsoft.com/ie" title="Internet Explorer">Internet Explorer</a>
+                    </div>
+                    
+                    <div style="padding-top: 5px;" class="footerLinks">
+                      <a href="http://msdn.microsoft.com/windows/desktop" title="Desktop">Desktop</a>
+                    </div>
+                    
+                    <div style="padding-top: 5px;" class="footerLinks">
+                      <a href="http://msdn.microsoft.com/windows/hardware" title="Hardware">Hardware</a>
+                    </div>
+                    
+        </div><div class="footerFinalBlock">
+          <div class="footerLinksTitles">Other links</div>
+          
+                    <div style="padding-top: 5px;" class="footerLinks">
+                      <a href="http://msdn.microsoft.com/windows/hardware/gg454528" title="Support">Support</a>
+                    </div>
+                    
+                    <div style="padding-top: 5px;" class="footerLinks">
+                      <a href="https://connect.microsoft.com/dashboard/" title="Microsoft Connect">Microsoft Connect</a>
+                    </div>
+                    
+                    <div style="padding-top: 5px;" class="footerLinks">
+                      <a href="http://dev.windowsphone.com/" title="Windows Phone Dev Center">Windows Phone Dev Center</a>
+                    </div>
+                    
+        </div>
+        </div>
+    
+    <div class="footerMSLogo">
+      <a href="http://www.microsoft.com" title="Microsoft">
+        <div class="clip104x20">
+          <img src="http://i.msdn.microsoft.com/Areas/Epx/Themes/Metro/Content/ImageSprite.png" class="footerMsLogo" title="Microsoft" alt="" />
+        </div>
+      </a>
+    </div>
+    <div class="footerSubLinksContainer">
+        <div class="footerSubLinks">
+            <a href="http://msdn.microsoft.com/windows/hardware/cc300389" title="Terms of use">Terms of use</a>
+              <span class="footerSubLinksDivider">|</span>
+            <a href="http://www.microsoft.com/library/toolbar/3.0/trademarks/en-us.mspx" title="Trademarks">Trademarks</a>
+              <span class="footerSubLinksDivider">|</span>
+            <a href="http://www.microsoft.com/info/privacy.mspx" title="Privacy statement">Privacy statement</a>
+              <span class="footerSubLinksDivider">|</span>
+            
+          <a href="http://lab.msdn.microsoft.com/mailform/contactus.aspx?refurl=%2fwindows%2fhardware%2fhh852362" title="Site feedback" target="_blank" onclick="SiteFeedbackNewWindow('http://lab.msdn.microsoft.com/mailform/contactus.aspx?refurl=%2fwindows%2fhardware%2fhh852362'); return false;">Site feedback</a>
+          <span class="footerSubLinksDivider">|</span>
+          <a href="http://msdn.microsoft.com/en-US/windows/hardware/SelectLocale?fromPage=%2fwindows%2fhardware%2fhh852362" title=" United States (English)"> United States (English)</a>
+        </div>
+        <div class="footerCopyright" title="© 2013 Microsoft. All rights reserved.">© 2013 Microsoft. All rights reserved.</div>
+    </div>
+</div>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+
+<noscript>
+<img alt="DCSIMG" width="1" height="1" src="http://m.webtrends.com/dcsmgru7m99k7mqmgrhudo0k8_8c6m/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" />
+</noscript>
+
+
+<noscript><a href="http://www.omniture.com" title="Web Analytics">
+<img src="http://msstonojsmsdn.112.2o7.net/b/ss/msstonojsmsdn/1/H.20.2--NS/0" height="1" width="1" border="0" alt="" />
+</a></noscript>
+
+
+
+    <script type="text/javascript" class="mtps-injected">
+/*<![CDATA[*/
+(function(window,document){"use strict";function preload(scripts){for(var result=[],script,e,i=0;i<scripts.length;i++)script=scripts[i],script.hasOwnProperty("url")&&(e=document.createElement("script"),e.src=script.url,script.throwaway=e),result.push(script);return result}function inject(scripts,index){var script,elem;if(index>=scripts.length){delete mtps.injectScripts;return}script=scripts[index],elem=document.createElement("script"),elem.className="mtps-injected",elem.async=!1;var isLoaded=!1,timeoutId=0,injectNextFnName="",injectNext=elem.onerror=function(){isLoaded||(isLoaded=!0,inject(scripts,index+1),window.clearTimeout(timeoutId),elem.onload=elem.onerror=elem.onreadystatechange=null,injectNextFnName&&delete mtps[injectNextFnName],elem.removeEventListener&&elem.removeEventListener("load",injectNext,!1))};elem.addEventListener?elem.addEventListener("load",injectNext,!1):elem.readyState==="uninitialized"?elem.onreadystatechange=function(){(this.readyState==="loaded"||this.readyState==="complete")&&injectNext()}:elem.onload=injectNext,script.hasOwnProperty("url")?(timeoutId=window.setTimeout(injectNext,12e4),elem.src=script.url):(injectNextFnName="_injectNextScript_"+index,mtps[injectNextFnName]=injectNext,timeoutId=window.setTimeout(injectNext,2e3),elem.text="try {\n"+script.txt+"\n} finally { MTPS."+injectNextFnName+" && MTPS."+injectNextFnName+"(); }"),parent.appendChild(elem)}var mtps=window.MTPS||(window.MTPS={}),parent=document.getElementsByTagName("head")[0];mtps.injectScripts=function(scripts){inject(preload(scripts),0)}})(window,document);
+MTPS.injectScripts([
+	{ txt: "/**/\r\n(window.MTPS || (window.MTPS = {})).cdnDomains || (window.MTPS.cdnDomains = { \r\n\t\"image\": \"http://i.msdn.microsoft.com\", \r\n\t\"js\": \"http://i2.msdn.microsoft.com\", \r\n\t\"css\": \"http://i3.msdn.microsoft.com\"\r\n});\r\n/**/" },
+	{ url: "http://i2.msdn.microsoft.com/Combined.js?resources=0:jquery.cookie,1:header;/Areas/Sto/Content/Scripts:0,/Areas/Epx/Themes/Metro/Content:1&amp;hashKey=BA57B62820DEADDAB921C68C023A67C8" },
+	{ txt: "//\n    function SiteFeedbackNewWindow(url) {\n        window.open(url, \u0027_blank\u0027, \u0027width=750,height=836,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,directories=no,status=no\u0027);\n    }\n    //" },
+	{ txt: "/**/\n    \n      var wt_nvr_ru = \"WT_NVR_RU\";\n      var wt_fpcdom = \".microsoft.com\";\n      var wt_domlist = \"msdn.microsoft.com\";\n      var wt_pathlist = \"\";var wt_paramlist = \"DCSext.mtps_devcenter\";\n      var wt_siteid = \"MSDN\";\n      var gDomain=\"m.webtrends.com\";\n    var gDcsId = \"dcsmgru7m99k7mqmgrhudo0k8_8c6m\";\n    var gFpc = \"WT_FPC\";\n    if (document.cookie.indexOf(gFpc + \"=\") == -1) {\n        var scriptElem = document.createElement(\u0027script\u0027);\n        scriptElem.src = \"http\" + (window.location.protocol.indexOf(\u0027https:\u0027) == 0 ? \u0027s\u0027 : \u0027\u0027) + \"://\" + gDomain + \"/\" + gDcsId + \"/wtid.js\";\n        document.getElementsByTagName(\u0027head\u0027)[0].appendChild(scriptElem);\n    }\n    var detectedLocale = \"en-us\";\n    var wtsp = \"_msdn_\";\n    var gTrackEvents = \"1\";\n    /**/" },
+	{ url: "http://i2.msdn.microsoft.com/Areas/Sto/Content/Scripts/webtrendsscript.js" },
+	{ txt: "var omni_guid = \u0027c_2c7ce68049de49c6a4900047d62785e6\u0027;" },
+	{ url: "http://i2.msdn.microsoft.com/Areas/Sto/Content/Scripts/omni_rsid.js" },
+	{ url: "http://js.microsoft.com/library/svy/sto/broker.js" }
+]);
+
+/*]]>*/
+</script></body>
+
+<![CDATA[     
+Third party scripts and code linked to or referenced from this website are licensed to you by the parties that own such code, not by Microsoft.  See ASP.NET Ajax CDN Terms of Use – http://www.asp.net/ajaxlibrary/CDN.ashx.
+]]>
+</html>

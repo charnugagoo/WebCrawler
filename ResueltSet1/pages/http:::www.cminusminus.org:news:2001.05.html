@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+
+<html>
+  <head> <!-- news/2001.05 -->
+            <title></title>
+            <!-- navtree[news/2001.05] ==  -->
+            <!-- navtree[news/2001.05][leaf] == [leaf] -->
+            <meta http-equiv = 'Content-Type' 
+                  content    = 'text/html; charset=iso-8859-1'>
+            <style type='text/css'>
+
+Warning: readfile(../cmm.css): failed to open stream: No such file or directory in /home/nr/c--/www/cmm.inc on line 250
+  
+            </style>
+          </head>
+  <body>
+    <!-- news/2001.05 -->
+        <table width='100%' cellpadding='3' cellspacing='0' border='0'>
+          <tr>
+            <td class='smallblue' width='10%'><strong>C--</strong></td>
+            <td class='smallgrey' width='90%'><a href='http://www.eecs.harvard.edu/'>Harvard EECS</a>
+<img width='13' height='9' alt='->' 
+     src='../images/arrow_yellow.gif'>
+<a href='../news/2001.05.html'></a>
+   
+            </td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td class='small'>
+            <a href='../index.html'>C-- Home</a>            |
+            <a href='../code.html'>Specification &amp; Downloads</a>          |
+            <a href='../news/2001.10.html'>Old News</a>          |
+            <a href='../papers.html'>Papers</a>             | 
+    <!--       <a href='../progress.html'>Work in Progress</a> |  -->
+            <a href='../mail.html'>Mailing List</a>         | 
+            <a href='../people.html'>People</a>             |
+            <a href='../faq.html'>FAQ</a>                   
+     <!-- |       <a href='../links.html'>Related Work</a> -->
+
+            </td>
+          </tr>
+        </table>     <br>
+     <br>
+     
+
+    <h1>C-- News for May, 2001</h1>
+    Here is the C-- news as of May, 2001. <br>
+    (There is <a href="2000.07.html">old news</a> from last year
+    still available.) 
+
+    <p>We still don't have a working compiler that implements the
+    full Version&nbsp;2 specification. Essentially, our status is
+    that a great deal of interesting stuff has been going on, but
+    nothing is actually finished.</p>
+
+    <ol>
+      <li>We are planning a C-- workshop at Harvard for late July
+      or mid-August. The two topics of discussion will be <em>types
+      and C--</em> and <em>support for concurrency</em>.</li>
+
+      <li>All the developers have been at work on a new language
+      specification, to be called version 2.0. The new manual is
+      not quite ready as we have been working on the
+      implementation.</li>
+
+      <li>Norman Ramsey and Simon Peyton Jones have put toegether a
+      <a href='../concurrency.html'>concurrency proposal</a>      . There are substantial points of interest in the proposal,
+      but many problems remain, especially problems of <em>stack
+      overflow</em> and <em>pre-emption</em>.</li>
+
+      <li>Daniel Damian has worked on using type-directed partial
+      evaluation to specialize analyses and optimizations used in
+      the compiler. Our hope is that the specialized code will
+      enable us to use an machine-dependent representation of
+      instructions within the compiler. We expect this will
+      substantially reduce time and space costs. The technique
+      should also have interesting applications to other problems,
+      e.g., proof-carrying code.</li>
+
+      <li>Lee Feigenbaum has done some preliminary work on
+      automatically deriving a code generator from a machine
+      description. We hope to complete this work and use the code
+      generators in the Quick C-- compiler.</li>
+
+      <li>Christian Lindig has pushed forward the development of
+      Quick C--, including translation to intermediate code,
+      flow-graph representations for optimization, liveness
+      analysis, and register allocation.</li>
+
+      <li>Norman Ramsey is working on a version of BURG for
+      Objective Caml. We will use this tool to implement both Lee
+      Feigenbaum's code generators and any code generators we might
+      write by hand.</li>
+
+      <li>Fermin Reig has been adapting the Objective Caml front
+      end to a restricted version of C-- (<tt>cmmc</tt>, which is
+      built on top of MLRISC). He has got working code!</li>
+
+      <li>Sergei Egorov: <a href=
+      "http://www.malgil.com/trc/">trampolining C--</a>. Sergei has
+      built an implementation of C-- by compiling C-- to C and
+      using a trampoline. It is basically a proof-of-concept
+      implementation that demonstrates a popular method of
+      compiling tail-recursive procedures to portable C.</li>
+
+      <li>Jon Eddy will be spending the summer looking at two
+      problems related to C--: first, how to recognize and identify
+      machine instructions efficiently, even in the presence of
+      interesting optimizations. Second: whether some of the C--
+      `unchecked run-time errors' can in fact be checked at run
+      time, and if so at what cost.</li>
+
+      <li>John Dias will be working on an `optimization backplane'
+      for putting together the back end of the Quick C-- compiler.
+      The idea is to give a clean framework for phase ordering and
+      other aspects of configuring the compiler.</li>
+    </ol>
+    <br><hr size='1'><span class='small'>Contact: <a href='mailto:webmaster@cminusminus.org'>C-- Webmaster</a>. 
+URL: <tt><a href='http://www.cminusminus.org/'>http://www.cminusminus.org/</a></tt>.
+Last edited: Mon 05 Feb 2007 14:02 EST.</span>
+<!-- last edited by  -->
+  </body>
+</html>
+

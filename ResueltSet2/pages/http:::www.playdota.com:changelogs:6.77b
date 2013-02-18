@@ -1,0 +1,894 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>DotA Changelogs - 6.77b</title>
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="application/xhtml; charset=UTF-8" />
+<meta name="keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2" />
+<meta name="revisit-after" content="1 days" />
+<meta name="robots" content="index,follow" />
+<meta name="verify-v1" content="2utJHp2BxUBgV2QqQfsp0lfqX4a58OhdDlcKfNNDA0A=" />
+<link href="http://media.playdota.com/css/style.css?ver=2.1.11" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://media.playdota.com/js/alfa/prototype.js"></script>
+<script type="text/javascript" src="http://media.playdota.com/js/scripts.js?ver=2.3"></script>
+<script type="text/javascript" src="http://media.playdota.com/js/swfobject.js?v=3.1"></script>
+
+
+<script type="text/javascript" src="http://www.playdota.com/forums/clientscript/ncode_imageresizer.js?v=1.0.2"></script>
+<script type="text/javascript">
+<!--
+NcodeImageResizer.MODE = 'newwindow';
+
+NcodeImageResizer.MAXWIDTH = 556;
+NcodeImageResizer.MAXHEIGHT = 0;
+
+
+NcodeImageResizer.MAXWIDTHSIGS = 500;
+NcodeImageResizer.MAXHEIGHTSIGS = 300;
+
+NcodeImageResizer.BBURL = 'http://www.playdota.com/forums';
+vbphrase = new Array();
+vbphrase['ncode_imageresizer_warning_small'] = 'Click this bar to view the full image.';
+vbphrase['ncode_imageresizer_warning_filesize'] = 'This image has been resized. Click this bar to view the full image. The original image is sized %1$sx%2$s and weights %3$sKB.';
+vbphrase['ncode_imageresizer_warning_no_filesize'] = 'This image has been resized. Click this bar to view the full image. The original image is sized %1$sx%2$s.';
+vbphrase['ncode_imageresizer_warning_fullsize'] = 'Click this bar to view the small image.';
+//-->
+</script>
+
+<style type="text/css">
+
+table.ncode_imageresizer_warning {
+background: #000000;
+color: #FFFFFF;
+border: 1px solid #CCCFFF;
+	cursor: pointer;
+}
+
+table.ncode_imageresizer_warning td {
+	font-size: 10px;
+	vertical-align: middle;
+	text-decoration: none;
+}
+
+table.ncode_imageresizer_warning td.td1 {
+	padding: 5px;
+}
+
+table.ncode_imageresizer_warning td.td1 {
+	padding: 2px;
+}
+
+</style>
+
+
+</head>
+<body>
+<center>
+
+<div class="header">
+	&nbsp;
+	<ul class="menu">
+		<li><a href="/heroes" title="DotA Heroes"><img src="http://media.playdota.com/site/heroes.png" border="0" alt="DotA Heroes"/></a></li>
+		<li><a href="/items" title="DotA Items"><img src="http://media.playdota.com/site/items.png"  border="0" alt="DotA Items"/></a></li>
+		<li><a href="/guides" title="DotA Guides"><img src="http://media.playdota.com/site/guides.png"  border="0" alt="DotA Guides"/></a></li>
+		<li><a href="/mechanics" title="DotA Mechanics"><img src="http://media.playdota.com/site/mechanics.png"  border="0" alt="DotA Mechanics"/></a></li>
+		<li><a href="/forums/dota-tools-ai-maps/" title="DotA Tools"><img src="http://media.playdota.com/site/tools.png"  border="0" alt="DotA Tools"/></a></li>
+		<li><a href="/forums/" title="DotA Community"><img src="http://media.playdota.com/site/forums.png"  border="0" alt="DotA Community"/></a></li>
+		<li class="sh" ><a href="/" ><div></div></a></li>
+		<li><a href="/forums/dota-replays/" title="DotA Replays"><img src="http://media.playdota.com/site/replays.png"  border="0" alt="DotA Replays"/></a></li>
+		<li><a href="/videos" title="DotA Videos"><img src="http://media.playdota.com/site/videos.png"  border="0" alt="DotA Videos"/></a></li>
+		<li><a href="/fanart" title="DotA FanArt"><img src="http://media.playdota.com/site/art.png"  border="0" alt="DotA FanArt"/></a></li>
+		<li><a href="/comics" title="DotA Comics"><img src="http://media.playdota.com/site/comics.png"  border="0" alt="DotA Comics"/></a></li>
+		<li><a href="/ai" title="DotA Links"><img src="http://media.playdota.com/site/links.png"  border="0" alt="DotA Links"/></a></li>
+		<li><a href="/about" title="About DotA"><img src="http://media.playdota.com/site/about.png"  border="0" alt="About DotA"/></a></li>
+	</ul>
+	&nbsp;
+	<div style="clear:both;"></div>
+	<div style="clear:both;"></div>
+	<a class="iceblog" href="http://www.playdota.com/forums/blogs/icefrog/" title="Developer's Blog"><img src="http://media.playdota.com/site/blog.jpg?ver=2.1.2" alt="Developer's Blog" /></a>
+	<div style="clear:both;"></div>
+	<div class="loginbox" align="right">
+		<form method="post" action="/forums/login.php?do=login" onsubmit=md5hash(vb_login_password,vb_login_md5password,vb_login_md5password_utf)>
+		<script type=text/javascript src="/forumsl/clientscript/vbulletin_md5.js"></script>
+
+		<input type="text" name="vb_login_username" id="navbar_username" value="Username" class="linput" onfocus="this.value = ''" onblur="if(this.value == '') this.value = 'Username'"/>
+		<input type="password" name="vb_login_password" value="Password" class="linput" onfocus="this.value = '';" onblur="if(this.value == '') this.value = 'Password'"/>
+		<input type="image" src="http://media.playdota.com/site/go.gif" align="middle" title="DotA Login"/> <br />
+
+		<div class="regs" align="left">
+		<a href="/forums/login.php?do=lostpw">Forgot Password?</a>
+		</div>
+		<div align="left" class="regi">
+				<input type="checkbox" name="cookieuser" value="1" tabindex="103" id="cb_cookieuser_navbar" accesskey="c" align="top"/> Remember me ? &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+				<a href="/forums/register.php" title="Register on DotA Community" class="regi">Register</a>
+		</div>
+
+
+
+
+
+		<input type=hidden name=s value="" />
+
+		<input type=hidden name=do value=login />
+		<input type=hidden name=vb_login_md5password />
+		<input type=hidden name=vb_login_md5password_utf />
+
+		</form>
+	</div>
+</div>
+<div style="clear:both;"></div>
+
+
+<div class="website" align="center" id="website">
+<div style="clear:both;"></div>
+	<div class="content">
+		<div class="site" align="left">
+			<center>
+<img src="http://media.playdota.com/site/changelogs.png" />
+</center>
+<div class="heroc">
+
+	<div class="pleft changelogs" >
+
+	<br />
+
+	<img src="http://media.playdota.com/changelogs/1357886184.jpg" border="0" alt="Changelog 6.77b" id="6.77b"/>
+	<br />
+	* Removed Christmas themed elements<br />
+* Fixed a death streak bounty bug<br />
+* Fixed Fire Spirits instantly kililng Forged Spirits<br />
+* Fixed Brilliance Aura's self effect on Crystal Maiden not working properly<br />
+* Fixed some tooltips
+	<br />
+	<br />
+
+	<br />
+
+	<img src="http://media.playdota.com/changelogs/1355327398.jpg" border="0" alt="Changelog 6.77" id="6.77"/>
+	<br />
+	<div align="center"><img src="http://www.playdota.com/img/changelogs/categories/heroes.jpg" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /></div><img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/aa.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/ancient-apparition" target="_blank">Ancient Apparition</a><br />
+- Chilling Touch manacost rescaled from 140 to 110/120/130/140<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/bat.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/batrider" target="_blank">Batrider</a><br />
+- Batrider can no longer attack while using Flaming Lasso<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/bh.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/bounty-hunter" target="_blank">Bounty Hunter</a><br />
+- Track no longer reduces armor<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/cent.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/centaur-warchief" target="_blank">Centaur</a><br />
+- Movement speed decreased from 305 to 300<br />
+- Double Edge no longer interrupts channeling<br />
+- Stampede now applies a 100% slow instead of a stun (as always, units cannot be slowed below 100 movement speed)<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/cw.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://media.playdota.com/hero/65/thumb.gif" target="_blank">Clockwerk</a><br />
+- Agility growth increased from 1.2 to 2.3<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/sp.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/shadow-priest" target="_blank">Dazzle</a><br />
+- Shallow Grave cast range rescaled from 400/600/800/1000 to 550/700/850/1000<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/doom.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/doom-bringer" target="_blank">Doom Bringer</a><br />
+- Scorched Earth now also affects other units you control<br />
+- Doom now has too much armor! (+1)<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/drow.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/drow-ranger" target="_blank">Drow Ranger</a><br />
+- Trueshot Aura now only affects non-hero units within 900 range of Drow<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/es.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/earthshaker" target="_blank">Earthshaker</a><br />
+- Aftershock stun duration rescaled from 0.3/0.7/1.2/1.5 to 0.6/0.9/1.2/1.5<br />
+- Aftershock damage increased from 25/45/75/115 to 50/75/100/125<br />
+- Enchant Totem cooldown decreased from 6 to 5<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/enchant.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/enchantress" target="_blank">Enchantress</a><br />
+- Untouchable AS reduction increased from 20/40/60/80 to 20/50/80/110<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/thd.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/twin-head-dragon" target="_blank">Jakiro</a><br />
+- Ice Path damage from 100 to 25/50/75/100<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/lycan.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/lycanthrope" target="_blank">Lycanthrope</a><br />
+- Base Int increased from 15 to 17<br />
+- Spirit Wolves armor increased by 1<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/mag.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/magnataur" target="_blank">Magnus</a><br />
+- Skewer no longer affects magic immune units<br />
+- Skewer cast range rescaled from 1200 to 600/800/1000/1200<br />
+- Reverse Polarity duration decreased from 2.5/3.25/4 to 2.25/3/3.75<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/dusa.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/gorgon" target="_blank">Medusa</a><br />
+- Stone Gaze cooldown decreased from 140/110/80 to 140/100/60<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/potm.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/priestess-of-the-moon" target="_blank">Mirana</a><br />
+- Moonlight Shadow duration increased from 11 to 15 seconds<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/morph.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/morphling" target="_blank">Morphling</a><br />
+- Cast animation time decreased from 0.4 to 0.25<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/necro.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/necrolyte" target="_blank">Necrolyte</a><br />
+- Reaper's Scythe stun/delay increased from 1 to 1.5 seconds<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/omni.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/omniknight" target="_blank">Omniknight</a><br />
+- Purification cast range rescaled from 400/500/600/700 to 700<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/phoenix.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/phoenix" target="_blank">Phoenix</a><br />
+- Sun Ray max range decreased from 1600 to 1300<br />
+- Sun Ray base damage decreased from 16/24/32/40 to 15/20/25/30<br />
+- Sun Ray now ends if you are stunned or silenced<br />
+- Fixed some Sunray lag issues<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/puck.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/faerie-dragon" target="_blank">Puck</a><br />
+- Illusory Orb cooldown decreased from 13 to 12<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/pug.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/oblivion" target="_blank">Pugna</a><br />
+- Decrepify cooldown decreased from 13/11/9/7 to 12/10/8/6<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/sd.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/shadow-demon" target="_blank">Shadow Demon</a><br />
+- Shadow Poison cooldown decreased from 3 to 2.75<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/murloc.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /><a href="http://www.playdota.com/heroes/murloc-nightcrawler" target="_blank"> Slark</a><br />
+- Base agility increased by 6<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/spec.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/spectre" target="_blank">Spectre</a><br />
+- Haunt no longer ends when you use reality (the targeted illusion is still replaced by you though)<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/sven.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/rogue-knight" target="_blank">Sven</a><br />
+- Great Cleave damage decreased from 25/40/55/70 to 20/35/50/65<br />
+- Warcry duration decreased from 8 to 7 seconds<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/ta.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/templar-assassin" target="_blank">Templar Assassin</a><br />
+- Refraction manacost increased from 75 to 100<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/tb.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/soul-keeper" target="_blank">Terrorblade</a><br />
+- Movement speed increased by 5<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/treant.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/treant-protector" target="_blank">Treant Protector</a><br />
+- Damage increased by 10<br />
+- Leech Seed cooldown decreased from 18/16/14/12 to 16/14/12/10<br />
+- Overgrowth cooldown decreased from 80 to 70<br />
+- Living Armor damage instances increased from 6 to 7<br />
+- Living Armor can be cast through the minimap (only considers heroes and towers/rax in this mode)<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/dirge.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/undying" target="_blank">Undying</a><br />
+- Decay damage reduced from 40/80/120/160 to 20/60/100/140<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/vs.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/vengeful-spirit" target="_blank">Vengeful Spirit</a><br />
+- Wave of Terror damage increased from 18.75/37.5/56.25/75 to 30/50/70/90<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/viper.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/netherdrake" target="_blank">Viper</a><br />
+- Base strength increased by 3<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/lock.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/warlock" target="_blank">Warlock</a><br />
+- Shadow Word cooldown decreased from 20 to 16<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/weaver.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/nerubian-weaver" target="_blank">Weaver</a><br />
+- Shukuchi damage increased from 90/100/110/120 to 90/110/130/150<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/winter.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/winter-wyvern" target="_blank">Winter Wyvern</a><br />
+- Arctic Burn cooldown decreased from 60/50/40/30 to 50/40/30/20<br />
+- Splinter Blast cooldown decreased from 8 to 7<br />
+- Fixed Arctic Burn vs Roshan<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/zeus.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/lord-of-olympus" target="_blank">Zeus</a><br />
+- Strength growth increased from 1.8 to 2.3<br />
+<br />
+<br />
+<br />
+<div align="center"><img src="http://www.playdota.com/img/changelogs/categories/items.jpg" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /></div><img src="http://www.playdota.com/forums/assault_fps/smilies/items/Ancient_Weaponry/BTNINV_Weapon_Crossbow_10.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/items/buriza-do-kyanon" target="_blank">Buriza-do Kyanon</a><br />
+- Crit multiplier decreased from 2.7 to 2.4<br />
+- Recipe cost decreased from 1200 to 1000<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/items/Ancient_Weaponry/BTNThoriumMelee.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/items/crystalys" target="_blank">Crystalys</a><br />
+- Damage decreased from 35 to 30<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/items/Enchanted%20Artifacts/BTNIceShard.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/items/eye-of-skadi" target="_blank">Eye of Skadi</a><br />
+- HP bonus increased from 200 to 250<br />
+- MP bonus increase from 150 to 250<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/items/Protectorate/BTNAdvancedMoonArmor.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/items/shivas-guard" target="_blank">Shiva's Guard</a><br />
+- Freezing Aura's attack speed reduction increased from 25 to 30<br />
+<br />
+<br />
+<br />
+<div align="center"><img src="http://www.playdota.com/img/changelogs/categories/misc.jpg" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /></div>* Harpy's Chain Lightning manacost reduced from 90 to 50
+	<br />
+	<br />
+
+	<br />
+
+	<img src="http://media.playdota.com/changelogs/1351380304.jpg" border="0" alt="Changelog 6.76c" id="6.76c"/>
+	<br />
+	* Stampede cooldown increased from 65 to 120/90/60<br />
+* Stampede duration rescaled from 3/4/5 to 3.75<br />
+* Stampede damage slightly reworked from 100/150/200 + 2x str to 0 + 1/2/3x str (no base damage)<br />
+* Stampede mancost increased from 50 to 80<br />
+* Stampede AoE reduced from 120 to 105<br />
+* Drow's base armor decreased by 2<br />
+* Marksmanship focus AoE increased from 375 to 400<br />
+* Last Word manacost from 100 to 115<br />
+* Living Armor cooldown and duration decreased from from 20 to 15<br />
+* Living Armor manacost decreased 30/35/40/45 to 25<br />
+<br />
+<br />
+* Fixed an exploit with Enfeeble allowing it to be perma stuck on the enemy in some situations<br />
+* Fixed some lag when Centaur initially casts Stampede<br />
+* Centaur restricted from Captain's Mode<br />
+* Fixed a couple of bugs with -TagTeam mode<br />
+* Fixed Force Staff shop hotkey<br />
+* Fixed various tooltips 
+	<br />
+	<br />
+
+	<br />
+
+	<img src="http://media.playdota.com/changelogs/1350878281.jpg" border="0" alt="Changelog 6.76b" id="6.76b"/>
+	<br />
+	- Fixed a bug with Spirit Lance that would cause kills done by it to be considered suicides
+	<br />
+	<br />
+
+	<br />
+
+	<img src="http://media.playdota.com/changelogs/1350569496.jpg" border="0" alt="Changelog 6.76" id="6.76"/>
+	<br />
+	<div align="center"><img src="http://www.playdota.com/img/changelogs/categories/heroes.jpg" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /></div><br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/alch.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/alchemist" target="_blank">Alchemist</a><br />
+- Unstable Concoction now explodes around you if you are killed while charging it up<br />
+- Goblin's Greed cap increased from 26 to 30<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/aa.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/ancient-apparition" target="_blank">Ancient Apparition</a><br />
+- Chilling Touch attack count increased from 2/3/4/5 to 3/4/5/6<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/arc.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/arc-warden" target="_blank">Arc Warden</a><br />
+- Magnetic Field no longer affects units other than Heroes and Structures<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/bane.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/bane-elemental" target="_blank">Bane Elemental</a><br />
+- Enfeeble cooldown decreased from 12 to 10<br />
+- Bane can now wake himself up from Nightmare with a subability<br />
+<div style="margin:0px;padding:0px;"><div style="margin:20px; margin-top:5px">
+<input type="button" class="button" value="Show ability code" style="width:auto;font-size:10px;margin:0px;padding:0px;" onClick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Hide ability code'; for (i=0;i<this.parentNode.parentNode.getElementsByTagName('img').length;i++) { NcodeImageResizer.createOn(this.parentNode.parentNode.getElementsByTagName('img')[i]); } } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Show ability code';}">
+</div>
+<div class="alt2" style="margin: 0px; padding: 6px; border: 1px inset; border-style: solid; border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-color: #336699 ">
+<div style="display: none;margin:0px;padding:0px;"><font color="DimGray"><font size="0"><i>Ability Code: A2O9</i></font></font><br />
+</div></div></div><br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/bat.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/batrider" target="_blank">Batrider</a><br />
+- Strength gain decreased from 2.7 to 2.4<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/cent.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/centaur-warchief" target="_blank">Centaur</a><br />
+- Strength growth increased from 2.6 to 3.8<br />
+- <font color="darkorange">Replaced Great Fortitude with a new skill</font><br />
+<div style="margin:0px;padding:0px;"><div style="margin:20px; margin-top:5px">
+<input type="button" class="button" value="Show" style="width:45px;font-size:10px;margin:0px;padding:0px;" onClick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Hide'; for (i=0;i<this.parentNode.parentNode.getElementsByTagName('img').length;i++) { NcodeImageResizer.createOn(this.parentNode.parentNode.getElementsByTagName('img')[i]); } } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Show';}">
+</div>
+<div class="alt2" style="margin: 0px; padding: 6px; border: 1px inset; border-style: solid; border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-color: #336699 ">
+<div style="display: none;margin:0px;padding:0px;">Stampede:<br />
+==========<br />
+Grants you and all allied player units on the map max movement speed and zero unit collision for a short duration. Any enemy units you or your allies come into collision with take some damage and get stunned. Enemies can only be affected by stampede impact once.<br />
+<br />
+Duration: 3/4/5<br />
+Damage: 100/150/200 + 2x your str<br />
+Stun: 1.25 seconds<br />
+Stampede Collision AoE: 120<br />
+<br />
+Cooldown: 65<br />
+Mancost: 50<br />
+<br />
+Note: Does not affect magic immune enemies<br />
+<br />
+<font color="DimGray"><font size="0"><i>Ability Code: A2O6</i></font></font><br />
+</div></div></div><br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/chen.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/holy-knight" target="_blank">Chen</a><br />
+- Hand of God cooldown increased from 120 to 140/130/120<br />
+- Penitence damage amplify increased from 7/14/21/28% to 8/16/24/32% (matches the slow values now)<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/cw.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://media.playdota.com/hero/65/thumb.gif" target="_blank">Clockwerk</a><br />
+- Hookshot now pulls Clockwerk to allies instead of getting blocked by them<br />
+- Hookshot Aghanim's upgraded cooldown decreased from 15 to 12<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/cm.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/crystal-maiden" target="_blank">Crystal Maiden</a><br />
+- Brilliance Aura has twice the effect on Crystal Maiden<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/seer.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/dark-seer" target="_blank">Dark Seer</a><br />
+- Vacuum cooldown increased from 19 to 22<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/doom.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/doom-bringer" target="_blank">Doom Bringer</a><br />
+- Doom duration increased from 13 to 15 (and scepter from 14 to 16)<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/drow.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/drow-ranger" target="_blank">Drow Ranger</a><br />
+- <font color="darkorange">Trueshot Aura mechanics reworked</font><br />
+<div style="margin:0px;padding:0px;"><div style="margin:20px; margin-top:5px">
+<input type="button" class="button" value="Show" style="width:45px;font-size:10px;margin:0px;padding:0px;" onClick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Hide'; for (i=0;i<this.parentNode.parentNode.getElementsByTagName('img').length;i++) { NcodeImageResizer.createOn(this.parentNode.parentNode.getElementsByTagName('img')[i]); } } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Show';}">
+</div>
+<div class="alt2" style="margin: 0px; padding: 6px; border: 1px inset; border-style: solid; border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-color: #336699 ">
+<div style="display: none;margin:0px;padding:0px;"><br />
+Trueshot Aura:<br />
+==============<br />
+Global Aura. Gives you and all allied ranged units a portion of your agility as bonus damage.<br />
+<br />
+Bonus Damage: 14/18/22/26% of your agility as damage <br />
+<br />
+Note: Can be toggled on and off to affect creeps or not<br />
+<br />
+<font color="DimGray"><font size="0"><i>Ability Code: A2O2</i></font></font><br />
+</div></div></div><br />
+- <font color="darkorange">Changed how Marksmanship bonus agility is granted</font><br />
+<div style="margin:0px;padding:0px;"><div style="margin:20px; margin-top:5px">
+<input type="button" class="button" value="Show" style="width:45px;font-size:10px;margin:0px;padding:0px;" onClick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Hide'; for (i=0;i<this.parentNode.parentNode.getElementsByTagName('img').length;i++) { NcodeImageResizer.createOn(this.parentNode.parentNode.getElementsByTagName('img')[i]); } } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Show';}">
+</div>
+<div class="alt2" style="margin: 0px; padding: 6px; border: 1px inset; border-style: solid; border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-color: #336699 ">
+<div style="display: none;margin:0px;padding:0px;">Marksmanship:<br />
+=============<br />
+Passively provides bonus agility. If there are no nearby enemy heroes, your focus improves and the bonus agility is doubled.<br />
+<br />
+Bonus Agility: 20/30/40 Agility<br />
+AOE: 375 (for double bonus)</div></div></div><br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/gyro.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/gyrocopter" target="_blank">Gyrocopter</a><br />
+- Homing Missile distance required for max damage reduced from 2000 to 1500<br />
+- Homing Missile stun duration rescaled from 2.5 to 2.2/2.4/2.6/2.8<br />
+- Rocket Barrage damage increased from 11/14/17/20 to 11/15/19/23<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/thd.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/twin-head-dragon" target="_blank">Jakiro</a><br />
+- Ice Path creation delay increased from 0.4 to 0.5<br />
+- Ice Path manacost increased from 75 to 90<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/dp.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/death-prophet" target="_blank">Krobelus</a><br />
+- Exorcism base ghost count increased from 4/10/18 to 4/12/21<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/admiral.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/admiral" target="_blank">Kunkka</a><br />
+- Tidebringer level 4 AoE increased from 500 to 600<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/lina.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/slayer" target="_blank">Lina</a><br />
+- Laguna Blade cooldown rescaled from 90/70/50 to 70/60/50<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/lion.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/demon-witch" target="_blank">Lion</a><br />
+- Mana Drain break threshold range increased from 850 to 1100<br />
+- Finger of Death cooldown rescaled from 170/105/40 to 160/100/40<br />
+- Finger of Death cast range increased from 700 to 900<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/luna.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/moon-rider" target="_blank">Luna</a><br />
+- Lunar Blessing bonus damage increased from 14/20/26/32 to 14/22/30/38<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/mag.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/magnataur" target="_blank">Magnataur</a><br />
+- Shockwave distance increased from 700 to 1000<br />
+- Shockwave cooldown  decreased from 11/10/9/8 to 10/9/8/7<br />
+- Shockwave cast range increased to match its travel distance (visual thing only)<br />
+- Skewer AoE increased from 95 to 125<br />
+- Skewer range increased from 800 to 1200<br />
+- Skewer now only considers heroes a valid target for dragging in consideration with its unit cap<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/geo.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/geomancer" target="_blank">Meepo</a><br />
+- Poof cooldown decreased from 14/12/10/8 to 12/10/8/6<br />
+- Divided We Stand Aghanims upgrade now gives clones 100% stat sharing<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/potm.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/priestess-of-the-moon" target="_blank">Mirana</a><br />
+- Elune's Arrow cooldown decreased from 20 to 17<br />
+- Moonlight Shadow manacost decreased from 175 to 75<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/morph.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/morphling" target="_blank">Morphling</a><br />
+- Cast animation time improved from 0.45 to 0.4<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/siren.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/naga-siren" target="_blank">Naga Siren</a><br />
+- Rip Tide cooldown rescaled from 10 to 19/16/13/10<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/necro.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/necrolyte" target="_blank">Necrolyte</a><br />
+- Heartstopper Aura damage increased from 0.6/0.8/1/1.2% to 0.6/0.9/1.2/1.5%<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/na.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/nerubian-assassin" target="_blank">Nerubian Assassin</a> <br />
+- Vendetta damage increased from 225/375/525 to 250/400/550<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/weaver.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/nerubian-weaver" target="_blank">Nerubian Weaver</a><br />
+- Base Damage increased by 4<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/od.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/obsidian-destroyer" target="_blank">Obsidian Destroyer</a><br />
+- Movement speed increased from 300 to 310<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/ogre.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/ogre-magi" target="_blank">Ogre Magi</a><br />
+- Multicast now increases cast range of Ignite by 150 per level, this is in addition to the existing AoE increase<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/omni.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/omniknight" target="_blank">Omniknight</a><br />
+- Purification cooldown decreased from 12 to 10<br />
+- Movement speed increased from 300 to 305<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/lancer.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/phantom-lancer" target="_blank">Phantom Lancer</a><br />
+- Collision size decreased from 24 to 8<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/phoenix.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/phoenix" target="_blank">Phoenix</a><br />
+- Fire Spirits duration increased from 12.5 to 16<br />
+- Fire Spirits can now be cast while using Sunray<br />
+- Fixed Supernova not working with Radiance aura (other auras work already)<br />
+- Supernova level 3 hit requirement increased from 9 to 10<br />
+- <font color="darkorange">Sunray Reworked</font><br />
+<div style="margin:0px;padding:0px;"><div style="margin:20px; margin-top:5px">
+<input type="button" class="button" value="Show" style="width:45px;font-size:10px;margin:0px;padding:0px;" onClick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Hide'; for (i=0;i<this.parentNode.parentNode.getElementsByTagName('img').length;i++) { NcodeImageResizer.createOn(this.parentNode.parentNode.getElementsByTagName('img')[i]); } } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Show';}">
+</div>
+<div class="alt2" style="margin: 0px; padding: 6px; border: 1px inset; border-style: solid; border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-color: #336699 ">
+<div style="display: none;margin:0px;padding:0px;">- Sunray is no longer channeling and you can control like before with its direction as well as the use of the drift sub ability<br />
+- Sunray now also heals allies in the AoE for half of the amount<br />
+- Sunray no longer slows<br />
+- Sunray HP cost is now 3% per second instead of a one time 10% cost on cast<br />
+- Sunray base damage reduced from 20/30/40/50 to 16/24/32/40 (has same percentage components as before)<br />
+- Max channel time mechanic is the same (6 seconds and damage/heal increase per second channeled)<br />
+<br />
+<font color="DimGray"><font size="0"><i>Sun Ray: A1YY</i></font></font><br />
+<font color="DimGray"><font size="0"><i>Sun Ray End: A1Z3</i></font></font><br />
+<font color="DimGray"><font size="0"><i>Sun Ray Drift: A205</i></font></font><br />
+</div></div></div><br />
+- <font color="darkorange">Icarus Dive Reworked</font><br />
+<div style="margin:0px;padding:0px;"><div style="margin:20px; margin-top:5px">
+<input type="button" class="button" value="Show" style="width:45px;font-size:10px;margin:0px;padding:0px;" onClick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Hide'; for (i=0;i<this.parentNode.parentNode.getElementsByTagName('img').length;i++) { NcodeImageResizer.createOn(this.parentNode.parentNode.getElementsByTagName('img')[i]); } } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Show';}">
+</div>
+<div class="alt2" style="margin: 0px; padding: 6px; border: 1px inset; border-style: solid; border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-color: #336699 ">
+<div style="display: none;margin:0px;padding:0px;">Icarus Dive:<br />
+=============<br />
+Dives forward in a looping arc, dealing moderate damage over time and slowing enemy units along the path. Dive can be canceled at any point by using Supernova or the sub ability. Casting your other spells does not interrupt it.<br />
+<br />
+Travel Range: 1400<br />
+Travel Width: 500<br />
+Total Travel Time: 2 seconds<br />
+<br />
+DPS: 10/30/50/70<br />
+Slow: 25%<br />
+Duration: 4<br />
+AOE: 200<br />
+<br />
+Cooldown: 36<br />
+Manacost: 0<br />
+HP Cost: 15% of current HP<br />
+<br />
+<font color="DimGray"><font size="0"><i>Icarus Dive: A1RJ</i></font></font><br />
+<font color="DimGray"><font size="0"><i>Icarus Dive End: A20N</i></font></font><br />
+</div></div></div><br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/puck.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/faerie-dragon" target="_blank">Puck</a><br />
+- Base Damage increased by 5<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/pug.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/oblivion" target="_blank">Pugna</a><br />
+- Life Drain break threshold range increased from 900 to 1100<br />
+- Nether Ward AoE increased from 700/1000/1300/1600 to 1600<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/razor.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/lightning-revenant" target="_blank">Razor</a><br />
+- Eye of the Storm strike interval decreased from 0.85/0.75/0.6 to 0.75/0.65/0.55 (Scepter 0.65/0.55/0.45)<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/rubick.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/grand-magus" target="_blank">Rubick</a><br />
+- Fade Bolt damage decreased from 75/150/225/300 to 70/140/210/280<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/silencer.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/silencer" target="_blank">Silencer</a><br />
+- Global Silence cooldown decreased from 160 to 140<br />
+- Global Silence duration increased from 3/4.5/6 to 4/5/6<br />
+- Base Intelligence increased by 6<br />
+- Base Damage reduced by 6<br />
+- Curse of the Silent duration rescaled from 5/6/7/8 to 6<br />
+- Curse of the Silent hp drain rescaled from 20/30/40/50 to 20/35/50/65<br />
+- Curse of the Silent mana drain rescaled from 10/15/20/25 to 8/16/24/32<br />
+- Int Steal moved from Last Word back to Glaives of Wisdom<br />
+- Glaives of Wisdom now steals Intelligence from outside of the AOE if Silencer gets the kill<br />
+* Int Steal aoe increased from 850 to the standard 900 aoe range<br />
+- <font color="darkorange">Last Word replaced with new active skill</font><br />
+<div style="margin:0px;padding:0px;"><div style="margin:20px; margin-top:5px">
+<input type="button" class="button" value="Show" style="width:45px;font-size:10px;margin:0px;padding:0px;" onClick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Hide'; for (i=0;i<this.parentNode.parentNode.getElementsByTagName('img').length;i++) { NcodeImageResizer.createOn(this.parentNode.parentNode.getElementsByTagName('img')[i]); } } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Show';}">
+</div>
+<div class="alt2" style="margin: 0px; padding: 6px; border: 1px inset; border-style: solid; border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-color: #336699 ">
+<div style="display: none;margin:0px;padding:0px;">Last Word:<br />
+==========<br />
+Targets an enemy unit placing a debuff on it. While the debuff is active, casting any spell causes the target to become silenced and take damage. If the duration of the debuff runs out without the target casting a spell, it will still take damage and be silenced but also be disarmed.<br />
+<br />
+Debuff Duration: 5<br />
+<br />
+Damage: 150/200/250/300<br />
+Silence/Disarm Duration: 3/4/5/6<br />
+<br />
+Cast Range: 900<br />
+Cooldown: 36/28/20/12<br />
+Manacost: 100<br />
+<br />
+Note: You have basic vision over the last word target while the initial buff is on them<br />
+<br />
+<font color="DimGray"><font size="0"><i>Ability Code: A2NT</i></font></font><br />
+</div></div></div><br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/sniper.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/dwarven-sniper" target="_blank">Sniper</a><br />
+- Assassinate cast range increased from 1500/2000/2500 to 2000/2500/3000<br />
+- Headshot procs cannot be evaded (the entire attack gets through)<br />
+- Headshot chance from 25/30/35/40 to 40<br />
+- Headshot damage from 30/45/60/75 to 15/40/65/90<br />
+- Headshot ministun from 0.01/0.1/0.2/0.2 to 0.25<br />
+- Shrapnel provides vision in the targeted area<br />
+- Shrapnel cast range increased from 1200 to 1800<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/ta.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/templar-assassin" target="_blank">Templar Assassin</a><br />
+- Psionic Trap now requires a buildup time to reach it's maximum slow. Starts at 30% and increases by 5% each second until it reaches 50%<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/tb.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/soul-keeper" target="_blank">Terrorblade</a><br />
+- Metamorphosis bonus damage increased from 15/30/45/60 to 20/40/60/80<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/tide.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/tidehunter" target="_blank">Tidehunter</a><br />
+- Ravage damage decreased from 250/350/450 to 200/325/450<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/treant.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/treant-protector" target="_blank">Treant Protector</a><br />
+- Strength growth increased from 2.8 to 3.3<br />
+- Living Armor HP regen increased from 4/6/8/10 to 4/7/10/13<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/veno.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/venomancer" target="_blank">Venomancer</a><br />
+- Venomous Gale manacost rescaled from 90/105/120/135 to 125<br />
+- Venomous Gale initial damage rescaled from 50/70/70/100 to 25/50/75/100<br />
+- Venomous Gale damage per tick increased from 10/20/40/50 to 15/30/45/60<br />
+- Poison Sting duration rescaled from 7 to 6/7/8/9<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/lock.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/warlock" target="_blank">Warlock</a><br />
+- Infernal attack damage increased from 50/75/100 to 75/100/125<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/winter.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/winter-wyvern" target="_blank">Winter Wyvern</a><br />
+- Arctic Burn debuff duration increased from 4 to 5<br />
+- Cold Embrace cooldown rescaled from 14 to 17/16/15/14<br />
+- Splinter Blast initial projectile speed improved from 1.5 to 1.35 seconds<br />
+- Winter's Curse cooldown rescaled from 90 to 90/80/70<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/wd.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/witch-doctor" target="_blank">Witch Doctor</a><br />
+- Death Ward Aghanim's upgrade changed from 3 target split attack to 5 target bounce<br />
+- Death Ward multi attack bounce AoE increased from 550 to 650<br />
+- Death Ward cooldown decreased from 90 to 80<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/heroes/zeus.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/heroes/lord-of-olympus" target="_blank">Zeus</a><br />
+- Thundergod's Wrath damage increased from 210/335/460 to 225/350/475<br />
+- Thundergod's Wrath Aghanim's damage increased from 400/500/600 to 440/540/640<br />
+<br />
+<br />
+<div align="center"><img src="http://www.playdota.com/img/changelogs/categories/items.jpg" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /></div><br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/items/CacheOfTheQuel-Thelan/BTNBootsOfSpeed.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /><a href="http://www.playdota.com/items/boots-of-speed" target="_blank">Boots of Speed</a><br />
+- Price decreased from 500 to 450<br />
+- Move speed bonus from 55 to 50<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/items/SupportiveVestments/ArcaneBoots_18x18.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/items/arcane-boots" target="_blank">Arcane Boots</a><br />
+- Move speed bonus decreased form 65 to 60<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/items/Gateway%20Relics/BTNPhaseBoots.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/items/phase-boots" target="_blank">Phase Boots</a><br />
+- Move speed bonus decreased from 60 to 55<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/items/Gateway%20Relics/BTNWirtsLeg.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/items/power-treads" target="_blank">Power Treads</a><br />
+- Move speed bonus decreased from 60 to 55<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/items/SupportiveVestments/BTNTranquilBoots18x18.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/items/tranquil-boots" target="_blank">Tranquil Boots</a><br />
+- Move speed bonus decreased from 80 to 75<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/items/Ancient_Weaponry/BTNUnholyStrength.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/items/armlet-of-mordiggian" target="_blank">Armlet of Mordiggian</a><br />
+- Armlet cooldown increased from 1 to 2 seconds<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/items/ArcaneSanctum/BTNForceStaff.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/items/force-staff" target="_blank">Force Staff</a><br />
+- <font color="darkorange">Recipe reworked</font><br />
+<div style="margin:0px;padding:0px;"><div style="margin:20px; margin-top:5px">
+<input type="button" class="button" value="Show" style="width:45px;font-size:10px;margin:0px;padding:0px;" onClick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Hide'; for (i=0;i<this.parentNode.parentNode.getElementsByTagName('img').length;i++) { NcodeImageResizer.createOn(this.parentNode.parentNode.getElementsByTagName('img')[i]); } } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Show';}">
+</div>
+<div class="alt2" style="margin: 0px; padding: 6px; border: 1px inset; border-style: solid; border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-color: #336699 ">
+<div style="display: none;margin:0px;padding:0px;">Old Force Staff:<br />
+============<br />
+Requires:<br />
+Staff of Wizardry (1000)<br />
+Quarterstaff (900)<br />
+Recipe (500)<br />
+Total: 2400<br />
+<br />
+Grants:<br />
++10 Intelligence<br />
++10 Damage<br />
++10 Attack Speed<br />
+Force (600 units forward, 25 mana, 20 cd, 800 cast range)<br />
+<br />
+<br />
+New Force Staff:<br />
+=============<br />
+Requires:<br />
+Staff of Wizardry (1000)<br />
+Ring of Regeneration (350)<br />
+Recipe (1000)<br />
+Total: 2350<br />
+<br />
+Grants:<br />
++10 Intelligence<br />
++3 Regeneration<br />
+Force (600 units forward, 25 mana, 20 cd, 800 cast range)</div></div></div><br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/items/Gateway%20Relics/BTNTalisman.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/items/null-talisman" target="_blank">Null Talisman</a><br />
+- Recipe cost decreased from 155 to 145<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/items/ArcaneSanctum/BTNRodOfAtos18x18.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/items/rod-of-atos" target="_blank">Rod of Atos</a><br />
+- Cast range increased from 800 to 1200<br />
+- Slow increased from 50 to 60%<br />
+<br />
+<img src="http://www.playdota.com/forums/assault_fps/smilies/items/CacheOfTheQuel-Thelan/BTNAoS.gif" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /> <a href="http://www.playdota.com/items/shadow-amulet" target="_blank">Shadow Amulet</a><br />
+- Fade time decreased from 2.75 to 2.6<br />
+<br />
+<br />
+<div align="center"><img src="http://www.playdota.com/img/changelogs/categories/gameplayandcosmetics.jpg" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /></div>* <font color="darkorange">Added a new game mode -TagTeam (-tt)</font><br />
+<div style="margin:0px;padding:0px;"><div style="margin:20px; margin-top:5px">
+<input type="button" class="button" value="Show" style="width:45px;font-size:10px;margin:0px;padding:0px;" onClick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Hide'; for (i=0;i<this.parentNode.parentNode.getElementsByTagName('img').length;i++) { NcodeImageResizer.createOn(this.parentNode.parentNode.getElementsByTagName('img')[i]); } } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Show';}">
+</div>
+<div class="alt2" style="margin: 0px; padding: 6px; border: 1px inset; border-style: solid; border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-color: #336699 ">
+<div style="display: none;margin:0px;padding:0px;"> Tag Team:<br />
+==========<br />
+You are assigned two random heroes (different hero classes). You choose which to start the game with. You start with the same bonus gold as all random.<br />
+<br />
+You have an ability that lets you swap heroes, has a 3 minute cooldown. You can swap while your current hero is dead to resume with the other hero.<br />
+<br />
+Any gold you gain is added to both heroes. Any gold you lose on current hero is lost on the other hero as well.<br />
+<br />
+Each hero has their own independent item inventories. Each time you swap heroes, the XP gain is synchronized.<br />
+<br />
+You have to be in the fountain to swap heroes (use -tt)<br />
+</div></div></div><br />
+<br />
+* <font color="darkorange">Removed some residual caster unit vision from various misc abilities</font><br />
+<div style="margin:0px;padding:0px;"><div style="margin:20px; margin-top:5px">
+<input type="button" class="button" value="Show" style="width:45px;font-size:10px;margin:0px;padding:0px;" onClick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Hide'; for (i=0;i<this.parentNode.parentNode.getElementsByTagName('img').length;i++) { NcodeImageResizer.createOn(this.parentNode.parentNode.getElementsByTagName('img')[i]); } } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Show';}">
+</div>
+<div class="alt2" style="margin: 0px; padding: 6px; border: 1px inset; border-style: solid; border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-color: #336699 ">
+<div style="display: none;margin:0px;padding:0px;">There are various abilities that use caster units in a way that unintentionally provides extra unobstructed vision. These are the abilities that have been fixed:<br />
+<br />
+Unstable Concoction: 400 flying aoe on projectile and 3.34 sec at impact<br />
+Ice Shards: 800 flying on projectile (reduced to 300) and 3.34 sec after expiration (removed)<br />
+Chakram: 800 flying on projectile (reduced to 300) and 3.34 sec after expiration (removed)<br />
+Phantasm: 1000 flying (reduced to 400) for 1.13 seconds<br />
+Pit of Malice: 800 flying for 7 seconds<br />
+Waveform: 1000 flying during travel (still has basic vision)<br />
+Storm Bolt: 800 flying on projectile (reduced to 225) and 3.34 sec at impact (removed)<br />
+Mirror Image: 1000 flying (reduced to 400) for 0.73<br />
+Spirit Lance: 800 flying on projectile and 3.34 sec at impact<br />
+Requiem of Souls: 1000 ground at each affected target location for 5 seconds <br />
+Spectral Dagger: 500 flying (reduced to 200)<br />
+Sunder: 1800 flying at both source and target for 3.2 sec  <br />
+Venomous Gale: 800 flying (reduced to 400)<br />
+Earthbind: 800 flying on projectile (reduced to 300) and 3.34 sec at impact (removed)<br />
+Mystic Snake: 800 flying on projectile (reduced to 300) and 3.34 sec at end (removed)<br />
+Dream Coil: 1000 flying for 6/8 seconds<br />
+Shackleshot: 800 flying on projectile (reduced to 200) and 3.34 sec at impact (removed)<br />
+Wall of Replica: 800 flying along the wall length (reduced to 200 ground)<br />
+Flamebreak: 800 flying on projectile (reduced to 300) and 3.34 sec at impact (removed)<br />
+Deafening Blast: 1200/800 flying on projectile and 1.75 sec at impact<br />
+Ghost Ship: 800 flying on projectile (reduced to 400) and 3.34 sec after expiration (removed)<br />
+<br />
+These changes are not done with the direct intention of nerfing or buffing specific heroes. The goal here is to reduce the number of spells that provide excessive vision gamewide (with arbitrary durations in many cases) that were either unintended or not a necessity in the ability's functionality. By fixing or reducing the excess flying vision some of these spell caster units provide, the viability of juking as a mechanic in the game is improved a bit more. That being said, if you feel like specific abilities have strong/valuable gameplay that has grown around them over time and are worth reconsidering, please send your feedback. If there are other abilities you think should have reduced vision, please send that feedback as well.</div></div></div><br />
+<br />
+<div align="center"><img src="http://www.playdota.com/img/changelogs/categories/bugs.jpg" border="0" alt="" class="tcattdimgresizer" onload="NcodeImageResizer.createOn(this);" /></div>* Fixed some more dagger/heart issues with Tempest Double<br />
+* Fixed a rounding issue with Nethertoxin<br />
+* Fixed a rare permabash bug with Tempest Double<br />
+* Fixed initial spawn size of Fire Spirit units (visual)<br />
+* Fixed some bugs with Shadow Amulet interaction with enemy spells<br />
+* Fixed a fatal error with Time Walk
+	<br />
+	<br />
+
+	</div>
+
+	<div class="cright">
+		&nbsp; <a href="/changelogs/"><img src="http://media.playdota.com/site/index.jpg" border="0" alt="Changelogs"/></a>
+
+		<ul>
+			<li class = "blw"><a href="/changelogs/6.77b" title="Changelog 6.77b">6.77b</a></li>
+			<li ><a href="/changelogs/6.77" title="Changelog 6.77">6.77</a></li>
+			<li ><a href="/changelogs/6.76c" title="Changelog 6.76c">6.76c</a></li>
+			<li ><a href="/changelogs/6.76b" title="Changelog 6.76b">6.76b</a></li>
+			<li ><a href="/changelogs/6.76" title="Changelog 6.76">6.76</a></li>
+			<li ><a href="/changelogs/6.75b" title="Changelog 6.75b">6.75b</a></li>
+			<li ><a href="/changelogs/6.75" title="Changelog 6.75">6.75</a></li>
+			<li ><a href="/changelogs/6.74c" title="Changelog 6.74c">6.74c</a></li>
+			<li ><a href="/changelogs/6.74b" title="Changelog 6.74b">6.74b</a></li>
+			<li ><a href="/changelogs/6.74" title="Changelog 6.74">6.74</a></li>
+			<li ><a href="/changelogs/6.73c" title="Changelog 6.73c">6.73c</a></li>
+			<li ><a href="/changelogs/6.73b" title="Changelog 6.73b">6.73b</a></li>
+			<li ><a href="/changelogs/6.73" title="Changelog 6.73">6.73</a></li>
+			<li ><a href="/changelogs/6.72f" title="Changelog 6.72f">6.72f</a></li>
+			<li ><a href="/changelogs/6.72e" title="Changelog 6.72e">6.72e</a></li>
+			<li ><a href="/changelogs/6.72d" title="Changelog 6.72d">6.72d</a></li>
+			<li ><a href="/changelogs/6.72c" title="Changelog 6.72c">6.72c</a></li>
+			<li ><a href="/changelogs/6.72b" title="Changelog 6.72b">6.72b</a></li>
+			<li ><a href="/changelogs/6.72" title="Changelog 6.72">6.72</a></li>
+			<li ><a href="/changelogs/6.71b" title="Changelog 6.71b">6.71b</a></li>
+			<li ><a href="/changelogs/6.71" title="Changelog 6.71">6.71</a></li>
+			<li ><a href="/changelogs/6.70c" title="Changelog 6.70c">6.70c</a></li>
+			<li ><a href="/changelogs/6.70b" title="Changelog 6.70b">6.70b</a></li>
+			<li ><a href="/changelogs/6.70" title="Changelog 6.70">6.70</a></li>
+			<li ><a href="/changelogs/6.69c" title="Changelog 6.69c">6.69c</a></li>
+			<li ><a href="/changelogs/6.69b" title="Changelog 6.69b">6.69b</a></li>
+			<li ><a href="/changelogs/6.69" title="Changelog 6.69">6.69</a></li>
+			<li ><a href="/changelogs/6.68c" title="Changelog 6.68c">6.68c</a></li>
+			<li ><a href="/changelogs/6.68b" title="Changelog 6.68b">6.68b</a></li>
+			<li ><a href="/changelogs/6.68" title="Changelog 6.68">6.68</a></li>
+			<li ><a href="/changelogs/6.67c" title="Changelog 6.67c">6.67c</a></li>
+			<li ><a href="/changelogs/6.67b" title="Changelog 6.67b">6.67b</a></li>
+			<li ><a href="/changelogs/6.67" title="Changelog 6.67">6.67</a></li>
+			<li ><a href="/changelogs/6.66b" title="Changelog 6.66b">6.66b</a></li>
+			<li ><a href="/changelogs/6.66" title="Changelog 6.66">6.66</a></li>
+			<li ><a href="/changelogs/6.65" title="Changelog 6.65">6.65</a></li>
+			<li ><a href="/changelogs/6.64" title="Changelog 6.64">6.64</a></li>
+			<li ><a href="/changelogs/6.63b" title="Changelog 6.63b">6.63b</a></li>
+			<li ><a href="/changelogs/6.63" title="Changelog 6.63">6.63</a></li>
+			<li ><a href="/changelogs/6.62b" title="Changelog 6.62b">6.62b</a></li>
+			<li ><a href="/changelogs/6.62" title="Changelog 6.62">6.62</a></li>
+			<li ><a href="/changelogs/6.61c" title="Changelog 6.61c">6.61c</a></li>
+			<li ><a href="/changelogs/6.61b" title="Changelog 6.61b">6.61b</a></li>
+			<li ><a href="/changelogs/6.61" title="Changelog 6.61">6.61</a></li>
+			<li ><a href="/changelogs/6.60b" title="Changelog 6.60b">6.60b</a></li>
+			<li ><a href="/changelogs/6.60" title="Changelog 6.60">6.60</a></li>
+			<li ><a href="/changelogs/6.59d" title="Changelog 6.59d">6.59d</a></li>
+			<li ><a href="/changelogs/6.59c" title="Changelog 6.59c">6.59c</a></li>
+			<li ><a href="/changelogs/6.59b" title="Changelog 6.59b">6.59b</a></li>
+			<li ><a href="/changelogs/6.59" title="Changelog 6.59">6.59</a></li>
+			<li ><a href="/changelogs/6.58b" title="Changelog 6.58b">6.58b</a></li>
+			<li ><a href="/changelogs/6.58" title="Changelog 6.58">6.58</a></li>
+			<li ><a href="/changelogs/6.57b" title="Changelog 6.57b">6.57b</a></li>
+			<li ><a href="/changelogs/6.57" title="Changelog 6.57">6.57</a></li>
+			<li ><a href="/changelogs/6.56" title="Changelog 6.56">6.56</a></li>
+			<li ><a href="/changelogs/6.55b" title="Changelog 6.55b">6.55b</a></li>
+			<li ><a href="/changelogs/6.55" title="Changelog 6.55">6.55</a></li>
+			<li ><a href="/changelogs/6.54b" title="Changelog 6.54b">6.54b</a></li>
+			<li ><a href="/changelogs/6.54" title="Changelog 6.54">6.54</a></li>
+			<li ><a href="/changelogs/6.53" title="Changelog 6.53">6.53</a></li>
+			<li ><a href="/changelogs/6.52e" title="Changelog 6.52e">6.52e</a></li>
+			<li ><a href="/changelogs/6.52d" title="Changelog 6.52d">6.52d</a></li>
+			<li ><a href="/changelogs/6.52c" title="Changelog 6.52c">6.52c</a></li>
+			<li ><a href="/changelogs/6.52b" title="Changelog 6.52b">6.52b</a></li>
+			<li ><a href="/changelogs/6.52" title="Changelog 6.52">6.52</a></li>
+			<li ><a href="/changelogs/6.51" title="Changelog 6.51">6.51</a></li>
+			<li ><a href="/changelogs/6.50b" title="Changelog 6.50b">6.50b</a></li>
+			<li ><a href="/changelogs/6.50" title="Changelog 6.50">6.50</a></li>
+			<li ><a href="/changelogs/6.49c" title="Changelog 6.49c">6.49c</a></li>
+			<li ><a href="/changelogs/6.49b" title="Changelog 6.49b">6.49b</a></li>
+			<li ><a href="/changelogs/6.49" title="Changelog 6.49">6.49</a></li>
+			<li ><a href="/changelogs/6.48b" title="Changelog 6.48b">6.48b</a></li>
+			<li ><a href="/changelogs/6.48" title="Changelog 6.48">6.48</a></li>
+		</ul>
+
+	</div>
+</div>
+
+<script type="text/javascript">
+/*
+Event.observe(window, 'load', function() {
+document.getElementById('6.77b').scrollIntoView(true);
+});
+*/
+</script>
+
+
+		</div>
+<div style="clear:both;"></div>
+		<br />
+		<div class="end"></div>
+	</div>
+	<div class="footer">
+	&nbsp;
+	<ul>
+
+		<li><a href="/heroes" title="DotA Heroes"><img src="http://media.playdota.com/site/footer/heroes.png" border="0" alt="DotA Heroes"/></a></li>
+		<li><a href="/items" title="DotA Items"><img src="http://media.playdota.com/site/footer/items.png"  border="0" alt="DotA Items"/></a></li>
+		<li><a href="/guides" title="DotA Guides"><img src="http://media.playdota.com/site/footer/guides.png"  border="0" alt="DotA Guides"/></a></li>
+		<li><a href="/mechanics" title="DotA Mechanics"><img src="http://media.playdota.com/site/footer/mechanics.png"  border="0" alt="DotA Mechanics"/></a></li>
+		<li><a href="/forums/dota-tools-ai-maps/" title="DotA Tools"><img src="http://media.playdota.com/site/footer/tools.png"  border="0" alt="DotA Tools"/></a></li>
+		<li><a href="/forums/" title="DotA Community"><img src="http://media.playdota.com/site/footer/forums.png"  border="0" alt="DotA Community"/></a></li>
+		<li class="sh" onclick="location.href='/';">&nbsp;</li>
+		<li><a href="/forums/dota-replays/" title="DotA Replays"><img src="http://media.playdota.com/site/footer/replays.png"  border="0" alt="DotA Replays"/></a></li>
+		<li><a href="/videos" title="DotA Videos"><img src="http://media.playdota.com/site/footer/videos.png"  border="0" alt="DotA Videos"/></a></li>
+		<li><a href="/fanart" title="DotA FanArt"><img src="http://media.playdota.com/site/footer/fanart.png"  border="0" alt="DotA FanArt"/></a></li>
+		<li><a href="/comics" title="DotA Comics"><img src="http://media.playdota.com/site/footer/comics.png"  border="0" alt="DotA Comics"/></a></li>
+		<li><a href="/ai" title="DotA Links"><img src="http://media.playdota.com/site/footer/links.png"  border="0" alt="DotA Links"/></a></li>
+		<li><a href="/about" title="About DotA"><img src="http://media.playdota.com/site/footer/about.png"  border="0" alt="About DotA"/></a></li>
+	</ul>
+	&nbsp;
+	<div style="clear:both;"></div>
+	<a href="/about" title="About DotA">About PlayDotA.com</a> | Terms and Conditions | <a href="/" title="DotA Community WebSite">&copy; 2010 PlayDotA.com</a> | All Rights Reserved
+	</div>
+</div>
+</center>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-9106374-1");
+pageTracker._trackPageview();
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,388 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Steam Community</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link href="https://steamcommunity.com/public/shared/css/buttons.css?v=3143806127" rel="stylesheet" type="text/css">
+<link href="https://steamcommunity.com/public/css/skin_1/global.css?v=1088990813&client=0" rel="stylesheet" type="text/css">
+<link href="https://steamcommunity.com/public/css/skin_1/home.css?v=3480104779" rel="stylesheet" type="text/css">
+<link href="https://steamcommunity.com/public/css/skin_1/login.css?v=796228529" rel="stylesheet" type="text/css">
+<link href="https://steamcommunity.com/public/css/skin_1/header.css?v=439635755" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://steamcommunity.com/public/javascript/prototype-1.7.js?v=3863744284&amp;l=english"></script>
+<script type="text/javascript" src="https://steamcommunity.com/public/javascript/scriptaculous/scriptaculous.js?v=1436297378&amp;l=english&amp;load=effects,controls,slider,dragdrop"></script>
+<script type="text/javascript" src="https://steamcommunity.com/public/javascript/global.js?v=2415175592&amp;l=english"></script>
+<script type="text/javascript" src="https://steamcommunity.com/public/javascript/home.js?v=134442360&amp;l=english"></script>
+<script type="text/javascript" src="https://steamcommunity.com/public/javascript/login.js?v=3805355884&amp;l=english"></script>
+<script type="text/javascript" src="https://steamcommunity.com/public/javascript/modalv2.js?v=2877296809&amp;l=english"></script>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33779068-1']);
+  _gaq.push(['_setCustomVar', 1, 'Logged In', 'false', 2]);
+  _gaq.push(['_setCustomVar', 2, 'Client Type', 'External', 2]);
+  _gaq.push(['_setCustomVar', 3, 'Cntrlr', 'login', 3]);
+  _gaq.push(['_setCustomVar', 4, 'Method', "login\/home", 3]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_setSessionCookieTimeout', 900000]);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<script type="text/javascript" src="https://steamcommunity.com/public/javascript/crypto/jsbn.js?v=3039950698&amp;l=english"></script>
+<script type="text/javascript" src="https://steamcommunity.com/public/javascript/crypto/rsa.js?v=1480855847&amp;l=english"></script>
+
+</head>
+<body>
+<center>
+<!-- header bar, contains info browsing user if logged in -->
+<div id="global_header">
+	<div class="content">
+	
+		<div class="logo">
+			<span id="logo_holder">
+				<a href="http://store.steampowered.com/">
+					<img src="https://steamcommunity.com/public/images/header/globalheader_logo.png" width="176" height="44" border="0" alt="Steam Logo" />
+				</a>
+			</span>
+			<!--[if lt IE 7]>
+			<style type="text/css">
+			#logo_holder img { filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0); }
+			#logo_holder { display: inline-block; width: 176px; height: 44px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://steamcommunity.com/public/images/header/globalheader_logo.png'); }
+			</style>
+			<![endif]-->
+		</div>
+
+		<a class="menuitem" href="http://store.steampowered.com/">
+			STORE		</a>
+
+		<div style="float: left; position: relative;">
+			<a class="menuitem active" style="display: block" href="http://steamcommunity.com">
+					<span class="menuitem_new">NEW</span>
+					Community			</a>
+			<div class="community_sub_nav">
+				<a class="submenuitem " href="https://steamcommunity.com/login/home/">Friends</a>
+				<a class="submenuitem " href="https://steamcommunity.com/login/home/">Profile</a>
+				<a class="submenuitem " href="http://steamcommunity.com/apps/">Game Hubs</a>
+				<a class="submenuitem " href="http://steamcommunity.com/discussions/">DISCUSSIONS</a>
+				<a class="submenuitem " href="http://steamcommunity.com/workshop/">Workshop</a>
+				<a class="submenuitem " href="http://steamcommunity.com/greenlight/">Greenlight</a>
+								<a class="submenuitem " href="http://steamcommunity.com/market/">Market</a>
+											</div>
+		</div>
+
+		<a class="menuitem" href="http://store.steampowered.com/news/">
+			NEWS		</a>
+
+		<a class="menuitem" href="http://store.steampowered.com/about/">
+			ABOUT		</a>
+
+		<a class="menuitem" href="http://support.steampowered.com/">
+			SUPPORT		</a>
+
+		<a class="menuitem" href="http://store.steampowered.com/stats/">
+			STATS		</a>
+		
+		<div id="global_actions">
+						<div id="global_action_menu">
+
+				<div class="header_installsteam_btn header_installsteam_btn_green">
+					<div class="header_installsteam_btn_leftcap"></div>
+					<div class="header_installsteam_btn_rightcap"></div>
+					<a class="header_installsteam_btn_content" href="http://store.steampowered.com/about/">
+						Install Steam					</a>
+				</div>
+															<a class="global_action_link" href="https://steamcommunity.com/login/home/?goto=login%2Fhome%2F">Login</a>
+						&nbsp;|&nbsp;
+										<span class="pulldown global_action_link" id="language_pulldown" onclick="ShowMenu( this, 'language_dropdown', 'right' );">language</span>
+					<div class="popup_block" id="language_dropdown" style="display: none;">
+						<div class="shadow_ul"></div><div class="shadow_top"></div><div class="shadow_ur"></div><div class="shadow_left"></div><div class="shadow_right"></div><div class="shadow_bl"></div><div class="shadow_bottom"></div><div class="shadow_br"></div><div class="iepopupfix"><img class="iepopupfix_img" src="https://steamcommunity.com/public/images/blank.gif" alt =""></div>						<div class="popup_body popup_menu shadow_content">
+																						<a class="popup_menu_item tight" href="?l=bulgarian">Български (Bulgarian)</a>
+																						<a class="popup_menu_item tight" href="?l=czech">čeština (Czech)</a>
+																						<a class="popup_menu_item tight" href="?l=danish">Dansk (Danish)</a>
+																						<a class="popup_menu_item tight" href="?l=dutch">Nederlands (Dutch)</a>
+																														<a class="popup_menu_item tight" href="?l=finnish">Suomi (Finnish)</a>
+																						<a class="popup_menu_item tight" href="?l=french">Français (French)</a>
+																						<a class="popup_menu_item tight" href="?l=german">Deutsch (German)</a>
+																						<a class="popup_menu_item tight" href="?l=greek">Ελληνικά (Greek)</a>
+																						<a class="popup_menu_item tight" href="?l=hungarian">Magyar (Hungarian)</a>
+																						<a class="popup_menu_item tight" href="?l=italian">Italiano (Italian)</a>
+																						<a class="popup_menu_item tight" href="?l=japanese">日本語 (Japanese)</a>
+																						<a class="popup_menu_item tight" href="?l=koreana">한국어 (Korean)</a>
+																						<a class="popup_menu_item tight" href="?l=norwegian">Norsk (Norwegian)</a>
+																						<a class="popup_menu_item tight" href="?l=polish">Polski (Polish)</a>
+																						<a class="popup_menu_item tight" href="?l=portuguese">Português (Portuguese)</a>
+																						<a class="popup_menu_item tight" href="?l=brazilian">Português-Brasil (Portuguese-Brazil)</a>
+																						<a class="popup_menu_item tight" href="?l=romanian">Română (Romanian)</a>
+																						<a class="popup_menu_item tight" href="?l=russian">Русский (Russian)</a>
+																						<a class="popup_menu_item tight" href="?l=schinese">简体中文 (Simplified Chinese)</a>
+																						<a class="popup_menu_item tight" href="?l=spanish">Español (Spanish)</a>
+																						<a class="popup_menu_item tight" href="?l=swedish">Svenska (Swedish)</a>
+																						<a class="popup_menu_item tight" href="?l=tchinese">繁體中文 (Traditional Chinese)</a>
+																						<a class="popup_menu_item tight" href="?l=thai">ไทย (Thai)</a>
+																						<a class="popup_menu_item tight" href="?l=turkish">Türkçe (Turkish)</a>
+														<a class="popup_menu_item tight" href="http://translation.steampowered.com" target="_blank">Help us translate Steam</a>
+						</div>
+					</div>
+							</div>
+		</div>
+		
+		
+		
+	</div>
+
+</div>
+
+<div id="modalBG" style="display: none"></div>
+<script type="text/javascript">
+	g_sessionID = "NjIwNjgzNDk5";
+	g_steamID = false;
+</script><!-- /header bar -->
+<div id="mainBody">
+	<div id="mainBodyHeader">
+		<h1>The Steam Community</h1>
+		<p>The Steam Community is comprised of people who play all sorts of PC and Mac games.<br />Now it's easy to find your friends online, organize groups, join chats, host matches and more.<br />Best of all, it's free.</p>
+		<div id="userNumbers">
+			<span id="iAccountsInGame">605,913 In-Game</span> &nbsp;&nbsp;|&nbsp;&nbsp;
+			<span id="iAccountsOnline">3,617,424 Online</span>
+		</div>
+			
+	</div>
+	<div id="lowerContents">
+		<div id="lowerRightContents">
+			<div id="rightActionBlockHeader"><img src="https://steamcommunity.com/public/images/trans.gif" width="254" height="8" border="0" /></div>
+			<div id="rightActionBlock">
+				<form action="#" method="POST" name="logon" id="loginForm" onsubmit="DoLogin(); return false;">
+					<input type="hidden" name="redir" value="http://steamcommunity.com/actions/RedirectToHome">
+					<input type="hidden" name="msg" value="">
+					<input type="hidden" name="emailauth" id="emailauth" value="">
+					<input type="hidden" name="emailsteamid" id="emailsteamid">
+					<label for="steamAccountName">Steam Username:</label>
+					<input class="textField" type="text" name="username" id="steamAccountName" maxlength="64" /><br />
+					<label for="steamPassword">Password:</label>
+					<input class="textField" type="password" name="password" id="steamPassword" autocomplete="off" maxlength="64" /><br />
+										<div id="captcha_entry" style="display: none;">
+						<input type="hidden" id="captchagid" name="captchagid" value="-1" />
+						<div id="CaptchaFormArea">
+						<label id="captchaLabel">These Characters:</label><span id="captchaRefresh"><img src="https://steamcommunity.com/public/images//skin_1/blue_refresh_icon.png" id="captchaRefreshImg" border="0" onClick="RefreshCaptcha();return false;" />&nbsp;<a href="#" id="captchaRefreshLink" title="Refresh" onClick="RefreshCaptcha();return false;">Refresh</a></span>
+						<img id="captchaImg" src="https://steamcommunity.com/public/captcha.php?gid=-1" border="0" /><br />
+						<input class="textField" type="text" name="captcha_text" id="input_captcha" autocomplete="off" /><br />
+						<label class="smallLabel" id="captchaExplanation">Please prove you are human by typing the above.</label>
+						</div>
+					</div>
+					<div id="login_btn_signin">
+						<input class="subImage" type="image" id="imageLogin" onMouseover="iSwap('imageLogin','skin_1/buttonLoginOver.gif')" onMouseout="iSwap('imageLogin','skin_1/buttonLogin.gif')" src="https://steamcommunity.com/public/images/skin_1/buttonLogin.gif" width="104" height="25" border="0"/>
+					</div>
+					<div id="login_btn_wait" style="display: none;">
+						<img src="https://steamcommunity.com/public/images/login/throbber.gif">
+					</div>
+				</form>
+				<h2 id="error_display" style="display: none;"></h2>
+			</div>
+			<div id="rightActionBlockFooter"><img src="https://steamcommunity.com/public/images/trans.gif" width="254" height="8" border="0" /></div>
+
+			<div class="rightLowBlockHeader"><img src="https://steamcommunity.com/public/images/trans.gif" width="254" height="8" border="0" /></div>
+				<div class="rightLowBlock">
+					<h2>Join Steam for Free!</h2>
+					<p><a class="linkStandard" href="http://store.steampowered.com/about/" target="_blank">Learn more about Steam</a></p>
+					<p><a class="linkStandard" href="http://steamcommunity.com/actions/GroupList">Browse existing groups</a></p>
+					
+				</div>
+			<div class="rightLowBlockFooter"><img src="https://steamcommunity.com/public/images/trans.gif" width="254" height="8" border="0" /></div>
+
+			<div class="rightLowBlockHeader"><img src="https://steamcommunity.com/public/images/trans.gif" width="254" height="8" border="0" /></div>
+				<div class="rightLowBlock">
+					<p class="ulTitle">Use The Steam Community to...</p>
+					<ul>
+						<li>Create your own profile page</li>
+						<li>Create and join groups</li>
+						<li>Easily see your friends online and in-game</li>
+						<li>Schedule matches and events</li>
+						<li>Review who you've played with lately</li>
+						<li>Track gameplay stats</li>
+						<li>Chat with groups</li>
+						<li>Chat via voice in-game or out</li>
+					</ul>
+				</div>
+			<div class="rightLowBlockFooter"><img src="https://steamcommunity.com/public/images/trans.gif" width="254" height="8" border="0" /></div>
+
+		</div>
+		<div id="lowerLeftContents" style="background-image:url(https://steamcommunity.com/public/images/homeMessaging/homeMessaging_12.jpg); cursor: pointer;" onclick="top.location.href='http://steamcommunity.com/workshop'">
+			<div id="lowerLeftColLeft">
+				<div id="lowerLeftColRight">
+					<h2>Already have Steam?</h2>
+					<div class="halfBreak"><img src="https://steamcommunity.com/public/images/skin_1/homeBoxHalfBreak.gif" width="315" height="1" border="0" /></div>
+					You're just one step away from full-fledged membership. Simply <a href="steam://open/main">log in to Steam</a> and go to the community tab to access and set up your profile page.				</div>
+				<h2>New to steam?</h2>
+				<div class="halfBreak"><img src="https://steamcommunity.com/public/images/skin_1/homeBoxHalfBreak.gif" width="315" height="1" border="0" /></div>
+				<a href="http://store.steampowered.com/about/">Join Steam for free</a> and purchase full retail versions of games delivered straight to your desktop, complete with automatic updates and in-game community features.				<br /><br />
+				<a id="tourSteam" href="http://www.steampowered.com/steamtour/" onClick="window.open(this.href, null, 'width=800,height=570');return false">Take a tour of Steam</a> to learn more.			</div>
+
+            <script type="text/javascript">
+                Event.observe( 'tourSteam', 'click', function(event) { event.stop(); } );
+            </script>
+			
+		</div>
+		
+	</div>
+</div>
+<!-- footer -->
+	<div id="footer">
+		<div class="footer_content">
+			<div id="footerLogo"><img src="https://steamcommunity.com/public/images/skin_1/footerLogo_valve.png" width="96" height="26" border="0" alt="Valve Logo" /></div>
+			<div id="footerText">
+				&copy; Valve Corporation. All rights reserved. All trademarks are property of their respective owners in the US and other countries.<br/>Some geospatial data on this website is provided by <a href="http://www.geonames.org" target="_blank">geonames.org</a>.							</div>
+		</div>
+	</div>
+
+	<!-- /footer -->
+
+</center>
+
+
+	<div id="loginAuthCodeModal" class="modal_frame" style="display:none; " >
+		<div class="modal_top_band">
+			<div class="modal_close"><a href="javascript:hideModal( 'loginAuthCodeModal' )"><img src="https://steamcommunity.com/public/images/x9x9.gif" width="9" height="9" border="0" alt="Close" /></a></div>
+		</div>
+		<div class="modal_box">
+			<div class="auth_message_area">
+				<div id="auth_icon" class="auth_icon auth_icon_key">
+				</div>
+				<div class="auth_messages" id="auth_messages">
+					<div class="auth_message" id="auth_message_entercode" style="display: none;">
+						<h1>Hello!</h1>
+						<p>We see you're logging in to Steam from a new browser or a new computer.  Or maybe it's just been a while...</p>
+					</div>
+					<div class="auth_message" id="auth_message_checkspam" style="display: none;">
+						<h1>Mistaken for spam?</h1>
+						<p>Did you check your spam folder?  If you don't see a recent message from Steam Support in your inbox, try looking there.</p>
+					</div>
+					<div class="auth_message" id="auth_message_success" style="display: none;">
+						<h1>Success!</h1>
+						<p>You now have access to your Steam account here.</p>
+					</div>
+					<div class="auth_message" id="auth_message_incorrectcode" style="display: none;">
+						<h1>Whoops!</h1>
+						<p>Sorry but, <br>that isn't quite right...</p>
+					</div>
+					<div class="auth_message" id="auth_message_help" style="display: none;">
+						<h1>Let us help!</h1>
+						<p>Sorry you're having trouble.  We know your Steam account is valuable to you, and we're committed to helping you keep access to it in the right hands.</p>
+					</div>
+				</div>
+			</div>
+			<div id="auth_details_messages" class="auth_details_messages">
+				<div class="auth_details" id="auth_details_entercode" style="display: none;">
+					As an added account security measure, you’ll need to grant access to this browser by entering the special code we’ve just sent to your email address at <span id="emailauth_entercode_emaildomain"></span>.				</div>
+				<div class="auth_details" id="auth_details_success" style="display: none;">
+					If this is a public computer, be sure to log out of Steam when you're ready to quit this browser session.				</div>
+				<div class="auth_details" id="auth_details_help" style="display: none;">
+					Please contact Steam Support for assistance from a member of our staff.  Legitimate claims for help with account access are our number one priority.				</div>
+			</div>
+			<div class="authcode_entry_area">
+				<div id="authcode_entry">
+					<div class="authcode_entry_box">
+						<form action="#" method="POST" onsubmit="javascript:SubmitAuthCode(); return false;"
+																>
+							<input class="authcode_entry_input defaulttext" id="authcode" type="text" value="enter your code here" onfocus="javascript:OnAuthcodeFocus( 'enter your code here');" onblur="javascript:OnAuthcodeBlur( 'enter your code here');">
+						</form>
+					</div>
+				</div>
+				<div id="authcode_help_supportlink">
+					<a href="https://support.steampowered.com/kb_article.php?ref=4020-ALZM-5519"
+														>Contact Steam Support for help with account access</a>
+				</div>
+			</div>
+			<div class="modal_buttons" id="auth_buttonsets">
+				<div class="auth_buttonset" id="auth_buttonset_entercode" style="display: none;">
+					<a href="javascript:SubmitAuthCode();" class="auth_button leftbtn">
+						<h3>I got the message</h3>
+						<h5>and I've entered my special access code above</h5>
+					</a>
+					<a href="javascript:SetEmailAuthModalState( 'checkspam' );" class="auth_button">
+						<h3>What message?</h3>
+						<h5>I don't have any message from Steam Support...</h5>
+					</a>
+					<div style="clear: left;"></div>
+				</div>
+				<div class="auth_buttonset" id="auth_buttonset_checkspam" style="display: none;">
+					<a href="javascript:SubmitAuthCode();" class="auth_button leftbtn">
+						<h3>Found it!</h3>
+						<h5>and I've entered my special access code above</h5>
+					</a>
+					<a href="javascript:SetEmailAuthModalState( 'help' );" class="auth_button">
+						<h3>No luck still...</h3>
+						<h5>I don't have any message from Steam Support...</h5>
+					</a>
+					<div style="clear: left;"></div>
+				</div>
+				<div class="auth_buttonset" id="auth_buttonset_success" style="display: none;">
+					<div class="auth_button auth_button_spacer">
+					</div>
+					<a href="javascript:LoginComplete();" class="auth_button" id="success_continue_btn">
+						<h3 style="padding-top: 20px;">Proceed to Steam!</h3>
+					</a>
+					<div style="clear: left;"></div>
+				</div>
+				<div class="auth_buttonset" id="auth_buttonset_incorrectcode" style="display: none;">
+					<a href="javascript:SubmitAuthCode();" class="auth_button leftbtn">
+						<h3>I want to try again</h3>
+						<h5>and I've re-entered my special access code above</h5>
+					</a>
+					<a href="javascript:SetEmailAuthModalState( 'help' );" class="auth_button">
+						<h3>Please help</h3>
+						<h5>I think I need assistance from Steam Support...</h5>
+					</a>
+					<div style="clear: left;"></div>
+				</div>
+				<div class="auth_buttonset" id="auth_buttonset_waiting" style="display: none;">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="loginIPTModal" class="modal_frame" style="display:none; top:0; left: 0">
+		<div class="modal_top_band">
+			<div class="modal_close"><a href="javascript:hideModal( 'loginIPTModal' )"><img src="https://steamcommunity.com/public/images/x9x9.gif" width="9" height="9" border="0" alt="Close" /></a></div>
+		</div>
+		<div class="modal_box">
+			<div class="auth_message_area">
+				<div id="" class="auth_icon ipt_icon">
+				</div>
+				<div class="auth_messages" id="">
+					<div class="auth_message" id="" >
+						<h1>Sorry</h1>
+						<p>This account can't be accessed from this computer without additional authorization.</p>
+					</div>
+				</div>
+			</div>
+			<div id="" class="auth_details_messages">
+				<div class="auth_details">
+					Please contact Steam Support to have a member of our staff assist you.  Legitimate claims for help with account access are our number one priority.				</div>
+			</div>
+			<div class="authcode_entry_area">
+			</div>
+			<div class="modal_buttons" id="">
+				<div class="auth_buttonset" >
+					<a href="https://support.steampowered.com/kb_article.php?ref=9400-IPAX-9398&auth=e39b5c227cffc8ae65414aba013e5fef" class="auth_button leftbtn"
+														>
+						<h3>Learn more</h3>
+						<h5>about Intel&reg; Identity Protection Technology</h5>
+					</a>
+					<a href="https://support.steampowered.com" class="auth_button"
+														>
+						<h3>Please help</h3>
+						<h5>I think I need assistance from Steam Support...</h5>
+					</a>
+					<div style="clear: left;"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="modalBG" style="display: none;"></div>
+
+</body>
+</html>
+
+

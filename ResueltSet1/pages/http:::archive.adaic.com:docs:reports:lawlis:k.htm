@@ -1,0 +1,130 @@
+<HTML>
+<HEAD>
+<TITLE>Appendix K: C  - Guidelines for Choosing a Computer Language: Support for the Visionary Organization</TITLE>
+</HEAD>
+<BODY bgcolor=#ffffff>
+<center>
+
+<table width=525>
+<tr>
+<td align=left valign=top><font size=2 color=#666666>Appendix K</font></td>
+<td align=right>
+<font size=2 color=#666666>
+
+Guidelines for Choosing a Computer Language:<br>
+Support for the Visionary Organization<font></td></tr></table>
+<hr size=1>
+<p>
+
+<!--text-->
+
+<table width=500><tr><td>
+<FONT FACE="Arial" SIZE=+1>Appendix K: C </A>
+</B></FONT><p>
+C is a 3GL which is popular for its ease of code creation, efficiency, and availability on a wide variety of platforms, including Unix-based workstations and PCs.  It supports all of the usual language features found in a non-object-oriented 3GL (for its object-oriented counterpart, see Appendix L on C++).  C is usually associated with the quick creation of cryptic code, although it is possible to create readable C. [<a href="b.htm#p">Plauger 89</a>] [<a href="b.htm#r">Rabinowitz 90</a>]</P>
+<B><FONT FACE="Arial" SIZE=2><A NAME="_Toc398514180">Language Criteria</A></P>
+</B></FONT><p>The following assesses C with respect to the language criteria presented in the Criteria for a Good Language section in the main document:</P>
+<ol>
+<p><li><I>Its definition should be independent of any particular hardware or operating system.</I>  C was originally defined as a language for system software on Unix platforms.  However, it has evolved to a language independent of Unix or any specific platform.</P>
+<p><li><I>Its definition should be standardized, and compiler implementations should comply with this standard.</I>  C has followed the standardization path of most languages.  First, the language was created and used.  As its popularity grew, it began to spawn a number of different dialects.  Then, C went through a standardization process, with the main core of the language being standardized.  It is common for compiler implementations to support standard C with additional, system-dependent features.  This results in the creation of much non-standard C code.</P>
+<p><li><I>It should support software engineering technology, discouraging or prohibiting poor practices, and promoting or supporting maintenance activities.</I>  Because of its original purpose, the easy creation of system software, C has never emphasized support for software engineering technology.  As with any language, it is possible to use good software engineering practices with C.  However, the language neither prevents nor discourages poor practice, and it, therefore, does not provide good support for maintenance.</P>
+<p><li><I>It should effectively support the application domain(s) of interest.</I>  Although it was originally developed to support system software, C has proven to be a very versatile language, supporting any domain in which it has been tried.</P>
+<p><li><I>It should support the required level of system reliability and safety.</I>  Because of its lack of support for software engineering technology, C provides little support for reliability.  Safety-critical systems, those on which human life may depend, are also not effectively supported by C because of its lack of support for software engineering technology. [<a href="b.htm#c">Cullyer 91</a>] [<a href="b.htm#p">Pyle 91</a>]</P>
+<p><li><I>Its compiler implementations should be commensurate with the current state of technology.</I>  Because of the language's immense popularity, C compilers continue to be improved using current technology.</P>
+<p><li><I>Appropriate software engineering-based supporting tools and environments should be available.</I>  Again because of its popularity, a wide variety of supporting tools and environments is available for C development.  Many of these are little more than tools to support code creation, with minimal support for engineering software.  However, many also provide appropriate software engineering-based support.</P>
+</ol>
+
+<B><FONT FACE="Arial" SIZE=2><A NAME="_Toc398514181">Language Characteristics</A></P>
+</B></FONT><p>In this section, C is rated with respect to the language characteristics used in Table 2 in the main document [<a href="b.htm#p">Plauger 89</a>] [<a href="b.htm#r">Rabinowitz 90</a>].  The ratings range from 0 to 10, where 0 means the language provides no support for the characteristic, and 10 means it provides extensive support.  The ratings given below are those provided in <a href="5.htm#t2">Table 2.</a> The reader must bear in mind that the support for a good characteristic in a language does not necessarily mean that it is always used, or used appropriately.  Unskilled programmers can write bad code in any language, but a good language facilitates the production of good code by skilled programmers.</P>
+<B><I><p>Clarity of source code</I> </B>–<I> the extent to which inherent language features support source code that is readable and understandable and that clearly reflects the underlying logical structure of the program</I>.</P>
+<p>Although it is possible to write C code which is understandable, it is not common practice to use a verbose, understandable style.  C provides cryptic shortcuts that run counter to clarity, and they are commonly used.  <B>Rating: 5</P>
+<I><p>Complexity management (architecture support)</I> </B>–<B> </B><I>the extent to which inherent language features support the management of system complexity, in terms of addressing issues of data, algorithm, interface, and architectural complexity</I>.</P>
+<p>C provides the capability to manage complexity through separate compilation of program pieces.  It also encourages the use of header files for grouping declarations of external resources used in a compilation unit.  However, it provides no consistency checking across compilation units, nor does it provide a mechanism for managing very large software components, such as subsystems.  <B>Rating: 5</P>
+<I><p>Concurrency support</B></I> – <I>the extent to which inherent language features support the construction of code with multiple threads of control (also known as parallel processing).</P>
+</I><p>Although C is often used in concurrent systems, the standard language definition provides no inherent support for concurrency.  Note that some dialects of C do support concurrency, but they are not standards.  <B>Rating: 0</P>
+<I><p>Distributed system support</B></I> – <I>the extent to which inherent language features support the construction of code to be distributed across multiple platforms on a network</I>.</P>
+<p>C provides no specific support for distributed systems.  <B>Rating: 0</P>
+<I><p>Maintainability</I> </B>–<B> </B><I>the extent to which inherent language features support the construction of code that can be readily modified to satisfy new requirements or to correct deficiencies</I>.</P>
+<p>A C programmer must work very carefully to write maintainable code because the language provides little inherent support.  <B>Rating: 2</P>
+<I><p>Mixed language support</I> </B>– <I>the extent to which inherent language features support interfacing to other languages</I>.</P>
+<p>C will readily use object files produced by any language compiler as it composes an application.  This is easy because C requires no consistency checking among these separate files.  While that makes the object files easy to use, it does not provide specific support for properly interfacing the languages or for verifying correct exchange of data across the established interface.  <B>Rating: 5</P>
+<I><p>Object-oriented programming support</I> </B>– <I>the extent to which inherent language features support the construction of object-oriented code</I>.</P>
+<p>C provides no object-oriented programming support.  <B>Rating: 0</P>
+<I><p>Portability</I> </B>– <I>the extent to which inherent language features support the transfer of a program from one hardware and/or software platform to another</I>.</P>
+<p>The existence of a standard for C makes portability possible.  However, common practice does not necessarily adhere to this standard.  There are also no inherent language features that facilitate portability, such as the encapsulation of dependencies.  The tremendous popularity of C has spawned tools and tool sets that are widely available on many platforms, enhancing portability.  <B>Rating: 5</P>
+<I><p>Real-time support</B></I> – <I>the extent to which inherent language features support the construction of real-time systems</I>.</P>
+<p>C was developed as a systems programming language, where real-time performance is required.  It is a well streamlined language, inherently supporting real-time system performance and the ability to interact directly with low-level devices.  <B>Rating: 7</P>
+<I><p>Reliability</I> </B>– <I>the extent to which inherent language features support the construction of components that can be expected to perform their intended functions in a satisfactory manner throughout the expected lifetime of the product</I>.</P>
+<p>C provides little in the way of inherent language features to support reliability.  It readily allows inconsistencies to show up in compiled code.  <B>Rating: 1</P>
+<I><p>Reusability</I> </B>– <I>the extent to which inherent language features support the adaptation of code for use in another application</I>.</P>
+<p>Support for reusability requires support for code clarity, encapsulation, maintainability, and portability.  C provides little inherent support for any of these characteristics.  Hence, it does not support development reuse on a large scale.  On the other hand, reuse of specialized C libraries, such as graphics libraries, is very effective.    <B>Rating: 3</P>
+<I><p>Safety</I> </B>– <I>the extent to which inherent language features support the construction of safety-critical systems, yielding systems that are fault-tolerant, fail-safe, or robust in the face of systemic failures</I>.</P>
+<p>As noted by [<a href="b.htm#c">Cullyer 91</a>], C does not provide good support for any safety features.  <B>Rating: 0</P>
+<I><p>Standardization</I> </B>– <I>the extent to which the language definition has been formally standardized (by recognized bodies such as ANSI and ISO) and the extent to which it can be reasonably expected that this standard will be followed in a language translator</I>.</P>
+<p>C is standardized by both ANSI and ISO.  However, there is no reasonable expectation that a C compiler will follow the standard without including additional features.  <B>Rating: 5</P>
+<I><p>Support for modern engineering methods</I> </B>– <I>the extent to which inherent language features support the expression of source code that enforces good software engineering principles</I>.</P>
+<p>C was not created with support for software engineering in mind, and it provides little inherent support for modern engineering methods.  <B>Rating: 1</P>
+
+</P></td></tr></table>
+<P>
+
+<hr noshade size=1>
+
+<!--footer-->
+
+<table width=550><tr>
+<td  align=left><a href="j.htm"><b>< Previous Page</B></a></td>
+<td><A HREF="search.htm"><b>Search</b></A></td>
+<td><A HREF="content.htm"><b>Contents</b></A></td>
+<td><A HREF="tables.htm"><b>Tables</b></A></td>
+<td  align=right><a href="l.htm"><b>Next Page ></B></a></td></tr></table>
+<p>
+Sections<br>
+<table width=490 bgcolor=#cccccc cellpadding=5><tr>
+<td width=70 align=middle><A HREF="1.htm">1</A></td>
+<td width=70 align=middle><A HREF="2.htm">2</A></td>
+<td width=70 align=middle><A HREF="3.htm">3</A></td>
+<td width=70 align=middle><A HREF="4.htm">4</A></td>
+<td width=70 align=middle><A HREF="5.htm">5</A></td>
+<td width=70 align=middle><A HREF="6.htm">6</A></td>
+<td width=70 align=middle><A HREF="7.htm">7</A></td>
+</tr></table>
+<p>
+Appendices
+<table width=450 BGCOLOR=#CCCCCC CELLPADDING=5>
+<tr>
+<td width=50 align=middle><A HREF="a.htm">A</A></td>
+<td width=50 align=middle><A HREF="b.htm">B</A></td>
+<td width=50 align=middle><A HREF="c.htm">C</A></td>
+<td width=50 align=middle><A HREF="d.htm">D</A></td>
+<td width=50 align=middle><A HREF="e.htm">E</A></td>
+<td width=50 align=middle><A HREF="f.htm">F</A></td>
+<td width=50 align=middle><A HREF="g.htm">G</A></td>
+<td width=50 align=middle><A HREF="h.htm">H</A></td>
+<td width=50 align=middle><A HREF="j.htm">J</A></td>
+</tr>
+<tr>
+<td width=50 align=middle><A HREF="k.htm">K</A></td>
+<td width=50 align=middle><A HREF="l.htm">L</A></td>
+<td width=50 align=middle><A HREF="m.htm">M</A></td>
+<td width=50 align=middle><A HREF="n.htm">N</A></td>
+<td width=50 align=middle><A HREF="p.htm">P</A></td>
+<td width=50 align=middle><A HREF="q.htm">Q</A></td>
+<td width=50 align=middle><A HREF="r.htm">R</A></td>
+<td width=50 align=middle><A HREF="s.htm">S</A></td>
+<td width=50 align=middle>&nbsp;</td>
+</table>
+
+</center>
+
+<p>
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+

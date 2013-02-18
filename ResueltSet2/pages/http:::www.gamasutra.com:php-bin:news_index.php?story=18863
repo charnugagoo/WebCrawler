@@ -1,0 +1,1993 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<script type="text/javascript" src="http://www.gamasutra.com/js/jquery-1.4.2.js"></script>
+<script type="text/javascript" src="http://www.gamasutra.com/js/jquery.tools.min.js"></script>
+<head>
+
+<meta name="node" content="228"/>
+<meta name="pagecaching" content="402"/>
+
+
+<title>Gamasutra - News - Analysis: Defense of the Ancients - An Underground Revolution</title>
+<meta name="keywords" content="game development, game developer, game programming, game programmer, videogame, artificial intelligence, 3D animation, game design, 3D modeling, game business, game jobs, game directory, game development software, game technology, 3D technology, game producer, game audio, game animation, virtual reality, digital entertainment, PC game, Xbox game, game news, new game, arcade development, Nintendo development, Playstation development, Playstation 2, PS2, Dreamcast development, Game Developer magazine, Computer Game Developers Conference, Game Developers Conference, Independent Game Developers Conference, CMP Game Media Group, game industry research, online game development, digital assets, free textures, free 3D models, free shaders, Gamasutra Exchange, 3D Studio Max textures" /><meta name="description" content="Defense of the Ancients is a fascinating, still-played Warcraft III mod which helped inspire Tower Defense, and in this analysis piece, Michael Walbridge looks at the design underpinnings of the game and the vibrant community su" /><link rel="image_src" href="http://www.gamasutra.com/db_area/images/news2001/18863/dota_allstars.jpg" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta property="og:title" content="Analysis:  Defense of the Ancients  - An Underground Revolution" />
+    <meta property="og:image" content="http://www.gamasutra.com/db_area/images/news2001/18863/dota_allstars.jpg" />
+    <meta property="og:description" content=" Defense of the Ancients  is a fascinating, still-played  Warcraft III  mod which helped inspire  Tower Defense , and in this analysis piece, Michael Walbridge looks at the design underpinnings of the game and the vibrant community su" />
+<link rel="alternate" type="application/rss+xml" title="Gamasutra Article Feed" href="http://feeds.feedburner.com/GamasutraFeatureArticles/" />
+<link rel="alternate" type="application/rss+xml" title="Gamasutra News Feed" href="http://feeds.feedburner.com/GamasutraNews/" />
+<link rel="alternate" type="application/rss+xml" title="Gamasutra Columns Feed" href="http://feeds.feedburner.com/GamasutraColumns/" />
+<link rel="alternate" type="application/rss+xml" title="Gamasutra Jobs Feed" href="http://feeds.feedburner.com/GamasutraJobs/" />
+<link href="/comments/redesign_comments.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="http://gamasutra.com/game_sites_superfooter_2012/css/superfooter.css" type="text/css">
+<script type="text/javascript" src="/comments/redesign_comments.js"></script>
+<script type="text/javascript">
+
+function checkMail(obj){
+
+        var think_opt_out = document.getElementById('Think_Opt_Out');
+
+        if (document.getElementById('Think_Opt_Out').checked) {
+
+                document.getElementById('Think_Opt_In').value = 0;
+        } else {
+
+                document.getElementById('Think_Opt_In').value = 1;
+        }
+        var firstname = document.getElementById('firstname').value;
+        if (firstname == ""){
+                alert('Please provide your first name');
+                return false;
+        }
+
+        if (document.getElementById('lastname').value == ''){
+                alert("Please provide your lastt name");
+                return false;
+        }
+
+
+        var x = document.getElementById('EmailAddr').value;
+
+        var filter  = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if (filter.test(x)) { return true; }
+        else  { alert('Invalid Email Address detected. Please correct.'); return false; }
+
+
+}
+
+</script>
+
+<script type="text/javascript" src="http://www.gamasutra.com/md5.js"></script>
+<link rel="stylesheet" href="/styles.css" type="text/css" />
+
+
+<script type="text/javascript">
+var adrand = parseInt(Math.random()*1000000000, 10);
+var adkeys = "key1+key2+key3+key4";
+</script>
+
+<script type="text/javascript">
+//alert('109814+console/pc+exclusive');
+var adkeys = '109814+console/pc+exclusive';
+</script>
+
+</head>
+<body  style="margin: 0px;" >
+<table class="sitenav" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+	<td bgcolor="#000000">&nbsp;</td>
+	<td width="1000px"><table width="100%" cellspacing="0" cellpadding="0"><tr><td class="properties">Our Properties:</td>
+	<td class="activetab"><a href="http://www.gamasutra.com" class="active">Gamasutra</a></td>
+	<td class="properties"><a href="http://www.gamecareerguide.com">GameCareerGuide</a> </td>
+	<td class="properties"><a href="http://www.indiegames.com">IndieGames</a> </td>
+	<td class="properties"><a href="http://www.gdcvault.com">GDC Vault</a> </td>
+	<td class="properties"><a href="http://www.gdconf.com">GDC</a> </td>
+	<td class="properties"><a href="http://www.igf.com">IGF</a> </td>
+	<td class="properties"><a href="http://www.gdmag.com">Game Developer Magazine</a> </td>
+	<td class="properties"><a href="http://www.game-advertising-online.com">GAO</a></td></tr></table>
+	</td><td bgcolor="#000000">&nbsp;</td></tr></table> 
+ 
+<div id="headerBox">
+    <span id="headerText">My Message</span>
+    <a id="headerCloseButton" href='#'>close</a>
+</div>
+
+          <!--JavaScript Tag // Tag for network 5242: United Business Media // Website: Gamasutra // Page: ROS // Placement: BACKUP_Skin_1x1 (2382814) // created at: Apr 5, 2012 7:55:55 PM-->
+<script language="javascript"><!--
+document.write('<scr'+'ipt language="javascript1.1" src="http://adserver.adtechus.com/addyn/3.0/5242.1/2382814/0/16/ADTECH;alias=Gamasutra_Console_PC_Skin_1x1;loc=100;target=_blank;key='+adkeys+';grp='+adrand+';misc='+new Date().getTime()+'"></scri'+'pt>');
+//-->
+</script><noscript><a href="http://adserver.adtechus.com/adlink/3.0/5242.1/2382814/0/16/ADTECH;alias=Gamasutra_Console_PC_Skin_1x1;loc=300;key='+adkeys+';grp='+adrand+'" target="_blank"><img src="http://adserver.adtechus.com/adserv/3.0/5242.1/2382814/0/16/ADTECH;alias=Gamasutra_Console_PC_Skin_1x1;loc=300;key='+adkeys+';grp='+adrand+'" border="0" width="1" height="1"></a></noscript>
+<!-- End of JavaScript Tag -->
+
+  
+<div id="wrapper"> <!-- Width: 999px -->
+  <div id="header"> <!-- Width: 999px -->
+    <table style="margin:0px; margin-top: 5px;padding:0xp;" cellspacing="0" cellpadding="0" border="0"><tr><td>
+
+    <a href="http://www.gamasutra.com"><img src="http://twimgs.com/gamasutra/images/gamasutra_logo.png" alt="Gamasutra: The Art &amp; Business of Making Games" width="243" height="77" border="0" /></a><img alt="spacer" src="http://twimgs.com/gamasutra/images/spacer.gif" width="27" />
+   </td>
+   <td width="728" height="90">
+
+    
+                  <!-- 728x90 Leaderboard  -->
+
+<!--/* OpenX Javascript Tag v2.8.1 */-->
+<!--JavaScript Tag // Tag for network 5242: United Business Media // Website: Gamasutra // Page: ROS // Placement: BACKUP_Top_728x90 (2382762) // created at: Apr 5, 2012 5:15:30 PM-->
+<script language="javascript"><!--
+document.write('<scr'+'ipt language="javascript1.1" src="http://adserver.adtechus.com/addyn/3.0/5242.1/2382762/0/225/ADTECH;alias=Gamasutra_Console_PC_728x90;loc=100;target=_blank;key='+adkeys+';grp='+adrand+';misc='+new Date().getTime()+'"></scri'+'pt>');
+//-->
+</script><noscript><a href="http://adserver.adtechus.com/adlink/3.0/5242.1/2382762/0/225/ADTECH;alias=Gamasutra_Console_PC_728x90;loc=300;key='+adkeys+';grp='+adrand+'" target="_blank"><img src="http://adserver.adtechus.com/adserv/3.0/5242.1/2382762/0/225/ADTECH;alias=Gamasutra_Console_PC_728x90;loc=300;key='+adkeys+';grp='+adrand+'" border="0" width="728" height="90"></a></noscript>
+<!-- End of JavaScript Tag -->
+      
+
+         </td>
+         </tr>
+         </table>
+  </div>
+<table cellpadding="0" cellspacing="0" border="0" width="829" align="left" bgcolor="#ffffff">
+  <tr>
+    <td align="right" width="600" valign="middle" id="hQuickLinks">
+  <img src="http://twimgs.com/gamasutra/images/spacer.gif" border="0" width="7" />
+  <a href="/php-bin/news_index.php">news</a><img src="http://twimgs.com/gamasutra/images/spacer.gif" border="0" width="7" />
+  <a href="/php-bin/article_display.php">features</a><img src="http://twimgs.com/gamasutra/images/spacer.gif" border="0" width="7" />
+  <a href="/blogs/">Blogs</a><img src="http://twimgs.com/gamasutra/images/spacer.gif" border="0" width="7" />
+  <a href="/jobs/">jobs/resumes</a><img src="http://twimgs.com/gamasutra/images/spacer.gif" border="0" width="7" />
+  <a href="/contractors/contractor_display.php">contractors</a><img src="http://twimgs.com/gamasutra/images/spacer.gif" border="0" width="7" />
+  <a href="https://store.cmpgame.com/storefront.php?loc=&skin=gamasutra_redesign">store</a><img src="http://twimgs.com/gamasutra/images/spacer.gif" border="0" width="7" />
+  <a href="http://www.gamasutra.com/static2/rssfeeds.html">rss</a><img src="http://twimgs.com/gamasutra/images/spacer.gif" border="0" width="7" />
+  <a href="http://twitter.com/gamasutra">twitter</a>
+ 
+</td>
+<td width="234" valign="middle" align="center" id="searchBox">
+ <form style="margin:0px;padding:0px;" name="topsearch" action="/search/" method="GET">
+  <table cellpadding="0" cellspacing="0" border="0" width="90%">
+    
+    <tr>
+  	  <td align="left" valign="top" width="19" class="searchText">&nbsp;</td>
+  	  <td valign="middle" width="60" class="searchText">&nbsp;SEARCH</td>	  
+	  <td valign="middle" align="center" width="100"><!--<input type="hidden" name="sort" value="score">--><input name="search_text" type="text" size="10" class="search" /></td>	  
+	  <td valign="middle" align="right" width="30" height="30"><span class="whiteBorder"><a href="" onclick="javascript: document.topsearch.submit(); return false;" class="searchButton">GO</a></span>&nbsp;&nbsp;</td>
+	</tr>
+	
+  </table> 
+  </form>
+</td>
+</tr><tr>
+<td align="right" width="829" valign="middle" id="hQuickLinks_topics" colspan="2">
+  <ul id="topicmenu">
+     <li id="topicmenu_all_selected"><a href="http://www.gamasutra.com">ALL</a></li>
+     <li id="topicmenu_console"><a href="http://www.gamasutra.com/topic/console-pc">CONSOLE/PC GAMES</a></li>
+     <li id="topicmenu_social"><a href="http://www.gamasutra.com/topic/social-online">SOCIAL/ONLINE GAMES</a></li>
+     <li id="topicmenu_smartphone"><a href="http://www.gamasutra.com/topic/smartphone-tablet">SMARTPHONE/TABLET GAMES</a></li>
+     <li id="topicmenu_indie"><a href="http://www.gamasutra.com/topic/indie">INDEPENDENT GAMES</a></li>
+     <li id="topicmenu_serious"><a href="http://www.gamasutra.com/topic/serious">SERIOUS GAMES</a></li>
+  </ul>
+</td>  </tr>
+  <tr>
+    <td colspan="2" width="829" style="padding-top: 0px;">
+      <table cellpadding="0" cellspacing="0" border="0" width="829" style="margin-top: -2px;">
+        <tr>
+          <td width="2"><img src="http://twimgs.com/gamasutra/images/spacer.gif" border="0" width="2" /></td>
+          <td valign="top" width="177" bgcolor="#eeeeee">
+            <table width="177" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td id="memberLoginHeading" class="whiteTop" bgcolor="#82BC7A" width="177" height="19"></td>  	
+  </tr>
+  
+  <tr>   
+    <td id="memberLogin">
+    
+    </td>   
+  </tr>
+</table>
+<iframe id="searchease_login_iframe" style="display: none;" src="" width="10" height="10" frameborder="0" scrolling="no" name="myInlineFrame"></iframe>
+<script type="text/javascript" src="/login.js"></script>
+            <!--/* OpenX Gama leftside event button Tag */-->
+<!--JavaScript Tag // Tag for network 5242: United Business Media // Website: Gamasutra // Page: ROS // Placement: BACKUP_Button1_177x59 (2382766) // created at: Apr 5, 2012 5:15:29 PM-->
+<script language="javascript"><!--
+document.write('<scr'+'ipt language="javascript1.1" src="http://adserver.adtechus.com/addyn/3.0/5242.1/2382766/0/0/ADTECH;alias=Gamasutra_Console_PC_Button1;loc=100;target=_blank;key='+adkeys+';grp='+adrand+';misc='+new Date().getTime()+'"></scri'+'pt>');
+//-->
+</script><noscript><a href="http://adserver.adtechus.com/adlink/3.0/5242.1/2382766/0/0/ADTECH;alias=Gamasutra_Console_PC_Button1;loc=300;key='+adkeys+';grp='+adrand+'" target="_blank"><img src="http://adserver.adtechus.com/adserv/3.0/5242.1/2382766/0/0/ADTECH;alias=Gamasutra_Console_PC_Button1;loc=300;key='+adkeys+';grp='+adrand+'" border="0" width="0" height="0"></a></noscript>
+<!-- End of JavaScript Tag -->
+
+<!--JavaScript Tag // Tag for network 5242: United Business Media // Website: Gamasutra // Page: ROS // Placement: Backup_CallOut_1x1 (2411536) // created at: May 14, 2012 3:00:06 PM--> 
+<script language="javascript"><!-- 
+document.write('<scr'+'ipt language="javascript1.1" src="http://adserver.adtechus.com/addyn/3.0/5242.1/2411536/0/0/ADTECH;alias=Gamasutra_Console_PC_CallOut_1x1;loc=100;target=_blank;key='+adkeys+';grp='+adrand+';misc='+new Date().getTime()+'"></scri'+'pt>');
+//-->
+</script><noscript><a href="http://adserver.adtechus.com/adlink/3.0/5242.1/2411536/0/0/ADTECH;alias=Gamasutra_Console_PC_CallOut_1x1;loc=300;key='+adkeys+';grp='+adrand+'" target="_blank"><img src="http://adserver.adtechus.com/adserv/3.0/5242.1/2411536/0/0/ADTECH;alias=Gamasutra_Console_PC_CallOut_1x1;loc=300;key='+adkeys+';grp='+adrand+'" border="0" width="0" height="0"></a></noscript>
+<!-- End of JavaScript Tag -->
+            <!-- Test -->
+            <table width="177" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td colspan="4">
+      <a href="/php-bin/news_index.php"><img src="http://twimgs.com/gamasutra/images/LatestNews_header.gif" alt="Latest News" border="0" class="whiteTop" style="margin-bottom: 5px;" /></a>    </td>
+  </tr>
+  <tr>
+    <td width="5" rowspan="25">
+      <img alt="spacer" src="http://twimgs.com/gamasutra/images/spacer.gif" border="0" width="5" />
+    </td>
+	<td colspan="2" class="leftNavJobs">
+	  <a href="/php-bin/news_index.php"><strong>View All</strong></a>
+	</td>
+	<td width="5" rowspan="25">
+	  <img alt="spacer" src="http://twimgs.com/gamasutra/images/spacer.gif" border="0" width="5" />
+	</td>
+  </tr>
+  <tr>
+    <td colspan="2" class="dot_line">&nbsp;</td>
+  </tr>
+  <tr><td colspan="2" class="leftNavJobs"><strong>February 17, 2013</strong></td></tr>
+    <tr><td colspan="2" class="dot_line">&nbsp;</td></tr>
+  <tr>
+    <td width="10" valign="top"><img src="http://twimgs.com/gamasutra/images/gray_arrow2.gif" width="6" height="10" border="0" /></td>
+	<td width="157" class="leftNavJobs">
+	  <a href="/view/news/186801/Analysis_Bungie_and_Activisions_reveal_of_Destiny.php" >Analysis: Bungie and Activision's reveal of <I>Destiny</i> </a> 
+       
+                       [<a title="10 comments" href="/view/news/186801/Analysis_Bungie_and_Activisions_reveal_of_Destiny.php#comments">10</a>]
+                	</td>
+  </tr>
+    <tr><td colspan="2" class="dot_line">&nbsp;</td></tr>
+  <tr>
+    <td width="10" valign="top"><img src="http://twimgs.com/gamasutra/images/gray_arrow2.gif" width="6" height="10" border="0" /></td>
+	<td width="157" class="leftNavJobs">
+	  <a href="/view/news/186741/At_57K_sold_Wii_Us_January_performance_is_historically_abysmal.php" >At 57K sold, Wii U's January performance is historically abysmal</a> 
+       
+                       [<a title="103 comments" href="/view/news/186741/At_57K_sold_Wii_Us_January_performance_is_historically_abysmal.php#comments">103</a>]
+                	</td>
+  </tr>
+    <tr><td colspan="2" class="dot_line">&nbsp;</td></tr>
+  <tr>
+    <td width="10" valign="top"><img src="http://twimgs.com/gamasutra/images/gray_arrow2.gif" width="6" height="10" border="0" /></td>
+	<td width="157" class="leftNavJobs">
+	  <a href="/view/news/186789/EA_and_Zynga_settle_The_Ville_copycat_case_out_of_court.php" >EA and Zynga settle <em>The Ville</em> copycat case out of court</a> 
+       
+                       [<a title="3 comments" href="/view/news/186789/EA_and_Zynga_settle_The_Ville_copycat_case_out_of_court.php#comments">3</a>]
+                	</td>
+  </tr>
+    <tr><td colspan="2"><img alt="spacer" src="http://twimgs.com/gamasutra/images/spacer.gif" height="10" border="0" /></td></tr>
+</table>                     
+            <table width="177" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td colspan="4">
+      <a href="/php-bin/article_display.php"><img src="http://twimgs.com/gamasutra/images/LatestFeatures_header.gif" alt="Latest Features" border="0" class="whiteTop" style="margin-bottom: 5px;" /></a>    </td>
+  </tr>
+  <tr>
+    <td width="5" rowspan="25">
+      <img alt="spacer" src="http://twimgs.com/gamasutra/images/spacer.gif" border="0" width="5" />
+    </td>
+	<td colspan="2" class="leftNavJobs">
+	  <a href="/php-bin/article_display.php"><strong>View All</strong></a>
+	</td>
+	<td width="5" rowspan="25">
+	  <img alt="spacer" src="http://twimgs.com/gamasutra/images/spacer.gif" border="0" width="5" />
+	</td>
+  </tr>
+  <tr>
+    <td colspan="2" class="dot_line">&nbsp;</td>
+  </tr>
+  <tr><td colspan="2" class="leftNavJobs"><strong>February 17, 2013</strong></td></tr>
+    <tr><td colspan="2" class="dot_line">&nbsp;</td></tr>
+  <tr>
+    <td width="10" valign="top"><img alt="arrow" src="http://twimgs.com/gamasutra/images/gray_arrow2.gif" width="6" height="10" border="0" /></td>
+	<td width="157" class="leftNavJobs">
+	  <a href="/view/feature/186735/proteus_a_trio_of_artisanal_game_.php"><i>Proteus</i>: A Trio of Artisanal Game Reviews</a>
+       
+      [<a title="13 comments" href="/view/feature/186735/proteus_a_trio_of_artisanal_game_.php#comments">13</a>]
+      	</td>
+  </tr>
+    <tr><td colspan="2" class="dot_line">&nbsp;</td></tr>
+  <tr>
+    <td width="10" valign="top"><img alt="arrow" src="http://twimgs.com/gamasutra/images/gray_arrow2.gif" width="6" height="10" border="0" /></td>
+	<td width="157" class="leftNavJobs">
+	  <a href="/view/feature/186607/the_rise_of_the_mobile_collectible_.php">The Rise of the Mobile Collectible Card Game</a>
+       
+      [<a title="9 comments" href="/view/feature/186607/the_rise_of_the_mobile_collectible_.php#comments">9</a>]
+      	</td>
+  </tr>
+    <tr><td colspan="2" class="dot_line">&nbsp;</td></tr>
+  <tr>
+    <td width="10" valign="top"><img alt="arrow" src="http://twimgs.com/gamasutra/images/gray_arrow2.gif" width="6" height="10" border="0" /></td>
+	<td width="157" class="leftNavJobs">
+	  <a href="/view/feature/186514/storyboarding_for_games_user_.php">Storyboarding for Games User Research</a>
+      	</td>
+  </tr>
+    <tr><td colspan="2"><img alt="spacer" src="http://twimgs.com/gamasutra/images/spacer.gif" height="10" border="0" /></td></tr>
+</table>
+		            <table width="177" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td colspan="4">
+      <a href="/blogs/"><img src="http://twimgs.com/gamasutra/images/LatestBlogs_header.gif" alt="Latest Blogs" border="0" class="whiteTop" style="margin-bottom: 5px;" /></a>    </td>
+  </tr>
+  <tr>
+    <td width="5" rowspan="25"><img alt="spacer" src="http://twimgs.com/gamasutra/images/spacer.gif" border="0" width="5" /></td>
+		<td width="167" colspan="2" class="leftNavJobs"><a href="/blogs/"><strong>View All</strong></a> 
+		&nbsp;&nbsp;&nbsp; <a href="/blogs/edit/"><strong>Post</strong></a>
+		&nbsp;&nbsp;&nbsp; <a href="/blogs/rss/"><strong>RSS</strong></a>
+		</td>
+		<td width="5" rowspan="25"><img alt="spacer" src="http://twimgs.com/gamasutra/images/spacer.gif" border="0" width="5" /></td>
+  </tr>
+  <tr><td colspan="2" class="dot_line">&nbsp;</td></tr>
+	<tr><td colspan="2" class="leftNavJobs"><strong>February 17, 2013</strong></td></tr>
+	<!-- this should be replaced with dynamic content -->
+  <tr>
+    <td width="10" valign="top"><img alt="" src="http://twimgs.com/gamasutra/images/spacer.gif" border="0" width="10" height="1" /></td>
+		<td width="157" class="leftNavJobs"><img alt="" src="http://twimgs.com/gamasutra/images/spacer.gif" border="0" width="157" height="1" /></td>
+  </tr>
+	<!-- above should be replaced with dynamic content -->
+
+    <tr><td colspan="2" class="dot_line">&nbsp;</td></tr>
+  <tr>
+    <td width="10" valign="top"><img src="http://twimgs.com/gamasutra/images/gray_arrow2.gif" width="6" height="10" border="0" /></td>
+		<td width="157" class="leftNavJobs"><a href="/blogs/EricSchwarz/20130215/186781/Dont_Waste_My_Time.php">Don't Waste My Time</a>
+			 
+      [<a title="16 comments" href="/blogs/EricSchwarz/20130215/186781/Dont_Waste_My_Time.php#comments">16</a>]
+      		</td>
+  </tr>
+    <tr><td colspan="2" class="dot_line">&nbsp;</td></tr>
+  <tr>
+    <td width="10" valign="top"><img src="http://twimgs.com/gamasutra/images/gray_arrow2.gif" width="6" height="10" border="0" /></td>
+		<td width="157" class="leftNavJobs"><a href="/blogs/NathanFouts/20130215/186778/Profiles_in_Gonzo_Guns_MorphORay.php">Profiles in Gonzo Guns: Morph-O-Ray</a>
+					</td>
+  </tr>
+    <tr><td colspan="2" class="dot_line">&nbsp;</td></tr>
+  <tr>
+    <td width="10" valign="top"><img src="http://twimgs.com/gamasutra/images/gray_arrow2.gif" width="6" height="10" border="0" /></td>
+		<td width="157" class="leftNavJobs"><a href="/blogs/BenjaminQuintero/20130215/186740/Raw_Power_Still_Matters.php">Raw Power Still Matters</a>
+			 
+      [<a title="14 comments" href="/blogs/BenjaminQuintero/20130215/186740/Raw_Power_Still_Matters.php#comments">14</a>]
+      		</td>
+  </tr>
+    <tr><td colspan="2" class="dot_line">&nbsp;</td></tr>
+  <tr>
+    <td width="10" valign="top"><img src="http://twimgs.com/gamasutra/images/gray_arrow2.gif" width="6" height="10" border="0" /></td>
+		<td width="157" class="leftNavJobs"><a href="/blogs/RyanCreighton/20130215/186771/Sissys_Magical_Birthday_Celebration.php">Sissy's Magical Birthday Celebration</a>
+					</td>
+  </tr>
+    <tr><td colspan="2" class="dot_line">&nbsp;</td></tr>
+  <tr>
+    <td width="10" valign="top"><img src="http://twimgs.com/gamasutra/images/gray_arrow2.gif" width="6" height="10" border="0" /></td>
+		<td width="157" class="leftNavJobs"><a href="/blogs/StephenJacobs/20130215/186770/New_Commercial_StudioAcademic_Research_Hybrid_Announced_at_RIT_today.php">New Commercial Studio/Academic Research Hybrid Announced at RIT today!</a>
+					</td>
+  </tr>
+    <tr><td colspan="2"><img alt="spacer" src="http://twimgs.com/gamasutra/images/spacer.gif" height="10" border="0" /></td></tr>
+</table>     
+            <table width="177" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td colspan="4">
+      <a href="/jobs/"><img src="http://twimgs.com/gamasutra/images/LatestJobs_header.gif" alt="Latest Jobs" border="0" class="whiteTop" style="margin-bottom: 5px;" /></a>    </td>
+  </tr>
+  <tr>
+    <td width="5" rowspan="25"><img alt="spacer" src="http://twimgs.com/gamasutra/images/spacer.gif" border="0" width="5" /></td>
+	<td colspan="2" class="leftNavJobs"><a href="/jobs/"><strong>View All</strong></a> &nbsp;&nbsp;&nbsp;
+	  <a href="http://jobs.gamasutra.com/employerx/"><strong>Post a Job</strong></a>
+	  &nbsp;&nbsp;&nbsp;
+	  <a href="http://feeds.feedburner.com/GamasutraJobs"><strong>RSS</strong></a>
+	  </td>
+	<td width="5" rowspan="25"><img alt="spacer" src="http://twimgs.com/gamasutra/images/spacer.gif" border="0" width="5" /></td>
+  </tr>
+  <tr><td colspan="2" class="dot_line">&nbsp;</td></tr>
+  <tr><td colspan="2" class="leftNavJobs"><strong>February 17, 2013</strong></td></tr>
+    <tr><td colspan="2" class="dot_line">&nbsp;</td></tr>
+  <tr>
+    <td width="10" valign="top"><img src="http://twimgs.com/gamasutra/images/gray_arrow2.gif" width="6" height="10" border="0" /></td>
+	<td width="157" class="leftNavJobs">Sony Computer Entertainment America LLC<br />
+	  <a href="http://jobs.gamasutra.com/jobseekerx/viewjobrss.asp?cjid=32526&accountno=345">Sr. Network Systems Engineer</a>
+	</td>
+  </tr>
+    <tr><td colspan="2" class="dot_line">&nbsp;</td></tr>
+  <tr>
+    <td width="10" valign="top"><img src="http://twimgs.com/gamasutra/images/gray_arrow2.gif" width="6" height="10" border="0" /></td>
+	<td width="157" class="leftNavJobs">Activision<br />
+	  <a href="http://jobs.gamasutra.com/jobseekerx/viewjobrss.asp?cjid=32485&accountno=101">SENIOR MOBILE ENGINEER,  Android</a>
+	</td>
+  </tr>
+    <tr><td colspan="2" class="dot_line">&nbsp;</td></tr>
+  <tr>
+    <td width="10" valign="top"><img src="http://twimgs.com/gamasutra/images/gray_arrow2.gif" width="6" height="10" border="0" /></td>
+	<td width="157" class="leftNavJobs">Activision<br />
+	  <a href="http://jobs.gamasutra.com/jobseekerx/viewjobrss.asp?cjid=32484&accountno=101">SENIOR MOBILE ENGINEER, iOS</a>
+	</td>
+  </tr>
+    <tr><td colspan="2" class="dot_line">&nbsp;</td></tr>
+  <tr>
+    <td width="10" valign="top"><img src="http://twimgs.com/gamasutra/images/gray_arrow2.gif" width="6" height="10" border="0" /></td>
+	<td width="157" class="leftNavJobs">Lantern<br />
+	  <a href="http://jobs.gamasutra.com/jobseekerx/viewjobrss.asp?cjid=32525&accountno=110934">Game Programmers</a>
+	</td>
+  </tr>
+    <tr><td colspan="2" class="dot_line">&nbsp;</td></tr>
+  <tr>
+    <td width="10" valign="top"><img src="http://twimgs.com/gamasutra/images/gray_arrow2.gif" width="6" height="10" border="0" /></td>
+	<td width="157" class="leftNavJobs">University of Huddersfield<br />
+	  <a href="http://jobs.gamasutra.com/jobseekerx/viewjobrss.asp?cjid=32694&accountno=142665">Lecturer/Senior Lecturer in Computer Games Art</a>
+	</td>
+  </tr>
+    <tr><td colspan="2" class="dot_line">&nbsp;</td></tr>
+  <tr>
+    <td width="10" valign="top"><img src="http://twimgs.com/gamasutra/images/gray_arrow2.gif" width="6" height="10" border="0" /></td>
+	<td width="157" class="leftNavJobs">2K Games<br />
+	  <a href="http://jobs.gamasutra.com/jobseekerx/viewjobrss.asp?cjid=32645&accountno=362">MMO Producer (CivilizationÂ®) -Seoul</a>
+	</td>
+  </tr>
+    <tr><td colspan="2"><img alt="spacer" src="http://twimgs.com/gamasutra/images/spacer.gif" height="10" border="0" /></td></tr>
+</table>            
+            <table width="177" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td colspan="4">
+      <a href="/pressreleases_index.php"><img src="http://twimgs.com/gamasutra/images/PressReleases_header.gif" alt="Latest Press Releases" border="0" class="whiteTop" style="margin-bottom: 5px;" /></a>    </td>
+  </tr>
+  <tr>
+    <td width="5" rowspan="25"><img alt="spacer" src="http://twimgs.com/gamasutra/images/spacer.gif" border="0" width="5" /></td>
+		<td width="167" colspan="2" class="leftNavJobs"><a href="/pressreleases/"><strong>View All</strong></a> 
+		&nbsp;&nbsp;&nbsp; <a href="/pressreleases/rss/"><strong>RSS</strong></a>
+		</td>
+		<td width="5" rowspan="25"><img alt="spacer" src="http://twimgs.com/gamasutra/images/spacer.gif" border="0" width="5" /></td>
+  </tr>
+  <tr><td colspan="2" class="dot_line">&nbsp;</td></tr>
+	<tr><td colspan="2" class="leftNavJobs"><strong>February 17, 2013</strong></td></tr>
+	<!-- this should be replaced with dynamic content -->
+  <tr>
+    <td width="10" valign="top"><img alt="" src="http://twimgs.com/gamasutra/images/spacer.gif" border="0" width="10" height="1" /></td>
+		<td width="157" class="leftNavJobs"><img alt="" src="http://twimgs.com/gamasutra/images/spacer.gif" border="0" width="157" height="1" /></td>
+  </tr>
+	<!-- above should be replaced with dynamic content -->
+
+    <tr><td colspan="2" class="dot_line">&nbsp;</td></tr>
+  <tr>
+    <td width="10" valign="top"><img src="http://twimgs.com/gamasutra/images/gray_arrow2.gif" width="6" height="10" border="0" /></td>
+		<td width="157" class="leftNavJobs"><a href="/view/pressreleases/186786/SpellForce_2_Faith_in_Destiny_releases_third_actionpacked
+DLC.php">SpellForce 2: Faith in<br />
+Destiny releases third...</a>
+		</td>
+  </tr>
+    <tr><td colspan="2" class="dot_line">&nbsp;</td></tr>
+  <tr>
+    <td width="10" valign="top"><img src="http://twimgs.com/gamasutra/images/gray_arrow2.gif" width="6" height="10" border="0" /></td>
+		<td width="157" class="leftNavJobs"><a href="/view/pressreleases/186787/JEFF_BROADBENT_SCORES_PLANETSIDEregnbsp2.php">JEFF BROADBENT SCORES<br />
+PLANETSIDE&reg;&nbsp;2</a>
+		</td>
+  </tr>
+    <tr><td colspan="2" class="dot_line">&nbsp;</td></tr>
+  <tr>
+    <td width="10" valign="top"><img src="http://twimgs.com/gamasutra/images/gray_arrow2.gif" width="6" height="10" border="0" /></td>
+		<td width="157" class="leftNavJobs"><a href="/view/pressreleases/186782/AFTERFALL_DIRTY_ARENA_ndash_A_WEEK_TO_RELEASE.php">AFTERFALL DIRTY ARENA<br />
+&ndash; A WEEK TO RELEASE</a>
+		</td>
+  </tr>
+    <tr><td colspan="2" class="dot_line">&nbsp;</td></tr>
+  <tr>
+    <td width="10" valign="top"><img src="http://twimgs.com/gamasutra/images/gray_arrow2.gif" width="6" height="10" border="0" /></td>
+		<td width="157" class="leftNavJobs"><a href="/view/pressreleases/186783/THE_BASEMENT_COLLECTION_W_INDIE_GAME_THE_MOVIE_ANNOUNCED
+FOR_RETAIL.php">THE BASEMENT COLLECTION<br />
+W/ INDIE GAME: THE<br />
+MOVIE...</a>
+		</td>
+  </tr>
+    <tr><td colspan="2" class="dot_line">&nbsp;</td></tr>
+  <tr>
+    <td width="10" valign="top"><img src="http://twimgs.com/gamasutra/images/gray_arrow2.gif" width="6" height="10" border="0" /></td>
+		<td width="157" class="leftNavJobs"><a href="/view/pressreleases/186772/FROM_LOS_ANGELES_TO_LONDON_GAMERS_WORLDWIDE_ARE_SUITING_UP
+FOR_THE_LAUNCH_OF_CRYSIS_3_ndash_THE_PINNACLE_IN_THE
+AWARDWINNING_CRYSIS_SERIES.php">FROM LOS ANGELES TO<br />
+LONDON GAMERS WORLDWIDE<br />
+ARE...</a>
+		</td>
+  </tr>
+    <tr><td colspan="2"><img alt="spacer" src="http://twimgs.com/gamasutra/images/spacer.gif" height="10" border="0" /></td></tr>
+</table>            <table width="177" border="0" cellspacing="0" cellpadding="0">
+                                                <tr><td colspan="3"><img src="http://twimgs.com/gamasutra/images/about_left.gif" alt="About" class="whiteTop" style="margin-bottom: 5px;" /></td></tr> 
+
+                                                <tr>
+                                                    <td width="5" rowspan="13"><img alt="spacer" src="http://twimgs.com/gamasutra/images/spacer.gif" border="0" width="5" /></td>
+                                                    <td  valign="top"><img height="10" border="0" width="6" src="http://twimgs.com/gamasutra/images/gray_arrow2.gif"/></td>
+                                                    <td class="leftNavJobs" width="157">
+                                                       <strong>Editor-In-Chief: </strong><br /><a href="mailto:kgraft@gamasutra.com">Kris Graft</a><br />                               </td>
+                                                </tr>
+                                                 
+
+                                                <tr>
+                                                    <td  valign="top"><img height="10" border="0" width="6" src="http://twimgs.com/gamasutra/images/gray_arrow2.gif"/></td>
+                                                    <td class="leftNavJobs" width="157"><strong>Features Director: </strong><br /><a href="mailto:christian.nutt@ubm.com">Christian Nutt</a><br /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td  valign="top"><img height="10" border="0" width="6" src="http://twimgs.com/gamasutra/images/gray_arrow2.gif"/></td>
+                                                    <td class="leftNavJobs" width="157"><strong>News Director: </strong><br /><a href="mailto:fcifaldi@gamasutra.com">Frank Cifaldi</a><br /></td>
+                                                </tr>
+                                                <tr>
+                                                        <td  valign="top"><img height="10" border="0" width="6" src="http://twimgs.com/gamasutra/images/gray_arrow2.gif"/></td>
+                                                        <td class="leftNavJobs" width="157"><strong>Senior Contributing Editor: </strong><br /><a href="mailto:bsheffield@gdmag.com">Brandon Sheffield</a><br /></td>
+                                                </tr>
+                                               <!-- <tr>
+                                                        <td  valign="top"><img height="10" border="0" width="6" src="http://twimgs.com/gamasutra/images/gray_arrow2.gif"/></td>
+                                                        <td class="leftNavJobs" width="157" ><strong>Business Editor:</strong><br /> Colin Campbell<br /></td>
+                                                </tr> -->
+                                                <tr>
+                                                        <td  valign="top"><img height="10" border="0" width="6" src="http://twimgs.com/gamasutra/images/gray_arrow2.gif"/></td>
+							<td class="leftNavJobs" width="157"><strong>News Editors: </strong><br />Frank Cifaldi, Mike Rose, Kris Graft<br /></td>
+                                                </tr>
+                                                <tr>
+                                                        <td  valign="top"><img height="10" border="0" width="6" src="http://twimgs.com/gamasutra/images/gray_arrow2.gif"/></td>
+                                                        <td class="leftNavJobs" width="157" ><strong>Editors-At-Large:</strong><br /> Leigh Alexander, Chris Morris<br /></td>
+                                                </tr>
+                                                <tr>
+                                                  <td  valign="top"><img height="10" border="0" width="6" src="http://twimgs.com/gamasutra/images/gray_arrow2.gif"/></td>
+                                                  <td class="leftNavJobs"><strong>Advertising: </strong><br />
+					      <a href="mailto:jennifer.sulik@ubm.com">Jennifer Sulik</a></td>
+                                                </tr>
+                                                <tr>
+                                                        <td  valign="top"><img height="10" border="0" width="6" src="http://twimgs.com/gamasutra/images/gray_arrow2.gif"/></td>
+                                                        <td class="leftNavJobs" width="157"><strong>Recruitment: </strong><br /><a href="http://www.jointhegamenetwork.com/recruitment/online/jobs.html">Gina Gross</a><br /></td>
+                                                </tr>
+                                                <tr><td colspan="2" class="dot_line_tall">&nbsp;</td></tr>
+                                                <tr>
+                                                  <td colspan="2" align="center"><a href="/static/featuresubmit.html">Feature Submissions</a></td>
+                                                </tr>
+                                                <tr><td colspan="2" class="dot_line_tall">&nbsp;</td></tr>
+                                                <tr>
+                                                  <td colspan="2" align="center"><a href="/static2/comment_guidelines.html">Comment Guidelines</a></td>
+                                                </tr>
+                                                <tr><td colspan="2"><img src="http://twimgs.com/gamasutra/images/spacer.gif" height="20" border="0" /></td></tr>
+                                                </table>
+<a href="http://www.jointhegamenetwork.com/online/gamasutra/index.html" target="_blank"><img src="http://twimgs.com/gamasutra/images/AdwGama_177x60_button_v1.jpg" alt="Sponsor" width="177" border="0" class="whiteTop" /></a><br />
+          </td>
+          <td width="2"><img src="http://twimgs.com/gamasutra/images/spacer.gif" width="2" border="0" /></td>
+          <td valign="top" width="650" id="content_news">
+            <br />
+            <table border="0" cellpadding="0" cellspacing="0" width="650">
+              <tr>
+                <td width="10" rowspan="30">&nbsp;</td>
+                <td width="630">
+                                      <div class="left">
+                        <img src="http://www.gamasutra.com/db_area/images/news2001/18863/dota_allstars.jpg" width="150" height="150" border="1" alt="Analysis:  Defense of the Ancients  - An Underground Revolution" style="padding:5px; border:1px solid #ADADAD; margin-right:15px;"/>
+                    </div>
+                  
+                    <span class="newsTitle" style="font-size:30px;"><strong>Analysis: <i>Defense of the Ancients</i> - An Underground Revolution</strong>
+                                                    <a href="http://gamasutra.com/news/exclusive/"><img valign="middle" border="0" src="http://twimgs.com/gamasutra/images/exclusive_btn.gif" alt="Exclusive" /></a>
+                                                <br />
+                    </span>
+                                 </td>
+                <td width="10" rowspan="30">&nbsp;</td>
+              </tr>
+              <tr><td><hr style=" margin-bottom:15px; margin-top:20px; height:2px; background-color:#000; border-style:none;"></td></tr>
+              <tr>
+                <td class="newsText"><!-- Video:   -->
+                    <div style="width:300px; float:right; margin-left:20px; margin-bottom:20px;">
+                        <div>
+                            <span class="newsDate">June 12,  2008 &nbsp; | &nbsp; By Michael Walbridge</span><br />
+                            <hr class="dot_line_tall" style="border:0">
+                                                        <img valign="middle" border="0" src="http://twimgs.com/gamasutra//images/comments_bubble.gif" alt="Comments" />
+                            <a href="#comments" style="font-size:10px;text-decoration:underline;"><strong>14 comments</strong></a><br />
+                                                        <hr class="dot_line_tall" style="border:0">
+                            <span style="font-size:10px;">More: <span class="pageNav"><span class="category_links"><a href="/news/console-pc/">Console/PC</a>, <a href="/news/exclusive/">Exclusive</a></span></span></span><br />
+                            <hr class="dot_line_tall" style="border:0">
+                            <!-- AddThis Button BEGIN -->
+                                <div class="addthis_toolbox addthis_default_style " style="margin-right: 6px;">
+                                <a class="addthis_button_preferred_2"></a>
+                                <a class="addthis_button_preferred_1"></a>
+				<a class="addthis_button_google_plusone" g:plusone:count="false" style="margin-right: 6px;"></a>
+                                <a class="addthis_button_preferred_5"></a>
+                                <a class="addthis_button_preferred_6"></a>
+                                <a class="addthis_button_compact"></a>
+                                <!--<a class="addthis_counter addthis_bubble_style"></a>-->
+                                </div>
+                                <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+                                <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4feb3c394b881c05"></script>
+                            <!-- AddThis Button END -->
+                            <hr class="dot_line_tall" style="border:0">
+                        </div>
+                                
+                        <div>
+                            <br />
+                            
+<div id='adheader'>
+<br /><img src="http://twimgs.com/gamasutra//images/advertisement_header.gif" alt="" /><br />
+</div>
+<div id='imu_ad'>
+<!--/* AD rectangle 300x250 */-->
+<!--JavaScript Tag // Tag for network 5242: United Business Media // Website: Gamasutra // Page: ROS // Placement: BACKUP_IMU_300x250 (2382763) // created at: Apr 5, 2012 5:15:29 PM-->
+<script language="javascript"><!--
+document.write('<scr'+'ipt language="javascript1.1" src="http://adserver.adtechus.com/addyn/3.0/5242.1/2382763/0/0/ADTECH;alias=Gamasutra_Console_PC_IMU1_300x250;loc=100;target=_blank;key='+adkeys+';grp='+adrand+';misc='+new Date().getTime()+'"></scri'+'pt>');
+//-->
+</script><noscript><a href="http://adserver.adtechus.com/adlink/3.0/5242.1/2382763/0/0/ADTECH;alias=Gamasutra_Console_PC_IMU1_300x250;loc=300;key='+adkeys+';grp='+adrand+'" target="_blank"><img src="http://adserver.adtechus.com/adserv/3.0/5242.1/2382763/0/0/ADTECH;alias=Gamasutra_Console_PC_IMU1_300x250;loc=300;key='+adkeys+';grp='+adrand+'" border="0" width="0" height="0"></a></noscript>
+<!-- End of JavaScript Tag -->
+</div>
+ 
+<script type='text/javascript'>
+var isayso = 'true';
+var adimg = $('#imu_ad img').attr('src');
+
+if((adimg.indexOf("blank.gif") > 0) || (adimg.indexOf("Default_Size_16_1x1.gif") > 0)) {
+//alert(adimg); 
+$('#adheader').remove();
+}
+</script>
+
+                        </div>
+                                          </div>
+                  <i>[<em>Defense of the Ancients</em> is a fascinating, still-played <em>Warcraft III</em> mod which helped inspire <em>Tower Defense</em>, and in this analysis piece, Michael Walbridge looks at the design underpinnings of the game and the vibrant community supporting it.]</i><br />
+<br />
+If you've played <i>Warcraft III</i> on Battle.net lately you'd feel like more people were playing <a href="http://en.wikipedia.org/wiki/Defense_of_the_Ancients"><i>Defense of the Ancients</i></a>, popularly called <i>DOTA</i>, than the actual Blizzard game it’s based on. <br />
+<br />
+In fact, <i>DOTA</i> is likely the most popular and most-discussed free, non-supported game mod in the world, judging by the numbers. (It's also been a notable inspiration for the <a href="http://www.towerdefence.net/">plethora of Tower Defense Flash games</a> in recent years.)<br />
+<br />
+Over at the “official” <i>DOTA Allstars</i> forums as I write this, there are 800 people logged in and over 100,000 total topics and over 23,000 topics in the general forum in the last month. By comparison, <i>Warcraft III</i>, the game it is modded from, only has a few thousand topics at most over on the Battle.net website. <br />
+<br />
+<b><u>Competitive RPG Action the Way We Want It </b></u><br />
+<br />
+The game itself is technically played in RTS format but is often described as “RPG combat.” Many players were disappointed by <i>Warcraft III</i>; some were disappointed it wasn’t more like <i>Starcraft</i>, and many found that the heroes system watered the game down into an experiment that was interesting enough to play, but not fun enough to worship. <br />
+<br />
+<i>Warcraft III</i> match strategies are centered around the selection, leveling, and gearing of heroes, with all units simply being support for the hero. Turning points, victories, and defeats are hero-centered. <i>DOTA</i> turns <i>Warcraft III</i>’s hero system on its head—instead of playing an army with an important leader, you simply play the important leader while the computer takes care of the army. <br />
+<br />
+Like any brilliant game, the concept is simple and the strategy is complex: each side has an Ancient and the object of the game is to destroy that ancient. There are three paths from base to base with three defensive towers on the way to that base. <br />
+<br />
+At precise and frequent intervals, each base sends a set of computer-controlled creeps towards the enemy base. Players control heroes who receive earn money as time passes and for killing enemy creeps and enemy heroes. <br />
+<br />
+The maximum level is 25 (instead of <i>Warcraft III’s</i> 10) and each team gets 5 heroes. There are over 70 heroes to choose from. At level 1, a hero can barely take on two creeps by himself. At level 25 and with the right items, a hero can wade through a dozen creeps with little to no consequences.<br />
+<br />
+The strategy focuses on leveling, getting hero kills, pushing the enemy’s base with your allied creeps and defending against the same. There are also a large number of items for purchase, some coming from “recipes” that mix multiple items to make single powerful items, a necessity since each hero has only 6 slots. <br />
+<br />
+If a player dies, he loses money and valuable time to be leveling while providing a lot of experience to the other player. If he dies frequently, he’s called a “feeder” and his team will usually become venomous.<br />
+<br />
+<i>DOTA</i> is no small mod; only <i>Counter-Strike</i> can compare for depth, fun, fan-base, and community depth. <i>DOTA Allstars</i> is frequently updated, tested, and changed. The <a href=http://www.getdota.com/changelog.txt>changelog</a> has a professional quality to it; <i>DOTA</i> is well-balanced to the point that it had its own tournament at Blizzcon in 2005 and it is represented in numerous Esports leagues and other cash prize tournaments. <br />
+<br />
+<b><u>A Mod Made by Legends and the People </b></u><br />
+<br />
+The only thing about <i>DOTA</i> that is as fascinating as its gameplay and success is its history and evolution. Its designers and programmers are largely anonymous. The original designer is only known as Eul; he released <i>DOTA</i> even before the expansion <i>Warcraft III: The Frozen Throne</i> came out. After its release, Guinsoo, another anonymous modder, took over and converted it for the expansion. <br />
+<br />
+<img alt="Dota%20heroes.jpg" src="http://www.gamesetwatch.com/dota2.jpg"  hspace="5" align="left"/> He later stopped developing for it; the also-anonymous Icefrog took his place. Icefrog responded to an interview request with “I usually prefer to not do interviews” (he hasn’t done one anywhere yet). <br />
+<br />
+Players debate the validity of reports of his even being seen playing the game; what little information that is offered about him is only offered by people who claim to know him. <br />
+<br />
+There is no verifiable or documented information about him—the only proof we have that someone named Icefrog is even involved is by his email on getdota.com, his name in the load screen, and the few people who have truly, if unverifiably, interacted with him.<br />
+<br />
+Over at the <i>DOTA Allstars</i> community, the highly loyal players suggest many, many changes and ideas. “Eul, Guinsoo or IceFrog alone did not make the map. The <i>DOTA</i> community…makes the map”, one player said. Loadscreen art is drawn by fans. Some bugs are found and some items and heroes are made, erased, and changed almost entirely because of community outreach. <br />
+<br />
+Seven mirrors on <a href="http://www.getdota.com">getdota.com</a> are responsible for its dissemination. Once a new hero, the fairie dragon, was found by the community to be too powerful. Icefrog must have agreed—the fairie dragon was changed in less than two weeks.<br />
+<br />
+But despite all of the community’s help, it is still Icefrog, a man who may be named Jeremy, who may be from Boston and who may study at UCLA, which makes the final changes. The masses may be the power of the movement, but the figurehead and initiator of all that changes is still focused on a mysterious, almost spiritual figurehead.<br />
+<br />
+As curious a figure as Icefrog is, his identity ultimately doesn’t matter to the game’s progress. The community has faith that if one leader leaves, another will take his place. Previous modders Eul and Guinsoo did much for <i>DOTA</i>; they have in-game items named after them. If Icefrog steps down, doubtless another will take his place as the Zorro of Battle.net. <br />
+<br />
+<b><u>Give Us the Tools and We’ll Make the Rules </b></u><br />
+<br />
+<i>DOTA</i> is played using custom map settings on Battle.net, which is a setting that anyone would have said couldn’t be governed by anyone other than Blizzard. <i>Warcraft III</i> matches are made randomly by Battle.net to prevent abuse of the stats system, which is a way of measuring player skill for practice or clan acceptance. <br />
+<br />
+It also ensures that players are close enough geographically so that disconnecting doesn’t interfere with stats or matches. In a custom map, none of this is available. Anyone can join any game no matter how poor or distant the connections, and there are no stats. A round of <i>DOTA</i> is usually at least half an hour long, and if someone leaves the teams become imbalanced. <br />
+<br />
+It seems impossible to get ten people to stick in an online game for approximately an hour, but the <i>DOTA</i> community has found ways to do this with consistency. One program allows the host to check the country from which all users originate. Some games that are hosted now say something like “DOTA 6.48 –apem BR!”, which means that it’s <i>DOTA</i>, it’s the 6.48 version, it’s the –apem game modes, and it’s only for players in Brazil. <br />
+<br />
+Even if you speak Portuguese, you’ll likely be booted. Personal banlists ensure that if someone doesn’t like you or if you leave within 5 minutes, you will be kicked the next time you join that person’s matches.<br />
+<br />
+Team Dota Allstars is a committee dedicated to mature and complete games. TDA has rules, its own forum, channel, certification process (getting on the “safelist”) and banlist. The process to be safelisted, which proves your willingness to not start games you know you can’t finish and to work as a team in what can only be a team game, is highly inconvenient, necessary, and effective. <br />
+<br />
+<b><u>The Underground in Public </b></u><br />
+<br />
+<i>DOTA</i> is a delight to all who play it: it’s surprisingly addictive and even pastiche, mixing the highs and lows of gaming and gaming culture. <i>DOTA</i>’s quirks, governments, outlaws, and innovation show us that it’s much easier to renovate for the masses when the masses are involved. The vision of one leader alone is required, but never sufficient.
+                  <br />
+                </td>
+              </tr>
+              <tr><td class="dot_line_tall">&nbsp;</td></tr>
+              <tr><td>
+              <!-- AddThis Button BEGIN -->
+              
+                <div class="addthis_toolbox addthis_default_style ">
+				<a class="addthis_button_tweet"></a>
+                                <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+				<a class="addthis_button_reddit"></a>
+                                <a class="addthis_button_stumbleupon"></a>
+				<a class="addthis_counter addthis_pill_style"></a>
+                </div>
+                <!-- 
+				<div class="addthis_toolbox addthis_default_style addthis_32x32_style" style="float:right; width:100px;">
+				<a class="addthis_button_preferred_3"></a>
+				<a class="addthis_button_preferred_4"></a>
+				</div>
+				-->
+                <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+                <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4feb3c394b881c05"></script>
+                
+              <!-- AddThis Button END -->
+              </tr></td>
+              <tr><td class="dot_line_tall">&nbsp;</td></tr>
+              <tr><td>
+                                <a style="font-weight: bold; font-size: 16px; margin-right:10px;" name="Top Stories">Top Stories</a><br /><br />
+              <table align="center">
+              <tr>
+                             <td valign="top" width="120px">
+                <a href="/view/news/186801/Analysis_Bungie_and_Activisions_reveal_of_Destiny.php" ><img alt="image" src="/images/news/186801_thumb.jpg" style="height:108px;width:108px;padding:5px; border:1px solid #ddd; margin-right:10px;" /></a><br />
+                <b> <a href="/view/news/186801/Analysis_Bungie_and_Activisions_reveal_of_Destiny.php" >Analysis: Bungie and Activision's reveal of <I>Destiny</i> </a></b><br />
+               </td>
+               <td width="20px"></td>
+              
+                             <td valign="top" width="120px">
+                <a href="/view/news/186741/At_57K_sold_Wii_Us_January_performance_is_historically_abysmal.php" ><img alt="image" src="/images/news/186741_thumb.jpg" style="height:108px;width:108px;padding:5px; border:1px solid #ddd; margin-right:10px;" /></a><br />
+                <b> <a href="/view/news/186741/At_57K_sold_Wii_Us_January_performance_is_historically_abysmal.php" >At 57K sold, Wii U's January performance is historically abysmal</a></b><br />
+               </td>
+               <td width="20px"></td>
+              
+                             <td valign="top" width="120px">
+                <a href="/view/news/186789/EA_and_Zynga_settle_The_Ville_copycat_case_out_of_court.php" ><img alt="image" src="/images/news/186789_thumb.jpg" style="height:108px;width:108px;padding:5px; border:1px solid #ddd; margin-right:10px;" /></a><br />
+                <b> <a href="/view/news/186789/EA_and_Zynga_settle_The_Ville_copycat_case_out_of_court.php" >EA and Zynga settle <em>The Ville</em> copycat case out of court</a></b><br />
+               </td>
+               <td width="20px"></td>
+              
+                             <td valign="top" width="120px">
+                <a href="/view/news/186785/Share_your_GDC_Story_to_win_an_All_Access_Pass_to_GDC_2013.php" ><img alt="image" src="/images/news/186785_thumb.jpg" style="height:108px;width:108px;padding:5px; border:1px solid #ddd; margin-right:10px;" /></a><br />
+                <b> <a href="/view/news/186785/Share_your_GDC_Story_to_win_an_All_Access_Pass_to_GDC_2013.php" >Share your 'GDC Story' to win an All Access Pass to GDC 2013</a></b><br />
+               </td>
+               <td width="20px"></td>
+              
+                            </tr>
+              </table>
+                                </td></tr>
+            </table><br />
+            <br />
+            <table style="margin-bottom: 0px;" border="0" cellpadding="0" cellspacing="0" width="650">
+              <tr>
+                <td width="10" rowspan="1">&nbsp;</td>
+                <td width="450" class="pageNav">
+                                  </td>
+                <td valign="top" width="200" align="right" class="pageNav">
+                  [<a href="/view/news/109955/Twisted_Pixel_Announces_XBLA_ActionAdventure_The_Maw.php" >Next News Story</a>]
+                  [<a href="/php-bin/news_index.php">View All</a>]
+                </td>
+                <td width="10" rowspan="1">&nbsp;</td>
+              </tr>
+            </table>
+            <table style="margin-top: 10px;" border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr>
+                <td width="10" rowspan="1">&nbsp;</td>
+                <td>
+                  <div class="all_comments">
+  <a style="font-weight: bold; font-size: 16px;" name="comments">Comments</a><br />
+    
+      
+ 
+      
+  
+    <table id="comment3428" cellpadding="0" cellspacing="0" style="width:630px;" border="0">
+    <tr>
+    <td colspan="2">
+    <hr noshade size="1" class="hr_comment">
+    </td>
+    </tr>
+    <tr>
+      <td style="background-color:#dcebdc; padding: 5px; text-align: left; width: 300px;">                 
+      				<a href="/blogs/MaurcioGomes/790434/">Maurício Gomes</a><br />
+		            </td>
+      <td style="background-color:#dcebdc; padding: 5px;">
+        <div class="date_comment">
+          <a href="#comment3428">12 Jun 2008 at 12:13 pm PST</a>
+          		                    </div>
+      </td>
+    </tr>
+  </table>
+  <table cellpadding="0" cellspacing="0" border="0" style="width:630px; margin-bottom: 0px; margin-top:2px;">
+    <tr>
+      <td style="width: 80px; text-align: center;" valign="top">                     
+        <img style="padding-top: 2px; padding-right: 5px; padding-bottom: 5px;" alt="profile image" 
+                  src="/blogs/edit/img/portrait/277/thumb_portrait.png?1236297239"
+                />
+      </td>
+      <td valign="top" style="text-align:left;">      
+        <div id="comment3428_show" class="single_comment">
+          I am a DotA player, and in fact I used this around as a example of good level design, they sometimes do subtle changes trying to fix subtle things that can inbalance the game, like when they changed the level (the physical one, the terrain) where a boss character is, because when the terrain was completly leveled, the players could easily exploit the other team without dangers (watching from a distance, then jumping in and stealing the boss kill without any danger...) where now, you can only see the boss from the entrance of his area, but everyone inside his area and also see people at the entrance, so if a player wants to scout the boss area now he needs to be a proper scout (being invisible for example, or fast enough to show-up, see and run, or have a large field of vision)<br /><br />
+<br /><br />
+Also, even the way that the trees are positioned can give advantages to players, there are many videos about DotA on youtube, in one of them there are a player using the hero named "Lina" (a mage with 3 diffrent long range spells), this player was dieing, but he cleverly managed to fit himself between some trees, in a way that the other team do not saw him, but he saw the other team (Because the allied players and the allied army share their vision), from the middle of the trees he launched some cleverly placed spells and ended killing the entire opposing team, while that team just tried to figure out why they died...<br /><br />
+<br /><br />
+Also many sistems were created to help players ensure that no griefers will mess their games, the external one already cited in the article (banlist), where the players put there the ones that keep messing with the game (ex: there are some griefers that their especiality is to start a game, kill themselves on the hands of the enemy team, that is called "feeding" and them quitting the game, ensuring that his "allied" team will lose (unless they are geniouses), and several in-game systems, the lastest one for example is a system that when you steal a item it stops working... Some players got mad since that meant that they could not steal items from careless adversaries (you can not get items from another character, only from the ground), but the majority of the players got happy, because this also prevented allied griefers to steal your own itens (in fact this only ensure that the item will not work, there are still creative people that steal a item and drop it at the feet of the boss for example...)<br /><br />
+<br /><br />
+Also once there was a character that they fixed in a single day, because the character had a "gameplay bug", that is: the character had two abilities that altough worked as planned and such, in a ocassion they were stupidly overpowered: one hability reflected ANY enemy attack to everyone in a area, but it was a small change to happen (but at that time, the chance was fairly big), the other is that the character could create instantenous copies of himself that show up in every enemy hero of the map (btw: remember what I said of scouting the boss? here is another usefull hability to do that), the players discovered that with the strong copies (Icefrog made them weaker) and the high change of reflecting damage, players could make the copies show up when the enemy team was in their "fountain" (it is a structure that has a REALLY POWERFULL attack, and that also heals the allies, meaning that when someone is badly hurt he will be there near the fountain to heal himself...), the result is that the massive attack of the fountain against the copies got reflected and everyone near died, without any risk to the character that done that, the player obviously as soon as that was discovered, stormed the foruns, and Icefrog was fast to deliver a new version now properly balanced. 
+        </div>
+		      </td>
+    </tr>
+<tr>
+      <td style="width: 80px; text-align: center;" valign="top">
+      </td>
+      <td valign="top" style="text-align:left;">
+<!--
+        <form name="comments3428_like_submit" action="/php-bin/news_index.php?story=18863" method="post" style='display:inline;'>
+            <input type="hidden" name="comment_like" value="3428" />
+            <div align="right"><a href="javascript:void(0)" onclick="document.comments3428_like_submit.submit(); return false;">Like</a>  </div>
+        </form>
+-->
+		<div id="comment3428_replyLink">
+<div id="no_reply_button">
+     <a href="/sso/login.php?from=http://www.gamasutra.com/php-bin/news_index.php?story=18863">Login to Reply or Like</a> <div style="display:inline; float:right;"> </div>
+</div>
+		</div>
+		<div id="comment3428_replyForm" style="display:none;">
+          <div id="website_comment">
+          Reply |
+            <a href="" onclick="document.comments3428_like_submit.submit(); return false;">Like</a> <div style="display:inline; float:right;"> </div>
+          </div>
+          <form name="comments3428_reply_submit" action="/php-bin/news_index.php?story=18863#comment3428" method="post">
+			<textarea class="comment_textarea" name="comment_body" rows="8" style="width: 99%"></textarea>
+			<input type="hidden" name="comment_reply" value="3428" />
+			<input type="hidden" name="comment_type" value="reply" />
+			<a href="javascript:void(0)" onclick="document.comments3428_reply_submit.submit(); javascript:trackComment(); return false;">Submit Reply</a> | <a href="javascript:void(0)" onclick="cancelReplyComment(3428);">Cancel Reply</a>
+		  </form>
+        </div>
+</td>
+</tr>
+    </table>     
+       
+    
+     
+   
+      
+ 
+      
+  
+    <table id="comment3429" cellpadding="0" cellspacing="0" style="width:630px;" border="0">
+    <tr>
+    <td colspan="2">
+    <hr noshade size="1" class="hr_comment">
+    </td>
+    </tr>
+    <tr>
+      <td style="background-color:#dcebdc; padding: 5px; text-align: left; width: 300px;">                 
+              Anonymous<br />
+            </td>
+      <td style="background-color:#dcebdc; padding: 5px;">
+        <div class="date_comment">
+          <a href="#comment3429">12 Jun 2008 at 12:31 pm PST</a>
+          		                    </div>
+      </td>
+    </tr>
+  </table>
+  <table cellpadding="0" cellspacing="0" border="0" style="width:630px; margin-bottom: 0px; margin-top:2px;">
+    <tr>
+      <td style="width: 80px; text-align: center;" valign="top">                     
+        <img style="padding-top: 2px; padding-right: 5px; padding-bottom: 5px;" alt="profile image" 
+                  src="http://twimgs.com/gamasutra/images/questionmark.jpg"
+                />
+      </td>
+      <td valign="top" style="text-align:left;">      
+        <div id="comment3429_show" class="single_comment">
+          I think a huge part of tolerating the intensly steep learning curve is the price of the game... FREE.<br /><br />
+i would not play it if i was being charged money 
+        </div>
+		      </td>
+    </tr>
+<tr>
+      <td style="width: 80px; text-align: center;" valign="top">
+      </td>
+      <td valign="top" style="text-align:left;">
+<!--
+        <form name="comments3429_like_submit" action="/php-bin/news_index.php?story=18863" method="post" style='display:inline;'>
+            <input type="hidden" name="comment_like" value="3429" />
+            <div align="right"><a href="javascript:void(0)" onclick="document.comments3429_like_submit.submit(); return false;">Like</a>  </div>
+        </form>
+-->
+		<div id="comment3429_replyLink">
+<div id="no_reply_button">
+     <a href="/sso/login.php?from=http://www.gamasutra.com/php-bin/news_index.php?story=18863">Login to Reply or Like</a> <div style="display:inline; float:right;"> </div>
+</div>
+		</div>
+		<div id="comment3429_replyForm" style="display:none;">
+          <div id="website_comment">
+          Reply |
+            <a href="" onclick="document.comments3429_like_submit.submit(); return false;">Like</a> <div style="display:inline; float:right;"> </div>
+          </div>
+          <form name="comments3429_reply_submit" action="/php-bin/news_index.php?story=18863#comment3429" method="post">
+			<textarea class="comment_textarea" name="comment_body" rows="8" style="width: 99%"></textarea>
+			<input type="hidden" name="comment_reply" value="3429" />
+			<input type="hidden" name="comment_type" value="reply" />
+			<a href="javascript:void(0)" onclick="document.comments3429_reply_submit.submit(); javascript:trackComment(); return false;">Submit Reply</a> | <a href="javascript:void(0)" onclick="cancelReplyComment(3429);">Cancel Reply</a>
+		  </form>
+        </div>
+</td>
+</tr>
+    </table>     
+       
+    
+     
+   
+      
+ 
+      
+  
+    <table id="comment3430" cellpadding="0" cellspacing="0" style="width:630px;" border="0">
+    <tr>
+    <td colspan="2">
+    <hr noshade size="1" class="hr_comment">
+    </td>
+    </tr>
+    <tr>
+      <td style="background-color:#dcebdc; padding: 5px; text-align: left; width: 300px;">                 
+      				Christopher Plummer<br />
+		            </td>
+      <td style="background-color:#dcebdc; padding: 5px;">
+        <div class="date_comment">
+          <a href="#comment3430">12 Jun 2008 at 1:03 pm PST</a>
+          		                    </div>
+      </td>
+    </tr>
+  </table>
+  <table cellpadding="0" cellspacing="0" border="0" style="width:630px; margin-bottom: 0px; margin-top:2px;">
+    <tr>
+      <td style="width: 80px; text-align: center;" valign="top">                     
+        <img style="padding-top: 2px; padding-right: 5px; padding-bottom: 5px;" alt="profile image" 
+                  src="http://twimgs.com/gamasutra/images/questionmark.jpg"
+                />
+      </td>
+      <td valign="top" style="text-align:left;">      
+        <div id="comment3430_show" class="single_comment">
+          Does anyone remember the Bunker Mod from Starcraft?  This reminds me of a more advanced and multiplayer version of that. 
+        </div>
+		      </td>
+    </tr>
+<tr>
+      <td style="width: 80px; text-align: center;" valign="top">
+      </td>
+      <td valign="top" style="text-align:left;">
+<!--
+        <form name="comments3430_like_submit" action="/php-bin/news_index.php?story=18863" method="post" style='display:inline;'>
+            <input type="hidden" name="comment_like" value="3430" />
+            <div align="right"><a href="javascript:void(0)" onclick="document.comments3430_like_submit.submit(); return false;">Like</a>  </div>
+        </form>
+-->
+		<div id="comment3430_replyLink">
+<div id="no_reply_button">
+     <a href="/sso/login.php?from=http://www.gamasutra.com/php-bin/news_index.php?story=18863">Login to Reply or Like</a> <div style="display:inline; float:right;"> </div>
+</div>
+		</div>
+		<div id="comment3430_replyForm" style="display:none;">
+          <div id="website_comment">
+          Reply |
+            <a href="" onclick="document.comments3430_like_submit.submit(); return false;">Like</a> <div style="display:inline; float:right;"> </div>
+          </div>
+          <form name="comments3430_reply_submit" action="/php-bin/news_index.php?story=18863#comment3430" method="post">
+			<textarea class="comment_textarea" name="comment_body" rows="8" style="width: 99%"></textarea>
+			<input type="hidden" name="comment_reply" value="3430" />
+			<input type="hidden" name="comment_type" value="reply" />
+			<a href="javascript:void(0)" onclick="document.comments3430_reply_submit.submit(); javascript:trackComment(); return false;">Submit Reply</a> | <a href="javascript:void(0)" onclick="cancelReplyComment(3430);">Cancel Reply</a>
+		  </form>
+        </div>
+</td>
+</tr>
+    </table>     
+       
+    
+     
+   
+      
+ 
+      
+  
+    <table id="comment3436" cellpadding="0" cellspacing="0" style="width:630px;" border="0">
+    <tr>
+    <td colspan="2">
+    <hr noshade size="1" class="hr_comment">
+    </td>
+    </tr>
+    <tr>
+      <td style="background-color:#dcebdc; padding: 5px; text-align: left; width: 300px;">                 
+      				Eric Han<br />
+		            </td>
+      <td style="background-color:#dcebdc; padding: 5px;">
+        <div class="date_comment">
+          <a href="#comment3436">12 Jun 2008 at 2:03 pm PST</a>
+          		                    </div>
+      </td>
+    </tr>
+  </table>
+  <table cellpadding="0" cellspacing="0" border="0" style="width:630px; margin-bottom: 0px; margin-top:2px;">
+    <tr>
+      <td style="width: 80px; text-align: center;" valign="top">                     
+        <img style="padding-top: 2px; padding-right: 5px; padding-bottom: 5px;" alt="profile image" 
+                  src="http://twimgs.com/gamasutra/images/questionmark.jpg"
+                />
+      </td>
+      <td valign="top" style="text-align:left;">      
+        <div id="comment3436_show" class="single_comment">
+          I am actually a new DotA player after playing a couple years of World of Warcraft.  The thing that obviously struck me first was that a game only lasted about 30 minutes, or an hour at the max, whereas, a World of Wacraft raid could take several hours.  I am an older gamer, and don’t have the time and luxury to be able to sit at my computer anymore and raid with my guild mates.  <br /><br />
+My friends actually got me started on DotA, and I love the high player vs. player (pvp) aspect, but my only problem was that sometimes it seemed too hardcore of a pvp aspect.  As a new player I obviously do not know much about the game, and learned the hard way that some people don’t appreciate having me in their game.  Feeling unwelcomed in a game doesn’t offer much in the ways of wanting to come back.  <br /><br />
+I love the wide variety of characters to choose from, and the concept of item upgrading, but as a new player it all seems too much for me to learn, and sometimes I get overwhelmed by all the things I have to keep track of.  One game seemed just as intense as doing like a 40-man raid in World of Warcraft.<br /><br />
+Also, it’s a great mod, but for an old game.  I like playing with friends, but you have to admit that Warcraft 3 is an old game.  Games like Starcraft have finally come out with a new release, and even Counterstrike mod for the original Half-Life game got a new face in Counterstrike Source for the Half-Life 2 engine.  It’s a great game; I just wish to see a new face for it.<br /><br />
+The mod has got a lot of pros and cons, as do most games, and I just can see it doing better, with like more types of maps, and maybe a training level or teaching new players how to play.  The game community seems much focused on its hardcore players, and trying to hold tournaments and competitions, and as a new player it’s hard for me to break into that society. 
+        </div>
+		      </td>
+    </tr>
+<tr>
+      <td style="width: 80px; text-align: center;" valign="top">
+      </td>
+      <td valign="top" style="text-align:left;">
+<!--
+        <form name="comments3436_like_submit" action="/php-bin/news_index.php?story=18863" method="post" style='display:inline;'>
+            <input type="hidden" name="comment_like" value="3436" />
+            <div align="right"><a href="javascript:void(0)" onclick="document.comments3436_like_submit.submit(); return false;">Like</a>  </div>
+        </form>
+-->
+		<div id="comment3436_replyLink">
+<div id="no_reply_button">
+     <a href="/sso/login.php?from=http://www.gamasutra.com/php-bin/news_index.php?story=18863">Login to Reply or Like</a> <div style="display:inline; float:right;"> </div>
+</div>
+		</div>
+		<div id="comment3436_replyForm" style="display:none;">
+          <div id="website_comment">
+          Reply |
+            <a href="" onclick="document.comments3436_like_submit.submit(); return false;">Like</a> <div style="display:inline; float:right;"> </div>
+          </div>
+          <form name="comments3436_reply_submit" action="/php-bin/news_index.php?story=18863#comment3436" method="post">
+			<textarea class="comment_textarea" name="comment_body" rows="8" style="width: 99%"></textarea>
+			<input type="hidden" name="comment_reply" value="3436" />
+			<input type="hidden" name="comment_type" value="reply" />
+			<a href="javascript:void(0)" onclick="document.comments3436_reply_submit.submit(); javascript:trackComment(); return false;">Submit Reply</a> | <a href="javascript:void(0)" onclick="cancelReplyComment(3436);">Cancel Reply</a>
+		  </form>
+        </div>
+</td>
+</tr>
+    </table>     
+       
+    
+     
+   
+      
+ 
+      
+  
+    <table id="comment3441" cellpadding="0" cellspacing="0" style="width:630px;" border="0">
+    <tr>
+    <td colspan="2">
+    <hr noshade size="1" class="hr_comment">
+    </td>
+    </tr>
+    <tr>
+      <td style="background-color:#dcebdc; padding: 5px; text-align: left; width: 300px;">                 
+              Anonymous<br />
+            </td>
+      <td style="background-color:#dcebdc; padding: 5px;">
+        <div class="date_comment">
+          <a href="#comment3441">12 Jun 2008 at 3:14 pm PST</a>
+          		                    </div>
+      </td>
+    </tr>
+  </table>
+  <table cellpadding="0" cellspacing="0" border="0" style="width:630px; margin-bottom: 0px; margin-top:2px;">
+    <tr>
+      <td style="width: 80px; text-align: center;" valign="top">                     
+        <img style="padding-top: 2px; padding-right: 5px; padding-bottom: 5px;" alt="profile image" 
+                  src="http://twimgs.com/gamasutra/images/questionmark.jpg"
+                />
+      </td>
+      <td valign="top" style="text-align:left;">      
+        <div id="comment3441_show" class="single_comment">
+          One aspect of DotA the author didn't mention was the item recipe system contributed by Guinsoo. The heroes are great on their own, but what makes DotA feel so much more interesting is the use of items and their evolution during each game. If you're unfamilare with this, the way it works is some items, when combined, create greater items and thus creating a whole new element of strategy. 
+        </div>
+		      </td>
+    </tr>
+<tr>
+      <td style="width: 80px; text-align: center;" valign="top">
+      </td>
+      <td valign="top" style="text-align:left;">
+<!--
+        <form name="comments3441_like_submit" action="/php-bin/news_index.php?story=18863" method="post" style='display:inline;'>
+            <input type="hidden" name="comment_like" value="3441" />
+            <div align="right"><a href="javascript:void(0)" onclick="document.comments3441_like_submit.submit(); return false;">Like</a>  </div>
+        </form>
+-->
+		<div id="comment3441_replyLink">
+<div id="no_reply_button">
+     <a href="/sso/login.php?from=http://www.gamasutra.com/php-bin/news_index.php?story=18863">Login to Reply or Like</a> <div style="display:inline; float:right;"> </div>
+</div>
+		</div>
+		<div id="comment3441_replyForm" style="display:none;">
+          <div id="website_comment">
+          Reply |
+            <a href="" onclick="document.comments3441_like_submit.submit(); return false;">Like</a> <div style="display:inline; float:right;"> </div>
+          </div>
+          <form name="comments3441_reply_submit" action="/php-bin/news_index.php?story=18863#comment3441" method="post">
+			<textarea class="comment_textarea" name="comment_body" rows="8" style="width: 99%"></textarea>
+			<input type="hidden" name="comment_reply" value="3441" />
+			<input type="hidden" name="comment_type" value="reply" />
+			<a href="javascript:void(0)" onclick="document.comments3441_reply_submit.submit(); javascript:trackComment(); return false;">Submit Reply</a> | <a href="javascript:void(0)" onclick="cancelReplyComment(3441);">Cancel Reply</a>
+		  </form>
+        </div>
+</td>
+</tr>
+    </table>     
+       
+    
+     
+   
+      
+ 
+      
+  
+    <table id="comment3445" cellpadding="0" cellspacing="0" style="width:630px;" border="0">
+    <tr>
+    <td colspan="2">
+    <hr noshade size="1" class="hr_comment">
+    </td>
+    </tr>
+    <tr>
+      <td style="background-color:#dcebdc; padding: 5px; text-align: left; width: 300px;">                 
+              Anonymous<br />
+            </td>
+      <td style="background-color:#dcebdc; padding: 5px;">
+        <div class="date_comment">
+          <a href="#comment3445">12 Jun 2008 at 4:41 pm PST</a>
+          		                    </div>
+      </td>
+    </tr>
+  </table>
+  <table cellpadding="0" cellspacing="0" border="0" style="width:630px; margin-bottom: 0px; margin-top:2px;">
+    <tr>
+      <td style="width: 80px; text-align: center;" valign="top">                     
+        <img style="padding-top: 2px; padding-right: 5px; padding-bottom: 5px;" alt="profile image" 
+                  src="http://twimgs.com/gamasutra/images/questionmark.jpg"
+                />
+      </td>
+      <td valign="top" style="text-align:left;">      
+        <div id="comment3445_show" class="single_comment">
+          There is no doubt that DotA is an incredible game.  But what's more impressive is the mod's success despite its origins and evolution.  It's amazing how the complexities of DotA came from a couple of individuals (Eul, Guinsoo, and Icefrog) with the support of the community. 
+        </div>
+		      </td>
+    </tr>
+<tr>
+      <td style="width: 80px; text-align: center;" valign="top">
+      </td>
+      <td valign="top" style="text-align:left;">
+<!--
+        <form name="comments3445_like_submit" action="/php-bin/news_index.php?story=18863" method="post" style='display:inline;'>
+            <input type="hidden" name="comment_like" value="3445" />
+            <div align="right"><a href="javascript:void(0)" onclick="document.comments3445_like_submit.submit(); return false;">Like</a>  </div>
+        </form>
+-->
+		<div id="comment3445_replyLink">
+<div id="no_reply_button">
+     <a href="/sso/login.php?from=http://www.gamasutra.com/php-bin/news_index.php?story=18863">Login to Reply or Like</a> <div style="display:inline; float:right;"> </div>
+</div>
+		</div>
+		<div id="comment3445_replyForm" style="display:none;">
+          <div id="website_comment">
+          Reply |
+            <a href="" onclick="document.comments3445_like_submit.submit(); return false;">Like</a> <div style="display:inline; float:right;"> </div>
+          </div>
+          <form name="comments3445_reply_submit" action="/php-bin/news_index.php?story=18863#comment3445" method="post">
+			<textarea class="comment_textarea" name="comment_body" rows="8" style="width: 99%"></textarea>
+			<input type="hidden" name="comment_reply" value="3445" />
+			<input type="hidden" name="comment_type" value="reply" />
+			<a href="javascript:void(0)" onclick="document.comments3445_reply_submit.submit(); javascript:trackComment(); return false;">Submit Reply</a> | <a href="javascript:void(0)" onclick="cancelReplyComment(3445);">Cancel Reply</a>
+		  </form>
+        </div>
+</td>
+</tr>
+    </table>     
+       
+    
+     
+   
+      
+ 
+      
+  
+    <table id="comment3454" cellpadding="0" cellspacing="0" style="width:630px;" border="0">
+    <tr>
+    <td colspan="2">
+    <hr noshade size="1" class="hr_comment">
+    </td>
+    </tr>
+    <tr>
+      <td style="background-color:#dcebdc; padding: 5px; text-align: left; width: 300px;">                 
+      				Gustav Seymore<br />
+		            </td>
+      <td style="background-color:#dcebdc; padding: 5px;">
+        <div class="date_comment">
+          <a href="#comment3454">13 Jun 2008 at 1:42 am PST</a>
+          		                    </div>
+      </td>
+    </tr>
+  </table>
+  <table cellpadding="0" cellspacing="0" border="0" style="width:630px; margin-bottom: 0px; margin-top:2px;">
+    <tr>
+      <td style="width: 80px; text-align: center;" valign="top">                     
+        <img style="padding-top: 2px; padding-right: 5px; padding-bottom: 5px;" alt="profile image" 
+                  src="http://twimgs.com/gamasutra/images/questionmark.jpg"
+                />
+      </td>
+      <td valign="top" style="text-align:left;">      
+        <div id="comment3454_show" class="single_comment">
+          I am glad someone has finally written about DotA here. I play dota a lot and I find it amazing how one mod can continually improve and see to the communities needs. It is one of the best designed games around and it's re-playability is proof of that. I often compare it to a modern version of Chess, where there are a simple set of rules yet bottomless depth of play. 
+        </div>
+		      </td>
+    </tr>
+<tr>
+      <td style="width: 80px; text-align: center;" valign="top">
+      </td>
+      <td valign="top" style="text-align:left;">
+<!--
+        <form name="comments3454_like_submit" action="/php-bin/news_index.php?story=18863" method="post" style='display:inline;'>
+            <input type="hidden" name="comment_like" value="3454" />
+            <div align="right"><a href="javascript:void(0)" onclick="document.comments3454_like_submit.submit(); return false;">Like</a>  </div>
+        </form>
+-->
+		<div id="comment3454_replyLink">
+<div id="no_reply_button">
+     <a href="/sso/login.php?from=http://www.gamasutra.com/php-bin/news_index.php?story=18863">Login to Reply or Like</a> <div style="display:inline; float:right;"> </div>
+</div>
+		</div>
+		<div id="comment3454_replyForm" style="display:none;">
+          <div id="website_comment">
+          Reply |
+            <a href="" onclick="document.comments3454_like_submit.submit(); return false;">Like</a> <div style="display:inline; float:right;"> </div>
+          </div>
+          <form name="comments3454_reply_submit" action="/php-bin/news_index.php?story=18863#comment3454" method="post">
+			<textarea class="comment_textarea" name="comment_body" rows="8" style="width: 99%"></textarea>
+			<input type="hidden" name="comment_reply" value="3454" />
+			<input type="hidden" name="comment_type" value="reply" />
+			<a href="javascript:void(0)" onclick="document.comments3454_reply_submit.submit(); javascript:trackComment(); return false;">Submit Reply</a> | <a href="javascript:void(0)" onclick="cancelReplyComment(3454);">Cancel Reply</a>
+		  </form>
+        </div>
+</td>
+</tr>
+    </table>     
+       
+    
+     
+   
+      
+ 
+      
+  
+    <table id="comment3458" cellpadding="0" cellspacing="0" style="width:630px;" border="0">
+    <tr>
+    <td colspan="2">
+    <hr noshade size="1" class="hr_comment">
+    </td>
+    </tr>
+    <tr>
+      <td style="background-color:#dcebdc; padding: 5px; text-align: left; width: 300px;">                 
+      				Matthew Bozarth<br />
+		            </td>
+      <td style="background-color:#dcebdc; padding: 5px;">
+        <div class="date_comment">
+          <a href="#comment3458">13 Jun 2008 at 6:28 am PST</a>
+          		                    </div>
+      </td>
+    </tr>
+  </table>
+  <table cellpadding="0" cellspacing="0" border="0" style="width:630px; margin-bottom: 0px; margin-top:2px;">
+    <tr>
+      <td style="width: 80px; text-align: center;" valign="top">                     
+        <img style="padding-top: 2px; padding-right: 5px; padding-bottom: 5px;" alt="profile image" 
+                  src="http://twimgs.com/gamasutra/images/questionmark.jpg"
+                />
+      </td>
+      <td valign="top" style="text-align:left;">      
+        <div id="comment3458_show" class="single_comment">
+          Let's all take a minute to weep for the fans of the original Eul version. We feel that All Stars is sort of a ripoff is in comparison is imbalanced and poorly paced. :P<br /><br />
+<br /><br />
+One thing I think should be mentioned is that Gas Powered Games is making a game called Demigod that looks to be inspired by DotA.<br /><br />
+<br /><br />
+http://www.demigodthegame.com/ 
+        </div>
+		      </td>
+    </tr>
+<tr>
+      <td style="width: 80px; text-align: center;" valign="top">
+      </td>
+      <td valign="top" style="text-align:left;">
+<!--
+        <form name="comments3458_like_submit" action="/php-bin/news_index.php?story=18863" method="post" style='display:inline;'>
+            <input type="hidden" name="comment_like" value="3458" />
+            <div align="right"><a href="javascript:void(0)" onclick="document.comments3458_like_submit.submit(); return false;">Like</a>  </div>
+        </form>
+-->
+		<div id="comment3458_replyLink">
+<div id="no_reply_button">
+     <a href="/sso/login.php?from=http://www.gamasutra.com/php-bin/news_index.php?story=18863">Login to Reply or Like</a> <div style="display:inline; float:right;"> </div>
+</div>
+		</div>
+		<div id="comment3458_replyForm" style="display:none;">
+          <div id="website_comment">
+          Reply |
+            <a href="" onclick="document.comments3458_like_submit.submit(); return false;">Like</a> <div style="display:inline; float:right;"> </div>
+          </div>
+          <form name="comments3458_reply_submit" action="/php-bin/news_index.php?story=18863#comment3458" method="post">
+			<textarea class="comment_textarea" name="comment_body" rows="8" style="width: 99%"></textarea>
+			<input type="hidden" name="comment_reply" value="3458" />
+			<input type="hidden" name="comment_type" value="reply" />
+			<a href="javascript:void(0)" onclick="document.comments3458_reply_submit.submit(); javascript:trackComment(); return false;">Submit Reply</a> | <a href="javascript:void(0)" onclick="cancelReplyComment(3458);">Cancel Reply</a>
+		  </form>
+        </div>
+</td>
+</tr>
+    </table>     
+       
+    
+     
+   
+      
+ 
+      
+  
+    <table id="comment3459" cellpadding="0" cellspacing="0" style="width:630px;" border="0">
+    <tr>
+    <td colspan="2">
+    <hr noshade size="1" class="hr_comment">
+    </td>
+    </tr>
+    <tr>
+      <td style="background-color:#dcebdc; padding: 5px; text-align: left; width: 300px;">                 
+      				<a href="/blogs/EricLagel/398892/">Eric Lagel</a><br />
+		            </td>
+      <td style="background-color:#dcebdc; padding: 5px;">
+        <div class="date_comment">
+          <a href="#comment3459">13 Jun 2008 at 6:58 am PST</a>
+          		                    </div>
+      </td>
+    </tr>
+  </table>
+  <table cellpadding="0" cellspacing="0" border="0" style="width:630px; margin-bottom: 0px; margin-top:2px;">
+    <tr>
+      <td style="width: 80px; text-align: center;" valign="top">                     
+        <img style="padding-top: 2px; padding-right: 5px; padding-bottom: 5px;" alt="profile image" 
+                  src="http://twimgs.com/gamasutra/images/questionmark.jpg"
+                />
+      </td>
+      <td valign="top" style="text-align:left;">      
+        <div id="comment3459_show" class="single_comment">
+          I would say DotA is definitely more complex than chess, but it has, indeed, infinite replayability. It would also be fair to remind that any multiplayer game has infinite replayability by nature, but this one is indeed still enjoyable 5 years still after the first time I tried it.<br /><br />
+<br /><br />
+As underlined in this great article, there is some kind of magic that makes this mod so successful. It is most certainly because of the community that this has lasted so long with such an incredible success. And I do agree that the devs do an amazing job. If Icefrog is looking for a job, he definitely should contact me :). 
+        </div>
+		      </td>
+    </tr>
+<tr>
+      <td style="width: 80px; text-align: center;" valign="top">
+      </td>
+      <td valign="top" style="text-align:left;">
+<!--
+        <form name="comments3459_like_submit" action="/php-bin/news_index.php?story=18863" method="post" style='display:inline;'>
+            <input type="hidden" name="comment_like" value="3459" />
+            <div align="right"><a href="javascript:void(0)" onclick="document.comments3459_like_submit.submit(); return false;">Like</a>  </div>
+        </form>
+-->
+		<div id="comment3459_replyLink">
+<div id="no_reply_button">
+     <a href="/sso/login.php?from=http://www.gamasutra.com/php-bin/news_index.php?story=18863">Login to Reply or Like</a> <div style="display:inline; float:right;"> </div>
+</div>
+		</div>
+		<div id="comment3459_replyForm" style="display:none;">
+          <div id="website_comment">
+          Reply |
+            <a href="" onclick="document.comments3459_like_submit.submit(); return false;">Like</a> <div style="display:inline; float:right;"> </div>
+          </div>
+          <form name="comments3459_reply_submit" action="/php-bin/news_index.php?story=18863#comment3459" method="post">
+			<textarea class="comment_textarea" name="comment_body" rows="8" style="width: 99%"></textarea>
+			<input type="hidden" name="comment_reply" value="3459" />
+			<input type="hidden" name="comment_type" value="reply" />
+			<a href="javascript:void(0)" onclick="document.comments3459_reply_submit.submit(); javascript:trackComment(); return false;">Submit Reply</a> | <a href="javascript:void(0)" onclick="cancelReplyComment(3459);">Cancel Reply</a>
+		  </form>
+        </div>
+</td>
+</tr>
+    </table>     
+       
+    
+     
+   
+      
+ 
+      
+  
+    <table id="comment3465" cellpadding="0" cellspacing="0" style="width:630px;" border="0">
+    <tr>
+    <td colspan="2">
+    <hr noshade size="1" class="hr_comment">
+    </td>
+    </tr>
+    <tr>
+      <td style="background-color:#dcebdc; padding: 5px; text-align: left; width: 300px;">                 
+      				Tom Kammerer<br />
+		            </td>
+      <td style="background-color:#dcebdc; padding: 5px;">
+        <div class="date_comment">
+          <a href="#comment3465">13 Jun 2008 at 9:43 am PST</a>
+          		                    </div>
+      </td>
+    </tr>
+  </table>
+  <table cellpadding="0" cellspacing="0" border="0" style="width:630px; margin-bottom: 0px; margin-top:2px;">
+    <tr>
+      <td style="width: 80px; text-align: center;" valign="top">                     
+        <img style="padding-top: 2px; padding-right: 5px; padding-bottom: 5px;" alt="profile image" 
+                  src="http://twimgs.com/gamasutra/images/questionmark.jpg"
+                />
+      </td>
+      <td valign="top" style="text-align:left;">      
+        <div id="comment3465_show" class="single_comment">
+          Matthew Bozarth ,  <br /><br />
+<br /><br />
+Awsome comment,  I have been a daily DOTA fan since the very first version launched months after the launch of wc3.<br /><br />
+Eul has forever been my idol not icefrog or guinsoo and i got a little upset when icefrog got alot of the attention in this article.  Dont get me wrong he is an awsome person to keep dota what it should be but Eul needs to make himself heard.  I want to see a relaunch of the orginal on battle.net.<br /><br />
+<br /><br />
+His version with his orginal heros was the true spark of every tower/base defense game on battle.net.  Before Eul it was all Starcraft inspired custom games, like the old SC tower d build em up games (AKA DukeWintermaul)  and the CTF games.  Eul deserves alot more say than anyone involved with DOTA.<br /><br />
+<br /><br />
+all i can say is,   DEFENSE OF THE ANCIENTS <br /><br />
+<br /><br />
+its own game, its own price, its ownage brought to Gamestop's everywhere.<br /><br />
+<br /><br />
+It truly is a game gamers want.  whether you have experienced it our not. period. 
+        </div>
+		      </td>
+    </tr>
+<tr>
+      <td style="width: 80px; text-align: center;" valign="top">
+      </td>
+      <td valign="top" style="text-align:left;">
+<!--
+        <form name="comments3465_like_submit" action="/php-bin/news_index.php?story=18863" method="post" style='display:inline;'>
+            <input type="hidden" name="comment_like" value="3465" />
+            <div align="right"><a href="javascript:void(0)" onclick="document.comments3465_like_submit.submit(); return false;">Like</a>  </div>
+        </form>
+-->
+		<div id="comment3465_replyLink">
+<div id="no_reply_button">
+     <a href="/sso/login.php?from=http://www.gamasutra.com/php-bin/news_index.php?story=18863">Login to Reply or Like</a> <div style="display:inline; float:right;"> </div>
+</div>
+		</div>
+		<div id="comment3465_replyForm" style="display:none;">
+          <div id="website_comment">
+          Reply |
+            <a href="" onclick="document.comments3465_like_submit.submit(); return false;">Like</a> <div style="display:inline; float:right;"> </div>
+          </div>
+          <form name="comments3465_reply_submit" action="/php-bin/news_index.php?story=18863#comment3465" method="post">
+			<textarea class="comment_textarea" name="comment_body" rows="8" style="width: 99%"></textarea>
+			<input type="hidden" name="comment_reply" value="3465" />
+			<input type="hidden" name="comment_type" value="reply" />
+			<a href="javascript:void(0)" onclick="document.comments3465_reply_submit.submit(); javascript:trackComment(); return false;">Submit Reply</a> | <a href="javascript:void(0)" onclick="cancelReplyComment(3465);">Cancel Reply</a>
+		  </form>
+        </div>
+</td>
+</tr>
+    </table>     
+       
+    
+     
+   
+      
+ 
+      
+  
+    <table id="comment3466" cellpadding="0" cellspacing="0" style="width:630px;" border="0">
+    <tr>
+    <td colspan="2">
+    <hr noshade size="1" class="hr_comment">
+    </td>
+    </tr>
+    <tr>
+      <td style="background-color:#dcebdc; padding: 5px; text-align: left; width: 300px;">                 
+      				Tom Kammerer<br />
+		            </td>
+      <td style="background-color:#dcebdc; padding: 5px;">
+        <div class="date_comment">
+          <a href="#comment3466">13 Jun 2008 at 9:46 am PST</a>
+          		                    </div>
+      </td>
+    </tr>
+  </table>
+  <table cellpadding="0" cellspacing="0" border="0" style="width:630px; margin-bottom: 0px; margin-top:2px;">
+    <tr>
+      <td style="width: 80px; text-align: center;" valign="top">                     
+        <img style="padding-top: 2px; padding-right: 5px; padding-bottom: 5px;" alt="profile image" 
+                  src="http://twimgs.com/gamasutra/images/questionmark.jpg"
+                />
+      </td>
+      <td valign="top" style="text-align:left;">      
+        <div id="comment3466_show" class="single_comment">
+          Matthew Bozarth ,  <br /><br />
+<br /><br />
+Awsome comment,  I have been a daily DOTA fan since the very first version launched months after the launch of wc3.<br /><br />
+Eul has forever been my idol not icefrog or guinsoo and i got a little upset when icefrog got alot of the attention in this article.  Dont get me wrong he is an awsome person to keep dota what it should be but Eul needs to make himself heard.  I want to see a relaunch of the orginal on battle.net.<br /><br />
+<br /><br />
+His version with his orginal heros was the true spark of every tower/base defense game on battle.net.  Before Eul it was all Starcraft inspired custom games, like the old SC tower d build em up games (AKA DukeWintermaul)  and the CTF games.  Eul deserves alot more say than anyone involved with DOTA.<br /><br />
+<br /><br />
+all i can say is,   DEFENSE OF THE ANCIENTS <br /><br />
+<br /><br />
+its own game, its own price, its ownage brought to Gamestop's everywhere.<br /><br />
+<br /><br />
+It truly is a game gamers want.  whether you have experienced it our not. period. 
+        </div>
+		      </td>
+    </tr>
+<tr>
+      <td style="width: 80px; text-align: center;" valign="top">
+      </td>
+      <td valign="top" style="text-align:left;">
+<!--
+        <form name="comments3466_like_submit" action="/php-bin/news_index.php?story=18863" method="post" style='display:inline;'>
+            <input type="hidden" name="comment_like" value="3466" />
+            <div align="right"><a href="javascript:void(0)" onclick="document.comments3466_like_submit.submit(); return false;">Like</a>  </div>
+        </form>
+-->
+		<div id="comment3466_replyLink">
+<div id="no_reply_button">
+     <a href="/sso/login.php?from=http://www.gamasutra.com/php-bin/news_index.php?story=18863">Login to Reply or Like</a> <div style="display:inline; float:right;"> </div>
+</div>
+		</div>
+		<div id="comment3466_replyForm" style="display:none;">
+          <div id="website_comment">
+          Reply |
+            <a href="" onclick="document.comments3466_like_submit.submit(); return false;">Like</a> <div style="display:inline; float:right;"> </div>
+          </div>
+          <form name="comments3466_reply_submit" action="/php-bin/news_index.php?story=18863#comment3466" method="post">
+			<textarea class="comment_textarea" name="comment_body" rows="8" style="width: 99%"></textarea>
+			<input type="hidden" name="comment_reply" value="3466" />
+			<input type="hidden" name="comment_type" value="reply" />
+			<a href="javascript:void(0)" onclick="document.comments3466_reply_submit.submit(); javascript:trackComment(); return false;">Submit Reply</a> | <a href="javascript:void(0)" onclick="cancelReplyComment(3466);">Cancel Reply</a>
+		  </form>
+        </div>
+</td>
+</tr>
+    </table>     
+       
+    
+     
+   
+      
+ 
+      
+  
+    <table id="comment3473" cellpadding="0" cellspacing="0" style="width:630px;" border="0">
+    <tr>
+    <td colspan="2">
+    <hr noshade size="1" class="hr_comment">
+    </td>
+    </tr>
+    <tr>
+      <td style="background-color:#dcebdc; padding: 5px; text-align: left; width: 300px;">                 
+              Anonymous<br />
+            </td>
+      <td style="background-color:#dcebdc; padding: 5px;">
+        <div class="date_comment">
+          <a href="#comment3473">13 Jun 2008 at 11:11 am PST</a>
+          		                    </div>
+      </td>
+    </tr>
+  </table>
+  <table cellpadding="0" cellspacing="0" border="0" style="width:630px; margin-bottom: 0px; margin-top:2px;">
+    <tr>
+      <td style="width: 80px; text-align: center;" valign="top">                     
+        <img style="padding-top: 2px; padding-right: 5px; padding-bottom: 5px;" alt="profile image" 
+                  src="http://twimgs.com/gamasutra/images/questionmark.jpg"
+                />
+      </td>
+      <td valign="top" style="text-align:left;">      
+        <div id="comment3473_show" class="single_comment">
+          lots of companys are making dota clones.. the market is soon to be saturated with them.   It will be interesting to see if DOTA players are willing to pay for a product, when they can have the same if not better experience playing dota.<br /><br />
+I am half expecting a dota game mode in the next starcraft :P 
+        </div>
+		      </td>
+    </tr>
+<tr>
+      <td style="width: 80px; text-align: center;" valign="top">
+      </td>
+      <td valign="top" style="text-align:left;">
+<!--
+        <form name="comments3473_like_submit" action="/php-bin/news_index.php?story=18863" method="post" style='display:inline;'>
+            <input type="hidden" name="comment_like" value="3473" />
+            <div align="right"><a href="javascript:void(0)" onclick="document.comments3473_like_submit.submit(); return false;">Like</a>  </div>
+        </form>
+-->
+		<div id="comment3473_replyLink">
+<div id="no_reply_button">
+     <a href="/sso/login.php?from=http://www.gamasutra.com/php-bin/news_index.php?story=18863">Login to Reply or Like</a> <div style="display:inline; float:right;"> </div>
+</div>
+		</div>
+		<div id="comment3473_replyForm" style="display:none;">
+          <div id="website_comment">
+          Reply |
+            <a href="" onclick="document.comments3473_like_submit.submit(); return false;">Like</a> <div style="display:inline; float:right;"> </div>
+          </div>
+          <form name="comments3473_reply_submit" action="/php-bin/news_index.php?story=18863#comment3473" method="post">
+			<textarea class="comment_textarea" name="comment_body" rows="8" style="width: 99%"></textarea>
+			<input type="hidden" name="comment_reply" value="3473" />
+			<input type="hidden" name="comment_type" value="reply" />
+			<a href="javascript:void(0)" onclick="document.comments3473_reply_submit.submit(); javascript:trackComment(); return false;">Submit Reply</a> | <a href="javascript:void(0)" onclick="cancelReplyComment(3473);">Cancel Reply</a>
+		  </form>
+        </div>
+</td>
+</tr>
+    </table>     
+       
+    
+     
+   
+      
+ 
+      
+  
+    <table id="comment3503" cellpadding="0" cellspacing="0" style="width:630px;" border="0">
+    <tr>
+    <td colspan="2">
+    <hr noshade size="1" class="hr_comment">
+    </td>
+    </tr>
+    <tr>
+      <td style="background-color:#dcebdc; padding: 5px; text-align: left; width: 300px;">                 
+              Anonymous<br />
+            </td>
+      <td style="background-color:#dcebdc; padding: 5px;">
+        <div class="date_comment">
+          <a href="#comment3503">16 Jun 2008 at 2:25 pm PST</a>
+          		                    </div>
+      </td>
+    </tr>
+  </table>
+  <table cellpadding="0" cellspacing="0" border="0" style="width:630px; margin-bottom: 0px; margin-top:2px;">
+    <tr>
+      <td style="width: 80px; text-align: center;" valign="top">                     
+        <img style="padding-top: 2px; padding-right: 5px; padding-bottom: 5px;" alt="profile image" 
+                  src="http://twimgs.com/gamasutra/images/questionmark.jpg"
+                />
+      </td>
+      <td valign="top" style="text-align:left;">      
+        <div id="comment3503_show" class="single_comment">
+          Where DotA really falls short is in its player management. As described above, there are little to no methods to match players effectively and there are no ways of balancing crooked games once they have started. <br /><br />
+<br /><br />
+There are some systems that have been created such as the Ban List to prevent players from playing with those who are undesirable. But it is still third party software and it would be so much nicer if it was part of the game itself. 
+        </div>
+		      </td>
+    </tr>
+<tr>
+      <td style="width: 80px; text-align: center;" valign="top">
+      </td>
+      <td valign="top" style="text-align:left;">
+<!--
+        <form name="comments3503_like_submit" action="/php-bin/news_index.php?story=18863" method="post" style='display:inline;'>
+            <input type="hidden" name="comment_like" value="3503" />
+            <div align="right"><a href="javascript:void(0)" onclick="document.comments3503_like_submit.submit(); return false;">Like</a>  </div>
+        </form>
+-->
+		<div id="comment3503_replyLink">
+<div id="no_reply_button">
+     <a href="/sso/login.php?from=http://www.gamasutra.com/php-bin/news_index.php?story=18863">Login to Reply or Like</a> <div style="display:inline; float:right;"> </div>
+</div>
+		</div>
+		<div id="comment3503_replyForm" style="display:none;">
+          <div id="website_comment">
+          Reply |
+            <a href="" onclick="document.comments3503_like_submit.submit(); return false;">Like</a> <div style="display:inline; float:right;"> </div>
+          </div>
+          <form name="comments3503_reply_submit" action="/php-bin/news_index.php?story=18863#comment3503" method="post">
+			<textarea class="comment_textarea" name="comment_body" rows="8" style="width: 99%"></textarea>
+			<input type="hidden" name="comment_reply" value="3503" />
+			<input type="hidden" name="comment_type" value="reply" />
+			<a href="javascript:void(0)" onclick="document.comments3503_reply_submit.submit(); javascript:trackComment(); return false;">Submit Reply</a> | <a href="javascript:void(0)" onclick="cancelReplyComment(3503);">Cancel Reply</a>
+		  </form>
+        </div>
+</td>
+</tr>
+    </table>     
+       
+    
+     
+   
+      
+ 
+      
+  
+    <table id="comment3526" cellpadding="0" cellspacing="0" style="width:630px;" border="0">
+    <tr>
+    <td colspan="2">
+    <hr noshade size="1" class="hr_comment">
+    </td>
+    </tr>
+    <tr>
+      <td style="background-color:#dcebdc; padding: 5px; text-align: left; width: 300px;">                 
+              Anonymous<br />
+            </td>
+      <td style="background-color:#dcebdc; padding: 5px;">
+        <div class="date_comment">
+          <a href="#comment3526">17 Jun 2008 at 5:09 pm PST</a>
+          		                    </div>
+      </td>
+    </tr>
+  </table>
+  <table cellpadding="0" cellspacing="0" border="0" style="width:630px; margin-bottom: 0px; margin-top:2px;">
+    <tr>
+      <td style="width: 80px; text-align: center;" valign="top">                     
+        <img style="padding-top: 2px; padding-right: 5px; padding-bottom: 5px;" alt="profile image" 
+                  src="http://twimgs.com/gamasutra/images/questionmark.jpg"
+                />
+      </td>
+      <td valign="top" style="text-align:left;">      
+        <div id="comment3526_show" class="single_comment">
+          Let's not forget the time when we all started playing DotA, the unforgiving ridicule that we received for even the smallest mistake.  Without proper player matching this was hard to avoid. >. 
+        </div>
+		      </td>
+    </tr>
+<tr>
+      <td style="width: 80px; text-align: center;" valign="top">
+      </td>
+      <td valign="top" style="text-align:left;">
+<!--
+        <form name="comments3526_like_submit" action="/php-bin/news_index.php?story=18863" method="post" style='display:inline;'>
+            <input type="hidden" name="comment_like" value="3526" />
+            <div align="right"><a href="javascript:void(0)" onclick="document.comments3526_like_submit.submit(); return false;">Like</a>  </div>
+        </form>
+-->
+		<div id="comment3526_replyLink">
+<div id="no_reply_button">
+     <a href="/sso/login.php?from=http://www.gamasutra.com/php-bin/news_index.php?story=18863">Login to Reply or Like</a> <div style="display:inline; float:right;"> </div>
+</div>
+		</div>
+		<div id="comment3526_replyForm" style="display:none;">
+          <div id="website_comment">
+          Reply |
+            <a href="" onclick="document.comments3526_like_submit.submit(); return false;">Like</a> <div style="display:inline; float:right;"> </div>
+          </div>
+          <form name="comments3526_reply_submit" action="/php-bin/news_index.php?story=18863#comment3526" method="post">
+			<textarea class="comment_textarea" name="comment_body" rows="8" style="width: 99%"></textarea>
+			<input type="hidden" name="comment_reply" value="3526" />
+			<input type="hidden" name="comment_type" value="reply" />
+			<a href="javascript:void(0)" onclick="document.comments3526_reply_submit.submit(); javascript:trackComment(); return false;">Submit Reply</a> | <a href="javascript:void(0)" onclick="cancelReplyComment(3526);">Cancel Reply</a>
+		  </form>
+        </div>
+</td>
+</tr>
+    </table>     
+       
+    
+     
+   
+    
+  <div id="comment_form">
+  <hr noshade size="1" class="hr_comment">
+  <br />
+    <form name="comments_submit" action="/php-bin/news_index.php?story=18863" method="post">
+    <table cellspacing="0" cellpadding="0" border="0">
+    <tr>
+      <td class="td_comment_name">
+        <div id="user_name_comment">none
+             </div>
+      </td>
+      <td class="td_comment_anonymous" valign="top">
+              </td>
+      <td>
+        &nbsp;      </td>
+    </tr> 
+    <tr>
+      <td class="td_blank_comment_website">
+        <div id="website_comment">
+          Comment:
+        </div>
+      </td>
+      <td>
+        <div class="td_comment_website">
+                </div>
+      </td>
+      <td>&nbsp;</td>
+    </tr>
+    
+    </table>
+    <textarea class="comment_textarea" name="comment_body" rows="8" style="width: 99%"></textarea>
+    <input type="hidden" name="comment_type" value="comment" />
+    <br />
+    <br />
+    <div class="comment_submit">
+      <a class="noline" onclick="document.comments_submit.submit(); javascript:trackComment(); return false;" href="">Submit Comment</a>
+    </div>
+    </form>
+  </div> 
+  <div id="no_comment_form">
+    <br />
+    <span class="comment_login">
+     <a href="/sso/login.php?from=http://www.gamasutra.com/php-bin/news_index.php?story=18863">        
+        <img src="http://twimgs.com/gamasutra/images/btn_comment.gif" width="113" height="16" border="0" alt="Login to Comment" /></a>    
+     </span>
+    
+    <br />
+  </div>
+  
+  <script type="text/javascript">
+  if(login.loggedIn)
+    document.getElementById('no_comment_form').style.display='none';
+  else
+    document.getElementById('comment_form').style.display='none';
+
+	function editComment(c)
+	{
+		document.getElementById('comment'+c+'_show').style.display = 'none';
+		document.getElementById('comment'+c+'_edit').style.display = 'block';
+	}
+	
+	function cancelEditComment(c)
+	{
+		document.getElementById('comment'+c+'_show').style.display = 'block';
+		document.getElementById('comment'+c+'_edit').style.display = 'none';
+	}
+	function replyComment(c)
+	{
+            if(login.loggedIn) {
+                document.getElementById('comment'+c+'_replyLink').style.display = 'none';
+		document.getElementById('comment'+c+'_replyForm').style.display = 'block';
+            } else {
+                window.location.assign('/sso/login.php?from=' + document.URL);
+            }
+		
+	}
+	
+	function cancelReplyComment(c)
+	{
+		document.getElementById('comment'+c+'_replyLink').style.display = 'block';
+		document.getElementById('comment'+c+'_replyForm').style.display = 'none';
+	}	
+	
+	function trackComment(){
+		//if(document.comments_submit.comment_body.value != '') {
+			//alert(document.comments_submit.comment_body.value);
+		  var s=s_gi('cmpglobalvista'); 
+		  s.eVar24=s.prop7 +" | "+ s.prop4;  
+		  s.events='event8';
+		  s.tl(this,'o','Article Comment Posted');
+
+		//} 
+		//else {
+		//	alert('Comment body was blank');
+		//}
+	}
+	
+  </script>
+  
+</div>
+<br />
+<br />                   </td>
+                <td width="10" rowspan="1">&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+          <td rowspan="30" bgcolor="#FFFFFF" width="2">
+            <img src="http://twimgs.com/gamasutra/images/spacer.gif" border="0" width="2" />
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<div id="ad"> <!-- Width: 160 px; margin-left: 5px skyscrapper-->
+		<!--right hand ads start here-->
+    
+                    
+<!-- 160x600 Skyscraper  -->
+<!--JavaScript Tag // Tag for network 5242: United Business Media // Website: Gamasutra // Page: ROS // Placement: BACKUP_Skyscraper_160x600 (2382764) // created at: Apr 5, 2012 5:15:30 PM-->
+<script language="javascript"><!--
+document.write('<scr'+'ipt language="javascript1.1" src="http://adserver.adtechus.com/addyn/3.0/5242.1/2382764/0/154/ADTECH;alias=Gamasutra_Console_PC_160x600;loc=100;target=_blank;key='+adkeys+';grp='+adrand+';misc='+new Date().getTime()+'"></scri'+'pt>');
+//-->
+</script><noscript><a href="http://adserver.adtechus.com/adlink/3.0/5242.1/2382764/0/154/ADTECH;alias=Gamasutra_Console_PC_160x600;loc=300;key='+adkeys+';grp='+adrand+'" target="_blank"><img src="http://adserver.adtechus.com/adserv/3.0/5242.1/2382764/0/154/ADTECH;alias=Gamasutra_Console_PC_160x600;loc=300;key='+adkeys+';grp='+adrand+'" border="0" width="160" height="600"></a></noscript>
+<!-- End of JavaScript Tag -->
+
+<!-- /160x600 Skyscraper -->
+        <br />
+    
+<div style="text-align: center;">
+
+<br />
+
+<!--/* 160x160 sponsor 1 OpenX Javascript Tag v2.8.5 */-->
+
+<!--JavaScript Tag // Tag for network 5242: United Business Media // Website: Gamasutra // Page: ROS // Placement: BACKUP_Tile1_160x160 (2382761) // created at: Apr 5, 2012 5:15:30 PM-->
+<script language="javascript"><!--
+document.write('<scr'+'ipt language="javascript1.1" src="http://adserver.adtechus.com/addyn/3.0/5242.1/2382761/0/401/ADTECH;alias=Gamasutra_Console_PC_Tile1_160x160;loc=100;target=_blank;key='+adkeys+';grp='+adrand+';misc='+new Date().getTime()+'"></scri'+'pt>');
+//-->
+</script><noscript><a href="http://adserver.adtechus.com/adlink/3.0/5242.1/2382761/0/401/ADTECH;alias=Gamasutra_Console_PC_Tile1_160x160;loc=300;key='+adkeys+';grp='+adrand+'" target="_blank"><img src="http://adserver.adtechus.com/adserv/3.0/5242.1/2382761/0/401/ADTECH;alias=Gamasutra_Console_PC_Tile1_160x160;loc=300;key='+adkeys+';grp='+adrand+'" border="0" width="160" height="160"></a></noscript>
+<!-- End of JavaScript Tag -->
+
+<br />
+<br />
+
+
+
+<!--/* 160x160 sponsor 2 OpenX Javascript Tag v2.8.5 */-->
+<!--JavaScript Tag // Tag for network 5242: United Business Media // Website: Gamasutra // Page: ROS // Placement: BACKUP_Tile2_160x160 (2382765) // created at: Apr 5, 2012 5:15:30 PM-->
+<script language="javascript"><!--
+document.write('<scr'+'ipt language="javascript1.1" src="http://adserver.adtechus.com/addyn/3.0/5242.1/2382765/0/401/ADTECH;alias=Gamasutra_Console_PC_Tile2_160x160;loc=100;target=_blank;key='+adkeys+';grp='+adrand+';misc='+new Date().getTime()+'"></scri'+'pt>');
+//-->
+</script><noscript><a href="http://adserver.adtechus.com/adlink/3.0/5242.1/2382765/0/401/ADTECH;alias=Gamasutra_Console_PC_Tile2_160x160;loc=300;key='+adkeys+';grp='+adrand+'" target="_blank"><img src="http://adserver.adtechus.com/adserv/3.0/5242.1/2382765/0/401/ADTECH;alias=Gamasutra_Console_PC_Tile2_160x160;loc=300;key='+adkeys+';grp='+adrand+'" border="0" width="160" height="160"></a></noscript>
+<!-- End of JavaScript Tag -->
+
+
+
+</div>         
+        
+		<!--right hand ads end here-->
+	</div><!-- SiteCatalyst code version: H.21.
+Copyright 1996-2010 Adobe, Inc. All Rights Reserved
+More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="http://i.cmpnet.com/shared/omniture/h_s_code_remote.js"></script>
+<script language="JavaScript" type="text/javascript"><!--
+    /* You may give each page an identifying name, server, and channel on
+    the next lines. */
+	s.pageName="";
+	s.server="";
+	s.channel="";
+	s.pageType="";
+	s.prop1="";
+	s.prop2="109814";
+	s.prop3="Gamasustra | 109814 | Analysis: <i>Defense of the Ancients</i> - An Underground Revolution";
+	s.prop4="Analysis: <i>Defense of the Ancients</i> - An Underground Revolution";
+	s.prop5="GAMASUTRA NEWS";
+	s.prop6="";
+	s.prop7="Michael Walbridge";
+	s.prop8="37.146.90.172 | Opera/9.80 (Windows NT 6.1; U; ru) Presto/2.6.30 Version/10.61";
+	s.prop9="";
+	s.prop10="";
+	s.prop13="";
+	/* Conversion Variables */
+	s.campaign="";
+	s.state="";
+	s.zip="";
+	s.events="event5";
+	s.products="";
+	s.purchaseID="";
+	s.eVar1="";
+	s.eVar2="";
+	s.eVar3="";
+	s.eVar4="";
+	s.eVar5="";
+	/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+    var s_code = s.t(); if (s_code) document.write(s_code)//--></script>
+<script language="JavaScript" type="text/javascript"><!--
+    if (navigator.appVersion.indexOf('MSIE') >= 0) document.write(unescape('%3C') + '\!-' + '-')
+//--></script><noscript><a href="http://www.omniture.com" title="Web Analytics"><img
+src="http://cmp.112.2o7.net/b/ss/cmpglobalvista/1/H.21--NS/0"
+height="1" width="1" border="0" alt="" /></a></noscript><!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.21. -->          
+            
+
+</div>
+
+<div class="footer1" >
+<div class="footerline"></div>
+<div id="footercontent">
+	<div class="left">
+                        <a href="http://www.ubmtechweb.com/" target="_blank"><img src="http://gamasutra.com/game_sites_superfooter_2012/images/logo_ubmtech_white.png" width="88" height="111" border="0" alt="UBM Tech"></a>
+                        </div>
+                         <!-- LEFT SIDE -->
+                         <div id="rightlinks">
+                          <ul>
+                            <li>FEATURED UBM TECH SITES:
+                            <li><a href="http://www.gdconf.com/" target="_blank">Game Developers Conference</a></li> | 
+                            <li><a href="http://www.gamasutra.com/" target="_blank">Gamasutra</a></li> | 
+                            <li><a href="http://www.gdmag.com/" target="_blank">Game Developer Mag</a></li> | 
+                            <li><a href="http://www.gamecareerguide.com/" target="_blank">Game Career Guide</a></li>
+                          </ul>
+                             
+                         <ul>
+                            <li>OUR MARKETS: 
+                            <li><a href="http://tech.ubm.com/businesses/business-technology/" target="_blank">Business Technology</a></li> | 
+                            <li><a href="http://tech.ubm.com/businesses/channel/" target="_blank">Channel</a></li> | 
+                            <li><a href="http://tech.ubm.com/businesses/electronics/" target="_blank">Electronics</a></li> | 
+                            <li><a href="http://tech.ubm.com/businesses/game-app-development/" target="_blank">Game &amp; App Development</a></li>
+                        </ul>
+					
+                          <ul class="normal">
+                            <li><b>Working With Us:</b>
+                            <li><a href="http://www.jointhegamenetwork.com/" target="_blank">Game Network Advertising</a></li> | 
+                            <li><a href="http://www.jointhegamenetwork.com/event/" target="_blank">Event Calendar</a></li> | 
+                            <li><a href="http://www.jointhegamenetwork.com/contact/" target="_blank">Contact Us</a></li> 
+                          </ul>
+                         
+                         <ul class="colored">
+                            <li><a href="http://legal.us.ubm.com/terms-of-service/" target="_blank" class="blue">Terms of Service</a></li>  |
+                            <li><a href="http://legal.us.ubm.com/privacy-policy/" target="_blank" class="blue">Privacy Statement</a></li>  |
+                            <li><a href="http://legal.us.ubm.com/copyright-notice/" target="_blank" class="blue">Copyright &#169; <script type="text/javascript">
+                                        <!--
+                                        var currentTime = new Date()
+                                        var year = currentTime.getFullYear()
+                                        document.write( year)
+                                        //-->
+                                    </script>
+                            UBM Tech, All rights reserved</a></li>
+                        </ul>
+                         </div>
+                          <br/>
+</div>
+</div>
+
+</body>
+</html>

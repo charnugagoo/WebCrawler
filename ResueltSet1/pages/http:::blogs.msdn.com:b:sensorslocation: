@@ -1,0 +1,1041 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head><meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8;" /><meta name="robots" content="index,follow" />
+<meta name="description" content="Team blog that talks about the new Sensors &amp; Location Platform in Windows 7. Topics include platform descriptions, news flashes, tips &amp; tricks and code snippets" />
+<meta name="keywords" content="microsoft windows7 sensor sensors location gps als ambient light accelerometer devices" />
+<meta name="GENERATOR" content="Telligent Evolution Platform Developer Build (Build: 5.6.50428.7875)" />
+<link rel="alternate" type="application/rss+xml" title="Site Home (RSS 2.0)" href="http://blogs.msdn.com/rss.aspx"  />
+<link rel="alternate" type="application/rss+xml" title="sensblog&#39;s Comments (RSS 2.0)" href="/members/sensblog/comments/rss.aspx"  />
+<link rel="alternate" type="application/rss+xml" title="sensblog&#39;s Activities (RSS 2.0)" href="/members/sensblog/activities/rss.aspx"  />
+<link rel="alternate" type="application/rss+xml" title="Activities of People sensblog Follows (RSS 2.0)" href="/members/sensblog/activities/followersrss.aspx"  />
+<link rel="alternate" type="application/rss+xml" title="sensblog&#39;s Groups Activities (RSS 2.0)" href="/members/sensblog/activities/groupsrss.aspx"  />
+<link rel="alternate" type="application/rss+xml" title="Sensor &amp; Location Platform Team Blog (RSS 2.0)" href="http://blogs.msdn.com/b/sensorslocation/rss.aspx"  />
+<link rel="alternate" type="application/atom+xml" title="Sensor &amp; Location Platform Team Blog (Atom 1.0)" href="http://blogs.msdn.com/b/sensorslocation/atom.aspx"  />
+<link rel="alternate" type="application/rss+xml" title="Sensor &amp; Location Platform Team Blog - All Comments (RSS 2.0)" href="http://blogs.msdn.com/b/sensorslocation/rsscomments.aspx"  />
+
+            <link href="http://i1.blogs.msdn.com/rrcontent/1a563ea570df7bfb6fc392bfb090b354-e6ce9ec14ffbcc395448624e6fc3c2f1-RequestReducedStyle.css" rel="Stylesheet" type="text/css" />        
+          <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+          <link rel="shortcut icon" type="image/ico" href="/themes/MSDN2/favicon.ico" />
+          <!--
+            Third party scripts and code linked to or referenced from this website are licensed to you by the parties that own such code, not by Microsoft.  See ASP.NET Ajax CDN Terms of Use – http://www.asp.net/ajaxlibrary/CDN.ashx.
+          -->
+          <link href="http://i1.blogs.msdn.com/rrcontent/6e455ee01481483d5d047db51a775dad-ffc9f7e1f0412800af51bef62a866f63-RequestReducedStyle.css" rel="Stylesheet" type="text/css" /><script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.5.2.min.js" type="text/javascript" language="javascript"></script>
+                            
+          <link type="text/css" rel="stylesheet" href="/themes/MSDN2/css/DynamicStyle.aspx?PreviewKey=0" media="screen,print" />
+          <link type="text/css" rel="stylesheet" href="/themes/blogs/MSDN2/css/DynamicStyle.aspx?WeblogID=13082&PreviewKey=0" media="screen,print" />
+        
+          <!--[if lte IE 6]>
+              <link type="text/css" rel="stylesheet" href="/themes/MSDN2/css/ie6.css" media="screen,print" />
+          <![endif]-->
+                  <meta name="msvalidate.01" content="B717AD6FC29D3A844832AF011B5F9E4C" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://blogs.msdn.com/b/sensorslocation/rsd.ashx" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" title="WLWManifest" href="http://blogs.msdn.com/b/sensorslocation/wlwmanifest.ashx" />
+
+        <!--
+            Third party scripts and code linked to or referenced from this website are licensed to you by the parties that own such code, not by Microsoft.  See ASP.NET Ajax CDN Terms of Use – http://www.asp.net/ajaxlibrary/CDN.ashx.
+          -->
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.5.2.min.js" type="text/javascript" language="javascript"></script>
+    <title>
+	Sensor &amp; Location Platform Team Blog - Site Home - MSDN Blogs
+</title></head>
+	<body spellcheck="true">
+		<form name="aspnetForm" method="post" action="/b/sensorslocation/" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTM5OTAxNDYyNWRkDtRVwYYdLN5WMJAfmBjpy+lIufE=" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="http://i1.blogs.msdn.com/rrcontent/891e6b1b1714b1f2bbc67076063e2b18-a25745564f482f6484ac0978c8471e2e-RequestReducedScript.js" type="text/javascript" ></script>
+
+
+			
+            
+                
+            
+            <div class="header-fragments-header"></div>
+<div class="header-fragments"><div class="header-fragment-outer top-bar msdn-header-fragment-outer msdn-top-bar"><div class="header-fragment-inner top-bar msdn-header-fragment-inner msdn-top-bar"><div class="header-fragment welcome-message" id="header-fragment-1402503690">
+
+
+<!-- always render -->
+</div><div class="header-fragment login-logout" id="header-fragment-1402503691">
+
+
+
+
+
+        <div class="navigation-list-header"></div>
+        <ul class="navigation-list">
+
+            <li class="navigation-item">
+                <span id="ctl00_header_fragment_1402503691__b7a7ed_ctl00_ctl02_ctl05_WLIDLoginButton1" class="internal-link live-id-button"><a href="https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=11&ct=1361149863&rver=6.0.5286.0&wp=MBI&wreply=http:%2F%2Fblogs.msdn.com%2Fb%2Fsensorslocation%2Fdefault.aspx&lc=1033&id=271611">Sign in</a></span>
+            </li>
+        </ul>
+        <div class="navigation-list-footer"></div>
+    </div><div class="header-fragment user-welcome-without-login" id="header-fragment-1402503692">
+
+ &nbsp;<!-- always render -->
+
+</div></div></div><div class="header-fragment blog-banner" id="header-fragment-1402503693">
+
+
+
+<div class="site-banner blog-banner">
+
+<h1 class="blog-banner-name"><a href="/b/sensorslocation/">Sensor &amp; Location Platform Team Blog</a></h1>
+
+</div>
+
+</div></div>
+<div class="header-fragments-footer"></div>
+			    <div class="content-fragment-page postlist" id="ctl00_content_ctl00_page"><div class="layout">
+<div class="layout-header"></div>
+<div class="layout-content content-left-sidebar-right" id="ctl00_content_ctl00_layout">
+<div class="layout-region right-sidebar" id="ctl00_content_ctl00_right-sidebar">
+<div class="layout-region-inner right-sidebar"><div class="content-fragment blog-links no-wrapper-with-spacing with-header" id="fragment-44149">
+<div class="content-fragment-inner msdn-content-fragment-inner"><div class="content-fragment-top msdn-content-fragment-top"><div class="r1 msdn-r1"></div><div class="r2 msdn-r2"></div><div class="r3 msdn-r3"></div><div class="r4 msdn-r4"></div></div><div class="content-fragment-header"><div>Options</div></div>
+<div class="content-fragment-content">
+
+		<div class="navigation-list-header"></div>
+		<ul class="navigation-list">
+	<li class="navigation-item"><a class="internal-link view-contact" href="/b/sensorslocation/contact.aspx"><span></span>Email Blog Author</a></li><li class="navigation-item"><a class="internal-link rss" href="/b/sensorslocation/rss.aspx"><span></span>RSS for posts</a></li><li class="navigation-item"><a class="internal-link rss" href="/b/sensorslocation/atom.aspx"><span></span>Atom</a></li><li id=""RssComments""" class="navigation-item"><a class="internal-link rss" href="/b/sensorslocation/rsscomments.aspx"><span></span>RSS for comments</a></li>
+        <li class="navigation-item email-subscription">
+                <div class="field-list-header email-subscription-form"></div>
+                <fieldset class="field-list email-subscription-form">
+                    <ul class="field-list">
+                        <li class="field-item">
+                            <span class="field-item-description"></span>
+                            
+                                    <span class="field-item-input">
+                                        <input name="ctl00$content$ctl00$w_44149$_b7a7ed$ctl00$ctl00$weblogSubscribe$ctl09$ctl00$ctl01$EmailSubscriptionPanel$ctl01$EmailSubscribeTextBox" type="text" value="Subscribe w/ Email Address" id="ctl00_content_ctl00_w_44149__b7a7ed_ctl00_ctl00_weblogSubscribe_ctl09_ctl00_ctl01_EmailSubscriptionPanel_ctl01_EmailSubscribeTextBox" title="Enter your email address" onfocus="if(this.defaultValue==this.value) this.value='';" onblur="if(this.value=='') this.value=this.defaultValue;" />
+                                        <a id="ctl00_content_ctl00_w_44149__b7a7ed_ctl00_ctl00_weblogSubscribe_ctl09_ctl00_ctl01_EmailSubscriptionPanel_ctl01_EmailSubscribeButton" href="javascript:__doPostBack('ctl00$content$ctl00$w_44149$_b7a7ed$ctl00$ctl00$weblogSubscribe$ctl09$ctl00$ctl01$EmailSubscriptionPanel$ctl01$EmailSubscribeButton','')">OK</a>
+                                    </span>
+                                
+                        </li>
+                    </ul>
+                </fieldset>
+                <div class="field-list-footer email-subscription"></div>
+            </li>
+    
+		</ul>
+		<div class="navigation-list-footer"></div>
+	</div>
+<div class="content-fragment-footer"></div>
+<div class="content-fragment-bottom msdn-content-fragment-bottom"><div class="r1 msdn-r1"></div><div class="r2 msdn-r2"></div><div class="r3 msdn-r3"></div><div class="r4 msdn-r4"></div></div></div></div>
+<div class="content-fragment search-form no-wrapper-with-spacing with-header" id="fragment-44150">
+<div class="content-fragment-inner msdn-content-fragment-inner"><div class="content-fragment-top msdn-content-fragment-top"><div class="r1 msdn-r1"></div><div class="r2 msdn-r2"></div><div class="r3 msdn-r3"></div><div class="r4 msdn-r4"></div></div><div class="content-fragment-header"><div>Search</div></div>
+<div class="content-fragment-content">
+
+<div class="field-list-header">
+</div>
+<fieldset class="field-list">
+    <ul class="field-list">
+        <li class="field-item search">
+            <div id="search-allblogs-container">
+                <span class="field-item-input">
+                    <input id="SearchTextBox_AllBlogs" name="SearchTextBox_AllBlogs" type="text" class="searchField"
+                        maxlength="64" size="45" autocomplete="off" />
+                    <input id="SearchButton_AllBlogs" name="SearchButton_AllBlogs" type="button" class="search-button" />
+                </span>
+            </div>
+            <div id="search-thisblog-container">
+                <span class="field-item-input">
+                    <input id="SearchTextBox_ThisBlog" name="SearchTextBox_ThisBlog" type="text" class="searchField"
+                        maxlength="64" size="45" autocomplete="off" />
+                    <input id="SearchButton_ThisBlog" name="SearchButton_ThisBlog" type="button" class="search-button" />
+                </span>
+            </div>
+        </li>
+    </ul>
+</fieldset>
+<div class="field-list-footer">
+    <div id="search-switch-container">
+        <span style="display: inline-block">
+            <input type="radio" name="SearchTypeRadio" value="ThisBlog" id="ThisBlog" checked="checked" /><label
+                for="ThisBlog" id="ThisBlogText">Search this blog</label></span>
+        <span style="display: inline-block">
+            <input type="radio" name="SearchTypeRadio" value="AllBlogs" id="AllBlogs" /><label
+                for="AllBlogs" id="AllBlogsText">Search all blogs</label></span>
+    </div>
+</div>
+<script type="text/javascript">
+var elmSearchAll = $('#search-allblogs-container').hide();
+var elmSearchThis = $('#search-thisblog-container');
+
+// try to get the blog id, if we fail, then we aren't on a blog and just use the regular search approach       
+(13082 === -1) && $('#search-switch-container').hide();
+
+$(document).ready(function() {
+    $('#ThisBlog').click(function () {
+        var self = $(this);
+        if (self.is(':checked')) {
+            elmSearchAll.hide();
+            elmSearchThis.show();
+        }
+    });
+    
+    $('#AllBlogs').click(function () {
+        var self = $(this);
+        if (self.is(':checked')) {
+            elmSearchThis.hide();
+            elmSearchAll.show();
+        }
+    });
+});
+</script>
+<script src="http://i4.services.social.microsoft.com/Search/Widgets/SearchBox.jss?boxid=SearchTextBox_AllBlogs&btnid=SearchButton_AllBlogs&brand=MSDN&refinement=109&resref=&addEnglish=&rn=&rq=&watermark=&focusOnInit=false&beta=0&iroot=&overrideWatermark=false" type="text/javascript" language="javascript"></script>
+<script src="http://i4.services.social.microsoft.com/Search/Widgets/SearchBox.jss?boxid=SearchTextBox_ThisBlog&btnid=SearchButton_ThisBlog&brand=MSDN&refinement=&resref=&addEnglish=&watermark=&focusOnInit=false&beta=0&iroot=&overrideWatermark=false&rn=Sensor%2b%2526amp%253b%2bLocation%2bPlatform%2bTeam%2bBlog&rq=site:blogs.msdn.com/b/sensorslocation/" type="text/javascript" language="javascript"></script>
+</div>
+<div class="content-fragment-footer"></div>
+<div class="content-fragment-bottom msdn-content-fragment-bottom"><div class="r1 msdn-r1"></div><div class="r2 msdn-r2"></div><div class="r3 msdn-r3"></div><div class="r4 msdn-r4"></div></div></div></div>
+<div class="content-fragment tag-cloud no-wrapper-with-spacing with-header" id="fragment-44151">
+<div class="content-fragment-inner msdn-content-fragment-inner"><div class="content-fragment-top msdn-content-fragment-top"><div class="r1 msdn-r1"></div><div class="r2 msdn-r2"></div><div class="r3 msdn-r3"></div><div class="r4 msdn-r4"></div></div><div class="content-fragment-header"><div>Tags</div></div>
+<div class="content-fragment-content">
+<div class="tag-list-header"></div><ul class="tag-list">
+<li class="tag-item level-6"><a href="http://blogs.msdn.com/b/sensorslocation/archive/tags/-net/" rel="tag">.net</a></li>
+<li class="tag-item level-6"><a href="http://blogs.msdn.com/b/sensorslocation/archive/tags/adaptive+brightness/" rel="tag">adaptive brightness</a></li>
+<li class="tag-item level-6"><a href="http://blogs.msdn.com/b/sensorslocation/archive/tags/als/" rel="tag">als</a></li>
+<li class="tag-item level-3"><a href="http://blogs.msdn.com/b/sensorslocation/archive/tags/architecture/" rel="tag">architecture</a></li>
+<li class="tag-item level-2"><a href="http://blogs.msdn.com/b/sensorslocation/archive/tags/driver/" rel="tag">driver</a></li>
+<li class="tag-item level-6"><a href="http://blogs.msdn.com/b/sensorslocation/archive/tags/gps/" rel="tag">gps</a></li>
+<li class="tag-item level-3"><a href="http://blogs.msdn.com/b/sensorslocation/archive/tags/location/" rel="tag">location</a></li>
+<li class="tag-item level-5"><a href="http://blogs.msdn.com/b/sensorslocation/archive/tags/LocationAPI/" rel="tag">LocationAPI</a></li>
+<li class="tag-item level-5"><a href="http://blogs.msdn.com/b/sensorslocation/archive/tags/parallax/" rel="tag">parallax</a></li>
+<li class="tag-item level-5"><a href="http://blogs.msdn.com/b/sensorslocation/archive/tags/permissions/" rel="tag">permissions</a></li>
+<li class="tag-item level-2"><a href="http://blogs.msdn.com/b/sensorslocation/archive/tags/platform/" rel="tag">platform</a></li>
+<li class="tag-item level-2"><a href="http://blogs.msdn.com/b/sensorslocation/archive/tags/SensorAPI/" rel="tag">SensorAPI</a></li>
+<li class="tag-item level-3"><a href="http://blogs.msdn.com/b/sensorslocation/archive/tags/SensorClassExtension/" rel="tag">SensorClassExtension</a></li>
+<li class="tag-item level-1"><a href="http://blogs.msdn.com/b/sensorslocation/archive/tags/sensors/" rel="tag">sensors</a></li>
+<li class="tag-item level-5"><a href="http://blogs.msdn.com/b/sensorslocation/archive/tags/states/" rel="tag">states</a></li>
+<li class="tag-item level-3"><a href="http://blogs.msdn.com/b/sensorslocation/archive/tags/umdf/" rel="tag">umdf</a></li>
+<li class="tag-item level-6"><a href="http://blogs.msdn.com/b/sensorslocation/archive/tags/visual+studio/" rel="tag">visual studio</a></li>
+<li class="tag-item level-6"><a href="http://blogs.msdn.com/b/sensorslocation/archive/tags/WDK/" rel="tag">WDK</a></li>
+<li class="tag-item level-1"><a href="http://blogs.msdn.com/b/sensorslocation/archive/tags/windows7/" rel="tag">windows7</a></li>
+</ul>
+<div class="tag-list-footer"></div>
+</div>
+<div class="content-fragment-footer"></div>
+<div class="content-fragment-bottom msdn-content-fragment-bottom"><div class="r1 msdn-r1"></div><div class="r2 msdn-r2"></div><div class="r3 msdn-r3"></div><div class="r4 msdn-r4"></div></div></div></div>
+<div class="content-fragment blog-archive-list no-wrapper-with-spacing with-header" id="fragment-44152">
+<div class="content-fragment-inner msdn-content-fragment-inner"><div class="content-fragment-top msdn-content-fragment-top"><div class="r1 msdn-r1"></div><div class="r2 msdn-r2"></div><div class="r3 msdn-r3"></div><div class="r4 msdn-r4"></div></div><div class="content-fragment-header"><div>Archive</div></div>
+<div class="content-fragment-content">
+
+		<div class="content-list-header"></div>
+		<div class="content-list-name">Archives</div>
+		<ul class="content-list">
+	
+		<li class="content-item"><a class="internal-link view-post-archive-list" href="/b/sensorslocation/archive/2010/06.aspx">June 2010</a> (2)</li>
+	
+		<li class="content-item"><a class="internal-link view-post-archive-list" href="/b/sensorslocation/archive/2010/04.aspx">April 2010</a> (2)</li>
+	
+		<li class="content-item"><a class="internal-link view-post-archive-list" href="/b/sensorslocation/archive/2010/03.aspx">March 2010</a> (4)</li>
+	
+		<li class="content-item"><a class="internal-link view-post-archive-list" href="/b/sensorslocation/archive/2010/02.aspx">February 2010</a> (2)</li>
+	
+		<li class="content-item"><a class="internal-link view-post-archive-list" href="/b/sensorslocation/archive/2010/01.aspx">January 2010</a> (2)</li>
+	
+		<li class="content-item"><a class="internal-link view-post-archive-list" href="/b/sensorslocation/archive/2009/12.aspx">December 2009</a> (2)</li>
+	
+		</ul>
+		<div class="content-list-footer"></div>
+	
+</div>
+<div class="content-fragment-footer"></div>
+<div class="content-fragment-bottom msdn-content-fragment-bottom"><div class="r1 msdn-r1"></div><div class="r2 msdn-r2"></div><div class="r3 msdn-r3"></div><div class="r4 msdn-r4"></div></div></div></div>
+</div>
+</div>
+<div class="layout-region content" id="ctl00_content_ctl00_content">
+<div class="layout-region-inner content"><div class="content-fragment blog-title full-border" id="fragment-44153">
+<div class="content-fragment-inner msdn-content-fragment-inner"><div class="content-fragment-top msdn-content-fragment-top"><div class="r1 msdn-r1"></div><div class="r2 msdn-r2"></div><div class="r3 msdn-r3"></div><div class="r4 msdn-r4"></div></div><div class="content-fragment-content">
+<h1 class="title">
+	    
+			        
+			    
+	                
+			    
+	</h1></div>
+<div class="content-fragment-footer"></div>
+<div class="content-fragment-bottom msdn-content-fragment-bottom"><div class="r1 msdn-r1"></div><div class="r2 msdn-r2"></div><div class="r3 msdn-r3"></div><div class="r4 msdn-r4"></div></div></div></div>
+<div class="content-fragment blog-bread-crumbs no-wrapper" id="fragment-44154">
+<div class="content-fragment-inner msdn-content-fragment-inner"><div class="content-fragment-top msdn-content-fragment-top"><div class="r1 msdn-r1"></div><div class="r2 msdn-r2"></div><div class="r3 msdn-r3"></div><div class="r4 msdn-r4"></div></div><div class="content-fragment-content">
+
+
+<div class="breadcrumb-list-header"></div>
+<div class="breadcrumb-list">
+	<span class="breadcrumb-item"><a class="internal-link view-home" href="/">MSDN Blogs</a></span>
+  
+	
+
+	
+			<span class="separator"> > </span>
+			<span class="breadcrumb-item">
+		<a href="/b/sensorslocation/">Sensor &amp; Location Platform Team Blog</a>
+			</span>
+		
+	
+	
+
+	
+</div>
+<div class="breadcrumb-list-footer"></div>
+</div>
+<div class="content-fragment-footer"></div>
+<div class="content-fragment-bottom msdn-content-fragment-bottom"><div class="r1 msdn-r1"></div><div class="r2 msdn-r2"></div><div class="r3 msdn-r3"></div><div class="r4 msdn-r4"></div></div></div></div>
+<div class="content-fragment blog-post-list no-wrapper with-header" id="fragment-44155">
+<div class="content-fragment-inner msdn-content-fragment-inner"><div class="content-fragment-top msdn-content-fragment-top"><div class="r1 msdn-r1"></div><div class="r2 msdn-r2"></div><div class="r3 msdn-r3"></div><div class="r4 msdn-r4"></div></div><div class="content-fragment-header"><div>Posts</div></div>
+<div class="content-fragment-content">
+
+
+<div class="navigation-list-header"></div>
+<ul class="navigation-list post-list">
+	<li class="navigation-item"><a class="internal-link rss" href="/b/MainFeed.aspx?Type=BlogsOnly"><span></span>Subscribe via RSS</a></li>
+	
+</ul>
+<div class="navigation-list-footer"></div>
+
+<div id="ctl00_content_ctl00_w_44155__b7a7ed_ctl00_ctl00_ctl00_PostListWrapper"><input type="hidden" name="ctl00$content$ctl00$w_44155$_b7a7ed$ctl00$ctl00$ctl00$PostListWrapper" value="true:" />
+        
+
+        
+
+        
+
+        <div class="filter">
+            <div class="query-type">
+		        <span class="filter-label">Sort by: </span>
+                <span class="filter-option selected"><a href="/b/sensorslocation/default.aspx?PostSortBy=MostRecent&amp;PageIndex=1">Most Recent</a></span>
+		        <span class="separator">|</span>
+                <span class="filter-option"><a href="/b/sensorslocation/default.aspx?PostSortBy=MostViewed&amp;PageIndex=1">Most Views</a></span>
+		        <span class="separator">|</span>
+                <span class="filter-option"><a href="/b/sensorslocation/default.aspx?PostSortBy=MostComments&amp;PageIndex=1">Most Comments</a></span>
+            </div>
+            <div class="view-type">
+                
+				        <span class="filter-option selected">						
+			        
+                    <a href="#" onclick="ctl00_content_ctl00_w_44155__b7a7ed_ctl00_ctl00_ctl00_PostListWrapper.Reload('List'); return false;" title="Excerpt View" class="internal-link view-list">Excerpt View</a>
+                </span>
+                <span class="separator">|</span>
+                
+				        <span class="filter-option">						
+			        
+                    <a href="#" onclick="ctl00_content_ctl00_w_44155__b7a7ed_ctl00_ctl00_ctl00_PostListWrapper.Reload('Detail'); return false;" title="Full Post View" class="internal-link view-detail-list">Full Post View</a>
+                </span>
+            </div>
+        </div>
+
+
+        
+	            <div class="content-list-header standard"></div>
+	            <ul class="content-list standard">
+	        
+		        <li class="content-item">
+			        <div class="abbreviated-post-header"></div>
+			        <div class="abbreviated-post">
+			            <div class="post-application">
+		                        <span class="label"></span>
+		                        <span class="value"><a class="internal-link view-application" href="/b/sensorslocation/"><span></span>Sensor &amp; Location Platform Team Blog</a></span>
+			                </div>
+				        <h4 class="post-name"><a class="internal-link view-post" href="/b/sensorslocation/archive/2010/06/29/using-an-accelerometer-to-build-a-game-controller.aspx"><span></span>Using an Accelerometer to Build a Game Controller</a></h4>
+				        
+            <div class="post-date">
+		        <span class="label">Posted</span>
+		        <span class="value">over 3 years ago</span>
+	        </div>
+                        <div class="post-author">
+                            <span class="msdn-post-author-by">by</span>
+                            <span class="avatar"><a href="/231662/ProfileUrlRedirect.ashx"><img src="http://i1.social.microsoft.com/profile/u/avatar.jpg?displayname=sensblog&amp;size=large" alt="" style="border-width:0px;max-height:32px;max-width:32px;" /></a></span>
+                            
+                            <span class="profile-usercard-hover" data-profile-userid='02c81e29-9f84-4966-8e28-e739f54e8747'>
+                                <span class="user-name"><a class="internal-link view-user-profile" href="/231662/ProfileUrlRedirect.ashx"><span></span>sensblog</a></span>
+                            
+                                
+                            </span>
+                        </div>
+				        
+	                    <div class="post-attributes">
+		                        <div class="attribute-list-header"></div>
+                                <ul class="attribute-list">
+                                    <li class="attribute-item post-reply-count">
+                                        <span class="attribute-value">1</span>
+                                        <span class="attribute-name">Comments</span>
+                                    </li>
+                                </ul>
+                                <div class="attribute-list-footer"></div>
+                            </div>
+        				
+				        
+						        <div class="post-summary">The XNA team created their XNA Game Studio to simplify the creation of games for: Windows, the Xbox 360, the Zune, and the Windows Phone 7 Series. The Game Studio includes the XNA Framework--a set of managed libraries that are designed for game development...</div>
+					        
+        				
+			        </div>
+			        <div class="abbreviated-post-footer"></div>
+		        </li>
+	        
+		        <li class="content-item">
+			        <div class="abbreviated-post-header"></div>
+			        <div class="abbreviated-post">
+			            <div class="post-application">
+		                        <span class="label"></span>
+		                        <span class="value"><a class="internal-link view-application" href="/b/sensorslocation/"><span></span>Sensor &amp; Location Platform Team Blog</a></span>
+			                </div>
+				        <h4 class="post-name"><a class="internal-link view-post" href="/b/sensorslocation/archive/2010/06/25/making-sense-of-sensor-permissions.aspx"><span></span>Making Sense of Sensor Permissions</a></h4>
+				        
+            <div class="post-date">
+		        <span class="label">Posted</span>
+		        <span class="value">over 3 years ago</span>
+	        </div>
+                        <div class="post-author">
+                            <span class="msdn-post-author-by">by</span>
+                            <span class="avatar"><a href="/231662/ProfileUrlRedirect.ashx"><img src="http://i1.social.microsoft.com/profile/u/avatar.jpg?displayname=sensblog&amp;size=large" alt="" style="border-width:0px;max-height:32px;max-width:32px;" /></a></span>
+                            
+                            <span class="profile-usercard-hover" data-profile-userid='02c81e29-9f84-4966-8e28-e739f54e8747'>
+                                <span class="user-name"><a class="internal-link view-user-profile" href="/231662/ProfileUrlRedirect.ashx"><span></span>sensblog</a></span>
+                            
+                                
+                            </span>
+                        </div>
+				        
+	                    <div class="post-attributes">
+		                        <div class="attribute-list-header"></div>
+                                <ul class="attribute-list">
+                                    <li class="attribute-item post-reply-count">
+                                        <span class="attribute-value">0</span>
+                                        <span class="attribute-name">Comments</span>
+                                    </li>
+                                </ul>
+                                <div class="attribute-list-footer"></div>
+                            </div>
+        				
+				        
+						        <div class="post-summary">In this, my first Sensor and Location Team Blog post, I will discuss sensor permissions. 
+ I&rsquo;ll cover: 
+ &middot; Clearing up some confusion around sensors and devices 
+ &middot; What are sensor permissions 
+ &middot; What permissions permits...</div>
+					        
+        				
+			        </div>
+			        <div class="abbreviated-post-footer"></div>
+		        </li>
+	        
+		        <li class="content-item">
+			        <div class="abbreviated-post-header"></div>
+			        <div class="abbreviated-post">
+			            <div class="post-application">
+		                        <span class="label"></span>
+		                        <span class="value"><a class="internal-link view-application" href="/b/sensorslocation/"><span></span>Sensor &amp; Location Platform Team Blog</a></span>
+			                </div>
+				        <h4 class="post-name"><a class="internal-link view-post" href="/b/sensorslocation/archive/2010/04/27/understanding-access-denied-when-working-with-isensor-getstate-and-isensor-getproperty.aspx"><span></span>Understanding Access Denied when working with ISensor::GetState() and ISensor::GetProperty()</a></h4>
+				        
+            <div class="post-date">
+		        <span class="label">Posted</span>
+		        <span class="value">over 3 years ago</span>
+	        </div>
+                        <div class="post-author">
+                            <span class="msdn-post-author-by">by</span>
+                            <span class="avatar"><a href="/231662/ProfileUrlRedirect.ashx"><img src="http://i1.social.microsoft.com/profile/u/avatar.jpg?displayname=sensblog&amp;size=large" alt="" style="border-width:0px;max-height:32px;max-width:32px;" /></a></span>
+                            
+                            <span class="profile-usercard-hover" data-profile-userid='02c81e29-9f84-4966-8e28-e739f54e8747'>
+                                <span class="user-name"><a class="internal-link view-user-profile" href="/231662/ProfileUrlRedirect.ashx"><span></span>sensblog</a></span>
+                            
+                                
+                            </span>
+                        </div>
+				        
+	                    <div class="post-attributes">
+		                        <div class="attribute-list-header"></div>
+                                <ul class="attribute-list">
+                                    <li class="attribute-item post-reply-count">
+                                        <span class="attribute-value">0</span>
+                                        <span class="attribute-name">Comments</span>
+                                    </li>
+                                </ul>
+                                <div class="attribute-list-footer"></div>
+                            </div>
+        				
+				        
+						        <div class="post-summary">In last week’s blog post we provided best practice guidance for Sensor State management in Location Sensors. At the bottom of that post we mention that SENSOR_STATE_ACCESS_DENIED is reserved and should only be used by the Platform. As a follow-on post...</div>
+					        
+        				
+			        </div>
+			        <div class="abbreviated-post-footer"></div>
+		        </li>
+	        
+		        <li class="content-item">
+			        <div class="abbreviated-post-header"></div>
+			        <div class="abbreviated-post">
+			            <div class="post-application">
+		                        <span class="label"></span>
+		                        <span class="value"><a class="internal-link view-application" href="/b/sensorslocation/"><span></span>Sensor &amp; Location Platform Team Blog</a></span>
+			                </div>
+				        <h4 class="post-name"><a class="internal-link view-post" href="/b/sensorslocation/archive/2010/04/13/state-transition-in-location-drivers-best-practices.aspx"><span></span>State Transition in Location Drivers : Best practices</a></h4>
+				        
+            <div class="post-date">
+		        <span class="label">Posted</span>
+		        <span class="value">over 3 years ago</span>
+	        </div>
+                        <div class="post-author">
+                            <span class="msdn-post-author-by">by</span>
+                            <span class="avatar"><a href="/231662/ProfileUrlRedirect.ashx"><img src="http://i1.social.microsoft.com/profile/u/avatar.jpg?displayname=sensblog&amp;size=large" alt="" style="border-width:0px;max-height:32px;max-width:32px;" /></a></span>
+                            
+                            <span class="profile-usercard-hover" data-profile-userid='02c81e29-9f84-4966-8e28-e739f54e8747'>
+                                <span class="user-name"><a class="internal-link view-user-profile" href="/231662/ProfileUrlRedirect.ashx"><span></span>sensblog</a></span>
+                            
+                                
+                            </span>
+                        </div>
+				        <div class="post-rating"><span id="ctl00_content_ctl00_w_44155__b7a7ed_ctl00_ctl00_ctl00_PostListWrapper_ctl01_Posts_ctl05_ctl08" title="Rated Excellent [5 out of 5]."></span><input type="hidden" value="5" id="ctl00_content_ctl00_w_44155__b7a7ed_ctl00_ctl00_ctl00_PostListWrapper_ctl01_Posts_ctl05_ctl08_Value" /></div>
+	                    <div class="post-attributes">
+		                        <div class="attribute-list-header"></div>
+                                <ul class="attribute-list">
+                                    <li class="attribute-item post-reply-count">
+                                        <span class="attribute-value">1</span>
+                                        <span class="attribute-name">Comments</span>
+                                    </li>
+                                </ul>
+                                <div class="attribute-list-footer"></div>
+                            </div>
+        				
+				        
+						        <div class="post-summary">This post will be talking about best practices for handling state to get the best behaviors from the Location API. Before reviewing our best practice guidance we recommend you read up on “ Writing a Location Sensor Driver ”. With information above in...</div>
+					        
+        				
+			        </div>
+			        <div class="abbreviated-post-footer"></div>
+		        </li>
+	        
+		        <li class="content-item">
+			        <div class="abbreviated-post-header"></div>
+			        <div class="abbreviated-post">
+			            <div class="post-application">
+		                        <span class="label"></span>
+		                        <span class="value"><a class="internal-link view-application" href="/b/sensorslocation/"><span></span>Sensor &amp; Location Platform Team Blog</a></span>
+			                </div>
+				        <h4 class="post-name"><a class="internal-link view-post" href="/b/sensorslocation/archive/2010/03/30/developing-your-first-sensor-driver-part-2.aspx"><span></span>Developing Your First Sensor Driver – Part 2</a></h4>
+				        
+            <div class="post-date">
+		        <span class="label">Posted</span>
+		        <span class="value">over 3 years ago</span>
+	        </div>
+                        <div class="post-author">
+                            <span class="msdn-post-author-by">by</span>
+                            <span class="avatar"><a href="/231662/ProfileUrlRedirect.ashx"><img src="http://i1.social.microsoft.com/profile/u/avatar.jpg?displayname=sensblog&amp;size=large" alt="" style="border-width:0px;max-height:32px;max-width:32px;" /></a></span>
+                            
+                            <span class="profile-usercard-hover" data-profile-userid='02c81e29-9f84-4966-8e28-e739f54e8747'>
+                                <span class="user-name"><a class="internal-link view-user-profile" href="/231662/ProfileUrlRedirect.ashx"><span></span>sensblog</a></span>
+                            
+                                
+                            </span>
+                        </div>
+				        
+	                    <div class="post-attributes">
+		                        <div class="attribute-list-header"></div>
+                                <ul class="attribute-list">
+                                    <li class="attribute-item post-reply-count">
+                                        <span class="attribute-value">0</span>
+                                        <span class="attribute-name">Comments</span>
+                                    </li>
+                                </ul>
+                                <div class="attribute-list-footer"></div>
+                            </div>
+        				
+				        
+						        <div class="post-summary">In the last blog post we investigated the fundamental characteristics of a sensor driver (properties and data fields) and how the Sensor Class Extension interacts with them. Here we will expand the basic driver template to include raising events and managing...</div>
+					        
+        				
+			        </div>
+			        <div class="abbreviated-post-footer"></div>
+		        </li>
+	        
+		        <li class="content-item">
+			        <div class="abbreviated-post-header"></div>
+			        <div class="abbreviated-post">
+			            <div class="post-application">
+		                        <span class="label"></span>
+		                        <span class="value"><a class="internal-link view-application" href="/b/sensorslocation/"><span></span>Sensor &amp; Location Platform Team Blog</a></span>
+			                </div>
+				        <h4 class="post-name"><a class="internal-link view-post" href="/b/sensorslocation/archive/2010/03/23/developing-your-first-sensor-driver-part-1.aspx"><span></span>Developing Your First Sensor Driver – Part 1</a></h4>
+				        
+            <div class="post-date">
+		        <span class="label">Posted</span>
+		        <span class="value">over 3 years ago</span>
+	        </div>
+                        <div class="post-author">
+                            <span class="msdn-post-author-by">by</span>
+                            <span class="avatar"><a href="/231662/ProfileUrlRedirect.ashx"><img src="http://i1.social.microsoft.com/profile/u/avatar.jpg?displayname=sensblog&amp;size=large" alt="" style="border-width:0px;max-height:32px;max-width:32px;" /></a></span>
+                            
+                            <span class="profile-usercard-hover" data-profile-userid='02c81e29-9f84-4966-8e28-e739f54e8747'>
+                                <span class="user-name"><a class="internal-link view-user-profile" href="/231662/ProfileUrlRedirect.ashx"><span></span>sensblog</a></span>
+                            
+                                
+                            </span>
+                        </div>
+				        
+	                    <div class="post-attributes">
+		                        <div class="attribute-list-header"></div>
+                                <ul class="attribute-list">
+                                    <li class="attribute-item post-reply-count">
+                                        <span class="attribute-value">0</span>
+                                        <span class="attribute-name">Comments</span>
+                                    </li>
+                                </ul>
+                                <div class="attribute-list-footer"></div>
+                            </div>
+        				
+				        
+						        <div class="post-summary">The Windows Driver Kit (WDK) is a great place to get started when writing your first sensor driver. In this post we will take a look at the Sensor Driver Skeleton Sample , which provides a basic sensor driver template. A future post will investigate the...</div>
+					        
+        				
+			        </div>
+			        <div class="abbreviated-post-footer"></div>
+		        </li>
+	        
+		        <li class="content-item">
+			        <div class="abbreviated-post-header"></div>
+			        <div class="abbreviated-post">
+			            <div class="post-application">
+		                        <span class="label"></span>
+		                        <span class="value"><a class="internal-link view-application" href="/b/sensorslocation/"><span></span>Sensor &amp; Location Platform Team Blog</a></span>
+			                </div>
+				        <h4 class="post-name"><a class="internal-link view-post" href="/b/sensorslocation/archive/2010/03/09/overview-of-adaptive-brightness-in-windows-7.aspx"><span></span>Overview of Adaptive Brightness in Windows 7</a></h4>
+				        
+            <div class="post-date">
+		        <span class="label">Posted</span>
+		        <span class="value">over 3 years ago</span>
+	        </div>
+                        <div class="post-author">
+                            <span class="msdn-post-author-by">by</span>
+                            <span class="avatar"><a href="/231662/ProfileUrlRedirect.ashx"><img src="http://i1.social.microsoft.com/profile/u/avatar.jpg?displayname=sensblog&amp;size=large" alt="" style="border-width:0px;max-height:32px;max-width:32px;" /></a></span>
+                            
+                            <span class="profile-usercard-hover" data-profile-userid='02c81e29-9f84-4966-8e28-e739f54e8747'>
+                                <span class="user-name"><a class="internal-link view-user-profile" href="/231662/ProfileUrlRedirect.ashx"><span></span>sensblog</a></span>
+                            
+                                
+                            </span>
+                        </div>
+				        
+	                    <div class="post-attributes">
+		                        <div class="attribute-list-header"></div>
+                                <ul class="attribute-list">
+                                    <li class="attribute-item post-reply-count">
+                                        <span class="attribute-value">2</span>
+                                        <span class="attribute-name">Comments</span>
+                                    </li>
+                                </ul>
+                                <div class="attribute-list-footer"></div>
+                            </div>
+        				
+				        
+						        <div class="post-summary">So you just got yourself a new laptop. Congratulations! Did you notice that it has an Ambient Light Sensor (ALS)? With Windows 7, we’re seeing more and more laptops coming to market with built in ALS. How does Windows 7 take advantage of this sensor?...</div>
+					        
+        				
+			        </div>
+			        <div class="abbreviated-post-footer"></div>
+		        </li>
+	        
+		        <li class="content-item">
+			        <div class="abbreviated-post-header"></div>
+			        <div class="abbreviated-post">
+			            <div class="post-application">
+		                        <span class="label"></span>
+		                        <span class="value"><a class="internal-link view-application" href="/b/sensorslocation/"><span></span>Sensor &amp; Location Platform Team Blog</a></span>
+			                </div>
+				        <h4 class="post-name"><a class="internal-link view-post" href="/b/sensorslocation/archive/2010/03/03/the-parallax-introduction-to-sensors-kit.aspx"><span></span>The Parallax Introduction to Sensors Kit</a></h4>
+				        
+            <div class="post-date">
+		        <span class="label">Posted</span>
+		        <span class="value">over 3 years ago</span>
+	        </div>
+                        <div class="post-author">
+                            <span class="msdn-post-author-by">by</span>
+                            <span class="avatar"><a href="/231662/ProfileUrlRedirect.ashx"><img src="http://i1.social.microsoft.com/profile/u/avatar.jpg?displayname=sensblog&amp;size=large" alt="" style="border-width:0px;max-height:32px;max-width:32px;" /></a></span>
+                            
+                            <span class="profile-usercard-hover" data-profile-userid='02c81e29-9f84-4966-8e28-e739f54e8747'>
+                                <span class="user-name"><a class="internal-link view-user-profile" href="/231662/ProfileUrlRedirect.ashx"><span></span>sensblog</a></span>
+                            
+                                
+                            </span>
+                        </div>
+				        
+	                    <div class="post-attributes">
+		                        <div class="attribute-list-header"></div>
+                                <ul class="attribute-list">
+                                    <li class="attribute-item post-reply-count">
+                                        <span class="attribute-value">0</span>
+                                        <span class="attribute-name">Comments</span>
+                                    </li>
+                                </ul>
+                                <div class="attribute-list-footer"></div>
+                            </div>
+        				
+				        
+						        <div class="post-summary">Accelerometers, motion-sensors, distance-sensors, and compasses. What do these sensors have in common? They compose the Introduction to Sensors Kit that the Parallax Corporation sells for $79.99. Purchase this kit , a programmable microcontroller like...</div>
+					        
+        				
+			        </div>
+			        <div class="abbreviated-post-footer"></div>
+		        </li>
+	        
+		        <li class="content-item">
+			        <div class="abbreviated-post-header"></div>
+			        <div class="abbreviated-post">
+			            <div class="post-application">
+		                        <span class="label"></span>
+		                        <span class="value"><a class="internal-link view-application" href="/b/sensorslocation/"><span></span>Sensor &amp; Location Platform Team Blog</a></span>
+			                </div>
+				        <h4 class="post-name"><a class="internal-link view-post" href="/b/sensorslocation/archive/2010/02/23/introducing-location-in-net-4-0.aspx"><span></span>Introducing Location in .NET 4.0</a></h4>
+				        
+            <div class="post-date">
+		        <span class="label">Posted</span>
+		        <span class="value">over 3 years ago</span>
+	        </div>
+                        <div class="post-author">
+                            <span class="msdn-post-author-by">by</span>
+                            <span class="avatar"><a href="/231662/ProfileUrlRedirect.ashx"><img src="http://i1.social.microsoft.com/profile/u/avatar.jpg?displayname=sensblog&amp;size=large" alt="" style="border-width:0px;max-height:32px;max-width:32px;" /></a></span>
+                            
+                            <span class="profile-usercard-hover" data-profile-userid='02c81e29-9f84-4966-8e28-e739f54e8747'>
+                                <span class="user-name"><a class="internal-link view-user-profile" href="/231662/ProfileUrlRedirect.ashx"><span></span>sensblog</a></span>
+                            
+                                
+                            </span>
+                        </div>
+				        
+	                    <div class="post-attributes">
+		                        <div class="attribute-list-header"></div>
+                                <ul class="attribute-list">
+                                    <li class="attribute-item post-reply-count">
+                                        <span class="attribute-value">1</span>
+                                        <span class="attribute-name">Comments</span>
+                                    </li>
+                                </ul>
+                                <div class="attribute-list-footer"></div>
+                            </div>
+        				
+				        
+						        <div class="post-summary">The .NET Framework 4.0 RC, which is integrated with Visual Studio 2010 , is now available for download . This release of the .NET Framework 4 provides a managed location API in the System.Device.Location namespace that allow .NET developers to access...</div>
+					        
+        				
+			        </div>
+			        <div class="abbreviated-post-footer"></div>
+		        </li>
+	        
+		        <li class="content-item">
+			        <div class="abbreviated-post-header"></div>
+			        <div class="abbreviated-post">
+			            <div class="post-application">
+		                        <span class="label"></span>
+		                        <span class="value"><a class="internal-link view-application" href="/b/sensorslocation/"><span></span>Sensor &amp; Location Platform Team Blog</a></span>
+			                </div>
+				        <h4 class="post-name"><a class="internal-link view-post" href="/b/sensorslocation/archive/2010/02/10/the-sensor-and-location-drill-down-part-3-the-location-api.aspx"><span></span>The Sensor and Location Drill Down – Part 3: The Location API</a></h4>
+				        
+            <div class="post-date">
+		        <span class="label">Posted</span>
+		        <span class="value">over 3 years ago</span>
+	        </div>
+                        <div class="post-author">
+                            <span class="msdn-post-author-by">by</span>
+                            <span class="avatar"><a href="/231662/ProfileUrlRedirect.ashx"><img src="http://i1.social.microsoft.com/profile/u/avatar.jpg?displayname=sensblog&amp;size=large" alt="" style="border-width:0px;max-height:32px;max-width:32px;" /></a></span>
+                            
+                            <span class="profile-usercard-hover" data-profile-userid='02c81e29-9f84-4966-8e28-e739f54e8747'>
+                                <span class="user-name"><a class="internal-link view-user-profile" href="/231662/ProfileUrlRedirect.ashx"><span></span>sensblog</a></span>
+                            
+                                
+                            </span>
+                        </div>
+				        
+	                    <div class="post-attributes">
+		                        <div class="attribute-list-header"></div>
+                                <ul class="attribute-list">
+                                    <li class="attribute-item post-reply-count">
+                                        <span class="attribute-value">0</span>
+                                        <span class="attribute-name">Comments</span>
+                                    </li>
+                                </ul>
+                                <div class="attribute-list-footer"></div>
+                            </div>
+        				
+				        
+						        <div class="post-summary">Over the last few weeks we have been providing an introduction to the Sensor and Location Platform by examining each component in the platform in greater detail. 
+ We started first with an overview of the Sensor and Location Platform . 
+ This was followed...</div>
+					        
+        				
+			        </div>
+			        <div class="abbreviated-post-footer"></div>
+		        </li>
+	        
+		        <li class="content-item">
+			        <div class="abbreviated-post-header"></div>
+			        <div class="abbreviated-post">
+			            <div class="post-application">
+		                        <span class="label"></span>
+		                        <span class="value"><a class="internal-link view-application" href="/b/sensorslocation/"><span></span>Sensor &amp; Location Platform Team Blog</a></span>
+			                </div>
+				        <h4 class="post-name"><a class="internal-link view-post" href="/b/sensorslocation/archive/2010/01/27/the-sensor-and-location-drill-down-part-2-the-sensor-api.aspx"><span></span>The Sensor and Location Drill Down - Part 2: The Sensor API</a></h4>
+				        
+            <div class="post-date">
+		        <span class="label">Posted</span>
+		        <span class="value">over 3 years ago</span>
+	        </div>
+                        <div class="post-author">
+                            <span class="msdn-post-author-by">by</span>
+                            <span class="avatar"><a href="/231662/ProfileUrlRedirect.ashx"><img src="http://i1.social.microsoft.com/profile/u/avatar.jpg?displayname=sensblog&amp;size=large" alt="" style="border-width:0px;max-height:32px;max-width:32px;" /></a></span>
+                            
+                            <span class="profile-usercard-hover" data-profile-userid='02c81e29-9f84-4966-8e28-e739f54e8747'>
+                                <span class="user-name"><a class="internal-link view-user-profile" href="/231662/ProfileUrlRedirect.ashx"><span></span>sensblog</a></span>
+                            
+                                
+                            </span>
+                        </div>
+				        
+	                    <div class="post-attributes">
+		                        <div class="attribute-list-header"></div>
+                                <ul class="attribute-list">
+                                    <li class="attribute-item post-reply-count">
+                                        <span class="attribute-value">0</span>
+                                        <span class="attribute-name">Comments</span>
+                                    </li>
+                                </ul>
+                                <div class="attribute-list-footer"></div>
+                            </div>
+        				
+				        
+						        <div class="post-summary">We continue our overview of the Sensor and Location Platform this time focusing on the Sensor API. The Sensor API is made up of several COM Interfaces but where to start and how does it all fit together? Today we’ll answer that question. The Sensor API...</div>
+					        
+        				
+			        </div>
+			        <div class="abbreviated-post-footer"></div>
+		        </li>
+	        
+		        <li class="content-item">
+			        <div class="abbreviated-post-header"></div>
+			        <div class="abbreviated-post">
+			            <div class="post-application">
+		                        <span class="label"></span>
+		                        <span class="value"><a class="internal-link view-application" href="/b/sensorslocation/"><span></span>Sensor &amp; Location Platform Team Blog</a></span>
+			                </div>
+				        <h4 class="post-name"><a class="internal-link view-post" href="/b/sensorslocation/archive/2010/01/12/the-sensor-and-location-platform-drill-down-part-1-the-sensor-ddi.aspx"><span></span>The Sensor and Location Platform Drill Down – Part 1 : The Sensor DDI</a></h4>
+				        
+            <div class="post-date">
+		        <span class="label">Posted</span>
+		        <span class="value">over 3 years ago</span>
+	        </div>
+                        <div class="post-author">
+                            <span class="msdn-post-author-by">by</span>
+                            <span class="avatar"><a href="/231662/ProfileUrlRedirect.ashx"><img src="http://i1.social.microsoft.com/profile/u/avatar.jpg?displayname=sensblog&amp;size=large" alt="" style="border-width:0px;max-height:32px;max-width:32px;" /></a></span>
+                            
+                            <span class="profile-usercard-hover" data-profile-userid='02c81e29-9f84-4966-8e28-e739f54e8747'>
+                                <span class="user-name"><a class="internal-link view-user-profile" href="/231662/ProfileUrlRedirect.ashx"><span></span>sensblog</a></span>
+                            
+                                
+                            </span>
+                        </div>
+				        
+	                    <div class="post-attributes">
+		                        <div class="attribute-list-header"></div>
+                                <ul class="attribute-list">
+                                    <li class="attribute-item post-reply-count">
+                                        <span class="attribute-value">0</span>
+                                        <span class="attribute-name">Comments</span>
+                                    </li>
+                                </ul>
+                                <div class="attribute-list-footer"></div>
+                            </div>
+        				
+				        
+						        <div class="post-summary">Welcome back and Happy New Year! As we resume our blog in the new year, we begin by doing a series of what we call drill-down posts, where we look at a particular part of the Sensor &amp; Location Platform and do a deep dive into its various components...</div>
+					        
+        				
+			        </div>
+			        <div class="abbreviated-post-footer"></div>
+		        </li>
+	        
+		        <li class="content-item">
+			        <div class="abbreviated-post-header"></div>
+			        <div class="abbreviated-post">
+			            <div class="post-application">
+		                        <span class="label"></span>
+		                        <span class="value"><a class="internal-link view-application" href="/b/sensorslocation/"><span></span>Sensor &amp; Location Platform Team Blog</a></span>
+			                </div>
+				        <h4 class="post-name"><a class="internal-link view-post" href="/b/sensorslocation/archive/2009/12/15/sensor-location-platform-the-50-000-foot-view.aspx"><span></span>Sensor &amp; Location Platform – The 50,000-Foot View</a></h4>
+				        
+            <div class="post-date">
+		        <span class="label">Posted</span>
+		        <span class="value">over 4 years ago</span>
+	        </div>
+                        <div class="post-author">
+                            <span class="msdn-post-author-by">by</span>
+                            <span class="avatar"><a href="/231662/ProfileUrlRedirect.ashx"><img src="http://i1.social.microsoft.com/profile/u/avatar.jpg?displayname=sensblog&amp;size=large" alt="" style="border-width:0px;max-height:32px;max-width:32px;" /></a></span>
+                            
+                            <span class="profile-usercard-hover" data-profile-userid='02c81e29-9f84-4966-8e28-e739f54e8747'>
+                                <span class="user-name"><a class="internal-link view-user-profile" href="/231662/ProfileUrlRedirect.ashx"><span></span>sensblog</a></span>
+                            
+                                
+                            </span>
+                        </div>
+				        
+	                    <div class="post-attributes">
+		                        <div class="attribute-list-header"></div>
+                                <ul class="attribute-list">
+                                    <li class="attribute-item post-reply-count">
+                                        <span class="attribute-value">0</span>
+                                        <span class="attribute-name">Comments</span>
+                                    </li>
+                                </ul>
+                                <div class="attribute-list-footer"></div>
+                            </div>
+        				
+				        
+						        <div class="post-summary">The Sensor &amp; Location platform for Windows 7 is essentially a set of COM APIs designed to interact with a variety of sensor devices in a standard manner. Rather than explain it in words, here is a neat picture that shows the 50,000-Foot view of the...</div>
+					        
+        				
+			        </div>
+			        <div class="abbreviated-post-footer"></div>
+		        </li>
+	        
+		        <li class="content-item">
+			        <div class="abbreviated-post-header"></div>
+			        <div class="abbreviated-post">
+			            <div class="post-application">
+		                        <span class="label"></span>
+		                        <span class="value"><a class="internal-link view-application" href="/b/sensorslocation/"><span></span>Sensor &amp; Location Platform Team Blog</a></span>
+			                </div>
+				        <h4 class="post-name"><a class="internal-link view-post" href="/b/sensorslocation/archive/2009/12/08/welcome-to-the-sensor-and-location-platform-team-blog.aspx"><span></span>Welcome to the Sensor &amp; Location Platform Team Blog</a></h4>
+				        
+            <div class="post-date">
+		        <span class="label">Posted</span>
+		        <span class="value">over 4 years ago</span>
+	        </div>
+                        <div class="post-author">
+                            <span class="msdn-post-author-by">by</span>
+                            <span class="avatar"><a href="/231662/ProfileUrlRedirect.ashx"><img src="http://i1.social.microsoft.com/profile/u/avatar.jpg?displayname=sensblog&amp;size=large" alt="" style="border-width:0px;max-height:32px;max-width:32px;" /></a></span>
+                            
+                            <span class="profile-usercard-hover" data-profile-userid='02c81e29-9f84-4966-8e28-e739f54e8747'>
+                                <span class="user-name"><a class="internal-link view-user-profile" href="/231662/ProfileUrlRedirect.ashx"><span></span>sensblog</a></span>
+                            
+                                
+                            </span>
+                        </div>
+				        
+	                    <div class="post-attributes">
+		                        <div class="attribute-list-header"></div>
+                                <ul class="attribute-list">
+                                    <li class="attribute-item post-reply-count">
+                                        <span class="attribute-value">0</span>
+                                        <span class="attribute-name">Comments</span>
+                                    </li>
+                                </ul>
+                                <div class="attribute-list-footer"></div>
+                            </div>
+        				
+				        
+						        <div class="post-summary">Welcome to the Sensor and Location Platform Team Blog. We’re the ones who brought this new platform to Windows 7. Our goal in this blog is to add another dimension to the wealth of information that is already out there regarding the platform. 
+ What...</div>
+					        
+        				
+			        </div>
+			        <div class="abbreviated-post-footer"></div>
+		        </li>
+	        
+		        </ul>
+		        <div class="content-list-footer standard"></div>
+	        
+
+        <div class="pager">
+        <span class="summary">Page 1 of 1 (14 items)</span>
+    </div>
+    </div></div>
+<div class="content-fragment-footer"></div>
+<div class="content-fragment-bottom msdn-content-fragment-bottom"><div class="r1 msdn-r1"></div><div class="r2 msdn-r2"></div><div class="r3 msdn-r3"></div><div class="r4 msdn-r4"></div></div></div></div>
+</div>
+</div>
+</div>
+<div class="layout-footer"></div>
+</div></div>
+			<div class="footer-fragments-header"></div>
+<div class="footer-fragments"><div class="footer-fragment copyright-info" id="footer-fragment-1402503690">
+
+<ul class="footer-fragment-links">
+    <li class="message copyright">© 2013 Microsoft Corporation.</li>
+	<li class="message termsOfService"><a href="http://msdn.microsoft.com/cc300389">Terms of Use</a> </li>
+    <li class="message trademarks"><a href="http://www.microsoft.com/library/toolbar/3.0/trademarks/en-us.mspx">Trademarks</a> </li>
+    <li class="message privacy"><a href="http://go.microsoft.com/fwlink/?LinkId=248681">Privacy Statement</a> </li>
+    <li class="message abuse">
+    
+            <a id="ctl00_footer_fragment_1402503690__b7a7ed_ctl00_ctl00_ctl01_lnkAbuse" href="javascript:__doPostBack('ctl00$footer_fragment_1402503690$_b7a7ed$ctl00$ctl00$ctl01$lnkAbuse','')">Report Abuse</a>
+        
+    </li>
+    
+    <li class="message version">5.6.1228.364</li>
+</ul></div><div class="footer-fragment omniture-footer-fragment" id="footer-fragment-1402503691">
+
+
+<script src="http://i1.blogs.msdn.com/rrcontent/2569210a296af7a76a1f0a41cafcfd42-0504c0fa449b909ab2cb1f13355532e6-RequestReducedScript.js" type="text/javascript" ></script>        <noscript><a href="http://www.omniture.com" title="Web Analytics"><img
+        src="http://msstomsdnblogs.112.2O7.net/b/ss/msstomsdnblogs/1/H.20.2--NS/0"
+        height="1" width="1" border="0" alt="" /></a></noscript>
+
+</div></div>
+<div class="footer-fragments-footer"></div>
+		
+<script type="text/javascript">
+// <![CDATA[
+ctl00_content_ctl00 = new ContentFragmentPageCustomCallback('ctl00_content_ctl00',new Function('mode','parameters','callback','errorCallback','context','ctl00_content_ctl00_ctl00._doCallback(mode+\':\'+parameters,callback,context,errorCallback);'));
+// ]]>
+</script><script type="text/javascript">
+// <![CDATA[
+Telligent_Modal.Configure('\/utility\/loading.htm',['modal'],['modal-title','modal-title-2','modal-title-3','modal-title-4'],['modal-close'],['modal-content','modal-content-2'],['modal-footer','modal-footer-2','modal-footer-3'],['modal-resize'],['modal-mask'],10000,false,true,true);
+// ]]>
+</script><script type="text/javascript">
+// <![CDATA[
+window.ctl00_content_ctl00_ctl00 = new Telligent_CallbackManager('ctl00_content_ctl00_ctl00','ctl00$content$ctl00$ctl00','aspnetForm');
+// ]]>
+</script><script type="text/javascript">
+// <![CDATA[
+window.ctl00_content_ctl00_w_44155__b7a7ed_ctl00_ctl00_ctl00_PostListWrapper = new DelayedContent('ctl00_content_ctl00_w_44155__b7a7ed_ctl00_ctl00_ctl00_PostListWrapper','ctl00_content_ctl00_w_44155__b7a7ed_ctl00_ctl00_ctl00_PostListWrapper','ctl00_content_ctl00._customCallback(\'fragment-44155\',\'ctl00$content$ctl00$w_44155$_b7a7ed$ctl00$ctl00$ctl00$PostListWrapper\',argument,null,callback,null)',true,true,null);
+// ]]>
+</script><script type="text/javascript">
+// <![CDATA[
+var ctl00_content_ctl00_w_44155__b7a7ed_ctl00_ctl00_ctl00_PostListWrapper_ctl01_Posts_ctl05_ctl08=new RateableContentRating('ctl00_content_ctl00_w_44155__b7a7ed_ctl00_ctl00_ctl00_PostListWrapper_ctl01_Posts_ctl05_ctl08','ctl00_content_ctl00_w_44155__b7a7ed_ctl00_ctl00_ctl00_PostListWrapper_ctl01_Posts_ctl05_ctl08','ctl00_content_ctl00_w_44155__b7a7ed_ctl00_ctl00_ctl00_PostListWrapper_ctl01_Posts_ctl05_ctl08_Value', 5, '/Utility/images/small-stars/', false, 'rating','rating active','rating readonly',['Terrible','Poor','Fair','Average','Good','Excellent'],true,true);
+// ]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+
+WebForm_InitCallback();//]]>
+</script>
+<script type="text/javascript">
+				// <![CDATA[
+				var ctl00_content_ctl00_w_44155__b7a7ed_ctl00_ctl00_ctl00_PostListWrapper_ctl01_Posts_ctl05_ctl08_ajax={"SaveRating":function(rating,successFunction,failureFunction){WebForm_DoCallback('ctl00$content$ctl00$w_44155$_b7a7ed$ctl00$ctl00$ctl00$PostListWrapper$ctl01$Posts$ctl05$ctl08',rating,successFunction,rating,failureFunction,true)}};
+				// ]]>
+				</script></form>
+       
+    <script type="text/javascript">
+        $(window).load(function () {
+            $.getScript('http://widgets.membership.s-msft.com/v1/loader.js?brand=msdn&lang=en-US', function () {
+            });
+        });
+    </script>
+    
+	
+        <script type="text/javascript">$('div.breadcrumb-list span:last a').addClass('last');</script></body>
+</html>

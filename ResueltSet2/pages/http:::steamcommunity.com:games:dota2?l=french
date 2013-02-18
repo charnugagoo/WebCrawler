@@ -1,0 +1,286 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Communauté Steam :: Groupe :: Dota 2</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link href="http://cdn.steamcommunity.com/public/shared/css/buttons.css?v=3143806127" rel="stylesheet" type="text/css">
+<link href="http://cdn.steamcommunity.com/public/css/skin_1/global.css?v=1088990813&client=0" rel="stylesheet" type="text/css">
+<link href="http://cdn.steamcommunity.com/public/css/skin_1/group_ogg.css?v=1889131915" rel="stylesheet" type="text/css">
+<link href="http://cdn.steamcommunity.com/public/css/skin_1/header.css?v=439635755" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="http://cdn.steamcommunity.com/public/javascript/prototype-1.7.js?v=3863744284&amp;l=french"></script>
+<script type="text/javascript" src="http://cdn.steamcommunity.com/public/javascript/scriptaculous/scriptaculous.js?v=1436297378&amp;l=french&amp;load=effects,controls,slider,dragdrop"></script>
+<script type="text/javascript" src="http://cdn.steamcommunity.com/public/javascript/global.js?v=2415175592&amp;l=french"></script>
+<script type="text/javascript" src="http://cdn.steamcommunity.com/public/javascript/group_functions.js?v=2664025124&amp;l=french"></script>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33779068-1']);
+  _gaq.push(['_setCustomVar', 1, 'Logged In', 'false', 2]);
+  _gaq.push(['_setCustomVar', 2, 'Client Type', 'External', 2]);
+  _gaq.push(['_setCustomVar', 3, 'Cntrlr', 'groups', 3]);
+  _gaq.push(['_setCustomVar', 4, 'Method', "groups\/DefaultAction", 3]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_setSessionCookieTimeout', 900000]);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<script language="javascript">
+var rgGroupMembers = new Array();
+var rgChatting = new Array();
+var rgInGame = new Array();
+</script>
+</head>
+<body>
+<center>
+<!-- header bar, contains info browsing user if logged in -->
+<div id="global_header">
+	<div class="content">
+	
+		<div class="logo">
+			<span id="logo_holder">
+				<a href="http://store.steampowered.com/">
+					<img src="http://cdn.steamcommunity.com/public/images/header/globalheader_logo.png" width="176" height="44" border="0" alt="Logo Steam" />
+				</a>
+			</span>
+			<!--[if lt IE 7]>
+			<style type="text/css">
+			#logo_holder img { filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0); }
+			#logo_holder { display: inline-block; width: 176px; height: 44px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.steamcommunity.com/public/images/header/globalheader_logo.png'); }
+			</style>
+			<![endif]-->
+		</div>
+
+		<a class="menuitem" href="http://store.steampowered.com/">
+			Magasin		</a>
+
+		<div style="float: left; position: relative;">
+			<a class="menuitem active" style="display: block" href="http://steamcommunity.com">
+					<span class="menuitem_new">NOUVEAU</span>
+					Communauté			</a>
+			<div class="community_sub_nav">
+				<a class="submenuitem " href="https://steamcommunity.com/login/home/">Amis</a>
+				<a class="submenuitem " href="https://steamcommunity.com/login/home/">Profil</a>
+				<a class="submenuitem " href="http://steamcommunity.com/apps/">Hubs de jeu</a>
+				<a class="submenuitem " href="http://steamcommunity.com/discussions/">DISCUSSIONS</a>
+				<a class="submenuitem " href="http://steamcommunity.com/workshop/">Workshop</a>
+				<a class="submenuitem " href="http://steamcommunity.com/greenlight/">Greenlight</a>
+								<a class="submenuitem " href="http://steamcommunity.com/market/">Marché</a>
+											</div>
+		</div>
+
+		<a class="menuitem" href="http://store.steampowered.com/news/">
+			Actualités		</a>
+
+		<a class="menuitem" href="http://store.steampowered.com/about/">
+			À propos		</a>
+
+		<a class="menuitem" href="http://support.steampowered.com/">
+			Support		</a>
+
+		<a class="menuitem" href="http://store.steampowered.com/stats/">
+			STATS		</a>
+		
+		<div id="global_actions">
+						<div id="global_action_menu">
+
+				<div class="header_installsteam_btn header_installsteam_btn_green">
+					<div class="header_installsteam_btn_leftcap"></div>
+					<div class="header_installsteam_btn_rightcap"></div>
+					<a class="header_installsteam_btn_content" href="http://store.steampowered.com/about/">
+						Installer Steam					</a>
+				</div>
+															<a class="global_action_link" href="https://steamcommunity.com/login/home/?goto=games%2Fdota2%3Fl%3Dfrench">Connexion</a>
+						&nbsp;|&nbsp;
+										<span class="pulldown global_action_link" id="language_pulldown" onclick="ShowMenu( this, 'language_dropdown', 'right' );">langue</span>
+					<div class="popup_block" id="language_dropdown" style="display: none;">
+						<div class="shadow_ul"></div><div class="shadow_top"></div><div class="shadow_ur"></div><div class="shadow_left"></div><div class="shadow_right"></div><div class="shadow_bl"></div><div class="shadow_bottom"></div><div class="shadow_br"></div><div class="iepopupfix"><img class="iepopupfix_img" src="http://cdn.steamcommunity.com/public/images/blank.gif" alt =""></div>						<div class="popup_body popup_menu shadow_content">
+																						<a class="popup_menu_item tight" href="?l=bulgarian">Български (Bulgare)</a>
+																						<a class="popup_menu_item tight" href="?l=czech">čeština (Tchèque)</a>
+																						<a class="popup_menu_item tight" href="?l=danish">Dansk (Danois)</a>
+																						<a class="popup_menu_item tight" href="?l=dutch">Nederlands (Néerlandais)</a>
+																						<a class="popup_menu_item tight" href="?l=english">English (Anglais)</a>
+																						<a class="popup_menu_item tight" href="?l=finnish">Suomi (Finnois)</a>
+																														<a class="popup_menu_item tight" href="?l=german">Deutsch (Allemand)</a>
+																						<a class="popup_menu_item tight" href="?l=greek">Ελληνικά (Grec)</a>
+																						<a class="popup_menu_item tight" href="?l=hungarian">Magyar (Hongrois)</a>
+																						<a class="popup_menu_item tight" href="?l=italian">Italien (Italian)</a>
+																						<a class="popup_menu_item tight" href="?l=japanese">日本語 (Japonais)</a>
+																						<a class="popup_menu_item tight" href="?l=koreana">한국어 (Coréen)</a>
+																						<a class="popup_menu_item tight" href="?l=norwegian">Norsk (Norvégien)</a>
+																						<a class="popup_menu_item tight" href="?l=polish">Polski (Polonais)</a>
+																						<a class="popup_menu_item tight" href="?l=portuguese">Português (Portugais)</a>
+																						<a class="popup_menu_item tight" href="?l=brazilian">Português-Brasil (Portugais du Brésil)</a>
+																						<a class="popup_menu_item tight" href="?l=romanian">Română (Roumain)</a>
+																						<a class="popup_menu_item tight" href="?l=russian">Русский (Russe)</a>
+																						<a class="popup_menu_item tight" href="?l=schinese">简体中文 (Chinois Simplifié)</a>
+																						<a class="popup_menu_item tight" href="?l=spanish">Espagnol (Spanish)</a>
+																						<a class="popup_menu_item tight" href="?l=swedish">Svenska (Suédois)</a>
+																						<a class="popup_menu_item tight" href="?l=tchinese">繁體中文 (Chinois Traditionnel)</a>
+																						<a class="popup_menu_item tight" href="?l=thai">ไทย (Thaïlandais)</a>
+																						<a class="popup_menu_item tight" href="?l=turkish">Türkçe (Turc)</a>
+														<a class="popup_menu_item tight" href="http://translation.steampowered.com" target="_blank">Aidez-nous à traduire Steam</a>
+						</div>
+					</div>
+							</div>
+		</div>
+		
+		
+		
+	</div>
+
+</div>
+
+<div id="modalBG" style="display: none"></div>
+<script type="text/javascript">
+	g_sessionID = "MjcyNTAyNTM4";
+	g_steamID = false;
+</script><!-- /header bar -->
+
+<div id="mainBody">
+<!-- main contents -->
+	<div id="mainContents" class="clearfix">
+<!-- right side contents -->
+		<div id="rightContents">
+
+<!-- group type bit -->
+			<div id="groupStatus">
+			<div id="inCommon">
+			<div id="groupType">
+				<div id="publicGroupJoin"><a href="http://steamcommunity.com/?goto=%2Fgames%2Fdota2%3Faction%3Djoin%26sessionID%3DMjcyNTAyNTM4&msg=Login+required+to+join+groups" onMouseover="iSwap('joinImage','skin_1/buttonJoinOver_FR.gif')" onMouseout="iSwap('joinImage','skin_1/buttonJoin_FR.gif')"><img id="joinImage" src="http://cdn.steamcommunity.com/public/images/skin_1/buttonJoin_FR.gif" width="104" height="25" border="0" /></a></div>
+				<p class="orangeText">Groupe officiel<br />Tout le monde peut le rejoindre.</p>
+			</div>
+			</div>
+			</div>
+
+<!-- /group type bit -->
+
+<!-- actions section -->
+			<div class="rightSectionHeader">Actions</div>
+			<div id="rightActionBlock">
+														<div class="actionItem">
+						<div class="actionItemIcon"><a href="steam://friends/joinchat/103582791433224455"><img src="http://cdn.steamcommunity.com/public/images/skin_1/iconChat.gif" width="16" height="16" border="0" /></a></div>
+						<a class="linkActionMinor steamLink" href="steam://friends/joinchat/103582791433224455">Rejoindre la salle de chat</a>
+					</div>
+								<div class="actionItem">
+					<div class="actionItemIcon"><a href="http://steamcommunity.com/app/570/discussions"><img src="http://cdn.steamcommunity.com/public/images/skin_1/iconForums.gif" width="16" height="16" border="0" /></a></div>
+					<a class="linkActionMinor" href="http://steamcommunity.com/app/570/discussions">Visitez les forums</a>
+				</div>
+				<div class="actionItem">
+					<div class="actionItemIcon"><a href="http://steamcommunity.com/app/570"><img src="http://cdn.steamcommunity.com/public/images/skin_1/icon_hub.png" width="16" height="16" border="0" /></a></div>
+					<a class="linkActionMinor" href="http://steamcommunity.com/app/570">Visitez le hub de la communauté</a>
+				</div>
+				<div class="actionItem">
+					<div class="actionItemIcon"><a href="http://store.steampowered.com/app/570"><img src="http://cdn.steamcommunity.com/public/images/skin_1/iconPurchase.gif" width="16" height="16" border="0" /></a></div>
+					<a class="linkActionMinor" href="http://store.steampowered.com/app/570">Visitez la page du magasin</a>
+				</div>
+								<div class="actionItem">
+					<div class="actionItemIcon"><a href="http://steamcommunity.com/stats/570/achievements/"><img src="http://cdn.steamcommunity.com/public/images/skin_1/icon_game_stats.png" width="16" height="16" border="0" /></a></div>
+					<a class="linkActionMinor" href="http://steamcommunity.com/stats/570/achievements/">Afficher les stats générales du jeu</a>
+				</div>
+				
+				
+																
+			</div>
+			<div id="rightActionBlockFooter"><img src="http://cdn.steamcommunity.com/public/images/trans.gif" width="254" height="8" border="0" /></div>
+<!-- /actions section -->
+
+		</div>
+<!-- /right side contents -->
+
+		<h2>Groupe officiel</h2>
+		<h1>Dota 2</h1>
+
+<!-- profile section -->
+		<div class="mainSectionHeader">Profil <span class="underscoreColor">_</span></div>
+
+		<div id="profileBlock">
+			<div id="oggLogoHolder"><img src="http://cdn.steamcommunity.com/public/images/skin_1/oggLogoHolder.gif" width="452" height="216" border="0" />
+				<div id="oggLogo"><img src="http://media.steampowered.com/steamcommunity/public/images/apps/570/205f7a8aec8c8a7e09e5daa160b5339a2dd9427f.jpg"></div>
+			</div>
+			<h1></h1>
+			<a class="linkStandard" href="http://steamcommunity.com/games/dota2/members">153,318 Membres</a><span class="infoBreak">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span class="membersInGame">8366 Dans un jeu</span><span class="infoBreak">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span class="membersOnline">18,285 En ligne</span><span class="infoBreak">&nbsp;&nbsp;|&nbsp;&nbsp;</span><a class="linkStandard steamLink" href="steam://friends/joinchat/103582791433224455">15 Dans un groupe de chat</a>
+			<h2></h2>
+			<p class="sectionText" id="summaryText">Dota began as a user-made modification for Warcraft 3 and has grown into one of the most played online games in the world. Following in the tradition of Counter-Strike, Day of Defeat, Team Fortress, Portal, and Alien Swarm, Dota 2 is the result of Valve hiring the community developers who built the mod and giving them the chance to finally build a full product out of their idea with the help of a professional team of developers and artists at Valve.<br><br>As for the gameplay, it’s a little hard to describe. The camera is set in the traditional RTS perspective, but it wouldn’t be fair to call Dota an RTS. And while each hero starts at level 1, and many times hits the level cap of 25, it wouldn’t be fair to call it an RPG.<br><br>Lots of people have tried to assign various genre names to Dota, but we think Action RTS is probably the most descriptive. And while we don’t spend a lot of time trying to figure out what genre the game is inventing, we can’t stop playing it internally!</p>
+
+			<a class="externalLink" href="http://blog.dota2.com/" target="_blank">Dota 2 Blog</a> <img src="http://cdn.steamcommunity.com/public/images/skin_1/iconExternalLink.gif" width="8" height="8" border="0" /><br />
+			<a class="externalLink" href="http://www.dota2.com/store/" target="_blank">Dota 2 Store</a> <img src="http://cdn.steamcommunity.com/public/images/skin_1/iconExternalLink.gif" width="8" height="8" border="0" /><br />
+			<a class="externalLink" href="http://steamcommunity.com/workshop/browse?appid=570" target="_blank">Dota 2 Workshop</a> <img src="http://cdn.steamcommunity.com/public/images/skin_1/iconExternalLink.gif" width="8" height="8" border="0" /><br />
+		</div>
+<!-- /profile section -->
+
+		<br clear="left" />
+
+
+		<br clear="left" />
+
+<!-- announcements section -->
+		<div class="mainSectionHeader">Annonces <span class="underscoreColor">_</span></div>
+<!-- /announcements section -->
+		<div id="announcementsBlock">
+			<div class="announcement">
+				<div class="headline"><a href="http://steamcommunity.com/games/dota2/announcements/detail/1730774941216813218">No, no problems here</a></div>
+				<div class="byline">publié par <a class="font11" href="http://steamcommunity.com/id/demomenz">Finol</a> @ 07:33PM on January 24, 2013</div>
+									<div class="bodytext">Don't feed this guy.<br><br><a href="http://media.steampowered.com/apps/dota2/images/blogfiles/keyart_troll.jpg "><img class="alignnone" title="Max is the worst." alt="" src="http://media.steampowered.com/apps/dota2/images/blogfiles/inline_hero_troll.jpg" width="576" height="239" /></a><br><br>In happier news, our new Calendar system is now available. Leagues can add events to the calendar making pro games easier to follow than ever before.<br><br><a href="http://media.steampowered.com/apps/dota2/posts/calendar_full.png"><img class="alignnone" title="Ayesee, on the other hand, is the coolest." alt="" src="http://media.steampowered.com/apps/dota2/posts/calendar.png" width="588" height="537" /></a><br><br>&nbsp;<br><br>And what better way of using this new feature than by following the new <a title="LD too" href="http://www.dota2.com/store/itemdetails/120653104" target="_blank">SEA League</a>? That GoDz guy is so dreamy.<br><br>&nbsp;<br><br>We've also added All Random mode and tweaked Least Played to now hide a player's top 40 heroes.<br><br>And unlike last week, I will properly link to the <a title="I hope this woks" href="http://www.dota2.com/news/updates/">changelog </a>this time.</div>
+								<a href="http://steamcommunity.com/games/dota2/announcements/detail/1730774941216813218">Voir les 175 commentaires</a>
+			</div>
+			<div class="announcement">
+				<div class="headline"><a href="http://steamcommunity.com/games/dota2/announcements/detail/1711630743419213281">Polycount Contest Winners – Day 1</a></div>
+				<div class="byline">publié par <a class="font11" href="http://steamcommunity.com/id/gishyfishy">the_gish</a> @ 05:45PM on December 11, 2012</div>
+								<a href="http://steamcommunity.com/games/dota2/announcements/detail/1711630743419213281">Voir les 355 commentaires</a>
+			</div>
+			<div class="announcement">
+				<div class="headline"><a href="http://steamcommunity.com/games/dota2/announcements/detail/1749908253671562680">A Cornea-copia of Wards</a></div>
+				<div class="byline">publié par <a class="font11" href="http://steamcommunity.com/id/demomenz">Finol</a> @ 06:42PM on November 08, 2012</div>
+								<a href="http://steamcommunity.com/games/dota2/announcements/detail/1749908253671562680">Voir les 237 commentaires</a>
+			</div>
+			<div class="announcement">
+				<div class="headline"><a href="http://steamcommunity.com/games/dota2/announcements/detail/1748781147899355786">Diretide</a></div>
+				<div class="byline">publié par <a class="font11" href="http://steamcommunity.com/id/demomenz">Finol</a> @ 02:51PM on November 05, 2012</div>
+								<a href="http://steamcommunity.com/games/dota2/announcements/detail/1748781147899355786">Voir les 131 commentaires</a>
+			</div>
+			<div class="announcement">
+				<div class="headline"><a href="http://steamcommunity.com/games/dota2/announcements/detail/1460537506845230002">Introducing the Dota Store</a></div>
+				<div class="byline">publié par <a class="font11" href="http://steamcommunity.com/id/alden">Alden</a> @ 08:21AM on June 01, 2012</div>
+								<a href="http://steamcommunity.com/games/dota2/announcements/detail/1460537506845230002">Voir les 2278 commentaires</a>
+			</div>
+			<div id="viewAllAnnouncements"><a href="http://steamcommunity.com/games/dota2/announcements">Afficher toutes les annonces passées</a></div>
+			</div>
+		<br clear="left" />
+
+<!-- events section -->
+		<div class="mainSectionHeader">Événements à venir <span class="underscoreColor">_</span></div>
+		<div id="eventsBlock">
+			<p class="sectionText">
+													0 événements au cours des deux prochaines semaines											</p>
+			 <a href="http://steamcommunity.com/games/dota2/events">Afficher tous les événements</a>
+		</div>
+<!-- /events section -->
+
+		<br clear="left" />
+
+<!-- screenshot section -->
+<!-- /screenshot section -->
+
+	<br clear="all" />
+	</div>
+<!-- /main contents -->
+</div>
+<!-- footer -->
+	<div id="footer">
+		<div class="footer_content">
+			<div id="footerLogo"><img src="http://cdn.steamcommunity.com/public/images/skin_1/footerLogo_valve.png" width="96" height="26" border="0" alt="Logo de Valve" /></div>
+			<div id="footerText">
+				&copy; Valve Corporation. Tous droits réservés. Toutes les marques déposées sont la propriété de leurs détenteurs respectifs aux États-Unis et dans d'autres pays. Certaines données géographiques de ce site sont fournies par <a href="http://www.geonames.org" target="_blank">geonames.org</a>.							</div>
+		</div>
+	</div>
+
+	<!-- /footer -->
+
+
+
+</center>
+</body>
+</html>

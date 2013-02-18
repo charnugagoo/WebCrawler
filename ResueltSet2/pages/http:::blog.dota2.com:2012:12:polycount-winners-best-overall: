@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<script type="text/javascript" src="http://blog.dota2.com/wp-includes/js/jquery/jquery.js"></script>
+<script language="javascript">
+var languageMap = {
+	'english': 'blog',
+	'russian': 'ru',
+	'spanish': 'es',
+	'french': 'fr',
+	'german': 'de',
+	'chinese': 'cn',
+	'schinese': 'cn',
+	'tchinese': 'cn',
+	'portuguese': 'br',
+	'brazilian': 'br'
+};
+
+var queryArgs = document.location.search.substring(1).split('&');
+argsParsed = {};
+for (i=0; i < queryArgs.length; i++)
+{
+    arg = unescape(queryArgs[i]);
+    if (arg.indexOf('=') == -1)
+    {
+        argsParsed[arg.trim()] = true;
+    }
+    else
+    {
+        keyValuePair = arg.split('=');
+        argsParsed[keyValuePair[0].trim()] = keyValuePair[1].trim();
+    }
+}
+if ( argsParsed['l'] && languageMap[argsParsed['l']] )
+{
+	domain = languageMap[argsParsed['l']] + '.dota2.com';
+	if ( location.href.indexOf( domain ) == -1 && location.href.indexOf( 'blog.dota2.com' ) != -1 )
+	{
+		newURL = location.href.replace( 'blog.dota2.com', domain );
+		location.href = newURL;
+	}
+	
+}
+</script>
+<link rel="shortcut icon" href="http://www.dota2.com/images/favicon.ico" type="image/x-icon" />
+<meta charset="UTF-8" />
+<title>Frostivus and Polycount Contest Winner &#8211; Best Overall | Dota 2</title>
+
+<link rel="stylesheet" href="http://blog.dota2.com/wp-content/plugins/sitepress-multilingual-cms/res/css/language-selector.css?v=2.6.0" type="text/css" media="all" />
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="stylesheet" type="text/css" media="all" href="http://blog.dota2.com/wp-content/themes/dota2/style.css" />
+<link rel="pingback" href="http://blog.dota2.com/xmlrpc.php" />
+<!-- image for sharing on reddit/facebook -->
+<link rel="image_src" href="http://blog.dota2.com/images/logo_112.png" />
+<link rel="alternate" type="application/rss+xml" title="Dota 2 &raquo; Feed" href="http://blog.dota2.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Dota 2 &raquo; Comments Feed" href="http://blog.dota2.com/comments/feed/" />
+<script type='text/javascript' src='http://blog.dota2.com/wp-includes/js/comment-reply.min.js?ver=3.5.1'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://blog.dota2.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://blog.dota2.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Polycount Contest Winners &#8211; Day 3' href='http://blog.dota2.com/2012/12/polycount-contest-winners-doom/' />
+<link rel='next' title='Happy New Year!' href='http://blog.dota2.com/2013/01/happy-new-year/' />
+<meta name="generator" content="WordPress 3.5.1" />
+<link rel='shortlink' href='http://blog.dota2.com/?p=3897' />
+<script type="text/javascript">var icl_lang = 'en';var icl_home = 'http://blog.dota2.com/';</script>
+<script type="text/javascript" src="http://blog.dota2.com/wp-content/plugins/sitepress-multilingual-cms/res/js/sitepress.js"></script>
+<meta name="generator" content="WPML ver:2.6.0 stt:1,61,4,3,47,2,44;0" />
+<link rel="alternate" hreflang="zh_CN" href="http://cn.dota2.com/2012/12/%e8%bf%8e%e9%9c%9c%e8%8a%82%e5%92%8cpolycount%e7%ab%9e%e8%b5%9b-%e5%a4%a7%e5%a5%96%e8%8e%b7%e5%be%97%e8%80%85/" />
+<link rel="alternate" hreflang="fr_FR" href="http://fr.dota2.com/2012/12/frostivus-et-le-vainqueur-du-concours-polycount-le-meilleur/" />
+<link rel="alternate" hreflang="de_DE" href="http://de.dota2.com/2012/12/frostivus-and-polycount-contest-winner-best-overall/" />
+<link rel="alternate" hreflang="ru_RU" href="http://ru.dota2.com/2012/12/frostivus-and-polycount-contest-winner-best-overall-2/" />
+<link rel="alternate" hreflang="es_ES" href="http://es.dota2.com/2012/12/frostivus-and-polycount-contest-winner-best-overall-3/" />
+<link rel="alternate" hreflang="pt_BR" href="http://br.dota2.com/2012/12/frostivus-and-polycount-contest-winner-best-overall-4/" />
+
+<style type="text/css">#lang_sel_list a.lang_sel_sel, #lang_sel_list ul a, #lang_sel_list ul a:visited, #lang_sel_list_list ul a:visited, #lang_sel_list a, #lang_sel_list a:visited, #lang_sel_list li { border:none; border-width:0; padding:0; margin:0; color: #9c3021; font-family: Georgia, \\\"Bitstream Charter\\\", serif; background-color:transparent; font-size:12px; line-height:16px; }
+
+</style><script language="javascript">
+function populateUniqueUsers( dataJSON )
+{
+	if ( dataJSON['users_last_month'] )
+	{
+		jQuery('#rightColPlayerCountNum').html( addCommas( dataJSON['users_last_month'] ) );
+	}
+}
+function addCommas(nStr)
+{
+	nStr += '';
+	x = nStr.split('.');
+	x1 = x[0];
+	x2 = x.length > 1 ? '.' + x[1] : '';
+	var rgx = /(\d+)(\d{3})/;
+	while (rgx.test(x1)) 
+	{
+		x1 = x1.replace(rgx, '$1' + ',' + '$2');
+	}
+	return x1 + x2;
+}
+jQuery(document).ready(
+	function()
+	{
+		var URL = ( location.protocol == 'https:' ) ? 'https://www.dota2.com/' : 'http://www.dota2.com/';
+		URL = URL + 'jsfeed/uniqueusers';
+		jQuery.ajax(
+			{
+				type:'GET',
+				cache:true,
+				url: URL,
+				dataType:'jsonp',
+				jsonpCallback:'populateUniqueUsers'
+			}
+		);
+	}
+);
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33822635-11']);
+  _gaq.push(['_setDomainName', 'dota2.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+
+<body class="single single-post postid-3897 single-format-standard">
+<div id="navBarShadowOnly"></div><div id="navBarBGRepeat" style="display:none;">
+	<div id="navBarShadow"></div>
+	<div id="navBarBG">
+		<div id="navBar">
+			<div id="navLoginAndLanguage">
+				<div id="languageSelector">
+					<a href="javascript:void(0)">Language</a> <img style="padding-bottom: 2px;" src="http://media.steampowered.com/apps/dota2/images/header/btn_arrow_down.png" width="9" height="4" border="0" /><br />
+					<div style="display:none;" id="languageList">
+							<a class="languageItem" href="http://blog.dota2.com">English</a>
+							<a class="languageItem" href="http://es.dota2.com">Spanish</a>
+							<a class="languageItem" href="http://de.dota2.com">German</a>
+							<a class="languageItem" href="http://fr.dota2.com">French</a>
+							<a class="languageItem" href="http://br.dota2.com">Portuguese</a>
+							<a class="languageItem" href="http://ru.dota2.com">Russian</a>
+							<a class="languageItem" href="http://cn.dota2.com">Chinese</a>
+					</div>
+				</div>
+			</div>
+			<a class="navBarItem" href="http://blog.dota2.com/">
+				<img border="0" class="top" src="http://media.steampowered.com/apps/dota2/images/nav/en_dota_logo_over.png"/>
+				<img border="0" class="bottom" src="http://media.steampowered.com/apps/dota2/images/nav/en_dota_logo.png"/>
+			</a>
+			<a class="navBarItem" href="http://www.dota2.com/store/">
+				<img border="0" class="top" src="http://media.steampowered.com/apps/dota2/images/nav/en_store_over.png"/>
+				<img border="0" class="bottom" src="http://media.steampowered.com/apps/dota2/images/nav/en_store.png"/>
+			</a>
+			<a class="navBarItem" href="http://www.dota2.com/heroes/">
+				<img border="0" class="top" src="http://media.steampowered.com/apps/dota2/images/nav/en_heroes_over.png"/>
+				<img border="0" class="bottom" src="http://media.steampowered.com/apps/dota2/images/nav/en_heroes.png"/>
+			</a>
+			<a class="navBarItem" href="http://www.dota2.com/items/">
+				<img border="0" class="top" src="http://media.steampowered.com/apps/dota2/images/nav/en_items_over.png"/>
+				<img border="0" class="bottom" src="http://media.steampowered.com/apps/dota2/images/nav/en_items.png"/>
+			</a>
+			<a class="navBarItem" href="http://steamcommunity.com/workshop/dota2/" target="_blank">
+				<img border="0" class="top" src="http://media.steampowered.com/apps/dota2/images/nav/en_workshop_over.png"/>
+				<img border="0" class="bottom" src="http://media.steampowered.com/apps/dota2/images/nav/en_workshop.png"/>
+			</a>
+			<a class="navBarItem" href="http://www.playdota.com/forums/" target="_blank">
+				<img border="0" class="top" src="http://media.steampowered.com/apps/dota2/images/nav/en_forums_over.png"/>
+				<img border="0" class="bottom" src="http://media.steampowered.com/apps/dota2/images/nav/en_forums.png"/>
+			</a>
+		</div>
+	</div>
+</div>
+<script language="javascript">
+
+	function MM_preloadImages() { //v3.0
+	  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+	    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+	    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+	}
+
+	function PreloadHeaderImages()
+	{
+		//  Preload header rollover images
+		MM_preloadImages(
+			'http://media.steampowered.com/apps/dota2/images/nav/en_dota_logo_over.png',							
+			'http://media.steampowered.com/apps/dota2/images/nav/en_store_over.png',							
+			'http://media.steampowered.com/apps/dota2/images/nav/en_heroes_over.png',							
+			'http://media.steampowered.com/apps/dota2/images/nav/en_items_over.png',							
+			'http://media.steampowered.com/apps/dota2/images/nav/en_workshop_over.png',							
+			'http://media.steampowered.com/apps/dota2/images/nav/en_forums_over.png'
+		);
+	}
+
+		document.addEventListener( "DOMContentLoaded", PreloadHeaderImages, false );
+	jQuery(document).ready(
+		function ()
+		{
+			jQuery( '#languageSelector' ).hover(
+				function ()
+				{
+					//show its submenu
+					jQuery( '#languageSelector' ).find( 'div' ).fadeIn( 'fast' );
+				},
+				function ()
+				{
+					//hide its submenu
+					jQuery( '#languageSelector' ).find( 'div' ).hide();
+				}
+			);
+		}
+	);
+</script>
+<!--
+<div id="calloutHeader">
+	<div id="calloutHeaderLink">
+		<div id="calloutHeaderLink"><a href="http://media.steampowered.com/apps/dota2/images/blogfiles/keyart_rubik.png"><img src="http://blog.dota2.com/wp-includes/images/blank.gif" width="938" height="377" border="0" /></a></div>
+	</div>
+</div>
+-->
+<script language="javascript">
+//var rand = Math.random();
+//var which = ( rand < .34 ) ? 'ezalor' : ( rand < .67 ? 'nyx' : 'visage' );
+//document.write( '<div id="calloutHeader" style="background-image:url(\'http://media.steampowered.com/apps/dota2/images/blogfiles/bg_'+which+'.jpg\');">' );
+//document.write( '<div id="calloutHeaderLink"><a href="http://www.dota2.com/hero/'+(which == 'ezalor' ? 'Keeper_of_the_Light/' : ( which == 'nyx' ? 'Nyx_Assassin/' : 'Visage/'))+'"><img src="http://media.steampowered.com/apps/dota2/images/blogfiles/trans.gif" width="938" height="377" border="0" /></a></div>' );
+//document.write( '</div>' );
+</script>
+<div id="calloutHeader" style="background-image:url('http://media.steampowered.com/apps/dota2/images/blogfiles/bg_tusk.jpg');">
+	<div id="calloutHeaderLink">
+		<div id="calloutHeaderLink"><a href="http://www.dota2.com/hero/Tusk">--><img src="http://media.steampowered.com/apps/dota2/images/blogfiles/trans.gif" width="938" height="377" border="0" /></a></div>
+    </div>
+</div>
+<div id="mainContentSideBG">
+	<div id="mainContentBG">
+		<div id="mainContent">
+			<div id="rightColHeaderImage"><img src="http://media.steampowered.com/apps/dota2/images/blogfiles/rightcol_bg_top.png" width="292" height="24" border="0" /></div>
+			<div id="noTabArea"></div>
+			<div id="tabArea" style="display:none;">
+				<img id="tabAreaBG" src="http://media.steampowered.com/apps/dota2/images/blogfiles/tabs_bg.png" width="659" height="61" border="0" />
+				<a href="?" class="btn_tab_on fl_left">
+					<div class="btn_left"></div>
+					<div class="btn_right"></div>
+					BLOG				</a>
+				<div class="tab_split"></div>
+				<a href="http://www.dota2.com/news/" class="btn_tab fl_left">
+					<div class="btn_left"></div>
+					<div class="btn_right"></div>
+					NEWS				</a>
+				<div class="tab_split"></div>
+				<a href="http://www.dota2.com/news/updates/" class="btn_tab fl_left">
+					<div class="btn_left"></div>
+					<div class="btn_right"></div>
+					UPDATES				</a>
+				<div class="tab_split"></div>
+			</div>
+<script language="javascript">
+if ( navigator.userAgent.toLowerCase().indexOf('dota 2 client') == -1 )
+{
+	document.getElementById('navBarShadowOnly').style.display = 'none';
+	document.getElementById('navBarBGRepeat').style.display = 'block';
+	document.getElementById('noTabArea').style.display = 'none';
+	document.getElementById('tabArea').style.display = 'block';
+}
+</script>
+		<div id="primary" >
+
+			<a class="hoverBG" style="display:none" id="rightColSignupLink" href="http://www.dota2.com/survey/experience/"><img src="http://media.steampowered.com/apps/dota2/images/blogfiles/trans.gif" width="261" height="77" border="0" /></a>
+							<div id="rightColPlayerCount"><div id="rightColPlayerCountNum">Loading..</div></div>
+<script language="javascript">
+if ( navigator.userAgent.toLowerCase().indexOf('dota 2 client') == -1 )
+{
+	document.getElementById('rightColSignupLink').style.display = 'block';
+}
+</script>
+			
+			<a class="hoverBG" id="rightColGreevilingButton" href="http://www.dota2.com/greeviling/"><img src="http://media.steampowered.com/apps/dota2/images/blogfiles/trans.gif" width="256" height="191" border="0" /></a>
+			<a class="rightColBigButtonTextLink" href="http://www.dota2.com/greeviling/">Greeviling Update Event</a>
+			
+			<div class="rightColButtonRow" style="margin-top:12px;">
+				<a class="rightColButton hoverBG" id="rightColStoreButton" href="http://www.dota2.com/store/"><img src="http://media.steampowered.com/apps/dota2/images/blogfiles/trans.gif" width="127" height="75" border="0" /></a>
+				<p>
+					<a class="rightColButtonTxtLink" href="http://www.dota2.com/store/">Customize your Hero</a><br />
+					<span class="rightColButtonSubtext">Stand out with cosmetic upgrades for your favorite heroes.</span>
+				</p>
+			</div>
+			<div class="rightColButtonRow">
+				<a class="rightColButton hoverBG" id="rightColWorkshopButton" href="http://steamcommunity.com/workshop/browse?appid=570"><img src="http://media.steampowered.com/apps/dota2/images/blogfiles/trans.gif" width="127" height="75" border="0" /></a>
+				<p>
+					<a class="rightColButtonTxtLink" href="http://steamcommunity.com/workshop/browse?appid=570">Make items for Dota 2</a><br />
+					<span class="rightColButtonSubtext">Create, browse, and rate community Dota 2 gear.</span>
+				</p>
+			</div>
+			
+			<div id="recentPostsTopBar"><img src="http://media.steampowered.com/apps/dota2/images/blogfiles/rightcol_recentposts_top.png" width="294" height="10" border="0" /></div>
+			<div id="recentPostsSearchArea">
+				<div id="rightColSearchArea">
+					<form role="search" method="get" id="searchform" action="http://blog.dota2.com/">
+					<input id="rightColSearchInput" type="text" value="Search" onfocus="if(this.value=='Search'){this.value=''}" onblur="if(this.value==''){this.value='Search'}" name="s" id="s" />
+					<input type="image" id="rightColSearchSubmit" src="http://media.steampowered.com/apps/dota2/images/blogfiles/searchbar_submit.jpg" width="21" height="20" border="0" />
+					</form>
+				</div>
+						<div class="widget valve_widget_recent_entries">				
+									<div class="recent_entry">
+				<a href="http://blog.dota2.com/2013/02/update-punch/" title="Update Punch!">Update Punch!</a>
+				<div class="recent_entry_date">Feb. 14 2013</div>
+			</div>
+								<div class="recent_entry">
+				<a href="http://blog.dota2.com/2013/02/introducing-team-matchmaking/" title="Introducing Team Matchmaking">Introducing Team Matchmaking</a>
+				<div class="recent_entry_date">Feb. 7 2013</div>
+			</div>
+								<div class="recent_entry">
+				<a href="http://blog.dota2.com/2013/01/no-no-problems-here/" title="No, no problems here.">No, no problems here.</a>
+				<div class="recent_entry_date">Jan. 24 2013</div>
+			</div>
+								<div class="recent_entry">
+				<a href="http://blog.dota2.com/2013/01/3982/" title="Hello? Is this on?">Hello? Is this on?</a>
+				<div class="recent_entry_date">Jan. 17 2013</div>
+			</div>
+								<div class="recent_entry">
+				<a href="http://blog.dota2.com/2013/01/happy-new-year/" title="Happy New Year!">Happy New Year!</a>
+				<div class="recent_entry_date">Jan. 4 2013</div>
+			</div>
+								<div class="recent_entry">
+				<a href="http://blog.dota2.com/2012/12/polycount-winners-best-overall/" title="Frostivus and Polycount Contest Winner &#8211; Best Overall">Frostivus and Polycount Contest Winner &#8211; Best Overall</a>
+				<div class="recent_entry_date">Dec. 14 2012</div>
+			</div>
+								<div class="recent_entry">
+				<a href="http://blog.dota2.com/2012/12/polycount-contest-winners-doom/" title="Polycount Contest Winners &#8211; Day 3">Polycount Contest Winners &#8211; Day 3</a>
+				<div class="recent_entry_date">Dec. 13 2012</div>
+			</div>
+									</div>				<div id="recentPostsBottomBar"><img src="http://media.steampowered.com/apps/dota2/images/blogfiles/rightcol_recentposts_bot.png" width="294" height="10" border="0" /></div>
+			</div>
+			
+			<div id="rightColDotaLinks">
+				<a id="dotaLinkImgPlayDota" class="rightColDotaLinkImg" href="http://www.playdota.com/forums/" target="_blank"><img src="http://media.steampowered.com/apps/dota2/images/blogfiles/link_icon_playdota.png" width="25" height="28" border="0" /></a>
+				<a id="dotaLinkPlayDota" class="rightColDotaLink" href="http://www.playdota.com/forums/" target="_blank">PlayDota Forums</a>
+
+				<a id="dotaLinkImgFacebook" class="rightColDotaLinkImg" href="http://www.facebook.com/pages/Dota-2/106876872711112" target="_blank"><img src="http://media.steampowered.com/apps/dota2/images/blogfiles/link_icon_facebook.png" width="23" height="23" border="0" /></a>
+				<a id="dotaLinkFacebook" class="rightColDotaLink" href="http://www.facebook.com/pages/Dota-2/106876872711112" target="_blank">Facebook Page</a>
+
+				<a id="dotaLinkImgTwitter" class="rightColDotaLinkImg" href="http://twitter.com/DOTA2" target="_blank"><img src="http://media.steampowered.com/apps/dota2/images/blogfiles/link_icon_twitter.png" width="24" height="24" border="0" /></a>
+				<a id="dotaLinkTwitter" class="rightColDotaLink" href="http://twitter.com/DOTA2" target="_blank">Twitter Profile</a>
+
+				<a id="dotaLinkImgYoutube" class="rightColDotaLinkImg" href="http://www.youtube.com/user/dota2" target="_blank"><img src="http://media.steampowered.com/apps/dota2/images/blogfiles/link_icon_youtube.png" width="20" height="24" border="0" /></a>
+				<a id="dotaLinkYoutube" class="rightColDotaLink" href="http://www.youtube.com/user/dota2" target="_blank">YouTube Channel</a>
+
+				<a id="dotaLinkImgSteam" class="rightColDotaLinkImg" href="http://store.steampowered.com/app/570/" target="_blank"><img src="http://media.steampowered.com/apps/dota2/images/blogfiles/link_icon_steam.png" width="24" height="24" border="0" /></a>
+				<a id="dotaLinkSteam" class="rightColDotaLink" href="http://store.steampowered.com/app/570/" target="_blank">Dota 2 on Steam</a>
+				
+			
+			</div>
+			
+			<a class="hoverBG" id="rightColInternationalButton" href="http://www.dota2.com/tournaments/international/"><img src="http://media.steampowered.com/apps/dota2/images/blogfiles/trans.gif" width="256" height="107" border="0" /></a>
+			<a class="rightColBigButtonTextLink" href="http://www.dota2.com/tournaments/international/">The International Dota 2 Championships</a>
+
+			<a class="hoverBG" id="rightColAegisButton" href="http://www.dota2.com/aegisofchampions/" target="_blank"><img src="http://media.steampowered.com/apps/dota2/images/blogfiles/trans.gif" width="256" height="165" border="0" /></a>
+			<a class="rightColBigButtonTextLink" href="http://www.dota2.com/aegisofchampions/" target="_blank">Aegis of Champions</a>
+
+			<a class="hoverBG" id="rightColSOWButton" href="http://www.dota2.com/spoilsofwar/" target="_blank"><img src="http://media.steampowered.com/apps/dota2/images/blogfiles/trans.gif" width="254" height="254" border="0" /></a>
+			<a class="rightColBigButtonTextLink" href="http://www.dota2.com/spoilsofwar/" target="_blank">Spoils of War</a>
+
+			<a class="hoverBG" id="rightColTrailerButton" href="http://store.steampowered.com/video/570/81026" target="_blank"><img src="http://media.steampowered.com/apps/dota2/images/blogfiles/trans.gif" width="264" height="154" border="0" /></a>
+			<a class="rightColBigButtonTextLink" href="http://store.steampowered.com/video/570/81026" target="_blank">Dota 2 Trailer</a>
+
+			<a class="hoverBG" id="rightColComicButton" href="http://www.dota2.com/comics/are_we_heroes_yet/" target="_blank"><img src="http://media.steampowered.com/apps/dota2/images/blogfiles/trans.gif" width="263" height="122" border="0" /></a>
+			<a class="rightColBigButtonTextLink" href="http://www.dota2.com/comics/are_we_heroes_yet/" target="_blank">'Are We Heroes Yet' Comic</a>
+			
+			<a class="hoverBG" id="rightColInternational2011Button" href="http://www.dota2.com/tournaments/international2011/"><img src="http://media.steampowered.com/apps/dota2/images/blogfiles/trans.gif" width="256" height="107" border="0" /></a>
+			<a class="rightColBigButtonTextLink" href="http://www.dota2.com/tournaments/international2011/">The International Dota 2 Championships (2011)</a>
+			
+			<div id="rightColFeedback">
+				<div id="feedbackForums">
+					<a href="http://dev.dota2.com" target="_blank">Feedback Forums</a><br />
+					For general feedback about the game.				</div>
+				<div id="feedbackContact">
+					<a href="http://www.valvesoftware.com/email.php?recipient=Dota+2+Team" target="_blank">Contact the Team</a><br />
+					To contact us directly about specific matters.				</div>
+				<div id="feedbackSupport">
+					<a href="http://support.steampowered.com" target="_blank">Steam Support</a><br />
+					Visit the support site for any issues you may be having with the game or Steam.				</div>
+			</div>
+			
+			<div id="rightColLanguages">
+			<span class="languageActive">English</span><br /><a class="languageLink" href="http://es.dota2.com/2012/12/frostivus-and-polycount-contest-winner-best-overall-3/">Español</a><br /><a class="languageLink" href="http://de.dota2.com/2012/12/frostivus-and-polycount-contest-winner-best-overall/">Deutsch</a><br /><a class="languageLink" href="http://fr.dota2.com/2012/12/frostivus-et-le-vainqueur-du-concours-polycount-le-meilleur/">Français</a><br /><a class="languageLink" href="http://br.dota2.com/2012/12/frostivus-and-polycount-contest-winner-best-overall-4/">Português</a><br /><a class="languageLink" href="http://ru.dota2.com/2012/12/frostivus-and-polycount-contest-winner-best-overall-2/">Русский</a><br /><a class="languageLink" href="http://cn.dota2.com/2012/12/%e8%bf%8e%e9%9c%9c%e8%8a%82%e5%92%8cpolycount%e7%ab%9e%e8%b5%9b-%e5%a4%a7%e5%a5%96%e8%8e%b7%e5%be%97%e8%80%85/">简体中文</a><br />			</div>
+			<br /><br />
+
+		</div>
+		
+
+			<div id="mainLoop">
+			
+
+
+				<div id="nav-above" class="navigation">
+					<div class="nav-previous"><a href="http://blog.dota2.com/2012/12/polycount-contest-winners-doom/" rel="prev"><span class="meta-nav">&larr;</span> Polycount Contest Winners &#8211; Day 3</a></div>
+					<div class="nav-next"><a href="http://blog.dota2.com/2013/01/happy-new-year/" rel="next">Happy New Year! <span class="meta-nav">&rarr;</span></a></div>
+				</div><!-- #nav-above -->
+		<div id="post-3897" class="post-3897 post type-post status-publish format-standard hentry category-uncategorized">
+			<h2 class="entry-title"><a href="http://blog.dota2.com/2012/12/polycount-winners-best-overall/" title="Permalink to Frostivus and Polycount Contest Winner &#8211; Best Overall" rel="bookmark">Frostivus and Polycount Contest Winner &#8211; Best Overall</a></h2>
+
+			<div class="entry-meta">
+				December 14, 2012 - Dota Team			</div><!-- .entry-meta -->
+
+				<div class="entry-content">
+				<p>Ah yes, it is that time of the year. A time to buy the courier, a time to let that other guy have the last hit, a time to be grateful if you happen to be a frost Lich or Crystal Maiden.</p>
+<p>Introducing Frostivus.</p>
+<p><a href="http://www.dota2.com/frostivus/" target="_blank"><img class="alignnone" title="For the rest of us..." src="http://media.steampowered.com/apps/dota2/posts/blog_image_FROSTIVUS.jpg" alt="" width="576" height="392" /></a></p>
+<p>Frostivus is our Holidays event, enjoy it responsibly with a nice cup of Greevil Eggnog.</p>
+<p>And the winner of the Polycount Contest is&#8230; *drum roll*</p>
+<p><img src="http://media.steampowered.com/apps/dota2/posts/polycount/blog_post_winner.jpg" alt="" /></p>
+<p>Most of you have already guessed but it&#8217;s time to make it official: Danidem and Hunter&#8217;s Rider of the Storm set for Disruptor wins the distinction of Best Overall Polycount Contest entry!</p>
+<p>The winning sets will ship in next week&#8217;s Frostivus update. The winners will receive a share of sales, special versions of their items, and a custom trophy-ward to show off their accomplishment in game.</p>
+<div style="width: 576px; background-color: #111111; border-style: ridge; border-width: 6px; border-color: #333333;">
+<div style="margin-bottom: 0px;"><img src="http://media.steampowered.com/apps/dota2/posts/polycount/disruptor111111_header.png" alt="" width="576" border="0" /></div>
+<p><!--CREATED BY--></p>
+<div style="text-align: center; padding: 0px;">
+<p style="margin-top: -20px; font-size: 12px; font-weight: bold; font-style: italic; line-height: 14px; color: #666666;">A collection of seven items created by Danidem and Hunter.</p>
+</div>
+<p><!--PORTRAIT--></p>
+<div style="padding: 8px 20px 20px; height: 250px;">
+<p><img style="float: left; margin-right: 20px;" src="http://media.steampowered.com/apps/dota2/posts/polycount/disruptor111111_portrait.jpg" alt="" border="0" /><span style="color: #dddddd; font-size: 12px; line-height: 20px;">In the times of the Oglodi a well trained Stormcrafter knew he was never really in control of the storm but merely a vector for its power.  </span></p>
+<p><span style="font-size: 12px; line-height: 20px; color: #dddddd;">Through Stormthrasher, Disruptor wields the ancient power of the Stormrider.  Stormriders laugh in the face of order and through force of will bend storms to do their bidding.  Clad in the armor of his ancestors and riding a scaled storm beast, Disruptor is a true Rider of the Storm.</span></p>
+<p>&nbsp;</p>
+</div>
+<hr style="width: 90%; border: 0; height: 1; color: #904018; background-color: #904018;" />
+<p><!--THIS IS TEXT--></p>
+<div style="padding: 0px 20px;">
+<p style="margin-top: 2px; font-size: 12px; line-height: 18px; color: #aaaaaa;">No one will be shocked to discover that Danidem &amp; Hunter&#8217;s set &#8220;<a href="http://steamcommunity.com/id/hntrluc/myworkshopfiles/?appid=570">Rider of the Storm</a>&#8221; is our team&#8217;s pick for the best entry in the Dota 2 Polycount Contest. The mount, Rampant the Scaled Hunter, is a wicked alternative to the default with both runed beak and feathers drawing attention and creating a sleek sense of direction. Disruptor himself looks battleready and grim. The beard design and eye-patch make the portrait stand apart and both also read well at game-distance. Technical execution is at the professional level.</p>
+<p style="margin-top: 2px; font-size: 12px; line-height: 18px; color: #aaaaaa;">Perhaps the only adjustment we would make is to tone down the feathers behind the saddle, but they hardly interfere with readability and this is a minor observation.</p>
+<p style="margin-top: 2px; font-size: 12px; line-height: 18px; color: #aaaaaa;"><a href="http://www.polycount.com/forum/showthread.php?t=106636">Polycount Discussion Thread</a></p>
+</div>
+<hr style="width: 90%; border: 0; height: 1; color: #904018; background-color: #904018;" />
+<div style="margin: 12px 0px; text-align: center;"><img src="http://media.steampowered.com/apps/dota2/posts/polycount/disruptor111111_world.jpg" alt="" border="0" /></div>
+<p><!--div style="padding:8px 20px;margin-bottom:16px;"><img src="http://media.steampowered.com/apps/dota2/posts/polycount/polycount_rule.png" /></div-->
+<div style="background-color: #222222; padding: 4px; text-align: center; font-size: 12px; letter-spacing: 3px; text-transform: uppercase;"></div>
+</div>
+					<br clear="left" />
+							</div><!-- .entry-content -->
+	
+		</div><!-- #post-## -->
+
+
+				<!-- inter-post rule -->
+		<div class="dota_rule">
+		</div>
+			<div id="nav-below" class="navigation">
+			<div class="nav-previous"><a href="http://blog.dota2.com/2012/12/polycount-contest-winners-doom/" rel="prev"><span class="meta-nav">&larr;</span> Polycount Contest Winners &#8211; Day 3</a></div>
+			<div class="nav-next"><a href="http://blog.dota2.com/2013/01/happy-new-year/" rel="next">Happy New Year! <span class="meta-nav">&rarr;</span></a></div>
+		</div><!-- #nav-below -->
+
+				<br clear="right" />
+			</div>
+		</div><!-- /mainContent -->
+		<div id="mainContentBottomBG"></div>
+	</div><!-- /mainContentBG -->
+</div><!-- /mainContentSideBG -->
+<div id="footer" role="contentinfo">
+
+
+
+			<div id="footer-widget-area" role="complementary">
+
+				<div id="first" class="widget-area">
+					<ul class="xoxo">
+								<li id="dota2-recent-posts-4" class="widget-container valve_widget_recent_entries">		<div class="rightLinksTitle">Previous Entries</div>		
+					<div class="archive_column">
+									<div class="recent_entry">
+				<a href="http://blog.dota2.com/2013/02/update-punch/" title="Update Punch!">Update Punch!</a>
+				<div class="recent_entry_date">Feb. 14 2013</div>
+			</div>
+								<div class="recent_entry">
+				<a href="http://blog.dota2.com/2013/02/introducing-team-matchmaking/" title="Introducing Team Matchmaking">Introducing Team Matchmaking</a>
+				<div class="recent_entry_date">Feb. 7 2013</div>
+			</div>
+								<div class="recent_entry">
+				<a href="http://blog.dota2.com/2013/01/no-no-problems-here/" title="No, no problems here.">No, no problems here.</a>
+				<div class="recent_entry_date">Jan. 24 2013</div>
+			</div>
+								<div class="recent_entry">
+				<a href="http://blog.dota2.com/2013/01/3982/" title="Hello? Is this on?">Hello? Is this on?</a>
+				<div class="recent_entry_date">Jan. 17 2013</div>
+			</div>
+								<div class="recent_entry">
+				<a href="http://blog.dota2.com/2013/01/happy-new-year/" title="Happy New Year!">Happy New Year!</a>
+				<div class="recent_entry_date">Jan. 4 2013</div>
+			</div>
+							</div>
+				<div class="archive_column">
+								<div class="recent_entry">
+				<a href="http://blog.dota2.com/2012/12/polycount-winners-best-overall/" title="Frostivus and Polycount Contest Winner &#8211; Best Overall">Frostivus and Polycount Contest Winner &#8211; Best Overall</a>
+				<div class="recent_entry_date">Dec. 14 2012</div>
+			</div>
+								<div class="recent_entry">
+				<a href="http://blog.dota2.com/2012/12/polycount-contest-winners-doom/" title="Polycount Contest Winners &#8211; Day 3">Polycount Contest Winners &#8211; Day 3</a>
+				<div class="recent_entry_date">Dec. 13 2012</div>
+			</div>
+								<div class="recent_entry">
+				<a href="http://blog.dota2.com/2012/12/polycount-contest-winners-day-2/" title="Polycount Contest Winners &#8211; Day 2">Polycount Contest Winners &#8211; Day 2</a>
+				<div class="recent_entry_date">Dec. 12 2012</div>
+			</div>
+								<div class="recent_entry">
+				<a href="http://blog.dota2.com/2012/12/polycount-contest/" title="Polycount Contest Winners &#8211; Day 1">Polycount Contest Winners &#8211; Day 1</a>
+				<div class="recent_entry_date">Dec. 10 2012</div>
+			</div>
+								<div class="recent_entry">
+				<a href="http://blog.dota2.com/2012/12/the-defense-3/" title="The Defense 3">The Defense 3</a>
+				<div class="recent_entry_date">Dec. 8 2012</div>
+			</div>
+							</div>
+				<div class="archive_column">
+								<div class="recent_entry">
+				<a href="http://blog.dota2.com/2012/11/thanks/" title="Thanks!">Thanks!</a>
+				<div class="recent_entry_date">Nov. 21 2012</div>
+			</div>
+								<div class="recent_entry">
+				<a href="http://blog.dota2.com/2012/11/slark-who-goes-there/" title="Slark, who goes there?">Slark, who goes there?</a>
+				<div class="recent_entry_date">Nov. 15 2012</div>
+			</div>
+								<div class="recent_entry">
+				<a href="http://blog.dota2.com/2012/11/a-cornea-copia-of-wards/" title="A Cornea-copia of Wards">A Cornea-copia of Wards</a>
+				<div class="recent_entry_date">Nov. 8 2012</div>
+			</div>
+								<div class="recent_entry">
+				<a href="http://blog.dota2.com/2012/10/diretide/" title="Diretide">Diretide</a>
+				<div class="recent_entry_date">Oct. 30 2012</div>
+			</div>
+								<div class="recent_entry">
+				<a href="http://blog.dota2.com/2012/10/twice-the-horns/" title="Twice the Horns!">Twice the Horns!</a>
+				<div class="recent_entry_date">Oct. 25 2012</div>
+			</div>
+							</div>
+				<div class="archive_column">
+								<div class="recent_entry">
+				<a href="http://blog.dota2.com/2012/10/a-cloven-skull-for-the-cloven-hooved/" title="A cloven skull for the cloven hooved">A cloven skull for the cloven hooved</a>
+				<div class="recent_entry_date">Oct. 18 2012</div>
+			</div>
+								<div class="recent_entry">
+				<a href="http://blog.dota2.com/2012/10/dota-2-polycount-contest/" title="Dota 2 Polycount Contest">Dota 2 Polycount Contest</a>
+				<div class="recent_entry_date">Oct. 8 2012</div>
+			</div>
+								<div class="recent_entry">
+				<a href="http://blog.dota2.com/2012/10/this-update-has-legs/" title="This update has legs">This update has legs</a>
+				<div class="recent_entry_date">Oct. 4 2012</div>
+			</div>
+								<div class="recent_entry">
+				<a href="http://blog.dota2.com/2012/09/this-one-goes-up-to-11/" title="This one goes up to 11">This one goes up to 11</a>
+				<div class="recent_entry_date">Sep. 27 2012</div>
+			</div>
+								<div class="recent_entry">
+				<a href="http://blog.dota2.com/2012/09/the-aegis-of-champions/" title="The Aegis of Champions">The Aegis of Champions</a>
+				<div class="recent_entry_date">Sep. 24 2012</div>
+			</div>
+							</div>
+				<div class="archive_column">
+										</div>
+				</li>					</ul>
+				</div><!-- #first .widget-area -->
+
+
+
+
+			</div><!-- #footer-widget-area -->
+
+
+	<div class="legal_footer">
+		<img id="valveLogoLegal" src="http://media.steampowered.com/apps/dota2/images/blogfiles/valve_logo_footer.png" width="112" height="34" border="0" />
+		&copy; Valve Corporation, all rights reserved. Valve, the Valve logo, Steam, the Steam logo, Source, the Source logo, Valve Source and Dota are trademarks and/or registered trademarks of Valve Corporation. 
+	</div>
+</div><!-- #footer -->
+</body>
+</html>
+
+<!-- Performance optimized by W3 Total Cache. Learn more: http://www.w3-edge.com/wordpress-plugins/
+
+Page Caching using disk: basic
+Database Caching 98/135 queries in 0.030 seconds using disk: basic
+
+ Served from: blog.dota2.com @ 2013-02-17 16:34:43 by W3 Total Cache -->

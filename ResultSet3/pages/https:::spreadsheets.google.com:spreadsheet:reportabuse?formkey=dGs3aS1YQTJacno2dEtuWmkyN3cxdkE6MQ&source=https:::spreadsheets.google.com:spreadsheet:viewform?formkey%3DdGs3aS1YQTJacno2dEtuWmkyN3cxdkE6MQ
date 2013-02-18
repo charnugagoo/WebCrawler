@@ -1,0 +1,78 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Report AbuseGoogle Docs</title></head>
+<body bgcolor="#FFFFFF"><style type="text/css">
+     body {margin: 18; padding: 0;}
+     body, td {font-family: arial, sans, sans-serif;}
+     body td {font-size: 100%;}
+     a {color: #0000cc;}
+     a:visited {color:#0000cc}
+     .header {font-size: 120%;}
+     .bodytext {font-size: 83%;}
+     p {margin: .8em 0 0 0;}
+     .dashed{ border-left: 1px dashed #BED0FA; }
+   </style>
+<table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td><table id="pageframe" border="0" cellspacing="0" cellpadding="0" width="100%"><tr><td width="150" rowspan="2" style="padding-right: 10;"><a href="https://spreadsheets.google.com/spreadsheet/"><img border="0" src="https://ssl.gstatic.com/docs/spreadsheets/logos3/en/docs_logo_sm.gif" alt="Google Docs"></a></td>
+<td height="40" valign="bottom" style="padding-bottom:2; border-bottom: 1px solid #cccccc;" nowrap><font color="#676767"><b>Google Docs</b></font></td></tr>
+<tr><td height="15"></td></tr></table></td></tr></table>
+<br>
+<div class="report-abuse" style="padding-left:153px; font-size: 83%;"><form action="https://spreadsheets.google.com/spreadsheet/reportabuse?formkey=dGs3aS1YQTJacno2dEtuWmkyN3cxdkE6MQ&amp;source=https://spreadsheets.google.com/spreadsheet/viewform?formkey%3DdGs3aS1YQTJacno2dEtuWmkyN3cxdkE6MQ" method="POST"><h3>Type of abuse:</h3>
+<script type="text/javascript">
+    
+    function togglePolicy(policyId) {
+      var divs = document.getElementsByTagName('div');
+      for (var i = 0; i < divs.length; i++) {
+        if (divs[i].className == 'abuse-policy') {
+          divs[i].style.display = (divs[i].id == 'policy-' + policyId) ? '' :
+              'none';
+        }
+      }
+      
+      var submitButton =
+          document.getElementById("submit-button-id");
+      var copyrightReportButton =
+          document.getElementById("copyright-button-id");
+      if (submitButton && copyrightReportButton) {
+        var isCopyrightPolicy = (policyId == "COPYRIGHT");
+        submitButton.style.display = isCopyrightPolicy ? 'none' : '';
+        copyrightReportButton.style.display = isCopyrightPolicy ? '' : 'none';
+      }
+    }
+
+  </script>
+<p><input name="abuseCategory" type="radio" value="NUDITY" id="abuse-NUDITY" checked onclick="togglePolicy(&quot;NUDITY&quot;)">
+<label for="abuse-NUDITY">Nudity</label></p> <p><input name="abuseCategory" type="radio" value="HATE_SPEECH" id="abuse-HATE_SPEECH" onclick="togglePolicy(&quot;HATE_SPEECH&quot;)">
+<label for="abuse-HATE_SPEECH">Promotes hate, violence or illegal/offensive activities</label></p> <p><input name="abuseCategory" type="radio" value="SPAM" id="abuse-SPAM" onclick="togglePolicy(&quot;SPAM&quot;)">
+<label for="abuse-SPAM">Spam, malware or &quot;phishing&quot; (fake login)</label></p> <p><input name="abuseCategory" type="radio" value="PERSONAL_INFO" id="abuse-PERSONAL_INFO" onclick="togglePolicy(&quot;PERSONAL_INFO&quot;)">
+<label for="abuse-PERSONAL_INFO">Private and confidential information</label></p> <p><input name="abuseCategory" type="radio" value="COPYRIGHT" id="abuse-COPYRIGHT" onclick="togglePolicy(&quot;COPYRIGHT&quot;)">
+<label for="abuse-COPYRIGHT">Copyright infringement</label></p>
+<div class="abuse-policy" id="policy-NUDITY"><h3>Our policy on nudity</h3>
+<p>We don&#39;t allow the sharing or publishing of content depicting nudity, graphic sex acts, or other sexually explicit material. We also don&#39;t allow content that drives traffic to commercial pornography sites or that promotes pedophilia, incest, or bestiality.</p>
+<p>We have a zero tolerance policy towards content that exploits children. This means that we will terminate the accounts of any user we find sharing or publishing child pornography. We will also report the content and its owner to law enforcement.</p>
+<p>We also do not allow the sharing or publishing of content that encourages or promotes sexual attraction towards children.</p></div>
+<div class="abuse-policy" id="policy-SPAM" style="display: none;"><h3>Our policy on spam, malware and &quot;phishing&quot; (fake login)</h3>
+<p>We do not allow spamming or content that transmits viruses, causes pop-ups, attempts to install software with the user&#39;s consent, or otherwise impacts users with malicious code or scripts. Also, we do not allow phishing activity.</p></div>
+<div class="abuse-policy" id="policy-PERSONAL_INFO" style="display: none;"><h3>Our policy on private and confidential information</h3>
+<p>We do not allow the posting of another person&#39;s personal and confidential account or identification information. For example, we do not allow the sharing or publishing of another person&#39;s credit card number or account passwords.</p></div>
+<div class="abuse-policy" id="policy-HATE_SPEECH" style="display: none;"><h3>Our policy on hate, violence and illegal or offensive activities</h3>
+<p>Users may not share or publish content that promotes hate or violence towards other groups based on race, ethnicity, religion, disability, gender, age, veteran status, or sexual orientation/gender identity. Please note that individuals are not considered a protected group.</p>
+<p>Users may not share or publish crude content or violent content that is shockingly graphic.</p>
+<p>We will also remove content that threatens, harasses or bullies other people or promotes dangerous and illegal activities.</p></div>
+<div class="abuse-policy" id="policy-COPYRIGHT" style="display: none;"><h3>Our policy on copyright infringement</h3>
+<p>It is our policy to respond to clear notices of alleged copyright infringement. If you own the copyright to material in this document, please use this form to report an official Digital Millennium Copyright Act (DMCA) complaint:</p></div>
+<p><a href="//docs.google.com/support/bin/answer.py?hl=en&amp;answer=148505" target="_blank">Learn more about our Program Policies</a></p>
+<br>
+<input type="hidden" name="isSubmitting" value="true">
+<input type="submit" value="Submit Abuse Report" id="submit-button-id">
+<input type="button" value="Report Copyright Violation" style="display:none" id="copyright-button-id" onclick="window.open(&quot;//www.google.com/dmca.html&quot;)">
+<input type="button" value="Cancel" onclick="window.location=&quot;https://spreadsheets.google.com/spreadsheet/viewform?formkey\x3ddGs3aS1YQTJacno2dEtuWmkyN3cxdkE6MQ&quot;"></form></div>
+<br>
+<br>
+<div style="border-top: 1px solid #ccc; padding: 4; margin: 0 3"><center><font size="-1" color="#676767">&copy;2013
+Google -
+<a href="http://www.google.com">Google Home</a>
+-
+<a href="http://groups.google.com/group/GoogleDocs">Discuss</a>
+-
+<a href="http://www.google.com/google-d-s/intl/en-US/privacy.html">Privacy Policy</a>
+-
+<a href="http://docs.google.com/support">Help</a></font></center></div><br></body></html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Log in | Bloomberg New Energy Finance</title>
+    <meta name="description" content="Delivering the analysis, data and news for our clients to successfully navigate clean energy and the carbon markets." />
+    
+    <link rel="stylesheet" href="/assets/styles/login.css">
+    <script src="/assets/scripts/modernizr.js"></script>
+</head>
+<!--[if lt IE 7 ]> <body class="ie6 ie-lt9"> <![endif]-->
+<!--[if IE 7 ]>    <body class="ie7 ie-lt9"> <![endif]-->
+<!--[if IE 8 ]>    <body class="ie8 ie-lt9"> <![endif]-->
+<!--[if IE 9 ]>    <body class="ie9"> <![endif]-->
+<!--[if gt IE 9 ]> <body class="iex"> <![endif]-->
+<!--[if !IE]><!--><body> <!--<![endif]-->
+
+<div id="login-wrap">
+    <div id="login">
+        <div id="login-body">
+            <img src="/assets/images/login/logo.png" class="logo" alt="Bloomberg New Energy Finance" />
+            
+            
+    <form action="/Login/login/" method="post">
+                    <input type="hidden" name="requested" value="/Account" />
+                <h2>
+            Please log in to BNEF:        </h2>
+        <div class="form-row"> 
+            <label for="login-username">Username:</label>
+            <input type="text" id="login-username" class="text" data-placeholder="First.Last" placeholder="First.Last" name="username" value="" />
+        </div>
+        <div class="form-row">
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" class="text" name="password" />
+        </div>
+        <div class="form-row">
+            <p class="switch"><a href="/Login/recover" data-switch="forgot">Having trouble logging in? &raquo;</a></p>
+            <input type="submit" id="login-submit" class="submit" value="Log In" />
+        </div>
+
+            
+    </form>
+
+
+            <p id="privacy">
+              <a href="http://www.bnef.com/assets/pdfs/BNEF_Privacy.pdf">Privacy Policy</a>  
+              | <a href="http://www.bnef.com/disclaimer/">Disclaimer</a>
+              | <a target="_blank" href="http://about.bnef.com/">bnef.com</a>
+            </p>
+        </div>
+    </div>
+</div> 
+
+<script src="/assets/scripts/jquery-1.7.1.js"></script>
+<script src="/assets/scripts/login.js"></script>
+</body>
+</html>

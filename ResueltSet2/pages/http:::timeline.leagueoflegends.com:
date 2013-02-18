@@ -1,0 +1,2195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta property="og:url" content="http://timeline.leagueoflegends.com/" />
+  <meta property="og:title" content="Interactive Timeline" />
+  <meta property="og:image" content="http://timeline.leagueoflegends.com/sites/all/themes/timeline/ireina/timelinelogo.jpg" />
+  <meta property="og:description" content="League of Legends Interactive Timeline" />
+  <title>Interactive Timeline</title>
+  <script>
+	window.nodeData = 0;
+	window.nodeBack = '0';
+  </script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="/sites/all/themes/timeline/favicon.ico" type="image/x-icon" />
+  <link type="text/css" rel="stylesheet" media="all" href="/modules/node/node.css?B" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/defaults.css?B" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/system.css?B" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/system-menus.css?B" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/user/user.css?B" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/contrib/cck/theme/content-module.css?B" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/contrib/ctools/css/ctools.css?B" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/contrib/date/date.css?B" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/contrib/filefield/filefield.css?B" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/contrib/views/css/views.css?B" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/custom/riot_timeline/css/normalize.css?B" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/custom/riot_libraries/jscrollpane/jquery.jscrollpane.css?B" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/custom/riot_timeline/css/riot_timeline.css?B" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/community/css/html-reset.css?B" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/community/css/wireframes.css?B" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/community/css/layout-fixed.css?B" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/timeline/css/page-backgrounds.css?B" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/community/css/tabs.css?B" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/community/css/messages.css?B" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/community/css/pages.css?B" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/community/css/block-editing.css?B" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/community/css/blocks.css?B" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/community/css/navigation.css?B" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/community/css/panels-styles.css?B" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/community/css/views-styles.css?B" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/community/css/nodes.css?B" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/community/css/comments.css?B" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/community/css/forms.css?B" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/community/css/fields.css?B" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/timeline/css/timeline.css?B" />
+<link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/community/css/print.css?B" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/community/css/ie.css?D" />
+<![endif]-->
+<!--[if lte IE 6]>
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/community/css/ie6.css?D" />
+<![endif]-->
+  <script type="text/javascript" src="/misc/jquery.js?B"></script>
+<script type="text/javascript" src="/misc/drupal.js?B"></script>
+<script type="text/javascript" src="/sites/all/modules/custom/riot_libraries/js/jquery-1.4.2.min.js?B"></script>
+<script type="text/javascript" src="/sites/all/modules/custom/riot_libraries/js/jquery.tools.min.js?B"></script>
+<script type="text/javascript" src="/sites/all/modules/custom/riot_libraries/jscrollpane/jquery.jscrollpane.min.js?B"></script>
+<script type="text/javascript" src="/sites/all/modules/custom/riot_timeline/js/riot_timeline.js?B"></script>
+<script type="text/javascript" src="/sites/all/modules/custom/riot_libraries/zeroclipboard/ZeroClipboard.js?B"></script>
+<script type="text/javascript" src="/sites/all/themes/timeline/js/timeline.js?B"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","riotTimeline":{"selector":".viewport"},"riotTimelinePath":"sites\/all\/modules\/custom\/riot_timeline","riotLibrariesPath":"sites\/all\/modules\/custom\/riot_libraries"});
+//--><!]]>
+</script>
+  <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+</head>
+<body class="page front not-logged-in no-sidebars i18n-en">
+
+  	<div id="pagehider"></div>
+  <div id="page-wrapper"><div id="page">
+
+    <div id="header"><div class="section clearfix">
+      <div id="title">
+        <a href="http://www.leagueoflegends.com/" id="loltitle">League of Legends</a>
+        <div id="tltitle">Timeline</div>
+      </div>
+
+      
+      
+      
+    </div></div><!-- /.section, /#header -->
+
+    <div id="main-wrapper">
+      <div id="main" class="clearfix">
+
+      <div id="content" class="column"><div class="section">
+
+        
+        
+                                        
+        
+        <div id="content-area">
+          <div class="viewport"><ul class="container">
+  <li class="year" id="2009"><div class="year-span" style="z-index:10;"><a name="2009">2009</a></div>
+  <ul>
+    <li class="month" style="z-index:120;">
+    <span class="month-span">October</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-milestone " style="margin-left: 0px;">
+<div id="timeline-item-52" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/52" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_md/Launch-Small_3.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_md" width="180" height="180" /></a>  </div>
+
+  <div class="date">10.26.2009</div>
+  <h2><a href="/timeline/item/52" rel="#overlay" class="timeline-modal">Launch – 10/27/2009 </a></h2>
+
+  
+  <div class="field field-type-text field-field-timeline-brief">
+    <div class="field-items">
+            <div class="field-item odd">
+                    <p>League of Legends was officially launched in both North America and Europe. The game featured 40 playable champions...</p>
+        </div>
+        </div>
+</div>
+
+  <div class="read-more">
+    <a href="/timeline/item/52" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:119;">
+    <span class="month-span">November</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-12" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">11.11.2009</div>
+  <h2><a href="/timeline/item/12" rel="#overlay" class="timeline-modal">Release Notes 1.0.0.52 – 11/11/2009 </a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/12" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/ryze_icon.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-13" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">11.20.2009</div>
+  <h2><a href="/timeline/item/13" rel="#overlay" class="timeline-modal">Release Notes PVP.Net 31.05 – 11/20/2009</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/13" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Tryndamere_Square_0_1.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-14" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">11.30.2009</div>
+  <h2><a href="/timeline/item/14" rel="#overlay" class="timeline-modal">Release Notes 1.0.0.61 – 11/30/2009</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/14" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Udyr_Square_0.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:118;">
+    <span class="month-span">December</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-15" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">12.16.2009</div>
+  <h2><a href="/timeline/item/15" rel="#overlay" class="timeline-modal">Release Notes 1.0.0.63 – 12/16/2009</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/15" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Nidalee_Square_0.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+    </ul>
+    </li>
+  </ul>
+  </li>
+  <li class="year" id="2010"><div class="year-span" style="z-index:9;"><a name="2010">2010</a></div>
+  <ul>
+    <li class="month" style="z-index:117;">
+    <span class="month-span">January</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-16" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">1.12.2010</div>
+  <h2><a href="/timeline/item/16" rel="#overlay" class="timeline-modal">Release Notes 1.0.0.70 – 1/12/2010</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/16" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Poppy_Square_0.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:116;">
+    <span class="month-span">February</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-17" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">2.1.2010</div>
+  <h2><a href="/timeline/item/17" rel="#overlay" class="timeline-modal">Release Notes 1.0.0.72 – 2/1/2010</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/17" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/gragas_icon.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-18" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">2.9.2010</div>
+  <h2><a href="/timeline/item/18" rel="#overlay" class="timeline-modal">Release Notes 1.0.0.74 – 2/9/2010</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/18" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/wrenchmen.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-19" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">2.23.2010</div>
+  <h2><a href="/timeline/item/19" rel="#overlay" class="timeline-modal">Release 1.0.0.75 – 2/23/2010</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/19" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Mordekaiser_Square_0.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:115;">
+    <span class="month-span">March</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-20" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">3.14.2010</div>
+  <h2><a href="/timeline/item/20" rel="#overlay" class="timeline-modal">Release Notes 1.0.0.79 – 3/15/2010</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/20" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Ezreal.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-21" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">3.22.2010</div>
+  <h2><a href="/timeline/item/21" rel="#overlay" class="timeline-modal">Release Notes 1.0.0.81 – 3/23/2010</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/21" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Shen_Square_0.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-milestone " style="margin-left: 0px;">
+<div id="timeline-item-76" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/76" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_md/Twisted-TreeLine-Small.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_md" width="180" height="180" /></a>  </div>
+
+  <div class="date">3.29.2010</div>
+  <h2><a href="/timeline/item/76" rel="#overlay" class="timeline-modal">Twisted Treeline – 3/30/2010	</a></h2>
+
+  
+  <div class="field field-type-text field-field-timeline-brief">
+    <div class="field-items">
+            <div class="field-item odd">
+                    <p>The highly anticipated Twisted Treeline map launches. Built from the ground up, Twisted Treeline offers faster paced 3v3 gameplay...</p>
+        </div>
+        </div>
+</div>
+
+  <div class="read-more">
+    <a href="/timeline/item/76" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:114;">
+    <span class="month-span">April</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-22" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">4.6.2010</div>
+  <h2><a href="/timeline/item/22" rel="#overlay" class="timeline-modal">Release Notes 1.0.0.82 – 4/7/2010</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/22" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Kennen_Square_0.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-23" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">4.25.2010</div>
+  <h2><a href="/timeline/item/23" rel="#overlay" class="timeline-modal">Release Notes 1.0.0.83 – 4/26/2010</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/23" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Garen_Square_0.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:113;">
+    <span class="month-span">May</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-feature-update " style="margin-left: 0px;">
+<div id="timeline-item-84" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/84" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Razer-Twisted-Tournament-Small.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+
+  <div class="date">4.30.2010</div>
+  <h2><a href="/timeline/item/84" rel="#overlay" class="timeline-modal">Twisted Treeline Tournament</a></h2>
+
+  <div class="read-more">
+    <a href="/timeline/item/84" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-24" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">5.9.2010</div>
+  <h2><a href="/timeline/item/24" rel="#overlay" class="timeline-modal">Release Notes 1.0.0.85 – 5/10/2010</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/24" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Akali.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-25" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">5.30.2010</div>
+  <h2><a href="/timeline/item/25" rel="#overlay" class="timeline-modal">Release Notes 1.0.0.86 – 5/31/2010</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/25" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Malzahar_Square_0.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:112;">
+    <span class="month-span">June</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-26" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">6.6.2010</div>
+  <h2><a href="/timeline/item/26" rel="#overlay" class="timeline-modal">Release Notes 1.0.0.87 – 6/7/2010</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/26" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Olaf.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-27" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">6.22.2010</div>
+  <h2><a href="/timeline/item/27" rel="#overlay" class="timeline-modal">Release Notes 1.0.0.94 – 6/23/2010</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/27" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/KogMaw_Square_0.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-28" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">6.27.2010</div>
+  <h2><a href="/timeline/item/28" rel="#overlay" class="timeline-modal">Release Notes PVP.net 1.13.29 and 1.0.0.94 (b) – 6/28/2010</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/28" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/wrenchmen_0.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:111;">
+    <span class="month-span">July</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-323" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">7.11.2010</div>
+  <h2><a href="/timeline/item/323" rel="#overlay" class="timeline-modal">Release Notes v1.0.0.120 – 7/12/2010</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/323" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/XinZhao_Square_0_3.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-feature-update " style="margin-left: 0px;">
+<div id="timeline-item-82" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/82" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Journal-of-Justice-Small.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+
+  <div class="date">7.12.2010</div>
+  <h2><a href="/timeline/item/82" rel="#overlay" class="timeline-modal">Journal of Justice </a></h2>
+
+  <div class="read-more">
+    <a href="/timeline/item/82" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-milestone " style="margin-left: 0px;">
+<div id="timeline-item-77" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/77" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_md/Season-One-Small.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_md" width="180" height="180" /></a>  </div>
+
+  <div class="date">7.12.2010</div>
+  <h2><a href="/timeline/item/77" rel="#overlay" class="timeline-modal">Season One – 7/13/2010</a></h2>
+
+  
+  <div class="field field-type-text field-field-timeline-brief">
+    <div class="field-items">
+            <div class="field-item odd">
+                    <p>Season One marks the largest content update to date and the start of the first major competitive season for League of Legends. Season One includes many new game features...</p>
+        </div>
+        </div>
+</div>
+
+  <div class="read-more">
+    <a href="/timeline/item/77" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-29" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">7.25.2010</div>
+  <h2><a href="/timeline/item/29" rel="#overlay" class="timeline-modal">Release Notes 1.0.0.97 – 7/26/2010</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/29" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Vladimir_0.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:110;">
+    <span class="month-span">August</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-30" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">8.8.2010</div>
+  <h2><a href="/timeline/item/30" rel="#overlay" class="timeline-modal">Release Notes 1.0.0.98 – 8/9/2010</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/30" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Galio_Square_0.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-feature-update " style="margin-left: 0px;">
+<div id="timeline-item-53" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/53" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Seals_%282%29_0.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+
+  <div class="date">8.9.2010</div>
+  <h2><a href="/timeline/item/53" rel="#overlay" class="timeline-modal">Rune Pages </a></h2>
+
+  <div class="read-more">
+    <a href="/timeline/item/53" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-31" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">8.22.2010</div>
+  <h2><a href="/timeline/item/31" rel="#overlay" class="timeline-modal">Release Notes 1.0.0.99 – 8/23/2010</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/31" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Urgot_Square_0.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:109;">
+    <span class="month-span">September</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-32" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">9.6.2010</div>
+  <h2><a href="/timeline/item/32" rel="#overlay" class="timeline-modal">Release Notes 1.0.0.100 – 9/7/2010</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/32" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/MissFortune_Square_0.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-33" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">9.19.2010</div>
+  <h2><a href="/timeline/item/33" rel="#overlay" class="timeline-modal">Release Notes 1.0.0.101 – 9/20/2010</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/33" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Sona_Square_0.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:108;">
+    <span class="month-span">October</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-feature-update " style="margin-left: 0px;">
+<div id="timeline-item-85" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/85" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/WCG-Finals-Small.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+
+  <div class="date">10.1.2010</div>
+  <h2><a href="/timeline/item/85" rel="#overlay" class="timeline-modal">WCG Finals </a></h2>
+
+  <div class="read-more">
+    <a href="/timeline/item/85" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-34" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">10.3.2010</div>
+  <h2><a href="/timeline/item/34" rel="#overlay" class="timeline-modal">Release Notes 1.0.0.102 – 10/4/2010</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/34" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Swain_Square_0.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-feature-update " style="margin-left: 80px;">
+<div id="timeline-item-86" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/86" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Extreme-Pvp-Alienware-small.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+
+  <div class="date">10.13.2010</div>
+  <h2><a href="/timeline/item/86" rel="#overlay" class="timeline-modal">PVP Tournament</a></h2>
+
+  <div class="read-more">
+    <a href="/timeline/item/86" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-35" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">10.17.2010</div>
+  <h2><a href="/timeline/item/35" rel="#overlay" class="timeline-modal">Release Notes 1.0.0.103 – 10/18/2010</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/35" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Lux_Square_0.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:107;">
+    <span class="month-span">November</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-36" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">10.31.2010</div>
+  <h2><a href="/timeline/item/36" rel="#overlay" class="timeline-modal">Release Notes 1.0.0.104 – 11/1/2010</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/36" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Leblanc_Square_0.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-milestone " style="margin-left: 0px;">
+<div id="timeline-item-78" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/78" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_md/Battle-Training-Small.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_md" width="180" height="180" /></a>  </div>
+
+  <div class="date">11.2.2010</div>
+  <h2><a href="/timeline/item/78" rel="#overlay" class="timeline-modal">Battle Training - 11/3/2010</a></h2>
+
+  
+  <div class="field field-type-text field-field-timeline-brief">
+    <div class="field-items">
+            <div class="field-item odd">
+                    <p>Set on the Summoner’s Rift map, Battle Training coaches new players on the many nuances of the game...</p>
+        </div>
+        </div>
+</div>
+
+  <div class="read-more">
+    <a href="/timeline/item/78" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-37" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">11.15.2010</div>
+  <h2><a href="/timeline/item/37" rel="#overlay" class="timeline-modal">Release Notes 1.0.0.105 – 11/15/2010</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/37" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Irelia_Square_0.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-38" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">11.30.2010</div>
+  <h2><a href="/timeline/item/38" rel="#overlay" class="timeline-modal">Release Notes 1.0.0.106 – 11/30/2010</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/38" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Trundle_Square_0.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:106;">
+    <span class="month-span">December</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-39" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">12.13.2010</div>
+  <h2><a href="/timeline/item/39" rel="#overlay" class="timeline-modal">Patch Notes 1.0.0.107 – 12/13/2010</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/39" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Cassiopea_Square_0.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-milestone " style="margin-left: 90px;">
+<div id="timeline-item-79" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/79" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_md/Leaver-Buster-smalll_4.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_md" width="180" height="180" /></a>  </div>
+
+  <div class="date">12.14.2010</div>
+  <h2><a href="/timeline/item/79" rel="#overlay" class="timeline-modal">Automated Leaver Banning - 12/14/2010</a></h2>
+
+  
+  <div class="field field-type-text field-field-timeline-brief">
+    <div class="field-items">
+            <div class="field-item odd">
+                    <p>League of Legends introduces the latest addition to LeaverBuster: Automated Leaver Banning...</p>
+        </div>
+        </div>
+</div>
+
+  <div class="read-more">
+    <a href="/timeline/item/79" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+</li>
+
+    </ul>
+    </li>
+  </ul>
+  </li>
+  <li class="year" id="2011"><div class="year-span" style="z-index:8;"><a name="2011">2011</a></div>
+  <ul>
+    <li class="month" style="z-index:105;">
+    <span class="month-span">January</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-40" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">1.3.2011</div>
+  <h2><a href="/timeline/item/40" rel="#overlay" class="timeline-modal">League of Legends v1.0.0.108 – 1/03/2011</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/40" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/CaitlynSquare.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-41" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">1.17.2011</div>
+  <h2><a href="/timeline/item/41" rel="#overlay" class="timeline-modal">League of Legends v1.0.0.109 – 1/17/2011</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/41" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Renekton_Square_0.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-milestone " style="margin-left: 155px;">
+<div id="timeline-item-312" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/312" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_md/banned-small.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_md" width="180" height="180" /></a>  </div>
+
+  <div class="date">1.19.2011</div>
+  <h2><a href="/timeline/item/312" rel="#overlay" class="timeline-modal">AFK Detection - 01/19/2011</a></h2>
+
+  
+  <div class="field field-type-text field-field-timeline-brief">
+    <div class="field-items">
+            <div class="field-item odd">
+                    <p>The LeaverBuster system is now able to detect those players who refuse to actively participate in games in addition to those who overtly quit...</p>
+        </div>
+        </div>
+</div>
+
+  <div class="read-more">
+    <a href="/timeline/item/312" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-42" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">1.31.2011</div>
+  <h2><a href="/timeline/item/42" rel="#overlay" class="timeline-modal">League of Legends v1.0.0.110 – 01/31/2011</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/42" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/KarmaSquare.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:104;">
+    <span class="month-span">February</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-43" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">2.15.2011</div>
+  <h2><a href="/timeline/item/43" rel="#overlay" class="timeline-modal">Release Notes v1.0.0.111 – 2/15/2011</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/43" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Maokai_Square_0.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-milestone " style="margin-left: 155px;">
+<div id="timeline-item-80" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/80" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_md/Co-op-v-ai-small-2_3.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_md" width="180" height="180" /></a>  </div>
+
+  <div class="date">2.15.2011</div>
+  <h2><a href="/timeline/item/80" rel="#overlay" class="timeline-modal">Co-Op versus AI - 02/15/11</a></h2>
+
+  
+  <div class="field field-type-text field-field-timeline-brief">
+    <div class="field-items">
+            <div class="field-item odd">
+                    <p>The addition of Co-Op versus AI afforded new and veteran summoners alike a place to test their skills against AI bots rather than other players...</p>
+        </div>
+        </div>
+</div>
+
+  <div class="read-more">
+    <a href="/timeline/item/80" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-44" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">2.28.2011</div>
+  <h2><a href="/timeline/item/44" rel="#overlay" class="timeline-modal">Release Notes v1.0.0.112 – 2/28/2011</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/44" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/JarvanIVSquare.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:103;">
+    <span class="month-span">March</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-45" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">3.13.2011</div>
+  <h2><a href="/timeline/item/45" rel="#overlay" class="timeline-modal">Release Notes v1.0.0.113 - 3/14/2011</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/45" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/NocturneSquare.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-feature-update " style="margin-left: 0px;">
+<div id="timeline-item-87" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/87" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/IEM-CeBit-Small.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+
+  <div class="date">3.13.2011</div>
+  <h2><a href="/timeline/item/87" rel="#overlay" class="timeline-modal">IEM – CeBit</a></h2>
+
+  <div class="read-more">
+    <a href="/timeline/item/87" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-46" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">3.27.2011</div>
+  <h2><a href="/timeline/item/46" rel="#overlay" class="timeline-modal">Release Notes v1.0.0.114 – 3/28/2011</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/46" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/BlindMonk_Square_0.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:102;">
+    <span class="month-span">April</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-47" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">4.10.2011</div>
+  <h2><a href="/timeline/item/47" rel="#overlay" class="timeline-modal">Release Notes v1.0.0.115 – 4/11/2011</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/47" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/BrandSquare.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-48" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">4.24.2011</div>
+  <h2><a href="/timeline/item/48" rel="#overlay" class="timeline-modal">Release Notes v.1.0.0.116 – 4/25/2011</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/48" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/RumbleSquare.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:101;">
+    <span class="month-span">May</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-11" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">5.9.2011</div>
+  <h2><a href="/timeline/item/11" rel="#overlay" class="timeline-modal">Release Notes v1.0.0.118 - 05/10/2011</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/11" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Vayne_Square_0_3.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-49" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">5.22.2011</div>
+  <h2><a href="/timeline/item/49" rel="#overlay" class="timeline-modal">Release Notes v1.0.0.118b – 5/23/2011</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/49" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/wrenchmen_1.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-milestone " style="margin-left: 0px;">
+<div id="timeline-item-83" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/83" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_md/Tribunal-Small.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_md" width="180" height="180" /></a>  </div>
+
+  <div class="date">5.23.2011</div>
+  <h2><a href="/timeline/item/83" rel="#overlay" class="timeline-modal">The Tribunal - 05/24/2011</a></h2>
+
+  
+  <div class="field field-type-text field-field-timeline-brief">
+    <div class="field-items">
+            <div class="field-item odd">
+                    <p>Tribunal is launched, giving the community the opportunity to govern itself through the new service...</p>
+        </div>
+        </div>
+</div>
+
+  <div class="read-more">
+    <a href="/timeline/item/83" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-feature-update " style="margin-left: 0px;">
+<div id="timeline-item-289" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/289" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/masterypages-small.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+
+  <div class="date">5.23.2011</div>
+  <h2><a href="/timeline/item/289" rel="#overlay" class="timeline-modal">Mastery Pages</a></h2>
+
+  <div class="read-more">
+    <a href="/timeline/item/289" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:100;">
+    <span class="month-span">June</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-51" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">5.31.2011</div>
+  <h2><a href="/timeline/item/51" rel="#overlay" class="timeline-modal">Orianna Release Notes -  6/01/2011</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/51" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Orianna_Square_0.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-milestone " style="margin-left: 156px;">
+<div id="timeline-item-81" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/81" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_md/Season-One-Champ-small.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_md" width="180" height="180" /></a>  </div>
+
+  <div class="date">6.17.2011</div>
+  <h2><a href="/timeline/item/81" rel="#overlay" class="timeline-modal">Season One Championships 06/18/2011</a></h2>
+
+  
+  <div class="field field-type-text field-field-timeline-brief">
+    <div class="field-items">
+            <div class="field-item odd">
+                    <p>On this date, the epic conclusion of League of Legends premier competitive season took place at DreamHack in Jönköping, Sweden...</p>
+        </div>
+        </div>
+</div>
+
+  <div class="read-more">
+    <a href="/timeline/item/81" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-50" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">6.20.2011</div>
+  <h2><a href="/timeline/item/50" rel="#overlay" class="timeline-modal">Release Notes v1.0.0.120 – 6/21/2011</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/50" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/YorickSquare.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:99;">
+    <span class="month-span">July</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-250" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">7.7.2011</div>
+  <h2><a href="/timeline/item/250" rel="#overlay" class="timeline-modal">Release Notes v1.0.0.121 - 07/08/2011</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/250" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/LeonaSquare.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-251" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">7.24.2011</div>
+  <h2><a href="/timeline/item/251" rel="#overlay" class="timeline-modal">Release Notes v1.0.0.122 - 07/25/2011</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/251" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/WukongSquare.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:98;">
+    <span class="month-span">August</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-263" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">8.7.2011</div>
+  <h2><a href="/timeline/item/263" rel="#overlay" class="timeline-modal">Release Notes v1.0.0.123 - 08/08/2011</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/263" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/SkarnerSquare.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-264" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">8.22.2011</div>
+  <h2><a href="/timeline/item/264" rel="#overlay" class="timeline-modal">Talon Patch Notes - 08/23/2011</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/264" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/TalonSquare.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:97;">
+    <span class="month-span">September</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-265" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">9.12.2011</div>
+  <h2><a href="/timeline/item/265" rel="#overlay" class="timeline-modal">Riven Patch Notes - 09/13/2011</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/265" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/RivenSquare.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-milestone " style="margin-left: 0px;">
+<div id="timeline-item-302" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/302" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_md/Season-One-ladder-end-small.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_md" width="180" height="180" /></a>  </div>
+
+  <div class="date">9.12.2011</div>
+  <h2><a href="/timeline/item/302" rel="#overlay" class="timeline-modal">End of Ladder Season One – 09/13/2011</a></h2>
+
+  
+  <div class="field field-type-text field-field-timeline-brief">
+    <div class="field-items">
+            <div class="field-item odd">
+                    <p>Ladder Season One came to a close with the recognition of all those players who participated in making the premier season a competitive success...</p>
+        </div>
+        </div>
+</div>
+
+  <div class="read-more">
+    <a href="/timeline/item/302" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-milestone " style="margin-left: 305px;">
+<div id="timeline-item-303" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/303" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_md/dominion-small.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_md" width="180" height="180" /></a>  </div>
+
+  <div class="date">9.25.2011</div>
+  <h2><a href="/timeline/item/303" rel="#overlay" class="timeline-modal">League of Legends: Dominion – 09/26/2011</a></h2>
+
+  
+  <div class="field field-type-text field-field-timeline-brief">
+    <div class="field-items">
+            <div class="field-item odd">
+                    <p>Dominion, a brand new map and game mode, and one of the largest updates ever to be made to League of Legends, brings with it exciting and innovative new gameplay!</p>
+        </div>
+        </div>
+</div>
+
+  <div class="read-more">
+    <a href="/timeline/item/303" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:96;">
+    <span class="month-span">October</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-317" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">10.4.2011</div>
+  <h2><a href="/timeline/item/317" rel="#overlay" class="timeline-modal">Xerath Patch Notes - 10/05/2011</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/317" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/XerathSquare.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-327" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">10.17.2011</div>
+  <h2><a href="/timeline/item/327" rel="#overlay" class="timeline-modal">Graves Patch Notes - 10/18/2011</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/327" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Graves_Square_0_0.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-feature-update " style="margin-left: 0px;">
+<div id="timeline-item-364" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/364" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/harrowing-small.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+
+  <div class="date">10.18.2011</div>
+  <h2><a href="/timeline/item/364" rel="#overlay" class="timeline-modal">Harrowing</a></h2>
+
+  <div class="read-more">
+    <a href="/timeline/item/364" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:95;">
+    <span class="month-span">November</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-332" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">10.31.2011</div>
+  <h2><a href="/timeline/item/332" rel="#overlay" class="timeline-modal">Shyvana Patch Notes - 11/01/2011</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/332" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Shyvana_Square_0_1.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-337" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">11.15.2011</div>
+  <h2><a href="/timeline/item/337" rel="#overlay" class="timeline-modal">Fizz Patch Notes - 11/15/2011</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/337" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Fizz_Square_0.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-milestone " style="margin-left: 0px;">
+<div id="timeline-item-425" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/425" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_md/masteries-small.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_md" width="180" height="180" /></a>  </div>
+
+  <div class="date">11.22.2011</div>
+  <h2><a href="/timeline/item/425" rel="#overlay" class="timeline-modal">New Masteries – 11/22/2011</a></h2>
+
+  
+  <div class="field field-type-text field-field-timeline-brief">
+    <div class="field-items">
+            <div class="field-item odd">
+                    <p>The start of Season Two brought along an overhaul of the Masteries system, providing players with even more strategic options for their champs...</p>
+        </div>
+        </div>
+</div>
+
+  <div class="read-more">
+    <a href="/timeline/item/425" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-milestone " style="margin-left: 305px;">
+<div id="timeline-item-362" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/362" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_md/seasontwolaunchsmall.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_md" width="180" height="180" /></a>  </div>
+
+  <div class="date">11.22.2011</div>
+  <h2><a href="/timeline/item/362" rel="#overlay" class="timeline-modal">League of Legends Season Two Launch – 11/22/2011</a></h2>
+
+  
+  <div class="field field-type-text field-field-timeline-brief">
+    <div class="field-items">
+            <div class="field-item odd">
+                    <p>Season Two officially launched in all territories on this date, bringing a host of new features to League of Legends...</p>
+        </div>
+        </div>
+</div>
+
+  <div class="read-more">
+    <a href="/timeline/item/362" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-342" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">11.29.2011</div>
+  <h2><a href="/timeline/item/342" rel="#overlay" class="timeline-modal">Volibear Patch Notes - 11/29/2011</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/342" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Volibear_Square_0.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:94;">
+    <span class="month-span">December</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-347" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">12.13.2011</div>
+  <h2><a href="/timeline/item/347" rel="#overlay" class="timeline-modal">Ahri Patch Notes - 12/13/2011</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/347" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/AhriSquare.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-feature-update " style="margin-left: 0px;">
+<div id="timeline-item-365" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/365" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/snowdown-small.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+
+  <div class="date">12.14.2011</div>
+  <h2><a href="/timeline/item/365" rel="#overlay" class="timeline-modal">Snowdown Showdown</a></h2>
+
+  <div class="read-more">
+    <a href="/timeline/item/365" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-352" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">12.29.2011</div>
+  <h2><a href="/timeline/item/352" rel="#overlay" class="timeline-modal">Viktor Patch Notes - 12/29/2011</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/352" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Viktor_Square_0.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+    </ul>
+    </li>
+  </ul>
+  </li>
+  <li class="year" id="2012"><div class="year-span" style="z-index:7;"><a name="2012">2012</a></div>
+  <ul>
+    <li class="month" style="z-index:93;">
+    <span class="month-span">January</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-feature-update " style="margin-left: 60px;">
+<div id="timeline-item-366" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/366" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/lunarrevel-small.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+
+  <div class="date">1.11.2012</div>
+  <h2><a href="/timeline/item/366" rel="#overlay" class="timeline-modal">Lunar Revel</a></h2>
+
+  <div class="read-more">
+    <a href="/timeline/item/366" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-feature-update " style="margin-left: 145px;">
+<div id="timeline-item-363" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/363" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/colorblind-small.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+
+  <div class="date">1.12.2012</div>
+  <h2><a href="/timeline/item/363" rel="#overlay" class="timeline-modal">Colorblind Mode</a></h2>
+
+  <div class="read-more">
+    <a href="/timeline/item/363" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-357" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">1.17.2012</div>
+  <h2><a href="/timeline/item/357" rel="#overlay" class="timeline-modal">Sejuani Patch Notes - 01/17/2012</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/357" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/SejuaniSquare.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-feature-update " style="margin-left: 80px;">
+<div id="timeline-item-424" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/424" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/riseofbots-small_0.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+
+  <div class="date">1.24.2012</div>
+  <h2><a href="/timeline/item/424" rel="#overlay" class="timeline-modal">Expanded Co-op vs. AI - 01/24/2012</a></h2>
+
+  <div class="read-more">
+    <a href="/timeline/item/424" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-387" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">1.31.2012</div>
+  <h2><a href="/timeline/item/387" rel="#overlay" class="timeline-modal">Ziggs Patch Notes - 01/31/2012</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/387" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/ZiggsSquare.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:92;">
+    <span class="month-span">February</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-392" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">2.13.2012</div>
+  <h2><a href="/timeline/item/392" rel="#overlay" class="timeline-modal">Nautilus Patch Notes - 02/13/2012</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/392" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/naut-square.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-397" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">2.29.2012</div>
+  <h2><a href="/timeline/item/397" rel="#overlay" class="timeline-modal">Fiora Patch Notes - 02/29/2012</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/397" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/fiorasquare.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:91;">
+    <span class="month-span">March</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-402" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">3.18.2012</div>
+  <h2><a href="/timeline/item/402" rel="#overlay" class="timeline-modal">Lulu Patch Notes - 03/19/2012</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/402" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Lulu_Square_0.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-feature-update " style="margin-left: 0px;">
+<div id="timeline-item-426" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/426" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/great-hunt-small_0.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+
+  <div class="date">3.19.2012</div>
+  <h2><a href="/timeline/item/426" rel="#overlay" class="timeline-modal">The Great Hunt</a></h2>
+
+  <div class="read-more">
+    <a href="/timeline/item/426" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:90;">
+    <span class="month-span">April</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-407" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">4.15.2012</div>
+  <h2><a href="/timeline/item/407" rel="#overlay" class="timeline-modal">Hecarim Patch Notes - 04/16/2012</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/407" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Hecarim_Square_0.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-feature-update " style="margin-left: 60px;">
+<div id="timeline-item-427" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/427" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/server-side-small.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+
+  <div class="date">4.16.2012</div>
+  <h2><a href="/timeline/item/427" rel="#overlay" class="timeline-modal">Server-Side Masteries</a></h2>
+
+  <div class="read-more">
+    <a href="/timeline/item/427" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-feature-update " style="margin-left: 145px;">
+<div id="timeline-item-465" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/465" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Teemo_Splash_4_thumb.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+
+  <div class="date">4.24.2012</div>
+  <h2><a href="/timeline/item/465" rel="#overlay" class="timeline-modal">Refer-a-Friend 2.0 - 04/25/2012</a></h2>
+
+  <div class="read-more">
+    <a href="/timeline/item/465" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-milestone " style="margin-left: 0px;">
+<div id="timeline-item-423" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/423" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_md/spectator-small.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_md" width="180" height="180" /></a>  </div>
+
+  <div class="date">4.26.2012</div>
+  <h2><a href="/timeline/item/423" rel="#overlay" class="timeline-modal">Spectator Mode Full Release - 04/27/2012</a></h2>
+
+  
+  <div class="field field-type-text field-field-timeline-brief">
+    <div class="field-items">
+            <div class="field-item odd">
+                    <p>The spectator mode open beta came to a close, bringing the full release of Spectator Mode to summoners all over the world!</p>
+        </div>
+        </div>
+</div>
+
+  <div class="read-more">
+    <a href="/timeline/item/423" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-412" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">4.29.2012</div>
+  <h2><a href="/timeline/item/412" rel="#overlay" class="timeline-modal">Spectator Mode Patch Notes - 04/30/2012</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/412" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Varus_Square.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:89;">
+    <span class="month-span">May</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-417" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">5.21.2012</div>
+  <h2><a href="/timeline/item/417" rel="#overlay" class="timeline-modal">Darius Patch Notes - 05/22/2012</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/417" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Darius_Square_0.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-feature-update " style="margin-left: 0px;">
+<div id="timeline-item-422" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/422" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/new-rift-small.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+
+  <div class="date">5.22.2012</div>
+  <h2><a href="/timeline/item/422" rel="#overlay" class="timeline-modal">Summoner’s Rift Update</a></h2>
+
+  <div class="read-more">
+    <a href="/timeline/item/422" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:88;">
+    <span class="month-span">June</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-428" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">6.3.2012</div>
+  <h2><a href="/timeline/item/428" rel="#overlay" class="timeline-modal">Draven Patch Notes - 06/05/2012</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/428" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Draven_Square.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-433" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">6.19.2012</div>
+  <h2><a href="/timeline/item/433" rel="#overlay" class="timeline-modal">June 20 Patch Notes - 06/20/2012</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/433" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/wrenchmen_0_0.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-feature-update " style="margin-left: 0px;">
+<div id="timeline-item-462" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/462" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Pulsefire_ezreal_thumb.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+
+  <div class="date">6.28.2012</div>
+  <h2><a href="/timeline/item/462" rel="#overlay" class="timeline-modal">Pulsefire Ezreal - 06/29/2012</a></h2>
+
+  <div class="read-more">
+    <a href="/timeline/item/462" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:87;">
+    <span class="month-span">July</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-438" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">7.5.2012</div>
+  <h2><a href="/timeline/item/438" rel="#overlay" class="timeline-modal">Jayce Patch Notes - 07/06/2012</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/438" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/jayce_square.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-443" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">7.17.2012</div>
+  <h2><a href="/timeline/item/443" rel="#overlay" class="timeline-modal">Mid-July Patch Notes - 07/18/2012</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/443" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Zyra_Square_0.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:86;">
+    <span class="month-span">August</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-444" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">8.1.2012</div>
+  <h2><a href="/timeline/item/444" rel="#overlay" class="timeline-modal">Early August Patch Notes - 08/02/2012</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/444" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Diana_Square_0.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-feature-update " style="margin-left: 0px;">
+<div id="timeline-item-463" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/463" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Battlecast_Prime_Chogath_thumb.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+
+  <div class="date">8.2.2012</div>
+  <h2><a href="/timeline/item/463" rel="#overlay" class="timeline-modal"> Battlecast Cho&#039;Gath - 08/03/2012</a></h2>
+
+  <div class="read-more">
+    <a href="/timeline/item/463" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-449" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">8.13.2012</div>
+  <h2><a href="/timeline/item/449" rel="#overlay" class="timeline-modal">Mid August Patch Notes - 08/14/2012</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/449" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/rengar-square.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-454" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">8.28.2012</div>
+  <h2><a href="/timeline/item/454" rel="#overlay" class="timeline-modal">Late August Patch Notes - 08/29/2012</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/454" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/wrenchmen_0_0_4.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:85;">
+    <span class="month-span">September</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-feature-update " style="margin-left: 0px;">
+<div id="timeline-item-457" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/457" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Viktor_thumb.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+
+  <div class="date">9.5.2012</div>
+  <h2><a href="/timeline/item/457" rel="#overlay" class="timeline-modal">Streamer Portal - 09/06/12 </a></h2>
+
+  <div class="read-more">
+    <a href="/timeline/item/457" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-458" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">9.11.2012</div>
+  <h2><a href="/timeline/item/458" rel="#overlay" class="timeline-modal">Mid September Patch Notes - 09/12/2012</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/458" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Syndra_thumb.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-459" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">9.17.2012</div>
+  <h2><a href="/timeline/item/459" rel="#overlay" class="timeline-modal">World Championship Hotfix Notes - 09/18/2012</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/459" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/wrenchmen_0_0_9.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-feature-update " style="margin-left: 15px;">
+<div id="timeline-item-466" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/466" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Refund_thumb_0.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+
+  <div class="date">9.18.2012</div>
+  <h2><a href="/timeline/item/466" rel="#overlay" class="timeline-modal">Refund Feature - 9/19/2012</a></h2>
+
+  <div class="read-more">
+    <a href="/timeline/item/466" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-460" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">9.25.2012</div>
+  <h2><a href="/timeline/item/460" rel="#overlay" class="timeline-modal">Late September Patch Notes - 09/26/2012</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/460" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/KhaZix_thumb.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:84;">
+    <span class="month-span">October</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-milestone " style="margin-left: 0px;">
+<div id="timeline-item-461" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/461" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_md/Honor_thumb_0.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_md" width="180" height="180" /></a>  </div>
+
+  <div class="date">9.30.2012</div>
+  <h2><a href="/timeline/item/461" rel="#overlay" class="timeline-modal">Honor Initiative - 10/01/2012</a></h2>
+
+  
+  <div class="field field-type-text field-field-timeline-brief">
+    <div class="field-items">
+            <div class="field-item odd">
+                    <p>When the game’s over, award Honor to players who helped make the match a positive experience!</p>
+        </div>
+        </div>
+</div>
+
+  <div class="read-more">
+    <a href="/timeline/item/461" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-milestone " style="margin-left: 305px;">
+<div id="timeline-item-464" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/464" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_md/LoL_Battle_3_thumb_0.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_md" width="180" height="180" /></a>  </div>
+
+  <div class="date">10.12.2012</div>
+  <h2><a href="/timeline/item/464" rel="#overlay" class="timeline-modal">Season Two Championships - 10/13/2012</a></h2>
+
+  
+  <div class="field field-type-text field-field-timeline-brief">
+    <div class="field-items">
+            <div class="field-item odd">
+                    <p>On this day, the epic conclusion of League of Legends second competitive season took place at the Galen Center in Los Angeles, California...</p>
+        </div>
+        </div>
+</div>
+
+  <div class="read-more">
+    <a href="/timeline/item/464" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-467" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">10.15.2012</div>
+  <h2><a href="/timeline/item/467" rel="#overlay" class="timeline-modal">Twisted Fate Game Update - 10/16/2012</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/467" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/TwistedFate_thumb_1.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-468" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">10.23.2012</div>
+  <h2><a href="/timeline/item/468" rel="#overlay" class="timeline-modal">Shadow Isles Patch Notes - 10/24/2012</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/468" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Elise_thumb_0.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-feature-update " style="margin-left: 0px;">
+<div id="timeline-item-470" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/470" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Haunted_Maokai_Splash_thumb.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+
+  <div class="date">10.24.2012</div>
+  <h2><a href="/timeline/item/470" rel="#overlay" class="timeline-modal">Twisted Treeline Beta - 10/25/2012</a></h2>
+
+  <div class="read-more">
+    <a href="/timeline/item/470" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-feature-update " style="margin-left: 145px;">
+<div id="timeline-item-469" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/469" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/KayleSquare1.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+
+  <div class="date">10.24.2012</div>
+  <h2><a href="/timeline/item/469" rel="#overlay" class="timeline-modal">Tribunal Update - 10/25/2012</a></h2>
+
+  <div class="read-more">
+    <a href="/timeline/item/469" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-feature-update " style="margin-left: 145px;">
+<div id="timeline-item-471" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/471" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Zombie_Brand_Splash_thumb.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+
+  <div class="date">10.25.2012</div>
+  <h2><a href="/timeline/item/471" rel="#overlay" class="timeline-modal">Harrowing - 10/26/2012 </a></h2>
+
+  <div class="read-more">
+    <a href="/timeline/item/471" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-feature-update " style="margin-left: 145px;">
+<div id="timeline-item-472" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/472" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Elise_square.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+
+  <div class="date">10.25.2012</div>
+  <h2><a href="/timeline/item/472" rel="#overlay" class="timeline-modal">Shadow Isles - 10/26/2012</a></h2>
+
+  <div class="read-more">
+    <a href="/timeline/item/472" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-feature-update " style="margin-left: 145px;">
+<div id="timeline-item-478" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/478" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/TwistedFate_Splash_thumb.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+
+  <div class="date">10.28.2012</div>
+  <h2><a href="/timeline/item/478" rel="#overlay" class="timeline-modal">T.T. Co-op vs. AI - 10/29/2012</a></h2>
+
+  <div class="read-more">
+    <a href="/timeline/item/478" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:83;">
+    <span class="month-span">November</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-milestone " style="margin-left: 0px;">
+<div id="timeline-item-474" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/474" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_md/Janna_Splash_4_thumb.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_md" width="180" height="180" /></a>  </div>
+
+  <div class="date">11.12.2012</div>
+  <h2><a href="/timeline/item/474" rel="#overlay" class="timeline-modal">End of Season Two - 11/12/2012</a></h2>
+
+  
+  <div class="field field-type-text field-field-timeline-brief">
+    <div class="field-items">
+            <div class="field-item odd">
+                    <p>Season Two officially came to a close on this day. All players who participated in the competitive ladder earned rewards based on the top rating they achieved.</p>
+        </div>
+        </div>
+</div>
+
+  <div class="read-more">
+    <a href="/timeline/item/474" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-473" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">11.12.2012</div>
+  <h2><a href="/timeline/item/473" rel="#overlay" class="timeline-modal">Mid-November Patch Notes - 11/12/2012</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/473" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Zed_Square_0_0.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:82;">
+    <span class="month-span">December</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-475" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">12.3.2012</div>
+  <h2><a href="/timeline/item/475" rel="#overlay" class="timeline-modal">Preseason 3 Patch Notes - 12/03/2012</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/475" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Nami_Square_0.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-milestone " style="margin-left: 155px;">
+<div id="timeline-item-477" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/477" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_md/Preseason_3_Top.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_md" width="180" height="180" /></a>  </div>
+
+  <div class="date">12.3.2012</div>
+  <h2><a href="/timeline/item/477" rel="#overlay" class="timeline-modal">Preseason Update - 12/03/2012</a></h2>
+
+  
+  <div class="field field-type-text field-field-timeline-brief">
+    <div class="field-items">
+            <div class="field-item odd">
+                    <p>We were extremely pleased with Season Two, but we think there’s always room to make the League of Legends metagame even better.</p>
+        </div>
+        </div>
+</div>
+
+  <div class="read-more">
+    <a href="/timeline/item/477" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-feature-update " style="margin-left: 0px;">
+<div id="timeline-item-479" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/479" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Nocturne_Splash_thumb.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+
+  <div class="date">12.5.2012</div>
+  <h2><a href="/timeline/item/479" rel="#overlay" class="timeline-modal">Eternum Nocturne - 12/05/2012</a></h2>
+
+  <div class="read-more">
+    <a href="/timeline/item/479" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-476" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">12.13.2012</div>
+  <h2><a href="/timeline/item/476" rel="#overlay" class="timeline-modal"> Preseason Balance Update 1 - Patch Notes - 12/13/2012</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/476" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Vi_Square_0.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-feature-update " style="margin-left: 80px;">
+<div id="timeline-item-480" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/480" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Snowdown_thumb.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+
+  <div class="date">12.14.2012</div>
+  <h2><a href="/timeline/item/480" rel="#overlay" class="timeline-modal">Snowdown Showdown</a></h2>
+
+  <div class="read-more">
+    <a href="/timeline/item/480" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+
+</li>
+
+    </ul>
+    </li>
+  </ul>
+  </li>
+  <li class="year" id="2013"><div class="year-span" style="z-index:6;"><a name="2013">2013</a></div>
+  <ul>
+    <li class="month" style="z-index:81;">
+    <span class="month-span">January</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-481" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">1.15.2013</div>
+  <h2><a href="/timeline/item/481" rel="#overlay" class="timeline-modal"> Preseason Balance Update 2 Patch Notes 01/15/2013</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/481" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Thresh_Square_0.png" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-feature-update " style="margin-left: 60px;">
+<div id="timeline-item-482" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/482" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Kayle_Splash_thumb.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+
+  <div class="date">1.17.2013</div>
+  <h2><a href="/timeline/item/482" rel="#overlay" class="timeline-modal">Aether Wing Kayle - 01/17/13</a></h2>
+
+  <div class="read-more">
+    <a href="/timeline/item/482" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-release-notes ">
+<div id="timeline-item-485" class="clear-block inner-item-wrap">
+
+  <!-- We probably still want to include this data but hide it with CSS if JS is enabled? -->
+  <!--<div class="date">1.31.2013</div>
+  <h2><a href="/timeline/item/485" rel="#overlay" class="timeline-modal"> Patch 3.01 Notes - 01/31/2013</a></h2>-->
+
+  <div class="image">
+    <a href="/timeline/item/485" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_sm/Annie_Square_0.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_sm" width="50" height="50" /></a>  </div>
+</div>
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:80;">
+    <span class="month-span">February</span>
+    <ul>
+<li class="timeline-item riot_timeline_item riot-timeline-item-milestone " style="margin-left: 0px;">
+<div id="timeline-item-483" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/483" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_md/Season_3_thumb_0.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_md" width="180" height="180" /></a>  </div>
+
+  <div class="date">2.1.2013</div>
+  <h2><a href="/timeline/item/483" rel="#overlay" class="timeline-modal">League of Legends Season Three Launch - 02/01/13</a></h2>
+
+  
+  <div class="field field-type-text field-field-timeline-brief">
+    <div class="field-items">
+            <div class="field-item odd">
+                    <p>The best teams in League of Legends esports took their first steps on the road to the World Championship.</p>
+        </div>
+        </div>
+</div>
+
+  <div class="read-more">
+    <a href="/timeline/item/483" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+</li>
+
+<li class="timeline-item riot_timeline_item riot-timeline-item-milestone " style="margin-left: 305px;">
+<div id="timeline-item-484" class="clear-block inner-item-wrap">
+
+  <div class="image">
+    <a href="/timeline/item/484" rel="#overlay" class="timeline-modal"><img src="http://timeline.leagueoflegends.com/sites/default/files/imagecache/timeline_image_md/League_Ranked_thumb.jpg" alt="" title=""  class="imagecache imagecache-timeline_image_md" width="180" height="180" /></a>  </div>
+
+  <div class="date">2.1.2013</div>
+  <h2><a href="/timeline/item/484" rel="#overlay" class="timeline-modal">New League System - 02/01/13</a></h2>
+
+  
+  <div class="field field-type-text field-field-timeline-brief">
+    <div class="field-items">
+            <div class="field-item odd">
+                    <p>In Season 3 we introduced a new league system to provide more challenges for competitive players and a greater sense of progression for newcomers.</p>
+        </div>
+        </div>
+</div>
+
+  <div class="read-more">
+    <a href="/timeline/item/484" rel="#overlay" class="timeline-modal">Read more</a>  </div>
+</div>
+</li>
+
+    </ul>
+    </li>
+    <li class="month" style="z-index:79;">
+    <span class="month-span">March</span>
+    </li>
+    <li class="month" style="z-index:78;">
+    <span class="month-span">April</span>
+    </li>
+  </ul>
+  </li>
+</ul></div>        </div>
+
+        
+        
+      </div></div><!-- /.section, /#content -->
+
+      
+    </div>
+        <div class="shade-bottom-left"></div>
+        <div class="shade-top-left"></div>
+        <div class="shade-bottom-right"></div>
+        <div class="shade-top-right"></div>
+    </div><!-- /#main, /#main-wrapper -->
+
+          <div id="footer"><div class="section">
+
+        
+        
+        
+      </div></div><!-- /.section, /#footer -->
+    
+  </div></div><!-- /#page, /#page-wrapper -->
+<script type="text/javascript"> 
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript"> 
+	try {
+		var pageTracker = _gat._getTracker("UA-5859958-1");
+		pageTracker._setDomainName(".leagueoflegends.com");
+		pageTracker._setAllowHash(false);
+		pageTracker._trackPageview();
+	} catch(err) {
+ 
+	}
+</script>
+
+  
+  
+</body>
+</html>

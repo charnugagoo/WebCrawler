@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>DotA Mechanics</title>
+<meta name="description" content="Provides details regarding many aspects of DotA Mechanics." />
+<meta http-equiv="content-type" content="application/xhtml; charset=UTF-8" />
+<meta name="keywords" content="dota, mechanics" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2" />
+<meta name="revisit-after" content="1 days" />
+<meta name="robots" content="index,follow" />
+<meta name="verify-v1" content="2utJHp2BxUBgV2QqQfsp0lfqX4a58OhdDlcKfNNDA0A=" />
+<link href="http://media.playdota.com/css/style.css?ver=2.1.11" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://media.playdota.com/js/alfa/prototype.js"></script>
+<script type="text/javascript" src="http://media.playdota.com/js/scripts.js?ver=2.3"></script>
+<script type="text/javascript" src="http://media.playdota.com/js/swfobject.js?v=3.1"></script>
+
+
+<script type="text/javascript" src="http://www.playdota.com/forums/clientscript/ncode_imageresizer.js?v=1.0.2"></script>
+<script type="text/javascript">
+<!--
+NcodeImageResizer.MODE = 'newwindow';
+
+NcodeImageResizer.MAXWIDTH = 556;
+NcodeImageResizer.MAXHEIGHT = 0;
+
+
+NcodeImageResizer.MAXWIDTHSIGS = 500;
+NcodeImageResizer.MAXHEIGHTSIGS = 300;
+
+NcodeImageResizer.BBURL = 'http://www.playdota.com/forums';
+vbphrase = new Array();
+vbphrase['ncode_imageresizer_warning_small'] = 'Click this bar to view the full image.';
+vbphrase['ncode_imageresizer_warning_filesize'] = 'This image has been resized. Click this bar to view the full image. The original image is sized %1$sx%2$s and weights %3$sKB.';
+vbphrase['ncode_imageresizer_warning_no_filesize'] = 'This image has been resized. Click this bar to view the full image. The original image is sized %1$sx%2$s.';
+vbphrase['ncode_imageresizer_warning_fullsize'] = 'Click this bar to view the small image.';
+//-->
+</script>
+
+<style type="text/css">
+
+table.ncode_imageresizer_warning {
+background: #000000;
+color: #FFFFFF;
+border: 1px solid #CCCFFF;
+	cursor: pointer;
+}
+
+table.ncode_imageresizer_warning td {
+	font-size: 10px;
+	vertical-align: middle;
+	text-decoration: none;
+}
+
+table.ncode_imageresizer_warning td.td1 {
+	padding: 5px;
+}
+
+table.ncode_imageresizer_warning td.td1 {
+	padding: 2px;
+}
+
+</style>
+
+
+</head>
+<body>
+<center>
+
+<div class="header">
+	&nbsp;
+	<ul class="menu">
+		<li><a href="/heroes" title="DotA Heroes"><img src="http://media.playdota.com/site/heroes.png" border="0" alt="DotA Heroes"/></a></li>
+		<li><a href="/items" title="DotA Items"><img src="http://media.playdota.com/site/items.png"  border="0" alt="DotA Items"/></a></li>
+		<li><a href="/guides" title="DotA Guides"><img src="http://media.playdota.com/site/guides.png"  border="0" alt="DotA Guides"/></a></li>
+		<li><a href="/mechanics" title="DotA Mechanics"><img src="http://media.playdota.com/site/mechanics.png"  border="0" alt="DotA Mechanics"/></a></li>
+		<li><a href="/forums/dota-tools-ai-maps/" title="DotA Tools"><img src="http://media.playdota.com/site/tools.png"  border="0" alt="DotA Tools"/></a></li>
+		<li><a href="/forums/" title="DotA Community"><img src="http://media.playdota.com/site/forums.png"  border="0" alt="DotA Community"/></a></li>
+		<li class="sh" ><a href="/" ><div></div></a></li>
+		<li><a href="/forums/dota-replays/" title="DotA Replays"><img src="http://media.playdota.com/site/replays.png"  border="0" alt="DotA Replays"/></a></li>
+		<li><a href="/videos" title="DotA Videos"><img src="http://media.playdota.com/site/videos.png"  border="0" alt="DotA Videos"/></a></li>
+		<li><a href="/fanart" title="DotA FanArt"><img src="http://media.playdota.com/site/art.png"  border="0" alt="DotA FanArt"/></a></li>
+		<li><a href="/comics" title="DotA Comics"><img src="http://media.playdota.com/site/comics.png"  border="0" alt="DotA Comics"/></a></li>
+		<li><a href="/ai" title="DotA Links"><img src="http://media.playdota.com/site/links.png"  border="0" alt="DotA Links"/></a></li>
+		<li><a href="/about" title="About DotA"><img src="http://media.playdota.com/site/about.png"  border="0" alt="About DotA"/></a></li>
+	</ul>
+	&nbsp;
+	<div style="clear:both;"></div>
+	<div style="clear:both;"></div>
+	<a class="iceblog" href="http://www.playdota.com/forums/blogs/icefrog/" title="Developer's Blog"><img src="http://media.playdota.com/site/blog.jpg?ver=2.1.2" alt="Developer's Blog" /></a>
+	<div style="clear:both;"></div>
+	<div class="loginbox" align="right">
+		<form method="post" action="/forums/login.php?do=login" onsubmit=md5hash(vb_login_password,vb_login_md5password,vb_login_md5password_utf)>
+		<script type=text/javascript src="/forumsl/clientscript/vbulletin_md5.js"></script>
+
+		<input type="text" name="vb_login_username" id="navbar_username" value="Username" class="linput" onfocus="this.value = ''" onblur="if(this.value == '') this.value = 'Username'"/>
+		<input type="password" name="vb_login_password" value="Password" class="linput" onfocus="this.value = '';" onblur="if(this.value == '') this.value = 'Password'"/>
+		<input type="image" src="http://media.playdota.com/site/go.gif" align="middle" title="DotA Login"/> <br />
+
+		<div class="regs" align="left">
+		<a href="/forums/login.php?do=lostpw">Forgot Password?</a>
+		</div>
+		<div align="left" class="regi">
+				<input type="checkbox" name="cookieuser" value="1" tabindex="103" id="cb_cookieuser_navbar" accesskey="c" align="top"/> Remember me ? &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+				<a href="/forums/register.php" title="Register on DotA Community" class="regi">Register</a>
+		</div>
+
+
+
+
+
+		<input type=hidden name=s value="" />
+
+		<input type=hidden name=do value=login />
+		<input type=hidden name=vb_login_md5password />
+		<input type=hidden name=vb_login_md5password_utf />
+
+		</form>
+	</div>
+</div>
+<div style="clear:both;"></div>
+
+
+<div class="website" align="center" id="website">
+<div style="clear:both;"></div>
+	<div class="content">
+		<div class="site" align="left">
+			<center>
+<img src="http://media.playdota.com/page/mechanicstitle.jpg" />
+</center>
+<div class="heroc">
+	<div class="pleft">
+
+	<div class="pagedefaultcss"><p><img src="../../img/guides/1244413353.jpg" alt="Introduction" width="251" height="27" /></p>
+<p>&nbsp;</p>
+<p>This part of the site focuses on explaining the details of DotA, things that aren't particularly required to play and succeed in the game but that will give you a bigger perspective of DotA's inner workings.</p>
+<p>&nbsp;</p>
+<p>In Mechanics you can learn many things regarding heroes, units, items, abilities, and more. You can see how some small details affect the flow of the game, and the rules and formulas that explain the outcome of things such as movement, casting, or attacking in game.</p>
+<p>&nbsp;</p>
+<p>Mechanical content is the result of curiosity, theories, and investigation with testing. Its purpose is to provide a solid knowledge base for all the players who are curious about DotA. It also serves to verify and document the Warcraft III engine's and DotA's accumulated information over time.</p>
+<p>&nbsp;</p>
+<p>If you have questions related to Mechanics that are not covered in these pages, you can ask them in the <strong><a href="../../forums/forumdisplay.php?f=52" target="_blank">Advanced Mechanics</a> </strong>forum.</p>
+<p>&nbsp;</p>
+<p>Enjoy your browsing!</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong><span style="font-size: small;"><span style="color: #ff9000;">Popular Topics</span></span></strong></p>
+<ul>
+<li><a href="../../mechanics/Orb_Effects"><span style="font-size: small;"><span style="color: #ffffff;">Orb Effect Stacking</span></span></a></li>
+<li><a href="../../mechanics/attackspeed"><span style="font-size: small;"><span style="color: #ffffff;">Attack Speed</span></span></a></li>
+<li><a href="../../mechanics/damagearmor"><span style="font-size: small;"><span style="color: #ffffff;">Damage and Armor</span></span></a></li>
+</ul>
+<p>&nbsp;</p>
+<p>For beginners looking to get started, visit:</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><a href="../../learn"><img src="../../img/guides/1244597598.jpg" alt="Learn the Game" width="171" height="52" /></a></p>
+<p style="text-align: center;">&nbsp;</p>
+<p>&nbsp;</p>
+<p>If you have a bug, typo, or faulty information about the Mechanics guides to report or if you have a suggestion for a new Mechanics guide and feedback to give, do so <a href="../../forums/11517/hero-item-database-mechanics-feedback/" target="_blank">here</a>.</p>
+<ul>
+</ul></div>
+	</div>
+
+	<div class="pright">
+		<a href="/mechanics"><img src="http://media.playdota.com/page/mechanicsindex.jpg" border="0" /></a>
+
+
+		<h2>Hero</h2>
+		<ul>
+			<li >* <a href="/mechanics/Attributes" title="Attributes">Attributes</a></li>
+			<li >* <a href="/mechanics/experience" title="Experience">Experience</a></li>
+		</ul>
+		<h2>Unit/Hero Basics</h2>
+		<ul>
+			<li >* <a href="/mechanics/buildings" title="Buildings">Buildings</a></li>
+			<li >* <a href="/mechanics/fountains" title="Fountains">Fountains</a></li>
+			<li >* <a href="/mechanics/illusions" title="Illusions">Illusions</a></li>
+			<li >* <a href="/mechanics/roshan" title="Roshan">Roshan</a></li>
+			<li >* <a href="/mechanics/unittypes" title="Unit Types">Unit Types</a></li>
+		</ul>
+		<h2>Unit/Hero Specifics</h2>
+		<ul>
+			<li >* <a href="/mechanics/attackspeed" title="Attack Speed">Attack Speed</a></li>
+			<li >* <a href="/mechanics/physattackmods" title="Cleave">Cleave</a></li>
+			<li >* <a href="/mechanics/damagearmor" title="Damage and Armor">Damage and Armor</a></li>
+			<li >* <a href="/mechanics/Hitpoints_and_Manapoints" title="Hitpoints and Manapoints">Hitpoints and Manapoints</a></li>
+			<li >* <a href="/mechanics/Invisibility" title="Invisibility">Invisibility</a></li>
+			<li >* <a href="/mechanics/Lifesteal" title="Lifesteal">Lifesteal</a></li>
+			<li >* <a href="/mechanics/neutralcreeps" title="Neutral Creeps">Neutral Creeps</a></li>
+			<li >* <a href="/mechanics/Targeting" title="Targeting">Targeting</a></li>
+			<li >* <a href="/mechanics/unitstats" title="Unit Statistics">Unit Statistics</a></li>
+		</ul>
+		<h2>Abilities</h2>
+		<ul>
+			<li >* <a href="/mechanics/Cooldown" title="Cooldown">Cooldown</a></li>
+			<li >* <a href="/mechanics/disables" title="Disables">Disables</a></li>
+		</ul>
+		<h2>Items</h2>
+		<ul>
+			<li >* <a href="/mechanics/Item_Passive_Stacking" title="Item Passive Stacking">Item Passive Stacking</a></li>
+			<li >* <a href="/mechanics/shareditems" title="Item Sharing">Item Sharing</a></li>
+			<li >* <a href="/mechanics/Orb_Effects" title="Orb Effect Stacking">Orb Effect Stacking</a></li>
+			<li >* <a href="/mechanics/shopsanditems" title="Shops and Items">Shops and Items</a></li>
+		</ul>
+		<h2>Environment</h2>
+		<ul>
+			<li >* <a href="/mechanics/timedevents" title="Day and Night">Day and Night</a></li>
+			<li >* <a href="/mechanics/Gold" title="Gold">Gold</a></li>
+			<li >* <a href="/mechanics/runes" title="Runes">Runes</a></li>
+			<li >* <a href="/mechanics/terrainvision" title="Terrain and Vision">Terrain and Vision</a></li>
+		</ul>
+		<h2>Misc</h2>
+		<ul>
+			<li >* <a href="/mechanics/CustomKeys" title="CustomKeys.txt">CustomKeys.txt</a></li>
+			<li >* <a href="/mechanics/factions" title="Factions">Factions</a></li>
+			<li >* <a href="/mechanics/Healing" title="Healing">Healing</a></li>
+		</ul>
+		<h2>Group</h2>
+		<ul>
+			<li >* <a href="/mechanics/mechanics" title="mechanics">mechanics</a></li>
+		</ul>
+	</div>
+	<div style="clear:both;"></div>
+</div>
+
+		</div>
+<div style="clear:both;"></div>
+		<br />
+		<div class="end"></div>
+	</div>
+	<div class="footer">
+	&nbsp;
+	<ul>
+
+		<li><a href="/heroes" title="DotA Heroes"><img src="http://media.playdota.com/site/footer/heroes.png" border="0" alt="DotA Heroes"/></a></li>
+		<li><a href="/items" title="DotA Items"><img src="http://media.playdota.com/site/footer/items.png"  border="0" alt="DotA Items"/></a></li>
+		<li><a href="/guides" title="DotA Guides"><img src="http://media.playdota.com/site/footer/guides.png"  border="0" alt="DotA Guides"/></a></li>
+		<li><a href="/mechanics" title="DotA Mechanics"><img src="http://media.playdota.com/site/footer/mechanics.png"  border="0" alt="DotA Mechanics"/></a></li>
+		<li><a href="/forums/dota-tools-ai-maps/" title="DotA Tools"><img src="http://media.playdota.com/site/footer/tools.png"  border="0" alt="DotA Tools"/></a></li>
+		<li><a href="/forums/" title="DotA Community"><img src="http://media.playdota.com/site/footer/forums.png"  border="0" alt="DotA Community"/></a></li>
+		<li class="sh" onclick="location.href='/';">&nbsp;</li>
+		<li><a href="/forums/dota-replays/" title="DotA Replays"><img src="http://media.playdota.com/site/footer/replays.png"  border="0" alt="DotA Replays"/></a></li>
+		<li><a href="/videos" title="DotA Videos"><img src="http://media.playdota.com/site/footer/videos.png"  border="0" alt="DotA Videos"/></a></li>
+		<li><a href="/fanart" title="DotA FanArt"><img src="http://media.playdota.com/site/footer/fanart.png"  border="0" alt="DotA FanArt"/></a></li>
+		<li><a href="/comics" title="DotA Comics"><img src="http://media.playdota.com/site/footer/comics.png"  border="0" alt="DotA Comics"/></a></li>
+		<li><a href="/ai" title="DotA Links"><img src="http://media.playdota.com/site/footer/links.png"  border="0" alt="DotA Links"/></a></li>
+		<li><a href="/about" title="About DotA"><img src="http://media.playdota.com/site/footer/about.png"  border="0" alt="About DotA"/></a></li>
+	</ul>
+	&nbsp;
+	<div style="clear:both;"></div>
+	<a href="/about" title="About DotA">About PlayDotA.com</a> | Terms and Conditions | <a href="/" title="DotA Community WebSite">&copy; 2010 PlayDotA.com</a> | All Rights Reserved
+	</div>
+</div>
+</center>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-9106374-1");
+pageTracker._trackPageview();
+</script>
+
+</body>
+</html>
+

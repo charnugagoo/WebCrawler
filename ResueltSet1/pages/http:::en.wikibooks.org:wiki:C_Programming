@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<title>C Programming - Wikibooks, open books for an open world</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.21wmf9" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="/w/index.php?title=C_Programming&amp;action=edit" />
+<link rel="edit" title="Edit" href="/w/index.php?title=C_Programming&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikibooks (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="//en.wikibooks.org/w/api.php?action=rsd" />
+<link rel="copyright" href="//creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Wikibooks Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="//bits.wikimedia.org/en.wikibooks.org/load.php?debug=false&amp;lang=en&amp;modules=ext.flaggedRevs.basic%7Cext.gadget.extlinks%7Cext.wikihiero%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmw.PopUpMediaTransform%7Cskins.vector&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="//bits.wikimedia.org/en.wikibooks.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: enwikibooks:resourceloader:filter:minify-css:7:7e437ef773c7cbb07b329889319b1d5c */</style>
+
+<script src="//bits.wikimedia.org/en.wikibooks.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"C_Programming","wgTitle":"C Programming","wgCurRevisionId":2438192,"wgArticleId":31445,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Featured books","Books with PDF version","Books with print version","C Programming","C programming language","C programming language/all books","Computer programming languages/all books","Computer programming/all books","Computer science/all books","Computing/all books","Books by subject/all books","Alphabetical/C","Completed books","Books by completion status/all books"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"C_Programming","wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVectorEnabledModules":{"collapsiblenav":true,"collapsibletabs":true,"editwarning":true,"expandablesearch":false,"footercleanup":false,"sectioneditlinks":false,"experiments":true},"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"templateEditor":false,"templates":false,"preview":false,"previewDialog":false,"publish":false,"toc":false},"wgFlaggedRevsParams":{"tags":{"value":{"levels":3,"quality":2,"pristine":3}}},"wgStableRevisionId":2438192,"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","Geo":{"city":"","country":""},"wgNoticeProject":"wikibooks"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":0,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":false,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":4,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":0,"watchdeletion":0,"watchlistdays":3
+,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"flaggedrevssimpleui":0,"flaggedrevsstable":0,"flaggedrevseditdiffs":true,"flaggedrevsviewdiffs":false,"vector-simplesearch":1,"useeditwarning":1,"vector-collapsiblenav":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":true,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs102":false,"searchNs103":false,"searchNs108":false,"searchNs109":false,"searchNs110":false,"searchNs111":false,"searchNs112":true,"searchNs113":false,"gadget-extlinks":1,"gadget-commons-file":1,"gadget-toolboxcompat":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.
+tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: enwikibooks:resourceloader:filter:minify-js:7:71d2543b236ad98d29cc1ed0e44b8b72 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","ext.centralNotice.bannerController"]);
+}</script>
+<script src="//bits.wikimedia.org/geoiplookup"></script><link rel="dns-prefetch" href="//meta.wikimedia.org" /><!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/skins-1.21wmf9/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-C_Programming skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- sitenotice -->
+			<div id="siteNotice"><!-- CentralNotice --><script>
+	mw.loader.using( 'ext.centralNotice.bannerController', function() { mw.centralNotice.initialize(); } );
+</script>
+</div>
+			<!-- /sitenotice -->
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">C Programming</span></h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+								<!-- tagline -->
+				<div id="siteSub">From Wikibooks, open books for an open world</div>
+				<!-- /tagline -->
+								<!-- subtitle -->
+				<div id="contentSub"><div id="mw-fr-revisiontag" class="flaggedrevs_basic plainlinks noprint"><img class="flaggedrevs-icon" src="//bits.wikimedia.org/static-1.21wmf9/extensions/FlaggedRevs/frontend/modules/img/1.png" alt="Unreviewed changes are displayed on this page" title="Unreviewed changes are displayed on this page" />The <a class="external text" href="//en.wikibooks.org/w/index.php?title=C_Programming&amp;stable=1">latest reviewed version</a> was <a class="external text" href="//en.wikibooks.org/w/index.php?title=Special:Log&amp;type=review&amp;page=C_Programming">checked</a> on <i>5 January 2013</i>. There are <a class="external text" href="//en.wikibooks.org/w/index.php?title=C_Programming&amp;oldid=2438192&amp;diff=cur&amp;diffonly=0">template/file changes</a> awaiting review.</div>
+</div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodycontent -->
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table class="metadata plainlinks ambox ambox-notice" style="">
+<tr>
+<td class="mbox-image">
+<div style="width: 52px;"><img alt="Featured book en.svg" src="//upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Featured_book_en.svg/50px-Featured_book_en.svg.png" width="50" height="50" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Featured_book_en.svg/75px-Featured_book_en.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Featured_book_en.svg/100px-Featured_book_en.svg.png 2x" /></div>
+</td>
+<td class="mbox-text" style=""><i>C Programming</i> is a <a href="/wiki/Wikibooks:Featured_books" title="Wikibooks:Featured books">featured book</a> on Wikibooks because it contains substantial content, it is well-formatted, and the Wikibooks community has decided to feature it on the <a href="/wiki/Main_Page" title="Main Page">main page</a> or in other places. Please continue to improve it and thanks for the great work so far! You can edit its <a href="/wiki/Template:Goodbook/C_Programming" title="Template:Goodbook/C Programming">advertisement template</a>.</td>
+</tr>
+</table>
+<div style="text-align: center;">
+<p><i>Wikibooks Contributors Present:</i><br />
+<big><big><big><b>C Programming</b></big></big></big></p>
+<center><i>A comprehensive look at the C programming language and its features.</i></center>
+</div>
+<p><br /></p>
+<h2><span class="editsection">[<a href="/w/index.php?title=C_Programming&amp;action=edit&amp;section=1" title="Edit section: Table of contents">edit</a>]</span> <span class="mw-headline" id="Table_of_contents">Table of contents</span></h2>
+<table class="plainlinks noprint messagebox growth" style="width:250px; float:right; clear:right; margin:0px; margin-left:10px;">
+<tr style="vertical-align:middle;">
+<td style="padding:0.1em; text-align:center; vertical-align:middle; width:45px; border:none;"><img alt="Gnome-mime-application-pdf.svg" src="//upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Gnome-mime-application-pdf.svg/40px-Gnome-mime-application-pdf.svg.png" width="40" height="40" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Gnome-mime-application-pdf.svg/60px-Gnome-mime-application-pdf.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Gnome-mime-application-pdf.svg/80px-Gnome-mime-application-pdf.svg.png 2x" /></td>
+<td style="color:black; text-align:left; vertical-align:middle; padding:0.5em; padding-left:0em; border:none;">
+<p>A <i><b><a href="//upload.wikimedia.org/wikipedia/commons/0/07/C_Programming.pdf" class="internal" title="C Programming.pdf">PDF version</a></b></i> is available. <small>(<a href="/wiki/File:C_Programming.pdf" title="File:C Programming.pdf">info</a>)</small></p>
+</td>
+</tr>
+</table>
+<table class="plainlinks noprint messagebox growth" style="width:250px; float:right; clear:right; margin:0px; margin-left:10px;">
+<tr style="vertical-align:middle;">
+<td style="padding:0.1em; text-align:center; vertical-align:middle; width:45px; border:none;"><img alt="Printer.svg" src="//upload.wikimedia.org/wikipedia/commons/thumb/2/23/Printer.svg/40px-Printer.svg.png" width="40" height="40" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/2/23/Printer.svg/60px-Printer.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/2/23/Printer.svg/80px-Printer.svg.png 2x" /></td>
+<td style="color:black; text-align:left; vertical-align:middle; padding:0.5em; padding-left:0em; border:none;">
+<p>A <i><b><a href="/wiki/C_Programming/Print_version" title="C Programming/Print version">printable version</a></b></i> of C Programming is available. <small>(<a class="external text" href="//en.wikibooks.org/w/index.php?title=C_Programming/Print_version&amp;action=edit">edit it</a>)</small></p>
+</td>
+</tr>
+</table>
+<table class="plainlinks noprint messagebox growth" style="width:250px; float:right; clear:right; margin:0px; margin-left:10px;">
+<tr style="vertical-align:middle;">
+<td style="padding:0.1em; text-align:center; vertical-align:middle; width:45px; border:none;"><img alt="Ebook reader icon.png" src="//upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Ebook_reader_icon.png/40px-Ebook_reader_icon.png" width="40" height="40" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Ebook_reader_icon.png/60px-Ebook_reader_icon.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Ebook_reader_icon.png/80px-Ebook_reader_icon.png 2x" /></td>
+<td style="color:black; text-align:left; vertical-align:middle; padding:0.5em; padding-left:0em; border:none;">
+<p>An <i><b><a href="/wiki/File:C_Programming_eBook_Reader.pdf" title="File:C Programming eBook Reader.pdf">E-Book Reader optimized PDF Version</a></b></i> is available.</p>
+</td>
+</tr>
+</table>
+<div class="noprint" style="float:right; width:250px; clear:right; margin:0 0 1em 1em;">
+<table style="background:#f9f9f9;border:solid #aaaaaa 1px;-moz-border-radius:5px;">
+<tr>
+<td width="50px">
+<p><img alt="Help-books-aj.svg aj ash 01.svg" src="//upload.wikimedia.org/wikipedia/commons/thumb/7/77/Help-books-aj.svg_aj_ash_01.svg/50px-Help-books-aj.svg_aj_ash_01.svg.png" width="50" height="50" style="vertical-align: middle" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/7/77/Help-books-aj.svg_aj_ash_01.svg/75px-Help-books-aj.svg_aj_ash_01.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/7/77/Help-books-aj.svg_aj_ash_01.svg/100px-Help-books-aj.svg_aj_ash_01.svg.png 2x" /></p>
+</td>
+<td width="385px">
+<div style="margin-left: auto; margin-right: auto; text-align: center; background-color:transparent">
+<form name="searchbox" id="searchbox" class="searchbox" action="/wiki/Special:Search">
+<p><input class="searchboxInput" name="search" type="text" value="" placeholder="" size="13" dir="ltr" /><input name="prefix" type="hidden" value="C Programming/" /><br />
+<input type="submit" name="fulltext" class="searchboxSearchButton" value="Search this book" /><input type="hidden" value="Search" name="fulltext" /></p>
+</form>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<h3><span class="editsection">[<a href="/w/index.php?title=C_Programming&amp;action=edit&amp;section=2" title="Edit section: Introduction">edit</a>]</span> <span class="mw-headline" id="Introduction">Introduction</span></h3>
+<dl>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="50% developed&#160; as of Mar 10, 2009"><img alt="50% developed&#160; as of Mar 10, 2009" src="//upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/9px-50%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/14px-50%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/18px-50%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/Why_learn_C%3F" title="C Programming/Why learn C?">Why Learn C</a></dd>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="50% developed&#160; as of Mar 10, 2009"><img alt="50% developed&#160; as of Mar 10, 2009" src="//upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/9px-50%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/14px-50%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/18px-50%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/History" title="C Programming/History">History</a></dd>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="50% developed&#160; as of Mar 10, 2009"><img alt="50% developed&#160; as of Mar 10, 2009" src="//upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/9px-50%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/14px-50%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/18px-50%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/What_you_need_before_you_can_learn" title="C Programming/What you need before you can learn">What you need before you can learn</a></dd>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="50% developed&#160; as of Mar 10, 2009"><img alt="50% developed&#160; as of Mar 10, 2009" src="//upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/9px-50%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/14px-50%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/18px-50%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/Using_a_Compiler" title="C Programming/Using a Compiler">Using a Compiler</a></dd>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="50% developed&#160; as of Mar 10, 2009"><img alt="50% developed&#160; as of Mar 10, 2009" src="//upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/9px-50%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/14px-50%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/18px-50%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/A_taste_of_C" title="C Programming/A taste of C">A Taste of C</a></dd>
+</dl>
+<h3><span class="editsection">[<a href="/w/index.php?title=C_Programming&amp;action=edit&amp;section=3" title="Edit section: Beginning C">edit</a>]</span> <span class="mw-headline" id="Beginning_C">Beginning C</span></h3>
+<dl>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="25% developed&#160; as of Sept 04, 2012"><img alt="25% developed&#160; as of Sept 04, 2012" src="//upload.wikimedia.org/wikipedia/commons/thumb/3/34/25%25.svg/9px-25%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/3/34/25%25.svg/14px-25%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/3/34/25%25.svg/18px-25%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/Intro_exercise" title="C Programming/Intro exercise">Intro Exercise</a></dd>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="75% developed&#160; as of June 17, 2012"><img alt="75% developed&#160; as of June 17, 2012" src="//upload.wikimedia.org/wikipedia/commons/thumb/4/49/75%25.svg/9px-75%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/4/49/75%25.svg/14px-75%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/4/49/75%25.svg/18px-75%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/Preliminaries" title="C Programming/Preliminaries">Preliminaries</a></dd>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="25% developed&#160; as of Mar 10, 2009"><img alt="25% developed&#160; as of Mar 10, 2009" src="//upload.wikimedia.org/wikipedia/commons/thumb/3/34/25%25.svg/9px-25%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/3/34/25%25.svg/14px-25%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/3/34/25%25.svg/18px-25%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/Compiling" title="C Programming/Compiling">Basics of Compilation</a></dd>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="100% developed&#160; as of Jul 15, 2010"><img alt="100% developed&#160; as of Jul 15, 2010" src="//upload.wikimedia.org/wikipedia/commons/thumb/c/ce/100%25.svg/9px-100%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/c/ce/100%25.svg/14px-100%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/ce/100%25.svg/18px-100%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/Structure_and_style" title="C Programming/Structure and style">Programming Structure and Style</a></dd>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="75% developed&#160; as of Mar 10, 2009"><img alt="75% developed&#160; as of Mar 10, 2009" src="//upload.wikimedia.org/wikipedia/commons/thumb/4/49/75%25.svg/9px-75%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/4/49/75%25.svg/14px-75%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/4/49/75%25.svg/18px-75%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/Variables" title="C Programming/Variables">Variables</a></dd>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="75% developed&#160; as of Mar 10, 2009"><img alt="75% developed&#160; as of Mar 10, 2009" src="//upload.wikimedia.org/wikipedia/commons/thumb/4/49/75%25.svg/9px-75%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/4/49/75%25.svg/14px-75%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/4/49/75%25.svg/18px-75%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/Simple_Input_and_Output" title="C Programming/Simple Input and Output" class="mw-redirect">Simple Input and Output</a></dd>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="50% developed&#160; as of Oct 29, 2012"><img alt="50% developed&#160; as of Oct 29, 2012" src="//upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/9px-50%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/14px-50%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/18px-50%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/Simple_math" title="C Programming/Simple math">Simple Math in C</a></dd>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="75% developed&#160; as of Mar 10, 2009"><img alt="75% developed&#160; as of Mar 10, 2009" src="//upload.wikimedia.org/wikipedia/commons/thumb/4/49/75%25.svg/9px-75%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/4/49/75%25.svg/14px-75%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/4/49/75%25.svg/18px-75%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/Further_math" title="C Programming/Further math">Further Math in C</a></dd>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="75% developed&#160; as of Mar 10, 2009"><img alt="75% developed&#160; as of Mar 10, 2009" src="//upload.wikimedia.org/wikipedia/commons/thumb/4/49/75%25.svg/9px-75%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/4/49/75%25.svg/14px-75%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/4/49/75%25.svg/18px-75%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/Control" title="C Programming/Control">Program Flow</a></dd>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="50% developed&#160; as of Mar 10, 2009"><img alt="50% developed&#160; as of Mar 10, 2009" src="//upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/9px-50%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/14px-50%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/18px-50%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/Procedures_and_functions" title="C Programming/Procedures and functions">Procedures and Functions</a></dd>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="50% developed&#160; as of Mar 10, 2009"><img alt="50% developed&#160; as of Mar 10, 2009" src="//upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/9px-50%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/14px-50%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/18px-50%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/Error_handling" title="C Programming/Error handling">Error Handling</a></dd>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="50% developed&#160; as of Mar 10, 2009"><img alt="50% developed&#160; as of Mar 10, 2009" src="//upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/9px-50%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/14px-50%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/18px-50%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/Preprocessor" title="C Programming/Preprocessor">The Preprocessor</a></dd>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="25% developed&#160; as of Mar 10, 2009"><img alt="25% developed&#160; as of Mar 10, 2009" src="//upload.wikimedia.org/wikipedia/commons/thumb/3/34/25%25.svg/9px-25%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/3/34/25%25.svg/14px-25%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/3/34/25%25.svg/18px-25%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/Libraries" title="C Programming/Libraries">Libraries</a></dd>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="50% developed&#160; as of Mar 10, 2009"><img alt="50% developed&#160; as of Mar 10, 2009" src="//upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/9px-50%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/14px-50%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/18px-50%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/Standard_libraries" title="C Programming/Standard libraries">Standard libraries</a></dd>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="75% developed&#160; as of Mar 10, 2009"><img alt="75% developed&#160; as of Mar 10, 2009" src="//upload.wikimedia.org/wikipedia/commons/thumb/4/49/75%25.svg/9px-75%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/4/49/75%25.svg/14px-75%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/4/49/75%25.svg/18px-75%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/File_IO" title="C Programming/File IO">File I/O</a></dd>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="75% developed&#160; as of Mar 10, 2009"><img alt="75% developed&#160; as of Mar 10, 2009" src="//upload.wikimedia.org/wikipedia/commons/thumb/4/49/75%25.svg/9px-75%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/4/49/75%25.svg/14px-75%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/4/49/75%25.svg/18px-75%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/Beginning_exercises" title="C Programming/Beginning exercises">Exercises</a></dd>
+</dl>
+<h3><span class="editsection">[<a href="/w/index.php?title=C_Programming&amp;action=edit&amp;section=4" title="Edit section: In-depth C Ideas">edit</a>]</span> <span class="mw-headline" id="In-depth_C_Ideas">In-depth C Ideas</span></h3>
+<dl>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="75% developed&#160; as of Mar 10, 2009"><img alt="75% developed&#160; as of Mar 10, 2009" src="//upload.wikimedia.org/wikipedia/commons/thumb/4/49/75%25.svg/9px-75%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/4/49/75%25.svg/14px-75%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/4/49/75%25.svg/18px-75%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/Arrays" title="C Programming/Arrays">Arrays &amp; Strings</a></dd>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="50% developed&#160; as of Mar 10, 2009"><img alt="50% developed&#160; as of Mar 10, 2009" src="//upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/9px-50%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/14px-50%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/18px-50%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/Pointers_and_arrays" title="C Programming/Pointers and arrays">Pointers and relationship to arrays</a></dd>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="50% developed&#160; as of Mar 10, 2009"><img alt="50% developed&#160; as of Mar 10, 2009" src="//upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/9px-50%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/14px-50%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/18px-50%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/Memory_management" title="C Programming/Memory management">Memory Management</a></dd>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="75% developed&#160; as of Mar 10, 2009"><img alt="75% developed&#160; as of Mar 10, 2009" src="//upload.wikimedia.org/wikipedia/commons/thumb/4/49/75%25.svg/9px-75%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/4/49/75%25.svg/14px-75%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/4/49/75%25.svg/18px-75%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/Strings" title="C Programming/Strings">String Manipulation</a></dd>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="50% developed&#160; as of Mar 10, 2009"><img alt="50% developed&#160; as of Mar 10, 2009" src="//upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/9px-50%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/14px-50%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/18px-50%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/Complex_types" title="C Programming/Complex types">C complex types</a></dd>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="50% developed&#160; as of Mar 10, 2009"><img alt="50% developed&#160; as of Mar 10, 2009" src="//upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/9px-50%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/14px-50%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/18px-50%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/Networking_in_UNIX" title="C Programming/Networking in UNIX">Sockets and Networking (UNIX)</a></dd>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="50% developed&#160; as of Mar 10, 2009"><img alt="50% developed&#160; as of Mar 10, 2009" src="//upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/9px-50%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/14px-50%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/18px-50%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/Common_practices" title="C Programming/Common practices">Common Practices</a></dd>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="25% developed&#160; as of Mar 10, 2009"><img alt="25% developed&#160; as of Mar 10, 2009" src="//upload.wikimedia.org/wikipedia/commons/thumb/3/34/25%25.svg/9px-25%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/3/34/25%25.svg/14px-25%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/3/34/25%25.svg/18px-25%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/Serialization" title="C Programming/Serialization">Serialization and X-Macros</a></dd>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="25% developed&#160; as of Feb 1, 2011"><img alt="25% developed&#160; as of Feb 1, 2011" src="//upload.wikimedia.org/wikipedia/commons/thumb/3/34/25%25.svg/9px-25%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/3/34/25%25.svg/14px-25%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/3/34/25%25.svg/18px-25%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/Coroutines" title="C Programming/Coroutines">Coroutines</a></dd>
+</dl>
+<h3><span class="editsection">[<a href="/w/index.php?title=C_Programming&amp;action=edit&amp;section=5" title="Edit section: C and Beyond">edit</a>]</span> <span class="mw-headline" id="C_and_Beyond">C and Beyond</span></h3>
+<dl>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="50% developed&#160; as of Mar 10, 2009"><img alt="50% developed&#160; as of Mar 10, 2009" src="//upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/9px-50%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/14px-50%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/c2/50%25.svg/18px-50%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/Particularities_of_C" title="C Programming/Particularities of C">Particularities of C</a></dd>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="25% developed&#160; as of Mar 10, 2009"><img alt="25% developed&#160; as of Mar 10, 2009" src="//upload.wikimedia.org/wikipedia/commons/thumb/3/34/25%25.svg/9px-25%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/3/34/25%25.svg/14px-25%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/3/34/25%25.svg/18px-25%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/Language_extensions" title="C Programming/Language extensions">Language Overloading and Extensions</a></dd>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="25% developed&#160; as of Mar 10, 2009"><img alt="25% developed&#160; as of Mar 10, 2009" src="//upload.wikimedia.org/wikipedia/commons/thumb/3/34/25%25.svg/9px-25%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/3/34/25%25.svg/14px-25%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/3/34/25%25.svg/18px-25%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/Mixing_languages" title="C Programming/Mixing languages">Combining Languages</a></dd>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="75% developed&#160; as of Oct 11, 2011"><img alt="75% developed&#160; as of Oct 11, 2011" src="//upload.wikimedia.org/wikipedia/commons/thumb/4/49/75%25.svg/9px-75%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/4/49/75%25.svg/14px-75%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/4/49/75%25.svg/18px-75%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/GObject" title="C Programming/GObject">Object Oriented Programming: The GObject System</a></dd>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="0% developed&#160; as of Mar 10, 2009"><img alt="0% developed&#160; as of Mar 10, 2009" src="//upload.wikimedia.org/wikipedia/commons/thumb/d/d6/00%25.svg/9px-00%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/d/d6/00%25.svg/14px-00%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/d/d6/00%25.svg/18px-00%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/Code_library" title="C Programming/Code library">Commented Source Code Library</a></dd>
+</dl>
+<h3><span class="editsection">[<a href="/w/index.php?title=C_Programming&amp;action=edit&amp;section=6" title="Edit section: Computer Science">edit</a>]</span> <span class="mw-headline" id="Computer_Science">Computer Science</span></h3>
+<p>The following are C adaptations of articles from the <a href="/wiki/Computer_programming" title="Computer programming" class="mw-redirect">Computer programming</a> book.</p>
+<dl>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="0% developed&#160; as of Mar 10, 2009"><img alt="0% developed&#160; as of Mar 10, 2009" src="//upload.wikimedia.org/wikipedia/commons/thumb/d/d6/00%25.svg/9px-00%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/d/d6/00%25.svg/14px-00%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/d/d6/00%25.svg/18px-00%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/Statements" title="C Programming/Statements">Statements</a></dd>
+</dl>
+<h3><span class="editsection">[<a href="/w/index.php?title=C_Programming&amp;action=edit&amp;section=7" title="Edit section: C Reference Tables">edit</a>]</span> <span class="mw-headline" id="C_Reference_Tables">C Reference Tables</span></h3>
+<p>This section has some tables and lists of C entities.</p>
+<dl>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="75% developed&#160; as of Mar 10, 2009"><img alt="75% developed&#160; as of Mar 10, 2009" src="//upload.wikimedia.org/wikipedia/commons/thumb/4/49/75%25.svg/9px-75%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/4/49/75%25.svg/14px-75%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/4/49/75%25.svg/18px-75%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/Reference_Tables" title="C Programming/Reference Tables">C References - The Whole List</a>
+<dl>
+<dd>
+<ul>
+<li><a href="/wiki/C_Programming/Reference_Tables#List_of_Keywords" title="C Programming/Reference Tables">C Keywords</a></li>
+<li><a href="/wiki/C_Programming/Reference_Tables#List_of_Standard_Headers" title="C Programming/Reference Tables">Standard C Headers</a></li>
+<li><a href="/wiki/C_Programming/Reference_Tables#Table_of_Operators" title="C Programming/Reference Tables">C Operator Precedence Table</a></li>
+<li><a href="/wiki/C_Programming/Reference_Tables#Table_of_Data_Types" title="C Programming/Reference Tables">C Data Types</a></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="0% developed&#160; as of Oct 5, 2011"><img alt="0% developed&#160; as of Oct 5, 2011" src="//upload.wikimedia.org/wikipedia/commons/thumb/d/d6/00%25.svg/9px-00%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/d/d6/00%25.svg/14px-00%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/d/d6/00%25.svg/18px-00%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/C_Reference" title="C Programming/C Reference">C Reference</a></dd>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="0% developed&#160; as of Oct 5, 2011"><img alt="0% developed&#160; as of Oct 5, 2011" src="//upload.wikimedia.org/wikipedia/commons/thumb/d/d6/00%25.svg/9px-00%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/d/d6/00%25.svg/14px-00%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/d/d6/00%25.svg/18px-00%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/POSIX_Reference" title="C Programming/POSIX Reference">POSIX Reference</a></dd>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="0% developed&#160; as of Oct 5, 2011"><img alt="0% developed&#160; as of Oct 5, 2011" src="//upload.wikimedia.org/wikipedia/commons/thumb/d/d6/00%25.svg/9px-00%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/d/d6/00%25.svg/14px-00%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/d/d6/00%25.svg/18px-00%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/Platform_Reference" title="C Programming/Platform Reference">Platform Reference</a></dd>
+<dd><span class="noprint"><a href="/wiki/Help:Development_stages" title="0% developed&#160; as of Mar 10, 2009"><img alt="0% developed&#160; as of Mar 10, 2009" src="//upload.wikimedia.org/wikipedia/commons/thumb/d/d6/00%25.svg/9px-00%25.svg.png" width="9" height="9" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/d/d6/00%25.svg/14px-00%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/d/d6/00%25.svg/18px-00%25.svg.png 2x" /></a></span> <a href="/wiki/C_Programming/Compilers" title="C Programming/Compilers">C Compilers Reference List</a></dd>
+</dl>
+<h3><span class="editsection">[<a href="/w/index.php?title=C_Programming&amp;action=edit&amp;section=8" title="Edit section: Appendices">edit</a>]</span> <span class="mw-headline" id="Appendices">Appendices</span></h3>
+<ul>
+<li><a href="/wiki/C_Programming/Index" title="C Programming/Index">Index</a></li>
+<li><a href="/wiki/C_Programming/Links" title="C Programming/Links">Links</a>
+<div class="metadata topicon" id="status-icon"><a href="/wiki/Help:Development_stages" title="100% developed"><img alt="100% developed" src="//upload.wikimedia.org/wikipedia/commons/thumb/c/ce/100%25.svg/24px-100%25.svg.png" width="24" height="24" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/c/ce/100%25.svg/36px-100%25.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/ce/100%25.svg/48px-100%25.svg.png 2x" /></a></div>
+</li>
+</ul>
+<p><br /></p>
+
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 2815/1000000
+Preprocessor generated node count: 10271/1500000
+Post-expand include size: 37051/2048000 bytes
+Template argument size: 5145/2048000 bytes
+Highest expansion depth: 35/40
+Expensive parser function count: 7/500
+-->
+
+<!-- Saved in parser cache with key enwikibooks:pcache:idhash:31445-0!*!0!default!!en!4!* and timestamp 20130214215354 -->
+</div>				<!-- /bodycontent -->
+								<!-- printfooter -->
+				<div class="printfooter">
+				Retrieved from "<a href="http://en.wikibooks.org/w/index.php?title=C_Programming&amp;oldid=2438192">http://en.wikibooks.org/w/index.php?title=C_Programming&amp;oldid=2438192</a>"				</div>
+				<!-- /printfooter -->
+												<!-- catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Subjects</a>: <ul><li><a href="/wiki/Category:C_Programming" title="Category:C Programming">C Programming</a></li><li><a href="/wiki/Category:C_programming_language" title="Category:C programming language">C programming language</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="/wiki/Category:Featured_books" title="Category:Featured books">Featured books</a></li><li><a href="/wiki/Category:Books_with_PDF_version" title="Category:Books with PDF version">Books with PDF version</a></li><li><a href="/wiki/Category:Books_with_print_version" title="Category:Books with print version">Books with print version</a></li><li><a href="/wiki/Category:C_programming_language/all_books" title="Category:C programming language/all books">C programming language/all books</a></li><li><a href="/wiki/Category:Computer_programming_languages/all_books" title="Category:Computer programming languages/all books">Computer programming languages/all books</a></li><li><a href="/wiki/Category:Computer_programming/all_books" title="Category:Computer programming/all books">Computer programming/all books</a></li><li><a href="/wiki/Category:Computer_science/all_books" title="Category:Computer science/all books">Computer science/all books</a></li><li><a href="/wiki/Category:Computing/all_books" title="Category:Computing/all books">Computing/all books</a></li><li><a href="/wiki/Category:Books_by_subject/all_books" title="Category:Books by subject/all books">Books by subject/all books</a></li><li><a href="/wiki/Category:Alphabetical/C" title="Category:Alphabetical/C">Alphabetical/C</a></li><li><a href="/wiki/Category:Completed_books" title="Category:Completed books">Completed books</a></li><li><a href="/wiki/Category:Books_by_completion_status/all_books" title="Category:Books by completion status/all books">Books by completion status/all books</a></li></ul></div></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+				<!-- debughtml -->
+								<!-- /debughtml -->
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<!-- header -->
+			<div id="mw-head" class="noprint">
+				
+<!-- 0 -->
+<div id="p-personal" role="navigation" class="">
+	<h3>Personal tools</h3>
+	<ul>
+<li id="pt-createaccount"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=C+Programming&amp;type=signup">Create account</a></li><li id="pt-login"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=C+Programming" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>	</ul>
+</div>
+
+<!-- /0 -->
+				<div id="left-navigation">
+					
+<!-- 0 -->
+<div id="p-namespaces" role="navigation" class="vectorTabs">
+	<h3>Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="/wiki/C_Programming"  title="View the content page [c]" accesskey="c">Book</a></span></li>
+					<li  id="ca-talk"><span><a href="/wiki/Talk:C_Programming"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+				</div>
+				<div id="right-navigation">
+					
+<!-- 0 -->
+<div id="p-views" role="navigation" class="vectorTabs">
+	<h3>Views</h3>
+	<ul>
+					<li id="ca-view" class="collapsible"><span><a href="/w/index.php?title=C_Programming&amp;stable=1" >Read</a></span></li>
+					<li id="ca-current" class="collapsible collapsible selected"><span><a href="/w/index.php?title=C_Programming&amp;stable=0&amp;redirect=no"  title="View this page with the pending changes [v]" accesskey="v">Latest draft</a></span></li>
+					<li id="ca-edit"><span><a href="/w/index.php?title=C_Programming&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="/w/index.php?title=C_Programming&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet">
+	<h3><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="/w/index.php" id="searchform">
+				<div id="simpleSearch">
+						<input name="search" title="Search Wikibooks [f]" accesskey="f" id="searchInput" />						<button type="submit" name="button" title="Search the pages for this text" id="searchButton"><img src="//bits.wikimedia.org/static-1.21wmf9/skins/vector/images/search-ltr.png?303-4" alt="Search" width="12" height="13" /></button>								<input type='hidden' name="title" value="Special:Search"/>
+		</div>
+	</form>
+</div>
+
+<!-- /2 -->
+				</div>
+			</div>
+			<!-- /header -->
+			<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo" role="banner"><a style="background-image: url(//upload.wikimedia.org/wikibooks/en/b/bc/Wiki.png);" href="/wiki/Main_Page"  title="Visit the main page"></a></div>
+				<!-- /logo -->
+				
+<!-- Navigation -->
+<div class="portal" role="navigation" id='p-Navigation'>
+	<h3>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+			<li id="n-help"><a href="/wiki/Help:Contents" title="Find help on how to use and edit Wikibooks">Help</a></li>
+			<li id="n-Browse"><a href="/wiki/Wikibooks:Card_Catalog_Office" title="Check out what Wikibooks has to offer">Browse</a></li>
+			<li id="n-Cookbook"><a href="/wiki/Cookbook:Table_of_Contents" title="Learn recipes from around the world">Cookbook</a></li>
+			<li id="n-Wikijunior"><a href="/wiki/Wikijunior" title="Books for children">Wikijunior</a></li>
+			<li id="n-Featured-books"><a href="/wiki/Wikibooks:Featured_books" title="The best of Wikibooks">Featured books</a></li>
+			<li id="n-recentchanges"><a href="/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-sitesupport"><a href="//donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikibooks.org&amp;uselang=en" title="Support Wikibooks">Donations</a></li>
+			<li id="n-randomrootpage"><a href="/wiki/Special:Randomrootpage">Random book</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- /Navigation -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- Community -->
+<div class="portal" role="navigation" id='p-Community'>
+	<h3>Community</h3>
+	<div class="body">
+		<ul>
+			<li id="n-Reading-room"><a href="/wiki/Wikibooks:Reading_room" title="Discuss Wikibooks-related questions and concerns with others">Reading room</a></li>
+			<li id="n-portal"><a href="/wiki/Wikibooks:Community_Portal" title="Find your way around the Wikibooks community">Community portal</a></li>
+			<li id="n-currentevents"><a href="/wiki/Wikibooks:Reading_room/Bulletin_Board" title="Important community news">Bulletin Board</a></li>
+			<li id="n-maintenance"><a href="/wiki/Wikibooks:Maintenance" title="Frequent tasks that you can help with">Help out!</a></li>
+			<li id="n-Policies-and-guidelines"><a href="/wiki/Wikibooks:Policies_and_guidelines" title="Pages detailing important rules and procedures">Policies and guidelines</a></li>
+			<li id="n-contact"><a href="/wiki/Wikibooks:Contact_us" title="Alternative methods of communication">Contact us</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- /Community -->
+
+<!-- TOOLBOX -->
+<div class="portal" role="navigation" id='p-tb'>
+	<h3>Toolbox</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="/wiki/Special:WhatLinksHere/C_Programming" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/C_Programming" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-upload"><a href="//commons.wikimedia.org/wiki/Commons:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
+			<li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-permalink"><a href="/w/index.php?title=C_Programming&amp;oldid=2438192" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="/w/index.php?title=C_Programming&amp;action=info">Page information</a></li>
+<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=C_Programming&amp;id=2438192" title="Information on how to cite this page">Cite this page</a></li>		</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+
+<!-- Sister projects -->
+<div class="portal" role="navigation" id='p-Sister_projects'>
+	<h3>Sister projects</h3>
+	<div class="body">
+		<ul>
+			<li id="n-Wikipedia"><a href="//en.wikipedia.org/wiki/Main_Page">Wikipedia</a></li>
+			<li id="n-Wikiversity"><a href="//en.wikiversity.org/wiki/Wikiversity:Main_Page">Wikiversity</a></li>
+			<li id="n-Wiktionary"><a href="//en.wiktionary.org/wiki/Wiktionary:Main_Page">Wiktionary</a></li>
+			<li id="n-Wikiquote"><a href="//en.wikiquote.org/wiki/Main_Page">Wikiquote</a></li>
+			<li id="n-Wikisource"><a href="//en.wikisource.org/wiki/Main_Page">Wikisource</a></li>
+			<li id="n-Wikinews"><a href="//en.wikinews.org/wiki/Main_Page">Wikinews</a></li>
+			<li id="n-Wikivoyage"><a href="//en.wikivoyage.org/wiki/Main_Page">Wikivoyage</a></li>
+			<li id="n-Commons"><a href="//commons.wikimedia.org/wiki/Main_Page">Commons</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- /Sister projects -->
+
+<!-- coll-print_export -->
+<div class="portal" role="navigation" id='p-coll-print_export'>
+	<h3>Print/export</h3>
+	<div class="body">
+		<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=C+Programming" title="Create a book or page collection" rel="nofollow">Create a collection</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=C+Programming&amp;oldid=2438192&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=C_Programming&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>	</div>
+</div>
+
+<!-- /coll-print_export -->
+			</div>
+			<!-- /panel -->
+		</div>
+		<!-- footer -->
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 11 November 2012, at 00:59.</li>
+											<li id="footer-info-copyright">Text is available under the <a rel="license" href="//en.wikibooks.org/wiki/Wikibooks:Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply. See <a href="//wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="//wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="/wiki/Wikibooks:Welcome" title="Wikibooks:Welcome">About Wikibooks</a></li>
+											<li id="footer-places-disclaimer"><a href="/wiki/Wikibooks:General_disclaimer" title="Wikibooks:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-mobileview"><a href="http://en.m.wikibooks.org/wiki/C_Programming" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-copyrightico">
+						<a href="//wikimediafoundation.org/"><img src="//bits.wikimedia.org/images/wikimedia-button.png" width="88" height="31" alt="Wikimedia Foundation"/></a>
+					</li>
+					<li id="footer-poweredbyico">
+						<a href="//www.mediawiki.org/"><img src="//bits.wikimedia.org/static-1.21wmf9/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		<script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script src="//bits.wikimedia.org/en.wikibooks.org/load.php?debug=false&amp;lang=en&amp;modules=skins.vector&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.loader.load(["mobile.desktop","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.extlinks","mw.MwEmbedSupport.style","ext.vector.collapsibleNav","ext.vector.collapsibleTabs","ext.vector.editWarning","mw.PopUpMediaTransform","ext.flaggedRevs.advanced"], null, true);
+}</script>
+<script src="/w/index.php?title=MediaWiki:Gadget-commons-file.js&amp;action=raw&amp;ctype=text/javascript&amp;2172780"></script>
+<script src="/w/index.php?title=MediaWiki:Gadget-toolboxcompat.js&amp;action=raw&amp;ctype=text/javascript&amp;2161931"></script>
+<script src="//bits.wikimedia.org/en.wikibooks.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<!-- Served by mw1044 in 0.162 secs. -->
+	</body>
+</html>

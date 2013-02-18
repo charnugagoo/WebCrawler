@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Webteam :: Support Ticket System</title>
+    <link rel="stylesheet" href="./styles/main.css" media="screen">
+    <link rel="stylesheet" href="./styles/colors.css" media="screen">
+</head>
+<body>
+<div id="container">
+    <div id="header">
+        <a id="logo" href="index.php" title="Support Center"><img src="./images/logo2.jpg" border=0 alt="Support Center"></a>
+        <p><span>SUPPORT TICKET</span> SYSTEM</p>
+    </div>
+    <ul id="nav">
+                  <li><a class="ticket_status" href="tickets.php">Ticket Status</a></li>
+                  <li><a class="new_ticket" href="open.php">New Ticket</a></li>
+         <li><a class="home" href="index.php">Home</a></li>
+    </ul>
+    <div id="content">
+<div id="index">
+<h1>Welcome to the support center</h1>
+<p class="big">In order to streamline support requests and better serve you, we utilize a support ticket system. Every support request is assigned a unique ticket number which you can use to track the progress and responses online. For your reference we provide complete archives and history of all your support requests. A valid email address is required.</p>
+<hr />
+<br />
+<div class="lcol">
+  <img src="./images/new_ticket_icon.jpg" width="48" height="48" align="left" style="padding-bottom:150px;">
+  <h3>Open A New Ticket</h3>
+  Please provide as much detail as possible so we can best assist you. To update a previously submitted ticket, please use the form to the right.
+  <br /><br />
+  <form method="link" action="open.php">
+  <input type="submit" class="button2" value="Open New Ticket">
+  </form>
+</div>
+<div class="rcol">
+  <img src="./images/ticket_status_icon.jpg" width="48" height="48" align="left" style="padding-bottom:150px;">
+  <h3>Check Ticket Status</h3>We provide archives and history of all your support requests complete with responses.
+  <br /><br />
+  <form class="status_form" action="login.php" method="post">
+    <fieldset>
+      <label>Email:</label>
+      <input type="text" name="lemail">
+    </fieldset>
+    <fieldset>
+     <label>Ticket#:</label>
+     <input type="text" name="lticket">
+    </fieldset>
+    <fieldset>
+        <label>&nbsp;</label>
+         <input type="submit" class="button2" value="Check Status">
+    </fieldset>
+  </form>
+</div>
+<div class="clear"></div>
+<br />
+</div>
+<br />
+ <div style="clear:both"></div> 
+ </div>
+ <div id="footer">Copyright &copy; osTicket.com. All rights reserved</div>
+ <div align="center">
+    <!--> As a show of support, we ask that you leave powered by osTicket link to help spread the word. Thank you! -->
+     <a id="powered_by" href="http://osticket.com"><img src="./images/poweredby.jpg" width="126" height="23" alt="Powered by osTicket"></a></div>
+</div>
+</body>
+</html>

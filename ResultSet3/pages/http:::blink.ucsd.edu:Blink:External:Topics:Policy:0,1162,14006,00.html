@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" /><title>Single Sign-On</title><meta content="University of California, San Diego" name="ORGANIZATION" /><meta content="index,follow,noarchive" name="robots" /><meta content="Faculty &amp; Staff" name="SITE" /><meta content="" name="SUBSITE" /><meta content="" name="CONTENTID" /><meta content="" name="PAGETITLE" /><meta content="Learn how Single Sign-On works and how it affects UCSD Business Systems users." name="DESCRIPTION" /><link href="../../../_resources/active-apple/css/identity-2_1.css" media="all" rel="stylesheet" type="text/css" /><link href="../../../_resources/active-apple/css/blink.css" media="all" rel="stylesheet" type="text/css" /><link href="../../../_resources/active-apple/css/print.css" media="print" rel="stylesheet" type="text/css" /><script src="../../../_resources/active-apple/js/sonofsuckerfish.js" type="text/javascript" ></script><script src="../../../_resources/active-apple/js/jquery-1.3.2.min.js" type="text/javascript" ></script><script src="../../../_resources/active-apple/js/accordion.js" type="text/javascript" ></script><script src="../../../_resources/active-apple/js/faq.js" type="text/javascript" ></script><script src="../../../_resources/active-apple/js/sso_manager.js" type="text/javascript" ></script><script src="http://www.ucsd.edu/common/_emergency-broadcast/message.js" type="text/javascript" ></script>
+</head>
+
+<body>
+<div id="uc-emergency" ></div>
+<div id="tdr_login">
+  <!-- Start page controls -->                            
+  <span class="tdr_login_content"> </span>                        
+  <!-- End page controls -->     
+</div>
+
+<div id="tdr_title">
+  <div id="tdr_title_content">
+    <div id="tdr_title_ucsd_title"><a href="http://www.ucsd.edu/">UC San Diego</a></div>
+    <div id="tdr_title_page_title"><a href="http://blink.ucsd.edu">Faculty &amp; Staff</a></div>
+  </div>
+</div>
+
+<div id="tdr_search2">
+  <div id="tdr_search2_content">
+        <script type="text/javascript">
+ 
+        var radioHandler = function() {
+                                if (this.checked == true) {
+                                        this.className = "active";
+                                        $("#" + this.id + "-label").each(function() {
+                                                this.className = "active";
+                                        });
+                                } else {
+                                        this.className = "inactive";
+                                        $("#" + this.id + "-label").each(function() {
+                                                this.className = "inactive";
+                                        });
+                                }
+        }
+        
+        $(document).ready(function() {
+                $("#tdr_search2_content input[type=radio]").click(function() {
+                        $("input[type=radio]", this.form).each(radioHandler);
+                });
+                $("#tdr_search2_content input[type=radio]").each(radioHandler);
+        });
+</script><form action="http://www-act.ucsd.edu/blinksearch/search" id="sitesearch" method="get" style="float: left;">
+<fieldset><legend>Search</legend> <label>Search</label> <span id="site-1"><input checked="checked" id="search-scope1" name="search-scope" style="border: 0px none; width: 10px;" type="radio" value="blink" /> <label for="search-scope1" id="search-scope1-label">This Site</label> &#160;</span> <span id="site-2"><input id="search-scope2" name="search-scope" style="border: 0px none; width: 10px;" type="radio" value="default_collection" /> <label for="search-scope2" id="search-scope2-label">All UCSD Sites</label> &#160;</span> <input name="q" size="20" type="text" /> <button type="submit">Search!</button></fieldset>
+</form>
+<form action="http://act.ucsd.edu/directory/search" id="peoplesearch" method="get" style="float: right;">
+<fieldset><legend>Find Faculty/Staff</legend> <label for="search-scope3">Find Faculty/Staff</label> <input name="jlinkevent" type="hidden" value="Redirect" /> <input name="entry" size="20" type="text" /> <button type="submit">Search!</button></fieldset>
+</form>     
+  </div>
+</div>
+
+<div id="blink_nav">
+  <div id="blink_nav_content">
+  <!--googleoff:index-->
+        <a href="../../../index.html" id="blink_nav_logo_link"><img alt="Blink Logo" id="blink_nav_logo" src="http://blink.ucsd.edu/_images/homepage/blink_logo.gif" /></a> 
+<div id="blink_nav_links"><a href="http://www.ucsd.edu/_about/a-to-z-site-index/index.html">A-Z Sites</a> <a href="../../help-desk/directory/departments-quick/index.html">Department Index</a> <a href="http://www.ucsd.edu/directory/search">Find People - Advanced Search</a></div>
+<div>
+<ul id="blink_nav_list">
+<li><span>Blink Topics</span> 
+<ul>
+<li><a href="../../../buy-pay/index.html">Buy &amp; Pay</a></li>
+<li><a href="../../../facilities/index.html">Facilities &amp; Services</a></li>
+<li><a href="../../../faculty/index.html">Faculty Resources</a></li>
+<li><a href="../../../finance/index.html">Finance</a></li>
+<li><a href="../../../HR/index.html">Human Resources</a></li>
+<li><a href="../../../research/index.html">Research</a></li>
+<li><a href="../../../safety/index.html">Safety</a></li>
+<li><a href="../../../instructors/index.html">Student / Class Info</a></li>
+<li><a href="../../index.html">Technology</a></li>
+<li><a href="../../../travel/index.html">Travel</a></li>
+</ul>
+</li>
+<li><span>Personal Tools</span> 
+<ul>
+<li><a href="https://atyourserviceonline.ucop.edu/ayso/">At Your Service via AYSO</a></li>
+<li><a href="http://ayso.ucsd.edu">At Your Service via SSO</a></li>
+<li><a href="http://atyourservice.ucop.edu/applications/total_comp/index.php">Compensation Calculator</a></li>
+<li><a href="http://edben.ucsd.edu">Educational Benefits</a></li>
+<li><a href="https://jobs.ucsd.edu/bulletin/default.aspx">Job Bulletin</a></li>
+<li><a href="https://act.ucsd.edu/mydirectory/updater">My Directory</a></li>
+<li><a href="http://myleavebalances.ucsd.edu">My LeaveBalances</a></li>
+<li><a href="http://mytime.ucsd.edu">My Time (Online)</a></li>
+<li><a href="https://act.ucsd.edu/employeeTimesheets/timesheets">My Time (Paper)</a></li>
+<li><a href="http://uclearning.ucsd.edu">My Training</a></li>
+<li><a href="http://mytravel.ucsd.edu">My Travel</a></li>
+<li><a href="http://skillportsso.ucsd.edu/">SkillSoft eLearning</a></li>
+<li><a href="http://uclearning.ucsd.edu">UC Learning Center</a></li>
+<li class="more"><a href="../../../_tool-page/index.html">All tools</a></li>
+</ul>
+</li>
+<li><span>Business Tools</span> 
+<ul>
+<li><a href="http://academicaffairs.ucsd.edu/aps/apol/">AP On-Line</a></li>
+<li><a href="http://cams.ucsd.edu/">CAMS</a></li>
+<li><a href="http://booktravel.ucsd.edu/">Connexxus</a></li>
+<li><a href="http://employeelink.ucsd.edu/">EmployeeLink</a></li>
+<li><a href="https://act.ucsd.edu/financial">FinancialLink</a></li>
+<li><a href="http://marketplace.ucsd.edu/">Marketplace</a></li>
+<li><a href="http://myapprovals.ucsd.edu">MyApprovals</a></li>
+<li><a href="http://mydashboard.ucsd.edu/">MyDashboard</a></li>
+<li><a href="http://myevents.ucsd.edu/">MyEvents</a></li>
+<li><a href="http://myfunds.ucsd.edu">MyFunds</a></li>
+<li><a href="http://mymobilebill.ucsd.edu">MyMobileBill</a></li>
+<li><a href="http://mytravel.ucsd.edu">MyTravel</a></li>
+<li><a href="http://joblink.ucsd.edu/ojd/default.aspx">Online Job Description</a></li>
+<li><a href="https://act.ucsd.edu/studentdirectory/search">Student Directory</a></li>
+<li><a href="http://hr.ucsd.edu/tpp/">Title &amp; Pay Look-up</a></li>
+<li><a href="../../../safety/emergencies/preparedness/get-ready/ucready.html">UC Ready</a></li>
+<li><a href="http://mail.ucsd.edu/">UCSD e-mail</a></li>
+<li class="more"><a href="../../../sponsor/blink/forms.html">Forms</a></li>
+<li class="more"><a href="../../../_tool-page/index.html">All tools</a></li>
+</ul>
+</li>
+<li><span>Instruction Tools</span> 
+<ul>
+<li><a href="http://www.assist.org/web-assist/welcome.html">ASSIST</a></li>
+<li><a href="http://www.ucsd.edu/portal/cgi-bin/blink.pl/4/faculty/student/advanced_class_list.pl">Class lists</a></li>
+<li><a href="http://acms.ucsd.edu/faculty/classroom-support/classroom-details.html">Classroom details</a></li>
+<li><a href="https://act.ucsd.edu/studentDarsFacultyAudit/viewgroup.htm">View DARS audits</a></li>
+<li><a href="http://egrades.ucsd.edu/">eGrades</a></li>
+<li><a href="http://www.ucsd.edu/portal/cgi-bin/blink.pl/4/faculty/resource/enroll_list.pl">Enrollment/waitlists</a></li>
+<li><a href="http://www.ucsd.edu/portal/cgi-bin/blink.pl/4/faculty/student/student_name_lookup.pl">Find a student</a></li>
+<li><a href="http://ucsd.edu/catalog/">General Catalog</a></li>
+<li><a href="http://www.ucsd.edu/portal/cgi-bin/blink.pl/4/faculty/student/major_list.pl">Majors list</a></li>
+<li><a href="http://www.ucsd.edu/portal/cgi-bin/blink.pl/4/faculty/student/minor_list.pl">Minors list</a></li>
+<li><a href="http://www.ucsd.edu/portal/cgi-bin/blink.pl/4/faculty/queries.html">Queries</a></li>
+<li><a href="https://act.ucsd.edu/studentRegistration/status?registrationEvent=checkStatus">Registration status</a></li>
+<li><a href="http://www.ucsd.edu/portal/cgi-bin/blink.pl/1/faculty/schedule_of_classes.pl">Schedule of Classes</a></li>
+<li><a href="http://ted.ucsd.edu/">Ted</a></li>
+<li><a href="http://www.ucsd.edu/portal/cgi-bin/blink.pl/4/faculty/student/audit/">Term audit</a></li>
+<li class="more"><a href="../../../_tool-page/index.html">All tools</a></li>
+</ul>
+</li>
+<li><span>Research Tools</span> 
+<ul class="last">
+<li><a href="https://act.ucsd.edu/GoogleResearchDirectory/research">Faculty Expertise</a></li>
+<li><a href="https://act.ucsd.edu/financial">FinancialLink</a></li>
+<li><a href="https://act.ucsd.edu/proposallog/proposallog">Get Proposal #</a></li>
+<li><a href="http://myeffort.ucsd.edu">MyEffort</a></li>
+<li><a href="http://myfunds.ucsd.edu">MyFunds</a></li>
+<li><a href="http://ehs.ucsd.edu/myresearchsafety/">My Research Safety</a></li>
+<li><a href="http://mytravel.ucsd.edu">MyTravel</a></li>
+<li><a href="https://act.ucsd.edu/sepr/eprs">Proposal Repository</a></li>
+<li><a href="http://ora.ucsd.edu/sharedfacilities/">Shared Facilities</a></li>
+<li><a href="../../../_tool-page/index.html">All tools</a></li>
+</ul>
+</li>
+</ul>
+</div> 
+  <!--googleon:index-->       
+  </div>
+</div>
+
+<div id="tdr_crumbs">
+  <div id="tdr_crumbs_content">
+    <ul id="tdr_crumbs_list"><li><a href="../../../index.html">Blink Home</a>&#160;</li><li><a href="../../index.html">Technology</a>&#160;</li><li><a href="../index.html">Security</a>&#160;</li><li>Single Sign-On</li></ul>     
+  </div>
+</div>
+
+<div class="tdr_fonts" id="tdr_content"><div id="tdr_content_content"><div id="blink_article_content"><h1>Single Sign-On</h1><div class="article_info"><div class="article_updated_at">
+        Last updated
+        February 6, 2013 4:48:45 PM PST</div><div class="article_feedback">Give
+                <a href="http://www-act.ucsd.edu/cwp/feedback/tool/blink" onclick="window.open('http://www-act.ucsd.edu/cwp/feedback/tool/blink','DYGWYW','menubar=0,resizable=1,scrollbars=1,width=450,height=640')" target="DYGWYW">more feedback</a></div></div><img class="figure_right" src="../../../_images/technology-tab/tech285_sso.jpg" /><p class="subhead">Learn how the Single Sign-On process allows UCSD faculty and staff to enter a user ID and password just&#160;once for&#160;access to a number of campus systems.</p><p>With Single Sign-On (also called SSO), one ID and password authenticates your identity and access rights, giving you entry to a set of campus Business Systems. With SSO, you sign in once and don't have to sign in again &#8212; until you sign out or remain idle for a period of time and close the browser session.</p>
+<h2>Business Systems involved include:</h2>
+<ul>
+<li><a href="https://altng.ucsd.edu">AccessLinkTNG</a></li>
+<li><a href="http://ayso.ucsd.edu">At Your Service Online</a></li>
+<li><a href="https://www-act.ucsd.edu/bsl/home">BudgetLink</a></li>
+<li><a href="http://cwo.ucsd.edu/cms/">Campus CMS</a></li>
+<li><a href="http://datalink.ucsd.edu">DataLink</a></li>
+<li><a href="http://employeelink.ucsd.edu">EmployeeLink</a></li>
+<li><a href="http://financiallink.ucsd.edu">FinancialLink</a></li>
+<li><a href="http://newmarketplace.ucsd.edu">Marketplace</a></li>
+<li><a href="../../help-desk/applications/myservices/mydashboard/index.html">MyDashboard Overview</a></li>
+<li><a href="http://myleavebalances.ucsd.edu">MyLeaveBalances</a></li>
+<li><a href="http://mytraining.ucsd.edu">MyTraining</a></li>
+<li><a href="../../help-desk/applications/myservices/index.html">Other MyServices</a></li>
+<li><a href="http://travellink.ucsd.edu">TravelLink</a></li>
+<li><a href="http://tritonlink.ucsd.edu">TritonLink</a></li>
+<li><a href="http://uclearning.ucsd.edu/">UC Learning Center</a></li>
+</ul>
+<p><strong>Note:</strong></p>
+<ul>
+<li>Some systems require prior <a href="business.html">authorization/ training</a>.</li>
+<li>See <a href="../../help-desk/applications/link-family/BS/index.html">Business Systems/ Link Family</a> for a complete list. Other campus systems and services will be added over time.</li>
+<li>You must use a <a href="../passwords/changing.html">different password</a> for campus e-mail and network/ departmental systems, as they are not coordinated with Single Sign-On.</li>
+<li>You will need a valid <a href="../../email/tasks/get-address.html">UCSD e-mail address</a> (abcd@ucsd.edu, not abcd@dept.ucsd.edu) and an active, paid appointment to register a new Single Sign-On account.</li>
+</ul>
+<table border="0">
+<tbody>
+<tr>
+<td valign="top">
+<h2>How it works</h2>
+<p>When you access any of the participating UCSD Business Systems, a sign-in page, as shown here, will appear (click the image for a larger view). By signing in, you get access to all the systems you're <a href="../passwords/rights.html">authorized</a> to use.</p>
+</td>
+<td><a href="../../../_images/import/4/4358ar.jpg" onclick="popup = window.open('','popup',centeredPopupCoords(700,500)+',width=700,height=650,location=1,status=1,directories=1,toolbar=1,menubar=1,resizable=1,scrollbars=1')" target="popup"><img alt="New system sign-in screen. Click for larger view." border="1" class="figure_right" hspace="5" src="../../../_images/import/4/4359ar.jpg" vspace="5" /></a></td>
+</tr>
+</tbody>
+</table>
+<h2>How to register</h2>
+<p>To register as a new user, read these <a href="register.html">simple instructions</a>.</p><div class="blink_question">Contact your <a href="https://altng.ucsd.edu/extras/dsaSearch.jsp">Department Security Administrator (DSA)</a> or the <a href="mailto:acthelp@ucsd.edu">ACT Help Desk</a> at (858) 534-1853.</div><p><strong>Note:</strong> This page has a friendly link that&#8217;s easy to remember: <a href="http://blink.ucsd.edu/go/sso">http://blink.ucsd.edu/go/sso</a></p></div><div id="blink_article_supplement"><h2 class="blink_topic"><a href="../../index.html">Technology</a></h2><h3 class="blink_subtopic"><a href="../index.html">Security</a></h3><ul id="blink_page_nav"><li class=""><a href="../phishing.html">Phishing</a></li><li class=""><a href="../network/index.html">Network Security</a></li><li class=""><a href="../firewall/index.html">Firewalls</a></li><li class=""><a href="../mobile-security.html">Mobile Device Security</a></li><li class=""><a href="../personal/index.html">Personal Information</a></li><li class=""><a href="../cloud-security.html">Cloud Security</a></li><li class=""><a href="../social-media-security.html">Social Media and Security</a></li><li class=""><a href="../passwords/index.html">Passwords &amp; Access</a></li><li class="expanded active">Single Sign-On<ul><li class=""><a href="register.html">How to Self-Register</a></li><li class=""><a href="business.html">Business Systems</a></li><li class=""><a href="reset.html">Reset Your Password</a></li></ul></li><li class=""><a href="../DMCA.html">DMCA and You</a></li><li class=""><a href="../CIRT/index.html">Computer Incident Response Team</a></li><li class=""><a href="../DSA/index.html">Departmental Security Administrator</a></li><li class=""><a href="../principles-it-security.html">IT Security</a></li><li class=""><a href="../password-reset.html">Campus-wide Password Reset</a></li><li class=""><a href="../password-recovery.html">Password Recovery</a></li></ul><div class="rb210blue">
+<div class="rbcontent">
+<form action="http://www-act.ucsd.edu/blinksearch/search" method="get"><label for="blink_search" style="display:none;">Search terms</label> <input class="blink_input" id="blink_search" name="q" onblur="if(this.value=='')this.value='Search Blink';" onfocus="this.value='';" value="Search Blink" /> <button class="blink_submit" type="submit">Search!</button></form>
+</div>
+</div><div class="rb210green"><div class="rbcontent"><h3>Departments</h3><hr /><p><a href="../../../sponsor/ACT/index.html">ACT (Administrative Computing and Telecommunications)</a></p></div></div><div class="rb210orange"><div class="rbcontent"><h3>See Also</h3><hr /><p><a href="../../help-desk/applications/link-family/list.html">Link Family</a></p><p><a href="https://altng.ucsd.edu">AccessLinkTNG</a></p><p><a href="../../help-desk/policies/responsible.html">Responsible Computing Use Policy</a></p><p><a href="../../email/tasks/get-address.html">E-mail: Getting a UCSD Address</a></p><p><a href="../../../HR/benefits/AYSO/SSO.html">How to Use Single Sign-On to Access At Your Service Online</a></p></div></div></div></div></div>    
+
+<div id="tdr_footer">
+  <div id="tdr_footer_content">
+    <div id="tdr_address"><span id="tdr_address_place">UC San Diego</span> <span id="tdr_address_street">9500 Gilman Dr.</span> <span id="tdr_address_city_state_zip">La Jolla, CA 92093</span> <span id="tdr_address_phone">(858) 534-2230</span></div>
+<div id="tdr_copyright">Copyright &#169;2012 Regents of the University of California. All rights reserved.</div>
+<ul id="tdr_footer_links">
+<li id="tdr_footer_t_and_c"><a href="http://www.ucsd.edu/_about/legal/index.html">Terms &amp; Conditions</a></li>
+<li id="tdr_footer_t_and_c"><a href="http://www-act.ucsd.edu/cwp/feedback/tool/blink" onclick="window.open('http://act.ucsd.edu/cwp/feedback/tool/blink','DYGWYW','menubar=0,resizable=1,scrollbars=1,width=450,height=640')" target="DYGWYW">Feedback</a></li>
+<li id="tdr_footer_t_and_c"><a href="../../../sponsor/blink/index.html">About Us</a></li>
+<li id="tdr_footer_t_and_c"><img alt="Disability Icon" hspace="0" src="http://www.ucsd.edu/common/_resources/current/images/global/blue-yellow-accessibility-icon.gif" style="margin: 0pt;" />&#160;<a href="http://disabilities.ucsd.edu/">Disability Resources</a></li>
+<li id="tdr_footer_feedback"><a href="http://ucsd.edu/emergency/">Emergency Status<br />
+</a></li>
+</ul>
+<script src="http://www.google-analytics.com/ga.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+var pageTracker;
+setTimeout('startGA();', 500);
+function startGA()
+{
+pageTracker = _gat._getTracker("UA-3409104-3");
+pageTracker._trackPageview();
+}
+</script>
+  </div>
+</div>
+</body>
+</html>

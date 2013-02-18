@@ -1,0 +1,788 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<META http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="Description" content="Dota 2 - Dota 2: Early Access PackDota 2 is a Free to Play game, that is not yet fully released. The game is constantly being updated with new heroes and new features. The Early Access Holiday Pack is your opportunity to get in the game now. Your purchase includes an Early Access Pass to Dota 2 in addition to the following in-game items! Mighty Boar Courier Juggernaut - Traveler on the High Plains Set: Stoic Mask of the High Plains Wolf Cape of the High Plains Aspect Wraps of the High Plains Long-Fang the Grey Blade Sven - Swordmaster of the Vigil Set: Tayrnhelm of the Swordmaster Girth of the Swordmaster Fluted Guard of the Swordmaster Grip of the Swordmaster Witchdoctor - 'Staff of the Old Doctor' &amp; 'Wooden Fetish Mask' About the GameDota began as a user-made modification for Warcraft 3 and has grown into one of the most played online games in the world. Following in the tradition of Counter-Strike, Day of Defeat, Team Fortress, Portal, and Alien Swarm, Dota 2 is the result of Valve hiring the community developers who built the mod and giving them the chance to finally build a full product out of their idea with the help of a professional team of developers and artists at Valve. As for the gameplay, it’s a little hard to describe. The camera is set in the traditional RTS perspective, but it wouldn’t be fair to call Dota an RTS. And while each hero starts at level 1, and many times hits the level cap of 25, it wouldn’t be fair to call it an RPG. Lots of people have tried to assign various genre names to Dota, but we think Action RTS is probably the most descriptive. And while we don’t spend a lot of time trying to figure out what genre the game is inventing, we can’t stop playing it internally!">
+	<title>Steam Community :: Dota 2</title>
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+	<link href="http://cdn.steamcommunity.com/public/shared/css/buttons.css?v=3143806127" rel="stylesheet" type="text/css">
+<link href="http://cdn.steamcommunity.com/public/css/skin_1/global.css?v=1088990813&client=0" rel="stylesheet" type="text/css">
+<link href="http://cdn.steamcommunity.com/public/shared/css/apphub.css?v=511849319" rel="stylesheet" type="text/css">
+<link href="http://cdn.steamcommunity.com/public/css/skin_1/modalContent.css?v=973400107" rel="stylesheet" type="text/css">
+<link href="http://cdn.steamcommunity.com/public/css/skin_1/workshop.css?v=2681919303" rel="stylesheet" type="text/css">
+<link href="http://cdn.steamcommunity.com/public/css/skin_1/apphub_home.css?v=593535767" rel="stylesheet" type="text/css">
+<link href="http://cdn.steamcommunity.com/public/css/skin_1/apphub_guides.css?v=1003082395" rel="stylesheet" type="text/css">
+<link href="http://cdn.steamcommunity.com/public/shared/css/motiva_sans.css?v=1977022930" rel="stylesheet" type="text/css">
+<link href="http://cdn.steamcommunity.com/public/css/skin_1/header.css?v=439635755" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="http://cdn.steamcommunity.com/public/javascript/prototype-1.7.js?v=3863744284&amp;l=english"></script>
+<script type="text/javascript" src="http://cdn.steamcommunity.com/public/javascript/scriptaculous/scriptaculous.js?v=1436297378&amp;l=english&amp;load=effects,controls,slider,dragdrop"></script>
+<script type="text/javascript" src="http://cdn.steamcommunity.com/public/javascript/global.js?v=2415175592&amp;l=english"></script>
+<script type="text/javascript" src="http://cdn.steamcommunity.com/public/javascript/modalv2.js?v=2877296809&amp;l=english"></script>
+<script type="text/javascript" src="http://cdn.steamcommunity.com/public/javascript/modalContent.js?v=3544508210&amp;l=english"></script>
+<script type="text/javascript" src="http://cdn.steamcommunity.com/public/shared/javascript/apphub.js?v=3119673304&amp;l=english"></script>
+<script type="text/javascript" src="http://cdn.steamcommunity.com/public/javascript/apphub_home.js?v=2989973116&amp;l=english"></script>
+<script type="text/javascript" src="http://cdn.steamcommunity.com/public/javascript/workshop_functions.js?v=3988498059&amp;l=english"></script>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33779068-1']);
+  _gaq.push(['_setCustomVar', 1, 'Logged In', 'false', 2]);
+  _gaq.push(['_setCustomVar', 2, 'Client Type', 'External', 2]);
+  _gaq.push(['_setCustomVar', 3, 'Cntrlr', 'app', 3]);
+  _gaq.push(['_setCustomVar', 4, 'Method', "app\/guides", 3]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_setSessionCookieTimeout', 900000]);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+	<script type="text/javascript">
+	</script>
+</head>
+<script>
+	var gSearchField = null;
+
+	function FilterByTags()
+	{
+		gSearchField.ClearIfDefaultValue();
+		$( 'TagsFilterForm' ).submit();
+	}
+
+	function SelectSortMethod( url )
+	{
+		HideMenu( $('sortselect'), $('sortselect_options') );
+
+		window.location = url;
+	}
+
+	function ShowAllCategories()
+	{
+		$( 'GuideCategories' ).removeClassName( 'collapsed' );
+		$( 'ViewAllGuideCategoriesLink' ).hide();
+	}
+
+	function ToggleCategoryTagsSection()
+	{
+		var categoryTags = $( 'GuideCategoryTags' );
+		if ( categoryTags.hasClassName( 'collapsed' ) )
+		{
+			categoryTags.removeClassName( 'collapsed' );
+		}
+		else
+		{
+			categoryTags.addClassName( 'collapsed' );
+		}
+	}
+
+</script>
+<body class="">
+
+<div id="ModalContentContainer">
+
+<center>
+	<!-- header bar, contains info browsing user if logged in -->
+	<div id="global_header">
+	<div class="content">
+	
+		<div class="logo">
+			<span id="logo_holder">
+				<a href="http://store.steampowered.com/">
+					<img src="http://cdn.steamcommunity.com/public/images/header/globalheader_logo.png" width="176" height="44" border="0" alt="Steam Logo" />
+				</a>
+			</span>
+			<!--[if lt IE 7]>
+			<style type="text/css">
+			#logo_holder img { filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0); }
+			#logo_holder { display: inline-block; width: 176px; height: 44px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.steamcommunity.com/public/images/header/globalheader_logo.png'); }
+			</style>
+			<![endif]-->
+		</div>
+
+		<a class="menuitem" href="http://store.steampowered.com/">
+			STORE		</a>
+
+		<div style="float: left; position: relative;">
+			<a class="menuitem active" style="display: block" href="http://steamcommunity.com">
+					<span class="menuitem_new">NEW</span>
+					Community			</a>
+			<div class="community_sub_nav">
+				<a class="submenuitem " href="https://steamcommunity.com/login/home/">Friends</a>
+				<a class="submenuitem " href="https://steamcommunity.com/login/home/">Profile</a>
+				<a class="submenuitem " href="http://steamcommunity.com/apps/">Game Hubs</a>
+				<a class="submenuitem " href="http://steamcommunity.com/discussions/">DISCUSSIONS</a>
+				<a class="submenuitem " href="http://steamcommunity.com/workshop/">Workshop</a>
+				<a class="submenuitem " href="http://steamcommunity.com/greenlight/">Greenlight</a>
+								<a class="submenuitem " href="http://steamcommunity.com/market/">Market</a>
+											</div>
+		</div>
+
+		<a class="menuitem" href="http://store.steampowered.com/news/">
+			NEWS		</a>
+
+		<a class="menuitem" href="http://store.steampowered.com/about/">
+			ABOUT		</a>
+
+		<a class="menuitem" href="http://support.steampowered.com/">
+			SUPPORT		</a>
+
+		<a class="menuitem" href="http://store.steampowered.com/stats/">
+			STATS		</a>
+		
+		<div id="global_actions">
+						<div id="global_action_menu">
+
+				<div class="header_installsteam_btn header_installsteam_btn_green">
+					<div class="header_installsteam_btn_leftcap"></div>
+					<div class="header_installsteam_btn_rightcap"></div>
+					<a class="header_installsteam_btn_content" href="http://store.steampowered.com/about/">
+						Install Steam					</a>
+				</div>
+															<a class="global_action_link" href="https://steamcommunity.com/login/home/?goto=app%2F570%2Fguides%2F">Login</a>
+						&nbsp;|&nbsp;
+										<span class="pulldown global_action_link" id="language_pulldown" onclick="ShowMenu( this, 'language_dropdown', 'right' );">language</span>
+					<div class="popup_block" id="language_dropdown" style="display: none;">
+						<div class="shadow_ul"></div><div class="shadow_top"></div><div class="shadow_ur"></div><div class="shadow_left"></div><div class="shadow_right"></div><div class="shadow_bl"></div><div class="shadow_bottom"></div><div class="shadow_br"></div><div class="iepopupfix"><img class="iepopupfix_img" src="http://cdn.steamcommunity.com/public/images/blank.gif" alt =""></div>						<div class="popup_body popup_menu shadow_content">
+																						<a class="popup_menu_item tight" href="?l=bulgarian">Български (Bulgarian)</a>
+																						<a class="popup_menu_item tight" href="?l=czech">čeština (Czech)</a>
+																						<a class="popup_menu_item tight" href="?l=danish">Dansk (Danish)</a>
+																						<a class="popup_menu_item tight" href="?l=dutch">Nederlands (Dutch)</a>
+																														<a class="popup_menu_item tight" href="?l=finnish">Suomi (Finnish)</a>
+																						<a class="popup_menu_item tight" href="?l=french">Français (French)</a>
+																						<a class="popup_menu_item tight" href="?l=german">Deutsch (German)</a>
+																						<a class="popup_menu_item tight" href="?l=greek">Ελληνικά (Greek)</a>
+																						<a class="popup_menu_item tight" href="?l=hungarian">Magyar (Hungarian)</a>
+																						<a class="popup_menu_item tight" href="?l=italian">Italiano (Italian)</a>
+																						<a class="popup_menu_item tight" href="?l=japanese">日本語 (Japanese)</a>
+																						<a class="popup_menu_item tight" href="?l=koreana">한국어 (Korean)</a>
+																						<a class="popup_menu_item tight" href="?l=norwegian">Norsk (Norwegian)</a>
+																						<a class="popup_menu_item tight" href="?l=polish">Polski (Polish)</a>
+																						<a class="popup_menu_item tight" href="?l=portuguese">Português (Portuguese)</a>
+																						<a class="popup_menu_item tight" href="?l=brazilian">Português-Brasil (Portuguese-Brazil)</a>
+																						<a class="popup_menu_item tight" href="?l=romanian">Română (Romanian)</a>
+																						<a class="popup_menu_item tight" href="?l=russian">Русский (Russian)</a>
+																						<a class="popup_menu_item tight" href="?l=schinese">简体中文 (Simplified Chinese)</a>
+																						<a class="popup_menu_item tight" href="?l=spanish">Español (Spanish)</a>
+																						<a class="popup_menu_item tight" href="?l=swedish">Svenska (Swedish)</a>
+																						<a class="popup_menu_item tight" href="?l=tchinese">繁體中文 (Traditional Chinese)</a>
+																						<a class="popup_menu_item tight" href="?l=thai">ไทย (Thai)</a>
+																						<a class="popup_menu_item tight" href="?l=turkish">Türkçe (Turkish)</a>
+														<a class="popup_menu_item tight" href="http://translation.steampowered.com" target="_blank">Help us translate Steam</a>
+						</div>
+					</div>
+							</div>
+		</div>
+		
+		
+		
+	</div>
+
+</div>
+
+<div id="modalBG" style="display: none"></div>
+<script type="text/javascript">
+	g_sessionID = "MTE1MTU2ODU1";
+	g_steamID = false;
+</script>	<!-- /header bar -->
+</center>
+
+<!-- main content -->
+<center>
+
+	<div class="apphub_HomeHeader">
+			<div class="apphub_HeaderTop">
+		<div class="apphub_OtherSiteInfo">
+										<a style="position: relative; z-index: 1;" class="btn_darkblue_white_innerfade btn_medium" href="http://store.steampowered.com/app/570">
+					<span>Store Page</span>
+				</a>
+					</div>
+		<div class="apphub_AppIcon"><img src="http://media.steampowered.com/steamcommunity/public/images/apps/570/0bbb630d63262dd66d2fdd0f7d37e8661a410075.jpg"><div class="overlay"></div></div>
+		<div class="apphub_AppName ellipsis">Dota 2</div>
+		<div style="clear: both"></div>
+		<div class="apphub_sectionTabs">
+				<a href="http://steamcommunity.com/app/570" class="apphub_sectionTab "><span>All</span></a>
+					<a href="http://steamcommunity.com/app/570/discussions/" class="apphub_sectionTab "><span>Discussions</span></a>
+					<a href="http://steamcommunity.com/app/570/screenshots/" class="apphub_sectionTab "><span>Screenshots</span></a>
+								<a href="http://steamcommunity.com/app/570/videos" class="apphub_sectionTab "><span>Videos</span></a>
+					<a href="http://steamcommunity.com/workshop/browse/?appid=570" class="apphub_sectionTab "><span>Workshop</span></a>
+					<a href="http://steamcommunity.com/app/570/news" class="apphub_sectionTab "><span>News</span></a>
+					<a href="http://steamcommunity.com/app/570/announcements" class="apphub_sectionTab "><span>Announcements</span></a>
+					<a href="http://steamcommunity.com/app/570/guides/" class="apphub_sectionTab active"><span>Guides</span></a>
+							<div style="clear: left"></div>
+		</div>
+	</div>
+	<div class="apphub_sectionTabsHR"></div>
+	<div style="position: relative; width: 948px; margin: 0px auto;">
+		<div class="apphub_HeaderBottomBG"></div>
+	</div>
+
+		</div>
+
+	
+	<div id="ig_bottom" class="nobg apphub_Guides">
+
+				<div class="subtitle">Browse and rate player-created guides for this game. Or <a href="http://steamcommunity.com/sharedfiles/editguide/?appid=570">create your own</a> and share your tips with the community.</div>
+		<!-- right column -->
+				<div id="rightContents">
+			<form id="TagsFilterForm" method="GET" onkeypress="return PerformSearchOnKeypress(event);">
+			<div class="sidebar">
+				<!-- search-->
+				<div class="searchTextContainer">
+					<input value="Search Dota 2 Guides" class="searchText defaultText" id="appHubsSearchText" type="text" name="searchText" maxlength="128" autocomplete="off" >
+					<input type="hidden" name="browsefilter" value="trend">
+					<img onclick="javascript:PerformSearch();" class="searchTextSubmitImg" src="http://cdn.steamcommunity.com/public/images/sharedfiles/searchbox_workshop_submit.gif" width="23" height="18" border="0">
+				</div>
+				<script>
+					gSearchField = new SearchFieldWithText( 'appHubsSearchText', "Search Dota 2 Guides", FilterByTags, 'defaultText' );
+				</script>
+								<div class="panel guide_category_tags collapsed" id="GuideCategoryTags">
+					<div class="guide_category_tags_title" onclick="ToggleCategoryTagsSection()">
+						Filter by Category						<div class="rightSectionBrowseBarArrow"></div>
+					</div>
+					<div class="rightSectionHolder">
+						<div class="rightSectionDivider"></div>
+						<div class="rightDetailsBlock">
+							<div class="rightSectionTitle"><div class="tagSearch">Show items tagged with all of the selected terms:</div></div>
+										<div class="tag_category_desc">Category</div>
+									<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13373" value="achievements" class="inputTagsFilter"  /><label for="13373">Achievements</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13088" value="Characters" class="inputTagsFilter"  /><label for="13088">Characters</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13089" value="classes" class="inputTagsFilter"  /><label for="13089">Classes</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13095" value="Co-op" class="inputTagsFilter"  /><label for="13095">Co-op</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13092" value="Crafting" class="inputTagsFilter"  /><label for="13092">Crafting</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13087" value="Game Modes" class="inputTagsFilter"  /><label for="13087">Game Modes</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13083" value="Gameplay Basics" class="inputTagsFilter"  /><label for="13083">Gameplay Basics</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13091" value="Loot" class="inputTagsFilter"  /><label for="13091">Loot</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13236" value="Maps or Levels" class="inputTagsFilter"  /><label for="13236">Maps Or Levels</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13090" value="Modding or Configuration" class="inputTagsFilter"  /><label for="13090">Modding Or Configuration</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13096" value="Multiplayer" class="inputTagsFilter"  /><label for="13096">Multiplayer</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13085" value="Secrets" class="inputTagsFilter"  /><label for="13085">Secrets</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13097" value="Story or Lore" class="inputTagsFilter"  /><label for="13097">Story Or Lore</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13094" value="Trading" class="inputTagsFilter"  /><label for="13094">Trading</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13086" value="Walkthroughs" class="inputTagsFilter"  /><label for="13086">Walkthroughs</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13093" value="Weapons" class="inputTagsFilter"  /><label for="13093">Weapons</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13098" value="workshop" class="inputTagsFilter"  /><label for="13098">Workshop</label></div>
+									<div class="tag_category_desc">Heroes</div>
+									<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13639" value="Alchemist" class="inputTagsFilter"  /><label for="13639">Alchemist</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13687" value="Ancient Apparition" class="inputTagsFilter"  /><label for="13687">Ancient Apparition</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="12000" value="Anti-Mage" class="inputTagsFilter"  /><label for="12000">Anti-Mage</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11181" value="Axe" class="inputTagsFilter"  /><label for="11181">Axe</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13688" value="Bane" class="inputTagsFilter"  /><label for="13688">Bane</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13640" value="Batrider" class="inputTagsFilter"  /><label for="13640">Batrider</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11978" value="Beastmaster" class="inputTagsFilter"  /><label for="11978">Beastmaster</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11182" value="Bloodseeker" class="inputTagsFilter"  /><label for="11182">Bloodseeker</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11183" value="Bounty Hunter" class="inputTagsFilter"  /><label for="11183">Bounty Hunter</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11413" value="Brewmaster" class="inputTagsFilter"  /><label for="11413">Brewmaster</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11845" value="Broodmother" class="inputTagsFilter"  /><label for="11845">Broodmother</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13551" value="Centaur Warrunner" class="inputTagsFilter"  /><label for="13551">Centaur Warrunner</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13689" value="Chaos Knight" class="inputTagsFilter"  /><label for="13689">Chaos Knight</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11363" value="Chen" class="inputTagsFilter"  /><label for="11363">Chen</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11377" value="Clinkz" class="inputTagsFilter"  /><label for="11377">Clinkz</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13690" value="Clockwerk" class="inputTagsFilter"  /><label for="13690">Clockwerk</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11330" value="Crystal Maiden" class="inputTagsFilter"  /><label for="11330">Crystal Maiden</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="12949" value="Dark Seer" class="inputTagsFilter"  /><label for="12949">Dark Seer</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11958" value="Dazzle" class="inputTagsFilter"  /><label for="11958">Dazzle</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11979" value="Death Prophet" class="inputTagsFilter"  /><label for="11979">Death Prophet</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11864" value="Disruptor" class="inputTagsFilter"  /><label for="11864">Disruptor</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13641" value="Doom" class="inputTagsFilter"  /><label for="13641">Doom</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="10748" value="Dragon Knight" class="inputTagsFilter"  /><label for="10748">Dragon Knight</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11180" value="Drow Ranger" class="inputTagsFilter"  /><label for="11180">Drow Ranger</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13691" value="Earthshaker" class="inputTagsFilter"  /><label for="13691">Earthshaker</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11980" value="Enchantress" class="inputTagsFilter"  /><label for="11980">Enchantress</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13692" value="Enigma" class="inputTagsFilter"  /><label for="13692">Enigma</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11202" value="Faceless Void" class="inputTagsFilter"  /><label for="11202">Faceless Void</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13693" value="Gyrocopter" class="inputTagsFilter"  /><label for="13693">Gyrocopter</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11884" value="Huskar" class="inputTagsFilter"  /><label for="11884">Huskar</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11203" value="Invoker" class="inputTagsFilter"  /><label for="11203">Invoker</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13694" value="Jakiro" class="inputTagsFilter"  /><label for="13694">Jakiro</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="10691" value="Juggernaut" class="inputTagsFilter"  /><label for="10691">Juggernaut</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13615" value="Keeper of the Light" class="inputTagsFilter"  /><label for="13615">Keeper Of The Light</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="10693" value="Kunkka" class="inputTagsFilter"  /><label for="10693">Kunkka</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13005" value="Leshrac" class="inputTagsFilter"  /><label for="13005">Leshrac</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13642" value="Lich" class="inputTagsFilter"  /><label for="13642">Lich</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13695" value="Lifestealer" class="inputTagsFilter"  /><label for="13695">Lifestealer</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11981" value="Lina" class="inputTagsFilter"  /><label for="11981">Lina</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="12927" value="Lion" class="inputTagsFilter"  /><label for="12927">Lion</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11359" value="Lone Druid" class="inputTagsFilter"  /><label for="11359">Lone Druid</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13696" value="Luna" class="inputTagsFilter"  /><label for="13696">Luna</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11896" value="Lycan" class="inputTagsFilter"  /><label for="11896">Lycan</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13643" value="Lycanthrope" class="inputTagsFilter"  /><label for="13643">Lycanthrope</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13697" value="Magnus" class="inputTagsFilter"  /><label for="13697">Magnus</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13698" value="Medusa" class="inputTagsFilter"  /><label for="13698">Medusa</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11799" value="Meepo" class="inputTagsFilter"  /><label for="11799">Meepo</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13618" value="Mirana" class="inputTagsFilter"  /><label for="13618">Mirana</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11316" value="Morphling" class="inputTagsFilter"  /><label for="11316">Morphling</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11688" value="Naga Siren" class="inputTagsFilter"  /><label for="11688">Naga Siren</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="10745" value="Nature's Prophet" class="inputTagsFilter"  /><label for="10745">Nature's Prophet</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11971" value="Necrolyte" class="inputTagsFilter"  /><label for="11971">Necrolyte</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13699" value="Night Stalker" class="inputTagsFilter"  /><label for="13699">Night Stalker</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11961" value="Nyx Assassin" class="inputTagsFilter"  /><label for="11961">Nyx Assassin</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11308" value="Ogre Magi" class="inputTagsFilter"  /><label for="11308">Ogre Magi</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="10690" value="Omniknight" class="inputTagsFilter"  /><label for="10690">Omniknight</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11959" value="Outworld Destroyer" class="inputTagsFilter"  /><label for="11959">Outworld Destroyer</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13644" value="Outworld Devourer" class="inputTagsFilter"  /><label for="13644">Outworld Devourer</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11354" value="Phantom Assassin" class="inputTagsFilter"  /><label for="11354">Phantom Assassin</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11360" value="Phantom Lancer" class="inputTagsFilter"  /><label for="11360">Phantom Lancer</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13700" value="Puck" class="inputTagsFilter"  /><label for="13700">Puck</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11687" value="Pudge" class="inputTagsFilter"  /><label for="11687">Pudge</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11340" value="Pugna" class="inputTagsFilter"  /><label for="11340">Pugna</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="10744" value="Queen Of Pain" class="inputTagsFilter"  /><label for="10744">Queen Of Pain</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="12860" value="Razor" class="inputTagsFilter"  /><label for="12860">Razor</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11972" value="Riki" class="inputTagsFilter"  /><label for="11972">Riki</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11677" value="Rubick" class="inputTagsFilter"  /><label for="11677">Rubick</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11844" value="Sand King" class="inputTagsFilter"  /><label for="11844">Sand King</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13515" value="Shadow Demon" class="inputTagsFilter"  /><label for="13515">Shadow Demon</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13701" value="Shadow Fiend" class="inputTagsFilter"  /><label for="13701">Shadow Fiend</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11388" value="Shadow Shaman" class="inputTagsFilter"  /><label for="11388">Shadow Shaman</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11817" value="Silencer" class="inputTagsFilter"  /><label for="11817">Silencer</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11389" value="Skeleton King" class="inputTagsFilter"  /><label for="11389">Skeleton King</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11949" value="Slardar" class="inputTagsFilter"  /><label for="11949">Slardar</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13541" value="Slark" class="inputTagsFilter"  /><label for="13541">Slark</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11802" value="Sniper" class="inputTagsFilter"  /><label for="11802">Sniper</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11982" value="Spectre" class="inputTagsFilter"  /><label for="11982">Spectre</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11858" value="Spirit Breaker" class="inputTagsFilter"  /><label for="11858">Spirit Breaker</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11983" value="Storm Spirit" class="inputTagsFilter"  /><label for="11983">Storm Spirit</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="10741" value="Sven" class="inputTagsFilter"  /><label for="10741">Sven</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11392" value="Templar Assassin" class="inputTagsFilter"  /><label for="11392">Templar Assassin</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="10694" value="Tidehunter" class="inputTagsFilter"  /><label for="10694">Tidehunter</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13702" value="Timbersaw" class="inputTagsFilter"  /><label for="13702">Timbersaw</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13703" value="TINKER" class="inputTagsFilter"  /><label for="13703">TINKER</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13704" value="Tiny" class="inputTagsFilter"  /><label for="13704">Tiny</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13705" value="Treant Protector" class="inputTagsFilter"  /><label for="13705">Treant Protector</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13706" value="Troll Warlord" class="inputTagsFilter"  /><label for="13706">Troll Warlord</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13707" value="Undying" class="inputTagsFilter"  /><label for="13707">Undying</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11184" value="Ursa" class="inputTagsFilter"  /><label for="11184">Ursa</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13708" value="Vengeful Spirit" class="inputTagsFilter"  /><label for="13708">Vengeful Spirit</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11846" value="Venomancer" class="inputTagsFilter"  /><label for="11846">Venomancer</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13709" value="Viper" class="inputTagsFilter"  /><label for="13709">Viper</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13710" value="Visage" class="inputTagsFilter"  /><label for="13710">Visage</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11954" value="Warlock" class="inputTagsFilter"  /><label for="11954">Warlock</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11728" value="Weaver" class="inputTagsFilter"  /><label for="11728">Weaver</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11317" value="Windrunner" class="inputTagsFilter"  /><label for="11317">Windrunner</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13711" value="Wisp" class="inputTagsFilter"  /><label for="13711">Wisp</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11197" value="Witch Doctor" class="inputTagsFilter"  /><label for="11197">Witch Doctor</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="13712" value="Zeus" class="inputTagsFilter"  /><label for="13712">Zeus</label></div>
+												<div><input onclick="FilterByTags();" type="checkbox" name="requiredtags[]" id="11893" value="Doom Bringer" class="inputTagsFilter"  /><label for="11893">Doom Bringer</label></div>
+													<div style="clear:both"></div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- browse -->
+				<div class="panel">
+					<div class="rightSectionTopTitle">Browse by:</div>
+					<div class="rightDetailsBlock">
+						<div style="position:relative;"><img class="browseOptionImage" src="http://cdn.steamcommunity.com/public/images/sharedfiles/filterselect_blue.png" /><div class="browseOption home"><a href="?browsesort=home&browsefilter=home&p=1">Home</a></div></div>			<div style="position:relative;">
+				<div class="browseOption notSelected trend" onclick="top.location.href='?browsesort=trend&browsefilter=trend&p=1';"><a href="?browsesort=trend&browsefilter=trend&p=1">Most Popular</a></div>
+			</div>
+						<div style="position:relative;">
+				<div class="browseOption notSelected toprated" onclick="top.location.href='?browsesort=toprated&browsefilter=toprated&p=1';"><a href="?browsesort=toprated&browsefilter=toprated&p=1">Top Rated All Time</a></div>
+			</div>
+						<div style="position:relative;">
+				<div class="browseOption notSelected mostrecent" onclick="top.location.href='?browsesort=mostrecent&browsefilter=mostrecent&p=1';"><a href="?browsesort=mostrecent&browsefilter=mostrecent&p=1">Most Recent</a></div>
+			</div>
+								</div>
+				</div>
+
+				<!-- user panel -->
+								
+				<!-- info panel -->
+				<div class="panel">
+					<div class="rightSectionTopTitle">More About Guides</div>
+					<div class="rightSectionDivider"></div>
+					<div class="rightDetailsBlock">
+						<div class="guideInfo" onClick="top.location.href='http://steamcommunity.com/guides'">
+							<div class="guideInfoTitle">Click here to learn more about Steam Guides</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</form>
+		</div>
+
+		<!-- main column -->
+		<div class="apphub_ContentGuides">
+			
+								<div class="detailBox guide_categories collapsed" id="GuideCategories">
+												<div class="guides_home_view_all_link" id="ViewAllGuideCategoriesLink"><a href="javascript:ShowAllCategories()">View All (17)</a></div>
+												<div class="guides_home_section_title">Popular Categories</div>
+											<div class="guide_home_category_selection" onclick="top.location.href='http://steamcommunity.com/app/570/guides/?browsefilter=trend&requiredtags[]=Characters'">
+							<img class="guide_category_icon" src="http://cdn.steamcommunity.com/public/images//sharedfiles/guides/categories/strategy_Characters_default.png">
+							<img class="guide_category_icon highlightState" src="http://cdn.steamcommunity.com/public/images//sharedfiles/guides/categories/strategy_Characters_brightened.png">
+							<div class="guide_home_category_name">Characters</div>
+							<div class="guide_home_category_count">170 Guides</div>
+						</div>
+												<div class="guide_home_category_selection" onclick="top.location.href='http://steamcommunity.com/app/570/guides/?browsefilter=trend&requiredtags[]=Gameplay Basics'">
+							<img class="guide_category_icon" src="http://cdn.steamcommunity.com/public/images//sharedfiles/guides/categories/strategy_GameplayBasics_default.png">
+							<img class="guide_category_icon highlightState" src="http://cdn.steamcommunity.com/public/images//sharedfiles/guides/categories/strategy_GameplayBasics_brightened.png">
+							<div class="guide_home_category_name">Gameplay Basics</div>
+							<div class="guide_home_category_count">128 Guides</div>
+						</div>
+												<div class="guide_home_category_selection" onclick="top.location.href='http://steamcommunity.com/app/570/guides/?browsefilter=trend&requiredtags[]=Multiplayer'">
+							<img class="guide_category_icon" src="http://cdn.steamcommunity.com/public/images//sharedfiles/guides/categories/strategy_Multiplayer_default.png">
+							<img class="guide_category_icon highlightState" src="http://cdn.steamcommunity.com/public/images//sharedfiles/guides/categories/strategy_Multiplayer_brightened.png">
+							<div class="guide_home_category_name">Multiplayer</div>
+							<div class="guide_home_category_count">98 Guides</div>
+						</div>
+												<div class="guide_home_category_selection" onclick="top.location.href='http://steamcommunity.com/app/570/guides/?browsefilter=trend&requiredtags[]=Walkthroughs'">
+							<img class="guide_category_icon" src="http://cdn.steamcommunity.com/public/images//sharedfiles/guides/categories/strategy_Walkthrough_default.png">
+							<img class="guide_category_icon highlightState" src="http://cdn.steamcommunity.com/public/images//sharedfiles/guides/categories/strategy_Walkthrough_brightened.png">
+							<div class="guide_home_category_name">Walkthroughs</div>
+							<div class="guide_home_category_count">90 Guides</div>
+						</div>
+												<div class="guide_home_category_selection" onclick="top.location.href='http://steamcommunity.com/app/570/guides/?browsefilter=trend&requiredtags[]=Classes'">
+							<img class="guide_category_icon" src="http://cdn.steamcommunity.com/public/images//sharedfiles/guides/categories/strategy_Class_default.png">
+							<img class="guide_category_icon highlightState" src="http://cdn.steamcommunity.com/public/images//sharedfiles/guides/categories/strategy_Class_brightened.png">
+							<div class="guide_home_category_name">Classes</div>
+							<div class="guide_home_category_count">83 Guides</div>
+						</div>
+												<div class="guide_home_category_selection" onclick="top.location.href='http://steamcommunity.com/app/570/guides/?browsefilter=trend&requiredtags[]=Secrets'">
+							<img class="guide_category_icon" src="http://cdn.steamcommunity.com/public/images//sharedfiles/guides/categories/strategy_Secrets_default.png">
+							<img class="guide_category_icon highlightState" src="http://cdn.steamcommunity.com/public/images//sharedfiles/guides/categories/strategy_Secrets_brightened.png">
+							<div class="guide_home_category_name">Secrets</div>
+							<div class="guide_home_category_count">46 Guides</div>
+						</div>
+												<div class="guide_home_category_selection" onclick="top.location.href='http://steamcommunity.com/app/570/guides/?browsefilter=trend&requiredtags[]=Co-op'">
+							<img class="guide_category_icon" src="http://cdn.steamcommunity.com/public/images//sharedfiles/guides/categories/strategy_Coop_default.png">
+							<img class="guide_category_icon highlightState" src="http://cdn.steamcommunity.com/public/images//sharedfiles/guides/categories/strategy_Coop_brightened.png">
+							<div class="guide_home_category_name">Co-op</div>
+							<div class="guide_home_category_count">31 Guides</div>
+						</div>
+												<div class="guide_home_category_selection" onclick="top.location.href='http://steamcommunity.com/app/570/guides/?browsefilter=trend&requiredtags[]=Weapons'">
+							<img class="guide_category_icon" src="http://cdn.steamcommunity.com/public/images//sharedfiles/guides/categories/strategy_Weapons_default.png">
+							<img class="guide_category_icon highlightState" src="http://cdn.steamcommunity.com/public/images//sharedfiles/guides/categories/strategy_Weapons_brightened.png">
+							<div class="guide_home_category_name">Weapons</div>
+							<div class="guide_home_category_count">30 Guides</div>
+						</div>
+												<div class="guide_home_category_selection" onclick="top.location.href='http://steamcommunity.com/app/570/guides/?browsefilter=trend&requiredtags[]=Game Modes'">
+							<img class="guide_category_icon" src="http://cdn.steamcommunity.com/public/images//sharedfiles/guides/categories/strategy_GameMode_default.png">
+							<img class="guide_category_icon highlightState" src="http://cdn.steamcommunity.com/public/images//sharedfiles/guides/categories/strategy_GameMode_brightened.png">
+							<div class="guide_home_category_name">Game Modes</div>
+							<div class="guide_home_category_count">27 Guides</div>
+						</div>
+												<div class="guide_home_category_selection" onclick="top.location.href='http://steamcommunity.com/app/570/guides/?browsefilter=trend&requiredtags[]=Story or Lore'">
+							<img class="guide_category_icon" src="http://cdn.steamcommunity.com/public/images//sharedfiles/guides/categories/strategy_Story_default.png">
+							<img class="guide_category_icon highlightState" src="http://cdn.steamcommunity.com/public/images//sharedfiles/guides/categories/strategy_Story_brightened.png">
+							<div class="guide_home_category_name">Story Or Lore</div>
+							<div class="guide_home_category_count">17 Guides</div>
+						</div>
+												<div class="guide_home_category_selection" onclick="top.location.href='http://steamcommunity.com/app/570/guides/?browsefilter=trend&requiredtags[]=Loot'">
+							<img class="guide_category_icon" src="http://cdn.steamcommunity.com/public/images//sharedfiles/guides/categories/strategy_Loot_default.png">
+							<img class="guide_category_icon highlightState" src="http://cdn.steamcommunity.com/public/images//sharedfiles/guides/categories/strategy_Loot_brightened.png">
+							<div class="guide_home_category_name">Loot</div>
+							<div class="guide_home_category_count">17 Guides</div>
+						</div>
+												<div class="guide_home_category_selection" onclick="top.location.href='http://steamcommunity.com/app/570/guides/?browsefilter=trend&requiredtags[]=Modding or Configuration'">
+							<img class="guide_category_icon" src="http://cdn.steamcommunity.com/public/images//sharedfiles/guides/categories/strategy_Modding_default.png">
+							<img class="guide_category_icon highlightState" src="http://cdn.steamcommunity.com/public/images//sharedfiles/guides/categories/strategy_Modding_brightened.png">
+							<div class="guide_home_category_name">Modding Or Configuration</div>
+							<div class="guide_home_category_count">16 Guides</div>
+						</div>
+												<div class="guide_home_category_selection" onclick="top.location.href='http://steamcommunity.com/app/570/guides/?browsefilter=trend&requiredtags[]=Workshop'">
+							<img class="guide_category_icon" src="http://cdn.steamcommunity.com/public/images//sharedfiles/guides/categories/strategy_Workshop_default.png">
+							<img class="guide_category_icon highlightState" src="http://cdn.steamcommunity.com/public/images//sharedfiles/guides/categories/strategy_Workshop_brightened.png">
+							<div class="guide_home_category_name">Workshop</div>
+							<div class="guide_home_category_count">16 Guides</div>
+						</div>
+												<div class="guide_home_category_selection" onclick="top.location.href='http://steamcommunity.com/app/570/guides/?browsefilter=trend&requiredtags[]=Maps or Levels'">
+							<img class="guide_category_icon" src="http://cdn.steamcommunity.com/public/images//sharedfiles/guides/categories/strategy_Maps_default.png">
+							<img class="guide_category_icon highlightState" src="http://cdn.steamcommunity.com/public/images//sharedfiles/guides/categories/strategy_Maps_brightened.png">
+							<div class="guide_home_category_name">Maps Or Levels</div>
+							<div class="guide_home_category_count">15 Guides</div>
+						</div>
+												<div class="guide_home_category_selection" onclick="top.location.href='http://steamcommunity.com/app/570/guides/?browsefilter=trend&requiredtags[]=Achievements'">
+							<img class="guide_category_icon" src="http://cdn.steamcommunity.com/public/images//sharedfiles/guides/categories/strategy_Achievements_default.png">
+							<img class="guide_category_icon highlightState" src="http://cdn.steamcommunity.com/public/images//sharedfiles/guides/categories/strategy_Achievements_brightened.png">
+							<div class="guide_home_category_name">Achievements</div>
+							<div class="guide_home_category_count">12 Guides</div>
+						</div>
+												<div class="guide_home_category_selection" onclick="top.location.href='http://steamcommunity.com/app/570/guides/?browsefilter=trend&requiredtags[]=Trading'">
+							<img class="guide_category_icon" src="http://cdn.steamcommunity.com/public/images//sharedfiles/guides/categories/strategy_Trading_default.png">
+							<img class="guide_category_icon highlightState" src="http://cdn.steamcommunity.com/public/images//sharedfiles/guides/categories/strategy_Trading_brightened.png">
+							<div class="guide_home_category_name">Trading</div>
+							<div class="guide_home_category_count">11 Guides</div>
+						</div>
+												<div class="guide_home_category_selection" onclick="top.location.href='http://steamcommunity.com/app/570/guides/?browsefilter=trend&requiredtags[]=Crafting'">
+							<img class="guide_category_icon" src="http://cdn.steamcommunity.com/public/images//sharedfiles/guides/categories/strategy_Crafting_default.png">
+							<img class="guide_category_icon highlightState" src="http://cdn.steamcommunity.com/public/images//sharedfiles/guides/categories/strategy_Crafting_brightened.png">
+							<div class="guide_home_category_name">Crafting</div>
+							<div class="guide_home_category_count">9 Guides</div>
+						</div>
+												<div style="clear: left"></div>
+					</div>
+										<div class="detailBox">
+												<div class="guides_home_view_all_link"><a href="http://steamcommunity.com/app/570/guides/?browsefilter=trend&filetype=11">View All (238)</a></div>
+												<div class="guides_home_section_title"><img src="http://cdn.steamcommunity.com/public/images//sharedfiles/icons/guides_popular.png">Popular Steam Guides&nbsp;<span class="guides_home_section_desc">Written guides, references, and walkthroughs</span></div>
+								<div id="sharedfile_126386524_1464525263" class="workshopItemCollectionContainer">
+			<div class="workshopItemCollection" onClick="top.location.href='http://steamcommunity.com/sharedfiles/filedetails/?id=126386524'">
+				<div class="workshopItem">
+					<div class="workshopItemPreviewHolder ">
+						<img class="workshopItemPreviewImage" src="http://cloud-2.steampowered.com/ugc/921254178703234389/F6BF2AB91134E4CE56C863B3BC6EEC111A2F3462/200x200.resizedimage">
+					</div>
+				</div>
+				<div class="workshopItemDetails">
+					<img class="fileRating" src="http://cdn.steamcommunity.com/public/images/sharedfiles/4-star.png" />
+					<div class="workshopItemApp guide"></div>
+					<div class="workshopItemTitle">
+												Basic Advice to Improve Your Games					</div>
+					<div class="workshopItemAuthorLine">by&nbsp;<span class="workshopItemAuthorName">devilesk</span></div>
+					<div class="workshopItemShortDesc">Simple advice for playing pub games that will make you and whoever you're playing with better. This guide covers some basic guidelines for drafting, general tactics that will help you coordinate your team and win games, and advice that will help you play ...</div>
+				</div>
+				<div style="clear: both"></div>
+			</div>
+		</div>
+					<script>
+				SharedFileBindMouseHover( "sharedfile_126386524_1464525263", false, {"id":"126386524","title":"Basic Advice to Improve Your Games","description":"Simple advice for playing pub games that will make you and whoever you're playing with better. This guide covers some basic guidelines for drafting, general tactics that will help you coordinate your team and win games, and advice that will help you play ","user_subscribed":false,"user_favorited":false,"played":false,"appid":570} );
+			</script>
+				<div style="clear:left"></div>
+				<div id="sharedfile_126146279_1329415290" class="workshopItemCollectionContainer">
+			<div class="workshopItemCollection" onClick="top.location.href='http://steamcommunity.com/sharedfiles/filedetails/?id=126146279'">
+				<div class="workshopItem">
+					<div class="workshopItemPreviewHolder ">
+						<img class="workshopItemPreviewImage" src="http://cloud-2.steampowered.com/ugc/919003005197269256/9A0E8DBF5F6C42F3E822BBF02D0AC35B44622A96/200x200.resizedimage">
+					</div>
+				</div>
+				<div class="workshopItemDetails">
+					<img class="fileRating" src="http://cdn.steamcommunity.com/public/images/sharedfiles/4-star.png" />
+					<div class="workshopItemApp guide"></div>
+					<div class="workshopItemTitle">
+												Queen of Pain Guide					</div>
+					<div class="workshopItemAuthorLine">by&nbsp;<span class="workshopItemAuthorName">Cless</span></div>
+					<div class="workshopItemShortDesc">A comprehensive, ground-up guide to playing Queen of Pain....</div>
+				</div>
+				<div style="clear: both"></div>
+			</div>
+		</div>
+					<script>
+				SharedFileBindMouseHover( "sharedfile_126146279_1329415290", false, {"id":"126146279","title":"Queen of Pain Guide","description":"A comprehensive, ground-up guide to playing Queen of Pain.","user_subscribed":false,"user_favorited":false,"played":false,"appid":570} );
+			</script>
+				<div style="clear:left"></div>
+				<div id="sharedfile_126506774_1844510885" class="workshopItemCollectionContainer">
+			<div class="workshopItemCollection" onClick="top.location.href='http://steamcommunity.com/sharedfiles/filedetails/?id=126506774'">
+				<div class="workshopItem">
+					<div class="workshopItemPreviewHolder ">
+						<img class="workshopItemPreviewImage" src="http://cloud.steampowered.com/ugc/613883653017385981/3A58C65052C5F549169D99C71E9207BD1E1C7279/200x200.resizedimage">
+					</div>
+				</div>
+				<div class="workshopItemDetails">
+					<img class="fileRating" src="http://cdn.steamcommunity.com/public/images/sharedfiles/4-star.png" />
+					<div class="workshopItemApp guide"></div>
+					<div class="workshopItemTitle">
+												You may be strong but you are not 5 (Meepo Guide)					</div>
+					<div class="workshopItemAuthorLine">by&nbsp;<span class="workshopItemAuthorName">Ðireclaw</span></div>
+					<div class="workshopItemShortDesc">Meepo the Geomancer, one of the most unique heroes in the entire game, feared by some, underestimated by many. Meepo is not an easy hero to be learned, and in order to master the Geomancer you need to have some coordination and the will to practice with h...</div>
+				</div>
+				<div style="clear: both"></div>
+			</div>
+		</div>
+					<script>
+				SharedFileBindMouseHover( "sharedfile_126506774_1844510885", false, {"id":"126506774","title":"You may be strong but you are not 5 (Meepo Guide)","description":"Meepo the Geomancer, one of the most unique heroes in the entire game, feared by some, underestimated by many. Meepo is not an easy hero to be learned, and in order to master the Geomancer you need to have some coordination and the will to practice with h","user_subscribed":false,"user_favorited":false,"played":false,"appid":570} );
+			</script>
+				<div style="clear:left"></div>
+				<div id="sharedfile_125937184_2069731263" class="workshopItemCollectionContainer">
+			<div class="workshopItemCollection" onClick="top.location.href='http://steamcommunity.com/sharedfiles/filedetails/?id=125937184'">
+				<div class="workshopItem">
+					<div class="workshopItemPreviewHolder ">
+						<img class="workshopItemPreviewImage" src="http://cloud-2.steampowered.com/ugc/560966208481321728/5470DF0964FDD0CFB6315A209CC50070DD4547DA/200x200.resizedimage">
+					</div>
+				</div>
+				<div class="workshopItemDetails">
+					<img class="fileRating" src="http://cdn.steamcommunity.com/public/images/sharedfiles/4-star.png" />
+					<div class="workshopItemApp guide"></div>
+					<div class="workshopItemTitle">
+												You know what I love? EVERYTHING! [Enchantress Guide]					</div>
+					<div class="workshopItemAuthorLine">by&nbsp;<span class="workshopItemAuthorName">Evil Andrex</span></div>
+					<div class="workshopItemShortDesc">Enchantress is a powerful support jungler that is strongest early-mid game. He unique set of abilities make her a strong jungler, ganker, and a pusher while still being able to support the team.
+
+Here is a complete guide for Enchantress - detailing skil...</div>
+				</div>
+				<div style="clear: both"></div>
+			</div>
+		</div>
+					<script>
+				SharedFileBindMouseHover( "sharedfile_125937184_2069731263", false, {"id":"125937184","title":"You know what I love? EVERYTHING! [Enchantress Guide]","description":"Enchantress is a powerful support jungler that is strongest early-mid game. He unique set of abilities make her a strong jungler, ganker, and a pusher while still being able to support the team.<br \/>\r\n<br \/>\r\nHere is a complete guide for Enchantress - detailing skil","user_subscribed":false,"user_favorited":false,"played":false,"appid":570} );
+			</script>
+				<div style="clear:left"></div>
+				<div id="sharedfile_126276005_1540295555" class="workshopItemCollectionContainer">
+			<div class="workshopItemCollection" onClick="top.location.href='http://steamcommunity.com/sharedfiles/filedetails/?id=126276005'">
+				<div class="workshopItem">
+					<div class="workshopItemPreviewHolder ">
+						<img class="workshopItemPreviewImage" src="http://cloud-2.steampowered.com/ugc/615009404039032377/1FCFC6ED76D8F20A2E63F3D6A4880CAC8AF920FB/200x200.resizedimage">
+					</div>
+				</div>
+				<div class="workshopItemDetails">
+					<img class="fileRating" src="http://cdn.steamcommunity.com/public/images/sharedfiles/not-yet.png" />
+					<div class="workshopItemApp guide"></div>
+					<div class="workshopItemTitle">
+												How to be an annoying piece of shit and play KOTL of the Light					</div>
+					<div class="workshopItemAuthorLine">by&nbsp;<span class="workshopItemAuthorName">Baron</span></div>
+					<div class="workshopItemShortDesc">Have you ever wanted to be a magical wizard gandalf that shits light everywhere and steals farm from everyone who needs it without impunity? Fortunately for you, I have created this shitty guide that will enable you to play a hero with six abilities witho...</div>
+				</div>
+				<div style="clear: both"></div>
+			</div>
+		</div>
+					<script>
+				SharedFileBindMouseHover( "sharedfile_126276005_1540295555", false, {"id":"126276005","title":"How to be an annoying piece of shit and play KOTL of the Light","description":"Have you ever wanted to be a magical wizard gandalf that shits light everywhere and steals farm from everyone who needs it without impunity? Fortunately for you, I have created this shitty guide that will enable you to play a hero with six abilities witho","user_subscribed":false,"user_favorited":false,"played":false,"appid":570} );
+			</script>
+				<div style="clear:left"></div>
+				<div id="sharedfile_127534438_1641948249" class="workshopItemCollectionContainer">
+			<div class="workshopItemCollection" onClick="top.location.href='http://steamcommunity.com/sharedfiles/filedetails/?id=127534438'">
+				<div class="workshopItem">
+					<div class="workshopItemPreviewHolder ">
+						<img class="workshopItemPreviewImage" src="http://cloud-2.steampowered.com/ugc/594743994491802978/788C40B4865A6D37D229DBBFA52D82C4C6CEC2E1/200x200.resizedimage">
+					</div>
+				</div>
+				<div class="workshopItemDetails">
+					<img class="fileRating" src="http://cdn.steamcommunity.com/public/images/sharedfiles/not-yet.png" />
+					<div class="workshopItemApp guide"></div>
+					<div class="workshopItemTitle">
+												Basic Guide to Dota 2					</div>
+					<div class="workshopItemAuthorLine">by&nbsp;<span class="workshopItemAuthorName">HopelessHyena</span></div>
+					<div class="workshopItemShortDesc">An introductory video guide to DOTA 2, covering everything you need to know to start playing.
+
+You got a friend who wants to learn? Send them a link to this guide!...</div>
+				</div>
+				<div style="clear: both"></div>
+			</div>
+		</div>
+					<script>
+				SharedFileBindMouseHover( "sharedfile_127534438_1641948249", false, {"id":"127534438","title":"Basic Guide to Dota 2","description":"An introductory video guide to DOTA 2, covering everything you need to know to start playing.<br \/>\r\n<br \/>\r\nYou got a friend who wants to learn? Send them a link to this guide!","user_subscribed":false,"user_favorited":false,"played":false,"appid":570} );
+			</script>
+				<div style="clear:left"></div>
+				<div id="sharedfile_127061176_1814602117" class="workshopItemCollectionContainer">
+			<div class="workshopItemCollection" onClick="top.location.href='http://steamcommunity.com/sharedfiles/filedetails/?id=127061176'">
+				<div class="workshopItem">
+					<div class="workshopItemPreviewHolder ">
+						<img class="workshopItemPreviewImage" src="http://cloud.steampowered.com/ugc/577855333415399503/47BA9D05B4E33E436E6D43D3AB535355B4B26199/200x200.resizedimage">
+					</div>
+				</div>
+				<div class="workshopItemDetails">
+					<img class="fileRating" src="http://cdn.steamcommunity.com/public/images/sharedfiles/3-star.png" />
+					<div class="workshopItemApp guide"></div>
+					<div class="workshopItemTitle">
+												How to play Drow Ranger					</div>
+					<div class="workshopItemAuthorLine">by&nbsp;<span class="workshopItemAuthorName">Morgan freeman's narraration</span></div>
+					<div class="workshopItemShortDesc">This is a very complicated guide for Drow Ranger, so please, just, buckle up....</div>
+				</div>
+				<div style="clear: both"></div>
+			</div>
+		</div>
+					<script>
+				SharedFileBindMouseHover( "sharedfile_127061176_1814602117", false, {"id":"127061176","title":"How to play Drow Ranger","description":"This is a very complicated guide for Drow Ranger, so please, just, buckle up.","user_subscribed":false,"user_favorited":false,"played":false,"appid":570} );
+			</script>
+				<div style="clear:left"></div>
+				<div id="sharedfile_127030832_1523818837" class="workshopItemCollectionContainer">
+			<div class="workshopItemCollection" onClick="top.location.href='http://steamcommunity.com/sharedfiles/filedetails/?id=127030832'">
+				<div class="workshopItem">
+					<div class="workshopItemPreviewHolder ">
+						<img class="workshopItemPreviewImage" src="http://cloud-2.steampowered.com/ugc/558715034972933226/C8D3954AEABC454E47E0BC9C757E7DA88D3A7210/200x200.resizedimage">
+					</div>
+				</div>
+				<div class="workshopItemDetails">
+					<img class="fileRating" src="http://cdn.steamcommunity.com/public/images/sharedfiles/not-yet.png" />
+					<div class="workshopItemApp guide"></div>
+					<div class="workshopItemTitle">
+												Juggernaut: The Last of His Kind...					</div>
+					<div class="workshopItemAuthorLine">by&nbsp;<span class="workshopItemAuthorName">7R4V3N0U$</span></div>
+					<div class="workshopItemShortDesc">A guide to the Skill Build and Item Build of Juggernaut, Plus some helpful tips :D...</div>
+				</div>
+				<div style="clear: both"></div>
+			</div>
+		</div>
+					<script>
+				SharedFileBindMouseHover( "sharedfile_127030832_1523818837", false, {"id":"127030832","title":"Juggernaut: The Last of His Kind...","description":"A guide to the Skill Build and Item Build of Juggernaut, Plus some helpful tips :D","user_subscribed":false,"user_favorited":false,"played":false,"appid":570} );
+			</script>
+				<div style="clear:left"></div>
+				<div id="sharedfile_127157669_162967088" class="workshopItemCollectionContainer">
+			<div class="workshopItemCollection" onClick="top.location.href='http://steamcommunity.com/sharedfiles/filedetails/?id=127157669'">
+				<div class="workshopItem">
+					<div class="workshopItemPreviewHolder ">
+						<img class="workshopItemPreviewImage" src="http://cloud-2.steampowered.com/ugc/1119413188592767851/35900BC0D29A855D142956D5B6B922ADD7467948/200x200.resizedimage">
+					</div>
+				</div>
+				<div class="workshopItemDetails">
+					<img class="fileRating" src="http://cdn.steamcommunity.com/public/images/sharedfiles/not-yet.png" />
+					<div class="workshopItemApp guide"></div>
+					<div class="workshopItemTitle">
+												Treant Protector: Becoming the Forest					</div>
+					<div class="workshopItemAuthorLine">by&nbsp;<span class="workshopItemAuthorName">Apothecary David Bowie</span></div>
+					<div class="workshopItemShortDesc">This guide teaches you how to descend into the deepest parts of Treant Protector's character and truely become the tree itself....</div>
+				</div>
+				<div style="clear: both"></div>
+			</div>
+		</div>
+					<script>
+				SharedFileBindMouseHover( "sharedfile_127157669_162967088", false, {"id":"127157669","title":"Treant Protector: Becoming the Forest","description":"This guide teaches you how to descend into the deepest parts of Treant Protector's character and truely become the tree itself.","user_subscribed":false,"user_favorited":false,"played":false,"appid":570} );
+			</script>
+				<div style="clear:left"></div>
+				<div id="sharedfile_126891969_523630075" class="workshopItemCollectionContainer">
+			<div class="workshopItemCollection" onClick="top.location.href='http://steamcommunity.com/sharedfiles/filedetails/?id=126891969'">
+				<div class="workshopItem">
+					<div class="workshopItemPreviewHolder ">
+						<img class="workshopItemPreviewImage" src="http://cloud-2.steampowered.com/ugc/902113880333071370/46F48F9A19689ABC3C19A9C55CCE83DB17504C36/200x200.resizedimage">
+					</div>
+				</div>
+				<div class="workshopItemDetails">
+					<img class="fileRating" src="http://cdn.steamcommunity.com/public/images/sharedfiles/not-yet.png" />
+					<div class="workshopItemApp guide"></div>
+					<div class="workshopItemTitle">
+												How to kill roshan lvl 1 - Ursa and Wisp					</div>
+					<div class="workshopItemAuthorLine">by&nbsp;<span class="workshopItemAuthorName">Lelouch</span></div>
+					<div class="workshopItemShortDesc">see the video to know :)  rate the video if you want more :) , and with you don't like the music, please turn off the youtube volume and listen what you like :)...</div>
+				</div>
+				<div style="clear: both"></div>
+			</div>
+		</div>
+					<script>
+				SharedFileBindMouseHover( "sharedfile_126891969_523630075", false, {"id":"126891969","title":"How to kill roshan lvl 1 - Ursa and Wisp","description":"see the video to know :)  rate the video if you want more :) , and with you don't like the music, please turn off the youtube volume and listen what you like :)","user_subscribed":false,"user_favorited":false,"played":false,"appid":570} );
+			</script>
+				<div style="clear:left"></div>
+		</div>			<div style="clear: both"></div>
+
+					</div>
+
+		</div>
+		<div style="clear: both"></div>
+			</div>
+
+</center>
+
+
+<div class="hover" id="workshop_item_hover" style="position:absolute; display: none; left: 0px; top: 0px;" onmouseout="HideWorkshopItemHover( this, event, $('global_hover') )">
+	<div class="shadow_ul"></div><div class="shadow_top"></div><div class="shadow_ur"></div><div class="shadow_left"></div><div class="shadow_right"></div><div class="shadow_bl"></div><div class="shadow_bottom"></div><div class="shadow_br"></div><div class="iepopupfix"><img class="iepopupfix_img" src="http://cdn.steamcommunity.com/public/images/blank.gif" alt =""></div>	<div class="hover_box shadow_content">
+		<div class="content" id="global_hover_content"></div>
+		<div id="hover_user_action_history" class="hover_user_action_history" style="display: none">
+			<div id="hover_subscribed" class="hover_user_action subscribed" style="display: none">Subscribed</div>
+			<div id="hover_favorited" class="hover_user_action favorited" style="display: none">Favorited</div>
+			<div id="hover_played" class="hover_user_action played" style="display: none">Played</div>
+		</div>
+		<div id="hover_subscriptions" style="display: none">
+			<div class="contentNoTopPadding">
+			</div>
+		</div>
+	</div>
+	<div class="hover_arrow_left" id="hover_arrow_left">
+		<div class="hover_arrow_inner"></div>
+	</div>
+	<div class="hover_arrow_right" id="hover_arrow_right">
+		<div class="hover_arrow_inner"></div>
+	</div>
+</div>
+
+<center>
+	<!-- footer -->
+		<div id="footer">
+		<div class="footer_content">
+			<div id="footerLogo"><img src="http://cdn.steamcommunity.com/public/images/skin_1/footerLogo_valve.png" width="96" height="26" border="0" alt="Valve Logo" /></div>
+			<div id="footerText">
+				&copy; Valve Corporation. All rights reserved. All trademarks are property of their respective owners in the US and other countries.<br/>Some geospatial data on this website is provided by <a href="http://www.geonames.org" target="_blank">geonames.org</a>.							</div>
+		</div>
+	</div>
+
+		<!-- /footer -->
+
+</center>
+
+</div>
+
+</body>
+</html>

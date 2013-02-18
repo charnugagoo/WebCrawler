@@ -1,0 +1,388 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Steam 社群</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link href="https://steamcommunity.com/public/shared/css/buttons.css?v=3143806127" rel="stylesheet" type="text/css">
+<link href="https://steamcommunity.com/public/css/skin_1/global.css?v=1088990813&client=0" rel="stylesheet" type="text/css">
+<link href="https://steamcommunity.com/public/css/skin_1/home.css?v=3480104779" rel="stylesheet" type="text/css">
+<link href="https://steamcommunity.com/public/css/skin_1/login.css?v=796228529" rel="stylesheet" type="text/css">
+<link href="https://steamcommunity.com/public/css/skin_1/header.css?v=439635755" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://steamcommunity.com/public/javascript/prototype-1.7.js?v=3863744284&amp;l=tchinese"></script>
+<script type="text/javascript" src="https://steamcommunity.com/public/javascript/scriptaculous/scriptaculous.js?v=1436297378&amp;l=tchinese&amp;load=effects,controls,slider,dragdrop"></script>
+<script type="text/javascript" src="https://steamcommunity.com/public/javascript/global.js?v=2415175592&amp;l=tchinese"></script>
+<script type="text/javascript" src="https://steamcommunity.com/public/javascript/home.js?v=134442360&amp;l=tchinese"></script>
+<script type="text/javascript" src="https://steamcommunity.com/public/javascript/login.js?v=3805355884&amp;l=tchinese"></script>
+<script type="text/javascript" src="https://steamcommunity.com/public/javascript/modalv2.js?v=2877296809&amp;l=tchinese"></script>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33779068-1']);
+  _gaq.push(['_setCustomVar', 1, 'Logged In', 'false', 2]);
+  _gaq.push(['_setCustomVar', 2, 'Client Type', 'External', 2]);
+  _gaq.push(['_setCustomVar', 3, 'Cntrlr', 'login', 3]);
+  _gaq.push(['_setCustomVar', 4, 'Method', "login\/home", 3]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_setSessionCookieTimeout', 900000]);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<script type="text/javascript" src="https://steamcommunity.com/public/javascript/crypto/jsbn.js?v=3039950698&amp;l=tchinese"></script>
+<script type="text/javascript" src="https://steamcommunity.com/public/javascript/crypto/rsa.js?v=1480855847&amp;l=tchinese"></script>
+
+</head>
+<body>
+<center>
+<!-- header bar, contains info browsing user if logged in -->
+<div id="global_header">
+	<div class="content">
+	
+		<div class="logo">
+			<span id="logo_holder">
+				<a href="http://store.steampowered.com/">
+					<img src="https://steamcommunity.com/public/images/header/globalheader_logo.png" width="176" height="44" border="0" alt="Steam Logo" />
+				</a>
+			</span>
+			<!--[if lt IE 7]>
+			<style type="text/css">
+			#logo_holder img { filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0); }
+			#logo_holder { display: inline-block; width: 176px; height: 44px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://steamcommunity.com/public/images/header/globalheader_logo.png'); }
+			</style>
+			<![endif]-->
+		</div>
+
+		<a class="menuitem" href="http://store.steampowered.com/">
+			商店		</a>
+
+		<div style="float: left; position: relative;">
+			<a class="menuitem active" style="display: block" href="http://steamcommunity.com">
+					<span class="menuitem_new">全新</span>
+					社群			</a>
+			<div class="community_sub_nav">
+				<a class="submenuitem " href="https://steamcommunity.com/login/home/">好友</a>
+				<a class="submenuitem " href="https://steamcommunity.com/login/home/">個人檔案</a>
+				<a class="submenuitem " href="http://steamcommunity.com/apps/">遊戲中心</a>
+				<a class="submenuitem " href="http://steamcommunity.com/discussions/">討論</a>
+				<a class="submenuitem " href="http://steamcommunity.com/workshop/">工作坊</a>
+				<a class="submenuitem " href="http://steamcommunity.com/greenlight/">Greenlight</a>
+								<a class="submenuitem " href="http://steamcommunity.com/market/">市集</a>
+											</div>
+		</div>
+
+		<a class="menuitem" href="http://store.steampowered.com/news/">
+			新聞		</a>
+
+		<a class="menuitem" href="http://store.steampowered.com/about/">
+			關於		</a>
+
+		<a class="menuitem" href="http://support.steampowered.com/">
+			支援		</a>
+
+		<a class="menuitem" href="http://store.steampowered.com/stats/">
+			統計資料		</a>
+		
+		<div id="global_actions">
+						<div id="global_action_menu">
+
+				<div class="header_installsteam_btn header_installsteam_btn_green">
+					<div class="header_installsteam_btn_leftcap"></div>
+					<div class="header_installsteam_btn_rightcap"></div>
+					<a class="header_installsteam_btn_content" href="http://store.steampowered.com/about/">
+						安裝 Steam					</a>
+				</div>
+															<a class="global_action_link" href="https://steamcommunity.com/login/home/?goto=login%2Fhome%2F%3Fl%3Dtchinese">登入</a>
+						&nbsp;|&nbsp;
+										<span class="pulldown global_action_link" id="language_pulldown" onclick="ShowMenu( this, 'language_dropdown', 'right' );">語言</span>
+					<div class="popup_block" id="language_dropdown" style="display: none;">
+						<div class="shadow_ul"></div><div class="shadow_top"></div><div class="shadow_ur"></div><div class="shadow_left"></div><div class="shadow_right"></div><div class="shadow_bl"></div><div class="shadow_bottom"></div><div class="shadow_br"></div><div class="iepopupfix"><img class="iepopupfix_img" src="https://steamcommunity.com/public/images/blank.gif" alt =""></div>						<div class="popup_body popup_menu shadow_content">
+																						<a class="popup_menu_item tight" href="?l=bulgarian">Български (保加利亞文)</a>
+																						<a class="popup_menu_item tight" href="?l=czech">čeština (Czech)</a>
+																						<a class="popup_menu_item tight" href="?l=danish">Dansk (Danish)</a>
+																						<a class="popup_menu_item tight" href="?l=dutch">Nederlands (Dutch)</a>
+																						<a class="popup_menu_item tight" href="?l=english">English</a>
+																						<a class="popup_menu_item tight" href="?l=finnish">Suomi (Finnish)</a>
+																						<a class="popup_menu_item tight" href="?l=french">Français (French)</a>
+																						<a class="popup_menu_item tight" href="?l=german">Deutsch (German)</a>
+																						<a class="popup_menu_item tight" href="?l=greek">Ελληνικά（希臘文）</a>
+																						<a class="popup_menu_item tight" href="?l=hungarian">Magyar (Hungarian)</a>
+																						<a class="popup_menu_item tight" href="?l=italian">Italiano (Italian)</a>
+																						<a class="popup_menu_item tight" href="?l=japanese">日本語 (Japanese)</a>
+																						<a class="popup_menu_item tight" href="?l=koreana">한국어 (Korean)</a>
+																						<a class="popup_menu_item tight" href="?l=norwegian">Norsk (Norwegian)</a>
+																						<a class="popup_menu_item tight" href="?l=polish">Polski (Polish)</a>
+																						<a class="popup_menu_item tight" href="?l=portuguese">Português (Portuguese)</a>
+																						<a class="popup_menu_item tight" href="?l=brazilian">Português-Brasil（葡萄牙語 － 巴西）</a>
+																						<a class="popup_menu_item tight" href="?l=romanian">Română (Romanian)</a>
+																						<a class="popup_menu_item tight" href="?l=russian">Русский (Russian)</a>
+																						<a class="popup_menu_item tight" href="?l=schinese">简体中文 (Simplified Chinese)</a>
+																						<a class="popup_menu_item tight" href="?l=spanish">Español (Spanish)</a>
+																						<a class="popup_menu_item tight" href="?l=swedish">Svenska (Swedish)</a>
+																														<a class="popup_menu_item tight" href="?l=thai">ไทย (Thai)</a>
+																						<a class="popup_menu_item tight" href="?l=turkish">Türkçe (土耳其文)</a>
+														<a class="popup_menu_item tight" href="http://translation.steampowered.com" target="_blank">幫助我們翻譯 Steam</a>
+						</div>
+					</div>
+							</div>
+		</div>
+		
+		
+		
+	</div>
+
+</div>
+
+<div id="modalBG" style="display: none"></div>
+<script type="text/javascript">
+	g_sessionID = "MTEwMjMwNTM1Mg==";
+	g_steamID = false;
+</script><!-- /header bar -->
+<div id="mainBody">
+	<div id="mainBodyHeader">
+		<h1>Steam 社群</h1>
+		<p>Steam 社群是由各式各樣的電腦遊戲玩家組成。<br />您現在可以輕鬆在線上找到您的好友、組織群組、加入聊天室、建立對戰遊戲，還能享受更多其他功能。<br />最棒的是，這一切全都免費。</p>
+		<div id="userNumbers">
+			<span id="iAccountsInGame">604,585 遊戲中</span> &nbsp;&nbsp;|&nbsp;&nbsp;
+			<span id="iAccountsOnline">3,611,675 線上</span>
+		</div>
+			
+	</div>
+	<div id="lowerContents">
+		<div id="lowerRightContents">
+			<div id="rightActionBlockHeader"><img src="https://steamcommunity.com/public/images/trans.gif" width="254" height="8" border="0" /></div>
+			<div id="rightActionBlock">
+				<form action="#" method="POST" name="logon" id="loginForm" onsubmit="DoLogin(); return false;">
+					<input type="hidden" name="redir" value="http://steamcommunity.com/actions/RedirectToHome">
+					<input type="hidden" name="msg" value="">
+					<input type="hidden" name="emailauth" id="emailauth" value="">
+					<input type="hidden" name="emailsteamid" id="emailsteamid">
+					<label for="steamAccountName">Steam 使用者名稱：</label>
+					<input class="textField" type="text" name="username" id="steamAccountName" maxlength="64" /><br />
+					<label for="steamPassword">密碼：</label>
+					<input class="textField" type="password" name="password" id="steamPassword" autocomplete="off" maxlength="64" /><br />
+										<div id="captcha_entry" style="display: none;">
+						<input type="hidden" id="captchagid" name="captchagid" value="-1" />
+						<div id="CaptchaFormArea">
+						<label id="captchaLabel">這些字元：</label><span id="captchaRefresh"><img src="https://steamcommunity.com/public/images//skin_1/blue_refresh_icon.png" id="captchaRefreshImg" border="0" onClick="RefreshCaptcha();return false;" />&nbsp;<a href="#" id="captchaRefreshLink" title="Refresh" onClick="RefreshCaptcha();return false;">Refresh</a></span>
+						<img id="captchaImg" src="https://steamcommunity.com/public/captcha.php?gid=-1" border="0" /><br />
+						<input class="textField" type="text" name="captcha_text" id="input_captcha" autocomplete="off" /><br />
+						<label class="smallLabel" id="captchaExplanation">請輸入上方的字元，證明自己是人類。</label>
+						</div>
+					</div>
+					<div id="login_btn_signin">
+						<input class="subImage" type="image" id="imageLogin" onMouseover="iSwap('imageLogin','skin_1/buttonLoginOver.gif')" onMouseout="iSwap('imageLogin','skin_1/buttonLogin.gif')" src="https://steamcommunity.com/public/images/skin_1/buttonLogin.gif" width="104" height="25" border="0"/>
+					</div>
+					<div id="login_btn_wait" style="display: none;">
+						<img src="https://steamcommunity.com/public/images/login/throbber.gif">
+					</div>
+				</form>
+				<h2 id="error_display" style="display: none;"></h2>
+			</div>
+			<div id="rightActionBlockFooter"><img src="https://steamcommunity.com/public/images/trans.gif" width="254" height="8" border="0" /></div>
+
+			<div class="rightLowBlockHeader"><img src="https://steamcommunity.com/public/images/trans.gif" width="254" height="8" border="0" /></div>
+				<div class="rightLowBlock">
+					<h2>免費加入 Steam！</h2>
+					<p><a class="linkStandard" href="http://store.steampowered.com/about/" target="_blank">瞭解更多關於 Steam 的使用</a></p>
+					<p><a class="linkStandard" href="http://steamcommunity.com/actions/GroupList">瀏覽現有群組</a></p>
+					
+				</div>
+			<div class="rightLowBlockFooter"><img src="https://steamcommunity.com/public/images/trans.gif" width="254" height="8" border="0" /></div>
+
+			<div class="rightLowBlockHeader"><img src="https://steamcommunity.com/public/images/trans.gif" width="254" height="8" border="0" /></div>
+				<div class="rightLowBlock">
+					<p class="ulTitle">使用 Steam 社群可以……</p>
+					<ul>
+						<li>建立您自己的個人檔案頁面</li>
+						<li>建立並加入群組</li>
+						<li>輕鬆看到您線上和遊戲中的好友</li>
+						<li>安排配對競賽及活動的時程</li>
+						<li>檢閱最近和您一起遊戲的玩家</li>
+						<li>追蹤遊戲統計資料</li>
+						<li>和群組成員聊天</li>
+						<li>透過語音系統在遊戲內外聊天</li>
+					</ul>
+				</div>
+			<div class="rightLowBlockFooter"><img src="https://steamcommunity.com/public/images/trans.gif" width="254" height="8" border="0" /></div>
+
+		</div>
+		<div id="lowerLeftContents" style="background-image:url(https://steamcommunity.com/public/images/homeMessaging/homeMessaging_12.jpg); cursor: pointer;" onclick="top.location.href='http://steamcommunity.com/workshop'">
+			<div id="lowerLeftColLeft">
+				<div id="lowerLeftColRight">
+					<h2>已經有 Steam 了？</h2>
+					<div class="halfBreak"><img src="https://steamcommunity.com/public/images/skin_1/homeBoxHalfBreak.gif" width="315" height="1" border="0" /></div>
+					距離完整的會員資格只有一步之遙。只要<a href="steam://open/main">登入 Steam</a>，移到「社群」索引標籤，就能存取並設定您的個人檔案頁面。				</div>
+				<h2>初次使用 Steam？</h2>
+				<div class="halfBreak"><img src="https://steamcommunity.com/public/images/skin_1/homeBoxHalfBreak.gif" width="315" height="1" border="0" /></div>
+				<a href="http://store.steampowered.com/about/">免費加入 Steam</a>，購買完整的零售版遊戲，系統會直接將遊戲傳送到您的電腦，您還能享有自動更新及遊戲內的社群功能。				<br /><br />
+				<a id="tourSteam" href="http://www.steampowered.com/steamtour/" onClick="window.open(this.href, null, 'width=800,height=570');return false">來趟 Steam 之旅</a>以了解更多。			</div>
+
+            <script type="text/javascript">
+                Event.observe( 'tourSteam', 'click', function(event) { event.stop(); } );
+            </script>
+			
+		</div>
+		
+	</div>
+</div>
+<!-- footer -->
+	<div id="footer">
+		<div class="footer_content">
+			<div id="footerLogo"><img src="https://steamcommunity.com/public/images/skin_1/footerLogo_valve.png" width="96" height="26" border="0" alt="Valve Logo" /></div>
+			<div id="footerText">
+				&copy; 2009 Valve Corporation。保留一切權利。所有商標皆為其各自所有權人在美國與其他國家 (地區) 之財產。 本網站上部分空間資料是由 <a href="http://www.geonames.org" target="_blank">geonames.org</a> 所提供。							</div>
+		</div>
+	</div>
+
+	<!-- /footer -->
+
+</center>
+
+
+	<div id="loginAuthCodeModal" class="modal_frame" style="display:none; " >
+		<div class="modal_top_band">
+			<div class="modal_close"><a href="javascript:hideModal( 'loginAuthCodeModal' )"><img src="https://steamcommunity.com/public/images/x9x9.gif" width="9" height="9" border="0" alt="關閉" /></a></div>
+		</div>
+		<div class="modal_box">
+			<div class="auth_message_area">
+				<div id="auth_icon" class="auth_icon auth_icon_key">
+				</div>
+				<div class="auth_messages" id="auth_messages">
+					<div class="auth_message" id="auth_message_entercode" style="display: none;">
+						<h1>哈囉！</h1>
+						<p>我們發現您正在從新的瀏覽器或電腦登入 Steam，或是已經一段時間了 ...</p>
+					</div>
+					<div class="auth_message" id="auth_message_checkspam" style="display: none;">
+						<h1>誤認為垃圾郵件？</h1>
+						<p>您有檢查您的垃圾郵件嗎？如果您在您的收件匣中沒有看到來自 Steam Support 的訊息，試著去那邊找找看。</p>
+					</div>
+					<div class="auth_message" id="auth_message_success" style="display: none;">
+						<h1>成功！</h1>
+						<p>您現在可以從這裡存取您的 Steam 帳戶。</p>
+					</div>
+					<div class="auth_message" id="auth_message_incorrectcode" style="display: none;">
+						<h1>哎呦！</h1>
+						<p>抱歉，不過，<br>這好像不對喔 ...</p>
+					</div>
+					<div class="auth_message" id="auth_message_help" style="display: none;">
+						<h1>讓我們來幫忙！</h1>
+						<p>很抱歉您遇到問題。我們知道您的 Steam 帳戶對您非常重要，所以我們承諾會幫助您讓您的帳號在正確的手中存取。</p>
+					</div>
+				</div>
+			</div>
+			<div id="auth_details_messages" class="auth_details_messages">
+				<div class="auth_details" id="auth_details_entercode" style="display: none;">
+					由於新增的帳戶安全措施，您需要輸入我們剛才寄送至 <span id="emailauth_entercode_emaildomain"></span> 電子信箱的特殊代碼以授權給此瀏覽器。				</div>
+				<div class="auth_details" id="auth_details_success" style="display: none;">
+					如果這是公用電腦，請記得離開此瀏覽器時登出 Steam。				</div>
+				<div class="auth_details" id="auth_details_help" style="display: none;">
+					請聯絡我們 Steam 支援的工作人員尋求協助。協助正常登入帳戶是我們的首要任務。				</div>
+			</div>
+			<div class="authcode_entry_area">
+				<div id="authcode_entry">
+					<div class="authcode_entry_box">
+						<form action="#" method="POST" onsubmit="javascript:SubmitAuthCode(); return false;"
+																>
+							<input class="authcode_entry_input defaulttext" id="authcode" type="text" value="請在此輸入您的代碼" onfocus="javascript:OnAuthcodeFocus( '請在此輸入您的代碼');" onblur="javascript:OnAuthcodeBlur( '請在此輸入您的代碼');">
+						</form>
+					</div>
+				</div>
+				<div id="authcode_help_supportlink">
+					<a href="https://support.steampowered.com/kb_article.php?ref=4020-ALZM-5519"
+														>聯絡 Steam Support 以取得關於帳戶登入的幫助</a>
+				</div>
+			</div>
+			<div class="modal_buttons" id="auth_buttonsets">
+				<div class="auth_buttonset" id="auth_buttonset_entercode" style="display: none;">
+					<a href="javascript:SubmitAuthCode();" class="auth_button leftbtn">
+						<h3>我已經收到訊息</h3>
+						<h5>我也已經在上面輸入特別存取代碼</h5>
+					</a>
+					<a href="javascript:SetEmailAuthModalState( 'checkspam' );" class="auth_button">
+						<h3>什麼訊息？</h3>
+						<h5>我沒有收到任何來自 Steam Support 的訊息 ...</h5>
+					</a>
+					<div style="clear: left;"></div>
+				</div>
+				<div class="auth_buttonset" id="auth_buttonset_checkspam" style="display: none;">
+					<a href="javascript:SubmitAuthCode();" class="auth_button leftbtn">
+						<h3>找到了！</h3>
+						<h5>我也已經在上面輸入特別存取代碼</h5>
+					</a>
+					<a href="javascript:SetEmailAuthModalState( 'help' );" class="auth_button">
+						<h3>依然沒好運 ...</h3>
+						<h5>我沒有收到任何來自 Steam Support 的訊息 ...</h5>
+					</a>
+					<div style="clear: left;"></div>
+				</div>
+				<div class="auth_buttonset" id="auth_buttonset_success" style="display: none;">
+					<div class="auth_button auth_button_spacer">
+					</div>
+					<a href="javascript:LoginComplete();" class="auth_button" id="success_continue_btn">
+						<h3 style="padding-top: 20px;">前往 Steam！</h3>
+					</a>
+					<div style="clear: left;"></div>
+				</div>
+				<div class="auth_buttonset" id="auth_buttonset_incorrectcode" style="display: none;">
+					<a href="javascript:SubmitAuthCode();" class="auth_button leftbtn">
+						<h3>我想要再試一次</h3>
+						<h5>我也已經在上面重新輸入特別存取代碼</h5>
+					</a>
+					<a href="javascript:SetEmailAuthModalState( 'help' );" class="auth_button">
+						<h3>請幫個忙</h3>
+						<h5>我想我需要 Steam Support 的協助 ...</h5>
+					</a>
+					<div style="clear: left;"></div>
+				</div>
+				<div class="auth_buttonset" id="auth_buttonset_waiting" style="display: none;">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="loginIPTModal" class="modal_frame" style="display:none; top:0; left: 0">
+		<div class="modal_top_band">
+			<div class="modal_close"><a href="javascript:hideModal( 'loginIPTModal' )"><img src="https://steamcommunity.com/public/images/x9x9.gif" width="9" height="9" border="0" alt="關閉" /></a></div>
+		</div>
+		<div class="modal_box">
+			<div class="auth_message_area">
+				<div id="" class="auth_icon ipt_icon">
+				</div>
+				<div class="auth_messages" id="">
+					<div class="auth_message" id="" >
+						<h1>抱歉啦</h1>
+						<p>不透過額外授權就無法從此電腦存取這個帳戶。</p>
+					</div>
+				</div>
+			</div>
+			<div id="" class="auth_details_messages">
+				<div class="auth_details">
+					請聯絡我們 Steam 支援的工作人員尋求協助。協助正常登入帳戶是我們的首要任務。				</div>
+			</div>
+			<div class="authcode_entry_area">
+			</div>
+			<div class="modal_buttons" id="">
+				<div class="auth_buttonset" >
+					<a href="https://support.steampowered.com/kb_article.php?ref=9400-IPAX-9398&auth=e39b5c227cffc8ae65414aba013e5fef" class="auth_button leftbtn"
+														>
+						<h3>瞭解更多</h3>
+						<h5>關於 Intel&reg; Identity Protection Technology</h5>
+					</a>
+					<a href="https://support.steampowered.com" class="auth_button"
+														>
+						<h3>請幫個忙</h3>
+						<h5>我想我需要 Steam Support 的協助 ...</h5>
+					</a>
+					<div style="clear: left;"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="modalBG" style="display: none;"></div>
+
+</body>
+</html>
+
+

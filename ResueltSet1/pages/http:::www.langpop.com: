@@ -1,0 +1,586 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <title>Programming Language Popularity</title>
+      <link href="/stylesheets/report.css?1271944109" media="screen" rel="stylesheet" type="text/css" />
+
+      <!--[if IE]><script type="text/javascript" src="/javascripts/chartr/excanvas.js"></script><![endif]-->
+
+            <script src="/javascripts/prototype.js?1236898850" type="text/javascript"></script>
+<script src="/javascripts/effects.js?1236898850" type="text/javascript"></script>
+<script src="/javascripts/dragdrop.js?1236898850" type="text/javascript"></script>
+<script src="/javascripts/controls.js?1236898850" type="text/javascript"></script>
+<script src="/javascripts/application.js?1236898581" type="text/javascript"></script>      
+      
+  </head>
+
+  <body>
+      <!--[if IE]>
+<script src="/javascripts/chartr/excanvas.js?1302700257" type="text/javascript"></script>
+<script src="/javascripts/chartr/base64.js?1302700257" type="text/javascript"></script>
+<![endif]--><script src="/javascripts/chartr/canvas2image.js?1302700257" type="text/javascript"></script>
+<script src="/javascripts/chartr/canvastext.js?1302700257" type="text/javascript"></script>
+<script src="/javascripts/chartr/flotr-min.js?1302700257" type="text/javascript"></script>
+
+  <script src="/javascripts/normalizer.js?1238878721" type="text/javascript"></script>
+  <div id="container">
+
+      <div id="header">
+      <img src="/images/langpop.png" alt="Programming Language Popularity" title="Programming Language Popularity">
+    </div>
+
+  <div id="subheader">
+    Programming Language Popularity
+  </div>
+
+  <div id="navbox">
+    <b>Navigation:</b>
+    <ul>
+      <li><a href="#normalized">Normalized Comparison</a></li>
+      <li><a href="#search">Yahoo Search Results</a></li>
+      <li><a href="#craigslist">Craigslist</a></li>
+      <li><a href="#powells">Powell's Books</a></li>
+      <li><a href="#freshmeat">Freshmeat</a></li>
+      <li><a href="#googlecode">Google Code</a></li>
+      <li><a href="#delicious">Del.icio.us</a></li>
+      <li><a href="#ohloh">Ohloh</a></li>
+    </ul>
+    <hr></hr>
+    <ul>
+      <li><a href="#normalizeddiscussion">Normalized Discussion Sites</a></li>
+      <li><a href="#ltu">Lambda The Ultimate</a></li>
+      <li><a href="#reddit">programming.reddit.com</a></li>
+      <li><a href="#slashdot">Slashdot</a></li>
+      <li><a href="#irc">Freenode IRC</a></li>
+    </ul>
+    <hr>
+    <ul>
+      <li><a href="timeline.html">Timeline</a></li>
+      <li><a href="talk_timeline.html">Discussion Site Timeline</a></li>
+    </ul>
+    <hr>
+    <ul>
+      <li><a href="#aboutlanguages">About The Languages</a></li>
+      <li><a href="http://groups.google.com/group/langpop">Discussion Forum</a></li>
+    </ul>
+
+    <div>
+	    <iframe src="http://rcm.amazon.com/e/cm?t=dedasys-20&o=1&p=8&l=as1&asins=B002Y27P3M&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=000000&bg1=FFFFFF&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+    </div>
+
+    <div style="margin-top: 5px;">
+	    <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.langpop.com&amp;layout=standard&amp;show_faces=true&amp;width=140&amp;action=like&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:140px; height:80px;" allowTransparency="true"></iframe>
+   </div>
+
+	  <div>
+         <a href="http://twitter.com/share" class="twitter-share-button" data-text="Programming Language Popularity: " data-count="none">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+	  </div>
+
+  </div>
+
+  <hr></hr>
+  <div class="ads" style="font-size: 16px;">
+	<a style="font-size: 36px;" href="http://journal.dedasys.com/2011/04/13/for-sale-langpop-com">LangPop.com is for sale!</a>
+	<br>
+	That's right, after running it for years, I've decided I'd like to move on, if someone's
+	willing to buy it at the right price.
+  </div>
+  <hr></hr>
+
+  <p>
+    Last data update: <em>Wed Apr 13 14:57:11 +0200 2011</em>
+  </p>
+
+  <p>
+    We have attempted to collect a variety of data about the relative popularity of programming
+    languages, mostly out of curiousity.  To some degree <a
+      href="http://www.welton.it/articles/programming_language_economics.html">popularity does
+      matter</a> - however it is clearly not the only thing to take into account when choosing a
+    programming language.  Most experienced programmers should be able to learn the basics of a new
+    language in a week, and be productive with it in a few more weeks, although it will likely take
+    much longer to truly master it.
+  </p>
+
+  <p><strong>Browser requirements:</strong> sadly, yes, this site requires a browser that supports
+    Javascript and the <code>canvas</code> tag.  I wasn't happy with other options for creating
+    charts in image formats, and this also saves some bandwidth, since the Javascript is only
+    downloaded once.  Firefox, IE and Safari ought to work, although I haven't tested it with the
+    latter.  Konqueror apparently does not work.  The charts are created with <a
+      href="http://github.com/davidw/chartr/tree/master">Chartr</a> and <a
+      href="http://solutoire.com/flotr/">Flotr</a>.
+  </p>
+
+  <p><strong>Note:</strong> these results are not scientific.  They are interesting nonetheless, and
+    are an attempt to glean as much data as possible notwithstanding the fact that gathering precise
+    data is impossible.  We hope you find them interesting as well.  Constructive suggestions on
+    improving them are welcome.  Contact information is provided at the bottom of the page.
+  </p>
+
+  <div class="widget">
+    Want to include these charts on your own web pages?
+    <a href="widget">Here's how.</a>
+  </div>
+
+  <br/>
+
+  <h2><a name="normalized">Normalized Comparison</a></h2>
+
+  <p>This is a chart showing combined results from all data sets, listed individually below.</p>
+
+  <div class="chart results" id="normalized_results">
+  </div>
+
+  <p>
+    It is possible to recalculate the normalized results with different "weights" for the
+    different data sources.  For instance, if you want to place more importance on Craigslist
+    data, and less on Yahoo Search, you could set Craigslist to '2', and Yahoo Search to '0.5'.
+  </p>
+
+  <div>
+    <form id="normalized_controls">
+    </form>
+  </div>
+
+  <script type="text/javascript">
+//<![CDATA[
+
+  normalize_and_display_data({"fmdata":[["Cobol",0.0],["Rexx",9.0],["Actionscript",12.0],["D",16.0],["Scala",21.0],["ColdFusion",22.0],["Smalltalk",24.0],["Forth",30.0],["Visual Basic",44.0],["Erlang",63.0],["Shell",67.0],["Pascal",72.0],["Delphi",75.0],["Ada",81.0],["Haskell",85.0],["Fortran",93.0],["OCaml",107.0],["Lisp",115.0],["Lua",126.0],["Scheme",157.0],["Assembly",267.0],["Objective C",352.0],["C#",429.0],["Tcl",511.0],["Ruby",667.0],["SQL",742.0],["JavaScript",1572.0],["Python",4240.0],["Perl",4324.0],["C++",5584.0],["PHP",5591.0],["Java",6930.0],["C",9948.0]],"ohlohdata":[["Cobol",0.0],["ColdFusion",0.0],["Forth",0.0],["Rexx",110.0],["Smalltalk",139.0],["Ada",760.0],["Scala",897.0],["Erlang",898.0],["OCaml",1179.0],["Lisp",1271.0],["Fortran",1416.0],["Haskell",1895.0],["Scheme",2592.0],["D",2787.0],["Tcl",2999.0],["Delphi",3270.0],["Pascal",3270.0],["Lua",4110.0],["Visual Basic",4227.0],["Actionscript",6144.0],["Objective C",7103.0],["Assembly",8766.0],["Ruby",15780.0],["C#",24261.0],["Perl",30758.0],["SQL",30851.0],["PHP",41482.0],["Python",45945.0],["Shell",65190.0],["JavaScript",69053.0],["C++",70009.0],["Java",84808.0],["C",87204.0]],"cldata":[["Smalltalk",1.0],["Rexx",2.0],["Tcl",6.0],["Haskell",9.0],["Lisp",11.0],["OCaml",14.0],["Pascal",15.0],["Ada",20.0],["Scheme",23.0],["D",25.0],["Scala",32.0],["Erlang",33.0],["Lua",33.0],["Forth",43.0],["Fortran",54.0],["Delphi",61.0],["Cobol",105.0],["Objective C",192.0],["ColdFusion",258.0],["Shell",274.0],["Assembly",387.0],["Actionscript",427.0],["Visual Basic",502.0],["Python",544.0],["Perl",629.0],["Ruby",667.0],["C#",1480.0],["Java",2120.0],["JavaScript",2510.0],["C",2750.0],["C++",2790.0],["SQL",2900.0],["PHP",5220.0]],"gcodedata":[["Forth",21308.0],["Cobol",33426.0],["Scala",83237.0],["D",92342.0],["Erlang",221776.0],["ColdFusion",248571.0],["Actionscript",326000.0],["Haskell",508870.0],["Visual Basic",592821.0],["Lua",674491.0],["Scheme",715954.0],["Smalltalk",745081.0],["OCaml",802748.0],["Delphi",1087980.0],["Pascal",1087980.0],["Ada",1512332.0],["Tcl",1632857.0],["Objective C",1674136.0],["SQL",1817067.0],["Fortran",1828748.0],["Lisp",1938684.0],["Assembly",5280553.0],["C#",5461411.0],["Ruby",7205839.0],["JavaScript",8402809.0],["Python",10193326.0],["Shell",11013273.0],["Perl",14648942.0],["PHP",23704029.0],["Java",29523840.0],["C++",48252447.0],["C",109850164.0]],"azdata":[["D",1.0],["OCaml",1.0],["Forth",2.0],["Erlang",4.0],["Rexx",5.0],["Scala",6.0],["Haskell",7.0],["Lua",7.0],["Scheme",7.0],["Shell",10.0],["Tcl",11.0],["ColdFusion",16.0],["Objective C",16.0],["Lisp",17.0],["Smalltalk",22.0],["Delphi",24.0],["Actionscript",31.0],["Fortran",47.0],["Cobol",52.0],["Assembly",60.0],["Pascal",69.0],["Ruby",71.0],["Ada",71.0],["Python",94.0],["Perl",101.0],["PHP",122.0],["JavaScript",137.0],["SQL",165.0],["C",268.0],["C#",332.0],["Visual Basic",419.0],["C++",622.0],["Java",956.0]],"deliciousdata":[["Rexx",395.0],["Cobol",1066.0],["Ada",1966.0],["Pascal",2453.0],["Tcl",3044.0],["D",3530.0],["Fortran",3562.0],["Forth",3691.0],["ColdFusion",5525.0],["OCaml",6996.0],["Lua",8529.0],["Delphi",8992.0],["Visual Basic",9234.0],["Smalltalk",13144.0],["Assembly",13691.0],["Scala",18494.0],["Erlang",27478.0],["Scheme",32110.0],["Objective C",36320.0],["Shell",39329.0],["Haskell",40864.0],["Actionscript",56485.0],["SQL",66167.0],["Lisp",76467.0],["Perl",84110.0],["C++",103806.0],["C",109646.0],["C#",225008.0],["Ruby",299834.0],["PHP",310787.0],["Python",362111.0],["Java",458637.0],["JavaScript",570882.0]],"searchdata":[["OCaml",7870.0],["Rexx",13300.0],["Smalltalk",68600.0],["Tcl",87000.0],["Erlang",119000.0],["Scala",150000.0],["Forth",165000.0],["Ada",181000.0],["Objective C",182000.0],["Haskell",221000.0],["Scheme",247000.0],["Fortran",248000.0],["Cobol",283000.0],["Assembly",362000.0],["Lisp",372000.0],["Pascal",390000.0],["D",412000.0],["Actionscript",427000.0],["Lua",451000.0],["ColdFusion",510000.0],["Delphi",1490000.0],["SQL",1550000.0],["JavaScript",1550000.0],["Ruby",1740000.0],["Shell",1990000.0],["Visual Basic",2260000.0],["Python",2670000.0],["C#",2810000.0],["Perl",3540000.0],["PHP",5810000.0],["Java",10400000.0],["C",15600000.0],["C++",15600000.0]]}, 'normalized_results', 'normalized_controls', {"fmdata":"Freshmeat","ohlohdata":"Ohloh","cldata":"Craigslist","gcodedata":"Google Code","azdata":"Powells","deliciousdata":"Delicious","searchdata":"Yahoo Search"});
+  
+//]]>
+</script>
+
+
+      <h2><a name="search">Yahoo Search Results</a></h2>
+
+      <p>
+	Yahoo provides an API to its search API.  <a
+	  href="http://www.welton.it/articles/language_popularity.html">Previous versions</a> of these
+	statistics used numbers from Google, but since Google has deprecated its own API, we utilized
+	Yahoo's.  Searches took the form <code>"<em>language</em> programming"</code>
+      </p>
+
+      <p>
+	This is a fairly crude approximation of popularity, however, it's worth including, because all
+	other things being equal, the more popular a language is, the more pages will exist mentioning
+	it.
+      </p>
+
+      <div class="chart results" id="search_results">
+      </div>
+      <script type="text/javascript">
+	Flotr.draw($('search_results'), [[[7870.0,1],[13300.0,2],[68600.0,3],[87000.0,4],[119000.0,5],[150000.0,6],[165000.0,7],[181000.0,8],[182000.0,9],[221000.0,10],[247000.0,11],[248000.0,12],[283000.0,13],[362000.0,14],[372000.0,15],[390000.0,16],[412000.0,17],[427000.0,18],[451000.0,19],[510000.0,20],[1490000.0,21],[1550000.0,22],[1550000.0,23],[1740000.0,24],[1990000.0,25],[2260000.0,26],[2670000.0,27],[2810000.0,28],[3540000.0,29],[5810000.0,30],[10400000.0,31],[15600000.0,32],[15600000.0,33]]], {"yaxis":{"ticks":[[1.4,"OCaml"],[2.4,"Rexx"],[3.4,"Smalltalk"],[4.4,"Tcl"],[5.4,"Erlang"],[6.4,"Scala"],[7.4,"Forth"],[8.4,"Ada"],[9.4,"Objective C"],[10.4,"Haskell"],[11.4,"Scheme"],[12.4,"Fortran"],[13.4,"Cobol"],[14.4,"Assembly"],[15.4,"Lisp"],[16.4,"Pascal"],[17.4,"D"],[18.4,"Actionscript"],[19.4,"Lua"],[20.4,"ColdFusion"],[21.4,"Delphi"],[22.4,"SQL"],[23.4,"JavaScript"],[24.4,"Ruby"],[25.4,"Shell"],[26.4,"Visual\u0026nbsp;Basic"],[27.4,"Python"],[28.4,"C#"],[29.4,"Perl"],[30.4,"PHP"],[31.4,"Java"],[32.4,"C"],[33.4,"C++"]]},"bars":{"horizontal":true,"barWidth":0.8,"show":true}});      </script>
+
+      <h2><a name="craigslist">Craigslist</a></h2>
+
+      <p>
+	We used Yahoo's search API for this too, with queries like this: <code><em>language</em>
+	  programmer -"job wanted" site:craigslist.org</code>
+      </p>
+
+      <p>
+	Popular languages are used more in industry, and consequently, people post job listings that
+	seek individuals with experience in those languages.  This is probably something of a lagging
+	indicator, because a language is likely to gain popularity prior to companies utilizing it and
+	consequently seeking more people with experience in it.
+      </p>
+
+      <div class="chart results" id="craigslist_results">
+      </div>
+      <script type="text/javascript">
+	Flotr.draw($('craigslist_results'), [[[1.0,1],[2.0,2],[6.0,3],[9.0,4],[11.0,5],[14.0,6],[15.0,7],[20.0,8],[23.0,9],[25.0,10],[32.0,11],[33.0,12],[33.0,13],[43.0,14],[54.0,15],[61.0,16],[105.0,17],[192.0,18],[258.0,19],[274.0,20],[387.0,21],[427.0,22],[502.0,23],[544.0,24],[629.0,25],[667.0,26],[1480.0,27],[2120.0,28],[2510.0,29],[2750.0,30],[2790.0,31],[2900.0,32],[5220.0,33]]], {"yaxis":{"ticks":[[1.4,"Smalltalk"],[2.4,"Rexx"],[3.4,"Tcl"],[4.4,"Haskell"],[5.4,"Lisp"],[6.4,"OCaml"],[7.4,"Pascal"],[8.4,"Ada"],[9.4,"Scheme"],[10.4,"D"],[11.4,"Scala"],[12.4,"Erlang"],[13.4,"Lua"],[14.4,"Forth"],[15.4,"Fortran"],[16.4,"Delphi"],[17.4,"Cobol"],[18.4,"Objective C"],[19.4,"ColdFusion"],[20.4,"Shell"],[21.4,"Assembly"],[22.4,"Actionscript"],[23.4,"Visual\u0026nbsp;Basic"],[24.4,"Python"],[25.4,"Perl"],[26.4,"Ruby"],[27.4,"C#"],[28.4,"Java"],[29.4,"JavaScript"],[30.4,"C"],[31.4,"C++"],[32.4,"SQL"],[33.4,"PHP"]]},"bars":{"horizontal":true,"barWidth":0.8,"show":true}});      </script>
+
+      <h2><a name="powells">Powell's Books</a></h2>
+
+      <div style="float: left; margin-right: 14px; margin-bottom: 10px;">
+	<a href="http://www.powells.com/partner/26820"><img
+	    src="http://www.powells.com/images/BloggerPartnerButton.gif"
+	    border="0" width="150" height="100" alt="Click here to visit
+	    Powell's Books!"></a>
+      </div>
+
+      <p>
+	<strong>Note:</strong> Until recently, we used data from Amazon.com for book statistics,
+	but due to several problems with Amazon's web service, we have switched to data from
+	Powell's Books.  They're a large, independant book store based in Portland, Oregon.  A visit
+	to the physical store is highly recommended if you're ever in the area.
+      </p>
+
+      <p>
+	Since these results are new, we will probably be tweaking them in order to determine which
+	queries work "best".  Currently, we're searching for language names in titles in several
+	sections that are relevant (Software Engineering and Computer Programming, to be precise).
+	Expect the results to change some over the coming months.
+      </p>
+
+      <p>
+	Books are a lagging indicator, but a good way to eliminate languages that aren't "established"
+	at all.  There are hundreds of languages out there, but if there's a book, it's generally
+	something more than a toy or research project.  That's not to say that languages without a
+	book aren't "serious", but we do need to draw the line somewhere.  In any case, it's
+	interesting to compare what languages people are talking about with the amount of available
+	books.
+      </p>
+
+      <div class="chart results" id="powells_results">
+      </div>
+      <script type="text/javascript">
+	Flotr.draw($('powells_results'), [[[1.0,1],[1.0,2],[2.0,3],[4.0,4],[5.0,5],[6.0,6],[7.0,7],[7.0,8],[7.0,9],[10.0,10],[11.0,11],[16.0,12],[16.0,13],[17.0,14],[22.0,15],[24.0,16],[31.0,17],[47.0,18],[52.0,19],[60.0,20],[69.0,21],[71.0,22],[71.0,23],[94.0,24],[101.0,25],[122.0,26],[137.0,27],[165.0,28],[268.0,29],[332.0,30],[419.0,31],[622.0,32],[956.0,33]]], {"yaxis":{"ticks":[[1.4,"D"],[2.4,"OCaml"],[3.4,"Forth"],[4.4,"Erlang"],[5.4,"Rexx"],[6.4,"Scala"],[7.4,"Haskell"],[8.4,"Lua"],[9.4,"Scheme"],[10.4,"Shell"],[11.4,"Tcl"],[12.4,"ColdFusion"],[13.4,"Objective C"],[14.4,"Lisp"],[15.4,"Smalltalk"],[16.4,"Delphi"],[17.4,"Actionscript"],[18.4,"Fortran"],[19.4,"Cobol"],[20.4,"Assembly"],[21.4,"Pascal"],[22.4,"Ruby"],[23.4,"Ada"],[24.4,"Python"],[25.4,"Perl"],[26.4,"PHP"],[27.4,"JavaScript"],[28.4,"SQL"],[29.4,"C"],[30.4,"C#"],[31.4,"Visual\u0026nbsp;Basic"],[32.4,"C++"],[33.4,"Java"]]},"bars":{"horizontal":true,"barWidth":0.8,"show":true}});      </script>
+
+      <h2><a name="freshmeat">Freshmeat</a></h2>
+
+      <p>
+	The data from Freshmeat were obtained via their new API: <a
+	  href="http://help.freshmeat.net/faqs/api-7/data-api-intro">http://help.freshmeat.net/faqs/api-7/data-api-intro</a>.
+    </p>
+
+  <p>
+    Freshmeat is a good place to get data on open source projects that have passed the early stages
+    and actually released something and announced it.  These results most likely reflect differences
+    in what people are paid to work with and what they choose to work with when they can choose.
+    There were no freshmeat projects utilizing Cobol, for example, although it seems to fare
+    decently in the other results.
+  </p>
+
+  <div class="chart results" id="freshmeat_results">
+  </div>
+  <script type="text/javascript">
+    Flotr.draw($('freshmeat_results'), [[[0.0,1],[9.0,2],[12.0,3],[16.0,4],[21.0,5],[22.0,6],[24.0,7],[30.0,8],[44.0,9],[63.0,10],[67.0,11],[72.0,12],[75.0,13],[81.0,14],[85.0,15],[93.0,16],[107.0,17],[115.0,18],[126.0,19],[157.0,20],[267.0,21],[352.0,22],[429.0,23],[511.0,24],[667.0,25],[742.0,26],[1572.0,27],[4240.0,28],[4324.0,29],[5584.0,30],[5591.0,31],[6930.0,32],[9948.0,33]]], {"yaxis":{"ticks":[[1.4,"Cobol"],[2.4,"Rexx"],[3.4,"Actionscript"],[4.4,"D"],[5.4,"Scala"],[6.4,"ColdFusion"],[7.4,"Smalltalk"],[8.4,"Forth"],[9.4,"Visual\u0026nbsp;Basic"],[10.4,"Erlang"],[11.4,"Shell"],[12.4,"Pascal"],[13.4,"Delphi"],[14.4,"Ada"],[15.4,"Haskell"],[16.4,"Fortran"],[17.4,"OCaml"],[18.4,"Lisp"],[19.4,"Lua"],[20.4,"Scheme"],[21.4,"Assembly"],[22.4,"Objective C"],[23.4,"C#"],[24.4,"Tcl"],[25.4,"Ruby"],[26.4,"SQL"],[27.4,"JavaScript"],[28.4,"Python"],[29.4,"Perl"],[30.4,"C++"],[31.4,"PHP"],[32.4,"Java"],[33.4,"C"]]},"bars":{"horizontal":true,"barWidth":0.8,"show":true}});  </script>
+
+  <h2><a name="googlecode">Google Code</a></h2>
+
+  <p>
+    Data from Google Code Search was obtained using the API to search here: <a
+      href="http://www.google.com/codesearch">http://www.google.com/codesearch</a>
+  </p>
+
+  <p>
+    This is similar to Freshmeat in that it favors open source projects with code that is visible on
+    the internet.  Due to some issues with the API, I am currently (as of October 2010) using a dump
+    of data handed directly to me by Google.
+  </p>
+
+  <div class="chart results" id="googlecode_results">
+  </div>
+  <script type="text/javascript">
+    Flotr.draw($('googlecode_results'), [[[21308.0,1],[33426.0,2],[83237.0,3],[92342.0,4],[221776.0,5],[248571.0,6],[326000.0,7],[508870.0,8],[592821.0,9],[674491.0,10],[715954.0,11],[745081.0,12],[802748.0,13],[1087980.0,14],[1087980.0,15],[1512332.0,16],[1632857.0,17],[1674136.0,18],[1817067.0,19],[1828748.0,20],[1938684.0,21],[5280553.0,22],[5461411.0,23],[7205839.0,24],[8402809.0,25],[10193326.0,26],[11013273.0,27],[14648942.0,28],[23704029.0,29],[29523840.0,30],[48252447.0,31],[109850164.0,32]]], {"yaxis":{"ticks":[[1.4,"Forth"],[2.4,"Cobol"],[3.4,"Scala"],[4.4,"D"],[5.4,"Erlang"],[6.4,"ColdFusion"],[7.4,"Actionscript"],[8.4,"Haskell"],[9.4,"Visual\u0026nbsp;Basic"],[10.4,"Lua"],[11.4,"Scheme"],[12.4,"Smalltalk"],[13.4,"OCaml"],[14.4,"Delphi"],[15.4,"Pascal"],[16.4,"Ada"],[17.4,"Tcl"],[18.4,"Objective C"],[19.4,"SQL"],[20.4,"Fortran"],[21.4,"Lisp"],[22.4,"Assembly"],[23.4,"C#"],[24.4,"Ruby"],[25.4,"JavaScript"],[26.4,"Python"],[27.4,"Shell"],[28.4,"Perl"],[29.4,"PHP"],[30.4,"Java"],[31.4,"C++"],[32.4,"C"]]},"bars":{"horizontal":true,"barWidth":0.8,"show":true}});  </script>
+
+  <h2><a name="delicious">Del.icio.us</a></h2>
+
+  <p>
+    Data from Del.icio.us was obtained with the Yahoo Search API, because the del.icio.us API
+    really isn't up to the job yet.  We did site: searches like <code><em>language</em>
+      programming</code>.
+  </p>
+
+  <p>
+    This is an interesting bit of data for a couple of reasons.  First of all, it seems more
+    linear that the others.  It ought to reflect what people genuinely find interesting or useful
+    themselves, rather than what they put out there at random, which means they have an incentive
+    to be 'honest'.  The order of the language also seems to change significantly compared to the
+    other data sets.
+  </p>
+
+  <div class="chart results" id="delicious_results">
+  </div>
+  <script type="text/javascript">
+    Flotr.draw($('delicious_results'), [[[395.0,1],[1066.0,2],[1966.0,3],[2453.0,4],[3044.0,5],[3530.0,6],[3562.0,7],[3691.0,8],[5525.0,9],[6996.0,10],[8529.0,11],[8992.0,12],[9234.0,13],[13144.0,14],[13691.0,15],[18494.0,16],[27478.0,17],[32110.0,18],[36320.0,19],[39329.0,20],[40864.0,21],[56485.0,22],[66167.0,23],[76467.0,24],[84110.0,25],[103806.0,26],[109646.0,27],[225008.0,28],[299834.0,29],[310787.0,30],[362111.0,31],[458637.0,32],[570882.0,33]]], {"yaxis":{"ticks":[[1.4,"Rexx"],[2.4,"Cobol"],[3.4,"Ada"],[4.4,"Pascal"],[5.4,"Tcl"],[6.4,"D"],[7.4,"Fortran"],[8.4,"Forth"],[9.4,"ColdFusion"],[10.4,"OCaml"],[11.4,"Lua"],[12.4,"Delphi"],[13.4,"Visual\u0026nbsp;Basic"],[14.4,"Smalltalk"],[15.4,"Assembly"],[16.4,"Scala"],[17.4,"Erlang"],[18.4,"Scheme"],[19.4,"Objective C"],[20.4,"Shell"],[21.4,"Haskell"],[22.4,"Actionscript"],[23.4,"SQL"],[24.4,"Lisp"],[25.4,"Perl"],[26.4,"C++"],[27.4,"C"],[28.4,"C#"],[29.4,"Ruby"],[30.4,"PHP"],[31.4,"Python"],[32.4,"Java"],[33.4,"JavaScript"]]},"bars":{"horizontal":true,"barWidth":0.8,"show":true}});  </script>
+
+  <h2><a name="ohloh">Ohloh</a></h2>
+
+  <p>
+    <a href="http://www.ohloh.net">Ohloh</a> provides a lot of information and statistics about
+    various open source projects.  We decided to use the number of people committing code in a
+    particular language, rather than something like lines of code, as languages like C will always
+    have more lines than, say, shell scripts.
+  </p>
+
+  <div class="chart results" id="ohloh_results">
+  </div>
+  <script type="text/javascript">
+    Flotr.draw($('ohloh_results'), [[[0.0,1],[0.0,2],[0.0,3],[110.0,4],[139.0,5],[760.0,6],[897.0,7],[898.0,8],[1179.0,9],[1271.0,10],[1416.0,11],[1895.0,12],[2592.0,13],[2787.0,14],[2999.0,15],[3270.0,16],[3270.0,17],[4110.0,18],[4227.0,19],[6144.0,20],[7103.0,21],[8766.0,22],[15780.0,23],[24261.0,24],[30758.0,25],[30851.0,26],[41482.0,27],[45945.0,28],[65190.0,29],[69053.0,30],[70009.0,31],[84808.0,32],[87204.0,33]]], {"yaxis":{"ticks":[[1.4,"Cobol"],[2.4,"ColdFusion"],[3.4,"Forth"],[4.4,"Rexx"],[5.4,"Smalltalk"],[6.4,"Ada"],[7.4,"Scala"],[8.4,"Erlang"],[9.4,"OCaml"],[10.4,"Lisp"],[11.4,"Fortran"],[12.4,"Haskell"],[13.4,"Scheme"],[14.4,"D"],[15.4,"Tcl"],[16.4,"Delphi"],[17.4,"Pascal"],[18.4,"Lua"],[19.4,"Visual\u0026nbsp;Basic"],[20.4,"Actionscript"],[21.4,"Objective C"],[22.4,"Assembly"],[23.4,"Ruby"],[24.4,"C#"],[25.4,"Perl"],[26.4,"SQL"],[27.4,"PHP"],[28.4,"Python"],[29.4,"Shell"],[30.4,"JavaScript"],[31.4,"C++"],[32.4,"Java"],[33.4,"C"]]},"bars":{"horizontal":true,"barWidth":0.8,"show":true}});  </script>
+
+  <hr></hr>
+  <div class="ads">
+    <script type="text/javascript"><!--
+      google_ad_client = "pub-5440322766006443";
+      google_ad_width = 728;
+      google_ad_height = 90;
+      google_ad_format = "728x90_as";
+      google_ad_type = "text_image";
+      google_ad_channel = "";
+      //-->
+    </script>
+    <script type="text/javascript"
+      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+  </div>
+  <hr></hr>
+
+  <h2 align="center">What languages are people talking about?</h2>
+
+  <p>
+    For fun (well, this whole site is "for fun"... let's just say it's extra data we don't include
+    in the main results), we also gathered some data from sites programmers often visit to talk
+    about programming languages.  Because of how this industry functions, what people are
+    experimenting with, what they want to use, and what they're paid to use every day are often
+    different things.  For the moment, we use three sites:
+  </p>
+
+  <h2><a name="normalizeddiscussion">Normalized Discussion Site Results</a></h2>
+
+  <p>Normalized results from the discussion site data sets - these results are not included with
+    the 'normalized results' above.  It's interesting to note how languages like Haskell and Erlang
+    are talked about a lot, despite scoring fairly low on the normalized popularity chart above.
+    People are interested in them, but haven't begun to use them on a large scale yet.</p>
+
+  <div class="chart results" id="discussions_results">
+  </div>
+
+  <p>
+    It is possible to recalculate the normalized results with different "weights" for the
+    different data sources.  For instance, if you want to place more importance on Craigslist data,
+    and less on Yahoo Search, you could set Craigslist to '2', and Search to '0.5', and then redraw
+    the chart.
+  </p>
+
+  <div id="discussions_controls"></div>
+
+  <script type="text/javascript">
+//<![CDATA[
+
+  normalize_and_display_data({"slashdata":[["Tcl",0.0],["Rexx",1.0],["Actionscript",2.0],["D",2.0],["Smalltalk",2.0],["OCaml",2.0],["Forth",4.0],["ColdFusion",5.0],["Lua",5.0],["Delphi",5.0],["Fortran",6.0],["Ada",7.0],["Pascal",7.0],["Scala",10.0],["Haskell",11.0],["C#",13.0],["Objective C",13.0],["Cobol",13.0],["Assembly",15.0],["Visual Basic",15.0],["Erlang",17.0],["Lisp",17.0],["Shell",20.0],["Scheme",25.0],["SQL",51.0],["Python",52.0],["Perl",59.0],["Ruby",68.0],["PHP",78.0],["JavaScript",91.0],["C",103.0],["C++",103.0],["Java",195.0]],"ltudata":[["Actionscript",0.0],["ColdFusion",0.0],["Delphi",1.0],["D",1.0],["Tcl",2.0],["Rexx",2.0],["Cobol",3.0],["PHP",3.0],["Shell",4.0],["SQL",4.0],["Objective C",5.0],["Pascal",5.0],["Perl",5.0],["Fortran",6.0],["Assembly",8.0],["Lua",8.0],["Visual Basic",9.0],["Forth",9.0],["Ada",14.0],["OCaml",14.0],["C#",17.0],["Smalltalk",19.0],["Scala",24.0],["Ruby",28.0],["JavaScript",30.0],["Erlang",33.0],["Scheme",57.0],["Python",61.0],["Lisp",78.0],["Java",82.0],["Haskell",90.0],["C",148.0],["C++",148.0]],"ircdata":[["Rexx",1.44769874476987],["Cobol",1.94583333333333],["Actionscript",6.725],["Pascal",8.325],["Delphi",11.475],["ColdFusion",12.5125],["Fortran",17.1416666666667],["Smalltalk",19.3179916317992],["Forth",26.9416666666667],["Visual Basic",37.8786610878661],["Ada",51.4125],["Objective C",58.6666666666667],["Tcl",81.5857740585774],["D",82.1333333333333],["OCaml",95.1458333333333],["SQL",98.7489539748954],["Assembly",149.133333333333],["Scheme",158.443514644351],["Lua",195.221757322176],["Erlang",231.7125],["Scala",242.635983263598],["Java",306.648535564854],["C#",316.875],["Lisp",327.426778242678],["Ruby",331.820083682008],["C",370.7375],["PHP",448.445833333333],["JavaScript",488.112970711297],["Shell",569.062761506276],["Perl",573.975],["C++",686.504166666667],["Haskell",696.432432432432],["Python",776.393305439331]],"redditdata":[["Rexx",2.0],["ColdFusion",40.0],["Pascal",40.0],["Fortran",60.0],["Ada",70.0],["Delphi",70.0],["Tcl",70.0],["Visual Basic",70.0],["Cobol",110.0],["Actionscript",130.0],["Assembly",150.0],["Lua",150.0],["Forth",160.0],["Objective C",170.0],["Shell",220.0],["D",300.0],["OCaml",350.0],["Smalltalk",430.0],["Scheme",570.0],["Scala",600.0],["SQL",610.0],["Erlang",920.0],["Perl",940.0],["Lisp",1290.0],["PHP",1760.0],["Haskell",2020.0],["Ruby",2110.0],["JavaScript",2350.0],["Java",2870.0],["C++",3360.0],["C#",3360.0],["C",3360.0],["Python",3390.0]]}, 'discussions_results', 'discussions_controls', {"slashdata":"Slashdot","ltudata":"Lambda The Ultimate","ircdata":"IRC","redditdata":"Reddit"});
+  
+//]]>
+</script>
+
+  <h2><a name="ltu">Lambda The Ultimate</a></h2>
+
+  <p>
+    The data were obtained using Yahoo's search API on the <a
+      href="http://lambda-the-ultimate.org">Lambda The Ultimate</a> web site, utilizing the
+    <code>title:</code> query option in an attempt to eliminate false positives due to the
+    presence of these terms on every page: Erlang, Lisp, Haskell, Tcl, Python.
+  </p>
+
+  <p>
+    This site is firmly grounded in academia, and many participants are associated with
+    programming language research, so more "experimental" or innovative languages are commonly
+    discussed and well regarded.  What's interesting about the numbers is that there seems to be a
+    cap, with several languages equal to the maximum.  Perhaps it's an error with Yahoo's data -
+    we'll keep an eye on it for future versions of this report.
+  </p>
+
+  <div class="chart results" id="ltu_results">
+  </div>
+  <script type="text/javascript">
+    Flotr.draw($('ltu_results'), [[[0.0,1],[0.0,2],[1.0,3],[1.0,4],[2.0,5],[2.0,6],[3.0,7],[3.0,8],[4.0,9],[4.0,10],[5.0,11],[5.0,12],[5.0,13],[6.0,14],[8.0,15],[8.0,16],[9.0,17],[9.0,18],[14.0,19],[14.0,20],[17.0,21],[19.0,22],[24.0,23],[28.0,24],[30.0,25],[33.0,26],[57.0,27],[61.0,28],[78.0,29],[82.0,30],[90.0,31],[148.0,32],[148.0,33]]], {"yaxis":{"ticks":[[1.4,"Actionscript"],[2.4,"ColdFusion"],[3.4,"Delphi"],[4.4,"D"],[5.4,"Tcl"],[6.4,"Rexx"],[7.4,"Cobol"],[8.4,"PHP"],[9.4,"Shell"],[10.4,"SQL"],[11.4,"Objective C"],[12.4,"Pascal"],[13.4,"Perl"],[14.4,"Fortran"],[15.4,"Assembly"],[16.4,"Lua"],[17.4,"Visual\u0026nbsp;Basic"],[18.4,"Forth"],[19.4,"Ada"],[20.4,"OCaml"],[21.4,"C#"],[22.4,"Smalltalk"],[23.4,"Scala"],[24.4,"Ruby"],[25.4,"JavaScript"],[26.4,"Erlang"],[27.4,"Scheme"],[28.4,"Python"],[29.4,"Lisp"],[30.4,"Java"],[31.4,"Haskell"],[32.4,"C"],[33.4,"C++"]]},"bars":{"horizontal":true,"barWidth":0.8,"show":true}});  </script>
+
+  <h2><a name="reddit">programming.reddit.com</a></h2>
+
+  <p>
+    The data were obtained with a bit of screen scraping and reddit's own search feature.
+  </p>
+
+  <p>
+    This site has gained in popularity recently, and often has decent discussions of programming
+    languages and their relative merits.  The community is generally curious about up and coming
+    languages like Haskell and Erlang.  Of course there are also many people working in industry
+    with languages like Java and PHP.
+  </p>
+
+  <div class="chart results" id="reddit_results">
+  </div>
+  <script type="text/javascript">
+    Flotr.draw($('reddit_results'), [[[2.0,1],[40.0,2],[40.0,3],[60.0,4],[70.0,5],[70.0,6],[70.0,7],[70.0,8],[110.0,9],[130.0,10],[150.0,11],[150.0,12],[160.0,13],[170.0,14],[220.0,15],[300.0,16],[350.0,17],[430.0,18],[570.0,19],[600.0,20],[610.0,21],[920.0,22],[940.0,23],[1290.0,24],[1760.0,25],[2020.0,26],[2110.0,27],[2350.0,28],[2870.0,29],[3360.0,30],[3360.0,31],[3360.0,32],[3390.0,33]]], {"yaxis":{"ticks":[[1.4,"Rexx"],[2.4,"ColdFusion"],[3.4,"Pascal"],[4.4,"Fortran"],[5.4,"Ada"],[6.4,"Delphi"],[7.4,"Tcl"],[8.4,"Visual\u0026nbsp;Basic"],[9.4,"Cobol"],[10.4,"Actionscript"],[11.4,"Assembly"],[12.4,"Lua"],[13.4,"Forth"],[14.4,"Objective C"],[15.4,"Shell"],[16.4,"D"],[17.4,"OCaml"],[18.4,"Smalltalk"],[19.4,"Scheme"],[20.4,"Scala"],[21.4,"SQL"],[22.4,"Erlang"],[23.4,"Perl"],[24.4,"Lisp"],[25.4,"PHP"],[26.4,"Haskell"],[27.4,"Ruby"],[28.4,"JavaScript"],[29.4,"Java"],[30.4,"C++"],[31.4,"C#"],[32.4,"C"],[33.4,"Python"]]},"bars":{"horizontal":true,"barWidth":0.8,"show":true}});  </script>
+
+  <h2><a name="slashdot">Slashdot</a></h2>
+
+  <p>
+    The data were obtained using Yahoo's search API with the <a
+      href="http://slashdot.org">Slashdot</a> web site.  We use the <code>title:</code> query
+    option here too, to be fair.
+  </p>
+
+  <p>
+    Slashdot reaches a very wide audience, and while it hasn't been quite as popular as more recent
+    arrivals like reddit, it's still a very popular site, and has been around for a while, so is
+    worth including.
+  </p>
+
+  <div class="chart results" id="slashdot_results">
+  </div>
+  <script type="text/javascript">
+    Flotr.draw($('slashdot_results'), [[[0.0,1],[1.0,2],[2.0,3],[2.0,4],[2.0,5],[2.0,6],[4.0,7],[5.0,8],[5.0,9],[5.0,10],[6.0,11],[7.0,12],[7.0,13],[10.0,14],[11.0,15],[13.0,16],[13.0,17],[13.0,18],[15.0,19],[15.0,20],[17.0,21],[17.0,22],[20.0,23],[25.0,24],[51.0,25],[52.0,26],[59.0,27],[68.0,28],[78.0,29],[91.0,30],[103.0,31],[103.0,32],[195.0,33]]], {"yaxis":{"ticks":[[1.4,"Tcl"],[2.4,"Rexx"],[3.4,"Actionscript"],[4.4,"D"],[5.4,"Smalltalk"],[6.4,"OCaml"],[7.4,"Forth"],[8.4,"ColdFusion"],[9.4,"Lua"],[10.4,"Delphi"],[11.4,"Fortran"],[12.4,"Ada"],[13.4,"Pascal"],[14.4,"Scala"],[15.4,"Haskell"],[16.4,"C#"],[17.4,"Objective C"],[18.4,"Cobol"],[19.4,"Assembly"],[20.4,"Visual\u0026nbsp;Basic"],[21.4,"Erlang"],[22.4,"Lisp"],[23.4,"Shell"],[24.4,"Scheme"],[25.4,"SQL"],[26.4,"Python"],[27.4,"Perl"],[28.4,"Ruby"],[29.4,"PHP"],[30.4,"JavaScript"],[31.4,"C"],[32.4,"C++"],[33.4,"Java"]]},"bars":{"horizontal":true,"barWidth":0.8,"show":true}});  </script>
+
+  <h2><a name="irc">IRC</a></h2>
+
+  <p>
+    The data were obtained from a bot stationed on the <a href="http://freenode.net/">Freenode</a>
+    <a href="http://en.wikipedia.org/wiki/IRC">IRC</a> network, which polls the number of users per
+    channel at intervals of several hours.
+  </p>
+
+  <p>
+    IRC is still, for many people, <em>the</em> place to go to get real-time help with various
+    technologies, or simply to discuss them.
+  </p>
+
+  <div class="chart results" id="irc_results">
+  </div>
+  <script type="text/javascript">
+    Flotr.draw($('irc_results'), [[[1.44769874476987,1],[1.94583333333333,2],[6.725,3],[8.325,4],[11.475,5],[12.5125,6],[17.1416666666667,7],[19.3179916317992,8],[26.9416666666667,9],[37.8786610878661,10],[51.4125,11],[58.6666666666667,12],[81.5857740585774,13],[82.1333333333333,14],[95.1458333333333,15],[98.7489539748954,16],[149.133333333333,17],[158.443514644351,18],[195.221757322176,19],[231.7125,20],[242.635983263598,21],[306.648535564854,22],[316.875,23],[327.426778242678,24],[331.820083682008,25],[370.7375,26],[448.445833333333,27],[488.112970711297,28],[569.062761506276,29],[573.975,30],[686.504166666667,31],[696.432432432432,32],[776.393305439331,33]]], {"yaxis":{"ticks":[[1.4,"Rexx"],[2.4,"Cobol"],[3.4,"Actionscript"],[4.4,"Pascal"],[5.4,"Delphi"],[6.4,"ColdFusion"],[7.4,"Fortran"],[8.4,"Smalltalk"],[9.4,"Forth"],[10.4,"Visual\u0026nbsp;Basic"],[11.4,"Ada"],[12.4,"Objective C"],[13.4,"Tcl"],[14.4,"D"],[15.4,"OCaml"],[16.4,"SQL"],[17.4,"Assembly"],[18.4,"Scheme"],[19.4,"Lua"],[20.4,"Erlang"],[21.4,"Scala"],[22.4,"Java"],[23.4,"C#"],[24.4,"Lisp"],[25.4,"Ruby"],[26.4,"C"],[27.4,"PHP"],[28.4,"JavaScript"],[29.4,"Shell"],[30.4,"Perl"],[31.4,"C++"],[32.4,"Haskell"],[33.4,"Python"]]},"bars":{"horizontal":true,"barWidth":0.8,"show":true}});  </script>
+
+
+  <h2><a name="aboutlanguages">About The Languages</a></h2>
+
+  <ul>
+    <li><a href="http://en.wikipedia.org/wiki/Actionscript">Actionscript</a>
+    </li>
+    <li><a href="http://en.wikipedia.org/wiki/Ada_(programming_language)">Ada</a>
+    </li>
+    <li><a href="http://en.wikipedia.org/wiki/Assembly_language">Assembly</a>
+    </li>
+    <li><a href="http://en.wikipedia.org/wiki/C_(programming_language)">C</a>
+    </li>
+    <li><a href="http://en.wikipedia.org/wiki/C_Sharp_(programming_language)">C#</a>
+    </li>
+    <li><a href="http://en.wikipedia.org/wiki/C%2B%2B">C++</a>
+    </li>
+    <li><a href="http://en.wikipedia.org/wiki/Cobol">Cobol</a>
+    </li>
+    <li><a href="http://en.wikipedia.org/wiki/ColdFusion">ColdFusion</a>
+    </li>
+    <li><a href="http://en.wikipedia.org/wiki/D_(programming_language)">D</a>
+    </li>
+    <li><a href="http://en.wikipedia.org/wiki/Delphi_programming_language">Delphi</a>
+    </li>
+    <li><a href="http://en.wikipedia.org/wiki/Erlang_(programming_language)">Erlang</a>
+    </li>
+    <li><a href="http://en.wikipedia.org/wiki/Forth_(programming_language)">Forth</a>
+    </li>
+    <li><a href="http://en.wikipedia.org/wiki/Fortran">Fortran</a>
+    </li>
+    <li><a href="http://en.wikipedia.org/wiki/Haskell_(programming_language)">Haskell</a>
+    </li>
+    <li><a href="http://en.wikipedia.org/wiki/Java_(programming_language)">Java</a>
+    </li>
+    <li><a href="http://en.wikipedia.org/wiki/JavaScript">JavaScript</a>
+    </li>
+    <li><a href="http://en.wikipedia.org/wiki/Lisp_(programming_language)">Lisp</a>
+    </li>
+    <li><a href="http://en.wikipedia.org/wiki/Lua_(programming_language)">Lua</a>
+    </li>
+    <li><a href="http://en.wikipedia.org/wiki/Objective-C">Objective C</a>
+    </li>
+    <li><a href="http://en.wikipedia.org/wiki/OCaml">OCaml</a>
+    </li>
+    <li><a href="http://en.wikipedia.org/wiki/PHP">PHP</a>
+    </li>
+    <li><a href="http://en.wikipedia.org/wiki/Pascal_(programming_language)">Pascal</a>
+    </li>
+    <li><a href="http://en.wikipedia.org/wiki/Perl">Perl</a>
+    </li>
+    <li><a href="http://en.wikipedia.org/wiki/Python_(programming_language)">Python</a>
+    </li>
+
+    <li><a href="http://en.wikipedia.org/wiki/Rexx">Rexx</a></li>
+
+    <li><a href="http://en.wikipedia.org/wiki/Ruby_(programming_language)">Ruby</a></li>
+
+    <li><a href="http://en.wikipedia.org/wiki/Scala_%28programming_language%29">Scala</a></li>
+
+    <li><a href="http://en.wikipedia.org/wiki/SQL">SQL</a></li>
+
+    <li><a href="http://en.wikipedia.org/wiki/Scheme_(programming_language)">Scheme</a>
+    </li>
+    <li><a href="http://en.wikipedia.org/wiki/Bourne_shell">Shell</a>
+    </li>
+    <li><a href="http://en.wikipedia.org/wiki/Smalltalk">Smalltalk</a>
+    </li>
+    <li><a href="http://en.wikipedia.org/wiki/Tcl">Tcl</a>
+    </li>
+    <li><a href="http://en.wikipedia.org/wiki/Visual Basic">Visual Basic</a>
+    </li>
+  </ul>
+
+  <h2>Notes, Future Improvements</h2>
+
+  <ul>
+    <li>
+      <p>
+	With the proper infrastructure in place for gathering and saving data, we intend to update
+	this data on a regular basis, as well as showing historical trends.
+      </p>
+    </li>
+
+    <li>
+      <p>
+	Past versions of these statistics used data on prices of keywords in programs like
+	Google's AdSense.  We have currently applied for access to this data from Google, and are
+	waiting on approval.
+      </p>
+    </li>
+
+    <li>
+      <p>
+	"C" named languages are something of a problem.  Queries for "C" tend to return results
+	for C# and C++ as well.  One way of dealing with this would be to run queries like this:
+	<code>C -C# -C++</code>, however, that unfairly penalizes pages that contain discussions
+	of both C and C++.  The D programming language suffers from a similar problem (it tends to
+	be confused with "3-d programming", so we tweaked some of the searches to account for
+	this, and use "D programming language" where appropriate.
+      </p>
+    </li>
+
+    <li>
+      <p>
+	More sources of data are always welcome.
+      </p>
+    </li>
+
+    <li>
+      <p>
+	We're willing to add other languages, but they should register in <strong>all</strong> of
+	our existing data sources.
+      </p>
+    </li>
+
+    <li>
+      <p>
+	Check out the <a href="http://groups.google.com/group/langpop">Google Group</a> for
+	announcements / updates, or if you want to make a suggestion about the survey.  We also
+	welcome email to suggestions --- at --- langpop.com.  When submitting a request, please
+	check and see if your language registers hits with the data source used in this survey, and
+	send me the links. Thanks!
+      </p>
+    </li>
+
+  </ul>
+
+  <hr></hr>
+  <div class="ads">
+<iframe src="http://rcm.amazon.com/e/cm?t=dedasys-20&o=1&p=16&l=bn1&mode=books&browse=5&fc1=000000&lt1=&lc1=3366FF&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="468" height="336" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
+  </div>
+  <hr></hr>
+
+  </div>
+
+
+      <div id="footer">
+	<p>
+	  Copyright &copy; 2007-2011 <a href="http://www.dedasys.com">DedaSys LLC</a></p>
+      </div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-2794167-3");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+    </body>
+</html>

@@ -1,0 +1,2895 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="generator" content="vBulletin 3.8.4" />
+
+<meta name="keywords" content="Advanced Mechanics, dota" />
+<meta name="description" content="Ask any technical questions about advanced DotA mechanics here" />
+
+
+<!-- CSS Stylesheet -->
+<style type="text/css" id="vbulletin_css">
+/**
+* vBulletin 3.8.4 CSS
+* Style: 'PlayDotA'; Style ID: 2
+*/
+@import url("clientscript/vbulletin_css/style-300cd769-00002.css");
+</style>
+<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_important.css?v=387" />
+
+
+
+<!-- / CSS Stylesheet -->
+
+
+
+<style type="text/css">
+.tooltiphover {
+	border-bottom: 1px dashed #fff;
+	text-decoration: none;
+	cursor:help;
+}
+
+.tooltiphover:hover {
+	position: relative;
+         border-bottom: 1px dashed #fff;
+}
+
+.tooltiphover span {
+	display: none;
+}
+.tooltiphover:hover span {
+	display: block;
+   	position: absolute;left:0px;top:10px;
+   	padding: 5px; margin: 10px;
+   	background: #f0f0f0; border: 1px dotted #c0c0c0;
+         opacity:0.9;   
+         filter:alpha(opacity=90);   
+         -moz-opacity:0.9;   
+         color:#fff;
+         background:#111;
+         width:220px;
+         float:left;
+}
+</style>
+
+
+
+<style type="text/css">
+.stg_table
+{
+background:#000;
+}
+.stg_table td
+{
+padding:3px;
+}
+.stg_table .alt1 td
+{
+background:#222;
+}
+.iceblog
+{
+position:relative;
+padding-top:5px;
+left:52px;
+}
+.iceblog img
+{
+
+}
+.pics
+{
+list-style-type:none;
+margin:0px;
+padding:0px;
+margin-top:15px;
+border:0px;
+margin-left:10px;
+width:600px;
+}
+
+
+.fixwrapq {width:100%;}
+
+
+
+.pics h1
+{
+font-size:12px;
+font-weight:normal;
+color:#96B6DF;
+margin:2px;
+padding:0px;
+}
+
+.pics li
+{
+margin-right:10px;
+text-align:center;
+float:left;
+padding:5px;
+margin-bottom:8px;
+}
+
+.pics .s
+{
+
+width:125px;
+float:left;
+margin:0px;
+padding:0px;
+margin-left:5px;
+margin-right:5px;	
+margin-bottom:10px;
+height:140px !important;
+height:160px;
+padding-top:4px;
+}
+
+.pics .g
+{
+width:125px;
+float:left;
+margin:0px;
+padding:0px;
+margin-left:5px;
+margin-right:5px;	
+margin-bottom:10px;
+height:140px !important;
+height:160px;
+padding-top:4px;
+}
+
+.pics .s img
+{
+width:100px;
+height:77px;
+}
+
+.pics .b
+{
+background:url(http://media.playdota.com/site/artwork/sbg.jpg) center top no-repeat;
+width:220px;
+padding:10px;
+}
+
+
+.pics li img
+{
+margin-bottom:5px;
+border:0px;
+}
+.footer
+{
+height:131px;
+background:url(http://media.playdota.com/site/footer.jpg) no-repeat;
+width:934px;
+color:#a1a1a1;
+font-size:12px;
+font-weight:normal;
+}
+
+
+.footer ul
+{
+background:none;
+list-style-type:none;
+margin:0px;
+padding:0px;
+margin-top:28px;
+margin-left:136px;
+
+}
+
+.footer ul li
+{
+background:none;
+float:left;
+margin-right:8px;
+margin-bottom:20px;
+
+}
+.footer .sh
+{
+width:65px;
+}
+
+.menu
+{
+list-style-type:none;
+padding:0px;
+margin:0px;
+border:0;
+margin-top:160px;
+background:none;
+margin-left:73px;
+}
+.header
+{
+width:980px;
+height:339px;
+background:url(http://media.playdota.com/site/header.jpg) no-repeat;
+margin:0px;
+padding:0px;
+margin-left:1px;
+}
+.menu li
+{
+font-family: "Times New Roman", Times, serif; 
+float:left;
+padding-top:42px;
+margin-right:8px;
+color:#cccccc;
+background:none;
+}
+
+.sigdim
+{
+max-width: 500px;
+max-height: 300px;
+overflow: hidden;
+}
+
+.menu .sh
+{
+width:140px;
+cursor:pointer;
+background:none;
+height:100px;
+}
+.menu .sh a div
+{
+width:130px;height:130px;
+position:relative;
+top:-60px;
+cursor:pointer;
+}
+.bracket .space
+{
+width:1px;
+height:31px;
+clear:both;
+}
+.bracket .semispace
+{
+width:1px;
+height:14px;
+clear:both;
+}
+.bracket .single
+{
+background:url(http://media.playdota.com/site/bracketsingle.png) no-repeat;
+width:109px;
+height:31px;
+padding-top:2px;
+}
+.bracket .single .team
+{
+display:block;
+padding-top:5px;
+padding-left:7px;
+font-size:10px;
+color:#fff;
+float:left;
+width:88px;
+font-weight:bold;
+}
+.bracket .single .score
+{
+color:#fff;
+font-weight:bold;
+padding-top:4px;
+display:block;
+float:left;
+width:10px;
+}
+.bracket .customjoint
+{
+margin-top:15px;
+padding-bottom:15px; 
+display:block;
+}
+
+.bracket
+{
+border:0px !important;
+padding:0px !important;
+background:none !important;;
+}
+.bracket td
+{
+border:0px !important;
+padding:0px !important;
+background:none !important;;
+}
+.bracket .noscore
+{
+background:url(http://media.playdota.com/site/bracket.png) no-repeat;
+width:136px;
+height:52px;
+}
+.bracket .windown
+{
+background:url(http://media.playdota.com/site/bracket.png) left -106px no-repeat;
+}
+.bracket .winup
+{
+background:url(http://media.playdota.com/site/bracket.png) left -53px no-repeat;
+}
+.bracket .noscore .team
+{
+display:block;
+padding-top:5px;
+padding-left:15px;
+font-size:11px;
+color:#fff;
+float:left;
+width:105px;
+font-weight:bold;
+}
+.bracket .noscore .score
+{
+color:#fff;
+font-weight:bold;
+padding-top:6px;
+display:block;
+float:left;
+width:15px;
+}
+
+.jointline
+{
+background:url(http://media.playdota.com/site/joint.gif) no-repeat left center;
+width:11px;
+}
+
+.bracketContainer
+{
+width:610px;
+overflow:auto;
+white-space:nowrap;
+height:100%;
+scrollbar-base-color:#222222;
+overflow-y: hidden;
+-ms-overflow-y: hidden;
+padding-bottom:30px;
+}
+.groupTable table
+{
+border:0px !important;
+padding:0px !important;
+background:url(http://media.playdota.com/competition/toptable.png) no-repeat !important;
+width:254px;
+}
+.groupTable thead td
+{
+padding-bottom:3px;
+padding-top:3px;
+font-size:12px;
+}
+
+.groupTable tbody td
+{
+padding-bottom:3px;
+padding-top:3px;
+font-size:11px;
+color:#fff;
+padding-left:9px;
+padding-right:9px;
+background:none;
+height:13px;
+}
+.groupTable thead td
+{
+padding-left:9px;
+padding-right:9px;
+padding-top:5px;
+background:none !important;
+}
+.groupTable tfoot td
+{
+background:none !important;
+padding:0;
+border:0;
+}
+
+</style>
+<script type="text/javascript" src="http://media.playdota.com/js/swfobject.js"></script>
+<script type="text/javascript" src="http://media.playdota.com/forums/clientscript/yui/yahoo-dom-event/yahoo-dom-event.js?v=387"></script>
+<script type="text/javascript" src="http://media.playdota.com/forums/clientscript/yui/connection/connection-min.js?v=387"></script>
+<script type="text/javascript">
+<!--
+var SESSIONURL = "s=32a1f749d6f96700ac42f245f66692fa&";
+var SECURITYTOKEN = "guest";
+var IMGDIR_MISC = "http://media.playdota.com/forums/assault_fps/misc";
+var vb_disable_ajax = parseInt("0", 10);
+// -->
+</script>
+<script type="text/javascript" src="http://media.playdota.com/forums/clientscript/vbulletin_global.js?v=387"></script>
+<script type="text/javascript" src="http://media.playdota.com/forums/clientscript/vbulletin_menu.js?v=387"></script>
+
+
+	<link rel="alternate" type="application/rss+xml" title="DotA Forums RSS Feed" href="external.php?type=RSS2" />
+	
+		<link rel="alternate" type="application/rss+xml" title="DotA Forums - Advanced Mechanics - RSS Feed" href="external.php?type=RSS2&amp;forumids=52" />
+	
+<script type="text/javascript" src="http://media.playdota.com/forums/clientscript/ncode_imageresizer.js?v=1.0.2"></script>
+<script type="text/javascript">
+<!--
+NcodeImageResizer.MODE = 'newwindow';
+
+NcodeImageResizer.MAXWIDTH = 580;
+NcodeImageResizer.MAXHEIGHT = 0;
+
+
+NcodeImageResizer.MAXWIDTHSIGS = 500;
+NcodeImageResizer.MAXHEIGHTSIGS = 300;
+
+NcodeImageResizer.BBURL = 'http://www.playdota.com/forums';
+
+vbphrase['ncode_imageresizer_warning_small'] = 'Click this bar to view the full image.';
+vbphrase['ncode_imageresizer_warning_filesize'] = 'This image has been resized. Click this bar to view the full image. The original image is sized %1$sx%2$s and weights %3$sKB.';
+vbphrase['ncode_imageresizer_warning_no_filesize'] = 'This image has been resized. Click this bar to view the full image. The original image is sized %1$sx%2$s.';
+vbphrase['ncode_imageresizer_warning_fullsize'] = 'Click this bar to view the small image.';
+//-->
+</script>
+
+<style type="text/css">
+
+table.ncode_imageresizer_warning {
+background: #FFFFE1; 
+color: #FFFFFF; 
+border: 1px solid #CCCFFF; 
+	cursor: pointer;
+}
+
+table.ncode_imageresizer_warning td {
+	font-size: 10px;
+	vertical-align: middle;
+	text-decoration: none;
+}
+
+table.ncode_imageresizer_warning td.td1 {
+	padding: 5px;
+}
+
+table.ncode_imageresizer_warning td.td1 {
+	padding: 2px;
+}
+
+</style>
+<title>Advanced Mechanics - DotA Forums</title>
+
+</head>
+<body>
+
+	
+	
+	
+	
+
+
+<div id="pagewrapper_out_dc">
+<div id="pagewrapper">
+<!-- header -->
+
+<center>
+
+
+<div class="header">
+	&nbsp;
+	<ul class="menu">
+		<li><a href="/heroes"><img src="http://media.playdota.com/site/heroes.png" alt="" border="0"/></a></li>
+		<li><a href="/items"><img src="http://media.playdota.com/site/items.png" alt="" border="0"/></a></li>
+		<li><a href="/guides"><img src="http://media.playdota.com/site/guides.png" alt="" border="0"/></a></li>
+		<li><a href="/mechanics"><img src="http://media.playdota.com/site/mechanics.png" alt="" border="0"/></a></li>
+		<li><a href="/forums/dota-tools-ai-maps/"><img src="http://media.playdota.com/site/tools.png" alt="" border="0"/></a></li>
+		<li><a href="/forums/"><img src="http://media.playdota.com/site/forums.png" alt="" border="0"/></a></li>
+		<li class="sh" ><a href="/" ><div></div></a></li>
+		<li><a href="/forums/dota-replays/"><img src="http://media.playdota.com/site/replays.png" alt="" border="0"/></a></li>
+		<li><a href="/videos"><img src="http://media.playdota.com/site/videos.png" alt="" border="0"/></a></li>
+		<li><a href="/fanart"><img src="http://media.playdota.com/site/art.png" alt="" border="0"/></a></li>
+		<li><a href="/comics"><img src="http://media.playdota.com/site/comics.png" alt="" border="0"/></a></li>
+		<li><a href="/ai"><img src="http://media.playdota.com/site/links.png" alt="" border="0"/></a></li>
+		<li><a href="/about"><img src="http://media.playdota.com/site/about.png" alt="" border="0"/></a></li>
+	</ul>
+<a class="iceblog" href="http://www.playdota.com/forums/blogs/icefrog/" title="Developer's Blog"><img src="http://media.playdota.com/site/blog.jpg" alt="Developer's Blog" /></a>
+</div>
+</center>
+
+
+<!-- /header -->
+
+
+
+<div id="border_left">
+<div id="border_right">
+<div id="border_top">
+<div id="border_bottom">
+
+<div id="tleft_corner">
+<div id="tright_corner">
+<!-- content table -->
+<!-- open content container -->
+
+<div align="center" style='word-wrap: break-word;'>
+	<div class="page_spacer" style="width:autopx; text-align:left">
+		<div>
+
+
+
+
+<div class="vbmenu_popup" id="vbbloglinks_menu" style="display:none;margin-top:3px" align="left">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead"><a href="blog.php?s=32a1f749d6f96700ac42f245f66692fa">Blogs</a></td>
+	</tr>
+	
+
+	<tr>
+		<td class="vbmenu_option"><a href="http://www.playdota.com/forums/blogs/icefrog/">IceFrog's Blog</a></td>
+	</tr>
+
+	<tr>
+		<td class="vbmenu_option"><a href="blog.php?s=32a1f749d6f96700ac42f245f66692fa&amp;do=bloglist">Blog List</a></td>
+	</tr>
+	
+	<tr>
+		<td class="vbmenu_option"><a href="blog_search.php?s=32a1f749d6f96700ac42f245f66692fa&amp;do=search">Search Blogs</a></td>
+	</tr>
+	
+	</table>
+</div>
+<div class="navbarcontainer">
+<!-- breadcrumb, login, pm info -->
+<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
+<tr>
+	<td class="alt1" width="100%">
+		
+			<table cellpadding="0" cellspacing="0" border="0">
+			<tr valign="bottom">
+				<td><a href="http://www.playdota.com/forums/index.php"><img src="http://media.playdota.com/forums/assault_fps/misc/navbits_start.gif" alt="" border="0" /></a></td>
+				<td>&nbsp;</td>
+				<td width="100%">
+	<span class="navbar"><img src="http://media.playdota.com/forums/assault_fps/icons/arrow_y.png" alt="" /><a href="forumdisplay.php?s=32a1f749d6f96700ac42f245f66692fa&amp;f=23">Defense of the Ancients</a></span>
+
+</td>
+			</tr>
+			<tr>
+				<td class="navbar" style="font-size:10pt; padding-top:1px" colspan="3"><a href="/forums/forumdisplay.php?f=52"><img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/misc/arrow_x.png" alt="Reload this Page" border="0" /></a> <h1 class="h1">
+	Advanced Mechanics
+
+</h1></td>
+			</tr>
+			</table>			
+		
+	</td>	
+	
+		<td class="alt2" nowrap="nowrap" style="padding:0px">
+		<!-- login form -->
+		<form action="login.php?do=login" method="post" onsubmit="md5hash(vb_login_password, vb_login_md5password, vb_login_md5password_utf, 0)">
+		<script type="text/javascript" src="http://media.playdota.com/forums/clientscript/vbulletin_md5.js?v=387"></script>
+		<table cellpadding="0" cellspacing="3" border="0">
+		<tr>
+			<td class="smallfont" style="white-space: nowrap;"><label for="navbar_username">User Name</label></td>
+			<td><input type="text" class="bginput" style="font-size: 11px" name="vb_login_username" id="navbar_username" size="10" accesskey="u" tabindex="101" value="User Name" onfocus="if (this.value == 'User Name') this.value = '';" /></td>
+			<td class="smallfont" nowrap="nowrap"><label for="cb_cookieuser_navbar"><input type="checkbox" name="cookieuser" value="1" tabindex="103" id="cb_cookieuser_navbar" accesskey="c" />Remember Me?</label></td>
+		</tr>
+		<tr>
+			<td class="smallfont"><label for="navbar_password">Password</label></td>
+			<td><input type="password" class="bginput" style="font-size: 11px" name="vb_login_password" id="navbar_password" size="10" tabindex="102" /></td>
+			<td><input type="submit" class="button" value="Log in" tabindex="104" title="Enter your username and password in the boxes provided to login, or click the 'register' button to create a profile for yourself." accesskey="s" /></td>
+		</tr>
+		</table>
+		<input type="hidden" name="s" value="32a1f749d6f96700ac42f245f66692fa" />
+		<input type="hidden" name="securitytoken" value="guest" />
+		<input type="hidden" name="do" value="login" />		
+		<input type="hidden" name="vb_login_md5password" />
+		<input type="hidden" name="vb_login_md5password_utf" />
+		</form>
+		<!-- / login form -->
+		</td>
+		
+</tr>
+</table>
+</div>
+<!-- / breadcrumb, login, pm info -->
+
+<!-- nav buttons bar -->
+<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center" style="border-top-width:0px">
+<tr align="center">
+	
+	
+		<td class="vbmenu_control"><a href="register.php?s=32a1f749d6f96700ac42f245f66692fa" rel="nofollow">Register</a></td>
+	
+	
+<!--	<td class="vbmenu_control"><a rel="help" href="faq.php?s=32a1f749d6f96700ac42f245f66692fa" accesskey="5">FAQ</a></td>-->
+	
+		<td class="vbmenu_control"><a id="community" href="/forums/forumdisplay.php?f=52&amp;nojs=1#community" rel="nofollow" accesskey="6">Community</a> <script type="text/javascript"> vbmenu_register("community"); </script></td>
+	
+
+	<td class="vbmenu_control"><a href="lofi/">Low Fi</a></td>
+			
+		
+		
+	
+	
+	
+
+</tr>
+</table>
+<!-- / nav buttons bar -->
+
+
+
+<br />
+
+
+
+
+
+
+<!-- NAVBAR POPUP MENUS -->
+
+	
+	<!-- community link menu -->
+	<div class="vbmenu_popup" id="community_menu" style="display:none;margin-top:3px" align="left">
+		<table cellpadding="4" cellspacing="1" border="0">
+		<tr><td class="thead">Community Links</td></tr>
+		
+        <tr><td class="vbmenu_option"><a href="group.php?s=32a1f749d6f96700ac42f245f66692fa&amp;">Social Groups</a></td></tr>
+		
+		<tr><td class="vbmenu_option"><a href="http://www.playdota.com/chat">IRC Chat</a></td></tr>
+		
+		
+        <tr><td class="vbmenu_option"><a href="arcade.php?s=32a1f749d6f96700ac42f245f66692fa">Arcade</a></td></tr>
+        <tr><td class="thead">Blogs</td></tr>
+        <tr><td class="vbmenu_option"><a href="blog.php?s=32a1f749d6f96700ac42f245f66692fa&amp;u=0">Your Blog</a></td></tr>
+        <tr><td class="vbmenu_option"><a href="http://www.playdota.com/forums/blogs/icefrog/">IceFrog's Blog</a></td></tr>
+        <tr><td class="vbmenu_option"><a href="blog.php?s=32a1f749d6f96700ac42f245f66692fa&amp;do=bloglist">Blog List</a></td></tr>
+        
+        <tr><td class="vbmenu_option"><a href="blog_search.php?s=32a1f749d6f96700ac42f245f66692fa&amp;do=search">Search Blogs</a></td></tr>
+        
+        
+		</table>
+	</div>
+	<!-- / community link menu -->
+	
+
+	
+
+	
+<!-- / NAVBAR POPUP MENUS -->
+
+<!-- PAGENAV POPUP -->
+	<div class="vbmenu_popup" id="pagenav_menu" style="display:none">
+		<table cellpadding="4" cellspacing="1" border="0">
+		<tr>
+			<td class="thead" nowrap="nowrap">Go to Page...</td>
+		</tr>
+		<tr>
+			<td class="vbmenu_option" title="nohilite">
+			<form action="index.php" method="get" onsubmit="return this.gotopage()" id="pagenav_form">
+				<input type="text" class="bginput" id="pagenav_itxt" style="font-size:11px" size="4" />
+				<input type="button" class="button" id="pagenav_ibtn" value="Go" />
+			</form>
+			</td>
+		</tr>
+		</table>
+	</div>
+<!-- / PAGENAV POPUP -->
+
+
+
+
+
+
+
+<!-- sub-forum list  -->
+<div class="tcat_top">
+	<div class="tcat_left"></div>
+	
+	<div class="tcat_right">
+	<div class="tcat_right_inner">
+	</div>
+	</div>
+
+	
+	
+	<div class="tcat_text">
+	<div class="tcat_text_inner">
+		Sub-Forums<span class="normal"> : Advanced Mechanics</span>
+	</div>
+	</div>
+</div>
+
+<div class="tborder_big">
+<div class="tborder_big_right">
+<table id="collapseobj_forumbit_52" class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
+<thead>
+	<tr align="center">
+		<td class="thead" style="width: 4%;">&nbsp;</td>
+		<td class="thead" align="left">Forum</td>
+		<td class="thead" style="width: 26%;" nowrap="nowrap">Last Post</td>
+		<td class="thead" style="width: 5%; text-align: center;">Threads</td>
+		<td class="thead" style="width: 5%; text-align: center;">Posts</td>
+		
+	</tr>
+</thead>
+
+<tr align="center">
+		<td class="alt1Active" colspan="2" align="left" id="f27">
+		
+		<table cellpadding="0" cellspacing="0" border="0">
+		<tr>
+			<td><img src="http://media.playdota.com/forums/assault_fps/statusicon/forum_27.jpg" alt="" width="39" height="39" border="0" id="forum_statusicon_27" /></td>
+			<td><img src="clear.gif" alt="" width="9" height="1" border="0" /></td>
+			<td>
+			<div>
+				<a href="forumdisplay.php?s=32a1f749d6f96700ac42f245f66692fa&amp;f=27" class="forumtitle"><strong>Advanced Mechanics Guides</strong></a>
+
+				
+			</div>
+			
+			
+			
+			</td>
+		</tr>
+		</table>
+		
+		</td>
+		<td class="alt2">
+<div class="smallfont" align="left">
+	<div>
+		<span style="white-space:nowrap">
+		<img class="inlineimg" src="assault_fps/icons/icon1.gif" alt="" border="0" />
+		
+		<a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;goto=newpost&amp;t=1260780" style="white-space:nowrap" title="Go to first unread post in thread 'Every Neutral Creep's and Item's damage type.'"><strong>Every Neutral Creep's and...</strong></a></span>
+	</div>
+	<div style="white-space:nowrap">
+		by <a href="member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;find=lastposter&amp;f=27" rel="nofollow">jyzzy</a>
+	</div>
+	<div align="right" style="white-space:nowrap">
+		02-12-2013 <span class="time">10:25 PM</span>
+		<a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;p=7970814#post7970814"><img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+	</div>
+</div>
+</td>
+		<td class="alt1">31</td>
+		<td class="alt2">1,840</td>
+		
+	</tr>
+
+
+
+</table>
+</div>
+</div>
+<div class="tbottom">
+<div class="tbottom_left"></div>
+<div class="tbottom_right"></div>
+</div>
+<!-- / sub-forum list  -->
+
+
+
+<!-- threads list  -->
+
+<form action="inlinemod.php?forumid=52" method="post" id="inlinemodform">
+<input type="hidden" name="url" value="" />
+<input type="hidden" name="s" value="32a1f749d6f96700ac42f245f66692fa" />
+<input type="hidden" name="securitytoken" value="guest" />
+<input type="hidden" name="forumid" value="52" />
+
+<!-- controls above thread list -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:3px">
+<tr valign="bottom" class="dark">
+	<td align="left"><div class="pagenav" align="left">
+<table class="tborder" cellpadding="3" cellspacing="1" border="0">
+<tr>
+	<td class="vbmenu_control" style="font-weight:normal">Page 1 of 417</td>
+	
+	
+		<td class="alt2"><span class="smallfont" title="Showing results 1 to 20 of 8,338"><strong>1</strong></span></td>
+ <td class="alt1"><a class="smallfont" href="forumdisplay.php?s=32a1f749d6f96700ac42f245f66692fa&amp;f=52&amp;order=desc&amp;page=2" title="Show results 21 to 40 of 8,338">2</a></td><td class="alt1"><a class="smallfont" href="forumdisplay.php?s=32a1f749d6f96700ac42f245f66692fa&amp;f=52&amp;order=desc&amp;page=3" title="Show results 41 to 60 of 8,338">3</a></td><td class="alt1"><a class="smallfont" href="forumdisplay.php?s=32a1f749d6f96700ac42f245f66692fa&amp;f=52&amp;order=desc&amp;page=11" title="Show results 201 to 220 of 8,338"><!--+10-->11</a></td><td class="alt1"><a class="smallfont" href="forumdisplay.php?s=32a1f749d6f96700ac42f245f66692fa&amp;f=52&amp;order=desc&amp;page=51" title="Show results 1,001 to 1,020 of 8,338"><!--+50-->51</a></td><td class="alt1"><a class="smallfont" href="forumdisplay.php?s=32a1f749d6f96700ac42f245f66692fa&amp;f=52&amp;order=desc&amp;page=101" title="Show results 2,001 to 2,020 of 8,338"><!--+100-->101</a></td>
+	<td class="alt1"><a rel="next" class="smallfont" href="forumdisplay.php?s=32a1f749d6f96700ac42f245f66692fa&amp;f=52&amp;order=desc&amp;page=2" title="Next Page - Results 21 to 40 of 8,338">&gt;</a></td>
+	<td class="alt1" nowrap="nowrap"><a class="smallfont" href="forumdisplay.php?s=32a1f749d6f96700ac42f245f66692fa&amp;f=52&amp;order=desc&amp;page=417" title="Last Page - Results 8,321 to 8,338 of 8,338">Last <strong>&raquo;</strong></a></td>
+	<td class="vbmenu_control" title="forumdisplay.php?s=32a1f749d6f96700ac42f245f66692fa&amp;f=52&amp;order=desc"><a name="PageNav"></a></td>
+</tr>
+</table>
+</div></td>
+	<td class="smallfont" align="right"><a href="newthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;do=newthread&amp;f=52" rel="nofollow"><img src="http://media.playdota.com/forums/assault_fps/buttons/newthread.gif" alt="Post New Thread" border="0" /></a></td>
+</tr>
+</table>
+<!-- / controls above thread list -->
+
+<div class="tcat_top">
+	<div class="tcat_left"></div>
+	
+	<div class="tcat_right">
+	<div class="tcat_right_inner">
+	</div>
+	</div>
+	
+	<div class="vbmenu_outer">
+		<div class="tcat_vbmenu" id="forumtools"><img src="http://media.playdota.com/forums/assault_fps/misc/skin/spacer.gif" class="spacer" alt="" />
+			<a href="/forums/forumdisplay.php?f=52&amp;nojs=1#goto_forumtools" rel="nofollow">Forum Tools</a> <script type="text/javascript"> vbmenu_register("forumtools"); </script>
+		</div>
+		
+	
+	</div>
+
+	<div class="tcat_text">
+	<div class="tcat_text_inner">
+		Threads in Forum<span class="normal"> : Advanced Mechanics</span>
+	</div>
+	</div>
+</div>
+
+<div class="tborder_big">
+<div class="tborder_big_right">
+<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center" id="threadslist">
+<tbody>
+<tr>
+	<td class="alt1"><img src="http://media.playdota.com/forums/assault_fps/statusicon/announcement_old.gif" border="0" alt="Announcement" /></td>
+	<td class="alt2" colspan="5">
+		<div>
+			<span class="smallfont" style="float:right">Views: <strong>80,903</strong> <a href="announcement.php?s=32a1f749d6f96700ac42f245f66692fa&amp;f=52&amp;a=58"><img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/buttons/lastpost.gif" alt="View Announcement" border="0" /></a></span>
+			<strong>Announcement</strong>: <a href="announcement.php?s=32a1f749d6f96700ac42f245f66692fa&amp;f=52&amp;a=58">Forum Rules</a>
+		</div>
+		<div>
+			<span style="float:right"><span class="smallfont">05-09-2011</span></span>
+			<span class="smallfont">
+				<a href="member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;u=20">28awg</a>
+				(Administrator)
+			</span>
+		</div>
+	</td>
+</tr>
+<tr>
+
+	
+		<td class="thead" colspan="2">&nbsp;</td>
+		
+	<td class="thead" width="100%">
+		
+		<a href="forumdisplay.php?s=32a1f749d6f96700ac42f245f66692fa&amp;f=52&amp;daysprune=-1&amp;order=asc&amp;sort=title" rel="nofollow">Thread</a>  /
+		<a href="forumdisplay.php?s=32a1f749d6f96700ac42f245f66692fa&amp;f=52&amp;daysprune=-1&amp;order=asc&amp;sort=postusername" rel="nofollow">Thread Starter</a> 
+	</td>
+	<td class="thead" width="150" align="center" nowrap="nowrap"><span style="white-space:nowrap"><a href="forumdisplay.php?s=32a1f749d6f96700ac42f245f66692fa&amp;f=52&amp;daysprune=-1&amp;order=desc&amp;sort=lastpost" rel="nofollow">Last Post</a> <a href="forumdisplay.php?s=32a1f749d6f96700ac42f245f66692fa&amp;f=52&amp;daysprune=-1&amp;order=asc&amp;sort=lastpost&amp;pp=20&amp;page=1" rel="nofollow"><img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/buttons/sortasc.gif" alt="Reverse Sort Order" border="0" /></a></span></td>
+	<td class="thead" align="center" nowrap="nowrap"><span style="white-space:nowrap"><a href="forumdisplay.php?s=32a1f749d6f96700ac42f245f66692fa&amp;f=52&amp;daysprune=-1&amp;order=desc&amp;sort=replycount" rel="nofollow">Replies</a> </span></td>
+	<td class="thead" align="center" nowrap="nowrap"><span style="white-space:nowrap"><a href="forumdisplay.php?s=32a1f749d6f96700ac42f245f66692fa&amp;f=52&amp;daysprune=-1&amp;order=desc&amp;sort=views" rel="nofollow">Views</a> </span></td>
+	
+	
+
+</tr>
+</tbody>
+
+
+	<!-- show threads -->
+	<tbody id="threadbits_forum_52">
+	
+	<tr>
+<td class="thead" colspan="7"><strong>Sticky Threads</strong></td>
+</tr><tr>
+	<td class="alt1" id="td_threadstatusicon_378114" align="center">
+		
+		<img src="http://media.playdota.com/forums/assault_fps/statusicon/thread_hot.gif" id="thread_statusicon_378114" alt="" border="" />
+	</td>
+	
+		<td class="alt2"><img src="assault_fps/icons/icon1.gif" alt="" border="0" /></td>
+	
+
+	<td class="alt1 sticky" id="td_threadtitle_378114" title="This topic is for forumers to suggest things for the Fact of the Day on the main page. If you have a piece of mechanics related information that you...">
+
+		
+		<div>
+			
+				<span style="float:right">
+					
+					
+					
+					
+					 <a href="#" onclick="attachments(378114); return false"> <img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/misc/paperclip.gif" border="0" alt="2 Attachment(s)" /></a> 
+					
+					 <img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/misc/sticky.gif" alt="Sticky Thread" /> 
+				</span>
+			
+			
+			
+			
+			
+			
+			<a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=378114" id="thread_title_378114" class="threadcolor">Fact of the Day</a>
+			<span class="smallfont" style="white-space:nowrap">(<img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/misc/multipage.gif" alt="Multi-page thread" border="0" />  <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=378114">1</a> <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=378114&amp;page=2">2</a> <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=378114&amp;page=3">3</a> ... <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=378114&amp;page=83">Last Page</a>)</span>
+		</div>
+
+	
+		
+			
+		<div class="smallfont">
+					<!-- thread description --><!-- / thread description -->
+			
+				<span style="cursor:pointer" onclick="window.open('member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;u=12852', '_self')">Lordshinjo</span>
+			
+		</div>
+		
+		
+		
+	</td>
+	
+	
+	<td class="alt2" title="Replies: 1,657, Views: 294,660">
+		<div class="smallfont" style="text-align:right; white-space:nowrap">
+			02-16-2013 <span class="time">12:27 PM</span><br />
+			by <a href="member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;find=lastposter&amp;t=378114" rel="nofollow">Tahinpekmez</a>  <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;p=7991999#post7991999"><img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+		</div>
+	</td>
+	
+	
+	
+		<td class="alt1" align="center"><a href="misc.php?do=whoposted&amp;t=378114" onclick="who(378114); return false;">1,657</a></td>
+		<td class="alt2" align="center">294,660</td>
+			
+		
+	
+	
+	
+</tr>
+
+<tr>
+	<td class="alt1" id="td_threadstatusicon_11517" align="center">
+		
+		<img src="http://media.playdota.com/forums/assault_fps/statusicon/thread_hot.gif" id="thread_statusicon_11517" alt="" border="" />
+	</td>
+	
+		<td class="alt2"><img src="assault_fps/icons/icon1.gif" alt="" border="0" /></td>
+	
+
+	<td class="alt1 sticky" id="td_threadtitle_11517" title="This thread is for bug reports and feedback related to the Hero database, Item database, or Mechanics pages. Suggestions for things to add should...">
+
+		
+		<div>
+			
+				<span style="float:right">
+					
+					
+					
+					
+					 <a href="#" onclick="attachments(11517); return false"> <img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/misc/paperclip.gif" border="0" alt="3 Attachment(s)" /></a> 
+					
+					 <img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/misc/sticky.gif" alt="Sticky Thread" /> 
+				</span>
+			
+			
+			
+			
+			
+			
+			<a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=11517" id="thread_title_11517" class="threadcolor">Hero/Item Database and Mechanics Feedback</a>
+			<span class="smallfont" style="white-space:nowrap">(<img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/misc/multipage.gif" alt="Multi-page thread" border="0" />  <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=11517">1</a> <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=11517&amp;page=2">2</a> <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=11517&amp;page=3">3</a> ... <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=11517&amp;page=33">Last Page</a>)</span>
+		</div>
+
+	
+		
+			
+		<div class="smallfont">
+					<!-- thread description --><!-- / thread description -->
+			
+				<span style="cursor:pointer" onclick="window.open('member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;u=49', '_self')">Protomanx1</span>
+			
+		</div>
+		
+		
+		
+	</td>
+	
+	
+	<td class="alt2" title="Replies: 652, Views: 79,566">
+		<div class="smallfont" style="text-align:right; white-space:nowrap">
+			02-09-2013 <span class="time">10:48 PM</span><br />
+			by <a href="member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;find=lastposter&amp;t=11517" rel="nofollow">Rysik</a>  <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;p=7951580#post7951580"><img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+		</div>
+	</td>
+	
+	
+	
+		<td class="alt1" align="center"><a href="misc.php?do=whoposted&amp;t=11517" onclick="who(11517); return false;">652</a></td>
+		<td class="alt2" align="center">79,566</td>
+			
+		
+	
+	
+	
+</tr>
+
+<tr>
+	<td class="alt1" id="td_threadstatusicon_639324" align="center">
+		
+		<img src="http://media.playdota.com/forums/assault_fps/statusicon/thread_hot_lock.gif" id="thread_statusicon_639324" alt="" border="" />
+	</td>
+	
+		<td class="alt2"><img src="assault_fps/icons/icon1.gif" alt="" border="0" /></td>
+	
+
+	<td class="alt1 sticky" id="td_threadtitle_639324" title="For those interested. 
+ 
+Short guide: 
+ 
+unit.txt - Every hero, unit and dummy unit available, and those unavailable.  
+Search for either the unit...">
+
+		
+		<div>
+			
+				<span style="float:right">
+					
+					
+					
+					
+					 <a href="#" onclick="attachments(639324); return false"> <img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/misc/paperclip.gif" border="0" alt="1 Attachment(s)" /></a> 
+					
+					 <img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/misc/sticky.gif" alt="Sticky Thread" /> 
+				</span>
+			
+			
+			
+			
+			
+			
+			<a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=639324" id="thread_title_639324" class="threadcolor">Data Dump &amp; Jass Code [6.76c]</a>
+			
+		</div>
+
+	
+		
+			
+		<div class="smallfont">
+					<!-- thread description --><!-- / thread description -->
+			
+				<span style="cursor:pointer" onclick="window.open('member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;u=3849', '_self')">SoletLuna</span>
+			
+		</div>
+		
+		
+		
+	</td>
+	
+	
+	<td class="alt2" title="Replies: 2, Views: 5,006">
+		<div class="smallfont" style="text-align:right; white-space:nowrap">
+			11-02-2012 <span class="time">03:33 PM</span><br />
+			by <a href="member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;find=lastposter&amp;t=639324" rel="nofollow">SoletLuna</a>  <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;p=7184751#post7184751"><img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+		</div>
+	</td>
+	
+	
+	
+		<td class="alt1" align="center"><a href="misc.php?do=whoposted&amp;t=639324" onclick="who(639324); return false;">2</a></td>
+		<td class="alt2" align="center">5,006</td>
+			
+		
+	
+	
+	
+</tr>
+
+<tr>
+	<td class="alt1" id="td_threadstatusicon_1020132" align="center">
+		
+		<img src="http://media.playdota.com/forums/assault_fps/statusicon/thread_hot_lock.gif" id="thread_statusicon_1020132" alt="" border="" />
+	</td>
+	
+		<td class="alt2"><img src="assault_fps/icons/icon1.gif" alt="" border="0" /></td>
+	
+
+	<td class="alt1 sticky" id="td_threadtitle_1020132" title="Currently, Advanced Mechanics doesn't deal with DotA 2 questions. But fret not, there are people who do (and even better than we can)! 
+ 
+That is,...">
+
+		
+		<div>
+			
+				<span style="float:right">
+					
+					
+					
+					
+					
+					
+					 <img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/misc/sticky.gif" alt="Sticky Thread" /> 
+				</span>
+			
+			
+			
+			
+			
+			
+			<a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=1020132" id="thread_title_1020132" class="threadcolor">Regarding DotA 2 questions</a>
+			
+		</div>
+
+	
+		
+			
+		<div class="smallfont">
+					<!-- thread description --><!-- / thread description -->
+			
+				<span style="cursor:pointer" onclick="window.open('member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;u=3849', '_self')">SoletLuna</span>
+			
+		</div>
+		
+		
+		
+	</td>
+	
+	
+	<td class="alt2" title="Replies: 0, Views: 2,035">
+		<div class="smallfont" style="text-align:right; white-space:nowrap">
+			08-08-2012 <span class="time">08:49 AM</span><br />
+			by <a href="member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;find=lastposter&amp;t=1020132" rel="nofollow">SoletLuna</a>  <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;p=6667818#post6667818"><img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+		</div>
+	</td>
+	
+	
+	
+		<td class="alt1" align="center"><a href="misc.php?do=whoposted&amp;t=1020132" onclick="who(1020132); return false;">0</a></td>
+		<td class="alt2" align="center">2,035</td>
+			
+		
+	
+	
+	
+</tr>
+
+<tr>
+	<td class="alt1" id="td_threadstatusicon_466" align="center">
+		
+		<img src="http://media.playdota.com/forums/assault_fps/statusicon/thread_hot.gif" id="thread_statusicon_466" alt="" border="" />
+	</td>
+	
+		<td class="alt2"><img src="assault_fps/icons/icon1.gif" alt="" border="0" /></td>
+	
+
+	<td class="alt1 sticky" id="td_threadtitle_466" title="When browsing through this section of the forum you may find terms that you don't understand, here's a few of them with their meaning. 
+ 
+ 
+Attack...">
+
+		
+		<div>
+			
+				<span style="float:right">
+					 <img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/misc/tag.png" alt="definitions, dictionary, dummy, hardcoded, mechanics, stacking, terminology, triggered" /> 
+					
+					
+					
+					
+					
+					 <img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/misc/sticky.gif" alt="Sticky Thread" /> 
+				</span>
+			
+			
+			
+			
+			
+			
+			<a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=466" id="thread_title_466" class="threadcolor">DotA Mechanics Common Terminology</a>
+			<span class="smallfont" style="white-space:nowrap">(<img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/misc/multipage.gif" alt="Multi-page thread" border="0" />  <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=466">1</a> <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=466&amp;page=2">2</a>)</span>
+		</div>
+
+	
+		
+			
+		<div class="smallfont">
+					<!-- thread description --><!-- / thread description -->
+			
+				<span style="cursor:pointer" onclick="window.open('member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;u=49', '_self')">Protomanx1</span>
+			
+		</div>
+		
+		
+		
+	</td>
+	
+	
+	<td class="alt2" title="Replies: 38, Views: 27,444">
+		<div class="smallfont" style="text-align:right; white-space:nowrap">
+			06-04-2012 <span class="time">01:44 PM</span><br />
+			by <a href="member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;find=lastposter&amp;t=466" rel="nofollow">MauranKilom</a>  <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;p=5628825#post5628825"><img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+		</div>
+	</td>
+	
+	
+	
+		<td class="alt1" align="center"><a href="misc.php?do=whoposted&amp;t=466" onclick="who(466); return false;">38</a></td>
+		<td class="alt2" align="center">27,444</td>
+			
+		
+	
+	
+	
+</tr>
+
+<tr>
+	<td class="alt1" id="td_threadstatusicon_459661" align="center">
+		
+		<img src="http://media.playdota.com/forums/assault_fps/statusicon/thread_hot_lock.gif" id="thread_statusicon_459661" alt="" border="" />
+	</td>
+	
+		<td class="alt2"><img src="assault_fps/icons/icon1.gif" alt="" border="0" /></td>
+	
+
+	<td class="alt1 sticky" id="td_threadtitle_459661" title="Here is the list of abilities that Rubick cannot steal: 
+ 
+Useless abilities (for instance, subabilities, or Quas/Wex/Exort/Invoke) 
+Transformation...">
+
+		
+		<div>
+			
+				<span style="float:right">
+					
+					
+					
+					
+					
+					
+					 <img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/misc/sticky.gif" alt="Sticky Thread" /> 
+				</span>
+			
+			
+			
+			
+			
+			
+			<a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=459661" id="thread_title_459661" class="threadcolor">Spell Steal: list of unstealable abilities</a>
+			
+		</div>
+
+	
+		
+			
+		<div class="smallfont">
+					<!-- thread description --><!-- / thread description -->
+			
+				<span style="cursor:pointer" onclick="window.open('member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;u=12852', '_self')">Lordshinjo</span>
+			
+		</div>
+		
+		
+		
+	</td>
+	
+	
+	<td class="alt2" title="Replies: 0, Views: 26,091">
+		<div class="smallfont" style="text-align:right; white-space:nowrap">
+			04-28-2011 <span class="time">03:19 PM</span><br />
+			by <a href="member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;find=lastposter&amp;t=459661" rel="nofollow">Lordshinjo</a>  <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;p=2385168#post2385168"><img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+		</div>
+	</td>
+	
+	
+	
+		<td class="alt1" align="center"><a href="misc.php?do=whoposted&amp;t=459661" onclick="who(459661); return false;">0</a></td>
+		<td class="alt2" align="center">26,091</td>
+			
+		
+	
+	
+	
+</tr>
+
+<tr>
+	<td class="alt1" id="td_threadstatusicon_990" align="center">
+		
+		<img src="http://media.playdota.com/forums/assault_fps/statusicon/thread_hot_lock.gif" id="thread_statusicon_990" alt="" border="" />
+	</td>
+	
+		<td class="alt2"><img src="assault_fps/icons/icon1.gif" alt="" border="0" /></td>
+	
+
+	<td class="alt1 sticky" id="td_threadtitle_990" title="Advanced Mechanics Forum Rules 
+ 
+In addition to the Global Forum Rules, the following rules apply to the Advanced Mechanics section. 
+ 
+ 
+Only...">
+
+		
+		<div>
+			
+				<span style="float:right">
+					 <img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/misc/tag.png" alt="rules" /> 
+					
+					
+					
+					
+					
+					 <img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/misc/sticky.gif" alt="Sticky Thread" /> 
+				</span>
+			
+			
+			
+			
+			
+			
+			<a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=990" id="thread_title_990" class="threadcolor">Advanced Mechanics Forum Rules</a>
+			
+		</div>
+
+	
+		
+			
+		<div class="smallfont">
+					<!-- thread description --><!-- / thread description -->
+			
+				<span style="cursor:pointer" onclick="window.open('member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;u=49', '_self')">Protomanx1</span>
+			
+		</div>
+		
+		
+		
+	</td>
+	
+	
+	<td class="alt2" title="Replies: 0, Views: 9,056">
+		<div class="smallfont" style="text-align:right; white-space:nowrap">
+			06-08-2009 <span class="time">08:57 PM</span><br />
+			by <a href="member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;find=lastposter&amp;t=990" rel="nofollow">Protomanx1</a>  <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;p=3962#post3962"><img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+		</div>
+	</td>
+	
+	
+	
+		<td class="alt1" align="center"><a href="misc.php?do=whoposted&amp;t=990" onclick="who(990); return false;">0</a></td>
+		<td class="alt2" align="center">9,056</td>
+			
+		
+	
+	
+	
+</tr>
+
+<tr>
+<td class="thead" colspan="7">Normal Threads</td>
+</tr>
+	
+	<tr>
+	<td class="alt1" id="td_threadstatusicon_1274867" align="center">
+		
+		<img src="http://media.playdota.com/forums/assault_fps/statusicon/thread.gif" id="thread_statusicon_1274867" alt="" border="" />
+	</td>
+	
+		<td class="alt2"><img src="assault_fps/icons/icon1.gif" alt="" border="0" /></td>
+	
+
+	<td class="alt1 " id="td_threadtitle_1274867" title="Hi i didnt play wc3 forever, and im about to do a bug report on dota2 dev forums. 
+ 
+When ur hero has an inventory full, and the courier has for...">
+
+		
+		<div>
+			
+			
+			
+			
+			
+			
+			<a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=1274867" id="thread_title_1274867" class="threadcolor">Does courier swap items with a full hero inventory</a>
+			
+		</div>
+
+	
+		
+			
+		<div class="smallfont">
+					<!-- thread description --><!-- / thread description -->
+			
+				<span style="cursor:pointer" onclick="window.open('member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;u=91076082', '_self')">BetterNerfPudge</span>
+			
+		</div>
+		
+		
+		
+	</td>
+	
+	
+	<td class="alt2" title="Replies: 3, Views: 4">
+		<div class="smallfont" style="text-align:right; white-space:nowrap">
+			Today <span class="time">12:11 AM</span><br />
+			by <a href="member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;find=lastposter&amp;t=1274867" rel="nofollow">Strange_Kid</a>  <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;p=8001102#post8001102"><img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+		</div>
+	</td>
+	
+	
+	
+		<td class="alt1" align="center"><a href="misc.php?do=whoposted&amp;t=1274867" onclick="who(1274867); return false;">3</a></td>
+		<td class="alt2" align="center">4</td>
+			
+		
+	
+	
+	
+</tr>
+
+<tr>
+	<td class="alt1" id="td_threadstatusicon_1269015" align="center">
+		
+		<img src="http://media.playdota.com/forums/assault_fps/statusicon/thread.gif" id="thread_statusicon_1269015" alt="" border="" />
+	</td>
+	
+		<td class="alt2"><img src="assault_fps/icons/icon1.gif" alt="" border="0" /></td>
+	
+
+	<td class="alt1 " id="td_threadtitle_1269015" title="Skill descriptions and hero page give nothing about what % it slows. Did a quick search and couldn't find it either. 
+So, how much it slows?">
+
+		
+		<div>
+			
+			
+			
+			
+			
+			
+			<a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=1269015" id="thread_title_1269015" class="threadcolor">Icarus Dive slow?</a>
+			
+		</div>
+
+	
+		
+			
+		<div class="smallfont">
+					<!-- thread description --><!-- / thread description -->
+			
+				<span style="cursor:pointer" onclick="window.open('member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;u=643351', '_self')">Heroico</span>
+			
+		</div>
+		
+		
+		
+	</td>
+	
+	
+	<td class="alt2" title="Replies: 3, Views: 4">
+		<div class="smallfont" style="text-align:right; white-space:nowrap">
+			Yesterday <span class="time">09:36 PM</span><br />
+			by <a href="member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;find=lastposter&amp;t=1269015" rel="nofollow">pigi_rylai</a>  <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;p=8000549#post8000549"><img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+		</div>
+	</td>
+	
+	
+	
+		<td class="alt1" align="center"><a href="misc.php?do=whoposted&amp;t=1269015" onclick="who(1269015); return false;">3</a></td>
+		<td class="alt2" align="center">4</td>
+			
+		
+	
+	
+	
+</tr>
+
+<tr>
+	<td class="alt1" id="td_threadstatusicon_1273978" align="center">
+		
+		<img src="http://media.playdota.com/forums/assault_fps/statusicon/thread.gif" id="thread_statusicon_1273978" alt="" border="" />
+	</td>
+	
+		<td class="alt2"><img src="assault_fps/icons/icon1.gif" alt="" border="0" /></td>
+	
+
+	<td class="alt1 " id="td_threadtitle_1273978" title="Can anybody explain why this is happening? 
+ 
+I think I have found a plausible reason, but I first like to hear if there is already a known reason...">
+
+		
+		<div>
+			
+			
+			
+			
+			
+			
+			<a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=1273978" id="thread_title_1273978" class="threadcolor">Pugna's attack against Ethereal units</a>
+			
+		</div>
+
+	
+		
+			
+		<div class="smallfont">
+					<!-- thread description --><!-- / thread description -->
+			
+				<span style="cursor:pointer" onclick="window.open('member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;u=125665', '_self')">ThoAppelsin</span>
+			
+		</div>
+		
+		
+		
+	</td>
+	
+	
+	<td class="alt2" title="Replies: 8, Views: 9">
+		<div class="smallfont" style="text-align:right; white-space:nowrap">
+			Yesterday <span class="time">01:01 PM</span><br />
+			by <a href="member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;find=lastposter&amp;t=1273978" rel="nofollow">ThoAppelsin</a>  <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;p=7998035#post7998035"><img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+		</div>
+	</td>
+	
+	
+	
+		<td class="alt1" align="center"><a href="misc.php?do=whoposted&amp;t=1273978" onclick="who(1273978); return false;">8</a></td>
+		<td class="alt2" align="center">9</td>
+			
+		
+	
+	
+	
+</tr>
+
+<tr>
+	<td class="alt1" id="td_threadstatusicon_1274356" align="center">
+		
+		<img src="http://media.playdota.com/forums/assault_fps/statusicon/thread_lock.gif" id="thread_statusicon_1274356" alt="" border="" />
+	</td>
+	
+		<td class="alt2"><img src="assault_fps/icons/icon1.gif" alt="" border="0" /></td>
+	
+
+	<td class="alt1 " id="td_threadtitle_1274356" title="when u hit ulti with ancient (aa) and silencer use's hes at same time ur ulti just disapears,u cant stop it or see,its like canceled,so why sven hit...">
+
+		
+		<div>
+			
+			
+			
+			
+			
+			
+			<a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=1274356" id="thread_title_1274356" class="threadcolor">dota 2 aa and silencer bug</a>
+			
+		</div>
+
+	
+		
+			
+		<div class="smallfont">
+					<!-- thread description --><!-- / thread description -->
+			
+				<span style="cursor:pointer" onclick="window.open('member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;u=91077481', '_self')">EminenceYopivos</span>
+			
+		</div>
+		
+		
+		
+	</td>
+	
+	
+	<td class="alt2" title="Replies: 2, Views: 3">
+		<div class="smallfont" style="text-align:right; white-space:nowrap">
+			Yesterday <span class="time">12:41 PM</span><br />
+			by <a href="member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;find=lastposter&amp;t=1274356" rel="nofollow">SoletLuna</a>  <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;p=7997897#post7997897"><img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+		</div>
+	</td>
+	
+	
+	
+		<td class="alt1" align="center"><a href="misc.php?do=whoposted&amp;t=1274356" onclick="who(1274356); return false;">2</a></td>
+		<td class="alt2" align="center">3</td>
+			
+		
+	
+	
+	
+</tr>
+
+<tr>
+	<td class="alt1" id="td_threadstatusicon_1271686" align="center">
+		
+		<img src="http://media.playdota.com/forums/assault_fps/statusicon/thread.gif" id="thread_statusicon_1271686" alt="" border="" />
+	</td>
+	
+		<td class="alt2"><img src="assault_fps/icons/icon1.gif" alt="" border="0" /></td>
+	
+
+	<td class="alt1 " id="td_threadtitle_1271686" title="So as far as I understood mechanic of the spell , it hits unit once when its airborne and once when its on ground during single cast.  
+ 
+The...">
+
+		
+		<div>
+			
+			
+			
+			
+			
+			
+			<a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=1271686" id="thread_title_1271686" class="threadcolor">Avalanche and some other spells.</a>
+			
+		</div>
+
+	
+		
+			
+		<div class="smallfont">
+					<!-- thread description --><!-- / thread description -->
+			
+				<span style="cursor:pointer" onclick="window.open('member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;u=90505316', '_self')">ar4er13</span>
+			
+		</div>
+		
+		
+		
+	</td>
+	
+	
+	<td class="alt2" title="Replies: 14, Views: 15">
+		<div class="smallfont" style="text-align:right; white-space:nowrap">
+			Yesterday <span class="time">09:55 AM</span><br />
+			by <a href="member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;find=lastposter&amp;t=1271686" rel="nofollow">DracoLich</a>  <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;p=7997089#post7997089"><img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+		</div>
+	</td>
+	
+	
+	
+		<td class="alt1" align="center"><a href="misc.php?do=whoposted&amp;t=1271686" onclick="who(1271686); return false;">14</a></td>
+		<td class="alt2" align="center">15</td>
+			
+		
+	
+	
+	
+</tr>
+
+<tr>
+	<td class="alt1" id="td_threadstatusicon_1273923" align="center">
+		
+		<img src="http://media.playdota.com/forums/assault_fps/statusicon/thread.gif" id="thread_statusicon_1273923" alt="" border="" />
+	</td>
+	
+		<td class="alt2"><img src="http://media.playdota.com/forums/assault_fps/icons/icon4.gif" alt="Exclamation" border="0" /></td>
+	
+
+	<td class="alt1 " id="td_threadtitle_1273923" title="When you attack someone with desolator it applies the armor debuff first, then the actual damage hits (meaning your attack benefits from the armor...">
+
+		
+		<div>
+			
+			
+			
+			
+			
+			
+			<a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=1273923" id="thread_title_1273923" class="threadcolor">Templar Assassin--Meld Armor Debuff</a>
+			
+		</div>
+
+	
+		
+			
+		<div class="smallfont">
+					<!-- thread description --><!-- / thread description -->
+			
+				<span style="cursor:pointer" onclick="window.open('member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;u=90508735', '_self')">Fox_McCloud</span>
+			
+		</div>
+		
+		
+		
+	</td>
+	
+	
+	<td class="alt2" title="Replies: 7, Views: 8">
+		<div class="smallfont" style="text-align:right; white-space:nowrap">
+			Yesterday <span class="time">06:19 AM</span><br />
+			by <a href="member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;find=lastposter&amp;t=1273923" rel="nofollow">EebstertheGreat</a>  <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;p=7996335#post7996335"><img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+		</div>
+	</td>
+	
+	
+	
+		<td class="alt1" align="center"><a href="misc.php?do=whoposted&amp;t=1273923" onclick="who(1273923); return false;">7</a></td>
+		<td class="alt2" align="center">8</td>
+			
+		
+	
+	
+	
+</tr>
+
+<tr>
+	<td class="alt1" id="td_threadstatusicon_1272958" align="center">
+		
+		<img src="http://media.playdota.com/forums/assault_fps/statusicon/thread.gif" id="thread_statusicon_1272958" alt="" border="" />
+	</td>
+	
+		<td class="alt2"><img src="assault_fps/icons/icon1.gif" alt="" border="0" /></td>
+	
+
+	<td class="alt1 " id="td_threadtitle_1272958" title="I recently played a game as Invoker against a team that had Tusk. Ice wall worked fantastically against snowball. The ball just sat there moving at...">
+
+		
+		<div>
+			
+			
+			
+			
+			
+			
+			<a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=1272958" id="thread_title_1272958" class="threadcolor">Tusk Snowball + Invoker Ice Wall</a>
+			
+		</div>
+
+	
+		
+			
+		<div class="smallfont">
+					<!-- thread description --><!-- / thread description -->
+			
+				<span style="cursor:pointer" onclick="window.open('member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;u=90934887', '_self')">Haschel</span>
+			
+		</div>
+		
+		
+		
+	</td>
+	
+	
+	<td class="alt2" title="Replies: 6, Views: 7">
+		<div class="smallfont" style="text-align:right; white-space:nowrap">
+			02-16-2013 <span class="time">11:23 PM</span><br />
+			by <a href="member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;find=lastposter&amp;t=1272958" rel="nofollow">LavaDeath</a>  <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;p=7994944#post7994944"><img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+		</div>
+	</td>
+	
+	
+	
+		<td class="alt1" align="center"><a href="misc.php?do=whoposted&amp;t=1272958" onclick="who(1272958); return false;">6</a></td>
+		<td class="alt2" align="center">7</td>
+			
+		
+	
+	
+	
+</tr>
+
+<tr>
+	<td class="alt1" id="td_threadstatusicon_1273853" align="center">
+		
+		<img src="http://media.playdota.com/forums/assault_fps/statusicon/thread_lock.gif" id="thread_statusicon_1273853" alt="" border="" />
+	</td>
+	
+		<td class="alt2"><img src="assault_fps/icons/icon1.gif" alt="" border="0" /></td>
+	
+
+	<td class="alt1 " id="td_threadtitle_1273853" title="There is something I dont understand with Tusk's ultimate. It clearly says that target will be slowed for 2/3/4 seconds after landing. But I see a...">
+
+		
+		<div>
+			
+				<span style="float:right">
+					
+					
+					
+					
+					 <a href="#" onclick="attachments(1273853); return false"> <img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/misc/paperclip.gif" border="0" alt="2 Attachment(s)" /></a> 
+					
+					
+				</span>
+			
+			
+			
+			
+			
+			
+			<a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=1273853" id="thread_title_1273853" class="threadcolor">Tusk's Ult stuns the target instead of slow.</a>
+			
+		</div>
+
+	
+		
+			
+		<div class="smallfont">
+					<!-- thread description --><!-- / thread description -->
+			
+				<span style="cursor:pointer" onclick="window.open('member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;u=90519814', '_self')">HellFell</span>
+			
+		</div>
+		
+		
+		
+	</td>
+	
+	
+	<td class="alt2" title="Replies: 1, Views: 2">
+		<div class="smallfont" style="text-align:right; white-space:nowrap">
+			02-16-2013 <span class="time">10:48 PM</span><br />
+			by <a href="member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;find=lastposter&amp;t=1273853" rel="nofollow">SoletLuna</a>  <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;p=7994831#post7994831"><img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+		</div>
+	</td>
+	
+	
+	
+		<td class="alt1" align="center"><a href="misc.php?do=whoposted&amp;t=1273853" onclick="who(1273853); return false;">1</a></td>
+		<td class="alt2" align="center">2</td>
+			
+		
+	
+	
+	
+</tr>
+
+<tr>
+	<td class="alt1" id="td_threadstatusicon_1273549" align="center">
+		
+		<img src="http://media.playdota.com/forums/assault_fps/statusicon/thread.gif" id="thread_statusicon_1273549" alt="" border="" />
+	</td>
+	
+		<td class="alt2"><img src="assault_fps/icons/icon1.gif" alt="" border="0" /></td>
+	
+
+	<td class="alt1 " id="td_threadtitle_1273549" title="So if Brewmaster hold gem before he cast PRimal split, does Earth have truesight ? Wanna know for both Dota 1 and Dota 2. I googled one same topic in...">
+
+		
+		<div>
+			
+			
+			
+			
+			
+			
+			<a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=1273549" id="thread_title_1273549" class="threadcolor">Gem Vs Primal split - Dota 1 and Dota 2</a>
+			
+		</div>
+
+	
+		
+			
+		<div class="smallfont">
+					<!-- thread description --><!-- / thread description -->
+			
+				<span style="cursor:pointer" onclick="window.open('member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;u=1268989', '_self')">LichSUPAnova</span>
+			
+		</div>
+		
+		
+		
+	</td>
+	
+	
+	<td class="alt2" title="Replies: 6, Views: 7">
+		<div class="smallfont" style="text-align:right; white-space:nowrap">
+			02-16-2013 <span class="time">08:57 PM</span><br />
+			by <a href="member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;find=lastposter&amp;t=1273549" rel="nofollow">jyzzy</a>  <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;p=7994407#post7994407"><img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+		</div>
+	</td>
+	
+	
+	
+		<td class="alt1" align="center"><a href="misc.php?do=whoposted&amp;t=1273549" onclick="who(1273549); return false;">6</a></td>
+		<td class="alt2" align="center">7</td>
+			
+		
+	
+	
+	
+</tr>
+
+<tr>
+	<td class="alt1" id="td_threadstatusicon_1273218" align="center">
+		
+		<img src="http://media.playdota.com/forums/assault_fps/statusicon/thread.gif" id="thread_statusicon_1273218" alt="" border="" />
+	</td>
+	
+		<td class="alt2"><img src="assault_fps/icons/icon1.gif" alt="" border="0" /></td>
+	
+
+	<td class="alt1 " id="td_threadtitle_1273218" title="Quick question. Does activating tuskar's ult while in shadowblade buff consider the buff and multiply it with the crit?">
+
+		
+		<div>
+			
+			
+			
+			
+			
+			
+			<a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=1273218" id="thread_title_1273218" class="threadcolor">Tuskar and Shadowblade</a>
+			
+		</div>
+
+	
+		
+			
+		<div class="smallfont">
+					<!-- thread description --><!-- / thread description -->
+			
+				<span style="cursor:pointer" onclick="window.open('member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;u=71961', '_self')">omnimon3000</span>
+			
+		</div>
+		
+		
+		
+	</td>
+	
+	
+	<td class="alt2" title="Replies: 7, Views: 8">
+		<div class="smallfont" style="text-align:right; white-space:nowrap">
+			02-16-2013 <span class="time">03:16 PM</span><br />
+			by <a href="member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;find=lastposter&amp;t=1273218" rel="nofollow">awwwsnap</a>  <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;p=7992920#post7992920"><img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+		</div>
+	</td>
+	
+	
+	
+		<td class="alt1" align="center"><a href="misc.php?do=whoposted&amp;t=1273218" onclick="who(1273218); return false;">7</a></td>
+		<td class="alt2" align="center">8</td>
+			
+		
+	
+	
+	
+</tr>
+
+<tr>
+	<td class="alt1" id="td_threadstatusicon_1273290" align="center">
+		
+		<img src="http://media.playdota.com/forums/assault_fps/statusicon/thread.gif" id="thread_statusicon_1273290" alt="" border="" />
+	</td>
+	
+		<td class="alt2"><img src="assault_fps/icons/icon1.gif" alt="" border="0" /></td>
+	
+
+	<td class="alt1 " id="td_threadtitle_1273290" title="Is the spell (not the buff or the damage) physical or universal? I realize it makes absolutely no difference since you can't attack someone with...">
+
+		
+		<div>
+			
+			
+			
+			
+			
+			
+			<a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=1273290" id="thread_title_1273290" class="threadcolor">Pointless question about fury swipes</a>
+			
+		</div>
+
+	
+		
+			
+		<div class="smallfont">
+					<!-- thread description --><!-- / thread description -->
+			
+				<span style="cursor:pointer" onclick="window.open('member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;u=90467648', '_self')">xpforever</span>
+			
+		</div>
+		
+		
+		
+	</td>
+	
+	
+	<td class="alt2" title="Replies: 1, Views: 2">
+		<div class="smallfont" style="text-align:right; white-space:nowrap">
+			02-16-2013 <span class="time">01:02 PM</span><br />
+			by <a href="member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;find=lastposter&amp;t=1273290" rel="nofollow">Erios</a>  <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;p=7992170#post7992170"><img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+		</div>
+	</td>
+	
+	
+	
+		<td class="alt1" align="center"><a href="misc.php?do=whoposted&amp;t=1273290" onclick="who(1273290); return false;">1</a></td>
+		<td class="alt2" align="center">2</td>
+			
+		
+	
+	
+	
+</tr>
+
+<tr>
+	<td class="alt1" id="td_threadstatusicon_1273258" align="center">
+		
+		<img src="http://media.playdota.com/forums/assault_fps/statusicon/thread.gif" id="thread_statusicon_1273258" alt="" border="" />
+	</td>
+	
+		<td class="alt2"><img src="assault_fps/icons/icon1.gif" alt="" border="0" /></td>
+	
+
+	<td class="alt1 " id="td_threadtitle_1273258" title="Sup guys 
+ 
+I just want to clarify whether Creep Agro is Wc3 built-in system or self made triggered system 
+ 
+Thanks in advance :D">
+
+		
+		<div>
+			
+			
+			
+			
+			
+			
+			<a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=1273258" id="thread_title_1273258" class="threadcolor">Dota Creep Agro System</a>
+			
+		</div>
+
+	
+		
+			
+		<div class="smallfont">
+					<!-- thread description --><!-- / thread description -->
+			
+				<span style="cursor:pointer" onclick="window.open('member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;u=662062', '_self')">8uY_YoU</span>
+			
+		</div>
+		
+		
+		
+	</td>
+	
+	
+	<td class="alt2" title="Replies: 1, Views: 2">
+		<div class="smallfont" style="text-align:right; white-space:nowrap">
+			02-16-2013 <span class="time">11:14 AM</span><br />
+			by <a href="member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;find=lastposter&amp;t=1273258" rel="nofollow">EebstertheGreat</a>  <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;p=7991680#post7991680"><img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+		</div>
+	</td>
+	
+	
+	
+		<td class="alt1" align="center"><a href="misc.php?do=whoposted&amp;t=1273258" onclick="who(1273258); return false;">1</a></td>
+		<td class="alt2" align="center">2</td>
+			
+		
+	
+	
+	
+</tr>
+
+<tr>
+	<td class="alt1" id="td_threadstatusicon_1272936" align="center">
+		
+		<img src="http://media.playdota.com/forums/assault_fps/statusicon/thread_lock.gif" id="thread_statusicon_1272936" alt="" border="" />
+	</td>
+	
+		<td class="alt2"><img src="assault_fps/icons/icon1.gif" alt="" border="0" /></td>
+	
+
+	<td class="alt1 " id="td_threadtitle_1272936" title="Do Mjollnir/Deso work with Luna's Moon Glaive in Dota2?">
+
+		
+		<div>
+			
+			
+			
+			
+			
+			
+			<a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=1272936" id="thread_title_1272936" class="threadcolor">Luna --&gt; dota2</a>
+			
+		</div>
+
+	
+		
+			
+		<div class="smallfont">
+					<!-- thread description --><!-- / thread description -->
+			
+				<span style="cursor:pointer" onclick="window.open('member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;u=80840', '_self')">darktifa</span>
+			
+		</div>
+		
+		
+		
+	</td>
+	
+	
+	<td class="alt2" title="Replies: 6, Views: 7">
+		<div class="smallfont" style="text-align:right; white-space:nowrap">
+			02-16-2013 <span class="time">09:49 AM</span><br />
+			by <a href="member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;find=lastposter&amp;t=1272936" rel="nofollow">SoletLuna</a>  <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;p=7991271#post7991271"><img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+		</div>
+	</td>
+	
+	
+	
+		<td class="alt1" align="center"><a href="misc.php?do=whoposted&amp;t=1272936" onclick="who(1272936); return false;">6</a></td>
+		<td class="alt2" align="center">7</td>
+			
+		
+	
+	
+	
+</tr>
+
+<tr>
+	<td class="alt1" id="td_threadstatusicon_1272853" align="center">
+		
+		<img src="http://media.playdota.com/forums/assault_fps/statusicon/thread.gif" id="thread_statusicon_1272853" alt="" border="" />
+	</td>
+	
+		<td class="alt2"><img src="assault_fps/icons/icon1.gif" alt="" border="0" /></td>
+	
+
+	<td class="alt1 " id="td_threadtitle_1272853" title="can backstab from windwalk be dodged by evasion? Cause I noted on Mortreds page it said her evasion doesnt work vs invisible units.">
+
+		
+		<div>
+			
+			
+			
+			
+			
+			
+			<a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=1272853" id="thread_title_1272853" class="threadcolor">backstab and evasion</a>
+			
+		</div>
+
+	
+		
+			
+		<div class="smallfont">
+					<!-- thread description --><!-- / thread description -->
+			
+				<span style="cursor:pointer" onclick="window.open('member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;u=468344', '_self')">knifeman</span>
+			
+		</div>
+		
+		
+		
+	</td>
+	
+	
+	<td class="alt2" title="Replies: 3, Views: 4">
+		<div class="smallfont" style="text-align:right; white-space:nowrap">
+			02-16-2013 <span class="time">01:07 AM</span><br />
+			by <a href="member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;find=lastposter&amp;t=1272853" rel="nofollow">MauranKilom</a>  <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;p=7989601#post7989601"><img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+		</div>
+	</td>
+	
+	
+	
+		<td class="alt1" align="center"><a href="misc.php?do=whoposted&amp;t=1272853" onclick="who(1272853); return false;">3</a></td>
+		<td class="alt2" align="center">4</td>
+			
+		
+	
+	
+	
+</tr>
+
+<tr>
+	<td class="alt1" id="td_threadstatusicon_1272727" align="center">
+		
+		<img src="http://media.playdota.com/forums/assault_fps/statusicon/thread.gif" id="thread_statusicon_1272727" alt="" border="" />
+	</td>
+	
+		<td class="alt2"><img src="assault_fps/icons/icon1.gif" alt="" border="0" /></td>
+	
+
+	<td class="alt1 " id="td_threadtitle_1272727" title="If the snowball is rolling towards me, and I activate BKB, how much does bkb block? 
+ 
+Does the snowball still chase me? 
+Does it deal damage when it...">
+
+		
+		<div>
+			
+			
+			
+			
+			
+			
+			<a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=1272727" id="thread_title_1272727" class="threadcolor">BKB versus tuskar</a>
+			
+		</div>
+
+	
+		
+			
+		<div class="smallfont">
+					<!-- thread description --><!-- / thread description -->
+			
+				<span style="cursor:pointer" onclick="window.open('member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;u=463661', '_self')">sintho_Matix</span>
+			
+		</div>
+		
+		
+		
+	</td>
+	
+	
+	<td class="alt2" title="Replies: 1, Views: 2">
+		<div class="smallfont" style="text-align:right; white-space:nowrap">
+			02-15-2013 <span class="time">11:12 PM</span><br />
+			by <a href="member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;find=lastposter&amp;t=1272727" rel="nofollow">EebstertheGreat</a>  <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;p=7989174#post7989174"><img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+		</div>
+	</td>
+	
+	
+	
+		<td class="alt1" align="center"><a href="misc.php?do=whoposted&amp;t=1272727" onclick="who(1272727); return false;">1</a></td>
+		<td class="alt2" align="center">2</td>
+			
+		
+	
+	
+	
+</tr>
+
+<tr>
+	<td class="alt1" id="td_threadstatusicon_1272731" align="center">
+		
+		<img src="http://media.playdota.com/forums/assault_fps/statusicon/thread.gif" id="thread_statusicon_1272731" alt="" border="" />
+	</td>
+	
+		<td class="alt2"><img src="assault_fps/icons/icon1.gif" alt="" border="0" /></td>
+	
+
+	<td class="alt1 " id="td_threadtitle_1272731" title="How does Sleight of Fist interact with Vladmir's Lifesteal aura? May it be not working because the hero is invulnerable?">
+
+		
+		<div>
+			
+			
+			
+			
+			
+			
+			<a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=1272731" id="thread_title_1272731" class="threadcolor">Sleight of Fist</a>
+			
+		</div>
+
+	
+		
+			
+		<div class="smallfont">
+					<!-- thread description --><!-- / thread description -->
+			
+				<span style="cursor:pointer" onclick="window.open('member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;u=642169', '_self')">random999</span>
+			
+		</div>
+		
+		
+		
+	</td>
+	
+	
+	<td class="alt2" title="Replies: 2, Views: 3">
+		<div class="smallfont" style="text-align:right; white-space:nowrap">
+			02-15-2013 <span class="time">10:19 PM</span><br />
+			by <a href="member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;find=lastposter&amp;t=1272731" rel="nofollow">random999</a>  <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;p=7988988#post7988988"><img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+		</div>
+	</td>
+	
+	
+	
+		<td class="alt1" align="center"><a href="misc.php?do=whoposted&amp;t=1272731" onclick="who(1272731); return false;">2</a></td>
+		<td class="alt2" align="center">3</td>
+			
+		
+	
+	
+	
+</tr>
+
+<tr>
+	<td class="alt1" id="td_threadstatusicon_1271067" align="center">
+		
+		<img src="http://media.playdota.com/forums/assault_fps/statusicon/thread.gif" id="thread_statusicon_1271067" alt="" border="" />
+	</td>
+	
+		<td class="alt2"><img src="assault_fps/icons/icon1.gif" alt="" border="0" /></td>
+	
+
+	<td class="alt1 " id="td_threadtitle_1271067" title="If Ymir uses the Active Ability from Phase Boots, Phase, does Snowball use the Movement Speed of Tuskarr's current Movement Speed or his base?">
+
+		
+		<div>
+			
+			
+			
+			
+			
+			
+			<a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=1271067" id="thread_title_1271067" class="threadcolor">Snowball + Phase Boots</a>
+			
+		</div>
+
+	
+		
+			
+		<div class="smallfont">
+					<!-- thread description --><!-- / thread description -->
+			
+				<span style="cursor:pointer" onclick="window.open('member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;u=91056106', '_self')">InvokerofCrime</span>
+			
+		</div>
+		
+		
+		
+	</td>
+	
+	
+	<td class="alt2" title="Replies: 9, Views: 10">
+		<div class="smallfont" style="text-align:right; white-space:nowrap">
+			02-15-2013 <span class="time">06:40 PM</span><br />
+			by <a href="member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;find=lastposter&amp;t=1271067" rel="nofollow">ThoAppelsin</a>  <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;p=7987934#post7987934"><img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+		</div>
+	</td>
+	
+	
+	
+		<td class="alt1" align="center"><a href="misc.php?do=whoposted&amp;t=1271067" onclick="who(1271067); return false;">9</a></td>
+		<td class="alt2" align="center">10</td>
+			
+		
+	
+	
+	
+</tr>
+
+<tr>
+	<td class="alt1" id="td_threadstatusicon_1267925" align="center">
+		
+		<img src="http://media.playdota.com/forums/assault_fps/statusicon/thread.gif" id="thread_statusicon_1267925" alt="" border="" />
+	</td>
+	
+		<td class="alt2"><img src="assault_fps/icons/icon1.gif" alt="" border="0" /></td>
+	
+
+	<td class="alt1 " id="td_threadtitle_1267925" title="You buy qb and melee hero animation get changed. I have reasons to believe that  its AA is swaped with CA. Am I right?">
+
+		
+		<div>
+			
+			
+			
+			
+			
+			
+			<a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=1267925" id="thread_title_1267925" class="threadcolor">qb nad pl</a>
+			
+		</div>
+
+	
+		
+			
+		<div class="smallfont">
+					<!-- thread description --><!-- / thread description -->
+			
+				<span style="cursor:pointer" onclick="window.open('member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;u=557104', '_self')">Petrucci992</span>
+			
+		</div>
+		
+		
+		
+	</td>
+	
+	
+	<td class="alt2" title="Replies: 11, Views: 12">
+		<div class="smallfont" style="text-align:right; white-space:nowrap">
+			02-15-2013 <span class="time">05:43 PM</span><br />
+			by <a href="member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;find=lastposter&amp;t=1267925" rel="nofollow">EebstertheGreat</a>  <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;p=7987657#post7987657"><img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+		</div>
+	</td>
+	
+	
+	
+		<td class="alt1" align="center"><a href="misc.php?do=whoposted&amp;t=1267925" onclick="who(1267925); return false;">11</a></td>
+		<td class="alt2" align="center">12</td>
+			
+		
+	
+	
+	
+</tr>
+
+<tr>
+	<td class="alt1" id="td_threadstatusicon_1272568" align="center">
+		
+		<img src="http://media.playdota.com/forums/assault_fps/statusicon/thread.gif" id="thread_statusicon_1272568" alt="" border="" />
+	</td>
+	
+		<td class="alt2"><img src="assault_fps/icons/icon1.gif" alt="" border="0" /></td>
+	
+
+	<td class="alt1 " id="td_threadtitle_1272568" title="does it works? 
+wat if sand knig is grabbed wile anneling 
+wat if es grabbed after anneling? 
+ 
+missing keys sorry">
+
+		
+		<div>
+			
+			
+			
+			
+			
+			
+			<a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=1272568" id="thread_title_1272568" class="threadcolor">Tusk snowball / Epienter interation?</a>
+			
+		</div>
+
+	
+		
+			
+		<div class="smallfont">
+					<!-- thread description --><!-- / thread description -->
+			
+				<span style="cursor:pointer" onclick="window.open('member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;u=91076082', '_self')">BetterNerfPudge</span>
+			
+		</div>
+		
+		
+		
+	</td>
+	
+	
+	<td class="alt2" title="Replies: 1, Views: 2">
+		<div class="smallfont" style="text-align:right; white-space:nowrap">
+			02-15-2013 <span class="time">05:41 PM</span><br />
+			by <a href="member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;find=lastposter&amp;t=1272568" rel="nofollow">EebstertheGreat</a>  <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;p=7987647#post7987647"><img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+		</div>
+	</td>
+	
+	
+	
+		<td class="alt1" align="center"><a href="misc.php?do=whoposted&amp;t=1272568" onclick="who(1272568); return false;">1</a></td>
+		<td class="alt2" align="center">2</td>
+			
+		
+	
+	
+	
+</tr>
+
+<tr>
+	<td class="alt1" id="td_threadstatusicon_1270747" align="center">
+		
+		<img src="http://media.playdota.com/forums/assault_fps/statusicon/thread.gif" id="thread_statusicon_1270747" alt="" border="" />
+	</td>
+	
+		<td class="alt2"><img src="assault_fps/icons/icon1.gif" alt="" border="0" /></td>
+	
+
+	<td class="alt1 " id="td_threadtitle_1270747" title="Does Hood of Defiance reduce nukes or auto attack or both? 
+ 
+And just what the hell is &quot;spell&quot;? is spell considered auto attack from magic caster?...">
+
+		
+		<div>
+			
+			
+			
+			
+			
+			
+			<a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;t=1270747" id="thread_title_1270747" class="threadcolor">Magic Resistance question</a>
+			
+		</div>
+
+	
+		
+			
+		<div class="smallfont">
+					<!-- thread description --><!-- / thread description -->
+			
+				<span style="cursor:pointer" onclick="window.open('member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;u=90766682', '_self')">Ork_Warboss</span>
+			
+		</div>
+		
+		
+		
+	</td>
+	
+	
+	<td class="alt2" title="Replies: 6, Views: 7">
+		<div class="smallfont" style="text-align:right; white-space:nowrap">
+			02-15-2013 <span class="time">12:34 PM</span><br />
+			by <a href="member.php?s=32a1f749d6f96700ac42f245f66692fa&amp;find=lastposter&amp;t=1270747" rel="nofollow">Larvichee</a>  <a href="showthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;p=7986090#post7986090"><img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/buttons/lastpost.gif" alt="Go to last post" border="0" /></a>
+		</div>
+	</td>
+	
+	
+	
+		<td class="alt1" align="center"><a href="misc.php?do=whoposted&amp;t=1270747" onclick="who(1270747); return false;">6</a></td>
+		<td class="alt2" align="center">7</td>
+			
+		
+	
+	
+	
+</tr>
+
+
+	</tbody>
+	<!-- end show threads -->
+
+</table>
+
+</div>
+</div>
+<div class="tbottom">
+<div class="tbottom_left"></div>
+<div class="tbottom_right"></div>
+</div>
+
+<!-- controls below thread list -->
+
+<div class="altdp1">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:3px">
+<tr valign="top" class="dark">
+	<!--<td class="smallfont">-->
+	
+	<td align="right"><div class="pagenav" align="left">
+<table class="tborder" cellpadding="3" cellspacing="1" border="0">
+<tr>
+	<td class="vbmenu_control" style="font-weight:normal">Page 1 of 417</td>
+	
+	
+		<td class="alt2"><span class="smallfont" title="Showing results 1 to 20 of 8,338"><strong>1</strong></span></td>
+ <td class="alt1"><a class="smallfont" href="forumdisplay.php?s=32a1f749d6f96700ac42f245f66692fa&amp;f=52&amp;order=desc&amp;page=2" title="Show results 21 to 40 of 8,338">2</a></td><td class="alt1"><a class="smallfont" href="forumdisplay.php?s=32a1f749d6f96700ac42f245f66692fa&amp;f=52&amp;order=desc&amp;page=3" title="Show results 41 to 60 of 8,338">3</a></td><td class="alt1"><a class="smallfont" href="forumdisplay.php?s=32a1f749d6f96700ac42f245f66692fa&amp;f=52&amp;order=desc&amp;page=11" title="Show results 201 to 220 of 8,338"><!--+10-->11</a></td><td class="alt1"><a class="smallfont" href="forumdisplay.php?s=32a1f749d6f96700ac42f245f66692fa&amp;f=52&amp;order=desc&amp;page=51" title="Show results 1,001 to 1,020 of 8,338"><!--+50-->51</a></td><td class="alt1"><a class="smallfont" href="forumdisplay.php?s=32a1f749d6f96700ac42f245f66692fa&amp;f=52&amp;order=desc&amp;page=101" title="Show results 2,001 to 2,020 of 8,338"><!--+100-->101</a></td>
+	<td class="alt1"><a rel="next" class="smallfont" href="forumdisplay.php?s=32a1f749d6f96700ac42f245f66692fa&amp;f=52&amp;order=desc&amp;page=2" title="Next Page - Results 21 to 40 of 8,338">&gt;</a></td>
+	<td class="alt1" nowrap="nowrap"><a class="smallfont" href="forumdisplay.php?s=32a1f749d6f96700ac42f245f66692fa&amp;f=52&amp;order=desc&amp;page=417" title="Last Page - Results 8,321 to 8,338 of 8,338">Last <strong>&raquo;</strong></a></td>
+	<td class="vbmenu_control" title="forumdisplay.php?s=32a1f749d6f96700ac42f245f66692fa&amp;f=52&amp;order=desc"><a name="PageNav"></a></td>
+</tr>
+</table>
+</div></td>
+	<!--
+	<td class="smallfont" align="right"><a href="newthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;do=newthread&amp;f=52" rel="nofollow"><img src="http://media.playdota.com/forums/assault_fps/buttons/newthread.gif" alt="Post New Thread" border="0" /></a></td>
+	-->
+
+
+<td align="center">
+<center>
+
+	
+	
+</center>
+	</td>
+
+
+<td align="right">
+<a href="newthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;do=newthread&amp;f=52" rel="nofollow"><img src="http://media.playdota.com/forums/assault_fps/buttons/newthread.gif" alt="Post New Thread" border="0" /></a></td>
+	
+
+<!-- forum rules & forum jump -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
+<tr valign="bottom">
+	<td width="100%">
+	
+
+
+
+<!-- lower breadcrumbs -->
+
+<div class="altdp1">
+<table cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
+
+<tbody id="collapseobj_lowerbreadcrumbs" style="">
+<tr>
+        <td class="alt1" width="100%">  <table cellpadding="0" cellspacing="0" border="0"> <tr valign="bottom">
+        <td>
+            <a href="http://www.playdota.com/forums/index.php"><img src="http://media.playdota.com/forums/assault_fps/misc/navbits_start.gif" alt="" border="0" /></a>
+        </td>
+        <td>&nbsp;
+        
+        </td>
+        <td width="100%"><span class="navbar"><a href="index.php?s=32a1f749d6f96700ac42f245f66692fa" accesskey="1"></a></span> 
+	<span class="navbar"><img src="http://media.playdota.com/forums/assault_fps/icons/arrow_y.png" alt="" /><a href="forumdisplay.php?s=32a1f749d6f96700ac42f245f66692fa&amp;f=23">Defense of the Ancients</a></span>
+
+
+        </td>
+    </tr>
+    <tr>
+        <td class="navbar" style="font-size:10pt; padding-top:1px" colspan="3"><a href="/forums/forumdisplay.php?f=52"><img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/misc/arrow_x.png" alt="Reload this Page" border="0" /></a><strong>
+	Advanced Mechanics
+
+</strong>
+        </td>
+    </tr>
+    </table>
+     
+        </td>
+
+</tr>
+</tbody>
+</table>
+</div>
+<!-- / lower breadcrumbs -->
+
+
+	</td>
+	<td>
+		<div class="smallfont" style="text-align:left; white-space:nowrap">
+	</form><form action="forumdisplay.php" method="get">
+	<input type="hidden" name="s" value="32a1f749d6f96700ac42f245f66692fa" />
+	<input type="hidden" name="daysprune" value="-1" />
+	<br /><br /><strong>Forum Jump</strong><br />
+	<select name="f" onchange="this.form.submit();">
+		<optgroup label="Site Areas">
+			<option value="cp" >User Control Panel</option>
+			<option value="pm" >Private Messages</option>
+			<option value="subs" >Subscriptions</option>
+			<option value="wol" >Who's Online</option>
+			<option value="search" >Search Forums</option>
+			<option value="home" >Forums Home</option>
+		</optgroup>
+		
+		<optgroup label="Forums">
+		<option value="151" class="fjdpth0" > New Players</option>
+<option value="150" class="fjdpth1" >&nbsp; &nbsp;  Getting Started</option>
+<option value="103" class="fjdpth0" > News &amp; Events</option>
+<option value="29" class="fjdpth1" >&nbsp; &nbsp;  News</option>
+<option value="104" class="fjdpth1" >&nbsp; &nbsp;  Matches</option>
+<option value="119" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Inhouse Matches</option>
+<option value="92" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Old Matches</option>
+<option value="23" class="fjdpth0" > Defense of the Ancients</option>
+<option value="28" class="fjdpth1" >&nbsp; &nbsp;  DotA Chat</option>
+<option value="163" class="fjdpth1" >&nbsp; &nbsp;  Competitive Chat</option>
+<option value="30" class="fjdpth1" >&nbsp; &nbsp;  Game Strategy</option>
+<option value="109" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Draft Guides</option>
+<option value="107" class="fjdpth3" >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Draft Archive</option>
+<option value="108" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Published Guides</option>
+<option value="160" class="fjdpth1" >&nbsp; &nbsp;  Marketplace</option>
+<option value="164" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Dota 2 Invite Trading</option>
+<option value="52" class="fjsel" selected="selected">&nbsp; &nbsp;  Advanced Mechanics</option>
+<option value="27" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Advanced Mechanics Guides</option>
+<option value="123" class="fjdpth1" >&nbsp; &nbsp;  DotA Replays</option>
+<option value="56" class="fjdpth1" >&nbsp; &nbsp;  Hero Comments</option>
+<option value="152" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Agility - Sentinel</option>
+<option value="153" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Agility - Scourge</option>
+<option value="156" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Intelligence - Sentinel</option>
+<option value="157" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Intelligence - Scourge</option>
+<option value="155" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Strength - Sentinel</option>
+<option value="154" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Strength - Scourge</option>
+<option value="31" class="fjdpth1" >&nbsp; &nbsp;  Suggestions</option>
+<option value="142" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Ability Ideas</option>
+<option value="130" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Visuals</option>
+<option value="140" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Hero Ideas</option>
+<option value="141" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Item Ideas</option>
+<option value="129" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Remakes</option>
+<option value="131" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Others</option>
+<option value="88" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Requests</option>
+<option value="97" class="fjdpth1" >&nbsp; &nbsp;  DotA Media</option>
+<option value="93" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Submitted Media</option>
+<option value="70" class="fjdpth1" >&nbsp; &nbsp;  DotA &#20013;&#25991;&#35752;&#35770;&#21306;</option>
+<option value="25" class="fjdpth0" > Entertainment</option>
+<option value="35" class="fjdpth1" >&nbsp; &nbsp;  Random Chat</option>
+<option value="71" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Forum Games</option>
+<option value="122" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Homework</option>
+<option value="120" class="fjdpth1" >&nbsp; &nbsp;  World News &amp; Debates</option>
+<option value="106" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Debate Forum</option>
+<option value="98" class="fjdpth1" >&nbsp; &nbsp;  Gadgets &amp; Tech</option>
+<option value="43" class="fjdpth1" >&nbsp; &nbsp;  Programming</option>
+<option value="32" class="fjdpth1" >&nbsp; &nbsp;  Fan Fiction &amp; Literature</option>
+<option value="105" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Literature</option>
+<option value="42" class="fjdpth1" >&nbsp; &nbsp;  Studio D'Art</option>
+<option value="75" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Members Requests</option>
+<option value="76" class="fjdpth3" >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Completed Requests</option>
+<option value="113" class="fjdpth3" >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Unresolved Requests</option>
+<option value="78" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Battle Ground</option>
+<option value="77" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Portfolios</option>
+<option value="90" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Tutorial and Help</option>
+<option value="39" class="fjdpth1" >&nbsp; &nbsp;  Comedy</option>
+<option value="36" class="fjdpth1" >&nbsp; &nbsp;  Anime &amp; Manga Discussion</option>
+<option value="40" class="fjdpth1" >&nbsp; &nbsp;  Video Games</option>
+
+		</optgroup>
+		
+	</select><input type="submit" class="button" value="Go"  />
+	</form>
+</div>
+		
+	</td>
+</tr>
+
+
+
+
+
+
+</table>
+<!-- / forum rules & forum jump -->		
+
+</div>
+<!-- / controls below thread list -->
+
+</form>
+<br />
+
+
+
+
+<!-- Active Users in this Forum (and sub-forums) and Moderators -->
+
+<form action="forumdisplay.php" method="get">
+<input type="hidden" name="s" value="32a1f749d6f96700ac42f245f66692fa" />
+<input type="hidden" name="f" value="52" />
+<input type="hidden" name="page" value="1" />
+<input type="hidden" name="pp" value="20" />
+
+
+</div>
+</div>
+<div class="tbottom">
+<!-- tbottom -->
+</div>
+</form>
+<!-- End Active Users in this Forum (and sub-forums) and Moderators -->
+
+
+<br />
+<!-- popup menu contents -->
+
+
+<!-- forum tools menu -->
+<div class="vbmenu_popup" id="forumtools_menu" style="display:none">
+<form action="moderator.php?f=52" method="post" name="forumadminform">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr><td class="thead">Forum Tools<a name="goto_forumtools"></a></td></tr>
+	<tr><td class="vbmenu_option"><a href="newthread.php?s=32a1f749d6f96700ac42f245f66692fa&amp;do=newthread&amp;f=52" rel="nofollow">Post a New Thread</a></td></tr>
+	<tr><td class="vbmenu_option"><a href="forumdisplay.php?s=32a1f749d6f96700ac42f245f66692fa&amp;do=markread&amp;f=52" rel="nofollow" onclick="return mark_forum_read(52);">Mark This Forum Read</a></td></tr>
+	<tr>
+		<td class="vbmenu_option">
+		
+			<a href="subscription.php?s=32a1f749d6f96700ac42f245f66692fa&amp;do=addsubscription&amp;f=52" rel="nofollow">Subscribe to This Forum</a>
+		
+		</td>
+	</tr>
+	<tr><td class="vbmenu_option"><a href="forumdisplay.php?s=32a1f749d6f96700ac42f245f66692fa&amp;f=23" rel="nofollow">View Parent Forum</a></td></tr>
+    <tr><td class="vbmenu_option"><a href="external.php?s=32a1f749d6f96700ac42f245f66692fa&amp;type=rss2&amp;forumids=52" rel="nofollow">RSS Feed</a></td></tr>
+	
+	</table>
+</form>
+</div>
+<!-- / forum tools menu -->
+
+<!-- inline mod menu -->
+
+<!-- / inline mod menu -->
+
+<!-- / popup menu contents -->
+
+
+
+
+<!-- ############## END THREADS LIST ##############  -->
+
+
+<script type="text/javascript" src="http://media.playdota.com/forums/clientscript/vbulletin_read_marker.js?v=387"></script>
+<script type="text/javascript">
+<!--
+vbphrase['doubleclick_forum_markread'] = "Double-click this icon to mark this forum and its contents as read";
+init_forum_readmarker_system();
+//-->
+</script>
+
+
+
+
+
+
+<!-- icon key -->
+<!--
+
+
+<table class="bottom_legend2" cellpadding="2" cellspacing="1" border="0" width="100%">
+<tr>
+	<td class="bottom_legend_icon"><img src="http://media.playdota.com/forums/assault_fps/statusicon/thread_new.gif" alt="New posts" border="0" /></td>
+	<td class="smallfont">New posts</td>
+	<td class="bottom_legend_icon"><img src="http://media.playdota.com/forums/assault_fps/statusicon/thread.gif" alt="No new posts" border="0" /></td>
+	<td class="smallfont">No new posts</td>
+	<td class="bottom_legend_icon"><img src="http://media.playdota.com/forums/assault_fps/statusicon/thread_lock.gif" alt="Closed Thread" border="0" /></td>
+	<td class="smallfont">Thread is closed</td>
+</tr>
+<tr>
+	
+		<td class="bottom_legend_icon"><img src="http://media.playdota.com/forums/assault_fps/statusicon/thread_hot_new.gif" alt="More than 30 replies or 150 views" border="0" /></td>
+	<td class="smallfont">Hot thread with new posts</td>
+	<td class="bottom_legend_icon"><img src="http://media.playdota.com/forums/assault_fps/statusicon/thread_hot.gif" alt="More than 30 replies or 150 views" border="0" /></td>
+	<td class="smallfont">Hot thread with no new posts</td>
+	
+	
+		<td colspan="2">&nbsp;</td>
+	
+	
+</tr>
+</table>
+
+-->
+<!-- / icon key -->
+
+
+
+
+
+<!-- pd_footer -->
+
+
+
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- /content area table -->
+</div>
+<div id="bleft_corner"><div id="bright_corner"></div></div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<!-- /content area table -->
+
+<div class="smallfont" style="text-align: center; margin-bottom: 2px;">
+
+<!-- Do not remove this copyright notice -->
+
+<!-- Do not remove this copyright notice -->
+</div>
+
+
+
+</div>
+</div>
+
+<div id="cron_hider">
+<!-- Do not remove cronimage or your scheduled tasks will cease to function -->
+
+<!-- Do not remove cronimage or your scheduled tasks will cease to function -->
+
+<script type="text/javascript">
+<!--
+	// Main vBulletin Javascript Initialization
+	vBulletin_init();
+//-->
+</script>
+</div>
+
+<center>
+
+	<div class="footer">
+	&nbsp;
+	<ul>
+		<li><a href="/heroes"><img src="http://media.playdota.com/site/footer/heroes.png" alt="" border="0"/></a></li>
+		<li><a href="/items"><img src="http://media.playdota.com/site/footer/items.png" alt="" border="0"/></a></li>
+		<li><a href="/guides"><img src="http://media.playdota.com/site/footer/guides.png" alt="" border="0"/></a></li>
+		<li><a href="/mechanics"><img src="http://media.playdota.com/site/footer/mechanics.png" alt="" border="0"/></a></li>
+		<li><a href="/forums/dota-tools-ai-maps/"><img src="http://media.playdota.com/site/footer/tools.png" alt="" border="0"/></a></li>
+		<li><a href="/forums/"><img src="http://media.playdota.com/site/footer/forums.png" alt="" border="0"/></a></li>
+		<li class="sh">&nbsp;</li>
+		<li><a href="/forums/dota-replays/"><img src="http://media.playdota.com/site/footer/replays.png" alt="" border="0"/></a></li>
+		<li><a href="/videos"><img src="http://media.playdota.com/site/footer/videos.png" alt="" border="0"/></a></li>
+		<li><a href="/fanart"><img src="http://media.playdota.com/site/footer/fanart.png" alt="" border="0"/></a></li>
+		<li><a href="/comics"><img src="http://media.playdota.com/site/footer/comics.png" alt="" border="0"/></a></li>
+		<li><a href="/ai"><img src="http://media.playdota.com/site/footer/links.png" alt="" border="0"/></a></li>
+		<li><a href="/about"><img src="http://media.playdota.com/site/footer/about.png" alt="" border="0"/></a></li>
+	</ul>
+	&nbsp;
+	<div style="clear:both;"></div>
+	About PlayDotA.com | Terms and Conditions | &copy; 2010 PlayDotA.com | All Rights Reserved	
+	</div>
+</center>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-9106374-1");
+pageTracker._trackPageview();
+</script>
+
+
+</body>
+</html>

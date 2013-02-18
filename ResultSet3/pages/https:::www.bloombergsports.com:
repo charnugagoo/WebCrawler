@@ -1,0 +1,295 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>
+Fantasy Football & Baseball Products | Bloomberg Sports
+</title>
+<meta content='Bloomberg Sports fantasy products give fans the powerful, easy-to-use analytical tools they need as they draft and manage their fantasy teams.' name='description' />
+<meta content='Bloomberg Sports, Fantasy Football, Fantasy Baseball, Tools, Analysis, Analytics, draft, manage, lineup, decision maker, front office, fantasy sports' name='keywords' />
+<link href='/favicon.ico' rel='shortcut icon' type='image/x-icon' />
+<script src="/javascripts/JQuery/jquery-1.4.2.min.js?1359665488" type="text/javascript"></script>
+<script src="/javascripts/JQuery/jquery-ui-1.8.2.custom.min.js?1359665488" type="text/javascript"></script>
+<script src="/javascripts/JQuery/jquery.cookie.js?1359665488" type="text/javascript"></script>
+<script src="/javascripts/mlb/tooltip.js?1359665488" type="text/javascript"></script>
+<script src="/javascripts/mlb/BBS.js?1359665488" type="text/javascript"></script>
+<script src="/javascripts/ecom.js?1359665488" type="text/javascript"></script>
+<script type='text/javascript'>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  //]]>
+</script>
+<script type='text/javascript'>
+  //<![CDATA[
+    try {
+    var pageTracker = _gat._getTracker("UA-8586010-3");
+    pageTracker._setDomainName(".bloombergsports.com");
+    pageTracker._setAllowLinker(true);
+    pageTracker._setAllowHash(false);
+    pageTracker._addOrganic("images.google","prev");
+    pageTracker._trackPageview();
+    } catch(err) {}
+  //]]>
+</script>
+<link href="/stylesheets/dm/dm_marketing.css?1359665488" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id='header_wrap'>
+<div id='header'>
+<div class='bsp_logo'>
+<a href='/'></a>
+</div>
+<ul>
+<li class='header_links'>
+<a href="/football/" onclick="recordOutboundLink(this, '/sports/nav-soccer', 'click'); return false;">FOOTBALL</a>
+</li>
+<li class='hfdivider'>
+|
+</li>
+<li class='header_links'>
+<a href="/decision-maker/" onclick="recordOutboundLink(this, '/sports/nav-football', 'click'); return false;">NFL</a>
+</li>
+<li class='hfdivider'>
+|
+</li>
+<li class='header_links'>
+<a href="/frontoffice" onclick="recordOutboundLink(this, '/sports/nav-baseball', 'click'); return false;">MLB</a>
+</li>
+</ul>
+<div id='login_area'>
+<div id='login_wrapper'>
+<div id='login_content'>
+<form action="/decision-maker/login/login" method="post" name="loginForm">
+<div id='login_input_boxes_area'>
+<input id="id" name="id" type="hidden" value="" />
+<input id="iniframe" name="iniframe" type="hidden" />
+<input id="user_session_email" name="user_session[email]" rel="Email address" size="30" style="border:1px solid #989898;" type="text" />
+<input class="prompt" id="text2pass" name="text2pass" onfocus="toggleTextAndPassword('text2pass', 'user_session_password', 'Enter your password');" style="margin:0 0 0 5px;border:1px solid #989898;" type="text" value="Enter your password" />
+<input id="user_session_password" name="user_session[password]" onblur="toggleTextAndPassword('text2pass','user_session_password', 'Enter your password');" size="30" style="display:none; margin:0 0 0 5px;border:1px solid #989898;" type="password" />
+<div class='login_submit' onclick="return validateLogin(document.loginForm);pageTracker._trackEvent('login', 'mlb', '/mlb/')" type='submit'></div>
+<input onclick="return validateLogin(document.loginForm);pageTracker._trackEvent('login', 'mlb', '/mlb/')" style='margin-left: -2000px;' type='submit' value='submit' />
+</div>
+<div class='clear'></div>
+<div id='login_account_area'>
+<input name="user_session[remember_me]" type="hidden" value="0" /><input checked="checked" class="checkbox" id="user_session_remember_me" name="user_session[remember_me]" type="checkbox" value="1" />
+<label class="checkboxlabel" for="user_session_remember_me">Remember me</label>
+<a href="/login" class="createAccount mb" id="mb" rel="width:730,height:492">Create an Account</a>
+<a href="/reset_password" class="forgotPassword mb" id="mb2" rel="width:397,height:330">Forgot Password?</a>
+</div>
+</form>
+<div id='login_errors_area'>
+<div class='errorDiv clearfix' id='sessionEmailError' style='display:none;'>
+<div id='userError1'>You must enter a valid email address</div>
+</div>
+<div class='errorDiv clearfix' id='sessionPasswordError' style='display:none;'>
+<p id='sessionPasswordErrorP'>You must enter a password</p>
+</div>
+</div>
+</div>
+</div>
+<script type='text/javascript'>
+  //<![CDATA[
+    function validateAddress(address) {
+    var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+      return (reg.test(address));
+    }
+    
+    
+    function validateLogin(frm) {
+      var errorDivs =  document.getElementsByClassName("errorDiv");
+      for(var i=0; i<errorDivs.length; i++) {
+        errorDivs[i].style.display="none";
+      }
+      if (validateSessionEmail(frm) && validateSessionPwd(frm)) {
+        if (isInIFrame()) {
+          frm.iniframe.value="true";
+        } else {
+          frm.iniframe.value="false";
+        }
+    
+        frm.submit();
+        return false;
+      } else {
+        return false;
+      }
+    }
+    
+    function isInIFrame() {
+      if (top != self) {
+        return true;
+      }
+      return false;
+    }
+    
+    function validateSessionEmail(frm) {
+      if ( (frm.user_session_email.value == "Email address") || (frm.user_session_email.value == "") || (!validateAddress(frm.user_session_email.value))) {
+        document.getElementById("sessionEmailError").style.display="block";
+        return false;
+      }
+      return true;
+    }
+    
+    function validateSessionPwd(frm) {
+      if(frm.user_session_password.value == "") {
+        document.getElementById("sessionPasswordError").style.display="block";
+        return false;
+      }
+      pw = frm.user_session_password.value;
+      return validateSessionPwd2(pw);
+      return true;
+    }
+    
+    function validateSessionPwd2(frm) {
+      var invalid = " ";
+      var minLength = 6;
+      if (pw.length < minLength) {
+        document.getElementById("sessionPasswordErrorP").innerHTML = 'Your password must be at least ' + minLength + ' characters long';
+        document.getElementById("sessionPasswordError").style.display="block";
+        return false;
+      }
+    
+      return true;
+    }
+  //]]>
+</script>
+
+</div>
+</div>
+</div>
+
+<div id='main_container'>
+<div class='clearfix' id='content'>
+<div id='gateway_main_content'>
+<h1 class='page_header_title'>Groundbreaking Analytics Products</h1>
+<h2 class='front_page_subhead_text'>Bloomberg Sports, the global leader in sports analytics, provides a variety of applications that are indispensable to predicting team performance and to players of fantasy sports</h2>
+<div id='choose_product_content'>
+<div id='soccer_content'>
+<h3 class='gateway_box_headers'>football</h3>
+<div id='soccer_icon_gateway'></div>
+<div class='soccer_text'>The match analysis tool that provides data-driven projections and in-depth analytics for all the major European football leagues. Get an edge in forecasting results, correct scores and many more key elements of football matches.</div>
+<div class='soccer_learn_more_button'>
+<a href="/football/">Soccer</a>
+</div>
+</div>
+<div id='dm_content'>
+<h3 class='gateway_box_headers'>NFL</h3>
+<div id='dm_icon_gateway'></div>
+<div class='dm_text'>The ultimate sit/start fantasy tool applies science to the management of your team. Decision Maker features the most accurate fantasy projections in the industry and will give you an edge in your league all season long.</div>
+<div class='dm_learn_more_button'>
+<a href="/decision-maker/">Decision Maker</a>
+</div>
+<!-- .dm_projections_explanation -->
+<!-- %a{:href => APP_CONFIG['projections_explanation_url'], :target => "_blank"} -->
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id='footer_wrap'>
+<div id='footer'>
+<ul>
+<li>
+<a href="/dm_about" class="mb" rel="width:800,height:250">ABOUT</a>
+</li>
+<li class='hfdivider'>
+|
+</li>
+<li>
+<a href="/dm_contact" class="mb" rel="width:400,height:330">CONTACT</a>
+</li>
+<li class='hfdivider'>
+|
+</li>
+<li>
+<a href="/dm_mobile" class="mb" rel="width:400,height:280">MOBILE</a>
+</li>
+<li class='hfdivider'>
+|
+</li>
+<li>
+<a href="/tos" class="mb" rel="width:600,height:394">TERMS</a>
+</li>
+<li class='hfdivider'>
+|
+</li>
+<li>
+<a href="/privacy" class="mb" rel="width:801,height:440">PRIVACY</a>
+</li>
+</ul>
+<div class='footer_links'>
+<div class='facebook_link'>
+<a href='http://www.facebook.com/bloombergsports?so_cmpid=021711_fbpg_blog_fbpage_prodg_fbpage_prod' onclick="recordOutboundLink(this, '/sports/btn-facebook', 'click'); return false;" target='blank'></a>
+</div>
+<div class='twitter_link'>
+<a href='http://twitter.com/bloombergsports?so_cmpid=021711_twpg_blog_twpage_prodage_prod' onclick="recordOutboundLink(this, '/sports/btn-twitter', 'click'); return false;" target='blank'></a>
+</div>
+</div>
+</div>
+<div class='footer_copyright'>All product images simulated. &copy; Bloomberg Sports LLC. All Rights Reserved. Portions &copy; 2001-2012 MLB Advanced Media, L.P. All rights reserved.</div>
+</div>
+
+<div id='toolTip'></div>
+</body>
+<!--multiBox lightbox code-->
+<script src="https://ajax.googleapis.com/ajax/libs/mootools/1.2.4/mootools-yui-compressed.js" type="text/javascript"></script>
+<script src="/javascripts/mlb/overlay.js?1359665488" type="text/javascript"></script>
+<script src="/javascripts/mlb/Assets.js?1359665488" type="text/javascript"></script>
+<script src="/javascripts/mlb/multibox.js?1359665488" type="text/javascript"></script>
+<script type='text/javascript'>
+  //<![CDATA[
+    $$('input[rel]').each(function(el){
+    var prompt = el.get('rel');
+    var pass = el.get('type') == 'password';
+    el.addEvents({
+      focus: function(){
+        if (el.get('value') == prompt){
+          el.set({value:''});
+          el.removeClass('prompt');
+          if (pass) el.set('type','password');
+        }
+      },
+      blur: function(){
+        var val = el.get('value')
+          if (!val || val == prompt){
+            el.set({value:prompt});
+            el.addClass('prompt');
+            if (pass) el.set('type','text');
+        }
+      }
+    }).fireEvent('blur');
+    });
+    
+    var forgotPassword;
+    var mb;
+    
+    window.addEvent('domready', function(){
+      forgotPassword = new multiBox('fp', {
+        overlay: new overlay(),
+        titleClassName: '',
+        showControls: false,
+        closeButtonStyle: 'overlayClose'
+        });
+    
+      mb = new multiBox('mb', {
+        overlay: new overlay(),
+        showControls: false
+        });
+    
+    
+    });
+    
+    function closeOverlay(overlayID){
+      //var mb = $(overlayID);
+      //forgotPassword.close(mb);
+    
+      // the code above throws an error because forgotPassword is not the instance of multibox that contains the reset password form.
+      // we'll take short route and dispatch a click event from the close button
+    
+      var cl = document.getElementsByClassName("MultiBoxClose")[0];
+      cl.fireEvent('click');
+    }
+  //]]>
+</script>
+<link href="/stylesheets/mlb/multibox.css?1359665488" media="screen" rel="stylesheet" type="text/css" />
+</html>

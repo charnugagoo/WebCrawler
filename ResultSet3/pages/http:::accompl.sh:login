@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:og="http://ogp.me/ns#"
+xmlns:fb="https://www.facebook.com/2008/fbml">
+<head>
+	<meta charset="utf-8">
+	<meta name="google-site-verification" content="LQvAlkIystc0uOQ7vQmfIvwigG5fcxsQRt7N2g94OaI" />
+	<meta name="bitly-verification" content="b703fb8f6211"/>
+	<title>Log In - Accompl.sh</title>
+	<meta name="description" content="Accompl.sh is the online community to develop, track, and achieve your goals." />
+	<meta name="author" content="Jenn Vargas">
+
+	<meta property="og:title" content="Log In - Accompl.sh" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="http://assets.accompl.sh/assets/27da6e0/imgs/accomplshcheck.png" />
+
+<meta name="HandheldFriendly" content="True" /> 
+<meta name="MobileOptimized" content="320" />
+<meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0" />
+
+<link rel="stylesheet" href="http://assets.accompl.sh/assets/27da6e0/css/jquery.fancybox.css" type="text/css" media="screen" />
+<link rel="stylesheet" type="text/css" href="http://assets.accompl.sh/assets/27da6e0/css/ui-lightness/jquery-ui-1.8.13.custom.css">
+
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 480px)" href="http://assets.accompl.sh/assets/27da6e0/style-mobile.css" />
+<!-- <link rel="stylesheet" type="text/css" media="only screen and (max-width: 480px)" href="/style-mobile.css" /> -->
+
+<link rel="stylesheet" type="text/css" href="http://assets.accompl.sh/assets/27da6e0/css/jquery.lightbox-0.5.css" media="screen" />
+
+<link href="/css/bootstrap.css" rel="stylesheet">
+<link href="/css/accomplsh.css" rel="stylesheet">
+
+<link rel="apple-touch-icon-precomposed" href="http://assets.accompl.sh/assets/27da6e0/imgs/accomplshcheck.png" />
+<link rel="apple-touch-startup-image" href="http://assets.accompl.sh/assets/27da6e0/imgs/iphoneloadscreen.png" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<script type="text/javascript" src="https://use.typekit.com/ubl6uvu.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<style type="text/css">
+#todaymarker{margin-left:%;}
+#inprogress{width:%;}
+#done{width:%;}
+</style>
+<!-- <script type="text/javascript" src="/js/jquery.js"></script>    -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.js"></script>
+<!-- <script type="text/javascript" src="/js/jquery-ui.min.js"></script> -->
+<!-- <script type="text/javascript" src="/js/functions.min.js"></script>  -->
+<!-- <script type="text/javascript" src="/js/jquery.jeditable.min.js"></script> -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- KissMetrics -->
+<script src="/js/kissmetrics.js"></script>
+<script>_kmq.push(['identify', '']);</script>
+
+</head>
+<body>
+		<div class="container">
+		<header>
+			<div class="navbar">
+				<div class="navbar-inner row">
+						<div id="title-wrap" class="span2 nml"><a href="/"><div id="title"></div></a></div>
+						<div class="nav-collapse">
+															<ul class="nav" id="mainnav">
+									<li><a href="/login?done=%2Flogin">log in</a></li>
+									<li id="nav-signup"><a href="/register?done=%2Flogin">sign up</a></li>
+									<li><a href="/explore">explore</a></li>
+									<!-- <li><a href="/challenges">challenges</a></li>										 -->
+								</ul>
+																</div>
+								<div id='navbar-user-menu' class="pull-right">
+																		</div>
+								</div>
+							</div>
+							<!-- <div id="search">
+							<form action="/search" method="GET">
+							<input type="text" id="searchfield" name="q" onfocus="this.value='';" onblur="if(this.value == ") { this.value = "; }"  value="search for a person or goal" />
+							<input type="image" id="searchimg" src="/imgs/search-24.png" alt="search" />
+							</form>
+							</div> -->
+						</div>
+					</header>  
+				<div id="content" class="container">
+					<h1 id="loginheader">Welcome Back!</h1>  
+					<form method="post" action="/login" class="form" name="loginform" id="loginform">  
+						<label for="username"><span class='login-error'>Invalid Username</span></label><input type="text" name="username" id="username" placeholder="username" />  
+						<label for="password"><span class='login-error'>Invalid Password</span></label><input type="password" name="password" id="password" placeholder="password" />  
+						<label class="checkbox"><input type='checkbox' name='remember' id='remember' checked />Keep me logged in</label>
+						<button type="submit" class="btn" id="login" name="login">Let's do this &raquo;</button>        
+					</form>  
+					<p><br /><a href="/password-reset">Forgot your password?</a></p>
+					<p>Don't have your own Accompl.sh list yet? <a href="/register">Click here to register</a>.</p>
+					<script type="text/javascript">
+					$(function(){
+
+						$("document").ajaxError(function(event, XMLHttpRequest, ajaxOptions, thrownError) {
+							alert(thrownError);
+						});
+
+
+						$("#loginform").submit(function(){
+							var credCheck = $.ajax({
+								url: "/api/login.php",
+								type: "POST",
+								data: {username: $("#username").val(), password: $("#password").val()},
+								async: false,
+								dataType: "text"
+								}).responseText;
+								/* 			console.log("Checkpoint 1: Proper Syntax"); */
+								switch(credCheck){
+
+									case "valid":
+									/* 					console.log("Checkpoint 2: Valid Credentials"); */
+									_kmq.push(['record', 'Logged in']);
+									$("#login").text("Logging In...");
+									return true;
+									break;
+									case "wrongpw":
+									/* 					console.log("Checkpoint 3: Invalid Password"); */
+
+									$("#password").val("").css("backgroundColor", "#C8305B").stop().animate({backgroundColor: "white"}, 2000).focus();
+									$("label[for=password] span").stop().css({display: 'inline', opacity: '1'});
+									$("#password").attr('placeholder', "");
+									$("#password").keydown(function(){$("label[for=password] span").stop().fadeOut(3000)});
+
+									return false;
+									break;
+									case "nouser":
+									/* 					console.log("Checkpoint 4: User Nonexistent"); */
+
+									$("#username").val("").css("backgroundColor", "#C8305B").stop().animate({backgroundColor: "white"}, 2000).focus();
+									$("#password").val("").css("backgroundColor", "#C8305B").stop().animate({backgroundColor: "white"}, 2000);
+
+									$("label[for=username] span").stop().css({display: 'inline', opacity: '1'});
+									$("#username").keydown(function(){$("label[for=username] span").stop().fadeOut(3000)});
+
+
+									return false;
+									break;
+									default:
+									/* 					console.log("Checkpoint 5: Error: " + credCheck); */
+									return false;
+									break;			
+								}
+								return false;
+							});
+						});
+						</script>
+						<footer class="row">
+	<ul id="footerinfo" class="span7">
+		<li><a href="/about">About</a></li>
+		<li><a href="http://blog.accompl.sh">Blog</a></li>        
+		<li><a href="mailto:hello@accompl.sh">Contact</a></li>
+		<li><a href="/faq">FAQ</a></li>
+		<li><a href="/goodies">Goodies</a></li>
+		<li><a href="/guidelines">Guidelines</a></li>
+		<li><a href="/upgrade">Upgrade</a></li>
+	</ul>
+	<div id="meta" class="span5">&copy 2012 Accomplsh, LLC. <a href="http://nytm.org/made">Made in NYC</a>. <a href="http://twitter.com/accomplsh"><img src="/imgs/icon-twitter.png" alt="follow us on twitter: @accomplsh" height="20" /></a> <div class="fbfooter">
+		<iframe src="http://www.facebook.com/plugins/like.php?app_id=174940822566253&amp;href=http%3A%2F%2Fwww.facebook.com%2Fpages%2Faccomplsh%2F157875894279718&amp;send=false&amp;layout=button_count&amp;width=50&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:21px;" allowTransparency="true"></iframe>
+	</div>
+	<div id="subtitle">avoiding mediocrity one to-do list at a time</div>
+	</div>
+	
+	<div id="mobilelogout"><a href="/logout">log out</a></div>
+
+</div>
+</footer>
+<script type="text/javascript" src="http://assets.accompl.sh/assets/27da6e0/js/jquery.fancybox.js"></script>
+<!-- // <script type="text/javascript" src="/js/fancybox/jquery.easing-1.3.pack.js"></script> -->
+<script type="text/javascript" src="http://assets.accompl.sh/assets/27da6e0/js/jquery.color.min.js"></script>
+<script src="/js/accomplsh-global.js"></script>
+<script type="text/javascript">
+jQuery.fn.exists = function(){return jQuery(this).length>0;}
+$(document).ready(function(){
+	if ($('#listinput').exists()) {
+
+		var top = $('#listinput').offset().top - parseFloat($('#listinput').css('marginTop').replace(/auto/, 0))-12;
+		$(window).scroll(function (event) {
+			// what the y position of the scroll is
+			var y = $(this).scrollTop();
+
+			// whether that's below the form
+			if (y >= top) {
+				// if so, ad the fixed class
+				$('#listinput').addClass('fixed');
+				$('#alert').addClass('fixed');
+			} else {
+				// otherwise remove it
+				$('#listinput').removeClass('fixed');
+				$('#alert').removeClass('fixed');
+			}
+		});
+	}
+});
+</script>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+	var pageTracker = _gat._getTracker("UA-585912-12");
+	pageTracker._trackPageview();
+	} catch(err) {}</script>
+
+<!-- FACEBOOK -->
+<div id="fb-root"></div>
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<script>
+FB.init({
+	appId: '112008525484581', status: true, cookie: true, xfbml: true
+});
+FB.Event.subscribe('auth.login', function(response) {
+	//window.location.reload();
+});
+</script>
+<!-- Woopra Code Start -->
+<!-- Start of Woopra Code -->
+<script type="text/javascript">
+function woopraReady(tracker) {
+	tracker.setDomain('accompl.sh');
+	tracker.setIdleTimeout(300000);
+	tracker.track();
+	return false;
+}
+(function() {
+	var wsc = document.createElement('script');
+	wsc.src = document.location.protocol+'//static.woopra.com/js/woopra.js';
+	wsc.type = 'text/javascript';
+	wsc.async = true;
+	var ssc = document.getElementsByTagName('script')[0];
+	ssc.parentNode.insertBefore(wsc, ssc);
+	})();
+	</script>
+	<!-- End of Woopra Code -->
+
+<!-- <script type="text/javascript" src="//static.woopra.com/js/woopra.v2.js"></script>
+<script type="text/javascript">
+woopraTracker.track();
+</script> -->
+<!-- Woopra Code End -->
+<!-- begin olark code --><script type='text/javascript'>/*{literal}<![CDATA[*/window.olark||(function(i){var e=window,h=document,a=e.location.protocol=="https:"?"https:":"http:",g=i.name,b="load";(function(){e[g]=function(){(c.s=c.s||[]).push(arguments)};var c=e[g]._={},f=i.methods.length; while(f--){(function(j){e[g][j]=function(){e[g]("call",j,arguments)}})(i.methods[f])} c.l=i.loader;c.i=arguments.callee;c.f=setTimeout(function(){if(c.f){(new Image).src=a+"//"+c.l.replace(".js",".png")+"&"+escape(e.location.href)}c.f=null},20000);c.p={0:+new Date};c.P=function(j){c.p[j]=new Date-c.p[0]};function d(){c.P(b);e[g](b)}e.addEventListener?e.addEventListener(b,d,false):e.attachEvent("on"+b,d); (function(){function l(j){j="head";return["<",j,"></",j,"><",z,' onl'+'oad="var d=',B,";d.getElementsByTagName('head')[0].",y,"(d.",A,"('script')).",u,"='",a,"//",c.l,"'",'"',"></",z,">"].join("")}var z="body",s=h[z];if(!s){return setTimeout(arguments.callee,100)}c.P(1);var y="appendChild",A="createElement",u="src",r=h[A]("div"),G=r[y](h[A](g)),D=h[A]("iframe"),B="document",C="domain",q;r.style.display="none";s.insertBefore(r,s.firstChild).id=g;D.frameBorder="0";D.id=g+"-loader";if(/MSIE[ ]+6/.test(navigator.userAgent)){D.src="javascript:false"} D.allowTransparency="true";G[y](D);try{D.contentWindow[B].open()}catch(F){i[C]=h[C];q="javascript:var d="+B+".open();d.domain='"+h.domain+"';";D[u]=q+"void(0);"}try{var H=D.contentWindow[B];H.write(l());H.close()}catch(E){D[u]=q+'d.write("'+l().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}c.P(2)})()})()})({loader:(function(a){return "static.olark.com/jsclient/loader0.js?ts="+(a?a[1]:(+new Date))})(document.cookie.match(/olarkld=([0-9]+)/)),name:"olark",methods:["configure","extend","declare","identify"]});
+/* custom configuration goes here (www.olark.com/documentation) */
+olark.identify('1433-166-10-1067');/*]]>{/literal}*/</script>
+<!-- end olark code -->
+<script type="text/javascript"> olark('api.chat.updateVisitorNickname', { 
+	snippet: "" 
+}); 
+</script>
+</body>
+</html>

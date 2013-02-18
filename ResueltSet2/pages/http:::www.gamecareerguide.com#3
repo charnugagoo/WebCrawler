@@ -1,0 +1,731 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="keywords" content="career, school, schools, game, games, education, universities, jobs, job, internship, internships" />
+<meta name="description" content="Learn everything you need to know to get into the videogame industry!" /><link rel="icon" href="favicon.ico" type="/image/x-icon"/>
+
+<link rel="stylesheet" type="text/css" href="/css/home.css" />
+<link rel="stylesheet" type="text/css" href="/css/main.css" />
+<link rel="stylesheet" type="text/css" href="/css/star_rating.css" />
+<link rel="stylesheet" href="http://gamasutra.com/game_sites_superfooter_2012/css/superfooter.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="css/style_slider.css" />
+
+	<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+	<script type="text/javascript" src="js/jquery-easing-1.3.pack.js"></script>
+	<script type="text/javascript" src="js/jquery-easing-compatibility.1.2.pack.js"></script>
+	<script type="text/javascript" src="js/coda-slider.1.1.1.pack.js"></script>
+	
+	<script type="text/javascript">
+	
+		var theInt = null;
+		var $crosslink, $navthumb;
+		var curclicked = 0;
+		
+		theInterval = function(cur){
+			clearInterval(theInt);
+			
+			if( typeof cur != 'undefined' )
+				curclicked = cur;
+			
+			$crosslink.removeClass("active-thumb");
+			$navthumb.eq(curclicked).parent().addClass("active-thumb");
+				$(".stripNav ul li a").eq(curclicked).trigger('click');
+			
+			theInt = setInterval(function(){
+				$crosslink.removeClass("active-thumb");
+				$navthumb.eq(curclicked).parent().addClass("active-thumb");
+				$(".stripNav ul li a").eq(curclicked).trigger('click');
+				curclicked++;
+				if( 7 == curclicked )
+					curclicked = 0;
+				
+			}, 4500);
+		};
+		
+		$(function(){
+			
+			$("#main-photo-slider").codaSlider();
+			
+			$navthumb = $(".nav-thumb");
+			$crosslink = $(".cross-link");
+			
+			$navthumb
+			.click(function() {
+				var $this = $(this);
+				theInterval($this.parent().attr('href').slice(1) - 1);
+				return false;
+			});
+			
+			theInterval();
+		});
+	</script>
+	
+	
+
+
+<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+
+<link rel="alternate" type="application/rss+xml" title="Game Career Guide Article Feed" href="http://feeds.feedburner.com/GameCareerGuideFeatures/" />
+<link rel="alternate" type="application/rss+xml" title="Game Career Guide News Feed" href="http://feeds.feedburner.com/GameCareerGuideNews/" />
+<title>
+Main
+- GameCareerGuide.com
+</title>
+
+<script type="text/JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+	var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+		var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image;d.MM_p[j++].src=a[i];}}
+}
+function MM_swapImgRestore() { //v3.0
+	var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_findObj(n, d) { //v4.01
+	var p,i,x; if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+	d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+	if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+	for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+	if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+function MM_swapImage() { //v3.0
+	var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+	if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src;x.src=a[i+2];}
+}
+//-->
+</script>
+
+
+<script type="text/JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+	var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+		var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image;d.MM_p[j++].src=a[i];}}
+}
+function MM_swapImgRestore() { //v3.0
+	var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_findObj(n, d) { //v4.01
+	var p,i,x; if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+	d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+	if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+	for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+	if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+function MM_swapImage() { //v3.0
+	var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+	if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src;x.src=a[i+2];}
+}
+//-->
+</script>
+<script type="text/javascript">
+var adrand = parseInt(Math.random()*1000000000, 10);
+var adkeys = "key1+key2+key3+key4";
+</script>
+
+
+
+
+
+</head>
+<body onload="MM_preloadImages('/img/news_on.jpg','/img/features_on.jpg','/img/schools_on.jpg','/img/jobs_on.jpg','/img/community_on.jpg','/img/store_on.jpg','/img/getstarted_over.jpg','/img/contactus_on.gif', '/img/advertise_on.gif')">
+<!-- end header cut--->
+<div class="gcgheader">
+<table class="sitenav" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+	<td bgcolor="#000000">&nbsp;</td>
+	<td width="1000px"><table width="100%" cellspacing="0" cellpadding="0"><tr><td class="properties">Our Properties:</td>
+	<td class="properties"><a href="http://www.gamasutra.com">Gamasutra</a></td>
+	<td class="activetab"><a href="http://www.gamecareerguide.com" class="active">GameCareerGuide</a> </td>
+	<td class="properties"><a href="http://www.indiegames.com">IndieGames</a> </td>
+	<td class="properties"><a href="http://www.gdcvault.com">GDC Vault</a> </td>
+	<td class="properties"><a href="http://www.gdconf.com">GDC</a> </td>
+	<td class="properties"><a href="http://www.igf.com">IGF</a> </td>
+	<td class="properties"><a href="http://www.gdmag.com">Game Developer Magazine</a> </td>
+	<td class="properties"><a href="http://www.game-advertising-online.com">GAO</a></td></tr></table>
+	</td><td bgcolor="#000000">&nbsp;</td></tr></table> 
+ </div>
+<!-- -->
+<!--JavaScript Tag // Tag for network 5242: United Business Media // Website: Game Career Guide // Page: ROS // Placement: BACKUP_Skin_1x1 (2636660) // created at: Nov 13, 2012 3:07:51 PM-->
+<script language="javascript"><!--
+document.write('<scr'+'ipt language="javascript1.1" src="http://adserver.adtechus.com/addyn/3.0/5242.1/2636660/0/16/ADTECH;alias=GCG_Home_Skin_1x1;loc=100;target=_blank;key=key1+key2+key3+key4;grp=[group];misc='+new Date().getTime()+'"></scri'+'pt>');
+//-->
+</script><noscript><a href="http://adserver.adtechus.com/adlink/3.0/5242.1/2636660/0/16/ADTECH;alias=GCG_Home_Skin_1x1;loc=300;key=key1+key2+key3+key4;grp=[group]" target="_blank"><img src="http://adserver.adtechus.com/adserv/3.0/5242.1/2636660/0/16/ADTECH;alias=GCG_Home_Skin_1x1;loc=300;key=key1+key2+key3+key4;grp=[group]" border="0" width="1" height="1"></a></noscript>
+<!-- End of JavaScript Tag --> 
+<div id="allwrapper">
+<table width="1000" border="0" cellspacing="0" cellpadding="0">
+<tr>
+	<td width="162" rowspan="4" valign="top">
+		     	<a href="/"><div class="gcglogo"><img src="/img/pixel.gif"></div></a>
+               <div class="lefttilewrapper">
+               <div class="banner145 bottom10">
+               
+                    <!--JavaScript Tag // Tag for network 5242: United Business Media //
+               Website: Game Career Guide // Page: ROS // Placement:
+               BACKUP_Custom1_146x144 (2382853) // created at: Apr 6, 2012 10:19:04 AM--> 
+                    <script language="javascript"><!-- 
+               document.write('<scr'+'ipt language="javascript1.1" src="http://adserver.adtechus.com/addyn/3.0/5242.1/2382853/0/0/ADTECH;loc=100;target=_blank;key=key1+key2+key3+key4;grp=[group];misc='+new Date().getTime()+'"></scri'+'pt>');
+               //-->
+               </script><noscript><a
+               href="http://adserver.adtechus.com/adlink/3.0/5242.1/2382853/0/0/ADTECH;loc=300;key=key1+key2+key3+key4;grp=[group]" target="_blank"><img src="http://adserver.adtechus.com/adserv/3.0/5242.1/2382853/0/0/ADTECH;loc=300;key=key1+key2+key3+key4;grp=[group]" border="0" width="0" height="0"></a></noscript>
+                    <!-- End of JavaScript Tag -->
+                </div>    
+                   
+
+<div class="banner145 bottom25">
+
+<!--/* LEFT POSITION 4 OpenX Javascript Tag v2.8.2 */-->
+
+<!--JavaScript Tag // Tag for network 5242: United Business Media //
+Website: Game Career Guide // Page: ROS // Placement:
+BACKUP_Custom3_146x144 (2382852) // created at: Apr 6, 2012 10:19:04 AM--> <script language="javascript"><!-- 
+document.write('<scr'+'ipt language="javascript1.1" src="http://adserver.adtechus.com/addyn/3.0/5242.1/2382852/0/0/ADTECH;loc=100;target=_blank;key=key1+key2+key3+key4;grp=[group];misc='+new Date().getTime()+'"></scri'+'pt>');
+//-->
+</script><noscript><a
+href="http://adserver.adtechus.com/adlink/3.0/5242.1/2382852/0/0/ADTECH;loc=300;key=key1+key2+key3+key4;grp=[group]" target="_blank"><img src="http://adserver.adtechus.com/adserv/3.0/5242.1/2382852/0/0/ADTECH;loc=300;key=key1+key2+key3+key4;grp=[group]" border="0" width="0" height="0"></a></noscript>
+<!-- End of JavaScript Tag -->			
+</div>
+
+
+ </div>	</td>
+	<td colspan="2">
+		<div class="banner728 bottom25">
+    <!--/* AD Leaderboard 728x90 */ -->
+  <!--JavaScript Tag // Tag for network 5242: United Business Media //
+	  Website: Game Career Guide // Page: ROS // Placement: BACKUP_Top_728x90
+      (2382856) // created at: Apr 6, 2012 10:19:05 AM--> <script language="javascript"><!-- 
+   document.write('<scr'+'ipt language="javascript1.1" src="http://adserver.adtechus.com/addyn/3.0/5242.1/2382856/0/225/ADTECH;loc=100;target=_blank;key=key1+key2+key3+key4;grp=[group];misc='+new Date().getTime()+'"></scri'+'pt>');
+   //-->
+   </script><noscript><a href="http://adserver.adtechus.com/adlink/3.0/5242.1/2382856/0/225/ADTECH;loc=300;key=key1+key2+key3+key4;grp=[group]" target="_blank"><img src="http://adserver.adtechus.com/adserv/3.0/5242.1/2382856/0/225/ADTECH;loc=300;key=key1+key2+key3+key4;grp=[group]" border="0" width="728" height="90"></a></noscript>
+  <!-- End of JavaScript Tag --></div>          	</td>
+</tr>
+<tr>
+	<td colspan="2">
+		          	<span class="search">
+          	
+          	
+          	
+                    <form method="get" action="/search" target="_top">
+                    <input type="hidden" name="sort" value="score">
+                    <input name="search_text" class="searchinput" /><input type="submit" class="searchbutton" name="sa" value="search" />
+                    </form>
+                </span>
+                  
+                <span class="social"><img src="/img/divider.png" width="1" height="18" />&nbsp;&nbsp;&nbsp; <a href="https://twitter.com/gamecareerguide" target="_blank"><img src="/img/twitter.png" width="19" height="20" alt="Twitter" /></a> <a href="http://www.facebook.com/GameCareerGuide" target="_blank"><img src="/img/facebook.png" width="19" height="20" alt="Facebook" /></a> <a href="/rss/"><img src="/img/rss.png" width="19" height="20" alt="RSS" /></a> &nbsp;&nbsp;&nbsp;<img src="/img/divider.png" width="1" height="18" /></span> 
+                    
+                <span class="emailtxt">Get the latest Education e-news </span>   
+                     <span class="email"><form method="post" action="http://www.gamasutra.com/newsletter/" name="subscribe_form">
+                     				     <input type="submit" class="searchbutton" name="submit" value="sign up" />
+                	</form> 
+                </span> 
+                
+                <div class="clear">&nbsp;</div>
+                <!--topnav main tabs-->
+                <ul class="mainnav">
+							<li  class="active" ><a href="/" class="active">Home</a></li>
+							<li ><a href="/features/" >Features</a></li>
+							<li ><a href="/schools/" >Schools</a></li>
+							<li ><a href="/digital_counselor/" >Digital Counselor</a></li>
+							<li ><a href="/downloads/" >Student Games</a></li>
+							<li ><a href="/jobs/index.php" >Jobs</a></li>
+							<li ><a href="/forums/" >Forums</a></li>
+							<li ><a href="/contactus/" >Contact Us</a></li>
+				</ul>   	</td>
+</tr>
+<tr>
+	<td valign="top" width="665">
+		<!-- Post Head -->
+		<div class="maincontent">
+		
+		<div class="bottom10">
+		
+	<div id="page-wrap">
+											
+	<div class="slider-wrap">
+		<div id="main-photo-slider" class="csw">
+			<div class="panelContainer">
+			
+						
+				<div class="panel">
+				    <div class="wrapper">
+						<a href="http://gamecareerguide.com/features/1168/how_the_collegiate_starleague_is_.php"><img src="/img/slider/csl_carousel.jpg"  height="207px" width="207px" alt="" class="floatLeft"/></a>
+						<span>						<h1 class="nospace"><a href="http://gamecareerguide.com/features/1168/how_the_collegiate_starleague_is_.php">How the Collegiate StarLeague is Changing the Business of eSports</a></h1>
+						
+						Zoran Cunningham interviews Collegiate StarLeague head administrator Aston Mack for insight into how his organization promotes positive change in the world of competitive gaming. <br /><br /></span>		
+						
+						<div style="float:right; margin-botton: 15px"><strong><a style="color: #ebbc15;" href="http://gamecareerguide.com/features/1168/how_the_collegiate_starleague_is_.php">Read More >></a></strong></div>		
+
+					</div>
+				</div>
+			
+						
+				<div class="panel">
+				    <div class="wrapper">
+						<a href="/downloads/games/165/dignrig.php"><img src="../gcg_games/thumb/DigNRig_title.jpg"  height="207px" width="207px" alt="" class="floatLeft"/></a>
+						<span>						<h1 class="nospace"><a href="/downloads/games/165/dignrig.php">Featured Student Game: Dig-N-Rig</a></h1>
+						
+						Dig-N-Rig is a 2D, futuristic, mining simulator that combines resource management with creative building mechanics. Dig-N-Rig takes place in the year 2032, when a team of scientists decide to explore the Earth's final frontier, the core. The player plays as the Diggit 6400, the world's most advanced mining robot. As the player mines, they extract powerful minerals from the Earth and transport them up to their Lab via a custom-built rig system. <br /><br /></span>		
+						
+						<div style="float:right; margin-botton: 15px"><strong><a style="color: #ebbc15;" href="/downloads/games/165/dignrig.php">Read More >></a></strong></div>		
+
+					</div>
+				</div>
+			
+						
+				<div class="panel">
+				    <div class="wrapper">
+						<a href="/features/1157/test_drive_the_unreal_.php"><img src="/img/slider/unreal_carousel.jpg"  height="207px" width="207px" alt="" class="floatLeft"/></a>
+						<span>						<h1 class="nospace"><a href="/features/1157/test_drive_the_unreal_.php">Test Drive the Unreal Engine</a></h1>
+						
+						In this reprinted article from Game Developer magazine's 2012 Game Career Guide issue, Sjoerd De Jong details the steps involved in making a simple third-person game using the Unreal Development Kit. <br /><br /></span>		
+						
+						<div style="float:right; margin-botton: 15px"><strong><a style="color: #ebbc15;" href="/features/1157/test_drive_the_unreal_.php">Read More >></a></strong></div>		
+
+					</div>
+				</div>
+			
+						
+				<div class="panel">
+				    <div class="wrapper">
+						<a href="/schools/5/cogswell_.php"><img src="/img/slider/Cogswell Slider.jpg"  height="207px" width="207px" alt="" class="floatLeft"/></a>
+						<span>						<h1 class="nospace"><a href="/schools/5/cogswell_.php">Cogswell College</a></h1>
+						
+						Cogswell College – a small, prestigious institution in the heart of Silicon Valley – recognizes that our fast changing global economy demands an education that fosters a real-world, team-centered approach to learning. <br /><br /></span>		
+						
+						<div style="float:right; margin-botton: 15px"><strong><a style="color: #ebbc15;" href="/schools/5/cogswell_.php">Read More >></a></strong></div>		
+
+					</div>
+				</div>
+			
+						
+				<div class="panel">
+				    <div class="wrapper">
+						<a href="http://gamecareerguide.com/features/1169/affordances_of_elliptical_learning_.php"><img src="/img/slider/ell_carousel.jpg"  height="207px" width="207px" alt="" class="floatLeft"/></a>
+						<span>						<h1 class="nospace"><a href="http://gamecareerguide.com/features/1169/affordances_of_elliptical_learning_.php">Affordances of Elliptical Learning in Arcade Video Games</a></h1>
+						
+						In this comprehensive thesis, Sébastien Hock-koon details the results of his PhD research and his first-hand experience regarding the unique potential for learning in video games. <br /><br /></span>		
+						
+						<div style="float:right; margin-botton: 15px"><strong><a style="color: #ebbc15;" href="http://gamecareerguide.com/features/1169/affordances_of_elliptical_learning_.php">Read More >></a></strong></div>		
+
+					</div>
+				</div>
+			
+						
+				<div class="panel">
+				    <div class="wrapper">
+						<a href="http://gamecareerguide.com/features/1166/game_design_challenge_.php"><img src="/img/slider/reboot_carousel.jpg"  height="207px" width="207px" alt="" class="floatLeft"/></a>
+						<span>						<h1 class="nospace"><a href="http://gamecareerguide.com/features/1166/game_design_challenge_.php">Game Design Challenge: Reboot!</a></h1>
+						
+						Capcom's recent Devil May Cry reboot presented a fresh new take on a well-worn formula. Can you reboot a franchise from the previous console generation and make it appeal to modern audiences? <br /><br /></span>		
+						
+						<div style="float:right; margin-botton: 15px"><strong><a style="color: #ebbc15;" href="http://gamecareerguide.com/features/1166/game_design_challenge_.php">Read More >></a></strong></div>		
+
+					</div>
+				</div>
+			
+						
+				<div class="panel">
+				    <div class="wrapper">
+						<a href="/schools/64/vancouver_film_.php"><img src="/img/slider/VFS Slider Formatted.jpg"  height="207px" width="207px" alt="" class="floatLeft"/></a>
+						<span>						<h1 class="nospace"><a href="/schools/64/vancouver_film_.php">Vancouver Film School</a></h1>
+						
+						The one-year Game Design program at Vancouver Film School covers everything students need to thrive in the game industry, from game theory to coding to portfolio production. <br /><br /></span>		
+						
+						<div style="float:right; margin-botton: 15px"><strong><a style="color: #ebbc15;" href="/schools/64/vancouver_film_.php">Read More >></a></strong></div>		
+
+					</div>
+				</div>
+			
+				
+			</div>
+		</div>
+			
+		
+		<a href="#1" class="cross-link active-thumb"><img src="/img/slider/csl_carousel.jpg" height="75px" width="75px" class="nav-thumb" alt="temp-thumb" /></a>
+		<div id="movers-row">
+			<div><a href="#2" class="cross-link"><img src="../gcg_games/thumb/DigNRig_title.jpg" class="nav-thumb" alt="temp-thumb" height="75px" width="75px" /></a></div>
+			<div><a href="#3" class="cross-link"><img src="/img/slider/unreal_carousel.jpg" class="nav-thumb" alt="temp-thumb" height="75px" width="75px" /></a></div>
+			<div><a href="#4" class="cross-link"><img src="/img/slider/Cogswell Slider.jpg" class="nav-thumb" alt="temp-thumb" height="75px" width="75px" /></a></div>
+			<div><a href="#5" class="cross-link"><img src="/img/slider/ell_carousel.jpg" class="nav-thumb" alt="temp-thumb" height="75px" width="75px" /></a></div>
+			<div><a href="#6" class="cross-link"><img src="/img/slider/reboot_carousel.jpg" class="nav-thumb" alt="temp-thumb" height="75px" width="75px" /></a></div>
+			<div><a href="#7" class="cross-link"><img src="/img/slider/VFS Slider Formatted.jpg" class="nav-thumb" alt="temp-thumb" height="75px" width="75px" /></a></div>
+		</div>
+
+	</div>
+	
+	</div>
+		
+		
+		</div>				
+		<table cellpadding="0" cellspacing="0" width="654">
+		<tr>
+			<td valign="top" width="322">
+			
+											<div class="header_blue"><a href="/features/">TOP STORIES</a></div>
+<div class="sublinks_blue"><a href="/news/">News</a> &nbsp; | &nbsp; <a href="/features/">Features</a></div>
+
+	<ul class="mainblue">
+    <li class="title"><a href="/features/1169/affordances_of_elliptical_learning_.php"><strong>Affordances of Elliptical Learning in Arcade Video Games</strong></a>
+    <small>[02.14.13]</small> <a href="/features/1169/affordances_of_elliptical_learning_.php#disqus_thread"></a></li>
+    <li>
+        <a href="/features/1169/affordances_of_elliptical_learning_.php"><img src="http://www.gamecareerguide.com/db_area/images/item_images/130213/ell_thumb.jpg" class="img" alt="img" width="120"/></a>
+    
+
+	In this comprehensive thesis, Sébastien Hock-koon details the results of his PhD research and his first-hand experience regarding the unique potential for learning in video games.
+		<div class="cleaner"></div>
+		</li>
+
+	</ul>
+	<ul class="mainblue">
+    <li class="title"><a href="/features/1168/how_the_collegiate_starleague_is_.php"><strong>How the Collegiate StarLeague is Changing the Business of eSports</strong></a>
+    <small>[02.12.13]</small> <a href="/features/1168/how_the_collegiate_starleague_is_.php#disqus_thread"></a></li>
+    <li>
+        <a href="/features/1168/how_the_collegiate_starleague_is_.php"><img src="http://www.gamecareerguide.com/db_area/images/item_images/130211/csl_thumb.jpg" class="img" alt="img" width="120"/></a>
+    
+
+	Zoran Cunningham interviews Collegiate StarLeague head administrator Aston Mack for insight into how his organization promotes positive change in the world of competitive gaming.
+
+		<div class="cleaner"></div>
+		</li>
+
+	</ul>
+	<ul class="mainblue">
+    <li class="title"><a href="/features/1167/game_narrative_review_grim_.php"><strong>Game Narrative Review: Grim Fandango</strong></a>
+    <small>[02.07.13]</small> <a href="/features/1167/game_narrative_review_grim_.php#disqus_thread"></a></li>
+    <li>
+        <a href="/features/1167/game_narrative_review_grim_.php"><img src="http://www.gamecareerguide.com/db_area/images/item_images/130206/gf_thumb.jpg" class="img" alt="img" width="120"/></a>
+    
+
+	In this narrative-focused analysis, Northern Kentucky University student Patrick Delaney critically examines LucasArts' classic film noir adventure game Grim Fandango.
+
+
+
+		<div class="cleaner"></div>
+		</li>
+
+	</ul>
+	<ul class="mainblue">
+    <li class="title"><a href="/features/1166/game_design_challenge_.php"><strong>Game Design Challenge: Reboot!</strong></a>
+    <small>[02.06.13]</small> <a href="/features/1166/game_design_challenge_.php#disqus_thread"></a></li>
+    <li>
+        <a href="/features/1166/game_design_challenge_.php"><img src="http://www.gamecareerguide.com/db_area/images/item_images/130205/reboot_thumb.jpg" class="img" alt="img" width="120"/></a>
+    
+
+	Capcom's recent Devil May Cry reboot presented a fresh new take on a well-worn formula. Can you reboot a franchise from the previous console generation and make it appeal to modern audiences?
+
+		<div class="cleaner"></div>
+		</li>
+
+	</ul>
+	<ul class="mainblue">
+    <li class="title"><a href="/features/1165/results_from_game_design_.php"><strong>Results from Game Design Challenge: Reinvent the Brawler</strong></a>
+    <small>[02.05.13]</small> <a href="/features/1165/results_from_game_design_.php#disqus_thread"></a></li>
+    <li>
+        <a href="/features/1165/results_from_game_design_.php"><img src="http://www.gamecareerguide.com/db_area/images/item_images/130202/brawler_thumb.jpg" class="img" alt="img" width="120"/></a>
+    
+
+	Responding to Game Career Guide's challenge to revive the dormant beat-'em-up genre, our readers drafted designs for nightmarish pub crawls, boy band bodyguard sims, and more. Read on for our top picks.
+
+
+		<div class="cleaner"></div>
+		</li>
+
+	</ul>
+
+		
+<div class="footer_blue"><a href="/news/">More News</a>|&nbsp;&nbsp;<a href="/features/"> Stories &raquo;</a></div>
+
+									
+					<div class="header_blue"><a href="/getting_started/">GETTING STARTED</a></div>
+						<ul class="mainblue">
+				<li class="title"><a href="/features/1128/how_mismanagement_almost_sent_spin_.php"><strong>How Mismanagement Almost Sent <i>Spin Doctor</i> Spiraling Out Of Control</strong></a>
+		<small>[10.04.12]</small></li>
+		<li>
+		<a href="/features/1128/how_mismanagement_almost_sent_spin_.php"><img src="http://www.gamecareerguide.com/db_area/images/item_images/121003/spin_thumb.jpg" class="img" alt="img" width="120"/></a>
+		Student developers Jonny Pickton and Gina Nordheim look back on their recent student project, and note how a disorganized dev cycle nearly plunged their team into chaos.
+		
+		
+		<div class="cleaner"></div></li>		</ul>
+		<div class="footer_blue"><a href="/getting_started/"> More Getting Started Stories &raquo;</a></div>
+			
+			</td>
+			<td width="10"></td>
+			<td valign="top" width="322">
+						
+											<div class="header_purple"><a href="/schools/featured/">FEATURED SCHOOLS</a></div>
+				
+		<ul class="mainpurple">
+			<li class="title">
+							
+<img src="/img/gold.gif" width="68" height="15" alt="platinum" />
+					
+		<a href="/schools/567/ringling_college_of_art_and_design.php"><strong>Ringling College of Art and Design</strong>
+		<small>--Sarasota,&nbsp;Florida&nbsp; </small>
+		
+		</a>
+		</li>
+		<li>
+				<div class="right"><a href="/schools/567/ringling_college_of_art_and_design.php"><img alt="Ringling College of Art and Design" src="http://www.gamecareerguide.com/db_area/images/school/567/ringlingblock.jpg" class="img"/></a></div>
+				For more than 75 years, Ringling College of Art and Design has cultivated the creative spirit in art and design students from around the globe … transforming our visual world. 
+				
+		<div class="cleaner"></div>
+		</li>		</ul>
+		
+
+
+		
+
+		<div class="footer_purple"><a href="/schools/featured/">More Featured Schools &raquo;</a></div>						 				
+		
+					<div class="squaread">
+		<!--/* AD Square 300x250 */-->
+		<!--JavaScript Tag // Tag for network 5242: United Business Media //
+		Website: Game Career Guide // Page: ROS // Placement: BACKUP_IMU1_300x250
+		(2382855) // created at: Apr 6, 2012 10:19:05 AM--> <script language="javascript"><!-- 
+		document.write('<scr'+'ipt language="javascript1.1" src="http://adserver.adtechus.com/addyn/3.0/5242.1/2382855/0/0/ADTECH;loc=100;target=_blank;key=key1+key2+key3+key4;grp=[group];misc='+new Date().getTime()+'"></scri'+'pt>');
+		//-->
+		</script><noscript><a
+		href="http://adserver.adtechus.com/adlink/3.0/5242.1/2382855/0/0/ADTECH;loc=300;key=key1+key2+key3+key4;grp=[group]" target="_blank"><img src="http://adserver.adtechus.com/adserv/3.0/5242.1/2382855/0/0/ADTECH;loc=300;key=key1+key2+key3+key4;grp=[group]" border="0" width="0" height="0"></a></noscript>
+		<!-- End of JavaScript Tag -->
+	</div>		
+														<div class="header_purple"><a href="/forums/">FORUMS</a></div>
+<ul class="regular_purplebox">
+
+	<li class="title"><a href="http://www.gamecareerguide.com/forums/showthread.php?t=6218&goto=newpost">Ideas for the "Reboot" design challenge</a> </li>
+	<li>
+	Last comment by <strong>bob</strong> on Feb 17, 7:27 pm.
+	</li>		
+
+
+	<li class="title"><a href="http://www.gamecareerguide.com/forums/showthread.php?t=6224&goto=newpost">New Book Release on How to Get a Job in Video Games. I am giving out free copies</a> </li>
+	<li>
+	Last comment by <strong>Ken_Flemming</strong> on Feb 17, 6:49 pm.
+	</li>		
+
+
+	<li class="title"><a href="http://www.gamecareerguide.com/forums/showthread.php?t=6225&goto=newpost">Looking for a job. About to graduate with an MA in Psychology</a> </li>
+	<li>
+	Last comment by <strong>tsloper</strong> on Feb 17, 11:45 am.
+	</li>		
+
+
+	<li class="title"><a href="http://www.gamecareerguide.com/forums/showthread.php?t=6226&goto=newpost">Starting at square one, advice?</a> </li>
+	<li>
+	Last comment by <strong>tsloper</strong> on Feb 17, 11:41 am.
+	</li>		
+
+
+	<li class="title"><a href="http://www.gamecareerguide.com/forums/showthread.php?t=6003&goto=newpost">Commercial Quality Video Game/Animation/Film Composer!</a> </li>
+	<li>
+	Last comment by <strong>titanicpiano14</strong> on Feb 13, 12:26 pm.
+	</li>		
+
+
+	<li class="title"><a href="http://www.gamecareerguide.com/forums/showthread.php?t=6219&goto=newpost">Help in setting towards becoming a Creative Director</a> </li>
+	<li>
+	Last comment by <strong>tsloper</strong> on Feb 13, 12:00 pm.
+	</li>		
+
+
+	<li class="title"><a href="http://www.gamecareerguide.com/forums/showthread.php?t=6221&goto=newpost">How's my youtube channel look, plz comment</a> </li>
+	<li>
+	Last comment by <strong>CMDS CLAN</strong> on Feb 13, 11:45 am.
+	</li>		
+
+
+	<li class="title"><a href="http://www.gamecareerguide.com/forums/showthread.php?t=6217&goto=newpost">Hello all, just stumbled upon this glorious site last night</a> </li>
+	<li>
+	Last comment by <strong>Studentofthagame</strong> on Feb 11, 9:33 pm.
+	</li>		
+
+</ul>
+<div class="footer_purple"><a href="/forums/">More Forum Posts  &raquo;</a></div>
+																				
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3"></td>
+		</tr>
+		</table>
+
+		</div>
+	</td>
+	<td valign="top" width="665">
+		               	
+			<div class="banner160"><!--/* AD SKY 160x600 */-->
+<!--/* AD SKY 160x600 */-->
+
+<!--JavaScript Tag // Tag for network 5242: United Business Media //
+Website: Game Career Guide // Page: ROS // Placement: BACKUP_Sky1_160x600
+(2382857) // created at: Apr 6, 2012 10:19:05 AM--> <script language="javascript"><!-- 
+document.write('<scr'+'ipt language="javascript1.1" src="http://adserver.adtechus.com/addyn/3.0/5242.1/2382857/0/154/ADTECH;loc=100;target=_blank;key=key1+key2+key3+key4;grp=[group];misc='+new Date().getTime()+'"></scri'+'pt>');
+//-->
+</script><noscript><a
+href="http://adserver.adtechus.com/adlink/3.0/5242.1/2382857/0/154/ADTECH;loc=300;key=key1+key2+key3+key4;grp=[group]" target="_blank"><img src="http://adserver.adtechus.com/adserv/3.0/5242.1/2382857/0/154/ADTECH;loc=300;key=key1+key2+key3+key4;grp=[group]" border="0" width="160" height="600"></a></noscript>
+<!-- End of JavaScript Tag -->
+</div>
+
+
+		<br /><br />
+		<div class="banner160">
+<!--JavaScript Tag // Tag for network 5242: United Business Media // Website: Game Career Guide // Page: ROS // Placement: BACKUP_Tile1_160x160 (2636661) // created at: Nov 13, 2012 3:07:00 PM-->
+<script language="javascript"><!--
+document.write('<scr'+'ipt language="javascript1.1" src="http://adserver.adtechus.com/addyn/3.0/5242.1/2636661/0/0/ADTECH;loc=100;target=_blank;key=key1+key2+key3+key4;grp=[group];misc='+new Date().getTime()+'"></scri'+'pt>');
+//-->
+</script><noscript><a href="http://adserver.adtechus.com/adlink/3.0/5242.1/2636661/0/0/ADTECH;loc=300;key=key1+key2+key3+key4;grp=[group]" target="_blank"><img src="http://adserver.adtechus.com/adserv/3.0/5242.1/2636661/0/0/ADTECH;loc=300;key=key1+key2+key3+key4;grp=[group]" border="0" width="0" height="0"></a></noscript>
+<!-- End of JavaScript Tag -->
+</div>		<br /><br />
+		<div class="banner160">
+<!--JavaScript Tag // Tag for network 5242: United Business Media // Website: Game Career Guide // Page: ROS // Placement: BACKUP_Tile2_160x160 (2636659) // created at: Nov 13, 2012 3:07:28 PM-->
+<script language="javascript"><!--
+document.write('<scr'+'ipt language="javascript1.1" src="http://adserver.adtechus.com/addyn/3.0/5242.1/2636659/0/0/ADTECH;loc=100;target=_blank;key=key1+key2+key3+key4;grp=[group];misc='+new Date().getTime()+'"></scri'+'pt>');
+//-->
+</script><noscript><a href="http://adserver.adtechus.com/adlink/3.0/5242.1/2636659/0/0/ADTECH;loc=300;key=key1+key2+key3+key4;grp=[group]" target="_blank"><img src="http://adserver.adtechus.com/adserv/3.0/5242.1/2636659/0/0/ADTECH;loc=300;key=key1+key2+key3+key4;grp=[group]" border="0" width="0" height="0"></a></noscript>
+<!-- End of JavaScript Tag -->
+</div>	               	
+ 	</td>
+</tr>
+<tr>
+	<td colspan="2"> 
+		          <!--leaderboard ad-->
+               <div class="bottom30">&nbsp;</div>
+               <div class="banner728 bottom25">
+<!--JavaScript Tag // Tag for network 5242: United Business Media // Website: Game Career Guide // Page: ROS // Placement: BACKUP_Bottom_728x90 (2636643) // created at: Nov 13, 2012 3:06:28 PM-->
+<script language="javascript"><!--
+document.write('<scr'+'ipt language="javascript1.1" src="http://adserver.adtechus.com/addyn/3.0/5242.1/2636643/0/225/ADTECH;loc=100;target=_blank;misc='+new Date().getTime()+'"></scri'+'pt>');
+//-->
+</script><noscript><a href="http://adserver.adtechus.com/adlink/3.0/5242.1/2636643/0/225/ADTECH;loc=300" target="_blank"><img src="http://adserver.adtechus.com/adserv/3.0/5242.1/2636643/0/225/ADTECH;loc=300" border="0" width="728" height="90"></a></noscript>
+<!-- End of JavaScript Tag -->
+               
+               
+               
+               </div>          
+               
+               <!--end leaderboard-->	</td>
+</tr>
+</table>
+
+</div>
+
+<!-- begin footer cut -->
+<div class="footer1" >
+<div class="footerline"></div>
+<div id="footercontent">
+	<div class="left">
+                        <a href="http://www.ubmtechweb.com/" target="_blank"><img src="http://gamasutra.com/game_sites_superfooter_2012/images/logo_ubmtech_white.png" width="88" height="111" border="0" alt="UBM Tech"></a>
+                        </div>
+                         <!-- LEFT SIDE -->
+                         <div id="rightlinks">
+                          <ul>
+                            <li>FEATURED UBM TECH SITES:
+                            <li><a href="http://www.gdconf.com/" target="_blank">Game Developers Conference</a></li> | 
+                            <li><a href="http://www.gamasutra.com/" target="_blank">Gamasutra</a></li> | 
+                            <li><a href="http://www.gdmag.com/" target="_blank">Game Developer Mag</a></li> | 
+                            <li><a href="http://www.gamecareerguide.com/" target="_blank">Game Career Guide</a></li>
+                          </ul>
+                             
+                         <ul>
+                            <li>OUR MARKETS: 
+                            <li><a href="http://tech.ubm.com/businesses/business-technology/" target="_blank">Business Technology</a></li> | 
+                            <li><a href="http://tech.ubm.com/businesses/channel/" target="_blank">Channel</a></li> | 
+                            <li><a href="http://tech.ubm.com/businesses/electronics/" target="_blank">Electronics</a></li> | 
+                            <li><a href="http://tech.ubm.com/businesses/game-app-development/" target="_blank">Game &amp; App Development</a></li>
+                        </ul>
+					
+                          <ul class="normal">
+                            <li><b>Working With Us:</b>
+                            <li><a href="http://www.jointhegamenetwork.com/" target="_blank">Game Network Advertising</a></li> | 
+                            <li><a href="http://www.jointhegamenetwork.com/event/" target="_blank">Event Calendar</a></li> | 
+                            <li><a href="http://www.jointhegamenetwork.com/contact/" target="_blank">Contact Us</a></li> 
+                          </ul>
+                         
+                         <ul class="colored">
+                            <li><a href="http://legal.us.ubm.com/terms-of-service/" target="_blank" class="blue">Terms of Service</a></li>  |
+                            <li><a href="http://legal.us.ubm.com/privacy-policy/" target="_blank" class="blue">Privacy Statement</a></li>  |
+                            <li><a href="http://legal.us.ubm.com/copyright-notice/" target="_blank" class="blue">Copyright &#169; <script type="text/javascript">
+                                        <!--
+                                        var currentTime = new Date()
+                                        var year = currentTime.getFullYear()
+                                        document.write( year)
+                                        //-->
+                                    </script>
+                            UBM Tech, All rights reserved</a></li>
+                        </ul>
+                         </div>
+                          <br/>
+</div>
+</div>
+	
+
+<!-- SiteCatalyst code version: H.21.
+Copyright 1996-2010 Adobe, Inc. All Rights Reserved
+More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="http://i.cmpnet.com/shared/omniture/h_s_code_remote.js"></script>
+<script language="JavaScript" type="text/javascript"><!--
+/* You may give each page an identifying name, server, and channel on
+the next lines. */
+s.pageName="";
+s.server="";
+s.channel=""
+s.pageType=""
+s.prop1="";
+s.prop2="";
+s.prop3="Game Career Guide |  | Index";
+s.prop4="Index";
+s.prop5="Index";
+s.prop6="Group Name: www.gamecareerguide.com";
+s.prop7="";
+s.prop8="216.165.95.79 | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17";
+s.prop9="";
+s.prop10="";
+s.prop11="";
+s.prop12="";
+s.prop13="http://www.gamecareerguide.com/";
+s.prop14="";
+s.prop15="";
+s.prop16="";
+s.prop19="False";
+s.prop21="";
+
+/* Conversion Variables */
+s.campaign="";
+s.state="";
+s.zip="";
+s.events="event5";
+s.products="";
+s.purchaseID="";
+s.eVar1="";
+s.eVar2="";
+s.eVar3="";
+s.eVar4="";
+s.eVar5="";
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code=s.t();if(s_code)document.write(s_code)//--></script>
+<script language="JavaScript" type="text/javascript"><!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script><noscript><a href="http://www.omniture.com" title="Web Analytics"><img
+src="http://cmp.112.2o7.net/b/ss/cmpglobalvista/1/H.21--NS/0"
+height="1" width="1" border="0" alt="" /></a></noscript><!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.21. -->
+
+
+
+        <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'gamecareerguide'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+        </script>
+
+        
+</body>
+</html>

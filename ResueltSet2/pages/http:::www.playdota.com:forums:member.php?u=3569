@@ -1,0 +1,935 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+<meta name="robots" content="noindex,follow" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="generator" content="vBulletin 3.8.4" />
+
+<meta name="keywords" content="dota" />
+<meta name="description" content="Official DotA Forums" />
+
+
+<!-- CSS Stylesheet -->
+<style type="text/css" id="vbulletin_css">
+/**
+* vBulletin 3.8.4 CSS
+* Style: 'PlayDotA'; Style ID: 2
+*/
+@import url("clientscript/vbulletin_css/style-300cd769-00002.css");
+</style>
+<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_important.css?v=387" />
+
+
+
+<!-- / CSS Stylesheet -->
+
+
+
+<style type="text/css">
+.tooltiphover {
+	border-bottom: 1px dashed #fff;
+	text-decoration: none;
+	cursor:help;
+}
+
+.tooltiphover:hover {
+	position: relative;
+         border-bottom: 1px dashed #fff;
+}
+
+.tooltiphover span {
+	display: none;
+}
+.tooltiphover:hover span {
+	display: block;
+   	position: absolute;left:0px;top:10px;
+   	padding: 5px; margin: 10px;
+   	background: #f0f0f0; border: 1px dotted #c0c0c0;
+         opacity:0.9;   
+         filter:alpha(opacity=90);   
+         -moz-opacity:0.9;   
+         color:#fff;
+         background:#111;
+         width:220px;
+         float:left;
+}
+</style>
+
+
+
+<style type="text/css">
+.stg_table
+{
+background:#000;
+}
+.stg_table td
+{
+padding:3px;
+}
+.stg_table .alt1 td
+{
+background:#222;
+}
+.iceblog
+{
+position:relative;
+padding-top:5px;
+left:52px;
+}
+.iceblog img
+{
+
+}
+.pics
+{
+list-style-type:none;
+margin:0px;
+padding:0px;
+margin-top:15px;
+border:0px;
+margin-left:10px;
+width:600px;
+}
+
+
+.fixwrapq {width:100%;}
+
+
+
+.pics h1
+{
+font-size:12px;
+font-weight:normal;
+color:#96B6DF;
+margin:2px;
+padding:0px;
+}
+
+.pics li
+{
+margin-right:10px;
+text-align:center;
+float:left;
+padding:5px;
+margin-bottom:8px;
+}
+
+.pics .s
+{
+
+width:125px;
+float:left;
+margin:0px;
+padding:0px;
+margin-left:5px;
+margin-right:5px;	
+margin-bottom:10px;
+height:140px !important;
+height:160px;
+padding-top:4px;
+}
+
+.pics .g
+{
+width:125px;
+float:left;
+margin:0px;
+padding:0px;
+margin-left:5px;
+margin-right:5px;	
+margin-bottom:10px;
+height:140px !important;
+height:160px;
+padding-top:4px;
+}
+
+.pics .s img
+{
+width:100px;
+height:77px;
+}
+
+.pics .b
+{
+background:url(http://media.playdota.com/site/artwork/sbg.jpg) center top no-repeat;
+width:220px;
+padding:10px;
+}
+
+
+.pics li img
+{
+margin-bottom:5px;
+border:0px;
+}
+.footer
+{
+height:131px;
+background:url(http://media.playdota.com/site/footer.jpg) no-repeat;
+width:934px;
+color:#a1a1a1;
+font-size:12px;
+font-weight:normal;
+}
+
+
+.footer ul
+{
+background:none;
+list-style-type:none;
+margin:0px;
+padding:0px;
+margin-top:28px;
+margin-left:136px;
+
+}
+
+.footer ul li
+{
+background:none;
+float:left;
+margin-right:8px;
+margin-bottom:20px;
+
+}
+.footer .sh
+{
+width:65px;
+}
+
+.menu
+{
+list-style-type:none;
+padding:0px;
+margin:0px;
+border:0;
+margin-top:160px;
+background:none;
+margin-left:73px;
+}
+.header
+{
+width:980px;
+height:339px;
+background:url(http://media.playdota.com/site/header.jpg) no-repeat;
+margin:0px;
+padding:0px;
+margin-left:1px;
+}
+.menu li
+{
+font-family: "Times New Roman", Times, serif; 
+float:left;
+padding-top:42px;
+margin-right:8px;
+color:#cccccc;
+background:none;
+}
+
+.sigdim
+{
+max-width: 500px;
+max-height: 300px;
+overflow: hidden;
+}
+
+.menu .sh
+{
+width:140px;
+cursor:pointer;
+background:none;
+height:100px;
+}
+.menu .sh a div
+{
+width:130px;height:130px;
+position:relative;
+top:-60px;
+cursor:pointer;
+}
+.bracket .space
+{
+width:1px;
+height:31px;
+clear:both;
+}
+.bracket .semispace
+{
+width:1px;
+height:14px;
+clear:both;
+}
+.bracket .single
+{
+background:url(http://media.playdota.com/site/bracketsingle.png) no-repeat;
+width:109px;
+height:31px;
+padding-top:2px;
+}
+.bracket .single .team
+{
+display:block;
+padding-top:5px;
+padding-left:7px;
+font-size:10px;
+color:#fff;
+float:left;
+width:88px;
+font-weight:bold;
+}
+.bracket .single .score
+{
+color:#fff;
+font-weight:bold;
+padding-top:4px;
+display:block;
+float:left;
+width:10px;
+}
+.bracket .customjoint
+{
+margin-top:15px;
+padding-bottom:15px; 
+display:block;
+}
+
+.bracket
+{
+border:0px !important;
+padding:0px !important;
+background:none !important;;
+}
+.bracket td
+{
+border:0px !important;
+padding:0px !important;
+background:none !important;;
+}
+.bracket .noscore
+{
+background:url(http://media.playdota.com/site/bracket.png) no-repeat;
+width:136px;
+height:52px;
+}
+.bracket .windown
+{
+background:url(http://media.playdota.com/site/bracket.png) left -106px no-repeat;
+}
+.bracket .winup
+{
+background:url(http://media.playdota.com/site/bracket.png) left -53px no-repeat;
+}
+.bracket .noscore .team
+{
+display:block;
+padding-top:5px;
+padding-left:15px;
+font-size:11px;
+color:#fff;
+float:left;
+width:105px;
+font-weight:bold;
+}
+.bracket .noscore .score
+{
+color:#fff;
+font-weight:bold;
+padding-top:6px;
+display:block;
+float:left;
+width:15px;
+}
+
+.jointline
+{
+background:url(http://media.playdota.com/site/joint.gif) no-repeat left center;
+width:11px;
+}
+
+.bracketContainer
+{
+width:610px;
+overflow:auto;
+white-space:nowrap;
+height:100%;
+scrollbar-base-color:#222222;
+overflow-y: hidden;
+-ms-overflow-y: hidden;
+padding-bottom:30px;
+}
+.groupTable table
+{
+border:0px !important;
+padding:0px !important;
+background:url(http://media.playdota.com/competition/toptable.png) no-repeat !important;
+width:254px;
+}
+.groupTable thead td
+{
+padding-bottom:3px;
+padding-top:3px;
+font-size:12px;
+}
+
+.groupTable tbody td
+{
+padding-bottom:3px;
+padding-top:3px;
+font-size:11px;
+color:#fff;
+padding-left:9px;
+padding-right:9px;
+background:none;
+height:13px;
+}
+.groupTable thead td
+{
+padding-left:9px;
+padding-right:9px;
+padding-top:5px;
+background:none !important;
+}
+.groupTable tfoot td
+{
+background:none !important;
+padding:0;
+border:0;
+}
+
+</style>
+<script type="text/javascript" src="http://media.playdota.com/js/swfobject.js"></script>
+<script type="text/javascript" src="http://media.playdota.com/forums/clientscript/yui/yahoo-dom-event/yahoo-dom-event.js?v=387"></script>
+<script type="text/javascript" src="http://media.playdota.com/forums/clientscript/yui/connection/connection-min.js?v=387"></script>
+<script type="text/javascript">
+<!--
+var SESSIONURL = "s=32a1f749d6f96700ac42f245f66692fa&";
+var SECURITYTOKEN = "guest";
+var IMGDIR_MISC = "http://media.playdota.com/forums/assault_fps/misc";
+var vb_disable_ajax = parseInt("0", 10);
+// -->
+</script>
+<script type="text/javascript" src="http://media.playdota.com/forums/clientscript/vbulletin_global.js?v=387"></script>
+<script type="text/javascript" src="http://media.playdota.com/forums/clientscript/vbulletin_menu.js?v=387"></script>
+
+
+	<link rel="alternate" type="application/rss+xml" title="DotA Forums RSS Feed" href="external.php?type=RSS2" />
+	
+<script type="text/javascript" src="http://media.playdota.com/forums/clientscript/ncode_imageresizer.js?v=1.0.2"></script>
+<script type="text/javascript">
+<!--
+NcodeImageResizer.MODE = 'newwindow';
+
+NcodeImageResizer.MAXWIDTH = 580;
+NcodeImageResizer.MAXHEIGHT = 0;
+
+
+NcodeImageResizer.MAXWIDTHSIGS = 500;
+NcodeImageResizer.MAXHEIGHTSIGS = 300;
+
+NcodeImageResizer.BBURL = 'http://www.playdota.com/forums';
+
+vbphrase['ncode_imageresizer_warning_small'] = 'Click this bar to view the full image.';
+vbphrase['ncode_imageresizer_warning_filesize'] = 'This image has been resized. Click this bar to view the full image. The original image is sized %1$sx%2$s and weights %3$sKB.';
+vbphrase['ncode_imageresizer_warning_no_filesize'] = 'This image has been resized. Click this bar to view the full image. The original image is sized %1$sx%2$s.';
+vbphrase['ncode_imageresizer_warning_fullsize'] = 'Click this bar to view the small image.';
+//-->
+</script>
+
+<style type="text/css">
+
+table.ncode_imageresizer_warning {
+background: #FFFFE1; 
+color: #FFFFFF; 
+border: 1px solid #CCCFFF; 
+	cursor: pointer;
+}
+
+table.ncode_imageresizer_warning td {
+	font-size: 10px;
+	vertical-align: middle;
+	text-decoration: none;
+}
+
+table.ncode_imageresizer_warning td.td1 {
+	padding: 5px;
+}
+
+table.ncode_imageresizer_warning td.td1 {
+	padding: 2px;
+}
+
+</style>
+	<title>DotA Forums</title>
+
+</head>
+<body>
+
+	
+	
+	
+	
+
+
+<div id="pagewrapper_out_dc">
+<div id="pagewrapper">
+<!-- header -->
+
+<center>
+
+
+<div class="header">
+	&nbsp;
+	<ul class="menu">
+		<li><a href="/heroes"><img src="http://media.playdota.com/site/heroes.png" alt="" border="0"/></a></li>
+		<li><a href="/items"><img src="http://media.playdota.com/site/items.png" alt="" border="0"/></a></li>
+		<li><a href="/guides"><img src="http://media.playdota.com/site/guides.png" alt="" border="0"/></a></li>
+		<li><a href="/mechanics"><img src="http://media.playdota.com/site/mechanics.png" alt="" border="0"/></a></li>
+		<li><a href="/forums/dota-tools-ai-maps/"><img src="http://media.playdota.com/site/tools.png" alt="" border="0"/></a></li>
+		<li><a href="/forums/"><img src="http://media.playdota.com/site/forums.png" alt="" border="0"/></a></li>
+		<li class="sh" ><a href="/" ><div></div></a></li>
+		<li><a href="/forums/dota-replays/"><img src="http://media.playdota.com/site/replays.png" alt="" border="0"/></a></li>
+		<li><a href="/videos"><img src="http://media.playdota.com/site/videos.png" alt="" border="0"/></a></li>
+		<li><a href="/fanart"><img src="http://media.playdota.com/site/art.png" alt="" border="0"/></a></li>
+		<li><a href="/comics"><img src="http://media.playdota.com/site/comics.png" alt="" border="0"/></a></li>
+		<li><a href="/ai"><img src="http://media.playdota.com/site/links.png" alt="" border="0"/></a></li>
+		<li><a href="/about"><img src="http://media.playdota.com/site/about.png" alt="" border="0"/></a></li>
+	</ul>
+<a class="iceblog" href="http://www.playdota.com/forums/blogs/icefrog/" title="Developer's Blog"><img src="http://media.playdota.com/site/blog.jpg" alt="Developer's Blog" /></a>
+</div>
+</center>
+
+
+<!-- /header -->
+
+
+
+<div id="border_left">
+<div id="border_right">
+<div id="border_top">
+<div id="border_bottom">
+
+<div id="tleft_corner">
+<div id="tright_corner">
+<!-- content table -->
+<!-- open content container -->
+
+<div align="center" style='word-wrap: break-word;'>
+	<div class="page_spacer" style="width:autopx; text-align:left">
+		<div>
+
+
+
+
+<div class="vbmenu_popup" id="vbbloglinks_menu" style="display:none;margin-top:3px" align="left">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead"><a href="blog.php?s=32a1f749d6f96700ac42f245f66692fa">Blogs</a></td>
+	</tr>
+	
+
+	<tr>
+		<td class="vbmenu_option"><a href="http://www.playdota.com/forums/blogs/icefrog/">IceFrog's Blog</a></td>
+	</tr>
+
+	<tr>
+		<td class="vbmenu_option"><a href="blog.php?s=32a1f749d6f96700ac42f245f66692fa&amp;do=bloglist">Blog List</a></td>
+	</tr>
+	
+	<tr>
+		<td class="vbmenu_option"><a href="blog_search.php?s=32a1f749d6f96700ac42f245f66692fa&amp;do=search">Search Blogs</a></td>
+	</tr>
+	
+	</table>
+</div>
+
+<div class="navbarcontainer">
+<!-- breadcrumb, login, pm info -->
+<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
+<tr>
+	<td class="alt1" width="100%">
+		
+			<table cellpadding="0" cellspacing="0" border="0">
+			<tr valign="bottom">
+				<td><a href="http://www.playdota.com/forums/index.php"><img src="http://media.playdota.com/forums/assault_fps/misc/navbits_start.gif" alt="" border="0" /></a></td>
+				<td>&nbsp;</td>
+				<td width="100%"></td>
+			</tr>
+			<tr>
+				<td class="navbar" style="font-size:10pt; padding-top:1px" colspan="3"><a href="/forums/member.php?u=3569"><img class="inlineimg" src="http://media.playdota.com/forums/assault_fps/misc/arrow_x.png" alt="Reload this Page" border="0" /></a> <h1 class="h1">
+	Message
+
+</h1></td>
+			</tr>
+			</table>			
+		
+	</td>	
+	
+		<td class="alt2" nowrap="nowrap" style="padding:0px">
+		<!-- login form -->
+		<form action="login.php?do=login" method="post" onsubmit="md5hash(vb_login_password, vb_login_md5password, vb_login_md5password_utf, 0)">
+		<script type="text/javascript" src="http://media.playdota.com/forums/clientscript/vbulletin_md5.js?v=387"></script>
+		<table cellpadding="0" cellspacing="3" border="0">
+		<tr>
+			<td class="smallfont" style="white-space: nowrap;"><label for="navbar_username">User Name</label></td>
+			<td><input type="text" class="bginput" style="font-size: 11px" name="vb_login_username" id="navbar_username" size="10" accesskey="u" tabindex="101" value="User Name" onfocus="if (this.value == 'User Name') this.value = '';" /></td>
+			<td class="smallfont" nowrap="nowrap"><label for="cb_cookieuser_navbar"><input type="checkbox" name="cookieuser" value="1" tabindex="103" id="cb_cookieuser_navbar" accesskey="c" />Remember Me?</label></td>
+		</tr>
+		<tr>
+			<td class="smallfont"><label for="navbar_password">Password</label></td>
+			<td><input type="password" class="bginput" style="font-size: 11px" name="vb_login_password" id="navbar_password" size="10" tabindex="102" /></td>
+			<td><input type="submit" class="button" value="Log in" tabindex="104" title="Enter your username and password in the boxes provided to login, or click the 'register' button to create a profile for yourself." accesskey="s" /></td>
+		</tr>
+		</table>
+		<input type="hidden" name="s" value="32a1f749d6f96700ac42f245f66692fa" />
+		<input type="hidden" name="securitytoken" value="guest" />
+		<input type="hidden" name="do" value="login" />		
+		<input type="hidden" name="vb_login_md5password" />
+		<input type="hidden" name="vb_login_md5password_utf" />
+		</form>
+		<!-- / login form -->
+		</td>
+		
+</tr>
+</table>
+</div>
+<!-- / breadcrumb, login, pm info -->
+
+<!-- nav buttons bar -->
+<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center" style="border-top-width:0px">
+<tr align="center">
+	
+	
+		<td class="vbmenu_control"><a href="register.php?s=32a1f749d6f96700ac42f245f66692fa" rel="nofollow">Register</a></td>
+	
+	
+<!--	<td class="vbmenu_control"><a rel="help" href="faq.php?s=32a1f749d6f96700ac42f245f66692fa" accesskey="5">FAQ</a></td>-->
+	
+		<td class="vbmenu_control"><a id="community" href="/forums/member.php?u=3569&amp;nojs=1#community" rel="nofollow" accesskey="6">Community</a> <script type="text/javascript"> vbmenu_register("community"); </script></td>
+	
+
+	<td class="vbmenu_control"><a href="lofi/">Low Fi</a></td>
+			
+		
+		
+	
+	
+	
+
+</tr>
+</table>
+<!-- / nav buttons bar -->
+
+
+
+<br />
+
+
+
+
+
+
+<!-- NAVBAR POPUP MENUS -->
+
+	
+	<!-- community link menu -->
+	<div class="vbmenu_popup" id="community_menu" style="display:none;margin-top:3px" align="left">
+		<table cellpadding="4" cellspacing="1" border="0">
+		<tr><td class="thead">Community Links</td></tr>
+		
+        <tr><td class="vbmenu_option"><a href="group.php?s=32a1f749d6f96700ac42f245f66692fa&amp;">Social Groups</a></td></tr>
+		
+		<tr><td class="vbmenu_option"><a href="http://www.playdota.com/chat">IRC Chat</a></td></tr>
+		
+		
+        <tr><td class="vbmenu_option"><a href="arcade.php?s=32a1f749d6f96700ac42f245f66692fa">Arcade</a></td></tr>
+        <tr><td class="thead">Blogs</td></tr>
+        <tr><td class="vbmenu_option"><a href="blog.php?s=32a1f749d6f96700ac42f245f66692fa&amp;u=0">Your Blog</a></td></tr>
+        <tr><td class="vbmenu_option"><a href="http://www.playdota.com/forums/blogs/icefrog/">IceFrog's Blog</a></td></tr>
+        <tr><td class="vbmenu_option"><a href="blog.php?s=32a1f749d6f96700ac42f245f66692fa&amp;do=bloglist">Blog List</a></td></tr>
+        
+        <tr><td class="vbmenu_option"><a href="blog_search.php?s=32a1f749d6f96700ac42f245f66692fa&amp;do=search">Search Blogs</a></td></tr>
+        
+        
+		</table>
+	</div>
+	<!-- / community link menu -->
+	
+
+	
+
+	
+<!-- / NAVBAR POPUP MENUS -->
+
+<!-- PAGENAV POPUP -->
+	<div class="vbmenu_popup" id="pagenav_menu" style="display:none">
+		<table cellpadding="4" cellspacing="1" border="0">
+		<tr>
+			<td class="thead" nowrap="nowrap">Go to Page...</td>
+		</tr>
+		<tr>
+			<td class="vbmenu_option" title="nohilite">
+			<form action="index.php" method="get" onsubmit="return this.gotopage()" id="pagenav_form">
+				<input type="text" class="bginput" id="pagenav_itxt" style="font-size:11px" size="4" />
+				<input type="button" class="button" id="pagenav_ibtn" value="Go" />
+			</form>
+			</td>
+		</tr>
+		</table>
+	</div>
+<!-- / PAGENAV POPUP -->
+
+
+
+
+
+
+
+<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="70%" align="center">
+<tr>
+	<td class="tcat">Message</td>
+</tr>
+<tr>
+	<td class="panelsurround" align="center">
+	<div class="panel">
+		<div align="left">
+
+		
+			<script type="text/javascript" src="http://media.playdota.com/forums/clientscript/vbulletin_md5.js?v=387"></script>
+			<form action="login.php?do=login" method="post" onsubmit="md5hash(vb_login_password, vb_login_md5password, vb_login_md5password_utf, 0)">
+			<input type="hidden" name="do" value="login" />
+			<input type="hidden" name="url" value="/forums/member.php?u=3569" />
+			<input type="hidden" name="vb_login_md5password" />
+			<input type="hidden" name="vb_login_md5password_utf" />
+			
+
+			<input type="hidden" name="s" value="32a1f749d6f96700ac42f245f66692fa" />
+			<input type="hidden" name="securitytoken" value="guest" />
+
+			<!-- permission error message - user not logged in -->
+
+
+			<div class="smallfont">You are not logged in or you do not have permission to access this page. This could be due to one of several reasons:</div>
+
+			<ol>
+				<li class="smallfont">You are not logged in. Fill in the form at the bottom of this page and try again.</li>
+				<li class="smallfont">You may not have sufficient privileges to access this page. Are you trying to edit someone else's post, access administrative features or some other privileged system?</li>
+				<li class="smallfont">If you are trying to post, the administrator may have disabled your account, or it may be awaiting activation.</li>
+			</ol>
+
+			<fieldset class="fieldset">
+				<legend>Log in</legend>
+				<table cellpadding="0" cellspacing="3" border="0" align="center">
+				<tr>
+					<td>User Name:<br /><input type="text" class="bginput" name="vb_login_username" size="50" accesskey="u" tabindex="1" /></td>
+				</tr>
+				<tr>
+					<td>Password:<br /><input type="password" class="bginput" name="vb_login_password" size="50" tabindex="1" /></td>
+				</tr>
+				<tr>
+					<td>
+						<span style="float:right"><a href="login.php?s=32a1f749d6f96700ac42f245f66692fa&amp;do=lostpw">Forgotten Your Password?</a></span>
+						<label for="cb_cookieuser"><input type="checkbox" name="cookieuser" value="1" id="cb_cookieuser" tabindex="1" />Remember Me?</label>
+					</td>
+				</tr>
+				<tr>
+					<td align="right">
+						<input type="submit" class="button" value="Log in" accesskey="s" tabindex="1" />
+						<input type="reset" class="button" value="Reset Fields" accesskey="r" tabindex="1" />
+					</td>
+				</tr>
+				</table>
+			</fieldset>
+
+			<div class="smallfont">The administrator may have required you to <a href="register.php?s=32a1f749d6f96700ac42f245f66692fa&amp;do=signup" rel="nofollow">register</a> before you can view this page.</div>
+			</form>
+
+			<!-- / permission error message - user not logged in -->
+		
+
+		</div>
+	</div>
+	<!--
+	<div style="margin-top:6px">
+		<input type="submit" class="button" value="Go Back" accesskey="s" onclick="history.back(1); return false" />
+	</div>
+	-->
+	</td>
+</tr>
+</table>
+
+<br />
+
+
+<!-- forum jump -->
+<table cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+	<td><div class="smallfont" style="text-align:left; white-space:nowrap">
+	</form><form action="forumdisplay.php" method="get">
+	<input type="hidden" name="s" value="32a1f749d6f96700ac42f245f66692fa" />
+	<input type="hidden" name="daysprune" value="" />
+	<br /><br /><strong>Forum Jump</strong><br />
+	<select name="f" onchange="this.form.submit();">
+		<optgroup label="Site Areas">
+			<option value="cp" >User Control Panel</option>
+			<option value="pm" >Private Messages</option>
+			<option value="subs" >Subscriptions</option>
+			<option value="wol" >Who's Online</option>
+			<option value="search" >Search Forums</option>
+			<option value="home" >Forums Home</option>
+		</optgroup>
+		
+		<optgroup label="Forums">
+		<option value="151" class="fjdpth0" > New Players</option>
+<option value="150" class="fjdpth1" >&nbsp; &nbsp;  Getting Started</option>
+<option value="103" class="fjdpth0" > News &amp; Events</option>
+<option value="29" class="fjdpth1" >&nbsp; &nbsp;  News</option>
+<option value="104" class="fjdpth1" >&nbsp; &nbsp;  Matches</option>
+<option value="119" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Inhouse Matches</option>
+<option value="92" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Old Matches</option>
+<option value="23" class="fjdpth0" > Defense of the Ancients</option>
+<option value="28" class="fjdpth1" >&nbsp; &nbsp;  DotA Chat</option>
+<option value="163" class="fjdpth1" >&nbsp; &nbsp;  Competitive Chat</option>
+<option value="30" class="fjdpth1" >&nbsp; &nbsp;  Game Strategy</option>
+<option value="109" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Draft Guides</option>
+<option value="107" class="fjdpth3" >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Draft Archive</option>
+<option value="108" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Published Guides</option>
+<option value="160" class="fjdpth1" >&nbsp; &nbsp;  Marketplace</option>
+<option value="164" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Dota 2 Invite Trading</option>
+<option value="52" class="fjdpth1" >&nbsp; &nbsp;  Advanced Mechanics</option>
+<option value="27" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Advanced Mechanics Guides</option>
+<option value="123" class="fjdpth1" >&nbsp; &nbsp;  DotA Replays</option>
+<option value="56" class="fjdpth1" >&nbsp; &nbsp;  Hero Comments</option>
+<option value="152" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Agility - Sentinel</option>
+<option value="153" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Agility - Scourge</option>
+<option value="156" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Intelligence - Sentinel</option>
+<option value="157" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Intelligence - Scourge</option>
+<option value="155" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Strength - Sentinel</option>
+<option value="154" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Strength - Scourge</option>
+<option value="31" class="fjdpth1" >&nbsp; &nbsp;  Suggestions</option>
+<option value="142" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Ability Ideas</option>
+<option value="130" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Visuals</option>
+<option value="140" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Hero Ideas</option>
+<option value="141" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Item Ideas</option>
+<option value="129" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Remakes</option>
+<option value="131" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Others</option>
+<option value="88" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Requests</option>
+<option value="97" class="fjdpth1" >&nbsp; &nbsp;  DotA Media</option>
+<option value="93" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Submitted Media</option>
+<option value="70" class="fjdpth1" >&nbsp; &nbsp;  DotA &#20013;&#25991;&#35752;&#35770;&#21306;</option>
+<option value="25" class="fjdpth0" > Entertainment</option>
+<option value="35" class="fjdpth1" >&nbsp; &nbsp;  Random Chat</option>
+<option value="71" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Forum Games</option>
+<option value="122" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Homework</option>
+<option value="120" class="fjdpth1" >&nbsp; &nbsp;  World News &amp; Debates</option>
+<option value="106" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Debate Forum</option>
+<option value="98" class="fjdpth1" >&nbsp; &nbsp;  Gadgets &amp; Tech</option>
+<option value="43" class="fjdpth1" >&nbsp; &nbsp;  Programming</option>
+<option value="32" class="fjdpth1" >&nbsp; &nbsp;  Fan Fiction &amp; Literature</option>
+<option value="105" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Literature</option>
+<option value="42" class="fjdpth1" >&nbsp; &nbsp;  Studio D'Art</option>
+<option value="75" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Members Requests</option>
+<option value="76" class="fjdpth3" >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Completed Requests</option>
+<option value="113" class="fjdpth3" >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Unresolved Requests</option>
+<option value="78" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Battle Ground</option>
+<option value="77" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Portfolios</option>
+<option value="90" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Tutorial and Help</option>
+<option value="39" class="fjdpth1" >&nbsp; &nbsp;  Comedy</option>
+<option value="36" class="fjdpth1" >&nbsp; &nbsp;  Anime &amp; Manga Discussion</option>
+<option value="40" class="fjdpth1" >&nbsp; &nbsp;  Video Games</option>
+
+		</optgroup>
+		
+	</select><input type="submit" class="button" value="Go"  />
+	</form>
+</div></td>
+</tr>
+</table>
+<!-- / forum jump -->
+
+
+<br />
+
+
+
+<!-- pd_footer -->
+
+
+
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- /content area table -->
+</div>
+<div id="bleft_corner"><div id="bright_corner"></div></div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<!-- /content area table -->
+
+<div class="smallfont" style="text-align: center; margin-bottom: 2px;">
+
+<!-- Do not remove this copyright notice -->
+
+<!-- Do not remove this copyright notice -->
+</div>
+
+
+
+</div>
+</div>
+
+<div id="cron_hider">
+<!-- Do not remove cronimage or your scheduled tasks will cease to function -->
+
+<!-- Do not remove cronimage or your scheduled tasks will cease to function -->
+
+<script type="text/javascript">
+<!--
+	// Main vBulletin Javascript Initialization
+	vBulletin_init();
+//-->
+</script>
+</div>
+
+<center>
+
+	<div class="footer">
+	&nbsp;
+	<ul>
+		<li><a href="/heroes"><img src="http://media.playdota.com/site/footer/heroes.png" alt="" border="0"/></a></li>
+		<li><a href="/items"><img src="http://media.playdota.com/site/footer/items.png" alt="" border="0"/></a></li>
+		<li><a href="/guides"><img src="http://media.playdota.com/site/footer/guides.png" alt="" border="0"/></a></li>
+		<li><a href="/mechanics"><img src="http://media.playdota.com/site/footer/mechanics.png" alt="" border="0"/></a></li>
+		<li><a href="/forums/dota-tools-ai-maps/"><img src="http://media.playdota.com/site/footer/tools.png" alt="" border="0"/></a></li>
+		<li><a href="/forums/"><img src="http://media.playdota.com/site/footer/forums.png" alt="" border="0"/></a></li>
+		<li class="sh">&nbsp;</li>
+		<li><a href="/forums/dota-replays/"><img src="http://media.playdota.com/site/footer/replays.png" alt="" border="0"/></a></li>
+		<li><a href="/videos"><img src="http://media.playdota.com/site/footer/videos.png" alt="" border="0"/></a></li>
+		<li><a href="/fanart"><img src="http://media.playdota.com/site/footer/fanart.png" alt="" border="0"/></a></li>
+		<li><a href="/comics"><img src="http://media.playdota.com/site/footer/comics.png" alt="" border="0"/></a></li>
+		<li><a href="/ai"><img src="http://media.playdota.com/site/footer/links.png" alt="" border="0"/></a></li>
+		<li><a href="/about"><img src="http://media.playdota.com/site/footer/about.png" alt="" border="0"/></a></li>
+	</ul>
+	&nbsp;
+	<div style="clear:both;"></div>
+	About PlayDotA.com | Terms and Conditions | &copy; 2010 PlayDotA.com | All Rights Reserved	
+	</div>
+</center>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-9106374-1");
+pageTracker._trackPageview();
+</script>
+
+</body>
+</html>

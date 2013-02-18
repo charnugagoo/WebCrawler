@@ -1,0 +1,190 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+        <title>Did You Get What You Wanted?</title>
+        <title>Report Problem</title>
+        <link type="text/css" href="//www.ucsd.edu/common/cwp/active-cherry/base-min.css" rel="stylesheet"  media="all" />
+        <link type="text/css" href="//www.ucsd.edu/common/cwp/active-cherry/base-min.js" rel="stylesheet"  media="all" />
+        <link type="text/css" href="//www.ucsd.edu/common/cwp/active-cherry/home-min.js" rel="stylesheet"  media="all" />
+        <style type="text/css">
+            fieldset {
+    			background: none repeat scroll 0 0 #F0F0F0;
+    			border: 1px solid #AAAAAA;
+    			margin-bottom: 1em;
+    			padding: 10px;
+			}
+			legend {
+			    color: #333333;
+			    font-weight: bold;
+			    margin-left: 10px;
+			    padding: 0 5px;
+			}
+			.field .label {  float: left; }
+        </style>
+
+        <script type="text/javascript">
+            function validate_required(field, alerttxt) {
+                with (field) {
+                    if (value == null || value == "") {
+                        alert(alerttxt);
+                        return false;
+                    } else {
+                        return true;
+                    }
+                }
+            }
+
+            function validate_email(field, alerttxt) {
+                with (field) {
+                    apos = value.indexOf("@");
+                    dotpos = value.lastIndexOf(".");
+                    if (apos < 1 || dotpos - apos < 2) {
+                        alert(alerttxt);
+                        return false;
+                    } else {
+                        return true;
+                    }
+                }
+            }
+
+            function validate_form2(thisform) {
+
+                with (thisform) {
+                    if (validate_email(replyto, "Invalid Email Address Format!") == false) {
+                        replyto.focus();
+                        return false;
+                    }
+                    if (validate_required(comment, "Please provide a comment!") == false) {
+                        comment.focus();
+                        return false;
+                    }
+
+                }
+
+            }
+
+            function validate_form(thisform) {
+                return true;
+            }
+
+        </script>
+
+    </head>
+
+    <body class="tdr_fluid">
+
+        <div id="tdr_title">
+            <div id="tdr_title_content">
+                <div id="tdr_title_ucsd_title"><a href="http://www.ucsd.edu/">UC San Diego</a></div>
+                <div id="tdr_title_page_title"><a href="http://www.ucsd.edu/">Feedback</a></div>
+            </div>
+
+        </div>
+
+
+        <div id="tdr_content" class="tdr_fonts itag_webapp">
+            <div id="tdr_content_content">
+
+                <div id="feedback_content">
+                    <a href="javascript:window.close()" style="float:right;margin-top:10px;"><img src="/cwp/feedback/images/popup_close.jpg" alt="close"/></a>
+                    <h1>Your Opinion Counts!</h1>
+                    <!-- 
+                    <p>Please let us know if you didn't find what you were looking
+                                for, or if you have comments or suggestions. Thanks for helping us
+                            improve our Web site.</p>
+                     -->
+
+                    <form id="feedback" action="/cwp/feedback/tool/apps" method="post" accept-charset="UTF-8">
+                        <fieldset>
+                            <legend>Your Contact Details</legend>
+                            <div class="field">
+                                <div class="label">
+                                    <label>Name</label>
+                                </div>
+                                <div class="input">
+                                    <input id="name" name="name" style="width:200px;" type="text" value=""/>
+                                    
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="label">
+                                    <label>E-mail</label>
+                                </div>
+                                <div class="input">
+                                    <input name="email" value="" size="20" type="hidden"/>
+                                    <input id="replyto" name="replyto" style="width:200px;" type="text" value=""/>
+                                    
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="label">
+                                    <label>Phone</label>
+                                </div>
+                                <div class="input">
+                                    <input id="phone" name="phone" style="width:200px;" type="text" value=""/>
+                                    
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Feedback</legend>
+                            <div class="field">
+                                <div class="label">
+                                    <label>Was this page useful?</label>
+                                </div>
+                                <div class="input">
+                                    <input id="useful1" name="useful" type="radio" value="Yes"/><label for="useful1">Yes</label> &nbsp;
+                                    <input id="useful2" name="useful" type="radio" value="No"/><label for="useful2">No</label> &nbsp;
+                                    <input id="useful3" name="useful" type="radio" value="Partially"/><label for="useful3">Partially</label>
+                                    
+                                </div>
+                            </div><!--/field-->
+                            <div class="field">
+                                <div class="label">
+                                    <label>Comment</label>
+                                    <!-- 
+                                    <div class="itag_help">Your suggestions, ideas, and comments help all of us at UCSD.</div>
+                                     -->
+
+                                </div>
+                                <div class="input">
+                                    
+                                    <textarea id="comment" name="comment" style="width:90%;height:100px;"></textarea>
+                                </div>
+                            </div><!--/field-->
+                        </fieldset>
+                        <input id="sendPage" name="sendPage" type="hidden" value=""/>
+                        <input id="site" name="site" type="hidden" value="/cwp/feedback/tool/apps"/>
+                        <input type="submit" value="Send Message" class="button primary" />
+						<input type="submit" value="Cancel" class="button secondary" onclick="window.close()" />
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="tdr_footer">
+            <div id="tdr_footer_content" style="background:none;">
+                <div id="tdr_address">
+                    <span id="tdr_address_place">UC San Diego</span>
+                    <span id="tdr_address_street">9500 Gilman Dr.</span>
+
+                    <span id="tdr_address_city_state_zip">La Jolla, CA 92093</span>
+                    <span id="tdr_address_phone">(858) 534-2230</span>
+                </div>
+                <div id="tdr_copyright">Copyright &copy;2012 Regents of the University of California. All rights reserved.</div>
+            </div>
+        </div>
+
+    </body>
+
+</html>
+
