@@ -1,0 +1,1353 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="ctl00_Head1"><title>
+	U.S. News - Best Lawyers - Ropes & Gray LLP
+</title><meta name="description" content="View the U.S. News - Best Lawyers profile for Ropes &amp; Gray LLP" />
+    
+    <script type="text/javascript">
+        function doPanelToggle(sender, eventArgs) {
+            var item = eventArgs.get_item();
+            if (item.get_expanded()) {
+                item.collapse();
+                eventArgs.set_cancel(true);
+            }
+        }
+
+        function doPracticeAreaJump(ddl) {
+            var val = ddl.options[ddl.selectedIndex].value
+            if (val != 0) {
+                var a = String.format("practiceArea{0}", val)
+                window.location.hash = a
+            }
+        }
+
+        function pageLoad() {
+            $('#divPracticeAreasPreviewContent').truncateToHeight(200, '...')
+        }
+    </script>
+     
+    
+    <style type="text/css">
+       
+       /* hover and selecion fix */
+        div.RadPanelBar_Default .rpItem .rpGroup .rpLink {background-image: none;}
+
+        div.RadPanelBar_Default .rpItem .rpGroup .rpSelected {background-image: none; color: #000000;}
+        div.RadPanelBar_Default .rpItem .rpGroup .rpExpanded {background-image: none; color: #000000; }
+        div.RadPanelBar_Default .rpItem .rpGroup .rpLink:hover .rpOut {background-image: none; color: #000000;}
+    
+        div.RadPanelBar_Default .rpItem .rpGroup .rpSelected .rpOut {background-image: none; color: #000000;}
+        div.RadPanelBar_Default .rpItem .rpGroup .rpExpanded .rpOut {background-image: none; color: #000000;}
+        div.RadPanelBar .rpLink { cursor:default;}
+
+
+    
+    .lfotyRank  {
+        width: 350px;
+        padding:  5px 5px 5px 5px;
+        text-align: Center;
+        border: 3px solid #0072b2;
+        border-radius: 8px 8px 8px;
+        margin-top: 70px;
+        }
+               
+    
+    div.rankings div.column 
+    {
+    	width: 250px;
+    	float: left;
+    }
+    
+    div.column.leftcolumn
+    {
+        padding-right: 20px; 
+    }
+    
+    div.rankings .rankingcat
+    {
+    	padding-top: 5px;
+    	padding-bottom: 0px;
+    }
+    
+    
+    div.rankings .rankingspec, div.rankings .rankingcat, div.rankings .toggle
+    {
+    	margin-left: -10px;
+    }
+    
+    .rankingspec
+    {
+    	color: #444444 !important;
+        font-size: 13px;
+        line-height: 20px;
+        margin-bottom: 5px;
+    }
+    
+    div.rankings > div.column, div.rankings > div.column
+    {
+    	padding-left: 10px;
+    	margin-right: -10px;
+    }
+    
+    
+    #divMDData td 
+    {
+    	vertical-align: top;
+    }
+    
+    #divMDData .firm_profile_header 
+    {
+    	font-weight: normal;
+    }
+    
+    #divMDData tr td:first-child 
+    {
+    	width: 375px;
+    	text-indent: -10px;
+    	padding-left: 10px;
+    }
+    
+    #divMDData th, #divMDData tr.header
+    {
+    	text-decoration: underline;
+    	font-weight: bold;
+    	text-align: left;
+    }
+    
+    #divMDData
+    {
+    	width: 475px;
+    }
+    
+    #divMDData table
+    {
+    	width: 475px;
+    }
+    
+    tr.spacer
+    {
+    	line-height: 5px;
+    }
+    
+</style>
+<link href="../../../../Styles/dialog.css" rel="Stylesheet" type="text/css" /><link href="../../../../styles/global.css" rel="stylesheet" type="text/css" /><link href="../../../../styles/content.css" rel="Stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.2.min.js"></script>
+
+    <script type='text/javascript' src='/Scripts/jquery-cookie.js'></script>
+    <script type="text/javascript">
+            
+        var inSearchBox = false;
+
+        function checkKeycode(e) {
+            var keycode;
+            if (window.event) {
+                keycode = window.event.keyCode;
+            }
+            else if (e) {
+                keycode = e.which;
+            }
+
+            if (keycode == 13) {
+                if (inSearchBox) {
+                    searchResults(e.value);
+                }
+            }
+        }
+
+        function ClearText(textbox) {
+            if (textbox.id.indexOf("txtLawyerFirmName") != -1) {
+                if (document.getElementById(textbox.id).value == "Firm Name") {
+                    document.getElementById(textbox.id).value = "";
+                    document.getElementById(textbox.id).style.color = '#000000';
+                }
+            }
+            if (textbox.id.indexOf("txtCity") != -1) {
+                if (document.getElementById(textbox.id).value == "City")
+                    document.getElementById(textbox.id).value = "";
+            }
+            if (textbox.id.indexOf("txtZipCode") != -1) {
+                if (document.getElementById(textbox.id).value == "Zip Code")
+                    document.getElementById(textbox.id).value = "";
+            }
+        }
+
+        function TextBoxLoseFocus(textbox) {
+            if (textbox.id.indexOf("txtLawyerFirmName") != -1) {
+                if (document.getElementById(textbox.id).value == "") {
+                    document.getElementById(textbox.id).value = "Firm Name";
+                    document.getElementById(textbox.id).style.color = 'grey';
+                }
+            }
+            if (textbox.id.indexOf("txtCity") != -1) {
+                if (document.getElementById(textbox.id).value == "")
+                    document.getElementById(textbox.id).value = "City";
+            }
+            if (textbox.id.indexOf("txtZipCode") != -1) {
+                if (document.getElementById(textbox.id).value == "")
+                    document.getElementById(textbox.id).value = "Zip Code";
+            }
+        }
+
+        function setInSearch(flag) {
+            inSearchBox = flag;
+        }
+
+    </script>
+
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-946476-2']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+   <script type="text/javascript">
+            $(document).ready(function () {
+                $(".norightclick").live("contextmenu", function (e) {
+                    return false;
+                });
+
+                $('img[src="http://s0.2mdn.net/dot.gif"]').parent().parent().parent().css('margin-left', 'auto').css('margin-right', 'auto');
+            });
+    </script>
+
+    <style type="text/css">
+        .txtSearch
+        {
+            vertical-align:middle;
+        }
+        
+        .navMenuClass
+        {
+        	height:38px;
+        	padding-left:0px;
+        	margin-top:0px;
+        	margin-bottom:0px;
+        }
+        
+        #usnewsMenu li
+        {
+        	float:left;
+        	list-style-type:none;
+        	padding-left:3px;
+        	padding-right:3px;
+        	margin-left:3px;
+        	margin-right:3px;
+        }
+        
+        #usnewsMenu a
+        {
+        	color:white;
+        	text-transform:uppercase;
+        	font-size:12px;
+        	font-weight:400;
+        	font-style:normal;
+        	text-decoration:none;
+        	line-height:16.8px;
+        	font-variant:normal;
+        }
+        
+        #navMenu li
+        {
+        	float:left;
+        	list-style-type:none;
+        	padding-left:6px;
+        	padding-right:6px;
+        	margin-left:3px;
+        	margin-right:3px;
+        	padding-top:12px;
+        	height:33px;
+        }
+        
+        #navMenu a
+        {
+        	color:White;
+        	text-transform:uppercase;
+        	font-family:Verdana;
+        	font-size:14px;
+        	font-weight:700;
+        	font-style:normal;
+        	text-decoration:none;
+        	line-height:19.6px;
+        	font-variant:normal;
+        }
+        
+        #navMenu a:hover,
+        #usnewsMenu a:hover
+        {
+        	color:#F7B11A;
+        }
+        
+        .selectedMenuItem,
+        .selectedMenuItem a
+        {
+        	background-color:White;
+        	color:#444444 !important;
+        	border-radius: 10px 10px 0px 0px;
+        }
+        
+        #foot-copyright.law-foot {
+            background-color: #235983;
+            background-image: -moz-linear-gradient(center bottom , #235983 0%, #317EB9 100%);
+        }
+        .gold-link {
+            color: #F7B11A;
+        }
+        
+        #foot-copyright {
+            border-top: 1px solid #777777;
+            clear: both;
+            color: #FFFFFF;
+            float: left;
+            margin-top: 20px;
+            padding: 15px 0;
+            text-align: center;
+            width: 100%;
+        }
+        
+        #usn-foot {
+            background-color: #444444;
+            font-size: 11px;
+            overflow: auto;
+            padding: 20px 0 0;
+            margin-top:40px;
+        }
+        
+        #foot-content {
+            margin: 0 auto;
+            width: 1030px;
+        }
+
+        #foot-rankings {
+            background-color: #3C3C3C;
+            border-radius: 5px 5px 5px 5px;
+            color: #AAAAAA;
+            float: left;
+            line-height: 1.6em;
+            padding: 15px;
+            width: 170px;
+        }
+        
+        #foot-rankings #rank-img {
+            display: block;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+        
+        #usn-foot .foot-title {
+            color: #AAAAAA;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        
+        #usn-foot ul {
+            border-left: 1px solid #555555;
+            float: left;
+            height: 200px;
+            margin-left: 10px;
+            padding: 0 10px;
+        }
+        #usn-foot ul li {
+            margin-bottom: 5px;
+            list-style: none outside none;
+        }
+        
+        #usn-foot ul li a {
+            color: #CCCCCC;
+            padding-bottom: 2px;
+        }
+        
+        #twit-link, #face-link {
+            padding-left: 21px;
+        }
+        
+        #twit-link {
+            background: url("http://bestlawfirms.usnews.com/Images/Footer/foot-twit.png") no-repeat scroll 0 0 transparent;
+        }
+        
+         #face-link {
+            background: url("http://bestlawfirms.usnews.com/Images/Footer/foot-face.png") no-repeat scroll 0 0 transparent;
+        }
+        
+        #usn-foot .last-list {
+            border-right: 1px solid #555555;
+            margin-right: 10px;
+            padding-right: 20px;
+        }
+        
+        #foot-weekly {
+            background: none repeat scroll 0 0 #3C3C3C;
+            border-radius: 5px 5px 5px 5px;
+            color: #AAAAAA;
+            float: left;
+            line-height: 1.6em;
+            padding: 12px;
+            width: 200px;
+        }
+        
+        #foot-weekly #weekly-img {
+            display: block;
+            text-align:center;
+            height: 74px;
+            margin: 4px 12px 4px 4px;
+        }
+        
+        #foot-colleges, #foot-animals {
+            color: #CCCCCC;
+            float: left;
+            height: 74px;
+            margin-top: 15px;
+            padding: 0 10px;
+            width: 143px;
+        }
+        
+        #colleges-img, #animals-img {
+            box-shadow: 0 0 6px #000000;
+            float: left;
+            height: 56px;
+            margin-right: 10px;
+        }
+        
+        #nav-search a {
+            background: url("http://bestlawfirms.usnews.com/images/nav-search.png") no-repeat scroll 0 0 transparent;
+            display: block;
+            height: 12px;
+            width: 12px;
+            margin-left:0px;
+            padding-left:0px;
+            margin-top:4px;
+        }
+        
+        #nav-search a:hover,
+        #nav-search a:focus
+        {
+        	background-position: 0 -12px;
+        }
+        
+        a 
+        {
+        	color: #005EA6;
+            text-decoration: none;
+        }
+    </style>
+<link href="/WebResource.axd?d=6X3_PMXhTSwNCVjhKsRv2YxyeyJCaRZ0Ui7x8F0ncVc2ynwJZskdZ17Mb8-fwM0HNbzQbcnClklTMof1YE5rAiD8aJW401NURIuglYSEPKlSUSeAKvsLaKXE9vc4R9VBbc9jOgL0ipWtJ8mlJkA9AQ2&amp;t=634907478598153312" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=2uSoSFSvYshz_rYdLWdx3LNsFfemJn6g1ky917SiMMs81yQuCcK8LCY9kYJEuETNaC0jUj7Pn3zilqRopo5bE6BCS2kyQSezBYdcYj_AQ6Czz0u0wQ4P2gvwDcI_-XOUkQNdNtuUauZzy5gBkrIB1ZLQ-lKnP1Ukeyj53yw6HHU1&amp;t=634907478598153312" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=CK53l002HSWX1Bp4Gj-rVMGqCwt6cdM6L1kHqQZs0n-p1lX7vg1_vVIB3X0lsCFUeANMZyWfg0tBgydLChwV3KpH2IVNPRP-n9onal1aYtCO-1bNK55CPHUtPtJgFgagl-9Y-ysWUZtjcbcZXWbnvA2&amp;t=634907478598153312" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=5kByVBmnlbmJHt-WZGyMobUHqMhuQVnuXGbiPQEUI4z6EUu4HCdiyAtbPhPRDR-RpMfi0uPLRA8awZ0_-vkvBUyt1fXq_fqMbvJyHNxyRUTsaTPSWjuJH6uaDLopR0nvTugUqp9BvX38b1AH8LGqsVAQhWrYlHSklS14DuvMVcc1&amp;t=634907478598153312" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=VQ8GeyFUWHpzeYe-Mj4_3Lj4xvuQdi315ROg-hThX9BIl6F8EgKSl8HsC1-3wVsVnykyEBLBUB736ZtVrCsmzGSjs154Y29BoU3LFy15br5RWZHz658AK7v4GwnfZiTtbYAfjxmvndVCKJV9vpg-3w2&amp;t=634907478598153312" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=JliB0jEAHhOkSXviZ0wPPuIDYlE_is5iCRBuBAmPZ0yUOqiZEIXUOmqX1VC_AmfjKNOfRbQpynq95Vt08p8_IQ2iPEtSY9Ow_yDUHRPL3T3JAmBv0cV-zRVrGQ_T5Yb9sP8Z24tqqP4b5cdsxd_c9MeLO49Tdi3Eoz94vu9LT9Q1&amp;t=634907478598153312" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=F2gG2LSRbFmfLJUnvEXrjcZmE5YYoR6Vd5J6OczTGskDOrynpJZbZUhP2lTu0R-eNfomZV8AhcAb9Dsm__1tKurZNb3eAdeMBic50EpG-4I4KdCqpsusbDVP_O6o658NadFXgAcX270E24A_ju1JaWnKEncImR4MALX4Hg0TnOU1&amp;t=634907478055116365" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /></head>
+<body style="margin: 0px;">
+    <form name="aspnetForm" method="post" action="?firm_id=17395&amp;tab=Overview" id="aspnetForm">
+<div>
+<input type="hidden" name="ctl00_RadScriptManager1_TSM" id="ctl00_RadScriptManager1_TSM" value="" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTk2OTE5OTc4OQ9kFgJmD2QWBAIBD2QWAgIBDxYCHgdjb250ZW50BT5WaWV3IHRoZSBVLlMuIE5ld3MgLSBCZXN0IExhd3llcnMgcHJvZmlsZSBmb3IgUm9wZXMgJiBHcmF5IExMUGQCAw9kFgQCGQ8WAh4HVmlzaWJsZWcWAgIBDxYCHgRUZXh0BVE8YSBocmVmPScvJz5CZXN0IExhdyBGaXJtczwvYT4gPiA8YSBocmVmPScvU2VhcmNoLmFzcHgnPlNlYXJjaDwvYT4gPiBGaXJtIFByb2ZpbGVkAhsPZBYqZg8PFgIfAWhkZAIBDw8WAh8BaGRkAgIPDxYCHwIFdUV2YW4gTWljaGFlbHMgYXQgPGEgaHJlZj0nbWFpbHRvOmVtaWNoYWVsc0BiZXN0bGF3eWVycy5jb20nPmVtaWNoYWVsc0BiZXN0bGF3eWVycy5jb208L2E+IDxici8+IE9yIGF0ICg4MDMpIDY0NC0xODEzLmRkAgMPZBYOAgEPD2QWAh4FY2xhc3MFEGN1cnJlbnRfbmF2X2l0ZW1kAgMPD2QWAh8DBQhuYXZfaXRlbWQCBQ8PZBYCHwMFCG5hdl9pdGVtZAIHDw9kFgIfAwUIbmF2X2l0ZW1kAgkPDxYCHwFnFgIfAwUIbmF2X2l0ZW1kAgsPD2QWAh8DBQhuYXZfaXRlbWQCDQ8PZBYCHwMFCG5hdl9pdGVtZAIEDxYCHwFnFgxmDw8WAh8BZ2RkAgEPDxYCHwFoZGQCAg8PFgIfAWdkZAIDDw8WAh8BZ2RkAgQPDxYCHwFoZGQCBQ8PFgIfAWgWAh8DBQhuYXZfaXRlbWQCBQ8PFgIfAgUZUm9wZXMmbmJzcDsmYW1wOyBHcmF5IExMUGRkAgYPZBYCAgEPDxYCHghJbWFnZVVybAUtaHR0cDovL2Jlc3RsYXd5ZXJzLmNvbS9zZWFyY2gvbG9nb3MvMTczOTUuZ2lmZGQCBw9kFgQCAQ8WAh8DBS1maXJtX3Byb2ZpbGVfaGVhZGVyIGZpcm1fcHJvZmlsZV9oZWFkZXJfZmlyc3RkAgMPFgIfAgWoFDxkaXYgaWQ9J2RpdlByb2ZpbGVQcmV2aWV3JyBzdHlsZT0ncGFkZGluZy1ib3R0b206MnB4Oyc+Um9wZXMgJmFtcDsgR3JheSBpcyBhIGxlYWRpbmcgbmF0aW9uYWwgbGF3IGZpcm0gd2l0aCBvZmZpY2VzIGluJm5ic3A7Qm9zdG9uLCBDaGljYWdvLCBIb25nIEtvbmcsIExvbmRvbiwgTmV3IFlvcmssIFNhbiBGcmFuY2lzY28sIFNlb3VsLCBTaGFuZ2hhaSwmbmJzcDtTaWxpY29uIFZhbGxleSwgVG9reW8gYW5kIFdhc2hpbmd0b24gRC5DLg0KDQpCdWlsdCBvbiBhIGZvdW5kYXRpb24gb2Ygb3ZlciAxNDUgeWVhcnMgb2YgZGVkaWNhdGlvbiB0byBmb3JnaW5nIHN0cm9uZyBjbGllbnQgcmVsYXRpb25zaGlwcywgd2UgcmVwcmVzZW50IGludGVyZXN0cyBhY3Jvc3MgYSBicm9hZCBzcGVjdHJ1bSBvZiBpbmR1c3RyaWVzIGluIGNvcnBvcmF0ZSBsYXcgYW5kIGxpdGlnYXRpb24gbWF0dGVycy4gSW4gYWRkaS4uLiAgIDxkaXYgc3R5bGU9J3BhZGRpbmctdG9wOjVweDsnPiAgICAgICA8aW1nIHNyYz0naHR0cDovL2Jlc3RsYXdmaXJtcy51c25ld3MuY29tL2ltYWdlcy9idWxsZXQuZ2lmJz4mbmJzcDsmbmJzcDsgICAgICAgPGEgaHJlZj0nIycgb25DbGljaz0nZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoImRpdlByb2ZpbGVQcmV2aWV3Iikuc3R5bGUuZGlzcGxheT0ibm9uZSI7ICAgICAgICAgICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoImRpdlByb2ZpbGUiKS5zdHlsZS5kaXNwbGF5PSJibG9jayI7IHJldHVybiBmYWxzZTsgJz4gICAgICAgICAgIFJlYWQgbW9yZTwvYT4gICAgPC9kaXY+PC9kaXY+PGRpdiBpZD0nZGl2UHJvZmlsZScgc3R5bGU9J2Rpc3BsYXk6bm9uZTsgcGFkZGluZy1ib3R0b206MnB4Oyc+Um9wZXMgJmFtcDsgR3JheSBpcyBhIGxlYWRpbmcgbmF0aW9uYWwgbGF3IGZpcm0gd2l0aCBvZmZpY2VzIGluJm5ic3A7Qm9zdG9uLCBDaGljYWdvLCBIb25nIEtvbmcsIExvbmRvbiwgTmV3IFlvcmssIFNhbiBGcmFuY2lzY28sIFNlb3VsLCBTaGFuZ2hhaSwmbmJzcDtTaWxpY29uIFZhbGxleSwgVG9reW8gYW5kIFdhc2hpbmd0b24gRC5DLjxiciAvPg0KPGJyIC8+DQpCdWlsdCBvbiBhIGZvdW5kYXRpb24gb2Ygb3ZlciAxNDUgeWVhcnMgb2YgZGVkaWNhdGlvbiB0byBmb3JnaW5nIHN0cm9uZyBjbGllbnQgcmVsYXRpb25zaGlwcywgd2UgcmVwcmVzZW50IGludGVyZXN0cyBhY3Jvc3MgYSBicm9hZCBzcGVjdHJ1bSBvZiBpbmR1c3RyaWVzIGluIGNvcnBvcmF0ZSBsYXcgYW5kIGxpdGlnYXRpb24gbWF0dGVycy4gSW4gYWRkaXRpb24sIHdlIG9mZmVyIGNvdW5zZWwgb24gbGFib3IgYW5kIGVtcGxveW1lbnQgaXNzdWVzLCB0YXggYW5kIGJlbmVmaXRzLCBjcmVkaXRvcnMnIHJpZ2h0cywgYW5kIHByaXZhdGUgY2xpZW50IHNlcnZpY2VzLiBPdXIgY2xpZW50cyByYW5nZSBpbiBzaXplIGZyb20gbGFyZ2UgdG8gc21hbGwgY29tcGFuaWVzIGFuZCBpbmNsdWRlIGZpbmFuY2lhbCBpbnN0aXR1dGlvbnMsIGdvdmVybm1lbnQgYWdlbmNpZXMsIGhvc3BpdGFscyBhbmQgaGVhbHRoIGNhcmUgb3JnYW5pemF0aW9ucywgY29sbGVnZXMgYW5kIHVuaXZlcnNpdGllcywgYW5kIGZhbWlsaWVzIGFuZCBpbmRpdmlkdWFscy48YnIgLz4NCjxiciAvPg0KQWJvdXQgMSwwMDAgbGF3eWVycyBhbmQgcHJvZmVzc2lvbmFscyBzdHJpdmUgdG8gcHJvdmlkZSB0aGUgaGlnaGVzdC1xdWFsaXR5IGxlZ2FsIGFkdmljZSBhdmFpbGFibGUuIE91ciBmaXJtIGNvbWJpbmVzIHN1cGVyaW9yIHRhbGVudCB3aXRoIGEgc3VwcG9ydGl2ZSBlbnZpcm9ubWVudCB3aGVyZSBub3RoaW5nIGdldHMgaW4gdGhlIHdheSBvZiBzb2x2aW5nIG91ciBjbGllbnRzJyBwcm9ibGVtcy48YnIgLz4NCjxiciAvPg0KQ2xpZW50IGJ5IGNsaWVudCwgd2UgaGF2ZSBidWlsdCBhIHJlcHV0YXRpb24gZm9yIGhpZ2gtcXVhbGl0eSB3b3JrLCBhIHBvc2l0aXZlIG91dGxvb2ssIGFuZCB0aGUgaGlnaGVzdCBzdGFuZGFyZHMgb2Ygc2VydmljZSBhbmQgZXRoaWNzLiBZZWFyIGFmdGVyIHllYXIsIHdlIGNvbnRpbnVlIHRvIGF0dHJhY3QgZXhjZWxsZW50IGNsaWVudHMsIGNoYWxsZW5naW5nIGFzc2lnbm1lbnRzICZtZGFzaDsgYW5kIG91dHN0YW5kaW5nIGxhd3llcnMuIEFsbCB0aGlzIHRyYW5zbGF0ZXMgdG8gYSB0ZWFtIG9mIGxlZ2FsIGNvdW5zZWwgc29sZWx5IGZvY3VzZWQgb24gcHJvdmlkaW5nIHRoZSBiZXN0IGFkdmljZSBwb3NzaWJsZSBmb3Igb3VyIGNsaWVudHMgd2l0aG91dCBjb21wcm9taXNlLiA8YnIgLz48YnI+ICAgPGRpdiBzdHlsZT0ncGFkZGluZy10b3A6NXB4Oyc+ICAgICAgIDxpbWcgc3JjPSdodHRwOi8vYmVzdGxhd2Zpcm1zLnVzbmV3cy5jb20vaW1hZ2VzL2J1bGxldC5naWYnPiZuYnNwOyZuYnNwOyAgICAgICA8YSBocmVmPScjJyBvbkNsaWNrPSdkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgiZGl2UHJvZmlsZSIpLnN0eWxlLmRpc3BsYXk9Im5vbmUiOyAgICAgICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJkaXZQcm9maWxlUHJldmlldyIpLnN0eWxlLmRpc3BsYXk9ImJsb2NrIjsgcmV0dXJuIGZhbHNlOyAnPiAgICAgICAgICAgY29sbGFwc2UgcHJvZmlsZTwvYT4gICAgPC9kaXY+PC9kaXY+ZAIIDw9kFgIeBVN0eWxlBSFwYWRkaW5nOiA1cHggMCA1cHggMDsgd2lkdGg6IDk1JTsWAgIDDxYCHwIFpBw8ZGl2IGlkPSdkaXZQcmFjdGljZUFyZWFzQ29udGVudCcgc3R5bGU9J2Rpc3BsYXk6IG5vbmU7Jz5BbnRpdHJ1c3Q8YnIgLz4NCkJhbmtydXB0Y3kgJmFtcDsgQnVzaW5lc3MgUmVzdHJ1Y3R1cmluZzxiciAvPg0KQ29ycG9yYXRlPGJyIC8+DQombmJzcDsmbmJzcDtEZWJ0IEZpbmFuY2luZzxiciAvPg0KJm5ic3A7Jm5ic3A7SGVhbHRoIENhcmUgKENvcnBvcmF0ZSk8YnIgLz4NCiZuYnNwOyZuYnNwO0ludmVzdG1lbnQgTWFuYWdlbWVudDxiciAvPg0KJm5ic3A7Jm5ic3A7TGlmZSBTY2llbmNlczxiciAvPg0KJm5ic3A7Jm5ic3A7UHJpdmF0ZSBFcXVpdHk8YnIgLz4NCiZuYnNwOyZuYnNwO1B1YmxpYyBGaW5hbmNlPGJyIC8+DQombmJzcDsmbmJzcDtSZWFsIEVzdGF0ZTxiciAvPg0KJm5ic3A7Jm5ic3A7U2VjdXJpdGllcyAmYW1wOyBQdWJsaWMgQ29tcGFuaWVzPGJyIC8+DQombmJzcDsmbmJzcDtTcG9ydHMgTGF3PGJyIC8+DQombmJzcDsmbmJzcDtUZWNobm9sb2d5IENvbXBhbnk8YnIgLz4NCiZuYnNwOyZuYnNwO1ZlbnR1cmUgQ2FwaXRhbDxiciAvPg0KSW50ZWxsZWN0dWFsIFByb3BlcnR5PGJyIC8+DQombmJzcDsmbmJzcDtBbHRlcm5hdGl2ZSBEaXNwdXRlIFJlc29sdXRpb248YnIgLz4NCiZuYnNwOyZuYnNwO0ludGVybmF0aW9uYWw8YnIgLz4NCiZuYnNwOyZuYnNwO0xpY2Vuc2luZyAmYW1wOyBMaWNlbnNpbmcgUHJvZ3JhbXM8YnIgLz4NCiZuYnNwOyZuYnNwO1BhdGVudCBMaXRpZ2F0aW9uPGJyIC8+DQombmJzcDsmbmJzcDtQYXRlbnQgUHJvc2VjdXRpb24vIEFwcGxpY2F0aW9uczxiciAvPg0KJm5ic3A7Jm5ic3A7UG9ydGZvbGlvIEV2YWx1YXRpb24gYW5kIE1hbmFnZW1lbnQ8YnIgLz4NCiZuYnNwOyZuYnNwO1BUTzogSW50ZXJmZXJlbmNlczxiciAvPg0KJm5ic3A7Jm5ic3A7VHJhZGUgU2VjcmV0cy8gVW5mYWlyIENvbXBldGl0aW9uIExpdGlnYXRpb248YnIgLz4NCiZuYnNwOyZuYnNwO1RyYWRlbWFyay8gQ29weXJpZ2h0IExpdGlnYXRpb248YnIgLz4NCiZuYnNwOyZuYnNwO1RyYWRlbWFya3MvIENvcHlyaWdodC8gUHJvc2VjdXRpb24vIExpY2Vuc2luZzxiciAvPg0KJm5ic3A7Jm5ic3A7VHJhbnNhY3Rpb25hbCBDb3Vuc2VsaW5nPGJyIC8+DQombmJzcDsmbmJzcDtHb3Zlcm5tZW50IFJlbGF0aW9ucyAmYW1wOyBSZWd1bGF0b3J5PGJyIC8+DQpJbnRlcm5hdGlvbmFsPGJyIC8+DQpMYWJvciAmYW1wOyBFbXBsb3ltZW50PGJyIC8+DQpMaXRpZ2F0aW9uPGJyIC8+DQombmJzcDsmbmJzcDtBbnRpdHJ1c3QgKExpdGlnYXRpb24pPGJyIC8+DQombmJzcDsmbmJzcDtBcHBlbGxhdGU8YnIgLz4NCiZuYnNwOyZuYnNwO0JhbmtydXB0Y3k8YnIgLz4NCiZuYnNwOyZuYnNwO0NvbW1lcmNpYWwgJmFtcDsgQnVzaW5lc3M8YnIgLz4NCiZuYnNwOyZuYnNwO0Vudmlyb25tZW50YWw8YnIgLz4NCiZuYnNwOyZuYnNwO0dvdmVybm1lbnQgQ29udHJhY3RzPGJyIC8+DQombmJzcDsmbmJzcDtHb3Zlcm5tZW50IEVuZm9yY2VtZW50PGJyIC8+DQombmJzcDsmbmJzcDtIZWFsdGggQ2FyZSAoTGl0aWdhdGlvbik8YnIgLz4NCiZuYnNwOyZuYnNwO1NlY3VyaXRpZXMgJmFtcDsgQ29ycG9yYXRlPGJyIC8+DQpQcml2YXRlIENsaWVudCBHcm91cDxiciAvPg0KVGF4ICZhbXA7IEJlbmVmaXRzPGJyIC8+DQombmJzcDsmbmJzcDtFbXBsb3llZSBCZW5lZml0czxiciAvPg0KJm5ic3A7Jm5ic3A7VGF4PC9kaXY+PGRpdiBpZD0nZGl2UHJhY3RpY2VBcmVhc1ByZXZpZXcnIHN0eWxlPSdkaXNwbGF5OiBibG9jazsnPjxkaXYgaWQ9J2RpdlByYWN0aWNlQXJlYXNQcmV2aWV3Q29udGVudCc+QW50aXRydXN0PGJyIC8+DQpCYW5rcnVwdGN5ICZhbXA7IEJ1c2luZXNzIFJlc3RydWN0dXJpbmc8YnIgLz4NCkNvcnBvcmF0ZTxiciAvPg0KJm5ic3A7Jm5ic3A7RGVidCBGaW5hbmNpbmc8YnIgLz4NCiZuYnNwOyZuYnNwO0hlYWx0aCBDYXJlIChDb3Jwb3JhdGUpPGJyIC8+DQombmJzcDsmbmJzcDtJbnZlc3RtZW50IE1hbmFnZW1lbnQ8YnIgLz4NCiZuYnNwOyZuYnNwO0xpZmUgU2NpZW5jZXM8YnIgLz4NCiZuYnNwOyZuYnNwO1ByaXZhdGUgRXF1aXR5PGJyIC8+DQombmJzcDsmbmJzcDtQdWJsaWMgRmluYW5jZTxiciAvPg0KJm5ic3A7Jm5ic3A7UmVhbCBFc3RhdGU8YnIgLz4NCiZuYnNwOyZuYnNwO1NlY3VyaXRpZXMgJmFtcDsgUHVibGljIENvbXBhbmllczxiciAvPg0KJm5ic3A7Jm5ic3A7U3BvcnRzIExhdzxiciAvPg0KJm5ic3A7Jm5ic3A7VGVjaG5vbG9neSBDb21wYW55PGJyIC8+DQombmJzcDsmbmJzcDtWZW50dXJlIENhcGl0YWw8YnIgLz4NCkludGVsbGVjdHVhbCBQcm9wZXJ0eTxiciAvPg0KJm5ic3A7Jm5ic3A7QWx0ZXJuYXRpdmUgRGlzcHV0ZSBSZXNvbHV0aW9uPGJyIC8+DQombmJzcDsmbmJzcDtJbnRlcm5hdGlvbmFsPGJyIC8+DQombmJzcDsmbmJzcDtMaWNlbnNpbmcgJmFtcDsgTGljZW5zaW5nIFByb2dyYW1zPGJyIC8+DQombmJzcDsmbmJzcDtQYXRlbnQgTGl0aWdhdGlvbjxiciAvPg0KJm5ic3A7Jm5ic3A7UGF0ZW50IFByb3NlY3V0aW9uLyBBcHBsaWNhdGlvbnM8YnIgLz4NCiZuYnNwOyZuYnNwO1BvcnRmb2xpbyBFdmFsdWF0aW9uIGFuZCBNYW5hZ2VtZW50PGJyIC8+DQombmJzcDsmbmJzcDtQVE86IEludGVyZmVyZW5jZXM8YnIgLz4NCiZuYnNwOyZuYnNwO1RyYWRlIFNlY3JldHMvIFVuZmFpciBDb21wZXRpdGlvbiBMaXRpZ2F0aW9uPGJyIC8+DQombmJzcDsmbmJzcDtUcmFkZW1hcmsvIENvcHlyaWdodCBMaXRpZ2F0aW9uPGJyIC8+DQombmJzcDsmbmJzcDtUcmFkZW1hcmtzLyBDb3B5cmlnaHQvIFByb3NlY3V0aW9uLyBMaWNlbnNpbmc8YnIgLz4NCiZuYnNwOyZuYnNwO1RyYW5zYWN0aW9uYWwgQ291bnNlbGluZzxiciAvPg0KJm5ic3A7Jm5ic3A7R292ZXJubWVudCBSZWxhdGlvbnMgJmFtcDsgUmVndWxhdG9yeTxiciAvPg0KSW50ZXJuYXRpb25hbDxiciAvPg0KTGFib3IgJmFtcDsgRW1wbG95bWVudDxiciAvPg0KTGl0aWdhdGlvbjxiciAvPg0KJm5ic3A7Jm5ic3A7QW50aXRydXN0IChMaXRpZ2F0aW9uKTxiciAvPg0KJm5ic3A7Jm5ic3A7QXBwZWxsYXRlPGJyIC8+DQombmJzcDsmbmJzcDtCYW5rcnVwdGN5PGJyIC8+DQombmJzcDsmbmJzcDtDb21tZXJjaWFsICZhbXA7IEJ1c2luZXNzPGJyIC8+DQombmJzcDsmbmJzcDtFbnZpcm9ubWVudGFsPGJyIC8+DQombmJzcDsmbmJzcDtHb3Zlcm5tZW50IENvbnRyYWN0czxiciAvPg0KJm5ic3A7Jm5ic3A7R292ZXJubWVudCBFbmZvcmNlbWVudDxiciAvPg0KJm5ic3A7Jm5ic3A7SGVhbHRoIENhcmUgKExpdGlnYXRpb24pPGJyIC8+DQombmJzcDsmbmJzcDtTZWN1cml0aWVzICZhbXA7IENvcnBvcmF0ZTxiciAvPg0KUHJpdmF0ZSBDbGllbnQgR3JvdXA8YnIgLz4NClRheCAmYW1wOyBCZW5lZml0czxiciAvPg0KJm5ic3A7Jm5ic3A7RW1wbG95ZWUgQmVuZWZpdHM8YnIgLz4NCiZuYnNwOyZuYnNwO1RheDwvZGl2PjxkaXYgc3R5bGU9J3BhZGRpbmctdG9wOiA1cHg7Jz48aW1nIHNyYz0nL2ltYWdlcy9idWxsZXQuZ2lmJyAvPiZuYnNwOyZuYnNwOzxhIGhyZWY9Jy9maXJtcy9yb3Blcy1ncmF5LWxscC0vUHJhY3RpY2UtQXJlYXMvMTczOTUvJz5TZWUgYWxsIHByYWN0aWNlIGFyZWFzPC9hPjwvZGl2PjwvZGl2PmQCCQ8PFgIfAWcWAh8FBSFwYWRkaW5nOiA1cHggMCA1cHggMDsgd2lkdGg6IDk1JTsWBAIDDxYCHwIFgQI8ZGl2IGNsYXNzPSdsZm90eVJhbmsnPjxpbWcgc3JjPScvaW1hZ2VzL0xGT1RZXzIwMTMuZ2lmJyB3aWR0aD0nMTAwJyBoZWlnaHQ9JzEwNicgc3R5bGU9J01hcmdpbi10b3A6IC03NXB4Oyc+PGJyIC8+PHNwYW4gY2xhc3M9J3JhbmtpbmdzcGVjJz48Yj5Db3B5cmlnaHQgTGF3PC9iPjwvc3Bhbj48YnIgLz48c3BhbiBjbGFzcz0ncmFua2luZ3NwZWMnPjxiPlByaXZhdGUgRnVuZHMgLyBIZWRnZSBGdW5kcyBMYXc8L2I+PC9zcGFuPjxiciAvPjwvZGl2PmQCBw8WAh8BZxYCAgMPDxYCHgtOYXZpZ2F0ZVVybAUsL0Zpcm1wcm9maWxlLmFzcHg/ZmlybV9pZD0xNzM5NSZ0YWI9UmFua2luZ3NkZAIKDw8WAh8BaGRkAgsPD2QWAh8FBSFwYWRkaW5nOiA1cHggMCA1cHggMDsgd2lkdGg6IDk1JTsWAgIFDxYCHwFnFgICAw8PFgIfBgUyL2Zpcm1wcm9maWxlLmFzcHg/ZmlybV9pZD0xNzM5NSZ0YWI9bGlzdGVkLWxhd3llcnNkZAIMDw9kFgIfBQUhcGFkZGluZzogNXB4IDAgNXB4IDA7IHdpZHRoOiA5NSU7FgICBQ8WAh8BZxYCAgMPDxYCHwYFKy9maXJtcHJvZmlsZS5hc3B4P2Zpcm1faWQ9MTczOTUmdGFiPWNvbnRhY3RkZAINDw9kFgIfBQUhcGFkZGluZzogNXB4IDAgNXB4IDA7IHdpZHRoOiA5NSU7FgICAw8PFgIfAgWaITxkaXYgaWQ9J2Rpdk9mZmljZXNQcmV2aWV3JyBzdHlsZT0nd2lkdGg6NTAwcHg7IHBhZGRpbmctYm90dG9tOjJweDsgZGlzcGxheTpibG9jazsnID48ZGl2IHN0eWxlPSdjbGVhcjpib3RoOyBoZWlnaHQ6MHB4Oyc+Jm5ic3A7PC9kaXY+PGRpdiBzdHlsZT0nZmxvYXQ6bGVmdDsgcGFkZGluZy1yaWdodDoyMHB4Oyc+PGRpdiBzdHlsZT0nd2lkdGg6MjQwcHg7cGFkZGluZy1ib3R0b206IDEwcHg7Zm9udC1mYW1pbHk6dmVyZGFuYTtmb250LXNpemU6MTNweDtjb2xvcjojNjY2NjY2O2xpbmUtaGVpZ2h0OjE4LjJweDsnPjxoNSBzdHlsZT0iY29sb3I6IzQ0NDQ0NDtmb250LXNpemU6MTRweDtmb250LXdlaWdodDpib2xkO2xpbmUtaGVpZ2h0OjIwcHg7bWFyZ2luLWJvdHRvbTo1cHg7Ij5Cb3N0b24sIE1BPC9oNT4NClBydWRlbnRpYWwgVG93ZXI8YnI+DQo4MDAgQm95bHN0b24gU3RyZWV0PGJyPg0KMDIxOTktMzYwMDxicj4NClBob25lOiA2MTctOTUxLTcwMDA8YnI+DQo8L2Rpdj48ZGl2IHN0eWxlPSd3aWR0aDoyNDBweDtwYWRkaW5nLWJvdHRvbTogMTBweDtmb250LWZhbWlseTp2ZXJkYW5hO2ZvbnQtc2l6ZToxM3B4O2NvbG9yOiM2NjY2NjY7bGluZS1oZWlnaHQ6MTguMnB4Oyc+PGg1IHN0eWxlPSJjb2xvcjojNDQ0NDQ0O2ZvbnQtc2l6ZToxNHB4O2ZvbnQtd2VpZ2h0OmJvbGQ7bGluZS1oZWlnaHQ6MjBweDttYXJnaW4tYm90dG9tOjVweDsiPkNoaWNhZ28sIElMPC9oNT4NCjExMSBTb3V0aCBXYWNrZXIgRHJpdmUsIDQ2dGggRmxvb3I8YnI+DQo2MDYwNi00MzA5PGJyPg0KUGhvbmU6IDMxMi04NDUtMTIwMDxicj4NCjwvZGl2PjwvZGl2PjxkaXYgc3R5bGU9J2Zsb2F0OmxlZnQ7Jz48ZGl2IHN0eWxlPSd3aWR0aDoyNDBweDtwYWRkaW5nLWJvdHRvbTogMTBweDtmb250LWZhbWlseTp2ZXJkYW5hO2ZvbnQtc2l6ZToxM3B4O2NvbG9yOiM2NjY2NjY7bGluZS1oZWlnaHQ6MTguMnB4Oyc+PGg1IHN0eWxlPSJjb2xvcjojNDQ0NDQ0O2ZvbnQtc2l6ZToxNHB4O2ZvbnQtd2VpZ2h0OmJvbGQ7bGluZS1oZWlnaHQ6MjBweDttYXJnaW4tYm90dG9tOjVweDsiPkVhc3QgUGFsbyBBbHRvLCBDQTwvaDU+DQoxOTAwIFVuaXZlcnNpdHkgQXZlbnVlLCBTaXh0aCBGbG9vcjxicj4NCjk0MzAzLTIyODQ8YnI+DQpQaG9uZTogNjUwLTYxNy00MDAwPGJyPg0KPC9kaXY+PGRpdiBzdHlsZT0nd2lkdGg6MjQwcHg7cGFkZGluZy1ib3R0b206IDEwcHg7Zm9udC1mYW1pbHk6dmVyZGFuYTtmb250LXNpemU6MTNweDtjb2xvcjojNjY2NjY2O2xpbmUtaGVpZ2h0OjE4LjJweDsnPjxoNSBzdHlsZT0iY29sb3I6IzQ0NDQ0NDtmb250LXNpemU6MTRweDtmb250LXdlaWdodDpib2xkO2xpbmUtaGVpZ2h0OjIwcHg7bWFyZ2luLWJvdHRvbTo1cHg7Ij5OZXcgWW9yaywgTlk8L2g1Pg0KMTIxMSBBdmVudWUgb2YgdGhlIEFtZXJpY2FzPGJyPg0KMTAwMzYtODcwNDxicj4NClBob25lOiAyMTItNTk2LTkwMDA8YnI+DQo8L2Rpdj48L2Rpdj48ZGl2IHN0eWxlPSdjbGVhcjpib3RoOyBoZWlnaHQ6MXB4Oyc+Jm5ic3A7PC9kaXY+PGRpdiBzdHlsZT0nY2xlYXI6Ym90aDsgZGlzcGxheTpibG9jazsgJz4gICAgICAgPGltZyBzcmM9J2h0dHA6Ly9iZXN0bGF3ZmlybXMudXNuZXdzLmNvbS9pbWFnZXMvYnVsbGV0LmdpZic+Jm5ic3A7Jm5ic3A7PGEgaHJlZj0nL2Zpcm1wcm9maWxlLmFzcHg/ZmlybV9pZD0xNzM5NSZ0YWI9b2ZmaWNlcycgPiBzZWUgY29tcGxldGUgbGlzdGluZzwvYT4gICA8L2Rpdj48L2Rpdj48ZGl2IGlkPSdkaXZPZmZpY2VzQ29udGVudCcgc3R5bGU9J2Rpc3BsYXk6bm9uZTsgd2lkdGg6NTAwcHg7Jz48ZGl2IHN0eWxlPSdjbGVhcjpib3RoOyBoZWlnaHQ6MHB4Oyc+Jm5ic3A7PC9kaXY+PGRpdiBzdHlsZT0nZmxvYXQ6bGVmdDsgcGFkZGluZy1yaWdodDoyMHB4Oyc+PGRpdiBzdHlsZT0nd2lkdGg6MjQwcHg7cGFkZGluZy1ib3R0b206IDEwcHg7Zm9udC1mYW1pbHk6dmVyZGFuYTtmb250LXNpemU6MTNweDtjb2xvcjojNjY2NjY2O2xpbmUtaGVpZ2h0OjE4LjJweDsnPjxoNSBzdHlsZT0iY29sb3I6IzQ0NDQ0NDtmb250LXNpemU6MTRweDtmb250LXdlaWdodDpib2xkO2xpbmUtaGVpZ2h0OjIwcHg7bWFyZ2luLWJvdHRvbTo1cHg7Ij5Cb3N0b24sIE1BPC9oNT4NClBydWRlbnRpYWwgVG93ZXI8YnI+DQo4MDAgQm95bHN0b24gU3RyZWV0PGJyPg0KMDIxOTktMzYwMDxicj4NClBob25lOiA2MTctOTUxLTcwMDA8YnI+DQo8L2Rpdj48ZGl2IHN0eWxlPSd3aWR0aDoyNDBweDtwYWRkaW5nLWJvdHRvbTogMTBweDtmb250LWZhbWlseTp2ZXJkYW5hO2ZvbnQtc2l6ZToxM3B4O2NvbG9yOiM2NjY2NjY7bGluZS1oZWlnaHQ6MTguMnB4Oyc+PGg1IHN0eWxlPSJjb2xvcjojNDQ0NDQ0O2ZvbnQtc2l6ZToxNHB4O2ZvbnQtd2VpZ2h0OmJvbGQ7bGluZS1oZWlnaHQ6MjBweDttYXJnaW4tYm90dG9tOjVweDsiPkNoaWNhZ28sIElMPC9oNT4NCjExMSBTb3V0aCBXYWNrZXIgRHJpdmUsIDQ2dGggRmxvb3I8YnI+DQo2MDYwNi00MzA5PGJyPg0KUGhvbmU6IDMxMi04NDUtMTIwMDxicj4NCjwvZGl2PjxkaXYgc3R5bGU9J3dpZHRoOjI0MHB4O3BhZGRpbmctYm90dG9tOiAxMHB4O2ZvbnQtZmFtaWx5OnZlcmRhbmE7Zm9udC1zaXplOjEzcHg7Y29sb3I6IzY2NjY2NjtsaW5lLWhlaWdodDoxOC4ycHg7Jz48aDUgc3R5bGU9ImNvbG9yOiM0NDQ0NDQ7Zm9udC1zaXplOjE0cHg7Zm9udC13ZWlnaHQ6Ym9sZDtsaW5lLWhlaWdodDoyMHB4O21hcmdpbi1ib3R0b206NXB4OyI+RWFzdCBQYWxvIEFsdG8sIENBPC9oNT4NCjE5MDAgVW5pdmVyc2l0eSBBdmVudWUsIFNpeHRoIEZsb29yPGJyPg0KOTQzMDMtMjI4NDxicj4NClBob25lOiA2NTAtNjE3LTQwMDA8YnI+DQo8L2Rpdj48L2Rpdj48ZGl2IHN0eWxlPSdmbG9hdDpsZWZ0Oyc+PGRpdiBzdHlsZT0nd2lkdGg6MjQwcHg7cGFkZGluZy1ib3R0b206IDEwcHg7Zm9udC1mYW1pbHk6dmVyZGFuYTtmb250LXNpemU6MTNweDtjb2xvcjojNjY2NjY2O2xpbmUtaGVpZ2h0OjE4LjJweDsnPjxoNSBzdHlsZT0iY29sb3I6IzQ0NDQ0NDtmb250LXNpemU6MTRweDtmb250LXdlaWdodDpib2xkO2xpbmUtaGVpZ2h0OjIwcHg7bWFyZ2luLWJvdHRvbTo1cHg7Ij5OZXcgWW9yaywgTlk8L2g1Pg0KMTIxMSBBdmVudWUgb2YgdGhlIEFtZXJpY2FzPGJyPg0KMTAwMzYtODcwNDxicj4NClBob25lOiAyMTItNTk2LTkwMDA8YnI+DQo8L2Rpdj48ZGl2IHN0eWxlPSd3aWR0aDoyNDBweDtwYWRkaW5nLWJvdHRvbTogMTBweDtmb250LWZhbWlseTp2ZXJkYW5hO2ZvbnQtc2l6ZToxM3B4O2NvbG9yOiM2NjY2NjY7bGluZS1oZWlnaHQ6MTguMnB4Oyc+PGg1IHN0eWxlPSJjb2xvcjojNDQ0NDQ0O2ZvbnQtc2l6ZToxNHB4O2ZvbnQtd2VpZ2h0OmJvbGQ7bGluZS1oZWlnaHQ6MjBweDttYXJnaW4tYm90dG9tOjVweDsiPlNhbiBGcmFuY2lzY28sIENBPC9oNT4NClRocmVlIEVtYmFyY2FkZXJvIENlbnRlcjxicj4NCjk0MTExLTQwMDY8YnI+DQpQaG9uZTogNDE1LTMxNS02MzAwPGJyPg0KPC9kaXY+PGRpdiBzdHlsZT0nd2lkdGg6MjQwcHg7cGFkZGluZy1ib3R0b206IDEwcHg7Zm9udC1mYW1pbHk6dmVyZGFuYTtmb250LXNpemU6MTNweDtjb2xvcjojNjY2NjY2O2xpbmUtaGVpZ2h0OjE4LjJweDsnPjxoNSBzdHlsZT0iY29sb3I6IzQ0NDQ0NDtmb250LXNpemU6MTRweDtmb250LXdlaWdodDpib2xkO2xpbmUtaGVpZ2h0OjIwcHg7bWFyZ2luLWJvdHRvbTo1cHg7Ij5XYXNoaW5ndG9uLCBEQzwvaDU+DQpPbmUgTWV0cm8gQ2VudGVyLCBTdWl0ZSA5MDA8YnI+DQo3MDAgVHdlbGZ0aCBTdHJlZXQsIE5XPGJyPg0KMjAwMDUtMzk0ODxicj4NClBob25lOiAyMDItNTA4LTQ2MDA8YnI+DQo8L2Rpdj48L2Rpdj48ZGl2IHN0eWxlPSdjbGVhcjpib3RoOyBoZWlnaHQ6MXB4Oyc+Jm5ic3A7PC9kaXY+PGRpdiBzdHlsZT0nY2xlYXI6Ym90aDsgZGlzcGxheTpibG9jazsnPiAgICAgICA8aW1nIHNyYz0naHR0cDovL2Jlc3RsYXdmaXJtcy51c25ld3MuY29tL2ltYWdlcy9idWxsZXQuZ2lmJz4mbmJzcDsmbmJzcDsgICAgICAgPGEgaHJlZj0nIycgb25DbGljaz0nZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoImRpdk9mZmljZXNDb250ZW50Iikuc3R5bGUuZGlzcGxheT0ibm9uZSI7ICAgICAgICAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgiZGl2T2ZmaWNlc1ByZXZpZXciKS5zdHlsZS5kaXNwbGF5PSJibG9jayI7IHJldHVybiBmYWxzZTsgJz4gICAgICAgY29sbGFwc2UgT2ZmaWNlczwvYT4gICAgPC9kaXY+PC9kaXY+ZGQCDg9kFgYCAw8WAh8BaGQCBQ9kFgICAQ8UKwACFCsAAg8WBB4KRXhwYW5kTW9kZQspe1RlbGVyaWsuV2ViLlVJLlBhbmVsQmFyRXhwYW5kTW9kZSwgVGVsZXJpay5XZWIuVUksIFZlcnNpb249MjAxMi4zLjEyMDUuNDAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49MTIxZmFlNzgxNjViYTNkNAAeF0VuYWJsZUFqYXhTa2luUmVuZGVyaW5naGQQFgFmFgEUKwACDxYEHwIFGUNsaWVudCBDb21tZW50cyAyMDEyLTIwMTMeCEV4cGFuZGVkZ2QQFgNmAgECAhYDFCsAAg8WCB4JQmFja0NvbG9yCfz8/P8fAgXWAjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRTcGVjaWFsdHkiPk11dHVhbCBGdW5kcyBMYXc8L3NwYW4+PGJyPjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRUZXh0Ij5UaGUgYnJlYWR0aCBhbmQgZGVwdGggb2YgUm9wZXMgJiBHcmF5J3MgcmVnaXN0ZXJlZCBmdW5kL2FkdmlzZXIgcHJhY3RpY2Ugc2V0cyBpdCBhcGFydCBmcm9tIGl0cyBwZWVycy48L3NwYW4+PGJyPjxwIGNsYXNzPSdmaXJtUHJvZmlsZUNvbW1lbnRBdXRob3InPlJvYmVydCBCb3J6b25lPHNwYW4gY2xhc3M9J2Zpcm1Qcm9maWxlQ29tbWVudENvbXBhbnknPlByb1NoYXJlcyBBZHZpc29ycyBMTEM8L3NwYW4+PC9wPh4HRW5hYmxlZGgeBF8hU0ICCGRkFCsAAg8WCB8KCfPz8/8fAgWEAzxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRTcGVjaWFsdHkiPkNvcnBvcmF0ZSBMYXc8L3NwYW4+PGJyPjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRUZXh0Ij5Sb3BlcyAmIEdyYXkgdW5kZXJzdGFuZHMgdGhlIGNoYWxsZW5nZXMgaHlwZXItZ3Jvd3RoIGNvbXBhbmllcyBmYWNlIGFuZCB3YXMgYW4gb3V0c3RhbmRpbmcgcGFydG5lciB0aHJvdWdob3V0IHRoZSBlbnRpcmUgbGlmZSBjeWNsZS48L3NwYW4+PGJyPjxwIGNsYXNzPSdmaXJtUHJvZmlsZUNvbW1lbnRBdXRob3InPkpvZSBBcm15PHNwYW4gY2xhc3M9J2Zpcm1Qcm9maWxlQ29tbWVudENvbXBhbnknPmZvcm1lcmx5IG9mIFNhbGllbnQgU3VyZ2ljYWwgVGVjaG5vbG9naWVzLCBJbmMuPC9zcGFuPjwvcD4fC2gfDAIIZGQUKwACDxYIHwoJ/Pz8/x8CBYcEPHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFNwZWNpYWx0eSI+Q29ycG9yYXRlIExhdzwvc3Bhbj48YnI+PHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFRleHQiPlJvcGVzICYgR3JheSBwcm92aWRlcyBicmVhZHRoIGFuZCBkZXB0aCBvZiBleHBlcnRpc2UgaW4gbGlmZSBzY2llbmNlcyBhbmQgcmVsYXRlZCBjb3Jwb3JhdGUgdHJhbnNhY3Rpb25zLCBpcyBpbmNyZWRpYmx5IHJlc3BvbnNpdmUsIGFuZCBoYXMgYSB2ZXJ5IGRlZXAgcG9vbCBvZiBzbWFydCBhbmQgcHJvZHVjdGl2ZSBhc3NvY2lhdGVzIHdobyBhcmUgZWZmZWN0aXZlbHkgbWFuYWdlZCBhbmQgdHJhaW5lZCBieSB0aGUgcGFydG5lcnMgYW5kIGFkZCBjbGVhciB2YWx1ZSB0byBlbmdhZ2VtZW50cy48L3NwYW4+PGJyPjxwIGNsYXNzPSdmaXJtUHJvZmlsZUNvbW1lbnRBdXRob3InPlJpY2hhcmQgSC4gQnJ1ZG5pY2s8c3BhbiBjbGFzcz0nZmlybVByb2ZpbGVDb21tZW50Q29tcGFueSc+QmlvZ2VuIElkZWMgSW5jLjwvc3Bhbj48L3A+HwtoHwwCCGRkDxYDZmZmFgEFdVRlbGVyaWsuV2ViLlVJLlJhZFBhbmVsSXRlbSwgVGVsZXJpay5XZWIuVUksIFZlcnNpb249MjAxMi4zLjEyMDUuNDAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49MTIxZmFlNzgxNjViYTNkNA8WAWYWAQV1VGVsZXJpay5XZWIuVUkuUmFkUGFuZWxJdGVtLCBUZWxlcmlrLldlYi5VSSwgVmVyc2lvbj0yMDEyLjMuMTIwNS40MCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj0xMjFmYWU3ODE2NWJhM2Q0ZBYCZg8PFgQfAgUZQ2xpZW50IENvbW1lbnRzIDIwMTItMjAxMx8JZ2QWBmYPDxYIHwoJ/Pz8/x8CBdYCPHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFNwZWNpYWx0eSI+TXV0dWFsIEZ1bmRzIExhdzwvc3Bhbj48YnI+PHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFRleHQiPlRoZSBicmVhZHRoIGFuZCBkZXB0aCBvZiBSb3BlcyAmIEdyYXkncyByZWdpc3RlcmVkIGZ1bmQvYWR2aXNlciBwcmFjdGljZSBzZXRzIGl0IGFwYXJ0IGZyb20gaXRzIHBlZXJzLjwvc3Bhbj48YnI+PHAgY2xhc3M9J2Zpcm1Qcm9maWxlQ29tbWVudEF1dGhvcic+Um9iZXJ0IEJvcnpvbmU8c3BhbiBjbGFzcz0nZmlybVByb2ZpbGVDb21tZW50Q29tcGFueSc+UHJvU2hhcmVzIEFkdmlzb3JzIExMQzwvc3Bhbj48L3A+HwtoHwwCCGRkAgEPDxYIHwoJ8/Pz/x8CBYQDPHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFNwZWNpYWx0eSI+Q29ycG9yYXRlIExhdzwvc3Bhbj48YnI+PHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFRleHQiPlJvcGVzICYgR3JheSB1bmRlcnN0YW5kcyB0aGUgY2hhbGxlbmdlcyBoeXBlci1ncm93dGggY29tcGFuaWVzIGZhY2UgYW5kIHdhcyBhbiBvdXRzdGFuZGluZyBwYXJ0bmVyIHRocm91Z2hvdXQgdGhlIGVudGlyZSBsaWZlIGN5Y2xlLjwvc3Bhbj48YnI+PHAgY2xhc3M9J2Zpcm1Qcm9maWxlQ29tbWVudEF1dGhvcic+Sm9lIEFybXk8c3BhbiBjbGFzcz0nZmlybVByb2ZpbGVDb21tZW50Q29tcGFueSc+Zm9ybWVybHkgb2YgU2FsaWVudCBTdXJnaWNhbCBUZWNobm9sb2dpZXMsIEluYy48L3NwYW4+PC9wPh8LaB8MAghkZAICDw8WCB8KCfz8/P8fAgWHBDxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRTcGVjaWFsdHkiPkNvcnBvcmF0ZSBMYXc8L3NwYW4+PGJyPjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRUZXh0Ij5Sb3BlcyAmIEdyYXkgcHJvdmlkZXMgYnJlYWR0aCBhbmQgZGVwdGggb2YgZXhwZXJ0aXNlIGluIGxpZmUgc2NpZW5jZXMgYW5kIHJlbGF0ZWQgY29ycG9yYXRlIHRyYW5zYWN0aW9ucywgaXMgaW5jcmVkaWJseSByZXNwb25zaXZlLCBhbmQgaGFzIGEgdmVyeSBkZWVwIHBvb2wgb2Ygc21hcnQgYW5kIHByb2R1Y3RpdmUgYXNzb2NpYXRlcyB3aG8gYXJlIGVmZmVjdGl2ZWx5IG1hbmFnZWQgYW5kIHRyYWluZWQgYnkgdGhlIHBhcnRuZXJzIGFuZCBhZGQgY2xlYXIgdmFsdWUgdG8gZW5nYWdlbWVudHMuPC9zcGFuPjxicj48cCBjbGFzcz0nZmlybVByb2ZpbGVDb21tZW50QXV0aG9yJz5SaWNoYXJkIEguIEJydWRuaWNrPHNwYW4gY2xhc3M9J2Zpcm1Qcm9maWxlQ29tbWVudENvbXBhbnknPkJpb2dlbiBJZGVjIEluYy48L3NwYW4+PC9wPh8LaB8MAghkZAIHDxYCHwFnFgICAw8PFgIfBgUwL2Zpcm1wcm9maWxlLmFzcHg/ZmlybV9pZD0xNzM5NSZ0YWI9dGVzdGltb25pYWxzZGQCEA8PFgIfAWhkZAIRD2QWAgIBDw8WBB8GBRhodHRwOi8vd3d3LnJvcGVzZ3JheS5jb20fAgUQUm9wZXMgJiBHcmF5IExMUGRkAhIPZBYCAgEPZBYCAgEPZBYGZg8WAh4LXyFJdGVtQ291bnQCAhYGZg9kFgICAQ8WAh4EaHJlZgUhL2Zpcm1zL3JvcGVzLWdyYXkvT3ZlcnZpZXcvMTczOTUvFgJmDw8WAh8CBQxSb3BlcyAmIEdyYXlkZAIBD2QWAgIBDw8WAh8CBXMmcXVvdDtUaGUgYnJlYWR0aCBhbmQgZGVwdGggb2YgUm9wZXMgJiBHcmF5J3MgcmVnaXN0ZXJlZCBmdW5kL2FkdmlzZXIgcHJhY3RpY2Ugc2V0cyBpdCBhcGFydCBmcm9tIGl0cyBwZWVyLi4uJnF1b3Q7ZGQCAg9kFgICAQ8PFgIfAgVzJnF1b3Q7Um9wZXMgJiBHcmF5IHByb3ZpZGVzIGJyZWFkdGggYW5kIGRlcHRoIG9mIGV4cGVydGlzZSBpbiBsaWZlIHNjaWVuY2VzIGFuZCByZWxhdGVkIGNvcnBvcmF0ZSB0cmFuc2FjdC4uLiZxdW90O2RkAgEPFgIfDgUlL2Zpcm1zL3JvcGVzLWdyYXkvVGVzdGltb25pYWxzLzE3Mzk1L2QCAw8WAh8BaGQCEw9kFgICAQ9kFgJmD2QWCmYPD2QWAh4Gb25sb2FkBQtzaG93RkZEaXYoKWQCAQ8PFgIfAgUTTG93ZSxZZWFnZXIgJiBCcm93bmRkAgIPDxYCHwIFE0xvd2UsWWVhZ2VyICYgQnJvd25kZAIEDw8WAh8CBRNMb3dlLFllYWdlciAmIEJyb3duZGQCBQ8PFgIfAgXfAVRoZSBjb3JlIHByYWN0aWNlIG9mIExvd2UgWWVhZ2VyICZhbXA7IEJyb3duIGlzIHNlcnZpbmcgYXR0b3JuZXlzLCBqdWRnZXMsIGFuZCBsYXcgZmlybXMuJm5ic3A7IFdoZXRoZXIgYWR2aXNpbmcgb24gYSBwZW5kaW5nIG1hdHRlciBvciByZXByZXNlbnRpbmcgYSBjbGllbnQgaW4gYSBkaXNjaXBsaW5hcnkgb3IgbWFscHJhY3RpY2UgcHJvY2VlZGluZywgd2UgYXJlICZsZHF1bztsYXcuLi5kZAIUDw8WAh8IaBYCHgVzdHlsZQUNZGlzcGxheTpub25lO2QCFQ8UKwACFCsAAw8WAh8IaGRkZBAWAWYWARQrAAMPFgIfCGhkZGQPFgFmFgEFclRlbGVyaWsuV2ViLlVJLlJhZFdpbmRvdywgVGVsZXJpay5XZWIuVUksIFZlcnNpb249MjAxMi4zLjEyMDUuNDAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49MTIxZmFlNzgxNjViYTNkNBYCZg8UKwADDxYCHwhoZGRkZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WBAUYY3RsMDAkY3BoJHBiRmlybUNvbW1lbnRzBRtjdGwwMCRjcGgkUmFkRm9ybURlY29yYXRvcjEFG2N0bDAwJGNwaCRSYWRXaW5kb3dNYW5hZ2VyMQUUY3RsMDAkY3BoJFJhZFdpbmRvdzGKMV99j39i1qVJrzkIQucPItgjTlsKBPgsvk7FWPTu6w==" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=i7s5gvdLw98BJ4c-uLl5TtI9lhIDDJv_G3mh3cYl2hvH0R4ELQEoHBT8xArk-qix-W-RQ9F4IJw5JXffCLQxGGyGMlCFOY2usy3JCAJq6Ew1&amp;t=634944287538030287" type="text/javascript"></script>
+
+
+<script src="/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ctl00_RadScriptManager1_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3aen-US%3a89093640-ae6b-44c3-b8ea-010c934f8924%3aea597d4b%3ab25378d2%3bTelerik.Web.UI%2c+Version%3d2012.3.1205.40%2c+Culture%3dneutral%2c+PublicKeyToken%3d121fae78165ba3d4%3aen-US%3af18b91a4-0e6c-41d1-af11-dfb338738b79%3a16e4e7cd%3aed16cbdc%3af7645509%3a24ee1bba%3af46195d3%3a1e771326%3a4cacbc31%3a86526ba7%3a874f8ea2%3a19620875%3a490a9d4e%3abd8f85e4" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="../../../../Scripts/WebTools.js" type="text/javascript"></script>
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$RadScriptManager1', 'aspnetForm', ['tctl00$cph$ctl00$cph$RadAjaxPanel1Panel',''], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+
+   
+
+    <div style="background-image:url('http://bestlawfirms.usnews.com/images/header_v2_tile.gif');height:134px;margin-bottom:10px;">
+        <center>
+            <div style="background-image:url('http://bestlawfirms.usnews.com/images/header_v2_center.gif');width:1000px;height:134px;text-align:left;">
+                <div style="padding-top:4px;">
+                    <div style="float:left;">
+                        <a href="http://usnews.com" target="_blank"><img src="http://bestlawfirms.usnews.com/images/usn-logo.png" style="height:22px;width:98px;border-width:0px;" /></a>
+                    </div>
+                    <div style="float:left;padding-top:2px;padding-left:3px;">
+                        <a href="http://bestlawyers.com" target="_blank"><img src="../../../../images/bl_tiny.gif" style="border-width:0px;" /></a>
+                    </div>
+                    <div style="float:right;">
+                        <ul id="usnewsMenu" style="margin-top:0px;font-family:Verdana;">
+                            <li>
+                                <a href="http://www.usnews.com/news" target="_blank">News & Opinion</a>
+                            </li>
+                            <li>
+                                <a href="http://health.usnews.com/" target="_blank">Health</a>
+                            </li>
+                            <li>
+                                <a href="http://money.usnews.com/" target="_blank">Money</a>
+                            </li>
+                            <li>
+                                <a href="http://www.usnews.com/education" target="_blank">Education</a>
+                            </li>
+                            <li>
+                                <a href="http://travel.usnews.com/" target="_blank">Travel</a>
+                            </li>
+                            <li>
+                                <a href="http://usnews.rankingsandreviews.com/cars-trucks/" target="_blank">Cars</a>
+                            </li>
+                            <li>
+                                <a href="../../../../" style="color:#F7B11A;">Law</a>
+                            </li>
+                            <li>
+                                <a href="http://www.usnews.com/rankings" target="_blank">Rankings</a>
+                            </li>
+                            <li id="nav-search">
+                                <a href="../../../../Search.aspx"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+
+                <div style="margin-top:9px;">
+                    <a href="../../../../"><img src="../../../../Images/header_v2_blf_title.gif" style="border-width:0px;" /></a>
+                </div>
+
+                <div style="margin-top:5px;">
+                    <ul id="navMenu" class="navMenuClass">
+                        <li id="ctl00_liHome">
+                            <a href="../../../../Default.aspx">Home</a>
+                        </li>
+                        <li id="ctl00_liSearch">
+                            <a href="../../../../Search.aspx">Search</a>
+                        </li>
+                        <li id="ctl00_liMethodology">
+                            <a href="../../../../Methodology.aspx">Methodology</a>
+                        </li>
+                        <li id="ctl00_liSpecDefinition">
+                            <a href="../../../../SpecDefinition.aspx">Practice Areas</a>
+                        </li>
+                        <li id="ctl00_liFAQ">
+                            <a href="../../../../faq.aspx">FAQ</a>
+                        </li>
+                        <li id="ctl00_liLogin">
+                            <a href="../../../../Subscribe/Default.aspx">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </center>
+    </div>
+
+
+
+    <div style="text-align: center; width: 1000px; margin: auto;clear:both;">
+        <div id="ctl00_divBreadCrumb" style="text-align:left;margin-bottom:10px;margin-top:0px;">
+            <a href='/'>Best Law Firms</a> > <a href='/Search.aspx'>Search</a> > Firm Profile
+        </div>
+
+        
+    <script type="text/javascript">
+        function unlockNav() {
+            $('#login_link').hide()
+            $('[id*=imgLock]')
+                .hide()
+                .parent()
+                .children('a')
+                    .removeAttr('title')
+                    .removeAttr('onclick')
+        }
+
+//        $(function(){
+//            if (jQuery().cookie('BLFSession')) unlockNav()
+
+//            alert("1");
+//            $('#divLearnMore').dialog({
+//                autoOpen: false,
+//                modal: true,
+//                width: 320,
+//                height: 155,
+//                resizable: false,
+//                draggable: false,
+//                closeOnEscape: false                
+//            });
+//            alert("2");
+//        })
+
+        function OpenWindow() {
+            var addy = "/modal/profileinfo.aspx?firm_id=17395";
+            var wnd = window.radopen(addy, "RadWindow1");
+            wnd.setSize(400, 200);
+            return false;
+        }
+
+//        function OpenWindow() {
+//            $('#divLearnMore').dialog('open');
+//            alert("3");
+//            return false;
+//        }
+
+    </script>
+    <div style="clear: both;">
+        
+        <div style='width: 155px; text-align: left; float: left; vertical-align: top; padding-top:10px;'>
+            
+
+            <div id="divLearnMore" style="display: none;">
+                <h4 style="padding-bottom: 5px;">
+                    Please Provide Profile
+                </h4>
+               To provide or update your firm profile, please contact <span id="ctl00_cph_lblContact">Evan Michaels at <a href='mailto:emichaels@bestlawyers.com'>emichaels@bestlawyers.com</a> <br/> Or at (803) 644-1813.</span>
+            </div>
+
+            <div id="ctl00_cph_pnlfirmSummaryNavbar" style="border: 1px solid #dddddd;
+                background-color: #fcfcfc; padding-top: 5px;">
+	
+                <div style="padding-bottom:8px;padding-top:4px;padding-left:7px;font-size:12px;font-weight:bold;font-family:Verdana;">
+                    Firm Summary
+                </div>
+                <div id="ctl00_cph_navOverview" class="current_nav_item">
+		
+                    <div>
+                        <a href="/firms/ropes-gray-llp/overview/17395/  ">Overview</a>
+                    </div>
+                
+	</div>
+                <div id="ctl00_cph_navPracticeAreas" class="nav_item" style="margin-top:-1px;">
+		
+                    <div>
+                        <a href="/firms/ropes-gray-llp/Practice-Areas/17395/">Practice Areas</a>
+                    </div>
+                
+	</div>
+                <div id="ctl00_cph_navListedLawyers" class="nav_item" style="margin-top:-1px;">
+		
+                    <div>
+                        <a href="/firms/ropes-gray-llp/Listed-Lawyers/17395/">Listed Lawyers</a>
+                    </div>
+                
+	</div>
+                <div id="ctl00_cph_navOffices" class="nav_item" style="margin-top:-1px;">
+		
+                    <div>
+                        <a href="/firms/ropes-gray-llp/Offices/17395/">Offices</a>
+                    </div>
+                
+	</div>
+                <div id="ctl00_cph_navRankings" class="nav_item" style="margin-top:-1px;">
+		
+                    <div>
+                        <a href="/firms/ropes-gray-llp/Rankings/17395/">Rankings</a>
+                    </div>
+                
+	</div>
+                <div id="ctl00_cph_navContact" class="nav_item" style="margin-top:-1px;">
+		
+                    <div>
+                        <a href="/firms/ropes-gray-llp/Contact/17395/">Contacts</a>
+                    </div>
+                
+	</div>
+                <div id="ctl00_cph_navTestimonials" class="nav_item" style="margin-top:-1px;">
+		
+                    <div>
+                        <a href="/firms/ropes-gray-llp/Testimonials/17395/">Client Comments</a>
+                    </div>
+                
+	</div>
+            
+</div>
+            <div style="padding-bottom: 5px;">
+                &nbsp;
+            </div>
+            <div id="ctl00_cph_divFirmData" style="border: 1px solid #dddddd; background-color: #fcfcfc;padding-top:5px;">
+                <div style="padding-left:7px;margin-bottom:8px;margin-top:4px;">
+                    <span style="font-weight:bold;">Firm Data</span>
+
+                    
+                    <div id="login_link" style="font-size:11px;" >
+                        <a style="color:#0079b3;" href="/subscribe/default.aspx">Sign in</a> to access
+                    </div>
+                    
+                </div>
+                <div id="ctl00_cph_navFirmSize" class="nav_item">
+	
+                    <div id="ctl00_cph_divLock1" class="usnews_lock_positioning">
+                        <img id="ctl00_cph_imgLock1" src="../../../../Images/usnews_lock.gif" style="border-width:0px;" />
+                    </div>
+                    <div class="firm_data_link_positioning">
+                            <a href="/firms/ropes-gray-llp/Firm-Size-History/17395/" onClick="radalert('<h4>Information Locked</h4>Click <a href=/subscribe/default.aspx>here</a> to subscribe.', 330, 100,'Firm Information is Locked'); return false;"
+                            title="This section is locked for non-subscribers">Firm Size & History</a>
+                    </div>
+                    <div style="clear:both;"></div>
+                
+</div>
+                
+
+                <div id="ctl00_cph_navPracticeAreaDescriptions" class="nav_item" style="margin-top:-1px;">
+	
+                    <div id="ctl00_cph_divLock3" class="usnews_lock_positioning">
+                        <img id="ctl00_cph_imgLock3" src="../../../../Images/usnews_lock.gif" style="border-width:0px;" />
+                    </div>
+                    <div class="firm_data_link_positioning">
+                        <a href="/firms/ropes-gray-llp/Practice-Area-Descriptions/17395/" onClick="radalert('<h4>Information Locked</h4>Click <a href=/subscribe/default.aspx>here</a> to subscribe.', 330, 100,'Firm Information is Locked'); return false;"
+                            title="This section is locked for non-subscribers">Significant Matters</a>
+                    </div>
+                    <div style="clear:both;"></div>
+                
+</div>
+
+                <div id="ctl00_cph_navClients" class="nav_item" style="margin-top:-1px;">
+	
+                    <div id="ctl00_cph_divLock6" class="usnews_lock_positioning">
+                        <img id="ctl00_cph_imgLock6" src="../../../../Images/usnews_lock.gif" style="border-width:0px;" />
+                    </div>
+                    <div class="firm_data_link_positioning">
+                        <a href="/firms/ropes-gray-llp/Clients/17395/" onClick="radalert('<h4>Information Locked</h4>Click <a href=/subscribe/default.aspx>here</a> to subscribe.', 330, 100,'Firm Information is Locked'); return false;" title="This section is locked for non-subscribers">
+                            Clients</a>
+                    </div>
+                    <div style="clear:both;"></div>
+                
+</div>
+                
+                                                
+                <div id="ctl00_cph_navFirmAwards" class="nav_item" style="margin-top:-1px;">
+	
+                    <div id="ctl00_cph_divLock13" class="usnews_lock_positioning">
+                        <img id="ctl00_cph_imgLock13" src="../../../../Images/usnews_lock.gif" style="border-width:0px;" />
+                    </div>
+                    <div class="firm_data_link_positioning">
+                        <a href="/firms/ropes-gray-llp/firm-awards/17395/" onClick="radalert('<h4>Information Locked</h4>Click <a href=/subscribe/default.aspx>here</a> to subscribe.', 330, 100,'Firm Information is Locked'); return false;"
+                            title="This section is locked for non-subscribers">Awards Received by the Firm</a>
+                    </div>
+                    <div style="clear:both;"></div>
+                
+</div>
+
+            </div>
+        </div>
+
+
+        <div style='width: 499px; text-align: left; float: left; vertical-align: top; padding-left: 10px;'>
+            <div style="text-align: left; padding: 10px 0 5px 0;" class="search_header">
+                <h1>
+                    <span id="ctl00_cph_lblFirmName">Ropes&nbsp;&amp; Gray LLP</span></h1>
+            </div>
+            <div id="ctl00_cph_pnlFirmLogo">
+	
+                <img id="ctl00_cph_imgFirmLogo" src="http://bestlawyers.com/search/logos/17395.gif" style="border-width:0px;" />
+            
+</div>
+
+            
+            <div id="ctl00_cph_pnlProfile" style="padding: 0 0 5px 0; width: 95%;">
+	
+                <h3 id="ctl00_cph_hProfile" class="firm_profile_header firm_profile_header_first">
+                    Profile
+                </h3>
+                <div class="firm_profile_text">
+                    <div id='divProfilePreview' style='padding-bottom:2px;'>Ropes &amp; Gray is a leading national law firm with offices in&nbsp;Boston, Chicago, Hong Kong, London, New York, San Francisco, Seoul, Shanghai,&nbsp;Silicon Valley, Tokyo and Washington D.C.
+
+Built on a foundation of over 145 years of dedication to forging strong client relationships, we represent interests across a broad spectrum of industries in corporate law and litigation matters. In addi...   <div style='padding-top:5px;'>       <img src='http://bestlawfirms.usnews.com/images/bullet.gif'>&nbsp;&nbsp;       <a href='#' onClick='document.getElementById("divProfilePreview").style.display="none";            document.getElementById("divProfile").style.display="block"; return false; '>           Read more</a>    </div></div><div id='divProfile' style='display:none; padding-bottom:2px;'>Ropes &amp; Gray is a leading national law firm with offices in&nbsp;Boston, Chicago, Hong Kong, London, New York, San Francisco, Seoul, Shanghai,&nbsp;Silicon Valley, Tokyo and Washington D.C.<br />
+<br />
+Built on a foundation of over 145 years of dedication to forging strong client relationships, we represent interests across a broad spectrum of industries in corporate law and litigation matters. In addition, we offer counsel on labor and employment issues, tax and benefits, creditors' rights, and private client services. Our clients range in size from large to small companies and include financial institutions, government agencies, hospitals and health care organizations, colleges and universities, and families and individuals.<br />
+<br />
+About 1,000 lawyers and professionals strive to provide the highest-quality legal advice available. Our firm combines superior talent with a supportive environment where nothing gets in the way of solving our clients' problems.<br />
+<br />
+Client by client, we have built a reputation for high-quality work, a positive outlook, and the highest standards of service and ethics. Year after year, we continue to attract excellent clients, challenging assignments &mdash; and outstanding lawyers. All this translates to a team of legal counsel solely focused on providing the best advice possible for our clients without compromise. <br /><br>   <div style='padding-top:5px;'>       <img src='http://bestlawfirms.usnews.com/images/bullet.gif'>&nbsp;&nbsp;       <a href='#' onClick='document.getElementById("divProfile").style.display="none";            document.getElementById("divProfilePreview").style.display="block"; return false; '>           collapse profile</a>    </div></div>
+                </div>
+            
+</div>
+            <div id="ctl00_cph_pnlPracticeArea" style="padding: 5px 0 5px 0; width: 95%;">
+	
+
+                <h3 id="ctl00_cph_hPracticeAreas" class="firm_profile_header">
+                    Practice Areas
+                </h3>
+                <div id="divPracticeAreas" style="width: 500px" class="firm_profile_text">
+                    <div id='divPracticeAreasContent' style='display: none;'>Antitrust<br />
+Bankruptcy &amp; Business Restructuring<br />
+Corporate<br />
+&nbsp;&nbsp;Debt Financing<br />
+&nbsp;&nbsp;Health Care (Corporate)<br />
+&nbsp;&nbsp;Investment Management<br />
+&nbsp;&nbsp;Life Sciences<br />
+&nbsp;&nbsp;Private Equity<br />
+&nbsp;&nbsp;Public Finance<br />
+&nbsp;&nbsp;Real Estate<br />
+&nbsp;&nbsp;Securities &amp; Public Companies<br />
+&nbsp;&nbsp;Sports Law<br />
+&nbsp;&nbsp;Technology Company<br />
+&nbsp;&nbsp;Venture Capital<br />
+Intellectual Property<br />
+&nbsp;&nbsp;Alternative Dispute Resolution<br />
+&nbsp;&nbsp;International<br />
+&nbsp;&nbsp;Licensing &amp; Licensing Programs<br />
+&nbsp;&nbsp;Patent Litigation<br />
+&nbsp;&nbsp;Patent Prosecution/ Applications<br />
+&nbsp;&nbsp;Portfolio Evaluation and Management<br />
+&nbsp;&nbsp;PTO: Interferences<br />
+&nbsp;&nbsp;Trade Secrets/ Unfair Competition Litigation<br />
+&nbsp;&nbsp;Trademark/ Copyright Litigation<br />
+&nbsp;&nbsp;Trademarks/ Copyright/ Prosecution/ Licensing<br />
+&nbsp;&nbsp;Transactional Counseling<br />
+&nbsp;&nbsp;Government Relations &amp; Regulatory<br />
+International<br />
+Labor &amp; Employment<br />
+Litigation<br />
+&nbsp;&nbsp;Antitrust (Litigation)<br />
+&nbsp;&nbsp;Appellate<br />
+&nbsp;&nbsp;Bankruptcy<br />
+&nbsp;&nbsp;Commercial &amp; Business<br />
+&nbsp;&nbsp;Environmental<br />
+&nbsp;&nbsp;Government Contracts<br />
+&nbsp;&nbsp;Government Enforcement<br />
+&nbsp;&nbsp;Health Care (Litigation)<br />
+&nbsp;&nbsp;Securities &amp; Corporate<br />
+Private Client Group<br />
+Tax &amp; Benefits<br />
+&nbsp;&nbsp;Employee Benefits<br />
+&nbsp;&nbsp;Tax</div><div id='divPracticeAreasPreview' style='display: block;'><div id='divPracticeAreasPreviewContent'>Antitrust<br />
+Bankruptcy &amp; Business Restructuring<br />
+Corporate<br />
+&nbsp;&nbsp;Debt Financing<br />
+&nbsp;&nbsp;Health Care (Corporate)<br />
+&nbsp;&nbsp;Investment Management<br />
+&nbsp;&nbsp;Life Sciences<br />
+&nbsp;&nbsp;Private Equity<br />
+&nbsp;&nbsp;Public Finance<br />
+&nbsp;&nbsp;Real Estate<br />
+&nbsp;&nbsp;Securities &amp; Public Companies<br />
+&nbsp;&nbsp;Sports Law<br />
+&nbsp;&nbsp;Technology Company<br />
+&nbsp;&nbsp;Venture Capital<br />
+Intellectual Property<br />
+&nbsp;&nbsp;Alternative Dispute Resolution<br />
+&nbsp;&nbsp;International<br />
+&nbsp;&nbsp;Licensing &amp; Licensing Programs<br />
+&nbsp;&nbsp;Patent Litigation<br />
+&nbsp;&nbsp;Patent Prosecution/ Applications<br />
+&nbsp;&nbsp;Portfolio Evaluation and Management<br />
+&nbsp;&nbsp;PTO: Interferences<br />
+&nbsp;&nbsp;Trade Secrets/ Unfair Competition Litigation<br />
+&nbsp;&nbsp;Trademark/ Copyright Litigation<br />
+&nbsp;&nbsp;Trademarks/ Copyright/ Prosecution/ Licensing<br />
+&nbsp;&nbsp;Transactional Counseling<br />
+&nbsp;&nbsp;Government Relations &amp; Regulatory<br />
+International<br />
+Labor &amp; Employment<br />
+Litigation<br />
+&nbsp;&nbsp;Antitrust (Litigation)<br />
+&nbsp;&nbsp;Appellate<br />
+&nbsp;&nbsp;Bankruptcy<br />
+&nbsp;&nbsp;Commercial &amp; Business<br />
+&nbsp;&nbsp;Environmental<br />
+&nbsp;&nbsp;Government Contracts<br />
+&nbsp;&nbsp;Government Enforcement<br />
+&nbsp;&nbsp;Health Care (Litigation)<br />
+&nbsp;&nbsp;Securities &amp; Corporate<br />
+Private Client Group<br />
+Tax &amp; Benefits<br />
+&nbsp;&nbsp;Employee Benefits<br />
+&nbsp;&nbsp;Tax</div><div style='padding-top: 5px;'><img src='/images/bullet.gif' />&nbsp;&nbsp;<a href='/firms/ropes-gray-llp-/Practice-Areas/17395/'>See all practice areas</a></div></div>
+                </div>
+            
+</div>
+            <div id="ctl00_cph_pnlUSNewsFirmRankings" style="padding: 5px 0 5px 0; width: 95%;">
+	
+                <h3 id="ctl00_cph_hRankings" class="firm_profile_header">
+                    Best Law Firms Rankings
+                </h3>
+
+               
+               <center>
+                    <div id="divUSNewsFirmRankings">
+                        <div class='lfotyRank'><img src='/images/LFOTY_2013.gif' width='100' height='106' style='Margin-top: -75px;'><br /><span class='rankingspec'><b>Copyright Law</b></span><br /><span class='rankingspec'><b>Private Funds / Hedge Funds Law</b></span><br /></div>
+                    </div>
+               </center>
+                
+                <table class="firmRankingsTable firm_profile_text">
+		<tr>
+			<td class="firmRankingsTableFirstRow">Location</td>
+			<td class="firmRankingsTableFirstRow" style="width:20px;">Tier</td>
+			<td class="firmRankingsTableFirstRow">Practice</td>
+		</tr>
+		<tr class="odd">
+			<td style="vertical-align:middle;" rowspan="1">National</td>
+			<td style="vertical-align:middle;"><span class="tier">1</span></td>
+			<td>Antitrust Law<br>Banking and Finance Law<br>Bankruptcy and Creditor Debtor Rights / Insolvency and Reorganization Law<br>Biotechnology Law<br>Commercial Litigation<br>Copyright Law<br>Corporate Law</td>
+		</tr>
+	</table>
+	
+
+                <div id="ctl00_cph_divSeeAllRankings" style="padding-top: 5px;">
+                    <img src="../../../../images/bullet.gif" />
+                    <a id="ctl00_cph_hlSeeAllRankings" href="/Firmprofile.aspx?firm_id=17395&amp;tab=Rankings">See complete rankings list</a>
+                </div>
+            
+</div>
+            
+            <div id="ctl00_cph_pnlListedLawyers" style="padding: 5px 0 5px 0; width: 95%;">
+	
+                <h3 id="ctl00_cph_hListedLawyers" class="firm_profile_header">
+                    Listed Lawyers in Best Lawyers<sup>&reg;</sup>
+                </h3>
+
+                <div class="firm_profile_text">
+                    <div style="margin-top:14px;"><div class="firmProfileLLSpecialtyDiv"><h5>Antitrust Law</h5><p class="firmProfileLLParagraph"><a href="http://www.ropesgray.com/michaelmcfalls/">Michael S. McFalls</a><span class="firmProfileLLAddress">Washington, DC</span><span style="clear:both;">&#8203;</span></p><p class="firmProfileLLParagraph"><a href="http://www.ropesgray.com/markpopofsky/">Mark S. Popofsky</a><span class="firmProfileLLAddress">Washington, DC</span><span style="clear:both;">&#8203;</span></p></div><div class="firmProfileLLSpecialtyDiv"><h5>Banking &amp; Finance</h5><p class="firmProfileLLParagraph"><a href="http://www.ropesgray.com/mauriceallen/">Maurice Allen</a><span class="firmProfileLLAddress">London, GB</span><span style="clear:both;">&#8203;</span></p><p class="firmProfileLLParagraph"><a href="http://www.ropesgray.com/mikegoetz/">Michael S. Goetz</a><span class="firmProfileLLAddress">London, GB</span><span style="clear:both;">&#8203;</span></p></div><div class="firmProfileLLSpecialtyDiv"><h5>Banking and Finance Law</h5><p class="firmProfileLLParagraph"><a href="http://www.ropesgray.com/thomasdraper/">Thomas B. Draper</a><span class="firmProfileLLAddress">Boston, MA</span><span style="clear:both;">&#8203;</span></p></div></div>
+                </div>
+                
+                <div id="ctl00_cph_divListedLawyersLink" style="margin-top:15px;">
+                    <img src="../../../../images/bullet.gif" />
+                    <a id="ctl00_cph_hlListedLawyers" href="/firmprofile.aspx?firm_id=17395&amp;tab=listed-lawyers">See complete listing</a>
+                </div>
+            
+</div>
+            <div id="ctl00_cph_pnlContacts" style="padding: 5px 0 5px 0; width: 95%;">
+	
+                <h3 id="ctl00_cph_hContacts" class="firm_profile_header">
+                    Contacts
+                </h3>
+
+                <div id="divContacts" class="firm_profile_text">
+                    <div style="margin-top:14px;"><div class="firmProfileLLSpecialtyDiv"><h5>Chairman</h5><p class="firmProfileLLParagraph"><a href="http://www.ropesgray.com/bradmalt/">R. Bradford Malt</a><span class="firmProfileLLAddress"></span><span style="clear:both;">&#8203;</span></p></div><div class="firmProfileLLSpecialtyDiv"><h5>Managing Partner</h5><p class="firmProfileLLParagraph"><a href="http://www.ropesgray.com/johnmontgomery/">John T. Montgomery</a><span class="firmProfileLLAddress"></span><span style="clear:both;">&#8203;</span></p></div><div class="firmProfileLLSpecialtyDiv"><h5>Antitrust</h5><p class="firmProfileLLParagraph"><a href="http://www.ropesgray.com/markpopofsky/">Mark S. Popofsky</a><span class="firmProfileLLAddress">+1 202-508-4624</span><span style="clear:both;">&#8203;</span></p></div><div class="firmProfileLLSpecialtyDiv"><h5>Bankruptcy &amp; Business Restructuring</h5><p class="firmProfileLLParagraph"><a href="http://www.ropesgray.com/alysonallen/">Alyson Allen</a><span class="firmProfileLLAddress">+1 617-951-7483</span><span style="clear:both;">&#8203;</span></p><p class="firmProfileLLParagraph"><a href="http://www.ropesgray.com/markbane/">Mark I. Bane</a><span class="firmProfileLLAddress">+1 212-841-8808</span><span style="clear:both;">&#8203;</span></p></div></div>
+                </div>
+                
+                <div id="ctl00_cph_divContactsLink" style="margin-top:15px;">
+                    <img src="../../../../images/bullet.gif" />
+                    <a id="ctl00_cph_hlContacts" href="/firmprofile.aspx?firm_id=17395&amp;tab=contact">See complete contact list</a>
+                </div>
+            
+</div>
+            <div id="ctl00_cph_pnlOffices" style="padding: 5px 0 5px 0; width: 95%;">
+	
+                <h3 id="ctl00_cph_hOffices" class="firm_profile_header">
+                    Offices
+                </h3>
+                <div id="divOffices" style="margin-top:10px;" class="firm_profile_text">
+                    <span id="ctl00_cph_lblOfficesContent"><div id='divOfficesPreview' style='width:500px; padding-bottom:2px; display:block;' ><div style='clear:both; height:0px;'>&nbsp;</div><div style='float:left; padding-right:20px;'><div style='width:240px;padding-bottom: 10px;font-family:verdana;font-size:13px;color:#666666;line-height:18.2px;'><h5 style="color:#444444;font-size:14px;font-weight:bold;line-height:20px;margin-bottom:5px;">Boston, MA</h5>
+Prudential Tower<br>
+800 Boylston Street<br>
+02199-3600<br>
+Phone: 617-951-7000<br>
+</div><div style='width:240px;padding-bottom: 10px;font-family:verdana;font-size:13px;color:#666666;line-height:18.2px;'><h5 style="color:#444444;font-size:14px;font-weight:bold;line-height:20px;margin-bottom:5px;">Chicago, IL</h5>
+111 South Wacker Drive, 46th Floor<br>
+60606-4309<br>
+Phone: 312-845-1200<br>
+</div></div><div style='float:left;'><div style='width:240px;padding-bottom: 10px;font-family:verdana;font-size:13px;color:#666666;line-height:18.2px;'><h5 style="color:#444444;font-size:14px;font-weight:bold;line-height:20px;margin-bottom:5px;">East Palo Alto, CA</h5>
+1900 University Avenue, Sixth Floor<br>
+94303-2284<br>
+Phone: 650-617-4000<br>
+</div><div style='width:240px;padding-bottom: 10px;font-family:verdana;font-size:13px;color:#666666;line-height:18.2px;'><h5 style="color:#444444;font-size:14px;font-weight:bold;line-height:20px;margin-bottom:5px;">New York, NY</h5>
+1211 Avenue of the Americas<br>
+10036-8704<br>
+Phone: 212-596-9000<br>
+</div></div><div style='clear:both; height:1px;'>&nbsp;</div><div style='clear:both; display:block; '>       <img src='http://bestlawfirms.usnews.com/images/bullet.gif'>&nbsp;&nbsp;<a href='/firmprofile.aspx?firm_id=17395&tab=offices' > see complete listing</a>   </div></div><div id='divOfficesContent' style='display:none; width:500px;'><div style='clear:both; height:0px;'>&nbsp;</div><div style='float:left; padding-right:20px;'><div style='width:240px;padding-bottom: 10px;font-family:verdana;font-size:13px;color:#666666;line-height:18.2px;'><h5 style="color:#444444;font-size:14px;font-weight:bold;line-height:20px;margin-bottom:5px;">Boston, MA</h5>
+Prudential Tower<br>
+800 Boylston Street<br>
+02199-3600<br>
+Phone: 617-951-7000<br>
+</div><div style='width:240px;padding-bottom: 10px;font-family:verdana;font-size:13px;color:#666666;line-height:18.2px;'><h5 style="color:#444444;font-size:14px;font-weight:bold;line-height:20px;margin-bottom:5px;">Chicago, IL</h5>
+111 South Wacker Drive, 46th Floor<br>
+60606-4309<br>
+Phone: 312-845-1200<br>
+</div><div style='width:240px;padding-bottom: 10px;font-family:verdana;font-size:13px;color:#666666;line-height:18.2px;'><h5 style="color:#444444;font-size:14px;font-weight:bold;line-height:20px;margin-bottom:5px;">East Palo Alto, CA</h5>
+1900 University Avenue, Sixth Floor<br>
+94303-2284<br>
+Phone: 650-617-4000<br>
+</div></div><div style='float:left;'><div style='width:240px;padding-bottom: 10px;font-family:verdana;font-size:13px;color:#666666;line-height:18.2px;'><h5 style="color:#444444;font-size:14px;font-weight:bold;line-height:20px;margin-bottom:5px;">New York, NY</h5>
+1211 Avenue of the Americas<br>
+10036-8704<br>
+Phone: 212-596-9000<br>
+</div><div style='width:240px;padding-bottom: 10px;font-family:verdana;font-size:13px;color:#666666;line-height:18.2px;'><h5 style="color:#444444;font-size:14px;font-weight:bold;line-height:20px;margin-bottom:5px;">San Francisco, CA</h5>
+Three Embarcadero Center<br>
+94111-4006<br>
+Phone: 415-315-6300<br>
+</div><div style='width:240px;padding-bottom: 10px;font-family:verdana;font-size:13px;color:#666666;line-height:18.2px;'><h5 style="color:#444444;font-size:14px;font-weight:bold;line-height:20px;margin-bottom:5px;">Washington, DC</h5>
+One Metro Center, Suite 900<br>
+700 Twelfth Street, NW<br>
+20005-3948<br>
+Phone: 202-508-4600<br>
+</div></div><div style='clear:both; height:1px;'>&nbsp;</div><div style='clear:both; display:block;'>       <img src='http://bestlawfirms.usnews.com/images/bullet.gif'>&nbsp;&nbsp;       <a href='#' onClick='document.getElementById("divOfficesContent").style.display="none";           document.getElementById("divOfficesPreview").style.display="block"; return false; '>       collapse Offices</a>    </div></div></span>
+                </div>
+            
+</div>
+            <div id="ctl00_cph_pnlFirmComments" style="padding: 5px 0 5px 0; width: 95%;">
+	
+                <h3 id="ctl00_cph_hFirmComments" class="firm_profile_header">
+                    Client Comments
+                </h3>
+                <div id="divFirmComments">
+                    
+
+                    
+                    <div id="ctl00_cph_ctl00_cph_RadAjaxPanel1Panel">
+		<div id="ctl00_cph_RadAjaxPanel1">
+			<!-- 2012.3.1205.40 -->
+                        
+                        <div id="ctl00_cph_pbFirmComments" class="RadPanelBar RadPanelBar_Default firmProfileClientCommentsPanel" style="width:500px;">
+				<ul class="rpRootGroup">
+					<li class="rpItem rpFirst rpLast"><a href="#" class="rpLink rpExpandable rpExpanded"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText">Client Comments 2012-2013</span></span></a><div class="rpSlide" style="display:block;">
+						<ul class="rpGroup rpLevel1 " style="display:block;">
+							<li class="rpItem rpFirst"><a href="#" class="rpLink rpDisabled" style="background-color:#FCFCFC;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Mutual Funds Law</span><br><span class="firmProfileCommentText">The breadth and depth of Ropes & Gray's registered fund/adviser practice sets it apart from its peers.</span><br><p class='firmProfileCommentAuthor'>Robert Borzone<span class='firmProfileCommentCompany'>ProShares Advisors LLC</span></p></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#F3F3F3;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Corporate Law</span><br><span class="firmProfileCommentText">Ropes & Gray understands the challenges hyper-growth companies face and was an outstanding partner throughout the entire life cycle.</span><br><p class='firmProfileCommentAuthor'>Joe Army<span class='firmProfileCommentCompany'>formerly of Salient Surgical Technologies, Inc.</span></p></span></span></a></li><li class="rpItem rpLast"><a href="#" class="rpLink rpDisabled" style="background-color:#FCFCFC;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Corporate Law</span><br><span class="firmProfileCommentText">Ropes & Gray provides breadth and depth of expertise in life sciences and related corporate transactions, is incredibly responsive, and has a very deep pool of smart and productive associates who are effectively managed and trained by the partners and add clear value to engagements.</span><br><p class='firmProfileCommentAuthor'>Richard H. Brudnick<span class='firmProfileCommentCompany'>Biogen Idec Inc.</span></p></span></span></a></li>
+						</ul>
+					</div></li>
+				</ul><input id="ctl00_cph_pbFirmComments_ClientState" name="ctl00_cph_pbFirmComments_ClientState" type="hidden" />
+			</div>
+                    
+		</div>
+	</div>
+                    
+                <div id="ctl00_cph_divCommentsLink" style="margin-top:15px;">
+                    <img src="../../../../images/bullet.gif" />
+                    <a id="ctl00_cph_hlComments" href="/firmprofile.aspx?firm_id=17395&amp;tab=testimonials">See more comments</a>
+                </div>
+
+                </div>
+            
+</div>
+
+
+            
+            
+
+        </div>
+        <div style='width:336px; float:left;'>
+            <div style="height: 10px;">
+                &nbsp;
+            </div>
+            
+            <div id="ctl00_cph_pnlGeneralInfo">
+	
+                <div style="padding-top: 10px; padding-bottom: 5px;">
+                    <div class="sidebox">
+                        <div class="boxbody" style="text-align: left; vertical-align: top; padding-bottom: 10px;padding-top:10px;">
+                            <h5 style="color: #666666;font-size: 15px;font-weight: bold;margin-bottom: 10px;">
+                                COMPANY WEBSITE
+                            </h5>
+                            <a id="ctl00_cph_hlCompanyWebsite" href="http://www.ropesgray.com">Ropes & Gray LLP</a>
+                        </div>
+                    </div>
+                </div>
+            
+</div>
+            
+<script type="text/javascript">
+</script>
+
+
+<div id="ctl00_cph_clientCommentPreview_pnlClientComments" style="width:100%;">
+	
+    <div style="padding-bottom: 0px;">
+        <div class="sidebox">
+            <div id="ctl00_cph_clientCommentPreview_divClientComments" class="boxbody" style="text-align: left; padding-bottom: 15px;">
+                <h2 style="padding-top:15px;color:#666666;font-size: 15px;font-weight: bold;" class="sectionheader">
+                    WHAT CLIENTS ARE SAYING...
+                </h2>
+                <div class="" style="text-align: left;">
+                    <div class="dottedUnderlineBox">
+                        
+                        <div id="divFirmName" style="margin: 0 0 15px 0;font-size: 13px">
+                            <a href="/firms/ropes-gray/Overview/17395/" id="ctl00_cph_clientCommentPreview_rptrClientComments_ctl00_hlinkFirmName" class="links_blue"><span id="ctl00_cph_clientCommentPreview_rptrClientComments_ctl00_lblFirmName">Ropes & Gray</span></a>
+                        </div>
+                        
+                        <div>
+                            <div style="float: left;width: 275px">
+                                <p style="margin: 0 0 7px 0;font-style:italic;color:#777777;font-size:13px;"><span id="ctl00_cph_clientCommentPreview_rptrClientComments_ctl01_lblComment">&quot;The breadth and depth of Ropes & Gray's registered fund/adviser practice sets it apart from its peer...&quot;</span></p>
+                            </div>
+                            <div style="clear:both"></div>
+                        </div>
+                        
+                        <div>
+                            <div style="float: left;width: 275px">
+                                <p style="margin: 0 0 7px 0;font-style:italic;color:#777777;font-size:13px;"><span id="ctl00_cph_clientCommentPreview_rptrClientComments_ctl02_lblComment">&quot;Ropes & Gray provides breadth and depth of expertise in life sciences and related corporate transact...&quot;</span></p>
+                            </div>
+                            <div style="clear:both"></div>
+                        </div>
+                        
+                    </div>
+
+                    <div style="padding-top: 10px;">
+                        <img src="/images/bullet.gif" alt="" />&nbsp;<a href="/firms/ropes-gray/Testimonials/17395/" id="ctl00_cph_clientCommentPreview_hlinkSeeMore" style="font-weight:bold;font-size:13px;">See more comments</a>                  
+                    </div>
+                    <span id="ctl00_cph_clientCommentPreview_lbltest"></span>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+            <div id="ctl00_cph_pnlUSNews" style="padding-top: 5px; padding-bottom: 5px;">
+	
+                
+            
+</div>
+            <div style="clear: both; height: 0px;">
+                &nbsp;
+            </div>
+        </div>
+    </div>
+    <div style="clear: both;">
+        <div id="ctl00_cph_RadFormDecorator1" class="RadFormDecorator" style="display:none;">
+	<script type="text/javascript">
+//<![CDATA[
+if (typeof(WebForm_AutoFocus) != 'undefined')
+{
+	var old_WebForm_AutoFocus = WebForm_AutoFocus;
+	WebForm_AutoFocus = function(arg)
+	{
+		Sys.Application.add_load(function()
+		{
+			old_WebForm_AutoFocus(arg);
+			WebForm_AutoFocus = old_WebForm_AutoFocus;
+		});
+	}
+}
+if (typeof(Telerik) != 'undefined')
+{
+	if (Telerik.Web.UI.RadFormDecorator)
+	{
+		Telerik.Web.UI.RadFormDecorator.initializePage("ctl00_cph_RadFormDecorator1", "", "Default", 15);
+	}
+}
+//]]>
+</script><input id="ctl00_cph_RadFormDecorator1_ClientState" name="ctl00_cph_RadFormDecorator1_ClientState" type="hidden" />
+</div>
+
+        <div id="ctl00_cph_RadWindowManager1" style="display:none;">
+	<div id="ctl00_cph_RadWindow1" style="display:none;">
+		<div id="ctl00_cph_RadWindow1_C" style="display:none;">
+
+		</div><input id="ctl00_cph_RadWindow1_ClientState" name="ctl00_cph_RadWindow1_ClientState" type="hidden" />
+	</div><div id="ctl00_cph_RadWindowManager1_alerttemplate" style="display:none;">
+		<div class="rwDialogPopup radalert">			
+			<div class="rwDialogText">
+			{1}				
+			</div>
+			
+			<div>
+				<a  onclick="$find('{0}').close(true);"
+				class="rwPopupButton" href="javascript:void(0);">
+					<span class="rwOuterSpan">
+						<span class="rwInnerSpan">##LOC[OK]##</span>
+					</span>
+				</a>				
+			</div>
+		</div>
+		</div><div id="ctl00_cph_RadWindowManager1_prompttemplate" style="display:none;">
+		 <div class="rwDialogPopup radprompt">			
+			    <div class="rwDialogText">
+			    {1}				
+			    </div>		
+			    <div>
+				    <script type="text/javascript">
+				    function RadWindowprompt_detectenter(id, ev, input)
+				    {							
+					    if (!ev) ev = window.event;                
+					    if (ev.keyCode == 13)
+					    {															        
+					        var but = input.parentNode.parentNode.getElementsByTagName("A")[0];					        
+					        if (but)
+						    {							
+							    if (but.click) but.click();
+							    else if (but.onclick)
+							    {
+							        but.focus(); var click = but.onclick; but.onclick = null; if (click) click.call(but);							 
+							    }
+						    }
+					       return false;
+					    } 
+					    else return true;
+				    }	 
+				    </script>
+				    <input title="Enter Value" onkeydown="return RadWindowprompt_detectenter('{0}', event, this);" type="text"  class="rwDialogInput" value="{2}" />
+			    </div>
+			    <div>
+				    <a onclick="$find('{0}').close(this.parentNode.parentNode.getElementsByTagName('input')[0].value);"				
+					    class="rwPopupButton" href="javascript:void(0);" ><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[OK]##</span></span></a>
+				    <a onclick="$find('{0}').close(null);" class="rwPopupButton"  href="javascript:void(0);"><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[Cancel]##</span></span></a>
+			    </div>
+		    </div>				       
+		</div><div id="ctl00_cph_RadWindowManager1_confirmtemplate" style="display:none;">
+		<div class="rwDialogPopup radconfirm">			
+			<div class="rwDialogText">
+			{1}				
+			</div>						
+			<div>
+				<a onclick="$find('{0}').close(true);"  class="rwPopupButton" href="javascript:void(0);" ><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[OK]##</span></span></a>
+				<a onclick="$find('{0}').close(false);" class="rwPopupButton"  href="javascript:void(0);"><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[Cancel]##</span></span></a>
+			</div>
+		</div>		
+		</div><input id="ctl00_cph_RadWindowManager1_ClientState" name="ctl00_cph_RadWindowManager1_ClientState" type="hidden" />
+</div>
+
+    </div>
+    <script type="text/javascript" src="http://static.usnews.com/scripts/Analytics-3p.js"></script>
+
+    </div>
+    <div class="clear"></div>
+    
+    <div style="clear: both; height: 0px;">
+        &nbsp;</div>
+    
+
+    <div id="usn-foot">
+        <div id="foot-content">
+            <center>
+                <div style="width:902px;height:225px;text-align:left;">
+                    <div>
+                        <p id="foot-rankings">
+                            <a id="rank-img" href="http://www.usnews.com/rankings" target="_blank">
+                                <img style="border:none;" alt="Best U.S. News Rankings" src="http://static.usnews.com/static/images/swt/best-usn-rankings-gray.jpg"></img>
+                            </a>
+                            The 2013 “Best Law Firms” Rankings are part of U.S. News’s ongoing publication of rankings.<br />
+                            <a class="gold-link" href="http://www.usnews.com/rankings" target="_blank">See all U.S. News Rankings »</a>
+                        </p>
+                    </div>
+                    <ul>
+                        <li class="foot-title">Rankings Lists</li>
+                        <li>
+                            <a href="http://colleges.usnews.rankingsandreviews.com/best-colleges" target="_blank">Best Colleges</a>
+                        </li>
+                        <li>
+                            <a href="http://grad-schools.usnews.rankingsandreviews.com/best-graduate-schools" target="_blank">Best Grad Schools</a>
+                        </li>
+                        <li>
+                            <a href="http://health.usnews.com/best-hospitals" target="_blank">Best Hospitals</a>
+                        </li>
+                        <li>
+                            <a href="http://health.usnews.com/best-diet" target="_blank">Best Diets</a>
+                        </li>
+                        <li>
+                            <a href="http://travel.usnews.com/" target="_blank">Best Vacations</a>
+                        </li>
+                        <li>
+                            <a href="http://usnews.rankingsandreviews.com/cars-trucks/" target="_blank">Best Cars</a>
+                        </li>
+                        <li>
+                            <a href="http://www.usnews.com/education/best-high-schools" target="_blank">Best High Schools</a>
+                        </li>
+                        <li>
+                            <a href="http://health.usnews.com/top-doctors" target="_blank">Best Doctors</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="foot-title">U.S. News & World Report</li>
+                        <li>
+                            <a href="http://www.usnews.com/usnews/usinfo/about_usnews.htm" target="_blank">About U.S. News</a>
+                        </li>
+                        <li>
+                            <a href="http://www.usnews.com/info/features/contact" target="_blank">Contact Us</a>
+                        </li>
+                        <li>
+                            <a href="http://mediakit.usnews.com/" target="_blank">Advertising Info</a>
+                        </li>
+                        <li>
+                            <a href="http://www.usnews.com/info/features/masthead" target="_blank">Masthead</a>
+                        </li>
+                        <li>
+                            <a href="http://www.usnews.com/info/features/employment" target="_blank">Jobs</a>
+                        </li>
+                        <li>
+                            <a href="http://www.usnews.com/info/features/sitemap" target="_blank">Sitemap</a>
+                        </li>
+                        <li>
+                            <a id="twit-link" href="http://twitter.com/usnews" target="_blank">Twitter</a>
+                        </li>
+                        <li>
+                            <a id="face-link" href="http://www.facebook.com/usnewsandworldreport " target="_blank">Facebook</a>
+                        </li>
+                    </ul>
+                    <ul class="last-list">
+                        <li class="foot-title">Sections</li>
+                        <li>
+                            <a href="http://www.usnews.com/news/politics" target="_blank">Politics & Policy</a>
+                        </li>
+                        <li>
+                            <a href="http://www.usnews.com/education" target="_blank">Education</a>
+                        </li>
+                        <li>
+                            <a href="http://health.usnews.com/" target="_blank">Health</a>
+                        </li>
+                        <li>
+                            <a href="http://money.usnews.com/" target="_blank">Money</a>
+                        </li>
+                        <li>
+                            <a href="http://travel.usnews.com/" target="_blank">Travel</a>
+                        </li>
+                        <li>
+                            <a href="http://usnews.rankingsandreviews.com/cars-trucks/" target="_blank">Cars</a>
+                        </li>
+                        <li>
+                            <a href="http://www.usnews.com/science" target="_blank">Science</a>
+                        </li>
+                        <li>
+                            <a href="../../../../">Law</a>
+                        </li>
+                    </ul>
+                    <p id="foot-weekly">
+                        <a id="weekly-img" href="http://www.usnews.com/usnews/store/usnews_weekly_order.htm?src=subs_hph" target="_blank">
+                            <img src="../../../../Images/Footer/foot-weekly.png" style="border:none;" alt="U.S. News Weekly" />
+                        </a>
+                        Get all the last news, politics, opinion, and analysis U.S. News has to offer.<br />
+                        <a class="gold-link" href="http://www.usnews.com/usnews/store/usnews_weekly_order.htm?src=subs_hph" target="_blank">Subscribe to the Weekly »</a>
+                    </p>
+                    <div style="clear:both;"></div>
+                </div>
+                
+            </center>
+        </div>
+        <div id="foot-copyright" class="law-foot">
+            Copyright © 2012 U.S. News & World Report LP. Use of this Web site constitutes acceptance of our
+            <a href="http://www.usnews.com/info/features/terms" class="gold-link" target="_blank">Terms and Conditions/Privacy Policy</a>.
+        </div>
+    </div>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+function fn37749DB3_5E2BB4CB() { $('.rpLink.rpExpandable.rpExpanded').hide(); Sys.Application.remove_load(fn37749DB3_5E2BB4CB);}; Sys.Application.add_load(fn37749DB3_5E2BB4CB);function fn5E038023_6705A080() { $('#divFirmName').hide();; Sys.Application.remove_load(fn5E038023_6705A080);}; Sys.Application.add_load(fn5E038023_6705A080);Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadPanelBar, {"_skin":"Default","clientStateFieldID":"ctl00_cph_pbFirmComments_ClientState","collapseAnimation":"{\"duration\":450}","expandAnimation":"{\"duration\":450}","itemData":[{"items":[{"enabled":false},{"enabled":false},{"enabled":false}],"expanded":true}]}, {"itemClicking":doPanelToggle}, null, $get("ctl00_cph_pbFirmComments"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadAjaxPanel, {"clientEvents":{OnRequestStart:"",OnResponseEnd:""},"enableAJAX":true,"enableHistory":false,"links":[],"loadingPanelID":"","styles":[],"uniqueID":"ctl00$cph$RadAjaxPanel1"}, null, null, $get("ctl00_cph_RadAjaxPanel1"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadFormDecorator, {"clientStateFieldID":"ctl00_cph_RadFormDecorator1_ClientState","decoratedControls":15,"enabled":true,"skin":"Default"}, null, null, $get("ctl00_cph_RadFormDecorator1"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadWindow, {"_dockMode":false,"behaviors":4,"clientStateFieldID":"ctl00_cph_RadWindow1_ClientState","enableShadow":true,"formID":"aspnetForm","iconUrl":"","minimizeIconUrl":"","name":"RadWindow1","navigateUrl":"../../../../modal/profileinfo.aspx","reloadOnShow":true,"showContentDuringLoad":false,"skin":"WebBlue","visibleStatusbar":false}, null, null, $get("ctl00_cph_RadWindow1"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadWindowManager, {"clientStateFieldID":"ctl00_cph_RadWindowManager1_ClientState","enableShadow":true,"formID":"aspnetForm","iconUrl":"","minimizeIconUrl":"","name":"RadWindowManager1","reloadOnShow":true,"showContentDuringLoad":false,"skin":"Default","visibleStatusbar":false,"windowControls":"['ctl00_cph_RadWindow1']"}, null, {"child":"ctl00_cph_RadWindow1"}, $get("ctl00_cph_RadWindowManager1"));
+});
+//]]>
+</script>
+</form>
+</body>
+</html>

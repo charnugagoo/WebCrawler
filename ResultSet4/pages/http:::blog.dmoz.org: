@@ -1,0 +1,353 @@
+ <html>
+ <head>
+ 	<link href="/media/styles_mock.css" rel="stylesheet" type="text/css">
+ 	<title>DMOZ Blog</title>
+ 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://blog.dmoz.org/rss.xml" />
+ 	<script type="text/javascript">
+ 	 var searchFlag = 1;
+ 		function selTab(lnkObj){
+ 			prevLnk.style.fontWeight = "normal"
+ 			prevLnk.style.textDecoration = "underline"
+ 			prevLnk.style.color = "#c7efbb"
+ 			prevLnk = lnkObj;
+ 			lnkObj.style.fontWeight = "bold"
+ 			lnkObj.style.textDecoration = "none"
+ 			lnkObj.style.color = "#fff"
+ 		}
+ 		function goSearch(){
+ 			var formObj = document.dmozSearch
+ 			switch(searchFlag){
+ 				case 1:
+ 					window.location = "/search/?q=" + formObj.searchTxt.value
+ 					break
+ 				case 2:
+ 					window.location = "http://search.dmoz.org/cgi-bin/search?search=" + formObj.searchTxt.value
+ 					break
+ 				case 3:
+ 					window.location = "http://search.aol.com/aol/search?invocationType=dmoz-blog&query=" + formObj.searchTxt.value
+ 					break
+ 			}
+ 		}
+ 	</script>
+ </head>
+
+ <body>
+    <div id="outer-wrapper">
+ 	<table border="0" cellspacing="0" cellpadding="0" align="center" bgcolor=#ffffff style="height:1454px;border-left:1px solid #346a1e;border-right:1px solid #346a1e">
+ 	<tr>
+ 		<!-- <td class="left_bg"><table cellpadding=0 cellspacing=0 border=0><tr><td style="border-right:1px solid #346a1e"><img src="/media/DMOZ_blog_bg.gif"/></td></tr></table></td> -->
+ 		<td>
+ 	<table border="0" cellspacing="0" cellpadding="0" align="center" width="100%">
+ 	<tr>
+ 		<td class="header">
+ 			<form name="dmozSearch" method=post action="javascript:goSearch();">
+ 				<table border="0" cellspacing="0" cellpadding="0" align="center" width="100%">
+ 					<tr>
+ 						<td class="dmoz_blog"><a href="http://blog.dmoz.org/"><img src="/media/DMOZ_blog_logo.gif" border=0 alt="DMOZ Home" title="DMOZ Home"></a></td>
+ 						<td><img src="/media/search_l_bar.gif"></td>
+ 						<td>
+ 							<table border="0" cellspacing="0" cellpadding="0" class="search_tab_table" width="441">
+ 								<tr><td colspan="2" class="search_tab_options">&nbsp;<a href="javascript:void(0)" id=lnk1 onclick="searchFlag=1;selTab(this)" style="color:#c7efbb;text-decoration:none">DMOZ blog</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)" onclick="searchFlag=2;selTab(this)" style="color:#c7efbb;text-decoration:underline">DMOZ.org</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)" onclick="searchFlag=3;selTab(this)" style="color:#c7efbb;text-decoration:underline">Web</a></td></tr>
+
+ 								<tr><td colspan=2 class="search_tab_textbox"><input type="text" name="searchTxt" class="search_input" style="margin:0 0 0 1px;padding-bottom:0"> <input type="submit" value="SEARCH" class="button" style="width:70px;margin-left:3px"></td>
+ 								
+ 							</table>
+ 						</td>
+ 						<td><img src="/media/search_l_bar.gif"></td>
+ 						<td class="aol_search"><img src="/media/DMOZ_blog_searchlogo.gif"></td>
+ 					</tr>
+ 				</table>
+ 			</form>
+ 		</td>
+ 	</tr>
+ 	</table>
+
+ 			<table border="0" cellspacing="0" cellpadding="0" width=100%>
+ 			<tr height=4>
+ 				<td background="/media/gradient_grey.gif"></td>
+ 				<td background="/media/gradient_green_small.gif"></td>
+ 				<td background="/media/gradient_grey.gif" colspan=5></td>
+ 			</tr>
+ 			<tr>
+ 				<td width=9><img src="/media/spacer.gif" width="9" height=1/></td>
+ 				<td class="inner_left">
+ 				<!-- left content begins -->
+					<table border="0" cellspacing="0" cellpadding="0" width=100%>
+						<tr height="106px">
+							<td class="fsttd">
+								<div style="text-align:right"><img src="/media/DMOZ_blog_signup.gif"></div>
+								<div class="btext" style="margin:7px 0 0 8px;">Help build the largest human-<br>edited directory of the web.</div>
+								<div style="margin:4px 0 0 8px;"><a href="http://www.dmoz.org/help/become.html"><b>Find out how</b></a></div>
+								<div><img src="/media/spacer.gif width="204" height=1"/></div>
+							</td>
+						</tr>
+						<tr>
+							<td style="line-height:1px;background-color:#fff;width:204px;">&nbsp;</td>
+						</tr>
+
+						<tr height="22">
+							<td class="link1">
+								<a href="http://www.dmoz.org"><li type="disc" class="round"><b>Visit DMOZ.org</b></li></a>
+							</td>
+						</tr>
+						<tr>
+							<td style="line-height:1px;background-color:#fff;width:204px;">&nbsp;</td>
+						</tr>
+
+
+						<tr height="22">
+							<td class="link1">
+								<a href="http://www.dmoz.org/help/geninfo.html"><li type="disc" class="round"><b>Frequently Asked Questions</b></li></a>
+							</td>
+						</tr>
+						<tr>
+							<td style="line-height:6px;background-color:#fff;width:204px;">&nbsp;</td>
+						</tr>
+
+
+						<tr>
+							<td class="sectd">
+							<!--<b><a href="http://www.dmoz.org/help/geninfo.html">Frequently Asked Questions</a></b>
+									<div style="width:95%">
+										<div style="background-color:#ececec;align:center;width:100%;margin-top:7px"><img src="/media/hr.gif"></div>
+										<div style="background-color:#ffffff;align:center;width:100%;margin-bottom:11px"><img src="/media/hr.gif"></div>
+									</div>
+								-->
+								<div class="subhead">SUBSCRIBE</div>
+								<div class="btext">Enter your e-mail to receive notifications when there are new posts</div>
+								<form action="http://shootthebreeze.net/blogalert/index.php" method="post" ID="signupblogform">
+									<input type="hidden" name="formSubmitted" value="true">
+									<input type="hidden" name="fromBlog" value="true">
+									<input type="hidden" name="feedURL" value="http://blog.dmoz.org/rss.xml">
+									<nobr><input type="text" class="search_input" style="margin-right:1px;width:122px;padding-bottom:0" name="email" id="email">
+									<input type="submit" value="SIGN UP" class="button" style="width:60px"></nobr>
+									<div style="width:95%">
+										<div style="background-color:#ececec;align:center;width:100%;margin-top:15px"><img src="/media/hr.gif"></div>
+										<div style="background-color:#ffffff;align:center;width:100%;margin-bottom:10px"><img src="/media/hr.gif"></div>
+									</div>
+									<div class="fstimg"><a href="http://www.addthis.com/feed.php?pub=miavallo&h1=http://blog.dmoz.org/rss.xml&t1="><img src="/media/DMOZ_blog_rssfeed.gif"></a></div>
+									<div class="secimg"><a href="http://www.addthis.com/bookmark.php"><img src="/media/DMOZ_blog_bookmark.gif"></a></div>
+								</form>
+							</td>
+						</tr>
+					</table>
+					<div><img src="/media/spacer.gif" width="204" height=1/></div>
+ 				<!-- left content ends -->
+ 				</td>
+ 				<td width=20><img src="/media/spacer.gif" width="20" height=1/></td>
+ 				<td class="inner_mid">
+ 				<!-- center content begins -->
+					<div id="breadcrumb" style="padding-top:17px;padding-bottom:15px;"><a href="http://blog.dmoz.org">Back to Blog Main</a></div>
+					<div id="aboutDmoz">
+						<div class="head1">About DMOZ&nbsp;&nbsp;|&nbsp;&nbsp;Open Directory Project Blog</div>
+						Since 1998, the Open Directory Project has been the largest, most comprehensive human-edited directory of the Web.
+						It is constructed and maintained by a passionate, global community of volunteer editors.
+						<div style="background:url('/media/hr.gif') repeat-x center;margin:19px 0 21px 0"><img src="/media/hr.gif"/></div>
+					</div>
+					<div id="content">
+						<div id="p19879139"><div class="head2">Mar 14th 2011 6:33PM</div><div style="padding-bottom:3px"><a href="http://blog.dmoz.org/2011/03/14/categories-in-the-spotlight-march-edition/" rel="bookmark" style="font-family:verdana;color:#5a9541;font-size:14px;text-decoration:underline;font-weight:bold"><span id="pt19879139">Categories in the Spotlight, March Edition</span></a></div><div class="post"><div id="pc19879139">Hi Everyone!<br />
+<br />
+Today we're happy to bring you the first in an occasional series of posts which will highlight some DMOZ categories on popular, noteworthy and breaking news topics.<br />
+<br />
+Enjoy!<br />
+Emily <br />
+<br />
+- - - - - - - - - - - - - - -<br />
+<br />
+<strong>The 2011 Christchurch Earthquake and the 2011 Cricket World Cup</strong><br />
+An aftershock of the 2010 earthquake, the quake that struck the <a href="http://www.dmoz.org/Regional/Oceania/New_Zealand/Canterbury">Canterbury region</a> of New Zealand's South Island at 12:51 pm on 22 February 2011 local time was more destructive and deadlier than its predecessor. The epicenter of the 6.3-magnitude quake was two kilometers west of the port village of Lyttelton and ten kilometers southeast of <a href="http://www.dmoz.org/Regional/Oceania/New_Zealand/Canterbury/Christchurch">Christchurch</a>. Hundreds have been reported dead or missing and estimates of the damage exceed NZ$16 billion.<br />
+<br />
+Editor <a href="http://www.dmoz.org/public/profile?editor=bldarter">bldarter</a> has collected a comprehensive set of listings, including RSS feeds, covering the disaster and its aftermath: <a href="http://www.dmoz.org/Science/Earth_Sciences/Natural_Disasters_and_Hazards/Earthquakes/Past_Earthquakes/Christchurch_NZ_2011">Christchurch NZ 2011</a>.<br />
+<br />
+In an <a href="http://tvnz.co.nz/national-news/every-second-building-in-lyttelton-severely-damaged-4038816">interview</a>, Pete Dawson told Television New Zealand, "We'll rebuild. Of course, we will. We're resilient people, we're Cantabrians, you know. And we've got a World Cup to look forward to."<br />
+<br />
+As if on cue, <a href="http://www.dmoz.org/public/profile?editor=bldarter">bldarter</a> also provides DMOZ's <a href="http://www.dmoz.org/Sports/Cricket/ICC/Events/World_Cup">2011 Cricket World Cup</a> coverage.<br />
+<br />
+<strong>The 2010 Copiapo Mining Accident</strong><br />
+On August 5, 2010, the San Jose mine, 28 miles north of Copiapo, Chile collapsed trapping thirty-three miners 2,300 feet underground. On October 13, 2010, after sixty-nine days underground, all thirty-three miners were rescued.<br />
+<br />
+The story doesn't end there. The news media and a blogger bring us the miners' continuing stories: <a href="http://www.dmoz.org/Regional/South_America/Chile/Regions/Atacama/2010_Copiapo_Mining_Accident">2010 Copiapo Mining Accident.<br />
+</a><br />
+<strong>Dr. Horrible's Sing-Along Blog</strong><br />
+A musical comedy mini-series, it is the story of Dr. Horrible (<a href="http://www.dmoz.org/Arts/People/H/Harris,_Neil_Patrick">Neil Patrick Harris</a>) on his mission to become a true villain and join the elite Evil League of Evil, all while enamoured with his love interest Penny (Felicia Day), and impeded by his nemesis Captain Hammer (<a href="http://www.dmoz.org/Arts/Performing_Arts/Acting/Actors_and_Actresses/F/Fillion,_Nathan">Nathan Fillion</a>). In addition to the mini-series there is a series of comic books, some of which centre around the supporting characters.<br />
+<br />
+Directed by <a href="http://www.dmoz.org/Arts/People/W/Whedon,_Joss">Joss Whedon</a> and written during the 2007-2008 Writers Guild of America strike, the story was created as an inexpensive mini-series to show a professional production could be produced without the assistance of big corporations. Dr. Horrible's Sing-Along Blog was aired online July 15-19, 2008. Early the following year, a special in-character appearance aired during the 2009 Emmy Awards. <a href="http://www.dmoz.org/Arts/Television/Awards/Emmy_Awards">Emmy Award</a> winning, the series also won a Hugo award for Best Dramatic Presentation (Short Form), the People's Choice Awards USA for Favorite Online Sensation, and seven Streamy Awards.<br />
+<br />
+Enjoy the category <a href="http://www.dmoz.org/Arts/Television/Programs/Mini-Series/Dr._Horrible%27s_Sing-Along_Blog">Dr. Horrible's Sing-Along Blog</a>, created by editor <a href="http://www.dmoz.org/public/profile?editor=shadowlight">shadowlight</a>.<br />
+<br />
+<strong>Author Laura Hillenbrand</strong><br />
+Laura Hillenbrand's first book, <em>Seabiscuit: An American Legend (2001)</em> tells the account of <a href="http://www.dmoz.org/Sports/Equestrian/Racing/Famous_Racehorses/Seabiscuit">Seabiscuit</a>, the unlikely champion racehorse owned by a former bicycle mechanic, trained by reticent "Silent Tom", ridden by a jockey beset by bad luck and life-threatening injuries. Seabiscuit captured the hearts of Americans during the Great Depression. The bestselling book was made into a <a href="http://www.dmoz.org/Arts/Movies/Titles/S/Seabiscuit">movie</a> in 2003.<br />
+<br />
+Hillenbrand's second book, <em>Unbroken: A World War II Story of Survival, Resilience, and Redemption</em>, released in November, 2010, tells the story of Louis Zamperini, a runner whose Olympic aspirations were interrupted by <a href="http://www.dmoz.org/Society/History/By_Time_Period/Twentieth_Century/Wars_and_Conflicts/World_War_II">World War II</a>. A bombadier on a B-42, he survived a plane crash and was adrift in the Pacific Ocean for 47 days before being captured and held as a <a href="http://www.dmoz.org/Society/Military/POW-MIA/World_War_II">prisoner of war</a> until the war ended. The screen rights to the book, a New York Times bestseller and named top book of 2010 by Time, have been acquired by Universal Pictures.<br />
+<br />
+Find out more about this author who not only has written two bestsellers but done so while incapacitated by illness: <a href="http://www.dmoz.org/Arts/Literature/Authors/Non-fiction/Hillenbrand,_Laura">Laura Hillenbrand</a><br />
+<strong><br />
+Japan Earthquake</strong><br />
+Within hours of the disaster, editors had compiled listings of sites providing information about the <a href="http://www.dmoz.org/Science/Earth_Sciences/Natural_Disasters_and_Hazards/Earthquakes/">earthquake</a> and the <a href="http://www.dmoz.org/Science/Earth_Sciences/Natural_Disasters_and_Hazards/Tsunamis/">tsunami</a> it triggered, including news sites in Japan: <a href="http://www.dmoz.org/Science/Earth_Sciences/Natural_Disasters_and_Hazards/Earthquakes/Past_Earthquakes/Sendai%2C_Japan_2011/">Sendai, Japan 2011</a> and, thanks to afsitalia, 2011 - <a href="http://www.dmoz.org/World/Fran%C3%A7ais/Sciences/Sciences_de_la_Terre/Catastrophes_naturelles/2011_-_S%C3%A9isme_et_tsunami_au_Japon/">S&eacute;isme et tsunami au Japon</a>.</div></div><p class="byline"></p><!-- google_ad_section_end --><div class="postmeta"><!--ul><li class="readlink"></li> <li><a href="http://blog.dmoz.org/2011/03/14/categories-in-the-spotlight-march-edition/" rel="bookmark" title="Permanent link to this entry">Permalink</a></li> <li><a href="/forward/19879139/" title="Send this entry to a friend via email">Email this</a></li></li></ul> -->   Posted by <a href=/bloggers/emily/>Emily</a>&nbsp;&nbsp;|&nbsp;&nbsp;Comments <a class="commentslink" href="http://blog.dmoz.org/2011/03/14/categories-in-the-spotlight-march-edition/#comments" title="View reader comments on this entry">(53)</a><div class="hr"><img src="/media/hr.gif"/></div></div></div><div id="p19829192"><div class="head2">Feb 4th 2011 12:50PM</div><div style="padding-bottom:3px"><a href="http://blog.dmoz.org/2011/02/04/2010-editor-achievements/" rel="bookmark" style="font-family:verdana;color:#5a9541;font-size:14px;text-decoration:underline;font-weight:bold"><span id="pt19829192">2010 Editor &amp; Community Achievements</span></a></div><div class="post"><div id="pc19829192"><strong>International Growth &amp; Expansion</strong><br />
+<em>Expansion of World/Ukrainian</em><br />
+During 2010, the number of listed sites in the <a href="http://www.dmoz.org/World/Ukrainian">World/Ukrainian</a> branch increased by approximately 50% and Editor School was offered for the first time in this branch. Additionally, two editors attained high-level permissions in this area: one was granted access to the top level and the other received CatMod permissions. <br />
+<br />
+<em>Editor Promotions in World/Russian</em><br />
+The <a href="http://www.dmoz.org/World/Russian">World/Russian</a> branch promoted a team of senior editors (CatMod and Editall permission levels). These editors are <strong>ilyawww</strong>, <strong>raouf</strong>, <strong>tanstaaf1</strong>, <strong>vader</strong> and <strong>valeryiv</strong>. This is an important step for the Russian branch and ODP overall.<br />
+<br />
+<em>Addition of New Language Branches</em><br />
+Last year, <strong>salis</strong> created four new language branches including <a href="http://www.dmoz.org/World/Kyrgyz">World/Kyrgyz</a>, <a href="http://www.dmoz.org/World/O%27zbekcha">World/O'zbekcha</a>, <a href="http://www.dmoz.org/World/T%C3%BCrkmen%C3%A7e">World/T&uuml;rkmen&ccedil;e</a>, and <a href="http://www.dmoz.org/World/Uyghurche">World/Uyghurche</a>. In 2010, editors completed work to add <a href="http://www.dmoz.org/World/Bashkir/">World/Bashkir</a> to the directory, and this language was activated in January 2011.<br />
+<br />
+<strong>Tool Development Work</strong><br />
+The editor community builds and maintains tools to help improve editing processes. During 2010, editors <strong>chaos127</strong>, <strong>development</strong>, <strong>jtaylorj</strong>, <strong>plantrob</strong> and <strong>rpfuller</strong> all worked to upgrade critical editor tools to keep directory processes running smoothly.<br />
+<br />
+<strong>Personal Editor Milestones</strong><br />
+<em>Editor Anniversaries</em><br />
+We had a number of editors who celebrated their tenth anniversary with the directory in 2010. Congratulations on a decade of service go out to the following editors: <strong>albinfo</strong>, <strong>anthronet</strong>, <strong>bkalafut</strong>, <strong>boni</strong>, <strong>eddiep</strong>, <strong>edseward</strong>, <strong>ikw</strong>, <strong>jdaw1</strong>, <strong>kokopeli</strong>, <strong>liszt</strong>, <strong>mcowley</strong>, <strong>mngolden</strong>, <strong>motsa</strong>, <strong>ock</strong>, <strong>pvgool</strong>, <strong>rd232</strong>, <strong>sammy</strong>, <strong>smoorefu</strong>,<strong> stn77</strong> and <strong>sutty</strong>.<br />
+<br />
+<em>Special Thanks...</em><br />
+For the past two years, we've had several editors who have worked collaboratively with our AOL Staff team to provide an editorial perspective to our ongoing projects and processes. <strong>Photofox</strong>, <strong>plantrob</strong> and <strong>sthenbelle</strong>'s contributions have been invaluable, and we're very grateful that they have given additional time and effort as editor liaisons. <br />
+<strong><br />
+In Memoriam</strong><br />
+Sadly, editor <strong>cicka</strong> passed away in 2010. She was a Catmod in both <a href="http://www.dmoz.org/World/Srpski/">World/Srpski</a> and <a href="http://www.dmoz.org/World/Magyar/">World/Magyar</a>. Her contributions to the directory were numerous, and included opening a new Editor School for World/Srpski. She will be greatly missed.</div></div><p class="byline"></p><!-- google_ad_section_end --><div class="postmeta"><!--ul><li class="readlink"></li> <li><a href="http://blog.dmoz.org/2011/02/04/2010-editor-achievements/" rel="bookmark" title="Permanent link to this entry">Permalink</a></li> <li><a href="/forward/19829192/" title="Send this entry to a friend via email">Email this</a></li></li></ul> -->   Posted by <a href=/bloggers/emily/>Emily</a>&nbsp;&nbsp;|&nbsp;&nbsp;Comments <a class="commentslink" href="http://blog.dmoz.org/2011/02/04/2010-editor-achievements/#comments" title="View reader comments on this entry">(30)</a><div class="hr"><img src="/media/hr.gif"/></div></div></div><div id="p19773826"><div class="head2">Dec 22nd 2010 4:18PM</div><div style="padding-bottom:3px"><a href="http://blog.dmoz.org/2010/12/22/happy-holidays-from-dmoz/" rel="bookmark" style="font-family:verdana;color:#5a9541;font-size:14px;text-decoration:underline;font-weight:bold"><span id="pt19773826">Happy Holidays from DMOZ!</span></a></div><div class="post"><div id="pc19773826">Hi Everyone!<br />
+<br />
+The editor community has collaborated to prepare the following post to wish you Happy Holidays. We hope you enjoy and we look forward to seeing you in 2011!<br />
+<br />
+Emily <br />
+<br />
+- - - - - - - - - <br />
+<br />
+<img vspace="4" hspace="4" border="0" align="left" alt="" src="http://www.blogcdn.com/blog.dmoz.org/media/2010/12/mozziebells-1293037197.gif" />Happy Holidays to all our users from the staff and editors at DMOZ.<br />
+<br />
+This time of year is often the time for reflection of the year gone by. The highs and the lows, the joys and the pain of events that have passed through our lives.<br />
+<br />
+There definitely has been some doom and gloom throughout the year especially<br />
+with the global financial crisis but hopefully this may get better with the new<br />
+year for all of us.<br />
+<br />
+Why not research the traditions of Christmas and New Year by diving in and<br />
+looking at our categories and find out information about this time of year by<br />
+simply flicking through the sites we have on offer. For example, by just going<br />
+to Home/Cooking/Holidays/Christmas/ you will see "Eggnog@" This is a link to<br />
+Home/Cooking/Beverages/Eggnog/. If you needed to know about Eggnog, we<br />
+have 17 delicious recipes that will help get your festive party off to a great start.<br />
+<br />
+Here are some of our Yuletide categories:<br />
+<br />
+<a href="http://www.dmoz.org/Home/Cooking/Holidays/Christmas/">Home/Cooking/Holidays/Christmas/</a><br />
+<a href="http://www.dmoz.org/Home/Entertaining/Holidays/Christmas/">Home/Entertaining/Holidays/Christmas/</a><br />
+<a href="http://www.dmoz.org/Shopping/Holidays/Christmas">Shopping/Holidays/Christmas</a><br />
+<a href="http://www.dmoz.org/Society/Holidays/Christmas">Society/Holidays/Christmas</a><br />
+<a href="http://www.dmoz.org/Society/Holidays/New_Year">Society/Holidays/New_Year</a><br />
+<a href="http://www.dmoz.org/Kids_and_Teens/People_and_Society/Holidays_and_Special_Days/Christmas/">Kids_and_Teens/People_and_Society/Holidays_and_Special_Days/Christmas/</a><br />
+<a href="http://www.dmoz.org/Kids_and_Teens/International/Fran%C3%A7ais/Soci%C3%A9t%C3%A9/F%C3%AAtes/No%C3%ABl/">Kids_and_Teens/International/Fran&ccedil;ais/Soci&eacute;t&eacute;/F&ecirc;tes/No&euml;l/</a><br />
+<a href="http://www.dmoz.org/Kids_and_Teens/International/Espa%C3%B1ol/Sociedad_y_gente/Festividades/Navidad/">Kids_and_Teens/International/Espa&ntilde;ol/Sociedad_y_gente/Festividades/Na vidad/</a><br />
+<a href="http://www.dmoz.org/Kids_and_Teens/International/Japanese/%E4%BA%BA%E3%81%A8%E7%A4%BE%E4%BC%9A/%E4%B8%80%E5%B9%B4%E3%81%AE%E8%A1%8C%E4%BA%8B/%E3%82%AF%E3%83%AA%E3%82%B9%E3%83%9E%E3%82%B9/">Kids_and_Teens/International/Japanese/人と社会/一年の行事/ク リスマス/</a><br />
+<a href="http://www.dmoz.org/Kids_and_Teens/International/%C4%8Cesky/Lid%C3%A9_a_spole%C4%8Dnost/Sv%C3%A1tky_a_tradice/V%C3%A1noce/">Kids_and_Teens/International/Česky/Lid&eacute;_a_společnost/Sv&aacute;tky_a_trad ice/V&aacute;noce/</a><br />
+<a href="http://www.dmoz.org/World/Catal%C3%A0/Arts_i_cultura/Tradicions/Festes_anuals/Nadal">World/Catal&agrave;/Arts_i_cultura/Tradicions/Festes_anuals/Nadal</a><br />
+<a href="http://www.dmoz.org/World/Chinese_Simplified/%E7%A4%BE%E4%BC%9A/%E8%8A%82%E5%81%87%E6%97%A5/%E5%9C%A3%E8%AF%9E%E8%8A%82">World/Chinese_Simplified/社会/节假日/圣诞节</a><br />
+<a href="http://www.dmoz.org/World/%C4%8Cesky/Spole%C4%8Dnost/Sv%C3%A1tky_a_tradice/V%C3%A1noce">World/Česky/Společnost/Sv&aacute;tky_a_tradice/V&aacute;noce</a><br />
+<a href="http://www.dmoz.org/World/Dansk/Samfund/H%C3%B8jtider_og_m%C3%A6rkedage/Jul">World/Dansk/Samfund/H&oslash;jtider_og_m&aelig;rkedage/Jul</a><br />
+<a href="http://www.dmoz.org/World/Deutsch/Gesellschaft/Fest-_und_Feiertage/Weihnachten/">World/Deutsch/Gesellschaft/Fest-_und_Feiertage/Weihnachten/</a><br />
+<a href="http://www.dmoz.org/World/Espa%C3%B1ol/Sociedad/Festividades/Navidad">World/Espa&ntilde;ol/Sociedad/Festividades/Navidad</a><br />
+<a href="http://www.dmoz.org/World/Fran%C3%A7ais/Soci%C3%A9t%C3%A9/F%C3%AAtes_et_jours_f%C3%A9ri%C3%A9s/No%C3%ABl">World/Fran&ccedil;ais/Soci&eacute;t&eacute;/F&ecirc;tes_et_jours_f&eacute;ri&eacute;s/No&euml;l</a><br />
+<a href="http://www.dmoz.org/World/Italiano/Societ%C3%A0/Festivit%C3%A0/Natale">World/Italiano/Societ&agrave;/Festivit&agrave;/Natale</a><br />
+<a href="http://www.dmoz.org/World/Japanese/%E7%A4%BE%E4%BC%9A/%E6%96%87%E5%8C%96/%E7%A5%9D%E7%A5%AD%E6%97%A5%E3%83%BB%E5%B9%B4%E4%B8%AD%E8%A1%8C%E4%BA%8B/%E3%82%AF%E3%83%AA%E3%82%B9%E3%83%9E%E3%82%B9">World/Japanese/社会/文化/祝祭日・年中行事/クリスマス</a><br />
+<a href="http://www.dmoz.org/World/Nederlands/Maatschappij/Feestdagen/Kerstmis">World/Nederlands/Maatschappij/Feestdagen/Kerstmis</a><br />
+<a href="http://www.dmoz.org/World/Svenska/Samh%C3%A4lle/Helger/Jul">World/Svenska/Samh&auml;lle/Helger/Jul</a><br />
+<a href="http://www.dmoz.org/World/Thai/%E0%B8%AA%E0%B8%B1%E0%B8%87%E0%B8%84%E0%B8%A1/%E0%B8%A7%E0%B8%B1%E0%B8%99%E0%B8%AB%E0%B8%A2%E0%B8%B8%E0%B8%94%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%88%E0%B8%B3%E0%B8%9B%E0%B8%B5/%E0%B8%84%E0%B8%A3%E0%B8%B4%E0%B8%AA%E0%B8%A1%E0%B8%B2%E0%B8%AA%E0%B8%95%E0%B9%8C/">World/Thai/สังคม/วันหยุดประจำปี/ คริสมาสต์/</a><br />
+<br />
+You will notice how much a global communtiy the ODP is by the way we tie<br />
+categories of a similar nature together when they are when they are in completely<br />
+different languages.<br />
+<br />
+Take for instance the category at Society/Holidays/Christmas. If you look under<br />
+the "See Also" group of links (which are categories in the English language that<br />
+are related to this one) you will see immediately that we have a similar category<br />
+in 12 other languages. These languages are Catalan, Chinese Simplified, Czech,<br />
+Danish, Dutch, French, German, Italian, Japanese, Spanish, Swedish and Thai.<br />
+These links are here for your convenience and all you need to do to see what we<br />
+have in the other language is click on its name and you will be taken right to it.<br />
+If you know of some sites that could be added to any of the above categories, please<br />
+feel free to suggest them, or even better why not think about joining us and become<br />
+an editor. If you feel you would like to become part of the community just fill in the<br />
+application form and we will have a look at it as soon as possible.<br />
+<br />
+As you can see from the number of categories above, and the plethora of different<br />
+languages, DMOZ is a multi-cultural, worldwide community that prides itself on trying<br />
+to give representation to all creeds, languages and cultures. That job is certainly not<br />
+finished, and it may never be, but we love to give it a go.<br />
+<br />
+There are many other religious and non-religious festivals all around the world that<br />
+may not be as fully represented as they could be by the directory. It would be great<br />
+to have some input for these. Would like to join us to help us with that? We're always<br />
+eager to welcome new editors to help build and maintain categories, especially in areas<br />
+of the directory that are less developed. Just find a category that has your particular<br />
+interest, and click the become an editor link near the top of the page.<br />
+<br />
+All that is left to do is again wish all our users a Happy Christmas and a prosperous New<br />
+Year and to assure you that we are all looking forward to a productive editing year at<br />
+DMOZ.</div></div><p class="byline"></p><!-- google_ad_section_end --><div class="postmeta"><!--ul><li class="readlink"></li> <li><a href="http://blog.dmoz.org/2010/12/22/happy-holidays-from-dmoz/" rel="bookmark" title="Permanent link to this entry">Permalink</a></li> <li><a href="/forward/19773826/" title="Send this entry to a friend via email">Email this</a></li></li></ul> -->   Posted by <a href=/bloggers/emily/>Emily</a>&nbsp;&nbsp;|&nbsp;&nbsp;Comments <a class="commentslink" href="http://blog.dmoz.org/2010/12/22/happy-holidays-from-dmoz/#comments" title="View reader comments on this entry">(42)</a><div class="hr"><img src="/media/hr.gif"/></div></div></div><div id="p19593366"><div class="head2">Aug 16th 2010 6:00AM</div><div style="padding-bottom:3px"><a href="http://blog.dmoz.org/2010/08/16/dmoz-planned-system-outage-notification-round-3/" rel="bookmark" style="font-family:verdana;color:#5a9541;font-size:14px;text-decoration:underline;font-weight:bold"><span id="pt19593366">DMOZ Planned System Outage Notification, Round 3</span></a></div><div class="post"><div id="pc19593366">Over the next three days, we will be making additional upgrades to   DMOZ.  As with the previous planned outage, we will be taking some parts  of the directory offline so that we can complete the work.  While the  directory content will stay on view throughout the process,  all  directory submissions will be disabled from <em><strong>Monday, August 16 - Wednesday, August 18, 2010</strong></em>. The following functionality will be unavailable throughout  this planned outage:
+<ul>
+    <li>Site suggestions,</li>
+    <li>Site update requests,</li>
+    <li>New editor applications,</li>
+    <li>Editor &amp; staff feedback, and</li>
+    <li>Public abuse reports.</li>
+</ul>
+Neither the <a target="_blank" href="http://www.resource-zone.com/">Resource  Zone</a> public forums nor the <a target="_blank" href="http://forums.dmoz.org/">DMOZ editor forums</a> will be impacted by  this outage. We will provide any additional updates about this outage  to the public via this blog.<br />
+<br />
+Thank you again for your patience as we work to upgrade the DMOZ directory!<br />
+Emily</div></div><p class="byline"></p><!-- google_ad_section_end --><div class="postmeta"><!--ul><li class="readlink"></li> <li><a href="http://blog.dmoz.org/2010/08/16/dmoz-planned-system-outage-notification-round-3/" rel="bookmark" title="Permanent link to this entry">Permalink</a></li> <li><a href="/forward/19593366/" title="Send this entry to a friend via email">Email this</a></li></li></ul> -->   Posted by <a href=/bloggers/emily-kayser/>Emily Kayser</a>&nbsp;&nbsp;|&nbsp;&nbsp;Comments <a class="commentslink" href="http://blog.dmoz.org/2010/08/16/dmoz-planned-system-outage-notification-round-3/#comments" title="View reader comments on this entry">(57)</a><div class="hr"><img src="/media/hr.gif"/></div></div></div><div id="p19560030"><div class="head2">Jul 19th 2010 1:49PM</div><div style="padding-bottom:3px"><a href="http://blog.dmoz.org/2010/07/19/dmoz-planned-system-outage-notification-round-2/" rel="bookmark" style="font-family:verdana;color:#5a9541;font-size:14px;text-decoration:underline;font-weight:bold"><span id="pt19560030">DMOZ Planned System Outage Notification, Round 2</span></a></div><div class="post"><div id="pc19560030">Over the next three days, we will be making additional upgrades to  DMOZ.  As with the previous planned outage, we will be taking some parts of the directory offline so that we can complete the work.  While the directory content will stay on view throughout the process,  all directory submissions will be disabled from <em><strong>Tuesday, July 20 - Thursday, July 22, 2010</strong></em>. The following functionality will be unavailable throughout  this planned outage:
+<ul>
+    <li>Site suggestions,</li>
+    <li>Site update requests,</li>
+    <li>New editor applications,</li>
+    <li>Editor &amp; staff feedback, and</li>
+    <li>Public abuse reports.</li>
+</ul>
+Neither the <a href="http://www.resource-zone.com/" target="_blank">Resource  Zone</a> public forums nor the <a href="http://forums.dmoz.org/" target="_blank">DMOZ editor forums</a> will be impacted by  this outage. We will provide any additional updates about this outage  to the public via this blog.<br />
+<br />
+Thank you again for your patience as we work to upgrade the DMOZ directory!<br />
+Emily</div></div><p class="byline"></p><!-- google_ad_section_end --><div class="postmeta"><!--ul><li class="readlink"></li> <li><a href="http://blog.dmoz.org/2010/07/19/dmoz-planned-system-outage-notification-round-2/" rel="bookmark" title="Permanent link to this entry">Permalink</a></li> <li><a href="/forward/19560030/" title="Send this entry to a friend via email">Email this</a></li></li></ul> -->   Posted by <a href=/bloggers/emily-kayser/>Emily Kayser</a>&nbsp;&nbsp;|&nbsp;&nbsp;Comments <a class="commentslink" href="http://blog.dmoz.org/2010/07/19/dmoz-planned-system-outage-notification-round-2/#comments" title="View reader comments on this entry">(26)</a><div class="hr"><img src="/media/hr.gif"/></div></div></div><p align=center><a href="/page/2/">Next Page</a> ></p>																	</div>
+					<div class="copyright">Copyright &copy; 1998-2007 Netscape</div>
+ 					<div><img src="/media/spacer.gif" width="514" height=1/></div>
+ 				<!-- center content ends -->
+ 				</td>
+ 				<td width=20><img src="/media/spacer.gif" width="20" height=1/></td>
+ 				<td class="inner_right">
+ 					<div style="background-color:#F7F7F7;border:1px solid #eee;border-top:0">
+ 						<table cellpadding=10>
+ 						<tr><td>
+														 						</td></tr></table>
+ 					</div>
+ 					<div><img src="/media/spacer.gif" width="204" height=1/></div>
+ 				<!-- right content ends -->
+ 				</td>
+ 				<td width=9><img src="/media/spacer.gif" width="9" height=1/></td>
+ 			</tr>
+ 		</table>
+ 	</td>
+ 	<!-- <td class="left_bg"><table cellpadding=0 cellspacing=0 border=0><tr><td style="border-left:1px solid #346a1e"><img src="/media/DMOZ_blog_bg.gif"/></td></tr></table></td> -->
+ 	</tr>
+ </table>
+ </div>
+
+ 	<script type="text/javascript">
+ 	 var prevLnk = document.getElementById("lnk1")
+ 		prevLnk.style.fontWeight = "bold"
+ 		prevLnk.style.textDecoration = "none"
+ 		prevLnk.style.color = "#fff"
+ 		if(window.location == "http://blog.dmoz.org/")
+ 		{
+ 			document.getElementById("aboutDmoz").style.display = "";
+ 			document.getElementById("breadcrumb").style.display = "none";
+ 		}
+ 		else
+ 		{
+ 			document.getElementById("aboutDmoz").style.display = "none";
+ 			document.getElementById("breadcrumb").style.display = "";
+ 		}
+ 	</script>
+ </body>
+</html>
+<script type="text/javascript">
+<!--
+document.write('<scr' + 'ipt src="/traffic/' + '?t=js&bv=&os=&tz=&lg=&rv=&rsv=&pw=%2F&cb=2076808601" type="text/javascript"></scr' + 'ipt>');
+// -->
+</script><noscript><img src="/traffic/?t=px&bv=JavaScript+Disabled&os=&tz=default&lg=&rv=&rsv=&pw=%2F&cb=842198969" alt="the end" width="1" height="1"border="0" /></noscript>

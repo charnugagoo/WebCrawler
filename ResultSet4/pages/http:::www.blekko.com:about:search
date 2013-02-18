@@ -1,0 +1,327 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+<script type="text/javascript">
+var t_cst = new Date().getTime();
+var t_ctt = 0;
+</script>
+<meta http-equiv="X-UA-Compatible" content="IE=9" /> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<title>Searching with blekko | blekko</title>
+<meta name="description" content="blekko&#39;s search features and slahstags explained" />
+<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="http://a.blekko-img.com/045/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="http://a.blekko-img.com/045/favicon.ico" type="image/x-icon" />
+<meta name="application-name" content="blekko" />
+<meta name="msapplication-starturl" content="https://blekko.com" />
+<meta name="msapplication-navbutton-color" content="#3480C0" />
+<meta name="msapplication-window" content="width=1024;height=768" />
+<link rel="apple-touch-icon" href="http://a.blekko-img.com/045/apple-touch-icon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="/s/blekko.xml" title="blekko" />
+<link rel="search" type="application/opensearchdescription+xml" href="/s/blekko_https.xml" title="blekko (https)" />
+<link type="text/css" rel="stylesheet" href="/s/theme21/style.css?v=b09af990" />
+<link type="text/css" rel="stylesheet" href="http://a.blekko-img.com/045/theme21/2e36bc6086e0ffbc_nonserp.css" />
+<script type="text/javascript">
+<!-- 
+-->
+</script>
+</head>
+<body id="searchResults" onload="blekko_onload();">
+<div id="header" class="gradBlack"> 
+<div class="top-container">
+<div class="leftbar">
+<h1 id="logo" title="blekko"><a href="/" title="Go to Blekko Homepage">blekko</a></h1>
+</div>
+<div class="main">
+<form id="searchform" name="searchForm" action="/ws/">
+<input type="hidden" id="noslashq" value="" />
+<input type="text" id="searchBox" autofocus="autofocus" autocomplete="off" spellcheck="false" type="text" name="q" value="" />
+<span class="clearSearch pointer" onclick="clearSearch();">x</span>
+<button type="submit" class="red-button"  href="javascript:void(0);" id="search-submit" ><span class="search-icon"></span></button>
+</form>
+</div>
+</div>
+<div class="rightbar trebuchet">
+<div id="user-links">
+<a href="http://help.blekko.com/">HELP</a> | 
+<a href="javascript: togglePopID('prefsPane', 'pref-link', set_switches, '');" id="pref-link" title="change your preferences">PREFS</a> |
+<a href="javascript:void(0);" onclick="window.location.href='/login?d='+encodeURIComponent(window.location.href);; return false;" id="login">LOGIN</a>
+</div>
+</div>
+</div> 
+<div id="AutocompleteInjectDiv"  class="autocomplete"></div>
+<div id="prefsPane" class="hide pop-shadow">
+<a class="fr close" onclick="togglePopID('prefsPane', 'pref-link', set_switches, '');">x</a>
+<div class="inside">
+<div id="userPrefs">
+<h4>Search Preference Settings</h4>
+<hr class="clear pt"/>
+<div id="viewsettings_pref">
+<p class="mt mb5 pointer" onclick="collapseMenu('viewsettings_pref', this);" id="viewSetL">View settings <span class="arrow-close"></span></p>
+<div class="collapse hide " >
+<input  name="tag_newtab" id="tag_newtab" class="switchClass" type="checkbox" onclick="toggle_new_tab( $(this) );" /> <label for="tag_newtab">Open result in a new window</label> 
+<br/>
+<input  name="fixtopbar" id="fixtopbar" class="switchClass" type="checkbox" onclick="toggle_topsearch( $(this) );" /> <label for="fixtopbar">Don't fix the top bar</label> 
+<br/>
+<br/>
+<select name="res_per_page" id="res_per_page" onchange="set_cookie($(this).attr('id'),$(this).val(), 50); " class="mt5" >
+<option value="10" selected="selected">Display 10 Results</option>
+<option value="20" >Display 20 Results</option>
+<option value="50" >Display 50 Results</option>
+</select>
+</div>
+</div>
+<hr/>
+<div id="privacysettings_pref">
+<p class="mt mb5 pointer" onclick="collapseMenu('privacysettings_pref', this);" id="viewPrivacyL">Privacy settings <span class="arrow-open"></span></p>
+<div class="collapse " >
+<input  name="tag_superprivacy" id="tag_superprivacy" class="switchClass" type="checkbox" onclick="setSuperPrivacy(this, '');"/> <label for="tag_superprivacy">SuperPrivacy&trade; </label>
+<br/>
+<div class="mt5 ml">
+<input  name="tag_nofacebook" id="tag_nofacebook"  class="switchClass privacy" type="checkbox" onclick="noFacebookChecked(this,'')"  /> <label for="tag_nofacebook">No Facebook features</label>
+<br/>
+<input  name="tag_noads" id="tag_noads"  class="switchClass privacy" type="checkbox"  /> <label for="tag_noads">No ads</label>
+<br/>
+<input  name="tag_alwayshttps" id="tag_alwayshttps" class="switchClass privacy" type="checkbox"/> <label for="tag_alwayshttps">Always Use HTTPS on blekko.com</label>
+<br/>
+<input  name="tag_httpspreferred" id="tag_httpspreferred" class="switchClass privacy" type="checkbox" /> <label for="tag_httpspreferred">HTTPS Preferred&trade; </label>
+<br/>
+<input  name="tag_nodym" id="tag_nodym" class="switchClass privacy" type="checkbox" /> <label for="tag_nodym">No External <a class="tTip" style="border-bottom:1px dotted #2B43AD; margin:0px"  title="DYM = Did you mean">DYM</a></label>
+<br/>
+<input  name="tag_lesslogging" id="tag_lesslogging" class="switchClass privacy" type="checkbox" /> <label for="tag_lesslogging">Less logging</label>
+</div>
+</div>
+</div>
+<div class="clear">
+</div>
+<div class="clear">&nbsp;</div> 
+<select name="safesearch" id="safesearch" onchange="set_preference(this.name,this.value)" class="fl">
+<option value="1" >Safe Search: Strict</option>
+<option value=""  selected="selected" >Safe Search: Moderate</option>
+<option value="0" >Safe Search: Disabled</option>
+</select>
+<a href="javascript:togglePopID('prefsPane', 'pref-link', set_switches, '');" class="save fr"><small>save settings</small> <span class="save-icon"></span></a>
+<div class="clear">&nbsp;</div>
+</div>
+</div>
+</div>
+<div id="content">
+<div id="top-spacer"></div>
+<div class="container">
+<div id="main" class="main no-left-col">
+<div id="usertags" class="main"></div>
+<div id="above-results">
+<div id="onebox">
+<div  id="shopping-com"></div>
+<div  id="onedate"></div>
+<div  id="wa-onebox"></div>
+</div>
+<div class="clear"></div>
+<div id="needLogin"  class="  hide round10 pop-shadow">
+<span onclick="javascript:$('#needLogin').hide();" class="close" style="cursor:pointer;">x</span>
+<div class="round5 inside">
+<p id="needLoginMsg"></p><br />
+<a href="/login" class="login fl"><strong>proceed to login</strong></a>&nbsp;&nbsp; <a href="/join" class="fr"><strong>sign up with blekko</strong></a>
+<div class="clear"></div>
+</div>
+</div>		
+</div>
+<div id="cli"><div id="aboutBlekko">
+<h2>Searching with blekko</h2>
+<p>blekko search results provide information and tools you can use to make decisions and improve your own search experience.</p>
+<img src="http://a.blekko-img.com/045/images/about/result3.png" />
+<hr/>
+<h2>Content Box</h2>
+<div>
+<p>Some searches will have a content box that appears above the search results. This box gives a quick snippet of information depending on the slashtag used. </p>
+<img src="http://a.blekko-img.com/045/images/about/weather.png" alt="screenshot" />
+<strong class="bFeature red">Examples:</strong>
+<p><a href="/ws/san+jose%2C+ca+/weather" target="_new">san jose, ca /weather</a> |
+<a href="/ws/green+lantern+/movies" target="_new">green lantern /movies</a> |
+<a href="/ws/berkeley+/map" target="_new">berkeley /map</a> |
+<a href="/ws/verisimilitude+/define" target="_new">verisimilitude /define</a></p>
+</div>
+<hr/>
+<h2>Top Search Area</h2>
+<p>The <strong>Top bar</strong> includes the search box and the slashtag bar. The top bar is fixed in place by default but you can change this in prefs.</p>
+<img src="http://a.blekko-img.com/045/images/about/topbar2.png" alt="screenshot" />
+<p><strong class="font15">Search box</strong> – enter your query and slashtags and hit “search” to search blekko, e.g., <a href="/ws/alpha+dog+/movies" target="_new">alpha dog /movies</a>. </p>
+<p><strong class="font15"># of results</strong> – the number of results are shown. If a slashtag was used, there will be a link to that slashtag. </p>
+<p><strong class="font15">Sort options</strong> – <strong>/relevance</strong> is the usual default option, but you can change the sort order to /date or /likes. <strong>/date</strong> will order the results by date while <strong>/likes</strong> will only show results from you and your friends’ Facebook likes.</p>
+<p><strong class="font15">Slashtags</strong> – suggested based on your query. You can also access your own slashtags by clicking on the arrow next to your username. </p>
+<p><strong class="font15">Share</strong> – click the drop down to share the search result page on either Facebook or Twitter.</p>
+<hr/>
+<h2>Slashtag of the day</h2>
+<p>A <strong>Slashtag of the day</strong> is chosen for each day of the year. Most are chosen based on events happening that day. You can click on the slashtag of the day to pivot your search to include that slashtag.</p>
+<p>A sample query is shown when clicking 'slashtag of the day' in the right column.</p> 
+<p><img src="http://a.blekko-img.com/045/images/about/stotd1.png" /></p>
+<p>You can also search for other slashtags by topic or user. Enter a topic or username and hit the return key on your keyboard. This will bring up a list of slashtags found for that query.</p>
+<p>Click on the ‘<a href="/tag/show" target="_new">slashtag directory</a>’ link to browse our list of slashtags. </p>
+<hr />
+<h2>Preferences</h2>
+<div>
+<img src="http://a.blekko-img.com/045/images/about/prefs1.png" alt="preferences" class="ml fr"/>
+<p>Clicking on <strong>prefs</strong> in the upper right hand corner brings up search preference settings.</p>
+<p><strong class="font15">View settings:</strong> Control your view of the search results page. You can set results to open in a new window, remove Facebook likes, change the number of results shown, and more.</p>
+<p><strong class="font15">Privacy settings:</strong> blekko allows you to choose a level of privacy that you are comfortable with. Choosing SuperPrivacy will check all the privacy features. You can choose to enable one or more of each of these options individually. Click on the privacy tab for more information about each option.</p>
+<p><strong class="font15">Safe Search:</strong> You can choose to disable Safe Search, keep it set to Moderate or set it to Strict. Setting it to Strict will remove some results from your searches.</p>
+</div>
+</div>
+</div>
+<div class="clear">&nbsp;</div>
+</div>
+<div id="rightbar" class="rightbar">
+<div class="rightbar-inside">
+<div class="leftColList mt">
+<h4>How to use blekko</h4>
+<ul>
+<li><a href="/about"> introduction to blekko</a></li>
+<li><a href="/about/search"><span class="arrow"></span> searching with blekko</a></li>
+<li><a href="/about/slashtags"> slashtags</a></li>
+<li><a href="/about/privacy"> privacy settings</a></li>
+<li><a href="/about/facebook"> facebook friends</a></li>
+<li><a href="/about/more"> more information...</a></li>
+</ul>
+</div>
+<hr />
+<div class="leftColList mt">
+<h4>Information about blekko</h4>
+<ul>
+<li><a href="/about/press-videos"> videos</a></li>
+<li><a href="/about/management"> management</a></li>
+<li><a href="/about/press-articles"> blekko in the news</a></li>
+<li><a href="/about/investors"> investors</a></li>
+<li><a href="/about/blekkojobs"> jobs</a></li>
+<li><a href="//help.blekko.com/">help</a></li>
+</ul>
+</div>
+<hr/>
+<p>&nbsp;</p>
+<a href="javascript:togglePopID('fileBugBox');" class="grey">file bugs/feedback</a>
+<div id="fileBugBox" class="round10 pop-shadow hide">
+<span class="close" onclick="togglePopID('fileBugBox');">x</span>
+<div class="inside round5">
+<h2 class="fl">file a bug/give feedback</h2>
+<div class="clear mt">
+<label for="file_bug_email" class="fl">Email:</label>
+<input id="file_bug_email" type="text"  class="input"><em>(optional)</em>
+</div>
+<div class="clear mt">
+<label for="file_bug_desc" class="">Description:</label><br/>
+<textarea id="file_bug_desc" cols="24" rows="5" class="input" ghost_text="describe the bug..."></textarea><br />
+</div>
+<div class="clear mt">
+<input type="submit" value="submit bug to blekko" onclick="submit_bug_report('')" style="float:right;" />
+<a href="javascript:togglePopID('fileBugBox');" class="note">cancel</a>
+</div>
+<div id="file_bug_st" class="alertMsgTop" style="display: none"></div>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> 
+<div id="footer">
+<span class="copyright">&copy; 2013 blekko, inc.</span>
+<p>
+<a href="/about/contact">contact</a>&nbsp;
+<a href="http://blog.blekko.com/">blog</a>&nbsp;
+<a href="/about">about</a>&nbsp;
+<a href="/about/privacy-policy">privacy policy</a>&nbsp;
+<a href="/about/terms">terms &amp; conditions</a>&nbsp;
+<a href="/about/blekkojobs">jobs</a>&nbsp;
+<a href="/about/webmaster">webmaster</a>&nbsp;
+<a href="http://help.blekko.com/">help</a>
+&nbsp;<a href="http://twitter.com/blekko">follow @blekko on twitter</a>
+</p>
+</div>
+<script type="text/javascript" src="http://a.blekko-img.com/045/f4176bf76328834c_blekko.js"></script>
+<script type="text/javascript">
+$("a.UrlTitleLine").bind("click.replaceHref", clickResult);
+t_attach_click( 'a.UrlTitleLine' );
+t_attach_load( window );
+t_attach_unload( window );
+var server_total = 1;
+var q ="";
+var noslash_q ="";
+avatar_upload_id = "";
+serp_results_html = new Array();
+var blekko_initialized;
+function blekko_onload() {
+if ( blekko_initialized ) return;
+blekko_initialized = true;
+$("#searchBox").val( $("#searchBox").val()).focus();
+lesslogging = 0;
+// onedate
+$.ajax({
+url: "/api/onedate?f=html&q=",
+type: "GET",
+dataType: "html",
+success: function(result) {
+if (result.length > 3){
+$("#onedate").html(result);
+}
+return false;
+}
+});
+var windowHeight = $(window).height();
+if ( $("#main").height() < windowHeight){
+var newHeight = windowHeight - 84; //84 = top 52px and bottom 32px
+$("#main").css("min-height", newHeight + "px" );
+}
+init_search_settings();
+check_avatar_upload();
+$(".pop-shadow").draggable({cancel:"#myTagsChecks, .scroller, input, option, textarea, select"});
+//ad user 
+set_cookie("search_count", 1, 365 );
+$('.tTip').tinyTips('title');
+}
+var shareHtml="<div id=\"share-script\"></div><div class=\"fl tc line-right share\">    Facebook<br/>    </div><div class=\"fl tc share\">    Twitter<br/>                        <iframe src=\"http://platform.twitter.com/widgets/tweet_button.html?url=http%3A%2F%2Fblekko.com&via=blekko&count=none&text=blekko %7C \" id=\"button_twitter\" style=\"width:55px; height:20px;\" allowtransparency=\"true\" frameborder=\"0\" scrolling=\"no\" ></iframe></div><!-- <hr class=\"clear\"/>--><div class=\"clear mb\" id=\"share-icons\"></div>";
+set_ptt_cookie();
+</script>
+<div id="fb-root"></div>
+<script type="text/javascript">
+window.fbAsyncInit = function() {
+FB.init({
+appId  : 169076986451072,	
+channelUrl : document.location.protocol + '//blekko.com/s/fb-channel.html',
+status : true,
+cookie : true,
+logging: false,
+xfbml  : true
+});
+FB.getLoginStatus(function(response) {
+if ( response.status != 'connected' ) {
+$("#fbrelogin").show();
+} else if ( response.authResponse.accessToken ) {
+var at = response.authResponse.accessToken + '&uid=' + response.authResponse.userID;
+set_cookie( 'bfbat_169076986451072', at, 1 );
+}
+try {
+$('body').trigger('fb.ready'); 
+} catch (err) {}
+});
+};
+var facebook_js_loaded = 0;
+function load_fb() {
+if (facebook_js_loaded != 1) {
+facebook_js_loaded = 1;
+var e = document.createElement('script'); e.async = true;
+e.src = document.location.protocol +
+'//connect.facebook.net/en_US/all.js';
+document.getElementById('fb-root').appendChild(e);
+}
+};
+var fb_id="";
+var fb_appid="169076986451072";
+var fb_access_token="";
+var fb_perms="offline_access,user_likes,user_location,friends_likes,friends_location,user_checkins,friends_checkins,publish_stream";
+</script>
+<script type="text/javascript">
+t_ctt = new Date().getTime() - t_cst;
+</script>
+<img src="/a/timg/230d984f4ec07d91a15c7a59c66f163e.1361152062.95116.gif?i=0" />
+</body>
+</html>

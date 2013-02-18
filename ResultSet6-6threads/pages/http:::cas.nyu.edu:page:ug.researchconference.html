@@ -1,0 +1,366 @@
+<!DOCTYPE html><html xmlns:atom="http://www.w3.org/2005/Atom" xmlns:comem3="xalan://com.em3" xmlns:em3="http://www.em3.com/2002/widget">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Undergraduate Research Conference, College of Arts and Science | NYU</title>
+<!--Google jQuery-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<!--Google jQuery UI--><script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+<!--A collection of most of the special features available-->
+<!--AS Home page slideshow (2 scripts)--><script type="text/javascript" src="/object/script.js"></script><script type="text/javascript" src="/object/autoadvance.js"></script>
+<!--Alt. table row color--><script type="text/javascript" src="/object/alttbcolor.js"></script>
+<!--Scroll to Top Button-->
+<!--Adjust with ID "topcontrol"--><script src="/object/scrolltopcontrol.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="/object/sys-onsite-editbutton.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/sys-socialmediaicon20v2.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/sys-socialmediaicon20.css" media="all" />
+  <!--[if (IE 7)|(IE 6)]>
+<link rel="stylesheet" type="text/css" href="/object/sys-iepngfixv20.css" media="all" />
+ <![endif]--> 
+<link rel="stylesheet" type="text/css" href="/object/sys-scrolltotop.css" media="all" />
+
+<script LANGUE="javaScript">
+function makeArray()    {
+    this[0] = makeArray.arguments.length;
+    for (i = 0; i<makeArray.arguments.length; i++)
+        this[i+1] = makeArray.arguments[i];
+}
+
+var daysofweek = new makeArray('Sunday',
+                               'Monday',
+                               'Tuesday',
+                               'Wednesday',
+                               'Thursday',
+                               'Friday',
+                               'Saturday');
+
+var monthsofyear = new makeArray('January',
+                                 'February',
+                                 'March',
+                                 'April',
+                                 'May',
+                                 'June',
+                                 'July',
+                                 'August',
+                                 'September',
+                                 'October',
+                                 'November',
+                                 'December');
+
+function Nths(day) { 
+    if (day == 1 || day == 21 || day == 31) return 'st';
+    if (day == 2 || day == 22) return 'nd';
+    if (day == 3 || day == 23) return 'rd';
+    return 'th';
+}
+
+function DayOfWeek(day,month,year) {
+    var a = Math.floor((14 - month)/12);
+    var y = year - a;
+    var m = month + 12*a - 2;
+    var d = (day + y + Math.floor(y/4) - Math.floor(y/100) +
+             Math.floor(y/400) + Math.floor((31*m)/12)) % 7;
+    return d + 1;
+}
+
+function FullDate(day,month,year) {
+    return daysofweek[DayOfWeek(day,month,year)] +', '+ monthsofyear[month] +' '+ day + Nths(day); 
+//    return daysofweek[DayOfWeek(day,month,year)] +', '+ monthsofyear[month] +' '+ day + Nths(day) + '<br/>';
+// Do not understand why there's a <br>, so comment it out for now. - Herbert
+
+//    return daysofweek[DayOfWeek(day,month,year)] +', '+ day + Nths(day) +', '+ monthsofyear[month] +', '+ year;
+
+}
+</script>
+<link rel="stylesheet" type="text/css" href="/object/normalizeem.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/as-stickyfooter.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/as-scrolltotop.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/as-basegrid.css" media="all" />
+  <!--[if (IE 6)]>
+<link rel="stylesheet" type="text/css" href="/object/as-basegrid-ie6.css" media="all" />
+ <![endif]--> 
+  <!--[if (IE 7)]>
+<link rel="stylesheet" type="text/css" href="/object/as-basegrid-ie7.css" media="all" />
+ <![endif]--> 
+<link rel="stylesheet" type="text/css" href="/object/as-baselayout.css" media="all" />
+  <!--[if (IE 6)]>
+<link rel="stylesheet" type="text/css" href="/object/as-baselayoutie6.css" media="all" />
+ <![endif]--> 
+  <!--[if (IE 7)]>
+<link rel="stylesheet" type="text/css" href="/object/as-baselayout-ie7.css" media="all" />
+ <![endif]--> 
+<link rel="stylesheet" type="text/css" href="/object/as-baseform.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/as-basefont.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/as-baseprint.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/as-slideshow.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/casstyle.css" media="all" />
+
+<script LANGUE="javaScript">
+function makeArray()    {
+    this[0] = makeArray.arguments.length;
+    for (i = 0; i<makeArray.arguments.length; i++)
+        this[i+1] = makeArray.arguments[i];
+}
+
+var daysofweek = new makeArray('Sunday',
+                               'Monday',
+                               'Tuesday',
+                               'Wednesday',
+                               'Thursday',
+                               'Friday',
+                               'Saturday');
+
+var monthsofyear = new makeArray('January',
+                                 'February',
+                                 'March',
+                                 'April',
+                                 'May',
+                                 'June',
+                                 'July',
+                                 'August',
+                                 'September',
+                                 'October',
+                                 'November',
+                                 'December');
+
+function Nths(day) { 
+    if (day == 1 || day == 21 || day == 31) return 'st';
+    if (day == 2 || day == 22) return 'nd';
+    if (day == 3 || day == 23) return 'rd';
+    return 'th';
+}
+
+function DayOfWeek(day,month,year) {
+    var a = Math.floor((14 - month)/12);
+    var y = year - a;
+    var m = month + 12*a - 2;
+    var d = (day + y + Math.floor(y/4) - Math.floor(y/100) +
+             Math.floor(y/400) + Math.floor((31*m)/12)) % 7;
+    return d + 1;
+}
+
+function FullDate(day,month,year) {
+    return daysofweek[DayOfWeek(day,month,year)] +', '+ monthsofyear[month] +' '+ day + Nths(day); 
+//    return daysofweek[DayOfWeek(day,month,year)] +', '+ monthsofyear[month] +' '+ day + Nths(day) + '<br/>';
+// Do not understand why there's a <br>, so comment it out for now. - Herbert
+
+//    return daysofweek[DayOfWeek(day,month,year)] +', '+ day + Nths(day) +', '+ monthsofyear[month] +', '+ year;
+
+}
+</script><script type="text/javascript" src="/object/jquery.hashchange.min.js"></script><script type="text/javascript" src="/object/jquery.easytabs.js"></script>
+</head>
+<body id="cx" class="id815">
+<a name="top"></a>
+<div class="button-onsiteedit">
+<a target="ionAdmin" href="http://ionadmin.fas.nyu.edu/admin/ContextPageEditAction.ion?method=setup&key=815"><img height="8" width="8" alt="" src="/docs/TEMPLATE/1033/edit.png"></a>
+</div>
+<div id="wrap">
+<div id="main">
+<div id="emptysp"></div>
+<div ID="header">
+<div ID="hdr-headerbg">
+<div ID="hdr-headerart">
+<div ID="hdr-search" class="float-right">
+<div ID="searchbox">
+<div ID="search">
+<form action="http://google.nyu.edu/search" id="searchform" method="get">
+<input value="xml_no_dtd" name="output" type="hidden"><input value="UTF-8" name="oe" type="hidden"><input value="10" name="num" type="hidden"><input value="NYUWeb_Main" name="client" type="hidden"><input value="NYUWeb_Main" name="site" type="hidden"><input value="default_frontend" name="proxystylesheet" type="hidden"><input name="sitesearch" type="hidden" value="cas.nyu.edu"><input type="text" name="q" class="querybox"><input class="submitbox" border="0" src="/docs/TEMPLATE/1929/search-bt.png" type="image">
+</form>
+</div>
+</div>
+</div>
+<a class="linktonyu" href="http://www.nyu.edu"><span class="hidden">New York University</span></a><a class="linktoas" href="http://cas.nyu.edu"><span class="hidden">College of Arts and Science</span></a>
+</div>
+<div class="hidden" id="hdr-headerart-pt">
+<img src="/docs/TEMPLATE/48/print-cas.png"></div>
+</div>
+</div>
+<div id="snav">
+<ul>
+<li class="first">
+<a href="http://as.nyu.edu/page/aboutas">About Arts &amp; Science</a>
+</li>
+<li>
+<a href="http://as.nyu.edu/page/deptprogram">Departments and Programs</a>
+</li>
+<li class="last">
+<a href="http://as.nyu.edu/page/faculty.directory">The Faculty</a>
+</li>
+</ul>
+</div>
+<div ID="subnav">
+<div ID="breadcrumb">
+<div class="breadcrumb_nav" id="breadcrumb">
+<a href="/page/__default">Home</a> &gt; <a href="/page/research">Undergraduate Research</a> &gt; <span class="on">Research Conference</span>
+</div>
+</div>
+</div>
+<div id="content">
+<div class="column" id="center">
+<h2 class="content-title">Undergraduate Research Conference</h2>
+<div class="maincontent">
+<span class="spa"></span>
+<div id="contentelement"><h4>39th Annual Undergraduate Research Conference <br></h4>
+<h4>Friday, April 12, 2013 </h4>
+
+The College takes seriously the role of research in the liberal arts education of undergraduates.&nbsp; Students regularly benefit from direct contact with our research faculty and are empowered and encouraged to conduct their own inquiries.&nbsp; All undergraduates at the University are invited to participate in and present their research at the College’s 39th annual Undergraduate Research Conference on Friday, April 12, 2013. Projects showcasing undergraduate work in the Natural Sciences, Social Sciences and Humanities are welcome. The work may have been done in connection with a course or as independent or supervised study.<br><br>
+
+
+
+<span style="font-weight: bold;">Applications to participate in the Conference are available </span><a href="https://www.nyu.edu/cas/ugresearch/conference/index.php">online</a>.
+
+<br>
+
+
+<br>
+
+
+<!--<br><h4><a href="http://cas.nyu.edu/object/ug.pastprogramswinners">Past Conference Programs &amp; Winners</a></h4>
+<br>-->
+
+All Undergraduate Research Conference presenters are strongly encouraged to attend a workshop (dates and times TBA) entitled "Designing and Delivering Dynamic Presentations." Click <a href="/docs/CP/815/DesigningURCPresentations2010.pdf"><span style="font-weight: bold;">here</span></a> for slides from past workshops.<br><br>
+
+<br>
+
+<div id="PictoBrowser110829171311">Get the flash player here: http://www.adobe.com/flashplayer</div><script type="text/javascript" src="http://www.db798.com/pictobrowser/swfobject.js"></script><script type="text/javascript"> var so = new SWFObject("http://www.db798.com/pictobrowser.swf", "PictoBrowser", "500", "500", "8", "#EEEEEE"); so.addVariable("source", "sets"); so.addVariable("names", "urc photos"); so.addVariable("userName", "casitmanager"); so.addVariable("userId", "66927698@N03"); so.addVariable("ids", "72157627548773210"); so.addVariable("titles", "off"); so.addVariable("displayNotes", "off"); so.addVariable("thumbAutoHide", "off"); so.addVariable("imageSize", "medium"); so.addVariable("vAlign", "mid"); so.addVariable("vertOffset", "0"); so.addVariable("colorHexVar", "EEEEEE"); so.addVariable("initialScale", "off"); so.addVariable("bgAlpha", "90"); so.write("PictoBrowser110829171311");    </script>
+
+<br>
+
+
+<!--<p class="MsoPlainText">The following two workshops are geared toward students who will be giving a TALK at the URC.<span>&nbsp; </span>The workshops are identical, so come to whichever one fits your schedule more conveniently.<br></p><br>Workshop Dates:<br><br>Wednesday, March 30, 2011<br>4pm to 5pm<br>Location: 194 Mercer Street, Room 203 <br><br>OR<br><br>Tuesday, April 5, 2011<br>12:30pm to 1:30pm<br>Location: Silver, 502<br><br><br>
+<!--<p class="MsoPlainText">For students who will be presenting a POSTER, please plan to attend the following workshop:</p>
+Thursday, March 31, 2011<br>4pm to 5pm
+<p class="MsoPlainText">Location: Silver, 713</p>
+-->
+<p></p></div>
+<span class="gl"></span><span class="ev"></span><span class="nw"></span><span class="faclist"></span><span class="prolist"></span><script type="text/javascript">
+    $(document).ready( function() {
+      $('#majorminor-tab, #intlhouse-tab, #adminres-tab, #deptlist-tab, #degprog-tab').easytabs();
+    });
+</script>
+</div>
+</div>
+<div class="column" id="left">
+<div ID="nav">
+<ul>
+<li class="mainnav-off">
+<a href="/page/aboutcas">About CAS</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/academicprograms">Academic Programs</a>
+</li>
+<li class="mainnav-haschild">
+<a href="/page/research">Undergraduate Research</a>
+</li>
+<ul class="mainnav-childlist">
+        
+        
+      <li class="mainnav-off">
+<a href="/page/deansresearchfund">Dean's Undergraduate Research Fund</a>
+</li>
+        
+        
+      <li class="mainnav-childselected">Undergraduate Research Conference</li>
+<ul class="mainnav-childlist"></ul>
+        
+        
+      <li class="mainnav-off">
+<a href="/page/researchjournal">Inquiry: A Journal of Undergraduate Research</a>
+</li>
+        
+        
+      <li class="mainnav-off">
+<a href="/page/fundingsources">Funding Sources</a>
+</li>
+        
+        
+      <li class="mainnav-off">
+<a href="/page/researchopportunities">Database of Faculty Research Specializations</a>
+</li>
+        
+        
+      <li class="mainnav-off">
+<a href="/page/wins">Women in Science</a>
+</li>
+</ul>
+<li class="mainnav-off">
+<a href="/page/academicintegrity">Academic Integrity</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/academiclife">Academic Support Services</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/studyabroad">Study Abroad and Summer Study</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/studentlife">Student Life</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/Admissions" target="_blank">Admissions</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/financialaid">Financial Aid</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/alumni">Alumni</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/parents">Parents</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/events">Events</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/admin.pp">Administrative Policies &amp; Procedures</a>
+</li>
+</ul>
+</div>
+<span class="sa">
+<div class="bucket">
+<h4 class="bucket-title">
+              
+              
+              See Also
+            
+            </h4>
+<ul>
+<li class="last">
+<a href="/object/ug.pastprogramswinners">Past Conference Programs & Winners</a>
+</li>
+</ul>
+</div>
+</span><span class="ac"></span><span class="vi"></span><span class="lscore-req"></span><span class="admindir"></span>
+</div>
+<div class="column" id="right"></div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footerbox">
+<div class="footerText">
+<a href="/page/contactus">Contact Us</a> | <a target="Feedback" href="/object/cas.feedback">Feedback</a> | <a href="http://www.nyu.edu">&copy; New York University</a>, <a href="http://as.nyu.edu">Arts and Science</a>
+</div>
+<div id="as-smm"></div>
+<div id="nyulogo">
+<a target="_blank" href="http://www.nyu.edu"><img border="0" alt="New York University" src="/docs/TEMPLATE/424/footer-nyulogo.png"></a>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-6714527-4']);
+  _gaq.push(['_setDomainName', 'nyu.edu']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script><script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName('script')[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0011/6459.js";
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+</body>
+</html>

@@ -1,0 +1,862 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+<HEAD><TITLE>Ixquick Phone Search</TITLE>
+<!--[if gt IE 6]>
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache"> <META HTTP-EQUIV="Expires" CONTENT="-1">
+<![endif]-->
+<!--[if !IE]> -->
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache"> <META HTTP-EQUIV="Expires" CONTENT="-1">
+<!-- <![endif]-->
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META HTTP-EQUIV="Content-Language" CONTENT=en>
+<META name="Keywords" content="telephone directory, yellow pages, white pages, phone book, global, international, telephone, directory">
+<META name="Description" content="Global Phone Directory: Find anyone, anywhere in the world, with Ixquick's revolutionary International Telephone Directory. Performs Reverse Phone searches also.">
+<LINK REL="SHORTCUT ICON" HREF="/favicon.ico">
+<STYLE type="text/css">
+/* *:focus { outline: 0; }
+*:focus { outline: none; }
+*::-moz-focus-inner { border: none;} */
+
+/*New Focus styles starts*/
+
+*:focus{outline-style:dotted;outline-color:#000000;outline-width:1px;} /*put before all such styles*/ 
+html:focus { outline: 0; } /*removed 9* from all*/
+html:focus { outline: none; } 
+#content:focus { outline: 0; } 
+#content:focus { outline: none; } 
+input#submit:focus { outline: 0; } 
+input#submit:focus { outline: none; } 
+input#submit::-moz-focus-inner { border: none;} 
+
+div#links:focus { outline: 0; }  div#links:focus { outline: none; }#new_look_div:focus { outline: none; } #new_look_div:focus { outline: 0; }div#footer:focus { outline: none; } div#footer:focus { outline: 0; }body:focus { outline: none;
+ } body:focus { outline: 0; }table:focus { outline: none; } table:focus { outline: 0;border:none }body { outline: none;border:none; } body { outline: 0; }table { outline: none; } table { outline: 0; }table td:focus{ outline: none; } tab
+le td:focus { outline: 0; }div#search_form:focus { outline: 0; }  div#search_form:focus { outline: none; } /*IE9 fix ends*/ 
+
+/*New Focus styles ends*/
+
+.none { display : none; }
+body { margin : 0; font : 14px arial, sans-serif; background : url('/graphics/stp_bg.gif') repeat-x top left #fff; } 
+#head {margin : 10px 30px; min-width: 550px; text-align : right;}
+* html div#head { width: expression( document.documentElement.clientWidth < 552 ? "550px" : "auto" ); /* set min-width for IE */}
+
+#category { float : left; font: 13px verdana;}
+/*#settings {font: 13px verdana;}*/
+#head a { color : #0e5398; text-decoration : none; } #head a:hover { color: #448edd; }
+#head a.active { color : #464646; text-decoration : none; cursor : default; font-weight : bold;}
+
+#content { margin : 102px auto 0 auto; min-width: 600px; text-align : center;}
+* html div#content { width: expression( document.documentElement.clientWidth < 602 ? "600px" : "auto" ); /* set min-width for IE */}
+a#main_link img { border-width : 0px; } 
+a#main_link { text-decoration : none; display : block; width : 480px; margin : auto;}
+ 
+div#links, div#footer { min-width: 600px; text-align : center; }
+* html div#links { width: expression( document.documentElement.clientWidth < 602 ? "600px" : "auto" ); /* set min-width for IE */} 
+div#links {color: #1261E4; clear:both; padding-top : 55px; font: 13px verdana,arial,sans-serif;} 
+div#links a { color: #1261E4; text-decoration : none; } 
+div#links a:hover, div#footer a:hover { text-decoration : underline; } 
+
+div#footer { font-size : 11px; margin-top : 18px; min-width: 600px; color : #000;}
+* html div#footer { width: expression( document.documentElement.clientWidth < 602 ? "600px" : "auto" ); /* set min-width for IE */}  
+div#footer a { color : #1261e4;} div#footer a:visited { color : #1261e4;}
+
+#search_form table tr td {
+  font: 12px verdana,arial,sans-serif;
+}
+
+#search_form{
+  margin:0 auto;
+	 width:450px;
+	 position:relative;
+   }
+    #search_form .form-container{display:none;}
+
+#search_form ul {width:450px; text-align:center; list-style:none; margin: 30px auto; *margin: 30px auto; padding: 0;}
+#search_form ul li{
+color: #135aa7;
+cursor: pointer !important;
+display: inline;
+font-weight: bold;
+width: 14px;
+height: 13px;
+padding-left: 20px;
+margin-right: 15px;
+}
+#search_form ul li span{
+cursor: pointer !important;
+display: inline-block;
+background: url(/graphics/ipd_radio.gif) no-repeat top left; 
+background-position: 0 0;
+width: 14px;
+height: 13px;
+padding-right: 6px;
+}
+#search_form ul li.current span{
+background-position: 0 -18px; width: 14px; height: 13px;
+}
+
+#search_form label{
+color:#3371d8;
+display:block;
+font-weight:bold;
+line-height: 26px;
+text-align:left;
+width:180px;
+float:left;
+}
+
+.TEXT{
+float:left;
+width : 244px;
+font : 14px verdana, arial, snas-serif;
+padding: 4px 2px 3px;
+margin:2px 0 10px 10px;
+outline: none;
+border : 1px solid #3371d8;
+	border-radius: 4px;
+-moz-border-radius: 4px;
+-webkit-border-radius:4px;
+}
+
+
+#search_form select{
+float:left;
+width : 250px;
+height : 25px;
+padding:2px 0 2px 4px;
+margin:2px 0 10px 10px;
+}
+
+.form-container, .form-container p {clear: both;}
+.form-container p {height:40px; margin:0; padding:0;}
+#submit1,#submit1:focus,#submit1:active {  
+width : 88px;
+height : 26px;                                                                                                                                                                                    
+ border: 0px solid transparent;                                                                                                                                                                    
+padding: 0 26px 0 1px;
+text-align : center; cursor : pointer;                                                                                                                                      
+background-color:transparent;                                                                                                                                                                     
+}                                                                                                                                                                                                   
+#submit_box{                                                                                                                                                                                                  
+position : relative;                                                                                                                                                                               
+border : 1px solid white;                                                                                                                                                                          
+}                                                                                                                                                                                                  
+#submit_bg{
+position : absolute;
+width : 88px;
+height : 26px;
+top : 0px;
+left : 0px;                                                                                                                                                                                      
+background: transparent  no-repeat 100% 100% url("/graphics/search_green_adv.gif");
+}                                                                                                                                                                                                   
+#submit_div{                                                                                                                                                                                                   
+position : absolute;                                                                                                                                                                             
+top : 0px;                                                                                                                                                                                       
+left : 0px;                                                                                                                                                                                      
+}         
+.ac_results {width:247px !important; padding: 0px;overflow: hidden;border : 1px solid #628ace !important; margin-top:-23px;}
+
+	.ac_results ul {color:#000 !important;}
+
+.ac_results li{font-size:12px !important;font-weight: bold !important;}
+
+.ac_results li strong{font-weight: normal !important;}
+
+.ac_odd{background-color:#FFF !important;}
+
+.ac_over{background-color:#d5e2ff !important; color: #000 !important;}
+
+#dial_codes {
+ color: #16047C;
+ font-size: 12px;
+ font-weight: bold;
+ left: 460px;
+line-height: 22px;
+ position: absolute;
+text-align: left;
+ width: 200px;
+display:none;
+}
+
+span#dialcode {margin-left:6px}
+ #lang_div { position : absolute; top : 30px; left : 0px; border : 1px solid #3371D8; background-color : #fff; padding : 5px; width : 150px; -moz-border-radius : 4px; -webkit-border-radius:4px;}
+   #lang_div table tr td { padding : 3px; font-size : 12px; }
+   #lang_div table tr td a { color : #0E5398; }
+   #lang_div table tr td a:hover {text-decoration : none;} 
+ 
+
+img.jia{
+width: 25px;
+height: 18px;
+background: url("/graphics/asian_lang_home.gif") no-repeat scroll 67% 0 transparent ;
+}
+
+img.han{
+width: 30px;
+height: 18px;
+background: url("/graphics/asian_lang_home.gif") no-repeat scroll 43% 0 transparent ;
+}
+                                                                                                                                             
+img.fan{
+width: 57px;
+height: 18px;
+background: url("/graphics/asian_lang_home.gif") no-repeat scroll 0 0 transparent ;
+}
+
+img.nih{
+width: 54px;
+height: 18px;
+background: url("/graphics/asian_lang_home.gif") no-repeat scroll 111% 0 transparent ;
+}
+
+img.no_line_jia{
+width: 25px;
+height: 18px;
+background: url("/graphics/asian_lang_home.gif") no-repeat scroll 67% 108% transparent ;
+}
+                                                                                                                                             
+img.no_line_han{
+width: 30px;
+height: 18px;
+background: url("/graphics/asian_lang_home.gif") no-repeat scroll 43% 108% transparent ;
+}
+                                                                                                                                             
+img.no_line_fan{
+width: 57px;
+height: 18px;
+background: url("/graphics/asian_lang_home.gif") no-repeat scroll 0 108% transparent ;
+}
+
+img.no_line_nih{
+width: 54px;
+height: 18px;
+background: url("/graphics/asian_lang_home.gif") no-repeat scroll 111% 108% transparent ;
+}
+
+               </STYLE><script language="javascript" type="text/javascript" src="/js/jquery-1.2.6.min.js?changed=1356970860"></script>
+<script language="javascript" type="text/javascript" src="/js/jquery.bgiframe.min.js?changed=1356970859"></script>
+<script language="javascript" type="text/javascript" src="/js/jquery.autocomplete.js?changed=1356970848"></script>
+<script language="javascript">
+if (jQuery.browser.msie && jQuery.browser.version.substr(0,1)<7) { try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} }function eId(item) { return document.getElementById(item); }
+    var allCats = new Array('web','pics','video','phone');
+    function setCat(catr) {
+       document.blah.cat.value = catr;
+       for(var i = 0; i < allCats.length; i++) {
+          removeClass(eId(allCats[i]), 'active');
+       }
+       addClass(eId(catr), 'active');
+       eId("query").focus();                                                                                                                                                                                             
+       return false; 
+    }
+        
+	function setType(item) {
+		document.search_form.type.value = item.innerHTML.toLowerCase();
+		var items = eId('category');
+		items = items.getElementsByTagName('a');
+		for(var i = 0; i < items.length; i++) {
+			removeClass(items[i], 'active');
+		}
+		addClass(item, 'active');
+		eId("query").focus();
+		return false;
+	}
+	function hasClass(ele,cls) {
+		return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+	} 
+	function addClass(ele,cls) {
+		if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+	} 
+	function removeClass(ele,cls) {
+		if (hasClass(ele,cls)) {
+			var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+			ele.className=ele.className.replace(reg,' ');
+		}
+	}
+	var BrowserDetect = {
+	  init: function () {
+		  this.browser = this.searchString(this.dataBrowser) || "Browser";
+		  this.version = this.searchVersion(navigator.userAgent)
+			  || this.searchVersion(navigator.appVersion)
+			  || "an unknown version";
+	  },
+	  searchString: function (data) {
+		  for (var i=0;i<data.length;i++){
+			  var dataString = data[i].string;
+			  var dataProp = data[i].prop;
+			  this.versionSearchString = data[i].versionSearch || data[i].identity;
+			  if (dataString) {
+				  if (dataString.indexOf(data[i].subString) != -1)
+					  return data[i].identity;
+			  }
+			  else if (dataProp)
+				  return data[i].identity;
+		  }
+	  },
+	  searchVersion: function (dataString) {
+		  var index = dataString.indexOf(this.versionSearchString);
+		  if (index == -1) return;
+		  return parseFloat(dataString.substring(index+this.versionSearchString.length+1));
+	  },
+	  dataBrowser: [
+					{
+					  string: navigator.userAgent,
+					  subString: "Chrome",
+					  identity: "Chrome"
+					  },
+					{ string: navigator.userAgent,
+					subString: "OmniWeb",
+					versionSearch: "OmniWeb/",
+					identity: "OmniWeb"
+					},
+					{
+					  string: navigator.vendor,
+					  subString: "Apple",
+					  identity: "Safari",
+					  versionSearch: "Version"
+					  },
+					{
+					  prop: window.opera,
+					  identity: "Opera"
+					  },
+					{
+					  string: navigator.vendor,
+					  subString: "iCab",
+					  identity: "iCab"
+					  },
+					{
+					  string: navigator.vendor,
+					  subString: "KDE",
+					  identity: "Konqueror"
+					  },
+					{
+					  string: navigator.userAgent,
+					  subString: "Firefox",
+					  identity: "Firefox"
+					  },
+					{
+					  string: navigator.vendor,
+					  subString: "Camino",
+					  identity: "Camino"
+					  },
+					{// for newer Netscapes (6+)
+					   string: navigator.userAgent,
+					   subString: "Netscape",
+					   identity: "Netscape"
+				   },
+					{
+					  string: navigator.userAgent,
+					  subString: "MSIE",
+					  identity: "IE",
+					  versionSearch: "MSIE"
+					  },
+					{
+					  string: navigator.userAgent,
+					  subString: "Gecko",
+					  identity: "Mozilla",
+					  versionSearch: "rv"
+					  },
+					{ // for older Netscapes (4-)
+						string: navigator.userAgent,
+						subString: "Mozilla",
+						identity: "Netscape",
+						versionSearch: "Mozilla"
+					}
+					]
+					};
+	BrowserDetect.init();
+	
+	var browser = BrowserDetect.browser;
+</script></HEAD>
+<body>
+<div id='head'>
+<div id='category'>
+<a id='web' href="/eng/">Web</a> &nbsp;|&nbsp; <a id='pics' href="/eng/pics.html" onClick="location.href='/eng/?cat=pics'; return false;">Images</a> &nbsp;|&nbsp; <a id='video' href="/eng/video.html" onClick="location.href='/eng/?cat=video'; return false;">Videos</a> &nbsp;|&nbsp; <a id='phone' class='active'>Phone</a>
+</div>
+<div id ="settings"><a href='/eng/aboutixquick/'>About</a>  &nbsp;|&nbsp; <a href='/do/preferences.pl?language_ui=english'>Settings</a> &nbsp;|&nbsp; 
+<a href='/do/preferences.pl?language_ui=english' id='lang' onmouseover='showLang();' onmouseout='hideLang();'>Language</a></div></div>
+<div id='content'>
+<p><img src='/graphics/ixquick.gif?r=2' width='255' height='96' alt='Ixquick' /></p>
+<script language="javascript" type="text/javascript" src="/js/messages.js?changed=1356970857"></script>
+<div id="search_form">
+
+<ul>
+<li class='people current'><span></span>People</li>
+<li class='business'><span></span>Business</li>
+<li class='reverse'><span></span>Reverse</li>
+</ul>
+<div class='form-container people' style='display:block'><form action="/do/phone.pl" method="POST" name="people" autocomplete="off" onSubmit="return checkField('people', 'english');">
+<input type="hidden" name="type" value="people"><input type="hidden" name="cmd" value="search"><input type="hidden" name="language" value="english">
+<p><label>Last Name</label><input type="text" name="last_name" class="TEXT" id="last_name"></p><p><label>First Name (optional)</label><input type="text" name="first_name" class="TEXT" id="first_name"></p><p><label>City</label><input type="text" name="city" class="TEXT" id="city_people"></p><p  id="state_people_p"><label>State</label>
+<select name='state' id='state_people'><option value='X'>All
+<option value='AL'>Alabama
+<option value='AK'>Alaska
+<option value='AZ'>Arizona
+<option value='AR'>Arkansas
+<option value='CA'>California
+<option value='CO'>Colorado
+<option value='CT'>Connecticut
+<option value='DE'>Delaware
+<option value='DC'>District of Columbia
+<option value='FL'>Florida
+<option value='GA'>Georgia
+<option value='HI'>Hawaii
+<option value='ID'>Idaho
+<option value='IL'>Illinois
+<option value='IN'>Indiana
+<option value='IA'>Iowa
+<option value='KS'>Kansas
+<option value='KY'>Kentucky
+<option value='LA'>Louisiana
+<option value='ME'>Maine
+<option value='MD'>Maryland
+<option value='MA'>Massachusetts
+<option value='MI'>Michigan
+<option value='MN'>Minnesota
+<option value='MS'>Mississippi
+<option value='MO'>Missouri
+<option value='MT'>Montana
+<option value='NE'>Nebraska
+<option value='NV'>Nevada
+<option value='NH'>New Hampshire
+<option value='NJ'>New Jersey
+<option value='NM'>New Mexico
+<option value='NY'>New York
+<option value='NC'>North Carolina
+<option value='ND'>North Dakota
+<option value='OH'>Ohio
+<option value='OK'>Oklahoma
+<option value='OR'>Oregon
+<option value='PA'>Pennsylvania
+<option value='RI'>Rhode Island
+<option value='SC'>South Carolina
+<option value='SD'>South Dakota
+<option value='TN'>Tennessee
+<option value='TX'>Texas
+<option value='UT'>Utah
+<option value='VT'>Vermont
+<option value='VA'>Virginia
+<option value='WA'>Washington
+<option value='WV'>West Virginia
+<option value='WI'>Wisconsin
+<option value='WY'>Wyoming
+</select>
+</p>
+<p><label>Country</label>
+<select id='country_people' name='country'>
+<option value="AR">Argentina
+<option value="AU">Australia
+<option value="AT">Austria
+<option value="BE">Belgium
+<option value="BO">Bolivia
+<option value="BR">Brazil
+<option value="CA">Canada
+<option value="CO">Colombia
+<option value="CU">Cuba
+<option value="DK">Denmark
+<option value="FI">Finland
+<option value="FR">France
+<option value="DE">Germany
+<option value="GR">Greece
+<option value="HU">Hungary
+<option value="IT">Italy
+<option value="LU">Luxembourg
+<option value="MX">Mexico
+<option value="NL">Netherlands
+<option value="NZ">New Zealand
+<option value="NO">Norway
+<option value="PE">Peru
+<option value="PL">Poland
+<option value="PT">Portugal
+<option value="RO">Romania
+<option value="RU">Russia
+<option value="ZA">South Africa
+<option value="ES">Spain
+<option value="SE">Sweden
+<option value="CH">Switzerland
+<option value="TR">Turkey
+<option value="GB">United Kingdom
+<option value="US" selected>United States
+</select>
+</p><table style='clear: both;'><tr><td style="width:180px; *width:175px;"></td><td style="width: 250px;" align="left">
+<div id='submit_box'><div id='submit_bg'>&nbsp;</div>                                                                                                                                                    
+                     <div id='submit_div'><input type='submit' value="Search" id='submit1' /> </div></div>
+</td></tr></table>
+</form>
+</div>
+<script type='text/javascript'>change_form_method('people');</script><div class='form-container business'><form action="/do/phone.pl" method="POST" name="business" autocomplete="off" onSubmit="return checkField('business', 'english');">
+<input type="hidden" name="type" value="business"><input type="hidden" name="cmd" value="search"><input type="hidden" name="language" value="english">
+<p><label>Business Name</label><input type="text" name="business_name" class="TEXT" id="business_name"></p><p><label>City</label><input type="text" name="city" class="TEXT" id="city_business"></p><p  id="state_business_p"><label>State</label>
+<select name='state' id='state_business'><option value='X'>All
+<option value='AL'>Alabama
+<option value='AK'>Alaska
+<option value='AZ'>Arizona
+<option value='AR'>Arkansas
+<option value='CA'>California
+<option value='CO'>Colorado
+<option value='CT'>Connecticut
+<option value='DE'>Delaware
+<option value='DC'>District of Columbia
+<option value='FL'>Florida
+<option value='GA'>Georgia
+<option value='HI'>Hawaii
+<option value='ID'>Idaho
+<option value='IL'>Illinois
+<option value='IN'>Indiana
+<option value='IA'>Iowa
+<option value='KS'>Kansas
+<option value='KY'>Kentucky
+<option value='LA'>Louisiana
+<option value='ME'>Maine
+<option value='MD'>Maryland
+<option value='MA'>Massachusetts
+<option value='MI'>Michigan
+<option value='MN'>Minnesota
+<option value='MS'>Mississippi
+<option value='MO'>Missouri
+<option value='MT'>Montana
+<option value='NE'>Nebraska
+<option value='NV'>Nevada
+<option value='NH'>New Hampshire
+<option value='NJ'>New Jersey
+<option value='NM'>New Mexico
+<option value='NY'>New York
+<option value='NC'>North Carolina
+<option value='ND'>North Dakota
+<option value='OH'>Ohio
+<option value='OK'>Oklahoma
+<option value='OR'>Oregon
+<option value='PA'>Pennsylvania
+<option value='RI'>Rhode Island
+<option value='SC'>South Carolina
+<option value='SD'>South Dakota
+<option value='TN'>Tennessee
+<option value='TX'>Texas
+<option value='UT'>Utah
+<option value='VT'>Vermont
+<option value='VA'>Virginia
+<option value='WA'>Washington
+<option value='WV'>West Virginia
+<option value='WI'>Wisconsin
+<option value='WY'>Wyoming
+</select>
+</p>
+<p><label>Country</label>
+<select id='country_business' name='country'>
+<option value="AR">Argentina
+<option value="AU">Australia
+<option value="AT">Austria
+<option value="BE">Belgium
+<option value="BO">Bolivia
+<option value="BR">Brazil
+<option value="CA">Canada
+<option value="CO">Colombia
+<option value="CU">Cuba
+<option value="DK">Denmark
+<option value="FI">Finland
+<option value="FR">France
+<option value="DE">Germany
+<option value="GR">Greece
+<option value="HU">Hungary
+<option value="IT">Italy
+<option value="LU">Luxembourg
+<option value="MX">Mexico
+<option value="NL">Netherlands
+<option value="NZ">New Zealand
+<option value="NO">Norway
+<option value="PE">Peru
+<option value="PL">Poland
+<option value="PT">Portugal
+<option value="RO">Romania
+<option value="RU">Russia
+<option value="ZA">South Africa
+<option value="ES">Spain
+<option value="SE">Sweden
+<option value="CH">Switzerland
+<option value="TR">Turkey
+<option value="GB">United Kingdom
+<option value="US" selected>United States
+</select>
+</p><table style='clear: both;'><tr><td style="width:180px; *width:175px;"></td><td style="width: 250px;" align="left">
+<div id='submit_box'><div id='submit_bg'>&nbsp;</div>                                                                                                                                                    
+                     <div id='submit_div'><input type='submit' value="Search" id='submit1' /> </div></div>
+</td></tr></table>
+</form>
+</div>
+<script type='text/javascript'>change_form_method('business');</script><div class='form-container reverse'><form action="/do/phone.pl" method="POST" name="reverse" autocomplete="off" onSubmit="return checkField('reverse', 'english');">
+<input type="hidden" name="type" value="reverse"><input type="hidden" name="cmd" value="search"><input type="hidden" name="language" value="english">
+<p><label>Area Code</label><input type="text" name="area_code" class="TEXT" id="area_code"></p><p><label>Phone Number</label><input type="text" name="number" class="TEXT" id="number"></p><p><label title="Click for a list of Country Code" style='cursor:pointer; cursor:hand;' onClick="window.open('/eng/dialcode.html','','scrollbars=1,width=230,height=450');">Country Code: <span id=dialcode name=dialcode>+1</span></label>
+<select id='country_reverse' name='country'>
+<option value="AR">Argentina
+<option value="AU">Australia
+<option value="AT">Austria
+<option value="BE">Belgium
+<option value="BO">Bolivia
+<option value="BR">Brazil
+<option value="CA">Canada
+<option value="CO">Colombia
+<option value="CU">Cuba
+<option value="DK">Denmark
+<option value="FI">Finland
+<option value="FR">France
+<option value="DE">Germany
+<option value="GR">Greece
+<option value="HU">Hungary
+<option value="IT">Italy
+<option value="LU">Luxembourg
+<option value="MX">Mexico
+<option value="NL">Netherlands
+<option value="NZ">New Zealand
+<option value="NO">Norway
+<option value="PE">Peru
+<option value="PL">Poland
+<option value="PT">Portugal
+<option value="RO">Romania
+<option value="RU">Russia
+<option value="ZA">South Africa
+<option value="ES">Spain
+<option value="SE">Sweden
+<option value="CH">Switzerland
+<option value="TR">Turkey
+<option value="GB">United Kingdom
+<option value="US" selected>United States
+</select>
+</p><table style='clear: both;'><tr><td style="width:180px; *width:175px;"></td><td style="width: 250px;" align="left">
+<div id='submit_box'><div id='submit_bg'>&nbsp;</div>                                                                                                                                                    
+                     <div id='submit_div'><input type='submit' value="Search" id='submit1' /> </div></div>
+</td></tr></table>
+</form>
+</div>
+<script type='text/javascript'>change_form_method('reverse');</script></div>
+</div>
+<div id='links'><a id='addb' href='/eng/download-ixquick-plugin.html'>add to my browser</a> &nbsp;|&nbsp; <a href='/eng/make-ixquick-your-homepage.html'>Set as homepage</a></div>
+<script>if (browser != 'Browser') {var mesg = 'Add to `'; mesg=mesg.replace('`', browser); eId('addb').innerHTML=mesg;}</script><div id='footer'>&copy; &nbsp;2013 - <a href='/eng/privacy-policy.html'>Privacy</a></div>
+<span id='encode' class='none'></span>
+<link href="/css/jquery.autocomplete.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript" src="/js/dialcodes.js?changed=1356970858"></script>
+<script language="javascript" type="text/javascript" src="/js/states.js?changed=1356970856"></script>
+<script language="javascript" type="text/javascript" src="/js/cities.js?changed=1356970847"></script>
+<script language="javascript" type="text/javascript" src="/js/phone_helper.js?changed=1356970853"></script>
+<script type="text/javascript">
+var dialCodesTimeout = -1;
+function addCodes(set) {
+   var str = '';
+   for(var i = (set - 1) * 11; i < set * 11; i++) {
+  if(i < country_names['english'].length) {
+ str += dialcodes[i] + "  -  " + country_names['english'][i] + "<br />";
+  }
+   }
+   $('#dial_codes').html(str);
+   
+   if(set == 3)
+  set = 1;
+   else
+  set++;
+
+   dialCodesTimeout = setTimeout('addCodes(' + set + ')', 2000);
+}
+
+$(document).ready(function() {
+$('.ac_results').bgiframe();
+
+
+$('#country_reverse').mouseover(function() {
+   //Get dial codes
+   addCodes(1);
+   //Show Dial Codes Div
+   var pos = $('#search_form').offset();
+   $('#dial_codes').show();
+   $('#dial_codes').css('top', pos.top + 'px');
+   $('#dial_codes').css('left', (pos.left + 460) + 'px');
+}). mouseout (function() {
+   if(dialCodesTimeout != -1)
+ clearTimeout(dialCodesTimeout);
+   //Hide Dial Codes Div
+   $('#dial_codes').hide();
+   $('#dial_codes').empty();
+});
+//Setting default dial code
+//$('span#dialcode').html(dialcodes[01]);
+
+if($.browser.msie) {
+   if(!Array.indexOf){
+    Array.prototype.indexOf = function(obj){
+    for(var i=0; i<this.length; i++){
+      if(this[i]==obj){
+       return i;
+      }
+    }
+    return -1;
+    }
+   }
+}
+
+$('#country_reverse').change(function() {
+var val = $.trim($('#country_reverse option[value="' + $('#country_reverse').val() + '"]').html());
+var val_chars = val.split('');
+var encodedString = '';
+for(var i = 0; i < val_chars.length; i++) {
+    var code = val.charCodeAt(i);
+   if(code > 129) {
+       encodedString += "&#" + code + ";";
+   } else {
+       encodedString += val_chars[i];
+   }
+}
+$('span#dialcode').html(dialcodes[country_names['english'].indexOf(encodedString)]);
+
+});
+ 
+$("#search_form ul li").click(function(){
+	$("#search_form div.form-container").hide();
+							  $("#search_form ul li").removeClass("current");
+ 
+var tab_class = $(this).attr("class");
+ 
+$("#search_form div." + tab_class).show();
+$("#search_form ul li." + tab_class).addClass("current");
+});
+
+$('#country_people').change(function() {
+	var country = $(this).val();
+   if(states[country] == undefined ) {
+       $('#state_people_p').hide();
+       $('#state_people').html(''); 
+} else {
+       $('#state_people_p').show();
+       $('#state_people').prev().css('color','#3371d8');
+       $('#state_people').html('');
+
+var states_list = '';
+for(var i = 0; i < states[country].length; i = i+2) {
+	states_list += "<option value='" + states[country][i+1] + "'>" + states[country][i] + "</option>";
+}
+$('#state_people').html(states_list);
+}
+});
+
+$('#country_business').change(function() {
+   var country = $(this).val();
+   if(states[country] == undefined ) {
+      $('#state_business_p').hide();
+      $('#state_business').html('');
+   } else {
+      $('#state_business_p').show();
+      $('#state_business').prev().css('color','#3371d8');
+      $('#state_business').html('');
+  var states_list = '';
+  for(var i = 0; i < states[country].length; i = i+2) {
+     states_list += "<option value='" + states[country][i+1] + "'>" + states[country][i] + "</option>";
+                  }
+  $('#state_business').html(states_list);
+   }
+});
+
+//Setting default People cities list
+$("#city_people").autocomplete(cities["US"], { formatItem : cityAutoCompleteFormatItem, formatResult : cityAutoCompleteFormatResult});
+
+$('#country_people').change(function() {
+	var country = $(this).val();
+$("#city_people").unautocomplete();
+$("#city_people").autocomplete(cities[country], { formatItem : cityAutoCompleteFormatItem, formatResult : cityAutoCompleteFormatResult } );
+});
+
+//Setting default Business cities list
+	$("#city_business").autocomplete(cities["US"], { formatItem : cityAutoCompleteFormatItem, formatResult : cityAutoCompleteFormatResult});
+
+$('#country_business').change(function() {
+	var country = $(this).val();
+					   $("#city_business").unautocomplete();
+$("#city_business").autocomplete(cities[country], { formatItem : cityAutoCompleteFormatItem, formatResult : cityAutoCompleteFormatResult } );
+});
+});
+function cityAutoCompleteFormatItem (data, i, total) {
+	var myArray = data[0].split(",");
+   if(myArray.length > 1)
+	   return myArray[1];
+   else 
+	   return data[0];
+}
+function cityAutoCompleteFormatResult(data) {
+	var text = data[0];
+	var myArray = text.split(",");
+	if(myArray.length > 1) {
+		$('span#encode').html(myArray[1]);
+	return ($('span#encode').html());
+} else {
+	return (text);
+}
+}
+
+function findPos(obj) { 
+        var curleft = curtop = 0; 
+        if (obj.offsetParent) { 
+            curleft = obj.offsetLeft; 
+            curtop = obj.offsetTop; 
+            while (obj = obj.offsetParent) { 
+                curleft += obj.offsetLeft; curtop += obj.offsetTop; 
+            } 
+        } 
+        return [curleft,curtop]; 
+    }
+    function showLang() { 
+     clearTimeout(langTimeoutId);
+     var lang = eId('lang');
+     var lang_div = eId('lang_div');
+     var offset = findPos(lang);
+     lang_div.style.left = (offset[0] + lang.offsetWidth - 150) + 'px';
+     lang_div.style.display = 'block';
+    }
+    var isLangActive = false; 
+    var langTimeoutId; 
+    function checkAndHideLang() { 
+        if(!isLangActive) { 
+            eId('lang_div').style.display = 'none';
+            isLangActive = false; 
+        } 
+    }
+    function hideLang() { 
+        isLangActive = false; 
+        langTimeoutId = setTimeout('checkAndHideLang()', 1000); 
+    }
+</script>
+ <div id="lang_div" onmouseover="isLangActive = true; clearTimeout(langTimeoutId); " onmouseout="hideLang();" style='display : none;' >
+<table cellspacing='0' cellpadding='0' border='0' width='100%'>
+<tr>
+<td><a href='/dan/phone.html'>Dansk</a></td>
+<td><a href='/deu/phone.html'>Deutsch</a></td>
+</tr>
+<tr>
+<td><b>English</b></td>
+<td><a href='/uk/phone.html'>English UK</a></td>
+</tr>
+<tr>
+<td><a href='/esp/phone.html'>Espa&ntilde;ol</a></td>
+<td><a href='/fra/phone.html'>Fran&ccedil;ais</a></td>
+</tr>
+<tr>
+<td><a href='/ita/phone.html'>Italiano</a></td>
+<td><a href='/ned/phone.html'>Nederlands</a></td>
+</tr>
+<tr>
+<td><a href='/nor/phone.html'>Norsk</a></td>
+<td><a href='/pol/phone.html'>Polski</a></td>
+</tr>
+<tr>
+<td><a href='/por/phone.html'>Portugu&ecirc;s</a></td>
+<td><a href='/suo/phone.html'>Suomi</a></td>
+</tr>
+<tr>
+<td><a href='/sve/phone.html'>Svenska</a></td>
+<td><a href='/tur/phone.html'>T&uuml;rk&ccedil;e</a></td>
+</tr>
+<tr>
+<td style='padding-bottom: 0px;'><a href='/jia/phone.html'><img src="/graphics/spacer.gif" class="jia" border="0"> </a></td>
+<td style='padding-bottom: 0px;'><a href='/nih/phone.html'><img src="/graphics/spacer.gif" class="nih" border="0"> </a></td>
+</tr>
+<tr>
+<td style='padding-bottom: 0px;'><a href='/fan/phone.html'><img src="/graphics/spacer.gif" class="fan" border="0"> </a></td>
+<td style='padding-bottom: 0px;'><a href='/han/phone.html'><img src="/graphics/spacer.gif" class="han" border="0"> </a></td>
+</tr>
+</table>
+</div>
+  <div id='dial_codes'></div>
+</body></html>

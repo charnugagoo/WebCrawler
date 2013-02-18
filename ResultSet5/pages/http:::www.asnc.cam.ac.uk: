@@ -1,0 +1,448 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>welcome to ASNC</title>
+<meta name="keywords" content="anglo-saxon, norse, celtic, vikings, cambridge, asnc, viking, northmen, norsemen, celts, celt, d�l, dal, riata, picts, welsh, irish, english, wessex, mercia, anglian" />
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
+<link rel="stylesheet" href="style/reset.css" type="text/css" media="screen,projection" />
+<link rel="stylesheet" href="style/style.css" type="text/css" media="screen,projection" />
+<link rel="stylesheet" href="style/menu.css" type="text/css" media="screen,projection" />
+<link rel="stylesheet" href="style/print.css" type="text/css" media="print" />
+<script type="text/javascript" src="scripts/mootools-release-1.11.js"></script>
+<script type="text/javascript" src="scripts/rokslideshow.js"></script>
+<!--[if IE]>
+<style type="text/css" media="screen">
+body {
+behavior: url(http://www.asnc.cam.ac.uk/style/csshover.htc); /* call hover behaviour file */
+font-size: 100%; /* enable IE to resize em fonts */
+} 
+#menu ul li {
+float: left; /* cure IE5.x "whitespace in lists" problem */
+width: 100%;
+}
+#menu ul li a {
+height: 1%; /* make links honour display: block; properly */
+} 
+
+#menu a, #menu h2 {
+font: bold 0.7em/1.4em arial, helvetica, sans-serif; 
+/* if required use em's for IE as it won't resize pixels */
+} 
+</style>
+<![endif]-->
+<!--[if lt IE 5.5]>
+<p>This site does not work properly in IE 5.01 or below.  Please use the <a href="http://www.asnc.cam.ac.uk/site-map.htm">site map</a> for navigation.</p>
+<![endif]-->
+<!--[if lt IE 6]>
+<style type="text/css" media="screen">
+#container{
+	width:945px;
+	margin:20px auto;
+	padding:0;
+	text-align:left;
+	background-color:#ffffff;
+	color:#303030;
+	border:2px solid #a0a0a0;
+	}
+    
+#menu ul {
+	margin: 0;
+	padding: 0;
+	width: 134px;
+	float: left;
+}
+</style>
+<![endif]-->
+<!--[if lt IE 7]>
+<style type="text/css" media="screen">
+#menu li a:hover.dept, 
+#menu li a:hover.pros, 
+#menu li a:hover.curr, 
+#menu li a:hover.diary, 
+#menu li a:hover.pubs, 
+#menu li a:hover.alum, 
+#menu li a:hover.res
+{ color: #FFFFFF; background-color:#000000; }
+</style>
+<![endif]-->
+</head>
+
+<body>
+
+<div id="skiplinks">
+<ul>
+<li><a href="#nav">Skip to Navigation</a></li>
+<li><a href="#content">Skip to Content</a></li>
+</ul>
+</div>
+<div id="container" >
+<div id="header">
+<a href="http://www.cam.ac.uk/"><img src="images/unilogo2.gif" alt="University of Cambridge" /></a>
+  <h2 style="padding-left:2%;"><a href="http://www.asnc.cam.ac.uk/">Department of ASNC<br />
+    Anglo-Saxon, Norse &amp; Celtic</a></h2>
+</div>
+<div style="clear:both" />
+		<div id="slidewrap">
+			<div id="slideshow"></div>
+			<div id="loadingDiv"></div>
+            
+		<script type="text/javascript">
+			window.RokSlideshowPath = '';
+
+			var myshow;
+			window.addEvent('load', function(){
+				var imgs = [];
+			
+				imgs.push({
+					file: 'admissions.jpg',
+					title: 'Thinking about being an ASNaC?',
+					desc: 'Visit our admissions pages to find out how!',
+					url: '/admissions/'
+				});
+
+				imgs.push({
+					file: 'asncsociety.jpg',
+					title: 'The ASNaC Society',
+					desc: 'The ASNaC Society is a great way to get to know your fellow ASNaCs as well as enjoy social and academic events.',
+					url: 'http://www.asnc.cam.ac.uk/currentstudents/asnc-soc.htm'
+				});
+		
+				imgs.push({
+					file: 'development.jpg',
+					title: 'Supporting ASNC',
+					desc: 'The Department is currently raising money to fund various activities and could use your help!',
+					url: '/alumni/development.htm'
+				});
+				
+				imgs.push({
+					file: 'guest.jpg',
+					title: 'Why not come to one of our guest lectures?',
+					desc: 'The Department offers several guest lectures per term and everyone\'s invited!',
+					url: '/news/guest-lectures/'
+				});
+				
+				imgs.push({
+					file: 'faculty.jpg',
+					title: 'So what does an ASNaC study?',
+					desc: 'It\'s more varied than you might think!',
+					url: '/about/subjects.htm'
+				});
+												
+
+				myshow = new Slideshow('slideshow', { 
+					type: 'fade',
+					showTitleCaption: 1,
+					captionHeight: 45,
+					width: 580, 
+					height: 200, 
+					pan: 30,
+					zoom: 60,
+					loadingDiv: 1,
+					resize: true,
+					duration: [1500, 6000],
+					transition: Fx.Transitions.Expo.easeOut,
+					images: imgs, 
+					path: 'images/front_page/'
+				});
+
+				myshow.caps.h2.setStyles({
+					color: '#fff',
+					fontSize: '13px'
+				});
+				myshow.caps.p.setStyles({
+					color: '#ccc',
+					fontSize: '11px'
+				});
+			});
+		</script>    
+		<noscript>
+		<img src="images/front_page/faculty.jpg" />      	
+        </noscript>
+		</div>
+<div id="quicklinks">
+<span><h1>Quick Links</h1></span>
+<h2 class="first"><a href="/admissions/">Admissions</a></h2>
+<h2><a href="/people/">People</a> - <a href="/news/category/events/">Events</a></h2>
+<h2><a href="/students/">Student Intranet</a></h2>
+<h2><a href="lecturelist/lecture list.pdf">Lecture Timetable</a></h2>
+<h2><a href="/alumni/development.htm">Donating to ASNC</a></h2>
+</div>
+
+<div style="clear:both;" />
+
+<a name="nav"></a>
+<div id="menu">
+	<ul>
+	<li><a href="/index.htm" class="dept ">Department</a>
+		<ul>
+		<li><a href="/about/index.htm">About ASNC...</a>
+			<ul>
+		 	<li><a href="/about/index.htm">The Department</a></li>
+			<li><a href="/about/history.htm">History</a></li>
+			<li><a href="/about/subjects.htm">Subjects We Study</a></li>
+			<li><a href="/galleries/index.htm">Images of ASNC</a></li>
+			<li><a href="/about/logo.htm">About the ASNC Logo</a></li>
+			<li><a href="/about/assessments.htm">Quality Assessments</a></li>
+			</ul>
+		</li>
+		<li><a href="/people/index.htm">People...</a> 
+			<ul>
+			<li><a href="/people/index.htm">Academic Staff</a></li>
+			<li><a href="/people/directors-of-studies.htm">Directors of Studies</a></li>
+			<li><a href="/people/graduates.htm">PhD Students</a></li>
+			<li><a href="/people/admin/index.htm">Admin Staff</a></li>
+    		<li><a href="/people/visitors.htm">Academic Visitors</a></li>
+			</ul>
+		</li>
+        <li><a href="/research/index.htm">Research Projects</a> </li>
+		<li><a href="/vacancies/index.htm">Vacancies</a></li>
+		<li><a href="/contact.htm">Contact Us</a></li>
+		<li><a href="/search.htm">Search</a></li>
+		</ul>
+	</li>
+</ul>
+
+ 
+<ul>
+	<li><a href="/admissions/index.htm" class="admiss ">Admissions</a>
+		<ul>
+		<li><a href="/admissions/undergraduate/index.htm">Undergraduates...</a>
+			<ul>
+			<li><a href="/admissions/undergraduate/index.htm">Introduction</a></li>
+			<li><a href="/admissions/undergraduate/sbsguide/index.htm">Applying for ASNC</a></li>
+			<li><a href="#">Resources...</a>
+				<ul>
+				<li><a href="/currentstudents/undergraduates/reading-lists/intro-reading.htm">Introductory Reading</a></li>
+ 				<li><a href="/currentstudents/undergraduates/tripos/partI.htm">About Part I</a></li>
+				<li><a href="/currentstudents/undergraduates/tripos/partII.htm">About Part II</a></li>
+				<li><a href="/spokenword/">The Spoken Word</a></li>
+				<li><a href="http://www.cam.ac.uk/admissions/undergraduate/statistics/">Application/admission statistics</a></li>
+				</ul>
+			</li>
+			<li><a href="/admissions/undergraduate/ugrad-profiles/index.htm">Undergraduate Student Profiles</a></li>
+			<li><a href="/currentstudents/undergraduates/transferable.html">Transferable Skills</a></li>
+			<li><a href="/admissions/undergraduate/lifeafter-profiles/index.htm">Life after ASNC</a></li>
+ 			<li><a href="/admissions/asnc-open-day.htm">The Open Day...</a>
+ 				<ul>
+ 				<li><a href="/galleries/openday/index.htm">Images</a></li>
+ 				</ul>
+ 			</li>
+			</ul>
+		</li>
+		<li><a href="/admissions/graduate/index.htm">Graduates...</a>
+ 			<ul>
+			<li><a href="/admissions/graduate/index.htm">Introduction</a></li>
+ 			<li><a href="/admissions/graduate/index.htm#ba">Affiliated BA</a></li>
+ 			<li><a href="/admissions/graduate/index.htm#mphil">MPhil Degree...</a></li>
+			<li><a href="/admissions/graduate/index.htm#phd">PhD Degree</a></li>
+			<li><a href="http://www.english.cam.ac.uk/admissions/graduate/Application_Info.htm">Application Details</a></li>
+		  </ul>
+		</li>
+        <li><a href="/people/visiting-students.htm">Visiting Students</a></li>
+		<li><a href="/people/visitors.htm">Academic Visitors</a></li>
+		</ul>
+	</li>
+</ul>
+ 
+<ul class="curr">
+	<li><a href="/currentstudents/index.htm" class="curr ">Current Students</a>
+		<ul>
+		<li><a href="/currentstudents/undergraduates/index.htm">Undergraduates...</a>
+			<ul>
+			<li><a href="/currentstudents/undergraduates/index.htm">Introduction</a></li>
+            <li><a href="#">Teaching...</a>
+			<ul>
+			<li><a href="http://www.cam.ac.uk/cambuniv/termdates.html">Term Dates</a></li>
+			<li><a href="/lecturelist/lecture list.pdf">Lecture list (PDF)</a></li>
+			<li><a href="/lecturelist/Timetable.pdf">Timetable (PDF)</a></li>
+			</ul>
+		</li>
+		<li><a href="/currentstudents/undergraduates/reading/index.htm">Reading ASNC</a></li>
+		<li><a href="/currentstudents/undergraduates/tripos/index.htm">About the Tripos...</a>
+			<ul>
+			<li><a href="/currentstudents/undergraduates/tripos/partI.htm">ASNC Tripos, Part I</a></li>
+			<li><a href="/currentstudents/undergraduates/tripos/partII.htm">ASNC Tripos, Part II</a></li>
+			<li><a href="currentstudents/undergraduates/tripos/Set Texts for 2012.pdf">Set Texts 2012-13</a></li>
+ 			<li><a href="/currentstudents/undergraduates/tripos/pt1-dissertation.htm">Dissertations</a></li>
+			<li><a href="/currentstudents/undergraduates/asnc-stylesheet.htm">ASNC Stylesheet</a></li>
+			</ul>
+		</li>
+			<li><a href="/currentstudents/undergraduates/transferable.html">Transferable Skills</a></li>
+			<li><a href="/currentstudents/undergraduates/teaching-modes.htm">Teaching Modes...</a>
+				<ul>
+				<li><a href="/currentstudents/undergraduates/language-classes.htm">Language classes</a></li>
+				<li><a href="/currentstudents/undergraduates/supervisions.htm">Supervisions</a></li>
+				<li><a href="/currentstudents/undergraduates/private-study.htm">Private study</a></li>
+				<li><a href="/currentstudents/undergraduates/teaching-evaluation.htm">Teaching evaluation</a></li>
+				</ul> 
+			</li>
+			<li><a href="/currentstudents/undergraduates/jac.htm">Joint Academic Committee</a></li>
+			<li><a href="/currentstudents/undergraduates/teaching-workshops.htm">Teaching workshops</a></li>
+			<li><a href="/currentstudents/undergraduates/reading/libraries.htm">Libraries</a></li>
+			<li><a href="/students/exams/index.htm">Examinations</a></li>
+			<li><a href="http://camcors.cam.ac.uk/">CamCors</a></li>
+			<li><a href="http://www.camsis.cam.ac.uk/cam-only/">CamSIS</a></li>
+			</ul>
+		</li>
+		<li><a href="/currentstudents/graduates/index.htm">Graduates...</a>
+			<ul>
+            <li><a href="/currentstudents/graduates/index.htm">Introduction</a></li>
+			<li><a href="#">Seminars...</a>
+				<ul>
+				<li><a href="/currentstudents/graduates/graduate-seminar.htm">Graduate seminar</a></li>
+				<li><a href="/currentstudents/graduates/mphil-seminar.htm">MPhil Seminar</a></li>
+            	<li><a href="/currentstudents/graduates/mphil-researchforum.htm">MPhil Research Forum</a></li>
+				<li><a href="/currentstudents/graduates/graduate-symposium.htm">Graduate Symposium</a></li>
+				<li><a href="/currentstudents/graduates/res-seminar.htm">ASNC Research Seminar</a></li>
+				<li><a href="currentstudents/graduates/Other-Seminars.html">Other Seminars</a></li>
+				</ul>
+			</li>	
+    		<li><a href="/currentstudents/graduates/mphil.htm">MPhil</a></li>
+			<li><a href="/currentstudents/graduates/phd.htm">PhD</a></li>
+			<li><a href="/currentstudents/graduates/gjac.htm">Graduate JAC</a></li>
+			<li><a href="/ccasnc/index.htm">Cambridge Colloquium</a></li>
+			<li><a href="http://www.camgrad.cam.ac.uk/">CamGrad</a></li>
+			<li><a href="/currentstudents/graduates/training.htm">Funding &amp; Training</a></li>
+			</ul>
+		</li>
+		<li><a href="/currentstudents/grants/index.htm">Grants &amp; Awards</a></li>
+        <li><a href="/currentstudents/irish/index.htm">ASNC Modern Irish</a></li>
+        <li><a href="/currentstudents/icelandic/index.htm">ASNC Modern Icelandic</a></li>
+		<li><a href="/currentstudents/asnc-soc.htm">The ASNC Society</a></li>
+		<li><a href="http://www.english.cam.ac.uk/">Faculty of English...</a>
+			<ul>
+			<li><a href="http://lib.english.cam.ac.uk/">Faculty Library</a></li>
+			<li><a href="http://www.english.cam.ac.uk/computing/">Faculty Computing</a></li>
+			</ul>
+		</li>
+		<li><a href="http://www.cam.ac.uk/">The University...</a>
+			<ul>
+			<li><a href="http://www.cam.ac.uk/staffstudents/">Information for Students</a></li>
+			<li><a href="http://www.lib.cam.ac.uk/">University Library</a></li>
+			<li><a href="http://www.cam.ac.uk/cs/">Computing Service</a></li>
+			<li><a href="http://www.cam.ac.uk/cambuniv/disability/">Disability Resource Centre</a></li>
+			<li><a href="http://www.careers.cam.ac.uk/">Careers Service</a></li>
+			</ul>
+		</li>
+		<li><a href="/students/index.htm">Student Intranet</a></li>
+		</ul>
+	</li>
+ </ul>
+
+<ul class="pubs">
+	<li><a href="/publications/index.htm" class="pubs ">Publications</a>
+		<ul>
+		<li><a href="/publications/guides.htm">Guides, Texts and Studies</a></li>
+		<li><a href="/publications/Named Public Lectures.htm">Named Public Lectures</a></li>
+		<li><a href="http://vms.asnc.cam.ac.uk/">Viking and Medieval Scandinavia </a></li>
+		<li><a href="/publications/brittonic.htm">Other Publications...</a>
+			<ul>
+			<li><a href="/publications/brittonic.htm">Texts in Brittonic History</a></li>
+			<li><a href="/publications/gaelic.htm">Texts in Gaelic History</a></li>
+			<li><a href="/publications/quaestio/index.html">Quaestio Insularis</a></li>
+			<li><a href="/publications/gesta.htm">Gesta Asnacorum</a></li>
+			</ul>
+		</li>
+		</ul> 
+	</li>
+</ul>
+
+<ul class="alum">
+	<li><a href="/alumni/index.htm" class="alum ">Alumni</a>
+		<ul>
+		<li><a href="/alumni/events.htm">Alumni Events</a></li>
+		<li><a href="/alumni/asnc-news.htm">ASNC News...</a>
+			<ul>
+			<li><a href="/alumni/asnc-news.htm">Department News</a></li>
+			<!--<li><a href="/alumni/research.htm">Department Research</a></li>-->
+			<li><a href="/alumni/recent.htm">Recent Developments</a></li>
+			<!--<li><a href="/alumni/dept-events.htm">Departmental Events</a></li>-->
+			<li><a href="/alumni/outreach.htm">ASNC Outreach</a></li>
+			<li><a href="/alumni/alumni-news.htm">Alumni News</a></li>
+			</ul>
+		</li>
+		<li><a href="/alumni/mailings.htm">Keeping in Touch</a></li>
+		<li><a href="/alumni/development.htm">Donating</a></li>
+		</ul>
+	</li>
+</ul>
+
+ <ul class="res">
+	 <li><a href="/resources/index.htm" class="res ">Resources</a>
+		<ul>
+        <li><a href="/spokenword/">The Spoken Word</a></li>
+		<li><a href="/resources/academe.htm">Academic Institutions</a></li>
+		<li><a href="/resources/research/index.htm">Research Tools</a></li>
+		<li><a href="/resources/facsimiles.htm">Facsimiles</a></li>
+		<li><a href="/resources/images.htm">Online Images</a></li>
+		<li><a href="/resources/digital-editions.htm">Digital Editions</a></li>
+		<li><a href="/resources/journals.htm">Journals</a></li>
+		<li><a href="/resources/subjects-and-projects.htm">Subjects and Projects</a></li>
+		<li><a href="/resources/careers.htm">Careers</a></li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+<div id="content">
+<a name="content" accesskey="2"></a>
+
+<div id="newsbox">
+<h2>Departmental News</h2>
+<ul>
+    <li><a href="http://www.asnc.cam.ac.uk/news/2013/01/09/1362/">Languages, Myths and Finds</a>
+  <span style="word-wrap: break-word;"><p>The AHRC has awarded a £60,000 collaborative training grant for PhD students [...]</p>
+</span></p>
+  </li>
+    <li><a href="http://www.asnc.cam.ac.uk/news/2012/12/13/1358/">Kennings in the Community</a>
+  <span style="word-wrap: break-word;"><p>Funding has been awarded to Dr Judy Quinn and Dr Debbie Potts [...]</p>
+</span></p>
+  </li>
+    <li><a href="http://www.asnc.cam.ac.uk/news/2012/11/27/1326/">Funding awarded for &#8216;Interpreting Eddic Poetry&#8217; project</a>
+  <span style="word-wrap: break-word;"><p>The Research Centre of St John&#8217;s College Oxford has awarded pump-priming funding [...]</p>
+</span></p>
+  </li>
+    <li><a href="http://www.asnc.cam.ac.uk/news/2012/11/23/1322/">Leverhulme Early Career Fellowships Scheme 2013: Information for prospective applicants</a>
+  <span style="word-wrap: break-word;"><p>This notice gives information for those wishing to apply for a Leverhulme [...]</p>
+</span></p>
+  </li>
+    <li><a href="http://www.asnc.cam.ac.uk/news/2012/11/22/1318/">New Quiggin publication available!</a>
+  <span style="word-wrap: break-word;"><p>The much anticipated 2012 EC Quiggin Lecture volume 14 by Odd Einar [...]</p>
+</span></p>
+  </li>
+  </ul>
+</div> <!-- end newsbox -->
+
+<div id="eventsbox">
+<h2>Events</h2>
+<ul>
+<div class="divider"><!-- --></div>
+
+<li><a href="http://www.asnc.cam.ac.uk/news/event/18th-feb-2013-asnc-graduate-seminar/">18th Feb 2013: ASNC Graduate Seminar – Chris Lewis</a></li>
+<li><a href="http://www.asnc.cam.ac.uk/news/event/22nd-feb-2013-asnc-research-seminar/">22nd Feb 2013 – ASNC Research Seminar – Dr David Woodman</a></li>
+<li><a href="http://www.asnc.cam.ac.uk/news/event/25th-feb-2013-asnc-graduate-seminar/">25th Feb 2013: ASNC Graduate Seminar – Graduate Presentations</a></li>
+<li><a href="http://www.asnc.cam.ac.uk/news/event/asnc-society-guest-lecture/">1st March 2013 – ASNC Society Guest Lecture with Michael Wood</a></li>
+<li><a href="http://www.asnc.cam.ac.uk/news/event/2nd-march-2013-workshop-on-communication-and-cultural-contacts-in-the-north-atlantic-community/">2nd March 2013: Seminar on Communication and Cultural Contacts in the North Atlantic Community</a></li>
+<li><a href="http://www.asnc.cam.ac.uk/news/event/22nd-march-2013-asnc-research-seminar-dr-phil-dunshea/">22nd March 2013 – ASNC Research Seminar – Dr Phil Dunshea</a></li>
+</ul>
+
+<h2>ASNC Blog</h2>
+<ul>
+<li><a href="http://anglosaxonnorseandceltic.blogspot.com/2013/01/sutton-trust-summer-school-in-asnc-2013.html">Sutton Trust Summer School in ASNC 2013</a></li>
+<li><a href="http://anglosaxonnorseandceltic.blogspot.com/2012/12/final-congratulations-of-2012.html">Final congratulations of 2012</a></li>
+<li><a href="http://anglosaxonnorseandceltic.blogspot.com/2012/12/report-of-quiggin-lecture-2012.html">Report of Quiggin Lecture 2012</a></li>
+</ul>
+</div> <!-- end eventsbox -->
+
+<!-- end blogfeed -->
+
+</div><!-- end content -->
+
+<div id="footer">
+<p>&copy; 2011 University of Cambridge, Department of ASNC</p>
+</div>
+
+</div>
+</body>
+</html>

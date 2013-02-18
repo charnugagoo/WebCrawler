@@ -1,0 +1,235 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>Recoll text search finds your documents</title>
+    <meta name="generator" content="HTML Tidy, see www.w3.org">
+    <meta name="Description" content="Recoll is a desktop text search application for Unix, Linux and Mac OS X, based on the Xapian search engine library.">
+    <meta name="Keywords" content="text search, document search, full-text search, desktop search,open source,free">
+    <meta http-equiv="Content-language" content="en">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="robots" content="All,Index,Follow">
+    <link type="text/css" rel="stylesheet" href="styles/style.css">
+
+  </head>
+
+  <body>
+
+    <div class="rightlinks">
+      <ul>
+	<li><a href="http://www.recoll.org">Home</a></li>
+	<li><a href="pics/index.html">Screenshots</a></li>
+	<li><a href="download.html">Downloads</a></li>
+	<li><a href="doc.html">Documentation</a></li>
+	<li><a href="devel.html">Helping out</a></li>
+	<li><a href="index.html.fr">En Français</a></li>
+      </ul>
+      <p class="indexthumb">
+      <a href="pics/index.html"><img width="100" alt=
+	  "Thumbnail of recoll main screen" src=
+	  "pics/recoll0-thumb.png"></a>
+	</p>
+
+    </div>
+
+    <div class="content">
+
+      <h1><a href="http://www.recoll.org/">Recoll</a> is
+	a text search tool for Unix and Linux desktops.</h1>
+
+      <p><span class="application">Recoll</span> finds keywords
+        inside documents as well as file names.</p>
+      <ul>
+        <li>It can search
+          any <a href="features.html#doctypes">document format</a>.</li> 
+        <li>It can reach any storage place: files, 
+          archive members, email attachments, transparently
+          handling decompression.</li>
+        <li>One click will open the document inside a native editor or
+          display an even quicker text preview.</li>
+        <li>The software is free, open source,
+	  and licensed under the GPL.</li>
+        <li><a href="features.html">Detailed features</a>.
+      </ul>
+      <p>The current <span class="application">Recoll</span> version is
+	<a href="download.html">1.18.1</a> 
+	(<a href="release-1.18.html">Release notes</a>).</p>
+
+      <p><span class="application">Recoll</span> is based on the very
+        strong <a href="http://www.xapian.org">Xapian</a> search
+        engine library, for which it provides a powerful text
+	extraction layer and a complete, yet easy to use, Qt graphical
+	interface.</p>
+
+      <p class="remark">Recoll will index an <b>MS-Word</b> document
+      stored as an <b>attachment</b> to an <b>e-mail message</b> inside
+	  a <b>Thunderbird folder</b> archived in a <b>Zip file</b>
+	  (and more...). It will also help you search for it with a
+	  friendly and powerful interface, and let you open a copy of
+	  the file with a single mouse click. There is little that
+	  will remain hidden on your disk.
+        <a class="important" href="features.html">More details &hellip;</a></p>
+
+      <p>If you have problems with Recoll, <a href="doc.html">
+        documentation</a> and <a href="support.html">
+        support</a> are available.</p> 
+
+      <p><b><i>Recoll user ?</i></b> Maybe there are still a few useful
+      	  search tricks that you don't know about. A quick look at
+	the <a href="usermanual/rcl.search.tips.html">search
+	tips</a> might prove useful ! Also the 
+        <a href="http://bitbucket.org/medoc/recoll/wiki/FaqsAndHowTos">
+          Faqs and Howtos</a> on bitbucket.org, and some contributed
+          <a href="custom.html">result list formats</a>.</p>
+
+      <h2>News</h2>
+      <div class="news">
+      <dl>
+        <dt>2012-12-14</dt><dd>The next version of Recoll indexing will be
+          multithreaded, and much faster on most current
+          processors. The conversion has been an interesting project
+          with multiple stages, and I've taken 
+          <a href="idxthreads/threadingRecoll.html">a few  notes</a> 
+          about the transformation.</dd>
+        </dd>
+
+        <dt>2012-11-23</dt><dd>Released a minor update to the very
+          stable 1.17
+          branch: <a href="download-1.17.html">1.17.4</a>.
+          <a href="release-1.17.html">release notes</a>.
+        </dd>
+
+        <dt>2012-11-05</dt><dd>Recoll 1.18.1 is out. It has optional
+          character case and diacritics 
+          sensitivity, direct access to the hit page when opening PDF
+          files, complex search history, and a host of other smaller
+          improvements. See the <a href="release-1.18.html">release
+            notes</a>.
+          <span class="important">Those of you not using <b>evince</b>
+          as a PDF/Postscript/DVI viewer may be surprised to see the
+          recoll GUI try to use this viewer anyway.</span>This is because
+            some of the new functions in 1.18 work better
+            with <b>evince</b>, but you can override the choice by
+            going to the GUI preferences, and removing
+            application/pdf, application/postscript and
+            application/dvi from the <tt>Exceptions</tt> list.
+        </dd>
+
+        <dt>2012-10-30</dt> <dd>Recoll has a brand new Firefox extension for
+          indexing visited Web pages. This is very similar to the old
+          Beagle plugin, but slightly better integrated (no-fuss
+          installation), and with a new lease on life. See
+          <a href="https://sourceforge.net/projects/recollfirefox/">
+            Dave King's project page on sourceforge</a> and the
+          <a href="https://bitbucket.org/medoc/recoll/wiki/IndexWebHistory">
+            page about Recoll (trivial) configuration</a>.</dd>
+
+        <dt>2012-10-30</dt> <dd>The source for <a href="recoll-1.18.003.tar.gz">
+            recoll 1.18.003</a> is available, and this is a call to
+            volunteers to test it. There are binary packages on the recoll
+            "experimental" PPA for Ubuntu and Mint Linux users, and I can
+            build others. See this
+     <a href="http://www.freelists.org/post/recoll-user/recoll-1180-prerelease">
+            message</a> for more information. Mini-release 003 fixes a GUI
+            crash and a few other issues in 002.</dd>
+        </dd>
+
+        <dt>2012-10-25</dt> <dd>A problem with a simple workaround has caused
+          several reported <span class="important">recollindex
+          crashes</span> recently (for 1.17). If you store and index
+          Mozilla/Thunderbird email out of the standard location
+          (~/.thunderbird), you should add the following at the end of
+          your configuration file (e.g.:
+          ~/.recoll/recoll.conf): <pre><tt>
+              [/path/to/my/mozilla/mail]
+              mhmboxquirks = tbird
+          </tt></pre> Adjust the path to your local value of course...
+          Without this hint, recollindex has trouble finding the
+          message delimiters inside the folder files, and will
+          possibly use all the computer's memory and crash. Apart from
+          crashes, which only occur for very big folders, this also
+          causes incorrect mail indexing.
+        </dd>
+
+        <dt>2012-10-16</dt><dd> <a href="filters/filters.html">new filter for
+            EPUB documents</a>.</dd>
+
+        <dt>2012-09-21</dt><dd>An
+          <a href="https://bitbucket.org/medoc/recoll/wiki/ElinksBeagle">easy
+                 way</a> to extend the "Beagle queue"
+         Recoll web history indexing mechanism to other browsers than
+         Firefox (Elinks in this case).
+        </dd>
+
+        <dt>2012-09-13</dt> <dd>The next Recoll version will
+          acquire switchable 
+          case and diacritics sensitivity. I am writing 
+          a few pages about the
+          issues involved, they are referenced from my  
+          <a href="https://plus.google.com/u/0/113262930843833486941/posts">
+            google+</a> profile</dd>
+
+        <dt>2012-09-11</dt> <dd>A new user-contributed script for those who use
+          real-time indexing on laptops: stop or start indexing
+          according to AC power status. See the details on
+          the <a href="https://bitbucket.org/medoc/recoll/wiki/IndexOnAc.wiki">
+            Wiki</a>. </dd>
+
+        <dt>2012-06-19</dt> <dd>Update info. If you are not running
+          Recoll 1.17.3, you probably should. 1.17.2 and older versions
+          have a bug which 
+          can cause a crash of the indexing process while processing email,
+          under relatively common conditions.<br>
+          Also, if you are already running 1.17.3, you may want to install
+          the updated open/libre-office filter described just below.</dd>
+
+        <dt>2012-06-01</dt> <dd>An
+          updated <a href="filters/filters.html">filter</a> for the 
+          OpenDocument format will properly handle exported Google Docs
+          files.</dd> 
+
+        <dt>2012-05-25</dt> <dd>A
+          new <a href="filters/filters.html">filter</a> for indexing 
+          tar archives.</dd>
+
+        <dt>2012-04-07</dt><dd>We now have a Chinese user manual:
+        Recoll现在有中文手册咯： 
+        <a href="http://stupidbeauty.com/Blog/2012/03/recoll%E7%94%A8%E6%88%B6%E6%89%8B%E5%86%8A%E7%BF%BB%E8%AD%AF%EF%BC%8Crecoll-user-manual-2/">
+          Recoll中文手册，HTML</a></dd>
+
+        <dt>2012-03-27</dt> <dd>Recoll gets a Ubuntu Unity Lens. If
+        you are running
+          an Ubuntu release where this makes sense, you can install
+          the recoll-lens package from the 
+          <a href="https://launchpad.net/~recoll-backports/+archive/recoll-1.15-on">
+            Recoll PPA</a>. The Lens uses the Recoll GUI as a proxy to
+          extract and display embedded documents, which native utilities
+          can't reach directly. And of course you still need to run
+          the GUI (or the command line recollindex) to get the indexing
+          going !</dd>
+
+      </dl>
+      </div>
+	
+      <h2>Thanks</h2>
+      <p>Recoll borrows a lot of code
+	from other packages, and welcomes code and ideas from
+	contributors, see some of the 
+	<a class="important" href="credits.html">Credits</a>.</p>
+
+      <h2>On the side</h2>
+
+      <div class="news">
+      <blockquote>
+        <p>We rent <a href="http://www.metairie-enbor.com/index.html.en">
+	    a big country house</a> in the Aude area, in the south of
+	  France (<a href="http://www.metairie-enbor.com/acces.html.en">see
+	    map on the site</a>). If you are
+	  looking for a wonderful country place with a pool to
+	  spend holidays with a big bunch of family and/or
+          friends in a nice historical but very quiet area, this may be it.</p>
+      </blockquote>
+      </div>
+
+    </div>
+  </body>
+</html>

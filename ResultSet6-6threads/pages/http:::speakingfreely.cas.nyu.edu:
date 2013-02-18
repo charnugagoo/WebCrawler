@@ -1,0 +1,748 @@
+<html xmlns:comem3="xalan://com.em3" xmlns:em3="http://www.em3.com/2002/widget">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Speaking Freely, College of Arts and Science | New York University</title>
+<link type="image/x-icon" rel="shortcut icon" href="http://www.nyu.edu/fas/favicon.ico">
+<link type="image/x-icon" rel="icon" href="http://www.nyu.edu/fas/favicon.ico">
+<style>
+      
+      
+
+/****************************************************************
+START main CSS, Do not copy anything above this line
+****************************************************************/
+
+/*  
+Sticky Footer Solution
+by Steve Hatcher
+http://stever.ca
+http://www.cssstickyfooter.com
+*/
+
+* {margin:0;padding:0;}
+
+/* must declare 0 margins on everything, also for main layout components use padding, not
+vertical margins (top and bottom) to add spacing, else those margins get added to total height
+and your footer gets pushed down a bit more, creating vertical scroll bars in the browser */
+
+html, body, #wrap {height: 100%;}
+
+body > #wrap {height: auto; min-height: 100%;}
+
+#main {padding-bottom: 40px;}  /* must be same height as the footer */
+
+#footer {position: relative;
+    margin-top: -40px; /* negative value of footer height */
+    height: 40px;
+    clear:both;}
+
+/* CLEAR FIX*/
+.clearfix:after {content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;}
+.clearfix {display: inline-block;}
+/* Hides from IE-mac \*/
+* html .clearfix { height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+
+/*** INIT ***/
+body {text-align:center;}
+.hidden {display:none;}
+#wrap {background:url(/docs/TEMPLATE/1438/bg.jpg) repeat-y;}
+#wrap, #footer {margin-left:auto;margin-right:auto;}
+#wrap, #topempty, #footer {width:750px;}
+#topempty {height:15px;border-bottom:1px solid #CCC;background:#FFF;}
+#footer {border-top:1px solid #CCC;background:#FFF;}
+#header {height:120px;}
+#schoolnav {height:25px;}
+#content {}
+#header-tb, #ct-tb {display:table;}
+#header-rw, #ct-rw {display:table-row;}
+#header-nyulogo, #header-search, #ct-mainnav, #ct-content {display:table-cell;vertical-align:top;text-align:left;}
+* html #header-nyulogo, * html #header-search, * html #ct-mainnav, * html #ct-content {display:inline;}
+#ct-tb {width:712px;margin:0 auto 20px auto;}
+#ct-mainnav {width:220px;padding-top:30px;}
+#firstlevel #ct-mainnav {padding-top:0px;}
+#fourthlevel #ct-mainnav {display:none;}
+#ct-content {width:480px;_width:488px;}
+#fourthlevel #ct-content {width:712px;margin:0 auto;}
+
+
+/*** Header ***/
+#header {margin-bottom:1px;}
+#header-bg {padding-top:1px;background: #004d48;height:120px;}
+#header-nyulogo {height:61px;_height:61px;width:535px;_width:535px;}
+#header-search {height:45px;width:215px;text-align:right;}
+#header-minisite {height:59px;}
+.nyulogo {background: url(/docs/TEMPLATE/1438/casmini-hdr-cas.png) no-repeat;height:25px;width:400px;margin:20px 0 0 20px;text-align:left;}
+.nyulogo a {width:360px;height:15px;display:block;margin:0;}
+#search {}
+.minisite {background-repeat:no-repeat;width:720px;height:40px;padding-top:1px;text-align:left;margin-left:20px;_margin-left:15px;/*header selection please check bottom of the CSS*/}
+.minisite a {width:470px;height:30px;display:block;margin:0;}
+
+/**** School Nav ****/
+#schoolnav {text-align:right;padding-top:1px;margin-bottom:15px;/* for background, check below site selector*/}
+#schoolnav ul {list-style: none;padding: 0;margin:3px 0 0 0;}
+#schoolnav li {display:inline;margin:0 15px;}
+
+
+
+/*** Search ***/
+#search {float:right;}
+#fourthlevel #search {display:none;}
+#search fieldset label {display: none; }
+#searchbox {margin:10px 10px 0 0;background:#FFF;padding:1px;}
+#searchtextbox {width:100px;}
+.searchtable_bg,.searchbox_bg {background:#FFF;border:none;}
+.searchbutton_bg {background:#666;border:none;}
+.searchtext_bg {border-top: 1px solid #666;border-right: 1px solid #DDD;border-bottom: 1px solid #DDD;border-left: 1px solid #666;}
+
+/* Forms */
+input, select {font-size: 12px;  background: #FFF;  border:none;}
+label, select, input[type=checkbox], input[type=radio], input[type=button], input[type=submit] {cursor: pointer;}
+input[type=image] {font-size: 12px;  background: #FFFFFF;}
+input:focus, textarea:focus {background: #fff;}
+input:hover {background: #FFF; color: #333;}
+input#searchsubmit {font-family: Verdana,mingliu,Arial, Sans-Serif; font-size: 12px;}
+/*Form*/
+
+/**** Sub header ****/
+#subhr-box {border:1px solid #CCC;margin:0px auto 20px auto;width:710px;}
+#subhr-photo {background-repeat: no-repeat;margin:5px;}
+#subhr-whitebg {background-repeat: no-repeat;}
+#subhr-splayer {background-repeat: no-repeat;}
+#subhr-txt {background-repeat: no-repeat;}
+
+/**** Sub navigation ****/
+#fourthlevel .subnav {width:712px;margin:0 auto;height:21px;text-align:left;}
+
+/**** Main nav****/
+#ct-mainnav {vertical-align:top;}
+#mainnav {padding:10px 0 0px 10px;margin:0px 20px 20px 0;border:1px solid #CCC}
+#mainnav ul {list-style: none;padding: 0;margin:0px 10px 5px 0px;}
+#mainnav li {margin:0 0px;padding:0 0 6px 0px;}
+#mainnav ul.mainnav_child {margin:0 0 10px 10px;_margin:0 0 10px 10px;}
+#mainnav ul.mainnav_child li {background:URL(/docs/IO/15388/img15388.jpg) no-repeat;background-position:0 6px;_background-position:0 6px;padding:0 0 5px 10px;_padding:0 0 0 10px;_margin:5px 0 0 0;}
+
+/*** Context level sidebar ***/
+/*** Home - News/Events, Important Date ***/
+#firstlevel .maincontent .outerbox, 
+#firstlevel .maincontent .outer {margin: 0px 0 40px 0;padding:0px;border:1px solid #CCC;}
+#firstlevel .maincontent .upperbox, 
+#firstlevel .maincontent .titlebox {background:#DDD;padding:10px 0 10px 25px;}
+#firstlevel .maincontent .lowerbox {padding:10px 0 0 0px;}
+#firstlevel .maincontent .lowerbox ul, 
+#firstlevel .maincontent .txtlinkbox {list-style:none;padding:0;margin:0 0 0 15px;}
+#firstlevel .maincontent .txtlinkbox { padding: 10px 0 0 0; }
+#firstlevel .maincontent .lowerbox li, 
+#firstlevel .maincontent .txtlinkbox li {background:URL(/docs/IO/15388/img15388.jpg) no-repeat;background-position:0 4px;_background-position:0 4px;padding:0 0 0 10px;_padding:0 0 0 10px;line-height:1.2em;}
+#firstlevel .maincontent .txtsummary {padding-top:3px;}
+
+/***Second level page- main content area bucket***/
+#secondlevel .maincontent .lowerbox ul {list-style:none;padding:0;margin:0 0 0 0px;}
+#secondlevel .maincontent .lowerbox li {margin:0;padding:0 0 15px 0;}
+
+
+/*** Sidebar & See Also ***/
+#seealso {margin:0 20px 0 0;}
+#seealso .outer {padding:0px;border:1px solid #CCC;}
+#seealso .titlebox {background:#CCC;padding:5px 0 5px 10px }
+#seealso .inner .txtbox {padding:10px;border:none !important;}
+#seealso ul {list-style:none;padding:10px;margin:0;}
+#seealso li {padding:0px 0px 5px 0px;line-height:1em;}
+
+#breadcrumb {
+    padding-bottom: 10px;
+    font-size: 9px;
+}
+#breadcrumb, #breadcrumb a { color: #aaa; }
+/* hide by herbert #ct-content { padding-top: 10px; } */
+#breadcrumb #backtopreviousarrowbox a { color: #022C2B; }
+
+
+#ct-photo img {max-width:460px;_width:expression(document.body.clientWidth > 460? "460px": "auto" );margin:0 0 15px 0; width:100%; text-align:center;}
+#ct-photo {width:100%;text-align:center;}
+
+
+
+/*** Special Registration form CSS ***/
+label {width:300px;text-align:right;display:block;float:left;margin:0 5px 20px 0;font-weight:bold;font-size:1.1em}
+.require, .optional {padding:0 0 20px 0px;vertical-align:top;clear:both;}
+.require input, .optional input {font-size:1em;}
+.selbox, .txtbox, .txtareabox {border-top:1px solid #666;border-right:1px solid #CCC;border-bottom:1px solid #CCC;border-left:1px solid #666;vertical-align:top;}
+.selbox {}
+.fieldbox {margin:0 0 0 205px;_margin:0 0 0 210px;}
+.fieldalert {margin:10 0 5 0px;_margin:5 0 5 3px;padding:5px;border:1px solid #CCC;font-size:0.85em;background:#FFC;}/* fieldalert is for info that require a more pop out look */
+.fieldnote {margin:10 0 5 0px;_margin:5 0 5 3px;padding:5px;border:1px solid #CCC;font-size:0.85em;background:#FFF;}/* fieldnote is for info that should stand out, but not require an alert kind of look */
+.fieldnote-inline {padding:10 0 5 0px;font-size:0.9em;font-style:italic;} /*fieldnote-inline is for info that should just go with the rest, like one line sentence */
+.fieldtitle {margin:10 0 5 0px;_margin:0 0 0 3px;font-size:1em;font-weight:bold;} /* fieldtitle is for title about the following field */
+.radiobox, .chkbox {margin:3 5 0 0;_margin:0 10 0 0;vertical-align:top;}
+fieldset {border:none;}
+.col-left, .col-right, .col-grad-left {display:inline-block;margin-bottom:15px;width:210px;_width:210px;}
+.col-left {float:left;padding:0 0px 0 20px;margin-right:30px;}
+.col-left .radiobox, .col-right .radiobox {margin-left:-18px;_margin-left:-24px;_margin-right:5px;}
+.col-right {_padding:0 0 0 19px;}
+.formbox {display:inline-block;float:left;width:480px;}
+.spicon {font-weight:bold;color:#F00;margin:0 3px 0 0;}
+p.chkbox-box {margin:0 0 5 208px;}
+input.smbbtn {border-top:1px solid #CCC;border-right:1px solid #666;border-bottom:1px solid #666;border-left:1px solid #ccc;vertical-align:top;padding:0px 10 2 10;height:29px;background:#CCC}
+.smbbtn-box {text-align:center;}
+.txtareabox {}
+
+button {border-top:1px solid #CCC;border-right:1px solid #666;border-bottom:1px solid #666;border-left:1px solid #ccc;vertical-align:top;padding:0px 10 2 10;height:29px;background:#CCC}
+
+
+/*** Profile Page basic layout ***/
+.profile .pro-photo {width:150px;float:left;}
+.profile .pro-photoimg img {max-width:140px;_width:expression(document.body.clientWidth > 140? "140px": "auto" );margin:0 0 5px 0;}
+
+
+/***** ALT table row color ***/
+.addcolor td{padding:5px;}
+.even {background-color:#FFFFFF;}
+.odd {background-color:#DDDDDD;}
+
+
+
+/*** iOn Form ***/
+table.formContainer {margin:20px 0 20px 0}
+.formContainer .text, .formContainer .select {border-top:1px solid #666;border-right:1px solid #CCC;border-bottom:1px solid #CCC;border-left:1px solid #666;}
+.formContainer div {margin:5px 0 0 0;}
+.formContainer .button {border-top:1px solid #CCC;border-right:1px solid #666;border-bottom:1px solid #666;border-left:1px solid #CCC;margin:10px 10px 0 0;}
+
+/*** Form generated by widget instead of just handcode html form ***/
+.form {font-size:0.8em;}
+label {width:300px;text-align:right;display:block;float:left;margin:0 5px 0 0;font-weight:bold;}
+.require, .optional {padding:0 0 20 0px;vertical-align:top;clear:both;}
+.require input, .optional input {}
+.selbox, .txtbox, .txtareabox {border-top:1px solid #666;border-right:1px solid #CCC;border-bottom:1px solid #CCC;border-left:1px solid #666;vertical-align:top;}
+.txtbox {width:250px;height:21px;font-size:1em;}
+.selbox {width:180px;font-size:1em;}
+.chkbox {margin:0 5px 0 0;}
+.txtareabox {width:350px;height:150px;font-size:1em}
+.fieldbox {margin:0 0 0 305px;_margin:0 0 0 210px;}
+.fieldalert {margin:10px 0 5px 0px;_margin:5px 0 5px 3px;padding:5px;border:1px solid #CCC;font-size:0.85em;background:#FFC;}/* fieldalert is for info that require a more pop out look */
+.fieldnote {margin:10 0 5 0px;_margin:5 0 5 3px;padding:5px;border:1px solid #CCC;font-size:0.85em;background:#FFF;}/* fieldnote is for info that should stand out, but not require an alert kind of look */
+.fieldnote-inline {padding:10px 0 5px 0px;font-size:0.9em;font-style:italic;} /*fieldnote-inline is for info that should just go with the rest, like one line sentence */
+.fieldtitle {margin:10px 0 5px 0px;_margin:0 0 0 3px;font-size:1em;font-weight:bold;} /* fieldtitle is for title about the following field */
+.radiobox, .chkbox {margin:3px 5px 0 0;_margin:0 10px 0 0;vertical-align:top;}
+fieldset {border:none;}
+.formbox {display:inline-block;float:left;width:480px;}
+.spicon {font-weight:bold;color:#F00;margin:0 3px 0 0;}
+p.chkbox-box {margin:0 0 5px 208px;}
+input.smbbtn {border-top:1px solid #CCC;border-right:1px solid #666;border-bottom:1px solid #666;border-left:1px solid #ccc;vertical-align:top;padding:0px 10 2 10;height:29px;}
+.smbbtn-box {text-align:center;}
+.subhead {text-align:center;}
+.instruction {margin:0 0 0 0px;_margin:0 0 0 0px; font-color:#AAA;font-style:italic;}
+/* .instruction {margin:0 0 0 305px;_margin:0 0 0 310px;} */
+
+
+
+
+/* CAS First Year Button link widget */
+#fys-button-bucket {
+    position: relative;
+    margin-bottom: 1.5em;
+    padding-bottom: 1em;
+    border: 0;
+    overflow: hidden;
+    text-align: center;
+}
+#fys-button-bucket .button {
+    display: inline-block;
+    position: relative;
+    width: 140px;
+    overflow: visible;
+    margin-right: 35px;
+    margin-bottom: 24px;
+    background: transparent  no-repeat 0 0;
+    text-align: left;
+    vertical-align: top;
+}
+#fys-button-bucket .button.w-img {
+}
+#fys-button-bucket .button img {
+    max-height: 140px;
+    border: 1px solid #777;
+
+    -moz-box-shadow: 3px 4px 7px #a6a6a6;
+    -webkit-box-shadow: 3px 4px 7px #a6a6a6;
+    box-shadow: 3px 4px 7px #a6a6a6;
+}
+#fys-button-bucket .button p {
+    width: 140px;
+    margin: 0;
+    padding: 8px 0;
+    background-color: transparent;
+    line-height: 1.42857; /* 20/14 */
+}
+#fys-button-bucket .button p span.collegecaptain { font-style: italic; }
+
+.membersonly { text-align: right; }
+
+/* CAS Mentor page tweaks */
+.maincontent .pro-info {
+    display: block;
+    padding-left: 150px;
+}
+.maincontent p.mentor-involvement { margin: 15px 0 0 0; }
+.maincontent ul.mentor-involvement {
+    margin: 0 0 15px 0;
+    padding-left: 50px;
+}
+.maincontent ul.mentor-involvement li { margin: 0; }
+
+
+
+
+/************************************
+FONT STYLE
+************************************/
+
+body {font-size:100% !important;line-height:1.125em;font-family:Arial,Verdana;color:#000000;}
+h1, h2, h3, h4, h5, h6 {margin:0 0 15px 0px; /* Check bottom for site selection on color */}
+p {margin:0 0 15px 0;}
+.arrow-bg {background:#005C5C;}
+
+h1 {font-size:1.6em;}
+h2 {font-size:1.45em;}
+h3 {font-size:1.3em;}
+#secondlevel h3 {margin:0 0 15px 0;}
+h4 {font-size:1.2em; margin: 10px 0;}
+h5 {font-size:1.1em;}
+h6 {font-size:1em;}
+
+.maincontent ul, ol {margin:20px}
+.maincontent li {margin:10px;}
+.maincontent {text-align:left;}
+
+#schoolnav {font-size:10px;text-transform:uppercase;}
+#footer {font-size:11px}
+#schoolnav {color:#FFFFFF;}
+#schoolnav a {/* Check bottom for site selection */}
+#schoolnav a:hover {/* Check bottom for site selection */}
+#footer {color:#AAAAAA;}
+#footer a {color:#AAAAAA;text-decoration:none;}
+#footer a:hover {color:#022C2B;}
+#content, .maincontent td {font-size:0.74em;_font-size:0.8em;}
+
+#mainnav {color:#005C5C;font-size:1em;_font-size:0.95em; } /*1em of 0.75em = 0.75em */
+#mainnav A {/* Check bottom for site selection */}
+#mainnav A:hover {/* Check bottom for site selection */}
+#mainnav li.mainnav_on, #mainnav li.mainnav_spon, #mainnav li.mainnav_chon {font-weight:bold;/*for mainnav title color, check below site selector*/}
+#mainnav li.mainnav_chon {color:#DEBA60;}
+#mainnav .mainnav_child li.mainnav_off a {font-weight:normal;}
+
+
+
+.maincontent .upperbox, .maincontent .lowerbox  {font-size:1em;_font-size:0.95em}
+.maincontent .lowerbox {color:#666;}
+.maincontent .upperbox, .maincontent .titlebox {font-weight:bold;text-transform:uppercase;color:#005C5C;}
+.maincontent .txtlink a {/*for bucket link color, check below site selector */}
+.maincontent .txtlink a:hover {/*for bucket link color, check below site selector */}
+
+#secondlevel .maincontent .lowerbox {color:#000;}
+
+#seealso {font-size:0.95em;}
+#seealso .title {font-weight:bold; color:#054A4A;}
+#seealso li a {/*for seealso link color, check below site selector*/}
+
+
+/**Submenu***/
+.submenu  {float:right;  margin:0 0 20 20px; _width:215px;}
+.submenu ul {list-style:none; padding:0 10 10 0; _padding:0 0 10 0; margin:10px 0 0 10;}  
+.submenu li {list-style:none; padding:0 0 5 0; margin:0;}  
+.submenu .titletxt {background:#CCC;padding:5px 0 5px 10px; }  
+
+
+
+
+
+/*** Last Update ***/
+#lastupdate {float:left;margin:10px;}
+#lastupdate {font-size:0.6em;color:#aaaaaa;}
+
+
+/*** Social Media ***/
+#socialmedia {text-align:left;}
+#socialmedia .upperbox {display:none;}
+#socialmedia {margin:20 17 0 0px;}
+#socialmedia .lowerbox {padding:0 0 0 3px;}
+#socialmedia .lowerbox ul.contenttxt {list-style:none;padding:0;margin:0;}
+#socialmedia .lowerbox li.txtlink {background:none;padding:0px;list-style:none;margin:0 0 5px 0;}
+#socialmedia .lowerbox li {font-size:11px;font-family:verdana;}
+#socialmedia .lowerbox li a {display:block;height:19px;padding:1px 0 0 25px;color:#aaa;text-decoration:none;}
+#socialmedia .lowerbox li a:hover {color:#666;}
+
+
+
+/***  Scroll to top button changes for Minisites ***/
+body #topcontrol {
+    margin-right: 0;
+    padding: 12px;
+    border-top-right-radius: 0;
+    background-color: #004D48;
+    color: #DDB85F;
+    font-size: .75em;
+}
+
+
+/****************************************************************
+END main CSS, Do not copy anything below this line
+****************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      
+      
+      
+
+/***********************************
+Special Mini-site bucket title color selector
+**********************************/
+
+      
+      
+#mainnav li.mainnav_on, #mainnav li.mainnav_spon, #mainnav li.mainnav_chon {color:#054A4A}
+
+      
+      
+
+/***********************************
+Special Mini-site schoolnav color selector
+**********************************/
+
+      
+      
+#schoolnav {background:#DDB85F ;}
+#schoolnav a {color:#FFF;text-decoration:none;}
+#schoolnav a:hover {color:#022C2B;}
+
+      
+      
+
+/*****************************
+Special Mini-site H, A, mainnav A, bucket A tag color selector
+******************************/
+
+      
+      
+h1, h2, h3, h4, h5, h6 {color:#022C2B;}
+A {color:#022C2B;}
+A:hover {color:#DEBA60;}
+#mainnav A {color:#005C5C;text-decoration:none;}
+#mainnav A:hover {color:#DEBA60;text-decoration:none;}
+.maincontent .txtlink a {color:#666;}
+.maincontent .txtlink a:hover {color:#DEBA60;}
+#seealso li a {color:#666;}
+#seealso li a:hover {color:#DEBA60;}
+
+.maincontent a {color:#005C5C;}
+.maincontent a:hover {color:#DEBA60;}
+
+#secondlevel .maincontent .lowerbox li a {color:#005C5C; font-weight:bold;}
+#secondlevel .maincontent .lowerbox li a:hover {color:#DEBA60;}
+
+
+
+
+
+
+/***********************************
+Special Mini-site header selector
+**********************************/
+
+.minisite {background-image: url(/docs/TEMPLATE/1438/casmini-hdr-speakingfreely.png);}
+      
+      
+
+
+/***********************************
+Special Mini-site subheader selector  
+-      ID:subhr-photois to set the photo of the sub header
+-      ID:whitebgis to place a white background on top of the photo (just in case the photo iswider than necessary, the white background is to cover the photo so it willnot overlap on the summary text.)
+-      ID:subhr-splayeris to place a special layer on top of both the photo and the white background,but just below the text, for example, the yellow brush on CAS Orientation is aspecial layer that’s sitting on top of the photo, but below the text layer.
+-      Thespecial mini-site subheader link select widget is a subhr-txt DIV tag, whichwill display the text summary in PNG transparent fashion (check widget sectionon how the subhr-txt layer works.
+**********************************/
+
+      
+      
+/*
+#subhr-photo {
+    width: 700px;
+    height: 350px;
+    background: transparent url("/docs/TEMPLATE/1438/SpeakingFreely_brochure.png") no-repeat 0 0;
+}
+*/
+</style>
+<style type="text/css">
+@media print{
+.hidden {display:block;}
+#header-nyulogo, #header-search, #topempty, #schoolnav, #footer {display:none;}
+#header {height:160px;border:none;}
+.minisite {height:130px;}
+}
+</style>
+<style>
+
+/************************
+EDIT BUTTON
+************************/
+.button-onsiteedit {z-index:1;position: fixed !important; left: 5px !important; bottom: 5px !important;
+  _position:absolute;
+  _top:expression(document.body.scrollTop+document.body.clientHeight-this.clientHeight);
+}
+.button-onsiteedit img {border:none !important;margin:0px !important;padding:0px !important;_margin-bottom:1px;}
+
+</style>
+<style>
+/***** IE PNG fix *******/
+img, div, a, li { behavior: url(/docs/TEMPLATE/775/iepngfix.htc); }
+</style>
+<script LANGUE="javaScript">
+function makeArray()    {
+    this[0] = makeArray.arguments.length;
+    for (i = 0; i<makeArray.arguments.length; i++)
+        this[i+1] = makeArray.arguments[i];
+}
+
+var daysofweek = new makeArray('Sunday',
+                               'Monday',
+                               'Tuesday',
+                               'Wednesday',
+                               'Thursday',
+                               'Friday',
+                               'Saturday');
+
+var monthsofyear = new makeArray('January',
+                                 'February',
+                                 'March',
+                                 'April',
+                                 'May',
+                                 'June',
+                                 'July',
+                                 'August',
+                                 'September',
+                                 'October',
+                                 'November',
+                                 'December');
+
+function Nths(day) { 
+    if (day == 1 || day == 21 || day == 31) return 'st';
+    if (day == 2 || day == 22) return 'nd';
+    if (day == 3 || day == 23) return 'rd';
+    return 'th';
+}
+
+function DayOfWeek(day,month,year) {
+    var a = Math.floor((14 - month)/12);
+    var y = year - a;
+    var m = month + 12*a - 2;
+    var d = (day + y + Math.floor(y/4) - Math.floor(y/100) +
+             Math.floor(y/400) + Math.floor((31*m)/12)) % 7;
+    return d + 1;
+}
+
+function FullDate(day,month,year) {
+    return daysofweek[DayOfWeek(day,month,year)] +', '+ monthsofyear[month] +' '+ day + Nths(day); 
+//    return daysofweek[DayOfWeek(day,month,year)] +', '+ monthsofyear[month] +' '+ day + Nths(day) + '<br/>';
+// Do not understand why there's a <br>, so comment it out for now. - Herbert
+
+//    return daysofweek[DayOfWeek(day,month,year)] +', '+ day + Nths(day) +', '+ monthsofyear[month] +', '+ year;
+
+}
+</script>
+<STYLE>
+/************************
+Social Media bucket CSS
+NOTE: This only perform the image swap, actual font size, style CSS should be place within the main CSS
+*************************/
+#socialmedia a {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+#socialmedia a:hover { background-position: 0 -20px; }
+
+#socialmedia a.facebook { background-image: url(/docs/IO/22778/img22778.png); }
+
+#socialmedia a.twitter { background-image: url(/docs/IO/22782/img22782.png); }
+
+#socialmedia a.linkedin { background-image: url(/docs/IO/22780/img22780.png); }
+
+#socialmedia a.gplus { background-image: url(/docs/IO/22781/img22781.png); }
+
+#socialmedia a.youtube { background-image: url(/docs/IO/22784/img22784.png); }
+
+#socialmedia a.vimeo { background-image: url(/docs/IO/22783/img22783.png); }
+
+#socialmedia a.blogger { background-image: url("/docs/IO/27695/img27695.png"); }
+
+#socialmedia a.mt { background-image: url("/docs/IO/27693/img27693.png"); }
+
+#socialmedia a.wp { background-image: url("/docs/IO/25590/img25590.png"); }
+
+#socialmedia a.email { background-image: url(/docs/IO/28101/img28101.png); }
+
+#socialmedia a.itunes { background-image: url(/docs/IO/28102/img28102.png); }
+
+</STYLE>
+<!--A collection of most of the special features available-->
+<!--AS Home page slideshow (2 scripts)-->
+<script type="text/javascript" src="/object/script.js"></script><script type="text/javascript" src="/object/autoadvance.js"></script>
+<!--Alt. table row color--><script type="text/javascript" src="/object/alttbcolor.js"></script>
+<!--Scroll to Top Button-->
+<!--Adjust with ID "topcontrol"--><script src="/object/scrolltopcontrol.js" type="text/javascript"></script>
+</head>
+<body ID="firstlevel">
+<div id="wrap">
+<div class="clearfix" id="main">
+<div id="topempty"></div>
+<div id="header">
+<div id="header-bg">
+<div class="tb" id="header-tb">
+<div class="rw" id="header-rw">
+<div class="cell" id="header-nyulogo">
+<div class="nyulogo">
+<a href="http://www.nyu.edu"></a>
+</div>
+</div>
+<div class="cell" id="header-search">
+<div ID="search">
+<div ID="searchbox">
+<form action="http://google.nyu.edu/search" id="searchform" method="get">
+<input value="xml_no_dtd" name="output" type="hidden"><input value="UTF-8" name="oe" type="hidden"><input value="10" name="num" type="hidden"><input value="NYUWeb_Main" name="client" type="hidden"><input value="NYUWeb_Main" name="site" type="hidden"><input value="default_frontend" name="proxystylesheet" type="hidden"><input name="sitesearch" type="hidden" value="as.nyu.edu">
+<table margin="0" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td style="padding-top:0px; padding-left:0px; padding-right:0px;">
+<table border="0" cellspacing="0" cellpadding="1">
+<tr>
+<td class="searchtable_bg">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr class="searchbox_bg">
+<td class="searchtext_bg"><input id="searchtextbox" name="q" type="text"></td><td valign="middle" align="center" class="searchbutton_bg"><input id="searchsubmit" border="0" src="/docs/TEMPLATE/560/btnGoSm.gif" type="image"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="header-minisite">
+<div class="minisite">
+<a href="/page/__default"></a>
+</div>
+</div>
+</div>
+</div>
+<div id="schoolnav">
+<ul>
+<li class="last">
+<a href="http://as.nyu.edu/page/aboutas">About Arts &amp; Science</a>
+</li>
+</ul>
+</div>
+<div id="content">
+<div id="subhr-box">
+<div id="subhr-photo">
+<div id="subhr-whitebg">
+<div id="subhr-splayer">
+<a href="/page/__default">
+<div id="subhr-txt"></div>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="tb" id="ct-tb">
+<div class="rw" id="ct-rw">
+<div class="cell" id="ct-mainnav">
+<div ID="mainnav">
+<ul>
+<li class="mainnav_on">Home</li>
+<li class="mainnav_off">
+<a href="/page/more">More About Speaking Freely</a>
+</li>
+<li class="mainnav_off">
+<a href="/page/schedule">Schedule</a>
+</li>
+<li class="mainnav_off">
+<a href="/page/registration">Registration</a>
+</li>
+<li class="mainnav_off">
+<a href="/page/links">NYU Language-Related Sites</a>
+</li>
+<li class="mainnav_off">
+<a href="/page/gradstaff">Graduate Students &amp; Staff</a>
+</li>
+<li class="mainnav_off">
+<a href="/page/teach">Interested in Teaching?</a>
+</li>
+<li class="mainnav_off">
+<a href="/page/faq">Frequently Asked Questions</a>
+</li>
+<li class="mainnav_off">
+<a href="/page/contact">Contact Information</a>
+</li>
+</ul>
+</div>
+<div ID="seealso"></div>
+</div>
+<div class="cell" id="ct-content">
+<div class="maincontent"><h2>Speaking Freely: Travel Without a Suitcase</h2>NYU Washington Square <a href="http://www.nyu.edu/footer/map.html">Campus Map </a><br><br>
+<h4>Speaking Freely</h4>Get a taste of a new language and culture without leaving home! Speaking Freely is available to all NYU undergraduate and graduate students and staff free of charge. The 75-minute language coaching sessions meet once a week for approximately ten weeks each semester at various locations on campus. Each week, you'll learn how to communicate on a different topic, or you might enjoy a related activity--a movie, concert, or neighborhood visit--as part of a small informal language group. No books are required and there’s no pressure of grades! <br>
+<h4>Languages </h4>
+<p>Speaking Freely offers sessions in&nbsp;many different languages, including Arabic, French, Greek (Modern), Hebrew, Hindi, Indonesian, Irish, Italian, Japanese, Mandarin, Persian, Russian, Spanish, and Turkish. Please see the schedule for meeting times and locations.&nbsp; It's the perfect way to meet people and&nbsp;try out a language and culture before you study abroad or visit another country. </p>
+<h4>Levels </h4>
+<p>Speaking Freely is a fun way to gain an introduction to a language, and also improve your language skills if you already have the basics. The sessions emphasize conversational knowledge, learning practical words and phrases you might use when traveling or studying abroad, as well as vocabulary related to various aspects of art, history, and culture. </p>
+<p><br>At least two levels of coaching are offered for most of the languages, and a third level is offered in some languages, depending on instructor availability.</p>
+<p><br>Level 1 is a basic introduction for those who have no experience in the language. Topics include travel, fashion, food, film, money, music, and sports. <br><br>Level 2 is slightly more advanced, and meant for those who have completed Level 1 or those who have a little experience in the language. Topics include family, friendship,&nbsp; relationships, customs and traditions, health, and leisure activities. <br><br>Level 3 is meant for those who are fairly proficient, and have studied the language for a couple of years or more in high school or college. Topics are determined&nbsp;in concert with the coach or instructor, and based on&nbsp;student interests.<br><br></p>
+<h4>Dates</h4>Please refer to the <a href="/page/schedule">schedule</a> for the dates of the ten week sessions of NYU Speaking Freely offered every Fall and Spring semester. <div><br></div><div>REGISTRATION will begin at the start of the Spring semester (January 2013). Spring 2013 classes will begin on February 11.&nbsp;</div><div><br></div><div>Of Special Note:</div><div>Japanese will only be offered for six weeks this semester, due to instructor availability.</div><div><br></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div class="footer">
+<a href="/page/contactus">Contact Us</a> | &copy; <a href="/object/link.nyu">New York University</a>, <a href="/object/link.as">Arts and Science</a>
+</div>
+</div>
+<div class="button-onsiteedit">
+<a target="ionAdmin" href="http://ionadmin.fas.nyu.edu/admin/ContextPageEditAction.ion?method=setup&key=3146"><img height="8" width="8" alt="" src="/docs/TEMPLATE/1033/edit.png"></a>
+</div>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-34153046-6']);
+  _gaq.push(['_setDomainName', 'nyu.edu']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!doctype html public "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"><html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>Yahoo! Advanced Web Search</title>
+<link rel="stylesheet" href="http://sec.yimg.com/us.yimg.com/lib/s/ysch_gl_070104.css" type="text/css">
+<link rel="stylesheet" href="http://sec.yimg.com/us.yimg.com/lib/s/ysch_adv_041201.css" type="text/css">
+<script language=javascript>
+function selectSome(){
+	var count=0;
+	for(var i=0;i<document.forms[0].vl.length;i++){
+		if(document.forms[0].vl[i].checked){
+			count++;
+		}
+	}
+document.forms[0].fl[1].checked=(count>0);document.forms[0].fl[1 - 1].checked=(count<=0);}
+</script>
+
+<script>
+// script to enable and disable checkboxes
+function yschccToggle(oChkbx){
+	var oContainer = document.getElementById("forf0cccb0");
+	if(oContainer){
+		var aCheckboxes = oContainer.getElementsByTagName("input");
+		var aDivs = oContainer.getElementsByTagName("div");
+		var sClassName = oChkbx.checked ? '': 'disabled';
+		if(aCheckboxes){
+			aCheckboxes[1].disabled = !oChkbx.checked;
+			aCheckboxes[2].disabled = !oChkbx.checked;		
+		}
+		if(aDivs){
+				aDivs[1].className =sClassName;
+				aDivs[2].className =sClassName;
+		}
+	}
+}
+</script>
+<style>#yschsub legend em {font-weight: bold; color:#FF6634; font-size: .8em; font-style: italic;}
+* html #yschsub legend {position: relative; top:1em;}
+* html #yschsub  {margin-top: -1em;}
+.yschchxgrp{float:left; display: block;}
+.yschchxgrpmore .yschchx { margin-left: 5px;}
+.yschlrnmr {clear: left; padding-top: .5em;}
+.ysubdesc {padding-top: 1em; padding-bottom: 1em;}</style><style type="text/css">
+#yschcc div div {padding-left: 1.5em;}
+#yschcc div .disabled {color: #C6C7C6; }
+#yschcc legend em {font-weight: bold; color:#FF6634; font-size: .8em; font-style: italic;}
+* html #yschcc legend {position: relative; top:2.2em;}
+* html #yschcc  {margin-top: -2.2em;}
+#yschcclogo{float:right; margin-right: 4em; margin-top: 1em;}
+#yschfrm #yschlang span {padding-bottom: 10px;}
+@-moz-document url-prefix() { 
+#yschfrm legend {float:none;}
+}
+</style>
+
+</head>
+<body><div id="yschdoc"><div id=ygma><a href="http://global.ard.yahoo.com/SIG=15r7u2d75/M=289534.6742900.7689521.6551551/D=yahoosrch/S=96062891:HDSCH/_ylt=A0oG7trghyFRrDQA.SarzbkF/Y=YAHOO/EXP=1361159168/L=c0V.40geurCEWDiOc.n8nw_M2KVfTFEhh.AAB4PU/B=DhnVB2KImjM-/J=1361151968515363/K=kZ7XlJkPfx8s8T3HZ10ZEg/A=2828623/R=0/SIG=10pbnnlc1/*http://search.yahoo.com"><img id=ygmalogo src= http://l.yimg.com/a/i/brand/purplelogo/uh/us/search.gif width=236 height=26 border=0 alt="Yahoo! Search"></a><!--QYZ ,;;;96062891;;--><div>
+<a href="http://www.yahoo.com/">Yahoo!</a> -
+<a href="http://search.yahoo.com/web">Search Home</a> -
+<a href="http://help.yahoo.com/l/us/yahoo/search/">Help</a>
+</div>
+</div>
+        <h1 id=ygtb>Advanced Web Search</h1>
+        <div id=yschfrm>
+                <form action="/web/adv_rd;_ylt=A0oG7trghyFRrDQA.iarzbkF" name=as method=get>
+                    <input type=hidden name=adult_done value="http://search.yahoo.com/search">
+                    <input type=hidden name=adult_cancel value="http://search.yahoo.com/web/advanced">
+                    <input type=hidden name=_adv_prop value="web">
+                    <input type=hidden name=x value="op">
+                    <input type=hidden name=ei value="UTF-8">
+                    <input type=hidden name=fr value="">
+                    <input type=hidden name=fr2 value="">
+        
+<div class=yschact>
+<em>You can use the options on this page to create a very specific search. Just fill in the fields you need for your current search.</em>
+<input type=submit value="Yahoo! Search">
+<hr>
+</div>
+        
+<fieldset>
+<legend><b>Show results with</b></legend>
+<div id=yschshow>
+<div>
+<label for=f0va>all of these words</label> 
+<input type=text size=28 id=f0va name=va value=""> 
+<select name=va_vt>
+    <option value=any>any part of the page</option>
+    <option value=title>in the title of the page</option>
+</select>
+</div>
+<div>
+<label for=f0vp>the exact phrase</label>
+<input type=text size=28 id=f0vp name=vp value="">
+<select name=vp_vt>
+    <option value=any>any part of the page</option>
+    <option value=title>in the title of the page</option>
+</select>
+</div>
+<div>
+<label for=f0vo>any of these words</label>
+<input type=text size=28 id=f0vo name=vo value="">
+<select name=vo_vt>
+    <option value=any>any part of the page</option>
+    <option value=title>in the title of the page</option>
+</select>
+</div>
+<div>
+<label for=f0ve>none of these words</label>
+<input type=text size=28 id=f0ve name=ve value="">
+<select name=ve_vt>
+    <option value=any>any part of the page</option>
+    <option value=title>in the title of the page</option>
+</select>
+</div>
+<em><strong>Tip:</strong>Use these options to look for an exact phrase or to exclude pages containing certain words. You can also limit your search to certain parts of pages.</em>
+</div>
+</fieldset>
+        <hr>
+        <fieldset>
+<legend><b>Site/Domain</b></legend>
+<div id=yschsite>
+
+<script language=javascript>
+var html_out = new Array();
+ html_out[0]="<span><label for=f0vst0><input type=radio id=f0vst0 name=vst value=0 checked onclick=\"this.form.vs.value='';\">Any domain</label></span>";
+html_out[1]="<span><label for=f0vst1><input type=radio id=f0vst1 name=vst value=\".com\" onclick=\"this.form.vs.value=this.value;\">Only <strong>.com</strong> domains</label>";
+html_out[2]="<label for=f0vst2><input type=radio id=f0vst2 name=vst value=\".edu\" onclick=\"this.form.vs.value=this.value;\">Only <strong>.edu</strong> domains</label></span>";
+html_out[3]="<span><label for=f0vst3><input type=radio id=f0vst3 name=vst value=\".gov\" onclick=\"this.form.vs.value=this.value;\">Only <strong>.gov</strong> domains</label>";
+html_out[4]="<label for=f0vst4><input type=radio id=f0vst4 name=vst value=\".org\" onclick=\"this.form.vs.value=this.value;\">Only <strong>.org</strong> domains</label></span><br clear=all>";
+document.write(html_out.join(''));
+</script>
+<label for=f0vst5 onclick="this.form.vs.focus();"><input type=radio name=vst id=f0vst5>only search in this domain/site:</label> <input type=text name=vs value="" size=30 onclick="this.form.vst[5].checked=true;">
+<em><strong>Tip:</strong> You can search for results in a specific website (e.g. yahoo.com) or top-level domains (e.g. .com, .org, .gov).</em>
+</div>
+</fieldset>
+        <hr>
+                
+<fieldset>
+<legend><b>File Format</b></legend>
+<div>
+<label for=f0vf>Only find results that are:
+<select id=f0vf name=vf><option value=all>all formats</option>
+<option value=html>HTML (.htm, .html)</option>
+<option value=pdf>Adobe PDF (.pdf)</option>
+<option value=xls>Microsoft Excel (.xls)</option>
+<option value=ppt>Microsoft PowerPoint (.ppt)</option>
+<option value=doc>Microsoft Word (.doc)</option>
+<option value=txt>Text Format (.txt)</option>
+</select></label>
+</div>
+</fieldset>
+<hr>
+<fieldset id=yschsafe>
+<legend><b>SafeSearch Filter</b></legend>
+<div>
+<p class=yschmsg>Applies when I'm signed in:</p>
+<div><label for=f0vm0><input type=radio id=f0vm0 name=vm value=r><strong>Strict</strong>: filter out adult web, video and image search results  - <em>SafeSearch On</em></label></div>
+
+<div><label for=f0vm1><input type=radio id=f0vm1 name=vm value=i  checked><strong>Moderate</strong>: filter out adult video and image search results only  - <em>SafeSearch On</em></label></div>
+
+<div><label for=f0vm2><input type=radio id=f0vm2 name=vm value=p  ><strong>Off</strong>: do not filter web results (results may include adult content) - <em>SafeSearch Off</em></label></div>
+
+<p><em><strong>Note:</strong> Any user signed in on your computer as 18 or older can change this setting. We recommend periodically checking the SafeSearch Lock settings.</em></p>
+<p><em><strong>Advisory:</strong> Yahoo! SafeSearch is designed to filter out explicit, adult-oriented content from Yahoo! Search results. However, Yahoo! cannot guarantee that all explicit content will be filtered out.</em></p>
+ 
+<p><em><a href="http://family.yahoo.com/family/parents">Learn more</a> about protecting children online.</em></p>
+<p><em><strong>Tip:</strong> If you'd like to block explicit content for every search, you can set this in <a href="http://search.yahoo.com/preferences/preferences?pref_done=http%3A%2F%2Fsearch.yahoo.com%2Fsearch%2Foptions%3Fei%3DUTF-8">preferences</a>. Keep in mind that this filter may not block all offensive content.</em></p>
+</div>
+</fieldset>
+<hr>
+<fieldset>
+<legend><b>Country</b></legend>
+<div>
+<select id=f0vc name=vc><option value="">any country</option>
+<option value=al>Albania</option>
+<option value=dz>Algeria</option>
+<option value=ar>Argentina</option>
+<option value=am>Armenia</option>
+<option value=au>Australia</option>
+<option value=at>Austria</option>
+<option value=az>Azerbaijan</option>
+<option value=bh>Bahrain</option>
+<option value=be>Belgium</option>
+<option value=bo>Bolivia</option>
+<option value=ba>Bosnia and Herzegovina</option>
+<option value=br>Brazil</option>
+<option value=bg>Bulgaria</option>
+<option value=ca>Canada</option>
+<option value=cl>Chile</option>
+<option value=cn>China</option>
+<option value=co>Colombia</option>
+<option value=cr>Costa Rica</option>
+<option value=hr>Croatia</option>
+<option value=cz>Czech Republic</option>
+<option value=dk>Denmark</option>
+<option value=do>Dominican Republic</option>
+<option value=ec>Ecuador</option>
+<option value=eg>Egypt</option>
+<option value=sv>El Salvador</option>
+<option value=ee>Estonia</option>
+<option value=fi>Finland</option>
+<option value=mk>Former Yugoslav Republic of Macedonia</option>
+<option value=fr>France</option>
+<option value=ge>Georgia</option>
+<option value=de>Germany</option>
+<option value=gr>Greece</option>
+<option value=gt>Guatemala</option>
+<option value=hn>Honduras</option>
+<option value=hk>Hong Kong</option>
+<option value=hu>Hungary</option>
+<option value=is>Iceland</option>
+<option value=in>India</option>
+<option value=id>Indonesia</option>
+<option value=ir>Iran</option>
+<option value=iq>Iraq</option>
+<option value=ie>Ireland</option>
+<option value=il>Israel</option>
+<option value=it>Italy</option>
+<option value=jp>Japan</option>
+<option value=jo>Jordan</option>
+<option value=ke>Kenya</option>
+<option value=kr>Korea</option>
+<option value=kw>Kuwait</option>
+<option value=lv>Latvia</option>
+<option value=lb>Lebanon</option>
+<option value=ly>Libya</option>
+<option value=lt>Lithuania</option>
+<option value=lu>Luxembourg</option>
+<option value=my>Malaysia</option>
+<option value=mt>Malta</option>
+<option value=mx>Mexico</option>
+<option value=ma>Morocco</option>
+<option value=nl>Netherlands</option>
+<option value=nz>New Zealand</option>
+<option value=ni>Nicaragua</option>
+<option value=no>Norway</option>
+<option value=om>Oman</option>
+<option value=pk>Pakistan</option>
+<option value=pa>Panama</option>
+<option value=py>Paraguay</option>
+<option value=pe>Peru</option>
+<option value=ph>Philippines</option>
+<option value=pl>Poland</option>
+<option value=pt>Portugal</option>
+<option value=pr>Puerto Rico</option>
+<option value=qa>Qatar</option>
+<option value=ro>Romania</option>
+<option value=ru>Russia</option>
+<option value=sa>Saudi Arabia</option>
+<option value=sp>Serbia</option>
+<option value=sg>Singapore</option>
+<option value=sk>Slovakia</option>
+<option value=sl>Slovenia</option>
+<option value=za>South Africa</option>
+<option value=es>Spain</option>
+<option value=se>Sweden</option>
+<option value=ch>Switzerland</option>
+<option value=sy>Syria</option>
+<option value=tw>Taiwan</option>
+<option value=th>Thailand</option>
+<option value=tn>Tunisia</option>
+<option value=tr>Turkey</option>
+<option value=ae>U.A.E (United Arab Emirate)</option>
+<option value=ua>Ukrain</option>
+<option value=gb>United Kingdom</option>
+<option value=us>United States</option>
+<option value=vn>Vietnam</option>
+<option value=ye>Yemen</option>
+</select>
+</div>
+</fieldset>
+<hr>
+<fieldset>
+<legend><b>Languages</b></legend>
+<div id=yschlang>
+<div>
+Search only for pages written in:
+</div>
+<label for=f0fl0><input type=radio id=f0fl0 name=fl value=0 checked onclick="for(i=0;i<this.form.vl.length;i++) this.form.vl[i].checked=0;">any language</label>
+<strong>OR</strong>
+<label for=f0fl1><input type=radio id=f0fl1 name=fl value=1>one or more of the following languages (select as many as you want).</label><BR>
+<span>
+    <label for=f0vl0><input type=checkbox id=f0vl0 name=vl value=lang_ar onclick="selectSome()">Arabic</label><br>
+    <label for=f0vl1><input type=checkbox id=f0vl1 name=vl value=lang_bg onclick="selectSome()">Bulgarian</label><br>
+    <label for=f0vl2><input type=checkbox id=f0vl2 name=vl value=lang_zh_chs onclick="selectSome()">Chinese&nbsp;(Simplified)</label><br>
+    <label for=f0vl3><input type=checkbox id=f0vl3 name=vl value=lang_zh_cht onclick="selectSome()">Chinese&nbsp;(Traditional)</label><br>
+    <label for=f0vl4><input type=checkbox id=f0vl4 name=vl value=lang_hr onclick="selectSome()">Croatian</label><br>
+    <label for=f0vl5><input type=checkbox id=f0vl5 name=vl value=lang_cs onclick="selectSome()">Czech</label><br>
+    <label for=f0vl6><input type=checkbox id=f0vl6 name=vl value=lang_da onclick="selectSome()">Danish</label><br>
+    <label for=f0vl7><input type=checkbox id=f0vl7 name=vl value=lang_nl onclick="selectSome()">Dutch</label><br>
+    <label for=f0vl8><input type=checkbox id=f0vl8 name=vl value=lang_en onclick="selectSome()">English</label><br>
+    <label for=f0vl9><input type=checkbox id=f0vl9 name=vl value=lang_et onclick="selectSome()">Estonian</label><br>
+    <label for=f0vl10><input type=checkbox id=f0vl10 name=vl value=lang_fi onclick="selectSome()">Finnish</label><br>
+</span><span>    <label for=f0vl11><input type=checkbox id=f0vl11 name=vl value=lang_fr onclick="selectSome()">French</label><br>
+    <label for=f0vl12><input type=checkbox id=f0vl12 name=vl value=lang_de onclick="selectSome()">German</label><br>
+    <label for=f0vl13><input type=checkbox id=f0vl13 name=vl value=lang_el onclick="selectSome()">Greek</label><br>
+    <label for=f0vl14><input type=checkbox id=f0vl14 name=vl value=lang_he onclick="selectSome()">Hebrew</label><br>
+    <label for=f0vl15><input type=checkbox id=f0vl15 name=vl value=lang_hu onclick="selectSome()">Hungarian</label><br>
+    <label for=f0vl16><input type=checkbox id=f0vl16 name=vl value=lang_it onclick="selectSome()">Italian</label><br>
+    <label for=f0vl17><input type=checkbox id=f0vl17 name=vl value=lang_ja onclick="selectSome()">Japanese</label><br>
+    <label for=f0vl18><input type=checkbox id=f0vl18 name=vl value=lang_ko onclick="selectSome()">Korean</label><br>
+    <label for=f0vl19><input type=checkbox id=f0vl19 name=vl value=lang_lv onclick="selectSome()">Latvian</label><br>
+    <label for=f0vl20><input type=checkbox id=f0vl20 name=vl value=lang_lt onclick="selectSome()">Lithuanian</label><br>
+    <label for=f0vl21><input type=checkbox id=f0vl21 name=vl value=lang_no onclick="selectSome()">Norwegian</label><br>
+</span><span>    <label for=f0vl22><input type=checkbox id=f0vl22 name=vl value=lang_pl onclick="selectSome()">Polish</label><br>
+    <label for=f0vl23><input type=checkbox id=f0vl23 name=vl value=lang_pt onclick="selectSome()">Portuguese</label><br>
+    <label for=f0vl24><input type=checkbox id=f0vl24 name=vl value=lang_ro onclick="selectSome()">Romanian</label><br>
+    <label for=f0vl25><input type=checkbox id=f0vl25 name=vl value=lang_ru onclick="selectSome()">Russian</label><br>
+    <label for=f0vl26><input type=checkbox id=f0vl26 name=vl value=lang_sk onclick="selectSome()">Slovak</label><br>
+    <label for=f0vl27><input type=checkbox id=f0vl27 name=vl value=lang_sl onclick="selectSome()">Slovenian</label><br>
+    <label for=f0vl28><input type=checkbox id=f0vl28 name=vl value=lang_es onclick="selectSome()">Spanish</label><br>
+    <label for=f0vl29><input type=checkbox id=f0vl29 name=vl value=lang_sv onclick="selectSome()">Swedish</label><br>
+    <label for=f0vl30><input type=checkbox id=f0vl30 name=vl value=lang_th onclick="selectSome()">Thai</label><br>
+    <label for=f0vl31><input type=checkbox id=f0vl31 name=vl value=lang_tr onclick="selectSome()">Turkish</label><br>
+</span>
+</div>
+<hr>
+</fieldset>
+
+<fieldset>
+<legend><b>Number of Results</b></legend>
+<div><label for=f0n>Display <select id=f0n name=n><option value=10 selected>&nbsp;10 results<option value=15>&nbsp;15 results<option value=20>&nbsp;20 results<option value=30>&nbsp;30 results<option value=40>&nbsp;40 results<option value=100>&nbsp;100 results</select> per page.</label></div>
+</fieldset>
+<div class=yschact>
+<hr>
+<input type=submit value="Yahoo! Search">
+</div>
+</form>        
+        </div>
+        <div id=yschft>
+<hr>
+<p><center><font face=arial size=-2>
+
+Copyright &copy; 2013 Yahoo! All rights reserved. 
+<a href="/r/_ylt=A0oG7trghyFRrDQA.yarzbkF/SIG=12e7fcc1l/EXP=1361180768/**http%3a//info.yahoo.com/privacy/us/yahoo/search/details.html">Privacy</a> /
+<a href="/r/_ylt=A0oG7trghyFRrDQA_CarzbkF/SIG=12bpnfaon/EXP=1361180768/**http%3a//info.yahoo.com/legal/us/yahoo/utos/utos-173.html">Legal</a> -
+<a href="/r/_ylt=A0oG7trghyFRrDQA_SarzbkF/SIG=11mg1c468/EXP=1361180768/**http%3a//info.yahoo.com/relevantads/">About Our Ads</a> -<a href="/r/_ylt=A0oG7trghyFRrDQA_iarzbkF/SIG=11snovera/EXP=1361180768/**http%3a//search.yahoo.com/info/submit.html">Submit Your Site</a>
+</font></center></p>
+</div>
+        </body>
+        </html><!-- syc93.search.ac2.yahoo.com uncompressed/chunked Mon Feb 18 01:46:08 UTC 2013 -->

@@ -1,0 +1,432 @@
+<!doctype html public "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"><html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>Advanced News Search</title>
+<link rel="stylesheet" href="http://l.yimg.com/pv/lib/s6/adv_metro_vertical_201007212026.css" type="text/css">
+
+<script language=javascript>
+function selectAll(){
+    for(var i=0;i<document.forms[0].vl.length;i++) {
+        document.forms[0].vl[i].checked = false;
+    }
+}
+
+function selectSome(){
+    var count=0;
+    for(var i=0;i<document.forms[0].vl.length;i++){
+        if(document.forms[0].vl[i].checked){
+            count++;
+        }
+    }
+    document.forms[0].fl[0].checked=(count<=0);
+    document.forms[0].fl[1].checked=(count>0);
+}
+
+function selectAllCategories() {
+    for (var i=1;i<=16;i++) {
+        var elem = document.getElementById('yscat'+i);
+        if (elem) {
+            elem.checked = false;
+        }
+    }
+}
+</script>
+
+<script>
+// script to enable and disable checkboxes
+function yschccToggle(oChkbx){
+	var oContainer = document.getElementById("forf0cccb0");
+	if(oContainer){
+		var aCheckboxes = oContainer.getElementsByTagName("input");
+		var aDivs = oContainer.getElementsByTagName("div");
+		var sClassName = oChkbx.checked ? '': 'disabled';
+		if(aCheckboxes){
+			aCheckboxes[1].disabled = !oChkbx.checked;
+			aCheckboxes[2].disabled = !oChkbx.checked;		
+		}
+		if(aDivs){
+				aDivs[1].className =sClassName;
+				aDivs[2].className =sClassName;
+		}
+	}
+}
+</script>
+<style>#yschsub legend em {font-weight: bold; color:#FF6634; font-size: .8em; font-style: italic;}
+* html #yschsub legend {position: relative; top:1em;}
+* html #yschsub  {margin-top: -1em;}
+.yschchxgrp{float:left; display: block;}
+.yschchxgrpmore .yschchx { margin-left: 5px;}
+.yschlrnmr {clear: left; padding-top: .5em;}
+.ysubdesc {padding-top: 1em; padding-bottom: 1em;}</style><style type="text/css">
+#yschcc div div {padding-left: 1.5em;}
+#yschcc div .disabled {color: #C6C7C6; }
+#yschcc legend em {font-weight: bold; color:#FF6634; font-size: .8em; font-style: italic;}
+* html #yschcc legend {position: relative; top:2.2em;}
+* html #yschcc  {margin-top: -2.2em;}
+#yschcclogo{float:right; margin-right: 4em; margin-top: 1em;}
+#yschfrm #yschlang span {padding-bottom: 10px;}
+@-moz-document url-prefix() { 
+    #yschfrm legend {float:none;}
+}
+#yschfrm span {
+    float: right;
+    line-height: 1.4em;
+    text-align: left;
+    width: 79%;
+}
+#yschfrm .ysfrmgrp2,
+#yschfrm .ysfrmgrp3,
+#yschfrm .ysfrmgrp4 {
+    float: left;
+    margin: 5px 0px 0px 22%;
+    width: 23%;
+}
+#yschshow {
+    width: 80%;
+}
+#ss li.date span {
+    margin: 0 2px;
+}
+</style>
+
+</head>
+<body><div id="yschdoc"><div id=ygma><!-- gd2-status-11 --><!-- SpaceID=2114700010 loc=HDSCH noad -->
+<!--QYZ FAC_DONT_USE,,98.139.230.57;;;2114700010;11;--><a href="http://search.yahoo.com/web;_ylt=A2KJ2UiDhyFREwYA4BHqwgt."><img id="ygmalogo" src="http://l.yimg.com/pv/i/brand/purplelogo/uh/us/ma-search.gif" width="236" height="26" border="0" alt="Yahoo! Search"></a><div>
+<a href="http://www.yahoo.com/">Yahoo!</a> -
+<a href="http://news.search.yahoo.com">Search Home</a> -
+<a href="http://help.yahoo.com/l/us/yahoo/search/">Help</a>
+</div>
+</div>
+        <h1 id=ygtb>Advanced News Search</h1>
+        <div id="yschfrm">
+                <form action="/search;_ylt=A2KJ2UiDhyFREwYA4RHqwgt." name=as method=get>
+                    <input type="hidden" name="_adv_prop" value="web">
+                    <input type="hidden" name="x" value="op">
+                    <input type="hidden" name="ei" value="UTF-8">
+                    <input type="hidden" name="fr" value="altavista">
+                    <input type="hidden" name="fr2" value="">
+        
+<div class=yschact>
+<em>You can use the options on this page to create a very specific search. Just fill in the fields you need for your current search.</em>
+<input type=submit value="Yahoo! Search">
+<hr>
+</div>
+        
+<fieldset>
+<legend><b>Show results with</b></legend>
+<div id=yschshow>
+<div>
+<label for=f0va>all of these words</label> 
+<input type=text size=28 id=f0va name=va value=""> 
+<select name=va_vt>
+    <option value=any>any part of the page</option>
+    <option value=title>in the title of the page</option>
+    <option value=url>in the URL of the page</option>
+</select>
+</div>
+<div>
+<label for=f0vp>the exact phrase</label>
+<input type=text size=28 id=f0vp name=vp value="">
+<select name=vp_vt>
+    <option value=any>any part of the page</option>
+    <option value=title>in the title of the page</option>
+    <option value=url>in the URL of the page</option>
+</select>
+</div>
+<div>
+<label for=f0vo>any of these words</label>
+<input type=text size=28 id=f0vo name=vo value="">
+<select name=vo_vt>
+    <option value=any>any part of the page</option>
+    <option value=title>in the title of the page</option>
+    <option value=url>in the URL of the page</option>
+</select>
+</div>
+<div>
+<label for=f0ve>none of these words</label>
+<input type=text size=28 id=f0ve name=ve value="">
+<select name=ve_vt>
+    <option value=any>any part of the page</option>
+    <option value=title>in the title of the page</option>
+    <option value=url>in the URL of the page</option>
+</select>
+</div>
+<em><strong>Tip:</strong>Use these options to look for an exact phrase or to exclude pages containing certain words. You can also limit your search to certain parts of pages.</em>
+</div>
+</fieldset>
+<hr>
+<fieldset> 
+    <legend>
+        <label for=ysnwsrt>
+            <b>Sorted By</b>
+        </label>
+    </legend> 
+    <span>
+        <select name="sort" id=ysnwsrt> 
+            <option value="">relevance</option> 
+            <option value="time">date</option> 
+        </select> 
+    </span>
+    <br class=ysclr clear=all>
+</fieldset>
+<hr>
+<fieldset>
+    <legend>
+        <label for=ysnwpub>
+            <a name="published"><b>Published</b></a>
+        </label>
+    </legend>
+<span>
+
+
+
+<input type=radio name=pub checked value=>
+<select name=timeago id=ysnwpub onchange="this.form.pub[0].checked=true;">
+<option value=hour >last hour</option>
+<option value=day >last day</option>
+<option value=week >last 7 days</option>
+<option value=twoweeks >last 14 days</option>
+<option value=""  selected>last 30 days</option>
+</select><br>
+<label for=yspubspec><input type=radio name=pub id=yspubspec  value=1>Published between</label>
+<select onchange="this.form.pub[1].checked=true;" name=smonth>
+<option value=1 selected>Jan
+<option value=2>Feb
+</select>
+<select onchange="this.form.pub[1].checked=true;" name=sday>
+<option value=1 >1
+<option value=2 >2
+<option value=3 >3
+<option value=4 >4
+<option value=5 >5
+<option value=6 >6
+<option value=7 >7
+<option value=8 >8
+<option value=9 >9
+<option value=10 >10
+<option value=11 >11
+<option value=12 >12
+<option value=13 >13
+<option value=14 >14
+<option value=15 >15
+<option value=16 >16
+<option value=17 >17
+<option value=18 selected>18
+<option value=19 >19
+<option value=20 >20
+<option value=21 >21
+<option value=22 >22
+<option value=23 >23
+<option value=24 >24
+<option value=25 >25
+<option value=26 >26
+<option value=27 >27
+<option value=28 >28
+<option value=29 >29
+<option value=30 >30
+<option value=31 >31
+</select>
+and
+<select onchange="this.form.pub[1].checked=true;" name=emonth>
+<option value=1>Jan
+<option value=2 selected>Feb
+</select>
+<select onchange="this.form.pub[1].checked=true;" name=eday>
+<option value=1 >1
+<option value=2 >2
+<option value=3 >3
+<option value=4 >4
+<option value=5 >5
+<option value=6 >6
+<option value=7 >7
+<option value=8 >8
+<option value=9 >9
+<option value=10 >10
+<option value=11 >11
+<option value=12 >12
+<option value=13 >13
+<option value=14 >14
+<option value=15 >15
+<option value=16 >16
+<option value=17 selected>17
+<option value=18 >18
+<option value=19 >19
+<option value=20 >20
+<option value=21 >21
+<option value=22 >22
+<option value=23 >23
+<option value=24 >24
+<option value=25 >25
+<option value=26 >26
+<option value=27 >27
+<option value=28 >28
+<option value=29 >29
+<option value=30 >30
+<option value=31 >31
+</select>
+<br><em><strong>Tip:</strong>You can search within a certain time period or specify your own date or range of dates</em>	
+</span>
+<br class=ysclr clear=all>				
+</fieldset>
+<hr>
+<a name="source"></a>
+<fieldset>
+    <legend><label for=ysnwsrc><b>Source</b></label></legend>
+    <span>
+        <input type="text" size="40" id="ysnwsrc" name="source" value="">
+        <br><em><strong>Tip:</strong> You can search for news from a specific provider, e.g. "New York Times".</em>	
+    </span>
+    <br class=ysclr clear=all>	
+</fieldset>			
+<hr>
+<A name="location"></A>
+<fieldset>
+    <legend><label for="ysnwloc"><b>Location</b></label></legend>
+    <span>
+        <input type="text" size="40" id="ysnwloc" name="location" value="">
+        <br><em><strong>Tip:</strong> You can search for news from newspapers from a specific region or country, e.g. "Canada" or "California".</em>
+    </span>
+    <br class=ysclr clear=all>	
+</fieldset>
+<hr>
+
+<fieldset>
+    <legend>
+        <a name="topics">
+            <b>Categories</b>
+        </a>
+    </legend>
+    <span>Search only for pages within:<br />
+        <label onclick="selectAllCategories()" for="ysnwcatall">
+    <input type="radio" id="ysnwcatall" value="" name="catfilt" checked="checked">all categories
+        </label>
+        <p class="ysexcept">
+            <strong>or</strong>
+        </p>
+        <label for="ysncatfilt">
+        <input type="radio" id="ysncatfilt" value="1" name="catfilt"  />
+            one or more of the following categories (select as many as you want)
+        </label>
+    </span>
+    <br class="ysclr" clear="all" />
+    <span class="ysfrmgrp2">
+        <label onclick="document.forms[0].catfilt[1].checked=1;" for="yscat1">
+        <input type="checkbox" value="headlines" id="yscat1" name="cat" > Top Stories
+        </label><br />
+        <label onclick="document.forms[0].catfilt[1].checked=1;" for="yscat3">
+            <input type="checkbox" value="politics" id="yscat3" name="cat" > Politics
+        </label><br />
+        <label onclick="document.forms[0].catfilt[1].checked=1;" for="yscat4">
+            <input type="checkbox" value="entertainment" id="yscat4" name="cat" > Entertainment
+        </label><br />
+        <label onclick="document.forms[0].catfilt[1].checked=1;" for="yscat5">
+            <input type="checkbox" value="business" id="yscat5" name="cat" > Business
+        </label><br />
+        <label onclick="document.forms[0].catfilt[1].checked=1;" for="yscat6">
+            <input type="checkbox" value="crime" id="yscat6" name="cat" > Crimes and trials
+        </label><br />
+        <label onclick="document.forms[0].catfilt[1].checked=1;" for="yscat7">
+            <input type="checkbox" value="health" id="yscat7" name="cat" > Health
+        </label><br />
+    </span>
+    <span class="ysfrmgrp3">
+        <label onclick="document.forms[0].catfilt[1].checked=1;" for="yscat8">
+            <input type="checkbox" value="localnews" id="yscat8" name="cat" > Local
+        </label><br />
+        <label onclick="document.forms[0].catfilt[1].checked=1;" for="yscat11">
+            <input type="checkbox" value="commentary" id="yscat11" name="cat" > Commentary
+        </label><br />
+        <label onclick="document.forms[0].catfilt[1].checked=1;" for="yscat12">
+            <input type="checkbox" value="science" id="yscat12" name="cat" > Science
+        </label><br />
+        <label onclick="document.forms[0].catfilt[1].checked=1;" for="yscat13">
+            <input type="checkbox" value="sports" id="yscat13" name="cat" > Sports
+        </label><br />
+        <label onclick="document.forms[0].catfilt[1].checked=1;" for="yscat14">
+            <input type="checkbox" value="technology" id="yscat14" name="cat" > Technology
+        </label><br />
+    </span>
+    <span class="ysfrmgrp4">
+        <label onclick="document.forms[0].catfilt[1].checked=1;" forr="yscat15">
+            <input type="checkbox" value="elections" id="yscat15" name="cat" > Elections
+        </label><br />
+        <label onclick="document.forms[0].catfilt[1].checked=1;" forror="yscat16">
+            <input type="checkbox" value="finance" id="yscat16" name="cat" > Finance</label><br>
+        </label><br />
+    </span>
+    <br class="ysclr" clear="all" />
+</fieldset>
+<hr>
+<fieldset>
+<legend><b>Language</b></legend>
+<div id=yschlang>
+<div>
+Search only for pages written in:
+</div>
+<label for=f0fl0><input type=radio id=f0fl0 name=fl value=0 checked onclick="selectAll()">any language</label>
+<strong>or</strong>
+<label for=f0fl1><input type=radio id=f0fl1 name=fl value=1>one or more of the following languages (select as many as you want).</label><BR>
+<span>
+    <label for=f0vl0><input type=checkbox id=f0vl0 name=vl value=lang_sq onclick="selectSome()">Albanian</label><br>
+    <label for=f0vl1><input type=checkbox id=f0vl1 name=vl value=lang_ar onclick="selectSome()">Arabic</label><br>
+    <label for=f0vl2><input type=checkbox id=f0vl2 name=vl value=lang_bg onclick="selectSome()">Bulgarian</label><br>
+    <label for=f0vl3><input type=checkbox id=f0vl3 name=vl value=lang_ca onclick="selectSome()">Catalan</label><br>
+    <label for=f0vl4><input type=checkbox id=f0vl4 name=vl value=lang_zh-CN onclick="selectSome()">Chinese&nbsp;(Simplified)</label><br>
+    <label for=f0vl5><input type=checkbox id=f0vl5 name=vl value=lang_zh-TW onclick="selectSome()">Chinese&nbsp;(Traditional)</label><br>
+    <label for=f0vl6><input type=checkbox id=f0vl6 name=vl value=lang_hr onclick="selectSome()">Croatian</label><br>
+    <label for=f0vl7><input type=checkbox id=f0vl7 name=vl value=lang_cs onclick="selectSome()">Czech</label><br>
+    <label for=f0vl8><input type=checkbox id=f0vl8 name=vl value=lang_da onclick="selectSome()">Danish</label><br>
+    <label for=f0vl9><input type=checkbox id=f0vl9 name=vl value=lang_nl onclick="selectSome()">Dutch</label><br>
+    <label for=f0vl10><input type=checkbox id=f0vl10 name=vl value=lang_en onclick="selectSome()">English</label><br>
+    <label for=f0vl11><input type=checkbox id=f0vl11 name=vl value=lang_et onclick="selectSome()">Estonian</label><br>
+    <label for=f0vl12><input type=checkbox id=f0vl12 name=vl value=lang_fi onclick="selectSome()">Finnish</label><br>
+    <label for=f0vl13><input type=checkbox id=f0vl13 name=vl value=lang_fr onclick="selectSome()">French</label><br>
+</span><span>    <label for=f0vl14><input type=checkbox id=f0vl14 name=vl value=lang_de onclick="selectSome()">German</label><br>
+    <label for=f0vl15><input type=checkbox id=f0vl15 name=vl value=lang_el onclick="selectSome()">Greek</label><br>
+    <label for=f0vl16><input type=checkbox id=f0vl16 name=vl value=lang_iw onclick="selectSome()">Hebrew</label><br>
+    <label for=f0vl17><input type=checkbox id=f0vl17 name=vl value=lang_hu onclick="selectSome()">Hungarian</label><br>
+    <label for=f0vl18><input type=checkbox id=f0vl18 name=vl value=lang_is onclick="selectSome()">Icelandic</label><br>
+    <label for=f0vl19><input type=checkbox id=f0vl19 name=vl value=lang_id onclick="selectSome()">Indonesian</label><br>
+    <label for=f0vl20><input type=checkbox id=f0vl20 name=vl value=lang_it onclick="selectSome()">Italian</label><br>
+    <label for=f0vl21><input type=checkbox id=f0vl21 name=vl value=lang_ja onclick="selectSome()">Japanese</label><br>
+    <label for=f0vl22><input type=checkbox id=f0vl22 name=vl value=lang_ko onclick="selectSome()">Korean</label><br>
+    <label for=f0vl23><input type=checkbox id=f0vl23 name=vl value=lang_lv onclick="selectSome()">Latvian</label><br>
+    <label for=f0vl24><input type=checkbox id=f0vl24 name=vl value=lang_lt onclick="selectSome()">Lithuanian</label><br>
+    <label for=f0vl25><input type=checkbox id=f0vl25 name=vl value=lang_ms onclick="selectSome()">Malay</label><br>
+    <label for=f0vl26><input type=checkbox id=f0vl26 name=vl value=lang_no onclick="selectSome()">Norwegian</label><br>
+    <label for=f0vl27><input type=checkbox id=f0vl27 name=vl value=lang_fa onclick="selectSome()">Persian</label><br>
+</span><span>    <label for=f0vl28><input type=checkbox id=f0vl28 name=vl value=lang_pl onclick="selectSome()">Polish</label><br>
+    <label for=f0vl29><input type=checkbox id=f0vl29 name=vl value=lang_pt onclick="selectSome()">Portuguese</label><br>
+    <label for=f0vl30><input type=checkbox id=f0vl30 name=vl value=lang_ro onclick="selectSome()">Romanian</label><br>
+    <label for=f0vl31><input type=checkbox id=f0vl31 name=vl value=lang_ru onclick="selectSome()">Russian</label><br>
+    <label for=f0vl32><input type=checkbox id=f0vl32 name=vl value=lang_sr onclick="selectSome()">Serbian</label><br>
+    <label for=f0vl33><input type=checkbox id=f0vl33 name=vl value=lang_sk onclick="selectSome()">Slovak</label><br>
+    <label for=f0vl34><input type=checkbox id=f0vl34 name=vl value=lang_sl onclick="selectSome()">Slovenian</label><br>
+    <label for=f0vl35><input type=checkbox id=f0vl35 name=vl value=lang_es onclick="selectSome()">Spanish</label><br>
+    <label for=f0vl36><input type=checkbox id=f0vl36 name=vl value=lang_sv onclick="selectSome()">Swedish</label><br>
+    <label for=f0vl37><input type=checkbox id=f0vl37 name=vl value=lang_pht onclick="selectSome()">Tagalog</label><br>
+    <label for=f0vl38><input type=checkbox id=f0vl38 name=vl value=lang_th onclick="selectSome()">Thai</label><br>
+    <label for=f0vl39><input type=checkbox id=f0vl39 name=vl value=lang_tr onclick="selectSome()">Turkish</label><br>
+    <label for=f0vl40><input type=checkbox id=f0vl40 name=vl value=lang_vn onclick="selectSome()">Vietnamese</label><br>
+</span>
+</div>
+</fieldset>
+<hr>
+<fieldset>
+<legend><b>Number of Results</b></legend>
+<div><label for=f0n>Display <select id=f0n name=n><option value=10 selected>&nbsp;10 results<option value=15>&nbsp;15 results<option value=20>&nbsp;20 results<option value=30>&nbsp;30 results</select> per page.</label></div>
+</fieldset>
+<div class=yschact>
+<hr>
+<input type=submit value="Yahoo! Search">
+</div>
+</form>        
+        </div>
+        <div id=yschft>
+<hr>
+<p><center><font face=arial size=-2>
+Copyright &copy; 2013 Yahoo! All rights reserved. 
+<a href="http://info.yahoo.com/privacy/us/yahoo/search/details.html">Privacy</a> /
+<a href="http://info.yahoo.com/legal/us/yahoo/utos/utos-173.html">Legal</a> -
+<a href="http://info.yahoo.com/relevantads/">About Our Ads</a> -<a href="http://search.yahoo.com/info/submit.html">Submit Your Site</a>
+</font></center></p>
+</div>
+        </body>
+        </html><!-- fe1.news.search.ac4.yahoo.com uncompressed/chunked Mon Feb 18 01:44:35 UTC 2013 -->

@@ -1,0 +1,110 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html><head><title>EM3.iOn.Admin - 
+Login</title>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<SCRIPT type="text/javascript" language="javascript">
+function btnRoll(oImg) {
+var aTemp = oImg.src.split('/');
+var aSource = aTemp[aTemp.length-1].split('-');
+if (aSource.length == 1) oImg.src = './admin-images/' + aSource[0].split('.')[0] + '-over.gif';
+else if (aSource[1] == 'over.gif') oImg.src = './admin-images/' + aSource[0] + '.gif';
+}
+</SCRIPT>
+<SCRIPT type="text/javascript" language="javascript" SRC="./includes/admin.js"></SCRIPT>
+<SCRIPT type="text/javascript" language="javascript" SRC="./includes/popUp.js"></SCRIPT>
+<SCRIPT type="text/javascript" language="javascript" SRC="./includes/sarissa.js"></SCRIPT>
+<SCRIPT type="text/javascript" language="javascript" SRC="./includes/sarissa_ieemu_xpath.js"></SCRIPT>
+<SCRIPT type="text/javascript" language="javascript" SRC="./includes/modalDialog.js"></SCRIPT>
+<SCRIPT type="text/javascript" language="javascript" SRC="./includes/domEventHelpers.js"></SCRIPT>
+<link rel="stylesheet" type="text/css" href="./includes/adminStylesCommon.css">
+</head>
+<body onScroll="Javascript:positionFloaters()">
+<img id="logoLayer" class="logoLayer" height="250" width="130" src="./admin-images/em3Admin.gif">
+<img id="topCurve" class="topCurve" src="./admin-images/top-curve.gif">
+<img id="bottomCurve" class="bottomCurve" height="100" width="310" src="./admin-images/bottom-curve.gif">
+<SCRIPT type="text/javascript" language="javascript">
+if (is.ie) {document.write("<link rel='stylesheet' type='text/css' href='./includes/adminStylesIE.css'>")} else {document.write("<link rel='stylesheet' type='text/css' href='./includes/adminStylesMoz.css'>")}
+</SCRIPT>
+
+
+<div class="editPageTitle">EM3 iOn.admin.login</div>
+
+<!-- ERROR MESSAGES -->
+
+
+
+
+
+
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" style="width:100%;height:100%;">
+<tr>
+<td><img src="./admin-images/-.gif" height="26" width="100" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td valign="top" width="100%" height="100%">
+<div class="outerContainer">
+
+
+<div class="formContent" ID="layer1">
+<table align="center" height="200" border="0"><tr><td><hr valign="top" color="white">
+<table width="100%" cellspacing="0" cellpadding="3" border="0">
+		<tr>
+		<td width="200">
+			<form name="loginForm" method="post" action="/admin/LoginAction.ion;jsessionid=DB73196B0D9442DAD29F01687EEA86E6" id="form1">
+			<input type="hidden" name="nextPage" value="/admin/ContextPageEditAction.ion?method=setup&amp;key=4313"/>
+			<table width="300" cellspacing="0" cellpadding="3" border="0">	
+				<tr></tr>
+				<TR><TD VALIGN="TOP" align="right"><font class="instructionText"><nobr>E-Mail&nbsp;Address:</nobr></FONT></TD><TD VALIGN="TOP" width="100%"><input type="text" name="uid" maxlength="128" value="" style="width:100%" class="adminFormText"></TD></TR>
+				<TR><TD VALIGN="TOP" align="right"><font class="instructionText">Password:</FONT></TD><TD VALIGN="TOP"><input type="password" name="password" maxlength="32" value="" style="width:100%" class="adminFormText"></TD></TR>
+				<TR><TD>&nbsp;</TD><TD VALIGN="TOP"><input type="submit" value="LOG IN" onmouseover="this.style.backgroundColor='#C9CBEA'" onmouseout="this.style.backgroundColor='#EEEEEE'" style="width:100%" class="formbutton"></TD></TR>
+				<TR><TD align="right"></TD><TD><input type="checkbox" name="cookieLogin" value="on"><font class="instructionText">Remember my login</FONT></TD></TR>
+			</table>
+			<!--<INPUT TYPE="SUBMIT" VALUE="Log in">-->
+			<input type="hidden" name="url" value="">
+			
+			</form>		
+		
+		</td>
+		<td VALIGN="TOP"><font class="instructionText">
+		Welcome to iOn.Admin. You must have a valid logon to use this application. If you have not received your logon information, have forgotten your password, or need to request new logon permissions, please contact your site administrator.<br><br>Please enter your e-mail address and password to log in. If you would like to be automatically logged in from your current computer the next time you return to iOn.Admin, check the "Remember my login" option.
+		</td>	
+	</TR>	
+</table>
+<hr color="white"/>
+</td></tr></table>
+
+</div>
+</div>
+</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><img src="./admin-images/-.gif" height="40" width="20" /></td>
+</tr>
+</table>
+
+
+
+<script language="javascript">PopUp();</script>
+</body></html>

@@ -1,0 +1,2618 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head><script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script>
+     
+  
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+   
+
+
+   
+
+
+
+
+ 
+   
+ 
+      
+   	
+      
+ 
+   
+ 
+
+
+ 
+	
+  
+
+
+<meta charset="UTF-8">
+<link rel="shortcut icon" href="http://caprica.s3.amazonaws.com/production/versions/158/assets/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="http://caprica.s3.amazonaws.com/production/versions/158/assets/favicon128.png" />
+<link href="http://caprica.s3.amazonaws.com/production/versions/158/assets/normalize.css"  media="all" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" href="http://caprica.s3.amazonaws.com/production/versions/158/assets/pc.css" />
+
+
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+<script type="text/javascript" src="http://caprica.s3.amazonaws.com/production/versions/158/assets/pc.js"></script>
+<script type="text/javascript" src="http://caprica.s3.amazonaws.com/production/versions/158/assets/moment.min.js"></script>
+
+
+<script type="text/javascript" src="http://caprica.s3.amazonaws.com/production/versions/158/assets/jquery.cookie.js"></script>
+<script type="text/javascript" src="http://caprica.s3.amazonaws.com/production/versions/158/assets/all-search.js"></script>
+ <script type="text/javascript" src="http://caprica.s3.amazonaws.com/production/versions/158/assets/jquery.total-storage.js"></script> 
+ <script type="text/javascript" src="http://caprica.s3.amazonaws.com/production/versions/158/assets/all-movies.js"></script>   
+
+<!--[if lt IE 10]>
+<script type="text/javascript" src="http://caprica.s3.amazonaws.com/production/versions/158/assets/PIE.js"></script>
+<script type="text/javascript">
+$(function() {
+    if (window.PIE) {
+        $('#pageHeader').each(function() {
+            PIE.attach(this);
+        });
+    }
+});
+</script>
+
+
+<![endif]-->
+
+<!--[if lt IE 9]>
+<script src="http://caprica.s3.amazonaws.com/production/versions/158/assets/html5.js"></script>
+
+<![endif]-->
+
+
+<!--[if lt IE 8]>
+<link rel="stylesheet" href="http://caprica.s3.amazonaws.com/production/versions/158/assets/pc-ie7.css" />
+<![endif]-->
+
+<!--[if lt IE 7]>
+
+<style type="text/css">
+#pageMainContent {
+padding-right: 0;
+}
+
+#pageSidebar {
+padding-right: 0;
+}
+
+</style>
+
+<![endif]-->
+
+
+
+<script type="text/javascript">
+  var webSearchUrl = '/p/search' ; 
+  var imagesSearchUrl = '/p/search-images' ; 
+  var videosSearchUrl = '/p/search-videos' ; 
+  var newsSearchUrl = '/p/search-news' ; 
+
+</script>
+
+
+
+
+
+<script src="http://caprica.s3.amazonaws.com/production/versions/158/assets/colonial_raptor.js"></script>
+<script src="http://caprica.s3.amazonaws.com/production/versions/158/assets/underscore-min.js"></script>
+<script src="http://caprica.s3.amazonaws.com/production/versions/158/assets/underscore.string.min.js"></script>
+<script src="http://caprica.s3.amazonaws.com/production/versions/158/assets/doT.js"></script>
+
+
+  <title>Nation Home</title>
+
+<script type="text/javascript" src="http://caprica.s3.amazonaws.com/production/versions/158/assets/jquery.carouFredSel-5.5.0.js"></script>
+  
+
+<script src="http://caprica.s3.amazonaws.com/production/versions/158/assets/colonial_raptor.js"></script>
+<script src="http://caprica.s3.amazonaws.com/production/versions/158/assets/underscore-min.js"></script>
+<script src="http://caprica.s3.amazonaws.com/production/versions/158/assets/underscore.string.min.js"></script>
+<script src="http://caprica.s3.amazonaws.com/production/versions/158/assets/doT.js"></script>
+<script src="http://caprica.s3.amazonaws.com/production/versions/158/assets/pc-home.js"></script>
+
+  
+
+ 
+
+
+
+        
+  
+  
+
+</head>
+<body class="homepage">
+<div id="bodyWrapper">
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+   
+
+
+   
+
+
+
+
+ 
+   
+ 
+      
+   	
+      
+ 
+   
+ 
+
+
+ 
+	
+  
+
+
+
+
+
+<script type="text/javascript">
+   //replace conditional-zip template with colonial raptor 
+$(window).load(function() {
+  //parse zipcode string from inspcookie and assign it to zipcode 
+  var zip = getCookie("inspcookie");
+ 
+  var cookies = zip.split("&");
+  var name = "";
+  var value = "";
+  var myZip = "";
+  for (i=0; i<cookies.length; i++)
+  {
+    name=cookies[i].substr(0,cookies[i].indexOf("="));
+    value=cookies[i].substr(cookies[i].indexOf("=")+1);
+   
+    if (name == 'zip') {
+      
+      myZip = value;
+    } 
+  }
+  //console.log(myZip);
+  //if zip cookie is present, use colonial raptor to get city and state.  
+  //update zip
+  //update location text
+  //update client side panels (local news, weather, reviews, events)  
+   if (myZip) { 
+Infospace.ColonialRaptor.location(myZip,
+           { force_sync: 1 },
+         function(data, status, xhr) {
+           if (status == 'success') {
+             setCookie("zip",data.zip,null);
+             $('#usrLocation').html(data.city + ', ' + data.state);
+             $(document).trigger("cr.location.zip", data.zip);
+             //if (setRegion){setRegion(data.state);};
+              } else {
+                //console.log('fail');
+           }  
+     });     
+     //if zip cookie is not present, use colonial raptor city, state and zip of current ip location
+     //update the zip cookie
+     //update the location text
+     //update client side panels (local news, weather, reviews, events)
+   } else {
+     //console.log('zip is empty string')
+      Infospace.ColonialRaptor.location_by_ip(null, null,
+        function(data, status, xhr) {
+          if(status == 'success') {
+            setCookie("zip",data.zip,null); 
+                $('#usrLocation').html(data.city + ', ' + data.state);
+                $(document).trigger("cr.location.zip", data.zip);
+            
+             }
+       });
+    }
+
+});
+</script>
+
+<header id="pageHeader">
+  <div id="headerWrapper">
+    <div id="logoWrapper">
+      <a  rel="external" href="/p/home" title="Nation.com">    
+      	<img src="http://caprica.s3.amazonaws.com/production/versions/158/assets/Nation_Logo.png" alt="Nation.com"/>
+      </a>
+    </div>
+
+    <div id="webSearchWrapper">
+    
+   
+   
+          <div class="search">
+<!-- <div class="searchMenu">
+    <div id="searchCategoryButton" class="searchCategoryUnselected chromefix">
+      <img class="searchIcon" src="http://caprica.s3.amazonaws.com/production/versions/158/assets/search-icon.png" alt="" />
+    </div>
+    <ul class="searchList">
+        <li id="web" class="searchListItem currentSearch">Web</li>
+        <li id="images" class="searchListItem">Images</li>
+	<li id="videos" class="searchListItem">Video</li>
+	<li id="news" class="searchListItem">News</li>
+    </ul>
+</div>-->
+           <form id="searchBoxForm" name="searchBoxForm" class="searchForm" onsubmit="return validateQuery()" method="GET" 
+            action="http://search.nation.com">
+              <div class="searchBoxWrapper">
+              
+              	<input id="searchBox" type="text" placeholder="Search the Web" name="q" class="searchTxt" data-role="none" value="" />
+                <input type="hidden" name="s" value="web" />
+                <input type="hidden" name="as" value="0" />
+                <input type="hidden" name="dns" value="0" />
+              </div>
+             <button class="btn-search" type="submit">
+                Search<img src="http://caprica.s3.amazonaws.com/production/versions/158/assets/img_trans.gif" alt="" />
+              </button>
+                
+            </form>
+          </div>
+      <div id="location">
+        <span id="usrLocation" class="headerCategoryHeading">
+
+          
+
+        </span>
+        <!--<span id="locEdit" class="locInfo locationEdit">edit</span>--><br/>
+	<span class="dateInfo headerDateTime">
+          <time>
+          <script type="text/javascript"> 
+               printDate();
+ 	  </script>
+          </time>
+        </span>
+      
+      </div>
+        </div>  
+  <div id="headerControls">
+  <img id="locEdit" class="editInfo locationEdit toggleLocationButton" src="http://caprica.s3.amazonaws.com/production/versions/158/assets/tablet-icon-options-header.png" alt=""  />
+  </div><!-- headerControls -->
+    </div>
+   
+
+  
+</header>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Handler for .ready() called.
+  $("#locEditText").val("");
+});
+</script>
+  
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
+
+<div id="locEditPanel" class="toggleLocationPanel">
+    <div class="locationEditCol1">
+      <h2 class="editPanelHeader">Edit Location <span class="headerPanelArrow">&#9654;</span></h2>
+	</div><!-- locationEditCol1 -->
+	<div id="locationEditWrapper" class="locationEditCol2">
+        <div id="locFinder">
+            <img src="http://caprica.s3.amazonaws.com/production/versions/158/assets/tablet-icon-findlocation.png" />
+            <span class="editPanelText">Automatically find my location</span>
+        </div><!-- locFinder -->
+        <div id="autoLocFinder">
+            <form action="javascript:locationProxy()">
+              <input  id="locEditText" type="text" placeholder="  Enter a Zip Code or City, State" />
+              <button class="locButton" type="submit"><span>GO</span></button>
+            </form>
+        </div><!-- autoLocFinder -->
+        <div id="location-prompt">
+        </div>
+        <div id="defaultLocation">
+            <input id="defLocChkBox" type="checkbox" checked="true"/>
+            <span class="editPanelBoldText">Make this my default location</span>
+        </div><!-- defaultLocation -->
+    </div><!-- locationEditCol2 -->
+    <div class="locationEditCol3">
+	    <p><span class="editPanelBoldText"></span></p> 
+	</div><!-- locationEditCol3 -->
+	<div class="locationEditCol4">
+	    <div id="closeLocation">
+            <button id="closeEditPanel" onclick="javascript:closeLocationEditPanel()">Close</button>
+        </div><!-- closeLocation -->
+	</div><!-- locationEditCol4 -->
+</div><!-- locEditPanel -->
+
+
+<script type="text/javascript">     
+ $('#locEdit').click(
+    function(){
+     // updateLocation();
+	 locationProxy();
+ });
+  
+  function closeLocationEditPanel() {
+    $("#locEditPanel").hide(500, "swing");
+    }
+  
+   function locationProxy() {
+    address = $("#locEditText").val();
+     if( address == null || address.length == 0) {
+      return;
+    }
+     
+    gcGoogle(address);
+    //update weather
+    //updateWeather(null, address, '', 1, true);
+  }
+	
+  function updateWeather(zip, city, state, skip_cookie, reload_page) {
+    if( zip != null) {
+      Infospace.ColonialRaptor.location(zip,
+          { force_sync: 1, skip_cookie: skip_cookie },
+          function(data, status, xhr) {
+          if(status == 'success') {
+            // we can avoid reloading weather module if we are re-loading the entire page
+            if( reload_page ) { 
+                setCookie("zip",zip,null);
+                window.location.reload();                
+            } else {
+            }};
+          });
+     } else {
+     Infospace.ColonialRaptor.location_by_city(city, state,
+          { force_sync: 1, skip_cookie: skip_cookie },
+          function(data, status, xhr) {
+          if(status == 'success') {            
+            if( reload_page ) { 
+                setCookie("zip",data.zip,null);
+                window.location.reload();                
+            }};
+          });
+     }
+  
+  }
+ 
+  function gcGoogle(address) {
+    var gc = new google.maps.Geocoder();
+    gc.geocode( { 'address': address, 'region': '021' }, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+          if (results.length == 1) {
+            var addr = getAddr(results[0].address_components);
+            if (addr.city && addr.state && addr.zipCode) {
+              updateLocation(addr.city + ',' + addr.state);
+              handleDefaultLocation(addr.zipCode);
+            } else {
+              
+              var pos = { coords: {
+                
+                  latitude: results[0].geometry.location.lat(),
+                  longitude: results[0].geometry.location.lng()
+                }};
+              //console.log("Google reverse geocode: " + pos);
+                getLocationFromGoogle(pos);
+            }
+          } else if (results.length > 1) {
+            var addrs = getAddresses(results, false);
+            addrs = _.uniq(addrs, false, function(a) {
+              return a.city + ',' + a.state;
+            });
+            if (addrs.length > 1) {
+              showAddressDialog(addrs);
+            } else if (addrs.length == 1) {
+              getLocationFromGoogle(posFromAddr(addrs[0]));
+              
+            }
+            else {
+              //console.log("No results");  
+              //locationError();
+            }
+            //console.log(addrs);
+      
+          } else {
+            //console.log("No results");
+          }
+        } else {
+          //console.log("Failed with " + status);
+          locationError();
+        }
+      });
+  }
+  
+  function posFromAddr(addr) {
+    return { coords: {
+      latitude: addr.latitude,
+      longitude: addr.longitude
+    }};
+  }
+  
+  function showAddressDialog(addresses) {
+    var list = $('<ul></ul>');
+    for (var i=0; i<addresses.length; i++) {
+      var addr = addresses[i];
+      var pos = posFromAddr(addr);
+      var entry = $('<li><a href="#">' + addr.city + ', ' + addr.state + '</a></li>');
+      entry.click({pos: pos}, function(e) {
+        hideAddressDialog();
+        getLocationFromGoogle(e.data.pos);
+      });
+      list.append(entry);
+    }
+    
+    $('#location-prompt').html(list);
+    $('#location-prompt').show();
+  }
+  
+  function hideAddressDialog() {
+    $('#location-prompt').hide();
+  }
+  
+  function handleDefaultLocation(zip) {
+    if($('#defLocChkBox').attr('checked') == "checked") {
+        setCookie("zip",zip,365);
+    }
+    else {
+        setCookie("zip",zip,null);
+    }
+    //closeLocationEditPanel();
+    window.location.reload();
+  }
+  
+  
+  
+  function setCookie(key, value, expiryDays) {
+    inspCookieKey = 'inspcookie';
+    inspCookieValue = getCookie(inspCookieKey);    
+    inspCookieValue = removeKeyFromInspCookie(key,inspCookieValue);    
+    if(inspCookieValue.length != 0) {
+      inspCookieValue += "&";
+    }
+    
+    if(value != null && value.length != 0) {
+      inspCookieValue += key+"="+value;
+      // no expiration date
+      if(expiryDays != null) {
+        var exDate = new Date();
+        exDate.setTime(exDate.getTime() + (expiryDays*24*60*60*1000));
+        inspCookieValue += "; expires=" + exDate.toUTCString();
+      }
+      inspCookieValue += "; domain=" + location.hostname;
+      cookie = inspCookieKey+"="+inspCookieValue+";  path=/";
+    }
+    document.cookie = cookie;
+  }
+  
+  function getCookie(c_name)
+  {
+    cookies=document.cookie.split(";");
+    for (i=0;i<cookies.length;i++)
+    {
+    name=cookies[i].substr(0,cookies[i].indexOf("="));
+    value=cookies[i].substr(cookies[i].indexOf("=")+1);
+    name=name.replace(/^\s+|\s+$/g,"");
+      if (name==c_name) {
+        return value;
+      }
+    }
+    return "";
+  }
+  
+  function removeKeyFromInspCookie(key,cookieValue) {
+    regExp = new RegExp(key + "=\[^&\]+", "gi");
+    cookieValue = cookieValue.replace(regExp,"");
+    cookieValue = cookieValue.replace(/^&+/,"");
+    cookieValue = cookieValue.replace(/&+$/,"");
+    return cookieValue;
+  }
+  
+  function getZip(city) {
+    
+      usZipMatches = city.match(/^\d{5}$/gi);
+    canadaZipMatches = city.match(/^[a-zA-Z]\d[a-zA-Z]\s\d[a-zA-Z]\d$/gi);
+    
+    if(usZipMatches != null && city.length == 5) {
+      return usZipMatches[0];
+    } else if(canadaZipMatches != null && city.length == 7) {
+      return canadaZipMatches[0].toUpperCase();
+    } else {
+      return null;
+    }
+       
+  }
+  
+  $("#locFinder").click(function() {
+    try {
+      if(navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(getLocationFromGoogle, handleError, {maximumAge:600000, timeout:5000, enableHighAccuracy: true});
+      }
+    }
+    catch(err) { 
+      //alert(err.message);
+    }
+    })
+      
+   function handleError(error) {
+     // alert("An unexpected error occurred [" + error.code + "]: " + error.message); 
+     	if(error.code == 1) {
+          alert("Please enable the location service for the device's browser(Safari/FireFox/IE)");
+     	} 
+     //else if( error.code == 2) {
+     //  alert("Error: Position is unavailable!");
+     //   }
+   }
+    
+   function getLocationFromGoogle(position) {
+     
+      try {
+	var latitude = position.coords.latitude;	
+	var longitude = position.coords.longitude;
+      
+        var geocoder = new google.maps.Geocoder();	  
+	var latlng = new google.maps.LatLng(latitude, longitude);
+       
+        geocoder.geocode( {'latLng':latlng}, function(results, status) {				
+          if(status == google.maps.GeocoderStatus.OK) {
+
+            var addrs = getAddresses(results, true);
+            if(typeof addrs[0] == "undefined") {
+              //console.log('undefined address');
+                 locationError();
+            }
+            if(addrs.length > 0) {
+              var address = addrs[0];
+              updateLocation(address.city + ',' + address.state);
+              handleDefaultLocation(address.zipCode);
+            }// if results[3] is there
+          }	
+        } );
+     }
+      catch(err) {
+        // console.log(err.message);
+        //alert(err.message);
+      }
+  }
+  
+  // Takes a Google geocode result array and returns an array of addresses
+  // Only complete addresses with city, state, country and zip are returned
+  function getAddresses(results, zip_required) {
+    var ret = [];
+    
+    if ($.isArray(results)) {
+      for (var i=0; i<results.length; i++) {
+        var addr = getAddr(results[i].address_components);
+        if (addr.city && addr.state && addr.country && (!zip_required || addr.zipCode)) {
+          addr.latitude = results[i].geometry.location.lat();
+          addr.longitude = results[i].geometry.location.lng();
+          ret.push(addr);
+        }
+      }
+    }
+    return ret;
+  }
+  
+  function getAddr(address_components) {
+    var city, state, zipCode, country;
+  
+    out:
+    for (var i=0; i<address_components.length; i++) {
+      var component = address_components[i];
+      for (var j=0; j<component.types.length; j++) {
+        var type = component.types[j];
+        switch(type) {
+          case 'locality':
+            city = component.long_name;
+            continue out;
+          case 'administrative_area_level_1':
+            state = component.short_name;
+            continue out;
+          case 'country':
+            country = component.short_name;
+            continue out;
+          case 'postal_code_prefix':
+            continue out;
+          case 'postal_code':
+            zipCode = component.long_name;
+            continue out;
+        }
+      };
+    };
+    
+    return {city: city, state: state, zipCode: zipCode, country: country};
+  }
+  
+  function getAddress(address_components) {
+    var addr = getAddr(address_components);
+    var address = new Array(2);
+    address[0] = addr.city + ',' + addr.state;
+    address[1] = addr.zipCode;
+    return address;
+  }
+    
+  
+    function locationError() {
+           $('#location-prompt').html("Location not found");
+           $('#location-prompt').css("color", "red");
+          $('#location-prompt').show();
+      return false;
+  }
+  
+
+  
+</script>
+
+
+	
+        
+          
+
+
+
+<nav id="mainMenu">
+  <ul>
+    <li><a href="/p/home"  class="current">Home</a></li>
+    <li><a href="/p/news/source/news_ap" >News</a></li>
+    <li><a href="/p/localnews/source/localnews" >Local News</a></li>
+    <li><a href="/p/reviews/source/reviews_yp" >Reviews</a></li>
+    <li><a href="/p/events/source/events_ef" >Events</a></li>
+    <li><a href="/p/photos/source/photos_fl" >Photos</a></li>
+    <li><a href="/p/videos/source/videos_yt" >Videos</a></li>
+     <li><a href="/p/movies"   >Movies</a></li>
+  </ul>
+</nav> 
+          
+
+
+<nav id="subMenu">
+
+</nav>
+
+        <div id="contentWrapper">
+	<!-- content goes here -->
+
+<section id="pageMainContent">
+
+
+    <h1 class="categoryHeadingLink"><a href="/p/news/source/news_ap/category/top_headlines">Today's Top Features<span class="greenLine"></span></a></h1>
+      <section class="headlineSection carouselSection">
+  <div class="wrapper">
+    <div class="list_carousel">
+
+        <ul id="foo">
+             
+   
+ 
+    
+                         
+    
+		            
+			     
+                               
+                               <li>
+<article class="featuredArticle">
+                                     <a href="/p/news/source/news_ap/category/top_headlines/article/DA4GNKN82">
+                                   <figure style="background-image:url('http://portalcdn.infospace.com/imgsvr/news/ap/20130217/af755fcf-2504-4534-99fb-0cfa7c867110.jpg?MaxHeight=250&MaxWidth=250');" class="carouselImage"></figure>
+                    	           </a>
+
+                                   <p class="mediumHeadlineLink"><a href="/p/news/source/news_ap/category/top_headlines/article/DA4GNKN82">Official results: Correa winning Ecuador election</a></p>
+                                                
+   </article>
+                    		</li>	
+            	                   
+                        
+                             
+    
+           
+ 
+    
+ 
+    
+ 
+    
+ 
+    
+ 
+    
+ 
+    
+
+   
+
+          
+<li>
+  <article class="featuredArticle"><a href="/p/events/source/events_ef">
+<figure class="carouselImage"  style="background-image: url(http://caprica.s3.amazonaws.com/production/versions/158/assets/promo_bored_small.jpg);">
+  <img class="promo-nationlogo-sm" src="http://caprica.s3.amazonaws.com/production/versions/158/assets/promo-nationlogo-sm.png" alt="" />
+    </figure></a>
+  <p class="mediumHeadlineLink"><a href="/p/events/source/events_ef">Checkout local events in your area.</a></p>
+
+       </article>
+</li>          
+
+
+     
+   
+ 	
+
+              
+			  
+			<li>
+                          			 <article class="featuredArticle">
+                             <a href="/p/photos/source/photos_fl/category/puppy/article/8478355608">
+                               <figure class="carouselImage" title="Work-is-God" style="background-image:url(http://ptimage.infospace.com.edgesuite.net/imgsvr/ext.jpg?maxheight=300&maxwidth=300&url=http://farm9.static.flickr.com/8370/8478355608_db7188a26f_z.jpg);">
+			          </figure>
+			     </a> 
+                          <p class="mediumHeadlineLink"><a href="/p/photos/source/photos_fl/category/puppy/article/8478355608">Work-is-God</a></p>
+                          </article>
+              </li>
+           
+             
+          
+               
+          
+     
+       
+   
+ 
+    
+ 
+    
+ 
+    
+                         
+    
+		            
+			     
+                               
+                               <li>
+<article class="featuredArticle">
+                                     <a href="/p/news/source/news_ap/category/world/article/DA4GNKN82">
+                                   <figure style="background-image:url('http://portalcdn.infospace.com/imgsvr/news/ap/20130217/af755fcf-2504-4534-99fb-0cfa7c867110.jpg?MaxHeight=250&MaxWidth=250');" class="carouselImage"></figure>
+                    	           </a>
+		                  
+                                   <p class="mediumHeadlineLink"><a href="/p/news/source/news_ap/category/world/article/DA4GNKN82">Official results: Correa winning Ecuador election</a></p>
+                          
+   </article>
+                    		</li>	
+            	                   
+                        
+                             
+    
+           
+ 
+    
+ 
+    
+ 
+    
+ 
+    
+
+   
+    
+          
+ <li>
+  <article class="featuredArticle"><a href="/p/reviews/source/reviews_yp/category/restaurants">
+<figure class="carouselImage"  style="background-image: url(http://caprica.s3.amazonaws.com/production/versions/158/assets/promo_pie_eating_contest_1923_small.jpg);">
+  <img class="promo-nationlogo-sm" src="http://caprica.s3.amazonaws.com/production/versions/158/assets/promo-nationlogo-sm.png" alt="" />
+    </figure></a>
+  <p class="mediumHeadlineLink"><a href="/p/%7B%7B%20/source/reviews_yp/category/restaurants">local reviews.</a></p>
+       </article>
+</li>          
+          
+
+    
+
+   
+   
+ 	
+ 
+
+  
+    
+        
+              
+			 
+			<li>
+                                       <article class="featuredArticle">
+                              <a href="/p/videos/source/videos_yt/category/recently_featured/article/A6XUVjK9W4o">
+			        
+                               
+                               <figure class="carouselImage" style="background-image:url(http://portalcdn.infospace.com/imgsvr/ext.jpg?maxheight=150&maxwidth=200&url=http%3A%2F%2Fi.ytimg.com%2Fvi%2FA6XUVjK9W4o%2F0.jpg);">
+			          </figure>
+
+                             </a>
+                           
+
+                              <p class="mediumHeadlineLink"><a href="/p/videos/source/videos_yt/category/recently_featured/article/A6XUVjK9W4o">PEOPLE ARE AWESOME 2013</a></p>
+                             
+                            
+                          </article>
+                         
+			   
+              </li>
+           
+             
+           
+             
+          
+          
+                                  </ul>
+      </div><!-- end list_carousel-->
+<div class="clearfix homeControls">
+	<span id="foo_pag" class="homePagination"></span>
+	<span><a id="foo_prev" class="homePrev" href="#"><span>&#9664;</span></a></span>
+	<span><a id="foo_next" class="homeNext" href="#"><span>&#9654;</span></a></span>
+    </div>
+		</div><!-- end wrapper -->
+  </section>   
+
+   
+   
+   
+        
+          
+              
+ 	            
+	 
+    
+       
+    
+ 	          
+		<section class="headlineSection">
+			<article class="largeHeadlineArticle">
+					
+              		<section class="featuredTopImageSection">
+                          <a href="/p/news/source/news_ap/category/top_headlines/article/DA4GNDE82">
+                            <figure style="background-image:url('http://portalcdn.infospace.com/imgsvr/news/ap/20130217/eab29f98-009b-4423-82d9-a719f6bd737c.jpg?MaxHeight=300&MaxWidth=300');" class="headlineImage"></figure>
+                    	  </a>
+					</section>
+                          <p class="largeHeadlineLink"><a href="/p/news/source/news_ap/category/top_headlines/article/DA4GNDE82">Tiger Woods joins vacationing Obama for golf round</a></p>
+
+					<p class="introCopy">President Barack Obama played golf Sunday with Tiger Woods, the...</p>
+					<p class="fullStoryLink"><a href="/p/news/source/news_ap/category/top_headlines/article/DA4GNDE82">Full Story</a></p>
+				
+                          
+                  </article>
+			<section class="headlineListSection">
+                          <p class="headlinesHeading">Top Headlines</p>
+				<ul class="headlineList">
+	  
+	 
+    
+       
+    
+ 	            
+	 
+    
+					<li class="headlineListItem">
+						<article class="mediumHeadlineLink"><a href="/p/news/source/news_ap/category/top_headlines/article/DA4GN7O80">GOP foes of Hagel nomination say vote should go on</a></article>
+					</li>					
+					
+
+    
+       
+    
+ 	            
+	 
+    
+					<li class="headlineListItem">
+						<article class="mediumHeadlineLink"><a href="/p/news/source/news_ap/category/top_headlines/article/DA4GMNIG0">Danica Patrick wins pole for NASCAR's Daytona 500</a></article>
+					</li>					
+					
+
+    
+       
+    
+ 	            
+	 
+    
+					<li class="headlineListItem">
+						<article class="mediumHeadlineLink"><a href="/p/news/source/news_ap/category/top_headlines/article/DA4GMBH02">Ill. woman killed same day sister sat behind Obama</a></article>
+					</li>					
+					
+
+    
+       
+    
+ 	            
+	 
+    
+					<li class="headlineListItem">
+						<article class="mediumHeadlineLink"><a href="/p/news/source/news_ap/category/top_headlines/article/DA4GM1D00">Series of bombings in Baghdad area kill dozens</a></article>
+					</li>					
+					
+
+    
+       
+    
+ 	            
+	 
+    
+					<li class="headlineListItem">
+						<article class="mediumHeadlineLink"><a href="/p/news/source/news_ap/category/top_headlines/article/DA4GLU580">Pope blesses huge crowd in St. Peter's Square</a></article>
+					</li>					
+					
+
+    
+       
+    
+ 	            
+	 
+    
+					<li class="headlineListItem">
+						<article class="mediumHeadlineLink"><a href="/p/news/source/news_ap/category/top_headlines/article/DA4GLT4O0">Agent cancels all future races for Pistorius</a></article>
+					</li>					
+					
+
+    
+       
+    
+ 	            
+	 
+    
+					<li class="headlineListItem">
+						<article class="mediumHeadlineLink"><a href="/p/news/source/news_ap/category/top_headlines/article/DA4GLH3G1">Long-missing WWII medal awarded in LA</a></article>
+					</li>					
+					
+
+    
+       
+    
+                                  </ul>
+                          <p class="moreNewsLink"><a href="/p/news/source/news_ap/category/top_headlines">More News &#9654;</a></p>
+			</section><!-- .headlineListSection  -->
+		</section><!-- end HeadlineSection -->
+    
+ 
+          
+ 
+          
+ 
+          
+ 
+          
+ 
+          
+ 
+          
+
+   
+
+     
+   
+ 
+    
+ 
+    
+ 
+    
+ 
+    
+ 
+    
+<h2 class="categoryHeadingLink"><a href="/p/news/source/news_ap/category/entertainment">ENTERTAINMENT<span class="greenLine"></span></a></h2>		
+
+    
+ 	
+		<section class="headlineSection">
+			<article class="largeHeadlineArticle">
+					
+                    			
+					<p class="largeHeadlineLink"><a href="/p/news/source/news_ap/category/entertainment/article/DA4GJ9GG2">Willis' new 'Die Hard' scores with $25M debut</a></p>
+
+					<p class="introCopy">Bruce Willis remains a die-hard at the box office. Willis' action sequel "A Good Day to Die Hard" debuted as the weekend's top draw with a $25 million debut from...</p>
+					<p class="fullStoryLink"><a href="/p/news/source/news_ap/category/entertainment/article/DA4GJ9GG2">Full Story</a></p>
+				
+			
+                          </article>
+			<section class="headlineListSection">
+                          <p class="headlinesHeading">Entertainment Headlines</p>
+				<ul class="headlineList">
+	  
+	 
+    
+       
+    
+ 	  
+	 
+    
+					<li class="headlineListItem">
+						<article class="mediumHeadlineLink"><a href="/p/news/source/news_ap/category/entertainment/article/DA4GH7D80">Discovery bets on 2 dope series about pot growers</a></article>
+					</li>					
+					
+
+    
+       
+    
+ 	  
+	 
+    
+					<li class="headlineListItem">
+						<article class="mediumHeadlineLink"><a href="/p/news/source/news_ap/category/entertainment/article/DA4GGGT80">Shadow Morton, 1960s songwriter, dies at age 71</a></article>
+					</li>					
+					
+
+    
+       
+    
+ 	  
+	 
+    
+					<li class="headlineListItem">
+						<article class="mediumHeadlineLink"><a href="/p/news/source/news_ap/category/entertainment/article/DA4GGEIO1">Striking new look for 'Parsifal' at Met in NYC</a></article>
+					</li>					
+					
+
+    
+       
+    
+ 	  
+	 
+    
+					<li class="headlineListItem">
+						<article class="mediumHeadlineLink"><a href="/p/news/source/news_ap/category/entertainment/article/DA4GFMJ02">Overseas slice of 'Pi' flips Hollywood formula</a></article>
+					</li>					
+					
+
+    
+       
+    
+                                  </ul>
+                          <p class="moreNewsLink"><a href="/p/news/source/news_ap/category/entertainment">More Entertainment &#9654;</a></p>
+			</section>
+		</section><!-- end HeadlineSection -->
+    
+ 
+    
+ 
+    
+
+   
+   
+     
+   
+ 
+    
+ 
+    
+ 
+    
+ 
+    
+<h2 class="categoryHeadingLink"><a href="/p/news/source/news_ap/category/sports">SPORTS<span class="greenLine"></span></a></h2>		
+
+    
+ 	
+		<section class="headlineSection">
+			<article class="largeHeadlineArticle">
+					
+                    			
+					<p class="largeHeadlineLink"><a href="/p/news/source/news_ap/category/sports/article/DA4GNVB00">Lochte struggles to balance demands of TV, pool</a></p>
+
+					<p class="introCopy">Ryan Lochte is warming to the idea of being a TV star.
+Even if it's not doing much for his swimming.</p>
+					<p class="fullStoryLink"><a href="/p/news/source/news_ap/category/sports/article/DA4GNVB00">Full Story</a></p>
+				
+			
+                         </article>
+			<section class="headlineListSection">
+                          <p class="headlinesHeading">Sports Headlines</p>
+				<ul class="headlineList">
+	  
+	 
+    
+       
+    
+ 	  
+	 
+    
+					<li class="headlineListItem">
+						<article class="mediumHeadlineLink"><a href="/p/news/source/news_ap/category/sports/article/DA4GNUU82">Kadji's 3-pointer rescues No. 3 Miami at Clemson</a></article>
+					</li>					
+					
+
+    
+       
+    
+ 	  
+	 
+    
+					<li class="headlineListItem">
+						<article class="mediumHeadlineLink"><a href="/p/news/source/news_ap/category/sports/article/DA4GNNPO4">Wisconsin holds on to beat Minnesota 3-2</a></article>
+					</li>					
+					
+
+    
+       
+    
+ 	  
+	 
+    
+					<li class="headlineListItem">
+						<article class="mediumHeadlineLink"><a href="/p/news/source/news_ap/category/sports/article/DA4GNNNO0">Merrick gets his first win at home</a></article>
+					</li>					
+					
+
+    
+       
+    
+ 	  
+	 
+    
+					<li class="headlineListItem">
+						<article class="mediumHeadlineLink"><a href="/p/news/source/news_ap/category/sports/article/DA4GNKS80">Blackhawks close in on season-opening points mark</a></article>
+					</li>					
+					
+
+    
+       
+    
+                                  </ul>
+                          <p class="moreNewsLink"><a href="/p/news/source/news_ap/category/sports">More Sports News &#9654;</a></p>
+			</section>
+		</section><!-- end HeadlineSection -->
+    
+ 
+    
+ 
+    
+ 
+    
+
+   
+  
+  
+ 
+ 
+  
+  
+  
+   
+   
+<section class="reviewsAndEventsSection">
+
+  <section class="reviewHomeSection loader"></section><!-- .reviewHomeSection -->
+  
+    
+ <script type="text/html" id="reviewHomeSectionTemplate">
+      <h2 class="categoryHeadingLink inline-block">
+        <a href="/p/reviews/source/reviews_yp">Reviews<span class="greenLine"></span></a>
+      </h2>
+      <a href="http://www.yelp.com" target="_blank">
+        <img src="http://caprica.s3.amazonaws.com/production/versions/158/assets/poweredbyyelp.png" alt=""/>
+      </a>
+          
+         [% for (var i=0; i<3; i++) { %]
+           [% if (!(article = thiscategory.articles[i])) { break; } %]  
+              <article class="reviewHomeArticle">
+              <div class="articleTeaser">
+                [% if (article.photo_url) { %]
+                <div class="articleImage">     
+                  <div style="background-image:url('[%= article.photo_url %]');" class="reviewImage">
+                  </div>
+                </div>
+                [% } %]
+                 <p class="largeHeadlineLink" > 
+                    <a href="[%= article.url %]" target="_blank">
+                            [%= article.name %]
+                    </a> 
+                 </p>
+                <div class="rating_panel">
+                  <span class="review_rating">
+                    <img src="[%= article.rating_image_url %]" alt="[%= article.avg_rating %]"/>
+                  </span>
+                  <span class="review_count introCopy">
+                    [%= article.review_count %] Reviews
+                  </span>                  
+                </div>
+                 <p class="introCopy">
+                   [% if (article.photo_url) { %]
+                   [%= _.words(article.description).slice(0, 10).join(" ") %]
+                   [% } else { %]
+                   [%= article.description %]
+                   [% } %]
+                     
+                 </p>
+                
+
+              </div>
+            </article>
+         [% } %]
+                   
+            
+        <p class="moreNewsLink clearfix"><a href="/p/reviews/source/reviews_yp">More Reviews &#9654;</a></p>
+  </script>
+  
+
+  
+  <script type="text/javascript">
+$(document).on('cr.location.zip', function(e, zip) {
+      try {
+    var _review_section = $('section.reviewHomeSection');
+         Infospace.ColonialRaptor.category('reviews_yp', 'restaurants',
+             { zip: zip, force_sync: 1 },
+           function(data, status, xhr) {
+             if (status != 'success' || !(data.articles instanceof Array)) {
+               _review_section.append('<span>No content</span>');
+               _review_section.addClass('splat');
+             } else {
+ 
+               _review_section[0].innerHTML = doT.template($('#reviewHomeSectionTemplate')[0].innerHTML)(data);
+
+             }
+             _review_section.removeClass('loader');
+     });
+      }
+  catch (e) {
+    alert(e.message);
+  }
+    });
+  </script>
+
+           
+           
+       
+<section class="eventHomeSection loader"></section> <!-- .eventHomeSection -->       
+  </section><!-- .reviewsAndEventsSection -->
+  
+<script type="text/html" id="eventHomeSectionTemplate">
+
+[% for (var i=0; i<thesecategories.categories.length; i++) { %]
+  [% var thiscategory = thesecategories.categories[i]; %]
+    [% if (i == 0) { %]
+
+        
+
+  <h2 class="categoryHeadingLink inline-block"><a href="/p/events/source/events_ef">Events</a></h2>		
+             <a href="http://eventful.com/" target="_blank">
+               <img class="poweredByEventful" src="http://caprica.s3.amazonaws.com/production/versions/158/assets/poweredbyeventful.png" alt="" />
+             </a>
+
+
+         [% for (var j=0; j<3; j++) { %]
+           [% if (!(article = thiscategory.articles[j])) { break; } %]
+             <article class="eventHomeArticle">
+                <div class="articleTeaser">
+                  <p class="eventTitleLink clearfix"> 
+                    <a href="[%= article.url %]" target="_blank">
+                       [%= _.words(article.title).slice(0,7).join(' ') %]
+                    </a> 
+                  </p>
+                  <time class="eventDate"
+                    datetime="[%= new Date(article.start_time).toString() %]">
+                  
+                        [%=  moment(article.start_time).format('dddd, MMMM Do YYYY, h:mm a') %]
+                  
+                   
+                  </time>
+               [% if (article.image_url) { %]
+                  <div class="eventImage" [% if (article.image_url.indexOf('html') !=-1) { %] style="display:none;" [% } %]>     
+                    <div style="background-image:url('[%= article.image_url %]');" class="eventImage">
+                    </div>
+                  </div>
+               [% } %]
+                <p class="introCopy">
+                  [%= _.stripTags(_.words(article.description).slice(0,article.image_url ? 10 : 20).join(' ')) %]
+                </p>
+              </div>
+       	    </article>
+         [% } %]
+
+                   <p class="moreNewsLink clearfix"><a href="/p/events/source/events_ef">More Events &#9654;</a></p>
+
+  [% } %]
+[% } %]
+
+</script>
+
+<script type="text/javascript">
+$(document).on('cr.location.zip', function(e, zip) {
+    try { 
+     
+    var event_section = $('.eventHomeSection');
+
+    Infospace.ColonialRaptor.source('events_ef',
+       { zip: zip, force_sync: 1 },
+       function(data, status, xhr) {
+
+         if ( status == 'success') {
+            event_section[0].innerHTML = doT.template($('#eventHomeSectionTemplate')[0].innerHTML)(null, data);
+         } else {
+           //alert('flop');
+         }
+           event_section.removeClass('loader');
+     });
+  }
+  catch (e) {
+    alert(e.message);
+  }
+    
+});
+  </script>
+  
+
+  
+  
+  
+ 
+ 
+
+   
+ 
+     
+    
+<section class="localHeadlineSection loader clearfix"></section>        
+  
+<script type="text/html" id="headlineSectionTemplate">
+   
+   
+
+[% for (var i=0; i<thesecategories.categories.length; i++) { %]
+  [% var thiscategory = thesecategories.categories[i]; %]
+    [% if (i == 0) { %]
+      [% if (!!(thisarticle = thiscategory.articles[0])) { %]
+        
+<h2 class="categoryHeadingLink localnews">
+  
+  <a href="/p/localnews/source/localnews">Local News<span class="greenLine"></span></a>
+</h2>
+
+	      <article class="largeHeadlineArticle">
+            [% if (thisarticle.raw_image) { %]
+                <section class="featuredTopImageSection">
+                  <a href="[%= thisarticle.url %]" target="_blank">
+                    <figure style="background-image:url('[%= thisarticle.raw_image %]');" class="headlineImage"></figure>
+                  </a>
+                </section>
+                  <p class="largeHeadlineLink"><a href="[%= thisarticle.url %]" target="_blank">[%= thisarticle.title.replace(/_/,'-') %]</a></p>
+                  <p class="introCopy">[%= _.words(thisarticle.teaser).slice(0,10).join(' ') %]</p>
+            [% } else { %]        			
+                <p class="largeHeadlineLink"><a href="[%= thisarticle.url %]" target="_blank">[%= thisarticle.title.replace(/_/,'-') %]</a></p>
+	        <p class="introCopy">[%= _.words(thisarticle.teaser).slice(0,30).join(' ') %]</p>		
+            [% } %]
+                <p class="fullStoryLink"><a href="[%= thisarticle.url %]" target="_blank">Full Story</a></p>
+	      </article>
+      [% } %]
+         
+         <section class="headlineListSection">
+         <p class="headlinesHeading">Local News Headlines</p>
+         <ul class="headlineList">
+         [% for (var j=1; j<4; j++) { %]
+           [% if (!(thisarticle = thiscategory.articles[j])) { break; } %]
+              <li class="headlineListItem">
+                <article class="mediumHeadlineLink">
+                  <a href="[%= thisarticle.url %]" target="_blank">[%= thisarticle.title.replace(/_/, '-') %]</a>
+                </article>
+              </li>
+         [% } %]
+         </ul>
+
+         <p class="moreNewsLink"><a href="/p/localnews/source/localnews">More Local News &#9654;</a></p>
+	 </section>
+
+  [% } %]
+[% } %]
+
+</script>
+  
+
+  
+<script type="text/javascript">
+$(document).on('cr.location.zip', function(e, zip) {
+    try { 
+     
+    var headline_section = $('.localHeadlineSection');
+
+    Infospace.ColonialRaptor.source('localnews',
+       { zip: zip, force_sync: 1 },
+       function(data, status, xhr) {
+
+         if ( status == 'success') {
+
+           headline_section[0].innerHTML = doT.template($('#headlineSectionTemplate')[0].innerHTML)(null, data);
+
+         } else {
+           // alert('flop');
+         }
+      headline_section.removeClass('loader');
+     });
+  }
+  catch (e) {
+    alert(e.message);
+  }
+    
+});
+  </script>
+  
+ 
+  
+<section class="photosAndVideosSection clearfix topfix">
+ <section class="photosHomeSection">
+      
+   
+<h2 class="categoryHeadingLink"><a href="/p/photos/source/photos_fl">Photos<span class="greenLine"></span></a></h2>		
+
+	    <ul class="photoHomeList">
+
+     
+   
+ 	
+
+              
+			  
+			<li class="photoHomeListItem">
+                              <a href="/p/photos/source/photos_fl/category/puppy/article/8478355608">
+                               <figure class="homePhoto" title="Work-is-God" style="background-image:url(http://ptimage.infospace.com.edgesuite.net/imgsvr/ext.jpg?maxheight=150&maxwidth=150&url=http://farm9.static.flickr.com/8370/8478355608_db7188a26f_z.jpg);">
+			          </figure>
+			     </a> 
+                         
+			   
+              </li>
+           
+			  
+			<li class="photoHomeListItem">
+                              <a href="/p/photos/source/photos_fl/category/puppy/article/8478299120">
+                               <figure class="homePhoto" title="e065" style="background-image:url(http://ptimage.infospace.com.edgesuite.net/imgsvr/ext.jpg?maxheight=150&maxwidth=150&url=http://farm9.static.flickr.com/8231/8478299120_fe9c6b960a_z.jpg);">
+			          </figure>
+			     </a> 
+                         
+			   
+              </li>
+           
+			  
+			<li class="photoHomeListItem">
+                              <a href="/p/photos/source/photos_fl/category/puppy/article/8476259227">
+                               <figure class="homePhoto" title="DSCN0936" style="background-image:url(http://ptimage.infospace.com.edgesuite.net/imgsvr/ext.jpg?maxheight=150&maxwidth=150&url=http://farm9.static.flickr.com/8524/8476259227_74dcdd2c1a_z.jpg);">
+			          </figure>
+			     </a> 
+                         
+			   
+              </li>
+           
+             
+        
+    
+              
+     
+   
+ 	
+
+              
+			  
+			<li class="photoHomeListItem">
+                              <a href="/p/photos/source/photos_fl/category/art/article/8484362324">
+                               <figure class="homePhoto" title="contemporary curios as ancient objects : asian art museum, san francisco (2013)" style="background-image:url(http://ptimage.infospace.com.edgesuite.net/imgsvr/ext.jpg?maxheight=150&maxwidth=150&url=http://farm9.static.flickr.com/8524/8484362324_9f258d4b6b_z.jpg);">
+			          </figure>
+			     </a> 
+                         
+			   
+              </li>
+           
+			  
+			<li class="photoHomeListItem">
+                              <a href="/p/photos/source/photos_fl/category/art/article/8483273541">
+                               <figure class="homePhoto" title="alternate buddha : asian art museum, san francisco (2013)" style="background-image:url(http://ptimage.infospace.com.edgesuite.net/imgsvr/ext.jpg?maxheight=150&maxwidth=150&url=http://farm9.static.flickr.com/8247/8483273541_dd433ef3da_z.jpg);">
+			          </figure>
+			     </a> 
+                         
+			   
+              </li>
+           
+			  
+			<li class="photoHomeListItem">
+                              <a href="/p/photos/source/photos_fl/category/art/article/8483270419">
+                               <figure class="homePhoto" title="koi along the water line : asian art museum, san francisco (2013)" style="background-image:url(http://ptimage.infospace.com.edgesuite.net/imgsvr/ext.jpg?maxheight=150&maxwidth=150&url=http://farm9.static.flickr.com/8095/8483270419_fd8c3142b0_z.jpg);">
+			          </figure>
+			     </a> 
+                         
+			   
+              </li>
+           
+             
+        
+    
+              
+    
+     
+   
+ 	
+
+              
+			<li class="photoHomeListItem" data-title-id="photometa_8483189985">
+                             <a href="/p/photos/source/photos_fl/category/travel/article/8483189985">
+                               <figure class="homePhoto" title="What a Pair" style="background-image:url(http://ptimage.infospace.com.edgesuite.net/imgsvr/ext.jpg?maxheight=150&maxwidth=150&url=http://farm9.static.flickr.com/8380/8483189985_c64bc2d9ff_z.jpg);">
+			          </figure>
+			     </a> 
+                          <div id="photometa_8483189985" class="photometa">
+	    			<a class="phototitle" href="http://flic.kr/p/dVCyQi" target="_blank">What a Pair</a>
+	   			by <a class="photoowner" href="http://www.flickr.com/people/40775084@N05/" target="_blank">katsrcool (Bob)</a>
+	    			<span class="photolicense" > (Attribution License) </span>
+	    			<a class="photosite" href="http://www.flickr.com/" target="_blank">Flickr</a>
+	 		    </div>
+			   
+              </li>
+           
+			<li class="photoHomeListItem" data-title-id="photometa_8484275538">
+                             <a href="/p/photos/source/photos_fl/category/travel/article/8484275538">
+                               <figure class="homePhoto" title="Standing Guard" style="background-image:url(http://ptimage.infospace.com.edgesuite.net/imgsvr/ext.jpg?maxheight=150&maxwidth=150&url=http://farm9.static.flickr.com/8518/8484275538_5e366c73e5_z.jpg);">
+			          </figure>
+			     </a> 
+                          <div id="photometa_8484275538" class="photometa">
+	    			<a class="phototitle" href="http://flic.kr/p/dVJ8wJ" target="_blank">Standing Guard</a>
+	   			by <a class="photoowner" href="http://www.flickr.com/people/40775084@N05/" target="_blank">katsrcool (Bob)</a>
+	    			<span class="photolicense" > (Attribution License) </span>
+	    			<a class="photosite" href="http://www.flickr.com/" target="_blank">Flickr</a>
+	 		    </div>
+			   
+              </li>
+           
+			<li class="photoHomeListItem" data-title-id="photometa_8483147355">
+                             <a href="/p/photos/source/photos_fl/category/travel/article/8483147355">
+                               <figure class="homePhoto" title="Red Panda" style="background-image:url(http://ptimage.infospace.com.edgesuite.net/imgsvr/ext.jpg?maxheight=150&maxwidth=150&url=http://farm9.static.flickr.com/8392/8483147355_3446a4cc02_z.jpg);">
+			          </figure>
+			     </a> 
+                          <div id="photometa_8483147355" class="photometa">
+	    			<a class="phototitle" href="http://flic.kr/p/dVCmai" target="_blank">Red Panda</a>
+	   			by <a class="photoowner" href="http://www.flickr.com/people/40775084@N05/" target="_blank">katsrcool (Bob)</a>
+	    			<span class="photolicense" > (Attribution License) </span>
+	    			<a class="photosite" href="http://www.flickr.com/" target="_blank">Flickr</a>
+	 		    </div>
+			   
+              </li>
+           
+             
+        
+              
+     </ul>
+                                      <p class="moreNewsLink"><a href="/p/photos/source/photos_fl">More Photos &#9654;</a></p>
+</section>
+  
+  
+  
+  
+
+   
+   
+ 	
+ <section class="videosHomeSection">
+<h2 class="categoryHeadingLink"><a href="/p/videos/source/videos_yt/category/music">Featured Videos</a></h2>		
+  
+    
+          
+	    <ul class="videoHomeList">
+              
+			 
+			<li id="R5mMRiiCwak" class="videoHomeItem">
+                           <article class="videoHomeArticle">
+                              <a class="videoLink" href="/p/videos/source/videos_yt/category/music/article/R5mMRiiCwak">
+			        <div style="width:50px;background-repeat: no-repeat;position: absolute;top:  23%;left: 36%;">
+                                          <img src="http://caprica.s3.amazonaws.com/production/versions/158/assets/Overlay_Play-button.png" alt="Bottom percussion PATAX." class="overlay" />
+                                  </div>
+                               
+                               
+                               	<img class="videoHomeImage" src="http://portalcdn.infospace.com/imgsvr/ext.jpg?maxheight=150&maxwidth=200&url=http%3A%2F%2Fi.ytimg.com%2Fvi%2FR5mMRiiCwak%2F0.jpg" alt="Bottom percussion PATAX." />	                             
+                             </a>
+                           
+
+                                 <p class="videoHomeTitle">Bottom percussion PA...</p>
+                             
+                            
+                          </article>
+                         
+			   
+              </li>
+           
+			 
+			<li id="ekzHIouo8Q4" class="videoHomeItem">
+                           <article class="videoHomeArticle">
+                              <a class="videoLink" href="/p/videos/source/videos_yt/category/music/article/ekzHIouo8Q4">
+			        <div style="width:50px;background-repeat: no-repeat;position: absolute;top:  23%;left: 36%;">
+                                          <img src="http://caprica.s3.amazonaws.com/production/versions/158/assets/Overlay_Play-button.png" alt="Bruno Mars - When I Was Your Man [Official Video]" class="overlay" />
+                                  </div>
+                               
+                               
+                               	<img class="videoHomeImage" src="http://portalcdn.infospace.com/imgsvr/ext.jpg?maxheight=150&maxwidth=200&url=http%3A%2F%2Fi.ytimg.com%2Fvi%2FekzHIouo8Q4%2F0.jpg" alt="Bruno Mars - When I Was Your Man [Official Video]" />	                             
+                             </a>
+                           
+
+                                 <p class="videoHomeTitle">Bruno Mars - When I ...</p>
+                             
+                            
+                          </article>
+                         
+			   
+              </li>
+           
+			 
+			<li id="skm_8h73Fu8" class="videoHomeItem">
+                           <article class="videoHomeArticle">
+                              <a class="videoLink" href="/p/videos/source/videos_yt/category/music/article/skm_8h73Fu8">
+			        <div style="width:50px;background-repeat: no-repeat;position: absolute;top:  23%;left: 36%;">
+                                          <img src="http://caprica.s3.amazonaws.com/production/versions/158/assets/Overlay_Play-button.png" alt="Lil Wayne - Love Me (Feat. Future &amp; Drake) Official Video (Clean)" class="overlay" />
+                                  </div>
+                               
+                               
+                               	<img class="videoHomeImage" src="http://portalcdn.infospace.com/imgsvr/ext.jpg?maxheight=150&maxwidth=200&url=http%3A%2F%2Fi.ytimg.com%2Fvi%2Fskm_8h73Fu8%2F0.jpg" alt="Lil Wayne - Love Me (Feat. Future &amp; Drake) Official Video (Clean)" />	                             
+                             </a>
+                           
+
+                                 <p class="videoHomeTitle">Lil Wayne - Love Me ...</p>
+                             
+                            
+                          </article>
+                         
+			   
+              </li>
+           
+			 
+			<li id="DABphlXEyW8" class="videoHomeItem">
+                           <article class="videoHomeArticle">
+                              <a class="videoLink" href="/p/videos/source/videos_yt/category/music/article/DABphlXEyW8">
+			        <div style="width:50px;background-repeat: no-repeat;position: absolute;top:  23%;left: 36%;">
+                                          <img src="http://caprica.s3.amazonaws.com/production/versions/158/assets/Overlay_Play-button.png" alt="Harlem Shake (Matt and Kim Edition)" class="overlay" />
+                                  </div>
+                               
+                               
+                               	<img class="videoHomeImage" src="http://portalcdn.infospace.com/imgsvr/ext.jpg?maxheight=150&maxwidth=200&url=http%3A%2F%2Fi.ytimg.com%2Fvi%2FDABphlXEyW8%2F0.jpg" alt="Harlem Shake (Matt and Kim Edition)" />	                             
+                             </a>
+                           
+
+                                 <p class="videoHomeTitle">Harlem Shake (Matt a...</p>
+                             
+                            
+                          </article>
+                         
+			   
+              </li>
+           
+			 
+			<li id="zx_dTSPzXlk" class="videoHomeItem">
+                           <article class="videoHomeArticle">
+                              <a class="videoLink" href="/p/videos/source/videos_yt/category/music/article/zx_dTSPzXlk">
+			        <div style="width:50px;background-repeat: no-repeat;position: absolute;top:  23%;left: 36%;">
+                                          <img src="http://caprica.s3.amazonaws.com/production/versions/158/assets/Overlay_Play-button.png" alt="Lana Del Rey - Burning Desire" class="overlay" />
+                                  </div>
+                               
+                               
+                               	<img class="videoHomeImage" src="http://portalcdn.infospace.com/imgsvr/ext.jpg?maxheight=150&maxwidth=200&url=http%3A%2F%2Fi.ytimg.com%2Fvi%2Fzx_dTSPzXlk%2F0.jpg" alt="Lana Del Rey - Burning Desire" />	                             
+                             </a>
+                           
+
+                                 <p class="videoHomeTitle">Lana Del Rey - Burni...</p>
+                             
+                            
+                          </article>
+                         
+			   
+              </li>
+           
+			 
+			<li id="8YGG-ul_v2g" class="videoHomeItem">
+                           <article class="videoHomeArticle">
+                              <a class="videoLink" href="/p/videos/source/videos_yt/category/music/article/8YGG-ul_v2g">
+			        <div style="width:50px;background-repeat: no-repeat;position: absolute;top:  23%;left: 36%;">
+                                          <img src="http://caprica.s3.amazonaws.com/production/versions/158/assets/Overlay_Play-button.png" alt="Beyonce &quot;Life Is But A Dream&quot; Full Documentary" class="overlay" />
+                                  </div>
+                               
+                               
+                               	<img class="videoHomeImage" src="http://portalcdn.infospace.com/imgsvr/ext.jpg?maxheight=150&maxwidth=200&url=http%3A%2F%2Fi.ytimg.com%2Fvi%2F8YGG-ul_v2g%2F0.jpg" alt="Beyonce &quot;Life Is But A Dream&quot; Full Documentary" />	                             
+                             </a>
+                           
+
+                                 <p class="videoHomeTitle">Beyonce &quot;Life I...</p>
+                             
+                            
+                          </article>
+                         
+			   
+              </li>
+           
+             
+             </ul>
+
+                                        <p class="moreNewsLink"><a href="/p/videos/source/videos_yt/category/music">More Videos &#9654;</a></p>
+    
+</section>
+  
+  
+  </section>
+  
+  
+  
+
+</section><!-- end mainPageContent -->
+
+<section id="pageSidebar">
+            <!-- pc-panel-sidebarad-1 -->
+
+         
+
+
+
+<section class="trendingNowSection">
+<h2 class="categoryHeading">Trending Now</h2>
+<ul class="trendingNowList trendingNowPageOne">
+  
+
+  <li class="trendingNowItem">
+          <p class="trendingNowLink">
+          <a title="Search the web for Russian Meteorite"    
+            href="http://search.nation.com?q=Russian+Meteorite&s=web&as=0&dns=0">Russian Meteorite</a>
+	  </p>
+   </li>
+   
+
+  <li class="trendingNowItem">
+          <p class="trendingNowLink">
+          <a title="Search the web for Ford Returns As Solo"    
+            href="http://search.nation.com?q=Ford+Returns+As+Solo&s=web&as=0&dns=0">Ford Returns As Solo</a>
+	  </p>
+   </li>
+   
+
+  <li class="trendingNowItem">
+          <p class="trendingNowLink">
+          <a title="Search the web for Megyn Kelly Pregnant"    
+            href="http://search.nation.com?q=Megyn+Kelly+Pregnant&s=web&as=0&dns=0">Megyn Kelly Pregnant</a>
+	  </p>
+   </li>
+   
+
+  <li class="trendingNowItem">
+          <p class="trendingNowLink">
+          <a title="Search the web for Iran Jet Photoshopped"    
+            href="http://search.nation.com?q=Iran+Jet+Photoshopped&s=web&as=0&dns=0">Iran Jet Photoshopped</a>
+	  </p>
+   </li>
+   
+
+  <li class="trendingNowItem">
+          <p class="trendingNowLink">
+          <a title="Search the web for Gosselin Wife Swap"    
+            href="http://search.nation.com?q=Gosselin+Wife+Swap&s=web&as=0&dns=0">Gosselin Wife Swap</a>
+	  </p>
+   </li>
+   
+
+  <li class="trendingNowItem">
+          <p class="trendingNowLink">
+          <a title="Search the web for North Korean Threat"    
+            href="http://search.nation.com?q=North+Korean+Threat&s=web&as=0&dns=0">North Korean Threat</a>
+	  </p>
+   </li>
+   
+  </ul>
+
+</section>
+ 
+
+
+
+
+
+
+		
+  
+ 
+ 
+  
+
+  
+
+ 
+    
+<div id="weatherPanel" class="weatherSection">
+  
+</div>
+
+<script type="text/html" id="weatherPanelTemplate">
+ 
+   <div id="phone-panel-weather-header">
+    <h2 class="categoryHeading">Weather <a href="http://www.accuweather.com" target="_blank">
+        <img src="http://caprica.s3.amazonaws.com/production/versions/158/assets/accuweather-logo-100rgba.png"/>
+        </a></h2>
+           
+    [% var current = thiscategory.current; %]
+  <span id="weaLocation" class="todaysDate"></span>
+    
+    
+  <span id="weaDate" class="todaysDate"> February 18, 2013</span>
+    
+    
+   
+   
+  <section class="curr_weather">
+         <div class="current_temperature"> 
+          <span class="temperature">[%= current.temp %]</span>
+          <span class="degrees">         
+            °[%= current.temp_units %]
+            </span>
+          <img class="weather_icon" src="[%= current.weather_icon_small %]" /> 
+    	 </div>
+           <div class="current_weather">
+             <span class="weatherConditions">[%= current.weather %]</span><br/>
+             <span class="weatherConditions">Feels like: [%= current.real_feel_temp %]°</span><br/>
+            <span class="weatherConditions">
+              Wind: [%= current.wind_direction %] [%= current.wind_speed %] [%= current.wind_speed_units %]
+            </span>
+          </div>
+    </section>
+    <div class="weather_forecast clearfix">
+       <div class="forecast_header">
+      [% var forecast = thiscategory.forecast; %]
+      [% for ( i = 0; i < 5; i++ ) { %]
+      [% if (i < 4) { %]
+        [% if (i != 0) { %]
+        <section style="border-left:1px solid #CED0CF;">
+          [% } else { %]
+        <section>
+        [% } %]
+            <header>
+              <h3>[%= forecast[i].day_name.toString().slice(0,3) %]</h1>
+              <h5 style="">[%= new Date(forecast[i].date).toString().slice(4, 10) %]</h3>
+            </header>
+            <div class="forecast_details">
+              <img src="[%= forecast[i].weather_icon %]"/> 
+              <span> 
+                <span class="bold">[%= forecast[i].high_temp %]°</span> / [%= forecast[i].low_temp %]° 
+              </span>
+            </div>
+          </section>
+       [% } %]
+       [% } %]
+       </div>
+    </div>
+                  
+  </div>                                                                                                 
+  
+</script>
+
+<script type="text/javascript">
+ 
+$(document).on('cr.location.zip', function(e, zip) {
+    try {
+      
+    // get the div that is going to store the weather info
+    var phone_panel = $('#weatherPanel');
+    // call colonial raptor to get weather
+    Infospace.ColonialRaptor.source('wea_ac'
+           , { zip: zip, force_sync: 1 }
+           , function(data, status, xhr) {
+      if ( status == 'success') {
+        phone_panel[0].innerHTML = doT.template($('#weatherPanelTemplate')[0].innerHTML)(data);
+      }
+      else {
+        //alert('flop');
+      }
+        
+    });
+    
+  }
+  catch (e) {
+    alert(e.message);
+  }
+    
+    
+  });
+  
+</script>
+  
+  
+  
+  
+  
+
+<div class="horoscope">
+
+    <div class="title categoryHeading">Horoscope</div>
+    <div class="headerRight">
+    <div class="options">
+      <select id="sign" class="introCopy">
+        
+         <option value="aries">Aries</option>
+         
+         <option value="taurus">Taurus</option>
+         
+         <option value="gemini">Gemini</option>
+         
+         <option value="cancer">Cancer</option>
+         
+         <option value="leo">Leo</option>
+         
+         <option value="virgo">Virgo</option>
+         
+         <option value="libra">Libra</option>
+         
+         <option value="scorpio">Scorpio</option>
+         
+         <option value="sagittarius">Sagittarius</option>
+         
+         <option value="capricorn">Capricorn</option>
+         
+         <option value="aquarius">Aquarius</option>
+         
+         <option value="pisces">Pisces</option>
+         
+       </select>
+      <p class="introCopy">Select another sign</p>
+    </div>      
+  </div>
+  <div class="body">
+   <ul class="horoscopeList">  
+     
+     
+     
+     
+  
+     
+     
+     
+  
+     
+     
+     
+  
+     
+     
+     
+  
+     
+     
+     
+  
+     
+     
+     
+  
+     
+     
+     
+  
+     
+     
+     
+  
+     
+     
+     
+  
+     
+     
+     
+  
+     
+     
+     
+  
+     
+     
+     
+  
+     
+     
+     
+  
+     
+     
+     
+  
+     
+     
+     
+  
+     
+     
+     
+  
+     
+     
+     
+  
+     
+     
+     
+  
+     
+     
+     
+  
+     
+     
+     
+  
+     
+     
+     
+  
+     
+     
+     
+  
+     
+     
+     
+  
+     
+     
+     
+  
+     
+     
+         
+     <li id="aries" class="horoscopeItem  hidden">
+
+    <div class="leftPanel">
+      <div class="signImage"> 
+        <img class="horoscopeImage" src="http://portalcdn.infospace.com/images/mcms/horoscope/108/aries.png" width="75" alt="" />
+      </div>
+     <!-- <div class="levels">
+      	<div class="header">Today's energy levels</div>
+        <div class="body">
+          <div class="levelNames">
+            <span>Relationships</span>
+            <span>Personal</span>
+            <span>Work Finance</span>
+          </div>
+          <div class="levelImage"></div>
+        </div>
+      </div>-->
+    </div>
+    <div class="rightPanel">
+      <div class="title"><p class="introCopy">Aries</p></div>
+      <div class="dates"><p class="introCopy">(03/21 - 04/19)</p></div>
+      <div class="description clearfix">
+      	<p class="introCopy">
+          Be prepared for a few scheduling hiccups, today. Suddenly, an unforeseen event could limit your free time and make you feel a little bit like you're under the gun. But have no fear! This rapid change of pace will not send you down a stressful path. Instead, it will be invigorating and bring out your competitive, aggressive nature. This will be a fun day, full of twists and turns that keep you on the edge of your seat -- and ready for the next curveball to come your way!
+        </p>
+      </div>
+    </div>
+ 	</li>
+          
+  
+     
+     
+         
+     <li id="taurus" class="horoscopeItem  hidden">
+
+    <div class="leftPanel">
+      <div class="signImage"> 
+        <img class="horoscopeImage" src="http://portalcdn.infospace.com/images/mcms/horoscope/108/taurus.png" width="75" alt="" />
+      </div>
+     <!-- <div class="levels">
+      	<div class="header">Today's energy levels</div>
+        <div class="body">
+          <div class="levelNames">
+            <span>Relationships</span>
+            <span>Personal</span>
+            <span>Work Finance</span>
+          </div>
+          <div class="levelImage"></div>
+        </div>
+      </div>-->
+    </div>
+    <div class="rightPanel">
+      <div class="title"><p class="introCopy">Taurus</p></div>
+      <div class="dates"><p class="introCopy">(04/20 - 05/20)</p></div>
+      <div class="description clearfix">
+      	<p class="introCopy">
+          Someone is suddenly seeing you in a brand new light today, and it will trigger some deeper conversations. No longer will the two of you waste time in small talk -- you're both ready to get to the heart of the matter and get things resolved. You can't expect them to reach out for you, so be prepared to do some of the work first. Ask for some of their time, and request some wise advice. This is a wonderful opportunity to show them that you care about what they think.
+        </p>
+      </div>
+    </div>
+ 	</li>
+          
+  
+     
+     
+         
+     <li id="gemini" class="horoscopeItem  hidden">
+
+    <div class="leftPanel">
+      <div class="signImage"> 
+        <img class="horoscopeImage" src="http://portalcdn.infospace.com/images/mcms/horoscope/108/gemini.png" width="75" alt="" />
+      </div>
+     <!-- <div class="levels">
+      	<div class="header">Today's energy levels</div>
+        <div class="body">
+          <div class="levelNames">
+            <span>Relationships</span>
+            <span>Personal</span>
+            <span>Work Finance</span>
+          </div>
+          <div class="levelImage"></div>
+        </div>
+      </div>-->
+    </div>
+    <div class="rightPanel">
+      <div class="title"><p class="introCopy">Gemini</p></div>
+      <div class="dates"><p class="introCopy">(05/21 - 06/21)</p></div>
+      <div class="description clearfix">
+      	<p class="introCopy">
+          Today, you will get a lot more out of listening and learning than you ever could from getting a laugh, enjoying a flirtatious conversation, or relaxing with a friend. It's a serious day, with serious rewards if you are willing to put for the energy require to earn them. Moving away from instant gratification might make you feel like you're depriving yourself at first, but you will soon realize that once you have fed your mind, you'll be that better at knowing how to feed your soul.
+        </p>
+      </div>
+    </div>
+ 	</li>
+          
+  
+     
+     
+         
+     <li id="cancer" class="horoscopeItem  hidden">
+
+    <div class="leftPanel">
+      <div class="signImage"> 
+        <img class="horoscopeImage" src="http://portalcdn.infospace.com/images/mcms/horoscope/108/cancer.png" width="75" alt="" />
+      </div>
+     <!-- <div class="levels">
+      	<div class="header">Today's energy levels</div>
+        <div class="body">
+          <div class="levelNames">
+            <span>Relationships</span>
+            <span>Personal</span>
+            <span>Work Finance</span>
+          </div>
+          <div class="levelImage"></div>
+        </div>
+      </div>-->
+    </div>
+    <div class="rightPanel">
+      <div class="title"><p class="introCopy">Cancer</p></div>
+      <div class="dates"><p class="introCopy">(06/22 - 07/22)</p></div>
+      <div class="description clearfix">
+      	<p class="introCopy">
+          Your external world and your internal world are at odds, right now -- you have great ideas, but you are not interested in shouting them out to the world. Something is keeping you introverted right now, and you need to just sit with it until it's over and you are ready to break out of your shell, again. This is a perfectly normal phase to be going through, so do not add stress to your life by worrying about it! Being alone may bring you comfort right now, and that's all that matters.
+        </p>
+      </div>
+    </div>
+ 	</li>
+          
+  
+     
+     
+         
+     <li id="leo" class="horoscopeItem  hidden">
+
+    <div class="leftPanel">
+      <div class="signImage"> 
+        <img class="horoscopeImage" src="http://portalcdn.infospace.com/images/mcms/horoscope/108/leo.png" width="75" alt="" />
+      </div>
+     <!-- <div class="levels">
+      	<div class="header">Today's energy levels</div>
+        <div class="body">
+          <div class="levelNames">
+            <span>Relationships</span>
+            <span>Personal</span>
+            <span>Work Finance</span>
+          </div>
+          <div class="levelImage"></div>
+        </div>
+      </div>-->
+    </div>
+    <div class="rightPanel">
+      <div class="title"><p class="introCopy">Leo</p></div>
+      <div class="dates"><p class="introCopy">(07/23 - 08/22)</p></div>
+      <div class="description clearfix">
+      	<p class="introCopy">
+          If you're feeling bored with the same faces in your group of friends, then maybe it's time for you to look to the past for your social future! Dig out your phone book and refresh your memory about friends who you've let slip away, either through change of life or change of job. You will quickly remember at least one cool person, and the chances are high that they would love to hear from you! Give them a call and see what's new in their life. Set a date and your 'bored' is cured!
+        </p>
+      </div>
+    </div>
+ 	</li>
+          
+  
+     
+     
+         
+     <li id="virgo" class="horoscopeItem  hidden">
+
+    <div class="leftPanel">
+      <div class="signImage"> 
+        <img class="horoscopeImage" src="http://portalcdn.infospace.com/images/mcms/horoscope/108/virgo.png" width="75" alt="" />
+      </div>
+     <!-- <div class="levels">
+      	<div class="header">Today's energy levels</div>
+        <div class="body">
+          <div class="levelNames">
+            <span>Relationships</span>
+            <span>Personal</span>
+            <span>Work Finance</span>
+          </div>
+          <div class="levelImage"></div>
+        </div>
+      </div>-->
+    </div>
+    <div class="rightPanel">
+      <div class="title"><p class="introCopy">Virgo</p></div>
+      <div class="dates"><p class="introCopy">(08/23 - 09/22)</p></div>
+      <div class="description clearfix">
+      	<p class="introCopy">
+          When you enter into a new group situation today, try not to be as socially cautious as you often are. There's no need to be intimidated! A little quick reasoning will tell you that you have plenty of things in common with these people, so if you are at a loss for what to talk about, start there! Conversation is an art, but you have your own special twist on it -- don't be afraid to strike up conversations, today. People will be more receptive than you think.
+        </p>
+      </div>
+    </div>
+ 	</li>
+          
+  
+     
+     
+         
+     <li id="libra" class="horoscopeItem  hidden">
+
+    <div class="leftPanel">
+      <div class="signImage"> 
+        <img class="horoscopeImage" src="http://portalcdn.infospace.com/images/mcms/horoscope/108/libra.png" width="75" alt="" />
+      </div>
+     <!-- <div class="levels">
+      	<div class="header">Today's energy levels</div>
+        <div class="body">
+          <div class="levelNames">
+            <span>Relationships</span>
+            <span>Personal</span>
+            <span>Work Finance</span>
+          </div>
+          <div class="levelImage"></div>
+        </div>
+      </div>-->
+    </div>
+    <div class="rightPanel">
+      <div class="title"><p class="introCopy">Libra</p></div>
+      <div class="dates"><p class="introCopy">(09/23 - 10/22)</p></div>
+      <div class="description clearfix">
+      	<p class="introCopy">
+          If you are not in the mood to be social right now, then the worst thing you could do would be to force yourself to go out. You cannot convince yourself to have a good time if you're just not feeling it! When you pretend that you're having fun, you won't be able to fool anyone -- your acting skills are just not that great right now. But even though you're not into hanging out with others, you will still have some good energy. You'll just be able to enjoy it more alone.
+        </p>
+      </div>
+    </div>
+ 	</li>
+          
+  
+     
+     
+         
+     <li id="scorpio" class="horoscopeItem  hidden">
+
+    <div class="leftPanel">
+      <div class="signImage"> 
+        <img class="horoscopeImage" src="http://portalcdn.infospace.com/images/mcms/horoscope/108/scorpio.png" width="75" alt="" />
+      </div>
+     <!-- <div class="levels">
+      	<div class="header">Today's energy levels</div>
+        <div class="body">
+          <div class="levelNames">
+            <span>Relationships</span>
+            <span>Personal</span>
+            <span>Work Finance</span>
+          </div>
+          <div class="levelImage"></div>
+        </div>
+      </div>-->
+    </div>
+    <div class="rightPanel">
+      <div class="title"><p class="introCopy">Scorpio</p></div>
+      <div class="dates"><p class="introCopy">(10/23 - 11/21)</p></div>
+      <div class="description clearfix">
+      	<p class="introCopy">
+          Today, other people's money will cause you to think more about your own money. Either you don't have as much as someone and want more, or you have so much more than someone that you are feeling guilty. Either way, you can't let money come between you and a friend. Social plans should be organized with that in mind. Don't expect a struggling friend to be comfortable going out on the town in first class style. There are many, many ways to have fun without spending a dime -- start doing them.
+        </p>
+      </div>
+    </div>
+ 	</li>
+          
+  
+     
+     
+         
+     <li id="sagittarius" class="horoscopeItem  hidden">
+
+    <div class="leftPanel">
+      <div class="signImage"> 
+        <img class="horoscopeImage" src="http://portalcdn.infospace.com/images/mcms/horoscope/108/sagittarius.png" width="75" alt="" />
+      </div>
+     <!-- <div class="levels">
+      	<div class="header">Today's energy levels</div>
+        <div class="body">
+          <div class="levelNames">
+            <span>Relationships</span>
+            <span>Personal</span>
+            <span>Work Finance</span>
+          </div>
+          <div class="levelImage"></div>
+        </div>
+      </div>-->
+    </div>
+    <div class="rightPanel">
+      <div class="title"><p class="introCopy">Sagittarius</p></div>
+      <div class="dates"><p class="introCopy">(11/22 - 12/21)</p></div>
+      <div class="description clearfix">
+      	<p class="introCopy">
+          Today, absolutely anything is possible. This day is a blank slate, and it's up to you to draw the picture you want to see. The outcome of anything you're involved in is totally up to you. The amount of energy and value you put into things is going to dictate the amount of energy and value that you get out of them. So get serious about things and be willing to work a little harder -- and work a little longer, if need be. This blank canvas won't intimidate you -- it will excite you!
+        </p>
+      </div>
+    </div>
+ 	</li>
+          
+  
+     
+     
+         
+     <li id="capricorn" class="horoscopeItem  hidden">
+
+    <div class="leftPanel">
+      <div class="signImage"> 
+        <img class="horoscopeImage" src="http://portalcdn.infospace.com/images/mcms/horoscope/108/capricorn.png" width="75" alt="" />
+      </div>
+     <!-- <div class="levels">
+      	<div class="header">Today's energy levels</div>
+        <div class="body">
+          <div class="levelNames">
+            <span>Relationships</span>
+            <span>Personal</span>
+            <span>Work Finance</span>
+          </div>
+          <div class="levelImage"></div>
+        </div>
+      </div>-->
+    </div>
+    <div class="rightPanel">
+      <div class="title"><p class="introCopy">Capricorn</p></div>
+      <div class="dates"><p class="introCopy">(12/22 - 01/19)</p></div>
+      <div class="description clearfix">
+      	<p class="introCopy">
+          You have been attracting flighty people lately -- and while it's been fun, it has also been fairly frustrating. So today it will do you well to take a break from people who always seem to cancel on you at the last minute. Call up one or two of the people who you know you can always count on and find out when you guys can get together next. You don't have to cut your ties with the people who are driving you nuts right now, either. Variety is the spice of life, and of friendships!
+        </p>
+      </div>
+    </div>
+ 	</li>
+          
+  
+     
+     
+         
+     <li id="aquarius" class="horoscopeItem  hidden">
+
+    <div class="leftPanel">
+      <div class="signImage"> 
+        <img class="horoscopeImage" src="http://portalcdn.infospace.com/images/mcms/horoscope/108/aquarius.png" width="75" alt="" />
+      </div>
+     <!-- <div class="levels">
+      	<div class="header">Today's energy levels</div>
+        <div class="body">
+          <div class="levelNames">
+            <span>Relationships</span>
+            <span>Personal</span>
+            <span>Work Finance</span>
+          </div>
+          <div class="levelImage"></div>
+        </div>
+      </div>-->
+    </div>
+    <div class="rightPanel">
+      <div class="title"><p class="introCopy">Aquarius</p></div>
+      <div class="dates"><p class="introCopy">(01/20 - 02/18)</p></div>
+      <div class="description clearfix">
+      	<p class="introCopy">
+          Today your sense of humor is in full force, and likely to be the most effective tool toward lighting up a tiny spark of romance in someone's eye. So that means it's a great day to flirt! Start a conversation with a funny observation and get the laughter flowing. There is nothing wrong with encouraging a flirtatious energy with a stranger, even -- it's only good fun, and as long as you don't make any promises that you don't intend to keep, it's perfectly polite too.
+        </p>
+      </div>
+    </div>
+ 	</li>
+          
+  
+     
+     
+         
+     <li id="pisces" class="horoscopeItem  hidden">
+
+    <div class="leftPanel">
+      <div class="signImage"> 
+        <img class="horoscopeImage" src="http://portalcdn.infospace.com/images/mcms/horoscope/108/pisces.png" width="75" alt="" />
+      </div>
+     <!-- <div class="levels">
+      	<div class="header">Today's energy levels</div>
+        <div class="body">
+          <div class="levelNames">
+            <span>Relationships</span>
+            <span>Personal</span>
+            <span>Work Finance</span>
+          </div>
+          <div class="levelImage"></div>
+        </div>
+      </div>-->
+    </div>
+    <div class="rightPanel">
+      <div class="title"><p class="introCopy">Pisces</p></div>
+      <div class="dates"><p class="introCopy">(02/19 - 03/20)</p></div>
+      <div class="description clearfix">
+      	<p class="introCopy">
+          A few last minute changes will be required of you here and there today, especially if you are going to be traveling or about to embark on a trip. The good news is that your brain is sharp and firing on all cylinders, and you will be able to adapt and ride whatever waves come along. In fact, you'll get quite an ego boost out of being able to handle the twists and turns that the day throws at you with grace and aplomb. People will be amazed and impressed!
+        </p>
+      </div>
+    </div>
+ 	</li>
+          
+    
+        </ul>
+   </div>       
+  <div class="horoscopeFooter">
+    <p class="copyright introCopy">
+      &copy;<span class="horoscopeLink"><a href="http://astrology.com" target="_blank">Astrology.com</a></span>&trade;
+      1996 - 2013. All rights reserved. For entertainment only.
+      </p>
+  </div>
+</div>
+ 
+  
+ 
+ 
+  
+
+<script type="text/javascript">
+  //$(document).ready(function() {
+
+</script>
+       <!-- pc-panel-sidebarad-2 -->
+  <iframe class="tvListings" height="300px" frameborder="0" width="300px" scrolling="no" src="http://listings2go.tvguide.com/PartnerGrid/grids?partnerid=109&profileid=1267" ></iframe>
+</section><!-- end PageSidebar -->
+
+<footer id="pageFooter">
+
+  <ul>
+    <li><a href="/p/home">HOME</a></li>
+    <li><a href="http://infospaceinc.com/ourstory/default.aspx" target="_blank">ABOUT US</a></li>
+    <li><a href="http://infospaceinc.com/contactus.aspx" target="_blank">CONTACT US</a></li>
+    <li><a href="/p/terms-of-use">TERMS OF USE</a></li>
+    <li><a href="/p/privacy-policy">PRIVACY POLICY</a></li>
+       <li class="tablet-icon">
+         <a href="?device_override=2">TABLET</a>
+        </li>
+        <li class="phone-icon">
+          <a href="?device_override=3">MOBILE</a>
+        </li>
+    </ul>
+  
+    <p class="copyRight">Copyright &copy; 2013 Infospace All rights reserved</p>
+
+</footer>
+<script type="text/javascript">
+$(window).load(
+    function() {  
+		$('.headlineImage').each(function(){ 
+			 var image = new Image(); 	
+             image.src = extractUrl($(this).css("background-image")); 			 
+		     if (image.height > image.width){
+			     $(this).height(220);
+			  }  else {
+			     $(this).height(120);
+			  }			  
+		});
+    }
+);
+function extractUrl(input)
+{
+ // remove quotes and wrapping url()
+ return input.replace(/"/g,"").replace(/url\(|\)$/ig, "");
+}
+  
+
+</script>
+<script type="text/javascript">
+    // initialize google analytics
+  var _gaq = _gaq || [];
+
+  // initialize CEP logging data
+  // example /nation.toolbar/home.tablet:news_ap,sports,article
+  // for each of these, if the context values are non-null, assign them to the variables, else assign empty string
+  var CEPGAaccount = 'UA-21837140-5';
+  var CEPGAdomain = '.nation.com';
+
+    // initialize InfoSpace logging data for PCH Frontpage site
+  
+  
+     
+      
+  
+    // NOT page.slug == 'news'  and article
+  var customSiteIdentifier = '/nation.default/view/pc' + window.location.href.toString().split(window.location.host)[1];
+    
+
+
+  _gaq.push(['_setAccount', CEPGAaccount]);
+  _gaq.push(['_setDomainName', CEPGAdomain]);
+  _gaq.push(['_trackPageview',customSiteIdentifier]);
+  
+  (function() {
+    var ga = document.createElement('script');     ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:'   == document.location.protocol ? 'https://ssl'   : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+  
+ 
+
+<script type="text/javascript">
+    // initialize google analytics
+  var _gaq = _gaq || [];
+
+  // initialize CEP logging data
+  // example /nation.toolbar/home.tablet:news_ap,sports,article
+  // for each of these, if the context values are non-null, assign them to the variables, else assign empty string
+  var CEPGAaccount = 'UA-21837140-5';
+  var CEPGAdomain = '.nation.com';
+
+    // initialize InfoSpace logging data for PCH Frontpage site
+  
+  
+     
+      
+  
+    // NOT page.slug == 'news'  and article
+  var customSiteIdentifier = '/nation.default/view/pc' + window.location.href.toString().split(window.location.host)[1];
+    
+
+
+  _gaq.push(['_setAccount', CEPGAaccount]);
+  _gaq.push(['_setDomainName', CEPGAdomain]);
+  _gaq.push(['_trackPageview',customSiteIdentifier]);
+  
+  (function() {
+    var ga = document.createElement('script');     ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:'   == document.location.protocol ? 'https://ssl'   : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+  
+
+  	</div><!-- contentWrapper -->
+</div><!-- bodyWrapper-->
+<script type="text/javascript">if (!NREUMQ.f) { NREUMQ.f=function() {
+NREUMQ.push(["load",new Date().getTime()]);
+var e=document.createElement("script");
+e.type="text/javascript";e.async=true;e.src="https://d1ros97qkrwjf5.cloudfront.net/42/eum/rum.js";
+document.body.appendChild(e);
+if(NREUMQ.a)NREUMQ.a();
+};
+NREUMQ.a=window.onload;window.onload=NREUMQ.f;
+};
+NREUMQ.push(["nrfj","beacon-1.newrelic.com","875f1bf33f",377097,"dw1XEBMKWFkBExdETVYOUAc+E11QExIXR1BbFQ==",0,443,new Date().getTime(),"","","","",""])</script></body>
+</html>

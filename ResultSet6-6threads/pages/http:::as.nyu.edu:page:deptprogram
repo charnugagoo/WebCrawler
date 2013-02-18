@@ -1,0 +1,659 @@
+<!DOCTYPE html><html xmlns:atom="http://www.w3.org/2005/Atom" xmlns:comem3="xalan://com.em3" xmlns:em3="http://www.em3.com/2002/widget">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Departments and Programs, Arts &amp; Science | NYU</title>
+<!--Google jQuery-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<!--Google jQuery UI--><script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+<!--A collection of most of the special features available-->
+<!--AS Home page slideshow (2 scripts)--><script type="text/javascript" src="/object/script.js"></script><script type="text/javascript" src="/object/autoadvance.js"></script>
+<!--Alt. table row color--><script type="text/javascript" src="/object/alttbcolor.js"></script>
+<!--Scroll to Top Button-->
+<!--Adjust with ID "topcontrol"--><script src="/object/scrolltopcontrol.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="/object/sys-onsite-editbutton.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/sys-socialmediaicon20v2.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/sys-socialmediaicon20.css" media="all" />
+  <!--[if (IE 7)|(IE 6)]>
+<link rel="stylesheet" type="text/css" href="/object/sys-iepngfixv20.css" media="all" />
+ <![endif]--> 
+<link rel="stylesheet" type="text/css" href="/object/sys-scrolltotop.css" media="all" />
+
+<script LANGUE="javaScript">
+function makeArray()    {
+    this[0] = makeArray.arguments.length;
+    for (i = 0; i<makeArray.arguments.length; i++)
+        this[i+1] = makeArray.arguments[i];
+}
+
+var daysofweek = new makeArray('Sunday',
+                               'Monday',
+                               'Tuesday',
+                               'Wednesday',
+                               'Thursday',
+                               'Friday',
+                               'Saturday');
+
+var monthsofyear = new makeArray('January',
+                                 'February',
+                                 'March',
+                                 'April',
+                                 'May',
+                                 'June',
+                                 'July',
+                                 'August',
+                                 'September',
+                                 'October',
+                                 'November',
+                                 'December');
+
+function Nths(day) { 
+    if (day == 1 || day == 21 || day == 31) return 'st';
+    if (day == 2 || day == 22) return 'nd';
+    if (day == 3 || day == 23) return 'rd';
+    return 'th';
+}
+
+function DayOfWeek(day,month,year) {
+    var a = Math.floor((14 - month)/12);
+    var y = year - a;
+    var m = month + 12*a - 2;
+    var d = (day + y + Math.floor(y/4) - Math.floor(y/100) +
+             Math.floor(y/400) + Math.floor((31*m)/12)) % 7;
+    return d + 1;
+}
+
+function FullDate(day,month,year) {
+    return daysofweek[DayOfWeek(day,month,year)] +', '+ monthsofyear[month] +' '+ day + Nths(day); 
+//    return daysofweek[DayOfWeek(day,month,year)] +', '+ monthsofyear[month] +' '+ day + Nths(day) + '<br/>';
+// Do not understand why there's a <br>, so comment it out for now. - Herbert
+
+//    return daysofweek[DayOfWeek(day,month,year)] +', '+ day + Nths(day) +', '+ monthsofyear[month] +', '+ year;
+
+}
+</script>
+<link rel="stylesheet" type="text/css" href="/object/normalizeem.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/as-stickyfooter.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/as-scrolltotop.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/as-basegrid.css" media="all" />
+  <!--[if (IE 6)]>
+<link rel="stylesheet" type="text/css" href="/object/as-basegrid-ie6.css" media="all" />
+ <![endif]--> 
+  <!--[if (IE 7)]>
+<link rel="stylesheet" type="text/css" href="/object/as-basegrid-ie7.css" media="all" />
+ <![endif]--> 
+<link rel="stylesheet" type="text/css" href="/object/as-baselayout.css" media="all" />
+  <!--[if (IE 6)]>
+<link rel="stylesheet" type="text/css" href="/object/as-baselayoutie6.css" media="all" />
+ <![endif]--> 
+  <!--[if (IE 7)]>
+<link rel="stylesheet" type="text/css" href="/object/as-baselayout-ie7.css" media="all" />
+ <![endif]--> 
+<link rel="stylesheet" type="text/css" href="/object/as-baseform.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/as-basefont.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/as-baseprint.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/as-slideshow.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/as-feedbacklink.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/asstyle.css" media="all" />
+
+<script LANGUE="javaScript">
+function makeArray()    {
+    this[0] = makeArray.arguments.length;
+    for (i = 0; i<makeArray.arguments.length; i++)
+        this[i+1] = makeArray.arguments[i];
+}
+
+var daysofweek = new makeArray('Sunday',
+                               'Monday',
+                               'Tuesday',
+                               'Wednesday',
+                               'Thursday',
+                               'Friday',
+                               'Saturday');
+
+var monthsofyear = new makeArray('January',
+                                 'February',
+                                 'March',
+                                 'April',
+                                 'May',
+                                 'June',
+                                 'July',
+                                 'August',
+                                 'September',
+                                 'October',
+                                 'November',
+                                 'December');
+
+function Nths(day) { 
+    if (day == 1 || day == 21 || day == 31) return 'st';
+    if (day == 2 || day == 22) return 'nd';
+    if (day == 3 || day == 23) return 'rd';
+    return 'th';
+}
+
+function DayOfWeek(day,month,year) {
+    var a = Math.floor((14 - month)/12);
+    var y = year - a;
+    var m = month + 12*a - 2;
+    var d = (day + y + Math.floor(y/4) - Math.floor(y/100) +
+             Math.floor(y/400) + Math.floor((31*m)/12)) % 7;
+    return d + 1;
+}
+
+function FullDate(day,month,year) {
+    return daysofweek[DayOfWeek(day,month,year)] +', '+ monthsofyear[month] +' '+ day + Nths(day); 
+//    return daysofweek[DayOfWeek(day,month,year)] +', '+ monthsofyear[month] +' '+ day + Nths(day) + '<br/>';
+// Do not understand why there's a <br>, so comment it out for now. - Herbert
+
+//    return daysofweek[DayOfWeek(day,month,year)] +', '+ day + Nths(day) +', '+ monthsofyear[month] +', '+ year;
+
+}
+</script><style type="text/css">
+.content p {padding-right:0px !important;}
+</style><script type="text/javascript" src="/object/jquery.hashchange.min.js"></script><script type="text/javascript" src="/object/jquery.easytabs.js"></script>
+</head>
+<body id="cx" class="id3599">
+<a name="top"></a>
+<div class="button-onsiteedit">
+<a target="ionAdmin" href="http://ionadmin.fas.nyu.edu/admin/ContextPageEditAction.ion?method=setup&key=3599"><img height="8" width="8" alt="" src="/docs/TEMPLATE/1033/edit.png"></a>
+</div>
+<div id="wrap">
+<div id="main">
+<div id="emptysp"></div>
+<div ID="header">
+<div ID="hdr-headerbg">
+<div ID="hdr-headerart">
+<div ID="hdr-search" class="float-right">
+<div ID="searchbox">
+<div ID="search">
+<form action="http://google.nyu.edu/search" id="searchform" method="get">
+<input value="xml_no_dtd" name="output" type="hidden"><input value="UTF-8" name="oe" type="hidden"><input value="10" name="num" type="hidden"><input value="NYUWeb_Main" name="client" type="hidden"><input value="NYUWeb_Main" name="site" type="hidden"><input value="default_frontend" name="proxystylesheet" type="hidden"><input name="sitesearch" type="hidden" value="as.nyu.edu"><input type="text" name="q" class="querybox"><input class="submitbox" border="0" src="/docs/TEMPLATE/1929/search-bt.png" type="image">
+</form>
+</div>
+</div>
+</div>
+<a class="linktonyu" href="http://www.nyu.edu"><span class="hidden">New York University</span></a><a class="linktoas" href="http://as.nyu.edu"><span class="hidden">Arts and Science</span></a>
+</div>
+<div class="hidden" id="hdr-headerart-pt">
+<img src="/docs/TEMPLATE/48/print-as.png"></div>
+</div>
+</div>
+<div id="snav">
+<ul>
+<li class="first">
+<a href="http://as.nyu.edu/page/aboutas">About Arts &amp; Science</a>
+</li>
+<li>
+<a href="http://as.nyu.edu/page/deptprogram">Departments and Programs</a>
+</li>
+<li class="last">
+<a href="http://as.nyu.edu/page/faculty.directory">The Faculty</a>
+</li>
+</ul>
+</div>
+<div ID="subnav">
+<div ID="breadcrumb">
+<div class="breadcrumb_nav" id="breadcrumb">
+<a href="/page/__default">Home</a> &gt; <span class="on">Departments and Programs</span>
+</div>
+</div>
+</div>
+<div id="content">
+<div class="column" id="center">
+<h2 class="content-title">Departments and Programs</h2>
+<div class="maincontent">
+<span class="spa"></span>
+<div id="contentelement">For a complete list of degrees offered, please visit the <a href="http://cas.nyu.edu/page/ug.MajorsMinors">undergraduate major and minors</a> and the <a href="http://gsas.nyu.edu/page/grad.scholarlyprograms">graduate programs</a> pages .<br><br><br></div>
+<span class="gl"></span><span class="ev"></span><span class="nw"></span><span class="faclist"></span><span class="prolist"></span>
+<div class="tab-container" id="deptlist-tab">
+<ul id="toc">
+<li class="tab">
+<a href="#az">A-Z Listing</a>
+</li>
+<li class="tab">
+<a href="#humanities">Humanities</a>
+</li>
+<li class="tab">
+<a href="#science">Science</a>
+</li>
+<li class="tab">
+<a href="#socscience">Social Science</a>
+</li>
+</ul>
+<div class="bucket-container">
+<div id="az">
+<div class="temp bucket">
+<h4 class="bucket-title">
+<img vspace="0" hspace="0" border="0" alt="" src="/docs/TEMPLATE/1771/dept-photo.jpg"></h4>
+<ul>
+<li class="first">
+<a href="http://africanastudies.as.nyu.edu/" target="_blank">Africana Studies</a><span class="degoff">B.A., Minor, M.A.</span>
+</li>
+<li class="">
+<a href="http://americanstudies.as.nyu.edu" target="_blank">American Studies</a><span class="degoff">B.A., Minor, M.A., Ph.D.</span>
+</li>
+<li class="">
+<a href="http://anees.as.nyu.edu/" target="_blank">Ancient Near Eastern and Egyptian Studies </a><span class="degoff">M.A., Ph.D.</span>
+</li>
+<li class="">
+<a href="http://anthropology.as.nyu.edu" target="_blank">Anthropology</a><span class="degoff">B.A., Minor, M.A., Ph.D.</span>
+</li>
+<li class="">
+<a href="http://arthistory.as.nyu.edu" target="_blank">Art History</a><span class="degoff">B.A., Minor</span>
+</li>
+<li class="">
+<a href="http://apa.as.nyu.edu" target="_blank">Asian/Pacific/American Studies</a><span class="degoff">B.A., Minor</span>
+</li>
+<li class="">
+<a href="http://caos.cims.nyu.edu" target="_blank">Atmosphere Ocean Science</a><span class="degoff">Ph.D.</span>
+</li>
+<li class="">
+<a href="http://bioethics.as.nyu.edu" target="_blank">Bioethics</a><span class="degoff">M.A.</span>
+</li>
+<li class="">
+<a href="http://biology.as.nyu.edu/" target="_blank">Biology</a><span class="degoff">B.A., B.S., M.S., Ph.D.</span>
+</li>
+<li class="">
+<a href="http://sackler.med.nyu.edu/" target="_blank">Biomedical Sciences</a><span class="degoff">M.D., Ph.D.</span>
+</li>
+<li class="">
+<a href="http://ancientstudies.as.nyu.edu" target="_blank">Center for Ancient Studies</a><span class="degoff">Minor</span>
+</li>
+<li class="">
+<a href="http://chemistry.as.nyu.edu" target="_blank">Chemistry</a><span class="degoff">B.A., B.S., Ph.D.</span>
+</li>
+<li class="">
+<a href="http://cinema.tisch.nyu.edu" target="_blank">Cinema Studies</a><span class="degoff">B.A., Minor, M.A., Ph.D.</span>
+</li>
+<li class="">
+<a href="http://classics.as.nyu.edu" target="_blank">Classics</a><span class="degoff">B.A., M.A., Ph.D.</span>
+</li>
+<li class="">
+<a href="http://complit.as.nyu.edu" target="_blank">Comparative Literature</a><span class="degoff">B.A., Minor, M.A., Ph.D.</span>
+</li>
+<li class="">
+<a href="http://cob.as.nyu.edu" target="_blank">Computational Biology</a><span class="degoff">Ph.D.</span>
+</li>
+<li class="">
+<a href="http://cs.nyu.edu/csweb/index.html" target="_blank">Computer Science</a><span class="degoff">B.A., B.S., Minor, M.S., Ph.D.</span>
+</li>
+<li class="">
+<a href="http://cwp.as.nyu.edu" target="_blank">Creative Writing</a><span class="degoff">Minor, M.A.</span>
+</li>
+<li class="">
+<a href="http://anthropology.as.nyu.edu/object/anthro.grad.program.cultmedia" target="_blank">Culture and Media</a><span class="degoff">Certificate Program</span>
+</li>
+<li class="">
+<a href="http://dramalit.as.nyu.edu" target="_blank">Dramatic Literature</a><span class="degoff">B.A., Minor</span>
+</li>
+<li class="">
+<a href="http://eas.as.nyu.edu" target="_blank">East Asian Studies</a><span class="degoff">B.A., Minor, M.A., Ph.D.</span>
+</li>
+<li class="">
+<a href="http://econ.as.nyu.edu" target="_blank">Economics</a><span class="degoff">B.A., Minor, M.A., Ph.D., Special Program</span>
+</li>
+<li class="">
+<a href="http://cas.nyu.edu/object/engineering.1113.ug.info" target="_blank">Engineering</a><span class="degoff">B.A., B.S.</span>
+</li>
+<li class="">
+<a href="http://english.as.nyu.edu/page/home" target="_blank">English</a><span class="degoff">B.A., Minor, M.A., M.F.A., Ph.D.</span>
+</li>
+<li class="">
+<a href="http://environment.as.nyu.edu" target="_blank">Environmental Studies</a><span class="degoff">B.A., Minor</span>
+</li>
+<li class="">
+<a href="http://cems.as.nyu.edu" target="_blank">European and Mediterranean Studies</a><span class="degoff">B.A., Minor, M.A.</span>
+</li>
+<li class="">
+<a href="http://www.nyu.edu/gsas/dept/fineart/" target="_blank">Fine Arts</a><span class="degoff">M.A., Ph.D.</span>
+</li>
+<li class="">
+<a href="http://french.as.nyu.edu" target="_blank">French</a><span class="degoff">B.A., Minor, M.A., Ph.D.</span>
+</li>
+<li class="">
+<a href="http://ifs.as.nyu.edu" target="_blank">French Studies</a><span class="degoff">M.A., Ph.D., Certificate Program</span>
+</li>
+<li class="">
+<a href="http://genderandsexuality.as.nyu.edu" target="_blank">Gender and Sexuality Studies </a><span class="degoff">B.A., Minor</span>
+</li>
+<li class="">
+<a href="http://german.as.nyu.edu" target="_blank">German</a><span class="degoff">B.A., Minor, M.A., Ph.D.</span>
+</li>
+<li class="">
+<a href="http://hebrewjudaic.as.nyu.edu" target="_blank">Hebrew and Judaic Studies</a><span class="degoff">B.A., M.A., Ph.D.</span>
+</li>
+<li class="">
+<a href="http://hellenic.as.nyu.edu" target="_blank">Hellenic Studies</a><span class="degoff">B.A., Minor</span>
+</li>
+<li class="">
+<a href="http://arthistory.as.nyu.edu/page/ma" target="_blank">Historical and Sustainable Architecture</a><span class="degoff">M.A.</span>
+</li>
+<li class="">
+<a href="http://history.as.nyu.edu/" target="_blank">History</a><span class="degoff">B.A., Minor, M.A., Ph.D., Advanced Certificate</span>
+</li>
+<li class="">
+<a href="http://draper.as.nyu.edu/page/home" target="_blank">Humanities and Social Thought (Draper)</a><span class="degoff">M.A.</span>
+</li>
+<li class="">
+<a href="http://politics.as.nyu.edu/page/internationalrelations" target="_blank">International Relations</a><span class="degoff">B.A., M.A.</span>
+</li>
+<li class="">
+<a href="http://irelandhouse.as.nyu.edu" target="_blank">Irish Studies</a><span class="degoff">Minor, M.A.</span>
+</li>
+<li class="">
+<a href="http://italian.as.nyu.edu" target="_blank">Italian Studies</a><span class="degoff">B.A., Minor, M.A., Ph.D.</span>
+</li>
+<li class="">
+<a href="http://journalism.nyu.edu/" target="_blank">Journalism</a><span class="degoff">B.A., M.A.</span>
+</li>
+<li class="">
+<a href="http://clacs.as.nyu.edu" target="_blank">Latin American and Caribbean Studies (CLACS)</a><span class="degoff">B.A., Minor, M.A.</span>
+</li>
+<li class="">
+<a href="http://latinostudies.fas.nyu.edu" target="_blank">Latino Studies</a><span class="degoff">B.A., Minor</span>
+</li>
+<li class="">
+<a href="http://bulletin.cas.nyu.edu/object/lawsociety.1214.ug.info" target="_blank">Law and Society</a><span class="degoff">Minor</span>
+</li>
+<li class="">
+<a href="http://linguistics.as.nyu.edu" target="_blank">Linguistics</a><span class="degoff">B.A., Minor, Ph.D.</span>
+</li>
+<li class="">
+<a href="http://www.math.nyu.edu/" target="_blank">Mathematics</a><span class="degoff">B.A., B.S., M.S., Ph.D., Advanced Certificate</span>
+</li>
+<li class="">
+<a href="http://marc.as.nyu.edu/page/home" target="_blank">Medieval and Renaissance Center</a><span class="degoff">B.A., Minor</span>
+</li>
+<li class="">
+<a href="http://metropolitanstudies.as.nyu.edu" target="_blank">Metropolitan Studies</a><span class="degoff">B.A., Minor</span>
+</li>
+<li class="">
+<a href="http://meis.as.nyu.edu" target="_blank">Middle Eastern and Islamic Studies</a><span class="degoff">B.A., Minor, Ph.D.</span>
+</li>
+<li class="">
+<a href="http://map.cas.nyu.edu" target="_blank">Morse Academic Plan</a><span class="degoff"></span>
+</li>
+<li class="">
+<a href="http://museumstudies.as.nyu.edu" target="_blank">Museum Studies</a><span class="degoff">M.A.</span>
+</li>
+<li class="">
+<a href="http://www.nyu.edu/gsas/dept/music/" target="_blank">Music</a><span class="degoff">B.A., Minor, Ph.D., Advanced Certificate</span>
+</li>
+<li class="">
+<a href="http://neareaststudies.as.nyu.edu" target="_blank">Near Eastern Studies</a><span class="degoff">M.A.</span>
+</li>
+<li class="">
+<a href="http://www.cns.nyu.edu/" target="_blank">Neural Science</a><span class="degoff">B.S., Ph.D.</span>
+</li>
+<li class="">
+<a href="http://philosophy.as.nyu.edu" target="_blank">Philosophy</a><span class="degoff">B.A., Minor, M.A., Ph.D.</span>
+</li>
+<li class="">
+<a href="http://physics.as.nyu.edu" target="_blank">Physics</a><span class="degoff">B.A., B.S., M.S., Ph.D.</span>
+</li>
+<li class="">
+<a href="http://politics.as.nyu.edu" target="_blank">Politics</a><span class="degoff">B.A., Minor, M.A., Ph.D.</span>
+</li>
+<li class="">
+<a href="http://www.psych.nyu.edu/psychology.html" target="_blank">Psychology</a><span class="degoff">B.A., Minor, M.A., Ph.D.</span>
+</li>
+<li class="">
+<a href="http://postdocpsychoanalytic.as.nyu.edu" target="_blank">Psychotherapy and Psychoanalysis, Postdoctoral Program</a><span class="degoff">Advanced Certificate</span>
+</li>
+<li class="">
+<a href="http://religiousstudies.as.nyu.edu" target="_blank">Religious Studies</a><span class="degoff">B.A., Minor, M.A.</span>
+</li>
+<li class="">
+<a href="http://www.russianslavic.as.nyu.edu" target="_blank">Russian and Slavic Studies </a><span class="degoff">B.A., Minor, M.A.</span>
+</li>
+<li class="">
+<a href="http://sca.as.nyu.edu" target="_blank">Social and Cultural Analysis</a><span class="degoff">B.A.</span>
+</li>
+<li class="">
+<a href="http://sociology.as.nyu.edu" target="_blank">Sociology</a><span class="degoff">B.A., Minor, M.A., Ph.D.</span>
+</li>
+<li class="">
+<a href="http://spanish.as.nyu.edu/" target="_blank">Spanish and Portuguese Languages and Literature</a><span class="degoff">B.A., M.A., M.F.A., Ph.D.</span>
+</li>
+<li class="last">
+<a href="http://tvts.as.nyu.edu" target="_blank">Trauma and Violence Transdisciplinary Studies</a><span class="degoff">M.A.</span>
+</li>
+</ul>
+</div>
+</div>
+<div id="humanities">
+<div class="temp bucket">
+<h4 class="bucket-title">
+<img vspace="0" hspace="0" border="0" alt="" src="/docs/TEMPLATE/1772/humanities.jpg"></h4>
+<ul>
+<li class="first">
+<a href="http://africanastudies.as.nyu.edu/" target="_blank">Africana Studies</a><span class="degoff">B.A., Minor, M.A.</span>
+</li>
+<li class="">
+<a href="http://americanstudies.as.nyu.edu" target="_blank">American Studies</a><span class="degoff">B.A., Minor, M.A., Ph.D.</span>
+</li>
+<li class="">
+<a href="http://ancientstudies.as.nyu.edu" target="_blank">Center for Ancient Studies</a><span class="degoff">Minor</span>
+</li>
+<li class="">
+<a href="http://arthistory.as.nyu.edu" target="_blank">Art History</a><span class="degoff">B.A., Minor</span>
+</li>
+<li class="">
+<a href="http://classics.as.nyu.edu" target="_blank">Classics</a><span class="degoff">B.A., M.A., Ph.D.</span>
+</li>
+<li class="">
+<a href="http://complit.as.nyu.edu" target="_blank">Comparative Literature</a><span class="degoff">B.A., Minor, M.A., Ph.D.</span>
+</li>
+<li class="">
+<a href="http://cwp.as.nyu.edu/" target="_blank">Creative Writing</a><span class="degoff">Minor, M.A.</span>
+</li>
+<li class="">
+<a href="http://eas.as.nyu.edu" target="_blank">East Asian Studies</a><span class="degoff">B.A., Minor, M.A., Ph.D.</span>
+</li>
+<li class="">
+<a href="http://english.as.nyu.edu/page/home" target="_blank">English</a><span class="degoff">B.A., Minor, M.A., M.F.A., Ph.D.</span>
+</li>
+<li class="">
+<a href="http://cems.as.nyu.edu" target="_blank">European and Mediterranean Studies</a><span class="degoff">B.A., Minor, M.A.</span>
+</li>
+<li class="">
+<a href="http://www.nyu.edu/gsas/dept/fineart/" target="_blank">Fine Arts</a><span class="degoff"></span>
+</li>
+<li class="">
+<a href="http://french.as.nyu.edu" target="_blank">French</a><span class="degoff">B.A., Minor, M.A., Ph.D.</span>
+</li>
+<li class="">
+<a href="http://ifs.as.nyu.edu" target="_blank">French Studies</a><span class="degoff">M.A., Ph.D., Certificate Program</span>
+</li>
+<li class="">
+<a href="http://genderandsexuality.as.nyu.edu" target="_blank">Gender and Sexuality Studies </a><span class="degoff">B.A., Minor</span>
+</li>
+<li class="">
+<a href="http://german.as.nyu.edu" target="_blank">German</a><span class="degoff">B.A., Minor, M.A., Ph.D.</span>
+</li>
+<li class="">
+<a href="http://hebrewjudaic.as.nyu.edu" target="_blank">Hebrew and Judaic Studies</a><span class="degoff">B.A., M.A., Ph.D.</span>
+</li>
+<li class="">
+<a href="http://hellenic.as.nyu.edu" target="_blank">Hellenic Studies</a><span class="degoff">B.A., Minor</span>
+</li>
+<li class="">
+<a href="http://history.as.nyu.edu/" target="_blank">History</a><span class="degoff">B.A., Minor, M.A., Ph.D., Advanced Certificate</span>
+</li>
+<li class="">
+<a href="http://irelandhouse.as.nyu.edu" target="_blank">Irish Studies</a><span class="degoff">Minor, M.A.</span>
+</li>
+<li class="">
+<a href="http://italian.as.nyu.edu" target="_blank">Italian Studies</a><span class="degoff">B.A., Minor, M.A., Ph.D.</span>
+</li>
+<li class="">
+<a href="http://clacs.as.nyu.edu" target="_blank">Latin American and Caribbean Studies (CLACS)</a><span class="degoff">B.A., Minor, M.A.</span>
+</li>
+<li class="">
+<a href="http://marc.as.nyu.edu/page/home" target="_blank">Medieval and Renaissance Center</a><span class="degoff">B.A., Minor</span>
+</li>
+<li class="">
+<a href="http://meis.as.nyu.edu" target="_blank">Middle Eastern and Islamic Studies</a><span class="degoff">B.A., Minor, Ph.D.</span>
+</li>
+<li class="">
+<a href="http://www.nyu.edu/gsas/dept/music/" target="_blank">Music</a><span class="degoff">B.A., Minor, Ph.D., Advanced Certificate</span>
+</li>
+<li class="">
+<a href="http://neareaststudies.as.nyu.edu" target="_blank">Near Eastern Studies</a><span class="degoff">M.A.</span>
+</li>
+<li class="">
+<a href="http://philosophy.as.nyu.edu" target="_blank">Philosophy</a><span class="degoff">B.A., Minor, M.A., Ph.D.</span>
+</li>
+<li class="">
+<a href="http://religiousstudies.as.nyu.edu" target="_blank">Religious Studies</a><span class="degoff">B.A., Minor, M.A.</span>
+</li>
+<li class="">
+<a href="http://www.russianslavic.as.nyu.edu" target="_blank">Russian and Slavic Studies </a><span class="degoff">B.A., Minor, M.A.</span>
+</li>
+<li class="">
+<a href="http://sca.as.nyu.edu" target="_blank">Social and Cultural Analysis</a><span class="degoff">B.A.</span>
+</li>
+<li class="last">
+<a href="http://spanish.as.nyu.edu/" target="_blank">Spanish and Portuguese Languages and Literature</a><span class="degoff">B.A., M.A., M.F.A., Ph.D.</span>
+</li>
+</ul>
+</div>
+</div>
+<div id="science">
+<div class="bucket temp">
+<h4 class="bucket-title"></h4>
+<ul>
+<li class="first">
+<a href="http://caos.cims.nyu.edu" target="_blank">Atmosphere Ocean Science</a><span class="degoff">Ph.D.</span>
+</li>
+<li class="txtlink">
+<a href="http://biology.as.nyu.edu/" target="_blank">Biology</a><span class="degoff">B.A., B.S., M.S., Ph.D.</span>
+</li>
+<li class="txtlink">
+<a href="http://chemistry.as.nyu.edu" target="_blank">Chemistry</a><span class="degoff">B.A., B.S., Ph.D.</span>
+</li>
+<li class="txtlink">
+<a href="http://monod.biomath.nyu.edu" target="_blank">Computational Biology</a><span class="degoff">M.S., Ph.D.</span>
+</li>
+<li class="txtlink">
+<a href="http://cs.nyu.edu/csweb/index.html" target="_blank">Computer Science</a><span class="degoff">B.A., B.S., Minor, M.S., Ph.D.</span>
+</li>
+<li class="txtlink">
+<a href="http://www.math.nyu.edu/" target="_blank">Mathematics</a><span class="degoff">B.A., B.S., M.S., Ph.D., Advanced Certificate</span>
+</li>
+<li class="txtlink">
+<a href="http://www.cns.nyu.edu/" target="_blank">Neural Science</a><span class="degoff">B.S., Ph.D.</span>
+</li>
+<li class="txtlink">
+<a href="http://physics.as.nyu.edu" target="_blank">Physics</a><span class="degoff">B.A., B.S., M.S., Ph.D.</span>
+</li>
+<li class="last">
+<a href="http://www.psych.nyu.edu/psychology.html" target="_blank">Psychology</a><span class="degoff">B.A., Minor, M.A., Ph.D.</span>
+</li>
+</ul>
+</div>
+</div>
+<div id="socscience">
+<div class="bucket temp">
+<h4 class="bucket-title">
+<img vspace="0" hspace="0" border="0" alt="" src="/docs/TEMPLATE/1775/socialscience.jpg"></h4>
+<ul>
+<li class="first">
+<a href="http://anthropology.as.nyu.edu" target="_blank">Anthropology</a><span class="degoff">B.A., Minor, M.A., Ph.D.</span>
+</li>
+<li class="">
+<a href="http://bioethics.as.nyu.edu" target="_blank">Bioethics</a><span class="degoff">M.A.</span>
+</li>
+<li class="">
+<a href="http://anthropology.as.nyu.edu/object/anthro.grad.program.cultmedia" target="_blank">Culture and Media</a><span class="degoff">Certificate Program</span>
+</li>
+<li class="">
+<a href="http://econ.as.nyu.edu" target="_blank">Economics</a><span class="degoff">B.A., Minor, M.A., Ph.D., Special Program</span>
+</li>
+<li class="">
+<a href="http://environment.as.nyu.edu" target="_blank">Environmental Studies</a><span class="degoff">B.A., Minor</span>
+</li>
+<li class="">
+<a href="http://journalism.nyu.edu/" target="_blank">Journalism</a><span class="degoff">B.A., M.A.</span>
+</li>
+<li class="">
+<a href="http://bulletin.cas.nyu.edu/object/lawsociety.1214.ug.info" target="_blank">Law and Society</a><span class="degoff">Minor</span>
+</li>
+<li class="">
+<a href="http://linguistics.as.nyu.edu" target="_blank">Linguistics</a><span class="degoff">B.A., Minor, Ph.D.</span>
+</li>
+<li class="">
+<a href="http://politics.as.nyu.edu" target="_blank">Politics</a><span class="degoff">B.A., Minor, M.A., Ph.D.</span>
+</li>
+<li class="last">
+<a href="http://sociology.as.nyu.edu" target="_blank">Sociology</a><span class="degoff">B.A., Minor, M.A., Ph.D.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+    $(document).ready( function() {
+      $('#majorminor-tab, #intlhouse-tab, #adminres-tab, #deptlist-tab, #degprog-tab').easytabs();
+    });
+</script>
+</div>
+</div>
+<div class="column" id="left">
+<div ID="nav">
+<ul>
+<li class="mainnav-off">
+<a href="/page/aboutas">About Us</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/faculty.directory">Our Faculty</a>
+</li>
+<li class="mainnav-on">Departments and Programs</li>
+<ul class="mainnav-childlist"></ul>
+<li class="mainnav-off">
+<a href="/page/research">Research Centers, Institutes, and International Houses</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/asnews">News</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/policiesprocedures">Administrative Resources</a>
+</li>
+</ul>
+</div>
+<span class="sa"></span><span class="ac"></span><span class="vi"></span><span class="lscore-req"></span><span class="admindir"></span>
+</div>
+<div class="column" id="right"></div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footerbox">
+<div class="footerText">
+<a href="/page/contactus">Contact Us</a> | <a href="/object/as.feedback">Feedback</a> | <a href="http://www.nyu.edu">&copy; New York University</a>, <a href="http://as.nyu.edu">Arts and Science</a>
+</div>
+<div id="as-smm"></div>
+<div id="nyulogo">
+<a target="_blank" href="http://www.nyu.edu"><img border="0" alt="New York University" src="/docs/TEMPLATE/424/footer-nyulogo.png"></a>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-6714527-1']);
+  _gaq.push(['_setDomainName', 'nyu.edu']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script><script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName('script')[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0011/6459.js";
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+</body>
+</html>

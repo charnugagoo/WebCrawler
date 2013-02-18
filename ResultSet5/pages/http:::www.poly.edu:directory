@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>NYU-Poly Directory Search</title>
+		
+		
+	<link rel="stylesheet" type="text/css" href="_js/fancybox/jquery.fancybox-1.3.1.css" media="screen" /> 
+	<link rel="stylesheet" href="_css/style.css" type="text/css" media="screen" />
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="_js/main.js" charset="utf-8" ></script>
+	<script type="text/javascript" src="_js/fancybox/jquery.fancybox-1.3.1.js" ></script> 
+	<script type="text/javascript" src="_js/popup.js" charset="utf-8" ></script>	
+	
+		
+</head>
+<body>
+<div id="container">
+		<h1>NYU-Poly Directory Search</h1>
+		<form id="searchform" method="get" class="shadow rounded" action="/directory/index.php">
+		<fieldset id="search">
+
+		<input type="text" name="search_term" size="30" id="search-field" class="search-box" value="Enter Name or Department" />
+		<input type="submit" value="Search" class="search-btn" />
+
+		
+		<div id="loader"></div>
+		
+		</fieldset>
+	</form>
+
+	
+		<div id="results-container"  class="shadow rounded" style="display: none;">
+		<div id="arrow"></div>
+		<ul id="results">		</ul>
+	</div>
+	<div id="results-spacer"></div>
+</div>
+
+<div id="footer">
+
+	<div id="nyu-poly-logo">
+		<a href="http://www.poly.edu"><img src="_img/nyu-poly-logo.png" width="100" height="35" alt="NYU-Poly" /></a>
+	</div>
+
+
+<div id="links">
+	<span class="link"><a href="contact.php" id="popAreaLink">Update Your Info</a></span>
+	
+	<span class="link"><a href="http://www.poly.edu/directory/_print/alphabet.php">A-Z Listing</a></span>
+	<span class="link"><a href="http://www.poly.edu/directory/_print/department.php">Departmental Listing</a></span>
+	
+
+</div>
+	
+</div>
+</body> 
+</html>

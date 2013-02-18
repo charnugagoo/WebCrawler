@@ -1,0 +1,312 @@
+<!DOCTYPE html><html xmlns:atom="http://www.w3.org/2005/Atom" xmlns:comem3="xalan://com.em3" xmlns:em3="http://www.em3.com/2002/widget">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Events, College of Arts and Science | NYU</title>
+<!--Google jQuery-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<!--Google jQuery UI--><script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+<!--A collection of most of the special features available-->
+<!--AS Home page slideshow (2 scripts)--><script type="text/javascript" src="/object/script.js"></script><script type="text/javascript" src="/object/autoadvance.js"></script>
+<!--Alt. table row color--><script type="text/javascript" src="/object/alttbcolor.js"></script>
+<!--Scroll to Top Button-->
+<!--Adjust with ID "topcontrol"--><script src="/object/scrolltopcontrol.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="/object/sys-onsite-editbutton.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/sys-socialmediaicon20v2.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/sys-socialmediaicon20.css" media="all" />
+  <!--[if (IE 7)|(IE 6)]>
+<link rel="stylesheet" type="text/css" href="/object/sys-iepngfixv20.css" media="all" />
+ <![endif]--> 
+<link rel="stylesheet" type="text/css" href="/object/sys-scrolltotop.css" media="all" />
+
+<script LANGUE="javaScript">
+function makeArray()    {
+    this[0] = makeArray.arguments.length;
+    for (i = 0; i<makeArray.arguments.length; i++)
+        this[i+1] = makeArray.arguments[i];
+}
+
+var daysofweek = new makeArray('Sunday',
+                               'Monday',
+                               'Tuesday',
+                               'Wednesday',
+                               'Thursday',
+                               'Friday',
+                               'Saturday');
+
+var monthsofyear = new makeArray('January',
+                                 'February',
+                                 'March',
+                                 'April',
+                                 'May',
+                                 'June',
+                                 'July',
+                                 'August',
+                                 'September',
+                                 'October',
+                                 'November',
+                                 'December');
+
+function Nths(day) { 
+    if (day == 1 || day == 21 || day == 31) return 'st';
+    if (day == 2 || day == 22) return 'nd';
+    if (day == 3 || day == 23) return 'rd';
+    return 'th';
+}
+
+function DayOfWeek(day,month,year) {
+    var a = Math.floor((14 - month)/12);
+    var y = year - a;
+    var m = month + 12*a - 2;
+    var d = (day + y + Math.floor(y/4) - Math.floor(y/100) +
+             Math.floor(y/400) + Math.floor((31*m)/12)) % 7;
+    return d + 1;
+}
+
+function FullDate(day,month,year) {
+    return daysofweek[DayOfWeek(day,month,year)] +', '+ monthsofyear[month] +' '+ day + Nths(day); 
+//    return daysofweek[DayOfWeek(day,month,year)] +', '+ monthsofyear[month] +' '+ day + Nths(day) + '<br/>';
+// Do not understand why there's a <br>, so comment it out for now. - Herbert
+
+//    return daysofweek[DayOfWeek(day,month,year)] +', '+ day + Nths(day) +', '+ monthsofyear[month] +', '+ year;
+
+}
+</script>
+<link rel="stylesheet" type="text/css" href="/object/normalizeem.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/as-stickyfooter.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/as-scrolltotop.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/as-basegrid.css" media="all" />
+  <!--[if (IE 6)]>
+<link rel="stylesheet" type="text/css" href="/object/as-basegrid-ie6.css" media="all" />
+ <![endif]--> 
+  <!--[if (IE 7)]>
+<link rel="stylesheet" type="text/css" href="/object/as-basegrid-ie7.css" media="all" />
+ <![endif]--> 
+<link rel="stylesheet" type="text/css" href="/object/as-baselayout.css" media="all" />
+  <!--[if (IE 6)]>
+<link rel="stylesheet" type="text/css" href="/object/as-baselayoutie6.css" media="all" />
+ <![endif]--> 
+  <!--[if (IE 7)]>
+<link rel="stylesheet" type="text/css" href="/object/as-baselayout-ie7.css" media="all" />
+ <![endif]--> 
+<link rel="stylesheet" type="text/css" href="/object/as-baseform.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/as-basefont.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/as-baseprint.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/as-slideshow.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/casstyle.css" media="all" />
+
+<script LANGUE="javaScript">
+function makeArray()    {
+    this[0] = makeArray.arguments.length;
+    for (i = 0; i<makeArray.arguments.length; i++)
+        this[i+1] = makeArray.arguments[i];
+}
+
+var daysofweek = new makeArray('Sunday',
+                               'Monday',
+                               'Tuesday',
+                               'Wednesday',
+                               'Thursday',
+                               'Friday',
+                               'Saturday');
+
+var monthsofyear = new makeArray('January',
+                                 'February',
+                                 'March',
+                                 'April',
+                                 'May',
+                                 'June',
+                                 'July',
+                                 'August',
+                                 'September',
+                                 'October',
+                                 'November',
+                                 'December');
+
+function Nths(day) { 
+    if (day == 1 || day == 21 || day == 31) return 'st';
+    if (day == 2 || day == 22) return 'nd';
+    if (day == 3 || day == 23) return 'rd';
+    return 'th';
+}
+
+function DayOfWeek(day,month,year) {
+    var a = Math.floor((14 - month)/12);
+    var y = year - a;
+    var m = month + 12*a - 2;
+    var d = (day + y + Math.floor(y/4) - Math.floor(y/100) +
+             Math.floor(y/400) + Math.floor((31*m)/12)) % 7;
+    return d + 1;
+}
+
+function FullDate(day,month,year) {
+    return daysofweek[DayOfWeek(day,month,year)] +', '+ monthsofyear[month] +' '+ day + Nths(day); 
+//    return daysofweek[DayOfWeek(day,month,year)] +', '+ monthsofyear[month] +' '+ day + Nths(day) + '<br/>';
+// Do not understand why there's a <br>, so comment it out for now. - Herbert
+
+//    return daysofweek[DayOfWeek(day,month,year)] +', '+ day + Nths(day) +', '+ monthsofyear[month] +', '+ year;
+
+}
+</script><script type="text/javascript" src="/object/jquery.hashchange.min.js"></script><script type="text/javascript" src="/object/jquery.easytabs.js"></script>
+</head>
+<body id="cx" class="id738">
+<a name="top"></a>
+<div class="button-onsiteedit">
+<a target="ionAdmin" href="http://ionadmin.fas.nyu.edu/admin/ContextPageEditAction.ion?method=setup&key=738"><img height="8" width="8" alt="" src="/docs/TEMPLATE/1033/edit.png"></a>
+</div>
+<div id="wrap">
+<div id="main">
+<div id="emptysp"></div>
+<div ID="header">
+<div ID="hdr-headerbg">
+<div ID="hdr-headerart">
+<div ID="hdr-search" class="float-right">
+<div ID="searchbox">
+<div ID="search">
+<form action="http://google.nyu.edu/search" id="searchform" method="get">
+<input value="xml_no_dtd" name="output" type="hidden"><input value="UTF-8" name="oe" type="hidden"><input value="10" name="num" type="hidden"><input value="NYUWeb_Main" name="client" type="hidden"><input value="NYUWeb_Main" name="site" type="hidden"><input value="default_frontend" name="proxystylesheet" type="hidden"><input name="sitesearch" type="hidden" value="cas.nyu.edu"><input type="text" name="q" class="querybox"><input class="submitbox" border="0" src="/docs/TEMPLATE/1929/search-bt.png" type="image">
+</form>
+</div>
+</div>
+</div>
+<a class="linktonyu" href="http://www.nyu.edu"><span class="hidden">New York University</span></a><a class="linktoas" href="http://cas.nyu.edu"><span class="hidden">College of Arts and Science</span></a>
+</div>
+<div class="hidden" id="hdr-headerart-pt">
+<img src="/docs/TEMPLATE/48/print-cas.png"></div>
+</div>
+</div>
+<div id="snav">
+<ul>
+<li class="first">
+<a href="http://as.nyu.edu/page/aboutas">About Arts &amp; Science</a>
+</li>
+<li>
+<a href="http://as.nyu.edu/page/deptprogram">Departments and Programs</a>
+</li>
+<li class="last">
+<a href="http://as.nyu.edu/page/faculty.directory">The Faculty</a>
+</li>
+</ul>
+</div>
+<div ID="subnav">
+<div ID="breadcrumb">
+<div class="breadcrumb_nav" id="breadcrumb">
+<a href="/page/__default">Home</a> &gt; <span class="on">Events</span>
+</div>
+</div>
+</div>
+<div id="content">
+<div class="column" id="center">
+<h2 class="content-title">Events</h2>
+<div class="maincontent">
+<span class="spa"></span>
+<div id="contentelement"><a href="http://www.nyu.edu/cas/teachingawards/" target="_blank"><b>The 2011-2012 CAS Golden Dozen Awards</b></a> <br>The Golden Dozen Awards are given annually to twelve faculty members who are chosen by their colleagues and students for their outstanding teaching and service to the College. Selection is based on nominations from students and faculty, plus course evaluation over several years, the nominees own teaching dossier, and a departmental assessment. <a href="http://www.nyu.edu/cas/teachingawards/" target="_blank">more...</a>
+<p></p>
+<p><b>2012 Jurow Lecture</b><br>Dr. Wanda Austin, President and CEO of the Aerospace Corporation is the speaker for the 12th annual Jurow Lecture. Her talk, “The Human Factor: Managing Technical Complexity and Creativity in the 21st Century,” will take place on Tuesday, April 10, at 5:30 PM in Hemmerdinger Hall on the ground floor of the Silver Center.  A member of the U.S. Human Space Flight Plans Committee convened by President Obama in 2009, Dr. Austin and her fellow committee members completed an independent review of ongoing U.S. human space flight plans and programs to move space exploration forward into the 21st century. Austin is a member of the National Academy of Engineering, a fellow of the American Institute of Aeronautics and Astronautics, and a member of the International Academy of Astronautics.</p>
+
+<p></p>
+<p><a href="/docs/CP/738/ScholarsLectureBrochure_2012-13.pdf"><b>Scholars Lecture Series</b></a> <br>Initiated in spring 1994, the Scholars Lecture Series is designed to encourage and promote the exchange of ideas among our most distinguished guest lecturers, University faculty, and students in the Scholars Program. The lecture series further enhances the intellectual experience, cultural awareness, and social consciousness of exceptional students in the College of Arts and Science. </p>
+
+
+<p><b>2012 Dean's Lecture</b> <br>On Thursday, March 22, the College hosted the lecture, Perplexing “I”, delivered by distinguished faculty member, Silver Professor and Professor of Philosophy Beatrice Longuenesse.  Professor Longuenesse’s lecture focused on the perplexity in thought and knowledge surrounding the role of the first person “I”.  Previously a Professor in the philosophy department at Princeton University, Dr. Longuenesse moved from Princeton to NYU in 2004. In 2006-07 she was a fellow at the Wissenschaftskolleg (Institute for Advanced Study) in Berlin. In 2011 Professor Longuenesse was elected to the American Academy of Arts and Sciences and in 2012 received the Berlin prize of the American Academy in Berlin.</p>
+<p><a href="http://www.nyu.edu/cas/urc/Sheet.PDF" target="_blank"><b>2011-2012 Undergraduate Research Conference</b></a> <br>The Undergraduate Research Conference took place on Friday, April 13, at 10 A.M. in the Silver Center. Undergraduate researchers read their papers&nbsp;and presented posters. A ceremony honoring the student prize-winners, faculty judges, and DURF donors followed the conference. </p>
+<p><a href="http://www.nyu.edu/cas/franklin300/index.html" target="_blank"><b></b></a><a href="http://www.nyu.edu/cas/franklin300/index.html" target="_blank"><br></a> </p></div>
+<span class="gl"></span><span class="ev"></span><span class="nw"></span><span class="faclist"></span><span class="prolist"></span><script type="text/javascript">
+    $(document).ready( function() {
+      $('#majorminor-tab, #intlhouse-tab, #adminres-tab, #deptlist-tab, #degprog-tab').easytabs();
+    });
+</script>
+</div>
+</div>
+<div class="column" id="left">
+<div ID="nav">
+<ul>
+<li class="mainnav-off">
+<a href="/page/aboutcas">About CAS</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/academicprograms">Academic Programs</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/research">Undergraduate Research</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/academicintegrity">Academic Integrity</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/academiclife">Academic Support Services</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/studyabroad">Study Abroad and Summer Study</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/studentlife">Student Life</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/Admissions" target="_blank">Admissions</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/financialaid">Financial Aid</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/alumni">Alumni</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/parents">Parents</a>
+</li>
+<li class="mainnav-on">Events</li>
+<ul class="mainnav-childlist"></ul>
+<li class="mainnav-off">
+<a href="/page/admin.pp">Administrative Policies &amp; Procedures</a>
+</li>
+</ul>
+</div>
+<span class="sa">
+<div class="bucket">
+<h4 class="bucket-title">
+              
+              
+              See Also
+            
+            </h4>
+<ul>
+<li class="last">
+<a href="http://events.nyu.edu/" target="_blank">NYU Calendar of Events</a>
+</li>
+</ul>
+</div>
+</span><span class="ac"></span><span class="vi"></span><span class="lscore-req"></span><span class="admindir"></span>
+</div>
+<div class="column" id="right"></div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footerbox">
+<div class="footerText">
+<a href="/page/contactus">Contact Us</a> | <a target="Feedback" href="/object/cas.feedback">Feedback</a> | <a href="http://www.nyu.edu">&copy; New York University</a>, <a href="http://as.nyu.edu">Arts and Science</a>
+</div>
+<div id="as-smm"></div>
+<div id="nyulogo">
+<a target="_blank" href="http://www.nyu.edu"><img border="0" alt="New York University" src="/docs/TEMPLATE/424/footer-nyulogo.png"></a>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-6714527-4']);
+  _gaq.push(['_setDomainName', 'nyu.edu']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script><script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName('script')[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0011/6459.js";
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+</body>
+</html>

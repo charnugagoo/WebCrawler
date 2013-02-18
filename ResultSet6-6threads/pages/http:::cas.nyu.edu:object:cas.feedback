@@ -1,0 +1,366 @@
+<!DOCTYPE html><html xmlns:atom="http://www.w3.org/2005/Atom" xmlns:comem3="xalan://com.em3" xmlns:em3="http://www.em3.com/2002/widget">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CAS Website Feedback Form, CAS | NYU</title>
+<!--Google jQuery-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<!--Google jQuery UI--><script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+<!--A collection of most of the special features available-->
+<!--AS Home page slideshow (2 scripts)--><script type="text/javascript" src="/object/script.js"></script><script type="text/javascript" src="/object/autoadvance.js"></script>
+<!--Alt. table row color--><script type="text/javascript" src="/object/alttbcolor.js"></script>
+<!--Scroll to Top Button-->
+<!--Adjust with ID "topcontrol"--><script src="/object/scrolltopcontrol.js" type="text/javascript"></script><script LANGUE="javaScript">
+function makeArray()    {
+    this[0] = makeArray.arguments.length;
+    for (i = 0; i<makeArray.arguments.length; i++)
+        this[i+1] = makeArray.arguments[i];
+}
+
+var daysofweek = new makeArray('Sunday',
+                               'Monday',
+                               'Tuesday',
+                               'Wednesday',
+                               'Thursday',
+                               'Friday',
+                               'Saturday');
+
+var monthsofyear = new makeArray('January',
+                                 'February',
+                                 'March',
+                                 'April',
+                                 'May',
+                                 'June',
+                                 'July',
+                                 'August',
+                                 'September',
+                                 'October',
+                                 'November',
+                                 'December');
+
+function Nths(day) { 
+    if (day == 1 || day == 21 || day == 31) return 'st';
+    if (day == 2 || day == 22) return 'nd';
+    if (day == 3 || day == 23) return 'rd';
+    return 'th';
+}
+
+function DayOfWeek(day,month,year) {
+    var a = Math.floor((14 - month)/12);
+    var y = year - a;
+    var m = month + 12*a - 2;
+    var d = (day + y + Math.floor(y/4) - Math.floor(y/100) +
+             Math.floor(y/400) + Math.floor((31*m)/12)) % 7;
+    return d + 1;
+}
+
+function FullDate(day,month,year) {
+    return daysofweek[DayOfWeek(day,month,year)] +', '+ monthsofyear[month] +' '+ day + Nths(day); 
+//    return daysofweek[DayOfWeek(day,month,year)] +', '+ monthsofyear[month] +' '+ day + Nths(day) + '<br/>';
+// Do not understand why there's a <br>, so comment it out for now. - Herbert
+
+//    return daysofweek[DayOfWeek(day,month,year)] +', '+ day + Nths(day) +', '+ monthsofyear[month] +', '+ year;
+
+}
+</script>
+<link rel="stylesheet" type="text/css" href="/object/sys-onsite-editbutton.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/sys-socialmediaicon20v2.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/sys-socialmediaicon20.css" media="all" />
+  <!--[if (IE 7)|(IE 6)]>
+<link rel="stylesheet" type="text/css" href="/object/sys-iepngfixv20.css" media="all" />
+ <![endif]--> 
+<link rel="stylesheet" type="text/css" href="/object/sys-scrolltotop.css" media="all" />
+
+
+<link rel="stylesheet" type="text/css" href="/object/normalizeem.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/as-stickyfooter.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/as-scrolltotop.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/as-basegrid.css" media="all" />
+  <!--[if (IE 6)]>
+<link rel="stylesheet" type="text/css" href="/object/as-basegrid-ie6.css" media="all" />
+ <![endif]--> 
+  <!--[if (IE 7)]>
+<link rel="stylesheet" type="text/css" href="/object/as-basegrid-ie7.css" media="all" />
+ <![endif]--> 
+<link rel="stylesheet" type="text/css" href="/object/as-baselayout.css" media="all" />
+  <!--[if (IE 6)]>
+<link rel="stylesheet" type="text/css" href="/object/as-baselayoutie6.css" media="all" />
+ <![endif]--> 
+  <!--[if (IE 7)]>
+<link rel="stylesheet" type="text/css" href="/object/as-baselayout-ie7.css" media="all" />
+ <![endif]--> 
+<link rel="stylesheet" type="text/css" href="/object/as-baseform.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/as-basefont.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/as-baseprint.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/as-slideshow.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/casstyle.css" media="all" />
+
+</head>
+<body id="ct">
+<a name="top"></a>
+<div class="button-onsiteedit">
+<a target="ionAdmin" href="http://ionadmin.fas.nyu.edu/admin/ContentPageEditAction.ion?method=setup&key=23061"><img height="8" width="8" alt="" src="/docs/TEMPLATE/1033/edit.png"></a>
+</div>
+<div id="wrap">
+<div id="main">
+<div id="emptysp"></div>
+<div ID="header">
+<div ID="hdr-headerbg">
+<div ID="hdr-headerart">
+<div ID="hdr-search" class="float-right">
+<div ID="searchbox">
+<div ID="search">
+<form action="http://google.nyu.edu/search" id="searchform" method="get">
+<input value="xml_no_dtd" name="output" type="hidden"><input value="UTF-8" name="oe" type="hidden"><input value="10" name="num" type="hidden"><input value="NYUWeb_Main" name="client" type="hidden"><input value="NYUWeb_Main" name="site" type="hidden"><input value="default_frontend" name="proxystylesheet" type="hidden"><input name="sitesearch" type="hidden" value="cas.nyu.edu"><input type="text" name="q" class="querybox"><input class="submitbox" border="0" src="/docs/TEMPLATE/1929/search-bt.png" type="image">
+</form>
+</div>
+</div>
+</div>
+<a class="linktonyu" href="http://www.nyu.edu"><span class="hidden">New York University</span></a><a class="linktoas" href="http://cas.nyu.edu"><span class="hidden">College of Arts and Science</span></a>
+</div>
+<div class="hidden" id="hdr-headerart-pt">
+<img src="/docs/TEMPLATE/48/print-cas.png"></div>
+</div>
+</div>
+<div id="snav">
+<ul>
+<li class="first">
+<a href="http://as.nyu.edu/page/aboutas">About Arts &amp; Science</a>
+</li>
+<li>
+<a href="http://as.nyu.edu/page/deptprogram">Departments and Programs</a>
+</li>
+<li class="last">
+<a href="http://as.nyu.edu/page/faculty.directory">The Faculty</a>
+</li>
+</ul>
+</div>
+<div ID="subnav">
+<div ID="breadcrumb">
+<div class="breadcrumb_nav" id="breadcrumb">
+<div id="backtopreviousarrowbox">
+<a href="/page/__default"><img src="/docs/TEMPLATE/1829/backarrow_flat.gif"></a>&nbsp;&nbsp;<a href="/page/__default">Back to Home</a>
+</div>
+</div>
+</div>
+</div>
+<div id="content">
+<div class="column" id="center">
+<h2 class="content-title">CAS Website Feedback Form</h2>
+<div class="maincontent">
+<span class="sa"></span><span class="spa"></span><span class="gl"></span><span class="pp"></span><br><span class="gls-fl"></span><span class="ac"></span><span class="ev"></span><span class="form"></span><span class="feedback"><script type="text/javascript" SRC="/page/fo-validation.js"></script>
+<script type="text/javascript"><!--
+function clearForm()
+{   document.FormBuilder.reset();   }
+function validInputs(form){
+    var blnSubmit = true;
+    var intReq = 0;
+    var intQs = 12;
+    startAll();
+if (blnSubmit) {
+    blnSubmit = checkEmpty('Name',2,0);}
+if (blnSubmit) {
+    blnSubmit = checkEmpty('Email',3,0);}
+if (blnSubmit) {
+    blnSubmit = checkEmpty('What is the purpose of your visit to our website today?',4,0);}
+if (blnSubmit) {
+    blnSubmit = checkMultiRadio('Were you able to complete your task today?',5,0);}
+if (blnSubmit) {
+    blnSubmit = checkEmpty('If you were not able to complete your task today, why not?',6,0);}
+if (blnSubmit) {
+    blnSubmit = checkEmpty('What content/functionality would you like to see added to the site?',7,0);}
+if (blnSubmit) {
+    blnSubmit = checkEmpty('Have you noticed inaccurate or missing content?',8,0);}
+if (blnSubmit) {
+    blnSubmit = checkEmpty('Broken link, image, or technical feature?',9,0);}
+if (blnSubmit) {
+    blnSubmit = checkEmpty('Additional feedback:',10,0);}
+if (blnSubmit) {
+    blnSubmit = checkMultiCheck('Please check the following box before you submit',11,1,1);}
+parseInt(intG);
+ if(intG >= intQs)
+{intG = 0; blnSubmit = false; alert("Sorry no empty form submission"); return false;}
+
+if(blnSubmit == true)
+{  document.FormBuilder.js.value = "on"
+    alert('Thank You');
+    return true;
+}
+else{  return false;   }
+}
+//--></script>
+<FORM method="post" name="FormBuilder" action="/page/fo-process.html?formid=143" onSubmit="return validInputs(this)" count="12">
+<div class="formContainer">
+<fieldset>
+<INPUT name="QUESTION_1" type="HIDDEN" VALUE="">
+<div class="hidden">
+<div class="fieldbox"></div>
+</div>
+<div class="optional">
+<label for="Name">Name</label>
+<div class="fieldbox">
+<INPUT NAME="QUESTION_2" MAXLENGTH="128" class="txtbox" TYPE="TEXT">
+</div>
+</div>
+<div class="optional">
+<label for="Email">Email</label>
+<div class="fieldbox">
+<INPUT NAME="QUESTION_3" MAXLENGTH="128" class="txtbox" TYPE="TEXT">
+</div>
+</div>
+<div class="optional">
+<label for="What is the purpose of your visit to our website today?">What is the purpose of your visit to our website today?</label>
+<div class="fieldbox">
+<INPUT NAME="QUESTION_4" MAXLENGTH="128" class="txtbox" TYPE="TEXT">
+</div>
+</div>
+<div class="optional">
+<label for="Were you able to complete your task today?">Were you able to complete your task today?</label>
+<div class="fieldbox">
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td nowrap="true" valign="top"><INPUT VALUE=" Yes" id="choice" TYPE="RADIO" CLASS="radio" NAME="QUESTION_5"> Yes</INPUT> 
+<BR>
+</td><td nowrap="true" valign="top"><INPUT VALUE=" No" id="choice" TYPE="RADIO" CLASS="radio" NAME="QUESTION_5"> No</INPUT> 
+<BR>
+</td><td nowrap="true" valign="top"></td>
+</tr>
+</table>
+</div>
+</div>
+<div class="optional">
+<label for="If you were not able to complete your task today, why not?">If you were not able to complete your task today, why not?</label>
+<div class="fieldbox">
+<textarea NAME="QUESTION_6" ROWS="8" class="txtareabox"></textarea>
+</div>
+</div>
+<div class="optional">
+<label for="What content/functionality would you like to see added to the site?">What content/functionality would you like to see added to the site?</label>
+<div class="fieldbox">
+<textarea NAME="QUESTION_7" ROWS="8" class="txtareabox"></textarea>
+</div>
+</div>
+<div class="optional">
+<label for="Have you noticed inaccurate or missing content?">Have you noticed inaccurate or missing content?</label>
+<div class="fieldbox">
+<textarea NAME="QUESTION_8" ROWS="8" class="txtareabox"></textarea>
+</div>
+</div>
+<div class="optional">
+<label for="Broken link, image, or technical feature?">Broken link, image, or technical feature?</label>
+<div class="fieldbox">
+<textarea NAME="QUESTION_9" ROWS="8" class="txtareabox"></textarea>
+</div>
+</div>
+<div class="optional">
+<label for="Additional feedback:">Additional feedback:</label>
+<div class="fieldbox">
+<textarea NAME="QUESTION_10" ROWS="8" class="txtareabox"></textarea>
+</div>
+</div>
+<div class="require">
+<label for="Please check the following box before you submit">Please check the following box before you submit<font class="required"> *</font></label>
+<div class="fieldbox">
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td nowrap="true" valign="top"><INPUT NAME="QUESTION_11_0" VALUE="By checking this box I verify that all information above are correct." id="choice" TYPE="CHECKBOX" CLASS="chkbox">By checking this box I verify that all information above are correct.</INPUT>
+<BR>
+</td><td nowrap="true" valign="top"></td><td nowrap="true" valign="top"></td>
+</tr>
+</table>
+</div>
+</div>
+<div class="optional">
+<div class="subhead">We appreciate your feedback!</div>
+<div id="spacer"></div>
+<div class="fieldbox"></div>
+</div>
+<INPUT name="COMPLETED_URL" type="HIDDEN" VALUE=""><INPUT value="off" name="js" type="HIDDEN"><INPUT name="formid" type="HIDDEN" VALUE="143">
+<div class="smbbtn-box">
+<INPUT value="Submit" class="smbbtn" type="submit">   <INPUT value="Clear" class="smbbtn" type="reset">
+</div>
+</fieldset>
+</div>
+</FORM>
+</span>
+</div>
+</div>
+<div class="column" id="left">
+<div ID="nav">
+<ul>
+<li class="mainnav-off">
+<a href="/page/aboutcas">About CAS</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/academicprograms">Academic Programs</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/research">Undergraduate Research</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/academicintegrity">Academic Integrity</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/academiclife">Academic Support Services</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/studyabroad">Study Abroad and Summer Study</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/studentlife">Student Life</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/Admissions" target="_blank">Admissions</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/financialaid">Financial Aid</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/alumni">Alumni</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/parents">Parents</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/events">Events</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/admin.pp">Administrative Policies &amp; Procedures</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="column" id="right"></div>
+<div class="lastupdate">Updated on 04&#047;08&#047;2012</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footerbox">
+<div class="footerText">
+<a href="/page/contactus">Contact Us</a> | <a target="Feedback" href="/object/cas.feedback">Feedback</a> | <a href="http://www.nyu.edu">&copy; New York University</a>, <a href="http://as.nyu.edu">Arts and Science</a>
+</div>
+<div id="as-smm"></div>
+<div id="nyulogo">
+<a target="_blank" href="http://www.nyu.edu"><img border="0" alt="New York University" src="/docs/TEMPLATE/424/footer-nyulogo.png"></a>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-6714527-4']);
+  _gaq.push(['_setDomainName', 'nyu.edu']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script><script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName('script')[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0011/6459.js";
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+</body>
+</html>

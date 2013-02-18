@@ -1,0 +1,1059 @@
+
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head id="ctl00_ctl00_ctl00_Head1"><title>
+	Online Education Articles, Videos & Guides for College and Career
+</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/css/global.min.css" /><link rel="stylesheet" type="text/css" href="/scripts/fancyapps/jquery.fancybox.css" media="screen" />
+    <!--[if IE 7]>
+	<style type="text/css">h1, h2, h3, h4, h5, h6{margin-bottom:0;}</style>
+    <![endif]-->
+    
+    <!--[if lt IE 7]><style type="text/css">.paperclip-overlay{behavior:url(/scripts/png.htc);}.form-inputs{behavior:url(/scripts/iehoverfix.htc);} /* Path relative to page. */</style><![endif]-->
+    <!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="/css/ie6-ie7.css" /><![endif]-->
+    <script type="text/javascript" src="/scripts/base.min.js"></script>
+    <script type="text/javascript" src="/scripts/fancyapps/jquery.fancybox.js"></script>
+    <script type="text/javascript" src="/scripts/mbox.js"></script>
+    <script type="text/javascript">
+        var mirrorId1 = (new Date().getTime()) % 100000000; //first part
+        var mirrorId2 = Math.round(Math.random() * 100000000.0); //second part
+        var mirrorId = "" + mirrorId1 + "" + mirrorId2; //full 16-digit id
+        var chIdRightbarAd = 0;
+
+        function InsertRightBarAds() {
+            if (chIdRightbarAd > 0) {
+                InsertRightBarAd(chIdRightbarAd, 1);
+                InsertRightBarAd(chIdRightbarAd, 2);
+                InsertRightBarAd(chIdRightbarAd, 3);
+                InsertRightBarAd(chIdRightbarAd, 4);
+            }
+        }
+        function InsertRightBarAd(chId, pos) {
+            var ui;
+            var wi = '180';
+            var ht = '150';
+            var di = '613196'
+            switch (pos) {
+                case 1: ui = '621004'; break;
+                case 2: ui = '621028'; break;
+                case 3: ui = '621029'; break;
+                case 4: ui = '621032'; wi = '160'; ht = '600'; di = '613200'; break;
+            }
+            $("#rightBarPosition" + pos).append(BuildAjRotatorTag(chId, wi, ht, ui, di, pos));
+        }
+
+        function BuildAjRotatorTag(chId, width, height, urlId, dim, pos) {
+            var sponsoredByMarkup = '<iframe width="' + width + '" height="' + height + '" '
+                                  + 'scrolling="no" frameborder="0" marginheight="0" marginwidth="0" '
+                                  + 'src="http://as.usnuc.com/servlet/ajrotator/' + urlId + '/0/vh?z=bisk&ch=' + chId
+                                  + '&dim=' + dim
+                                  + (pos > 0 ? '&pos=' + pos.toString() : '')
+                                  + '&kw=&click=&pv=' + mirrorId + '">'
+                                  + '<scr' + 'ipt type="text/javascript" language="JavaScript" '
+                                  + 'src="http://as.usnuc.com/servlet/ajrotator/' + urlId + '/0/vj?z=bisk&ch=' + chId
+                                  + '&dim=' + dim
+                                  + (pos > 0 ? '&pos=' + pos.toString() : '')
+                                  + '&kw=&click=&pv=' + mirrorId + '">'
+                                  + '</scr' + 'ipt>'
+                                  + '<nos' + 'cript>'
+                                  + '<a href="http://as.usnuc.com/servlet/ajrotator/' + urlId + '/0/cc?z=bisk'
+                                  + (pos > 0 ? '&pos=' + pos.toString() : '')
+                                  + '">'
+                                  + '<img src="http://as.usnuc.com/servlet/ajrotator/' + urlId + '/0/vc?z=bisk&ch=' + chId
+                                  + '&dim=' + dim
+                                  + (pos > 0 ? '&pos=' + pos.toString() : '')
+                                  + '&kw=&click=&pv=' + mirrorId + '"'
+                                  + ' width="' + width + '" height="' + height + '" border="0" />'
+                                  + '</a>'
+                                  + '</nos' + 'cript>'
+                                  + '</iframe>';
+            return sponsoredByMarkup;
+        }
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $(".fancybox.multistep").fancybox({ 'type': 'iframe', 'width': 820, 'height': 620, 'autoScale': false, 'hideOnOverlayClick': false, 'showNavArrows': false });
+            $(".fancybox.zinchform").fancybox({ 'type': 'iframe', 'width': 800, 'height': 480, 'autoScale': false, 'hideOnOverlayClick': false, 'showNavArrows': false });
+            $(".fancybox.newsletter").fancybox({ 'type': 'iframe', 'width': 550, 'height': 280, 'autoScale': false, 'hideOnOverlayClick': false, 'showNavArrows': false });
+
+            $(".fancybox").each(function (index) {
+                if ($(this).attr("href") == "" || $(this).attr("href") == "#") $(this).attr("href", $(this).attr("url"));
+            });
+
+            $(".tree li a").each(function () {
+                if (window.location.href.indexOf($(this).attr('href')) > -1) {
+                    $(this).addClass("selected")
+                    .parent().addClass("expanded");
+                }
+            });
+            $(".tree li li a").each(function () {
+                if (window.location.href.indexOf($(this).attr('href')) > -1) {
+                    $(this).addClass("selected")
+                    .parent().parent().parent().addClass("expanded").children("a").addClass("selected");
+                }
+            });
+
+            InsertRightBarAds();
+        });
+    </script>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+    <script src="http://admin.brightcove.com/js/APIModules_all.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/scripts/home.min.js"></script>
+    <script type="text/javascript">
+        var defaultFit = 'crop';
+        var imgObjectList = new Array();
+        function imgObjectClass(imgElement, videoID, imgType, fit) {
+            this.imgElement = imgElement;
+            this.videoID = videoID;
+            this.imgType = imgType;
+            this.fit = fit;
+        }
+    </script>
+    <script type="text/javascript">
+        //var videoDict = new Dictionary();
+        $(document).ready(function () {
+            $(".subheading.optional").each(function (index) {
+                var remove = false;
+                var classList = $(this).attr('class').split(/\s+/);
+                $.each(classList, function (index, item) {
+                    if (item != 'subheading' && item != 'optional') {
+                        remove = ($(".section." + item).size() == 0)
+                    }
+                });
+                if (remove) $(this).remove();
+            });
+
+            $(".article-largeimg.play-button").each(function (index) {
+                if ($(this).find("div").size() == 0)
+                    $(this).append("<div></div>");
+
+            });
+            $(".article-smallimg.play-button").each(function (index) {
+                if ($(this).find("div.small").size() == 0)
+                    $(this).append("<div class='small'></div>");
+            });
+            $(".article-smallimg").each(function (index) {
+                var fit = defaultFit;
+                if ($(this).find("img").length == 1) {
+                    var imgElement = $(this).find("img")[0];
+                    var videoID = $(imgElement).attr('videoid');
+                    if ($(imgElement).attr('fit') != undefined) fit = $(imgElement).attr('fit');
+                    if ($(imgElement).hasClass("imgfrombrightcove")) {
+                        var imgObject = new imgObjectClass(imgElement, videoID, 'smallimg', fit);
+                        GetImageFromBrightcove(imgObject);
+                    } else {
+                        fixImageSize(imgElement, 150, 100, fit);
+                    }
+                }
+            });
+            $(".article-largeimg").each(function (index) {
+                var fit = defaultFit;
+                if ($(this).find("img").length == 1) {
+                    var imgElement = $(this).find("img")[0];
+                    var videoID = $(imgElement).attr('videoid');
+                    if ($(imgElement).attr('fit') != undefined) fit = $(imgElement).attr('fit');
+                    if ($(imgElement).hasClass("imgfrombrightcove")) {
+                        var imgObject = new imgObjectClass(imgElement, videoID, 'largeimg', fit);
+                        GetImageFromBrightcove(imgObject);
+                    } else {
+                        fixImageSize(imgElement, 250, 167, fit);
+                    }
+                }
+            });
+
+            $(".section p.summary").each(function (index) {
+                // short summary
+                FixTextLength(this, 120);
+            });
+            $(".multicolumn.one p.summary").each(function (index) {
+                // tiny summary
+                FixTextLength(this, 120);
+            });
+
+            $(".multicolumn.three p.summary").each(function (index) {
+                // tiny summary
+                FixTextLength(this, 80);
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        function fixImageSize(imgElement, width, height, fit) {
+            if (fit === undefined) fit = defaultFit;
+            var imgWidth = $(imgElement).width();
+            var imgHeight = $(imgElement).height();
+            if (imgWidth != width || imgHeight != height) {
+                switch(fit) {
+                case 'stretch':
+                    $(imgElement).css({ 'width': width });
+                    $(imgElement).css({ 'height': height });
+                    break;
+                case 'crop':
+                    if (imgWidth >= width && imgHeight >= height) {
+                        $(imgElement).css({ 'position': 'absolute' });
+                        $(imgElement).css({ 'left': (width - imgWidth) / 2 });
+                    } else {
+                        $(imgElement).css({ 'width': width });
+                        $(imgElement).css({ 'height': height });
+                    }
+                    break;
+                default: // 'fit'
+                    if ((width / imgWidth) > (height / imgHeight)) {
+                        var newImgWidth = imgWidth * width / imgWidth;
+                        var newImgHeight = imgHeight * width / imgWidth;
+                        $(imgElement).css({ 'width': newImgWidth });
+                        $(imgElement).css({ 'height': newImgHeight });
+                    } else {
+                        var newImgWidth = imgWidth * height / imgHeight;
+                        var newImgHeight = imgHeight * height / imgHeight;
+                        $(imgElement).css({ 'width': newImgWidth });
+                        $(imgElement).css({ 'height': newImgHeight });
+                        $(imgElement).css({ 'position': 'absolute' });
+                        $(imgElement).css({ 'left': (width - newImgWidth) / 2 });
+                    }
+                    break;
+                }
+            }
+        }
+        function FixTextLength(textObject, length) {
+            if ($(textObject).html().length > length) {
+                var txt = $(textObject).html();
+                txt = txt.substring(0, txt.lastIndexOf(' ', length)) + '&hellip;';
+                $(textObject).html(txt);
+            }
+        }
+
+        function addScriptTag(id, url, callback) {
+            var scriptTag = document.createElement("script");
+            var noCacheIE = '&noCacheIE=' + (new Date()).getTime();
+
+            // Add script object attributes
+            scriptTag.setAttribute("type", "text/javascript");
+            scriptTag.setAttribute("charset", "utf-8");
+            scriptTag.setAttribute("src", url + "&callback=" + callback + noCacheIE);
+            scriptTag.setAttribute("id", id);
+
+            var head = document.getElementsByTagName("head").item(0);
+            head.appendChild(scriptTag);
+        }
+
+        function GetImageFromBrightcove(imgObject) {
+            var pntr = imgObjectList.length;
+            imgObjectList[pntr] = imgObject;
+            var videoID = imgObject.videoID;
+            var url = 'http://api.brightcove.com/services/library?token=j2HWt5W4iZTzHw7jfS1mDAMqrcgR86OuZVv_S_4R9pywthjNC3WZQQ..'
+                + '&command=find_video_by_id'
+				+ '&video_id=' + videoID.toString();
+            var callback = 'callback=GetImageFromBrightcoveResponse_' + pntr.toString();
+            addScriptTag("GetImageFromBrightcove", url, callback);
+            //bObj = new JSONscriptRequest(url + '&' + callback); 
+	        //bObj.buildScriptTag(); 
+	        //bObj.addScriptTag();
+        }
+        function GetImageFromBrightcoveResponse(pntr, jsonData) {
+            var imgObject = imgObjectList[pntr];
+            if (imgObject.imgType == 'largeimg') 
+            {
+                imgObject.imgElement.src = jsonData.videoStillURL;
+                fixImageSize(imgObject.imgElement, 250, 167, imgObject.fit);
+            }
+            else  //if (imgObject.imgType == 'smallimg') 
+            {
+                imgObject.imgElement.src = jsonData.thumbnailURL;
+                fixImageSize(imgObject.imgElement, 150, 100, imgObject.fit);
+            }
+        }
+        function GetImageFromBrightcoveResponse_0(jsonData) {
+            GetImageFromBrightcoveResponse(0, jsonData);
+        }
+        function GetImageFromBrightcoveResponse_1(jsonData) {
+            GetImageFromBrightcoveResponse(1, jsonData);
+        }
+        function GetImageFromBrightcoveResponse_2(jsonData) {
+            GetImageFromBrightcoveResponse(2, jsonData);
+        }
+        function GetImageFromBrightcoveResponse_3(jsonData) {
+            GetImageFromBrightcoveResponse(3, jsonData);
+        }
+        function GetImageFromBrightcoveResponse_4(jsonData) {
+            GetImageFromBrightcoveResponse(4, jsonData);
+        }
+    </script>
+    
+    
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $(".sections").addClass('resource-center-home');
+                $('.introheading h1').wrap('<div class="mainbg" />');
+                $('<div class="subbg" />').insertAfter('.mainbg');
+                $('.addthis_toolbox').appendTo('.subbg');
+            });
+        </script>
+         
+
+<link href="/scripts/alivechat/alivechat_local.css" rel="stylesheet" type="text/css" />
+    <script src="/scripts/alivechat/aliveChat.jquery.js" type="text/javascript"></script>
+<meta name="description" content="U.S. News University Directory resource center features articles and videos about choosing a school, selecting a career and paying for college." /><meta name="keywords" content="online education, articles, videos, online guides, picking a school, paying for college, career information, paying for school, education online" /></head>
+<body>
+    <form name="aspnetForm" method="post" action="default.aspx" id="aspnetForm">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMjAzNzQ4MzgwNWQYAgU4Y3RsMDAkY3RsMDAkY3RsMDAkYm9keSRwYWdlQm9keSREYWlseU5ld3MkTWlkZGxlTGlzdFZpZXcPPCsACgIHFCsAA2RkZAgCA2QFOWN0bDAwJGN0bDAwJGN0bDAwJGJvZHkkcGFnZUJvZHkkRGFpbHlOZXdzJFRvcE5ld3NMaXN0Vmlldw88KwAKAgcUKwABZAgCAWTnInkuyKv3lQpYPumMnDPpnh6oeg==" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWKwK9x4CCBgLG5NuOAwLWyJ/4BALJyfyjCQLz8OyhDgKyys/JAwKKrp2sBAK0pJOXAwKHiLegDgKz5ZOhAgK+ytrIDwKmqobcCwKozuPYAwKM94iUDgLIz72HBAL5roTgDAKg9KnBAQKOi/6BDwLxlovJCwLT/K7gBgLDluq7BQLTv+I3At69rp0PApHdkYEDAt6ko8oEAqH8q4YGAvja/7MJApjP+a4EAvmYicgPAvKE/NcGAqn+x8gDArWFvoYHAuqomrILAvWnt90KAoa09dcDAs7KycUHAuf9ro0JAqjgvOAHApWMkIYJAsW4jcUOAsKOtt4GApXniMIHApHyxJYEIoTTvuhKVMISiFu6WuUNyJqZStM=" />
+</div>
+    <!-- START | Website Alive Chat -->
+    <script type="text/javascript">
+        var chat = 'false';
+        if (chat == 'true') {
+            var aliveChatOpts = {
+                'groupid': 7503,
+                'websiteid': 665,
+                'departmentid': 9406
+            };
+            $.fn.aliveChat(aliveChatOpts).loadJS();
+            $(function () {
+                $('a[rel="chat"]').aliveChat(aliveChatOpts);
+            });
+        }
+    </script>
+    <!-- END | Website Alive Chat -->
+    <div class="glow">
+        <div class="header">
+            <a href="/" class="logo">
+                <img src="/images/canvas/usn-logo.png" alt="U.S. News University Directory" title="U.S. News University Directory" /></a>
+            <div class="nav">
+                <!--<a onclick="javascript:clearCookies();" href="/" class="home-link">Home</a> | -->
+                <a href="/about-us.aspx" onclick="javascript:clearCookies();" class="">About Us</a>
+                | <a href="/resource-center/" onclick="javascript:clearCookies();" class="">Resource
+                    Center</a> | <a onclick="javascript:clearCookies();" href="/advertising.aspx">Advertise
+                        With Us</a> |
+                <!--<a href="/how-to-bookmark.aspx" onclick="javascript:clearCookies();"  class="set-homepage">Set as Homepage</a> | -->
+                <a href="#" url="/NewsLetterSignUp.aspx" class="fancybox newsletter actual">
+                    <img src="/images/canvas/icon-newsletter.png" />
+                    Sign Up for our Newsletter!</a>
+            </div>
+            <div class="flag">
+                <div class="block">
+                </div>
+                <div class="base">
+                    <div class="edge">
+                        <div>
+                            Find the Right School<br />
+                            <span>Call for Assistance!</span><br />
+                            <strong>855-237-2183</strong></div>
+                    </div>
+                    <div class="point">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="insetshadow">
+            </div>
+            <div class="nav secondary">
+                
+
+<div class="mboxDefault">
+	<div class="category main"><strong>Categories</strong><div class="line"></div></div>
+	
+	        <ul>
+	    
+	        <li>
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl01$ParentCategoryIDHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl01_ParentCategoryIDHiddenField" value="1" />
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl01$ParentCategoryNameHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl01_ParentCategoryNameHiddenField" value="Art &amp; Design" />
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl01$ParentCategorySelectedHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl01_ParentCategorySelectedHiddenField" value="False" />
+	            <a onclick="javascript:setCatetoryIDCookie('1');" class='' href='http://www.usnewsuniversitydirectory.com/art-design.aspx'>Art & Design</a>
+	            
+	        </li>
+	    
+	        <li>
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl02$ParentCategoryIDHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl02_ParentCategoryIDHiddenField" value="5" />
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl02$ParentCategoryNameHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl02_ParentCategoryNameHiddenField" value="Business" />
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl02$ParentCategorySelectedHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl02_ParentCategorySelectedHiddenField" value="False" />
+	            <a onclick="javascript:setCatetoryIDCookie('5');" class='' href='http://www.usnewsuniversitydirectory.com/business.aspx'>Business</a>
+	            
+	        </li>
+	    
+	        <li>
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl03$ParentCategoryIDHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl03_ParentCategoryIDHiddenField" value="15" />
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl03$ParentCategoryNameHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl03_ParentCategoryNameHiddenField" value="Criminal Justice" />
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl03$ParentCategorySelectedHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl03_ParentCategorySelectedHiddenField" value="False" />
+	            <a onclick="javascript:setCatetoryIDCookie('15');" class='' href='http://www.usnewsuniversitydirectory.com/criminal-justice.aspx'>Criminal Justice</a>
+	            
+	        </li>
+	    
+	        <li>
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl04$ParentCategoryIDHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl04_ParentCategoryIDHiddenField" value="19" />
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl04$ParentCategoryNameHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl04_ParentCategoryNameHiddenField" value="Education &amp; Teaching" />
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl04$ParentCategorySelectedHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl04_ParentCategorySelectedHiddenField" value="False" />
+	            <a onclick="javascript:setCatetoryIDCookie('19');" class='' href='http://www.usnewsuniversitydirectory.com/education-teaching.aspx'>Education & Teaching</a>
+	            
+	        </li>
+	    
+	        <li>
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl05$ParentCategoryIDHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl05_ParentCategoryIDHiddenField" value="26" />
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl05$ParentCategoryNameHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl05_ParentCategoryNameHiddenField" value="Engineering" />
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl05$ParentCategorySelectedHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl05_ParentCategorySelectedHiddenField" value="False" />
+	            <a onclick="javascript:setCatetoryIDCookie('26');" class='' href='http://www.usnewsuniversitydirectory.com/engineering.aspx'>Engineering</a>
+	            
+	        </li>
+	    
+	        <li>
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl06$ParentCategoryIDHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl06_ParentCategoryIDHiddenField" value="29" />
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl06$ParentCategoryNameHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl06_ParentCategoryNameHiddenField" value="Healthcare" />
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl06$ParentCategorySelectedHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl06_ParentCategorySelectedHiddenField" value="False" />
+	            <a onclick="javascript:setCatetoryIDCookie('29');" class='' href='http://www.usnewsuniversitydirectory.com/healthcare.aspx'>Healthcare</a>
+	            
+	        </li>
+	    
+	        <li>
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl07$ParentCategoryIDHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl07_ParentCategoryIDHiddenField" value="37" />
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl07$ParentCategoryNameHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl07_ParentCategoryNameHiddenField" value="Human Services" />
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl07$ParentCategorySelectedHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl07_ParentCategorySelectedHiddenField" value="False" />
+	            <a onclick="javascript:setCatetoryIDCookie('37');" class='' href='http://www.usnewsuniversitydirectory.com/human-services.aspx'>Human Services</a>
+	            
+	        </li>
+	    
+	        <li>
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl08$ParentCategoryIDHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl08_ParentCategoryIDHiddenField" value="40" />
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl08$ParentCategoryNameHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl08_ParentCategoryNameHiddenField" value="Legal/Paralegal" />
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl08$ParentCategorySelectedHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl08_ParentCategorySelectedHiddenField" value="False" />
+	            <a onclick="javascript:setCatetoryIDCookie('40');" class='' href='http://www.usnewsuniversitydirectory.com/legal-paralegal.aspx'>Legal/Paralegal</a>
+	            
+	        </li>
+	    
+	        <li>
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl09$ParentCategoryIDHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl09_ParentCategoryIDHiddenField" value="43" />
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl09$ParentCategoryNameHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl09_ParentCategoryNameHiddenField" value="Liberal Arts" />
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl09$ParentCategorySelectedHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl09_ParentCategorySelectedHiddenField" value="False" />
+	            <a onclick="javascript:setCatetoryIDCookie('43');" class='' href='http://www.usnewsuniversitydirectory.com/liberal-arts.aspx'>Liberal Arts</a>
+	            
+	        </li>
+	    
+	        <li>
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl10$ParentCategoryIDHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl10_ParentCategoryIDHiddenField" value="44" />
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl10$ParentCategoryNameHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl10_ParentCategoryNameHiddenField" value="Nursing" />
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl10$ParentCategorySelectedHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl10_ParentCategorySelectedHiddenField" value="False" />
+	            <a onclick="javascript:setCatetoryIDCookie('44');" class='' href='http://www.usnewsuniversitydirectory.com/nursing.aspx'>Nursing</a>
+	            
+	        </li>
+	    
+	        <li>
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl11$ParentCategoryIDHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl11_ParentCategoryIDHiddenField" value="45" />
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl11$ParentCategoryNameHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl11_ParentCategoryNameHiddenField" value="Political Science" />
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl11$ParentCategorySelectedHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl11_ParentCategorySelectedHiddenField" value="False" />
+	            <a onclick="javascript:setCatetoryIDCookie('45');" class='' href='http://www.usnewsuniversitydirectory.com/political-science.aspx'>Political Science</a>
+	            
+	        </li>
+	    
+	        <li>
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl12$ParentCategoryIDHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl12_ParentCategoryIDHiddenField" value="112" />
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl12$ParentCategoryNameHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl12_ParentCategoryNameHiddenField" value="Religious Studies" />
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl12$ParentCategorySelectedHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl12_ParentCategorySelectedHiddenField" value="False" />
+	            <a onclick="javascript:setCatetoryIDCookie('112');" class='' href='http://www.usnewsuniversitydirectory.com/religious-studies.aspx'>Religious Studies</a>
+	            
+	        </li>
+	    
+	        <li>
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl13$ParentCategoryIDHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl13_ParentCategoryIDHiddenField" value="46" />
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl13$ParentCategoryNameHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl13_ParentCategoryNameHiddenField" value="Science" />
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl13$ParentCategorySelectedHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl13_ParentCategorySelectedHiddenField" value="False" />
+	            <a onclick="javascript:setCatetoryIDCookie('46');" class='' href='http://www.usnewsuniversitydirectory.com/science.aspx'>Science</a>
+	            
+	        </li>
+	    
+	        <li>
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl14$ParentCategoryIDHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl14_ParentCategoryIDHiddenField" value="47" />
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl14$ParentCategoryNameHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl14_ParentCategoryNameHiddenField" value="Technology" />
+	            <input type="hidden" name="ctl00$ctl00$ctl00$Categories1$ParentCategoryRepeater$ctl14$ParentCategorySelectedHiddenField" id="ctl00_ctl00_ctl00_Categories1_ParentCategoryRepeater_ctl14_ParentCategorySelectedHiddenField" value="False" />
+	            <a onclick="javascript:setCatetoryIDCookie('47');" class='' href='http://www.usnewsuniversitydirectory.com/technology.aspx'>Technology</a>
+	            
+	        </li>
+	    
+	        </ul>
+	    
+</div>
+
+                <div class="category">
+                    <strong>What&rsquo;s Hot</strong><div class="line">
+                    </div>
+                </div>
+                <ul>
+                    <li><a href="/allied-health.aspx">Allied Health</a></li>
+                    <li><a href="/business.aspx">Business</a></li>
+                    <li><a href="/certificates/business/project-management.aspx">Project Management</a></li>
+                    <li><a href="/certificates/business/six-sigma.aspx">Six Sigma</a></li>
+                </ul>
+                <div id="resourceCenterClearCookie">
+                    <div class="category">
+                        <strong>Resource Center</strong><div class="line">
+                        </div>
+                    </div>
+                    <ul>
+                        <li><a href="/resource-center/">Resource Center Home</a></li>
+                        <li><a href="/resource-center/video.aspx">Video</a></li>
+                        <li><a href="/articles/dailynews.aspx">Daily News</a></li>
+                        <li><a href="/resource-center/school-choice.aspx">Choosing the Right School</a></li>
+                        <li><a href="/resource-center/back-to-school.aspx">Going Back to School</a></li>
+                        <li><a href="/resource-center/paying-for-school.aspx">Paying For School</a></li>
+                        <li><a href="/resource-center/online-education.aspx">Online Education</a></li>
+                        <li><a href="/careers/careers-videos.aspx">Careers</a></li>
+                        <li>
+                            <script type="text/javascript" language="JavaScript">
+                                aj_server = 'http://as.usnuc.com/servlet/ajrotator/'; aj_tagver = '1.0';
+                                aj_zone = 'bisk'; aj_adspot = '900404'; aj_page = '0'; aj_dim = '901113'; aj_ch = '706216'; aj_ct = '622442'; aj_kw = '';
+                                aj_pv = true; aj_click = '';
+                            </script>
+                            <script type="text/javascript" language="JavaScript" src="http://img1.cdn.adjuggler.com/banners/ajtg.js"></script>
+                        </li>
+                    </ul>
+                </div>
+                <div class="usnlogo">
+                    <img src="/images/canvas/usn.gif" /></div>
+                <div class="category rankings">
+                    <small><span>&mdash;</span> SCHOOL <span>&mdash;</span></small><br />
+                    <strong><span>LISTING &amp;</span><br />
+                        RANKINGS</strong><div class="line">
+                        </div>
+                </div>
+                <ul class="tree">
+                    <li><a href="/undergraduate-colleges/default.aspx">Best Colleges</a>
+                        <ul>
+                            <li class="indent"><strong title="Ranking Categories">Ranking Categories</strong>
+                                <li><a href="/undergraduate-colleges/national-universities.aspx" title="National Universities"
+                                    class="short">National Universities</a></li>
+                                <li><a href="/undergraduate-colleges/liberal-arts.aspx" title="National Liberal Arts Colleges"
+                                    class="short">National Liberal Arts Colleges</a></li>
+                                <li class="indent"><strong title="Regional Universities">Regional Universities</strong></li>
+                                <li class="current"><a href="/undergraduate-colleges/masters-north.aspx" title="North"
+                                    class="short">North</a></li>
+                                <li><a href="/undergraduate-colleges/masters-south.aspx" title="South" class="short">
+                                    South</a></li>
+                                <li><a href="/undergraduate-colleges/masters-midwest.aspx" title="Midwest" class="short">
+                                    Midwest</a></li>
+                                <li><a href="/undergraduate-colleges/masters-west.aspx" title="West" class="short">West</a></li>
+                                <li class="indent"><strong title="Regional Colleges">Regional Colleges</strong></li>
+                                <li><a href="/undergraduate-colleges/bachelors-north.aspx" title="North" class="short">
+                                    North</a></li>
+                                <li><a href="/undergraduate-colleges/bachelors-south.aspx" title="South" class="short">
+                                    South</a></li>
+                                <li><a href="/undergraduate-colleges/bachelors-midwest.aspx" title="Midwest" class="short">
+                                    Midwest</a></li>
+                                <li><a href="/undergraduate-colleges/bachelors-west.aspx" title="West" class="short">
+                                    West</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/graduate-schools/default.aspx">Best Graduate Schools</a>
+                        <ul>
+                            <li class="indent"><strong title="Ranking Categories">Ranking Categories</strong></li>
+                            <li><a href="/graduate-schools/business.aspx" title="Business" class="short">Business</a></li>
+                            <li><a href="/graduate-schools/law.aspx" title="Law" class="short">Law</a></li>
+                            <li><a href="/graduate-schools/medical.aspx" title="Medical" class="short">Medical</a></li>
+                            <li><a href="/graduate-schools/engineering.aspx" title="Engineering" class="short">Engineering</a></li>
+                            <li><a href="/graduate-schools/education.aspx" title="Education" class="short">Education</a></li>
+                            <li><a href="/graduate-schools/sciences.aspx" title="Science" class="short">The Sciences</a></li>
+                            <li><a href="/graduate-schools/library-information-studies.aspx" title="Library and Information Studies"
+                                class="short">Library and Information Studies</a></li>
+                            <li><a href="/graduate-schools/social-sciences-humanities.aspx" title="Social Sciences and Humanities"
+                                class="short">Social Sciences and Humanities</a></li>
+                            <li><a href="/graduate-schools/health.aspx" title="Health" class="short">Health</a></li>
+                            <li><a href="/graduate-schools/public-affairs.aspx" title="Public Affairs" class="short">
+                                Public Affairs</a></li>
+                            <li><a href="/graduate-schools/fine-arts.aspx" title="Fine Arts" class="short">Fine
+                                Arts</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/online-education/default.aspx">Online Education</a>
+                        <ul>
+                            <li><a href="/online-education/undergraduate.aspx" title="Undergraduate" class="short">
+                                Undergraduate</a></li>
+                            <li><a href="/online-education/graduate.aspx" title="Graduate" class="short">Graduate</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/methodology/default.aspx">Methodology</a></li>
+                </ul>
+                <div class="category">
+                    <strong>Follow Us On</strong><div class="line">
+                    </div>
+                </div>
+                <div class="social">
+                    <a href="http://www.facebook.com/pages/US-News-University-Directory/188134240831"
+                        class="button_facebook" title="Follow Us On Facebook" target="_blank">
+                        <img src="/images/canvas/icon-fb.png" /></a> <a href="http://twitter.com/usnewsud"
+                            class="button_twitter" title="Follow Us On Twitter" target="_blank">
+                            <img src="/images/canvas/icon-twitter.png" /></a> <a href="https://plus.google.com/115606058965961434724/posts"
+                                title="Follow Us On Google+" target="_blank">
+                                <img src="/images/canvas/icon-googler.png" /></a>
+                </div>
+            </div>
+            <div class="container_content">
+                <div class="nav primary">
+                    <ul>
+                        <li><a onclick="javascript:clearCookies();" class='home-btn icon'
+                            href="/" title="U.S. News University Directory">
+                            <img src="/images/canvas/icon-home.png" /></a></li>
+                        <li><a onclick="javascript:setcookie('1');" class=''
+                            href="/associates.aspx">Associate&rsquo;s</a></li>
+                        <li><a onclick="javascript:setcookie('2');" class=''
+                            href="/bachelors.aspx">Bachelor&rsquo;s</a></li>
+                        <li><a onclick="javascript:setcookie('3');" class=''
+                            href="/masters-mba.aspx">Master&rsquo;s/MBA</a></li>
+                        <li><a onclick="javascript:setcookie('4');" class=''
+                            href="/doctorate.aspx">Doctorate</a></li>
+                        <li><a onclick="javascript:setcookie('5');" class=''
+                            href="/certificates.aspx">Certificates</a></li>
+                        <li><a onclick="javascript:clearCookies();" class='school-search'
+                            href="/schoolsearch.aspx">
+                            <img src="/images/canvas/america.png" class="america" />School Search</a></li>
+                    </ul>
+                    <div class="search">
+                        <label>
+                            Enter Search Term</label>
+                        <input type="text" name="search" />
+                        <!-- <button type="submit" name="submit" title="Search"></button> -->
+                    </div>
+                    <div class="line">
+                    </div>
+                </div>
+                <div class="nav concierge">
+                    <div class="cap">
+                        <span>
+                            <img src="/images/canvas/cap.png" alt="U.S. News University Directory" title="U.S. News University Directory" /></span></div>
+                    <div class="find">
+                        Finding Your Perfect School <strong>Starts Here!</strong></div>
+                    <div class="step">
+                        <strong>Step 1</strong></div>
+                    <div class="please">
+                        Please answer the question below so that we can help you find your ideal school.</div>
+                    <div class="point">
+                    </div>
+                    <div class="badge">
+                    </div>
+                    <div class="badgepoint">
+                    </div>
+                    <div class="form">
+                        <div>
+                            <label>
+                                Select Program of Interest</label>
+                            <select>
+                                <option>Art & Design</option>
+                                <option>Business</option>
+                                <option>Criminal Justice</option>
+                                <option>Education & Teaching</option>
+                                <option>Engineering</option>
+                                <option>Healthcare</option>
+                                <option>Human Services</option>
+                                <option>Legal/Paralegal</option>
+                                <option>Liberal Arts</option>
+                                <option>Nursing</option>
+                                <option>Political Science</option>
+                                <option>Science</option>
+                                <option>Technology</option>
+                            </select>
+                        </div>
+                        <div class="findmore">
+                            <a href="#" url="/multistepform.aspx?mode=iframe&ver=22&creativeid=MultistepLeadIn"
+                                class="fancybox multistep">Find More</a>
+                        </div>
+                    </div>
+                </div>
+                
+    
+        
+
+    
+    <div class="content">
+            
+        <div class="breadcrumbs"><a href="/" class="home">University Directory</a><a class="current" href="default.aspx">Resource Center</a></div>
+	<script type="text/javascript">
+	    $(document).ready(function () {
+	        $('.addthis_button_google_plusone').attr('g:plusone:size', 'medium');
+	        $('.addthis_button_google_plusone').attr('pi:pinit:media', '');
+	        $('.addthis_button_google_plusone').attr('pi:pinit:layout', 'horizontal');
+	    });
+        </script>
+        <div class="addthissharefix">
+        <div class="addthis_toolbox addthis_default_style">
+            <a class="addthis_button_facebook_like" ></a>
+            <a class="addthis_button_tweet"></a>
+            <a class="addthis_button_google_plusone"></a>
+            <a class="addthis_button_pinterest_pinit"></a>
+            <a class="addthis_button_stumbleupon_badge"></a> 
+            <a class="addthis_button_linkedin"></a>
+            <a class="addthis_button_compact"></a>        
+        </div>
+        </div>
+        <script type="text/javascript">            var addthis_config = { "data_track_addressbar": true };</script>
+        <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=usnewsud&domready=1"></script>
+       
+            <div class="introheading stage"><h1>America&rsquo;s Best Online Education Resources</h1>   <p>U.S. News University Directory encourages you to  thoroughly research all of your educational options before choosing an  on-campus or <a href="/">online college</a>.  That’s why we provide you with the  authoritative news, advice, reference material and other assets available here  in our resource center.  You can read the  latest articles about what’s happening in the world of education, watch videos  about college life, download our free <a href="/colleges-universities/financialaidversion2/">financial aid guide</a> and much more!</p></div>
+                     
+                     
+            <div class="subheading video"><h3><strong>Video</strong><span><a href="video.aspx">view all</a></span></h3><hr /></div>  <div class="multicolumn three">         <!-- Position #1 -->                <div class="column"><a href="/resource-center/video.aspx?CCTVVideo=791383802001" class="preview">    <div class="small"></div>    <img src="/images/articleimages/bucknell-amanda-g.jpg" height="100" width="150" /></a></a>    <h5><a href="/resource-center/video.aspx?CCTVVideo=791383802001" style="color: #b10b0d;">All About Bucknell</a></h5>    <p>Computer science major Amanda G. gives you the inside story on classes, dorms and professors at Bucknell University.</</p>    <a href="/resource-center/video.aspx?CCTVCategory=Top Rated" class="category-link">CollegeClickTV</a>    </div>             <!-- Position #2 -->    <div class="column"><a href="/resource-center/video.aspx?FeaturedVideo=1030882053001" class="preview">    <div class="small"></div>   <img src="/images/articleimages/western-governors-universit.jpg" class='imgfrombrightcove'  videoID='1030882053001' width="150" height="100" /></a>    <h5><a href="/resource-center/video.aspx?FeaturedVideo=1030882053001" style="color: #b10b0d;">From the President of WGU</a></h5>    <p>University President Robert Mendenhall explains the commitment Western Governors University makes to its students.</p>    <a href="/resource-center/video.aspx?FeaturedCategory=Benedictine" class="category-link">Featured Videos</a>   </div>         <!-- Position #3 -->   <div class="column"><a href="/resource-center/video.aspx?CareerVideo=610672275001" class="preview">    <div class="small"></div>   <img src="/images/articleimages/computer-systems.jpg" class="imgfrombrightcove" videoid="610672275001" width="150" height="100"></a>    <h5><a href="/resource-center/video.aspx?CareerVideo=610672275001" style="color: #b10b0d;">Computer System Analyst</a></h5>    <p>Computer systems analysts help various organizations achieve their goals by designing, implementing and maintaining computer systems.</p>    <a href="/resource-center/video.aspx?CareerCategory=Healthcare%20Career%20Videos" class="category-link">Career Videos</a>   </div>   <br clear="all" />  </div>           
+            
+        <div class="subheading daily-news">
+            <h3>
+                <strong>Daily News</strong>
+                <span><a href="../articles/DailyNews.aspx">view all</a></span>
+            </h3><hr />
+        </div>
+        
+                
+                <a href='http://www.usnewsuniversitydirectory.com/articles/tips-applicants-can-use-during-the-mfa-admissions_12956.aspx' class="article-image-left preview">
+                    <span class='article-largeimg' >
+                        <img onclick="window.location.href='http://www.usnewsuniversitydirectory.com/articles/tips-applicants-can-use-during-the-mfa-admissions_12956.aspx'" src='/images/articleimages/Tips-for-applicants-to-MFA-programs_213_387722_0_14071902_300.jpg' alt='Tips for applicants to MFA programs.' complete="complete" />
+                    </span>
+                </a>
+                <h4><a href='http://www.usnewsuniversitydirectory.com/articles/tips-applicants-can-use-during-the-mfa-admissions_12956.aspx'>Tips Applicants Can Use During the MFA Admissions Process</a></h4>
+                <p class="summary">Many of the individuals who possess a desire to work in the visual or performing arts understand that they are likely to encounter stiff competition on their way to achieving their professional goals.</p>
+                <span class="continue"><a href='http://www.usnewsuniversitydirectory.com/articles/tips-applicants-can-use-during-the-mfa-admissions_12956.aspx'>Read More</a></span><br /><br />
+            
+            
+        <div class="section multicolumn three">
+            
+                    
+                    <div class="article">
+                        <a href='http://www.usnewsuniversitydirectory.com/articles/5-musicians-who-hold-college-degrees_12957.aspx' class="preview">
+                            <span class='article-smallimg'>
+                                <img onclick="window.location.href='http://www.usnewsuniversitydirectory.com/articles/5-musicians-who-hold-college-degrees_12957.aspx'" src='/images/articleimages/Many-musicians-have-earned-college-degrees_213_387694_0_14070843_100.jpg' alt='Many musicians have earned college degrees.'/>
+                            </span>
+                        </a>
+                        <h5><a href='http://www.usnewsuniversitydirectory.com/articles/5-musicians-who-hold-college-degrees_12957.aspx'>5 Musicians Who Hold College Degrees</a></h5>
+                        <p class="summary">Many musicians have decided to put their education first and earn a bachelor's degree.</p>
+                        <span class="continue"><a href='http://www.usnewsuniversitydirectory.com/articles/5-musicians-who-hold-college-degrees_12957.aspx'>Read More</a></span>
+                    </div>
+                
+                    <div class="secondcolumn article">
+                        <a href='http://www.usnewsuniversitydirectory.com/articles/obama-introduces-new-college-scorecard-tool_12958.aspx' class="preview">
+                            <span class='article-smallimg'>
+                                <img onclick="window.location.href='http://www.usnewsuniversitydirectory.com/articles/obama-introduces-new-college-scorecard-tool_12958.aspx'" src='/images/articleimages/Students-can-use-the-new-College-Scorecard-to-compare-data-on-prospective-schools_213_387483_0_14069815_100.jpg' alt='Students can use the new College Scorecard to compare data on prospective schools.'/>
+                            </span>
+                        </a>
+                        <h5><a href='http://www.usnewsuniversitydirectory.com/articles/obama-introduces-new-college-scorecard-tool_12958.aspx'>Obama Introduces New College Scorecard Tool</a></h5>
+                        <p class="summary">During his most recent State of the Union address, President Barack Obama announced that his administration would release a "College Scorecard."</p>
+                        <span class="continue"><a href='http://www.usnewsuniversitydirectory.com/articles/obama-introduces-new-college-scorecard-tool_12958.aspx'>Read More</a></span>
+                    </div>
+                
+                    <div class="article">
+                        <a href='http://www.usnewsuniversitydirectory.com/articles/strong-soft-skills-help-health-professionals_12959.aspx' class="preview">
+                            <span class='article-smallimg'>
+                                <img onclick="window.location.href='http://www.usnewsuniversitydirectory.com/articles/strong-soft-skills-help-health-professionals_12959.aspx'" src='/images/articleimages/Russian-meteorite-event_online_150x100.jpg' alt='Soft Skills Help Health Professionals Stay Cool Under Preasure'/>
+                            </span>
+                        </a>
+                        <h5><a href='http://www.usnewsuniversitydirectory.com/articles/strong-soft-skills-help-health-professionals_12959.aspx'>Strong Soft Skills Help Health Professionals Handle Russian Meteorite Event</a></h5>
+                        <p class="summary">Emergency staff in Russia needed more than just medical training when they responded to a meteorite impact, they needed the skills to be calm, patient and understanding.</p>
+                        <span class="continue"><a href='http://www.usnewsuniversitydirectory.com/articles/strong-soft-skills-help-health-professionals_12959.aspx'>Read More</a></span>
+                    </div>
+                
+                
+        </div>
+             
+            
+        <div class="subheading choosing-the-right-school">
+            <h3>
+                <strong>Choosing the Right School</strong>
+                <span><a href="school-choice.aspx">view all</a></span>
+            </h3><hr />
+        </div>
+        <!--start section-->
+        <div id="div2" class="section choosing-the-right-school multicolumn two">
+            
+                    <div class="article">
+                        <h4><a href='http://www.usnewsuniversitydirectory.com/articles/computer-science-majors-to-remain-in-demand_12908.aspx'>New Technologies Fuel Demand for Computer Science Degree Holders</a></h4>
+                        <p class="summary">Computer science program enrollment is up as federal projections call for an increase in jobs, particularly for software developers.</p>
+                        <span class="continue"><a href='http://www.usnewsuniversitydirectory.com/articles/computer-science-majors-to-remain-in-demand_12908.aspx'>Read More</a></span>
+                    </div>
+                
+            <div class="secondcolumn article">
+                <ul class="other-articles">
+                    
+                            <li><a href='http://www.usnewsuniversitydirectory.com/articles/the-hobbit-sparks-interest-in-animation-careers_12817.aspx'>The Hobbit: An Unexpected Journey Sparks Interest in Computer Animation Degrees and Careers</a></li>
+                        
+                            <li><a href='http://www.usnewsuniversitydirectory.com/articles/virtual-tours-aid-prospective-college-students_12743.aspx'>Virtual Campus Tours Aid Prospective College Students</a></li>
+                        
+                            <li><a href='http://www.usnewsuniversitydirectory.com/articles/the-best-nursing-schools-in-the-nation_12739.aspx'>The Best Nursing Schools in the Nation</a></li>
+                        
+                            <li><a href='http://www.usnewsuniversitydirectory.com/articles/pay-employment-chances-depend-on-major_12725.aspx'>U.S. Census Bureau: Pay, Employment Chances Depend on Major</a></li>
+                        
+                            <li><a href='http://www.usnewsuniversitydirectory.com/articles/jobs-in-fast-growing-financial-services-sector_12618.aspx'>Be a Part of the Fast-Growing Financial Services Sector</a></li>
+                        
+                            <li><a href='http://www.usnewsuniversitydirectory.com/articles/best-colleges-2013-coming_12605.aspx'>Best Colleges 2013 Coming Soon From <em>U.S. News & World Report</em></a></li>
+                        
+                </ul>
+            </div>
+            <br />
+        </div>
+        <!--end section-->
+             
+            
+        <div class="subheading going-back-to-school">
+            <h3>
+                <strong>Going Back to School</strong>
+                <span><a href="back-to-school.aspx">view all</a></span>
+            </h3><hr />
+        </div>
+        <div class="going-back-to-school">
+            
+                    <h4><a href='http://www.usnewsuniversitydirectory.com/articles/how-to-choose-mba-elective-courses_12881.aspx'>How to Choose MBA Elective Courses</a></h4>
+                    <p class="summary">If selected properly, business school electives can help prepare students for their future careers.</p>
+                    <p><span class="continue"><a href='http://www.usnewsuniversitydirectory.com/articles/how-to-choose-mba-elective-courses_12881.aspx'>Read More</a></span></p>
+                
+            <h5>Recent Articles</h5>
+            <div class="section multicolumn two">
+                <div class="article">
+                    <ul class="other-articles" style="padding-bottom: 0px; padding-top: 0px;">
+                        
+                                <li><a href='http://www.usnewsuniversitydirectory.com/articles/things-to-consider-before-going-back-to-college_12905.aspx'>Things Adults Should Consider Before Going Back to College</a></li>
+                            
+                                <li><a href='http://www.usnewsuniversitydirectory.com/articles/best-2-year-computer-degrees-for-entry-into-it_12771.aspx'>Best Two-Year Degrees For Entry Into IT Career</a></li>
+                            
+                                <li><a href='http://www.usnewsuniversitydirectory.com/articles/making-education-your-new-years-resolution_12836.aspx'>Why Making Education Your New Year's Resolution Is A Smart Decision</a></li>
+                            
+                    </ul>
+                </div>
+                <div class="secondcolumn article">
+                    <ul class="other-articles" style="padding-bottom: 0px; padding-top: 0px;">
+                        
+                                <li><a href='http://www.usnewsuniversitydirectory.com/articles/the-benefits-of-a-liberal-arts-education_12754.aspx'>The Benefits of a Liberal Arts Education</a></li>
+                            
+                                <li><a href='http://www.usnewsuniversitydirectory.com/articles/fields-where-a-masters-degree-can-mean-a-100k_12729.aspx'>5 Fields Where a Master's Degree Can Mean a 100K Salary</a></li>
+                            
+                                <li><a href='http://www.usnewsuniversitydirectory.com/articles/all-about-degree-completion-programs_12753.aspx'>Everything You Need to Know About College Degree Completion Programs</a></li>
+                            
+                    </ul>
+                </div>
+            </div>
+            <br />
+        </div>
+             
+            
+        <div class="subheading paying-for-school">
+            <h3>
+                <strong>Paying For School</strong>
+                <span><a href="paying-for-school.aspx">view all</a></span>
+            </h3><hr />
+        </div>
+    
+              <div><img src="/images/150x100-financialaidguide.jpg" class="article-image-left" />          <h4><a href="/Colleges-Universities/financialaid/">Download Your Free Financial Aid Guide</a></h4>          <p>You don’t have to pay for school all by yourself – there are grants, loans and scholarships that can offset your educational expenses. Download our free financial aid guide to find out how.  </p>          <p><span class="download"><a href="/Colleges-Universities/financialaid/">Download Now</a></span></p>          <br clear="all" />         </div>  
+            
+        <h5>Recent Articles</h5>
+        <div class="section multicolumn two">
+            <div class="split"></div>
+            <div class="article">
+                <ul class="other-articles" style="padding-bottom: 0px; padding-top: 0px;">
+                    
+                            <li><a href='http://www.usnewsuniversitydirectory.com/articles/5-simple-steps-to-get-organized-for-scholarship-se_12876.aspx'>5 Simple Steps to Get Organized for Scholarship Season</a></li>
+                        
+                            <li><a href='http://www.usnewsuniversitydirectory.com/articles/dream-act-fact-or-fiction_12892.aspx'>DREAM Act Summary: Facts and Fiction About Proposed Immigration Education Law</a></li>
+                        
+                            <li><a href='http://www.usnewsuniversitydirectory.com/articles/how-military-families-can-save-for-college_12873.aspx'>How Military Families Can Save for College</a></li>
+                        
+                </ul>
+            </div>
+            <div class="article">
+                <ul class="other-articles" style="padding-bottom: 0px; padding-top: 0px;">
+                    
+                            <li><a href='http://www.usnewsuniversitydirectory.com/articles/5-financial-new-years-resolutions-for-college-stud_12875.aspx'>5 Financial New Year's Resolutions for College Students and Parents</a></li>
+                        
+                            <li><a href='http://www.usnewsuniversitydirectory.com/articles/12-college-financial-aid-terms-defined_12678.aspx'>12 College Financial Aid Terms Defined</a></li>
+                        
+                            <li><a href='http://www.usnewsuniversitydirectory.com/articles/important-dates-for-seeking-financial-aid_12742.aspx'>Important Dates for Students Seeking Financial Aid in 2013</a></li>
+                        
+                </ul>
+            </div>
+        </div>
+        <br />
+    
+            
+            <div class="subheading online-education">
+                <h3>
+                    <strong>Online Education</strong>
+                    <span><a href="/resource-center/online-education.aspx">view all</a></span>
+                </h3><hr />
+            </div>
+            <div class="section online-education multicolumn two">
+            <div class="split"></div>
+            
+                    <div class="article">
+                        <h4><a href='http://www.usnewsuniversitydirectory.com/articles/6-online-college-courses-to-boost-your-career_12772.aspx'>Boost Your Career with One of These Six Online College Courses</a></h4>
+                        <p class="summary">Busy professionals can bolster their careers by taking online college courses to increase their knowledge and skills within their industry</p>
+                        <span class="continue"><a href='http://www.usnewsuniversitydirectory.com/articles/6-online-college-courses-to-boost-your-career_12772.aspx'>Read More</a></span>
+                    </div>
+                
+            <div class="secondcolumn article">
+                <ul class="other-articles">
+                    
+                            <li><a href='http://www.usnewsuniversitydirectory.com/articles/online-course-enrollment-climbs-for-10th-straight_12874.aspx'>Online Course Enrollment Climbs for 10th Straight Year</a></li>
+                        
+                            <li><a href='http://www.usnewsuniversitydirectory.com/articles/us-news-to-release-2013-online-school-rankings_12839.aspx'>U.S. News and World Report to Release 2013 Online College Rankings</a></li>
+                        
+                            <li><a href='http://www.usnewsuniversitydirectory.com/articles/explore-distance-learning-masters-degree-programs_12768.aspx'>Boost Your Career with a Distance Learning Master's Degree Program</a></li>
+                        
+                            <li><a href='http://www.usnewsuniversitydirectory.com/articles/4-back-to-school-tips-for-online-students_12679.aspx'>4 Back-to-School Tips for Online Students</a></li>
+                        
+                            <li><a href='http://www.usnewsuniversitydirectory.com/articles/nursing-shortage-continues-to-drive-job-openings_12738.aspx'>Nursing Shortage Continues to Drive Career Opportunities</a></li>
+                        
+                            <li><a href='http://www.usnewsuniversitydirectory.com/articles/study-business-most-popular-field-of-study-among-o_12680.aspx'>Study: Business Most Popular Field of Study Among Online Students</a></li>
+                        
+                </ul>
+            </div>
+            <br />
+        </div>
+    
+            
+        <div class="subheading careers">
+            <h3>
+                <strong>Careers</strong>
+                <span><a href="/careers/careers-videos.aspx">view all</a></span>
+            </h3><hr />
+        </div>
+        <div class="section careers multicolumn two">
+        <div class="split"></div>
+            
+                    <div class="article">
+                        <h4><a href='http://www.usnewsuniversitydirectory.com/articles/woodworking-machine-operators-and-tenders_12218.aspx'>Woodworking Machine Operators and Tenders</a></h4>
+                        <p class="summary">Woodworking machine operators and tenders operate drill presses, routers, sanders, lathes, shapers, planers and wood nailing machines.</p>
+                        <span class="continue"><a href='http://www.usnewsuniversitydirectory.com/articles/woodworking-machine-operators-and-tenders_12218.aspx'>Read More</a></span>
+                    </div>
+                
+            <div class="article">
+                <ul class="other-articles">
+                    
+                            <li><a href='http://www.usnewsuniversitydirectory.com/articles/wholesale-and-retail-buyers-except-farm-products_12217.aspx'>Wholesale and Retail Buyers, Except Farm Products</a></li>
+                        
+                            <li><a href='http://www.usnewsuniversitydirectory.com/articles/welders-cutters-solderers-and-brazers_12216.aspx'>Welders, Cutters, Solderers and Brazers</a></li>
+                        
+                            <li><a href='http://www.usnewsuniversitydirectory.com/articles/water-and-liquid-waste-treatment-plant-and-system_12215.aspx'>Water and Liquid Waste Treatment Plant and System Operators</a></li>
+                        
+                            <li><a href='http://www.usnewsuniversitydirectory.com/articles/veterinary-technologists-and-technicians_12214.aspx'>Veterinary Technicians Job Description, Education Requirements and Career Video</a></li>
+                        
+                            <li><a href='http://www.usnewsuniversitydirectory.com/articles/veterinary-assistants-job-description_12213.aspx'>Veterinary Assistants Job Description and Education Requirements</a></li>
+                        
+                            <li><a href='http://www.usnewsuniversitydirectory.com/articles/veterinarians_12212.aspx'>Veterinarians Job Description, Education and Career Overview Video</a></li>
+                        
+                </ul>
+            </div>
+            <br />
+        </div>   
+    
+        <span class="story lower">
+            <h3>Everything You need to Know About On-Campus and Online Education</h3>  <p>Whether you decide to attend an online college or pursue  a more traditional on-campus program, how well you research your options can  affect how quickly you find your ideal school.   U.S. News University Directory provides you with a comprehensive listing  of America’s best colleges and graduate schools, along with a <a href="/schoolsearch.aspx">school search</a> feature that allows you to explore them by name, location, or degree level and  subjects offered.  But we don’t stop  there.</p>  <p>Here in our resource center you can find the latest  news articles and videos, which will keep you informed about what’s going on in  the world of education.  Then there are  our financial aid articles and free financial aid guide; they can help you save  thousands on college tuition.  Please use  all of these resources to make sure you find the college or university that’s  perfect for you!</p>  
+        </span>
+    </div>
+    <!-- Content - Right Bar -->
+    <div class="aside">
+        <h6><img src="../../images/HDR_sponsors.gif" /></h6><div id="rightBarPosition1" class="size180x150"></div><div id="rightBarPosition2" class="size180x150"></div><div id="rightBarPosition3" class="size180x150"></div><div id="rightBarPosition4" class="size160x600"></div>
+    </div>
+
+
+            </div>
+            <br />
+        </div>
+        <div class="footer">
+            <div class="seperator">
+                <div class="line">
+                </div>
+            </div>
+            <div class="nav highlight">
+                <ul>
+                    <li class="badge">
+                        <img src="/images/canvas/best-college-books.png" /></li>
+                    <li><strong>U.S. News School Rankings</strong></li>
+                    <li><a href="/undergraduate-colleges/default.aspx">Best Colleges</a></li>
+                    <li><a href="/graduate-schools/default.aspx">Best Graduate Schools</a></li>
+                    <li><a href="/online-education.aspx">Online Education</a></li>
+                    <li><a href="/undergraduate-colleges/national-universities.aspx">National&nbsp;College&nbsp;Ranking</a></li>
+                    <li><a href="http://www.usnews.com/" target="_blank" class="end">USNews.com</a></li>
+                </ul>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><strong>Services</strong></li>
+                    <li><a href="/associates.aspx">Associate&#39;s Degrees</a></li>
+                    <li><a href="/bachelors.aspx">Bachelor’s Degrees</a></li>
+                    <li><a href="/masters-mba.aspx">Master’s Degrees</a></li>
+                    <li><a href="/doctorate.aspx">Doctorate Degrees</a></li>
+                    <li><a href="/certificates.aspx" class="end">Online Certificate Programs</a></li>
+                </ul>
+                <ul>
+                    <li><strong>Resource Center</strong></li>
+                    <li><a href="/resource-center/video.aspx">Video</a></li>
+                    <li><a href="/resource-center/school-choice.aspx">Choosing the Right School</a></li>
+                    <li><a href="/resource-center/back-to-school.aspx">Going Back to School</a></li>
+                    <li><a href="/resource-center/paying-for-school.aspx">Paying For School</a></li>
+                    <li><a href="/resource-center/online-education.aspx">Online Education</a></li>
+                    <li><a href="/articles/dailynews.aspx">Daily News</a></li>
+                    <li><a href="/careers/Careers-Videos.aspx" class="end">Careers</a></li>
+                </ul>
+                <ul>
+                    <li><strong>Help</strong></li>
+                    <!--<li><a href="/faqs.aspx">FAQ&rsquo;s</a></li>-->
+                    <li><a href="/about-us.aspx">About Us</a></li>
+                    <li><a href="/advertising.aspx">Advertise With Us</a></li>
+                    <li><a href="JavaScript:footerpopup('privacy-policy.aspx','PrivacyPolicy');">Privacy
+                        Policy</a></li>
+                    <li><a class="end" href="JavaScript:footerpopup('terms-of-use.aspx','Terms');">Terms
+                        of Use</a></li>
+                    <!--<li><a href="/sitemap.aspx" class="end">Site Map</a></li>-->
+                    <li class="call"><strong>Call for Free Assistance!</strong><br />
+                        <span>855-237-2183</span></li>
+                </ul>
+            </div>
+            <br />
+        </div>
+        <div class="copyright">
+            <div class="block">
+            </div>
+            <span>&copy;
+                2013
+                U.S.News University Connection. All rights reserved.</span>
+            <div class="flag">
+                <div class="edge">
+                    <div>
+                    </div>
+                </div>
+                <div class="base">
+                    <img src="/images/canvas/usn-flame-white.png" /></div>
+                <div class="point">
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+    <!-- START | SiteCatalyst -->
+    <script type="text/javascript" language="JavaScript"><!--
+        /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+        var s_code = s.t(); if (s_code) document.write(s_code)//-->
+    </script>
+    <!-- END | SiteCatalyst -->
+    <!-- START | Google Analytics -->
+    <script type="text/javascript">
+        var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-31942379-1']);
+        _gaq.push(['_trackPageview']);
+        (function () {
+            var ga = document.createElement('script');
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            ga.setAttribute('async', 'true');
+            document.documentElement.firstChild.appendChild(ga);
+        })();
+    </script>
+    <!-- END | Google Analytics -->
+    
+    
+    <script language="JavaScript">          if (mirrorId === undefined) {              var mirrorId1 = (new Date().getTime()) % 100000000; //first part              var mirrorId2 = Math.round(Math.random() * 100000000.0); //second part              var mirrorId = "" + mirrorId1 + "" + mirrorId2; //full 16-digit id          }  </script>      <script type="text/javascript">  $("#rightBarPosition1").append('<iframe width="180" height="150" scrolling="no" frameborder="0" marginheight="0" marginwidth="0" src="http://as.usnuc.com/servlet/ajrotator/621004/0/vh?z=bisk&ch=621587&ct=622442&dim=613196&pos=1&pv='+mirrorId+'"><scr'+'ipt type="text/javascript" language="JavaScript" src="http://as.usnuc.com/servlet/ajrotator/621004/0/vj?z=bisk&ch=621587&ct=622442&dim=613196&pos=1&pv='+mirrorId+'"></scr'+'ipt><nos'+'cript><a href="http://as.usnuc.com/servlet/ajrotator/621004/0/cc?z=bisk&pos=1"><img src="http://as.usnuc.com/servlet/ajrotator/621004/0/vc?z=bisk&ch=621587&ct=622442&dim=613196&pos=1&pv='+mirrorId+'" width="180" height="150" border="0" /></a></nos'+'cript></iframe>');       $("#rightBarPosition2").append('<iframe width="180" height="150" scrolling="no" frameborder="0" marginheight="0" marginwidth="0" src="http://as.usnuc.com/servlet/ajrotator/621004/0/vh?z=bisk&ch=621587&ct=622442&dim=613196&pos=2&pv='+mirrorId+'"><scr'+'ipt type="text/javascript" language="JavaScript" src="http://as.usnuc.com/servlet/ajrotator/621004/0/vj?z=bisk&ch=621587&ct=622442&dim=613196&pos=2&pv='+mirrorId+'"></scr'+'ipt><nos'+'cript><a href="http://as.usnuc.com/servlet/ajrotator/621004/0/cc?z=bisk&pos=1"><img src="http://as.usnuc.com/servlet/ajrotator/621004/0/vc?z=bisk&ch=621587&ct=622442&dim=613196&pos=2&pv='+mirrorId+'" width="180" height="150" border="0" /></a></nos'+'cript></iframe>');       $("#rightBarPosition3").append('<iframe width="180" height="150" scrolling="no" frameborder="0" marginheight="0" marginwidth="0" src="http://as.usnuc.com/servlet/ajrotator/621004/0/vh?z=bisk&ch=621587&ct=622442&dim=613196&pos=3&pv='+mirrorId+'"><scr'+'ipt type="text/javascript" language="JavaScript" src="http://as.usnuc.com/servlet/ajrotator/621004/0/vj?z=bisk&ch=621587&ct=622442&dim=613196&pos=3&pv='+mirrorId+'"></scr'+'ipt><nos'+'cript><a href="http://as.usnuc.com/servlet/ajrotator/621004/0/cc?z=bisk&pos=1"><img src="http://as.usnuc.com/servlet/ajrotator/621004/0/vc?z=bisk&ch=621587&ct=622442&dim=613196&pos=3&pv='+mirrorId+'" width="180" height="150" border="0" /></a></nos'+'cript></iframe>');       $("#rightBarPosition4").append('<iframe width="160" height="600" scrolling="no" frameborder="0" marginheight="0" marginwidth="0" src="http://as.usnuc.com/servlet/ajrotator/621032/0/vh?z=bisk&ch=621587&ct=622442&dim=613200&pos=4&pv='+mirrorId+'"><scr'+'ipt type="text/javascript" language="JavaScript" src="http://as.usnuc.com/servlet/ajrotator/621032/0/vj?z=bisk&ch=621587&ct=622442&dim=613200&pos=4&pv='+mirrorId+'"></scr'+'ipt><nos'+'cript><a href="http://as.usnuc.com/servlet/ajrotator/621032/0/cc?z=bisk&pos=4"><img src="http://as.usnuc.com/servlet/ajrotator/621032/0/vc?z=bisk&ch=621587&ct=622442&dim=613200&pos=4&pv='+mirrorId+'" width="160" height="600" border="0" /></a></nos'+'cript></iframe>');  </script>                <script type="text/javascript">          var cacheBuster = new Date().getTime().toString().substring(0, 15);          var pageTitle = escape(document.title);          document.write("<!-- Aggregate Knowledge Pixel --><iframe width='1' height='1' frameborder='0' src='http://data.aggregateknowledge.com/iframe!t=69!che=" + cacheBuster + "?segment=sitevisitor&page=" + pageTitle + "' />");      </script>   
+
+    <!-- Yahoo! Universal Tag -->
+    <script type="text/javascript" language="JavaScript">
+		<!-- Yahoo! Inc.
+		var ysm_accountid  = "1I40RGKGSRUQBJ12VHKLIF9AF6K";
+		document.write("<SCR" + "IPT language='JavaScript' type='text/javascript' " 
+		+ "SRC=//" + "srv1.wa.marketingsolutions.yahoo.com" + "/script/ScriptServlet" + "?aid=" + ysm_accountid 
+		+ "></SCR" + "IPT>");
+		// -->
+    </script>
+    <!-- /Yahoo! Universal Tag -->
+
+</body>
+</html>

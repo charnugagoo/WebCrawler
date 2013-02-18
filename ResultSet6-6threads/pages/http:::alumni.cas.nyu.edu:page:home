@@ -1,0 +1,1160 @@
+<html xmlns:atom="http://www.w3.org/2005/Atom" xmlns:comem3="xalan://com.em3" xmlns:em3="http://www.em3.com/2002/widget">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Alumni, College of Arts and Science | New York University</title>
+<link type="image/x-icon" rel="shortcut icon" href="http://www.nyu.edu/fas/favicon.ico">
+<link type="image/x-icon" rel="icon" href="http://www.nyu.edu/fas/favicon.ico">
+<style>
+      
+      
+/****************************************************************
+START main CSS, Do not copy anything above this line
+****************************************************************/
+
+/*  
+Sticky Footer Solution
+by Steve Hatcher
+http://stever.ca
+http://www.cssstickyfooter.com
+*/
+
+* {margin:0;padding:0;}
+
+/* must declare 0 margins on everything, also for main layout components use padding, not
+vertical margins (top and bottom) to add spacing, else those margins get added to total height
+and your footer gets pushed down a bit more, creating vertical scroll bars in the browser */
+
+html, body, #wrap {height: 100%;}
+
+body > #wrap {height: auto; min-height: 100%;}
+
+#main {padding-bottom: 40px;}  /* must be same height as the footer */
+
+#footer {position: relative;
+    margin-top: -40px; /* negative value of footer height */
+    height: 40px;
+    clear:both;}
+
+/* CLEAR FIX*/
+.clearfix:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+.clearfix {display: inline-block;}
+/* Hides from IE-mac \*/
+* html .clearfix { height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+
+/*** INIT ***/
+body {text-align:center;}
+.hidden {display:none;}
+.tb {display:table;}
+.rw {display:table-row;}
+.cell {display:table-cell;}
+* html .cell {_display:inline;}
+.alignleft {margin:0 5px 0 0;}
+.alignright {margin:0 0 0 5px;}
+
+
+ul, ol {margin:20px}
+li {margin:10px;}
+.maincontent {text-align:left;}
+
+
+
+#wrap {background:url(/docs/TEMPLATE/1712/content-bg.jpg) repeat-y;}
+#wrap, #footer {margin-left:auto;margin-right:auto;}
+#wrap, #topempty, #footer {width:852px;}
+#topempty {height:15px;border-bottom:1px solid #CCC;background:#FFF;}
+#footer {border-top:1px solid #CCC;background:#FFF;}
+#header {height:130px;}
+#schoolnav {height:25px;text-align:right;}
+#content {width:810px;margin-left:auto;margin-right:auto;}
+#header-nyulogo, #header-search, #leftnav, #content {vertical-align:top;text-align:left;}
+
+.ct-tb {margin-bottom:20px;}
+#ct-mainnav {width:220px; padding-top: 1px; }
+#ct #ct-mainnav {width:20px;}
+#ct-content {width:590px;_width:590px;}
+#ct #ct-content {width:810px;}
+
+#home .maincontent {_padding-top:1px;}
+
+/*** Header ***/
+/*** Header background color & header-bg moved to the bottom header selector ***/
+#header {border-bottom:1px solid #FFF;text-align:left;}
+#header-bg {padding-top:1px;height:130px;}
+#header-nyulogo {height:45px;_height:30px;width:635px;_width:635px;}
+#header-search {height:45px;width:215px;text-align:right;}
+#header-minisite {height:85px;float:left;}
+.nyulogo {background: url(/docs/TEMPLATE/1712/nyulogo.png) no-repeat;height:25px;width:150px;margin:10px 0 0 10px;text-align:left;}
+.nyulogo a {width:150px;height:25px;display:block;margin:5 0 0 0}
+#search {}
+.minisite {background-repeat:no-repeat;width:750px;height:85px;padding-top:1px;text-align:left;/*header selection please check bottom of the CSS*/}
+.minisite a {width:470px;height:65px;display:block;margin:5px 0 0 15px}
+
+/**** School Nav ****/
+#schoolnav {padding-top:1px;margin-bottom:15px;/* for background, check below site selector*/}
+#schoolnav ul {list-style: none;padding: 0;margin:3px 0 0 0;}
+#schoolnav li {display:inline;margin:0 15px;}
+
+
+
+/*** Search ***/
+#search {float:right;}
+#ct #search {display:none;}
+#search fieldset label {display: none; }
+#searchbox {margin:10px 10px 0 0;background:#FFF;padding:1px;}
+#searchtextbox {width:100px;}
+.searchtable_bg,.searchbox_bg {background:#FFF;border:none;}
+.searchbutton_bg {background:#666;border:none;}
+.searchtext_bg {border-top: 1px solid #666;border-right: 1px solid #DDD;border-bottom: 1px solid #DDD;border-left: 1px solid #666;}
+
+/* Forms */
+input, select {font-size: 12px;  background: #FFF;  border:none;}
+label, select, input[type=checkbox], input[type=radio], input[type=button], input[type=submit] {cursor: pointer;}
+input[type=image] {font-size: 12px;  background: #FFFFFF;}
+input:focus, textarea:focus {background: #fff;}
+input:hover {background: #FFF; color: #333;}
+input#searchsubmit {font-family: Verdana,mingliu,Arial, Sans-Serif; font-size: 12px;}
+/*Form*/
+
+/**** Sub header ****/
+#subhr-box {display:none;}
+#subhr-box {border:1px solid #CCC;margin:0px auto 15px auto;width:710px;}
+#subhr-photo {background-repeat: no-repeat;margin:5px;}
+#subhr-whitebg {background-repeat: no-repeat;}
+#subhr-splayer {background-repeat: no-repeat;}
+#subhr-txt {background-repeat: no-repeat;}
+
+/**** Sub navigation ****/
+#ct .subnav {width:850px;margin:0 auto;height:21px;text-align:left;padding:0 20px;}
+
+/**** Main nav****/
+#ct-mainnav {vertical-align:top;}
+#mainnav {padding:10px 0 0px 10px;margin:0px 20px 20px 0;border:1px solid #CCC}
+#ct #mainnav {display:none;}
+#mainnav ul {list-style: none;padding: 0;margin:0px 10px 5px 0px;}
+#mainnav li {margin:0 0px;padding:0 0 6px 0px;}
+#mainnav ul.mainnav_child {margin:0 0 10px 10px;_margin:0 0 10px 10px;}
+#mainnav ul.mainnav_child li {background:URL(/docs/IO/15388/img15388.jpg) no-repeat;background-position:0 6px;_background-position:0 6px;padding:0 0 5px 10px;_padding:0 0 0 10px;_margin:5px 0 0 0;}
+
+/*home lower bucket */
+#home #ct-left, #home #ct-mid, #home #ct-right {width:203px;_width:193px;vertical-align:top;}
+#home .ev .outerbox, #home .blog .outerbox {margin-right:10px;}
+
+/*** Home - general bucket setting ***/
+#home .maincontent .outerbox {margin:0 0 20px 0;padding:0px;border:1px solid #CCC;}
+#home .maincontent .upperbox {background:#DDD;padding:10px 0 10px 25px;}
+#home .maincontent .lowerbox {padding:10px 0 0 0px;}
+#home .maincontent .lowerbox ul {list-style:none;padding:0;margin:0 0 0 15px;}
+#home .maincontent .lowerbox li {background:URL(/docs/IO/15388/img15388.jpg) no-repeat;background-position:0 4px;_background-position:0 4px;padding:0 0 0 10px;_padding:0 0 0 10px;line-height:1.2em;}
+#home .maincontent .txtsummary {padding-top:3px;}
+
+/***Second level page- main content area bucket***/
+#cx .maincontent .lowerbox ul {list-style:none;padding:0;margin:0 0 0 15px;}
+ 
+
+/* Home announcement bucket */
+#home .ann .outerbox {margin-top: 0px;border:0;}
+#home .ann .upperbox {display:none;}
+#home .ann .lowerbox {margin:0px !important;padding:0px !important;}
+#home .ann .rw, #home .ann .txtlink-left, #home .ann .txtlink-right {vertical-align:top;}
+#home .ann ul {margin:0px !important;padding:0px !important;}
+#home .ann li {background:none !important;border:1px solid #CCC;width:580px;padding:10px !important;margin:0 0 10 0px;}
+#home .ann .txtlink-left {width:130px;margin:0px;padding:0px;}
+#home .ann .txtlink-right {margin:0px;padding:0px;}
+#home .ann .txtlink-img img {max-width:120px;_width:expression(document.body.clientWidth > 120? "120px": "auto" );margin:0px; width:100%; text-align:center;vertical-align:top;}
+#home .ann .txtlink-link {font-weight:bold;font-size:1.2em;text-decoration:none;margin-bottom:5px;display:block}
+
+
+
+/* Home event bucket */
+#home .ev .outerbox {border:1px solid #CCC;}
+#home .ev .upperbox {margin:15 0 20 10px;text-transform:uppercase;font-weight:bold;}
+#home .ev .lowerbox ul {margin:0;padding:0;}
+#home .ev .lowerbox li {list-style:none;line-height:1.2em;}
+#home .ev .txtlink-date {font-size:0.9em;color:#666;font-weight:bold;}
+#home .ev .txtlink-link {}
+#home .ev .txtlink-img img {display:none;}
+
+/* Home Blog bucket */
+#home .blog .outerbox {border:1px solid #CCC;}
+#home .blog .upperbox {margin:15 0 20 10px;text-transform:uppercase;font-weight:bold;}
+#home .blog .lowerbox ul {margin:0;padding:0;}
+#home .blog .lowerbox li {list-style:none;background:URL(/docs/IO/15388/img15388.jpg) no-repeat;background-position:0 4px;_background-position:0 4px;padding:0 0 0 10px;_padding:0 0 0 10px;line-height:1.2em;}
+#home .blog .lowerbox li .rss-cat {display:none;}
+
+/* Home Alumni listing bucket */
+#home .al .outerbox {background:#dedede;padding:1 0 10px 0;}
+#home .al .upperbox {margin:15 0 20 10px;text-transform:uppercase;font-weight:bold;}
+#home .al .lowerbox ul {margin:0;padding:0;}
+#home .al .lowerbox li {list-style:none;background:none;line-height:1.2em;}
+#home .al .lowerbox .faclist-photo img {max-width:180px;_width:expression(document.body.clientWidth > 120? "120px": "auto" );margin:0 10 15px 0; width:100%; text-align:center;}
+
+
+
+/*** Sidebar & See Also ***/
+#seealso {margin:0 20px 0 0;}
+#seealso .outer {padding:0px;border:1px solid #CCC;}
+#seealso .titlebox {background:#CCC;padding:5px 0 5px 10px }
+#seealso .inner .txtbox {padding:10px;border:none !important;}
+#seealso ul {list-style:none;padding:0;margin:0;}
+#seealso li {padding:0 0 5 0px;line-height:1.2em;}
+
+#breadcrumb {
+    padding-bottom: 10px;
+    font-size: 10px;
+}
+#breadcrumb, #breadcrumb a { color: #aaa; }
+#ct #content { padding-top: 10px; }
+#breadcrumb #backtopreviousarrowbox a { color: #022C2B; }
+
+#ct-photo img {max-width:460px;_width:expression(document.body.clientWidth > 460? "460px": "auto" );margin:0 0 15px 0; width:100%; text-align:center;}
+#ct-photo {width:100%;text-align:center;}
+
+
+/*** Special Registration form CSS ***/
+label {width:300px;text-align:right;display:block;float:left;margin:0 5px 20px 0;font-weight:bold;font-size:1.1em}
+.require, .optional {padding:0 0 20px 0px;vertical-align:top;clear:both;}
+.require input, .optional input {font-size:1em;}
+.selbox, .txtbox, .txtareabox {border-top:1px solid #666;border-right:1px solid #CCC;border-bottom:1px solid #CCC;border-left:1px solid #666;vertical-align:top;}
+.selbox {}
+.fieldbox {margin:0 0 0 205px;_margin:0 0 0 210px;}
+.fieldalert {margin:10 0 5 0px;_margin:5 0 5 3px;padding:5px;border:1px solid #CCC;font-size:0.85em;background:#FFC;}/* fieldalert is for info that require a more pop out look */
+.fieldnote {margin:10 0 5 0px;_margin:5 0 5 3px;padding:5px;border:1px solid #CCC;font-size:0.85em;background:#FFF;}/* fieldnote is for info that should stand out, but not require an alert kind of look */
+.fieldnote-inline {padding:10 0 5 0px;font-size:0.9em;font-style:italic;} /*fieldnote-inline is for info that should just go with the rest, like one line sentence */
+.fieldtitle {margin:10 0 5 0px;_margin:0 0 0 3px;font-size:1em;font-weight:bold;} /* fieldtitle is for title about the following field */
+.radiobox, .chkbox {margin:3 5 0 0;_margin:0 10 0 0;vertical-align:top;}
+fieldset {border:none;}
+.col-left, .col-right, .col-grad-left {display:inline-block;margin-bottom:15px;width:210px;_width:210px;}
+.col-left {float:left;padding:0 0px 0 20px;margin-right:30px;}
+.col-left .radiobox, .col-right .radiobox {margin-left:-18px;_margin-left:-24px;_margin-right:5px;}
+.col-right {_padding:0 0 0 19px;}
+.formbox {display:inline-block;float:left;width:480px;}
+.spicon {font-weight:bold;color:#F00;margin:0 3px 0 0;}
+p.chkbox-box {margin:0 0 5 208px;}
+input.smbbtn {border-top:1px solid #CCC;border-right:1px solid #666;border-bottom:1px solid #666;border-left:1px solid #ccc;vertical-align:top;padding:0px 10 2 10;height:29px;}
+.smbbtn-box {text-align:center;}
+.txtareabox {}
+
+/***********************
+ jQuery scroll to top CSS
+The basic element call is an ID "topcontrol".
+***********************/
+#topcontrol {
+  font-size:0.96em;
+  font-weight:bold;
+  background:#FFF;
+  padding:11px 8px;
+  margin-right:10px;
+  box-shadow: 0px 0px 3px 1px #AAAAAA;
+  text-transform:uppercase;
+}
+/* Remove Scroll to Top button on Home page (overwrite the default display on all pages setting) */
+#home #topcontrol {display:none;}
+
+
+
+/***** Testing ALT table row color ***/
+.even {background-color:#DDD;}
+.odd {background-color:#FFF;}
+
+
+
+/*** iOn Form ***/
+table.formContainer {margin:20px 0 20px 0}
+.formContainer .text, .formContainer .select {border-top:1px solid #666;border-right:1px solid #CCC;border-bottom:1px solid #CCC;border-left:1px solid #666;}
+.formContainer div {margin:5px 0 0 0;}
+.formContainer .button {border-top:1px solid #CCC;border-right:1px solid #666;border-bottom:1px solid #666;border-left:1px solid #CCC;margin:10px 10px 0 0;}
+
+
+
+/*** Context level bucket ***/
+#cx .gl .outerbox {margin:20px 0 20px 0;padding:0px;}
+#cx .gl .upperbox {display:none;}
+#cx .gl .lowerbox {padding:0px;}
+#cx .gl .lowerbox ul {list-style:none;padding:0 !important;margin:0px !important;}
+#cx .gl .lowerbox li {padding:0px !important;margin:0 0 15 0px;clear:both}
+#cx .gl .lowerbox li a {font-weight:bold;}
+#cx .gl .lowerbox .txtlink-img {float:left;}
+#cx .gl .lowerbox .txtlink img {max-width:120px;_width:expression(document.body.clientWidth > 120? "120px": "auto" );margin:0 10 15px 0; width:100%; text-align:center;}
+#cx .gl .txtsummary {padding-top:3px;}
+#cx .gl .txtlink-more {display:none;}
+
+
+/*** Context level event bucket ***/
+.evlist .jumplink {margin:0 0 20 0;}
+.evlist .jumplink a {margin:0 10 0 0;}
+.evlist .outerbox {border:none;}
+.evlist .outerbox, .evlist .lowerbox {background:none;padding:0;margin:0;}
+.evlist .upperbox {display:none;}
+.evlist .propertySub {font-size:1.6em;color:#999;font-weight:bold;text-transform:uppercase;margin:0 0 0px 0;line-height:1em;}
+.evlist ul {list-style:none;margin:0 0 25px 0;width:100%}
+.evlist li.txtlink {background:none;padding:10 0 15px 0;display:block;border-bottom:1px solid #ccc;width:100%}
+.evlist .txtlink-left {width:170px;}
+.evlist .txtlink-left .txtlink-date {font-size:0.85em;font-weight:bold;color:#666;padding:0 10 20 0;}
+.evlist .txtlink-left .txtlink-img img {max-width:150px;_width:expression(document.body.clientWidth > 150? "150px": "auto" );}
+.evlist .txtlink-right {_width:450px;}
+.evlist .txtlink-right .txtlink-title {font-weight:bold;}
+
+
+#ct .evdetail .txtlink-img {display:none;}
+
+
+/************************************
+FONT STYLE
+************************************/
+
+body {font-size:100% !important;line-height:1.125em;font-family:Arial,Verdana;color:#000000;}
+h1, h2, h3, h4, h5, h6 {margin:0 0 15px 0px; /* Check bottom for site selection on color */}
+p {margin:0 0 15px 0;}
+.arrow-bg {background:#005C5C;}
+
+h1 {font-size:1.8em;}
+h2 {font-size:1.6em;}
+h3 {font-size:1.5em;}
+#cx h3 {margin:0 0 15px 0;}
+h4 {font-size:1.3em; margin: 10px 0;}
+h5 {font-size:1.15em;}
+h6 {font-size:1em;}
+
+#schoolnav {font-size:10px;text-transform:uppercase;}
+#footer {font-size:11px}
+#schoolnav {color:#FFFFFF;}
+#schoolnav a {/* Check bottom for site selection */}
+#schoolnav a:hover {/* Check bottom for site selection */}
+#footer {color:#AAAAAA;}
+#footer a {color:#AAAAAA;text-decoration:none;}
+#footer a:hover {color:#022C2B;}
+#content, .maincontent td {font-size:0.74em;_font-size:0.8em;}
+
+#mainnav {color:#005C5C;font-size:1em;_font-size:0.95em; } /*1em of 0.75em = 0.75em */
+#mainnav A {/* Check bottom for site selection */}
+#mainnav A:hover {/* Check bottom for site selection */}
+#mainnav li.mainnav_on, #mainnav li.mainnav_spon, #mainnav li.mainnav_chon {font-weight:bold;/*for mainnav title color, check below site selector*/}
+#mainnav li.mainnav_chon {color:#DEBA60;}
+#mainnav .mainnav_child li.mainnav_off a {font-weight:normal;}
+
+
+
+.maincontent .upperbox, .maincontent .lowerbox  {font-size:1em;_font-size:0.95em}
+.maincontent .lowerbox {color:#666;}
+.maincontent .upperbox {font-weight:bold;text-transform:uppercase;color:#005C5C;}
+.maincontent .txtlink a {/*for bucket link color, check below site selector */}
+.maincontent .txtlink a:hover {/*for bucket link color, check below site selector */}
+
+#seealso {font-size:0.95em;}
+#seealso .title {font-weight:bold; color:#054A4A;}
+#seealso li a {/*for seealso link color, check below site selector*/}
+
+/*** Last Update ***/
+#lastupdate {float:left;margin:10px;}
+#lastupdate {font-size:0.6em;color:#aaaaaa;}
+#ct #lastupdate {margin-left:20px;}
+
+
+/*** Social Media ***/
+#socialmedia {text-align:left;}
+#socialmedia .upperbox {display:none;}
+#socialmedia {margin:20 17 0 0px;}
+#socialmedia .lowerbox {padding:0 0 0 3px;}
+#socialmedia .lowerbox ul.contenttxt {list-style:none;padding:0;margin:0;}
+#socialmedia .lowerbox li.txtlink {background:none;padding:0px;list-style:none;margin:0 0 5px 0;}
+#socialmedia .lowerbox li {font-size:11px;font-family:verdana;}
+#socialmedia .lowerbox li a {display:block;height:19px;padding:1px 0 0 25px;color:#aaa;text-decoration:none;}
+#socialmedia .lowerbox li a:hover {color:#666;}
+
+
+
+/****************************************************************
+END main CSS, Do not copy anything below this line
+****************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      
+      
+      
+
+/***********************************
+Special Mini-site bucket title color selector
+**********************************/
+
+      
+      #mainnav li.mainnav_on, #mainnav li.mainnav_spon, #mainnav li.mainnav_chon {color:#054A4A}
+      
+      
+
+/***********************************
+Special Mini-site schoolnav color selector
+**********************************/
+
+      
+      
+#schoolnav {background:#DDB85F ;}
+#schoolnav a {color:#FFF;text-decoration:none;}
+#schoolnav a:hover {color:#022C2B;}
+
+      
+      
+
+/*****************************
+Special Mini-site H, A, mainnav A, bucket A tag color selector
+******************************/
+
+      
+      
+h1, h2, h3, h4, h5, h6 {color:#022C2B;}
+A {color:#022C2B;}
+A:hover {color:#DEBA60;}
+#mainnav {color:#005C5C;}
+#mainnav A {color:#005C5C;text-decoration:none;}
+#mainnav A:hover {color:#DEBA60;text-decoration:none;}
+.maincontent .txtlink a {color:#666;}
+.maincontent .txtlink a:hover {color:#DEBA60;}
+#seealso li a {color:#666;}
+#seealso li a:hover {color:#DEBA60;}
+
+.maincontent a {color:#005C5C;}
+.maincontent a:hover {color:#DEBA60;}
+
+.maincontent .txtlink a, .txtlink-link a,  .txtlink-link,            .blog-link, .txtlink-readmore a {color:#005C5C;}    
+.maincontent .txtsummary {color:#000; line-height:1.4em; padding-bottom:5px;}  
+
+      
+      
+
+
+
+
+/***********************************
+Special Mini-site header selector
+**********************************/
+
+      
+      
+#header {background:#012B2A;}
+#header-bg {background: url(/docs/TEMPLATE/1712/cas-header-bg.jpg) no-repeat;}
+.minisite {background: url(/docs/TEMPLATE/1712/header-casalumni.png)}
+      
+      
+
+
+
+
+/***********************************
+Special Mini-site subheader selector  
+-      ID:subhr-photois to set the photo of the sub header
+-      ID:whitebgis to place a white background on top of the photo (just in case the photo iswider than necessary, the white background is to cover the photo so it willnot overlap on the summary text.)
+-      ID:subhr-splayeris to place a special layer on top of both the photo and the white background,but just below the text, for example, the yellow brush on CAS Orientation is aspecial layer that’s sitting on top of the photo, but below the text layer.
+-      Thespecial mini-site subheader link select widget is a subhr-txt DIV tag, whichwill display the text summary in PNG transparent fashion (check widget sectionon how the subhr-txt layer works.
+**********************************/
+
+      
+      </style>
+<style type="text/css">
+@media print{
+.hidden {display:block;}
+#header-nyulogo, #header-search, #topempty, #schoolnav, #footer {display:none;}
+#header {height:160px;border:none;}
+.minisite {height:130px;}
+}
+</style>
+<style>
+
+/************************
+EDIT BUTTON
+************************/
+.button-onsiteedit {z-index:1;position: fixed !important; left: 5px !important; bottom: 5px !important;
+  _position:absolute;
+  _top:expression(document.body.scrollTop+document.body.clientHeight-this.clientHeight);
+}
+.button-onsiteedit img {border:none !important;margin:0px !important;padding:0px !important;_margin-bottom:1px;}
+
+</style>
+<style>
+/***** IE PNG fix *******/
+img, div, a, li { behavior: url(/docs/TEMPLATE/775/iepngfix.htc); }
+</style>
+<script LANGUE="javaScript">
+function makeArray()    {
+    this[0] = makeArray.arguments.length;
+    for (i = 0; i<makeArray.arguments.length; i++)
+        this[i+1] = makeArray.arguments[i];
+}
+
+var daysofweek = new makeArray('Sun.',
+                               'Mon.',
+                               'Tues.',
+                               'Wed.',
+                               'Thurs.',
+                               'Fri.',
+                               'Sat.');
+
+var monthsofyear = new makeArray('January',
+                                 'February',
+                                 'March',
+                                 'April',
+                                 'May',
+                                 'June',
+                                 'July',
+                                 'August',
+                                 'September',
+                                 'October',
+                                 'November',
+                                 'December');
+
+function Nths(day) { 
+    if (day == 1 || day == 21 || day == 31) return '';
+    if (day == 2 || day == 22) return '';
+    if (day == 3 || day == 23) return '';
+    return '';
+}
+
+function DayOfWeek(day,month,year) {
+    var a = Math.floor((14 - month)/12);
+    var y = year - a;
+    var m = month + 12*a - 2;
+    var d = (day + y + Math.floor(y/4) - Math.floor(y/100) +
+             Math.floor(y/400) + Math.floor((31*m)/12)) % 7;
+    return d + 1;
+}
+
+function FullDate(day,month,year) {
+    return monthsofyear[month] +' '+ day + Nths(day);
+//    return daysofweek[DayOfWeek(day,month,year)] +', '+ monthsofyear[month] +', '+ day + Nths(day);
+//    return daysofweek[DayOfWeek(day,month,year)] +', '+ day + Nths(day) +', '+ monthsofyear[month] +', '+ year;
+}
+</script>
+<STYLE>
+/************************
+Social Media bucket CSS
+NOTE: This only perform the image swap, actual font size, style CSS should be place within the main CSS
+*************************/
+#socialmedia a {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+#socialmedia a:hover { background-position: 0 -20px; }
+
+#socialmedia a.facebook { background-image: url(/docs/IO/22778/img22778.png); }
+
+#socialmedia a.twitter { background-image: url(/docs/IO/22782/img22782.png); }
+
+#socialmedia a.linkedin { background-image: url(/docs/IO/22780/img22780.png); }
+
+#socialmedia a.gplus { background-image: url(/docs/IO/22781/img22781.png); }
+
+#socialmedia a.youtube { background-image: url(/docs/IO/22784/img22784.png); }
+
+#socialmedia a.vimeo { background-image: url(/docs/IO/22783/img22783.png); }
+
+#socialmedia a.blogger { background-image: url("/docs/IO/27695/img27695.png"); }
+
+#socialmedia a.mt { background-image: url("/docs/IO/27693/img27693.png"); }
+
+#socialmedia a.wp { background-image: url("/docs/IO/25590/img25590.png"); }
+
+#socialmedia a.email { background-image: url(/docs/IO/28101/img28101.png); }
+
+#socialmedia a.itunes { background-image: url(/docs/IO/28102/img28102.png); }
+
+</STYLE>
+<!--Google jQuery-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<!--Google jQuery UI--><script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+<!--A collection of most of the special features available-->
+<!--AS Home page slideshow (2 scripts)--><script type="text/javascript" src="/object/script.js"></script><script type="text/javascript" src="/object/autoadvance.js"></script>
+<!--Alt. table row color--><script type="text/javascript" src="/object/alttbcolor.js"></script>
+<!--Scroll to Top Button-->
+<!--Adjust with ID "topcontrol"--><script src="/object/scrolltopcontrol.js" type="text/javascript"></script><script type="text/javascript">
+
+   var _gaq = _gaq || [];
+   _gaq.push(['_setAccount', 'UA-30565093-1']);
+   _gaq.push(['_trackPageview']);
+ 
+   (function() {
+     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+   })();
+ 
+ </script>
+</head>
+<body ID="home">
+<div id="wrap">
+<div class="clearfix" id="main">
+<div id="topempty"></div>
+<div id="header">
+<div id="header-bg">
+<div class="tb">
+<div class="rw">
+<div class="cell" id="header-nyulogo">
+<div class="nyulogo">
+<a href="http://www.nyu.edu"></a>
+</div>
+</div>
+<div class="cell" id="header-search">
+<div ID="search">
+<div ID="searchbox">
+<form action="http://google.nyu.edu/search" id="searchform" method="get">
+<input value="xml_no_dtd" name="output" type="hidden"><input value="UTF-8" name="oe" type="hidden"><input value="10" name="num" type="hidden"><input value="NYUWeb_Main" name="client" type="hidden"><input value="NYUWeb_Main" name="site" type="hidden"><input value="default_frontend" name="proxystylesheet" type="hidden"><input name="sitesearch" type="hidden" value="as.nyu.edu">
+<table margin="0" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td style="padding-top:0px; padding-left:0px; padding-right:0px;">
+<table border="0" cellspacing="0" cellpadding="1">
+<tr>
+<td class="searchtable_bg">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr class="searchbox_bg">
+<td class="searchtext_bg"><input id="searchtextbox" name="q" type="text"></td><td valign="middle" align="center" class="searchbutton_bg"><input id="searchsubmit" border="0" src="/docs/TEMPLATE/560/btnGoSm.gif" type="image"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="header-minisite">
+<div class="minisite">
+<a href="/page/__default"></a>
+</div>
+</div>
+</div>
+</div>
+<div id="schoolnav">
+<ul>
+<li class="first">
+<a href="http://cas.nyu.edu">The College</a>
+</li>
+<li class="last">
+<a href="http://as.nyu.edu/page/aboutas">About Arts &amp; Science</a>
+</li>
+</ul>
+</div>
+<div id="subhr-box">
+<div id="subhr-photo">
+<div id="subhr-whitebg">
+<div id="subhr-splayer">
+<a href="/page/__default">
+<div id="subhr-txt"></div>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div id="content">
+<div class="ct-tb tb">
+<div class="rw">
+<div class="cell" id="ct-mainnav">
+<div ID="mainnav">
+<ul>
+<li class="mainnav_on">Home</li>
+<li class="mainnav_off">
+<a href="/page/news">News</a>
+</li>
+<li class="mainnav_off">
+<a href="/page/events">Events</a>
+</li>
+<li class="mainnav_off">
+<a href="/page/alumniachievement">Alumni Achievement Award</a>
+</li>
+<li class="mainnav_off">
+<a href="/page/getinvolved">Get Involved</a>
+</li>
+<li class="mainnav_off">
+<a href="/page/givingback">Giving Back</a>
+</li>
+<li class="mainnav_off">
+<a href="/page/parents">Alumni Parents</a>
+</li>
+<li class="mainnav_off">
+<a href="/page/alumni.magazine">NYU Alumni Magazine</a>
+</li>
+</ul>
+</div>
+<div ID="seealso"></div>
+<div class="outerbox" id="socialmedia">
+<div class="upperbox">
+<div class="titletxt">Connect</div>
+</div>
+<div class="lowerbox">
+<ul class="contenttxt">
+<li class="txtlink">
+<a title="Link to our Facebook page" class="facebook" href="http://www.facebook.com/nyucasalumni"><span class="socmed-txt">Facebook</span></a>
+</li>
+<li class="txtlink">
+<a title="Link to our Twitter page" class="twitter" href="http://www.twitter.com/artsandscience"><span class="socmed-txt">Twitter</span></a>
+</li>
+<li class="txtlink">
+<a title="Link to our LinkedIn" class="linkedin" href="http://www.linkedin.com/groupRegistration?gid=143282"><span class="socmed-txt">LinkedIn</span></a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell" id="ct-content">
+<div class="maincontent"><br>
+<span class="ann">
+<div class="outerbox">
+<div class="upperbox">
+<div class="titletxt">Announcements</div>
+</div>
+<div class="lowerbox">
+<ul class="contenttxt tb">
+<li class="txtlink tr">
+<div class="txtlink-left cell">
+<div class="txtlink-img">
+<img src="/props/IO/27883/126/HolidayCard2012.jpg"></div>
+</div>
+<div class="txtlink-right cell">
+<a class="txtlink-link" href="/object/alumni.ug.holiday2012" alt="Click for a special message from the Arts &amp; Science Alumni Relations Office. ">Happy Holidays!</a>
+<div class="txtsummary">Click for a special message from the Arts & Science Alumni Relations Office. </div>
+</div>
+</li>
+<li class="txtlink tr">
+<div class="txtlink-left cell">
+<div class="txtlink-img">
+<img src="/props/IO/22658/126/CAAHoliday.jpg"></div>
+</div>
+<div class="txtlink-right cell">
+<a class="txtlink-link" href="/object/alumni.ug.benefits" alt="NYU Alumni have many benefits available to them. If you haven't already created an NYUniverse account, start taking advantage of all the great benefits offered. For a complete list of benefits, see the <a href=&quot;http://alumni.nyu.edu/s/1068/index.aspx?sid=1068&amp;gid=1&amp;pgid=1892&quot;>NYU Alumni Benefits website</a>. ">Alumni Benefits</a>
+<div class="txtsummary">NYU Alumni have many benefits available to them. If you haven't already created an NYUniverse account, start taking advantage of all the great benefits offered. For a complete list of benefits, see the <a href="http://alumni.nyu.edu/s/1068/index.aspx?sid=1068&gid=1&pgid=1892">NYU Alumni Benefits website</a>. </div>
+<div class="txtlink-readmore">
+<a href="/object/alumni.ug.benefits">Read more</a>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</span>
+</div>
+<div class="tb">
+<div class="rw">
+<div class="cell" id="ct-left">
+<span class="ev">
+<div class="outerbox">
+<div class="upperbox">
+<div class="titletxt">Upcoming Events</div>
+</div>
+<div class="lowerbox">
+<ul class="contenttxt">
+<li class="txtlink">
+<div class="tb">
+<div class="rw">
+<div class="txtlink-left cell">
+<div class="txtlink-img">
+<img src="/props/IO/28116/126/Allen_Ginsberg.png"></div>
+</div>
+<div class="txtlink-right cell">
+<div class="txtlink-date">
+<script LANGUAGE="javaScript">document.write(FullDate(15,01,2013));</script>, <script LANGUAGE="javaScript">
+var hr;
+var add;
+var min;
+var hr = '09';
+var min = '00';
+    if (hr > 12) {      hr = hr - 12;      add = "p.m.";    } else {      hr = hr -1;      hr = hr +1;      add = "a.m.";    }
+    if (hr == 12) {      add = "p.m.";    }
+    if (hr == 00) {      hr = "12";    }
+document.write (hr + ":" + min + "&nbsp;" + add);</script> - <script LANGUAGE="javaScript">
+var hr;
+var add;
+var min;
+var hr = '18';
+var min = '00';
+    if (hr > 12) {      hr = hr - 12;      add = "p.m.";    } else {      hr = hr -1;      hr = hr +1;      add = "a.m.";    }
+    if (hr == 12) {      add = "p.m.";    }
+    if (hr == 00) {      hr = "12";    }
+document.write (hr + ":" + min + "&nbsp;" + add);</script>
+</div>
+<a class="txtlink-link" href="/object/beatmemories.html">"Beat Memories" by Allen Ginsberg</a>
+<div class="txtsummary">
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="txtlink">
+<div class="tb">
+<div class="rw">
+<div class="txtlink-left cell">
+<div class="txtlink-img">
+<img src="/props/IO/28112/126/empiremocktrial.png"></div>
+</div>
+<div class="txtlink-right cell">
+<div class="txtlink-date">
+<script LANGUAGE="javaScript">document.write(FullDate(26,01,2013));</script>, <script LANGUAGE="javaScript">
+var hr;
+var add;
+var min;
+var hr = '10';
+var min = '30';
+    if (hr > 12) {      hr = hr - 12;      add = "p.m.";    } else {      hr = hr -1;      hr = hr +1;      add = "a.m.";    }
+    if (hr == 12) {      add = "p.m.";    }
+    if (hr == 00) {      hr = "12";    }
+document.write (hr + ":" + min + "&nbsp;" + add);</script> - <script LANGUAGE="javaScript">
+var hr;
+var add;
+var min;
+var hr = '11';
+var min = '30';
+    if (hr > 12) {      hr = hr - 12;      add = "p.m.";    } else {      hr = hr -1;      hr = hr +1;      add = "a.m.";    }
+    if (hr == 12) {      add = "p.m.";    }
+    if (hr == 00) {      hr = "12";    }
+document.write (hr + ":" + min + "&nbsp;" + add);</script>
+</div>
+<a class="txtlink-link" href="/object/mocktrial2013.html">Mock Trial Event</a>
+<div class="txtsummary">
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="txtlink">
+<div class="tb">
+<div class="rw">
+<div class="txtlink-left cell">
+<div class="txtlink-img">
+<img src="/props/IO/28121/126/LorrieMoore.jpg"></div>
+</div>
+<div class="txtlink-right cell">
+<div class="txtlink-date">
+<script LANGUAGE="javaScript">document.write(FullDate(31,01,2013));</script>, <script LANGUAGE="javaScript">
+var hr;
+var add;
+var min;
+var hr = '19';
+var min = '00';
+    if (hr > 12) {      hr = hr - 12;      add = "p.m.";    } else {      hr = hr -1;      hr = hr +1;      add = "a.m.";    }
+    if (hr == 12) {      add = "p.m.";    }
+    if (hr == 00) {      hr = "12";    }
+document.write (hr + ":" + min + "&nbsp;" + add);</script>
+</div>
+<a class="txtlink-link" href="/object/LorrieMoore.html">Fiction Reading by Lorrie Moore</a>
+<div class="txtsummary">
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="txtlink">
+<div class="tb">
+<div class="rw">
+<div class="txtlink-left cell">
+<div class="txtlink-img">
+<img src="/props/IO/28129/126/BrendaShaughnessy.jpg"></div>
+</div>
+<div class="txtlink-right cell">
+<div class="txtlink-date">
+<script LANGUAGE="javaScript">document.write(FullDate(01,02,2013));</script>, <script LANGUAGE="javaScript">
+var hr;
+var add;
+var min;
+var hr = '17';
+var min = '00';
+    if (hr > 12) {      hr = hr - 12;      add = "p.m.";    } else {      hr = hr -1;      hr = hr +1;      add = "a.m.";    }
+    if (hr == 12) {      add = "p.m.";    }
+    if (hr == 00) {      hr = "12";    }
+document.write (hr + ":" + min + "&nbsp;" + add);</script>
+</div>
+<a class="txtlink-link" href="/object/BrendaShaughnessy.html">Poetry Reading with Brenda Shaughnessy and Craig Morgan Teicher</a>
+<div class="txtsummary">
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="txtlink">
+<div class="tb">
+<div class="rw">
+<div class="txtlink-left cell">
+<div class="txtlink-img">
+<img src="/props/IO/28088/126/mlk20131.gif"></div>
+</div>
+<div class="txtlink-right cell">
+<div class="txtlink-date">
+<script LANGUAGE="javaScript">document.write(FullDate(07,02,2013));</script>, <script LANGUAGE="javaScript">
+var hr;
+var add;
+var min;
+var hr = '19';
+var min = '00';
+    if (hr > 12) {      hr = hr - 12;      add = "p.m.";    } else {      hr = hr -1;      hr = hr +1;      add = "a.m.";    }
+    if (hr == 12) {      add = "p.m.";    }
+    if (hr == 00) {      hr = "12";    }
+document.write (hr + ":" + min + "&nbsp;" + add);</script>
+</div>
+<a class="txtlink-link" href="/object/MLKWeek2013.html">A Conversation with Reverend Al Sharpton and (Featured) Guests</a>
+<div class="txtsummary">
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="txtlink">
+<div class="tb">
+<div class="rw">
+<div class="txtlink-left cell">
+<div class="txtlink-img">
+<img src="/props/IO/27800/126/WSP_Fall.jpg"></div>
+</div>
+<div class="txtlink-right cell">
+<div class="txtlink-date">
+<script LANGUAGE="javaScript">document.write(FullDate(12,02,2013));</script>, <script LANGUAGE="javaScript">
+var hr;
+var add;
+var min;
+var hr = '18';
+var min = '30';
+    if (hr > 12) {      hr = hr - 12;      add = "p.m.";    } else {      hr = hr -1;      hr = hr +1;      add = "a.m.";    }
+    if (hr == 12) {      add = "p.m.";    }
+    if (hr == 00) {      hr = "12";    }
+document.write (hr + ":" + min + "&nbsp;" + add);</script>
+</div>
+<a class="txtlink-link" href="/object/alumni.events.CAApotluck">College Alumni Association Potluck </a>
+<div class="txtsummary">
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="txtlink">
+<div class="tb">
+<div class="rw">
+<div class="txtlink-left cell">
+<div class="txtlink-img">
+<img src="/props/IO/28113/126/engineeringweek2013.png"></div>
+</div>
+<div class="txtlink-right cell">
+<div class="txtlink-date">
+<script LANGUAGE="javaScript">document.write(FullDate(21,02,2013));</script>, <script LANGUAGE="javaScript">
+var hr;
+var add;
+var min;
+var hr = '18';
+var min = '00';
+    if (hr > 12) {      hr = hr - 12;      add = "p.m.";    } else {      hr = hr -1;      hr = hr +1;      add = "a.m.";    }
+    if (hr == 12) {      add = "p.m.";    }
+    if (hr == 00) {      hr = "12";    }
+document.write (hr + ":" + min + "&nbsp;" + add);</script>
+</div>
+<a class="txtlink-link" href="/object/EngineeringWeek2013.html">NYU Heights and NYU-Poly Engineering Alumni Gathering</a>
+<div class="txtsummary">
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="txtlink">
+<div class="tb">
+<div class="rw">
+<div class="txtlink-left cell">
+<div class="txtlink-img">
+<img src="/props/IO/28462/126/donnald_b_marron.png"></div>
+</div>
+<div class="txtlink-right cell">
+<div class="txtlink-date">
+<script LANGUAGE="javaScript">document.write(FullDate(07,03,2013));</script>, <script LANGUAGE="javaScript">
+var hr;
+var add;
+var min;
+var hr = '05';
+var min = '30';
+    if (hr > 12) {      hr = hr - 12;      add = "p.m.";    } else {      hr = hr -1;      hr = hr +1;      add = "a.m.";    }
+    if (hr == 12) {      add = "p.m.";    }
+    if (hr == 00) {      hr = "12";    }
+document.write (hr + ":" + min + "&nbsp;" + add);</script>
+</div>
+<a class="txtlink-link" href="/object/Jurow2013.html">Irving H. Jurow Lecture: The Rhetoric of Economic Policy</a>
+<div class="txtsummary">
+</div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</span>
+</div>
+<div class="cell" id="ct-mid">
+<span class="blog">
+<div class="outerbox">
+<div class="upperbox">
+<div class="titletxt">Alumni News</div>
+</div>
+<div class="lowerbox">
+<ul class="contenttxt">
+<li class="txtlink">
+<div class="txtlink-link">
+<a href="http://blogs.nyu.edu/blogs/eln205/alumni/2013/02/we_have_moved_the_location_of.html" target="_blank">We have moved the location of our blog!</a>
+</div>
+<div class="txtlink-date">
+          
+          Posted 
+          
+          2013-02-14</div>
+</li>
+<li class="txtlink">
+<div class="txtlink-link">
+<a href="http://blogs.nyu.edu/blogs/eln205/alumni/2013/01/two_events_you_wont_want_to_mi.html" target="_blank">Two events you wont want to miss in February</a>
+</div>
+<div class="txtlink-date">
+          
+          Posted 
+          
+          2013-01-22</div>
+</li>
+<li class="txtlink">
+<div class="txtlink-link">
+<a href="http://blogs.nyu.edu/blogs/eln205/alumni/2013/01/edward_radzivilovskiy_ls_15.html" target="_blank"> Student Edward Radzivilovskiy Interviews Noam Chomsky and Others</a>
+</div>
+<div class="txtlink-date">
+          
+          Posted 
+          
+          2013-01-15</div>
+</li>
+<li class="txtlink">
+<div class="txtlink-link">
+<a href="http://blogs.nyu.edu/blogs/eln205/alumni/2013/01/a_new_year_a_new_dean.html" target="_blank">A New Year, A New Dean</a>
+</div>
+<div class="txtlink-date">
+          
+          Posted 
+          
+          2013-01-08</div>
+</li>
+<li class="txtlink">
+<div class="txtlink-link">
+<a href="http://blogs.nyu.edu/blogs/eln205/alumni/2012/12/a_special_message_from_arts_sc.html" target="_blank">A Special Message from Arts &amp; Science Alumni Relations...</a>
+</div>
+<div class="txtlink-date">
+          
+          Posted 
+          
+          2012-12-18</div>
+</li>
+<li class="txtlink">
+<div class="txtlink-link">
+<a href="http://blogs.nyu.edu/blogs/eln205/alumni/2012/12/a_tasty_treat_bixby_bars.html" target="_blank">Kate McAleer's (CAS '09) Chocolate Bar Creations</a>
+</div>
+<div class="txtlink-date">
+          
+          Posted 
+          
+          2012-12-10</div>
+</li>
+<li>
+<a href="http://blogs.nyu.edu/as/alumni/" class="blog-link">Go to the CAS Alumni Blog</a>
+</li>
+</ul>
+</div>
+</div>
+</span>
+</div>
+<div class="cell" id="ct-right">
+<span class="al">
+<div class="outerbox">
+<div class="upperbox">
+<div class="titletxt">Featured Alumnus/a</div>
+</div>
+<div class="lowerbox">
+<ul class="contenttxt">
+<li>
+<div class="faclist-photo">
+<img src="/props/IO/22795/126/winter_a_194.jpg" alt="Photo of Terence Winter"></div>
+<div class="faclist-info">
+<div class="faclist-txt">Terence&nbsp;Winter (WSC '84): Creator, Showrunner and Writer for HBO's "Boardwalk Empire"<div class="txtlink-readmore">
+<a href="/object/alumni.ug.profile.TerenceWinter">Read more...</a>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div class="footer">
+<a href="/page/contactus">Contact Us</a> | &copy; <a href="/object/link.nyu">New York University</a>, <a href="/object/link.as">Arts and Science</a>
+</div>
+</div>
+<div class="button-onsiteedit">
+<a target="ionAdmin" href="http://ionadmin.fas.nyu.edu/admin/ContextPageEditAction.ion?method=setup&key=3178"><img height="8" width="8" alt="" src="/docs/TEMPLATE/1033/edit.png"></a>
+</div>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-30565093-1']);
+  _gaq.push(['_setDomainName', 'nyu.edu']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</body>
+</html>

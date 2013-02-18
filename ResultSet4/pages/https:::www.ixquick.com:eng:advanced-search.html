@@ -1,0 +1,742 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+<HEAD><TITLE>Ixquick Search Engine</TITLE>
+<!--[if gt IE 6]>
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache"> <META HTTP-EQUIV="Expires" CONTENT="-1">
+<![endif]-->
+<!--[if !IE]> -->
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache"> <META HTTP-EQUIV="Expires" CONTENT="-1">
+<!-- <![endif]-->
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META HTTP-EQUIV="Content-Language" CONTENT=en>
+<META name="Keywords" content="search engine, metasearch, private search, proxy search, image search, video search, news search, international phone search, search engine privacy, ixquick, ixquick.com">
+<META name="Description" content="Ixquick search engine provides search results from over ten best search engines in full privacy. Search anonymously with Ixquick Search Engine!">
+<LINK REL="SHORTCUT ICON" HREF="/favicon.ico">
+<script type="text/javascript" src="/js/jquery-1.2.6.min.js"></script>
+<script language="javascript">
+var abp = true;if (navigator.userAgent.indexOf('MSIE 6') != -1) { try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} }
+		function concatParamToAllUrls (referenceUrlId) {
+			/* Get current url */
+			var currentUrl = window.location.href;
+			currentUrl = unescape(currentUrl);
+			var isParamPresentInFormField = false; /* flag to check if prf OR prfh param is present in form field */
+			var isParamPresentInUrl = false;  /* flag to check if prf OR prfh param is present in url */
+            var alreadyHiddenPrfBlankPresent = false;
+			var paramName = "";
+			var paramValue = "";
+
+			/* Loop through each input type element and check if prf OR prfh is present or not. If yes mark flag as true */
+			jQuery(":input").each(function(i){
+					
+				if( (jQuery(this).attr("name") == "prfh") || (jQuery(this).attr("name") == "prf") ){
+					//isParamPresentInFormField = true;
+					paramName  = jQuery(this).attr("name") + "=";
+					paramValue = jQuery(this).attr("value");
+                    if (paramValue != "") {
+                         isParamPresentInFormField = true;
+                    } else {
+                       alreadyHiddenPrfBlankPresent = true;
+
+                    }
+				}
+				
+			});
+
+			/* Is prf OR prfh present in Url. If yes then set flag as true */
+			if( (currentUrl.match(/(.*?)(&|\?)(prfh)(=)(.*?)($|&)/g)) || (currentUrl.match(/(.*?)(&|\?)(prf)(=)(.*?)($|&)/g)) ){
+				isParamPresentInUrl = true;
+			}
+			//alert('isParamPresentInFormField ' + isParamPresentInFormField + ' isParamPresentInUrl ' + isParamPresentInUrl);
+			if( (isParamPresentInUrl) || (isParamPresentInFormField) ){
+				var concatThisParam = "";
+				
+				/* Prepare param to be concatenated */
+				if (isParamPresentInUrl) {
+					concatThisParam = RegExp.$3 + RegExp.$4 +RegExp.$5;
+				} else if(isParamPresentInFormField){
+					concatThisParam = paramName + paramValue ;
+					
+				}
+
+				/* If advance search url is calling this method then concat prf OR prfh param to this url only. Else concat to all the urls */
+				if (typeof referenceUrlId != "undefined") {
+					jQuery('#' + referenceUrlId).attr('href', jQuery('#' + referenceUrlId).attr('href') + '&' + concatThisParam);
+					
+				} else {
+				   /* Add prf OR prfh as form field as well if not already present. */
+				   if (!isParamPresentInFormField) {
+                       if (alreadyHiddenPrfBlankPresent) {
+                           var myParam = concatThisParam;
+                           var param_elements = myParam.split('=');
+                          jQuery('input[name='+param_elements[0]+']').val(param_elements[1]);
+                       } else {
+					      jQuery("<input type='hidden' value='" + RegExp.$5 + "' name='" + RegExp.$3 + "' id='" + RegExp.$3 + "' />").prependTo(jQuery('#search_form'));
+                       }
+                   }
+				   jQuery('.addsettings').each(function(index){ 
+					   var originalUrl = jQuery(this).attr('href');
+                       if (originalUrl) {
+					   if ( originalUrl.match( /(.*?)(\?)(.*?)$/g ) ){
+						   jQuery(this).attr('href', originalUrl + '&' + concatThisParam);
+					   } else if( originalUrl.match( /(.*?)(\/)$/g ) ){
+						   jQuery(this).attr('href', originalUrl + '?' + concatThisParam);
+					   } else if(originalUrl.match( /(.*)(\/)(.*?)$/g ) ){
+						   jQuery(this).attr('href', originalUrl + '?' + concatThisParam);
+					   }
+                       }
+					   
+				   });
+			   }
+			}
+		}
+function do_action () {
+    if ((document.blah.atleast_one.value == '') && (document.blah.all_terms.value == '') &&
+        (document.blah.exact_phrase.value == '') && (document.blah.without_word.value == '')) {
+        if (typeof document.blah.with_text != "undefined") {
+            if ((document.blah.with_text.value == '') && (document.blah.with_domain.value == '') &&
+                (document.blah.with_link.value == '') && (document.blah.domain_type.value == '')) {
+                return false;
+            } else {
+                document.blah.submit();
+                return false;
+            }
+        } else {
+            return false;
+        }
+    } else {
+        document.blah.submit();
+        return false;
+    }
+}
+function change_form_method(){
+             if(getCookie('enable_post_method') == '0') {
+                document.blah.method = 'GET';
+              }
+          }function getCookie(c_name) {
+           if (document.cookie.length>0) {
+              c_start=document.cookie.indexOf(c_name + "EEE");
+              if (c_start!=-1) {
+                 c_start=c_start + c_name.length+3;
+                 c_end=document.cookie.indexOf("N1N",c_start);
+                 if (c_end==-1) c_end=document.cookie.length;
+                 return unescape(document.cookie.substring(c_start,c_end));
+              }
+            }
+            return "";
+          }function setCategoryOnload(){
+            var window_location = window.location.href;
+            if(window_location.match(/&cat=(.*?)(&|$)/)){
+              if(RegExp.$1 == 'web' || RegExp.$1 == 'pics' || RegExp.$1 == 'video'){
+               setCat(RegExp.$1);
+             }
+            } 
+       var queryOffset = window_location.indexOf("query=");
+
+         if (queryOffset != -1) {
+
+        var query = window_location.substring(queryOffset + 6);
+
+         var queryLastPos = query.indexOf("&");
+
+           if (queryLastPos == -1) {
+
+           query = query.substring(0);
+
+            } else {
+
+              query = query.substring(0, queryLastPos);
+
+        }
+
+      /*eId('all_terms_include').value = unescape(query);*/
+
+/*Starts here*/
+     var str = unescape(query);
+
+
+                 document.getElementById("atleast_one_word").value = "";                               
+                 document.getElementById("all_words").value = "";                               
+                 document.getElementById("exact_phrase_in").value = "";                               
+                 document.getElementById("without_words").value = "";                               
+                 document.getElementById("with_text_in").value = "";                               
+                 document.getElementById("with_domain_at").value = "";                               
+                 document.getElementById("with_link_to").value = "";                               
+                 document.getElementById("domain_select").value = "";                               
+                 document.getElementById("text_url").value = "title";                               
+
+
+     var str1 = new Array();                                                                                                                   
+	str1[0] = str.match(/title:"(.*?)"/g);                                                                      
+	if(str1[0]) {  
+		document.getElementById("with_text_in").value = trim(RegExp.$1);                                                         
+		document.getElementById("text_url").value = "title";                                                              
+		str = str.replace(/title:"(.*?)"/g,"");                                                                           
+	}                                                                                            
+	str1[1] = str.match(/link:(.*?)(\s|$)/g);                                  
+	if(str1[1]) {               
+		document.getElementById("with_link_to").value = trim(RegExp.$1);                                                         
+		str = str.replace(/link:(.*?)(\s|$)/g,"");                                                                        
+	}   
+// NOT handling starts, first is -"car" case
+                 str1[3] = str.match(/\-"(.*?)"(\s|$)/g);
+                 
+                 if(str1[3]) {    
+                      var temp_string = str1[3].toString();
+                      temp_string = temp_string.replace(/\-/g, "");
+                      document.getElementById("without_words").value = trim(temp_string);
+                      str = str.replace(/\-"(.*?)"(\s|$)/g, "");
+               }
+                // str1[3] = str.match(/\-(.*?)(\s|$)/g); // Modifying this to accomodate table-tennis type terms, cannot do it.
+                 str1[3] = str;
+
+                 // Bundle the words if NOT(-) is present in the quotes
+                 var quoted_not = str.match(/.*".*[-+]+.*".*/);
+                 var without_words = "";
+                 if(str1[3])  {  
+                   if(quoted_not) {
+                      var t = str.match(/".*"/g);
+                      var k = t.toString().replace(/"/g,"");
+                      document.getElementById("exact_phrase_in").value = k;
+                      str = str.replace(/".*"/g, "");
+                      str1[3] = str; // Reset current string
+                  }
+                 // Ends bundled word execution
+
+                 // Match if terms like table-tennis  exist
+                  var regex = /((\w{1,})(\-)\w{1,}\s*)/g
+                  if (str1[3].toString().match(regex)) {   
+                     str1[3] = str1[3].toString().replace(regex, " ");
+                  }
+                 // Match if minus exist, comes from above.
+                   str1[3] = str1[3].match(/\-(.*?)(\s|$)/g);  
+                 if(str1[3]) {
+                  var temp_string       = str1[3].toString();                                                                          
+                  var exploded_elements = temp_string.split(",");                                                                    
+                  var without_words = "";                                                                                            
+                  for(var i=0 ; i< exploded_elements.length ; i++){                                                                    
+                     without_words += exploded_elements[i].substring(1,exploded_elements[i].length);                                    
+                     without_words += " ";                                                                                            
+                  }
+                 document.getElementById("without_words").value = trim(without_words);                                                    
+                 str = str.replace(/(\s+\-\w+|^\-\w+)/g,"");  // Modify str remove  negated terms except of the form bread-butter
+                }
+              }
+
+// ENd NOT execution                                                                                                                                  
+                                                                                                                                    
+	str1[2] = str.match(/\+(.*?)(\s|$)/g);    
+						if(str1[2]) {                                                                                                
+							var temp_string       = str1[2].toString();                         
+							var exploded_elements = temp_string.split(",");                                                         
+							var all_words = "";                                                                         
+							for(var i=0 ; i< exploded_elements.length ; i++){                                         
+								all_words += exploded_elements[i].substring(1,exploded_elements[i].length);                              
+								all_words += " ";                                                                                       
+                       }
+                       document.getElementById("all_words").value = trim(all_words);                                                         
+                       str = str.replace(/\+(.*?)(\s|$)/g,"");                                                                         
+                 }  
+
+                str1[4] = str.match(/domain:(.*?)(\s|$)/g);                                                                               
+                 if(str1[4]) { 
+                       document.getElementById("domain_select").value = trim(RegExp.$1);                                                       
+                       str = str.replace(/domain:(.*?)(\s|$)/g,"");                                                                     
+                 }                                                                                                                   
+                 str1[5] = str.match(/url:"(.*?)"/g);                                                                                     
+                 if(str1[5]) {                                                                                                              
+                       document.getElementById("with_text_in").value = trim(RegExp.$1);                  
+                       document.getElementById("text_url").value = "url";                                                               
+                       str = str.replace(/url:"(.*?)"/g,"");                                                                          
+                 }    
+                                                        
+                 str1[6] = str.match(/\((.*?)\)/g);                        
+                  if(str1[6]) {                                                                                                            
+                       var str_to_break = RegExp.$1;                                                                                       
+                       var exploded_elements =  str_to_break.split(" OR ");                                                               
+                       var words = "";                                                                                                    
+                       for(var i = 0;i < exploded_elements.length ; i++ ){                    
+                         words += exploded_elements[i];                                                                               
+                         words += " ";                               
+                  }                                                                                                                     
+                       document.getElementById("atleast_one_word").value = trim(words);                                                       
+                       str = str.replace(/\((.*?)\)/g,"");                                                                              
+                 }                                                                                                                          
+                 str1[7] = str.match(/"(.*?)"/g);                                                                                         
+                 if(str1[7]) {                                                                                                              
+                       document.getElementById("exact_phrase_in").value = trim(RegExp.$1);                                                     
+                       str = str.replace(/"(.*?)"/g,"");                                                                                
+                 }                                                                                                                          
+                 str1[8] = str.match(/host:(.*?)(\s|$)/g);                                                                                
+                 if(str1[8]) {                                                                                                              
+                       document.getElementById("with_domain_at").value = trim(RegExp.$1);                                                      
+                       str = str.replace(/host:(.*?)(\s|$)/g,"");                                                                       
+                 }                                                                                                                          
+
+                 str = str.replace(/^[\s]+/,"");                                                                                                         str = trim(str);
+                 str = str.replace(/ OR /," ");
+                 if(str){                                                                                                                                     if(document.getElementById("atleast_one_word").value == ""){
+                   document.getElementById("atleast_one_word").value += str;                                                                          }else{
+                        document.getElementById("atleast_one_word").value += " "+str;
+                   }
+                 }                                                                                                                          
+                                                                                                                                            
+             
+
+/*ends here*/
+
+
+      } 
+
+        
+ } function trim(str){
+               return str.replace(/^[\s]+/,"").replace(/\s+$/,"");
+             } 
+function eId(item) { return document.getElementById(item); }
+    var allCats = new Array('web','pics','video');
+    function setCat(catr) {
+       document.blah.cat.value = catr;
+       for(var i = 0; i < allCats.length; i++) {
+          removeClass(eId(allCats[i]), 'active');
+       }
+       addClass(eId(catr), 'active');
+       eId("all_words").focus();                                                                  
+       if (catr == 'pics') {
+           eId('atleast_one_row').style.display = 'none';
+           eId('with_link_to_row').style.display = 'none';
+           eId('sort_by_options').style.display = 'none';
+           eId('with_text_in_row').style.display = '';
+        eId('select_domain_advanced').style.display = '';
+        eId('advanced_search_domain').style.display = '';
+
+       } 
+       else if (catr == 'video'){
+        eId('with_link_to_row').style.display = 'none';
+        eId('select_domain_advanced').style.display = 'none';
+        eId('advanced_search_domain').style.display = 'none';
+        eId('sort_by_options').style.display = '';
+        eId('with_text_in_row').style.display = 'none';
+        eId('atleast_one_row').style.display = '';
+       }
+       else if (catr == 'web'){
+         eId('with_link_to_row').style.display = '';
+         eId('select_domain_advanced').style.display = '';
+         eId('advanced_search_domain').style.display = '';
+         eId('with_text_in_row').style.display = '';
+         eId('atleast_one_row').style.display = '';
+         eId('with_link_to_row').style.display = '';
+         eId('sort_by_options').style.display = 'none';
+       }
+       if(catr == "phone"){
+        return true;
+       }
+
+       return false; 
+    }
+
+	function hasClass(ele,cls) {
+		return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+	} 
+	function addClass(ele,cls) {
+		if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+	} 
+	function removeClass(ele,cls) {
+		if (hasClass(ele,cls)) {
+			var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+			ele.className=ele.className.replace(reg,' ');
+		}
+	}
+	function addLine() { 
+        if (eId('green')) {
+		eId('green').style.textDecoration = "underline"; 
+		//eId('green').style.fontWeight = "bold"; 
+        eId('green').style.color = "#158314";
+        }
+	}
+	function removeLine() {
+        if (eId('green')) {
+		//eId('green').style.textDecoration = "none"; 
+		eId('green').style.fontWeight = "normal"; 
+        eId('green').style.color = "#15b314";
+        }
+	}
+	
+	var BrowserDetect = {
+	  init: function () {
+		  this.browser = this.searchString(this.dataBrowser) || "Browser";
+		  this.version = this.searchVersion(navigator.userAgent)
+			  || this.searchVersion(navigator.appVersion)
+			  || "an unknown version";
+	  },
+	  searchString: function (data) {
+		  for (var i=0;i<data.length;i++){
+			  var dataString = data[i].string;
+			  var dataProp = data[i].prop;
+			  this.versionSearchString = data[i].versionSearch || data[i].identity;
+			  if (dataString) {
+				  if (dataString.indexOf(data[i].subString) != -1)
+					  return data[i].identity;
+			  }
+			  else if (dataProp)
+				  return data[i].identity;
+		  }
+	  },
+	  searchVersion: function (dataString) {
+		  var index = dataString.indexOf(this.versionSearchString);
+		  if (index == -1) return;
+		  return parseFloat(dataString.substring(index+this.versionSearchString.length+1));
+	  },
+	  dataBrowser: [
+					{
+					  string: navigator.userAgent,
+					  subString: "Chrome",
+					  identity: "Chrome"
+					  },
+					{ string: navigator.userAgent,
+					subString: "OmniWeb",
+					versionSearch: "OmniWeb/",
+					identity: "OmniWeb"
+					},
+					{
+					  string: navigator.vendor,
+					  subString: "Apple",
+					  identity: "Safari",
+					  versionSearch: "Version"
+					  },
+					{
+					  prop: window.opera,
+					  identity: "Opera"
+					  },
+					{
+					  string: navigator.vendor,
+					  subString: "iCab",
+					  identity: "iCab"
+					  },
+					{
+					  string: navigator.vendor,
+					  subString: "KDE",
+					  identity: "Konqueror"
+					  },
+					{
+					  string: navigator.userAgent,
+					  subString: "Firefox",
+					  identity: "Firefox"
+					  },
+					{
+					  string: navigator.vendor,
+					  subString: "Camino",
+					  identity: "Camino"
+					  },
+					{// for newer Netscapes (6+)
+					   string: navigator.userAgent,
+					   subString: "Netscape",
+					   identity: "Netscape"
+				   },
+					{
+					  string: navigator.userAgent,
+					  subString: "MSIE",
+					  identity: "IE",
+					  versionSearch: "MSIE"
+					  },
+					{
+					  string: navigator.userAgent,
+					  subString: "Gecko",
+					  identity: "Mozilla",
+					  versionSearch: "rv"
+					  },
+					{ // for older Netscapes (4-)
+						string: navigator.userAgent,
+						subString: "Mozilla",
+						identity: "Netscape",
+						versionSearch: "Mozilla"
+					}
+					]
+					};
+	BrowserDetect.init();
+	
+	var browser = BrowserDetect.browser;
+function passQueryAdv(url) {
+   url += "?&cat=" + document.blah.cat.value;
+   url += "&query=" + escape(document.blah.query.value);
+   location.href = url;
+   return false;
+concatParamToAllUrls();}
+
+ 
+    var focusChange = 1;
+    var obj;
+    function checkFocus(h){
+        focusChange = 2;
+    }
+    function checkBlur(h){
+        focusChange = 1;
+        obj = h;
+    }
+    function retainFocus(){
+        if (focusChange==1){
+            obj.focus();
+            if(obj.setSelectionRange){
+                obj.setSelectionRange(obj.value.length, obj.value.length);
+            }else if(obj.createTextRange){
+                var range = obj.createTextRange();
+                range.collapse(true);
+                range.moveEnd('character', obj.value.length);
+                range.moveStart('character', obj.value.length);
+                range.select();
+            }
+        }
+    }
+    </script><style type='text/css'>
+/* *:focus { outline: 0; }
+*:focus { outline: none; }
+*::-moz-focus-inner { border: none;} */
+
+/*New focus styles starts*/
+*:focus{outline-style:dotted;outline-color:#000000;outline-width:1px;} /*put before all such styles*/ 
+html:focus { outline: 0; } /*removed 9* from all*/
+html:focus { outline: none; } 
+#content:focus { outline: 0; } 
+#content:focus { outline: none; } 
+a#main_link:focus { outline: 0; } 
+a#main_link:focus { outline: none; }
+input#submit:focus { outline: 0; } 
+input#submit:focus { outline: none; } 
+input#submit::-moz-focus-inner { border: none;} 
+td.input input:focus{outline:0;}
+td.input input:focus{outline:none;}
+a#main_link::-moz-focus-inner { border: none;}  
+/*IE 9 fix starts*/
+div#links:focus { outline: 0; }  div#links:focus { outline: none; }#new_look_div:focus { outline: none; } #new_look_div:focus { outline: 0; }div#footer:focus { outline: none; } div#footer:focus { outline: 0; }body:focus { outline: none;
+ } body:focus { outline: 0; }table:focus { outline: none; } table:focus { outline: 0;border:none }body { outline: none;border:none; } body { outline: 0; }table { outline: none; } table { outline: 0; }table td:focus{ outline: none; } tab
+le td:focus { outline: 0; } /*IE9 fix ends*/ 
+/*New focus styles ends*/
+
+   body { margin : 0; font : 14px arial, sans-serif; background : url('/graphics/stp_bg.gif') repeat-x top left #fff; }
+   #head { text-align : right; margin : 10px 30px;}
+   #category { float : left; font : 13px verdana;}
+   /*#settings { font : 13px verdana;}*/
+   #head a { color : #0e5398; text-decoration : none; }
+   #head a:hover { color: #448edd; }
+   #head a.active { color : #464646; text-decoration : none; cursor : default; font-weight : bold;}
+   #content { margin : 75px auto 0 auto; text-align : center; width : 100%;}
+#content table tr td { text-align : left; padding : 4px 0; font: 12px verdana, arial, sans-serif; color: #3371d8;}
+#content table tr td span.words_sp { color : #032d5b; }
+#content table tr #tips_td { text-align : right; font-weight : normal; padding-right : 8px;}
+#tips { font-size : 11px; color : #0952a1;}
+#tips:hover { text-decoration : none; }
+   a#main_link img { border-width : 0px; }
+   a#main_link { text-decoration : none; display : block; width : 590px; margin : auto; color : #1261e4; }
+   p#caption { font : 18px verdana, arial, sans-serif; color : #1261e4; margin-top : 25px;}
+   span#green { color : #15b314; display : inline-block; text-decoration:underline;}
+   span#green:hover { color : #15b314; display : inline-block;text-decoration:underline;}
+span.textbox_span { background : url('/graphics/textbox_small.gif') no-repeat top left #fff; display : inline-block; width : 233px; height : 23px;}
+span.textbox_span input { border-width : 0px; background-color : transparent; width : 228px; margin-left : 2px; margin-top : 2px; font : 12px verdana, arial, sans-serif;}
+   form#search_form { margin-top : 24px;}
+   div#enhanced { float : right; font: 11px arial, sans-serif; color : #24478b; margin-right : 125px; }
+* html div#enhanced { margin-right: 65px; width: 66px; }
+   div#links, div#footer { text-align : center; }
+   div#links {color : #1261e4; margin-top : 42px; font: 13px verdana, arial, sans-serif;}
+   div#links a { color : #1261e4; text-decoration : none; }
+   div#links a:hover, div#footer a:hover { text-decoration : underline; }
+   div#footer { font-size : 11px; margin : 20px 0; color : #000;}
+   div#footer a { color : #1261e4;}
+div#footer a:visited { color : #1261e4;}
+ p#caption { font : 18px verdana, arial, sans-serif; color : #1261e4; margin-top : 26px;}
+           td.input { padding : 0px; }
+           td.input input { border : 1px solid #3371d8; width : 228px; padding : 4px 2px 3px 2px; font : 12px verdana, arial, sans-serif; margin : 0px; -moz-border-radius: 4px; -webkit-border-radius: 4px; }
+
+                 #submit1,#submit1:focus,#submit1:active{  width : 88px;
+                            height : 26px;
+                            border: 0px solid transparent;
+                            text-align : center; padding-right : 31px; cursor : pointer;
+                            background-color:transparent;
+                          }
+                #submit_box{
+                           position : relative;
+                           border : 1px solid white;
+                           }
+                #submit_bg{
+                             position : absolute;
+                             width : 88px;
+                             height : 26px;
+                             top : 0px;
+                             left : 0px;
+                            background : transparent  no-repeat 100% 100% url("/graphics/search_green_adv.gif");
+                          }
+               #submit_div{
+                             position : absolute;
+                             top : 0px;
+                             left : 0px;
+
+                          } 
+
+     #lang_div { position : absolute; top : 30px; left : 0px; border : 1px solid #3371D8; background-color : #fff; padding : 5px; width : 150px; -moz-border-radius : 4px; -webkit-border-radius:4px;}
+   #lang_div table tr td { padding : 3px; font-size : 12px; }
+   #lang_div table tr td a { color : #0E5398; }
+   #lang_div table tr td a:hover {text-decoration : none;}
+#ixquick_logo {background: url("/graphics/ixquick_logo_adv.gif") no-repeat; height: 99px; margin: 0 auto; *margin-left:165px; width: 258px;}
+  #ixquick_logo img {margin:83px 0 0 115px;} 
+
+img.jia{
+width: 25px;
+height: 18px;
+background: url("/graphics/asian_lang_home.gif") no-repeat scroll 67% 0 transparent ;
+}
+
+img.han{
+width: 30px;
+height: 18px;
+background: url("/graphics/asian_lang_home.gif") no-repeat scroll 43% 0 transparent ;
+}
+                                                                                                                                             
+img.fan{
+width: 57px;
+height: 18px;
+background: url("/graphics/asian_lang_home.gif") no-repeat scroll 0 0 transparent ;
+}
+
+img.nih{
+width: 54px;
+height: 18px;
+background: url("/graphics/asian_lang_home.gif") no-repeat scroll 111% 0 transparent ;
+}
+
+img.no_line_jia{
+width: 25px;
+height: 18px;
+background: url("/graphics/asian_lang_home.gif") no-repeat scroll 67% 108% transparent ;
+}
+                                                                                                                                             
+img.no_line_han{
+width: 30px;
+height: 18px;
+background: url("/graphics/asian_lang_home.gif") no-repeat scroll 43% 108% transparent ;
+}
+                                                                                                                                             
+img.no_line_fan{
+width: 57px;
+height: 18px;
+background: url("/graphics/asian_lang_home.gif") no-repeat scroll 0 108% transparent ;
+}
+
+img.no_line_nih{
+width: 54px;
+height: 18px;
+background: url("/graphics/asian_lang_home.gif") no-repeat scroll 111% 108% transparent ;
+}
+
+</style>
+</HEAD>
+<body>
+<table width='100%' cellspacing='0' cellpadding='0'> <tr> <td>
+<div id='head'>
+<div id='category'>
+<a id='web' onclick="return setCat('web');"href="/eng/advanced-search.html" class='active addsettings'>Web</a> &nbsp;|&nbsp; <a id='pics' onclick="return setCat('pics');"class="addsettings" href="/eng/advanced-search-pics.html">Images</a> &nbsp;|&nbsp; <a id='video' onclick="return setCat('video');"class="addsettings" href="/eng/advanced-search-video.html">Videos</a> &nbsp;|&nbsp; <a id='phone' onclick="return setCat('phone');"class="addsettings" href="/eng/phone.html">Phone</a>
+</div>
+<div id = "settings"><a class="addsettings" href='/eng/aboutixquick/'>About</a>  &nbsp;|&nbsp; <a href="/eng/" class="linkback addsettings" title="Return to Ixquick's homepage">Home</a>  &nbsp;|&nbsp; <a href='/do/preferences.pl?language_ui=english' class="addsettings">Settings</a> &nbsp;|&nbsp; 
+<a href='/do/preferences.pl?language_ui=english' id='lang' onmouseover='showLang();' onmouseout='hideLang();' class="addsettings">Language</a></div></div>
+<div id='content'>
+<a class="addsettings" href='/eng/protect-privacy.html' id='main_link' onmouseover='addLine()' onmouseout='removeLine()'>
+<p id="ixquick_logo" style="line-height: 10px;cursor:hand;">
+                <img width="183" height="13" alt="Advanced Search" src="/graphics/eng/adv_search_new.gif">
+                </p>
+<p id='caption'>the world's most <span id='green' style='cursor:hand;'>private</span> search engine</p></a>
+<form id="search_form" name="blah" method="POST" action="/do/search" onsubmit="return do_action();"><input type="hidden" value="web" name="cat"><input type="hidden" value="english" name="language"><input type='hidden' name='abp' id='abp' value='-1' />   <table width="490" border="0" cellspacing="0" cellpadding="2" align="center" style="padding-top:11px;">    <tr><td width="4020px"></td><td style='padding-bottom:5px; color:#0952A1;text-align: right; padding: 0 9px 0 0;padding-bottom:4px;'><a href='#' style='color:#0952A1; font-size:11px;' onclick="window.open('/eng/power-search-techniques.html','advanced_tips','width=800,height=600,scrollbars=yes'); return false;" >Advanced Search Tips</a></td></tr>    <tr><td width="243" class="powerrow"><span  onMouseOver="Tip('The results will contain <b>all these</b> words or phrases', WIDTH, 248);">with <font color='#2C2C99'>all</font> the words</span></td><td class="input" width="256"><input type="text" name="all_terms" id="all_words" class="TEXT" onBlur="checkBlur(this)" onFocus="checkFocus(this)"></td></tr>    <tr><td  class="powerrow"><span  onMouseOver="Tip('All these words need to <b>appear together as a phrase</b>, and not scattered about the page.', WIDTH, 248);">with the <font color='#2C2C99'>exact phrase</font></span></td><td class="input"><input type="text" name="exact_phrase" id="exact_phrase_in" class="TEXT" onBlur="checkBlur(this)" onFocus="checkFocus(this)"></td></tr>    <tr id="atleast_one_row"><td  class="powerrow"><span  onMouseOver="Tip('The results will contain <b>at least one of these words</b>', WIDTH, 248);">with <font color='#2C2C99'>at least one</font> of the words</span></td><td class="input"><input type="text" name="atleast_one" id="atleast_one_word" class="TEXT" onBlur="checkBlur(this)" onFocus="checkFocus(this)"></td></tr>    <tr><td  class="powerrow"><span  onMouseOver="Tip('In the results these words <b>must not be present</b>. (Use this in combination with the other fields).', WIDTH, 248);"><font color='#2C2C99'>without</font> the words</span></td><td class="input"><input type="text" name="without_word" id="without_words" class="TEXT" onBlur="checkBlur(this)" onFocus="checkFocus(this)"></td></tr>    <tr id="with_text_in_row"><td class="powerrow"><span  onMouseOver="Tip('Title: <b>page title</b> must contain this text<br>URL: find pages with specified text anywhere <b>within the url</b>', WIDTH, 248);">with text in the</span><img src="/graphics/spacer.gif" width="10" height="5"><select id="text_url" name="text_in" id="text_url" onBlur="checkBlur(this)" onFocus="checkFocus(this)"><option value='title'>title</option>
+<option value='url'>url</option>
+</select></td><td class="input"><input type="text" id="with_text_in" name="with_text" class="TEXT" onBlur="checkBlur(this)" onFocus="checkFocus(this)"></td></tr>    <tr id="advanced_search_domain"><td  class="powerrow"><span  onMouseOver="Tip('The page(s) <b>must be located</b> on this specified computer or on more specific computers.', WIDTH, 248);">at this <font color='#2C2C99'>domain name</font></span></td><td class="input"><input type="text"  id="with_domain_at" name="with_domain" class="TEXT" onBlur="checkBlur(this)" onFocus="checkFocus(this)"></td></tr>    <tr id="with_link_to_row"><td class="powerrow"><span  onMouseOver="Tip('Page <b>must contain a hyperlink</b> for which at least one of the words in the destination address begins with specified text.', WIDTH, 248);">with <font color='#2C2C99'>links to</font> this domain name</span></td><td class="input"> <input type="text" id="with_link_to" name="with_link" class="TEXT" onBlur="checkBlur(this)" onFocus="checkFocus(this)"></td></tr>    <tr id="sort_by_options" style="display:none"><td class="powerrow"><span>sort by</span></td><td><select name="sort_by" style="width:236px;" onBlur="checkBlur(this)" onFocus="checkFocus(this)"><option value='relevance'>relevance</option><option value='date'>date</option></select>
+    <tr id="select_domain_advanced"><td class="powerrow"><span  onMouseOver="Tip('The pages <b>must be located</b> at a .com, .gov etc. server.', WIDTH, 248);">At this <font color='#2C2C99'>type of domain</font> name</span></td><td><select id="domain_select" name="domain_type"  onBlur="checkBlur(this)" onFocus="checkFocus(this)"><option value=''>any</option>
+<option value='au'>au</option>
+<option value='nz'>nz</option>
+<option value='co.uk'>co.uk</option>
+<option value='com'>com</option>
+<option value='gov'>gov</option>
+<option value='net'>net</option>
+<option value='org'>org</option>
+<option value='edu'>edu</option>
+</select></td></tr><tr><td colspan='2'>&nbsp;</td></tr><tr>
+                  <td>&nbsp;</td>
+                  <td>
+                     <div id="enhanced" style="position: absolute; margin-left: 100px;display:none;">
+                        <span style="position: relative; top: -4px;"><br><img height="1" width="1" src="/graphics/spacer.gif">
+                        </span></div>
+                     <div id='submit_box'><div id='submit_bg'>&nbsp;</div>
+                     <div id='submit_div'><input type='submit' value="Search" id='submit1'/> </div></div>
+                  </td>
+               </tr></table></form></div><script language=javascript>setCategoryOnload();change_form_method();</script><div id='links'><a id='addb' href='/eng/download-ixquick-plugin.html' class="addsettings">add to my browser</a> &nbsp;|&nbsp; <a class="addsettings" href='/eng/make-ixquick-your-homepage.html'>Set as homepage</a></div>
+<script>if (browser != 'Browser') {var mesg = 'Add to `'; mesg=mesg.replace('`', browser); eId('addb').innerHTML=mesg;}</script><div id='footer'>&copy; &nbsp;2013 - <a href='/eng/privacy-policy.html' class="addsettings">Privacy</a></div>
+</td> </tr> </table>
+<script language="javascript" type="text/javascript" src="/js/wz_tooltip.js?changed=1356970857"></script>
+<script language="javascript" type="text/javascript" src="/js/abp.js?adType=1&advertiser=1&advertising=1&changed=1356970856"></script>
+<script type='text/javascript'>if (abp) {eId('abp').value='1';}</script> <script language="javascript" type="text/javascript">
+function findPos(obj) { 
+        var curleft = curtop = 0; 
+        if (obj.offsetParent) { 
+            curleft = obj.offsetLeft; 
+            curtop = obj.offsetTop; 
+            while (obj = obj.offsetParent) { 
+                curleft += obj.offsetLeft; curtop += obj.offsetTop; 
+            } 
+        } 
+        return [curleft,curtop]; 
+    }
+    function showLang() { 
+     clearTimeout(langTimeoutId);
+     var lang = eId('lang');
+     var lang_div = eId('lang_div');
+     var offset = findPos(lang);
+     lang_div.style.left = (offset[0] + lang.offsetWidth - 150) + 'px';
+     lang_div.style.display = 'block';
+    }
+    var isLangActive = false; 
+    var langTimeoutId; 
+    function checkAndHideLang() { 
+        if(!isLangActive) { 
+            eId('lang_div').style.display = 'none';
+            isLangActive = false; 
+        } 
+    }
+    function hideLang() { 
+        isLangActive = false; 
+        langTimeoutId = setTimeout('checkAndHideLang()', 1000); 
+    }
+$(document).ready(function(){ concatParamToAllUrls(); });</script>
+ <div id="lang_div" onmouseover="isLangActive = true; clearTimeout(langTimeoutId); " onmouseout="hideLang();" style='display : none;' >
+<table cellspacing='0' cellpadding='0' border='0' width='100%'>
+<tr>
+<td><a class="addsettings" href='/dan/advanced-search.html'>Dansk</a></td>
+<td><a class="addsettings" href='/deu/advanced-search.html'>Deutsch</a></td>
+</tr>
+<tr>
+<td><b>English</b></td>
+<td><a class="addsettings" href='/uk/advanced-search.html'>English UK</a></td>
+</tr>
+<tr>
+<td><a class="addsettings" href='/esp/advanced-search.html'>Espa&ntilde;ol</a></td>
+<td><a class="addsettings" href='/fra/advanced-search.html'>Fran&ccedil;ais</a></td>
+</tr>
+<tr>
+<td><a class="addsettings" href='/ita/advanced-search.html'>Italiano</a></td>
+<td><a class="addsettings" href='/ned/advanced-search.html'>Nederlands</a></td>
+</tr>
+<tr>
+<td><a class="addsettings" href='/nor/advanced-search.html'>Norsk</a></td>
+<td><a class="addsettings" href='/pol/advanced-search.html'>Polski</a></td>
+</tr>
+<tr>
+<td><a class="addsettings" href='/por/advanced-search.html'>Portugu&ecirc;s</a></td>
+<td><a class="addsettings" href='/suo/advanced-search.html'>Suomi</a></td>
+</tr>
+<tr>
+<td><a class="addsettings" href='/sve/advanced-search.html'>Svenska</a></td>
+<td><a class="addsettings" href='/tur/advanced-search.html'>T&uuml;rk&ccedil;e</a></td>
+</tr>
+<tr>
+<td style='padding-bottom: 0px;'><a class="addsettings" href='/jia/advanced-search.html'><img src="/graphics/spacer.gif" class="jia" border="0"> </a></td>
+<td style='padding-bottom: 0px;'><a class="addsettings" href='/nih/advanced-search.html'><img src="/graphics/spacer.gif" class="nih" border="0"> </a></td>
+</tr>
+<tr>
+<td style='padding-bottom: 0px;'><a class="addsettings" href='/fan/advanced-search.html'><img src="/graphics/spacer.gif" class="fan" border="0"> </a></td>
+<td style='padding-bottom: 0px;'><a class="addsettings" href='/han/advanced-search.html'><img src="/graphics/spacer.gif" class="han" border="0"> </a></td>
+</tr>
+</table>
+</div>
+ </body></html>

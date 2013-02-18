@@ -1,0 +1,1136 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="ctl00_Head1"><title>
+	U.S. News - Best Lawyers - Ropes & Gray LLP
+</title><meta name="description" content="View the U.S. News - Best Lawyers profile for Ropes &amp; Gray LLP" />
+    
+    <script type="text/javascript">
+        function doPanelToggle(sender, eventArgs) {
+            var item = eventArgs.get_item();
+            if (item.get_expanded()) {
+                item.collapse();
+                eventArgs.set_cancel(true);
+            }
+        }
+
+        function doPracticeAreaJump(ddl) {
+            var val = ddl.options[ddl.selectedIndex].value
+            if (val != 0) {
+                var a = String.format("practiceArea{0}", val)
+                window.location.hash = a
+            }
+        }
+
+        function pageLoad() {
+            $('#divPracticeAreasPreviewContent').truncateToHeight(200, '...')
+        }
+    </script>
+     
+    
+    <style type="text/css">
+       
+       /* hover and selecion fix */
+        div.RadPanelBar_Default .rpItem .rpGroup .rpLink {background-image: none;}
+
+        div.RadPanelBar_Default .rpItem .rpGroup .rpSelected {background-image: none; color: #000000;}
+        div.RadPanelBar_Default .rpItem .rpGroup .rpExpanded {background-image: none; color: #000000; }
+        div.RadPanelBar_Default .rpItem .rpGroup .rpLink:hover .rpOut {background-image: none; color: #000000;}
+    
+        div.RadPanelBar_Default .rpItem .rpGroup .rpSelected .rpOut {background-image: none; color: #000000;}
+        div.RadPanelBar_Default .rpItem .rpGroup .rpExpanded .rpOut {background-image: none; color: #000000;}
+        div.RadPanelBar .rpLink { cursor:default;}
+
+
+    
+    .lfotyRank  {
+        width: 350px;
+        padding:  5px 5px 5px 5px;
+        text-align: Center;
+        border: 3px solid #0072b2;
+        border-radius: 8px 8px 8px;
+        margin-top: 70px;
+        }
+               
+    
+    div.rankings div.column 
+    {
+    	width: 250px;
+    	float: left;
+    }
+    
+    div.column.leftcolumn
+    {
+        padding-right: 20px; 
+    }
+    
+    div.rankings .rankingcat
+    {
+    	padding-top: 5px;
+    	padding-bottom: 0px;
+    }
+    
+    
+    div.rankings .rankingspec, div.rankings .rankingcat, div.rankings .toggle
+    {
+    	margin-left: -10px;
+    }
+    
+    .rankingspec
+    {
+    	color: #444444 !important;
+        font-size: 13px;
+        line-height: 20px;
+        margin-bottom: 5px;
+    }
+    
+    div.rankings > div.column, div.rankings > div.column
+    {
+    	padding-left: 10px;
+    	margin-right: -10px;
+    }
+    
+    
+    #divMDData td 
+    {
+    	vertical-align: top;
+    }
+    
+    #divMDData .firm_profile_header 
+    {
+    	font-weight: normal;
+    }
+    
+    #divMDData tr td:first-child 
+    {
+    	width: 375px;
+    	text-indent: -10px;
+    	padding-left: 10px;
+    }
+    
+    #divMDData th, #divMDData tr.header
+    {
+    	text-decoration: underline;
+    	font-weight: bold;
+    	text-align: left;
+    }
+    
+    #divMDData
+    {
+    	width: 475px;
+    }
+    
+    #divMDData table
+    {
+    	width: 475px;
+    }
+    
+    tr.spacer
+    {
+    	line-height: 5px;
+    }
+    
+</style>
+<link href="../../../../Styles/dialog.css" rel="Stylesheet" type="text/css" /><link href="../../../../styles/global.css" rel="stylesheet" type="text/css" /><link href="../../../../styles/content.css" rel="Stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.2.min.js"></script>
+
+    <script type='text/javascript' src='/Scripts/jquery-cookie.js'></script>
+    <script type="text/javascript">
+            
+        var inSearchBox = false;
+
+        function checkKeycode(e) {
+            var keycode;
+            if (window.event) {
+                keycode = window.event.keyCode;
+            }
+            else if (e) {
+                keycode = e.which;
+            }
+
+            if (keycode == 13) {
+                if (inSearchBox) {
+                    searchResults(e.value);
+                }
+            }
+        }
+
+        function ClearText(textbox) {
+            if (textbox.id.indexOf("txtLawyerFirmName") != -1) {
+                if (document.getElementById(textbox.id).value == "Firm Name") {
+                    document.getElementById(textbox.id).value = "";
+                    document.getElementById(textbox.id).style.color = '#000000';
+                }
+            }
+            if (textbox.id.indexOf("txtCity") != -1) {
+                if (document.getElementById(textbox.id).value == "City")
+                    document.getElementById(textbox.id).value = "";
+            }
+            if (textbox.id.indexOf("txtZipCode") != -1) {
+                if (document.getElementById(textbox.id).value == "Zip Code")
+                    document.getElementById(textbox.id).value = "";
+            }
+        }
+
+        function TextBoxLoseFocus(textbox) {
+            if (textbox.id.indexOf("txtLawyerFirmName") != -1) {
+                if (document.getElementById(textbox.id).value == "") {
+                    document.getElementById(textbox.id).value = "Firm Name";
+                    document.getElementById(textbox.id).style.color = 'grey';
+                }
+            }
+            if (textbox.id.indexOf("txtCity") != -1) {
+                if (document.getElementById(textbox.id).value == "")
+                    document.getElementById(textbox.id).value = "City";
+            }
+            if (textbox.id.indexOf("txtZipCode") != -1) {
+                if (document.getElementById(textbox.id).value == "")
+                    document.getElementById(textbox.id).value = "Zip Code";
+            }
+        }
+
+        function setInSearch(flag) {
+            inSearchBox = flag;
+        }
+
+    </script>
+
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-946476-2']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+   <script type="text/javascript">
+            $(document).ready(function () {
+                $(".norightclick").live("contextmenu", function (e) {
+                    return false;
+                });
+
+                $('img[src="http://s0.2mdn.net/dot.gif"]').parent().parent().parent().css('margin-left', 'auto').css('margin-right', 'auto');
+            });
+    </script>
+
+    <style type="text/css">
+        .txtSearch
+        {
+            vertical-align:middle;
+        }
+        
+        .navMenuClass
+        {
+        	height:38px;
+        	padding-left:0px;
+        	margin-top:0px;
+        	margin-bottom:0px;
+        }
+        
+        #usnewsMenu li
+        {
+        	float:left;
+        	list-style-type:none;
+        	padding-left:3px;
+        	padding-right:3px;
+        	margin-left:3px;
+        	margin-right:3px;
+        }
+        
+        #usnewsMenu a
+        {
+        	color:white;
+        	text-transform:uppercase;
+        	font-size:12px;
+        	font-weight:400;
+        	font-style:normal;
+        	text-decoration:none;
+        	line-height:16.8px;
+        	font-variant:normal;
+        }
+        
+        #navMenu li
+        {
+        	float:left;
+        	list-style-type:none;
+        	padding-left:6px;
+        	padding-right:6px;
+        	margin-left:3px;
+        	margin-right:3px;
+        	padding-top:12px;
+        	height:33px;
+        }
+        
+        #navMenu a
+        {
+        	color:White;
+        	text-transform:uppercase;
+        	font-family:Verdana;
+        	font-size:14px;
+        	font-weight:700;
+        	font-style:normal;
+        	text-decoration:none;
+        	line-height:19.6px;
+        	font-variant:normal;
+        }
+        
+        #navMenu a:hover,
+        #usnewsMenu a:hover
+        {
+        	color:#F7B11A;
+        }
+        
+        .selectedMenuItem,
+        .selectedMenuItem a
+        {
+        	background-color:White;
+        	color:#444444 !important;
+        	border-radius: 10px 10px 0px 0px;
+        }
+        
+        #foot-copyright.law-foot {
+            background-color: #235983;
+            background-image: -moz-linear-gradient(center bottom , #235983 0%, #317EB9 100%);
+        }
+        .gold-link {
+            color: #F7B11A;
+        }
+        
+        #foot-copyright {
+            border-top: 1px solid #777777;
+            clear: both;
+            color: #FFFFFF;
+            float: left;
+            margin-top: 20px;
+            padding: 15px 0;
+            text-align: center;
+            width: 100%;
+        }
+        
+        #usn-foot {
+            background-color: #444444;
+            font-size: 11px;
+            overflow: auto;
+            padding: 20px 0 0;
+            margin-top:40px;
+        }
+        
+        #foot-content {
+            margin: 0 auto;
+            width: 1030px;
+        }
+
+        #foot-rankings {
+            background-color: #3C3C3C;
+            border-radius: 5px 5px 5px 5px;
+            color: #AAAAAA;
+            float: left;
+            line-height: 1.6em;
+            padding: 15px;
+            width: 170px;
+        }
+        
+        #foot-rankings #rank-img {
+            display: block;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+        
+        #usn-foot .foot-title {
+            color: #AAAAAA;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        
+        #usn-foot ul {
+            border-left: 1px solid #555555;
+            float: left;
+            height: 200px;
+            margin-left: 10px;
+            padding: 0 10px;
+        }
+        #usn-foot ul li {
+            margin-bottom: 5px;
+            list-style: none outside none;
+        }
+        
+        #usn-foot ul li a {
+            color: #CCCCCC;
+            padding-bottom: 2px;
+        }
+        
+        #twit-link, #face-link {
+            padding-left: 21px;
+        }
+        
+        #twit-link {
+            background: url("http://bestlawfirms.usnews.com/Images/Footer/foot-twit.png") no-repeat scroll 0 0 transparent;
+        }
+        
+         #face-link {
+            background: url("http://bestlawfirms.usnews.com/Images/Footer/foot-face.png") no-repeat scroll 0 0 transparent;
+        }
+        
+        #usn-foot .last-list {
+            border-right: 1px solid #555555;
+            margin-right: 10px;
+            padding-right: 20px;
+        }
+        
+        #foot-weekly {
+            background: none repeat scroll 0 0 #3C3C3C;
+            border-radius: 5px 5px 5px 5px;
+            color: #AAAAAA;
+            float: left;
+            line-height: 1.6em;
+            padding: 12px;
+            width: 200px;
+        }
+        
+        #foot-weekly #weekly-img {
+            display: block;
+            text-align:center;
+            height: 74px;
+            margin: 4px 12px 4px 4px;
+        }
+        
+        #foot-colleges, #foot-animals {
+            color: #CCCCCC;
+            float: left;
+            height: 74px;
+            margin-top: 15px;
+            padding: 0 10px;
+            width: 143px;
+        }
+        
+        #colleges-img, #animals-img {
+            box-shadow: 0 0 6px #000000;
+            float: left;
+            height: 56px;
+            margin-right: 10px;
+        }
+        
+        #nav-search a {
+            background: url("http://bestlawfirms.usnews.com/images/nav-search.png") no-repeat scroll 0 0 transparent;
+            display: block;
+            height: 12px;
+            width: 12px;
+            margin-left:0px;
+            padding-left:0px;
+            margin-top:4px;
+        }
+        
+        #nav-search a:hover,
+        #nav-search a:focus
+        {
+        	background-position: 0 -12px;
+        }
+        
+        a 
+        {
+        	color: #005EA6;
+            text-decoration: none;
+        }
+    </style>
+<link href="/WebResource.axd?d=6X3_PMXhTSwNCVjhKsRv2YxyeyJCaRZ0Ui7x8F0ncVc2ynwJZskdZ17Mb8-fwM0HNbzQbcnClklTMof1YE5rAiD8aJW401NURIuglYSEPKlSUSeAKvsLaKXE9vc4R9VBbc9jOgL0ipWtJ8mlJkA9AQ2&amp;t=634907478598153312" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=2uSoSFSvYshz_rYdLWdx3LNsFfemJn6g1ky917SiMMs81yQuCcK8LCY9kYJEuETNaC0jUj7Pn3zilqRopo5bE6BCS2kyQSezBYdcYj_AQ6Czz0u0wQ4P2gvwDcI_-XOUkQNdNtuUauZzy5gBkrIB1ZLQ-lKnP1Ukeyj53yw6HHU1&amp;t=634907478598153312" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=CK53l002HSWX1Bp4Gj-rVMGqCwt6cdM6L1kHqQZs0n-p1lX7vg1_vVIB3X0lsCFUeANMZyWfg0tBgydLChwV3KpH2IVNPRP-n9onal1aYtCO-1bNK55CPHUtPtJgFgagl-9Y-ysWUZtjcbcZXWbnvA2&amp;t=634907478598153312" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=5kByVBmnlbmJHt-WZGyMobUHqMhuQVnuXGbiPQEUI4z6EUu4HCdiyAtbPhPRDR-RpMfi0uPLRA8awZ0_-vkvBUyt1fXq_fqMbvJyHNxyRUTsaTPSWjuJH6uaDLopR0nvTugUqp9BvX38b1AH8LGqsVAQhWrYlHSklS14DuvMVcc1&amp;t=634907478598153312" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=VQ8GeyFUWHpzeYe-Mj4_3Lj4xvuQdi315ROg-hThX9BIl6F8EgKSl8HsC1-3wVsVnykyEBLBUB736ZtVrCsmzGSjs154Y29BoU3LFy15br5RWZHz658AK7v4GwnfZiTtbYAfjxmvndVCKJV9vpg-3w2&amp;t=634907478598153312" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=JliB0jEAHhOkSXviZ0wPPuIDYlE_is5iCRBuBAmPZ0yUOqiZEIXUOmqX1VC_AmfjKNOfRbQpynq95Vt08p8_IQ2iPEtSY9Ow_yDUHRPL3T3JAmBv0cV-zRVrGQ_T5Yb9sP8Z24tqqP4b5cdsxd_c9MeLO49Tdi3Eoz94vu9LT9Q1&amp;t=634907478598153312" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=F2gG2LSRbFmfLJUnvEXrjcZmE5YYoR6Vd5J6OczTGskDOrynpJZbZUhP2lTu0R-eNfomZV8AhcAb9Dsm__1tKurZNb3eAdeMBic50EpG-4I4KdCqpsusbDVP_O6o658NadFXgAcX270E24A_ju1JaWnKEncImR4MALX4Hg0TnOU1&amp;t=634907478055116365" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /></head>
+<body style="margin: 0px;">
+    <form name="aspnetForm" method="post" action="?firm_id=17395&amp;tab=Testimonials" id="aspnetForm">
+<div>
+<input type="hidden" name="ctl00_RadScriptManager1_TSM" id="ctl00_RadScriptManager1_TSM" value="" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTk2OTE5OTc4OQ9kFgJmD2QWBAIBD2QWAgIBDxYCHgdjb250ZW50BT5WaWV3IHRoZSBVLlMuIE5ld3MgLSBCZXN0IExhd3llcnMgcHJvZmlsZSBmb3IgUm9wZXMgJiBHcmF5IExMUGQCAw9kFgQCGQ8WAh4HVmlzaWJsZWcWAgIBDxYCHgRUZXh0BVE8YSBocmVmPScvJz5CZXN0IExhdyBGaXJtczwvYT4gPiA8YSBocmVmPScvU2VhcmNoLmFzcHgnPlNlYXJjaDwvYT4gPiBGaXJtIFByb2ZpbGVkAhsPZBYqZg8PFgIfAWhkZAIBDw8WAh8BaGRkAgIPDxYCHwIFdUV2YW4gTWljaGFlbHMgYXQgPGEgaHJlZj0nbWFpbHRvOmVtaWNoYWVsc0BiZXN0bGF3eWVycy5jb20nPmVtaWNoYWVsc0BiZXN0bGF3eWVycy5jb208L2E+IDxici8+IE9yIGF0ICg4MDMpIDY0NC0xODEzLmRkAgMPZBYOAgEPD2QWAh4FY2xhc3MFCG5hdl9pdGVtZAIDDw9kFgIfAwUIbmF2X2l0ZW1kAgUPD2QWAh8DBQhuYXZfaXRlbWQCBw8PZBYCHwMFCG5hdl9pdGVtZAIJDw8WAh8BZxYCHwMFCG5hdl9pdGVtZAILDw9kFgIfAwUIbmF2X2l0ZW1kAg0PD2QWAh8DBRBjdXJyZW50X25hdl9pdGVtZAIEDxYCHwFnFgxmDw8WAh8BZ2RkAgEPDxYCHwFoZGQCAg8PFgIfAWdkZAIDDw8WAh8BZ2RkAgQPDxYCHwFoZGQCBQ8PFgIfAWgWAh8DBQhuYXZfaXRlbWQCBQ8PFgIfAgUZUm9wZXMmbmJzcDsmYW1wOyBHcmF5IExMUGRkAgYPZBYCAgEPDxYCHghJbWFnZVVybAUtaHR0cDovL2Jlc3RsYXd5ZXJzLmNvbS9zZWFyY2gvbG9nb3MvMTczOTUuZ2lmZGQCBw8PFgIfAWhkFgICAw8WAh8CZGQCCA8PFgIfAWhkFgICAQ8WAh8BaGQCCQ8PFgIfAWhkFgICBw8WAh8BZxYCAgMPDxYCHgtOYXZpZ2F0ZVVybAUsL0Zpcm1wcm9maWxlLmFzcHg/ZmlybV9pZD0xNzM5NSZ0YWI9UmFua2luZ3NkZAIKDw8WAh8BaGRkAgsPDxYCHwFoZBYCAgUPFgIfAWcWAgIDDw8WAh8FBTIvZmlybXByb2ZpbGUuYXNweD9maXJtX2lkPTE3Mzk1JnRhYj1saXN0ZWQtbGF3eWVyc2RkAgwPDxYCHwFoZBYCAgUPFgIfAWcWAgIDDw8WAh8FBSsvZmlybXByb2ZpbGUuYXNweD9maXJtX2lkPTE3Mzk1JnRhYj1jb250YWN0ZGQCDQ8PFgIfAWhkFgICAw8PFgIfAgWaITxkaXYgaWQ9J2Rpdk9mZmljZXNQcmV2aWV3JyBzdHlsZT0nd2lkdGg6NTAwcHg7IHBhZGRpbmctYm90dG9tOjJweDsgZGlzcGxheTpibG9jazsnID48ZGl2IHN0eWxlPSdjbGVhcjpib3RoOyBoZWlnaHQ6MHB4Oyc+Jm5ic3A7PC9kaXY+PGRpdiBzdHlsZT0nZmxvYXQ6bGVmdDsgcGFkZGluZy1yaWdodDoyMHB4Oyc+PGRpdiBzdHlsZT0nd2lkdGg6MjQwcHg7cGFkZGluZy1ib3R0b206IDEwcHg7Zm9udC1mYW1pbHk6dmVyZGFuYTtmb250LXNpemU6MTNweDtjb2xvcjojNjY2NjY2O2xpbmUtaGVpZ2h0OjE4LjJweDsnPjxoNSBzdHlsZT0iY29sb3I6IzQ0NDQ0NDtmb250LXNpemU6MTRweDtmb250LXdlaWdodDpib2xkO2xpbmUtaGVpZ2h0OjIwcHg7bWFyZ2luLWJvdHRvbTo1cHg7Ij5Cb3N0b24sIE1BPC9oNT4NClBydWRlbnRpYWwgVG93ZXI8YnI+DQo4MDAgQm95bHN0b24gU3RyZWV0PGJyPg0KMDIxOTktMzYwMDxicj4NClBob25lOiA2MTctOTUxLTcwMDA8YnI+DQo8L2Rpdj48ZGl2IHN0eWxlPSd3aWR0aDoyNDBweDtwYWRkaW5nLWJvdHRvbTogMTBweDtmb250LWZhbWlseTp2ZXJkYW5hO2ZvbnQtc2l6ZToxM3B4O2NvbG9yOiM2NjY2NjY7bGluZS1oZWlnaHQ6MTguMnB4Oyc+PGg1IHN0eWxlPSJjb2xvcjojNDQ0NDQ0O2ZvbnQtc2l6ZToxNHB4O2ZvbnQtd2VpZ2h0OmJvbGQ7bGluZS1oZWlnaHQ6MjBweDttYXJnaW4tYm90dG9tOjVweDsiPkNoaWNhZ28sIElMPC9oNT4NCjExMSBTb3V0aCBXYWNrZXIgRHJpdmUsIDQ2dGggRmxvb3I8YnI+DQo2MDYwNi00MzA5PGJyPg0KUGhvbmU6IDMxMi04NDUtMTIwMDxicj4NCjwvZGl2PjwvZGl2PjxkaXYgc3R5bGU9J2Zsb2F0OmxlZnQ7Jz48ZGl2IHN0eWxlPSd3aWR0aDoyNDBweDtwYWRkaW5nLWJvdHRvbTogMTBweDtmb250LWZhbWlseTp2ZXJkYW5hO2ZvbnQtc2l6ZToxM3B4O2NvbG9yOiM2NjY2NjY7bGluZS1oZWlnaHQ6MTguMnB4Oyc+PGg1IHN0eWxlPSJjb2xvcjojNDQ0NDQ0O2ZvbnQtc2l6ZToxNHB4O2ZvbnQtd2VpZ2h0OmJvbGQ7bGluZS1oZWlnaHQ6MjBweDttYXJnaW4tYm90dG9tOjVweDsiPkVhc3QgUGFsbyBBbHRvLCBDQTwvaDU+DQoxOTAwIFVuaXZlcnNpdHkgQXZlbnVlLCBTaXh0aCBGbG9vcjxicj4NCjk0MzAzLTIyODQ8YnI+DQpQaG9uZTogNjUwLTYxNy00MDAwPGJyPg0KPC9kaXY+PGRpdiBzdHlsZT0nd2lkdGg6MjQwcHg7cGFkZGluZy1ib3R0b206IDEwcHg7Zm9udC1mYW1pbHk6dmVyZGFuYTtmb250LXNpemU6MTNweDtjb2xvcjojNjY2NjY2O2xpbmUtaGVpZ2h0OjE4LjJweDsnPjxoNSBzdHlsZT0iY29sb3I6IzQ0NDQ0NDtmb250LXNpemU6MTRweDtmb250LXdlaWdodDpib2xkO2xpbmUtaGVpZ2h0OjIwcHg7bWFyZ2luLWJvdHRvbTo1cHg7Ij5OZXcgWW9yaywgTlk8L2g1Pg0KMTIxMSBBdmVudWUgb2YgdGhlIEFtZXJpY2FzPGJyPg0KMTAwMzYtODcwNDxicj4NClBob25lOiAyMTItNTk2LTkwMDA8YnI+DQo8L2Rpdj48L2Rpdj48ZGl2IHN0eWxlPSdjbGVhcjpib3RoOyBoZWlnaHQ6MXB4Oyc+Jm5ic3A7PC9kaXY+PGRpdiBzdHlsZT0nY2xlYXI6Ym90aDsgZGlzcGxheTpibG9jazsgJz4gICAgICAgPGltZyBzcmM9J2h0dHA6Ly9iZXN0bGF3ZmlybXMudXNuZXdzLmNvbS9pbWFnZXMvYnVsbGV0LmdpZic+Jm5ic3A7Jm5ic3A7PGEgaHJlZj0nL2Zpcm1wcm9maWxlLmFzcHg/ZmlybV9pZD0xNzM5NSZ0YWI9b2ZmaWNlcycgPiBzZWUgY29tcGxldGUgbGlzdGluZzwvYT4gICA8L2Rpdj48L2Rpdj48ZGl2IGlkPSdkaXZPZmZpY2VzQ29udGVudCcgc3R5bGU9J2Rpc3BsYXk6bm9uZTsgd2lkdGg6NTAwcHg7Jz48ZGl2IHN0eWxlPSdjbGVhcjpib3RoOyBoZWlnaHQ6MHB4Oyc+Jm5ic3A7PC9kaXY+PGRpdiBzdHlsZT0nZmxvYXQ6bGVmdDsgcGFkZGluZy1yaWdodDoyMHB4Oyc+PGRpdiBzdHlsZT0nd2lkdGg6MjQwcHg7cGFkZGluZy1ib3R0b206IDEwcHg7Zm9udC1mYW1pbHk6dmVyZGFuYTtmb250LXNpemU6MTNweDtjb2xvcjojNjY2NjY2O2xpbmUtaGVpZ2h0OjE4LjJweDsnPjxoNSBzdHlsZT0iY29sb3I6IzQ0NDQ0NDtmb250LXNpemU6MTRweDtmb250LXdlaWdodDpib2xkO2xpbmUtaGVpZ2h0OjIwcHg7bWFyZ2luLWJvdHRvbTo1cHg7Ij5Cb3N0b24sIE1BPC9oNT4NClBydWRlbnRpYWwgVG93ZXI8YnI+DQo4MDAgQm95bHN0b24gU3RyZWV0PGJyPg0KMDIxOTktMzYwMDxicj4NClBob25lOiA2MTctOTUxLTcwMDA8YnI+DQo8L2Rpdj48ZGl2IHN0eWxlPSd3aWR0aDoyNDBweDtwYWRkaW5nLWJvdHRvbTogMTBweDtmb250LWZhbWlseTp2ZXJkYW5hO2ZvbnQtc2l6ZToxM3B4O2NvbG9yOiM2NjY2NjY7bGluZS1oZWlnaHQ6MTguMnB4Oyc+PGg1IHN0eWxlPSJjb2xvcjojNDQ0NDQ0O2ZvbnQtc2l6ZToxNHB4O2ZvbnQtd2VpZ2h0OmJvbGQ7bGluZS1oZWlnaHQ6MjBweDttYXJnaW4tYm90dG9tOjVweDsiPkNoaWNhZ28sIElMPC9oNT4NCjExMSBTb3V0aCBXYWNrZXIgRHJpdmUsIDQ2dGggRmxvb3I8YnI+DQo2MDYwNi00MzA5PGJyPg0KUGhvbmU6IDMxMi04NDUtMTIwMDxicj4NCjwvZGl2PjxkaXYgc3R5bGU9J3dpZHRoOjI0MHB4O3BhZGRpbmctYm90dG9tOiAxMHB4O2ZvbnQtZmFtaWx5OnZlcmRhbmE7Zm9udC1zaXplOjEzcHg7Y29sb3I6IzY2NjY2NjtsaW5lLWhlaWdodDoxOC4ycHg7Jz48aDUgc3R5bGU9ImNvbG9yOiM0NDQ0NDQ7Zm9udC1zaXplOjE0cHg7Zm9udC13ZWlnaHQ6Ym9sZDtsaW5lLWhlaWdodDoyMHB4O21hcmdpbi1ib3R0b206NXB4OyI+RWFzdCBQYWxvIEFsdG8sIENBPC9oNT4NCjE5MDAgVW5pdmVyc2l0eSBBdmVudWUsIFNpeHRoIEZsb29yPGJyPg0KOTQzMDMtMjI4NDxicj4NClBob25lOiA2NTAtNjE3LTQwMDA8YnI+DQo8L2Rpdj48L2Rpdj48ZGl2IHN0eWxlPSdmbG9hdDpsZWZ0Oyc+PGRpdiBzdHlsZT0nd2lkdGg6MjQwcHg7cGFkZGluZy1ib3R0b206IDEwcHg7Zm9udC1mYW1pbHk6dmVyZGFuYTtmb250LXNpemU6MTNweDtjb2xvcjojNjY2NjY2O2xpbmUtaGVpZ2h0OjE4LjJweDsnPjxoNSBzdHlsZT0iY29sb3I6IzQ0NDQ0NDtmb250LXNpemU6MTRweDtmb250LXdlaWdodDpib2xkO2xpbmUtaGVpZ2h0OjIwcHg7bWFyZ2luLWJvdHRvbTo1cHg7Ij5OZXcgWW9yaywgTlk8L2g1Pg0KMTIxMSBBdmVudWUgb2YgdGhlIEFtZXJpY2FzPGJyPg0KMTAwMzYtODcwNDxicj4NClBob25lOiAyMTItNTk2LTkwMDA8YnI+DQo8L2Rpdj48ZGl2IHN0eWxlPSd3aWR0aDoyNDBweDtwYWRkaW5nLWJvdHRvbTogMTBweDtmb250LWZhbWlseTp2ZXJkYW5hO2ZvbnQtc2l6ZToxM3B4O2NvbG9yOiM2NjY2NjY7bGluZS1oZWlnaHQ6MTguMnB4Oyc+PGg1IHN0eWxlPSJjb2xvcjojNDQ0NDQ0O2ZvbnQtc2l6ZToxNHB4O2ZvbnQtd2VpZ2h0OmJvbGQ7bGluZS1oZWlnaHQ6MjBweDttYXJnaW4tYm90dG9tOjVweDsiPlNhbiBGcmFuY2lzY28sIENBPC9oNT4NClRocmVlIEVtYmFyY2FkZXJvIENlbnRlcjxicj4NCjk0MTExLTQwMDY8YnI+DQpQaG9uZTogNDE1LTMxNS02MzAwPGJyPg0KPC9kaXY+PGRpdiBzdHlsZT0nd2lkdGg6MjQwcHg7cGFkZGluZy1ib3R0b206IDEwcHg7Zm9udC1mYW1pbHk6dmVyZGFuYTtmb250LXNpemU6MTNweDtjb2xvcjojNjY2NjY2O2xpbmUtaGVpZ2h0OjE4LjJweDsnPjxoNSBzdHlsZT0iY29sb3I6IzQ0NDQ0NDtmb250LXNpemU6MTRweDtmb250LXdlaWdodDpib2xkO2xpbmUtaGVpZ2h0OjIwcHg7bWFyZ2luLWJvdHRvbTo1cHg7Ij5XYXNoaW5ndG9uLCBEQzwvaDU+DQpPbmUgTWV0cm8gQ2VudGVyLCBTdWl0ZSA5MDA8YnI+DQo3MDAgVHdlbGZ0aCBTdHJlZXQsIE5XPGJyPg0KMjAwMDUtMzk0ODxicj4NClBob25lOiAyMDItNTA4LTQ2MDA8YnI+DQo8L2Rpdj48L2Rpdj48ZGl2IHN0eWxlPSdjbGVhcjpib3RoOyBoZWlnaHQ6MXB4Oyc+Jm5ic3A7PC9kaXY+PGRpdiBzdHlsZT0nY2xlYXI6Ym90aDsgZGlzcGxheTpibG9jazsnPiAgICAgICA8aW1nIHNyYz0naHR0cDovL2Jlc3RsYXdmaXJtcy51c25ld3MuY29tL2ltYWdlcy9idWxsZXQuZ2lmJz4mbmJzcDsmbmJzcDsgICAgICAgPGEgaHJlZj0nIycgb25DbGljaz0nZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoImRpdk9mZmljZXNDb250ZW50Iikuc3R5bGUuZGlzcGxheT0ibm9uZSI7ICAgICAgICAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgiZGl2T2ZmaWNlc1ByZXZpZXciKS5zdHlsZS5kaXNwbGF5PSJibG9jayI7IHJldHVybiBmYWxzZTsgJz4gICAgICAgY29sbGFwc2UgT2ZmaWNlczwvYT4gICAgPC9kaXY+PC9kaXY+ZGQCDg9kFgQCAQ8WAh8DBS1maXJtX3Byb2ZpbGVfaGVhZGVyIGZpcm1fcHJvZmlsZV9oZWFkZXJfZmlyc3RkAgUPZBYCAgEPFCsAAhQrAAIPFgIeF0VuYWJsZUFqYXhTa2luUmVuZGVyaW5naGQQFgNmAgECAhYDFCsAAg8WBB8CBRlDbGllbnQgQ29tbWVudHMgMjAxMi0yMDEzHghFeHBhbmRlZGdkEBYRZgIBAgICAwIEAgUCBgIHAggCCQIKAgsCDAINAg4CDwIQFhEUKwACDxYIHglCYWNrQ29sb3IJ/Pz8/x8CBdYCPHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFNwZWNpYWx0eSI+TXV0dWFsIEZ1bmRzIExhdzwvc3Bhbj48YnI+PHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFRleHQiPlRoZSBicmVhZHRoIGFuZCBkZXB0aCBvZiBSb3BlcyAmIEdyYXkncyByZWdpc3RlcmVkIGZ1bmQvYWR2aXNlciBwcmFjdGljZSBzZXRzIGl0IGFwYXJ0IGZyb20gaXRzIHBlZXJzLjwvc3Bhbj48YnI+PHAgY2xhc3M9J2Zpcm1Qcm9maWxlQ29tbWVudEF1dGhvcic+Um9iZXJ0IEJvcnpvbmU8c3BhbiBjbGFzcz0nZmlybVByb2ZpbGVDb21tZW50Q29tcGFueSc+UHJvU2hhcmVzIEFkdmlzb3JzIExMQzwvc3Bhbj48L3A+HgdFbmFibGVkaB4EXyFTQgIIZGQUKwACDxYIHwgJ8/Pz/x8CBYQDPHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFNwZWNpYWx0eSI+Q29ycG9yYXRlIExhdzwvc3Bhbj48YnI+PHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFRleHQiPlJvcGVzICYgR3JheSB1bmRlcnN0YW5kcyB0aGUgY2hhbGxlbmdlcyBoeXBlci1ncm93dGggY29tcGFuaWVzIGZhY2UgYW5kIHdhcyBhbiBvdXRzdGFuZGluZyBwYXJ0bmVyIHRocm91Z2hvdXQgdGhlIGVudGlyZSBsaWZlIGN5Y2xlLjwvc3Bhbj48YnI+PHAgY2xhc3M9J2Zpcm1Qcm9maWxlQ29tbWVudEF1dGhvcic+Sm9lIEFybXk8c3BhbiBjbGFzcz0nZmlybVByb2ZpbGVDb21tZW50Q29tcGFueSc+Zm9ybWVybHkgb2YgU2FsaWVudCBTdXJnaWNhbCBUZWNobm9sb2dpZXMsIEluYy48L3NwYW4+PC9wPh8JaB8KAghkZBQrAAIPFggfCAn8/Pz/HwIFhwQ8c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50U3BlY2lhbHR5Ij5Db3Jwb3JhdGUgTGF3PC9zcGFuPjxicj48c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50VGV4dCI+Um9wZXMgJiBHcmF5IHByb3ZpZGVzIGJyZWFkdGggYW5kIGRlcHRoIG9mIGV4cGVydGlzZSBpbiBsaWZlIHNjaWVuY2VzIGFuZCByZWxhdGVkIGNvcnBvcmF0ZSB0cmFuc2FjdGlvbnMsIGlzIGluY3JlZGlibHkgcmVzcG9uc2l2ZSwgYW5kIGhhcyBhIHZlcnkgZGVlcCBwb29sIG9mIHNtYXJ0IGFuZCBwcm9kdWN0aXZlIGFzc29jaWF0ZXMgd2hvIGFyZSBlZmZlY3RpdmVseSBtYW5hZ2VkIGFuZCB0cmFpbmVkIGJ5IHRoZSBwYXJ0bmVycyBhbmQgYWRkIGNsZWFyIHZhbHVlIHRvIGVuZ2FnZW1lbnRzLjwvc3Bhbj48YnI+PHAgY2xhc3M9J2Zpcm1Qcm9maWxlQ29tbWVudEF1dGhvcic+UmljaGFyZCBILiBCcnVkbmljazxzcGFuIGNsYXNzPSdmaXJtUHJvZmlsZUNvbW1lbnRDb21wYW55Jz5CaW9nZW4gSWRlYyBJbmMuPC9zcGFuPjwvcD4fCWgfCgIIZGQUKwACDxYIHwgJ8/Pz/x8CBZUEPHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFNwZWNpYWx0eSI+TXV0dWFsIEZ1bmRzIExhdzwvc3Bhbj48YnI+PHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFRleHQiPlJvcGVzICYgR3JheSBoYXMganVzdGlmaWFibHkgZWFybmVkIGl0cyBzdGVsbGFyIHJlcHV0YXRpb24gaW4gdGhlIGludmVzdG1lbnQgbWFuYWdlbWVudCBhcmVhIHdpdGggaXRzIHN0YXBsZSBvZiBxdWFsaXR5IGF0dG9ybmV5cyBhbmQgaXRzIHByb3Zpc2lvbiBvZiBjb25zaXN0ZW50LCBzb3VuZCBsZWdhbCBhZHZpY2UuIFJvcGVzJyBpbmR1c3RyeSBleHBlcmllbmNlIG9mZmVycyBpdHMgY2xpZW50cyBhIGdvb2QgcGVyc3BlY3RpdmUgb24gaG93IG90aGVycyBhcmUgaGFuZGxpbmcgImN1dHRpbmcgZWRnZSIgbGVnYWwgaXNzdWVzLjwvc3Bhbj48YnI+PHAgY2xhc3M9J2Zpcm1Qcm9maWxlQ29tbWVudEF1dGhvcic+S2VubmV0aCBGYW5nPHNwYW4gY2xhc3M9J2Zpcm1Qcm9maWxlQ29tbWVudENvbXBhbnknPlByb0Z1bmRzIEdyb3VwPC9zcGFuPjwvcD4fCWgfCgIIZGQUKwACDxYIHwgJ/Pz8/x8CBcYFPHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFNwZWNpYWx0eSI+TGl0aWdhdGlvbiAtIEFudGl0cnVzdDwvc3Bhbj48YnI+PHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFRleHQiPkkgaGF2ZSBiZWVuIHdvcmtpbmcgd2l0aCBSb3BlcyAmIEdyYXkgZm9yIG5lYXJseSB0d28geWVhcnMuIFRoZSBBbnRpdHJ1c3QgVGVhbSBpbiBSb3BlcyAmIEdyYXkgaGFzIGJlZW4gcHJvdmlkaW5nIG91ciBjb21wYW55IChIaXRhY2hpLUxHIERhdGEgU3RvcmFnZSkgd2l0aCB0aGUgdmVyeSBjb21wZXRlbnQgbGVnYWwgYWR2aXNvcnkgc2VydmljZXMgd2hpbGUgbWFraW5nIHV0bW9zdCBlZmZvcnRzIHRvIGFjaGlldmUgY29zdC1lZmZlY3RpdmVuZXNzLiAgSSwgYXMgZ2VuZXJhbCBjb3Vuc2VsIGluIGNoYXJnZSBvZiBhbnRpdHJ1c3QgbWF0dGVycywgaGF2ZSBiZWVuIHRydWx5IHNhdGlzZmllZCB3aXRoIFJvcGVzICYgR3JheSwgYW5kIGFtIHJlY29tbWVuZGluZyBteSBmcmllbmRzIHRvIHJlZmVyIHRvIFJvcGVzICYgR3JheSBmb3IgYW55IGFudGl0cnVzdCBsaXRpZ2F0aW9uIG1hdHRlcnMuPC9zcGFuPjxicj48cCBjbGFzcz0nZmlybVByb2ZpbGVDb21tZW50QXV0aG9yJz5IeXVuIChTZWFuKSBOYW1rdW5nPHNwYW4gY2xhc3M9J2Zpcm1Qcm9maWxlQ29tbWVudENvbXBhbnknPkhpdGFjaGkgTEcgRGF0YSBTdG9yYWdlLCBJbmMuPC9zcGFuPjwvcD4fCWgfCgIIZGQUKwACDxYIHwgJ8/Pz/x8CBcIDPHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFNwZWNpYWx0eSI+QW50aXRydXN0IExhdzwvc3Bhbj48YnI+PHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFRleHQiPlJvcGVzICYgR3JheSBhcmUgQ2FibGV2aXNpb24ncyBwcmltYXJ5IGFudGl0cnVzdCBsYXd5ZXJzLiBMZWQgYnkgTWFyayBQb3BvZnNreSwgUm9wZXMgJiBHcmF5IGhhcyBhbiBleGNlbGxlbnQgYW50aXRydXN0IHRlYW0gdGhhdCBpcyByZWFsbHkga25vd2xlZGdlYWJsZSBhYm91dCBhbnRpdHJ1c3QgZG9jdHJpbmUgYW5kIGNhbiBwcm92aWRlIGRldGFpbGVkIGNhc2UtbGF3LWdyb3VuZGVkIGFkdmljZSBhYm91dCBpbXBvcnRhbnQgcXVlc3Rpb25zIG9mIGFudGl0cnVzdCBsYXcuIFRoZXkgYXJlIHZlcnkgcmVzcG9uc2l2ZS4gSSBoaWdobHkgcmVjb21tZW5kIE1hcmsgYW5kIGhpcyB0ZWFtLjwvc3Bhbj48YnI+HwloHwoCCGRkFCsAAg8WCB8ICfz8/P8fAgXhBDxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRTcGVjaWFsdHkiPk11dHVhbCBGdW5kcyBMYXc8L3NwYW4+PGJyPjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRUZXh0Ij5Sb3BlcyAmIEdyYXkgaXMgYSByZWNvZ25pemVkIGxlYWRlciBpbiBwcm92aWRpbmcgbGVnYWwgc2VydmljZXMgdG8gdGhlIG11dHVhbCBmdW5kIGluZHVzdHJ5IGFuZCBncmVhdGx5IGRlc2VydmVzIGl0cyBsZWFkZXJzaGlwIHBvc2l0aW9uLiBJIGZpbmQgdGhhdCBSb3BlcyAmIEdyYXkgbGF3eWVycyBjb25zaXN0ZW50bHkgcHJvdmlkZSBleGNlbGxlbnQgYWR2aWNlIGluIGEgdGltZWx5IGFuZCByZXNwb25zaXZlIG1hbm5lci4gUm9wZXMgJiBHcmF5IGxhd3llcnMgYWxzbyBkZW1vbnN0cmF0ZSBxdWFsaXRpZXMgdGhhdCBJIGZpbmQgaGVscGZ1bCBpbiBteSBkYXktdG8tZGF5IHByYWN0aWNlIGluLWhvdXNlOiBUaGV5IGFyZSBjb29wZXJhdGl2ZSBhbmQgY29sbGVnaWFsIGFuZCBwcmFjdGljYWxseSBvcmllbnRlZCwgYWx3YXlzIHdvcmtpbmcgd2l0aCBhIHNlbnNpdGl2aXR5IHRvIHRoZSBwcmFjdGljYWwgbmVlZHMgb2YgdGhlaXIgYnVzaW5lc3MgY2xpZW50cy48L3NwYW4+PGJyPh8JaB8KAghkZBQrAAIPFggfCAnz8/P/HwIF7wE8c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50U3BlY2lhbHR5Ij5Qcml2YXRlIEZ1bmRzIC8gSGVkZ2UgRnVuZHMgTGF3PC9zcGFuPjxicj48c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50VGV4dCI+TGF1cmVsIEZpdHpQYXRyaWNrIGFuZCBKZXNzaWNhIFRheWxvciBPJ01hcnkgYXJlIGV4Y2VsbGVudCBsYXd5ZXJzIHNwZWNpYWxpemluZyBpbiB0aGUgaGVkZ2UgZnVuZCBwcmFjdGljZS48L3NwYW4+PGJyPh8JaB8KAghkZBQrAAIPFggfCAn8/Pz/HwIFzgE8c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50U3BlY2lhbHR5Ij5Db21tZXJjaWFsIExpdGlnYXRpb248L3NwYW4+PGJyPjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRUZXh0Ij5Sb3BlcyBkb2VzIGFuIGVmZmVjdGl2ZSBhbmQgdGhvcm91Z2ggam9iLiBUaGV5IGFyZSB3ZWxsLXN0YWZmZWQgYW5kIHZlcnkgcmVzcG9uc2l2ZS48L3NwYW4+PGJyPh8JaB8KAghkZBQrAAIPFggfCAnz8/P/HwIFtAI8c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50U3BlY2lhbHR5Ij5MaXRpZ2F0aW9uIC0gSW50ZWxsZWN0dWFsIFByb3BlcnR5PC9zcGFuPjxicj48c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50VGV4dCI+Um9wZXMgJiBHcmF5IGhhdmUgYW4gZXhjZWxsZW50IGxpdGlnYXRpb24gdGVhbXMgdGhhdCB1bmRlcnN0YW5kcyB0aGUgbGF3LCB0aGUgZmFjdHMgYW5kIHRlY2hub2xvZ3ksIHRoZSBhcHBsaWNhdGlvbiBvZiB0aGUgbGF3IHRvIHRoZSBmYWN0cywgYW5kIHByb3ZpZGUgcHJhZ21hdGljIHNvbHV0aW9ucy48L3NwYW4+PGJyPh8JaB8KAghkZBQrAAIPFggfCAn8/Pz/HwIF7wE8c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50U3BlY2lhbHR5Ij5MaXRpZ2F0aW9uIC0gSW50ZWxsZWN0dWFsIFByb3BlcnR5PC9zcGFuPjxicj48c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50VGV4dCI+Um9wZXMgJiBHcmF5IGFyZSBub3Qgb25seSBhbiBpbm5vdmF0aXZlIGZpcm0sIGJ1dCB0aGV5IGFyZSBvbiB0aGUgbG9va291dCBmb3IgdGhlIGJlc3QgcG9zc2libGUgb3V0Y29tZS48L3NwYW4+PGJyPh8JaB8KAghkZBQrAAIPFggfCAnz8/P/HwIFwwM8c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50U3BlY2lhbHR5Ij5MaXRpZ2F0aW9uIC0gQW50aXRydXN0PC9zcGFuPjxicj48c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50VGV4dCI+Um9wZXMgJiBHcmF5IGFyZSBsZWFkIGNvdW5zZWwgZm9yIHVzIGluIGNvbm5lY3Rpb24gd2l0aCBhIGNvbnN1bWVyIGJhc2VkIGFudGktdHJ1c3QgY2xhc3MgYWN0aW9uLiAgVGhleSBoYXZlIGJlZW4gZXhjZWVkaW5nbHkgb3JnYW5pemVkIGluIG1hbmFnaW5nIHRoZSBjYXNlIGFuZCBoYXZlIGhlbHBlZCB1cyBwcm9jdXJlIHF1aXRlIGEgZ29vZCBhcnJhbmdlbWVudCByZWdhcmRpbmcgZS1kaXNjb3ZlcnkgY29zdHMuIFRoZWlyIGRyYWZ0aW5nIGlzIGV4Y2VsbGVudCBhbmQgd2UgaGF2ZSBiZWVuIG1vcmUgdGhhbiBzYXRpc2ZpZWQgd2l0aCBhbGwgb2YgdGhlaXIgYnJpZWZzLjwvc3Bhbj48YnI+HwloHwoCCGRkFCsAAg8WCB8ICfz8/P8fAgXGATxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRTcGVjaWFsdHkiPkxpdGlnYXRpb24gLSBBbnRpdHJ1c3Q8L3NwYW4+PGJyPjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRUZXh0Ij5Sb3BlcyAmIEdyYXkgaXMgZWZmZWN0aXZlIGZpcm0gdGhhdCBoYXMgYSBjcmVhdGl2ZSBhbmQgdGhvdWdodGZ1bCBhcHByb2FjaC48L3NwYW4+PGJyPh8JaB8KAghkZBQrAAIPFggfCAnz8/P/HwIFvAE8c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50U3BlY2lhbHR5Ij5QYXRlbnQgTGF3PC9zcGFuPjxicj48c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50VGV4dCI+VGhlIHJlc3BvbnNpdmVuZXNzIGFuZCBhdHRlbnRpb24gdG8gZGV0YWlsIGJ5IFJvcGVzICYgR3JheSBpcyBzZWNvbmQgdG8gbm9uZS48L3NwYW4+PGJyPh8JaB8KAghkZBQrAAIPFggfCAn8/Pz/HwIFwwI8c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50U3BlY2lhbHR5Ij5QYXRlbnQgTGF3PC9zcGFuPjxicj48c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50VGV4dCI+Um9wZXMgJiBHcmF5IGlzIGEgZmlybSBvZiB2ZXJ5IGNvbXBldGVudCB0ZWNobmljYWwgZXhwZXJ0cyB3aG8gYWxzbyB1bmRlcnN0YW5kIGhvdyB0byBuYXZpZ2F0ZSB0aGUgZXZlci1jaGFuZ2luZyBpbnRlbGxlY3R1YWwgcHJvcGVydHkvcGF0ZW50IGxlZ2FsIGxhbmRzY2FwZSB0byBwcm92aWRlIHByYWN0aWNhbCBhZHZpY2UgYW5kIHN1cGVyaW9yIHdvcmsgcHJvZHVjdC48L3NwYW4+PGJyPh8JaB8KAghkZBQrAAIPFggfCAnz8/P/HwIFxAI8c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50U3BlY2lhbHR5Ij5QYXRlbnQgTGF3PC9zcGFuPjxicj48c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50VGV4dCI+Um9wZXMgJiBHcmF5IGlzIHZlcnkgcmVzcG9uc2l2ZSBpbiB0dXJuaW5nIGFyb3VuZCB3b3JrIHByb2R1Y3QuIFRoZSBmaXJtIGlzIHdlbGwtbWFuYWdlZCBhbmQgYWNjb21tb2RhdGluZyB0byBjbGllbnQgbmVlZHMgb24gYmlsbGluZyBhbmQgc2VydmljZSBtYXR0ZXJzLiBUaGUgYXR0b3JuZXlzIGFyZSBjb21wZXRlbnQgb24gbGVnYWwgYW5kIHRlY2huaWNhbCBpc3N1ZXMuPC9zcGFuPjxicj4fCWgfCgIIZGQUKwACDxYIHwgJ/Pz8/x8CBZICPHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFNwZWNpYWx0eSI+UGF0ZW50IExhdzwvc3Bhbj48YnI+PHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFRleHQiPldlIHJlbHkgZXh0ZW5zaXZlbHkgb24gdGhlIHBhdGVudCBwcm9zZWN1dGlvbiBncm91cCBhdCBSb3BlcyAmIEdyYXkgaW4gTmV3IFlvcmsuICBUaGUgZ3JvdXAgaXMgdG9wLW5vdGNoIHdpdGggdmVyeSBzb3BoaXN0aWNhdGVkIGxlZ2FsIGFuZCB0ZWNobmljYWwgdW5kZXJzdGFuZGluZy48L3NwYW4+PGJyPh8JaB8KAghkZA8WEWZmZmZmZmZmZmZmZmZmZmZmFgEFdVRlbGVyaWsuV2ViLlVJLlJhZFBhbmVsSXRlbSwgVGVsZXJpay5XZWIuVUksIFZlcnNpb249MjAxMi4zLjEyMDUuNDAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49MTIxZmFlNzgxNjViYTNkNBQrAAIPFgQfAgUZQ2xpZW50IENvbW1lbnRzIDIwMTEtMjAxMh8HaGQQFg5mAgECAgIDAgQCBQIGAgcCCAIJAgoCCwIMAg0WDhQrAAIPFggfCAnz8/P/HwIF+AI8c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50U3BlY2lhbHR5Ij5TZWN1cml0aWVzIC8gQ2FwaXRhbCBNYXJrZXRzIExhdzwvc3Bhbj48YnI+PHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFRleHQiPlJvcGVzICYgR3JheSBoYXMgcHJvdmVuIHZlcnkgZWZmZWN0aXZlIGluIG1hbmFnaW5nIHRvIG91ciBleHBlY3RhdGlvbnMgYW5kIHByb3ZpZGluZyBvdXRzdGFuZGluZyBhZHZpY2Ugb24gcm91dGluZSBhbmQgaXJyZWd1bGFyIGlzc3Vlcy48L3NwYW4+PGJyPjxwIGNsYXNzPSdmaXJtUHJvZmlsZUNvbW1lbnRBdXRob3InPkpvaG4gSGVycm1hbm48c3BhbiBjbGFzcz0nZmlybVByb2ZpbGVDb21tZW50Q29tcGFueSc+Tm92YXZheDwvc3Bhbj48L3A+HwloHwoCCGRkFCsAAg8WCB8ICfz8/P8fAgXtAjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRTcGVjaWFsdHkiPlNlY3VyaXRpZXMgLyBDYXBpdGFsIE1hcmtldHMgTGF3PC9zcGFuPjxicj48c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50VGV4dCI+Um9wZXMgJiBHcmF5IGlzIG91ciAiZ28tdG8iIGZpcm0gaW4gdGhpcyBhcmVhLiAgVGhlIGZpcm0gaXMgdmVyeSBzdHJvbmcsIHByYWN0aWNhbCwgY3JlYXRpdmUsIGFuZCBjb3N0LWNvbnNjaW91cy48L3NwYW4+PGJyPjxwIGNsYXNzPSdmaXJtUHJvZmlsZUNvbW1lbnRBdXRob3InPlJvYmVydCBBLiAgTGljaHQ8c3BhbiBjbGFzcz0nZmlybVByb2ZpbGVDb21tZW50Q29tcGFueSc+QmlvZ2VuIElkZWMgSW5jLjwvc3Bhbj48L3A+HwloHwoCCGRkFCsAAg8WCB8ICfPz8/8fAgXkAjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRTcGVjaWFsdHkiPkJpb3RlY2hub2xvZ3kgTGF3PC9zcGFuPjxicj48c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50VGV4dCI+Um9wZXMgJiBHcmF5IGhhcyBhIHZlcnkga25vd2xlZGdlYWJsZSBhbmQgcmVzcG9uc2l2ZSB0ZWFtIHRoYXQgaXMgd2VsbCB2ZXJzZWQgaW4gYWxsIGFzcGVjdHMgb2YgYmlvdGVjaCByZXByZXNlbnRhdGlvbi48L3NwYW4+PGJyPjxwIGNsYXNzPSdmaXJtUHJvZmlsZUNvbW1lbnRBdXRob3InPlJvYmVydCBBLiAgTGljaHQ8c3BhbiBjbGFzcz0nZmlybVByb2ZpbGVDb21tZW50Q29tcGFueSc+QmlvZ2VuIElkZWMgSW5jLjwvc3Bhbj48L3A+HwloHwoCCGRkFCsAAg8WCB8ICfz8/P8fAgWnAjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRTcGVjaWFsdHkiPk11dHVhbCBGdW5kcyBMYXc8L3NwYW4+PGJyPjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRUZXh0Ij5JIGhhdmUgdGhlIHV0bW9zdCBjb25maWRlbmNlIGluIHRoZSB0ZWFtIGF0IFJvcGVzIHdpdGggd2hpY2ggd2Ugd29yay48L3NwYW4+PGJyPjxwIGNsYXNzPSdmaXJtUHJvZmlsZUNvbW1lbnRBdXRob3InPlRyaXAgUHVyY2VsbDxzcGFuIGNsYXNzPSdmaXJtUHJvZmlsZUNvbW1lbnRDb21wYW55Jz5CQiZUIEZ1bmRzPC9zcGFuPjwvcD4fCWgfCgIIZGQUKwACDxYIHwgJ8/Pz/x8CBfICPHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFNwZWNpYWx0eSI+TXV0dWFsIEZ1bmRzIExhdzwvc3Bhbj48YnI+PHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFRleHQiPlJvcGVzICYgR3JheSBjb21iaW5lcyB0aGUgcmVzb3VyY2VzIGFuZCBrbm93bGVkZ2UgYmFzZSBvZiBhIGxhcmdlIGZpcm0gd2l0aCB0aGUgcGVyc29uYWwgc2VydmljZSBsZXZlbCBvZiBhIHNtYWxsIGZpcm0uPC9zcGFuPjxicj48cCBjbGFzcz0nZmlybVByb2ZpbGVDb21tZW50QXV0aG9yJz5BZGFtIFNoYXBpcm88c3BhbiBjbGFzcz0nZmlybVByb2ZpbGVDb21tZW50Q29tcGFueSc+U3RvbmUgSGFyYm9yIEludmVzdG1lbnQgUGFydG5lcnMgTFA8L3NwYW4+PC9wPh8JaB8KAghkZBQrAAIPFggfCAn8/Pz/HwIFpQI8c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50U3BlY2lhbHR5Ij5MZXZlcmFnZWQgQnV5b3V0cyBhbmQgUHJpdmF0ZSBFcXVpdHkgTGF3PC9zcGFuPjxicj48c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50VGV4dCI+Um9wZXMgJiBHcmF5IGlzIGV4dHJlbWVseSBrbm93bGVkZ2VhYmxlIGFuZCByZXNwZWN0ZWQgd2l0aGluIHByaXZhdGUgZXF1aXR5IGxhdy4gIERhdmlkIENoYXBpbiBhbmQgaGlzIHRlYW0gaGF2ZSBwcm9kdWNlZCBub3RoaW5nIGJ1dCBoaWdoLXF1YWxpdHkgd29yay48L3NwYW4+PGJyPh8JaB8KAghkZBQrAAIPFggfCAnz8/P/HwIFnAI8c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50U3BlY2lhbHR5Ij5Qcml2YXRlIEZ1bmRzIC8gSGVkZ2UgRnVuZHMgTGF3PC9zcGFuPjxicj48c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50VGV4dCI+Um9wZXMgaGFzIGEgdmVyeSBzdHJvbmcgcHJpdmF0ZSBmdW5kIHByYWN0aWNlLCBhbmQgaXMgb25lIG9mIG91ciBnby10byBmaXJtcy4gIFRoZXkgaGF2ZSBjcmVhdGVkIGEgcGFydGljdWxhcmx5IHN0cm9uZyBjdWx0dXJlIG9mIGNsaWVudCByZXNwb25zaXZlbmVzcy48L3NwYW4+PGJyPh8JaB8KAghkZBQrAAIPFggfCAn8/Pz/HwIFsQI8c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50U3BlY2lhbHR5Ij5TZWN1cml0aWVzIC8gQ2FwaXRhbCBNYXJrZXRzIExhdzwvc3Bhbj48YnI+PHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFRleHQiPlJvcGVzICYgR3JheSBpcyBhIGdyZWF0IGxhdyBmaXJtIHdpdGggdGhlIGV4cGVydGlzZSBuZWVkZWQgYnkgYSBwdWJsaWMgY29tcGFueS4gIFRoZSBmaXJtIGhhcyBkZWVwIHJlc291cmNlcyBhbmQgYW4gdW5kZXJzdGFuZGluZyBvZiBidXNpbmVzcyB0aGF0IGRyaXZlcyB0b3dhcmRzIHNvbHV0aW9ucy48L3NwYW4+PGJyPh8JaB8KAghkZBQrAAIPFggfCAnz8/P/HwIFpgE8c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50U3BlY2lhbHR5Ij5TZWN1cml0aWVzIC8gQ2FwaXRhbCBNYXJrZXRzIExhdzwvc3Bhbj48YnI+PHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFRleHQiPlJvcGVzICYgR3JheSBpcyBhbiBleGNlbGxlbnQgZmlybTwvc3Bhbj48YnI+HwloHwoCCGRkFCsAAg8WCB8ICfz8/P8fAgWrATxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRTcGVjaWFsdHkiPkxpdGlnYXRpb24gLSBJbnRlbGxlY3R1YWwgUHJvcGVydHk8L3NwYW4+PGJyPjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRUZXh0Ij5Sb3BlcyAmIEdyYXkgaGFzIGdvb2QgSVAgZXhwZXJpZW5jZS48L3NwYW4+PGJyPh8JaB8KAghkZBQrAAIPFggfCAnz8/P/HwIF5QE8c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50U3BlY2lhbHR5Ij5MaXRpZ2F0aW9uIC0gSW50ZWxsZWN0dWFsIFByb3BlcnR5PC9zcGFuPjxicj48c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50VGV4dCI+Um9wZXMgJiBHcmF5IGlzIHZlcnkgY29zdCBjb25zY2lvdXMgYW5kIGVmZmVjdGl2ZSBhdCBpZGVudGlmeWluZyBwaXZvdGFsIGlzc3VlcyBpbiBsaXRpZ2F0aW9uLjwvc3Bhbj48YnI+HwloHwoCCGRkFCsAAg8WCB8ICfz8/P8fAgWABDxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRTcGVjaWFsdHkiPkxpdGlnYXRpb24gLSBJbnRlbGxlY3R1YWwgUHJvcGVydHk8L3NwYW4+PGJyPjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRUZXh0Ij5Sb3BlcyAmIEdyYXkgaXMgYW4gZXhjZWxsZW50LCBvbmUtc3RvcCBJUCBmaXJtIHRoYXQgaGFzIHRoZSBicmVhZHRoIG9mIHRhbGVudCwgZXhwZXJpZW5jZSwgYW5kIHVuZGVyc3RhbmRpbmcgb2YgYSBob3N0IG9mIGlzc3VlcyB0aGF0IGFyZSBhbmNpbGxhcnkgdG8gbW9kZXJuIGRheSBJUCBsaXRpZ2F0aW9uLS1hbnRpdHJ1c3QsIHVuZmFpciBjb21wZXRpdGlvbiB3b3JrLCBsaWNlbnNpbmcsIHlvdSBuYW1lIGl0LiAgRm9yIGEgbGFyZ2UgZmlybSwgdGhleSBkbyBhIHZlcnkgbmljZSBqb2Igb2Ygd29ya2luZyB3aXRoIHRoZSBjbGllbnQgdG8gY29udHJvbCBjb3N0cyBhbmQgbWF4aW1pemUgdGhlIGVmZmVjdGl2ZW5lc3Mgb2YgdGhlaXIgd29yayBwcm9kdWN0Ljwvc3Bhbj48YnI+HwloHwoCCGRkFCsAAg8WCB8ICfPz8/8fAgXPATxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRTcGVjaWFsdHkiPlBhdGVudCBMYXc8L3NwYW4+PGJyPjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRUZXh0Ij5Sb3BlcyAmIEdyYXkgZWZmZWN0aXZlbHkgaGFuZGxlcyBpbnRlbGxlY3R1YWwgcHJvcGVydHkgZHVlIGRpbGlnZW5jZSBmb3IgY29ycG9yYXRlIHRyYW5zYWN0aW9ucy48L3NwYW4+PGJyPh8JaB8KAghkZBQrAAIPFggfCAn8/Pz/HwIFngE8c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50U3BlY2lhbHR5Ij5UcmFkZW1hcmsgTGF3PC9zcGFuPjxicj48c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50VGV4dCI+Um9wZXMgJiBHcmF5IGxhd3llcnMgYXJlIHZlcnkga25vd2xlZGdlYWJsZS48L3NwYW4+PGJyPh8JaB8KAghkZA8WDmZmZmZmZmZmZmZmZmZmFgEFdVRlbGVyaWsuV2ViLlVJLlJhZFBhbmVsSXRlbSwgVGVsZXJpay5XZWIuVUksIFZlcnNpb249MjAxMi4zLjEyMDUuNDAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49MTIxZmFlNzgxNjViYTNkNBQrAAIPFgQfAgUZQ2xpZW50IENvbW1lbnRzIDIwMTAtMjAxMR8HaGQQFgxmAgECAgIDAgQCBQIGAgcCCAIJAgoCCxYMFCsAAg8WCB8ICfPz8/8fAgWaAzxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRTcGVjaWFsdHkiPkNvbW1lcmNpYWwgTGl0aWdhdGlvbjwvc3Bhbj48YnI+PHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFRleHQiPlRoZSBmaXJtJ3MgZXhwZXJ0aXNlIGluIHBhcnRpY3VsYXIgcHJhY3RpY2UgYXJlYXMgaXMgb3V0c3RhbmRpbmcgYW5kIGhhcyBiZWVuLCBpbiBteSBvcGluaW9uLCBvdXRjb21lIGRldGVybWluYXRpdmUgaW4gc2V2ZXJhbCBzaWduaWZpY2FudCBsaXRpZ2F0aW9uIG1hdHRlcnMuPC9zcGFuPjxicj48cCBjbGFzcz0nZmlybVByb2ZpbGVDb21tZW50QXV0aG9yJz5DaGFybGVzIEthbGxlbmJhY2g8c3BhbiBjbGFzcz0nZmlybVByb2ZpbGVDb21tZW50Q29tcGFueSc+SGVhcnRsYW5kIFBheW1lbnQgU3lzdGVtczwvc3Bhbj48L3A+HwloHwoCCGRkFCsAAg8WCB8ICfz8/P8fAgWjAjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRTcGVjaWFsdHkiPkludGVsbGVjdHVhbCBQcm9wZXJ0eSBMYXc8L3NwYW4+PGJyPjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRUZXh0Ij5Sb3BlcyAmIEdyYXkgaGFzIGJlZW4gb3VyIGdvLXRvIGZpcm0gZm9yIHBhdGVudCBtYXR0ZXJzIGZvciBtb3JlIHRoYW4gMTAgeWVhcnMsIGFuZCB0aGUgZmlybSB2ZXJ5IGFkZXB0bHkgcHJvdmlkZXMgdXMgd2l0aCBtZWFuaW5nZnVsIHN0cmF0ZWdpYyBhbmQgcHJhY3RpY2FsIGFkdmljZS48L3NwYW4+PGJyPh8JaB8KAghkZBQrAAIPFggfCAnz8/P/HwIF8AI8c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50U3BlY2lhbHR5Ij5JbnRlbGxlY3R1YWwgUHJvcGVydHkgTGF3PC9zcGFuPjxicj48c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50VGV4dCI+Um9wZXMgJiBHcmF5IGlzIGEgdGVycmlmaWMgZmlybS4gIEl0IGhhcyBsYXd5ZXJzIHdobyBhcmUgY29uc2lzdGVudGx5IHRlY2huaWNhbGx5IGV4Y2VsbGVudCwgcmVzcG9uc2l2ZSwgYW5kIHBlcnNvbmFibGUuPC9zcGFuPjxicj48cCBjbGFzcz0nZmlybVByb2ZpbGVDb21tZW50QXV0aG9yJz5EYW5pZWwgSC4gSGFpbmVzPHNwYW4gY2xhc3M9J2Zpcm1Qcm9maWxlQ29tbWVudENvbXBhbnknPkdlbnp5bWUgQ29ycG9yYXRpb248L3NwYW4+PC9wPh8JaB8KAghkZBQrAAIPFggfCAn8/Pz/HwIFxAI8c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50U3BlY2lhbHR5Ij5JbnRlbGxlY3R1YWwgUHJvcGVydHkgTGF3PC9zcGFuPjxicj48c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50VGV4dCI+Um9wZXMgJiBHcmF5J3MgdGVjaG5pY2FsIGV4cGVydGlzZSBpcyB3aWRlIHJhbmdpbmcgdG8gcHJvdmlkZSBzcGVjaWZpY2l0eSBpbiBtYW55IGRpc3RpbmN0IGFyZWFzLCB3aGljaCBhbGxvd3MgbW9yZSB0aW1lIHRvIGZvY3VzIG9uIGFjdHVhbCBsZWdhbCBpc3N1ZXMgcmF0aGVyIHRoYW4gd2FzdGluZyB0aW1lIHRlYWNoaW5nIHRlY2hub2xvZ3kuPC9zcGFuPjxicj4fCWgfCgIIZGQUKwACDxYIHwgJ8/Pz/x8CBdMCPHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFNwZWNpYWx0eSI+SW50ZWxsZWN0dWFsIFByb3BlcnR5IExhdzwvc3Bhbj48YnI+PHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFRleHQiPlRoZSBJbnRlbGxlY3R1YWwgUHJvcGVydHkgZ3JvdXAgYXQgUm9wZXMgJiBHcmF5IGlzIHRvcCBub3RjaCB3aXRoIGEgdmVyeSBzb3BoaXN0aWNhdGVkIHByYWN0aWNlLjwvc3Bhbj48YnI+PHAgY2xhc3M9J2Zpcm1Qcm9maWxlQ29tbWVudEF1dGhvcic+QnJpYW4gSC4gV2F5PHNwYW4gY2xhc3M9J2Zpcm1Qcm9maWxlQ29tbWVudENvbXBhbnknPkFsdGVyYSBDb3Jwb3JhdGlvbjwvc3Bhbj48L3A+HwloHwoCCGRkFCsAAg8WCB8ICfz8/P8fAgWoAzxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRTcGVjaWFsdHkiPkludGVsbGVjdHVhbCBQcm9wZXJ0eSBMYXc8L3NwYW4+PGJyPjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRUZXh0Ij5KaW0gTXllcnMgYXQgUm9wZXMgJiBHcmF5IGlzIGFuIGV4Y2VwdGlvbmFsIGF0dG9ybmV5LiAgSGUgaXMgYSBnaWZ0ZWQgbGF3eWVyIHdpdGggYSBwcmFjdGljYWwgYnVzaW5lc3MgYXBwcm9hY2ggdG8gcHJvYmxlbSBzb2x2aW5nLiAgSSBhbSBkZWxpZ2h0ZWQgdG8gaGF2ZSBoaW0gYW5kIFJvcGVzIGJ5IG15IHNpZGUuPC9zcGFuPjxicj48cCBjbGFzcz0nZmlybVByb2ZpbGVDb21tZW50QXV0aG9yJz5WaXZpYW4gTWFlc2U8c3BhbiBjbGFzcz0nZmlybVByb2ZpbGVDb21tZW50Q29tcGFueSc+QklEUyBUcmFkaW5nIEwuUC4gPC9zcGFuPjwvcD4fCWgfCgIIZGQUKwACDxYIHwgJ8/Pz/x8CBZAIPHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFNwZWNpYWx0eSI+TGFib3IgTGF3IC0gTWFuYWdlbWVudDwvc3Bhbj48YnI+PHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFRleHQiPkkgaGF2ZSB3b3JrZWQgd2l0aCBSb3BlcyAmIEdyYXkgYXMgb3VyIGNvdW5zZWwsIGluIHRoZSBhcmVhIG9mIExhYm9yICYgRW1wbG95bWVudCBMYXcsIGZvciBvdmVyIDIwIHllYXJzLiAgVGhleSBwcm92aWRlIHNvdW5kIGFkdmljZSBhbmQgd2hlbiB0aGluZ3MgZ2V0IGEgYml0IGNvbXBsaWNhdGVkLCB0aGV5IGFyZSBhYmxlIHRvIHNvcnQgaXQgb3V0IGluIGEgd2F5IHRoYXQgbm90IG9ubHkgbWFrZXMgc2Vuc2UgYnV0IGFsc28gbGVhZHMgdG8gYSBsb2dpY2FsIGFjdGlvbiBwbGFuLiAgVGhlaXIgYXR0b3JuZXlzIGFyZSBleHRyZW1lbHkgd2VsbCBwcmVwYXJlZCBhbmQgdGhleSBhcmUgdGhlIHBlb3BsZSB5b3Ugd2FudCBieSB5b3VyIHNpZGUgd2hlbiBmYWNpbmcgYSBkaWZmaWN1bHQgbGFib3IgcmVsYXRpb25zIHNpdHVhdGlvbi4gIElmIG91ciBhdHRvcm5leSBpcyB1bnN1cmUgb3Igd2FudHMgYSBzZWNvbmQgb3Bpbmlvbiwgc2hlL2hlIHdpbGwgdHVybiB0byBhIGNvbGxlYWd1ZSB3aG8gbWF5IGhhdmUgcmVjZW50IGV4cGVyaWVuY2UgaW4gdGhhdCBwYXJ0aWN1bGFyIGFyZWEuICBXZSB0aGVuIGhhdmUgdGhlIGJlbmVmaXQgb2YgbW9yZSB0aGFuIG9uZSBzbWFydCBhbmQgaGFyZHdvcmtpbmcgYXR0b3JuZXkgb24gb3VyIHRlYW0uICBJbiBzaG9ydCwgSSB3b3VsZCBub3Qgd2FudCB0byB3YW5kZXIgaW4gdGhlIG1pbmVmaWVsZCBvZiBsYWJvciByZWxhdGlvbnMgaW4gdGhlIHllYXIgMjAxMCB3aXRob3V0IHRoZSBzYWdlIGd1aWRhbmNlIGFuZCBjb3Vuc2VsIG9mIFJvcGVzICYgR3JheS48L3NwYW4+PGJyPjxwIGNsYXNzPSdmaXJtUHJvZmlsZUNvbW1lbnRBdXRob3InPkFydGh1ciBNaWxhbm88c3BhbiBjbGFzcz0nZmlybVByb2ZpbGVDb21tZW50Q29tcGFueSc+QmVya3NoaXJlIEhlYWx0aCBTeXN0ZW1zPC9zcGFuPjwvcD4fCWgfCgIIZGQUKwACDxYIHwgJ/Pz8/x8CBeIBPHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFNwZWNpYWx0eSI+TGl0aWdhdGlvbiAtIFBhdGVudDwvc3Bhbj48YnI+PHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFRleHQiPk5vIGZpcm0gaGFzIGEgYmV0dGVyIHJlcHV0YXRpb24gaW4gcGF0ZW50IGRpc3B1dGVzIHRoYW4gUm9wZXMgJiBHcmF5LCBhbmQgdGhlIHJlcHV0YXRpb24gaXMgd2VsbC1kZXNlcnZlZC48L3NwYW4+PGJyPh8JaB8KAghkZBQrAAIPFggfCAnz8/P/HwIFowQ8c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50U3BlY2lhbHR5Ij5NdXR1YWwgRnVuZHMgTGF3PC9zcGFuPjxicj48c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50VGV4dCI+VGhlIHRlYW0gYXQgUm9wZXMgJiBHcmF5IGhhcyBvdXRzdGFuZGluZyBsYXd5ZXJzIHdobyBnbyB0byBncmVhdCBsZW5ndGhzIHRvIGNvbWJpbmUgdGhlaXIgYnJvYWQgYW5kIGRlZXAgbGVnYWwgZXhwZXJ0aXNlIHdpdGggcmVtYXJrYWJsZSB1bmRlcnN0YW5kaW5nIG9mIHRoZWlyIGNsaWVudHMnIGJ1c2luZXNzZXMgYW5kIHRoZSByZWd1bGF0b3J5IGVudmlyb25tZW50IGluIHdoaWNoIHRoZXkgb3BlcmF0ZS4gIEluIG15IHBlcnNvbmFsIGV4cGVyaWVuY2Ugd2l0aCB0aGUgZmlybSBvdmVyIHRoZSBsYXN0IGVpZ2h0IHllYXJzLCBJIGhhdmUgZm91bmQgdGhlbSBleHRyZW1lbHkgcmVzcG9uc2l2ZSwgYXR0ZW50aXZlIHRvIGRldGFpbCwgaW5jcmVkaWJseSBpbnRlbGxpZ2VudCwgYW5kIGFibGUgdG8gYWRhcHQgcXVpY2tseSB0byBtYXJrZXQgZXZlbnRzLjwvc3Bhbj48YnI+HwloHwoCCGRkFCsAAg8WCB8ICfz8/P8fAgXeATxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRTcGVjaWFsdHkiPk11dHVhbCBGdW5kcyBMYXc8L3NwYW4+PGJyPjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRUZXh0Ij5Sb3BlcyBhbmQgR3JheSBpcyBvbmUgb2YgdGhlIGNvdW50cnkncyBmb3JlbW9zdCBmaXJtcyBwcm92aWRpbmcgY291bnNlbCB0byB0aGUgYXNzZXQgbWFuYWdlbWVudCBpbmR1c3RyeS48L3NwYW4+PGJyPh8JaB8KAghkZBQrAAIPFggfCAnz8/P/HwIF4QM8c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50U3BlY2lhbHR5Ij5NdXR1YWwgRnVuZHMgTGF3PC9zcGFuPjxicj48c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50VGV4dCI+Um9wZXMgJiBHcmF5IGhhcyBhbiBleGNlcHRpb25hbCBjb21iaW5hdGlvbiBvZiBhIHN0cm9uZyBvdmVyYWxsIHRlYW0gd2l0aCBhIHN0cm9uZyBsZWFkZXIsIEFsYW4gUHJpZXN0LCB3aXRoIHN1cHBvcnQgZnJvbSBBbHlzc2EgQWxiZXJ0ZWxsaSBhbmQgb3RoZXJzLiAgVGhleSBoYXZlIGluZHVzdHJ5IGtub3dsZWRnZSwga25vd2xlZGdlIG9mIHRoZSBsYXcsIGFuZCBhIGNvbW1pdG1lbnQgdG8gY2xpZW50cy48L3NwYW4+PGJyPjxwIGNsYXNzPSdmaXJtUHJvZmlsZUNvbW1lbnRBdXRob3InPkRhdmUgRXJuZTxzcGFuIGNsYXNzPSdmaXJtUHJvZmlsZUNvbW1lbnRDb21wYW55Jz5Cb2FyZCBvZiBEaXJlY3RvcnMgb2YgQXJ0aXNhbiBGdW5kczwvc3Bhbj48L3A+HwloHwoCCGRkFCsAAg8WCB8ICfz8/P8fAgXmAjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRTcGVjaWFsdHkiPlZlbnR1cmUgQ2FwaXRhbCBMYXcgPC9zcGFuPjxicj48c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50VGV4dCI+U2NvdHQgJiBSb3BlcyBhcmUgdmVyeSBrbm93bGVkZ2VhYmxlIGFuZCBjYXBhYmxlLiAgVGhlaXIgcGFydG5lcnNoaXAgaXMgYnJvdWdodCBpbiB0byBkZWFsIHdpdGggdGhlIG1vc3QgY29tcGxleCBpc3N1ZXMuPC9zcGFuPjxicj48cCBjbGFzcz0nZmlybVByb2ZpbGVDb21tZW50QXV0aG9yJz5CcnlhbiBHaXJhdWRvPHNwYW4gY2xhc3M9J2Zpcm1Qcm9maWxlQ29tbWVudENvbXBhbnknPkxlZXJpbmsgU3dhbm4gTExDPC9zcGFuPjwvcD4fCWgfCgIIZGQPFgxmZmZmZmZmZmZmZmYWAQV1VGVsZXJpay5XZWIuVUkuUmFkUGFuZWxJdGVtLCBUZWxlcmlrLldlYi5VSSwgVmVyc2lvbj0yMDEyLjMuMTIwNS40MCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj0xMjFmYWU3ODE2NWJhM2Q0DxYDZmZmFgEFdVRlbGVyaWsuV2ViLlVJLlJhZFBhbmVsSXRlbSwgVGVsZXJpay5XZWIuVUksIFZlcnNpb249MjAxMi4zLjEyMDUuNDAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49MTIxZmFlNzgxNjViYTNkNGQWBmYPDxYEHwIFGUNsaWVudCBDb21tZW50cyAyMDEyLTIwMTMfB2dkFiJmDw8WCB8ICfz8/P8fAgXWAjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRTcGVjaWFsdHkiPk11dHVhbCBGdW5kcyBMYXc8L3NwYW4+PGJyPjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRUZXh0Ij5UaGUgYnJlYWR0aCBhbmQgZGVwdGggb2YgUm9wZXMgJiBHcmF5J3MgcmVnaXN0ZXJlZCBmdW5kL2FkdmlzZXIgcHJhY3RpY2Ugc2V0cyBpdCBhcGFydCBmcm9tIGl0cyBwZWVycy48L3NwYW4+PGJyPjxwIGNsYXNzPSdmaXJtUHJvZmlsZUNvbW1lbnRBdXRob3InPlJvYmVydCBCb3J6b25lPHNwYW4gY2xhc3M9J2Zpcm1Qcm9maWxlQ29tbWVudENvbXBhbnknPlByb1NoYXJlcyBBZHZpc29ycyBMTEM8L3NwYW4+PC9wPh8JaB8KAghkZAIBDw8WCB8ICfPz8/8fAgWEAzxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRTcGVjaWFsdHkiPkNvcnBvcmF0ZSBMYXc8L3NwYW4+PGJyPjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRUZXh0Ij5Sb3BlcyAmIEdyYXkgdW5kZXJzdGFuZHMgdGhlIGNoYWxsZW5nZXMgaHlwZXItZ3Jvd3RoIGNvbXBhbmllcyBmYWNlIGFuZCB3YXMgYW4gb3V0c3RhbmRpbmcgcGFydG5lciB0aHJvdWdob3V0IHRoZSBlbnRpcmUgbGlmZSBjeWNsZS48L3NwYW4+PGJyPjxwIGNsYXNzPSdmaXJtUHJvZmlsZUNvbW1lbnRBdXRob3InPkpvZSBBcm15PHNwYW4gY2xhc3M9J2Zpcm1Qcm9maWxlQ29tbWVudENvbXBhbnknPmZvcm1lcmx5IG9mIFNhbGllbnQgU3VyZ2ljYWwgVGVjaG5vbG9naWVzLCBJbmMuPC9zcGFuPjwvcD4fCWgfCgIIZGQCAg8PFggfCAn8/Pz/HwIFhwQ8c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50U3BlY2lhbHR5Ij5Db3Jwb3JhdGUgTGF3PC9zcGFuPjxicj48c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50VGV4dCI+Um9wZXMgJiBHcmF5IHByb3ZpZGVzIGJyZWFkdGggYW5kIGRlcHRoIG9mIGV4cGVydGlzZSBpbiBsaWZlIHNjaWVuY2VzIGFuZCByZWxhdGVkIGNvcnBvcmF0ZSB0cmFuc2FjdGlvbnMsIGlzIGluY3JlZGlibHkgcmVzcG9uc2l2ZSwgYW5kIGhhcyBhIHZlcnkgZGVlcCBwb29sIG9mIHNtYXJ0IGFuZCBwcm9kdWN0aXZlIGFzc29jaWF0ZXMgd2hvIGFyZSBlZmZlY3RpdmVseSBtYW5hZ2VkIGFuZCB0cmFpbmVkIGJ5IHRoZSBwYXJ0bmVycyBhbmQgYWRkIGNsZWFyIHZhbHVlIHRvIGVuZ2FnZW1lbnRzLjwvc3Bhbj48YnI+PHAgY2xhc3M9J2Zpcm1Qcm9maWxlQ29tbWVudEF1dGhvcic+UmljaGFyZCBILiBCcnVkbmljazxzcGFuIGNsYXNzPSdmaXJtUHJvZmlsZUNvbW1lbnRDb21wYW55Jz5CaW9nZW4gSWRlYyBJbmMuPC9zcGFuPjwvcD4fCWgfCgIIZGQCAw8PFggfCAnz8/P/HwIFlQQ8c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50U3BlY2lhbHR5Ij5NdXR1YWwgRnVuZHMgTGF3PC9zcGFuPjxicj48c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50VGV4dCI+Um9wZXMgJiBHcmF5IGhhcyBqdXN0aWZpYWJseSBlYXJuZWQgaXRzIHN0ZWxsYXIgcmVwdXRhdGlvbiBpbiB0aGUgaW52ZXN0bWVudCBtYW5hZ2VtZW50IGFyZWEgd2l0aCBpdHMgc3RhcGxlIG9mIHF1YWxpdHkgYXR0b3JuZXlzIGFuZCBpdHMgcHJvdmlzaW9uIG9mIGNvbnNpc3RlbnQsIHNvdW5kIGxlZ2FsIGFkdmljZS4gUm9wZXMnIGluZHVzdHJ5IGV4cGVyaWVuY2Ugb2ZmZXJzIGl0cyBjbGllbnRzIGEgZ29vZCBwZXJzcGVjdGl2ZSBvbiBob3cgb3RoZXJzIGFyZSBoYW5kbGluZyAiY3V0dGluZyBlZGdlIiBsZWdhbCBpc3N1ZXMuPC9zcGFuPjxicj48cCBjbGFzcz0nZmlybVByb2ZpbGVDb21tZW50QXV0aG9yJz5LZW5uZXRoIEZhbmc8c3BhbiBjbGFzcz0nZmlybVByb2ZpbGVDb21tZW50Q29tcGFueSc+UHJvRnVuZHMgR3JvdXA8L3NwYW4+PC9wPh8JaB8KAghkZAIEDw8WCB8ICfz8/P8fAgXGBTxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRTcGVjaWFsdHkiPkxpdGlnYXRpb24gLSBBbnRpdHJ1c3Q8L3NwYW4+PGJyPjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRUZXh0Ij5JIGhhdmUgYmVlbiB3b3JraW5nIHdpdGggUm9wZXMgJiBHcmF5IGZvciBuZWFybHkgdHdvIHllYXJzLiBUaGUgQW50aXRydXN0IFRlYW0gaW4gUm9wZXMgJiBHcmF5IGhhcyBiZWVuIHByb3ZpZGluZyBvdXIgY29tcGFueSAoSGl0YWNoaS1MRyBEYXRhIFN0b3JhZ2UpIHdpdGggdGhlIHZlcnkgY29tcGV0ZW50IGxlZ2FsIGFkdmlzb3J5IHNlcnZpY2VzIHdoaWxlIG1ha2luZyB1dG1vc3QgZWZmb3J0cyB0byBhY2hpZXZlIGNvc3QtZWZmZWN0aXZlbmVzcy4gIEksIGFzIGdlbmVyYWwgY291bnNlbCBpbiBjaGFyZ2Ugb2YgYW50aXRydXN0IG1hdHRlcnMsIGhhdmUgYmVlbiB0cnVseSBzYXRpc2ZpZWQgd2l0aCBSb3BlcyAmIEdyYXksIGFuZCBhbSByZWNvbW1lbmRpbmcgbXkgZnJpZW5kcyB0byByZWZlciB0byBSb3BlcyAmIEdyYXkgZm9yIGFueSBhbnRpdHJ1c3QgbGl0aWdhdGlvbiBtYXR0ZXJzLjwvc3Bhbj48YnI+PHAgY2xhc3M9J2Zpcm1Qcm9maWxlQ29tbWVudEF1dGhvcic+SHl1biAoU2VhbikgTmFta3VuZzxzcGFuIGNsYXNzPSdmaXJtUHJvZmlsZUNvbW1lbnRDb21wYW55Jz5IaXRhY2hpIExHIERhdGEgU3RvcmFnZSwgSW5jLjwvc3Bhbj48L3A+HwloHwoCCGRkAgUPDxYIHwgJ8/Pz/x8CBcIDPHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFNwZWNpYWx0eSI+QW50aXRydXN0IExhdzwvc3Bhbj48YnI+PHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFRleHQiPlJvcGVzICYgR3JheSBhcmUgQ2FibGV2aXNpb24ncyBwcmltYXJ5IGFudGl0cnVzdCBsYXd5ZXJzLiBMZWQgYnkgTWFyayBQb3BvZnNreSwgUm9wZXMgJiBHcmF5IGhhcyBhbiBleGNlbGxlbnQgYW50aXRydXN0IHRlYW0gdGhhdCBpcyByZWFsbHkga25vd2xlZGdlYWJsZSBhYm91dCBhbnRpdHJ1c3QgZG9jdHJpbmUgYW5kIGNhbiBwcm92aWRlIGRldGFpbGVkIGNhc2UtbGF3LWdyb3VuZGVkIGFkdmljZSBhYm91dCBpbXBvcnRhbnQgcXVlc3Rpb25zIG9mIGFudGl0cnVzdCBsYXcuIFRoZXkgYXJlIHZlcnkgcmVzcG9uc2l2ZS4gSSBoaWdobHkgcmVjb21tZW5kIE1hcmsgYW5kIGhpcyB0ZWFtLjwvc3Bhbj48YnI+HwloHwoCCGRkAgYPDxYIHwgJ/Pz8/x8CBeEEPHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFNwZWNpYWx0eSI+TXV0dWFsIEZ1bmRzIExhdzwvc3Bhbj48YnI+PHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFRleHQiPlJvcGVzICYgR3JheSBpcyBhIHJlY29nbml6ZWQgbGVhZGVyIGluIHByb3ZpZGluZyBsZWdhbCBzZXJ2aWNlcyB0byB0aGUgbXV0dWFsIGZ1bmQgaW5kdXN0cnkgYW5kIGdyZWF0bHkgZGVzZXJ2ZXMgaXRzIGxlYWRlcnNoaXAgcG9zaXRpb24uIEkgZmluZCB0aGF0IFJvcGVzICYgR3JheSBsYXd5ZXJzIGNvbnNpc3RlbnRseSBwcm92aWRlIGV4Y2VsbGVudCBhZHZpY2UgaW4gYSB0aW1lbHkgYW5kIHJlc3BvbnNpdmUgbWFubmVyLiBSb3BlcyAmIEdyYXkgbGF3eWVycyBhbHNvIGRlbW9uc3RyYXRlIHF1YWxpdGllcyB0aGF0IEkgZmluZCBoZWxwZnVsIGluIG15IGRheS10by1kYXkgcHJhY3RpY2UgaW4taG91c2U6IFRoZXkgYXJlIGNvb3BlcmF0aXZlIGFuZCBjb2xsZWdpYWwgYW5kIHByYWN0aWNhbGx5IG9yaWVudGVkLCBhbHdheXMgd29ya2luZyB3aXRoIGEgc2Vuc2l0aXZpdHkgdG8gdGhlIHByYWN0aWNhbCBuZWVkcyBvZiB0aGVpciBidXNpbmVzcyBjbGllbnRzLjwvc3Bhbj48YnI+HwloHwoCCGRkAgcPDxYIHwgJ8/Pz/x8CBe8BPHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFNwZWNpYWx0eSI+UHJpdmF0ZSBGdW5kcyAvIEhlZGdlIEZ1bmRzIExhdzwvc3Bhbj48YnI+PHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFRleHQiPkxhdXJlbCBGaXR6UGF0cmljayBhbmQgSmVzc2ljYSBUYXlsb3IgTydNYXJ5IGFyZSBleGNlbGxlbnQgbGF3eWVycyBzcGVjaWFsaXppbmcgaW4gdGhlIGhlZGdlIGZ1bmQgcHJhY3RpY2UuPC9zcGFuPjxicj4fCWgfCgIIZGQCCA8PFggfCAn8/Pz/HwIFzgE8c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50U3BlY2lhbHR5Ij5Db21tZXJjaWFsIExpdGlnYXRpb248L3NwYW4+PGJyPjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRUZXh0Ij5Sb3BlcyBkb2VzIGFuIGVmZmVjdGl2ZSBhbmQgdGhvcm91Z2ggam9iLiBUaGV5IGFyZSB3ZWxsLXN0YWZmZWQgYW5kIHZlcnkgcmVzcG9uc2l2ZS48L3NwYW4+PGJyPh8JaB8KAghkZAIJDw8WCB8ICfPz8/8fAgW0AjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRTcGVjaWFsdHkiPkxpdGlnYXRpb24gLSBJbnRlbGxlY3R1YWwgUHJvcGVydHk8L3NwYW4+PGJyPjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRUZXh0Ij5Sb3BlcyAmIEdyYXkgaGF2ZSBhbiBleGNlbGxlbnQgbGl0aWdhdGlvbiB0ZWFtcyB0aGF0IHVuZGVyc3RhbmRzIHRoZSBsYXcsIHRoZSBmYWN0cyBhbmQgdGVjaG5vbG9neSwgdGhlIGFwcGxpY2F0aW9uIG9mIHRoZSBsYXcgdG8gdGhlIGZhY3RzLCBhbmQgcHJvdmlkZSBwcmFnbWF0aWMgc29sdXRpb25zLjwvc3Bhbj48YnI+HwloHwoCCGRkAgoPDxYIHwgJ/Pz8/x8CBe8BPHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFNwZWNpYWx0eSI+TGl0aWdhdGlvbiAtIEludGVsbGVjdHVhbCBQcm9wZXJ0eTwvc3Bhbj48YnI+PHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFRleHQiPlJvcGVzICYgR3JheSBhcmUgbm90IG9ubHkgYW4gaW5ub3ZhdGl2ZSBmaXJtLCBidXQgdGhleSBhcmUgb24gdGhlIGxvb2tvdXQgZm9yIHRoZSBiZXN0IHBvc3NpYmxlIG91dGNvbWUuPC9zcGFuPjxicj4fCWgfCgIIZGQCCw8PFggfCAnz8/P/HwIFwwM8c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50U3BlY2lhbHR5Ij5MaXRpZ2F0aW9uIC0gQW50aXRydXN0PC9zcGFuPjxicj48c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50VGV4dCI+Um9wZXMgJiBHcmF5IGFyZSBsZWFkIGNvdW5zZWwgZm9yIHVzIGluIGNvbm5lY3Rpb24gd2l0aCBhIGNvbnN1bWVyIGJhc2VkIGFudGktdHJ1c3QgY2xhc3MgYWN0aW9uLiAgVGhleSBoYXZlIGJlZW4gZXhjZWVkaW5nbHkgb3JnYW5pemVkIGluIG1hbmFnaW5nIHRoZSBjYXNlIGFuZCBoYXZlIGhlbHBlZCB1cyBwcm9jdXJlIHF1aXRlIGEgZ29vZCBhcnJhbmdlbWVudCByZWdhcmRpbmcgZS1kaXNjb3ZlcnkgY29zdHMuIFRoZWlyIGRyYWZ0aW5nIGlzIGV4Y2VsbGVudCBhbmQgd2UgaGF2ZSBiZWVuIG1vcmUgdGhhbiBzYXRpc2ZpZWQgd2l0aCBhbGwgb2YgdGhlaXIgYnJpZWZzLjwvc3Bhbj48YnI+HwloHwoCCGRkAgwPDxYIHwgJ/Pz8/x8CBcYBPHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFNwZWNpYWx0eSI+TGl0aWdhdGlvbiAtIEFudGl0cnVzdDwvc3Bhbj48YnI+PHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFRleHQiPlJvcGVzICYgR3JheSBpcyBlZmZlY3RpdmUgZmlybSB0aGF0IGhhcyBhIGNyZWF0aXZlIGFuZCB0aG91Z2h0ZnVsIGFwcHJvYWNoLjwvc3Bhbj48YnI+HwloHwoCCGRkAg0PDxYIHwgJ8/Pz/x8CBbwBPHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFNwZWNpYWx0eSI+UGF0ZW50IExhdzwvc3Bhbj48YnI+PHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFRleHQiPlRoZSByZXNwb25zaXZlbmVzcyBhbmQgYXR0ZW50aW9uIHRvIGRldGFpbCBieSBSb3BlcyAmIEdyYXkgaXMgc2Vjb25kIHRvIG5vbmUuPC9zcGFuPjxicj4fCWgfCgIIZGQCDg8PFggfCAn8/Pz/HwIFwwI8c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50U3BlY2lhbHR5Ij5QYXRlbnQgTGF3PC9zcGFuPjxicj48c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50VGV4dCI+Um9wZXMgJiBHcmF5IGlzIGEgZmlybSBvZiB2ZXJ5IGNvbXBldGVudCB0ZWNobmljYWwgZXhwZXJ0cyB3aG8gYWxzbyB1bmRlcnN0YW5kIGhvdyB0byBuYXZpZ2F0ZSB0aGUgZXZlci1jaGFuZ2luZyBpbnRlbGxlY3R1YWwgcHJvcGVydHkvcGF0ZW50IGxlZ2FsIGxhbmRzY2FwZSB0byBwcm92aWRlIHByYWN0aWNhbCBhZHZpY2UgYW5kIHN1cGVyaW9yIHdvcmsgcHJvZHVjdC48L3NwYW4+PGJyPh8JaB8KAghkZAIPDw8WCB8ICfPz8/8fAgXEAjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRTcGVjaWFsdHkiPlBhdGVudCBMYXc8L3NwYW4+PGJyPjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRUZXh0Ij5Sb3BlcyAmIEdyYXkgaXMgdmVyeSByZXNwb25zaXZlIGluIHR1cm5pbmcgYXJvdW5kIHdvcmsgcHJvZHVjdC4gVGhlIGZpcm0gaXMgd2VsbC1tYW5hZ2VkIGFuZCBhY2NvbW1vZGF0aW5nIHRvIGNsaWVudCBuZWVkcyBvbiBiaWxsaW5nIGFuZCBzZXJ2aWNlIG1hdHRlcnMuIFRoZSBhdHRvcm5leXMgYXJlIGNvbXBldGVudCBvbiBsZWdhbCBhbmQgdGVjaG5pY2FsIGlzc3Vlcy48L3NwYW4+PGJyPh8JaB8KAghkZAIQDw8WCB8ICfz8/P8fAgWSAjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRTcGVjaWFsdHkiPlBhdGVudCBMYXc8L3NwYW4+PGJyPjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRUZXh0Ij5XZSByZWx5IGV4dGVuc2l2ZWx5IG9uIHRoZSBwYXRlbnQgcHJvc2VjdXRpb24gZ3JvdXAgYXQgUm9wZXMgJiBHcmF5IGluIE5ldyBZb3JrLiAgVGhlIGdyb3VwIGlzIHRvcC1ub3RjaCB3aXRoIHZlcnkgc29waGlzdGljYXRlZCBsZWdhbCBhbmQgdGVjaG5pY2FsIHVuZGVyc3RhbmRpbmcuPC9zcGFuPjxicj4fCWgfCgIIZGQCAQ8PFgQfAgUZQ2xpZW50IENvbW1lbnRzIDIwMTEtMjAxMh8HaGQWHGYPDxYIHwgJ8/Pz/x8CBfgCPHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFNwZWNpYWx0eSI+U2VjdXJpdGllcyAvIENhcGl0YWwgTWFya2V0cyBMYXc8L3NwYW4+PGJyPjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRUZXh0Ij5Sb3BlcyAmIEdyYXkgaGFzIHByb3ZlbiB2ZXJ5IGVmZmVjdGl2ZSBpbiBtYW5hZ2luZyB0byBvdXIgZXhwZWN0YXRpb25zIGFuZCBwcm92aWRpbmcgb3V0c3RhbmRpbmcgYWR2aWNlIG9uIHJvdXRpbmUgYW5kIGlycmVndWxhciBpc3N1ZXMuPC9zcGFuPjxicj48cCBjbGFzcz0nZmlybVByb2ZpbGVDb21tZW50QXV0aG9yJz5Kb2huIEhlcnJtYW5uPHNwYW4gY2xhc3M9J2Zpcm1Qcm9maWxlQ29tbWVudENvbXBhbnknPk5vdmF2YXg8L3NwYW4+PC9wPh8JaB8KAghkZAIBDw8WCB8ICfz8/P8fAgXtAjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRTcGVjaWFsdHkiPlNlY3VyaXRpZXMgLyBDYXBpdGFsIE1hcmtldHMgTGF3PC9zcGFuPjxicj48c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50VGV4dCI+Um9wZXMgJiBHcmF5IGlzIG91ciAiZ28tdG8iIGZpcm0gaW4gdGhpcyBhcmVhLiAgVGhlIGZpcm0gaXMgdmVyeSBzdHJvbmcsIHByYWN0aWNhbCwgY3JlYXRpdmUsIGFuZCBjb3N0LWNvbnNjaW91cy48L3NwYW4+PGJyPjxwIGNsYXNzPSdmaXJtUHJvZmlsZUNvbW1lbnRBdXRob3InPlJvYmVydCBBLiAgTGljaHQ8c3BhbiBjbGFzcz0nZmlybVByb2ZpbGVDb21tZW50Q29tcGFueSc+QmlvZ2VuIElkZWMgSW5jLjwvc3Bhbj48L3A+HwloHwoCCGRkAgIPDxYIHwgJ8/Pz/x8CBeQCPHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFNwZWNpYWx0eSI+QmlvdGVjaG5vbG9neSBMYXc8L3NwYW4+PGJyPjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRUZXh0Ij5Sb3BlcyAmIEdyYXkgaGFzIGEgdmVyeSBrbm93bGVkZ2VhYmxlIGFuZCByZXNwb25zaXZlIHRlYW0gdGhhdCBpcyB3ZWxsIHZlcnNlZCBpbiBhbGwgYXNwZWN0cyBvZiBiaW90ZWNoIHJlcHJlc2VudGF0aW9uLjwvc3Bhbj48YnI+PHAgY2xhc3M9J2Zpcm1Qcm9maWxlQ29tbWVudEF1dGhvcic+Um9iZXJ0IEEuICBMaWNodDxzcGFuIGNsYXNzPSdmaXJtUHJvZmlsZUNvbW1lbnRDb21wYW55Jz5CaW9nZW4gSWRlYyBJbmMuPC9zcGFuPjwvcD4fCWgfCgIIZGQCAw8PFggfCAn8/Pz/HwIFpwI8c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50U3BlY2lhbHR5Ij5NdXR1YWwgRnVuZHMgTGF3PC9zcGFuPjxicj48c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50VGV4dCI+SSBoYXZlIHRoZSB1dG1vc3QgY29uZmlkZW5jZSBpbiB0aGUgdGVhbSBhdCBSb3BlcyB3aXRoIHdoaWNoIHdlIHdvcmsuPC9zcGFuPjxicj48cCBjbGFzcz0nZmlybVByb2ZpbGVDb21tZW50QXV0aG9yJz5UcmlwIFB1cmNlbGw8c3BhbiBjbGFzcz0nZmlybVByb2ZpbGVDb21tZW50Q29tcGFueSc+QkImVCBGdW5kczwvc3Bhbj48L3A+HwloHwoCCGRkAgQPDxYIHwgJ8/Pz/x8CBfICPHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFNwZWNpYWx0eSI+TXV0dWFsIEZ1bmRzIExhdzwvc3Bhbj48YnI+PHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFRleHQiPlJvcGVzICYgR3JheSBjb21iaW5lcyB0aGUgcmVzb3VyY2VzIGFuZCBrbm93bGVkZ2UgYmFzZSBvZiBhIGxhcmdlIGZpcm0gd2l0aCB0aGUgcGVyc29uYWwgc2VydmljZSBsZXZlbCBvZiBhIHNtYWxsIGZpcm0uPC9zcGFuPjxicj48cCBjbGFzcz0nZmlybVByb2ZpbGVDb21tZW50QXV0aG9yJz5BZGFtIFNoYXBpcm88c3BhbiBjbGFzcz0nZmlybVByb2ZpbGVDb21tZW50Q29tcGFueSc+U3RvbmUgSGFyYm9yIEludmVzdG1lbnQgUGFydG5lcnMgTFA8L3NwYW4+PC9wPh8JaB8KAghkZAIFDw8WCB8ICfz8/P8fAgWlAjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRTcGVjaWFsdHkiPkxldmVyYWdlZCBCdXlvdXRzIGFuZCBQcml2YXRlIEVxdWl0eSBMYXc8L3NwYW4+PGJyPjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRUZXh0Ij5Sb3BlcyAmIEdyYXkgaXMgZXh0cmVtZWx5IGtub3dsZWRnZWFibGUgYW5kIHJlc3BlY3RlZCB3aXRoaW4gcHJpdmF0ZSBlcXVpdHkgbGF3LiAgRGF2aWQgQ2hhcGluIGFuZCBoaXMgdGVhbSBoYXZlIHByb2R1Y2VkIG5vdGhpbmcgYnV0IGhpZ2gtcXVhbGl0eSB3b3JrLjwvc3Bhbj48YnI+HwloHwoCCGRkAgYPDxYIHwgJ8/Pz/x8CBZwCPHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFNwZWNpYWx0eSI+UHJpdmF0ZSBGdW5kcyAvIEhlZGdlIEZ1bmRzIExhdzwvc3Bhbj48YnI+PHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFRleHQiPlJvcGVzIGhhcyBhIHZlcnkgc3Ryb25nIHByaXZhdGUgZnVuZCBwcmFjdGljZSwgYW5kIGlzIG9uZSBvZiBvdXIgZ28tdG8gZmlybXMuICBUaGV5IGhhdmUgY3JlYXRlZCBhIHBhcnRpY3VsYXJseSBzdHJvbmcgY3VsdHVyZSBvZiBjbGllbnQgcmVzcG9uc2l2ZW5lc3MuPC9zcGFuPjxicj4fCWgfCgIIZGQCBw8PFggfCAn8/Pz/HwIFsQI8c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50U3BlY2lhbHR5Ij5TZWN1cml0aWVzIC8gQ2FwaXRhbCBNYXJrZXRzIExhdzwvc3Bhbj48YnI+PHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFRleHQiPlJvcGVzICYgR3JheSBpcyBhIGdyZWF0IGxhdyBmaXJtIHdpdGggdGhlIGV4cGVydGlzZSBuZWVkZWQgYnkgYSBwdWJsaWMgY29tcGFueS4gIFRoZSBmaXJtIGhhcyBkZWVwIHJlc291cmNlcyBhbmQgYW4gdW5kZXJzdGFuZGluZyBvZiBidXNpbmVzcyB0aGF0IGRyaXZlcyB0b3dhcmRzIHNvbHV0aW9ucy48L3NwYW4+PGJyPh8JaB8KAghkZAIIDw8WCB8ICfPz8/8fAgWmATxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRTcGVjaWFsdHkiPlNlY3VyaXRpZXMgLyBDYXBpdGFsIE1hcmtldHMgTGF3PC9zcGFuPjxicj48c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50VGV4dCI+Um9wZXMgJiBHcmF5IGlzIGFuIGV4Y2VsbGVudCBmaXJtPC9zcGFuPjxicj4fCWgfCgIIZGQCCQ8PFggfCAn8/Pz/HwIFqwE8c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50U3BlY2lhbHR5Ij5MaXRpZ2F0aW9uIC0gSW50ZWxsZWN0dWFsIFByb3BlcnR5PC9zcGFuPjxicj48c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50VGV4dCI+Um9wZXMgJiBHcmF5IGhhcyBnb29kIElQIGV4cGVyaWVuY2UuPC9zcGFuPjxicj4fCWgfCgIIZGQCCg8PFggfCAnz8/P/HwIF5QE8c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50U3BlY2lhbHR5Ij5MaXRpZ2F0aW9uIC0gSW50ZWxsZWN0dWFsIFByb3BlcnR5PC9zcGFuPjxicj48c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50VGV4dCI+Um9wZXMgJiBHcmF5IGlzIHZlcnkgY29zdCBjb25zY2lvdXMgYW5kIGVmZmVjdGl2ZSBhdCBpZGVudGlmeWluZyBwaXZvdGFsIGlzc3VlcyBpbiBsaXRpZ2F0aW9uLjwvc3Bhbj48YnI+HwloHwoCCGRkAgsPDxYIHwgJ/Pz8/x8CBYAEPHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFNwZWNpYWx0eSI+TGl0aWdhdGlvbiAtIEludGVsbGVjdHVhbCBQcm9wZXJ0eTwvc3Bhbj48YnI+PHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFRleHQiPlJvcGVzICYgR3JheSBpcyBhbiBleGNlbGxlbnQsIG9uZS1zdG9wIElQIGZpcm0gdGhhdCBoYXMgdGhlIGJyZWFkdGggb2YgdGFsZW50LCBleHBlcmllbmNlLCBhbmQgdW5kZXJzdGFuZGluZyBvZiBhIGhvc3Qgb2YgaXNzdWVzIHRoYXQgYXJlIGFuY2lsbGFyeSB0byBtb2Rlcm4gZGF5IElQIGxpdGlnYXRpb24tLWFudGl0cnVzdCwgdW5mYWlyIGNvbXBldGl0aW9uIHdvcmssIGxpY2Vuc2luZywgeW91IG5hbWUgaXQuICBGb3IgYSBsYXJnZSBmaXJtLCB0aGV5IGRvIGEgdmVyeSBuaWNlIGpvYiBvZiB3b3JraW5nIHdpdGggdGhlIGNsaWVudCB0byBjb250cm9sIGNvc3RzIGFuZCBtYXhpbWl6ZSB0aGUgZWZmZWN0aXZlbmVzcyBvZiB0aGVpciB3b3JrIHByb2R1Y3QuPC9zcGFuPjxicj4fCWgfCgIIZGQCDA8PFggfCAnz8/P/HwIFzwE8c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50U3BlY2lhbHR5Ij5QYXRlbnQgTGF3PC9zcGFuPjxicj48c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50VGV4dCI+Um9wZXMgJiBHcmF5IGVmZmVjdGl2ZWx5IGhhbmRsZXMgaW50ZWxsZWN0dWFsIHByb3BlcnR5IGR1ZSBkaWxpZ2VuY2UgZm9yIGNvcnBvcmF0ZSB0cmFuc2FjdGlvbnMuPC9zcGFuPjxicj4fCWgfCgIIZGQCDQ8PFggfCAn8/Pz/HwIFngE8c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50U3BlY2lhbHR5Ij5UcmFkZW1hcmsgTGF3PC9zcGFuPjxicj48c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50VGV4dCI+Um9wZXMgJiBHcmF5IGxhd3llcnMgYXJlIHZlcnkga25vd2xlZGdlYWJsZS48L3NwYW4+PGJyPh8JaB8KAghkZAICDw8WBB8CBRlDbGllbnQgQ29tbWVudHMgMjAxMC0yMDExHwdoZBYYZg8PFggfCAnz8/P/HwIFmgM8c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50U3BlY2lhbHR5Ij5Db21tZXJjaWFsIExpdGlnYXRpb248L3NwYW4+PGJyPjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRUZXh0Ij5UaGUgZmlybSdzIGV4cGVydGlzZSBpbiBwYXJ0aWN1bGFyIHByYWN0aWNlIGFyZWFzIGlzIG91dHN0YW5kaW5nIGFuZCBoYXMgYmVlbiwgaW4gbXkgb3Bpbmlvbiwgb3V0Y29tZSBkZXRlcm1pbmF0aXZlIGluIHNldmVyYWwgc2lnbmlmaWNhbnQgbGl0aWdhdGlvbiBtYXR0ZXJzLjwvc3Bhbj48YnI+PHAgY2xhc3M9J2Zpcm1Qcm9maWxlQ29tbWVudEF1dGhvcic+Q2hhcmxlcyBLYWxsZW5iYWNoPHNwYW4gY2xhc3M9J2Zpcm1Qcm9maWxlQ29tbWVudENvbXBhbnknPkhlYXJ0bGFuZCBQYXltZW50IFN5c3RlbXM8L3NwYW4+PC9wPh8JaB8KAghkZAIBDw8WCB8ICfz8/P8fAgWjAjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRTcGVjaWFsdHkiPkludGVsbGVjdHVhbCBQcm9wZXJ0eSBMYXc8L3NwYW4+PGJyPjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRUZXh0Ij5Sb3BlcyAmIEdyYXkgaGFzIGJlZW4gb3VyIGdvLXRvIGZpcm0gZm9yIHBhdGVudCBtYXR0ZXJzIGZvciBtb3JlIHRoYW4gMTAgeWVhcnMsIGFuZCB0aGUgZmlybSB2ZXJ5IGFkZXB0bHkgcHJvdmlkZXMgdXMgd2l0aCBtZWFuaW5nZnVsIHN0cmF0ZWdpYyBhbmQgcHJhY3RpY2FsIGFkdmljZS48L3NwYW4+PGJyPh8JaB8KAghkZAICDw8WCB8ICfPz8/8fAgXwAjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRTcGVjaWFsdHkiPkludGVsbGVjdHVhbCBQcm9wZXJ0eSBMYXc8L3NwYW4+PGJyPjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRUZXh0Ij5Sb3BlcyAmIEdyYXkgaXMgYSB0ZXJyaWZpYyBmaXJtLiAgSXQgaGFzIGxhd3llcnMgd2hvIGFyZSBjb25zaXN0ZW50bHkgdGVjaG5pY2FsbHkgZXhjZWxsZW50LCByZXNwb25zaXZlLCBhbmQgcGVyc29uYWJsZS48L3NwYW4+PGJyPjxwIGNsYXNzPSdmaXJtUHJvZmlsZUNvbW1lbnRBdXRob3InPkRhbmllbCBILiBIYWluZXM8c3BhbiBjbGFzcz0nZmlybVByb2ZpbGVDb21tZW50Q29tcGFueSc+R2VuenltZSBDb3Jwb3JhdGlvbjwvc3Bhbj48L3A+HwloHwoCCGRkAgMPDxYIHwgJ/Pz8/x8CBcQCPHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFNwZWNpYWx0eSI+SW50ZWxsZWN0dWFsIFByb3BlcnR5IExhdzwvc3Bhbj48YnI+PHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFRleHQiPlJvcGVzICYgR3JheSdzIHRlY2huaWNhbCBleHBlcnRpc2UgaXMgd2lkZSByYW5naW5nIHRvIHByb3ZpZGUgc3BlY2lmaWNpdHkgaW4gbWFueSBkaXN0aW5jdCBhcmVhcywgd2hpY2ggYWxsb3dzIG1vcmUgdGltZSB0byBmb2N1cyBvbiBhY3R1YWwgbGVnYWwgaXNzdWVzIHJhdGhlciB0aGFuIHdhc3RpbmcgdGltZSB0ZWFjaGluZyB0ZWNobm9sb2d5Ljwvc3Bhbj48YnI+HwloHwoCCGRkAgQPDxYIHwgJ8/Pz/x8CBdMCPHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFNwZWNpYWx0eSI+SW50ZWxsZWN0dWFsIFByb3BlcnR5IExhdzwvc3Bhbj48YnI+PHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFRleHQiPlRoZSBJbnRlbGxlY3R1YWwgUHJvcGVydHkgZ3JvdXAgYXQgUm9wZXMgJiBHcmF5IGlzIHRvcCBub3RjaCB3aXRoIGEgdmVyeSBzb3BoaXN0aWNhdGVkIHByYWN0aWNlLjwvc3Bhbj48YnI+PHAgY2xhc3M9J2Zpcm1Qcm9maWxlQ29tbWVudEF1dGhvcic+QnJpYW4gSC4gV2F5PHNwYW4gY2xhc3M9J2Zpcm1Qcm9maWxlQ29tbWVudENvbXBhbnknPkFsdGVyYSBDb3Jwb3JhdGlvbjwvc3Bhbj48L3A+HwloHwoCCGRkAgUPDxYIHwgJ/Pz8/x8CBagDPHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFNwZWNpYWx0eSI+SW50ZWxsZWN0dWFsIFByb3BlcnR5IExhdzwvc3Bhbj48YnI+PHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFRleHQiPkppbSBNeWVycyBhdCBSb3BlcyAmIEdyYXkgaXMgYW4gZXhjZXB0aW9uYWwgYXR0b3JuZXkuICBIZSBpcyBhIGdpZnRlZCBsYXd5ZXIgd2l0aCBhIHByYWN0aWNhbCBidXNpbmVzcyBhcHByb2FjaCB0byBwcm9ibGVtIHNvbHZpbmcuICBJIGFtIGRlbGlnaHRlZCB0byBoYXZlIGhpbSBhbmQgUm9wZXMgYnkgbXkgc2lkZS48L3NwYW4+PGJyPjxwIGNsYXNzPSdmaXJtUHJvZmlsZUNvbW1lbnRBdXRob3InPlZpdmlhbiBNYWVzZTxzcGFuIGNsYXNzPSdmaXJtUHJvZmlsZUNvbW1lbnRDb21wYW55Jz5CSURTIFRyYWRpbmcgTC5QLiA8L3NwYW4+PC9wPh8JaB8KAghkZAIGDw8WCB8ICfPz8/8fAgWQCDxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRTcGVjaWFsdHkiPkxhYm9yIExhdyAtIE1hbmFnZW1lbnQ8L3NwYW4+PGJyPjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRUZXh0Ij5JIGhhdmUgd29ya2VkIHdpdGggUm9wZXMgJiBHcmF5IGFzIG91ciBjb3Vuc2VsLCBpbiB0aGUgYXJlYSBvZiBMYWJvciAmIEVtcGxveW1lbnQgTGF3LCBmb3Igb3ZlciAyMCB5ZWFycy4gIFRoZXkgcHJvdmlkZSBzb3VuZCBhZHZpY2UgYW5kIHdoZW4gdGhpbmdzIGdldCBhIGJpdCBjb21wbGljYXRlZCwgdGhleSBhcmUgYWJsZSB0byBzb3J0IGl0IG91dCBpbiBhIHdheSB0aGF0IG5vdCBvbmx5IG1ha2VzIHNlbnNlIGJ1dCBhbHNvIGxlYWRzIHRvIGEgbG9naWNhbCBhY3Rpb24gcGxhbi4gIFRoZWlyIGF0dG9ybmV5cyBhcmUgZXh0cmVtZWx5IHdlbGwgcHJlcGFyZWQgYW5kIHRoZXkgYXJlIHRoZSBwZW9wbGUgeW91IHdhbnQgYnkgeW91ciBzaWRlIHdoZW4gZmFjaW5nIGEgZGlmZmljdWx0IGxhYm9yIHJlbGF0aW9ucyBzaXR1YXRpb24uICBJZiBvdXIgYXR0b3JuZXkgaXMgdW5zdXJlIG9yIHdhbnRzIGEgc2Vjb25kIG9waW5pb24sIHNoZS9oZSB3aWxsIHR1cm4gdG8gYSBjb2xsZWFndWUgd2hvIG1heSBoYXZlIHJlY2VudCBleHBlcmllbmNlIGluIHRoYXQgcGFydGljdWxhciBhcmVhLiAgV2UgdGhlbiBoYXZlIHRoZSBiZW5lZml0IG9mIG1vcmUgdGhhbiBvbmUgc21hcnQgYW5kIGhhcmR3b3JraW5nIGF0dG9ybmV5IG9uIG91ciB0ZWFtLiAgSW4gc2hvcnQsIEkgd291bGQgbm90IHdhbnQgdG8gd2FuZGVyIGluIHRoZSBtaW5lZmllbGQgb2YgbGFib3IgcmVsYXRpb25zIGluIHRoZSB5ZWFyIDIwMTAgd2l0aG91dCB0aGUgc2FnZSBndWlkYW5jZSBhbmQgY291bnNlbCBvZiBSb3BlcyAmIEdyYXkuPC9zcGFuPjxicj48cCBjbGFzcz0nZmlybVByb2ZpbGVDb21tZW50QXV0aG9yJz5BcnRodXIgTWlsYW5vPHNwYW4gY2xhc3M9J2Zpcm1Qcm9maWxlQ29tbWVudENvbXBhbnknPkJlcmtzaGlyZSBIZWFsdGggU3lzdGVtczwvc3Bhbj48L3A+HwloHwoCCGRkAgcPDxYIHwgJ/Pz8/x8CBeIBPHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFNwZWNpYWx0eSI+TGl0aWdhdGlvbiAtIFBhdGVudDwvc3Bhbj48YnI+PHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFRleHQiPk5vIGZpcm0gaGFzIGEgYmV0dGVyIHJlcHV0YXRpb24gaW4gcGF0ZW50IGRpc3B1dGVzIHRoYW4gUm9wZXMgJiBHcmF5LCBhbmQgdGhlIHJlcHV0YXRpb24gaXMgd2VsbC1kZXNlcnZlZC48L3NwYW4+PGJyPh8JaB8KAghkZAIIDw8WCB8ICfPz8/8fAgWjBDxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRTcGVjaWFsdHkiPk11dHVhbCBGdW5kcyBMYXc8L3NwYW4+PGJyPjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRUZXh0Ij5UaGUgdGVhbSBhdCBSb3BlcyAmIEdyYXkgaGFzIG91dHN0YW5kaW5nIGxhd3llcnMgd2hvIGdvIHRvIGdyZWF0IGxlbmd0aHMgdG8gY29tYmluZSB0aGVpciBicm9hZCBhbmQgZGVlcCBsZWdhbCBleHBlcnRpc2Ugd2l0aCByZW1hcmthYmxlIHVuZGVyc3RhbmRpbmcgb2YgdGhlaXIgY2xpZW50cycgYnVzaW5lc3NlcyBhbmQgdGhlIHJlZ3VsYXRvcnkgZW52aXJvbm1lbnQgaW4gd2hpY2ggdGhleSBvcGVyYXRlLiAgSW4gbXkgcGVyc29uYWwgZXhwZXJpZW5jZSB3aXRoIHRoZSBmaXJtIG92ZXIgdGhlIGxhc3QgZWlnaHQgeWVhcnMsIEkgaGF2ZSBmb3VuZCB0aGVtIGV4dHJlbWVseSByZXNwb25zaXZlLCBhdHRlbnRpdmUgdG8gZGV0YWlsLCBpbmNyZWRpYmx5IGludGVsbGlnZW50LCBhbmQgYWJsZSB0byBhZGFwdCBxdWlja2x5IHRvIG1hcmtldCBldmVudHMuPC9zcGFuPjxicj4fCWgfCgIIZGQCCQ8PFggfCAn8/Pz/HwIF3gE8c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50U3BlY2lhbHR5Ij5NdXR1YWwgRnVuZHMgTGF3PC9zcGFuPjxicj48c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50VGV4dCI+Um9wZXMgYW5kIEdyYXkgaXMgb25lIG9mIHRoZSBjb3VudHJ5J3MgZm9yZW1vc3QgZmlybXMgcHJvdmlkaW5nIGNvdW5zZWwgdG8gdGhlIGFzc2V0IG1hbmFnZW1lbnQgaW5kdXN0cnkuPC9zcGFuPjxicj4fCWgfCgIIZGQCCg8PFggfCAnz8/P/HwIF4QM8c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50U3BlY2lhbHR5Ij5NdXR1YWwgRnVuZHMgTGF3PC9zcGFuPjxicj48c3BhbiBjbGFzcz0iZmlybVByb2ZpbGVDb21tZW50VGV4dCI+Um9wZXMgJiBHcmF5IGhhcyBhbiBleGNlcHRpb25hbCBjb21iaW5hdGlvbiBvZiBhIHN0cm9uZyBvdmVyYWxsIHRlYW0gd2l0aCBhIHN0cm9uZyBsZWFkZXIsIEFsYW4gUHJpZXN0LCB3aXRoIHN1cHBvcnQgZnJvbSBBbHlzc2EgQWxiZXJ0ZWxsaSBhbmQgb3RoZXJzLiAgVGhleSBoYXZlIGluZHVzdHJ5IGtub3dsZWRnZSwga25vd2xlZGdlIG9mIHRoZSBsYXcsIGFuZCBhIGNvbW1pdG1lbnQgdG8gY2xpZW50cy48L3NwYW4+PGJyPjxwIGNsYXNzPSdmaXJtUHJvZmlsZUNvbW1lbnRBdXRob3InPkRhdmUgRXJuZTxzcGFuIGNsYXNzPSdmaXJtUHJvZmlsZUNvbW1lbnRDb21wYW55Jz5Cb2FyZCBvZiBEaXJlY3RvcnMgb2YgQXJ0aXNhbiBGdW5kczwvc3Bhbj48L3A+HwloHwoCCGRkAgsPDxYIHwgJ/Pz8/x8CBeYCPHNwYW4gY2xhc3M9ImZpcm1Qcm9maWxlQ29tbWVudFNwZWNpYWx0eSI+VmVudHVyZSBDYXBpdGFsIExhdyA8L3NwYW4+PGJyPjxzcGFuIGNsYXNzPSJmaXJtUHJvZmlsZUNvbW1lbnRUZXh0Ij5TY290dCAmIFJvcGVzIGFyZSB2ZXJ5IGtub3dsZWRnZWFibGUgYW5kIGNhcGFibGUuICBUaGVpciBwYXJ0bmVyc2hpcCBpcyBicm91Z2h0IGluIHRvIGRlYWwgd2l0aCB0aGUgbW9zdCBjb21wbGV4IGlzc3Vlcy48L3NwYW4+PGJyPjxwIGNsYXNzPSdmaXJtUHJvZmlsZUNvbW1lbnRBdXRob3InPkJyeWFuIEdpcmF1ZG88c3BhbiBjbGFzcz0nZmlybVByb2ZpbGVDb21tZW50Q29tcGFueSc+TGVlcmluayBTd2FubiBMTEM8L3NwYW4+PC9wPh8JaB8KAghkZAIQDw8WAh8BaGRkAhEPZBYCAgEPDxYEHwUFGGh0dHA6Ly93d3cucm9wZXNncmF5LmNvbR8CBRBSb3BlcyAmIEdyYXkgTExQZGQCEg9kFgICAQ9kFgICAQ9kFgZmDxYCHgtfIUl0ZW1Db3VudAICFgZmD2QWAgIBDxYCHgRocmVmBSEvZmlybXMvcm9wZXMtZ3JheS9PdmVydmlldy8xNzM5NS8WAmYPDxYCHwIFDFJvcGVzICYgR3JheWRkAgEPZBYCAgEPDxYCHwIFcyZxdW90O1RoZSBicmVhZHRoIGFuZCBkZXB0aCBvZiBSb3BlcyAmIEdyYXkncyByZWdpc3RlcmVkIGZ1bmQvYWR2aXNlciBwcmFjdGljZSBzZXRzIGl0IGFwYXJ0IGZyb20gaXRzIHBlZXIuLi4mcXVvdDtkZAICD2QWAgIBDw8WAh8CBXMmcXVvdDtSb3BlcyAmIEdyYXkgdW5kZXJzdGFuZHMgdGhlIGNoYWxsZW5nZXMgaHlwZXItZ3Jvd3RoIGNvbXBhbmllcyBmYWNlIGFuZCB3YXMgYW4gb3V0c3RhbmRpbmcgcGFydG5lciB0Li4uJnF1b3Q7ZGQCAQ8WAh8MBSUvZmlybXMvcm9wZXMtZ3JheS9UZXN0aW1vbmlhbHMvMTczOTUvZAIDDxYCHwFoZAITD2QWAgIBD2QWAmYPZBYKZg8PZBYCHgZvbmxvYWQFC3Nob3dGRkRpdigpZAIBDw8WAh8CBQ9Hb21leiAmIFBldGl0dGlkZAICDw8WAh8CBQ9Hb21leiAmIFBldGl0dGlkZAIEDw8WAh8CBQ9Hb21leiAmIFBldGl0dGlkZAIFDw8WAh8CZWRkAhQPDxYCHwZoFgIeBXN0eWxlBQ1kaXNwbGF5Om5vbmU7ZAIVDxQrAAIUKwADDxYCHwZoZGRkEBYBZhYBFCsAAw8WAh8GaGRkZA8WAWYWAQVyVGVsZXJpay5XZWIuVUkuUmFkV2luZG93LCBUZWxlcmlrLldlYi5VSSwgVmVyc2lvbj0yMDEyLjMuMTIwNS40MCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj0xMjFmYWU3ODE2NWJhM2Q0FgJmDxQrAAMPFgIfBmhkZGRkGAEFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYEBRhjdGwwMCRjcGgkcGJGaXJtQ29tbWVudHMFG2N0bDAwJGNwaCRSYWRGb3JtRGVjb3JhdG9yMQUbY3RsMDAkY3BoJFJhZFdpbmRvd01hbmFnZXIxBRRjdGwwMCRjcGgkUmFkV2luZG93MdYqTqX5PoiqJOXlgig0pWc6MGU56aZZvlWOeSHgQnOT" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=i7s5gvdLw98BJ4c-uLl5TtI9lhIDDJv_G3mh3cYl2hvH0R4ELQEoHBT8xArk-qix-W-RQ9F4IJw5JXffCLQxGGyGMlCFOY2usy3JCAJq6Ew1&amp;t=634944287538030287" type="text/javascript"></script>
+
+
+<script src="/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ctl00_RadScriptManager1_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3aen-US%3a89093640-ae6b-44c3-b8ea-010c934f8924%3aea597d4b%3ab25378d2%3bTelerik.Web.UI%2c+Version%3d2012.3.1205.40%2c+Culture%3dneutral%2c+PublicKeyToken%3d121fae78165ba3d4%3aen-US%3af18b91a4-0e6c-41d1-af11-dfb338738b79%3a16e4e7cd%3aed16cbdc%3af7645509%3a24ee1bba%3af46195d3%3a1e771326%3a4cacbc31%3a86526ba7%3a874f8ea2%3a19620875%3a490a9d4e%3abd8f85e4" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="../../../../Scripts/WebTools.js" type="text/javascript"></script>
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$RadScriptManager1', 'aspnetForm', ['tctl00$cph$ctl00$cph$RadAjaxPanel1Panel',''], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+
+   
+
+    <div style="background-image:url('http://bestlawfirms.usnews.com/images/header_v2_tile.gif');height:134px;margin-bottom:10px;">
+        <center>
+            <div style="background-image:url('http://bestlawfirms.usnews.com/images/header_v2_center.gif');width:1000px;height:134px;text-align:left;">
+                <div style="padding-top:4px;">
+                    <div style="float:left;">
+                        <a href="http://usnews.com" target="_blank"><img src="http://bestlawfirms.usnews.com/images/usn-logo.png" style="height:22px;width:98px;border-width:0px;" /></a>
+                    </div>
+                    <div style="float:left;padding-top:2px;padding-left:3px;">
+                        <a href="http://bestlawyers.com" target="_blank"><img src="../../../../images/bl_tiny.gif" style="border-width:0px;" /></a>
+                    </div>
+                    <div style="float:right;">
+                        <ul id="usnewsMenu" style="margin-top:0px;font-family:Verdana;">
+                            <li>
+                                <a href="http://www.usnews.com/news" target="_blank">News & Opinion</a>
+                            </li>
+                            <li>
+                                <a href="http://health.usnews.com/" target="_blank">Health</a>
+                            </li>
+                            <li>
+                                <a href="http://money.usnews.com/" target="_blank">Money</a>
+                            </li>
+                            <li>
+                                <a href="http://www.usnews.com/education" target="_blank">Education</a>
+                            </li>
+                            <li>
+                                <a href="http://travel.usnews.com/" target="_blank">Travel</a>
+                            </li>
+                            <li>
+                                <a href="http://usnews.rankingsandreviews.com/cars-trucks/" target="_blank">Cars</a>
+                            </li>
+                            <li>
+                                <a href="../../../../" style="color:#F7B11A;">Law</a>
+                            </li>
+                            <li>
+                                <a href="http://www.usnews.com/rankings" target="_blank">Rankings</a>
+                            </li>
+                            <li id="nav-search">
+                                <a href="../../../../Search.aspx"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+
+                <div style="margin-top:9px;">
+                    <a href="../../../../"><img src="../../../../Images/header_v2_blf_title.gif" style="border-width:0px;" /></a>
+                </div>
+
+                <div style="margin-top:5px;">
+                    <ul id="navMenu" class="navMenuClass">
+                        <li id="ctl00_liHome">
+                            <a href="../../../../Default.aspx">Home</a>
+                        </li>
+                        <li id="ctl00_liSearch">
+                            <a href="../../../../Search.aspx">Search</a>
+                        </li>
+                        <li id="ctl00_liMethodology">
+                            <a href="../../../../Methodology.aspx">Methodology</a>
+                        </li>
+                        <li id="ctl00_liSpecDefinition">
+                            <a href="../../../../SpecDefinition.aspx">Practice Areas</a>
+                        </li>
+                        <li id="ctl00_liFAQ">
+                            <a href="../../../../faq.aspx">FAQ</a>
+                        </li>
+                        <li id="ctl00_liLogin">
+                            <a href="../../../../Subscribe/Default.aspx">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </center>
+    </div>
+
+
+
+    <div style="text-align: center; width: 1000px; margin: auto;clear:both;">
+        <div id="ctl00_divBreadCrumb" style="text-align:left;margin-bottom:10px;margin-top:0px;">
+            <a href='/'>Best Law Firms</a> > <a href='/Search.aspx'>Search</a> > Firm Profile
+        </div>
+
+        
+    <script type="text/javascript">
+        function unlockNav() {
+            $('#login_link').hide()
+            $('[id*=imgLock]')
+                .hide()
+                .parent()
+                .children('a')
+                    .removeAttr('title')
+                    .removeAttr('onclick')
+        }
+
+//        $(function(){
+//            if (jQuery().cookie('BLFSession')) unlockNav()
+
+//            alert("1");
+//            $('#divLearnMore').dialog({
+//                autoOpen: false,
+//                modal: true,
+//                width: 320,
+//                height: 155,
+//                resizable: false,
+//                draggable: false,
+//                closeOnEscape: false                
+//            });
+//            alert("2");
+//        })
+
+        function OpenWindow() {
+            var addy = "/modal/profileinfo.aspx?firm_id=17395";
+            var wnd = window.radopen(addy, "RadWindow1");
+            wnd.setSize(400, 200);
+            return false;
+        }
+
+//        function OpenWindow() {
+//            $('#divLearnMore').dialog('open');
+//            alert("3");
+//            return false;
+//        }
+
+    </script>
+    <div style="clear: both;">
+        
+        <div style='width: 155px; text-align: left; float: left; vertical-align: top; padding-top:10px;'>
+            
+
+            <div id="divLearnMore" style="display: none;">
+                <h4 style="padding-bottom: 5px;">
+                    Please Provide Profile
+                </h4>
+               To provide or update your firm profile, please contact <span id="ctl00_cph_lblContact">Evan Michaels at <a href='mailto:emichaels@bestlawyers.com'>emichaels@bestlawyers.com</a> <br/> Or at (803) 644-1813.</span>
+            </div>
+
+            <div id="ctl00_cph_pnlfirmSummaryNavbar" style="border: 1px solid #dddddd;
+                background-color: #fcfcfc; padding-top: 5px;">
+	
+                <div style="padding-bottom:8px;padding-top:4px;padding-left:7px;font-size:12px;font-weight:bold;font-family:Verdana;">
+                    Firm Summary
+                </div>
+                <div id="ctl00_cph_navOverview" class="nav_item">
+		
+                    <div>
+                        <a href="/firms/ropes-gray-llp/overview/17395/  ">Overview</a>
+                    </div>
+                
+	</div>
+                <div id="ctl00_cph_navPracticeAreas" class="nav_item" style="margin-top:-1px;">
+		
+                    <div>
+                        <a href="/firms/ropes-gray-llp/Practice-Areas/17395/">Practice Areas</a>
+                    </div>
+                
+	</div>
+                <div id="ctl00_cph_navListedLawyers" class="nav_item" style="margin-top:-1px;">
+		
+                    <div>
+                        <a href="/firms/ropes-gray-llp/Listed-Lawyers/17395/">Listed Lawyers</a>
+                    </div>
+                
+	</div>
+                <div id="ctl00_cph_navOffices" class="nav_item" style="margin-top:-1px;">
+		
+                    <div>
+                        <a href="/firms/ropes-gray-llp/Offices/17395/">Offices</a>
+                    </div>
+                
+	</div>
+                <div id="ctl00_cph_navRankings" class="nav_item" style="margin-top:-1px;">
+		
+                    <div>
+                        <a href="/firms/ropes-gray-llp/Rankings/17395/">Rankings</a>
+                    </div>
+                
+	</div>
+                <div id="ctl00_cph_navContact" class="nav_item" style="margin-top:-1px;">
+		
+                    <div>
+                        <a href="/firms/ropes-gray-llp/Contact/17395/">Contacts</a>
+                    </div>
+                
+	</div>
+                <div id="ctl00_cph_navTestimonials" class="current_nav_item" style="margin-top:-1px;">
+		
+                    <div>
+                        <a href="/firms/ropes-gray-llp/Testimonials/17395/">Client Comments</a>
+                    </div>
+                
+	</div>
+            
+</div>
+            <div style="padding-bottom: 5px;">
+                &nbsp;
+            </div>
+            <div id="ctl00_cph_divFirmData" style="border: 1px solid #dddddd; background-color: #fcfcfc;padding-top:5px;">
+                <div style="padding-left:7px;margin-bottom:8px;margin-top:4px;">
+                    <span style="font-weight:bold;">Firm Data</span>
+
+                    
+                    <div id="login_link" style="font-size:11px;" >
+                        <a style="color:#0079b3;" href="/subscribe/default.aspx">Sign in</a> to access
+                    </div>
+                    
+                </div>
+                <div id="ctl00_cph_navFirmSize" class="nav_item">
+	
+                    <div id="ctl00_cph_divLock1" class="usnews_lock_positioning">
+                        <img id="ctl00_cph_imgLock1" src="../../../../Images/usnews_lock.gif" style="border-width:0px;" />
+                    </div>
+                    <div class="firm_data_link_positioning">
+                            <a href="/firms/ropes-gray-llp/Firm-Size-History/17395/" onClick="radalert('<h4>Information Locked</h4>Click <a href=/subscribe/default.aspx>here</a> to subscribe.', 330, 100,'Firm Information is Locked'); return false;"
+                            title="This section is locked for non-subscribers">Firm Size & History</a>
+                    </div>
+                    <div style="clear:both;"></div>
+                
+</div>
+                
+
+                <div id="ctl00_cph_navPracticeAreaDescriptions" class="nav_item" style="margin-top:-1px;">
+	
+                    <div id="ctl00_cph_divLock3" class="usnews_lock_positioning">
+                        <img id="ctl00_cph_imgLock3" src="../../../../Images/usnews_lock.gif" style="border-width:0px;" />
+                    </div>
+                    <div class="firm_data_link_positioning">
+                        <a href="/firms/ropes-gray-llp/Practice-Area-Descriptions/17395/" onClick="radalert('<h4>Information Locked</h4>Click <a href=/subscribe/default.aspx>here</a> to subscribe.', 330, 100,'Firm Information is Locked'); return false;"
+                            title="This section is locked for non-subscribers">Significant Matters</a>
+                    </div>
+                    <div style="clear:both;"></div>
+                
+</div>
+
+                <div id="ctl00_cph_navClients" class="nav_item" style="margin-top:-1px;">
+	
+                    <div id="ctl00_cph_divLock6" class="usnews_lock_positioning">
+                        <img id="ctl00_cph_imgLock6" src="../../../../Images/usnews_lock.gif" style="border-width:0px;" />
+                    </div>
+                    <div class="firm_data_link_positioning">
+                        <a href="/firms/ropes-gray-llp/Clients/17395/" onClick="radalert('<h4>Information Locked</h4>Click <a href=/subscribe/default.aspx>here</a> to subscribe.', 330, 100,'Firm Information is Locked'); return false;" title="This section is locked for non-subscribers">
+                            Clients</a>
+                    </div>
+                    <div style="clear:both;"></div>
+                
+</div>
+                
+                                                
+                <div id="ctl00_cph_navFirmAwards" class="nav_item" style="margin-top:-1px;">
+	
+                    <div id="ctl00_cph_divLock13" class="usnews_lock_positioning">
+                        <img id="ctl00_cph_imgLock13" src="../../../../Images/usnews_lock.gif" style="border-width:0px;" />
+                    </div>
+                    <div class="firm_data_link_positioning">
+                        <a href="/firms/ropes-gray-llp/firm-awards/17395/" onClick="radalert('<h4>Information Locked</h4>Click <a href=/subscribe/default.aspx>here</a> to subscribe.', 330, 100,'Firm Information is Locked'); return false;"
+                            title="This section is locked for non-subscribers">Awards Received by the Firm</a>
+                    </div>
+                    <div style="clear:both;"></div>
+                
+</div>
+
+            </div>
+        </div>
+
+
+        <div style='width: 499px; text-align: left; float: left; vertical-align: top; padding-left: 10px;'>
+            <div style="text-align: left; padding: 10px 0 5px 0;" class="search_header">
+                <h1>
+                    <span id="ctl00_cph_lblFirmName">Ropes&nbsp;&amp; Gray LLP</span></h1>
+            </div>
+            <div id="ctl00_cph_pnlFirmLogo">
+	
+                <img id="ctl00_cph_imgFirmLogo" src="http://bestlawyers.com/search/logos/17395.gif" style="border-width:0px;" />
+            
+</div>
+
+            
+            
+            
+            
+            
+            
+            
+            
+            <div id="ctl00_cph_pnlFirmComments" style="padding: 5px 0 5px 0; width: 95%;">
+	
+                <h3 id="ctl00_cph_hFirmComments" class="firm_profile_header firm_profile_header_first">
+                    Client Comments
+                </h3>
+                <div id="divFirmComments">
+                    <p id="ctl00_cph_pFirmCommentsText" style="padding: 8px 8px 8px 8px;">
+                        <i>All client comments represent the opinions of the people who provide them. All potential
+                            clients are urged to remember that no two cases are ever completely alike and that
+                            the result in one case does not guarantee a similar result in another case.</i></p>
+
+                    
+                    <div id="ctl00_cph_ctl00_cph_RadAjaxPanel1Panel">
+		<div id="ctl00_cph_RadAjaxPanel1">
+			<!-- 2012.3.1205.40 -->
+                        
+                        <div id="ctl00_cph_pbFirmComments" class="RadPanelBar RadPanelBar_Default firmProfileClientCommentsPanel" style="width:500px;">
+				<ul class="rpRootGroup">
+					<li class="rpItem rpFirst"><a href="#" class="rpLink rpExpandable rpExpanded"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText">Client Comments 2012-2013</span></span></a><div class="rpSlide" style="display:block;">
+						<ul class="rpGroup rpLevel1 " style="display:block;">
+							<li class="rpItem rpFirst"><a href="#" class="rpLink rpDisabled" style="background-color:#FCFCFC;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Mutual Funds Law</span><br><span class="firmProfileCommentText">The breadth and depth of Ropes & Gray's registered fund/adviser practice sets it apart from its peers.</span><br><p class='firmProfileCommentAuthor'>Robert Borzone<span class='firmProfileCommentCompany'>ProShares Advisors LLC</span></p></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#F3F3F3;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Corporate Law</span><br><span class="firmProfileCommentText">Ropes & Gray understands the challenges hyper-growth companies face and was an outstanding partner throughout the entire life cycle.</span><br><p class='firmProfileCommentAuthor'>Joe Army<span class='firmProfileCommentCompany'>formerly of Salient Surgical Technologies, Inc.</span></p></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#FCFCFC;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Corporate Law</span><br><span class="firmProfileCommentText">Ropes & Gray provides breadth and depth of expertise in life sciences and related corporate transactions, is incredibly responsive, and has a very deep pool of smart and productive associates who are effectively managed and trained by the partners and add clear value to engagements.</span><br><p class='firmProfileCommentAuthor'>Richard H. Brudnick<span class='firmProfileCommentCompany'>Biogen Idec Inc.</span></p></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#F3F3F3;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Mutual Funds Law</span><br><span class="firmProfileCommentText">Ropes & Gray has justifiably earned its stellar reputation in the investment management area with its staple of quality attorneys and its provision of consistent, sound legal advice. Ropes' industry experience offers its clients a good perspective on how others are handling "cutting edge" legal issues.</span><br><p class='firmProfileCommentAuthor'>Kenneth Fang<span class='firmProfileCommentCompany'>ProFunds Group</span></p></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#FCFCFC;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Litigation - Antitrust</span><br><span class="firmProfileCommentText">I have been working with Ropes & Gray for nearly two years. The Antitrust Team in Ropes & Gray has been providing our company (Hitachi-LG Data Storage) with the very competent legal advisory services while making utmost efforts to achieve cost-effectiveness.  I, as general counsel in charge of antitrust matters, have been truly satisfied with Ropes & Gray, and am recommending my friends to refer to Ropes & Gray for any antitrust litigation matters.</span><br><p class='firmProfileCommentAuthor'>Hyun (Sean) Namkung<span class='firmProfileCommentCompany'>Hitachi LG Data Storage, Inc.</span></p></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#F3F3F3;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Antitrust Law</span><br><span class="firmProfileCommentText">Ropes & Gray are Cablevision's primary antitrust lawyers. Led by Mark Popofsky, Ropes & Gray has an excellent antitrust team that is really knowledgeable about antitrust doctrine and can provide detailed case-law-grounded advice about important questions of antitrust law. They are very responsive. I highly recommend Mark and his team.</span><br></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#FCFCFC;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Mutual Funds Law</span><br><span class="firmProfileCommentText">Ropes & Gray is a recognized leader in providing legal services to the mutual fund industry and greatly deserves its leadership position. I find that Ropes & Gray lawyers consistently provide excellent advice in a timely and responsive manner. Ropes & Gray lawyers also demonstrate qualities that I find helpful in my day-to-day practice in-house: They are cooperative and collegial and practically oriented, always working with a sensitivity to the practical needs of their business clients.</span><br></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#F3F3F3;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Private Funds / Hedge Funds Law</span><br><span class="firmProfileCommentText">Laurel FitzPatrick and Jessica Taylor O'Mary are excellent lawyers specializing in the hedge fund practice.</span><br></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#FCFCFC;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Commercial Litigation</span><br><span class="firmProfileCommentText">Ropes does an effective and thorough job. They are well-staffed and very responsive.</span><br></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#F3F3F3;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Litigation - Intellectual Property</span><br><span class="firmProfileCommentText">Ropes & Gray have an excellent litigation teams that understands the law, the facts and technology, the application of the law to the facts, and provide pragmatic solutions.</span><br></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#FCFCFC;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Litigation - Intellectual Property</span><br><span class="firmProfileCommentText">Ropes & Gray are not only an innovative firm, but they are on the lookout for the best possible outcome.</span><br></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#F3F3F3;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Litigation - Antitrust</span><br><span class="firmProfileCommentText">Ropes & Gray are lead counsel for us in connection with a consumer based anti-trust class action.  They have been exceedingly organized in managing the case and have helped us procure quite a good arrangement regarding e-discovery costs. Their drafting is excellent and we have been more than satisfied with all of their briefs.</span><br></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#FCFCFC;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Litigation - Antitrust</span><br><span class="firmProfileCommentText">Ropes & Gray is effective firm that has a creative and thoughtful approach.</span><br></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#F3F3F3;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Patent Law</span><br><span class="firmProfileCommentText">The responsiveness and attention to detail by Ropes & Gray is second to none.</span><br></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#FCFCFC;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Patent Law</span><br><span class="firmProfileCommentText">Ropes & Gray is a firm of very competent technical experts who also understand how to navigate the ever-changing intellectual property/patent legal landscape to provide practical advice and superior work product.</span><br></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#F3F3F3;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Patent Law</span><br><span class="firmProfileCommentText">Ropes & Gray is very responsive in turning around work product. The firm is well-managed and accommodating to client needs on billing and service matters. The attorneys are competent on legal and technical issues.</span><br></span></span></a></li><li class="rpItem rpLast"><a href="#" class="rpLink rpDisabled" style="background-color:#FCFCFC;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Patent Law</span><br><span class="firmProfileCommentText">We rely extensively on the patent prosecution group at Ropes & Gray in New York.  The group is top-notch with very sophisticated legal and technical understanding.</span><br></span></span></a></li>
+						</ul>
+					</div></li><li class="rpItem"><a href="#" class="rpLink rpExpandable"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText">Client Comments 2011-2012</span></span></a><div class="rpSlide">
+						<ul class="rpGroup rpLevel1 ">
+							<li class="rpItem rpFirst"><a href="#" class="rpLink rpDisabled" style="background-color:#F3F3F3;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Securities / Capital Markets Law</span><br><span class="firmProfileCommentText">Ropes & Gray has proven very effective in managing to our expectations and providing outstanding advice on routine and irregular issues.</span><br><p class='firmProfileCommentAuthor'>John Herrmann<span class='firmProfileCommentCompany'>Novavax</span></p></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#FCFCFC;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Securities / Capital Markets Law</span><br><span class="firmProfileCommentText">Ropes & Gray is our "go-to" firm in this area.  The firm is very strong, practical, creative, and cost-conscious.</span><br><p class='firmProfileCommentAuthor'>Robert A.  Licht<span class='firmProfileCommentCompany'>Biogen Idec Inc.</span></p></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#F3F3F3;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Biotechnology Law</span><br><span class="firmProfileCommentText">Ropes & Gray has a very knowledgeable and responsive team that is well versed in all aspects of biotech representation.</span><br><p class='firmProfileCommentAuthor'>Robert A.  Licht<span class='firmProfileCommentCompany'>Biogen Idec Inc.</span></p></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#FCFCFC;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Mutual Funds Law</span><br><span class="firmProfileCommentText">I have the utmost confidence in the team at Ropes with which we work.</span><br><p class='firmProfileCommentAuthor'>Trip Purcell<span class='firmProfileCommentCompany'>BB&T Funds</span></p></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#F3F3F3;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Mutual Funds Law</span><br><span class="firmProfileCommentText">Ropes & Gray combines the resources and knowledge base of a large firm with the personal service level of a small firm.</span><br><p class='firmProfileCommentAuthor'>Adam Shapiro<span class='firmProfileCommentCompany'>Stone Harbor Investment Partners LP</span></p></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#FCFCFC;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Leveraged Buyouts and Private Equity Law</span><br><span class="firmProfileCommentText">Ropes & Gray is extremely knowledgeable and respected within private equity law.  David Chapin and his team have produced nothing but high-quality work.</span><br></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#F3F3F3;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Private Funds / Hedge Funds Law</span><br><span class="firmProfileCommentText">Ropes has a very strong private fund practice, and is one of our go-to firms.  They have created a particularly strong culture of client responsiveness.</span><br></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#FCFCFC;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Securities / Capital Markets Law</span><br><span class="firmProfileCommentText">Ropes & Gray is a great law firm with the expertise needed by a public company.  The firm has deep resources and an understanding of business that drives towards solutions.</span><br></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#F3F3F3;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Securities / Capital Markets Law</span><br><span class="firmProfileCommentText">Ropes & Gray is an excellent firm</span><br></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#FCFCFC;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Litigation - Intellectual Property</span><br><span class="firmProfileCommentText">Ropes & Gray has good IP experience.</span><br></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#F3F3F3;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Litigation - Intellectual Property</span><br><span class="firmProfileCommentText">Ropes & Gray is very cost conscious and effective at identifying pivotal issues in litigation.</span><br></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#FCFCFC;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Litigation - Intellectual Property</span><br><span class="firmProfileCommentText">Ropes & Gray is an excellent, one-stop IP firm that has the breadth of talent, experience, and understanding of a host of issues that are ancillary to modern day IP litigation--antitrust, unfair competition work, licensing, you name it.  For a large firm, they do a very nice job of working with the client to control costs and maximize the effectiveness of their work product.</span><br></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#F3F3F3;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Patent Law</span><br><span class="firmProfileCommentText">Ropes & Gray effectively handles intellectual property due diligence for corporate transactions.</span><br></span></span></a></li><li class="rpItem rpLast"><a href="#" class="rpLink rpDisabled" style="background-color:#FCFCFC;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Trademark Law</span><br><span class="firmProfileCommentText">Ropes & Gray lawyers are very knowledgeable.</span><br></span></span></a></li>
+						</ul>
+					</div></li><li class="rpItem rpLast"><a href="#" class="rpLink rpExpandable"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText">Client Comments 2010-2011</span></span></a><div class="rpSlide">
+						<ul class="rpGroup rpLevel1 ">
+							<li class="rpItem rpFirst"><a href="#" class="rpLink rpDisabled" style="background-color:#F3F3F3;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Commercial Litigation</span><br><span class="firmProfileCommentText">The firm's expertise in particular practice areas is outstanding and has been, in my opinion, outcome determinative in several significant litigation matters.</span><br><p class='firmProfileCommentAuthor'>Charles Kallenbach<span class='firmProfileCommentCompany'>Heartland Payment Systems</span></p></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#FCFCFC;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Intellectual Property Law</span><br><span class="firmProfileCommentText">Ropes & Gray has been our go-to firm for patent matters for more than 10 years, and the firm very adeptly provides us with meaningful strategic and practical advice.</span><br></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#F3F3F3;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Intellectual Property Law</span><br><span class="firmProfileCommentText">Ropes & Gray is a terrific firm.  It has lawyers who are consistently technically excellent, responsive, and personable.</span><br><p class='firmProfileCommentAuthor'>Daniel H. Haines<span class='firmProfileCommentCompany'>Genzyme Corporation</span></p></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#FCFCFC;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Intellectual Property Law</span><br><span class="firmProfileCommentText">Ropes & Gray's technical expertise is wide ranging to provide specificity in many distinct areas, which allows more time to focus on actual legal issues rather than wasting time teaching technology.</span><br></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#F3F3F3;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Intellectual Property Law</span><br><span class="firmProfileCommentText">The Intellectual Property group at Ropes & Gray is top notch with a very sophisticated practice.</span><br><p class='firmProfileCommentAuthor'>Brian H. Way<span class='firmProfileCommentCompany'>Altera Corporation</span></p></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#FCFCFC;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Intellectual Property Law</span><br><span class="firmProfileCommentText">Jim Myers at Ropes & Gray is an exceptional attorney.  He is a gifted lawyer with a practical business approach to problem solving.  I am delighted to have him and Ropes by my side.</span><br><p class='firmProfileCommentAuthor'>Vivian Maese<span class='firmProfileCommentCompany'>BIDS Trading L.P. </span></p></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#F3F3F3;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Labor Law - Management</span><br><span class="firmProfileCommentText">I have worked with Ropes & Gray as our counsel, in the area of Labor & Employment Law, for over 20 years.  They provide sound advice and when things get a bit complicated, they are able to sort it out in a way that not only makes sense but also leads to a logical action plan.  Their attorneys are extremely well prepared and they are the people you want by your side when facing a difficult labor relations situation.  If our attorney is unsure or wants a second opinion, she/he will turn to a colleague who may have recent experience in that particular area.  We then have the benefit of more than one smart and hardworking attorney on our team.  In short, I would not want to wander in the minefield of labor relations in the year 2010 without the sage guidance and counsel of Ropes & Gray.</span><br><p class='firmProfileCommentAuthor'>Arthur Milano<span class='firmProfileCommentCompany'>Berkshire Health Systems</span></p></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#FCFCFC;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Litigation - Patent</span><br><span class="firmProfileCommentText">No firm has a better reputation in patent disputes than Ropes & Gray, and the reputation is well-deserved.</span><br></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#F3F3F3;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Mutual Funds Law</span><br><span class="firmProfileCommentText">The team at Ropes & Gray has outstanding lawyers who go to great lengths to combine their broad and deep legal expertise with remarkable understanding of their clients' businesses and the regulatory environment in which they operate.  In my personal experience with the firm over the last eight years, I have found them extremely responsive, attentive to detail, incredibly intelligent, and able to adapt quickly to market events.</span><br></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#FCFCFC;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Mutual Funds Law</span><br><span class="firmProfileCommentText">Ropes and Gray is one of the country's foremost firms providing counsel to the asset management industry.</span><br></span></span></a></li><li class="rpItem"><a href="#" class="rpLink rpDisabled" style="background-color:#F3F3F3;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Mutual Funds Law</span><br><span class="firmProfileCommentText">Ropes & Gray has an exceptional combination of a strong overall team with a strong leader, Alan Priest, with support from Alyssa Albertelli and others.  They have industry knowledge, knowledge of the law, and a commitment to clients.</span><br><p class='firmProfileCommentAuthor'>Dave Erne<span class='firmProfileCommentCompany'>Board of Directors of Artisan Funds</span></p></span></span></a></li><li class="rpItem rpLast"><a href="#" class="rpLink rpDisabled" style="background-color:#FCFCFC;"><span class="rpOut"><span class="rpExpandHandle"></span><span class="rpText"><span class="firmProfileCommentSpecialty">Venture Capital Law </span><br><span class="firmProfileCommentText">Scott & Ropes are very knowledgeable and capable.  Their partnership is brought in to deal with the most complex issues.</span><br><p class='firmProfileCommentAuthor'>Bryan Giraudo<span class='firmProfileCommentCompany'>Leerink Swann LLC</span></p></span></span></a></li>
+						</ul>
+					</div></li>
+				</ul><input id="ctl00_cph_pbFirmComments_ClientState" name="ctl00_cph_pbFirmComments_ClientState" type="hidden" />
+			</div>
+                    
+		</div>
+	</div>
+                    
+                
+
+                </div>
+            
+</div>
+
+
+            
+            
+
+        </div>
+        <div style='width:336px; float:left;'>
+            <div style="height: 10px;">
+                &nbsp;
+            </div>
+            
+            <div id="ctl00_cph_pnlGeneralInfo">
+	
+                <div style="padding-top: 10px; padding-bottom: 5px;">
+                    <div class="sidebox">
+                        <div class="boxbody" style="text-align: left; vertical-align: top; padding-bottom: 10px;padding-top:10px;">
+                            <h5 style="color: #666666;font-size: 15px;font-weight: bold;margin-bottom: 10px;">
+                                COMPANY WEBSITE
+                            </h5>
+                            <a id="ctl00_cph_hlCompanyWebsite" href="http://www.ropesgray.com">Ropes & Gray LLP</a>
+                        </div>
+                    </div>
+                </div>
+            
+</div>
+            
+<script type="text/javascript">
+</script>
+
+
+<div id="ctl00_cph_clientCommentPreview_pnlClientComments" style="width:100%;">
+	
+    <div style="padding-bottom: 0px;">
+        <div class="sidebox">
+            <div id="ctl00_cph_clientCommentPreview_divClientComments" class="boxbody" style="text-align: left; padding-bottom: 15px;">
+                <h2 style="padding-top:15px;color:#666666;font-size: 15px;font-weight: bold;" class="sectionheader">
+                    WHAT CLIENTS ARE SAYING...
+                </h2>
+                <div class="" style="text-align: left;">
+                    <div class="dottedUnderlineBox">
+                        
+                        <div id="divFirmName" style="margin: 0 0 15px 0;font-size: 13px">
+                            <a href="/firms/ropes-gray/Overview/17395/" id="ctl00_cph_clientCommentPreview_rptrClientComments_ctl00_hlinkFirmName" class="links_blue"><span id="ctl00_cph_clientCommentPreview_rptrClientComments_ctl00_lblFirmName">Ropes & Gray</span></a>
+                        </div>
+                        
+                        <div>
+                            <div style="float: left;width: 275px">
+                                <p style="margin: 0 0 7px 0;font-style:italic;color:#777777;font-size:13px;"><span id="ctl00_cph_clientCommentPreview_rptrClientComments_ctl01_lblComment">&quot;The breadth and depth of Ropes & Gray's registered fund/adviser practice sets it apart from its peer...&quot;</span></p>
+                            </div>
+                            <div style="clear:both"></div>
+                        </div>
+                        
+                        <div>
+                            <div style="float: left;width: 275px">
+                                <p style="margin: 0 0 7px 0;font-style:italic;color:#777777;font-size:13px;"><span id="ctl00_cph_clientCommentPreview_rptrClientComments_ctl02_lblComment">&quot;Ropes & Gray understands the challenges hyper-growth companies face and was an outstanding partner t...&quot;</span></p>
+                            </div>
+                            <div style="clear:both"></div>
+                        </div>
+                        
+                    </div>
+
+                    <div style="padding-top: 10px;">
+                        <img src="/images/bullet.gif" alt="" />&nbsp;<a href="/firms/ropes-gray/Testimonials/17395/" id="ctl00_cph_clientCommentPreview_hlinkSeeMore" style="font-weight:bold;font-size:13px;">See more comments</a>                  
+                    </div>
+                    <span id="ctl00_cph_clientCommentPreview_lbltest"></span>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+            <div id="ctl00_cph_pnlUSNews" style="padding-top: 5px; padding-bottom: 5px;">
+	
+                
+            
+</div>
+            <div style="clear: both; height: 0px;">
+                &nbsp;
+            </div>
+        </div>
+    </div>
+    <div style="clear: both;">
+        <div id="ctl00_cph_RadFormDecorator1" class="RadFormDecorator" style="display:none;">
+	<script type="text/javascript">
+//<![CDATA[
+if (typeof(WebForm_AutoFocus) != 'undefined')
+{
+	var old_WebForm_AutoFocus = WebForm_AutoFocus;
+	WebForm_AutoFocus = function(arg)
+	{
+		Sys.Application.add_load(function()
+		{
+			old_WebForm_AutoFocus(arg);
+			WebForm_AutoFocus = old_WebForm_AutoFocus;
+		});
+	}
+}
+if (typeof(Telerik) != 'undefined')
+{
+	if (Telerik.Web.UI.RadFormDecorator)
+	{
+		Telerik.Web.UI.RadFormDecorator.initializePage("ctl00_cph_RadFormDecorator1", "", "Default", 15);
+	}
+}
+//]]>
+</script><input id="ctl00_cph_RadFormDecorator1_ClientState" name="ctl00_cph_RadFormDecorator1_ClientState" type="hidden" />
+</div>
+
+        <div id="ctl00_cph_RadWindowManager1" style="display:none;">
+	<div id="ctl00_cph_RadWindow1" style="display:none;">
+		<div id="ctl00_cph_RadWindow1_C" style="display:none;">
+
+		</div><input id="ctl00_cph_RadWindow1_ClientState" name="ctl00_cph_RadWindow1_ClientState" type="hidden" />
+	</div><div id="ctl00_cph_RadWindowManager1_alerttemplate" style="display:none;">
+		<div class="rwDialogPopup radalert">			
+			<div class="rwDialogText">
+			{1}				
+			</div>
+			
+			<div>
+				<a  onclick="$find('{0}').close(true);"
+				class="rwPopupButton" href="javascript:void(0);">
+					<span class="rwOuterSpan">
+						<span class="rwInnerSpan">##LOC[OK]##</span>
+					</span>
+				</a>				
+			</div>
+		</div>
+		</div><div id="ctl00_cph_RadWindowManager1_prompttemplate" style="display:none;">
+		 <div class="rwDialogPopup radprompt">			
+			    <div class="rwDialogText">
+			    {1}				
+			    </div>		
+			    <div>
+				    <script type="text/javascript">
+				    function RadWindowprompt_detectenter(id, ev, input)
+				    {							
+					    if (!ev) ev = window.event;                
+					    if (ev.keyCode == 13)
+					    {															        
+					        var but = input.parentNode.parentNode.getElementsByTagName("A")[0];					        
+					        if (but)
+						    {							
+							    if (but.click) but.click();
+							    else if (but.onclick)
+							    {
+							        but.focus(); var click = but.onclick; but.onclick = null; if (click) click.call(but);							 
+							    }
+						    }
+					       return false;
+					    } 
+					    else return true;
+				    }	 
+				    </script>
+				    <input title="Enter Value" onkeydown="return RadWindowprompt_detectenter('{0}', event, this);" type="text"  class="rwDialogInput" value="{2}" />
+			    </div>
+			    <div>
+				    <a onclick="$find('{0}').close(this.parentNode.parentNode.getElementsByTagName('input')[0].value);"				
+					    class="rwPopupButton" href="javascript:void(0);" ><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[OK]##</span></span></a>
+				    <a onclick="$find('{0}').close(null);" class="rwPopupButton"  href="javascript:void(0);"><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[Cancel]##</span></span></a>
+			    </div>
+		    </div>				       
+		</div><div id="ctl00_cph_RadWindowManager1_confirmtemplate" style="display:none;">
+		<div class="rwDialogPopup radconfirm">			
+			<div class="rwDialogText">
+			{1}				
+			</div>						
+			<div>
+				<a onclick="$find('{0}').close(true);"  class="rwPopupButton" href="javascript:void(0);" ><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[OK]##</span></span></a>
+				<a onclick="$find('{0}').close(false);" class="rwPopupButton"  href="javascript:void(0);"><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[Cancel]##</span></span></a>
+			</div>
+		</div>		
+		</div><input id="ctl00_cph_RadWindowManager1_ClientState" name="ctl00_cph_RadWindowManager1_ClientState" type="hidden" />
+</div>
+
+    </div>
+    <script type="text/javascript" src="http://static.usnews.com/scripts/Analytics-3p.js"></script>
+
+    </div>
+    <div class="clear"></div>
+    
+    <div style="clear: both; height: 0px;">
+        &nbsp;</div>
+    
+
+    <div id="usn-foot">
+        <div id="foot-content">
+            <center>
+                <div style="width:902px;height:225px;text-align:left;">
+                    <div>
+                        <p id="foot-rankings">
+                            <a id="rank-img" href="http://www.usnews.com/rankings" target="_blank">
+                                <img style="border:none;" alt="Best U.S. News Rankings" src="http://static.usnews.com/static/images/swt/best-usn-rankings-gray.jpg"></img>
+                            </a>
+                            The 2013 “Best Law Firms” Rankings are part of U.S. News’s ongoing publication of rankings.<br />
+                            <a class="gold-link" href="http://www.usnews.com/rankings" target="_blank">See all U.S. News Rankings »</a>
+                        </p>
+                    </div>
+                    <ul>
+                        <li class="foot-title">Rankings Lists</li>
+                        <li>
+                            <a href="http://colleges.usnews.rankingsandreviews.com/best-colleges" target="_blank">Best Colleges</a>
+                        </li>
+                        <li>
+                            <a href="http://grad-schools.usnews.rankingsandreviews.com/best-graduate-schools" target="_blank">Best Grad Schools</a>
+                        </li>
+                        <li>
+                            <a href="http://health.usnews.com/best-hospitals" target="_blank">Best Hospitals</a>
+                        </li>
+                        <li>
+                            <a href="http://health.usnews.com/best-diet" target="_blank">Best Diets</a>
+                        </li>
+                        <li>
+                            <a href="http://travel.usnews.com/" target="_blank">Best Vacations</a>
+                        </li>
+                        <li>
+                            <a href="http://usnews.rankingsandreviews.com/cars-trucks/" target="_blank">Best Cars</a>
+                        </li>
+                        <li>
+                            <a href="http://www.usnews.com/education/best-high-schools" target="_blank">Best High Schools</a>
+                        </li>
+                        <li>
+                            <a href="http://health.usnews.com/top-doctors" target="_blank">Best Doctors</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="foot-title">U.S. News & World Report</li>
+                        <li>
+                            <a href="http://www.usnews.com/usnews/usinfo/about_usnews.htm" target="_blank">About U.S. News</a>
+                        </li>
+                        <li>
+                            <a href="http://www.usnews.com/info/features/contact" target="_blank">Contact Us</a>
+                        </li>
+                        <li>
+                            <a href="http://mediakit.usnews.com/" target="_blank">Advertising Info</a>
+                        </li>
+                        <li>
+                            <a href="http://www.usnews.com/info/features/masthead" target="_blank">Masthead</a>
+                        </li>
+                        <li>
+                            <a href="http://www.usnews.com/info/features/employment" target="_blank">Jobs</a>
+                        </li>
+                        <li>
+                            <a href="http://www.usnews.com/info/features/sitemap" target="_blank">Sitemap</a>
+                        </li>
+                        <li>
+                            <a id="twit-link" href="http://twitter.com/usnews" target="_blank">Twitter</a>
+                        </li>
+                        <li>
+                            <a id="face-link" href="http://www.facebook.com/usnewsandworldreport " target="_blank">Facebook</a>
+                        </li>
+                    </ul>
+                    <ul class="last-list">
+                        <li class="foot-title">Sections</li>
+                        <li>
+                            <a href="http://www.usnews.com/news/politics" target="_blank">Politics & Policy</a>
+                        </li>
+                        <li>
+                            <a href="http://www.usnews.com/education" target="_blank">Education</a>
+                        </li>
+                        <li>
+                            <a href="http://health.usnews.com/" target="_blank">Health</a>
+                        </li>
+                        <li>
+                            <a href="http://money.usnews.com/" target="_blank">Money</a>
+                        </li>
+                        <li>
+                            <a href="http://travel.usnews.com/" target="_blank">Travel</a>
+                        </li>
+                        <li>
+                            <a href="http://usnews.rankingsandreviews.com/cars-trucks/" target="_blank">Cars</a>
+                        </li>
+                        <li>
+                            <a href="http://www.usnews.com/science" target="_blank">Science</a>
+                        </li>
+                        <li>
+                            <a href="../../../../">Law</a>
+                        </li>
+                    </ul>
+                    <p id="foot-weekly">
+                        <a id="weekly-img" href="http://www.usnews.com/usnews/store/usnews_weekly_order.htm?src=subs_hph" target="_blank">
+                            <img src="../../../../Images/Footer/foot-weekly.png" style="border:none;" alt="U.S. News Weekly" />
+                        </a>
+                        Get all the last news, politics, opinion, and analysis U.S. News has to offer.<br />
+                        <a class="gold-link" href="http://www.usnews.com/usnews/store/usnews_weekly_order.htm?src=subs_hph" target="_blank">Subscribe to the Weekly »</a>
+                    </p>
+                    <div style="clear:both;"></div>
+                </div>
+                
+            </center>
+        </div>
+        <div id="foot-copyright" class="law-foot">
+            Copyright © 2012 U.S. News & World Report LP. Use of this Web site constitutes acceptance of our
+            <a href="http://www.usnews.com/info/features/terms" class="gold-link" target="_blank">Terms and Conditions/Privacy Policy</a>.
+        </div>
+    </div>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+function fn5E038023_21A4A7BA() { $('#divFirmName').hide();; Sys.Application.remove_load(fn5E038023_21A4A7BA);}; Sys.Application.add_load(fn5E038023_21A4A7BA);Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadPanelBar, {"_skin":"Default","clientStateFieldID":"ctl00_cph_pbFirmComments_ClientState","collapseAnimation":"{\"duration\":450}","expandAnimation":"{\"duration\":450}","expandMode":1,"itemData":[{"items":[{"enabled":false},{"enabled":false},{"enabled":false},{"enabled":false},{"enabled":false},{"enabled":false},{"enabled":false},{"enabled":false},{"enabled":false},{"enabled":false},{"enabled":false},{"enabled":false},{"enabled":false},{"enabled":false},{"enabled":false},{"enabled":false},{"enabled":false}],"expanded":true},{"items":[{"enabled":false},{"enabled":false},{"enabled":false},{"enabled":false},{"enabled":false},{"enabled":false},{"enabled":false},{"enabled":false},{"enabled":false},{"enabled":false},{"enabled":false},{"enabled":false},{"enabled":false},{"enabled":false}]},{"items":[{"enabled":false},{"enabled":false},{"enabled":false},{"enabled":false},{"enabled":false},{"enabled":false},{"enabled":false},{"enabled":false},{"enabled":false},{"enabled":false},{"enabled":false},{"enabled":false}]}]}, {"itemClicking":doPanelToggle}, null, $get("ctl00_cph_pbFirmComments"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadAjaxPanel, {"clientEvents":{OnRequestStart:"",OnResponseEnd:""},"enableAJAX":true,"enableHistory":false,"links":[],"loadingPanelID":"","styles":[],"uniqueID":"ctl00$cph$RadAjaxPanel1"}, null, null, $get("ctl00_cph_RadAjaxPanel1"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadFormDecorator, {"clientStateFieldID":"ctl00_cph_RadFormDecorator1_ClientState","decoratedControls":15,"enabled":true,"skin":"Default"}, null, null, $get("ctl00_cph_RadFormDecorator1"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadWindow, {"_dockMode":false,"behaviors":4,"clientStateFieldID":"ctl00_cph_RadWindow1_ClientState","enableShadow":true,"formID":"aspnetForm","iconUrl":"","minimizeIconUrl":"","name":"RadWindow1","navigateUrl":"../../../../modal/profileinfo.aspx","reloadOnShow":true,"showContentDuringLoad":false,"skin":"WebBlue","visibleStatusbar":false}, null, null, $get("ctl00_cph_RadWindow1"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadWindowManager, {"clientStateFieldID":"ctl00_cph_RadWindowManager1_ClientState","enableShadow":true,"formID":"aspnetForm","iconUrl":"","minimizeIconUrl":"","name":"RadWindowManager1","reloadOnShow":true,"showContentDuringLoad":false,"skin":"Default","visibleStatusbar":false,"windowControls":"['ctl00_cph_RadWindow1']"}, null, {"child":"ctl00_cph_RadWindow1"}, $get("ctl00_cph_RadWindowManager1"));
+});
+//]]>
+</script>
+</form>
+</body>
+</html>

@@ -1,0 +1,304 @@
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>NYU Login</title>
+	<!-- v1.2: Added favicon tag - wwward Dec 13, 2010 -->
+	<link rel="shortcut icon" href="/sso/favicon.ico" type="image/x-icon">
+	
+	<link rel="stylesheet" href="/sso/css/login.css" type="text/css" charset="utf-8" />
+	<!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="/sso/css/login.ie.css" media="screen" /><![endif]-->
+	
+	<script language="JavaScript" src="/sso/js/browserVersion.js"></script>
+	<script language="JavaScript" src="/sso/js/auth.js"></script>
+	<script language="JavaScript">
+	
+	var defaultBtn = 'Submit';
+	var elmCount = 0;
+
+	/** submit form with default command button */
+	function defaultSubmit() {
+		LoginSubmit(defaultBtn);
+	}
+
+	/**
+	 * submit form with given button value
+	 *
+	 * @param value of button
+	 */
+	function LoginSubmit(value) {
+		aggSubmit();
+		var hiddenFrm = document.forms['Login'];
+
+		if (hiddenFrm != null) {
+			hiddenFrm.elements['IDButton'].value = value;
+			hiddenFrm.submit();
+		}
+	}
+	
+	function focusLoginField(e) {
+		if (document.getElementById('IDToken1')) {
+			document.getElementById('IDToken1').focus();
+		}
+	}
+	
+	
+	window.onload = focusLoginField;
+	</script>
+</head>
+
+<body>
+
+<div id="doc" class="yui-t1">
+<div id="hd">
+	<h1><a href="http://www.nyu.edu">New York University</a></h1>
+	<ul id="utilities">
+	<li class="links">Quick Links
+		<ul>
+		<li><a href="http://www.nyu.edu/academics/academic.calendar.html">Academic Calendar</a></li>
+		<li><a href="http://www.albert.nyu.edu/operator">Albert: Admin</a></li>
+		<li><a href="http://www.nyu.edu/athletics/">Athletics</a></li>
+		<li><a href="http://www.bookstores.nyu.edu/">Bookstores</a></li>
+		<li><a href="http://www.nyu.edu/careerdevelopment/">Career Development</a></li>
+		<li><a href="http://www.nyu.edu/alumni/giving">Giving to NYU</a></li>
+		<li><a href="http://www.nyu.edu/nyuhc/">Health Center</a></li>
+		<li><a href="http://www.nyu.edu/housing/">Housing</a></li>
+		<li><a href="http://www.nyu.edu/its/">ITS</a></li>
+		<li><a href="http://www.nyu.edu/hr/employment/apply.html">Job Listings</a></li>
+		<li><a href="http://library.nyu.edu/">Libraries</a></li>
+		<li><a href="http://nyubook.collegestoreonline.com/">NYU Apparel</a></li>
+		<li><a href="http://www.nyu.edu/about/help.html">NYU Help</a></li>
+		<li><a href="http://www.nyu.edu/public.affairs">Public Affairs</a></li>
+		<li><a href="http://www.nyu.edu/registrar">Registrar</a></li>
+		<li><a href="http://www.nyu.edu/src">Student Resource Center</a></li>
+		<li><a href="http://www.nyu.edu/999">Wellness Exchange</a></li>
+		<li><a href="http://www.nyu.edu/about/atoz.html">NYU A-Z</a></li>
+		</ul>
+	</li>
+	<li class="schools">Schools
+		<ul>
+		<li><a href="http://as.nyu.edu">Arts and Science</a></li>
+		<li><a href="http://cas.nyu.edu">College of Arts and Science</a></li>
+		<li><a href="http://www.nyu.edu/dental/">College of Dentistry</a></li>
+		<li><a href="http://www.nyu.edu/nursing/">College of Nursing</a></li> 
+		<li><a href="http://www.cims.nyu.edu/">Courant Institute of Mathematical Sciences</a></li>
+		<li><a href="http://www.nyu.edu/gallatin/">Gallatin School of Individualized Study</a></li>
+		<li><a href="http://gsas.nyu.edu">Graduate School of Arts and Science</a></li>
+		<li><a href="http://www.nyu.edu/gsas/dept/fineart/">Institute of Fine Arts</a></li>
+		<li><a href="http://www.nyu.edu/isaw/">Institute for the Study of the Ancient World</a></li>						
+		<li><a href="http://www.stern.nyu.edu/">Leonard  N. Stern School of Business</a></li>
+		<li><a href="http://wagner.nyu.edu/">Robert F. Wagner Graduate School of Public Service</a></li>
+		<li><a href="http://www.scps.nyu.edu/">School of Continuing and Professional Studies</a></li>
+		<li><a href="http://www.law.nyu.edu/">School of Law</a></li>
+		<li><a href="http://www.med.nyu.edu/">School of Medicine</a></li>
+		<li><a href="http://www.nyu.edu/socialwork/">Silver School of Social Work</a></li>
+		<li><a href="http://steinhardt.nyu.edu/">Steinhardt School of Culture, Education, and Human Development</a></li>
+		<li><a href="http://www.tisch.nyu.edu/">Tisch School of the Arts</a></li>
+		</ul>
+	</li>
+	<li class="search">
+		<form action="http://www.nyu.edu/cgi-bin/search/NYUSearch.pl" name="search" method="get">
+		<input type="text" name="query" value="Search &amp; Directory" />
+		<button type="submit" name="submit" value="Submit">Go</button>
+		</form>
+	</li>
+	</ul>
+</div>
+
+<div id="bd">
+	<h1>Sign In</h1>
+	<!--
+	<ul id="navigation">
+	<li><a href="">FAQs</a></li>
+	</ul>
+	-->
+
+
+
+
+
+
+
+
+
+	<p>Login and continue to <strong>NYUHome</strong></p>
+
+
+<div id="yui-main"> 
+<div class="yui-b">
+	<div class="yui-ge"> 
+		<div class="yui-u first">
+			
+
+
+<img src="/sso/images/photos/flowers3.jpg" />
+			<p class="terms">Access and use, or causing access and use, of this computer system by anyone other than as permitted by NYU are strictly prohibited by NYU and by law and may subject an unauthorized user, including unauthorized employees, to criminal and civil penalties as well as NYU-initiated disciplinary proceedings. The use of this system is routinely monitored and recorded, and anyone accessing this system consents to such monitoring and recording.</p>
+
+			<p class="support">Questions? Comments? Please email <a href="mailto:askits@nyu.edu">askits@nyu.edu</a>, or call ITS Client Services at 212-998-3333.</p>
+		</div> 
+		<div class="yui-u">
+			<p class="support"><a href="http://www.nyu.edu/its/faq/passwords/#forget">Forgot</a> your password?</p>
+			<p class="support"><a href="http://www.nyu.edu/its/faq/nyuhome/#trouble">Problems</a> signing in?</p>
+			<p class="support">Need to <a href="http://start.nyu.edu/">activate</a> your NetID or NYUHome account?</p>
+		</div> 
+	</div>
+</div>
+</div>
+
+<div class="yui-b" id="login-column">
+	<div id="login-panel">
+	
+	<!--
+	
+		This server uses Data Store Authentication
+	
+	-->
+	
+	<fieldset>
+
+	
+		
+			<script language="javascript">
+			elmCount++;
+			</script>
+	
+	<!--  Added lowerCase() function. v1.2 wwward SSO-24 -->
+	<script language="javascript">
+	function lowerCase() {
+	var input=document.getElementById("IDToken1").value
+	document.getElementById("IDToken1").value=input.toLowerCase()
+	}
+	</script>
+	
+			<!-- Added onChange event to input for NetID textbox element. v1.2 wwward SSO-24 -->
+			
+
+			
+
+			
+		
+			<script language="javascript">
+			elmCount++;
+			</script>
+	
+	<!--  Added lowerCase() function. v1.2 wwward SSO-24 -->
+	<script language="javascript">
+	function lowerCase() {
+	var input=document.getElementById("IDToken1").value
+	document.getElementById("IDToken1").value=input.toLowerCase()
+	}
+	</script>
+	
+			<!-- Added onChange event to input for NetID textbox element. v1.2 wwward SSO-24 -->
+			
+				<form name="frm1" action="blank" onSubmit="defaultSubmit(); return false;">
+				<label>
+				<!--  -->
+				<!--  User Name:  -->
+				NetID
+				<input type="text" onChange="lowerCase()" name="IDToken1" id="IDToken1" value="" />
+				</label>
+				</form>
+			
+
+			
+
+			
+		
+			<script language="javascript">
+			elmCount++;
+			</script>
+	
+	<!--  Added lowerCase() function. v1.2 wwward SSO-24 -->
+	<script language="javascript">
+	function lowerCase() {
+	var input=document.getElementById("IDToken1").value
+	document.getElementById("IDToken1").value=input.toLowerCase()
+	}
+	</script>
+	
+			<!-- Added onChange event to input for NetID textbox element. v1.2 wwward SSO-24 -->
+			
+
+			
+				<form name="frm2" action="blank" onSubmit="defaultSubmit(); return false;">
+				<label>
+				<!--  -->
+				<!--  Password:  -->
+				Password
+				<input type="password" name="IDToken2" id="IDToken2" value="" />
+				</label>
+				</form>
+			
+
+			
+		
+	
+
+	
+
+	
+
+	
+
+	
+		
+
+		
+			<script language="javascript">
+			markupButton(
+				'Log In',
+				"javascript:LoginSubmit('Log In')"
+			);
+			</script>
+		
+	
+
+	
+		<form   name="Login"  action="/sso/UI/Login?AMAuthCookie=AQIC5wM2LY4SfcxeWZFrjYXWP8-8HWV99MwgqwpZ30eMka8.*AAJTSQACMDIAAlMxAAIwMQ..*"  method="post">
+		<script language="javascript">
+		if (elmCount != null) {
+			for (var i = 0; i < elmCount; i++) {
+				document.write("<input name=\"IDToken" + i + "\" type=\"hidden\">");
+			}
+			document.write("<input name=\"IDButton"  + "\" type=\"hidden\">");	
+		}
+		</script>
+		<input type="hidden" name="goto" value="aHR0cDovL2hvbWUubnl1LmVkdTo4MC8=">
+		<input type="hidden" name="gotoOnFail" value="">
+		<input type="hidden" name="SunQueryParamsString" value="">
+		<input type="hidden" name="encoded" value="true">
+		<input type="hidden" name="gx_charset" value="UTF-8"></form>
+	
+
+	</fieldset>
+	</div>
+</div>
+
+</div>
+
+<div id="ft">
+	<p class="copyright">Unless otherwise noted, all content copyright New York University. All rights reserved.<br/>
+	Designed by The Office of Web Communications</p>
+	
+	<p class="links"><a href="http://www.nyu.edu/about/copyright.html">Copyright Communication</a> | <a href="http://www.nyu.edu/about/notice.html">Important Notice</a> | <a href="mailto:web.feedback@nyu.edu">Feedback</a></p>
+</div>
+</div>
+
+</body>
+</html>
+
+<!-- am1 -->

@@ -1,0 +1,1093 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="ctl00_Head1"><title>
+	U.S. News - Best Lawyers - Yumkas, Vidmar & Sweeney, LLC
+</title><meta name="description" content="View the U.S. News - Best Lawyers profile for Yumkas, Vidmar &amp; Sweeney, LLC" />
+    
+    <script type="text/javascript">
+        function doPanelToggle(sender, eventArgs) {
+            var item = eventArgs.get_item();
+            if (item.get_expanded()) {
+                item.collapse();
+                eventArgs.set_cancel(true);
+            }
+        }
+
+        function doPracticeAreaJump(ddl) {
+            var val = ddl.options[ddl.selectedIndex].value
+            if (val != 0) {
+                var a = String.format("practiceArea{0}", val)
+                window.location.hash = a
+            }
+        }
+
+        function pageLoad() {
+            $('#divPracticeAreasPreviewContent').truncateToHeight(200, '...')
+        }
+    </script>
+     
+    
+    <style type="text/css">
+       
+       /* hover and selecion fix */
+        div.RadPanelBar_Default .rpItem .rpGroup .rpLink {background-image: none;}
+
+        div.RadPanelBar_Default .rpItem .rpGroup .rpSelected {background-image: none; color: #000000;}
+        div.RadPanelBar_Default .rpItem .rpGroup .rpExpanded {background-image: none; color: #000000; }
+        div.RadPanelBar_Default .rpItem .rpGroup .rpLink:hover .rpOut {background-image: none; color: #000000;}
+    
+        div.RadPanelBar_Default .rpItem .rpGroup .rpSelected .rpOut {background-image: none; color: #000000;}
+        div.RadPanelBar_Default .rpItem .rpGroup .rpExpanded .rpOut {background-image: none; color: #000000;}
+        div.RadPanelBar .rpLink { cursor:default;}
+
+
+    
+    .lfotyRank  {
+        width: 350px;
+        padding:  5px 5px 5px 5px;
+        text-align: Center;
+        border: 3px solid #0072b2;
+        border-radius: 8px 8px 8px;
+        margin-top: 70px;
+        }
+               
+    
+    div.rankings div.column 
+    {
+    	width: 250px;
+    	float: left;
+    }
+    
+    div.column.leftcolumn
+    {
+        padding-right: 20px; 
+    }
+    
+    div.rankings .rankingcat
+    {
+    	padding-top: 5px;
+    	padding-bottom: 0px;
+    }
+    
+    
+    div.rankings .rankingspec, div.rankings .rankingcat, div.rankings .toggle
+    {
+    	margin-left: -10px;
+    }
+    
+    .rankingspec
+    {
+    	color: #444444 !important;
+        font-size: 13px;
+        line-height: 20px;
+        margin-bottom: 5px;
+    }
+    
+    div.rankings > div.column, div.rankings > div.column
+    {
+    	padding-left: 10px;
+    	margin-right: -10px;
+    }
+    
+    
+    #divMDData td 
+    {
+    	vertical-align: top;
+    }
+    
+    #divMDData .firm_profile_header 
+    {
+    	font-weight: normal;
+    }
+    
+    #divMDData tr td:first-child 
+    {
+    	width: 375px;
+    	text-indent: -10px;
+    	padding-left: 10px;
+    }
+    
+    #divMDData th, #divMDData tr.header
+    {
+    	text-decoration: underline;
+    	font-weight: bold;
+    	text-align: left;
+    }
+    
+    #divMDData
+    {
+    	width: 475px;
+    }
+    
+    #divMDData table
+    {
+    	width: 475px;
+    }
+    
+    tr.spacer
+    {
+    	line-height: 5px;
+    }
+    
+</style>
+<link href="../../../../Styles/dialog.css" rel="Stylesheet" type="text/css" /><link href="../../../../styles/global.css" rel="stylesheet" type="text/css" /><link href="../../../../styles/content.css" rel="Stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.2.min.js"></script>
+
+    <script type='text/javascript' src='/Scripts/jquery-cookie.js'></script>
+    <script type="text/javascript">
+            
+        var inSearchBox = false;
+
+        function checkKeycode(e) {
+            var keycode;
+            if (window.event) {
+                keycode = window.event.keyCode;
+            }
+            else if (e) {
+                keycode = e.which;
+            }
+
+            if (keycode == 13) {
+                if (inSearchBox) {
+                    searchResults(e.value);
+                }
+            }
+        }
+
+        function ClearText(textbox) {
+            if (textbox.id.indexOf("txtLawyerFirmName") != -1) {
+                if (document.getElementById(textbox.id).value == "Firm Name") {
+                    document.getElementById(textbox.id).value = "";
+                    document.getElementById(textbox.id).style.color = '#000000';
+                }
+            }
+            if (textbox.id.indexOf("txtCity") != -1) {
+                if (document.getElementById(textbox.id).value == "City")
+                    document.getElementById(textbox.id).value = "";
+            }
+            if (textbox.id.indexOf("txtZipCode") != -1) {
+                if (document.getElementById(textbox.id).value == "Zip Code")
+                    document.getElementById(textbox.id).value = "";
+            }
+        }
+
+        function TextBoxLoseFocus(textbox) {
+            if (textbox.id.indexOf("txtLawyerFirmName") != -1) {
+                if (document.getElementById(textbox.id).value == "") {
+                    document.getElementById(textbox.id).value = "Firm Name";
+                    document.getElementById(textbox.id).style.color = 'grey';
+                }
+            }
+            if (textbox.id.indexOf("txtCity") != -1) {
+                if (document.getElementById(textbox.id).value == "")
+                    document.getElementById(textbox.id).value = "City";
+            }
+            if (textbox.id.indexOf("txtZipCode") != -1) {
+                if (document.getElementById(textbox.id).value == "")
+                    document.getElementById(textbox.id).value = "Zip Code";
+            }
+        }
+
+        function setInSearch(flag) {
+            inSearchBox = flag;
+        }
+
+    </script>
+
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-946476-2']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+   <script type="text/javascript">
+            $(document).ready(function () {
+                $(".norightclick").live("contextmenu", function (e) {
+                    return false;
+                });
+
+                $('img[src="http://s0.2mdn.net/dot.gif"]').parent().parent().parent().css('margin-left', 'auto').css('margin-right', 'auto');
+            });
+    </script>
+
+    <style type="text/css">
+        .txtSearch
+        {
+            vertical-align:middle;
+        }
+        
+        .navMenuClass
+        {
+        	height:38px;
+        	padding-left:0px;
+        	margin-top:0px;
+        	margin-bottom:0px;
+        }
+        
+        #usnewsMenu li
+        {
+        	float:left;
+        	list-style-type:none;
+        	padding-left:3px;
+        	padding-right:3px;
+        	margin-left:3px;
+        	margin-right:3px;
+        }
+        
+        #usnewsMenu a
+        {
+        	color:white;
+        	text-transform:uppercase;
+        	font-size:12px;
+        	font-weight:400;
+        	font-style:normal;
+        	text-decoration:none;
+        	line-height:16.8px;
+        	font-variant:normal;
+        }
+        
+        #navMenu li
+        {
+        	float:left;
+        	list-style-type:none;
+        	padding-left:6px;
+        	padding-right:6px;
+        	margin-left:3px;
+        	margin-right:3px;
+        	padding-top:12px;
+        	height:33px;
+        }
+        
+        #navMenu a
+        {
+        	color:White;
+        	text-transform:uppercase;
+        	font-family:Verdana;
+        	font-size:14px;
+        	font-weight:700;
+        	font-style:normal;
+        	text-decoration:none;
+        	line-height:19.6px;
+        	font-variant:normal;
+        }
+        
+        #navMenu a:hover,
+        #usnewsMenu a:hover
+        {
+        	color:#F7B11A;
+        }
+        
+        .selectedMenuItem,
+        .selectedMenuItem a
+        {
+        	background-color:White;
+        	color:#444444 !important;
+        	border-radius: 10px 10px 0px 0px;
+        }
+        
+        #foot-copyright.law-foot {
+            background-color: #235983;
+            background-image: -moz-linear-gradient(center bottom , #235983 0%, #317EB9 100%);
+        }
+        .gold-link {
+            color: #F7B11A;
+        }
+        
+        #foot-copyright {
+            border-top: 1px solid #777777;
+            clear: both;
+            color: #FFFFFF;
+            float: left;
+            margin-top: 20px;
+            padding: 15px 0;
+            text-align: center;
+            width: 100%;
+        }
+        
+        #usn-foot {
+            background-color: #444444;
+            font-size: 11px;
+            overflow: auto;
+            padding: 20px 0 0;
+            margin-top:40px;
+        }
+        
+        #foot-content {
+            margin: 0 auto;
+            width: 1030px;
+        }
+
+        #foot-rankings {
+            background-color: #3C3C3C;
+            border-radius: 5px 5px 5px 5px;
+            color: #AAAAAA;
+            float: left;
+            line-height: 1.6em;
+            padding: 15px;
+            width: 170px;
+        }
+        
+        #foot-rankings #rank-img {
+            display: block;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+        
+        #usn-foot .foot-title {
+            color: #AAAAAA;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        
+        #usn-foot ul {
+            border-left: 1px solid #555555;
+            float: left;
+            height: 200px;
+            margin-left: 10px;
+            padding: 0 10px;
+        }
+        #usn-foot ul li {
+            margin-bottom: 5px;
+            list-style: none outside none;
+        }
+        
+        #usn-foot ul li a {
+            color: #CCCCCC;
+            padding-bottom: 2px;
+        }
+        
+        #twit-link, #face-link {
+            padding-left: 21px;
+        }
+        
+        #twit-link {
+            background: url("http://bestlawfirms.usnews.com/Images/Footer/foot-twit.png") no-repeat scroll 0 0 transparent;
+        }
+        
+         #face-link {
+            background: url("http://bestlawfirms.usnews.com/Images/Footer/foot-face.png") no-repeat scroll 0 0 transparent;
+        }
+        
+        #usn-foot .last-list {
+            border-right: 1px solid #555555;
+            margin-right: 10px;
+            padding-right: 20px;
+        }
+        
+        #foot-weekly {
+            background: none repeat scroll 0 0 #3C3C3C;
+            border-radius: 5px 5px 5px 5px;
+            color: #AAAAAA;
+            float: left;
+            line-height: 1.6em;
+            padding: 12px;
+            width: 200px;
+        }
+        
+        #foot-weekly #weekly-img {
+            display: block;
+            text-align:center;
+            height: 74px;
+            margin: 4px 12px 4px 4px;
+        }
+        
+        #foot-colleges, #foot-animals {
+            color: #CCCCCC;
+            float: left;
+            height: 74px;
+            margin-top: 15px;
+            padding: 0 10px;
+            width: 143px;
+        }
+        
+        #colleges-img, #animals-img {
+            box-shadow: 0 0 6px #000000;
+            float: left;
+            height: 56px;
+            margin-right: 10px;
+        }
+        
+        #nav-search a {
+            background: url("http://bestlawfirms.usnews.com/images/nav-search.png") no-repeat scroll 0 0 transparent;
+            display: block;
+            height: 12px;
+            width: 12px;
+            margin-left:0px;
+            padding-left:0px;
+            margin-top:4px;
+        }
+        
+        #nav-search a:hover,
+        #nav-search a:focus
+        {
+        	background-position: 0 -12px;
+        }
+        
+        a 
+        {
+        	color: #005EA6;
+            text-decoration: none;
+        }
+    </style>
+<link href="/WebResource.axd?d=CK53l002HSWX1Bp4Gj-rVMGqCwt6cdM6L1kHqQZs0n-p1lX7vg1_vVIB3X0lsCFUeANMZyWfg0tBgydLChwV3KpH2IVNPRP-n9onal1aYtCO-1bNK55CPHUtPtJgFgagl-9Y-ysWUZtjcbcZXWbnvA2&amp;t=634907478598153312" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=5kByVBmnlbmJHt-WZGyMobUHqMhuQVnuXGbiPQEUI4z6EUu4HCdiyAtbPhPRDR-RpMfi0uPLRA8awZ0_-vkvBUyt1fXq_fqMbvJyHNxyRUTsaTPSWjuJH6uaDLopR0nvTugUqp9BvX38b1AH8LGqsVAQhWrYlHSklS14DuvMVcc1&amp;t=634907478598153312" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=VQ8GeyFUWHpzeYe-Mj4_3Lj4xvuQdi315ROg-hThX9BIl6F8EgKSl8HsC1-3wVsVnykyEBLBUB736ZtVrCsmzGSjs154Y29BoU3LFy15br5RWZHz658AK7v4GwnfZiTtbYAfjxmvndVCKJV9vpg-3w2&amp;t=634907478598153312" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=JliB0jEAHhOkSXviZ0wPPuIDYlE_is5iCRBuBAmPZ0yUOqiZEIXUOmqX1VC_AmfjKNOfRbQpynq95Vt08p8_IQ2iPEtSY9Ow_yDUHRPL3T3JAmBv0cV-zRVrGQ_T5Yb9sP8Z24tqqP4b5cdsxd_c9MeLO49Tdi3Eoz94vu9LT9Q1&amp;t=634907478598153312" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=F2gG2LSRbFmfLJUnvEXrjcZmE5YYoR6Vd5J6OczTGskDOrynpJZbZUhP2lTu0R-eNfomZV8AhcAb9Dsm__1tKurZNb3eAdeMBic50EpG-4I4KdCqpsusbDVP_O6o658NadFXgAcX270E24A_ju1JaWnKEncImR4MALX4Hg0TnOU1&amp;t=634907478055116365" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /></head>
+<body style="margin: 0px;">
+    <form name="aspnetForm" method="post" action="?firm_id=50934&amp;tab=overview" id="aspnetForm">
+<div>
+<input type="hidden" name="ctl00_RadScriptManager1_TSM" id="ctl00_RadScriptManager1_TSM" value="" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTk2OTE5OTc4OQ9kFgJmD2QWBAIBD2QWAgIBDxYCHgdjb250ZW50BUtWaWV3IHRoZSBVLlMuIE5ld3MgLSBCZXN0IExhd3llcnMgcHJvZmlsZSBmb3IgWXVta2FzLCBWaWRtYXIgJiBTd2VlbmV5LCBMTENkAgMPZBYEAhkPFgIeB1Zpc2libGVnFgICAQ8WAh4EVGV4dAVRPGEgaHJlZj0nLyc+QmVzdCBMYXcgRmlybXM8L2E+ID4gPGEgaHJlZj0nL1NlYXJjaC5hc3B4Jz5TZWFyY2g8L2E+ID4gRmlybSBQcm9maWxlZAIbD2QWKmYPDxYCHwFoZGQCAQ8PFgIfAWhkZAICDw8WAh8CBXBNYW5ueSBDYW5kYWwgYXQgPGEgaHJlZj0nbWFpbHRvOm1jYW5kYWxAYmVzdGxhd3llcnMuY29tJz5tY2FuZGFsQGJlc3RsYXd5ZXJzLmNvbTwvYT4gPGJyLz4gT3IgYXQgKDgwMykgNjQ0LTE4MDQuZGQCAw9kFg4CAQ8PZBYCHgVjbGFzcwUQY3VycmVudF9uYXZfaXRlbWQCAw8PFgIfAWgWAh8DBQhuYXZfaXRlbWQCBQ8PZBYCHwMFCG5hdl9pdGVtZAIHDw9kFgIfAwUIbmF2X2l0ZW1kAgkPDxYCHwFnFgIfAwUIbmF2X2l0ZW1kAgsPD2QWAh8DBQhuYXZfaXRlbWQCDQ8PFgIfAWgWAh8DBQhuYXZfaXRlbWQCBA8WAh8BZxYMZg8PFgIfAWdkZAIBDw8WAh8BaGRkAgIPDxYCHwFoZGQCAw8PFgIfAWhkZAIEDw8WAh8BaGRkAgUPDxYCHwFoFgIfAwUIbmF2X2l0ZW1kAgUPDxYCHwIFJll1bWthcywgVmlkbWFyJm5ic3A7JmFtcDsgU3dlZW5leSwgTExDZGQCBg9kFgICAQ8PFgIeCEltYWdlVXJsBTBodHRwOi8vYmVzdGxhd3llcnMuY29tL3NlYXJjaC9sb2dvcy81MDkzNF9VUy5naWZkZAIHD2QWBAIBDxYCHwMFLWZpcm1fcHJvZmlsZV9oZWFkZXIgZmlybV9wcm9maWxlX2hlYWRlcl9maXJzdGQCAw8WAh8CBccVPGRpdiBpZD0nZGl2UHJvZmlsZVByZXZpZXcnIHN0eWxlPSdwYWRkaW5nLWJvdHRvbToycHg7Jz4mbmJzcDsKWXVta2FzLCBWaWRtYXIgJmFtcDsgU3dlZW5leSwgTExDIGlzIGFuIEFubmFwb2xpcyBiYXNlZCBib3V0aXF1ZSBidXNpbmVzcyBsYXcgZmlybSBob21lIHRvIHRvcCByYXRlZCBhdHRvcm5leXMgd2hvIGZvY3VzIG9uIGhhbmRsaW5nIHRoZSBuZWVkcyBvZiBjbGllbnRzIHdpdGggY29tcGxleCBidXNpbmVzcyBpc3N1ZXMuIE91ciBjbGllbnRzIHJhbmdlIGZyb20gaGlnaC1uZXQtd29ydGggaW5kaXZpZHVhbHMgYW5kIGZhbWlseSBidXNpbmVzcyBvd25lcnMgdG8gbWlkLW1hcmtldCBhbmQgRm9ydHVuZSA1MDAgY29tcGFuaWVzLiAKClRoZSBmaXJtJ3MgYXR0b3JuZXlzIHNoYXJlIHdlbGwgb3ZlciAxMDAgeWVhcnMgb2YgY29tYmluZWQgbGVnYWwgZXhwZXJpZW5jZSBpbiBidXNpbmVzcyBsLi4uICAgPGRpdiBzdHlsZT0ncGFkZGluZy10b3A6NXB4Oyc+ICAgICAgIDxpbWcgc3JjPSdodHRwOi8vYmVzdGxhd2Zpcm1zLnVzbmV3cy5jb20vaW1hZ2VzL2J1bGxldC5naWYnPiZuYnNwOyZuYnNwOyAgICAgICA8YSBocmVmPScjJyBvbkNsaWNrPSdkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgiZGl2UHJvZmlsZVByZXZpZXciKS5zdHlsZS5kaXNwbGF5PSJub25lIjsgICAgICAgICAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgiZGl2UHJvZmlsZSIpLnN0eWxlLmRpc3BsYXk9ImJsb2NrIjsgcmV0dXJuIGZhbHNlOyAnPiAgICAgICAgICAgUmVhZCBtb3JlPC9hPiAgICA8L2Rpdj48L2Rpdj48ZGl2IGlkPSdkaXZQcm9maWxlJyBzdHlsZT0nZGlzcGxheTpub25lOyBwYWRkaW5nLWJvdHRvbToycHg7Jz48cD4mbmJzcDs8L3A+Cll1bWthcywgVmlkbWFyICZhbXA7IFN3ZWVuZXksIExMQyBpcyBhbiBBbm5hcG9saXMgYmFzZWQgYm91dGlxdWUgYnVzaW5lc3MgbGF3IGZpcm0gaG9tZSB0byB0b3AgcmF0ZWQgYXR0b3JuZXlzIHdobyBmb2N1cyBvbiBoYW5kbGluZyB0aGUgbmVlZHMgb2YgY2xpZW50cyB3aXRoIGNvbXBsZXggYnVzaW5lc3MgaXNzdWVzLiBPdXIgY2xpZW50cyByYW5nZSBmcm9tIGhpZ2gtbmV0LXdvcnRoIGluZGl2aWR1YWxzIGFuZCBmYW1pbHkgYnVzaW5lc3Mgb3duZXJzIHRvIG1pZC1tYXJrZXQgYW5kIEZvcnR1bmUgNTAwIGNvbXBhbmllcy4gPGJyIC8+CjxiciAvPgpUaGUgZmlybSdzIGF0dG9ybmV5cyBzaGFyZSB3ZWxsIG92ZXIgMTAwIHllYXJzIG9mIGNvbWJpbmVkIGxlZ2FsIGV4cGVyaWVuY2UgaW4gYnVzaW5lc3MgbGl0aWdhdGlvbiwgYnVzaW5lc3MgY291bnNlbGluZywgZGVidG9yIGFuZCBjcmVkaXRvciByaWdodHMsIHJlZ3VsYXRvcnkgY29tcGxpYW5jZSBhbmQgaW5zdXJhbmNlIGFuZCBjb21tZXJjaWFsIGxpdGlnYXRpb24uIE91ciBhdHRvcm5leXMgYXJlIGxpY2Vuc2VkIHRvIHByYWN0aWNlIGluIHRoZSBTdGF0ZSBhbmQgRmVkZXJhbCBDb3VydHMgb2YgTWFyeWxhbmQsIEQuQy4sIE5ldyBZb3JrLCBWaXJnaW5pYSwgYW5kIFdlc3QgVmlyZ2luaWEuIDxiciAvPgo8YnIgLz4KT3VyIGxhd3llcnMgaGF2ZSBiZWVuIHNlbGVjdGVkIGZvciBpbmNsdXNpb24gaW4gQmVzdCBMYXd5ZXJzIGluIEFtZXJpY2EsIGluIE1hcnlsYW5kIGFuZCBELkMuIFN1cGVyIExhd3llcnMsIGFuZCBoYXZlIGVhcm5lZCAiQVYiIHByZWVtaW5lbnQgcmF0aW5ncyAmbWRhc2g7IGEgcmVjb2duaXRpb24gcmVmbGVjdGluZyB0aGUgcmVzcGVjdCBvZiBvdXIgcGVlcnMgZm9yIG91ciBza2lsbCwgZXRoaWNzIGFuZCBpbnRlZ3JpdHkuIENhcmVmdWxseSBzZWxlY3RlZCBhbmQgYWNjb21wbGlzaGVkIGFzc29jaWF0ZXMgYnJpbmcgYSB3ZWFsdGggb2Yga25vd2xlZGdlLCB0YWxlbnQgYW5kIGhpZ2gtdmFsdWUgY2FzZSBleHBlcmllbmNlIGFjcm9zcyBrZXkgcHJhY3RpY2UgYXJlYXMgZm9yIG91ciBjbGllbnRzLiA8YnIgLz4KPGJyIC8+Ck91ciBmaXJtJ3MgQW5uYXBvbGlzIGxvY2F0aW9uIHBlcm1pdHMgdXMgdG8gcmVwcmVzZW50IGludGVyZXN0cyBpbiB0aGUgZHluYW1pYyBBbm5hcG9saXMgYW5kIEVhc3Rlcm4gU2hvcmUgbWFya2V0cyB3aGlsZSBnaXZpbmcgZm9jdXNlZCBhdHRlbnRpb24gdG8gY2xpZW50cyBsb2NhdGVkIGluIEJhbHRpbW9yZSwgV2FzaGluZ3RvbiwgRC5DLiwgTm9ydGhlcm4gVmlyZ2luaWEsIE5ldyBZb3JrLCBXZXN0IFZpcmdpbmlhIGFuZCBiZXlvbmQuIE91ciBzaXplLCBzdGFmZmluZyBhbmQgY29tcGV0aXRpdmUgcmF0ZXMgcGVybWl0IHVzIHRvIHByb3ZpZGUgYmlnIGNpdHksIGJpZyBmaXJtIHF1YWxpdHkgbGVnYWwgd29yayBlZmZpY2llbnRseSBhbmQgd2l0aCBwZXJzb25hbGl6ZWQgc2VydmljZSBpbiB0aGUgY2xpZW50LWZyaWVuZGx5IG1hbm5lciB0aGF0IG91ciBjbGllbnRzIGRlc2VydmUuIDxiciAvPjxicj4gICA8ZGl2IHN0eWxlPSdwYWRkaW5nLXRvcDo1cHg7Jz4gICAgICAgPGltZyBzcmM9J2h0dHA6Ly9iZXN0bGF3ZmlybXMudXNuZXdzLmNvbS9pbWFnZXMvYnVsbGV0LmdpZic+Jm5ic3A7Jm5ic3A7ICAgICAgIDxhIGhyZWY9JyMnIG9uQ2xpY2s9J2RvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJkaXZQcm9maWxlIikuc3R5bGUuZGlzcGxheT0ibm9uZSI7ICAgICAgICAgICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoImRpdlByb2ZpbGVQcmV2aWV3Iikuc3R5bGUuZGlzcGxheT0iYmxvY2siOyByZXR1cm4gZmFsc2U7ICc+ICAgICAgICAgICBjb2xsYXBzZSBwcm9maWxlPC9hPiAgICA8L2Rpdj48L2Rpdj5kAggPDxYCHwFoZBYCAgEPFgIfAWhkAgkPDxYCHwFnFgIeBVN0eWxlBSFwYWRkaW5nOiA1cHggMCA1cHggMDsgd2lkdGg6IDk1JTsWAgIDDxYCHwJlZAIKDw8WAh8BaGRkAgsPD2QWAh8FBSFwYWRkaW5nOiA1cHggMCA1cHggMDsgd2lkdGg6IDk1JTtkAgwPD2QWAh8FBSFwYWRkaW5nOiA1cHggMCA1cHggMDsgd2lkdGg6IDk1JTtkAg0PD2QWAh8FBSFwYWRkaW5nOiA1cHggMCA1cHggMDsgd2lkdGg6IDk1JTsWAgIDDw8WAh8CBZADPGRpdiBzdHlsZT0nY2xlYXI6Ym90aDsgaGVpZ2h0OjBweDsnPiZuYnNwOzwvZGl2PjxkaXYgc3R5bGU9J3dpZHRoOjI0MHB4O3BhZGRpbmctYm90dG9tOiAxMHB4O2ZvbnQtZmFtaWx5OnZlcmRhbmE7Zm9udC1zaXplOjEzcHg7Y29sb3I6IzY2NjY2NjtsaW5lLWhlaWdodDoxOC4ycHg7Jz48aDUgc3R5bGU9ImNvbG9yOiM0NDQ0NDQ7Zm9udC1zaXplOjE0cHg7Zm9udC13ZWlnaHQ6Ym9sZDtsaW5lLWhlaWdodDoyMHB4O21hcmdpbi1ib3R0b206NXB4OyI+QW5uYXBvbGlzLCBNRDwvaDU+DQoyNTMwIFJpdmEgUm9hZCwgU3VpdGUgNDAwPGJyPg0KMjE0MDE8YnI+DQpQaG9uZTogNDEwLTU3MS0yNzgwPGJyPg0KPC9kaXY+PGRpdiBzdHlsZT0nY2xlYXI6Ym90aDsgaGVpZ2h0OjFweDsnPiZuYnNwOzwvZGl2PmRkAg4PDxYCHwFoZBYIAgEPFgIfAWhkAgMPFgIfAWhkAgUPZBYCAgEPFCsAAhQrAAIPFgIeCkV4cGFuZE1vZGULKXtUZWxlcmlrLldlYi5VSS5QYW5lbEJhckV4cGFuZE1vZGUsIFRlbGVyaWsuV2ViLlVJLCBWZXJzaW9uPTIwMTIuMy4xMjA1LjQwLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTEyMWZhZTc4MTY1YmEzZDQAZBAWAWYWARQrAAIPFgIeCEV4cGFuZGVkZ2RkDxYBZhYBBXVUZWxlcmlrLldlYi5VSS5SYWRQYW5lbEl0ZW0sIFRlbGVyaWsuV2ViLlVJLCBWZXJzaW9uPTIwMTIuMy4xMjA1LjQwLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTEyMWZhZTc4MTY1YmEzZDRkFgJmDw8WAh8HZ2RkAgcPFgIfAWcWAgIDDw8WAh4LTmF2aWdhdGVVcmwFMC9maXJtcHJvZmlsZS5hc3B4P2Zpcm1faWQ9NTA5MzQmdGFiPXRlc3RpbW9uaWFsc2RkAhAPDxYCHwFoZGQCEQ9kFgICAQ8PFgQfCAUVaHR0cDovL3d3dy55dnNsYXcuY29tHwIFHVl1bWthcywgVmlkbWFyICYgU3dlZW5leSwgTExDZGQCEg8PFgIfAWhkFgICAQ9kFgICAQ9kFgRmDxYCHgtfIUl0ZW1Db3VudAL/////D2QCAw8WAh8BaGQCEw9kFgICAQ9kFgJmD2QWDGYPDxYCHwQFPGh0dHA6Ly9iZXN0bGF3ZmlybXMudXNuZXdzLmNvbS9Mb2dvcy9ob21lcGFnZS8xMDE0MF8zMTYyLmdpZhYCHgZvbmxvYWQFC3Nob3dGRkRpdigpZAIBDw8WAh8CBRRNaWRkbGV0b24gUmV1dGxpbmdlcmRkAgIPDxYCHwIFFE1pZGRsZXRvbiBSZXV0bGluZ2VyZGQCAw8PFgIfBAU8aHR0cDovL2Jlc3RsYXdmaXJtcy51c25ld3MuY29tL0xvZ29zL2hvbWVwYWdlLzEwMTQwXzMxNjIuZ2lmZGQCBA8PFgIfAgUUTWlkZGxldG9uIFJldXRsaW5nZXJkZAIFDw8WAh8CBcsBTE9DQVRFRCBJTiBMT1VJU1ZJTExFLiBQUkFDVElDSU5HIFdPUkxEV0lERS4mcmVnOw0KUHJlc2VydmluZyByb290cyBpbiBpdHMgaGlzdG9yaWMgaG9tZSBvZiBMb3Vpc3ZpbGxlLCBLZW50dWNreSwgdGhlIGZpcm0gbWFpbnRhaW5zIGEgbmF0aW9uYWwgcHJhY3RpY2Ugd2hpbGUgcHJpZGluZyBpdHNlbGYgb24gcGVyc29uYWwgd29ya2luZyByZWxhdGkuLi5kZAIUDw8WAh4XRW5hYmxlQWpheFNraW5SZW5kZXJpbmdoFgIeBXN0eWxlBQ1kaXNwbGF5Om5vbmU7ZAIVDxQrAAIUKwADDxYCHwtoZGRkEBYBZhYBFCsAAw8WAh8LaGRkZA8WAWYWAQVyVGVsZXJpay5XZWIuVUkuUmFkV2luZG93LCBUZWxlcmlrLldlYi5VSSwgVmVyc2lvbj0yMDEyLjMuMTIwNS40MCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj0xMjFmYWU3ODE2NWJhM2Q0FgJmDxQrAAMPFgIfC2hkZGRkGAEFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYDBRtjdGwwMCRjcGgkUmFkRm9ybURlY29yYXRvcjEFG2N0bDAwJGNwaCRSYWRXaW5kb3dNYW5hZ2VyMQUUY3RsMDAkY3BoJFJhZFdpbmRvdzGo/MUsRnOiT3diiMKeO2yxprhTRw0w9Sl/a1EvaaLn/g==" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=i7s5gvdLw98BJ4c-uLl5TtI9lhIDDJv_G3mh3cYl2hvH0R4ELQEoHBT8xArk-qix-W-RQ9F4IJw5JXffCLQxGGyGMlCFOY2usy3JCAJq6Ew1&amp;t=634944287538030287" type="text/javascript"></script>
+
+
+<script src="/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ctl00_RadScriptManager1_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3aen-US%3a89093640-ae6b-44c3-b8ea-010c934f8924%3aea597d4b%3ab25378d2%3bTelerik.Web.UI%2c+Version%3d2012.3.1205.40%2c+Culture%3dneutral%2c+PublicKeyToken%3d121fae78165ba3d4%3aen-US%3af18b91a4-0e6c-41d1-af11-dfb338738b79%3a16e4e7cd%3a86526ba7%3a874f8ea2%3af7645509%3a24ee1bba%3a19620875%3af46195d3%3a490a9d4e%3abd8f85e4" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="../../../../Scripts/WebTools.js" type="text/javascript"></script>
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$RadScriptManager1', 'aspnetForm', [], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+
+   
+
+    <div style="background-image:url('http://bestlawfirms.usnews.com/images/header_v2_tile.gif');height:134px;margin-bottom:10px;">
+        <center>
+            <div style="background-image:url('http://bestlawfirms.usnews.com/images/header_v2_center.gif');width:1000px;height:134px;text-align:left;">
+                <div style="padding-top:4px;">
+                    <div style="float:left;">
+                        <a href="http://usnews.com" target="_blank"><img src="http://bestlawfirms.usnews.com/images/usn-logo.png" style="height:22px;width:98px;border-width:0px;" /></a>
+                    </div>
+                    <div style="float:left;padding-top:2px;padding-left:3px;">
+                        <a href="http://bestlawyers.com" target="_blank"><img src="../../../../images/bl_tiny.gif" style="border-width:0px;" /></a>
+                    </div>
+                    <div style="float:right;">
+                        <ul id="usnewsMenu" style="margin-top:0px;font-family:Verdana;">
+                            <li>
+                                <a href="http://www.usnews.com/news" target="_blank">News & Opinion</a>
+                            </li>
+                            <li>
+                                <a href="http://health.usnews.com/" target="_blank">Health</a>
+                            </li>
+                            <li>
+                                <a href="http://money.usnews.com/" target="_blank">Money</a>
+                            </li>
+                            <li>
+                                <a href="http://www.usnews.com/education" target="_blank">Education</a>
+                            </li>
+                            <li>
+                                <a href="http://travel.usnews.com/" target="_blank">Travel</a>
+                            </li>
+                            <li>
+                                <a href="http://usnews.rankingsandreviews.com/cars-trucks/" target="_blank">Cars</a>
+                            </li>
+                            <li>
+                                <a href="../../../../" style="color:#F7B11A;">Law</a>
+                            </li>
+                            <li>
+                                <a href="http://www.usnews.com/rankings" target="_blank">Rankings</a>
+                            </li>
+                            <li id="nav-search">
+                                <a href="../../../../Search.aspx"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+
+                <div style="margin-top:9px;">
+                    <a href="../../../../"><img src="../../../../Images/header_v2_blf_title.gif" style="border-width:0px;" /></a>
+                </div>
+
+                <div style="margin-top:5px;">
+                    <ul id="navMenu" class="navMenuClass">
+                        <li id="ctl00_liHome">
+                            <a href="../../../../Default.aspx">Home</a>
+                        </li>
+                        <li id="ctl00_liSearch">
+                            <a href="../../../../Search.aspx">Search</a>
+                        </li>
+                        <li id="ctl00_liMethodology">
+                            <a href="../../../../Methodology.aspx">Methodology</a>
+                        </li>
+                        <li id="ctl00_liSpecDefinition">
+                            <a href="../../../../SpecDefinition.aspx">Practice Areas</a>
+                        </li>
+                        <li id="ctl00_liFAQ">
+                            <a href="../../../../faq.aspx">FAQ</a>
+                        </li>
+                        <li id="ctl00_liLogin">
+                            <a href="../../../../Subscribe/Default.aspx">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </center>
+    </div>
+
+
+
+    <div style="text-align: center; width: 1000px; margin: auto;clear:both;">
+        <div id="ctl00_divBreadCrumb" style="text-align:left;margin-bottom:10px;margin-top:0px;">
+            <a href='/'>Best Law Firms</a> > <a href='/Search.aspx'>Search</a> > Firm Profile
+        </div>
+
+        
+    <script type="text/javascript">
+        function unlockNav() {
+            $('#login_link').hide()
+            $('[id*=imgLock]')
+                .hide()
+                .parent()
+                .children('a')
+                    .removeAttr('title')
+                    .removeAttr('onclick')
+        }
+
+//        $(function(){
+//            if (jQuery().cookie('BLFSession')) unlockNav()
+
+//            alert("1");
+//            $('#divLearnMore').dialog({
+//                autoOpen: false,
+//                modal: true,
+//                width: 320,
+//                height: 155,
+//                resizable: false,
+//                draggable: false,
+//                closeOnEscape: false                
+//            });
+//            alert("2");
+//        })
+
+        function OpenWindow() {
+            var addy = "/modal/profileinfo.aspx?firm_id=50934";
+            var wnd = window.radopen(addy, "RadWindow1");
+            wnd.setSize(400, 200);
+            return false;
+        }
+
+//        function OpenWindow() {
+//            $('#divLearnMore').dialog('open');
+//            alert("3");
+//            return false;
+//        }
+
+    </script>
+    <div style="clear: both;">
+        
+        <div style='width: 155px; text-align: left; float: left; vertical-align: top; padding-top:10px;'>
+            
+
+            <div id="divLearnMore" style="display: none;">
+                <h4 style="padding-bottom: 5px;">
+                    Please Provide Profile
+                </h4>
+               To provide or update your firm profile, please contact <span id="ctl00_cph_lblContact">Manny Candal at <a href='mailto:mcandal@bestlawyers.com'>mcandal@bestlawyers.com</a> <br/> Or at (803) 644-1804.</span>
+            </div>
+
+            <div id="ctl00_cph_pnlfirmSummaryNavbar" style="border: 1px solid #dddddd;
+                background-color: #fcfcfc; padding-top: 5px;">
+	
+                <div style="padding-bottom:8px;padding-top:4px;padding-left:7px;font-size:12px;font-weight:bold;font-family:Verdana;">
+                    Firm Summary
+                </div>
+                <div id="ctl00_cph_navOverview" class="current_nav_item">
+		
+                    <div>
+                        <a href="/firms/yumkas-vidmar-sweeney-llc/overview/50934/  ">Overview</a>
+                    </div>
+                
+	</div>
+                
+                <div id="ctl00_cph_navListedLawyers" class="nav_item" style="margin-top:-1px;">
+		
+                    <div>
+                        <a href="/firms/yumkas-vidmar-sweeney-llc/Listed-Lawyers/50934/">Listed Lawyers</a>
+                    </div>
+                
+	</div>
+                <div id="ctl00_cph_navOffices" class="nav_item" style="margin-top:-1px;">
+		
+                    <div>
+                        <a href="/firms/yumkas-vidmar-sweeney-llc/Offices/50934/">Offices</a>
+                    </div>
+                
+	</div>
+                <div id="ctl00_cph_navRankings" class="nav_item" style="margin-top:-1px;">
+		
+                    <div>
+                        <a href="/firms/yumkas-vidmar-sweeney-llc/Rankings/50934/">Rankings</a>
+                    </div>
+                
+	</div>
+                <div id="ctl00_cph_navContact" class="nav_item" style="margin-top:-1px;">
+		
+                    <div>
+                        <a href="/firms/yumkas-vidmar-sweeney-llc/Contact/50934/">Contacts</a>
+                    </div>
+                
+	</div>
+                
+            
+</div>
+            <div style="padding-bottom: 5px;">
+                &nbsp;
+            </div>
+            <div id="ctl00_cph_divFirmData" style="border: 1px solid #dddddd; background-color: #fcfcfc;padding-top:5px;">
+                <div style="padding-left:7px;margin-bottom:8px;margin-top:4px;">
+                    <span style="font-weight:bold;">Firm Data</span>
+
+                    
+                    <div id="login_link" style="font-size:11px;" >
+                        <a style="color:#0079b3;" href="/subscribe/default.aspx">Sign in</a> to access
+                    </div>
+                    
+                </div>
+                <div id="ctl00_cph_navFirmSize" class="nav_item">
+	
+                    <div id="ctl00_cph_divLock1" class="usnews_lock_positioning">
+                        <img id="ctl00_cph_imgLock1" src="../../../../Images/usnews_lock.gif" style="border-width:0px;" />
+                    </div>
+                    <div class="firm_data_link_positioning">
+                            <a href="/firms/yumkas-vidmar-sweeney-llc/Firm-Size-History/50934/" onClick="radalert('<h4>Information Locked</h4>Click <a href=/subscribe/default.aspx>here</a> to subscribe.', 330, 100,'Firm Information is Locked'); return false;"
+                            title="This section is locked for non-subscribers">Firm Size & History</a>
+                    </div>
+                    <div style="clear:both;"></div>
+                
+</div>
+                
+
+                
+
+                
+                
+                                                
+                <div id="ctl00_cph_navFirmAwards" class="nav_item" style="margin-top:-1px;">
+	
+                    <div id="ctl00_cph_divLock13" class="usnews_lock_positioning">
+                        <img id="ctl00_cph_imgLock13" src="../../../../Images/usnews_lock.gif" style="border-width:0px;" />
+                    </div>
+                    <div class="firm_data_link_positioning">
+                        <a href="/firms/yumkas-vidmar-sweeney-llc/firm-awards/50934/" onClick="radalert('<h4>Information Locked</h4>Click <a href=/subscribe/default.aspx>here</a> to subscribe.', 330, 100,'Firm Information is Locked'); return false;"
+                            title="This section is locked for non-subscribers">Awards Received by the Firm</a>
+                    </div>
+                    <div style="clear:both;"></div>
+                
+</div>
+
+            </div>
+        </div>
+
+
+        <div style='width: 499px; text-align: left; float: left; vertical-align: top; padding-left: 10px;'>
+            <div style="text-align: left; padding: 10px 0 5px 0;" class="search_header">
+                <h1>
+                    <span id="ctl00_cph_lblFirmName">Yumkas, Vidmar&nbsp;&amp; Sweeney, LLC</span></h1>
+            </div>
+            <div id="ctl00_cph_pnlFirmLogo">
+	
+                <img id="ctl00_cph_imgFirmLogo" src="http://bestlawyers.com/search/logos/50934_US.gif" style="border-width:0px;" />
+            
+</div>
+
+            
+            <div id="ctl00_cph_pnlProfile" style="padding: 0 0 5px 0; width: 95%;">
+	
+                <h3 id="ctl00_cph_hProfile" class="firm_profile_header firm_profile_header_first">
+                    Profile
+                </h3>
+                <div class="firm_profile_text">
+                    <div id='divProfilePreview' style='padding-bottom:2px;'>&nbsp;
+Yumkas, Vidmar &amp; Sweeney, LLC is an Annapolis based boutique business law firm home to top rated attorneys who focus on handling the needs of clients with complex business issues. Our clients range from high-net-worth individuals and family business owners to mid-market and Fortune 500 companies. 
+
+The firm's attorneys share well over 100 years of combined legal experience in business l...   <div style='padding-top:5px;'>       <img src='http://bestlawfirms.usnews.com/images/bullet.gif'>&nbsp;&nbsp;       <a href='#' onClick='document.getElementById("divProfilePreview").style.display="none";            document.getElementById("divProfile").style.display="block"; return false; '>           Read more</a>    </div></div><div id='divProfile' style='display:none; padding-bottom:2px;'><p>&nbsp;</p>
+Yumkas, Vidmar &amp; Sweeney, LLC is an Annapolis based boutique business law firm home to top rated attorneys who focus on handling the needs of clients with complex business issues. Our clients range from high-net-worth individuals and family business owners to mid-market and Fortune 500 companies. <br />
+<br />
+The firm's attorneys share well over 100 years of combined legal experience in business litigation, business counseling, debtor and creditor rights, regulatory compliance and insurance and commercial litigation. Our attorneys are licensed to practice in the State and Federal Courts of Maryland, D.C., New York, Virginia, and West Virginia. <br />
+<br />
+Our lawyers have been selected for inclusion in Best Lawyers in America, in Maryland and D.C. Super Lawyers, and have earned "AV" preeminent ratings &mdash; a recognition reflecting the respect of our peers for our skill, ethics and integrity. Carefully selected and accomplished associates bring a wealth of knowledge, talent and high-value case experience across key practice areas for our clients. <br />
+<br />
+Our firm's Annapolis location permits us to represent interests in the dynamic Annapolis and Eastern Shore markets while giving focused attention to clients located in Baltimore, Washington, D.C., Northern Virginia, New York, West Virginia and beyond. Our size, staffing and competitive rates permit us to provide big city, big firm quality legal work efficiently and with personalized service in the client-friendly manner that our clients deserve. <br /><br>   <div style='padding-top:5px;'>       <img src='http://bestlawfirms.usnews.com/images/bullet.gif'>&nbsp;&nbsp;       <a href='#' onClick='document.getElementById("divProfile").style.display="none";            document.getElementById("divProfilePreview").style.display="block"; return false; '>           collapse profile</a>    </div></div>
+                </div>
+            
+</div>
+            
+            <div id="ctl00_cph_pnlUSNewsFirmRankings" style="padding: 5px 0 5px 0; width: 95%;">
+	
+                <h3 id="ctl00_cph_hRankings" class="firm_profile_header">
+                    Best Law Firms Rankings
+                </h3>
+
+               
+               <center>
+                    <div id="divUSNewsFirmRankings">
+                        
+                    </div>
+               </center>
+                
+                <table class="firmRankingsTable firm_profile_text">
+		<tr>
+			<td class="firmRankingsTableFirstRow">Location</td>
+			<td class="firmRankingsTableFirstRow" style="width:20px;">Tier</td>
+			<td class="firmRankingsTableFirstRow">Practice</td>
+		</tr>
+		<tr class="odd">
+			<td style="vertical-align:middle;" rowspan="1">Annapolis</td>
+			<td style="vertical-align:middle;"><span class="tier">2</span></td>
+			<td>Bankruptcy and Creditor Debtor Rights / Insolvency and Reorganization Law</td>
+		</tr>
+	</table>
+	
+
+                
+            
+</div>
+            
+            <div id="ctl00_cph_pnlListedLawyers" style="padding: 5px 0 5px 0; width: 95%;">
+	
+                <h3 id="ctl00_cph_hListedLawyers" class="firm_profile_header">
+                    Listed Lawyers in Best Lawyers<sup>&reg;</sup>
+                </h3>
+
+                <div class="firm_profile_text">
+                    <div style="margin-top:14px;"><div class="firmProfileLLSpecialtyDiv"><h5>Bankruptcy and Creditor Debtor Rights / Insolvency and Reorganization Law</h5><p class="firmProfileLLParagraph"><a href="http://www.loganyumkas.com/bios/paul-sweeney">Paul J. Sweeney</a><span class="firmProfileLLAddress">Annapolis, MD</span><span style="clear:both;">&#8203;</span></p><p class="firmProfileLLParagraph"><a href="http://www.loganyumkas.com/bios/james-vidmar">James A. Vidmar, Jr.</a><span class="firmProfileLLAddress">Annapolis, MD</span><span style="clear:both;">&#8203;</span></p></div><div class="firmProfileLLSpecialtyDiv"><h5>Litigation - Bankruptcy</h5><p class="firmProfileLLParagraph"><a href="http://www.loganyumkas.com/bios/paul-sweeney">Paul J. Sweeney</a><span class="firmProfileLLAddress">Annapolis, MD</span><span style="clear:both;">&#8203;</span></p><p class="firmProfileLLParagraph"><a href="http://www.loganyumkas.com/bios/james-vidmar">James A. Vidmar, Jr.</a><span class="firmProfileLLAddress">Annapolis, MD</span><span style="clear:both;">&#8203;</span></p></div></div>
+                </div>
+                
+                
+            
+</div>
+            <div id="ctl00_cph_pnlContacts" style="padding: 5px 0 5px 0; width: 95%;">
+	
+                <h3 id="ctl00_cph_hContacts" class="firm_profile_header">
+                    Contacts
+                </h3>
+
+                <div id="divContacts" class="firm_profile_text">
+                    <div style="margin-top:14px;"><div class="firmProfileLLSpecialtyDiv"><h5>Managing Member</h5><p class="firmProfileLLParagraph"><a href="../../../../lyumkas@yvslaw.com">Lawrence J. Yumkas</a><span class="firmProfileLLAddress"></span><span style="clear:both;">&#8203;</span></p></div></div>
+                </div>
+                
+                
+            
+</div>
+            <div id="ctl00_cph_pnlOffices" style="padding: 5px 0 5px 0; width: 95%;">
+	
+                <h3 id="ctl00_cph_hOffices" class="firm_profile_header">
+                    Offices
+                </h3>
+                <div id="divOffices" style="margin-top:10px;" class="firm_profile_text">
+                    <span id="ctl00_cph_lblOfficesContent"><div style='clear:both; height:0px;'>&nbsp;</div><div style='width:240px;padding-bottom: 10px;font-family:verdana;font-size:13px;color:#666666;line-height:18.2px;'><h5 style="color:#444444;font-size:14px;font-weight:bold;line-height:20px;margin-bottom:5px;">Annapolis, MD</h5>
+2530 Riva Road, Suite 400<br>
+21401<br>
+Phone: 410-571-2780<br>
+</div><div style='clear:both; height:1px;'>&nbsp;</div></span>
+                </div>
+            
+</div>
+            
+
+
+            
+            
+
+        </div>
+        <div style='width:336px; float:left;'>
+            <div style="height: 10px;">
+                &nbsp;
+            </div>
+            
+            <div id="ctl00_cph_pnlGeneralInfo">
+	
+                <div style="padding-top: 10px; padding-bottom: 5px;">
+                    <div class="sidebox">
+                        <div class="boxbody" style="text-align: left; vertical-align: top; padding-bottom: 10px;padding-top:10px;">
+                            <h5 style="color: #666666;font-size: 15px;font-weight: bold;margin-bottom: 10px;">
+                                COMPANY WEBSITE
+                            </h5>
+                            <a id="ctl00_cph_hlCompanyWebsite" href="http://www.yvslaw.com">Yumkas, Vidmar & Sweeney, LLC</a>
+                        </div>
+                    </div>
+                </div>
+            
+</div>
+            
+
+            <div id="ctl00_cph_pnlUSNews" style="padding-top: 5px; padding-bottom: 5px;">
+	
+                
+            
+</div>
+            <div style="clear: both; height: 0px;">
+                &nbsp;
+            </div>
+        </div>
+    </div>
+    <div style="clear: both;">
+        <div id="ctl00_cph_RadFormDecorator1" class="RadFormDecorator" style="display:none;">
+	<!-- 2012.3.1205.40 --><script type="text/javascript">
+//<![CDATA[
+if (typeof(WebForm_AutoFocus) != 'undefined')
+{
+	var old_WebForm_AutoFocus = WebForm_AutoFocus;
+	WebForm_AutoFocus = function(arg)
+	{
+		Sys.Application.add_load(function()
+		{
+			old_WebForm_AutoFocus(arg);
+			WebForm_AutoFocus = old_WebForm_AutoFocus;
+		});
+	}
+}
+if (typeof(Telerik) != 'undefined')
+{
+	if (Telerik.Web.UI.RadFormDecorator)
+	{
+		Telerik.Web.UI.RadFormDecorator.initializePage("ctl00_cph_RadFormDecorator1", "", "Default", 15);
+	}
+}
+//]]>
+</script><input id="ctl00_cph_RadFormDecorator1_ClientState" name="ctl00_cph_RadFormDecorator1_ClientState" type="hidden" />
+</div>
+
+        <div id="ctl00_cph_RadWindowManager1" style="display:none;">
+	<div id="ctl00_cph_RadWindow1" style="display:none;">
+		<div id="ctl00_cph_RadWindow1_C" style="display:none;">
+
+		</div><input id="ctl00_cph_RadWindow1_ClientState" name="ctl00_cph_RadWindow1_ClientState" type="hidden" />
+	</div><div id="ctl00_cph_RadWindowManager1_alerttemplate" style="display:none;">
+		<div class="rwDialogPopup radalert">			
+			<div class="rwDialogText">
+			{1}				
+			</div>
+			
+			<div>
+				<a  onclick="$find('{0}').close(true);"
+				class="rwPopupButton" href="javascript:void(0);">
+					<span class="rwOuterSpan">
+						<span class="rwInnerSpan">##LOC[OK]##</span>
+					</span>
+				</a>				
+			</div>
+		</div>
+		</div><div id="ctl00_cph_RadWindowManager1_prompttemplate" style="display:none;">
+		 <div class="rwDialogPopup radprompt">			
+			    <div class="rwDialogText">
+			    {1}				
+			    </div>		
+			    <div>
+				    <script type="text/javascript">
+				    function RadWindowprompt_detectenter(id, ev, input)
+				    {							
+					    if (!ev) ev = window.event;                
+					    if (ev.keyCode == 13)
+					    {															        
+					        var but = input.parentNode.parentNode.getElementsByTagName("A")[0];					        
+					        if (but)
+						    {							
+							    if (but.click) but.click();
+							    else if (but.onclick)
+							    {
+							        but.focus(); var click = but.onclick; but.onclick = null; if (click) click.call(but);							 
+							    }
+						    }
+					       return false;
+					    } 
+					    else return true;
+				    }	 
+				    </script>
+				    <input title="Enter Value" onkeydown="return RadWindowprompt_detectenter('{0}', event, this);" type="text"  class="rwDialogInput" value="{2}" />
+			    </div>
+			    <div>
+				    <a onclick="$find('{0}').close(this.parentNode.parentNode.getElementsByTagName('input')[0].value);"				
+					    class="rwPopupButton" href="javascript:void(0);" ><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[OK]##</span></span></a>
+				    <a onclick="$find('{0}').close(null);" class="rwPopupButton"  href="javascript:void(0);"><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[Cancel]##</span></span></a>
+			    </div>
+		    </div>				       
+		</div><div id="ctl00_cph_RadWindowManager1_confirmtemplate" style="display:none;">
+		<div class="rwDialogPopup radconfirm">			
+			<div class="rwDialogText">
+			{1}				
+			</div>						
+			<div>
+				<a onclick="$find('{0}').close(true);"  class="rwPopupButton" href="javascript:void(0);" ><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[OK]##</span></span></a>
+				<a onclick="$find('{0}').close(false);" class="rwPopupButton"  href="javascript:void(0);"><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[Cancel]##</span></span></a>
+			</div>
+		</div>		
+		</div><input id="ctl00_cph_RadWindowManager1_ClientState" name="ctl00_cph_RadWindowManager1_ClientState" type="hidden" />
+</div>
+
+    </div>
+    <script type="text/javascript" src="http://static.usnews.com/scripts/Analytics-3p.js"></script>
+
+    </div>
+    <div class="clear"></div>
+    
+    <div style="clear: both; height: 0px;">
+        &nbsp;</div>
+    
+
+    <div id="usn-foot">
+        <div id="foot-content">
+            <center>
+                <div style="width:902px;height:225px;text-align:left;">
+                    <div>
+                        <p id="foot-rankings">
+                            <a id="rank-img" href="http://www.usnews.com/rankings" target="_blank">
+                                <img style="border:none;" alt="Best U.S. News Rankings" src="http://static.usnews.com/static/images/swt/best-usn-rankings-gray.jpg"></img>
+                            </a>
+                            The 2013 “Best Law Firms” Rankings are part of U.S. News’s ongoing publication of rankings.<br />
+                            <a class="gold-link" href="http://www.usnews.com/rankings" target="_blank">See all U.S. News Rankings »</a>
+                        </p>
+                    </div>
+                    <ul>
+                        <li class="foot-title">Rankings Lists</li>
+                        <li>
+                            <a href="http://colleges.usnews.rankingsandreviews.com/best-colleges" target="_blank">Best Colleges</a>
+                        </li>
+                        <li>
+                            <a href="http://grad-schools.usnews.rankingsandreviews.com/best-graduate-schools" target="_blank">Best Grad Schools</a>
+                        </li>
+                        <li>
+                            <a href="http://health.usnews.com/best-hospitals" target="_blank">Best Hospitals</a>
+                        </li>
+                        <li>
+                            <a href="http://health.usnews.com/best-diet" target="_blank">Best Diets</a>
+                        </li>
+                        <li>
+                            <a href="http://travel.usnews.com/" target="_blank">Best Vacations</a>
+                        </li>
+                        <li>
+                            <a href="http://usnews.rankingsandreviews.com/cars-trucks/" target="_blank">Best Cars</a>
+                        </li>
+                        <li>
+                            <a href="http://www.usnews.com/education/best-high-schools" target="_blank">Best High Schools</a>
+                        </li>
+                        <li>
+                            <a href="http://health.usnews.com/top-doctors" target="_blank">Best Doctors</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="foot-title">U.S. News & World Report</li>
+                        <li>
+                            <a href="http://www.usnews.com/usnews/usinfo/about_usnews.htm" target="_blank">About U.S. News</a>
+                        </li>
+                        <li>
+                            <a href="http://www.usnews.com/info/features/contact" target="_blank">Contact Us</a>
+                        </li>
+                        <li>
+                            <a href="http://mediakit.usnews.com/" target="_blank">Advertising Info</a>
+                        </li>
+                        <li>
+                            <a href="http://www.usnews.com/info/features/masthead" target="_blank">Masthead</a>
+                        </li>
+                        <li>
+                            <a href="http://www.usnews.com/info/features/employment" target="_blank">Jobs</a>
+                        </li>
+                        <li>
+                            <a href="http://www.usnews.com/info/features/sitemap" target="_blank">Sitemap</a>
+                        </li>
+                        <li>
+                            <a id="twit-link" href="http://twitter.com/usnews" target="_blank">Twitter</a>
+                        </li>
+                        <li>
+                            <a id="face-link" href="http://www.facebook.com/usnewsandworldreport " target="_blank">Facebook</a>
+                        </li>
+                    </ul>
+                    <ul class="last-list">
+                        <li class="foot-title">Sections</li>
+                        <li>
+                            <a href="http://www.usnews.com/news/politics" target="_blank">Politics & Policy</a>
+                        </li>
+                        <li>
+                            <a href="http://www.usnews.com/education" target="_blank">Education</a>
+                        </li>
+                        <li>
+                            <a href="http://health.usnews.com/" target="_blank">Health</a>
+                        </li>
+                        <li>
+                            <a href="http://money.usnews.com/" target="_blank">Money</a>
+                        </li>
+                        <li>
+                            <a href="http://travel.usnews.com/" target="_blank">Travel</a>
+                        </li>
+                        <li>
+                            <a href="http://usnews.rankingsandreviews.com/cars-trucks/" target="_blank">Cars</a>
+                        </li>
+                        <li>
+                            <a href="http://www.usnews.com/science" target="_blank">Science</a>
+                        </li>
+                        <li>
+                            <a href="../../../../">Law</a>
+                        </li>
+                    </ul>
+                    <p id="foot-weekly">
+                        <a id="weekly-img" href="http://www.usnews.com/usnews/store/usnews_weekly_order.htm?src=subs_hph" target="_blank">
+                            <img src="../../../../Images/Footer/foot-weekly.png" style="border:none;" alt="U.S. News Weekly" />
+                        </a>
+                        Get all the last news, politics, opinion, and analysis U.S. News has to offer.<br />
+                        <a class="gold-link" href="http://www.usnews.com/usnews/store/usnews_weekly_order.htm?src=subs_hph" target="_blank">Subscribe to the Weekly »</a>
+                    </p>
+                    <div style="clear:both;"></div>
+                </div>
+                
+            </center>
+        </div>
+        <div id="foot-copyright" class="law-foot">
+            Copyright © 2012 U.S. News & World Report LP. Use of this Web site constitutes acceptance of our
+            <a href="http://www.usnews.com/info/features/terms" class="gold-link" target="_blank">Terms and Conditions/Privacy Policy</a>.
+        </div>
+    </div>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+function fn37749DB3_227B2ED8() { $('.rpLink.rpExpandable.rpExpanded').hide(); Sys.Application.remove_load(fn37749DB3_227B2ED8);}; Sys.Application.add_load(fn37749DB3_227B2ED8);function fn5E038023_545DC8B5() { $('#divFirmName').hide();; Sys.Application.remove_load(fn5E038023_545DC8B5);}; Sys.Application.add_load(fn5E038023_545DC8B5);Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadFormDecorator, {"clientStateFieldID":"ctl00_cph_RadFormDecorator1_ClientState","decoratedControls":15,"enabled":true,"skin":"Default"}, null, null, $get("ctl00_cph_RadFormDecorator1"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadWindow, {"_dockMode":false,"behaviors":4,"clientStateFieldID":"ctl00_cph_RadWindow1_ClientState","enableShadow":true,"formID":"aspnetForm","iconUrl":"","minimizeIconUrl":"","name":"RadWindow1","navigateUrl":"../../../../modal/profileinfo.aspx","reloadOnShow":true,"showContentDuringLoad":false,"skin":"WebBlue","visibleStatusbar":false}, null, null, $get("ctl00_cph_RadWindow1"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadWindowManager, {"clientStateFieldID":"ctl00_cph_RadWindowManager1_ClientState","enableShadow":true,"formID":"aspnetForm","iconUrl":"","minimizeIconUrl":"","name":"RadWindowManager1","reloadOnShow":true,"showContentDuringLoad":false,"skin":"Default","visibleStatusbar":false,"windowControls":"['ctl00_cph_RadWindow1']"}, null, {"child":"ctl00_cph_RadWindow1"}, $get("ctl00_cph_RadWindowManager1"));
+});
+//]]>
+</script>
+</form>
+</body>
+</html>

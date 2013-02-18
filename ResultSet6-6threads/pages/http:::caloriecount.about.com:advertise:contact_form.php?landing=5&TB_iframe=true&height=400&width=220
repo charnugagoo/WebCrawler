@@ -1,0 +1,145 @@
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+	<meta http-equiv="content-language" content="en-us">
+	<title>Calorie Count - Contact Us</title>
+	<script type="text/javascript" src="http://ccakamai.about.com/include/js/globalcc.js?v=1360114968"></script>
+	<script type="text/javascript" src="http://ccakamai.about.com/include/js/jquery.validate.js?v=1360114968"></script>
+<style type="text/css">
+body {
+	background-color: #FFFFFF;
+	font-family: Helvetica, Helvetica Neue, Arial, sans-serif;
+	font-size: 14px;
+	margin: 0;
+	padding: 0;
+	color: #808285;
+	text-align: left;
+}
+
+a, a:active, a:visited{
+	color: #3366CC;
+	text-decoration: underline;
+}
+
+a img {
+	border: none;
+}
+
+.contactinput {
+	font-family: Helvetica, Helvetica Neue, Arial, sans-serif;
+	margin: 3px 0;
+	padding: 2px;
+	font-size: 12px;
+	color: #A7A9AC;
+	border: 1px solid #CBCBCD;
+	width: 200px;
+}
+
+#form_landing {
+	margin: 10px;
+	border: none;
+}
+
+</style>
+<script type="text/javascript">
+	$(document).ready(function() {
+		
+		var default_vals = new Array();
+		default_vals["name"] = "Name *";
+		default_vals["title"] = "Title";
+		default_vals["company"] = "Company name *";
+		default_vals["email"] = "Email *";
+		default_vals["phone"] = "Phone number";
+		default_vals["comments"] = "Comments"; 
+		 
+		function autoFill(id, v) {
+			$(id).css({ color: "#A7A9AC" }).attr({ value: v }).focus(function(){
+				$(this).css({ border: "1px solid #00b1f0" });
+				if($(this).val()==v) {
+					$(this).val("").css({ color: "#4F4F4F" });
+				}
+			}).blur(function(){
+				$(this).css({ border: "1px solid #CBCBCD" });
+				if($(this).val()=="") {
+					$(this).css({ color: "#A7A9AC" }).val(v);
+					$(this).valid();
+				}
+			});
+		}
+				
+		jQuery.validator.addMethod("blankdefault", function(value, element) {
+			return (value != default_vals[element.name]);
+		});
+		$("#form_landing").validate({
+			errorLabelContainer: "#error",
+			onkeyup: false,
+			submitHandler: function(form) {
+				for (var n in default_vals) {
+					if ($("#"+n).val() == default_vals[n]) {
+						$("#"+n).val("");
+					}
+				}
+				form.submit();
+				$("#formloading").show();
+				$("#form_bot_submit").hide();
+			},
+			rules: {
+				name: {
+					required: true,
+					blankdefault: true
+				},
+				company: {
+					required: true,
+					blankdefault: true
+				},
+				email: {
+					required: true,
+					email: true,
+					blankdefault: true
+				}
+			},
+			messages: {
+				name: "<img src='http://ccakamai.about.com/images/icons/icon_alert.gif' style='vertical-align:text-bottom'> Full name required.<br>",
+				company: "<img src='http://ccakamai.about.com/images/icons/icon_alert.gif' style='vertical-align:text-bottom'> Company name required.<br>",
+				email: "<img src='http://ccakamai.about.com/images/icons/icon_alert.gif' style='vertical-align:text-bottom'> Valid email address required.<br>"
+			}
+		});
+		
+		for (var n in default_vals) {
+			autoFill($("#"+n), default_vals[n]);
+		}
+
+	});
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-4613669-2']);
+ _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body>
+	<form id="form_landing" method="post" action="/advertise/contact_form.php">
+		<span>Fill out this simple form and an advertising representative will contact you within 48 hours.</span>
+		<br clear="all"><br>
+		<div id="error" style="display:none;font-size:12px;margin:5px 0;color:#FF7E00;font-weight:bold;"></div>
+               <input onfocus="this.value='';" class="contactinput" id="name" name="name" value="Name *" title="Full Name"><br>
+               <input onfocus="this.value='';" class="contactinput" id="title" name="title" value="Title" title="Job Title"><br>
+               <input class="contactinput" onfocus="this.value='';" id="company" name="company" value="Company name *" title="Company name"><br>
+               <input class="contactinput" id="email" name="email" onfocus="this.value='';" value="Email *" title="Email"><br>
+               <input class="contactinput" id="phone" name="phone" value="Phone number *" onfocus="this.value='';" title="Phone number"><br>
+               Comments<br><textarea class="contactinput" id="comments" name="comments" title="Comments" style='height:90px;'></textarea><br>
+		<span id="formloading" style="display:none;float:left;"><img src="http://ccakamai.about.com/images/widgets/indicator.gif" alt="Please wait" style="margin-top: 4px;"></span>
+		<input type="image" src="http://ccakamai.about.com/images/splash/advertise/landing_button_submit.png" value="SUBMIT" style="margin-top:4px;float:left;" id="form_bot_submit">		<div style="float:right;margin: 5px 20px 0 0;color:#666;font-size:11px;">* Required</div>
+		<br clear="all">
+		<input type="hidden" name="formlocation" value="lightbox 5">
+		<input type="hidden" name="nav" value="process">
+	</form>
+</body>
+</html>

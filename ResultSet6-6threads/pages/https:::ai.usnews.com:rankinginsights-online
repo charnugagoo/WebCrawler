@@ -1,0 +1,163 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+
+<title>USNEWS - Academic Insights :: Log In</title>
+	<style type="text/css">
+		body,html  {
+			font: 13px/1.231 arial,helvetica,clean,sans-serif;
+			background-color: #EEE;
+		}
+
+		fieldset {
+			border:0 none;
+		}
+
+		.orange {
+			color: #fef4e9;
+			border: solid 1px #da7c0c;
+			background-color: #f78d1d;
+			background: -webkit-gradient(linear, left top, left bottom, from(#fea005), to(#c77d05));
+			background: -moz-linear-gradient(top,  #fea005,  #c77d05);
+			filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#fea005', endColorstr='#c77d05');	
+		}
+		.orange:hover {
+			background-color: #f47c20;
+			background: -webkit-gradient(linear, left top, left bottom, from(#ee9605), to(#ba7504));
+			background: -moz-linear-gradient(top,  #ee9605,  #ba7504);
+			filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee9605', endColorstr='#ba7504');
+		}
+		.orange:active {
+			color: #fcd3a5;
+			background: -webkit-gradient(linear, left top, left bottom, from(#c77d05), to(#fea005));
+			background: -moz-linear-gradient(top,  #c77d05,  #fea005);
+			filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#c77d05', endColorstr='#fea005');
+		}
+
+		.hover-btn {
+			font-size: 1.15em;
+			cursor: pointer;
+			text-transform: uppercase;
+			font-weight: bold;
+			text-align: center;
+			text-decoration: none;
+			padding: .4em .8em .4em;
+			text-shadow: 0 1px 1px rgba(0,0,0,.3);
+			-webkit-border-radius: .3em;
+			-moz-border-radius: .3em;
+			border-radius: .3em;
+			-webkit-box-shadow: 0 2px 4px rgba(0,0,0,.2);
+			-moz-box-shadow: 0 2px 4px rgba(0,0,0,.2);
+			box-shadow: 0 2px 4px rgba(0,0,0,.2);
+		}
+
+		#box-wrapper {
+			position: absolute;
+			margin-left: 50%;
+			left: -200px;
+			margin-top: 75px;
+			width: 360px;
+			padding: 20px;
+			border: 2px solid #CCC;	
+			background-color: #FFF;
+			-webkit-border-radius: 1em;
+			-moz-border-radius: 1em;
+			border-radius: 1em;
+			-webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,.2);
+			-moz-box-shadow: 0px  0px 20px 0px  rgba(0,0,0,.2);
+			box-shadow: 0px 0px 20px 0px rgba(0,0,0,.2);
+		} 
+
+		#box-wrapper h1 {
+			color: #666;
+			font-size: 2em;
+			font-weight: bold;
+			margin-top:0px;
+		}
+
+		#box-wrapper form  fieldset {
+			margin-bottom: 10px;
+		}
+
+		#box-wrapper form  fieldset.last {
+			margin-bottom: 0px;
+		}
+
+		#box-wrapper form label { 
+			font-weight: bold;
+			width: 90px;
+			display: block; 
+			float: left;
+			padding: .5em 0em;
+			font-size: 1.15em;
+		}
+
+		#box-wrapper form fieldset.textfield input {
+			width: 230px;
+			border: 1px solid #CCC;
+			padding: .5em;
+			-moz-box-shadow: inset .2em .2em .4em 0em #CCC;
+			-webkit-box-shadow: inset  .2em .2em .4em 0em #CCC;
+			box-shadow: inset  .2em .2em .4em 0em #CCC;
+		}
+
+		#box-wrapper fieldset.indent {
+			margin-left: 90px;
+		}
+
+		#loggedout {
+			background-color: #feffbd;
+			padding: 5px;
+			margin-bottom: 10px;
+			width: 394px;
+			position: absolute;
+			margin-left: 50%;
+			left: -200px;
+			margin-top: 30px;
+		}
+
+	</style>
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-31037627-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+</head>
+<body id="ie-handle">
+<div id="box-wrapper">
+<h1>Login</h1>
+		<form id="loginform" name="loginform" action="" method="post">
+    			<fieldset class="textfield">		
+				<label>Username</label>
+
+				<input type="text" id="user" name="user">
+			</fieldset>			
+			<fieldset class="textfield">		
+				<label>Password</label>
+				<input type="password" id="pass" name="pass">
+			</fieldset>						
+			<fieldset class="check indent"> 						
+				<input type="checkbox" name="remember"> Remember my password
+			</fieldset>					
+			<fieldset class="indent last">
+				<a href="javascript:void(0);" onclick="document.loginform.submit();" class="hover-btn orange login" id="loginSubmit"><span>Login</span></a>		
+			</fieldset>
+
+		</form>
+	</div>
+
+</body>
+</html>

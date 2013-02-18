@@ -1,0 +1,365 @@
+<!DOCTYPE html><html xmlns:atom="http://www.w3.org/2005/Atom" xmlns:comem3="xalan://com.em3" xmlns:em3="http://www.em3.com/2002/widget">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Junior Programs, College of Arts and Science | NYU</title>
+<!--Google jQuery-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<!--Google jQuery UI--><script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+<!--A collection of most of the special features available-->
+<!--AS Home page slideshow (2 scripts)--><script type="text/javascript" src="/object/script.js"></script><script type="text/javascript" src="/object/autoadvance.js"></script>
+<!--Alt. table row color--><script type="text/javascript" src="/object/alttbcolor.js"></script>
+<!--Scroll to Top Button-->
+<!--Adjust with ID "topcontrol"--><script src="/object/scrolltopcontrol.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="/object/sys-onsite-editbutton.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/sys-socialmediaicon20v2.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/sys-socialmediaicon20.css" media="all" />
+  <!--[if (IE 7)|(IE 6)]>
+<link rel="stylesheet" type="text/css" href="/object/sys-iepngfixv20.css" media="all" />
+ <![endif]--> 
+<link rel="stylesheet" type="text/css" href="/object/sys-scrolltotop.css" media="all" />
+
+<script LANGUE="javaScript">
+function makeArray()    {
+    this[0] = makeArray.arguments.length;
+    for (i = 0; i<makeArray.arguments.length; i++)
+        this[i+1] = makeArray.arguments[i];
+}
+
+var daysofweek = new makeArray('Sunday',
+                               'Monday',
+                               'Tuesday',
+                               'Wednesday',
+                               'Thursday',
+                               'Friday',
+                               'Saturday');
+
+var monthsofyear = new makeArray('January',
+                                 'February',
+                                 'March',
+                                 'April',
+                                 'May',
+                                 'June',
+                                 'July',
+                                 'August',
+                                 'September',
+                                 'October',
+                                 'November',
+                                 'December');
+
+function Nths(day) { 
+    if (day == 1 || day == 21 || day == 31) return 'st';
+    if (day == 2 || day == 22) return 'nd';
+    if (day == 3 || day == 23) return 'rd';
+    return 'th';
+}
+
+function DayOfWeek(day,month,year) {
+    var a = Math.floor((14 - month)/12);
+    var y = year - a;
+    var m = month + 12*a - 2;
+    var d = (day + y + Math.floor(y/4) - Math.floor(y/100) +
+             Math.floor(y/400) + Math.floor((31*m)/12)) % 7;
+    return d + 1;
+}
+
+function FullDate(day,month,year) {
+    return daysofweek[DayOfWeek(day,month,year)] +', '+ monthsofyear[month] +' '+ day + Nths(day); 
+//    return daysofweek[DayOfWeek(day,month,year)] +', '+ monthsofyear[month] +' '+ day + Nths(day) + '<br/>';
+// Do not understand why there's a <br>, so comment it out for now. - Herbert
+
+//    return daysofweek[DayOfWeek(day,month,year)] +', '+ day + Nths(day) +', '+ monthsofyear[month] +', '+ year;
+
+}
+</script>
+<link rel="stylesheet" type="text/css" href="/object/normalizeem.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/as-stickyfooter.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/as-scrolltotop.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/as-basegrid.css" media="all" />
+  <!--[if (IE 6)]>
+<link rel="stylesheet" type="text/css" href="/object/as-basegrid-ie6.css" media="all" />
+ <![endif]--> 
+  <!--[if (IE 7)]>
+<link rel="stylesheet" type="text/css" href="/object/as-basegrid-ie7.css" media="all" />
+ <![endif]--> 
+<link rel="stylesheet" type="text/css" href="/object/as-baselayout.css" media="all" />
+  <!--[if (IE 6)]>
+<link rel="stylesheet" type="text/css" href="/object/as-baselayoutie6.css" media="all" />
+ <![endif]--> 
+  <!--[if (IE 7)]>
+<link rel="stylesheet" type="text/css" href="/object/as-baselayout-ie7.css" media="all" />
+ <![endif]--> 
+<link rel="stylesheet" type="text/css" href="/object/as-baseform.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/as-basefont.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/as-baseprint.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/as-slideshow.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/object/casstyle.css" media="all" />
+
+<script LANGUE="javaScript">
+function makeArray()    {
+    this[0] = makeArray.arguments.length;
+    for (i = 0; i<makeArray.arguments.length; i++)
+        this[i+1] = makeArray.arguments[i];
+}
+
+var daysofweek = new makeArray('Sunday',
+                               'Monday',
+                               'Tuesday',
+                               'Wednesday',
+                               'Thursday',
+                               'Friday',
+                               'Saturday');
+
+var monthsofyear = new makeArray('January',
+                                 'February',
+                                 'March',
+                                 'April',
+                                 'May',
+                                 'June',
+                                 'July',
+                                 'August',
+                                 'September',
+                                 'October',
+                                 'November',
+                                 'December');
+
+function Nths(day) { 
+    if (day == 1 || day == 21 || day == 31) return 'st';
+    if (day == 2 || day == 22) return 'nd';
+    if (day == 3 || day == 23) return 'rd';
+    return 'th';
+}
+
+function DayOfWeek(day,month,year) {
+    var a = Math.floor((14 - month)/12);
+    var y = year - a;
+    var m = month + 12*a - 2;
+    var d = (day + y + Math.floor(y/4) - Math.floor(y/100) +
+             Math.floor(y/400) + Math.floor((31*m)/12)) % 7;
+    return d + 1;
+}
+
+function FullDate(day,month,year) {
+    return daysofweek[DayOfWeek(day,month,year)] +', '+ monthsofyear[month] +' '+ day + Nths(day); 
+//    return daysofweek[DayOfWeek(day,month,year)] +', '+ monthsofyear[month] +' '+ day + Nths(day) + '<br/>';
+// Do not understand why there's a <br>, so comment it out for now. - Herbert
+
+//    return daysofweek[DayOfWeek(day,month,year)] +', '+ day + Nths(day) +', '+ monthsofyear[month] +', '+ year;
+
+}
+</script><script type="text/javascript" src="/object/jquery.hashchange.min.js"></script><script type="text/javascript" src="/object/jquery.easytabs.js"></script>
+</head>
+<body id="cx" class="id824">
+<a name="top"></a>
+<div class="button-onsiteedit">
+<a target="ionAdmin" href="http://ionadmin.fas.nyu.edu/admin/ContextPageEditAction.ion?method=setup&key=824"><img height="8" width="8" alt="" src="/docs/TEMPLATE/1033/edit.png"></a>
+</div>
+<div id="wrap">
+<div id="main">
+<div id="emptysp"></div>
+<div ID="header">
+<div ID="hdr-headerbg">
+<div ID="hdr-headerart">
+<div ID="hdr-search" class="float-right">
+<div ID="searchbox">
+<div ID="search">
+<form action="http://google.nyu.edu/search" id="searchform" method="get">
+<input value="xml_no_dtd" name="output" type="hidden"><input value="UTF-8" name="oe" type="hidden"><input value="10" name="num" type="hidden"><input value="NYUWeb_Main" name="client" type="hidden"><input value="NYUWeb_Main" name="site" type="hidden"><input value="default_frontend" name="proxystylesheet" type="hidden"><input name="sitesearch" type="hidden" value="cas.nyu.edu"><input type="text" name="q" class="querybox"><input class="submitbox" border="0" src="/docs/TEMPLATE/1929/search-bt.png" type="image">
+</form>
+</div>
+</div>
+</div>
+<a class="linktonyu" href="http://www.nyu.edu"><span class="hidden">New York University</span></a><a class="linktoas" href="http://cas.nyu.edu"><span class="hidden">College of Arts and Science</span></a>
+</div>
+<div class="hidden" id="hdr-headerart-pt">
+<img src="/docs/TEMPLATE/48/print-cas.png"></div>
+</div>
+</div>
+<div id="snav">
+<ul>
+<li class="first">
+<a href="http://as.nyu.edu/page/aboutas">About Arts &amp; Science</a>
+</li>
+<li>
+<a href="http://as.nyu.edu/page/deptprogram">Departments and Programs</a>
+</li>
+<li class="last">
+<a href="http://as.nyu.edu/page/faculty.directory">The Faculty</a>
+</li>
+</ul>
+</div>
+<div ID="subnav">
+<div ID="breadcrumb">
+<div class="breadcrumb_nav" id="breadcrumb">
+<a href="/page/__default">Home</a> &gt; <a href="/page/studentlife">Student Life</a> &gt; <span class="on">Junior Programs</span>
+</div>
+</div>
+</div>
+<div id="content">
+<div class="column" id="center">
+<h2 class="content-title">Junior Programs</h2>
+<div class="maincontent">
+<span class="spa"></span>
+<div id="contentelement">Often lost in the rush and excitement of arrival and graduation, the Junior Year is an exciting and important period of a student's college career. In addition to pursuing specialized coursework in their major, Juniors have the opportunity to participate in various interdisciplinary, specialized, and accelerated programs offered by the College. Many Juniors will also study abroad, begin to prepare for graduate school, and/or pursue internships and employment opportunities related to future academic and career plans. In other words, the Junior Year is a crucial "bridge" year during which student needs are diverse, specialized, and continually evolving. Junior year is an ideal time to:<br><ul><li>Explore possible double <a href="http://cas.nyu.edu/page/ug.MajorsMinors">majors</a>, <a href="http://cas.nyu.edu/page/majorminors#minor">minors</a>, <a href="http://www.nyu.edu/students/undergraduates/academic-services/undergraduate-advisement/unique-academic-opportunities/cross-school-minors.html">cross-school minors</a> or <a href="http://cas.nyu.edu/page/ug.ProfessionalEdge">Professional Edge certificates</a></li></ul><ul><li>Consider pursuing <a href="http://www.nyu.edu/registrar/graduation/honors.html">honors in your major</a> or enrolling in one of the <a href="http://cas.nyu.edu/object/ug.acadlife.advancedhonors.winter13">Advanced Honors Seminars</a> offered in the College</li></ul><ul><li>Take advantage of <a href="http://cas.nyu.edu/page/ug.research">research opportunities</a>, apply for a <a href="http://www.nyu.edu/cas/DURF/">DURF grant</a> or a <a href="http://www.nyu.edu/academics/awards-and-highlights/student-nationalscholarshipcompetitions/national-prestigious-scholarships.html">National Scholarship</a>, and/or participate in the <a href="http://cas.nyu.edu/page/ug.researchconference.html">Undergraduate Research Conference</a><br></li></ul><ul><li>Study away at one of NYU's <a href="http://www.nyu.edu/admissions/study-abroad.html">many sites</a> around the world, at <a href="http://www.nyu.edu/diversity/nyu.in.world/student.exchange.html">domestic</a> or <a href="http://www.nyu.edu/studyabroad/exchange/intl.exchange.html">international exchange partners</a>, or through <a href="http://www.nyu.edu/admissions/summer-sessions/summer-abroad/programs.html">a summer study abroad program</a></li></ul><ul><li>Prepare for <a href="http://www.prelaw.cas.nyu.edu/page/home">law school</a>, a career in <a href="http://business.cas.nyu.edu/page/home">business</a>, or a <a href="http://prehealth.cas.nyu.edu/page/home">health profession</a> (for pre-health students, review the <a href="http://www.nyu.edu/cas/prehealth/webinar/player.html" alt="Watch a webinar about the Application Process for our program.">application process for health professional programs 2012-2013</a>)<br><br></li><li>Research and prepare for graduate school:<br><br><p><u>Attend an event to learn more about graduate school.</u><br><u><br></u><i>Researching and Applying to Graduate School</i><u><br></u>Wednesday, February 27, 2013 at 5:00pm<br>@ Jurow Hall, Silver Center (31 Washington Place), Ground Floor<br>Join
+ Dean Lauren A. Benton (GSAS), Assistant Dean for Students Natalie 
+Friedman (CAS), and representatives from CAS and GSAS for an informative
+ session about graduate study and special opportunities at the Graduate 
+School of Arts and Science. Topics to include: researching and preparing
+ for graduate school, the graduate school admissions process, financial 
+aid for graduate school, housing for graduate students, and more.<br><br><i>A Gathering of Graduates (Master's Focus)</i><u><br></u>Friday, March 8, 2013 at 2:00pm<br><i>A Gathering of Graduates (Doctoral Focus)</i><u><br></u>Friday, April 5, 2013 at 2:00pm<br>@ <a href="http://www.nyu.edu/careerdevelopment/programs/liberal_arts/">Wasserman Center for Career Development</a> (133 E. 13th Street, 2nd Floor). RSVP for either event on <a href="http://www.nyu.edu/careerdevelopment/careernet_info.php">NYU CareerNet</a> under Events &gt; Seminars.<br>Are
+ you considering graduate school? A panel of current graduate students 
+will share their experience on making the decision to pursue a graduate 
+degree and life as a graduate student, as well as offer advice for those
+ considering a graduate education. <b><br><br></b><u>Meet with your major advisor and/or a faculty mentors to learn more about graduate study in your field of interest. Questions to consider:</u><br>-Will a graduate degree help me achieve my academic/professional goals?<br>-Am I more interested in a professional degree, or one that emphasizes theory and research in my field?<br>-What’s the difference between a Master’s and Doctoral program in my field, and which one is right for me? <br>-Which specific programs might complement my research interests?<br>-How might I fund a graduate education?<br>-How can I prepare a strong application to graduate school?<b><br><br></b><u>Consider one of our <a href="http://cas.nyu.edu/page/bachelorsmasters">Accelerated Bachelor’s-Master’s Programs</a>.</u><br>-<a href="http://cas.nyu.edu/object/bachelorsmasters">CAS-GSAS program</a><br>-<a href="http://cas.nyu.edu/object/ug.academicprogram.bama_teaching">CAS-Steinhardt program</a><br>-<a href="http://cas.nyu.edu/object/ug.academicprogram.bampa">CAS-Wagner program</a><br>-For advisement on program eligibility, admissions, and general degree planning, students are encouraged to meet with Scott Statland (scott.statland@nyu.edu), Associate Director, Juniors and Inter-School Programs. <br>-Students may visit Scott during walk-in hours (Tuesdays, 12pm-1pm; Fridays, 11am-12pm)&nbsp; at the Academic Resource Center (ARC, 18 Washington Place), or they may call the CAS Advising Center (212-998-8130) to schedule an appointment at an alternative time.<br></p></li><li>Get a jump start on your career by visiting the <a href="http://www.nyu.edu/careerdevelopment/students/">Wasserman Center for Career Development</a>.
+ Choosing a direction to go in your career depends on a number of 
+different variables. Whether it’s choosing a major, discovering new jobs
+ or fine-tuning your chosen path, the Wasserman Center is ready to help.
+ Wasserman has a wide range of services, including direct counseling, 
+workshops, panel discussions, recruitment events, industry seminars, 
+career fairs, job and internship listings, and more. Go <a href="http://www.nyu.edu/careerdevelopment/students/">here</a> to get started and <a href="http://www.nyu.edu/careerdevelopment/contact.php">here</a> to schedule an appointment. Spring 2013 programs for liberal arts students in particular are described <a href="http://www.nyu.edu/careerdevelopment/programs/liberal_arts/">here</a>. </li></ul><ul><li>Check your degree progress  using <a href="http://cas.nyu.edu/docs/CP/824/CASDegreeReqs.pdf" target="_blank">this worksheet</a>
+ (or <a href="http://cas.nyu.edu/docs/CP/824/CASDegreeReqs_LSTransition.pdf" target="_blank">this worksheet</a>, for students who transitioned from the Liberal 
+Studies Core Program). To complete it, please go to the drop-down menu on the left of
+ your Albert Student Center to access your unofficial transcript and 
+<a href="https://www.nyu.edu/registrar/pdf/Albert_View_Your_Degree_Audit_Report.pdf" target="_blank">Degree Audit Report</a> (via the “Academic Requirements” link).<br></li></ul><ul><li>Get ready for <a href="http://www.nyu.edu/cas/seniors/">Senior Year</a>!<br></li></ul><br>The College offers special programming and advisement designed to assist you in these endeavors. Although Juniors receive academic advising from their major departmental advisor, they are encouraged to continue to work with their <a href="http://advising.cas.nyu.edu/page/aboutus">academic advisor</a> in the <a href="http://advising.cas.nyu.edu/page/home">College Advising Center</a>. Juniors can also come by the Advising Center during walk-in hours to speak to a part-time advisor. Walk-in hours are as follows:<br><br><table border="0" cellpadding="2" cellspacing="2" width="100%"><tbody><tr><td>&nbsp;Mondays</td><td>10:00am - 4:00pm<br></td></tr><tr><td>&nbsp;Tuesdays</td><td>10:00am - 4:00pm</td></tr><tr><td>&nbsp;Wednesdays</td><td>10:00am - 2:00pm &amp; 3:30pm - 4:00pm</td></tr><tr><td>&nbsp;Thursdays</td><td>10:00am - 4:00pm</td></tr><tr><td>&nbsp;Fridays</td><td>10:00am - 4:00pm</td></tr></tbody></table><br><p> <!-- ^^^^^^^^^^^^^^^^ --><!-- END TEXT Content --></p><!-- END Content table --><!-- ****************************************** --></div>
+<span class="gl"></span><span class="ev"></span><span class="nw"></span><span class="faclist"></span><span class="prolist"></span><script type="text/javascript">
+    $(document).ready( function() {
+      $('#majorminor-tab, #intlhouse-tab, #adminres-tab, #deptlist-tab, #degprog-tab').easytabs();
+    });
+</script>
+</div>
+</div>
+<div class="column" id="left">
+<div ID="nav">
+<ul>
+<li class="mainnav-off">
+<a href="/page/aboutcas">About CAS</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/academicprograms">Academic Programs</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/research">Undergraduate Research</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/academicintegrity">Academic Integrity</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/academiclife">Academic Support Services</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/studyabroad">Study Abroad and Summer Study</a>
+</li>
+<li class="mainnav-haschild">
+<a href="/page/studentlife">Student Life</a>
+</li>
+<ul class="mainnav-childlist">
+        
+        
+      <li class="mainnav-off">
+<a href="/page/studentlife.freshmanprograms">First-Year Programs</a>
+</li>
+        
+        
+      <li class="mainnav-off">
+<a href="/page/studentlife.sophomoreprograms">Sophomore Programs</a>
+</li>
+        
+        
+      <li class="mainnav-childselected">Junior Programs</li>
+<ul class="mainnav-childlist"></ul>
+        
+        
+      <li class="mainnav-off">
+<a href="/page/studentlife.seniorprograms">Senior Programs</a>
+</li>
+        
+        
+      <li class="mainnav-off">
+<a href="/page/studentcouncil" target="_blank">Student Council</a>
+</li>
+        
+        
+      <li class="mainnav-off">
+<a href="/page/studentlife.wellness" target="_blank">Wellness Exchange</a>
+</li>
+        
+        
+      <li class="mainnav-off">
+<a href="/page/studentlife.achievementprogram">Academic Achievement Program</a>
+</li>
+        
+        
+      <li class="mainnav-off">
+<a href="/page/studentlife.servicecorps">Dean's Service Honors Corps</a>
+</li>
+        
+        
+      <li class="mainnav-off">
+<a href="/page/pg_20060125932157" target="_blank">University Student Life</a>
+</li>
+        
+        
+      <li class="mainnav-off">
+<a href="/page/studentlife.resourcecenter" target="_blank">Student Resource Center</a>
+</li>
+        
+        
+      <li class="mainnav-off">
+<a href="/page/communityservice">Community Service</a>
+</li>
+</ul>
+<li class="mainnav-off">
+<a href="/page/Admissions" target="_blank">Admissions</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/financialaid">Financial Aid</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/alumni">Alumni</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/parents">Parents</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/events">Events</a>
+</li>
+<li class="mainnav-off">
+<a href="/page/admin.pp">Administrative Policies &amp; Procedures</a>
+</li>
+</ul>
+</div>
+<span class="sa"></span><span class="ac"></span><span class="vi"></span><span class="lscore-req"></span><span class="admindir"></span>
+</div>
+<div class="column" id="right"></div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footerbox">
+<div class="footerText">
+<a href="/page/contactus">Contact Us</a> | <a target="Feedback" href="/object/cas.feedback">Feedback</a> | <a href="http://www.nyu.edu">&copy; New York University</a>, <a href="http://as.nyu.edu">Arts and Science</a>
+</div>
+<div id="as-smm"></div>
+<div id="nyulogo">
+<a target="_blank" href="http://www.nyu.edu"><img border="0" alt="New York University" src="/docs/TEMPLATE/424/footer-nyulogo.png"></a>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-6714527-4']);
+  _gaq.push(['_setDomainName', 'nyu.edu']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script><script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName('script')[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0011/6459.js";
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+</body>
+</html>
