@@ -45,3 +45,11 @@ Define all urls without the last slash
 6. CheckRobots.py
 
 Given a url, check its robots protocol.
+
+7. CheckContent.py
+
+Check if two pages have the same/simialer contents, duplicate contents detecting.
+
+8. SimHashSample.py
+
+The sim-hash function and hanging distance function used in CheckContent.py

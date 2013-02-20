@@ -32,16 +32,20 @@ A list of special features beyond the basic requirements:
    If the server cannot send a response which is acceptable according to the combined Accept field value, then the
    server SHOULD send a 406 (not acceptable) response.
 
-4. In practice, there are two problems of performance. First, some pages have tons of out-link. For this case, we do not
-   allow redundantly pushing url into queue. Second, some servers have long time delay. For this case, we are planning
-   set up a timmer which help jump out slow pages.
+4. The program is able to detect duplicate contents. Rather than save whole contents in memory, we prefer Sim-hash and hanging distance techniques. There are about 10% duplicate contents found in average.
 
-5. We write CheckUrl and CheckSite functions independently. This is good for extend for future work. Two hash tables
-   are maintained in these two functions store visited url information and visited site information, including
+6. In practice, there are two problems of performance. First, some pages have tons of out-link. For this case, we do not
+   allow redundantly pushing url into queue. Second, some servers have long time delay. For this case, we are planning 
+   set up a run-time which help jump out slow pages.
+
+7. We write CheckUrl, CheckContents and CheckSite functions independently. This is good for extend for future work. Two hash tables
+   are maintained in these two functions store visited url information and visited site information, including 
    arrival time, how many times, robot protocol, e.g.
 
-6. We are using GitHub for version control. We also build up a web page and a wiki page for this project. See
+8. We are using GitHub for version control. We also build up a web page and a wiki page for this project. See
    http://charnugagoo.github.com/WebCrawler/
+
+A list of the files in our submission and what they do:
 
 ==========
 
@@ -54,22 +58,22 @@ How to compile and run this program?
 python WebCrawler.py 'query' 500
 
 Meaning of input parameters:
-
 query: (Required) A set of keywords to be searched. Query must be quoted, if there're more than one word in it.
-
 n: (Required) The total number of pages to be collected.
+
+
 
 ===========
 FILE LISTS:
 
-1.WebCrawler.py
+1. WebCrawler.py
 
 The main web crawler file.
 Given a query (a set of keywords) and a number n provided by the user, the crawler will contact Google, get the top-10
 results for this query from Google, and then crawl starting from these top-10 results in a Breadth-First manner until
 we have collected a total of n pages.
 
-2.CheckUrl.py
+2. CheckUrl.py
 
 checkUrl function checks if a url could be crawled. 
 
@@ -77,14 +81,22 @@ checkUrl function checks if a url could be crawled.
 
 Given a url, check its root site's information, whether this url could be crawled. 
 
-4.IndexFunc.py
+4. IndexFunc.py
 
 Treat url with "index/main/default" as the same without it.
 
-5.DeleteLastSlash.py
+5. DeleteLastSlash.py
 
 Define all urls without the last slash
 
-6.CheckRobots.py
+6. CheckRobots.py
 
 Given a url, check its robots protocol.
+
+7. CheckContent.py
+
+Check if two pages have the same/simialer contents, duplicate contents detecting.
+
+8. SimHashSample.py
+
+The sim-hash function and hanging distance function used in CheckContent.py
