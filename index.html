@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Webcrawler by charnugagoo</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Webcrawler</h1>
+        <p class="header">A (very primitive) web crawler in Python that attempts to do a limited crawl of the web.</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/charnugagoo/WebCrawler/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/charnugagoo/WebCrawler/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/charnugagoo/WebCrawler">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/charnugagoo">charnugagoo</a></p>
+
+
+      </header>
+      <section>
+        <p>WebCrawler
+==========  by Jiankai and Zhuoran</p>
+
+<p>A (very primitive) web crawler in Python that attempts to do a limited crawl of the web.</p>
+
+<p>The purpose is to learn about crawling and to learn a bit about the various strutures and features found in web pages and how to handle/parse them.</p>
+
+<p>How does the program works and what are the major functions?</p>
+
+<p>Given a query (a set of keywords) and a number n provided by the user, the crawler will contact Google, get the top-10
+results for this query from Google, and then crawl starting from these top-10 results in a Breadth-First manner until
+we have collected a total of n pages. Each page will be visited only once and stored in a file in the directory called
+"pages". The program will output a list of all visited URLs, in the order they are visited, into a file called
+"visited". In each line, in addition to the URL of the crawled page, we also print the time when it was crawled, its
+size, and the return code (e.g., 200, 404). The program will also compute the total number and total size (in MB) of the
+pages that were downloaded, and the depth of each page, i.e., its minimum distance from one of the 10 start pages, total
+time, and number of 404 errors. (As start pages, we use the actual result URLs returned by Google.)</p>
+
+<p>A list of special features beyond the basic requirements:</p>
+
+<ol>
+<li><p>The program uses mutithreading technique to improve the overall performance of the web crawler.
+In the worst case, the speed is .8 seconds per page.</p></li>
+<li><p>The program parses "base" elements.
+It will get the base URL and use it for all relative URLs contained within a document.
+It solves the issues of "the ambiguity of URLs".</p></li>
+<li><p>The program sends customized request headers to servers.
+The Accept request-header field can be used to specify certain media types which are acceptable for the response.
+Accept headers can be used to indicate that the request is specifically limited to a small set of desired types.
+Only html and xhtml are acceptable for the response, in our case.
+If the server cannot send a response which is acceptable according to the combined Accept field value, then the
+server SHOULD send a 406 (not acceptable) response.</p></li>
+<li><p>The program is able to detect duplicate contents. Rather than save whole contents in memory, we prefer Sim-hash and hanging distance techniques. There are about 10% duplicate contents found in average.</p></li>
+<li><p>In practice, there are two problems of performance. First, some pages have tons of out-link. For this case, we do not
+allow redundantly pushing url into queue. Second, some servers have long time delay. For this case, we are planning 
+set up a run-time which help jump out slow pages.</p></li>
+<li><p>We write CheckUrl, CheckContents and CheckSite functions independently. This is good for extend for future work. Two hash tables
+are maintained in these two functions store visited url information and visited site information, including 
+arrival time, how many times, robot protocol, e.g.</p></li>
+<li><p>We are using GitHub for version control. We also build up a web page and a wiki page for this project. See
+<a href="http://charnugagoo.github.com/WebCrawler/">http://charnugagoo.github.com/WebCrawler/</a></p></li>
+</ol><p>A list of the files in our submission and what they do:</p>
+
+<h1></h1>
+
+<p>How to compile and run this program?</p>
+
+<ol>
+<li>Launch your terminal.</li>
+<li>Enter the directory of the file "WebCrawler.py".</li>
+<li>Run the following command:</li>
+</ol><p>python WebCrawler.py 'query' 500</p>
+
+<p>Meaning of input parameters:
+query: (Required) A set of keywords to be searched. Query must be quoted, if there're more than one word in it.
+n: (Required) The total number of pages to be collected.</p>
+
+<h1></h1>
+
+<p>FILE LISTS:</p>
+
+<ol>
+<li>WebCrawler.py</li>
+</ol><p>The main web crawler file.
+Given a query (a set of keywords) and a number n provided by the user, the crawler will contact Google, get the top-10
+results for this query from Google, and then crawl starting from these top-10 results in a Breadth-First manner until
+we have collected a total of n pages.</p>
+
+<ol>
+<li>CheckUrl.py</li>
+</ol><p>checkUrl function checks if a url could be crawled. </p>
+
+<p>3.CheckSite.py</p>
+
+<p>Given a url, check its root site's information, whether this url could be crawled. </p>
+
+<ol>
+<li>IndexFunc.py</li>
+</ol><p>Treat url with "index/main/default" as the same without it.</p>
+
+<ol>
+<li>DeleteLastSlash.py</li>
+</ol><p>Define all urls without the last slash</p>
+
+<ol>
+<li>CheckRobots.py</li>
+</ol><p>Given a url, check its robots protocol.</p>
+
+<ol>
+<li>CheckContent.py</li>
+</ol><p>Check if two pages have the same/simialer contents, duplicate contents detecting.</p>
+
+<ol>
+<li>SimHashSample.py</li>
+</ol><p>The sim-hash function and hanging distance function used in CheckContent.py</p>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
