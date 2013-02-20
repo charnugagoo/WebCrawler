@@ -54,8 +54,8 @@ How to compile and run this program?
 python WebCrawler.py 'query' 500
 
 Meaning of input parameters:
+
 query: (Required) A set of keywords to be searched. Query must be quoted, if there're more than one word in it.
-n: (Required) The total number of pages to be collected.
 
 n: (Required) The total number of pages to be collected.
 
