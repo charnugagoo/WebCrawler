@@ -1,8 +1,10 @@
-#!/usr/bin/python
 # Implementation of Charikar simhashes in Python
 # See: http://dsrg.mff.cuni.cz/~holub/sw/shash/#a1
-# See: http://snipperize.todayclose.com/snippet/py/%E5%88%A9%E7%94%A8simhash%E6%9D%A5%E8%BF%9B%E8%A1%8C%E6%96%87%E6%9C%AC%E5%8E%BB%E9%87%8D%E5%A4%8D--812006/
 class simhash():
+    """SimHash class, given a splited string, given a hash 128 bits number.
+        
+        The more contents are similar, the more hash number is similar.
+        """
     def __init__(self, tokens='', hashbits=128):
         self.hashbits = hashbits
         self.hash = self.simhash(tokens)
