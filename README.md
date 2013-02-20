@@ -18,23 +18,29 @@ time, and number of 404 errors. (As start pages, we use the actual result URLs r
 
 A list of special features beyond the basic requirements:
 
-1. The program parses "base" elements.
+1. The program uses mutithreading technique to improve the overall performance of the web crawler.
+   In the worst case, the speed is .8 seconds per page.
+
+2. The program parses "base" elements.
    It will get the base URL and use it for all relative URLs contained within a document.
    It solves the issues of "the ambiguity of URLs".
 
-2. The program sends customized request headers to servers.
+3. The program sends customized request headers to servers.
    The Accept request-header field can be used to specify certain media types which are acceptable for the response.
    Accept headers can be used to indicate that the request is specifically limited to a small set of desired types.
    Only html and xhtml are acceptable for the response, in our case.
    If the server cannot send a response which is acceptable according to the combined Accept field value, then the
    server SHOULD send a 406 (not acceptable) response.
-3. In practice, there are two problems of performance. First, some pages have tons of out-link. For this case, we do not 
-   allow redundantly pushing url into queue. Second, some servers have long time delay. For this case, we are planning 
+
+4. In practice, there are two problems of performance. First, some pages have tons of out-link. For this case, we do not
+   allow redundantly pushing url into queue. Second, some servers have long time delay. For this case, we are planning
    set up a timmer which help jump out slow pages.
-4. We write CheckUrl and CheckSite functions independently. This is good for extend for future work. Two hash tables 
-   are maintained in these two functions store visited url information and visited site information, including 
+
+5. We write CheckUrl and CheckSite functions independently. This is good for extend for future work. Two hash tables
+   are maintained in these two functions store visited url information and visited site information, including
    arrival time, how many times, robot protocol, e.g.
-5. We are using GitHub for version control. We also build up a web page and a wiki page for this project. See
+
+6. We are using GitHub for version control. We also build up a web page and a wiki page for this project. See
    http://charnugagoo.github.com/WebCrawler/
 
 ==========
